@@ -1,0 +1,688 @@
+circuitId,name_circuit,driverId,forename,surname,wins
+9,Silverstone Circuit,1,Lewis,Hamilton,9
+11,Hungaroring,1,Lewis,Hamilton,8
+8,Circuit de Nevers Magny-Cours,30,Michael,Schumacher,8
+7,Circuit Gilles Villeneuve,1,Lewis,Hamilton,7
+7,Circuit Gilles Villeneuve,30,Michael,Schumacher,7
+21,Autodromo Enzo e Dino Ferrari,30,Michael,Schumacher,7
+17,Shanghai International Circuit,1,Lewis,Hamilton,6
+4,Circuit de Barcelona-Catalunya,1,Lewis,Hamilton,6
+4,Circuit de Barcelona-Catalunya,30,Michael,Schumacher,6
+22,Suzuka Circuit,30,Michael,Schumacher,6
+13,Circuit de Spa-Francorchamps,30,Michael,Schumacher,6
+6,Circuit de Monaco,102,Ayrton,Senna,6
+69,Circuit of the Americas,1,Lewis,Hamilton,5
+15,Marina Bay Street Circuit,20,Sebastian,Vettel,5
+6,Circuit de Monaco,289,Graham,Hill,5
+9,Silverstone Circuit,117,Alain,Prost,5
+32,Autódromo Hermanos Rodríguez,830,Max,Verstappen,5
+14,Autodromo Nazionale di Monza,30,Michael,Schumacher,5
+14,Autodromo Nazionale di Monza,1,Lewis,Hamilton,5
+36,Autódromo Internacional Nelson Piquet,117,Alain,Prost,5
+3,Bahrain International Circuit,1,Lewis,Hamilton,5
+20,Nürburgring,30,Michael,Schumacher,5
+24,Yas Marina Circuit,1,Lewis,Hamilton,5
+6,Circuit de Monaco,30,Michael,Schumacher,5
+13,Circuit de Spa-Francorchamps,1,Lewis,Hamilton,5
+19,Indianapolis Motor Speedway,30,Michael,Schumacher,5
+13,Circuit de Spa-Francorchamps,102,Ayrton,Senna,5
+70,Red Bull Ring,830,Max,Verstappen,5
+71,Sochi Autodrom,1,Lewis,Hamilton,5
+11,Hungaroring,30,Michael,Schumacher,4
+22,Suzuka Circuit,20,Sebastian,Vettel,4
+4,Circuit de Barcelona-Catalunya,830,Max,Verstappen,4
+1,Albert Park Grand Prix Circuit,30,Michael,Schumacher,4
+25,Autódromo Juan y Oscar Gálvez,579,Juan,Fangio,4
+39,Circuit Park Zandvoort,373,Jim,Clark,4
+10,Hockenheimring,30,Michael,Schumacher,4
+15,Marina Bay Street Circuit,1,Lewis,Hamilton,4
+34,Circuit Paul Ricard,117,Alain,Prost,4
+6,Circuit de Monaco,117,Alain,Prost,4
+13,Circuit de Spa-Francorchamps,8,Kimi,Räikkönen,4
+18,Autódromo José Carlos Pace,30,Michael,Schumacher,4
+22,Suzuka Circuit,1,Lewis,Hamilton,4
+3,Bahrain International Circuit,20,Sebastian,Vettel,4
+2,Sepang International Circuit,20,Sebastian,Vettel,4
+13,Circuit de Spa-Francorchamps,373,Jim,Clark,4
+24,Yas Marina Circuit,830,Max,Verstappen,4
+9,Silverstone Circuit,95,Nigel,Mansell,3
+10,Hockenheimring,1,Lewis,Hamilton,3
+21,Autodromo Enzo e Dino Ferrari,830,Max,Verstappen,3
+9,Silverstone Circuit,30,Michael,Schumacher,3
+35,Korean International Circuit,20,Sebastian,Vettel,3
+7,Circuit Gilles Villeneuve,830,Max,Verstappen,3
+7,Circuit Gilles Villeneuve,137,Nelson,Piquet,3
+20,Nürburgring,328,Jackie,Stewart,3
+20,Nürburgring,579,Juan,Fangio,3
+18,Autódromo José Carlos Pace,830,Max,Verstappen,3
+22,Suzuka Circuit,830,Max,Verstappen,3
+6,Circuit de Monaco,328,Jackie,Stewart,3
+9,Silverstone Circuit,373,Jim,Clark,3
+14,Autodromo Nazionale di Monza,579,Juan,Fangio,3
+30,Kyalami,182,Niki,Lauda,3
+6,Circuit de Monaco,475,Stirling,Moss,3
+18,Autódromo José Carlos Pace,1,Lewis,Hamilton,3
+18,Autódromo José Carlos Pace,20,Sebastian,Vettel,3
+24,Yas Marina Circuit,20,Sebastian,Vettel,3
+21,Autodromo Enzo e Dino Ferrari,117,Alain,Prost,3
+21,Autodromo Enzo e Dino Ferrari,102,Ayrton,Senna,3
+27,Autódromo do Estoril,95,Nigel,Mansell,3
+27,Autódromo do Estoril,117,Alain,Prost,3
+10,Hockenheimring,4,Fernando,Alonso,3
+37,Detroit Street Circuit,102,Ayrton,Senna,3
+69,Circuit of the Americas,830,Max,Verstappen,3
+14,Autodromo Nazionale di Monza,137,Nelson,Piquet,3
+46,Watkins Glen,373,Jim,Clark,3
+10,Hockenheimring,102,Ayrton,Senna,3
+14,Autodromo Nazionale di Monza,117,Alain,Prost,3
+14,Autodromo Nazionale di Monza,22,Rubens,Barrichello,3
+14,Autodromo Nazionale di Monza,20,Sebastian,Vettel,3
+55,Reims-Gueux,579,Juan,Fangio,3
+3,Bahrain International Circuit,4,Fernando,Alonso,3
+68,Buddh International Circuit,20,Sebastian,Vettel,3
+2,Sepang International Circuit,30,Michael,Schumacher,3
+46,Watkins Glen,289,Graham,Hill,3
+13,Circuit de Spa-Francorchamps,830,Max,Verstappen,3
+13,Circuit de Spa-Francorchamps,579,Juan,Fangio,3
+2,Sepang International Circuit,4,Fernando,Alonso,3
+70,Red Bull Ring,117,Alain,Prost,3
+13,Circuit de Spa-Francorchamps,71,Damon,Hill,3
+13,Circuit de Spa-Francorchamps,20,Sebastian,Vettel,3
+1,Albert Park Grand Prix Circuit,20,Sebastian,Vettel,3
+1,Albert Park Grand Prix Circuit,18,Jenson,Button,3
+11,Hungaroring,102,Ayrton,Senna,3
+4,Circuit de Barcelona-Catalunya,57,Mika,Häkkinen,3
+10,Hockenheimring,137,Nelson,Piquet,3
+5,Istanbul Park,13,Felipe,Massa,3
+14,Autodromo Nazionale di Monza,238,Ronnie,Peterson,3
+6,Circuit de Monaco,3,Nico,Rosberg,3
+39,Circuit Park Zandvoort,328,Jackie,Stewart,3
+39,Circuit Park Zandvoort,830,Max,Verstappen,3
+6,Circuit de Monaco,1,Lewis,Hamilton,3
+39,Circuit Park Zandvoort,182,Niki,Lauda,3
+14,Autodromo Nazionale di Monza,475,Stirling,Moss,3
+38,Brands Hatch,182,Niki,Lauda,3
+20,Nürburgring,1,Lewis,Hamilton,2
+14,Autodromo Nazionale di Monza,647,Alberto,Ascari,2
+14,Autodromo Nazionale di Monza,403,Phil,Hill,2
+14,Autodromo Nazionale di Monza,341,John,Surtees,2
+13,Circuit de Spa-Francorchamps,117,Alain,Prost,2
+14,Autodromo Nazionale di Monza,830,Max,Verstappen,2
+14,Autodromo Nazionale di Monza,844,Charles,Leclerc,2
+20,Nürburgring,4,Fernando,Alonso,2
+13,Circuit de Spa-Francorchamps,647,Alberto,Ascari,2
+15,Marina Bay Street Circuit,4,Fernando,Alonso,2
+19,Indianapolis Motor Speedway,657,Bill,Vukovich,2
+18,Autódromo José Carlos Pace,17,Mark,Webber,2
+18,Autódromo José Carlos Pace,13,Felipe,Massa,2
+14,Autodromo Nazionale di Monza,71,Damon,Hill,2
+18,Autódromo José Carlos Pace,3,Nico,Rosberg,2
+14,Autodromo Nazionale di Monza,182,Niki,Lauda,2
+14,Autodromo Nazionale di Monza,223,Clay,Regazzoni,2
+17,Shanghai International Circuit,4,Fernando,Alonso,2
+20,Nürburgring,35,Jacques,Villeneuve,2
+14,Autodromo Nazionale di Monza,102,Ayrton,Senna,2
+18,Autódromo José Carlos Pace,31,Juan,Pablo Montoya,2
+14,Autodromo Nazionale di Monza,4,Fernando,Alonso,2
+14,Autodromo Nazionale di Monza,31,Juan,Pablo Montoya,2
+17,Shanghai International Circuit,3,Nico,Rosberg,2
+14,Autodromo Nazionale di Monza,328,Jackie,Stewart,2
+18,Autódromo José Carlos Pace,57,Mika,Häkkinen,2
+18,Autódromo José Carlos Pace,102,Ayrton,Senna,2
+18,Autódromo José Carlos Pace,224,Emerson,Fittipaldi,2
+1,Albert Park Grand Prix Circuit,3,Nico,Rosberg,2
+26,Circuito de Jerez,102,Ayrton,Senna,2
+20,Nürburgring,235,Jacky,Ickx,2
+56,Prince George Circuit,373,Jim,Clark,2
+40,Zolder,182,Niki,Lauda,2
+45,Jarama,207,Mario,Andretti,2
+46,Watkins Glen,199,Carlos,Reutemann,2
+46,Watkins Glen,231,James,Hunt,2
+46,Watkins Glen,328,Jackie,Stewart,2
+47,Scandinavian Raceway,182,Niki,Lauda,2
+47,Scandinavian Raceway,222,Jody,Scheckter,2
+48,Mosport International Raceway,328,Jackie,Stewart,2
+49,Montjuïc,328,Jackie,Stewart,2
+50,Nivelles-Baulers,224,Emerson,Fittipaldi,2
+51,Charade Circuit,328,Jackie,Stewart,2
+53,Rouen-Les-Essarts,364,Dan,Gurney,2
+55,Reims-Gueux,356,Jack,Brabham,2
+55,Reims-Gueux,578,Mike,Hawthorn,2
+58,Aintree,475,Stirling,Moss,2
+39,Circuit Park Zandvoort,356,Jack,Brabham,2
+66,Circuit Bremgarten,579,Juan,Fangio,2
+70,Red Bull Ring,1,Lewis,Hamilton,2
+70,Red Bull Ring,3,Nico,Rosberg,2
+70,Red Bull Ring,30,Michael,Schumacher,2
+70,Red Bull Ring,57,Mika,Häkkinen,2
+70,Red Bull Ring,178,Alan,Jones,2
+70,Red Bull Ring,238,Ronnie,Peterson,2
+70,Red Bull Ring,822,Valtteri,Bottas,2
+71,Sochi Autodrom,822,Valtteri,Bottas,2
+73,Baku City Circuit,815,Sergio,Pérez,2
+75,Autódromo Internacional do Algarve,1,Lewis,Hamilton,2
+77,Jeddah Corniche Circuit,830,Max,Verstappen,2
+78,Losail International Circuit,830,Max,Verstappen,2
+79,Miami International Autodrome,830,Max,Verstappen,2
+39,Circuit Park Zandvoort,647,Alberto,Ascari,2
+39,Circuit Park Zandvoort,231,James,Hunt,2
+20,Nürburgring,341,John,Surtees,2
+29,Adelaide Street Circuit,102,Ayrton,Senna,2
+20,Nürburgring,647,Alberto,Ascari,2
+21,Autodromo Enzo e Dino Ferrari,71,Damon,Hill,2
+21,Autodromo Enzo e Dino Ferrari,95,Nigel,Mansell,2
+21,Autodromo Enzo e Dino Ferrari,137,Nelson,Piquet,2
+22,Suzuka Circuit,57,Mika,Häkkinen,2
+22,Suzuka Circuit,71,Damon,Hill,2
+22,Suzuka Circuit,77,Gerhard,Berger,2
+22,Suzuka Circuit,102,Ayrton,Senna,2
+25,Autódromo Juan y Oscar Gálvez,71,Damon,Hill,2
+25,Autódromo Juan y Oscar Gálvez,224,Emerson,Fittipaldi,2
+11,Hungaroring,830,Max,Verstappen,2
+26,Circuito de Jerez,117,Alain,Prost,2
+28,Okayama International Circuit,30,Michael,Schumacher,2
+29,Adelaide Street Circuit,77,Gerhard,Berger,2
+29,Adelaide Street Circuit,117,Alain,Prost,2
+39,Circuit Park Zandvoort,117,Alain,Prost,2
+30,Kyalami,95,Nigel,Mansell,2
+30,Kyalami,117,Alain,Prost,2
+30,Kyalami,328,Jackie,Stewart,2
+32,Autódromo Hermanos Rodríguez,1,Lewis,Hamilton,2
+32,Autódromo Hermanos Rodríguez,95,Nigel,Mansell,2
+32,Autódromo Hermanos Rodríguez,117,Alain,Prost,2
+32,Autódromo Hermanos Rodríguez,373,Jim,Clark,2
+33,Phoenix street circuit,102,Ayrton,Senna,2
+34,Circuit Paul Ricard,1,Lewis,Hamilton,2
+34,Circuit Paul Ricard,95,Nigel,Mansell,2
+34,Circuit Paul Ricard,830,Max,Verstappen,2
+36,Autódromo Internacional Nelson Piquet,137,Nelson,Piquet,2
+36,Autódromo Internacional Nelson Piquet,199,Carlos,Reutemann,2
+38,Brands Hatch,95,Nigel,Mansell,2
+12,Valencia Street Circuit,20,Sebastian,Vettel,2
+1,Albert Park Grand Prix Circuit,1,Lewis,Hamilton,2
+6,Circuit de Monaco,427,Maurice,Trintignant,2
+6,Circuit de Monaco,20,Sebastian,Vettel,2
+8,Circuit de Nevers Magny-Cours,95,Nigel,Mansell,2
+9,Silverstone Circuit,35,Jacques,Villeneuve,2
+6,Circuit de Monaco,182,Niki,Lauda,2
+4,Circuit de Barcelona-Catalunya,8,Kimi,Räikkönen,2
+2,Sepang International Circuit,8,Kimi,Räikkönen,2
+7,Circuit Gilles Villeneuve,20,Sebastian,Vettel,2
+4,Circuit de Barcelona-Catalunya,4,Fernando,Alonso,2
+10,Hockenheimring,117,Alain,Prost,2
+10,Hockenheimring,95,Nigel,Mansell,2
+10,Hockenheimring,77,Gerhard,Berger,2
+5,Istanbul Park,1,Lewis,Hamilton,2
+6,Circuit de Monaco,222,Jody,Scheckter,2
+6,Circuit de Monaco,17,Mark,Webber,2
+3,Bahrain International Circuit,830,Max,Verstappen,2
+7,Circuit Gilles Villeneuve,178,Alan,Jones,2
+9,Silverstone Circuit,328,Jackie,Stewart,2
+9,Silverstone Circuit,498,José Froilán,González,2
+9,Silverstone Circuit,830,Max,Verstappen,2
+9,Silverstone Circuit,647,Alberto,Ascari,2
+6,Circuit de Monaco,14,David,Coulthard,2
+6,Circuit de Monaco,4,Fernando,Alonso,2
+7,Circuit Gilles Villeneuve,102,Ayrton,Senna,2
+6,Circuit de Monaco,830,Max,Verstappen,2
+3,Bahrain International Circuit,13,Felipe,Massa,2
+11,Hungaroring,57,Mika,Häkkinen,2
+9,Silverstone Circuit,20,Sebastian,Vettel,2
+6,Circuit de Monaco,579,Juan,Fangio,2
+11,Hungaroring,137,Nelson,Piquet,2
+11,Hungaroring,71,Damon,Hill,2
+9,Silverstone Circuit,4,Fernando,Alonso,2
+1,Albert Park Grand Prix Circuit,14,David,Coulthard,2
+11,Hungaroring,18,Jenson,Button,2
+11,Hungaroring,35,Jacques,Villeneuve,2
+1,Albert Park Grand Prix Circuit,8,Kimi,Räikkönen,2
+9,Silverstone Circuit,17,Mark,Webber,2
+9,Silverstone Circuit,14,David,Coulthard,2
+4,Circuit de Barcelona-Catalunya,95,Nigel,Mansell,2
+11,Hungaroring,20,Sebastian,Vettel,2
+5,Istanbul Park,8,Kimi,Räikkönen,1
+5,Istanbul Park,18,Jenson,Button,1
+39,Circuit Park Zandvoort,846,Lando,Norris,1
+45,Jarama,203,Gilles,Villeneuve,1
+4,Circuit de Barcelona-Catalunya,813,Pastor,Maldonado,1
+39,Circuit Park Zandvoort,579,Juan,Fangio,1
+39,Circuit Park Zandvoort,476,Wolfgang,von Trips,1
+45,Jarama,182,Niki,Lauda,1
+39,Circuit Park Zandvoort,475,Stirling,Moss,1
+5,Istanbul Park,20,Sebastian,Vettel,1
+39,Circuit Park Zandvoort,358,Jochen,Rindt,1
+5,Istanbul Park,822,Valtteri,Bottas,1
+39,Circuit Park Zandvoort,347,Jo,Bonnier,1
+45,Jarama,221,Patrick,Depailler,1
+39,Circuit Park Zandvoort,289,Graham,Hill,1
+40,Zolder,105,Michele,Alboreto,1
+43,Long Beach,199,Carlos,Reutemann,1
+40,Zolder,187,John,Watson,1
+40,Zolder,199,Carlos,Reutemann,1
+43,Long Beach,187,John,Watson,1
+43,Long Beach,182,Niki,Lauda,1
+43,Long Beach,207,Mario,Andretti,1
+43,Long Beach,178,Alan,Jones,1
+43,Long Beach,223,Clay,Regazzoni,1
+44,Las Vegas Street Circuit,105,Michele,Alboreto,1
+43,Long Beach,137,Nelson,Piquet,1
+42,Fair Park,177,Keke,Rosberg,1
+41,Dijon-Prenois,238,Ronnie,Peterson,1
+41,Dijon-Prenois,219,Jean-Pierre,Jabouille,1
+41,Dijon-Prenois,207,Mario,Andretti,1
+41,Dijon-Prenois,182,Niki,Lauda,1
+39,Circuit Park Zandvoort,235,Jacky,Ickx,1
+41,Dijon-Prenois,117,Alain,Prost,1
+40,Zolder,328,Jackie,Stewart,1
+40,Zolder,255,Gunnar,Nilsson,1
+40,Zolder,222,Jody,Scheckter,1
+40,Zolder,207,Mario,Andretti,1
+44,Las Vegas Street Circuit,178,Alan,Jones,1
+40,Zolder,202,Didier,Pironi,1
+43,Long Beach,203,Gilles,Villeneuve,1
+41,Dijon-Prenois,177,Keke,Rosberg,1
+38,Brands Hatch,373,Jim,Clark,1
+6,Circuit de Monaco,8,Kimi,Räikkönen,1
+34,Circuit Paul Ricard,238,Ronnie,Peterson,1
+34,Circuit Paul Ricard,207,Mario,Andretti,1
+34,Circuit Paul Ricard,182,Niki,Lauda,1
+34,Circuit Paul Ricard,178,Alan,Jones,1
+34,Circuit Paul Ricard,163,René,Arnoux,1
+34,Circuit Paul Ricard,137,Nelson,Piquet,1
+6,Circuit de Monaco,199,Carlos,Reutemann,1
+6,Circuit de Monaco,203,Gilles,Villeneuve,1
+33,Phoenix street circuit,117,Alain,Prost,1
+6,Circuit de Monaco,221,Patrick,Depailler,1
+32,Autódromo Hermanos Rodríguez,832,Carlos,Sainz,1
+32,Autódromo Hermanos Rodríguez,386,Richie,Ginther,1
+6,Circuit de Monaco,238,Ronnie,Peterson,1
+32,Autódromo Hermanos Rodríguez,364,Dan,Gurney,1
+32,Autódromo Hermanos Rodríguez,341,John,Surtees,1
+32,Autódromo Hermanos Rodríguez,304,Denny,Hulme,1
+32,Autódromo Hermanos Rodríguez,289,Graham,Hill,1
+32,Autódromo Hermanos Rodríguez,235,Jacky,Ickx,1
+32,Autódromo Hermanos Rodríguez,119,Riccardo,Patrese,1
+6,Circuit de Monaco,304,Denny,Hulme,1
+32,Autódromo Hermanos Rodríguez,102,Ayrton,Senna,1
+6,Circuit de Monaco,306,Jean-Pierre,Beltoise,1
+32,Autódromo Hermanos Rodríguez,77,Gerhard,Berger,1
+32,Autódromo Hermanos Rodríguez,3,Nico,Rosberg,1
+6,Circuit de Monaco,356,Jack,Brabham,1
+31,Donington Park,102,Ayrton,Senna,1
+34,Circuit Paul Ricard,231,James,Hunt,1
+34,Circuit Paul Ricard,328,Jackie,Stewart,1
+39,Circuit Park Zandvoort,207,Mario,Andretti,1
+6,Circuit de Monaco,177,Keke,Rosberg,1
+39,Circuit Park Zandvoort,202,Didier,Pironi,1
+39,Circuit Park Zandvoort,178,Alan,Jones,1
+39,Circuit Park Zandvoort,163,René,Arnoux,1
+39,Circuit Park Zandvoort,137,Nelson,Piquet,1
+6,Circuit de Monaco,15,Jarno,Trulli,1
+45,Jarama,231,James,Hunt,1
+38,Brands Hatch,358,Jochen,Rindt,1
+38,Brands Hatch,356,Jack,Brabham,1
+38,Brands Hatch,346,Jo,Siffert,1
+38,Brands Hatch,224,Emerson,Fittipaldi,1
+38,Brands Hatch,222,Jody,Scheckter,1
+38,Brands Hatch,199,Carlos,Reutemann,1
+38,Brands Hatch,178,Alan,Jones,1
+38,Brands Hatch,137,Nelson,Piquet,1
+6,Circuit de Monaco,18,Jenson,Button,1
+37,Detroit Street Circuit,187,John,Watson,1
+37,Detroit Street Circuit,177,Keke,Rosberg,1
+37,Detroit Street Circuit,137,Nelson,Piquet,1
+37,Detroit Street Circuit,105,Michele,Alboreto,1
+6,Circuit de Monaco,31,Juan,Pablo Montoya,1
+6,Circuit de Monaco,44,Olivier,Panis,1
+6,Circuit de Monaco,57,Mika,Häkkinen,1
+36,Autódromo Internacional Nelson Piquet,95,Nigel,Mansell,1
+6,Circuit de Monaco,119,Riccardo,Patrese,1
+35,Korean International Circuit,4,Fernando,Alonso,1
+45,Jarama,224,Emerson,Fittipaldi,1
+4,Circuit de Barcelona-Catalunya,71,Damon,Hill,1
+45,Jarama,289,Graham,Hill,1
+70,Red Bull Ring,219,Jean-Pierre,Jabouille,1
+70,Red Bull Ring,187,John,Watson,1
+70,Red Bull Ring,182,Niki,Lauda,1
+1,Albert Park Grand Prix Circuit,844,Charles,Leclerc,1
+70,Red Bull Ring,173,Elio,de Angelis,1
+70,Red Bull Ring,172,Jacques,Laffite,1
+2,Sepang International Circuit,1,Lewis,Hamilton,1
+70,Red Bull Ring,95,Nigel,Mansell,1
+70,Red Bull Ring,56,Eddie,Irvine,1
+70,Red Bull Ring,35,Jacques,Villeneuve,1
+2,Sepang International Circuit,18,Jenson,Button,1
+70,Red Bull Ring,14,David,Coulthard,1
+2,Sepang International Circuit,21,Giancarlo,Fisichella,1
+2,Sepang International Circuit,23,Ralf,Schumacher,1
+69,Circuit of the Americas,844,Charles,Leclerc,1
+2,Sepang International Circuit,56,Eddie,Irvine,1
+69,Circuit of the Americas,822,Valtteri,Bottas,1
+69,Circuit of the Americas,20,Sebastian,Vettel,1
+69,Circuit of the Americas,8,Kimi,Räikkönen,1
+2,Sepang International Circuit,817,Daniel,Ricciardo,1
+2,Sepang International Circuit,830,Max,Verstappen,1
+67,Circuit de Pedralbes,579,Juan,Fangio,1
+67,Circuit de Pedralbes,578,Mike,Hawthorn,1
+66,Circuit Bremgarten,647,Alberto,Ascari,1
+66,Circuit Bremgarten,642,Nino,Farina,1
+66,Circuit Bremgarten,641,Piero,Taruffi,1
+70,Red Bull Ring,199,Carlos,Reutemann,1
+70,Red Bull Ring,224,Emerson,Fittipaldi,1
+65,Pescara Circuit,475,Stirling,Moss,1
+70,Red Bull Ring,230,Vittorio,Brambilla,1
+80,Las Vegas Strip Street Circuit,830,Max,Verstappen,1
+79,Miami International Autodrome,846,Lando,Norris,1
+1,Albert Park Grand Prix Circuit,4,Fernando,Alonso,1
+78,Losail International Circuit,1,Lewis,Hamilton,1
+77,Jeddah Corniche Circuit,815,Sergio,Pérez,1
+77,Jeddah Corniche Circuit,1,Lewis,Hamilton,1
+76,Autodromo Internazionale del Mugello,1,Lewis,Hamilton,1
+1,Albert Park Grand Prix Circuit,21,Giancarlo,Fisichella,1
+73,Baku City Circuit,857,Oscar,Piastri,1
+73,Baku City Circuit,830,Max,Verstappen,1
+73,Baku City Circuit,822,Valtteri,Bottas,1
+73,Baku City Circuit,817,Daniel,Ricciardo,1
+1,Albert Park Grand Prix Circuit,56,Eddie,Irvine,1
+73,Baku City Circuit,3,Nico,Rosberg,1
+73,Baku City Circuit,1,Lewis,Hamilton,1
+1,Albert Park Grand Prix Circuit,57,Mika,Häkkinen,1
+71,Sochi Autodrom,3,Nico,Rosberg,1
+1,Albert Park Grand Prix Circuit,71,Damon,Hill,1
+70,Red Bull Ring,847,George,Russell,1
+70,Red Bull Ring,844,Charles,Leclerc,1
+1,Albert Park Grand Prix Circuit,822,Valtteri,Bottas,1
+1,Albert Park Grand Prix Circuit,830,Max,Verstappen,1
+70,Red Bull Ring,346,Jo,Siffert,1
+1,Albert Park Grand Prix Circuit,832,Carlos,Sainz,1
+70,Red Bull Ring,235,Jacky,Ickx,1
+3,Bahrain International Circuit,3,Nico,Rosberg,1
+64,Ain Diab,475,Stirling,Moss,1
+45,Jarama,328,Jackie,Stewart,1
+51,Charade Circuit,358,Jochen,Rindt,1
+49,Montjuïc,224,Emerson,Fittipaldi,1
+49,Montjuïc,200,Jochen,Mass,1
+48,Mosport International Raceway,356,Jack,Brabham,1
+4,Circuit de Barcelona-Catalunya,13,Felipe,Massa,1
+48,Mosport International Raceway,309,Peter,Revson,1
+48,Mosport International Raceway,235,Jacky,Ickx,1
+48,Mosport International Raceway,231,James,Hunt,1
+48,Mosport International Raceway,224,Emerson,Fittipaldi,1
+48,Mosport International Raceway,222,Jody,Scheckter,1
+47,Scandinavian Raceway,304,Denny,Hulme,1
+4,Circuit de Barcelona-Catalunya,17,Mark,Webber,1
+4,Circuit de Barcelona-Catalunya,18,Jenson,Button,1
+47,Scandinavian Raceway,172,Jacques,Laffite,1
+46,Watkins Glen,404,Innes,Ireland,1
+4,Circuit de Barcelona-Catalunya,20,Sebastian,Vettel,1
+46,Watkins Glen,358,Jochen,Rindt,1
+4,Circuit de Barcelona-Catalunya,35,Jacques,Villeneuve,1
+46,Watkins Glen,327,François,Cevert,1
+30,Kyalami,356,Jack,Brabham,1
+46,Watkins Glen,238,Ronnie,Peterson,1
+46,Watkins Glen,224,Emerson,Fittipaldi,1
+46,Watkins Glen,203,Gilles,Villeneuve,1
+4,Circuit de Barcelona-Catalunya,117,Alain,Prost,1
+46,Watkins Glen,182,Niki,Lauda,1
+46,Watkins Glen,178,Alan,Jones,1
+4,Circuit de Barcelona-Catalunya,3,Nico,Rosberg,1
+51,Charade Circuit,373,Jim,Clark,1
+63,Sebring International Raceway,360,Bruce,McLaren,1
+52,Circuit Mont-Tremblant,235,Jacky,Ickx,1
+62,Monsanto Park Circuit,475,Stirling,Moss,1
+61,AVUS,479,Tony,Brooks,1
+60,Riverside International Raceway,475,Stirling,Moss,1
+59,Circuito da Boavista,475,Stirling,Moss,1
+59,Circuito da Boavista,356,Jack,Brabham,1
+58,Aintree,479,Tony,Brooks,1
+58,Aintree,476,Wolfgang,von Trips,1
+58,Aintree,373,Jim,Clark,1
+58,Aintree,356,Jack,Brabham,1
+57,Zeltweg,385,Lorenzo,Bandini,1
+3,Bahrain International Circuit,18,Jenson,Button,1
+56,Prince George Circuit,289,Graham,Hill,1
+55,Reims-Gueux,786,Luigi,Fagioli,1
+55,Reims-Gueux,581,Peter,Collins,1
+3,Bahrain International Circuit,30,Michael,Schumacher,1
+3,Bahrain International Circuit,815,Sergio,Pérez,1
+55,Reims-Gueux,479,Tony,Brooks,1
+55,Reims-Gueux,394,Giancarlo,Baghetti,1
+55,Reims-Gueux,373,Jim,Clark,1
+54,Le Mans,356,Jack,Brabham,1
+53,Rouen-Les-Essarts,647,Alberto,Ascari,1
+53,Rouen-Les-Essarts,579,Juan,Fangio,1
+3,Bahrain International Circuit,844,Charles,Leclerc,1
+53,Rouen-Les-Essarts,235,Jacky,Ickx,1
+52,Circuit Mont-Tremblant,304,Denny,Hulme,1
+30,Kyalami,373,Jim,Clark,1
+11,Hungaroring,817,Daniel,Ricciardo,1
+30,Kyalami,345,Pedro,Rodríguez,1
+9,Silverstone Circuit,231,James,Hunt,1
+17,Shanghai International Circuit,830,Max,Verstappen,1
+17,Shanghai International Circuit,817,Daniel,Ricciardo,1
+17,Shanghai International Circuit,30,Michael,Schumacher,1
+17,Shanghai International Circuit,22,Rubens,Barrichello,1
+17,Shanghai International Circuit,20,Sebastian,Vettel,1
+17,Shanghai International Circuit,18,Jenson,Button,1
+17,Shanghai International Circuit,8,Kimi,Räikkönen,1
+9,Silverstone Circuit,356,Jack,Brabham,1
+16,Fuji Speedway,231,James,Hunt,1
+16,Fuji Speedway,207,Mario,Andretti,1
+16,Fuji Speedway,4,Fernando,Alonso,1
+16,Fuji Speedway,1,Lewis,Hamilton,1
+15,Marina Bay Street Circuit,846,Lando,Norris,1
+15,Marina Bay Street Circuit,832,Carlos,Sainz,1
+15,Marina Bay Street Circuit,815,Sergio,Pérez,1
+9,Silverstone Circuit,579,Juan,Fangio,1
+9,Silverstone Circuit,581,Peter,Collins,1
+15,Marina Bay Street Circuit,3,Nico,Rosberg,1
+9,Silverstone Circuit,642,Nino,Farina,1
+14,Autodromo Nazionale di Monza,842,Pierre,Gasly,1
+14,Autodromo Nazionale di Monza,817,Daniel,Ricciardo,1
+9,Silverstone Circuit,832,Carlos,Sainz,1
+14,Autodromo Nazionale di Monza,642,Nino,Farina,1
+10,Hockenheimring,3,Nico,Rosberg,1
+14,Autodromo Nazionale di Monza,479,Tony,Brooks,1
+9,Silverstone Circuit,309,Peter,Revson,1
+18,Autódromo José Carlos Pace,8,Kimi,Räikkönen,1
+10,Hockenheimring,23,Ralf,Schumacher,1
+9,Silverstone Circuit,224,Emerson,Fittipaldi,1
+19,Indianapolis Motor Speedway,449,Rodger,Ward,1
+19,Indianapolis Motor Speedway,57,Mika,Häkkinen,1
+9,Silverstone Circuit,22,Rubens,Barrichello,1
+19,Indianapolis Motor Speedway,22,Rubens,Barrichello,1
+19,Indianapolis Motor Speedway,1,Lewis,Hamilton,1
+18,Autódromo José Carlos Pace,847,George,Russell,1
+9,Silverstone Circuit,31,Juan,Pablo Montoya,1
+18,Autódromo José Carlos Pace,250,Carlos,Pace,1
+18,Autódromo José Carlos Pace,199,Carlos,Reutemann,1
+18,Autódromo José Carlos Pace,182,Niki,Lauda,1
+18,Autódromo José Carlos Pace,172,Jacques,Laffite,1
+18,Autódromo José Carlos Pace,163,René,Arnoux,1
+18,Autódromo José Carlos Pace,117,Alain,Prost,1
+9,Silverstone Circuit,57,Mika,Häkkinen,1
+18,Autódromo José Carlos Pace,95,Nigel,Mansell,1
+18,Autódromo José Carlos Pace,71,Damon,Hill,1
+9,Silverstone Circuit,65,Johnny,Herbert,1
+18,Autódromo José Carlos Pace,35,Jacques,Villeneuve,1
+9,Silverstone Circuit,71,Damon,Hill,1
+9,Silverstone Circuit,102,Ayrton,Senna,1
+18,Autódromo José Carlos Pace,21,Giancarlo,Fisichella,1
+9,Silverstone Circuit,187,John,Watson,1
+18,Autódromo José Carlos Pace,18,Jenson,Button,1
+9,Silverstone Circuit,223,Clay,Regazzoni,1
+18,Autódromo José Carlos Pace,14,David,Coulthard,1
+10,Hockenheimring,22,Rubens,Barrichello,1
+14,Autodromo Nazionale di Monza,375,Ludovico,Scarfiotti,1
+6,Circuit de Monaco,358,Jochen,Rindt,1
+13,Circuit de Spa-Francorchamps,817,Daniel,Ricciardo,1
+13,Circuit de Spa-Francorchamps,642,Nino,Farina,1
+13,Circuit de Spa-Francorchamps,581,Peter,Collins,1
+11,Hungaroring,8,Kimi,Räikkönen,1
+13,Circuit de Spa-Francorchamps,479,Tony,Brooks,1
+13,Circuit de Spa-Francorchamps,403,Phil,Hill,1
+11,Hungaroring,17,Mark,Webber,1
+13,Circuit de Spa-Francorchamps,364,Dan,Gurney,1
+13,Circuit de Spa-Francorchamps,360,Bruce,McLaren,1
+13,Circuit de Spa-Francorchamps,356,Jack,Brabham,1
+13,Circuit de Spa-Francorchamps,345,Pedro,Rodríguez,1
+13,Circuit de Spa-Francorchamps,341,John,Surtees,1
+13,Circuit de Spa-Francorchamps,95,Nigel,Mansell,1
+11,Hungaroring,22,Rubens,Barrichello,1
+13,Circuit de Spa-Francorchamps,57,Mika,Häkkinen,1
+13,Circuit de Spa-Francorchamps,18,Jenson,Button,1
+13,Circuit de Spa-Francorchamps,14,David,Coulthard,1
+13,Circuit de Spa-Francorchamps,13,Felipe,Massa,1
+13,Circuit de Spa-Francorchamps,3,Nico,Rosberg,1
+11,Hungaroring,95,Nigel,Mansell,1
+12,Valencia Street Circuit,22,Rubens,Barrichello,1
+11,Hungaroring,123,Thierry,Boutsen,1
+12,Valencia Street Circuit,13,Felipe,Massa,1
+12,Valencia Street Circuit,4,Fernando,Alonso,1
+11,Hungaroring,857,Oscar,Piastri,1
+11,Hungaroring,839,Esteban,Ocon,1
+11,Hungaroring,5,Heikki,Kovalainen,1
+11,Hungaroring,4,Fernando,Alonso,1
+14,Autodromo Nazionale di Monza,373,Jim,Clark,1
+13,Circuit de Spa-Francorchamps,844,Charles,Leclerc,1
+10,Hockenheimring,31,Juan,Pablo Montoya,1
+10,Hockenheimring,56,Eddie,Irvine,1
+14,Autodromo Nazionale di Monza,320,Peter,Gethin,1
+14,Autodromo Nazionale di Monza,304,Denny,Hulme,1
+14,Autodromo Nazionale di Monza,289,Graham,Hill,1
+10,Hockenheimring,57,Mika,Häkkinen,1
+14,Autodromo Nazionale di Monza,224,Emerson,Fittipaldi,1
+10,Hockenheimring,71,Damon,Hill,1
+14,Autodromo Nazionale di Monza,222,Jody,Scheckter,1
+14,Autodromo Nazionale di Monza,207,Mario,Andretti,1
+14,Autodromo Nazionale di Monza,163,René,Arnoux,1
+10,Hockenheimring,163,René,Arnoux,1
+14,Autodromo Nazionale di Monza,95,Nigel,Mansell,1
+14,Autodromo Nazionale di Monza,77,Gerhard,Berger,1
+10,Hockenheimring,172,Jacques,Laffite,1
+14,Autodromo Nazionale di Monza,65,Johnny,Herbert,1
+14,Autodromo Nazionale di Monza,49,Heinz-Harald,Frentzen,1
+10,Hockenheimring,175,Patrick,Tambay,1
+10,Hockenheimring,178,Alan,Jones,1
+10,Hockenheimring,182,Niki,Lauda,1
+10,Hockenheimring,207,Mario,Andretti,1
+14,Autodromo Nazionale di Monza,14,David,Coulthard,1
+10,Hockenheimring,358,Jochen,Rindt,1
+14,Autodromo Nazionale di Monza,3,Nico,Rosberg,1
+10,Hockenheimring,830,Max,Verstappen,1
+19,Indianapolis Motor Speedway,509,Jim,Rathmann,1
+19,Indianapolis Motor Speedway,525,Jimmy,Bryan,1
+19,Indianapolis Motor Speedway,526,Troy,Ruttman,1
+7,Circuit Gilles Villeneuve,18,Jenson,Button,1
+26,Circuito de Jerez,57,Mika,Häkkinen,1
+26,Circuito de Jerez,30,Michael,Schumacher,1
+25,Autódromo Juan y Oscar Gálvez,647,Alberto,Ascari,1
+25,Autódromo Juan y Oscar Gálvez,577,Luigi,Musso,1
+25,Autódromo Juan y Oscar Gálvez,475,Stirling,Moss,1
+25,Autódromo Juan y Oscar Gálvez,360,Bruce,McLaren,1
+25,Autódromo Juan y Oscar Gálvez,328,Jackie,Stewart,1
+25,Autódromo Juan y Oscar Gálvez,304,Denny,Hulme,1
+7,Circuit Gilles Villeneuve,23,Ralf,Schumacher,1
+25,Autódromo Juan y Oscar Gálvez,222,Jody,Scheckter,1
+25,Autódromo Juan y Oscar Gálvez,207,Mario,Andretti,1
+25,Autódromo Juan y Oscar Gálvez,178,Alan,Jones,1
+25,Autódromo Juan y Oscar Gálvez,172,Jacques,Laffite,1
+25,Autódromo Juan y Oscar Gálvez,137,Nelson,Piquet,1
+7,Circuit Gilles Villeneuve,55,Jean,Alesi,1
+25,Autódromo Juan y Oscar Gálvez,35,Jacques,Villeneuve,1
+25,Autódromo Juan y Oscar Gálvez,30,Michael,Schumacher,1
+24,Yas Marina Circuit,846,Lando,Norris,1
+7,Circuit Gilles Villeneuve,57,Mika,Häkkinen,1
+24,Yas Marina Circuit,822,Valtteri,Bottas,1
+7,Circuit Gilles Villeneuve,71,Damon,Hill,1
+24,Yas Marina Circuit,8,Kimi,Räikkönen,1
+24,Yas Marina Circuit,3,Nico,Rosberg,1
+7,Circuit Gilles Villeneuve,77,Gerhard,Berger,1
+7,Circuit Gilles Villeneuve,95,Nigel,Mansell,1
+26,Circuito de Jerez,95,Nigel,Mansell,1
+7,Circuit Gilles Villeneuve,9,Robert,Kubica,1
+19,Indianapolis Motor Speedway,559,Pat,Flaherty,1
+27,Autódromo do Estoril,14,David,Coulthard,1
+30,Kyalami,304,Denny,Hulme,1
+30,Kyalami,238,Ronnie,Peterson,1
+30,Kyalami,222,Jody,Scheckter,1
+30,Kyalami,207,Mario,Andretti,1
+30,Kyalami,203,Gilles,Villeneuve,1
+30,Kyalami,199,Carlos,Reutemann,1
+6,Circuit de Monaco,360,Bruce,McLaren,1
+30,Kyalami,163,René,Arnoux,1
+30,Kyalami,119,Riccardo,Patrese,1
+29,Adelaide Street Circuit,177,Keke,Rosberg,1
+29,Adelaide Street Circuit,137,Nelson,Piquet,1
+29,Adelaide Street Circuit,123,Thierry,Boutsen,1
+6,Circuit de Monaco,815,Sergio,Pérez,1
+6,Circuit de Monaco,817,Daniel,Ricciardo,1
+29,Adelaide Street Circuit,95,Nigel,Mansell,1
+29,Adelaide Street Circuit,71,Damon,Hill,1
+6,Circuit de Monaco,844,Charles,Leclerc,1
+27,Autódromo do Estoril,119,Riccardo,Patrese,1
+7,Circuit Gilles Villeneuve,4,Fernando,Alonso,1
+27,Autódromo do Estoril,102,Ayrton,Senna,1
+7,Circuit Gilles Villeneuve,8,Kimi,Räikkönen,1
+27,Autódromo do Estoril,77,Gerhard,Berger,1
+27,Autódromo do Estoril,71,Damon,Hill,1
+27,Autódromo do Estoril,35,Jacques,Villeneuve,1
+27,Autódromo do Estoril,30,Michael,Schumacher,1
+22,Suzuka Circuit,822,Valtteri,Bottas,1
+22,Suzuka Circuit,145,Alessandro,Nannini,1
+22,Suzuka Circuit,137,Nelson,Piquet,1
+22,Suzuka Circuit,119,Riccardo,Patrese,1
+8,Circuit de Nevers Magny-Cours,71,Damon,Hill,1
+20,Nürburgring,479,Tony,Brooks,1
+20,Nürburgring,475,Stirling,Moss,1
+20,Nürburgring,373,Jim,Clark,1
+20,Nürburgring,356,Jack,Brabham,1
+8,Circuit de Nevers Magny-Cours,117,Alain,Prost,1
+20,Nürburgring,304,Denny,Hulme,1
+20,Nürburgring,289,Graham,Hill,1
+9,Silverstone Circuit,3,Nico,Rosberg,1
+20,Nürburgring,231,James,Hunt,1
+20,Nürburgring,223,Clay,Regazzoni,1
+20,Nürburgring,199,Carlos,Reutemann,1
+20,Nürburgring,117,Alain,Prost,1
+20,Nürburgring,105,Michele,Alboreto,1
+20,Nürburgring,65,Johnny,Herbert,1
+20,Nürburgring,57,Mika,Häkkinen,1
+9,Silverstone Circuit,8,Kimi,Räikkönen,1
+20,Nürburgring,23,Ralf,Schumacher,1
+20,Nürburgring,22,Rubens,Barrichello,1
+20,Nürburgring,20,Sebastian,Vettel,1
+20,Nürburgring,17,Mark,Webber,1
+19,Indianapolis Motor Speedway,766,Lee,Wallard,1
+19,Indianapolis Motor Speedway,628,Bob,Sweikert,1
+19,Indianapolis Motor Speedway,611,Sam,Hanks,1
+19,Indianapolis Motor Speedway,593,Johnnie,Parsons,1
+20,Nürburgring,642,Nino,Farina,1
+8,Circuit de Nevers Magny-Cours,49,Heinz-Harald,Frentzen,1
+21,Autodromo Enzo e Dino Ferrari,1,Lewis,Hamilton,1
+21,Autodromo Enzo e Dino Ferrari,202,Didier,Pironi,1
+7,Circuit Gilles Villeneuve,105,Michele,Alboreto,1
+7,Circuit Gilles Villeneuve,117,Alain,Prost,1
+7,Circuit Gilles Villeneuve,123,Thierry,Boutsen,1
+7,Circuit Gilles Villeneuve,163,René,Arnoux,1
+22,Suzuka Circuit,22,Rubens,Barrichello,1
+7,Circuit Gilles Villeneuve,172,Jacques,Laffite,1
+22,Suzuka Circuit,18,Jenson,Button,1
+22,Suzuka Circuit,8,Kimi,Räikkönen,1
+22,Suzuka Circuit,4,Fernando,Alonso,1
+22,Suzuka Circuit,3,Nico,Rosberg,1
+7,Circuit Gilles Villeneuve,203,Gilles,Villeneuve,1
+21,Autodromo Enzo e Dino Ferrari,175,Patrick,Tambay,1
+21,Autodromo Enzo e Dino Ferrari,4,Fernando,Alonso,1
+21,Autodromo Enzo e Dino Ferrari,173,Elio,de Angelis,1
+7,Circuit Gilles Villeneuve,817,Daniel,Ricciardo,1
+21,Autodromo Enzo e Dino Ferrari,119,Riccardo,Patrese,1
+8,Circuit de Nevers Magny-Cours,4,Fernando,Alonso,1
+8,Circuit de Nevers Magny-Cours,8,Kimi,Räikkönen,1
+8,Circuit de Nevers Magny-Cours,13,Felipe,Massa,1
+8,Circuit de Nevers Magny-Cours,14,David,Coulthard,1
+21,Autodromo Enzo e Dino Ferrari,49,Heinz-Harald,Frentzen,1
+8,Circuit de Nevers Magny-Cours,23,Ralf,Schumacher,1
+21,Autodromo Enzo e Dino Ferrari,23,Ralf,Schumacher,1
+21,Autodromo Enzo e Dino Ferrari,14,David,Coulthard,1
+80,Las Vegas Strip Street Circuit,847,George,Russell,1
