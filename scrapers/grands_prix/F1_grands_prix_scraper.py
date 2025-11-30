@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Optional, Sequence, Dict, Any, List
+from typing import Optional, Sequence, Dict, Any
 
 from bs4 import Tag
 
@@ -18,68 +18,39 @@ class F1GrandsPrixScraper(F1TableScraper):
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix"
     section_id = "By_race_title"
 
-    expected_headers = [
+    # podzbiór nagłówków – do znalezienia właściwej tabeli
+    expected_headers: Sequence[str] = [
         "Race title",
         "Years held",
     ]
 
-    column_map = {
+    # mapowanie nagłówek -> klucz w dict
+    column_map: Dict[str, str] = {
         "Race title": "race_title",
         "Years held": "years_held",
         "Races held": "races_held",
         "Country": "country",
     }
 
-    url_columns = ("Race title",)
+    # typy kolumn już po mapowaniu (po stronie dict-a)
+    # - years_held: zawsze tekst (bez kombinacji z listami / dictami)
+    # - country: zawsze lista linków {text, url}
+    column_types: Dict[str, str] = {
+        "race_title": "link",
+        "years_held": "seasons",
+        "country": "list_of_links",
+    }
 
-    # usuwamy gwiazdki z wyświetlanej nazwy
+    # usuwamy gwiazdki z wyświetlanej nazwy (status aktywne/past zostaje w osobnym polu)
     _STAR_RE = re.compile(r"\*")
 
-    # usuwamy przypisy Wikipedii: [1], [b], [note 3], [citation needed], itd.
-    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
-
     def _clean_title_text(self, text: str | None) -> str | None:
-        """Usuń gwiazdki i przypisy w nawiasach kwadratowych z nazwy GP."""
+        """Usuń gwiazdki z nazwy GP + standardowe czyszczenie tekstu."""
         if text is None:
             return None
         t = self._STAR_RE.sub("", text)
-        t = self._REF_RE.sub("", t)
-        return t.strip()
-
-    def _normalize_country_to_list(self, value: Any) -> List[Dict[str, Any]]:
-        """
-        Zwraca zawsze listę słowników {text, url}.
-        """
-        countries: List[Dict[str, Any]] = []
-
-        if value is None:
-            return countries
-
-        if isinstance(value, list):
-            items = value
-        else:
-            items = [value]
-
-        for item in items:
-            if isinstance(item, dict):
-                text = item.get("text")
-                url = item.get("url")
-            else:
-                text = str(item) if item is not None else None
-                url = None
-
-            # pomijamy całkiem puste
-            if text is None or str(text).strip() == "":
-                continue
-
-            countries.append(
-                {
-                    "text": str(text),
-                    "url": url,
-                }
-            )
-
-        return countries
+        # dodatkowe sprzątanie (whitespace, przypisy) robi helper z klasy bazowej
+        return self._clean_text(t)
 
     def parse_row(
         self,
@@ -87,53 +58,40 @@ class F1GrandsPrixScraper(F1TableScraper):
         cells: Sequence[Tag],
         headers: Sequence[str],
     ) -> Optional[Dict[str, Any]]:
-        # najpierw bazowa logika (dict / list[dict] dla linków itp.)
+        """
+        Korzystamy z bazowego parse_row (linki, list_of_links, seasons, itp.),
+        a potem tylko:
+        - ustawiamy race_status na podstawie oryginalnego tytułu (z gwiazdką),
+        - czyścimy race_title z gwiazdek.
+        """
+        # najpierw standardowe parsowanie tabeli
         record = super().parse_row(row, cells, headers)
         if record is None:
             return None
 
-        # --- 1) Race title: status + czyszczenie tekstu ---
+        # --- Race title: znajdź oryginalny tekst z komórki (z gwiazdką) ---
         raw_title: Optional[str] = None
         for header, cell in zip(headers, cells):
             if header == "Race title":
                 raw_title = cell.get_text(" ", strip=True)
                 break
 
-        # status active/past na podstawie gwiazdki w oryginalnym tekście
+        # status: aktywne GP ma gwiazdkę przy nazwie
         if raw_title:
             record["race_status"] = "active" if "*" in raw_title else "past"
         else:
             record["race_status"] = "past"
 
-        # wyczyść race_title z gwiazdek i przypisów
+        # --- wyczyść race_title z gwiazdek (i ewentualnych przypisów) ---
         rt = record.get("race_title")
+
         if isinstance(rt, dict):
-            rt = dict(rt)
-            rt["text"] = self._clean_title_text(rt.get("text"))
-            record["race_title"] = rt
+            # zachowaj URL, popraw tylko tekst
+            new_rt = dict(rt)
+            new_rt["text"] = self._clean_title_text(new_rt.get("text"))
+            record["race_title"] = new_rt
         elif isinstance(rt, str):
             record["race_title"] = self._clean_title_text(rt)
-
-        # --- 2) Years held: ZAWSZE tekst ---
-        years_val = record.get("years_held")
-        if isinstance(years_val, dict):
-            # {"text": "...", "url": "..."}
-            record["years_held"] = years_val.get("text")
-        elif isinstance(years_val, list):
-            # np. lista dictów; łączymy teksty przecinkami
-            parts: list[str] = []
-            for item in years_val:
-                if isinstance(item, dict):
-                    parts.append(str(item.get("text", "")))
-                else:
-                    parts.append(str(item))
-            record["years_held"] = ", ".join(p for p in parts if p)
-        else:
-            # już jest stringiem albo None
-            record["years_held"] = years_val
-
-        # --- 3) Country: ZAWSZE lista ---
-        record["country"] = self._normalize_country_to_list(record.get("country"))
 
         return record
 

@@ -25,7 +25,8 @@ class F1TableScraper(F1Scraper, ABC):
                          "list",
                          "seasons",
                          "skip",
-                         "list_of_links"  # NEW: zawsze lista obiektów linków {text, url}
+                         "list_of_links",  # zawsze lista obiektów linków {text, url}
+                         "link",           # NEW: pojedynczy link {text, url} lub None
     """
 
     _SKIP = object()
@@ -211,7 +212,7 @@ class F1TableScraper(F1Scraper, ABC):
         key: str,
         value: Any,
         clean_text: str,
-        col_type: Optional[str] = None,  # NEW: przekazujemy typ z parse_row
+        col_type: Optional[str] = None,
     ) -> Any:
         """
         Typy:
@@ -219,7 +220,8 @@ class F1TableScraper(F1Scraper, ABC):
         - "seasons" -> specjalny parser sezonów (lista dictów {year,url})
         - "text"    -> zawsze string
         - "list"    -> zawsze lista
-        - "list_of_links"   -> zawsze lista dictów {text, url}
+        - "list_of_links" -> zawsze lista dictów {text, url}
+        - "link"    -> pojedynczy dict {text, url} lub None
         - brak/auto -> bez zmian
         """
         if col_type is None:
@@ -232,7 +234,6 @@ class F1TableScraper(F1Scraper, ABC):
             return self._parse_seasons(clean_text)
 
         if col_type == "text":
-            # spłaszczamy dict/list do stringa
             if isinstance(value, dict):
                 return value.get("text")
             if isinstance(value, list):
@@ -252,12 +253,22 @@ class F1TableScraper(F1Scraper, ABC):
                 return value
             return [value]
 
-        if col_type == "list_of_links":  # NEW
+        if col_type == "link":
+            # normalizujemy do pojedynczego dicta lub None
+            if isinstance(value, list):
+                return value[0] if value else None
+            if isinstance(value, dict):
+                return value
+            if value is None:
+                return None
+            # jeżeli coś innego (np. sam tekst) – zrób z tego link bez URL
+            return {"text": str(value), "url": None}
+
+        if col_type == "list_of_links":
             if value is None:
                 return []
             if isinstance(value, list):
                 return value
-            # jakby coś innego tu wpadło – opakujmy w listę
             return [value]
 
         # auto
@@ -280,7 +291,8 @@ class F1TableScraper(F1Scraper, ABC):
           * tylko linki+przecinki → lista dictów
           * inaczej → tekst,
         - kolumny typu "list_of_links" → zawsze lista linków {text, url} z <a>,
-        - na końcu stosujemy column_types (skip / seasons / text / list / list_of_links / auto).
+        - kolumny typu "link"         → pojedynczy link {text, url} (lub None),
+        - na końcu stosujemy column_types (skip / seasons / text / list / list_of_links / link / auto).
         """
         record: Dict[str, Any] = {}
 
@@ -290,12 +302,21 @@ class F1TableScraper(F1Scraper, ABC):
             raw_text = cell.get_text(" ", strip=True)
             clean_text = self._clean_text(raw_text)
 
-            # NEW: ustalamy typ kolumny z góry
+            # typ kolumny
             col_type = self.column_types.get(header) or self.column_types.get(key) or "auto"
 
-            # NEW: specjalny przypadek – kolumna typu "list_of_links"
             if col_type == "list_of_links":
+                # zawsze lista linków z filtra referencji
                 value: Any = self._extract_links_from_cell(cell)
+
+            elif col_type == "link":
+                # pojedynczy link – bierzemy pierwszy sensowny z komórki
+                links = self._extract_links_from_cell(cell)
+                if not links:
+                    value = None
+                else:
+                    value = links[0]
+
             else:
                 value = clean_text  # domyślnie tekst
 
@@ -313,7 +334,7 @@ class F1TableScraper(F1Scraper, ABC):
                                 "url": url,
                             }
 
-                    # 2) Wiele linków → sprawdzamy czy tylko linki + przecinki
+                    # 2) Wiele linków → tylko linki+przecinki → lista dictów
                     elif len(links) > 1:
                         raw_html = "".join(str(x) for x in cell.contents)
                         cleaned_html = re.sub(r"\s+|&nbsp;|\xa0", "", raw_html)
@@ -333,7 +354,7 @@ class F1TableScraper(F1Scraper, ABC):
                                 list_value.append({"text": t, "url": url})
                             value = list_value
 
-            # zastosuj typ kolumny
+            # zastosuj typ kolumny (drugi etap)
             value = self._apply_column_type(header, key, value, clean_text, col_type=col_type)
 
             if value is self._SKIP:
