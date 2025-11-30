@@ -42,9 +42,26 @@ class F1Scraper(ABC):
         *,
         include_urls: bool = True,
         session: Optional[requests.Session] = None,
+        headers: Optional[Dict[str, str]] = None,
     ) -> None:
         self.include_urls = include_urls
         self.session = session or requests.Session()
+
+        # --- ważne: sensowne domyślne nagłówki, żeby nie było 403 ---
+        default_headers: Dict[str, str] = {
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/605.1.15 (KHTML, like Gecko) "
+                "Version/18.0 Safari/605.1.15"
+            ),
+            "Accept-Language": "en-US,en;q=0.9",
+        }
+        if headers:
+            default_headers.update(headers)
+
+        # ustawiamy na sesji, żeby używały się przy każdym GET
+        self.session.headers.update(default_headers)
+
         self._data: List[Dict[str, Any]] = []
 
     # ---------- API wysokiego poziomu ----------
@@ -103,7 +120,8 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        resp = self.session.get(self.url)
+        # możesz ewentualnie dorzucić timeout
+        resp = self.session.get(self.url, timeout=10)
         resp.raise_for_status()
         return resp.text
 
