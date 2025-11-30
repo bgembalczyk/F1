@@ -1,4 +1,4 @@
-from F1_table_scraper import F1TableScraper
+from scrapers.F1_table_scraper import F1TableScraper
 
 
 class F1Constructors2025Scraper(F1TableScraper):

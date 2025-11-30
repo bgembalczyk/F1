@@ -2,7 +2,7 @@ from typing import Dict, Any, Optional
 
 from bs4 import Tag
 
-from F1_list_scrapper import F1ListScraper
+from scrapers.F1_list_scrapper import F1ListScraper
 
 
 class F1IndianapolisOnlyEngineManufacturersScraper(F1ListScraper):

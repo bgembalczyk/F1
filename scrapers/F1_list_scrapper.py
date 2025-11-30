@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
-from F1_scraper import F1Scraper
+from scrapers.F1_scraper import F1Scraper
 
 
 class F1ListScraper(F1Scraper, ABC):

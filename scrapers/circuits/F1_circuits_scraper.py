@@ -1,4 +1,4 @@
-from F1_table_scraper import F1TableScraper
+from scrapers.F1_table_scraper import F1TableScraper
 
 
 class F1CircuitsScraper(F1TableScraper):
