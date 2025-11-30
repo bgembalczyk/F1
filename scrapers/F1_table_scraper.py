@@ -19,17 +19,29 @@ class F1TableScraper(F1Scraper, ABC):
                          jeśli None – szukamy po całej stronie.
     - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
     - column_map      – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - url_columns     – opcjonalnie: nagłówki, dla których NAWET przy wielu linkach
-                         w komórce chcemy specjalnie obsłużyć URL-e
-                         (konkretne użycie zostawiamy klasom potomnym / override).
+    - column_types    – typ danych dla danego KLUCZA (po column_map):
+                         "auto" (domyślnie),
+                         "text",
+                         "list",
+                         "seasons",
+                         "skip",
+                         "list_of_links"  # NEW: zawsze lista obiektów linków {text, url}
     """
+
+    _SKIP = object()
 
     section_id: Optional[str] = None
     expected_headers: Sequence[str] | None = None
     column_map: Mapping[str, str] = {}
-    url_columns: Sequence[str] = ()
+
+    # konfiguracja typów kolumn po stronie scraperów potomnych:
+    # np. {"years_held": "seasons", "country": "list", "grands_prix": "list_of_links"}
+    column_types: Mapping[str, str] = {}
 
     table_css_class: str = "wikitable"
+
+    # regex do przypisów Wikipedii: [1], [b], [note 3], [citation needed], ...
+    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
     # --- szablon parsowania ---
 
@@ -98,91 +110,234 @@ class F1TableScraper(F1Scraper, ABC):
         header_set = set(headers)
         return all(h in header_set for h in self.expected_headers)
 
+    # --- pomocnicze ---
+
+    def _clean_text(self, text: str) -> str:
+        """
+        Normalizacja whitespace + usunięcie przypisów Wikipedii.
+        """
+        t = text.replace("\xa0", " ").replace("&nbsp;", " ")
+        t = self._REF_RE.sub("", t)
+        return t.strip()
+
+    def _value_to_text(self, value: Any) -> Optional[str]:
+        """
+        Używane przy column_types[key] == "text".
+        Zamienia dict/list na tekst.
+        """
+        if value is None:
+            return None
+        if isinstance(value, dict):
+            return value.get("text") or ""
+        if isinstance(value, list):
+            parts: List[str] = []
+            for item in value:
+                parts.append(self._value_to_text(item) or "")
+            return ", ".join(p for p in parts if p)
+        return str(value)
+
+    def _parse_seasons(self, text: str) -> list[dict[str, Any]]:
+        """
+        Zamienia tekst w stylu '1973, 1975–1982, 1984' na listę:
+        [{"year": 1973, "url": ...}, {"year": 1975, "url": ...}, ..., {"year": 1984, "url": ...}]
+        """
+        result: list[dict[str, Any]] = []
+        seen: set[int] = set()
+
+        if not text:
+            return result
+
+        parts = [p.strip() for p in text.split(",") if p.strip()]
+
+        for part in parts:
+            # zakres: 1975–1982 (en dash lub zwykły minus)
+            m_range = re.fullmatch(r"(\d{4})\s*[\u2013-]\s*(\d{4})", part)
+            if m_range:
+                start = int(m_range.group(1))
+                end = int(m_range.group(2))
+                if end < start:
+                    start, end = end, start  # na wszelki wypadek
+                years = range(start, end + 1)
+            else:
+                # pojedynczy rok: 1973
+                m_year = re.fullmatch(r"\d{4}", part)
+                if not m_year:
+                    continue
+                years = [int(part)]
+
+            for y in years:
+                if y in seen:
+                    continue
+                seen.add(y)
+                url = f"https://en.wikipedia.org/wiki/{y}_Formula_One_World_Championship"
+                result.append({"year": y, "url": url})
+
+        return result
+
+    # NEW: helper do wyciągania listy linków z komórki
+    def _extract_links_from_cell(self, cell: Tag) -> list[dict[str, Any]]:
+        """
+        Zwraca listę linków {text, url} z komórki,
+        ignorując linki będące przypisami (cite_note/reference).
+        """
+        links: list[dict[str, Any]] = []
+
+        for a in cell.find_all("a", href=True):
+            href = a.get("href") or ""
+            classes = a.get("class") or []
+
+            # 1) Ignore typical reference / footnote links
+            #    <a href="#cite_note-..." class="reference">[14]</a>
+            if "cite_note" in href:
+                continue
+            if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
+                continue
+
+            text = self._clean_text(a.get_text(" ", strip=True))
+
+            # 2) Dodatkowy bezpiecznik – jak tekst jest pusty i to lokalny anchor,
+            #    to też traktujemy jako przypis / techniczny link.
+            if not text and href.startswith("#"):
+                continue
+
+            url = self._full_url(href)
+            links.append({"text": text, "url": url})
+
+        return links
+
+    def _apply_column_type(
+        self,
+        header: str,
+        key: str,
+        value: Any,
+        clean_text: str,
+        col_type: Optional[str] = None,  # NEW: przekazujemy typ z parse_row
+    ) -> Any:
+        """
+        Typy:
+        - "skip"    -> kolumna ignorowana
+        - "seasons" -> specjalny parser sezonów (lista dictów {year,url})
+        - "text"    -> zawsze string
+        - "list"    -> zawsze lista
+        - "list_of_links"   -> zawsze lista dictów {text, url}
+        - brak/auto -> bez zmian
+        """
+        if col_type is None:
+            col_type = self.column_types.get(header) or self.column_types.get(key) or "auto"
+
+        if col_type == "skip":
+            return self._SKIP
+
+        if col_type == "seasons":
+            return self._parse_seasons(clean_text)
+
+        if col_type == "text":
+            # spłaszczamy dict/list do stringa
+            if isinstance(value, dict):
+                return value.get("text")
+            if isinstance(value, list):
+                parts: list[str] = []
+                for item in value:
+                    if isinstance(item, dict):
+                        parts.append(str(item.get("text", "")))
+                    else:
+                        parts.append(str(item))
+                return ", ".join(p for p in parts if p)
+            return value
+
+        if col_type == "list":
+            if value is None:
+                return []
+            if isinstance(value, list):
+                return value
+            return [value]
+
+        if col_type == "list_of_links":  # NEW
+            if value is None:
+                return []
+            if isinstance(value, list):
+                return value
+            # jakby coś innego tu wpadło – opakujmy w listę
+            return [value]
+
+        # auto
+        return value
+
     # --- hook per-wiersz ---
 
     def parse_row(
-            self,
-            row: Tag,
-            cells: Sequence[Tag],
-            headers: Sequence[str],
+        self,
+        row: Tag,
+        cells: Sequence[Tag],
+        headers: Sequence[str],
     ) -> Optional[Dict[str, Any]]:
         """
         Zasady:
-        - normalizacja whitespace (&nbsp;, \xa0)
-        - usuwanie przypisów Wikipedii w []
-        - jeśli komórka zawiera tylko jeden link → dict(text, url)
-        - jeśli komórka zawiera wyłącznie linki + przecinki → lista dictów
-        - w przeciwnym razie → zwykły string
+        - normalizujemy whitespace (&nbsp;, \xa0),
+        - usuwamy przypisy Wikipedii w [],
+        - auto-linkowanie:
+          * 1 link → dict{text, url}
+          * tylko linki+przecinki → lista dictów
+          * inaczej → tekst,
+        - kolumny typu "list_of_links" → zawsze lista linków {text, url} z <a>,
+        - na końcu stosujemy column_types (skip / seasons / text / list / list_of_links / auto).
         """
         record: Dict[str, Any] = {}
-
-        # regex do usuwania przypisów
-        REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
         for header, cell in zip(headers, cells):
             key = self.column_map.get(header, self._normalize_header(header))
 
-            # --- pobranie tekstu i normalizacja whitespace ---
             raw_text = cell.get_text(" ", strip=True)
+            clean_text = self._clean_text(raw_text)
 
-            clean_text = (
-                raw_text.replace("\xa0", " ")
-                .replace("&nbsp;", " ")
-            )
+            # NEW: ustalamy typ kolumny z góry
+            col_type = self.column_types.get(header) or self.column_types.get(key) or "auto"
 
-            # --- USUWANIE PRZYPISÓW WIKIPEDII ---
-            clean_text = REF_RE.sub("", clean_text).strip()
+            # NEW: specjalny przypadek – kolumna typu "list_of_links"
+            if col_type == "list_of_links":
+                value: Any = self._extract_links_from_cell(cell)
+            else:
+                value = clean_text  # domyślnie tekst
 
-            value: Any = clean_text  # domyślnie zwykły tekst
+                if self.include_urls:
+                    links = [a for a in cell.find_all("a", href=True)]
 
-            if self.include_urls:
-                links = [a for a in cell.find_all("a", href=True)]
-
-                # --- 1) Jeden link → dict ---
-                if len(links) == 1:
-                    a = links[0]
-                    href = a.get("href")
-                    url = self._full_url(href)
-                    if url:
-                        value = {
-                            "text": clean_text,
-                            "url": url,
-                        }
-
-                # --- 2) Wiele linków → sprawdzamy, czy tylko linki + przecinki ---
-                elif len(links) > 1:
-                    # surowe HTML wewnątrz komórki
-                    raw_html = "".join(str(x) for x in cell.contents)
-
-                    # usuń whitespace (dowolny)
-                    cleaned_html = re.sub(r"\s+|&nbsp;|\xa0", "", raw_html)
-
-                    tmp = cleaned_html
-
-                    # usuń znaczniki <a>...</a>
-                    for a in links:
-                        link_html = re.sub(r"\s+|&nbsp;|\xa0", "", str(a))
-                        tmp = tmp.replace(link_html, "")
-
-                    # jeśli pozostały tylko przecinki → lista linków
-                    if all(ch == "," for ch in tmp if ch != ""):
-                        list_value = []
-                        for a in links:
-                            t = a.get_text(" ", strip=True)
-                            # whitespace + przypisy
-                            t = (
-                                t.replace("\xa0", " ")
-                                .replace("&nbsp;", " ")
-                            )
-                            t = REF_RE.sub("", t).strip()
-
-                            href = a.get("href")
-                            url = self._full_url(href)
-                            list_value.append({
-                                "text": t,
+                    # 1) Jeden link → dict{text, url}
+                    if len(links) == 1:
+                        a = links[0]
+                        href = a.get("href")
+                        url = self._full_url(href)
+                        if url:
+                            value = {
+                                "text": clean_text,
                                 "url": url,
-                            })
-                        value = list_value
+                            }
+
+                    # 2) Wiele linków → sprawdzamy czy tylko linki + przecinki
+                    elif len(links) > 1:
+                        raw_html = "".join(str(x) for x in cell.contents)
+                        cleaned_html = re.sub(r"\s+|&nbsp;|\xa0", "", raw_html)
+                        tmp = cleaned_html
+
+                        for a in links:
+                            link_html = re.sub(r"\s+|&nbsp;|\xa0", "", str(a))
+                            tmp = tmp.replace(link_html, "")
+
+                        if all(ch == "," for ch in tmp if ch != ""):
+                            list_value: list[dict[str, Any]] = []
+                            for a in links:
+                                t = a.get_text(" ", strip=True)
+                                t = self._clean_text(t)
+                                href = a.get("href")
+                                url = self._full_url(href)
+                                list_value.append({"text": t, "url": url})
+                            value = list_value
+
+            # zastosuj typ kolumny
+            value = self._apply_column_type(header, key, value, clean_text, col_type=col_type)
+
+            if value is self._SKIP:
+                continue
 
             record[key] = value
 
