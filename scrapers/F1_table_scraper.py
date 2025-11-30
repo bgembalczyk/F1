@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from abc import ABC
 from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
 
@@ -18,7 +19,9 @@ class F1TableScraper(F1Scraper, ABC):
                          jeśli None – szukamy po całej stronie.
     - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
     - column_map      – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - url_columns     – nagłówki, z których dodatkowo wyciągamy href (np. 'Constructor').
+    - url_columns     – opcjonalnie: nagłówki, dla których NAWET przy wielu linkach
+                         w komórce chcemy specjalnie obsłużyć URL-e
+                         (konkretne użycie zostawiamy klasom potomnym / override).
     """
 
     section_id: Optional[str] = None
@@ -98,30 +101,77 @@ class F1TableScraper(F1Scraper, ABC):
     # --- hook per-wiersz ---
 
     def parse_row(
-        self,
-        row: Tag,
-        cells: Sequence[Tag],
-        headers: Sequence[str],
+            self,
+            row: Tag,
+            cells: Sequence[Tag],
+            headers: Sequence[str],
     ) -> Optional[Dict[str, Any]]:
         """
-        Domyślna implementacja: tworzy słownik na podstawie column_map
-        oraz nagłówków. W razie potrzeby można nadpisać w klasie potomnej.
+        Zasady:
+        - zawsze normalizujemy whitespace (zwł. &nbsp;, \xa0)
+        - jeśli komórka zawiera tylko jeden link → dict(text, url)
+        - jeśli komórka zawiera wyłącznie linki + przecinki → lista dictów
+        - w przeciwnym razie → zwykły string
         """
         record: Dict[str, Any] = {}
 
         for header, cell in zip(headers, cells):
             key = self.column_map.get(header, self._normalize_header(header))
-            text = cell.get_text(" ", strip=True)
 
-            # wyciąganie URL
-            if self.include_urls and header in self.url_columns:
-                a = cell.find("a", href=True)
-                href = a["href"] if a else None
-                full = self._full_url(href)
-                if full:
-                    record[f"{key}_url"] = full
+            # --- normalizacja whitespace ---
+            raw_text = cell.get_text(" ", strip=True)
+            clean_text = (
+                raw_text.replace("\xa0", " ")
+                .replace("&nbsp;", " ")
+            )
 
-            record[key] = text
+            value: Any = clean_text  # domyślnie zwykły tekst
+
+            if self.include_urls:
+                links = [a for a in cell.find_all("a", href=True)]
+
+                # --- 1) Jeden link → dict ---
+                if len(links) == 1:
+                    a = links[0]
+                    href = a.get("href")
+                    url = self._full_url(href)
+                    if url:
+                        value = {
+                            "text": clean_text,
+                            "url": url,
+                        }
+
+                # --- 2) Wiele linków → sprawdź, czy komórka to tylko linki + przecinki ---
+                elif len(links) > 1:
+                    import re
+
+                    # surowe HTML wewnątrz komórki
+                    raw_html = "".join(str(x) for x in cell.contents)
+
+                    # całkowita normalizacja whitespace → usuń wszelki \s, w tym NBSP
+                    cleaned_html = re.sub(r"\s+|&nbsp;|\xa0", "", raw_html)
+
+                    tmp = cleaned_html
+
+                    # usuń wszystkie <a>…</a>
+                    for a in links:
+                        link_html = re.sub(r"\s+|&nbsp;|\xa0", "", str(a))
+                        tmp = tmp.replace(link_html, "")
+
+                    # jeśli zostały tylko przecinki → lista linków
+                    if all(ch == "," for ch in tmp if ch != ""):
+                        value = []
+                        for a in links:
+                            t = a.get_text(" ", strip=True)
+                            t = t.replace("\xa0", " ").replace("&nbsp;", " ")
+                            href = a.get("href")
+                            url = self._full_url(href)
+                            value.append({
+                                "text": t,
+                                "url": url,
+                            })
+
+            record[key] = value
 
         return record
 
