@@ -1,1126 +1,2628 @@
 [
   {
-    "Season": "1950",
-    "Season URL": "https://en.wikipedia.org/wiki/1950_Formula_One_season",
-    "Races": "7",
-    "Countries": "7",
-    "First": "British",
-    "First URL": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1950_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Giuseppe Farina ( ITA ) ( Alfa Romeo )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Giuseppe_Farina",
-    "Constructors' Champion": "Not awarded",
-    "Winners": "3"
-  },
-  {
-    "Season": "1951",
-    "Season URL": "https://en.wikipedia.org/wiki/1951_Formula_One_season",
-    "Races": "8",
-    "Countries": "8",
-    "First": "Swiss",
-    "First URL": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix",
-    "Last": "Spanish",
-    "Last URL": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix",
-    "Drivers' Champion (team)": "Juan Manuel Fangio ( ARG ) ( Alfa Romeo )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
-    "Constructors' Champion": "6"
-  },
-  {
-    "Season": "1952",
-    "Season URL": "https://en.wikipedia.org/wiki/1952_Formula_One_season",
-    "Races": "8",
-    "Countries": "8",
-    "First": "Swiss",
-    "First URL": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Alberto Ascari ( ITA ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alberto_Ascari",
-    "Constructors' Champion": "3"
-  },
-  {
-    "Season": "1953",
-    "Season URL": "https://en.wikipedia.org/wiki/1953_Formula_One_season",
-    "Races": "9",
-    "Countries": "9",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Alberto Ascari ( ITA ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alberto_Ascari",
-    "Constructors' Champion": "5"
-  },
-  {
-    "Season": "1954",
-    "Season URL": "https://en.wikipedia.org/wiki/1954_Formula_One_season",
-    "Races": "9",
-    "Countries": "9",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1954_Argentine_Grand_Prix",
-    "Last": "Spanish",
-    "Last URL": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix",
-    "Drivers' Champion (team)": "Juan Manuel Fangio ( ARG ) ( Maserati / Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
-    "Constructors' Champion": "4"
-  },
-  {
-    "Season": "1955",
-    "Season URL": "https://en.wikipedia.org/wiki/1955_Formula_One_season",
-    "Races": "7",
-    "Countries": "7",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Juan Manuel Fangio ( ARG ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
-    "Constructors' Champion": "4"
-  },
-  {
-    "Season": "1956",
-    "Season URL": "https://en.wikipedia.org/wiki/1956_Formula_One_season",
-    "Races": "8",
-    "Countries": "8",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Juan Manuel Fangio ( ARG ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
-    "Constructors' Champion": "5"
-  },
-  {
-    "Season": "1957",
-    "Season URL": "https://en.wikipedia.org/wiki/1957_Formula_One_season",
-    "Races": "8",
-    "Countries": "7",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix",
-    "Last": "Italian",
-    "Last URL": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix",
-    "Drivers' Champion (team)": "Juan Manuel Fangio ( ARG ) ( Maserati )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
-    "Constructors' Champion": "4"
-  },
-  {
-    "Season": "1958",
-    "Season URL": "https://en.wikipedia.org/wiki/1958_Formula_One_season",
-    "Races": "11",
-    "Countries": "11",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix",
-    "Last": "Moroccan",
-    "Last URL": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix",
-    "Drivers' Champion (team)": "Mike Hawthorn ( GBR ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Mike_Hawthorn",
-    "Constructors' Champion": "Vanwall ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Vanwall",
-    "Winners": "6"
-  },
-  {
-    "Season": "1959",
-    "Season URL": "https://en.wikipedia.org/wiki/1959_Formula_One_season",
-    "Races": "9",
-    "Countries": "8",
-    "First": "Monaco",
-    "First URL": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Jack Brabham ( AUS ) ( Cooper )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jack_Brabham",
-    "Constructors' Champion": "Cooper - Climax ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Cooper_Car_Company",
-    "Winners": "6"
-  },
-  {
-    "Season": "1960",
-    "Season URL": "https://en.wikipedia.org/wiki/1960_Formula_One_season",
-    "Races": "10",
-    "Countries": "9",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Jack Brabham ( AUS ) ( Cooper )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jack_Brabham",
-    "Constructors' Champion": "Cooper - Climax ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Cooper_Car_Company",
-    "Winners": "5"
-  },
-  {
-    "Season": "1961",
-    "Season URL": "https://en.wikipedia.org/wiki/1961_Formula_One_season",
-    "Races": "8",
-    "Countries": "8",
-    "First": "Monaco",
-    "First URL": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Phil Hill ( USA ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Phil_Hill",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "5"
-  },
-  {
-    "Season": "1962",
-    "Season URL": "https://en.wikipedia.org/wiki/1962_Formula_One_season",
-    "Races": "9",
-    "Countries": "9",
-    "First": "Dutch",
-    "First URL": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix",
-    "Last": "South African",
-    "Last URL": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix",
-    "Drivers' Champion (team)": "Graham Hill ( GBR ) ( BRM )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Graham_Hill",
-    "Constructors' Champion": "BRM ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/British_Racing_Motors",
-    "Winners": "4"
-  },
-  {
-    "Season": "1963",
-    "Season URL": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
-    "Races": "10",
-    "Countries": "10",
-    "First": "Monaco",
-    "First URL": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix",
-    "Last": "South African",
-    "Last URL": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix",
-    "Drivers' Champion (team)": "Jim Clark ( GBR ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jim_Clark",
-    "Constructors' Champion": "Lotus - Climax ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "3"
-  },
-  {
-    "Season": "1964",
-    "Season URL": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
-    "Races": "10",
-    "Countries": "10",
-    "First": "Monaco",
-    "First URL": "https://en.wikipedia.org/wiki/1964_Monaco_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1964_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "John Surtees ( GBR ) ( Ferrari / NART )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/John_Surtees",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "5"
-  },
-  {
-    "Season": "1965",
-    "Season URL": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
-    "Races": "10",
-    "Countries": "10",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1965_South_African_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Jim Clark ( GBR ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jim_Clark",
-    "Constructors' Champion": "Lotus - Climax ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "4"
-  },
-  {
-    "Season": "1966",
-    "Season URL": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
-    "Races": "9",
-    "Countries": "9",
-    "First": "Monaco",
-    "First URL": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1966_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Jack Brabham ( AUS ) ( Brabham )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jack_Brabham",
-    "Constructors' Champion": "Brabham - Repco ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Brabham",
-    "Winners": "5"
-  },
-  {
-    "Season": "1967",
-    "Season URL": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
-    "Races": "11",
-    "Countries": "11",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Denny Hulme ( NZL ) ( Brabham )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Denny_Hulme",
-    "Constructors' Champion": "Brabham - Repco ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Brabham",
-    "Winners": "7"
-  },
-  {
-    "Season": "1968",
-    "Season URL": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
-    "Races": "12",
-    "Countries": "12",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Graham Hill ( GBR ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Graham_Hill",
-    "Constructors' Champion": "Lotus - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "7"
-  },
-  {
-    "Season": "1969",
-    "Season URL": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
-    "Races": "11",
-    "Countries": "11",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Jackie Stewart ( GBR ) ( Matra )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jackie_Stewart",
-    "Constructors' Champion": "Matra - Ford ( FRA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports",
-    "Winners": "5"
-  },
-  {
-    "Season": "1970",
-    "Season URL": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
-    "Races": "13",
-    "Countries": "13",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix",
-    "Last": "Mexican",
-    "Last URL": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix",
-    "Drivers' Champion (team)": "Jochen Rindt ( AUT ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jochen_Rindt",
-    "Constructors' Champion": "Lotus - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "7"
-  },
-  {
-    "Season": "1971",
-    "Season URL": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
-    "Races": "11",
-    "Countries": "11",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Jackie Stewart ( GBR ) ( Tyrrell )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jackie_Stewart",
-    "Constructors' Champion": "Tyrrell - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Tyrrell_Racing",
-    "Winners": "6"
-  },
-  {
-    "Season": "1972",
-    "Season URL": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
-    "Races": "12",
-    "Countries": "12",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Emerson Fittipaldi ( BRA ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi",
-    "Constructors' Champion": "Lotus - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "5"
-  },
-  {
-    "Season": "1973",
-    "Season URL": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
-    "Races": "15",
-    "Countries": "15",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1973_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1973_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Jackie Stewart ( GBR ) ( Tyrrell )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jackie_Stewart",
-    "Constructors' Champion": "Lotus - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "5"
-  },
-  {
-    "Season": "1974",
-    "Season URL": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
-    "Races": "15",
-    "Countries": "15",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1974_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Emerson Fittipaldi ( BRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi",
-    "Constructors' Champion": "McLaren - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "7"
-  },
-  {
-    "Season": "1975",
-    "Season URL": "https://en.wikipedia.org/wiki/1975_Formula_One_season",
-    "Races": "14",
-    "Countries": "14",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Niki Lauda ( AUT ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Niki_Lauda",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "9"
-  },
-  {
-    "Season": "1976",
-    "Season URL": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "James Hunt ( GBR ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/James_Hunt",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "7"
-  },
-  {
-    "Season": "1977",
-    "Season URL": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
-    "Races": "17",
-    "Countries": "16",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1977_Argentine_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Niki Lauda ( AUT ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Niki_Lauda",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "8"
-  },
-  {
-    "Season": "1978",
-    "Season URL": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1978_Argentine_Grand_Prix",
-    "Last": "Canadian",
-    "Last URL": "https://en.wikipedia.org/wiki/1978_Canadian_Grand_Prix",
-    "Drivers' Champion (team)": "Mario Andretti ( USA ) ( Lotus )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Mario_Andretti",
-    "Constructors' Champion": "Lotus - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Team_Lotus",
-    "Winners": "6"
-  },
-  {
-    "Season": "1979",
-    "Season URL": "https://en.wikipedia.org/wiki/1979_Formula_One_season",
-    "Races": "15",
-    "Countries": "14",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Jody Scheckter ( RSA ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jody_Scheckter",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "7"
-  },
-  {
-    "Season": "1980",
-    "Season URL": "https://en.wikipedia.org/wiki/1980_Formula_One_season",
-    "Races": "14",
-    "Countries": "13",
-    "First": "Argentine",
-    "First URL": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix",
-    "Last": "United States",
-    "Last URL": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix",
-    "Drivers' Champion (team)": "Alan Jones ( AUS ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)",
-    "Constructors' Champion": "Williams - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "7"
-  },
-  {
-    "Season": "1981",
-    "Season URL": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
-    "Races": "15",
-    "Countries": "13",
-    "First": "United States West",
-    "First URL": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West",
-    "Last": "Caesars Palace",
-    "Last URL": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix",
-    "Drivers' Champion (team)": "Nelson Piquet ( BRA ) ( Brabham )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Nelson_Piquet",
-    "Constructors' Champion": "Williams - Ford ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "7"
-  },
-  {
-    "Season": "1982",
-    "Season URL": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "12",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix",
-    "Last": "Caesars Palace",
-    "Last URL": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix",
-    "Drivers' Champion (team)": "Keke Rosberg ( FIN ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Keke_Rosberg",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "11"
-  },
-  {
-    "Season": "1983",
-    "Season URL": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
-    "Races": "15",
-    "Countries": "13",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1983_Brazilian_Grand_Prix",
-    "Last": "South African",
-    "Last URL": "https://en.wikipedia.org/wiki/1983_South_African_Grand_Prix",
-    "Drivers' Champion (team)": "Nelson Piquet ( BRA ) ( Brabham )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Nelson_Piquet",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "8"
-  },
-  {
-    "Season": "1984",
-    "Season URL": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1984_Brazilian_Grand_Prix",
-    "Last": "Portuguese",
-    "Last URL": "https://en.wikipedia.org/wiki/1984_Portuguese_Grand_Prix",
-    "Drivers' Champion (team)": "Niki Lauda ( AUT ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Niki_Lauda",
-    "Constructors' Champion": "McLaren - TAG ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "5"
-  },
-  {
-    "Season": "1985",
-    "Season URL": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Alain Prost ( FRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alain_Prost",
-    "Constructors' Champion": "McLaren - TAG ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "8"
-  },
-  {
-    "Season": "1986",
-    "Season URL": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Alain Prost ( FRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alain_Prost",
-    "Constructors' Champion": "Williams - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "5"
-  },
-  {
-    "Season": "1987",
-    "Season URL": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Nelson Piquet ( BRA ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Nelson_Piquet",
-    "Constructors' Champion": "Williams - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "5"
-  },
-  {
-    "Season": "1988",
-    "Season URL": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Ayrton Senna ( BRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Ayrton_Senna",
-    "Constructors' Champion": "McLaren - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "3"
-  },
-  {
-    "Season": "1989",
-    "Season URL": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Alain Prost ( FRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alain_Prost",
-    "Constructors' Champion": "McLaren - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "6"
-  },
-  {
-    "Season": "1990",
-    "Season URL": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "United States",
-    "First URL": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Ayrton Senna ( BRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Ayrton_Senna",
-    "Constructors' Champion": "McLaren - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "6"
-  },
-  {
-    "Season": "1991",
-    "Season URL": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "United States",
-    "First URL": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Ayrton Senna ( BRA ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Ayrton_Senna",
-    "Constructors' Champion": "McLaren - Honda ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "5"
-  },
-  {
-    "Season": "1992",
-    "Season URL": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "15",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Nigel Mansell ( GBR ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Nigel_Mansell",
-    "Constructors' Champion": "Williams - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "5"
-  },
-  {
-    "Season": "1993",
-    "Season URL": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "South African",
-    "First URL": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Alain Prost ( FRA ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Alain_Prost",
-    "Constructors' Champion": "Williams - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "4"
-  },
-  {
-    "Season": "1994",
-    "Season URL": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "13",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Benetton )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Williams - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "4"
-  },
-  {
-    "Season": "1995",
-    "Season URL": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "14",
-    "First": "Brazilian",
-    "First URL": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix",
-    "Last": "Australian",
-    "Last URL": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Benetton )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Benetton - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Benetton_Formula",
-    "Winners": "5"
-  },
-  {
-    "Season": "1996",
-    "Season URL": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Damon Hill ( GBR ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Damon_Hill",
-    "Constructors' Champion": "Williams - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "4"
-  },
-  {
-    "Season": "1997",
-    "Season URL": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "14",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix",
-    "Last": "European",
-    "Last URL": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix",
-    "Drivers' Champion (team)": "Jacques Villeneuve ( CAN ) ( Williams )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jacques_Villeneuve",
-    "Constructors' Champion": "Williams - Renault ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Winners": "6"
-  },
-  {
-    "Season": "1998",
-    "Season URL": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/1998_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/1998_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Mika Häkkinen ( FIN ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen",
-    "Constructors' Champion": "McLaren - Mercedes ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "4"
-  },
-  {
-    "Season": "1999",
-    "Season URL": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Mika Häkkinen ( FIN ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "6"
-  },
-  {
-    "Season": "2000",
-    "Season URL": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "15",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix",
-    "Last": "Malaysian",
-    "Last URL": "https://en.wikipedia.org/wiki/2000_Malaysian_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "4"
-  },
-  {
-    "Season": "2001",
-    "Season URL": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "15",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/2001_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "5"
-  },
-  {
-    "Season": "2002",
-    "Season URL": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "15",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2002_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/2002_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "4"
-  },
-  {
-    "Season": "2003",
-    "Season URL": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
-    "Races": "16",
-    "Countries": "14",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2003_Australian_Grand_Prix",
-    "Last": "Japanese",
-    "Last URL": "https://en.wikipedia.org/wiki/2003_Japanese_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "8"
-  },
-  {
-    "Season": "2004",
-    "Season URL": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
-    "Races": "18",
-    "Countries": "16",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2004_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Michael Schumacher ( GER ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Michael_Schumacher",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "5"
-  },
-  {
-    "Season": "2005",
-    "Season URL": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "17",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2005_Australian_Grand_Prix",
-    "Last": "Chinese",
-    "Last URL": "https://en.wikipedia.org/wiki/2005_Chinese_Grand_Prix",
-    "Drivers' Champion (team)": "Fernando Alonso ( ESP ) ( Renault )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Fernando_Alonso",
-    "Constructors' Champion": "Renault ( FRA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Renault_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2006",
-    "Season URL": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
-    "Races": "18",
-    "Countries": "16",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2006_Bahrain_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2006_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Fernando Alonso ( ESP ) ( Renault )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Fernando_Alonso",
-    "Constructors' Champion": "Renault ( FRA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Renault_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2007",
-    "Season URL": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "17",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2007_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2007_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Kimi Räikkönen ( FIN ) ( Ferrari )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "4"
-  },
-  {
-    "Season": "2008",
-    "Season URL": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
-    "Races": "18",
-    "Countries": "17",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2008_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2008_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( McLaren )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Ferrari ( ITA )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Winners": "7"
-  },
-  {
-    "Season": "2009",
-    "Season URL": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "16",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2009_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2009_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Jenson Button ( GBR ) ( Brawn )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Jenson_Button",
-    "Constructors' Champion": "Brawn - Mercedes ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Brawn_GP",
-    "Winners": "6"
-  },
-  {
-    "Season": "2010",
-    "Season URL": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "18",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2010_Bahrain_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2010_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Sebastian Vettel ( GER ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
-    "Constructors' Champion": "Red Bull - Renault ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "5"
-  },
-  {
-    "Season": "2011",
-    "Season URL": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "18",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2011_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2011_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Sebastian Vettel ( GER ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
-    "Constructors' Champion": "Red Bull - Renault ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "5"
-  },
-  {
-    "Season": "2012",
-    "Season URL": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
-    "Races": "20",
-    "Countries": "19",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2012_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2012_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Sebastian Vettel ( GER ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
-    "Constructors' Champion": "Red Bull - Renault ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "8"
-  },
-  {
-    "Season": "2013",
-    "Season URL": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "19",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2013_Australian_Grand_Prix",
-    "Last": "Brazilian",
-    "Last URL": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix",
-    "Drivers' Champion (team)": "Sebastian Vettel ( GER ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
-    "Constructors' Champion": "Red Bull - Renault ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "5"
-  },
-  {
-    "Season": "2014",
-    "Season URL": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "19",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "3"
-  },
-  {
-    "Season": "2015",
-    "Season URL": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
-    "Races": "19",
-    "Countries": "19",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "3"
-  },
-  {
-    "Season": "2016",
-    "Season URL": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
-    "Races": "21",
-    "Countries": "21",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2016_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2016_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Nico Rosberg ( GER ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Nico_Rosberg",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "4"
-  },
-  {
-    "Season": "2017",
-    "Season URL": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
-    "Races": "20",
-    "Countries": "20",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2017_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2017_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2018",
-    "Season URL": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
-    "Races": "21",
-    "Countries": "21",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2018_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2018_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2019",
-    "Season URL": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
-    "Races": "21",
-    "Countries": "21",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2020",
-    "Season URL": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
-    "Races": "17",
-    "Countries": "12",
-    "First": "Austrian",
-    "First URL": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Lewis Hamilton ( GBR ) ( Mercedes )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "5"
-  },
-  {
-    "Season": "2021",
-    "Season URL": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
-    "Races": "22",
-    "Countries": "20",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Max Verstappen ( NED ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Max_Verstappen",
-    "Constructors' Champion": "Mercedes ( GER )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Winners": "6"
-  },
-  {
-    "Season": "2022",
-    "Season URL": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
-    "Races": "22",
-    "Countries": "20",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Max Verstappen ( NED ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Max_Verstappen",
-    "Constructors' Champion": "Red Bull - RBPT ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "5"
-  },
-  {
-    "Season": "2023",
-    "Season URL": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
-    "Races": "22",
-    "Countries": "20",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Max Verstappen ( NED ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Max_Verstappen",
-    "Constructors' Champion": "Red Bull - Honda RBPT ( AUT )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Winners": "3"
-  },
-  {
-    "Season": "2024",
-    "Season URL": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-    "Races": "24",
-    "Countries": "21",
-    "First": "Bahrain",
-    "First URL": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "Max Verstappen ( NED ) ( Red Bull )",
-    "Drivers' Champion (team) URL": "https://en.wikipedia.org/wiki/Max_Verstappen",
-    "Constructors' Champion": "McLaren - Mercedes ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "7"
-  },
-  {
-    "Season": "2025",
-    "Season URL": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-    "Races": "24",
-    "Countries": "21",
-    "First": "Australian",
-    "First URL": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix",
-    "Last": "Abu Dhabi",
-    "Last URL": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix",
-    "Drivers' Champion (team)": "TBD",
-    "Constructors' Champion": "McLaren - Mercedes ( GBR )",
-    "Constructors' Champion URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Winners": "4*"
+    "season": {
+      "text": "1950",
+      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+    },
+    "races": "7",
+    "countries": "7",
+    "first": {
+      "text": "British",
+      "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1950_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Giuseppe Farina",
+        "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+      },
+      {
+        "text": "Alfa Romeo",
+        "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "1951",
+      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+    },
+    "races": "8",
+    "countries": "8",
+    "first": {
+      "text": "Swiss",
+      "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+    },
+    "last": {
+      "text": "Spanish",
+      "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Juan Manuel Fangio",
+        "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+      },
+      {
+        "text": "Alfa Romeo",
+        "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1952",
+      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+    },
+    "races": "8",
+    "countries": "8",
+    "first": {
+      "text": "Swiss",
+      "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alberto Ascari",
+        "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1953",
+      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+    },
+    "races": "9",
+    "countries": "9",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alberto Ascari",
+        "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1954",
+      "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+    },
+    "races": "9",
+    "countries": "9",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1954_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Spanish",
+      "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Juan Manuel Fangio",
+        "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+      },
+      {
+        "text": "Maserati",
+        "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1955",
+      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+    },
+    "races": "7",
+    "countries": "7",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Juan Manuel Fangio",
+        "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1956",
+      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+    },
+    "races": "8",
+    "countries": "8",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Juan Manuel Fangio",
+        "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1957",
+      "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+    },
+    "races": "8",
+    "countries": "7",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Italian",
+      "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Juan Manuel Fangio",
+        "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+      },
+      {
+        "text": "Maserati",
+        "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+      }
+    ],
+    "constructors_champion": []
+  },
+  {
+    "season": {
+      "text": "1958",
+      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+    },
+    "races": "11",
+    "countries": "11",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Moroccan",
+      "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Mike Hawthorn",
+        "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Vanwall",
+        "url": "https://en.wikipedia.org/wiki/Vanwall"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1959",
+      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+    },
+    "races": "9",
+    "countries": "8",
+    "first": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jack Brabham",
+        "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+      },
+      {
+        "text": "Cooper",
+        "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Cooper",
+        "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+      },
+      {
+        "text": "Climax",
+        "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1960",
+      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+    },
+    "races": "10",
+    "countries": "9",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jack Brabham",
+        "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+      },
+      {
+        "text": "Cooper",
+        "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Cooper",
+        "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+      },
+      {
+        "text": "Climax",
+        "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1961",
+      "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+    },
+    "races": "8",
+    "countries": "8",
+    "first": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Phil Hill",
+        "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1962",
+      "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+    },
+    "races": "9",
+    "countries": "9",
+    "first": {
+      "text": "Dutch",
+      "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
+    },
+    "last": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Graham Hill",
+        "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+      },
+      {
+        "text": "BRM",
+        "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "BRM",
+        "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1963",
+      "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+    },
+    "races": "10",
+    "countries": "10",
+    "first": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
+    },
+    "last": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jim Clark",
+        "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Climax",
+        "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+      }
+    ],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "1964",
+      "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+    },
+    "races": "10",
+    "countries": "10",
+    "first": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/1964_Monaco_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1964_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "John Surtees",
+        "url": "https://en.wikipedia.org/wiki/John_Surtees"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      },
+      {
+        "text": "NART",
+        "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1965",
+      "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+    },
+    "races": "10",
+    "countries": "10",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1965_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jim Clark",
+        "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Climax",
+        "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1966",
+      "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+    },
+    "races": "9",
+    "countries": "9",
+    "first": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1966_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jack Brabham",
+        "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+      },
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      },
+      {
+        "text": "Repco",
+        "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1967",
+      "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+    },
+    "races": "11",
+    "countries": "11",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Denny Hulme",
+        "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+      },
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      },
+      {
+        "text": "Repco",
+        "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1968",
+      "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+    },
+    "races": "12",
+    "countries": "12",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Graham Hill",
+        "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1969",
+      "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+    },
+    "races": "11",
+    "countries": "11",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jackie Stewart",
+        "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+      },
+      {
+        "text": "Matra",
+        "url": "https://en.wikipedia.org/wiki/Matra_International"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Matra",
+        "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1970",
+      "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+    },
+    "races": "13",
+    "countries": "13",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Mexican",
+      "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jochen Rindt",
+        "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1971",
+      "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+    },
+    "races": "11",
+    "countries": "11",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jackie Stewart",
+        "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+      },
+      {
+        "text": "Tyrrell",
+        "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Tyrrell",
+        "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1972",
+      "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+    },
+    "races": "12",
+    "countries": "12",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Emerson Fittipaldi",
+        "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1973",
+      "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+    },
+    "races": "15",
+    "countries": "15",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1973_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1973_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jackie Stewart",
+        "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+      },
+      {
+        "text": "Tyrrell",
+        "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1974",
+      "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+    },
+    "races": "15",
+    "countries": "15",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1974_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Emerson Fittipaldi",
+        "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1975",
+      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+    },
+    "races": "14",
+    "countries": "14",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Niki Lauda",
+        "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "9"
+  },
+  {
+    "season": {
+      "text": "1976",
+      "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": "Brazilian",
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "James Hunt",
+        "url": "https://en.wikipedia.org/wiki/James_Hunt"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1977",
+      "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+    },
+    "races": "17",
+    "countries": "16",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1977_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Niki Lauda",
+        "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "8"
+  },
+  {
+    "season": {
+      "text": "1978",
+      "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1978_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "Canadian",
+      "url": "https://en.wikipedia.org/wiki/1978_Canadian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Mario Andretti",
+        "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1979",
+      "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+    },
+    "races": "15",
+    "countries": "14",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jody Scheckter",
+        "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1980",
+      "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+    },
+    "races": "14",
+    "countries": "13",
+    "first": {
+      "text": "Argentine",
+      "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
+    },
+    "last": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1980_United_States_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alan Jones",
+        "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1981",
+      "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+    },
+    "races": "15",
+    "countries": "13",
+    "first": {
+      "text": "United States West",
+      "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
+    },
+    "last": {
+      "text": "Caesars Palace",
+      "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Nelson Piquet",
+        "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+      },
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Ford",
+        "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "1982",
+      "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "12",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Caesars Palace",
+      "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Keke Rosberg",
+        "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "11"
+  },
+  {
+    "season": {
+      "text": "1983",
+      "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+    },
+    "races": "15",
+    "countries": "13",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1983_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1983_South_African_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Nelson Piquet",
+        "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+      },
+      {
+        "text": "Brabham",
+        "url": "https://en.wikipedia.org/wiki/Brabham"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "8"
+  },
+  {
+    "season": {
+      "text": "1984",
+      "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1984_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Portuguese",
+      "url": "https://en.wikipedia.org/wiki/1984_Portuguese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Niki Lauda",
+        "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "TAG",
+        "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1985",
+      "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "TAG",
+        "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+      }
+    ],
+    "winners": "8"
+  },
+  {
+    "season": {
+      "text": "1986",
+      "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1987",
+      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Nelson Piquet",
+        "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1988",
+      "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "1989",
+      "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1990",
+      "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1991",
+      "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1992",
+      "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "15",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Nigel Mansell",
+        "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1993",
+      "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "South African",
+      "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1994",
+      "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "13",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Benetton",
+        "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1995",
+      "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "14",
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
+    },
+    "last": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Benetton",
+        "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Benetton",
+        "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "1996",
+      "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Damon Hill",
+        "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1997",
+      "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "14",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "European",
+      "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jacques Villeneuve",
+        "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+      },
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Williams",
+        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "1998",
+      "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1998_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/1998_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Mika Häkkinen",
+        "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "1999",
+      "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Mika Häkkinen",
+        "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "2000",
+      "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "15",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Malaysian",
+      "url": "https://en.wikipedia.org/wiki/2000_Malaysian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "2001",
+      "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "15",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/2001_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2002",
+      "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "15",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2002_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/2002_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "2003",
+      "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+    },
+    "races": "16",
+    "countries": "14",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2003_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Japanese",
+      "url": "https://en.wikipedia.org/wiki/2003_Japanese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "8"
+  },
+  {
+    "season": {
+      "text": "2004",
+      "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+    },
+    "races": "18",
+    "countries": "16",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2004_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2005",
+      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "17",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2005_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Chinese",
+      "url": "https://en.wikipedia.org/wiki/2005_Chinese_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Fernando Alonso",
+        "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2006",
+      "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+    },
+    "races": "18",
+    "countries": "16",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2006_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2006_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Fernando Alonso",
+        "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2007",
+      "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "17",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2007_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2007_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Kimi Räikkönen",
+        "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+      },
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "2008",
+      "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+    },
+    "races": "18",
+    "countries": "17",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2008_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2008_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "2009",
+      "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+    },
+    "races": "17",
+    "countries": "16",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2009_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2009_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Jenson Button",
+        "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+      },
+      {
+        "text": "Brawn",
+        "url": "https://en.wikipedia.org/wiki/Brawn_GP"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Brawn",
+        "url": "https://en.wikipedia.org/wiki/Brawn_GP"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "2010",
+      "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "18",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2010_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2010_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Sebastian Vettel",
+        "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2011",
+      "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "18",
+    "first": "Australian",
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2011_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Sebastian Vettel",
+        "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2012",
+      "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+    },
+    "races": "20",
+    "countries": "19",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2012_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2012_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Sebastian Vettel",
+        "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "8"
+  },
+  {
+    "season": {
+      "text": "2013",
+      "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "19",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2013_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Sebastian Vettel",
+        "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2014",
+      "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "19",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "2015",
+      "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+    },
+    "races": "19",
+    "countries": "19",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "2016",
+      "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+    },
+    "races": "21",
+    "countries": "21",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2016_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2016_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Nico Rosberg",
+        "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "4"
+  },
+  {
+    "season": {
+      "text": "2017",
+      "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+    },
+    "races": "20",
+    "countries": "20",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2017_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2017_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2018",
+      "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+    },
+    "races": "21",
+    "countries": "21",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2018_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2018_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2019",
+      "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+    },
+    "races": "21",
+    "countries": "21",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2020",
+      "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+    },
+    "races": {
+      "text": "17",
+      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-30"
+    },
+    "countries": "12",
+    "first": {
+      "text": "Austrian",
+      "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2021",
+      "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+    },
+    "races": {
+      "text": "22",
+      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-32"
+    },
+    "countries": "20",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Max Verstappen",
+        "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+      }
+    ],
+    "winners": "6"
+  },
+  {
+    "season": {
+      "text": "2022",
+      "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+    },
+    "races": {
+      "text": "22",
+      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-34"
+    },
+    "countries": "20",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Max Verstappen",
+        "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "RBPT",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+      }
+    ],
+    "winners": "5"
+  },
+  {
+    "season": {
+      "text": "2023",
+      "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+    },
+    "races": {
+      "text": "22",
+      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-37"
+    },
+    "countries": "20",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Max Verstappen",
+        "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      },
+      {
+        "text": "Honda RBPT",
+        "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
+      }
+    ],
+    "winners": "3"
+  },
+  {
+    "season": {
+      "text": "2024",
+      "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+    },
+    "races": "24",
+    "countries": "21",
+    "first": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [
+      {
+        "text": "Max Verstappen",
+        "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+      },
+      {
+        "text": "Red Bull",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+      }
+    ],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "winners": "7"
+  },
+  {
+    "season": {
+      "text": "2025",
+      "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+    },
+    "races": "24",
+    "countries": "21",
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
+    },
+    "last": {
+      "text": "Abu Dhabi",
+      "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+    },
+    "drivers_champion_team": [],
+    "constructors_champion": [
+      {
+        "text": "McLaren",
+        "url": "https://en.wikipedia.org/wiki/McLaren"
+      },
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "winners": "4*"
   }
 ]
