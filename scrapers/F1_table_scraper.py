@@ -108,22 +108,30 @@ class F1TableScraper(F1Scraper, ABC):
     ) -> Optional[Dict[str, Any]]:
         """
         Zasady:
-        - zawsze normalizujemy whitespace (zwł. &nbsp;, \xa0)
+        - normalizacja whitespace (&nbsp;, \xa0)
+        - usuwanie przypisów Wikipedii w []
         - jeśli komórka zawiera tylko jeden link → dict(text, url)
         - jeśli komórka zawiera wyłącznie linki + przecinki → lista dictów
         - w przeciwnym razie → zwykły string
         """
         record: Dict[str, Any] = {}
 
+        # regex do usuwania przypisów
+        REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
         for header, cell in zip(headers, cells):
             key = self.column_map.get(header, self._normalize_header(header))
 
-            # --- normalizacja whitespace ---
+            # --- pobranie tekstu i normalizacja whitespace ---
             raw_text = cell.get_text(" ", strip=True)
+
             clean_text = (
                 raw_text.replace("\xa0", " ")
                 .replace("&nbsp;", " ")
             )
+
+            # --- USUWANIE PRZYPISÓW WIKIPEDII ---
+            clean_text = REF_RE.sub("", clean_text).strip()
 
             value: Any = clean_text  # domyślnie zwykły tekst
 
@@ -141,35 +149,40 @@ class F1TableScraper(F1Scraper, ABC):
                             "url": url,
                         }
 
-                # --- 2) Wiele linków → sprawdź, czy komórka to tylko linki + przecinki ---
+                # --- 2) Wiele linków → sprawdzamy, czy tylko linki + przecinki ---
                 elif len(links) > 1:
-                    import re
-
                     # surowe HTML wewnątrz komórki
                     raw_html = "".join(str(x) for x in cell.contents)
 
-                    # całkowita normalizacja whitespace → usuń wszelki \s, w tym NBSP
+                    # usuń whitespace (dowolny)
                     cleaned_html = re.sub(r"\s+|&nbsp;|\xa0", "", raw_html)
 
                     tmp = cleaned_html
 
-                    # usuń wszystkie <a>…</a>
+                    # usuń znaczniki <a>...</a>
                     for a in links:
                         link_html = re.sub(r"\s+|&nbsp;|\xa0", "", str(a))
                         tmp = tmp.replace(link_html, "")
 
-                    # jeśli zostały tylko przecinki → lista linków
+                    # jeśli pozostały tylko przecinki → lista linków
                     if all(ch == "," for ch in tmp if ch != ""):
-                        value = []
+                        list_value = []
                         for a in links:
                             t = a.get_text(" ", strip=True)
-                            t = t.replace("\xa0", " ").replace("&nbsp;", " ")
+                            # whitespace + przypisy
+                            t = (
+                                t.replace("\xa0", " ")
+                                .replace("&nbsp;", " ")
+                            )
+                            t = REF_RE.sub("", t).strip()
+
                             href = a.get("href")
                             url = self._full_url(href)
-                            value.append({
+                            list_value.append({
                                 "text": t,
                                 "url": url,
                             })
+                        value = list_value
 
             record[key] = value
 
