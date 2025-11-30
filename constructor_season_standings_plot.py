@@ -7,12 +7,16 @@ src_constructors_standings = pd.read_csv("data/main/constructor_standings.csv")
 src_constructors = pd.read_csv("data/main/constructors.csv")
 
 races = src_races[["raceId", "year"]].copy()
-constructors_standings = src_constructors_standings[["constructorStandingsId", "raceId", "constructorId", "points"]].copy()
+constructors_standings = src_constructors_standings[
+    ["constructorStandingsId", "raceId", "constructorId", "points"]
+].copy()
 constructors = src_constructors[["constructorId", "name"]].copy()
 
 df = constructors_standings.copy()
 
-df = pd.merge(df, races, on="raceId", how="left").merge(constructors, on="constructorId", how="left")
+df = pd.merge(df, races, on="raceId", how="left").merge(
+    constructors, on="constructorId", how="left"
+)
 
 # Sumowanie punktów końcowych w sezonach (maksymalna wartość dla danego zespołu i sezonu)
 season_points = df.groupby(["year", "constructorId"])["points"].max().reset_index()
@@ -21,7 +25,9 @@ season_points = df.groupby(["year", "constructorId"])["points"].max().reset_inde
 total_points = season_points.groupby("constructorId")["points"].sum().reset_index()
 
 # Dodanie nazw zespołów
-total_points = total_points.merge(constructors[["constructorId", "name"]], on="constructorId")
+total_points = total_points.merge(
+    constructors[["constructorId", "name"]], on="constructorId"
+)
 
 # Wybór top 10 zespołów
 top_10 = total_points.sort_values("points", ascending=False).head(10)

@@ -12,9 +12,7 @@ params = {
     "formatversion": "2",
 }
 
-headers = {
-    "User-Agent": "F1Bot/1.0 (bartosz.gembalczyk.stud@pw.edu.pl)"
-}
+headers = {"User-Agent": "F1Bot/1.0 (bartosz.gembalczyk.stud@pw.edu.pl)"}
 
 scraper = TableScraper(
     url=url,

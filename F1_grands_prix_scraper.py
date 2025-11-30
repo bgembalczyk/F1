@@ -1,18 +1,4 @@
-import json
-import csv
-import requests
-from pathlib import Path
-from typing import List, Dict, Any, Optional
-
-from bs4 import BeautifulSoup
-
 from F1_table_scraper import F1TableScraper
-
-try:
-    import pandas as pd
-    _HAS_PANDAS = True
-except ImportError:
-    _HAS_PANDAS = False
 
 
 class F1GrandsPrixScraper(F1TableScraper):

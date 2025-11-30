@@ -4,10 +4,10 @@ import csv
 import json
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence
 
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 try:
@@ -67,9 +67,13 @@ class F1Scraper(ABC):
     def to_json(self, path: str | Path, *, indent: int = 2) -> None:
         data = self.get_data()
         path = Path(path)
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=indent), encoding="utf-8")
+        path.write_text(
+            json.dumps(data, ensure_ascii=False, indent=indent), encoding="utf-8"
+        )
 
-    def to_csv(self, path: str | Path, *, fieldnames: Optional[Sequence[str]] = None) -> None:
+    def to_csv(
+        self, path: str | Path, *, fieldnames: Optional[Sequence[str]] = None
+    ) -> None:
         data = self.get_data()
         if not data:
             return
@@ -122,13 +126,9 @@ class F1Scraper(ABC):
 # ======================================================================
 
 
-
-
 # ======================================================================
 # SCRAPERY LIST
 # ======================================================================
-
-
 
 
 # ======================================================================
@@ -136,20 +136,4 @@ class F1Scraper(ABC):
 # ======================================================================
 
 
-    # domyślne parse_row z F1TableScraper jest OK
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# domyślne parse_row z F1TableScraper jest OK

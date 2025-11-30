@@ -65,7 +65,9 @@ class F1TableScraper(F1Scraper, ABC):
             heading = soup.find(id=self.section_id)
             if not heading:
                 raise RuntimeError(f"Nie znaleziono sekcji o id={self.section_id!r}")
-            candidate_tables = heading.find_all_next("table", class_=self.table_css_class)
+            candidate_tables = heading.find_all_next(
+                "table", class_=self.table_css_class
+            )
         else:
             candidate_tables = soup.find_all("table", class_=self.table_css_class)
 

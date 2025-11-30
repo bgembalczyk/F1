@@ -12,12 +12,7 @@ class TableScraper:
 
     @staticmethod
     def clean_text(text: str) -> str:
-        return (
-            text.strip()
-            .replace("\n", "")
-            .replace("\xa0", "")
-            .replace("/", "")
-        )
+        return text.strip().replace("\n", "").replace("\xa0", "").replace("/", "")
 
     def fetch_html(self) -> str:
         print("📡 Pobieranie danych z API...")
@@ -35,7 +30,9 @@ class TableScraper:
         soup = BeautifulSoup(html, "html.parser")
 
         tables = soup.find_all("table", class_=self.table_classes)
-        print(f"✔️  Znaleziono {len(tables)} tabel(e) pasujące do klas: {self.table_classes}")
+        print(
+            f"✔️  Znaleziono {len(tables)} tabel(e) pasujące do klas: {self.table_classes}"
+        )
 
         return tables
 
