@@ -51,7 +51,10 @@ class F1TableScraper(F1Scraper, ABC):
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
 
         header_cells = header_row.find_all(["th", "td"])
-        headers = [c.get_text(" ", strip=True) for c in header_cells]
+        headers = [
+            clean_wiki_text(c.get_text(" ", strip=True))
+            for c in header_cells
+        ]
 
         records: List[Dict[str, Any]] = []
         for tr in table.find_all("tr")[1:]:
@@ -90,7 +93,10 @@ class F1TableScraper(F1Scraper, ABC):
             if not header_row:
                 continue
             header_cells = header_row.find_all(["th", "td"])
-            headers = [c.get_text(" ", strip=True) for c in header_cells]
+            headers = [
+                clean_wiki_text(c.get_text(" ", strip=True))
+                for c in header_cells
+            ]
 
             if self._headers_match(headers):
                 return table
