@@ -133,3 +133,17 @@ def extract_links_from_cell(
         links.append({"text": text, "url": url})
 
     return links
+
+def strip_marks(text: str | None) -> str | None:
+    if text is None:
+        return None
+    # typowe znaki w tabelach F1
+    return (
+        text
+        .replace("*", "")
+        .replace("†", "")
+        .replace("‡", "")
+        .replace("✝", "")
+        .replace("✚", "")
+        .strip()
+    )

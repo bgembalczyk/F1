@@ -1,9 +1,10 @@
+import re
 from abc import ABC, abstractmethod
 from typing import Any, List, Dict, Callable
 
 from scrapers.helpers.columns.column_context import ColumnContext
 from scrapers.helpers.f1_table_utils import clean_wiki_text, parse_seasons, extract_links_from_cell, \
-    parse_int_from_text, parse_float_from_text
+    parse_int_from_text, parse_float_from_text, strip_marks
 
 
 # ==========================
@@ -161,22 +162,40 @@ class FloatColumn(BaseColumn):
         return parse_float_from_text(ctx.clean_text)
 
 
-class SingleLinkColumn(BaseColumn):
+class UrlColumn(BaseColumn):
     """
-    Zwraca pierwszy link ({text, url}) lub None.
+    Zwraca pierwszy link ({text, url}) albo None.
+    AUTOMATYCZNE czyszczenie * † z .text
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
-        return ctx.links[0] if ctx.links else None
+        if not ctx.links:
+            if ctx.clean_text:
+                return {"text": strip_marks(ctx.clean_text), "url": None}
+            return None
+
+        link = dict(ctx.links[0])
+        link["text"] = strip_marks(link.get("text"))
+        return link
 
 
 class LinksListColumn(BaseColumn):
     """
-    Zawsze lista linków (lista {text, url}).
+    Zwraca ZAWSZE listę linków [{text, url}, ...]
+    AUTOMATYCZNE czyszczenie * † z .text
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
-        return ctx.links
+        cleaned: list[dict[str, Any]] = []
+
+        for link in ctx.links:
+            d = dict(link)
+            if isinstance(d.get("text"), str):
+                d["text"] = strip_marks(d["text"])
+            d.setdefault("url", None)
+            cleaned.append(d)
+
+        return cleaned
 
 
 class EnumMarksColumn(BaseColumn):
@@ -197,3 +216,51 @@ class EnumMarksColumn(BaseColumn):
             if mark in text:
                 return value
         return self.default
+
+
+class RegexColumn(BaseColumn):
+    """
+    Kolumna wyciągająca fragment tekstu na podstawie regexa
+    i opcjonalnie rzutująca go na typ.
+
+    pattern        – regex z grupą przechwytującą (domyślnie group=1)
+    group          – numer grupy przechwytującej
+    cast           – funkcja typu str -> Any (np. float, int)
+    default        – wartość gdy brak dopasowania lub błąd rzutowania
+    normalize_number – jeśli True, usuwa ',' z liczby przed castem
+    flags          – flagi regexa (domyślnie IGNORECASE)
+    """
+
+    def __init__(
+        self,
+        pattern: str,
+        *,
+        group: int = 1,
+        cast: Callable[[str], Any] | None = None,
+        default: Any = None,
+        normalize_number: bool = False,
+        flags: int = re.IGNORECASE,
+    ) -> None:
+        self._re = re.compile(pattern, flags=flags)
+        self.group = group
+        self.cast = cast
+        self.default = default
+        self.normalize_number = normalize_number
+
+    def parse(self, ctx: ColumnContext) -> Any:
+        text = (ctx.clean_text or "").replace("\xa0", " ")
+        m = self._re.search(text)
+        if not m:
+            return self.default
+
+        s = m.group(self.group).strip()
+        if self.normalize_number:
+            s = s.replace(",", "")
+
+        if self.cast is None:
+            return s
+
+        try:
+            return self.cast(s)
+        except Exception:
+            return self.default
