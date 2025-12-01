@@ -9,7 +9,7 @@ from scrapers.helpers.columns.columns import (
     FloatColumn,
     MultiColumn,
     UrlColumn,
-    EnumMarksColumn,
+    EnumMarksColumn, LinksListColumn,
 )
 
 
@@ -67,6 +67,7 @@ class F1EngineManufacturersScraper(F1TableScraper):
                 ),
             }
         ),
+        "engines_built_in": LinksListColumn(),
 
         # sezony jako struktura (np. listy zakresów)
         "seasons": SeasonsColumn(),
