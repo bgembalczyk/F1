@@ -41,18 +41,10 @@ class F1Constructors2025Scraper(F1TableScraper):
 
     # typy kolumn po STRONIE KLUCZA (po column_map)
     column_types = {
-        # główny link do konstruktora
         "constructor": "link",
-        # sezony startów – lista dictów {year, url}
-        "seasons": "seasons",
-        # silniki / kierowcy / poprzednie zespoły – listy linków
         "engine": "list_of_links",
-        "drivers": "list_of_links",
+        "seasons": "seasons",
         "antecedent_teams": "list_of_links",
-        # państwa możemy spokojnie zrzucić do czystego tekstu
-        "licensed_in": "text",
-        "based_in": "text",
-        # reszta zostaje na "auto" – liczby zparsują się do int/float
     }
 
 
