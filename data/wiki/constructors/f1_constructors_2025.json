@@ -1,248 +1,577 @@
 [
   {
-    "Constructor": "Alpine",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
-    "Engine": "Renault",
-    "Engine URL": "https://en.wikipedia.org/wiki/Renault_in_Formula_One",
-    "Licensed in": "France",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/France",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "2021 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
-    "Races Entered": "113",
-    "Races Started": "112",
-    "Drivers": "5",
-    "Total Entries": "226",
-    "Wins": "1",
-    "Points": "535",
-    "Poles": "0",
-    "FL": "1",
-    "Podiums": "6",
-    "WCC": "0",
-    "WDC": "0",
-    "Antecedent teams": "Toleman (1981–1985), / Benetton (1986–2001), / Renault (2002–2011, 2016–2020), Lotus (2012–2015)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "constructor": {
+      "text": "Alpine",
+      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
+    },
+    "engine": [
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      }
+    ],
+    "licensed_in": "France",
+    "based_in": "United Kingdom",
+    "seasons": [],
+    "races_entered": "113",
+    "races_started": "113",
+    "drivers": [],
+    "total_entries": "226",
+    "wins": "1",
+    "points": "535",
+    "poles": "0",
+    "fastest_laps": "1",
+    "podiums": "6",
+    "wcc_titles": "0",
+    "wdc_titles": "0",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Toleman",
+        "url": "https://en.wikipedia.org/wiki/Toleman"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      },
+      {
+        "text": "Benetton",
+        "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/France"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Renault",
+        "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Lotus",
+        "url": "https://en.wikipedia.org/wiki/Lotus_F1"
+      }
+    ]
   },
   {
-    "Constructor": "Aston Martin",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-    "Engine": "Mercedes",
-    "Engine URL": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains",
-    "Licensed in": "United Kingdom",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "1959 – 1960 , 2021 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1959_Formula_One_season",
-    "Races Entered": "119",
-    "Races Started": "117",
-    "Drivers": "7",
-    "Total Entries": "237",
-    "Wins": "0",
-    "Points": "580",
-    "Poles": "0",
-    "FL": "3",
-    "Podiums": "9",
-    "WCC": "0",
-    "WDC": "0",
-    "Antecedent teams": "Jordan (1991–2005), Midland (2006), Spyker (2007) , Force India (2008–2018) , Force India (2018) , Racing Point (2019–2020)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+    "constructor": {
+      "text": "Aston Martin",
+      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+    },
+    "engine": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "licensed_in": "United Kingdom",
+    "based_in": "United Kingdom",
+    "seasons": [
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": "119",
+    "races_started": "118",
+    "drivers": [],
+    "total_entries": "237",
+    "wins": "0",
+    "points": "586",
+    "poles": "0",
+    "fastest_laps": "3",
+    "podiums": "9",
+    "wcc_titles": "0",
+    "wdc_titles": "0",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+      },
+      {
+        "text": "Jordan",
+        "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Russia"
+      },
+      {
+        "text": "Midland",
+        "url": "https://en.wikipedia.org/wiki/Midland_F1_Racing"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Netherlands"
+      },
+      {
+        "text": "Spyker",
+        "url": "https://en.wikipedia.org/wiki/Spyker_F1"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/India"
+      },
+      {
+        "text": "Force India",
+        "url": "https://en.wikipedia.org/wiki/Force_India"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Force India",
+        "url": "https://en.wikipedia.org/wiki/Racing_Point_Force_India"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Racing Point",
+        "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
+      }
+    ]
   },
   {
-    "Constructor": "Ferrari",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Engine": "Ferrari",
-    "Engine URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Licensed in": "Italy",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/Italy",
-    "Based in": "Italy",
-    "Based in URL": "https://en.wikipedia.org/wiki/Italy",
-    "Seasons": "1950 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1950_Formula_One_season",
-    "Races Entered": "1123",
-    "Races Started": "1120",
-    "Drivers": "83",
-    "Total Entries": "2372",
-    "Wins": "248",
-    "Points": "10702",
-    "Poles": "254",
-    "FL": "264",
-    "Podiums": "836",
-    "WCC": "16",
-    "WDC": "15",
-    "Antecedent teams": "—"
+    "constructor": {
+      "text": "Ferrari",
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+    },
+    "engine": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "licensed_in": "Italy",
+    "based_in": "Italy",
+    "seasons": [],
+    "races_entered": "1123",
+    "races_started": "1121",
+    "drivers": [],
+    "total_entries": "2372",
+    "wins": "248",
+    "points": "10706",
+    "poles": "254",
+    "fastest_laps": "264",
+    "podiums": "836",
+    "wcc_titles": "16",
+    "wdc_titles": "15",
+    "antecedent_teams": []
   },
   {
-    "Constructor": "Haas",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Haas_F1_Team",
-    "Engine": "Ferrari",
-    "Engine URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Licensed in": "United States",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/United_States",
-    "Based in": "United States United Kingdom Italy",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_States",
-    "Seasons": "2016 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
-    "Races Entered": "213",
-    "Races Started": "212",
-    "Drivers": "9",
-    "Total Entries": "426",
-    "Wins": "0",
-    "Points": "380",
-    "Poles": "1",
-    "FL": "3",
-    "Podiums": "0",
-    "WCC": "0",
-    "WDC": "0",
-    "Antecedent teams": "—"
+    "constructor": {
+      "text": "Haas",
+      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+    },
+    "engine": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "licensed_in": "United States",
+    "based_in": "United States United Kingdom Italy",
+    "seasons": [],
+    "races_entered": "213",
+    "races_started": "213",
+    "drivers": [],
+    "total_entries": "426",
+    "wins": "0",
+    "points": "380",
+    "poles": "1",
+    "fastest_laps": "3",
+    "podiums": "0",
+    "wcc_titles": "0",
+    "wdc_titles": "0",
+    "antecedent_teams": []
   },
   {
-    "Constructor": "McLaren",
-    "Constructor URL": "https://en.wikipedia.org/wiki/McLaren",
-    "Engine": "Mercedes",
-    "Engine URL": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains",
-    "Licensed in": "United Kingdom",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "1966 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
-    "Races Entered": "997",
-    "Races Started": "992",
-    "Drivers": "52",
-    "Total Entries": "2063",
-    "Wins": "203",
-    "Points": "7727.5",
-    "Poles": "177",
-    "FL": "182",
-    "Podiums": "555",
-    "WCC": "10",
-    "WDC": "12",
-    "Antecedent teams": "—"
+    "constructor": {
+      "text": "McLaren",
+      "url": "https://en.wikipedia.org/wiki/McLaren"
+    },
+    "engine": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "licensed_in": "United Kingdom",
+    "based_in": "United Kingdom",
+    "seasons": [],
+    "races_entered": "997",
+    "races_started": "993",
+    "drivers": [],
+    "total_entries": "2063",
+    "wins": "203",
+    "points": "7757.5",
+    "poles": "177",
+    "fastest_laps": "183",
+    "podiums": "556",
+    "wcc_titles": "10",
+    "wdc_titles": "12",
+    "antecedent_teams": []
   },
   {
-    "Constructor": "Mercedes",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-    "Engine": "Mercedes",
-    "Engine URL": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains",
-    "Licensed in": "Germany",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/Germany",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "1954 – 1955 , 2010 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1954_Formula_One_season",
-    "Races Entered": "340",
-    "Races Started": "339",
-    "Drivers": "13",
-    "Total Entries": "692",
-    "Wins": "131",
-    "Points": "8131.5",
-    "Poles": "143",
-    "FL": "115",
-    "Podiums": "310",
-    "WCC": "8",
-    "WDC": "9",
-    "Antecedent teams": "Tyrrell (1970–1998), BAR (1999–2005), Honda (2006–2008), Brawn (2009)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "constructor": {
+      "text": "Mercedes",
+      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+    },
+    "engine": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "licensed_in": "Germany",
+    "based_in": "United Kingdom",
+    "seasons": [
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": "340",
+    "races_started": "340",
+    "drivers": [],
+    "total_entries": "692",
+    "wins": "131",
+    "points": "8149.5",
+    "poles": "143",
+    "fastest_laps": "115",
+    "podiums": "310",
+    "wcc_titles": "8",
+    "wdc_titles": "9",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Tyrrell",
+        "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "BAR",
+        "url": "https://en.wikipedia.org/wiki/British_American_Racing"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Japan"
+      },
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Brawn",
+        "url": "https://en.wikipedia.org/wiki/Brawn_GP"
+      }
+    ]
   },
   {
-    "Constructor": "Racing Bulls",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Racing_Bulls",
-    "Engine": "Honda RBPT",
-    "Engine URL": "https://en.wikipedia.org/wiki/Honda_in_Formula_One",
-    "Licensed in": "Italy",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/Italy",
-    "Based in": "Italy United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/Italy",
-    "Seasons": "2024 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-    "Races Entered": "47",
-    "Races Started": "46",
-    "Drivers": "4",
-    "Total Entries": "94",
-    "Wins": "0",
-    "Points": "136",
-    "Poles": "0",
-    "FL": "1",
-    "Podiums": "1",
-    "WCC": "0",
-    "WDC": "0",
-    "Antecedent teams": "Minardi (1985–2005) , Toro Rosso (2006–2019) AlphaTauri (2020–2023)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/Italy"
+    "constructor": {
+      "text": "Racing Bulls",
+      "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
+    },
+    "engine": [
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      },
+      {
+        "text": "RBPT",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+      }
+    ],
+    "licensed_in": "Italy",
+    "based_in": "Italy United Kingdom",
+    "seasons": [],
+    "races_entered": "47",
+    "races_started": "47",
+    "drivers": [],
+    "total_entries": "94",
+    "wins": "0",
+    "points": "138",
+    "poles": "0",
+    "fastest_laps": "1",
+    "podiums": "1",
+    "wcc_titles": "0",
+    "wdc_titles": "0",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      },
+      {
+        "text": "Minardi",
+        "url": "https://en.wikipedia.org/wiki/Minardi"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      },
+      {
+        "text": "Toro Rosso",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      },
+      {
+        "text": "AlphaTauri",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
+      }
+    ]
   },
   {
-    "Constructor": "Red Bull Racing",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-    "Engine": "Honda RBPT",
-    "Engine URL": "https://en.wikipedia.org/wiki/Honda_in_Formula_One",
-    "Licensed in": "Austria",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/Austria",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "2005 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
-    "Races Entered": "417",
-    "Races Started": "415",
-    "Drivers": "13",
-    "Total Entries": "834",
-    "Wins": "128",
-    "Points": "8237",
-    "Poles": "110",
-    "FL": "102",
-    "Podiums": "295",
-    "WCC": "6",
-    "WDC": "8",
-    "Antecedent teams": "Stewart (1997–1999), Jaguar (2000–2004)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/United_Kingdom"
+    "constructor": {
+      "text": "Red Bull Racing",
+      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+    },
+    "engine": [
+      {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+      },
+      {
+        "text": "RBPT",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+      }
+    ],
+    "licensed_in": "Austria",
+    "based_in": "United Kingdom",
+    "seasons": [],
+    "races_entered": "417",
+    "races_started": "416",
+    "drivers": [],
+    "total_entries": "834",
+    "wins": "129",
+    "points": "8263",
+    "poles": "110",
+    "fastest_laps": "102",
+    "podiums": "296",
+    "wcc_titles": "6",
+    "wdc_titles": "8",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Stewart",
+        "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
+      },
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "Jaguar",
+        "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
+      }
+    ]
   },
   {
-    "Constructor": "Sauber / BMW Sauber / Kick Sauber",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Sauber",
-    "Engine": "Ferrari",
-    "Engine URL": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-    "Licensed in": "Switzerland",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/Switzerland",
-    "Based in": "Switzerland United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/Switzerland",
-    "Seasons": "1993 – 2018 , 2024 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
-    "Races Entered": "512",
-    "Races Started": "508",
-    "Drivers": "34",
-    "Total Entries": "996",
-    "Wins": "1",
-    "Points": "937",
-    "Poles": "1",
-    "FL": "5",
-    "Podiums": "27",
-    "WCC": "0",
-    "WDC": "0",
-    "Antecedent teams": "Alfa Romeo (2019–2023)",
-    "Antecedent teams URL": "https://en.wikipedia.org/wiki/Switzerland"
+    "constructor": {
+      "text": "Sauber",
+      "url": "https://en.wikipedia.org/wiki/Sauber"
+    },
+    "engine": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "licensed_in": "Switzerland",
+    "based_in": "Switzerland United Kingdom",
+    "seasons": [
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": "512",
+    "races_started": "509",
+    "drivers": [],
+    "total_entries": "996",
+    "wins": "1",
+    "points": "937",
+    "poles": "1",
+    "fastest_laps": "5",
+    "podiums": "27",
+    "wcc_titles": "0",
+    "wdc_titles": "0",
+    "antecedent_teams": [
+      {
+        "text": "",
+        "url": "https://en.wikipedia.org/wiki/Switzerland"
+      },
+      {
+        "text": "Alfa Romeo",
+        "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+      }
+    ]
   },
   {
-    "Constructor": "Williams",
-    "Constructor URL": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-    "Engine": "Mercedes",
-    "Engine URL": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains",
-    "Licensed in": "United Kingdom",
-    "Licensed in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Based in": "United Kingdom",
-    "Based in URL": "https://en.wikipedia.org/wiki/United_Kingdom",
-    "Seasons": "1978 –present",
-    "Seasons URL": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
-    "Races Entered": "850",
-    "Races Started": "848",
-    "Drivers": "49",
-    "Total Entries": "1617",
-    "Wins": "114",
-    "Points": "3759",
-    "Poles": "128",
-    "FL": "134",
-    "Podiums": "314",
-    "WCC": "9",
-    "WDC": "7",
-    "Antecedent teams": "—"
+    "constructor": {
+      "text": "Williams",
+      "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+    },
+    "engine": [
+      {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+      }
+    ],
+    "licensed_in": "United Kingdom",
+    "based_in": "United Kingdom",
+    "seasons": [],
+    "races_entered": "850",
+    "races_started": "849",
+    "drivers": [],
+    "total_entries": "1617",
+    "wins": "114",
+    "points": "3774",
+    "poles": "128",
+    "fastest_laps": "134",
+    "podiums": "315",
+    "wcc_titles": "9",
+    "wdc_titles": "7",
+    "antecedent_teams": []
   }
 ]

@@ -18,6 +18,7 @@ class F1Constructors2025Scraper(F1TableScraper):
         "Based in",
     ]
 
+    # nagłówek z tabeli -> klucz w dict
     column_map = {
         "Constructor": "constructor",
         "Engine": "engine",
@@ -38,7 +39,21 @@ class F1Constructors2025Scraper(F1TableScraper):
         "Antecedent teams": "antecedent_teams",
     }
 
-    url_columns = ("Constructor",)
+    # typy kolumn po STRONIE KLUCZA (po column_map)
+    column_types = {
+        # główny link do konstruktora
+        "constructor": "link",
+        # sezony startów – lista dictów {year, url}
+        "seasons": "seasons",
+        # silniki / kierowcy / poprzednie zespoły – listy linków
+        "engine": "list_of_links",
+        "drivers": "list_of_links",
+        "antecedent_teams": "list_of_links",
+        # państwa możemy spokojnie zrzucić do czystego tekstu
+        "licensed_in": "text",
+        "based_in": "text",
+        # reszta zostaje na "auto" – liczby zparsują się do int/float
+    }
 
 
 if __name__ == "__main__":
@@ -47,9 +62,5 @@ if __name__ == "__main__":
     constructors = scraper.fetch()
     print(f"Pobrano rekordów: {len(constructors)}")
 
-    scraper.to_json("f1_constructors_2025.json")
-    scraper.to_csv("f1_constructors_2025.csv")
-
-    # opcjonalnie:
-    # df = scraper.to_dataframe()
-    # print(df.head())
+    scraper.to_json("../../data/wiki/constructors/f1_constructors_2025.json")
+    scraper.to_csv("../../data/wiki/constructors/f1_constructors_2025.csv")
