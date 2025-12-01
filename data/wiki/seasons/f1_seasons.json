@@ -4,8 +4,8 @@
       "text": "1950",
       "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
     },
-    "races": "7",
-    "countries": "7",
+    "races": 7,
+    "countries": 7,
     "first": {
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
@@ -25,15 +25,15 @@
       }
     ],
     "constructors_champion": [],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "1951",
       "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
     },
-    "races": "8",
-    "countries": "8",
+    "races": 8,
+    "countries": 8,
     "first": {
       "text": "Swiss",
       "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
@@ -59,8 +59,8 @@
       "text": "1952",
       "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
     },
-    "races": "8",
-    "countries": "8",
+    "races": 8,
+    "countries": 8,
     "first": {
       "text": "Swiss",
       "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
@@ -86,8 +86,8 @@
       "text": "1953",
       "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
     },
-    "races": "9",
-    "countries": "9",
+    "races": 9,
+    "countries": 9,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
@@ -113,8 +113,8 @@
       "text": "1954",
       "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
     },
-    "races": "9",
-    "countries": "9",
+    "races": 9,
+    "countries": 9,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1954_Argentine_Grand_Prix"
@@ -144,8 +144,8 @@
       "text": "1955",
       "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
     },
-    "races": "7",
-    "countries": "7",
+    "races": 7,
+    "countries": 7,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
@@ -171,8 +171,8 @@
       "text": "1956",
       "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
     },
-    "races": "8",
-    "countries": "8",
+    "races": 8,
+    "countries": 8,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
@@ -198,8 +198,8 @@
       "text": "1957",
       "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
     },
-    "races": "8",
-    "countries": "7",
+    "races": 8,
+    "countries": 7,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
@@ -225,8 +225,8 @@
       "text": "1958",
       "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
     },
-    "races": "11",
-    "countries": "11",
+    "races": 11,
+    "countries": 11,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
@@ -251,15 +251,15 @@
         "url": "https://en.wikipedia.org/wiki/Vanwall"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1959",
       "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
     },
-    "races": "9",
-    "countries": "8",
+    "races": 9,
+    "countries": 8,
     "first": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
@@ -288,15 +288,15 @@
         "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1960",
       "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
     },
-    "races": "10",
-    "countries": "9",
+    "races": 10,
+    "countries": 9,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
@@ -325,15 +325,15 @@
         "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1961",
       "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
     },
-    "races": "8",
-    "countries": "8",
+    "races": 8,
+    "countries": 8,
     "first": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix"
@@ -358,15 +358,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1962",
       "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
     },
-    "races": "9",
-    "countries": "9",
+    "races": 9,
+    "countries": 9,
     "first": {
       "text": "Dutch",
       "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
@@ -391,15 +391,15 @@
         "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1963",
       "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
     },
-    "races": "10",
-    "countries": "10",
+    "races": 10,
+    "countries": 10,
     "first": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
@@ -428,15 +428,15 @@
         "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
       }
     ],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "1964",
       "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
     },
-    "races": "10",
-    "countries": "10",
+    "races": 10,
+    "countries": 10,
     "first": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1964_Monaco_Grand_Prix"
@@ -465,15 +465,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1965",
       "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
     },
-    "races": "10",
-    "countries": "10",
+    "races": 10,
+    "countries": 10,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1965_South_African_Grand_Prix"
@@ -502,15 +502,15 @@
         "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1966",
       "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
     },
-    "races": "9",
-    "countries": "9",
+    "races": 9,
+    "countries": 9,
     "first": {
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix"
@@ -539,15 +539,15 @@
         "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1967",
       "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
     },
-    "races": "11",
-    "countries": "11",
+    "races": 11,
+    "countries": 11,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
@@ -576,15 +576,15 @@
         "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1968",
       "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
     },
-    "races": "12",
-    "countries": "12",
+    "races": 12,
+    "countries": 12,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
@@ -613,15 +613,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1969",
       "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
     },
-    "races": "11",
-    "countries": "11",
+    "races": 11,
+    "countries": 11,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
@@ -650,15 +650,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1970",
       "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
     },
-    "races": "13",
-    "countries": "13",
+    "races": 13,
+    "countries": 13,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
@@ -687,15 +687,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1971",
       "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
     },
-    "races": "11",
-    "countries": "11",
+    "races": 11,
+    "countries": 11,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
@@ -724,15 +724,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1972",
       "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
     },
-    "races": "12",
-    "countries": "12",
+    "races": 12,
+    "countries": 12,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
@@ -761,15 +761,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1973",
       "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
     },
-    "races": "15",
-    "countries": "15",
+    "races": 15,
+    "countries": 15,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1973_Argentine_Grand_Prix"
@@ -798,15 +798,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1974",
       "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
     },
-    "races": "15",
-    "countries": "15",
+    "races": 15,
+    "countries": 15,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1974_Argentine_Grand_Prix"
@@ -835,15 +835,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1975",
       "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
     },
-    "races": "14",
-    "countries": "14",
+    "races": 14,
+    "countries": 14,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
@@ -868,16 +868,19 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "9"
+    "winners": 9
   },
   {
     "season": {
       "text": "1976",
       "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
     },
-    "races": "16",
-    "countries": "15",
-    "first": "Brazilian",
+    "races": 16,
+    "countries": 15,
+    "first": {
+      "text": "Brazilian",
+      "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
+    },
     "last": {
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
@@ -898,15 +901,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1977",
       "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
     },
-    "races": "17",
-    "countries": "16",
+    "races": 17,
+    "countries": 16,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1977_Argentine_Grand_Prix"
@@ -931,15 +934,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "8"
+    "winners": 8
   },
   {
     "season": {
       "text": "1978",
       "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1978_Argentine_Grand_Prix"
@@ -968,15 +971,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1979",
       "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
     },
-    "races": "15",
-    "countries": "14",
+    "races": 15,
+    "countries": 14,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
@@ -1001,15 +1004,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1980",
       "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
     },
-    "races": "14",
-    "countries": "13",
+    "races": 14,
+    "countries": 13,
     "first": {
       "text": "Argentine",
       "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
@@ -1038,15 +1041,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1981",
       "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
     },
-    "races": "15",
-    "countries": "13",
+    "races": 15,
+    "countries": 13,
     "first": {
       "text": "United States West",
       "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
@@ -1075,15 +1078,15 @@
         "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "1982",
       "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "12",
+    "races": 16,
+    "countries": 12,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
@@ -1108,15 +1111,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "11"
+    "winners": 11
   },
   {
     "season": {
       "text": "1983",
       "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
     },
-    "races": "15",
-    "countries": "13",
+    "races": 15,
+    "countries": 13,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1983_Brazilian_Grand_Prix"
@@ -1141,15 +1144,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "8"
+    "winners": 8
   },
   {
     "season": {
       "text": "1984",
       "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1984_Brazilian_Grand_Prix"
@@ -1178,15 +1181,15 @@
         "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1985",
       "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix"
@@ -1215,15 +1218,15 @@
         "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
       }
     ],
-    "winners": "8"
+    "winners": 8
   },
   {
     "season": {
       "text": "1986",
       "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
@@ -1252,15 +1255,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1987",
       "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
@@ -1289,15 +1292,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1988",
       "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
@@ -1326,15 +1329,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "1989",
       "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
@@ -1363,15 +1366,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1990",
       "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "United States",
       "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
@@ -1400,15 +1403,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1991",
       "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "United States",
       "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
@@ -1437,15 +1440,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1992",
       "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "15",
+    "races": 16,
+    "countries": 15,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
@@ -1474,15 +1477,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1993",
       "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
@@ -1511,15 +1514,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1994",
       "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "13",
+    "races": 16,
+    "countries": 13,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
@@ -1548,15 +1551,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1995",
       "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "14",
+    "races": 17,
+    "countries": 14,
     "first": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
@@ -1585,15 +1588,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "1996",
       "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
@@ -1622,15 +1625,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1997",
       "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "14",
+    "races": 17,
+    "countries": 14,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
@@ -1659,15 +1662,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "1998",
       "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1998_Australian_Grand_Prix"
@@ -1696,15 +1699,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "1999",
       "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
@@ -1729,15 +1732,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "2000",
       "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "15",
+    "races": 17,
+    "countries": 15,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix"
@@ -1762,15 +1765,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "2001",
       "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "15",
+    "races": 17,
+    "countries": 15,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix"
@@ -1795,15 +1798,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2002",
       "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "15",
+    "races": 17,
+    "countries": 15,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2002_Australian_Grand_Prix"
@@ -1828,15 +1831,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "2003",
       "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
     },
-    "races": "16",
-    "countries": "14",
+    "races": 16,
+    "countries": 14,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2003_Australian_Grand_Prix"
@@ -1861,15 +1864,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "8"
+    "winners": 8
   },
   {
     "season": {
       "text": "2004",
       "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
     },
-    "races": "18",
-    "countries": "16",
+    "races": 18,
+    "countries": 16,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2004_Australian_Grand_Prix"
@@ -1894,15 +1897,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2005",
       "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "17",
+    "races": 19,
+    "countries": 17,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2005_Australian_Grand_Prix"
@@ -1927,15 +1930,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2006",
       "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
     },
-    "races": "18",
-    "countries": "16",
+    "races": 18,
+    "countries": 16,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2006_Bahrain_Grand_Prix"
@@ -1960,15 +1963,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2007",
       "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "17",
+    "races": 17,
+    "countries": 17,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2007_Australian_Grand_Prix"
@@ -1993,15 +1996,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "2008",
       "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
     },
-    "races": "18",
-    "countries": "17",
+    "races": 18,
+    "countries": 17,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2008_Australian_Grand_Prix"
@@ -2026,15 +2029,15 @@
         "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "2009",
       "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
     },
-    "races": "17",
-    "countries": "16",
+    "races": 17,
+    "countries": 16,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2009_Australian_Grand_Prix"
@@ -2063,15 +2066,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "2010",
       "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "18",
+    "races": 19,
+    "countries": 18,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2010_Bahrain_Grand_Prix"
@@ -2100,16 +2103,19 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2011",
       "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "18",
-    "first": "Australian",
+    "races": 19,
+    "countries": 18,
+    "first": {
+      "text": "Australian",
+      "url": "https://en.wikipedia.org/wiki/2011_Australian_Grand_Prix"
+    },
     "last": {
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2011_Brazilian_Grand_Prix"
@@ -2134,15 +2140,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2012",
       "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
     },
-    "races": "20",
-    "countries": "19",
+    "races": 20,
+    "countries": 19,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2012_Australian_Grand_Prix"
@@ -2171,15 +2177,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "8"
+    "winners": 8
   },
   {
     "season": {
       "text": "2013",
       "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "19",
+    "races": 19,
+    "countries": 19,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2013_Australian_Grand_Prix"
@@ -2208,15 +2214,15 @@
         "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2014",
       "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "19",
+    "races": 19,
+    "countries": 19,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
@@ -2241,15 +2247,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "2015",
       "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
     },
-    "races": "19",
-    "countries": "19",
+    "races": 19,
+    "countries": 19,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
@@ -2274,15 +2280,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "2016",
       "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
     },
-    "races": "21",
-    "countries": "21",
+    "races": 21,
+    "countries": 21,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2016_Australian_Grand_Prix"
@@ -2307,15 +2313,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "4"
+    "winners": 4
   },
   {
     "season": {
       "text": "2017",
       "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
     },
-    "races": "20",
-    "countries": "20",
+    "races": 20,
+    "countries": 20,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2017_Australian_Grand_Prix"
@@ -2340,15 +2346,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2018",
       "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
     },
-    "races": "21",
-    "countries": "21",
+    "races": 21,
+    "countries": 21,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2018_Australian_Grand_Prix"
@@ -2373,15 +2379,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2019",
       "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
     },
-    "races": "21",
-    "countries": "21",
+    "races": 21,
+    "countries": 21,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
@@ -2406,18 +2412,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2020",
       "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
     },
-    "races": {
-      "text": "17",
-      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-30"
-    },
-    "countries": "12",
+    "races": 17,
+    "countries": 12,
     "first": {
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
@@ -2442,18 +2445,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2021",
       "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
     },
-    "races": {
-      "text": "22",
-      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-32"
-    },
-    "countries": "20",
+    "races": 22,
+    "countries": 20,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
@@ -2478,18 +2478,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
       }
     ],
-    "winners": "6"
+    "winners": 6
   },
   {
     "season": {
       "text": "2022",
       "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
     },
-    "races": {
-      "text": "22",
-      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-34"
-    },
-    "countries": "20",
+    "races": 22,
+    "countries": 20,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
@@ -2518,18 +2515,15 @@
         "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
       }
     ],
-    "winners": "5"
+    "winners": 5
   },
   {
     "season": {
       "text": "2023",
       "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
     },
-    "races": {
-      "text": "22",
-      "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons#cite_note-37"
-    },
-    "countries": "20",
+    "races": 22,
+    "countries": 20,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix"
@@ -2558,15 +2552,15 @@
         "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
       }
     ],
-    "winners": "3"
+    "winners": 3
   },
   {
     "season": {
       "text": "2024",
       "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
     },
-    "races": "24",
-    "countries": "21",
+    "races": 24,
+    "countries": 21,
     "first": {
       "text": "Bahrain",
       "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
@@ -2595,15 +2589,15 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
     ],
-    "winners": "7"
+    "winners": 7
   },
   {
     "season": {
       "text": "2025",
       "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
     },
-    "races": "24",
-    "countries": "21",
+    "races": 24,
+    "countries": 21,
     "first": {
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
@@ -2623,6 +2617,6 @@
         "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
       }
     ],
-    "winners": "4*"
+    "winners": 4
   }
 ]

@@ -1,4 +1,9 @@
+from __future__ import annotations
+
+from typing import Dict
+
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.columns import UrlColumn, LinksListColumn, IntColumn
 
 
 class F1SeasonsScraper(F1TableScraper):
@@ -19,21 +24,32 @@ class F1SeasonsScraper(F1TableScraper):
     ]
 
     # mapowanie: nagłówek z tabeli -> klucz w dict wynikowym
-    column_map = {
+    column_map: Dict[str, str] = {
         "Season": "season",
         "Races": "races",
+        "Countries": "countries",
+        "First": "first",
+        "Last": "last",
         "Drivers' Champion (team)": "drivers_champion_team",
         "Constructors' Champion": "constructors_champion",
+        "Winners": "winners",
     }
 
-    # typy kolumn po STRONIE KLUCZA (po column_map)
-    # - "season" jako pojedynczy link {text, url}
-    # - pozostałe kolumny z mistrzami jako lista linków [{text, url}, ...]
-    column_types = {
-        "season": "link",
-        "drivers_champion_team": "list_of_links",
-        "constructors_champion": "list_of_links",
-        # "races" zostawiamy jako "auto" -> powinno zparsować się do int
+    # logika kolumn po stronie KLUCZA (po column_map)
+    columns = {
+        # Season → pojedynczy link {text, url} z automatycznym czyszczeniem * † itd.
+        "season": UrlColumn(),
+
+        # Races → int
+        "races": IntColumn(),
+        "countries": IntColumn(),
+        "first": UrlColumn(),
+        "last": UrlColumn(),
+
+        # Mistrzowie → zawsze lista linków [{text, url}, ...]
+        "drivers_champion_team": LinksListColumn(),
+        "constructors_champion": LinksListColumn(),
+        "winners": IntColumn(),
     }
 
 
