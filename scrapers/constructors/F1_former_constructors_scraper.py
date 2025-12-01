@@ -1,10 +1,20 @@
+from __future__ import annotations
+
+from typing import Dict
+
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.columns import (
+    UrlColumn,
+    SeasonsColumn,
+    IntColumn, LinksListColumn,
+)
 
 
 class F1FormerConstructorsScraper(F1TableScraper):
     """
     Byli konstruktorzy – sekcja 'Former constructors'
-    z tej samej strony.
+    z:
+    https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
@@ -16,7 +26,8 @@ class F1FormerConstructorsScraper(F1TableScraper):
         "Seasons",
     ]
 
-    column_map = {
+    # nagłówek z tabeli -> klucz w dict
+    column_map: Dict[str, str] = {
         "Constructor": "constructor",
         "Licensed in": "licensed_in",
         "Seasons": "seasons",
@@ -33,7 +44,29 @@ class F1FormerConstructorsScraper(F1TableScraper):
         "WDC": "wdc_titles",
     }
 
-    url_columns = ("Constructor",)
+    # logika kolumn po stronie KLUCZA (po column_map)
+    columns = {
+        # nazwa konstruktora – pojedynczy link {text, url}
+        "constructor": UrlColumn(),
+        "licensed_in": LinksListColumn(),
+
+        # sezony – parser sezonów (lista lat/zakresów)
+        "seasons": SeasonsColumn(),
+
+        # statystyki – liczby całkowite
+        "races_entered": IntColumn(),
+        "races_started": IntColumn(),
+        "drivers": IntColumn(),
+        "total_entries": IntColumn(),
+        "wins": IntColumn(),
+        "points": IntColumn(),
+        "poles": IntColumn(),
+        "fastest_laps": IntColumn(),
+        "podiums": IntColumn(),
+        "wcc_titles": IntColumn(),
+        "wdc_titles": IntColumn(),
+    }
+    # "licensed_in" i "drivers" obsłuży domyślny AutoColumn z F1TableScraper
 
 
 if __name__ == "__main__":
@@ -42,5 +75,5 @@ if __name__ == "__main__":
     constructors = scraper.fetch()
     print(f"Pobrano rekordów: {len(constructors)}")
 
-    scraper.to_json("f1_former_constructors.json")
-    scraper.to_csv("f1_former_constructors.csv")
+    scraper.to_json("../../data/wiki/constructors/f1_former_constructors.json")
+    scraper.to_csv("../../data/wiki/constructors/f1_former_constructors.csv")
