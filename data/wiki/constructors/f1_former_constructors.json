@@ -6136,24 +6136,5 @@
     "podiums": 0,
     "wcc_titles": 0,
     "wdc_titles": 0
-  },
-  {
-    "constructor": {
-      "text": "Constructor",
-      "url": null
-    },
-    "licensed_in": [],
-    "seasons": [],
-    "races_entered": null,
-    "races_started": null,
-    "drivers": null,
-    "total_entries": null,
-    "wins": null,
-    "points": null,
-    "poles": null,
-    "fastest_laps": null,
-    "podiums": null,
-    "wcc_titles": null,
-    "wdc_titles": null
   }
 ]

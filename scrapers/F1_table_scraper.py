@@ -59,9 +59,20 @@ class F1TableScraper(F1Scraper, ABC):
         records: List[Dict[str, Any]] = []
         for tr in table.find_all("tr")[1:]:
             cells = tr.find_all(["td", "th"])
+
             # omijamy np. puste wiersze / separatory
             if not cells or all(not c.get_text(strip=True) for c in cells):
                 continue
+
+            # --- nowy fragment: pomijamy footer/powtórzony nagłówek ---
+            cleaned_cells = [
+                clean_wiki_text(c.get_text(" ", strip=True))
+                for c in cells
+            ]
+            if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+                # wiersz, który ma dokładnie to samo co nagłówki -> traktujemy jako footer
+                continue
+            # --- koniec nowego fragmentu ---
 
             record = self.parse_row(tr, cells, headers)
             if record:
