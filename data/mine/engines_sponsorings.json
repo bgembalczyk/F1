@@ -1,0 +1,285 @@
+{
+  "rebadging": [
+    {
+      "manufacturer": "Ferrari",
+      "rebadges": [
+        {
+          "badge": "Acer",
+          "years": [
+            {
+              "from": 2001,
+              "to": 2001
+            }
+          ]
+        },
+        {
+          "badge": "Petronas",
+          "years": [
+            {
+              "from": 1997,
+              "to": 2005
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Mercedes",
+      "rebadges": [
+        {
+          "badge": "BWT Mercedes",
+          "years": [
+            {
+              "from": 2019,
+              "to": 2020
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Ford",
+      "rebadges": [
+        {
+          "badge": "European",
+          "years": [
+            {
+              "from": 2001,
+              "to": 2001
+            }
+          ]
+        },
+        {
+          "badge": "Fondmetal",
+          "years": [
+            {
+              "from": 2000,
+              "to": 2000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Honda",
+      "rebadges": [
+        {
+          "badge": "Honda RBPT",
+          "years": [
+            {
+              "from": 2023,
+              "to": 2025
+            }
+          ]
+        },
+        {
+          "badge": "Red Bull Powertrains",
+          "years": [
+            {
+              "from": 2022,
+              "to": 2022
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Alfa Romeo",
+      "rebadges": [
+        {
+          "badge": "Osella",
+          "years": [
+            {
+              "from": 1988,
+              "to": 1988
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Ilmor",
+      "rebadges": [
+        {
+          "badge": "Sauber",
+          "years": [
+            {
+              "from": 1993,
+              "to": 1993
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Renault",
+      "rebadges": [
+        {
+          "badge": "TAG Heuer",
+          "years": [
+            {
+              "from": 2016,
+              "to": 2018
+            }
+          ]
+        },
+        {
+          "badge": "Toro Rosso",
+          "years": [
+            {
+              "from": 2017,
+              "to": 2017
+            }
+          ]
+        },
+        {
+          "badge": "Playlife",
+          "years": [
+            {
+              "from": 1998,
+              "to": 1998
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Mecachrome",
+      "rebadges": [
+        {
+          "badge": "Supertec",
+          "years": [
+            {
+              "from": 1999,
+              "to": 2000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Supertec",
+      "rebadges": [
+        {
+          "badge": "Playlife",
+          "years": [
+            {
+              "from": 1999,
+              "to": 2000
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "manufacturer": "Cosworth",
+      "funders": [
+        {
+          "funder": "Ford",
+          "years": [
+            {
+              "from": 1963,
+              "to": 1965
+            },
+            {
+              "from": 1967,
+              "to": 1999
+            },
+            {
+              "from": 2003,
+              "to": 2004
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Ilmor",
+      "funders": [
+        {
+          "funder": "Mercedes",
+          "years": [
+            {
+              "from": 1994,
+              "to": 2005
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Motori Moderni",
+      "funders": [
+        {
+          "funder": "Subaru",
+          "years": [
+            {
+              "from": 1990,
+              "to": 1990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "manufacturer": "Porsche",
+      "funders": [
+        {
+          "funder": "TAG",
+          "years": [
+            {
+              "from": 1983,
+              "to": 1987
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "based_on": [
+    {
+      "base": "Peugeot",
+      "upgrades": [
+        {
+          "upgrader": "Asiatech",
+          "years": [
+            {
+              "from": 2001,
+              "to": 2002
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "base": "Renault",
+      "upgrades": [
+        {
+          "upgrader": "Mecachrome",
+          "years": [
+            {
+              "from": 1998,
+              "to": 1998
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "base": "BMW",
+      "upgrades": [
+        {
+          "upgrader": "Megatron",
+          "years": [
+            {
+              "from": 1987,
+              "to": 1988
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
