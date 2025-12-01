@@ -19,8 +19,14 @@ class F1DriversScraper(F1TableScraper):
     - przetwarza kolumnę 'Drivers' Championships' do dicta:
         * drivers_championships = {
               "count": <int>,
-              "seasons": [<int>, ...]  # lata zdobycia tytułu
+              "seasons": [
+                  {"year": 2005, "url": "..."},
+                  {"year": 2006, "url": "..."},
+                  ...
+              ]
           }
+      gdzie "seasons" są parsowane tą samą logiką co kolumna seasons_competed
+      (typ kolumny "seasons" w F1TableScraper).
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
@@ -50,110 +56,76 @@ class F1DriversScraper(F1TableScraper):
     column_types = {
         # driver – jako pojedynczy link {text, url}
         "driver": "link",
-        # kraj jako zwykły tekst (bez kombinowania z flagami/linkami)
+        # kraj jako zwykły tekst
         "nationality": "text",
-        # sezony jako tekst (np. "1968–1973, 1975")
+        # sezony startów – używamy wbudowanego parsera "seasons"
         "seasons_competed": "seasons",
-        # specjalne traktowanie Championships – najpierw bierzemy czysty tekst,
-        # a potem w fetch() robimy z tego dicta {count, seasons}
+        # Championships – najpierw "goły" tekst, a potem przerabiamy go w fetch()
         "drivers_championships": "text",
-        # punkty często mają nawiasy / komentarze, zostawiamy jako tekst
+        # punkty jako tekst (bo bywają nawiasy / komentarze)
         "points": "text",
-        # reszta zostaje na "auto"
+        # reszta = "auto"
     }
 
     # ------------------------------------------------------------------ #
     #  Pomocniczy parser kolumny "Drivers' Championships"
     # ------------------------------------------------------------------ #
-    @staticmethod
-    def _parse_drivers_championships(text: str) -> Dict[str, Any]:
+    def _parse_drivers_championships(self, raw: Any) -> Dict[str, Any]:
         """
-        Parsuje tekst z komórki "Drivers' Championships" do postaći:
+        Parsuje tekst z komórki "Drivers' Championships" do postaci:
 
             {
-                "count": <int>,        # liczba tytułów
-                "seasons": [<int>, ...]  # lata zdobycia tytułu (np. [2005, 2006])
+                "count": <int>,              # liczba tytułów
+                "seasons": [ {year, url}, ... ]  # sezony zdobycia tytułu
             }
 
-        Przykładowe wejście:
+        Przykładowe wejście (raw, po bazowym parsowaniu typu "text"):
         - "0"
-        - "2\n2005–2006"
-        - "7\n1994–1995, 2000–2004"
+        - "2\\n2005–2006"
+        - "7\\n1994–1995, 2000–2004"
         """
-        text = (text or "").strip()
+        text = (str(raw) if raw is not None else "").strip()
         if not text:
             return {"count": 0, "seasons": []}
 
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
 
         count = 0
-        rest_parts: List[str] = []
+        seasons_parts: List[str] = []
 
         if lines:
-            # pierwsza linia zwykle zawiera samą liczbę tytułów
+            # pierwsza linia zwykle zaczyna się od liczby tytułów
             m = re.match(r"(\d+)", lines[0])
             if m:
                 count = int(m.group(1))
                 tail = lines[0][m.end():].strip()
                 if tail:
-                    rest_parts.append(tail)
-                # pozostałe linie traktujemy jako części z latami
-                rest_parts.extend(lines[1:])
+                    seasons_parts.append(tail)
+                # reszta linii traktujemy jako kolejne fragmenty z latami
+                seasons_parts.extend(lines[1:])
             else:
-                # fallback – spróbuj wyciągnąć jakąś liczbę z całego tekstu
+                # fallback – spróbuj wyciągnąć liczbę z całego tekstu
                 m2 = re.search(r"\d+", text)
                 if m2:
                     count = int(m2.group(1))
-                # lata z pozostałych linii (jeśli są)
-                rest_parts = lines[1:] if len(lines) > 1 else []
+                seasons_parts = lines[1:] if len(lines) > 1 else []
         else:
             # gdyby coś poszło nie tak z lines
             m2 = re.search(r"\d+", text)
             if m2:
                 count = int(m2.group(1))
 
-        # jeśli count == 0, to lista sezonów może nas nie interesować
-        if count == 0 or not rest_parts:
+        # jeśli count == 0 albo nie ma fragmentu z latami – nie ma sezonów
+        if count == 0 or not seasons_parts:
             return {"count": count, "seasons": []}
 
-        years: List[int] = []
+        # sklejamy resztę w coś w stylu:
+        # "2005–2006, 2010, 2012–2013"
+        seasons_text = ", ".join(seasons_parts)
 
-        for part in rest_parts:
-            # normalizujemy różne "–" na zwykły "-"
-            part = part.replace("–", "-").replace("—", "-")
-            # dzielimy po przecinkach / średnikach
-            for chunk in re.split(r"[,\;]", part):
-                chunk = chunk.strip()
-                if not chunk:
-                    continue
-
-                # zakresy typu "2005-2006"
-                if "-" in chunk:
-                    rng = re.match(r"(\d{4})\s*-\s*(\d{4})", chunk)
-                    if rng:
-                        start = int(rng.group(1))
-                        end = int(rng.group(2))
-                        if start <= end:
-                            years.extend(range(start, end + 1))
-                        else:
-                            # na wszelki wypadek, gdyby kolejność była odwrócona
-                            years.extend([start, end])
-                    else:
-                        # fallback: wyciągnij pojedyncze lata z kawałka
-                        years.extend(int(y) for y in re.findall(r"\d{4}", chunk))
-                else:
-                    # pojedynczy rok
-                    y = re.search(r"\d{4}", chunk)
-                    if y:
-                        years.append(int(y.group(0)))
-
-        # usuwamy duplikaty z zachowaniem kolejności
-        seen = set()
-        seasons: List[int] = []
-        for y in years:
-            if y not in seen:
-                seen.add(y)
-                seasons.append(y)
+        # i używamy dokładnie tej samej logiki, co dla kolumny "seasons"
+        # (F1TableScraper._parse_seasons) → lista dictów {year, url}
+        seasons = self._parse_seasons(seasons_text)
 
         return {"count": count, "seasons": seasons}
 
@@ -165,7 +137,7 @@ class F1DriversScraper(F1TableScraper):
         Nadpisujemy fetch(), żeby po bazowym parsowaniu:
         - usunąć symbole z nazw,
         - dodać is_active / is_world_champion,
-        - przemapować drivers_championships → {count, seasons}.
+        - przemapować drivers_championships → {count, seasons[{year,url}, ...]}.
         """
         rows = super().fetch()
 
@@ -198,16 +170,20 @@ class F1DriversScraper(F1TableScraper):
             #      ~ / *  -> startował w 2025
             #    + dodatkowo: jeśli w "Seasons competed" jest "2025"
             # ------------------------------
-            seasons_text = str(row.get("seasons_competed") or "")
-            has_2025 = "2025" in seasons_text
+            # UWAGA: po typie "seasons" seasons_competed jest już listą dictów
+            seasons_val = row.get("seasons_competed") or []
+            has_2025 = any(
+                isinstance(item, dict) and item.get("year") == 2025
+                for item in seasons_val
+            )
 
             is_active = has_2025 or symbol in ("~", "*")
 
             # ------------------------------
-            # 3) Parsowanie Drivers' Championships -> dict
+            # 3) Parsowanie Drivers' Championships -> dict {count, seasons}
             # ------------------------------
             champs_raw = row.get("drivers_championships")
-            champs_info = self._parse_drivers_championships(str(champs_raw or ""))
+            champs_info = self._parse_drivers_championships(champs_raw)
 
             # nadpisujemy kolumnę zparsowanym dict'em
             row["drivers_championships"] = champs_info
