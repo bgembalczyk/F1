@@ -4,6 +4,7 @@
       "text": "Adelaide Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Adelaide_Street_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -11,7 +12,9 @@
       "url": "https://en.wikipedia.org/wiki/Adelaide"
     },
     "country": "Australia",
-    "turns": "16",
+    "last_length_used_km": 3.78,
+    "last_length_used_mi": 2.349,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Australian Grand Prix",
@@ -64,16 +67,14 @@
         "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "11",
-    "circuit_status": "former",
-    "last_length_used_km": "3.780",
-    "last_length_used_mi": "2.349"
+    "grands_prix_held": 11
   },
   {
     "circuit": {
       "text": "Ain-Diab Circuit",
       "url": "https://en.wikipedia.org/wiki/Ain-Diab_Circuit"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -81,7 +82,9 @@
       "url": "https://en.wikipedia.org/wiki/Casablanca"
     },
     "country": "Morocco",
-    "turns": "18",
+    "last_length_used_km": 7.618,
+    "last_length_used_mi": 4.734,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "Moroccan Grand Prix",
@@ -94,16 +97,14 @@
         "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "7.618",
-    "last_length_used_mi": "4.734"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Aintree Motor Racing Circuit",
       "url": "https://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -111,7 +112,9 @@
       "url": "https://en.wikipedia.org/wiki/Aintree"
     },
     "country": "United Kingdom",
-    "turns": "12",
+    "last_length_used_km": 4.828,
+    "last_length_used_mi": 3.0,
+    "turns": 12,
     "grands_prix": [
       {
         "text": "British Grand Prix",
@@ -140,16 +143,14 @@
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "5",
-    "circuit_status": "former",
-    "last_length_used_km": "4.828",
-    "last_length_used_mi": "3.000"
+    "grands_prix_held": 5
   },
   {
     "circuit": {
       "text": "Albert Park Circuit",
       "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -157,7 +158,9 @@
       "url": "https://en.wikipedia.org/wiki/Melbourne"
     },
     "country": "Australia",
-    "turns": "16",
+    "last_length_used_km": 5.278,
+    "last_length_used_mi": 3.28,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Australian Grand Prix",
@@ -278,16 +281,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "28",
-    "circuit_status": "current",
-    "last_length_used_km": "5.278",
-    "last_length_used_mi": "3.280"
+    "grands_prix_held": 28
   },
   {
     "circuit": {
       "text": "Algarve International Circuit",
       "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -295,7 +296,9 @@
       "url": "https://en.wikipedia.org/wiki/Portim%C3%A3o"
     },
     "country": "Portugal",
-    "turns": "15",
+    "last_length_used_km": 4.653,
+    "last_length_used_mi": 2.891,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Portuguese Grand Prix",
@@ -312,16 +315,14 @@
         "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "4.653",
-    "last_length_used_mi": "2.891"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Autódromo do Estoril",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -329,7 +330,9 @@
       "url": "https://en.wikipedia.org/wiki/Estoril"
     },
     "country": "Portugal",
-    "turns": "13",
+    "last_length_used_km": 4.36,
+    "last_length_used_mi": 2.709,
+    "turns": 13,
     "grands_prix": [
       {
         "text": "Portuguese Grand Prix",
@@ -390,16 +393,14 @@
         "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "13",
-    "circuit_status": "former",
-    "last_length_used_km": "4.360",
-    "last_length_used_mi": "2.709"
+    "grands_prix_held": 13
   },
   {
     "circuit": {
       "text": "Autódromo Hermanos Rodríguez",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -407,7 +408,9 @@
       "url": "https://en.wikipedia.org/wiki/Mexico_City"
     },
     "country": "Mexico",
-    "turns": "17",
+    "last_length_used_km": 4.304,
+    "last_length_used_mi": 2.674,
+    "turns": 17,
     "grands_prix": [
       {
         "text": "Mexican Grand Prix",
@@ -520,16 +523,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "25",
-    "circuit_status": "current",
-    "last_length_used_km": "4.304",
-    "last_length_used_mi": "2.674"
+    "grands_prix_held": 25
   },
   {
     "circuit": {
       "text": "Autódromo Internacional do Rio de Janeiro",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -537,7 +538,9 @@
       "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
     },
     "country": "Brazil",
-    "turns": "11",
+    "last_length_used_km": 5.031,
+    "last_length_used_mi": 3.126,
+    "turns": 11,
     "grands_prix": [
       {
         "text": "Brazilian Grand Prix",
@@ -586,16 +589,14 @@
         "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "10",
-    "circuit_status": "former",
-    "last_length_used_km": "5.031",
-    "last_length_used_mi": "3.126"
+    "grands_prix_held": 10
   },
   {
     "circuit": {
       "text": "Autodromo Internazionale del Mugello",
       "url": "https://en.wikipedia.org/wiki/Autodromo_Internazionale_del_Mugello"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -603,7 +604,9 @@
       "url": "https://en.wikipedia.org/wiki/Scarperia_e_San_Piero"
     },
     "country": "Italy",
-    "turns": "15",
+    "last_length_used_km": 5.245,
+    "last_length_used_mi": 3.259,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Tuscan Grand Prix",
@@ -616,16 +619,14 @@
         "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "5.245",
-    "last_length_used_mi": "3.259"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Autodromo Internazionale Enzo e Dino Ferrari",
       "url": "https://en.wikipedia.org/wiki/Imola_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -633,7 +634,9 @@
       "url": "https://en.wikipedia.org/wiki/Imola"
     },
     "country": "Italy",
-    "turns": "19",
+    "last_length_used_km": 4.909,
+    "last_length_used_mi": 3.05,
+    "turns": 19,
     "grands_prix": [
       {
         "text": "Italian Grand Prix",
@@ -778,16 +781,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "32",
-    "circuit_status": "current",
-    "last_length_used_km": "4.909",
-    "last_length_used_mi": "3.050"
+    "grands_prix_held": 32
   },
   {
     "circuit": {
       "text": "Autodromo José Carlos Pace",
       "url": "https://en.wikipedia.org/wiki/Interlagos_circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -795,7 +796,9 @@
       "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
     },
     "country": "Brazil",
-    "turns": "15",
+    "last_length_used_km": 4.309,
+    "last_length_used_mi": 2.677,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Brazilian Grand Prix",
@@ -976,16 +979,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "42",
-    "circuit_status": "current",
-    "last_length_used_km": "4.309",
-    "last_length_used_mi": "2.677"
+    "grands_prix_held": 42
   },
   {
     "circuit": {
       "text": "Autodromo Nazionale di Monza",
       "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -993,7 +994,9 @@
       "url": "https://en.wikipedia.org/wiki/Monza"
     },
     "country": "Italy",
-    "turns": "11",
+    "last_length_used_km": 5.793,
+    "last_length_used_mi": 3.6,
+    "turns": 11,
     "grands_prix": [
       {
         "text": "Italian Grand Prix",
@@ -1302,16 +1305,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "75",
-    "circuit_status": "current",
-    "last_length_used_km": "5.793",
-    "last_length_used_mi": "3.600"
+    "grands_prix_held": 75
   },
   {
     "circuit": {
       "text": "Autódromo Oscar y Juan Gálvez",
       "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_y_Juan_G%C3%A1lvez"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1319,7 +1320,9 @@
       "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
     },
     "country": "Argentina",
-    "turns": "18",
+    "last_length_used_km": 4.259,
+    "last_length_used_mi": 2.646,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "Argentine Grand Prix",
@@ -1408,16 +1411,14 @@
         "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "20",
-    "circuit_status": "former",
-    "last_length_used_km": "4.259",
-    "last_length_used_mi": "2.646"
+    "grands_prix_held": 20
   },
   {
     "circuit": {
       "text": "AVUS",
       "url": "https://en.wikipedia.org/wiki/AVUS"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1425,7 +1426,9 @@
       "url": "https://en.wikipedia.org/wiki/Berlin"
     },
     "country": "Germany",
-    "turns": "4",
+    "last_length_used_km": 8.3,
+    "last_length_used_mi": 5.157,
+    "turns": 4,
     "grands_prix": [
       {
         "text": "German Grand Prix",
@@ -1438,16 +1441,14 @@
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "8.300",
-    "last_length_used_mi": "5.157"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Bahrain International Circuit",
       "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1455,7 +1456,9 @@
       "url": "https://en.wikipedia.org/wiki/Sakhir"
     },
     "country": "Bahrain",
-    "turns": "15",
+    "last_length_used_km": 5.412,
+    "last_length_used_mi": 3.363,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Bahrain Grand Prix",
@@ -1552,16 +1555,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "22",
-    "circuit_status": "current",
-    "last_length_used_km": "5.412",
-    "last_length_used_mi": "3.363"
+    "grands_prix_held": 22
   },
   {
     "circuit": {
       "text": "Baku City Circuit",
       "url": "https://en.wikipedia.org/wiki/Baku_City_Circuit"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1569,7 +1570,9 @@
       "url": "https://en.wikipedia.org/wiki/Baku"
     },
     "country": "Azerbaijan",
-    "turns": "20",
+    "last_length_used_km": 6.003,
+    "last_length_used_mi": 3.73,
+    "turns": 20,
     "grands_prix": [
       {
         "text": "European Grand Prix",
@@ -1618,16 +1621,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "9",
-    "circuit_status": "current",
-    "last_length_used_km": "6.003",
-    "last_length_used_mi": "3.730"
+    "grands_prix_held": 9
   },
   {
     "circuit": {
       "text": "Brands Hatch Circuit",
       "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1635,7 +1636,9 @@
       "url": "https://en.wikipedia.org/wiki/West_Kingsdown"
     },
     "country": "United Kingdom",
-    "turns": "11",
+    "last_length_used_km": 4.206,
+    "last_length_used_mi": 2.613,
+    "turns": 11,
     "grands_prix": [
       {
         "text": "British Grand Prix",
@@ -1704,16 +1707,14 @@
         "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "14",
-    "circuit_status": "former",
-    "last_length_used_km": "4.206",
-    "last_length_used_mi": "2.613"
+    "grands_prix_held": 14
   },
   {
     "circuit": {
       "text": "Buddh International Circuit",
       "url": "https://en.wikipedia.org/wiki/Buddh_International_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1721,7 +1722,9 @@
       "url": "https://en.wikipedia.org/wiki/Greater_Noida"
     },
     "country": "India",
-    "turns": "16",
+    "last_length_used_km": 5.141,
+    "last_length_used_mi": 3.194,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Indian Grand Prix",
@@ -1742,16 +1745,14 @@
         "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "3",
-    "circuit_status": "former",
-    "last_length_used_km": "5.141",
-    "last_length_used_mi": "3.194"
+    "grands_prix_held": 3
   },
   {
     "circuit": {
       "text": "Bugatti Au Mans",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1759,7 +1760,9 @@
       "url": "https://en.wikipedia.org/wiki/Le_Mans"
     },
     "country": "France",
-    "turns": "8",
+    "last_length_used_km": 4.43,
+    "last_length_used_mi": 2.753,
+    "turns": 8,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -1772,16 +1775,14 @@
         "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "4.430",
-    "last_length_used_mi": "2.753"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Caesars Palace Grand Prix Circuit",
       "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -1789,7 +1790,9 @@
       "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
     },
     "country": "United States",
-    "turns": "14",
+    "last_length_used_km": 3.65,
+    "last_length_used_mi": 2.268,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Caesars Palace Grand Prix",
@@ -1806,16 +1809,14 @@
         "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "3.650",
-    "last_length_used_mi": "2.268"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Charade Circuit",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Charade"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -1823,7 +1824,9 @@
       "url": "https://en.wikipedia.org/wiki/Saint-Gen%C3%A8s-Champanelle"
     },
     "country": "France",
-    "turns": "38",
+    "last_length_used_km": 8.055,
+    "last_length_used_mi": 5.005,
+    "turns": 38,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -1848,16 +1851,14 @@
         "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "4",
-    "circuit_status": "former",
-    "last_length_used_km": "8.055",
-    "last_length_used_mi": "5.005"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Circuit Bremgarten",
       "url": "https://en.wikipedia.org/wiki/Circuit_Bremgarten"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -1865,7 +1866,9 @@
       "url": "https://en.wikipedia.org/wiki/Bern"
     },
     "country": "Switzerland",
-    "turns": "14",
+    "last_length_used_km": 7.208,
+    "last_length_used_mi": 4.479,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Swiss Grand Prix",
@@ -1894,16 +1897,14 @@
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "5",
-    "circuit_status": "former",
-    "last_length_used_km": "7.208",
-    "last_length_used_mi": "4.479"
+    "grands_prix_held": 5
   },
   {
     "circuit": {
       "text": "Circuit de Barcelona-Catalunya",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -1911,7 +1912,9 @@
       "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
     },
     "country": "Spain",
-    "turns": "14",
+    "last_length_used_km": 4.657,
+    "last_length_used_mi": 2.894,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -2060,16 +2063,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "35",
-    "circuit_status": "current",
-    "last_length_used_km": "4.657",
-    "last_length_used_mi": "2.894"
+    "grands_prix_held": 35
   },
   {
     "circuit": {
       "text": "Circuit de Monaco",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -2077,7 +2078,9 @@
       "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
     },
     "country": "Monaco",
-    "turns": "19",
+    "last_length_used_km": 3.337,
+    "last_length_used_mi": 2.074,
+    "turns": 19,
     "grands_prix": [
       {
         "text": "Monaco Grand Prix",
@@ -2370,16 +2373,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "71",
-    "circuit_status": "current",
-    "last_length_used_km": "3.337",
-    "last_length_used_mi": "2.074"
+    "grands_prix_held": 71
   },
   {
     "circuit": {
       "text": "Circuit de Nevers Magny-Cours",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2387,7 +2388,9 @@
       "url": "https://en.wikipedia.org/wiki/Magny-Cours"
     },
     "country": "France",
-    "turns": "16",
+    "last_length_used_km": 4.411,
+    "last_length_used_mi": 2.741,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -2468,16 +2471,14 @@
         "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "18",
-    "circuit_status": "former",
-    "last_length_used_km": "4.411",
-    "last_length_used_mi": "2.741"
+    "grands_prix_held": 18
   },
   {
     "circuit": {
       "text": "Circuit de Pedralbes",
       "url": "https://en.wikipedia.org/wiki/Pedralbes_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -2485,7 +2486,9 @@
       "url": "https://en.wikipedia.org/wiki/Barcelona"
     },
     "country": "Spain",
-    "turns": "6",
+    "last_length_used_km": 6.316,
+    "last_length_used_mi": 3.925,
+    "turns": 6,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -2502,16 +2505,14 @@
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "6.316",
-    "last_length_used_mi": "3.925"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Circuit de Reims-Gueux",
       "url": "https://en.wikipedia.org/wiki/Reims-Gueux"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -2519,7 +2520,9 @@
       "url": "https://en.wikipedia.org/wiki/Gueux,_Marne"
     },
     "country": "France",
-    "turns": "6",
+    "last_length_used_km": 8.302,
+    "last_length_used_mi": 5.159,
+    "turns": 6,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -2572,16 +2575,14 @@
         "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "11",
-    "circuit_status": "former",
-    "last_length_used_km": "8.302",
-    "last_length_used_mi": "5.159"
+    "grands_prix_held": 11
   },
   {
     "circuit": {
       "text": "Circuit de Spa-Francorchamps",
       "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2589,7 +2590,9 @@
       "url": "https://en.wikipedia.org/wiki/Stavelot"
     },
     "country": "Belgium",
-    "turns": "20",
+    "last_length_used_km": 7.004,
+    "last_length_used_mi": 4.352,
+    "turns": 20,
     "grands_prix": [
       {
         "text": "Belgian Grand Prix",
@@ -2830,16 +2833,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "58",
-    "circuit_status": "current",
-    "last_length_used_km": "7.004",
-    "last_length_used_mi": "4.352"
+    "grands_prix_held": 58
   },
   {
     "circuit": {
       "text": "Circuit Dijon-Prenois",
       "url": "https://en.wikipedia.org/wiki/Dijon-Prenois"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -2847,7 +2848,9 @@
       "url": "https://en.wikipedia.org/wiki/Prenois"
     },
     "country": "France",
-    "turns": "12",
+    "last_length_used_km": 3.886,
+    "last_length_used_mi": 2.415,
+    "turns": 12,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -2884,16 +2887,14 @@
         "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "6",
-    "circuit_status": "former",
-    "last_length_used_km": "3.886",
-    "last_length_used_mi": "2.415"
+    "grands_prix_held": 6
   },
   {
     "circuit": {
       "text": "Circuit Gilles-Villeneuve",
       "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -2901,7 +2902,9 @@
       "url": "https://en.wikipedia.org/wiki/Montreal"
     },
     "country": "Canada",
-    "turns": "14",
+    "last_length_used_km": 4.361,
+    "last_length_used_mi": 2.71,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Canadian Grand Prix",
@@ -3086,16 +3089,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "44",
-    "circuit_status": "current",
-    "last_length_used_km": "4.361",
-    "last_length_used_mi": "2.710"
+    "grands_prix_held": 44
   },
   {
     "circuit": {
       "text": "Circuit Mont-Tremblant",
       "url": "https://en.wikipedia.org/wiki/Circuit_Mont-Tremblant"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3103,7 +3104,9 @@
       "url": "https://en.wikipedia.org/wiki/Mont-Tremblant,_Quebec"
     },
     "country": "Canada",
-    "turns": "15",
+    "last_length_used_km": 4.265,
+    "last_length_used_mi": 2.65,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Canadian Grand Prix",
@@ -3120,16 +3123,14 @@
         "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "4.265",
-    "last_length_used_mi": "2.650"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Circuit of the Americas",
       "url": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3137,7 +3138,9 @@
       "url": "https://en.wikipedia.org/wiki/Austin,_Texas"
     },
     "country": "United States",
-    "turns": "20",
+    "last_length_used_km": 5.513,
+    "last_length_used_mi": 3.426,
+    "turns": 20,
     "grands_prix": [
       {
         "text": "United States Grand Prix",
@@ -3198,16 +3201,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "13",
-    "circuit_status": "current",
-    "last_length_used_km": "5.513",
-    "last_length_used_mi": "3.426"
+    "grands_prix_held": 13
   },
   {
     "circuit": {
       "text": "Circuit Paul Ricard",
       "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3215,7 +3216,9 @@
       "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
     },
     "country": "France",
-    "turns": "15",
+    "last_length_used_km": 5.842,
+    "last_length_used_mi": 3.63,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -3296,16 +3299,14 @@
         "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "18",
-    "circuit_status": "former",
-    "last_length_used_km": "5.842",
-    "last_length_used_mi": "3.630"
+    "grands_prix_held": 18
   },
   {
     "circuit": {
       "text": "Circuit Zandvoort",
       "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3313,7 +3314,9 @@
       "url": "https://en.wikipedia.org/wiki/Zandvoort"
     },
     "country": "Netherlands",
-    "turns": "14",
+    "last_length_used_km": 4.259,
+    "last_length_used_mi": 2.646,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Dutch Grand Prix",
@@ -3462,16 +3465,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "35",
-    "circuit_status": "current",
-    "last_length_used_km": "4.259",
-    "last_length_used_mi": "2.646"
+    "grands_prix_held": 35
   },
   {
     "circuit": {
       "text": "Circuit Zolder",
       "url": "https://en.wikipedia.org/wiki/Circuit_Zolder"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3479,7 +3480,9 @@
       "url": "https://en.wikipedia.org/wiki/Heusden-Zolder"
     },
     "country": "Belgium",
-    "turns": "10",
+    "last_length_used_km": 4.262,
+    "last_length_used_mi": 2.648,
+    "turns": 10,
     "grands_prix": [
       {
         "text": "Belgian Grand Prix",
@@ -3528,16 +3531,14 @@
         "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "10",
-    "circuit_status": "former",
-    "last_length_used_km": "4.262",
-    "last_length_used_mi": "2.648"
+    "grands_prix_held": 10
   },
   {
     "circuit": {
       "text": "Circuito da Boavista",
       "url": "https://en.wikipedia.org/wiki/Circuito_da_Boavista"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3545,7 +3546,9 @@
       "url": "https://en.wikipedia.org/wiki/Porto"
     },
     "country": "Portugal",
-    "turns": "15",
+    "last_length_used_km": 7.775,
+    "last_length_used_mi": 4.831,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Portuguese Grand Prix",
@@ -3562,16 +3565,14 @@
         "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "7.775",
-    "last_length_used_mi": "4.831"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Circuito de Monsanto",
       "url": "https://en.wikipedia.org/wiki/Circuito_de_Monsanto"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -3579,7 +3580,9 @@
       "url": "https://en.wikipedia.org/wiki/Lisbon"
     },
     "country": "Portugal",
-    "turns": "9",
+    "last_length_used_km": 5.44,
+    "last_length_used_mi": 3.38,
+    "turns": 9,
     "grands_prix": [
       {
         "text": "Portuguese Grand Prix",
@@ -3592,16 +3595,14 @@
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "5.440",
-    "last_length_used_mi": "3.380"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Circuito Permanente de Jerez",
       "url": "https://en.wikipedia.org/wiki/Circuito_de_Jerez"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3609,7 +3610,9 @@
       "url": "https://en.wikipedia.org/wiki/Jerez_de_la_Frontera"
     },
     "country": "Spain",
-    "turns": "13",
+    "last_length_used_km": 4.428,
+    "last_length_used_mi": 2.751,
+    "turns": 13,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -3650,16 +3653,14 @@
         "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "7",
-    "circuit_status": "former",
-    "last_length_used_km": "4.428",
-    "last_length_used_mi": "2.751"
+    "grands_prix_held": 7
   },
   {
     "circuit": {
       "text": "Circuito Permanente del Jarama",
       "url": "https://en.wikipedia.org/wiki/Circuito_del_Jarama"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3667,7 +3668,9 @@
       "url": "https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n_de_los_Reyes"
     },
     "country": "Spain",
-    "turns": "12",
+    "last_length_used_km": 3.314,
+    "last_length_used_mi": 2.059,
+    "turns": 12,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -3712,16 +3715,14 @@
         "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "9",
-    "circuit_status": "former",
-    "last_length_used_km": "3.314",
-    "last_length_used_mi": "2.059"
+    "grands_prix_held": 9
   },
   {
     "circuit": {
       "text": "Dallas Fair Park",
       "url": "https://en.wikipedia.org/wiki/Fair_Park#Other_notable_events"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3729,7 +3730,9 @@
       "url": "https://en.wikipedia.org/wiki/Dallas_(Texas)"
     },
     "country": "United States",
-    "turns": "14",
+    "last_length_used_km": 3.901,
+    "last_length_used_mi": 2.424,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Dallas Grand Prix",
@@ -3742,16 +3745,14 @@
         "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "3.901",
-    "last_length_used_mi": "2.424"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Detroit Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Detroit_Street_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -3759,7 +3760,9 @@
       "url": "https://en.wikipedia.org/wiki/Detroit"
     },
     "country": "United States",
-    "turns": "20",
+    "last_length_used_km": 4.023,
+    "last_length_used_mi": 2.5,
+    "turns": 20,
     "grands_prix": [
       {
         "text": "Detroit Grand Prix",
@@ -3796,16 +3799,14 @@
         "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "7",
-    "circuit_status": "former",
-    "last_length_used_km": "4.023",
-    "last_length_used_mi": "2.500"
+    "grands_prix_held": 7
   },
   {
     "circuit": {
       "text": "Donington Park",
       "url": "https://en.wikipedia.org/wiki/Donington_Park"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3813,7 +3814,9 @@
       "url": "https://en.wikipedia.org/wiki/Castle_Donington"
     },
     "country": "United Kingdom",
-    "turns": "11",
+    "last_length_used_km": 4.02,
+    "last_length_used_mi": 2.498,
+    "turns": 11,
     "grands_prix": [
       {
         "text": "European Grand Prix",
@@ -3826,16 +3829,14 @@
         "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "4.020",
-    "last_length_used_mi": "2.498"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Fuji Speedway",
       "url": "https://en.wikipedia.org/wiki/Fuji_Speedway"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3843,7 +3844,9 @@
       "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
     },
     "country": "Japan",
-    "turns": "16",
+    "last_length_used_km": 4.563,
+    "last_length_used_mi": 2.835,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Japanese Grand Prix",
@@ -3868,16 +3871,14 @@
         "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "4",
-    "circuit_status": "former",
-    "last_length_used_km": "4.563",
-    "last_length_used_mi": "2.835"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Hockenheimring",
       "url": "https://en.wikipedia.org/wiki/Hockenheimring"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -3885,7 +3886,9 @@
       "url": "https://en.wikipedia.org/wiki/Hockenheim"
     },
     "country": "Germany",
-    "turns": "16",
+    "last_length_used_km": 4.574,
+    "last_length_used_mi": 2.842,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "German Grand Prix",
@@ -4042,16 +4045,14 @@
         "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "37",
-    "circuit_status": "former",
-    "last_length_used_km": "4.574",
-    "last_length_used_mi": "2.842"
+    "grands_prix_held": 37
   },
   {
     "circuit": {
       "text": "Hungaroring",
       "url": "https://en.wikipedia.org/wiki/Hungaroring"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4059,7 +4060,9 @@
       "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
     },
     "country": "Hungary",
-    "turns": "14",
+    "last_length_used_km": 4.381,
+    "last_length_used_mi": 2.722,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Hungarian Grand Prix",
@@ -4228,16 +4231,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "40",
-    "circuit_status": "current",
-    "last_length_used_km": "4.381",
-    "last_length_used_mi": "2.722"
+    "grands_prix_held": 40
   },
   {
     "circuit": {
       "text": "Indianapolis Motor Speedway",
       "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4245,7 +4246,9 @@
       "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
     },
     "country": "United States",
-    "turns": "13",
+    "last_length_used_km": 4.192,
+    "last_length_used_mi": 2.605,
+    "turns": 13,
     "grands_prix": [
       {
         "text": "Indianapolis 500",
@@ -4334,16 +4337,14 @@
         "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "19",
-    "circuit_status": "former",
-    "last_length_used_km": "4.192",
-    "last_length_used_mi": "2.605"
+    "grands_prix_held": 19
   },
   {
     "circuit": {
       "text": "Intercity Istanbul Park",
       "url": "https://en.wikipedia.org/wiki/Istanbul_Park"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4351,7 +4352,9 @@
       "url": "https://en.wikipedia.org/wiki/Istanbul"
     },
     "country": "Turkey",
-    "turns": "14",
+    "last_length_used_km": 5.338,
+    "last_length_used_mi": 3.317,
+    "turns": 14,
     "grands_prix": [
       {
         "text": "Turkish Grand Prix",
@@ -4396,16 +4399,14 @@
         "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "9",
-    "circuit_status": "former",
-    "last_length_used_km": "5.338",
-    "last_length_used_mi": "3.317"
+    "grands_prix_held": 9
   },
   {
     "circuit": {
       "text": "Jeddah Corniche Circuit",
       "url": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4413,7 +4414,9 @@
       "url": "https://en.wikipedia.org/wiki/Jeddah"
     },
     "country": "Saudi Arabia",
-    "turns": "27",
+    "last_length_used_km": 6.174,
+    "last_length_used_mi": 3.836,
+    "turns": 27,
     "grands_prix": [
       {
         "text": "Saudi Arabian Grand Prix",
@@ -4442,16 +4445,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "5",
-    "circuit_status": "current",
-    "last_length_used_km": "6.174",
-    "last_length_used_mi": "3.836"
+    "grands_prix_held": 5
   },
   {
     "circuit": {
       "text": "Korea International Circuit",
       "url": "https://en.wikipedia.org/wiki/Korea_International_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4459,7 +4460,9 @@
       "url": "https://en.wikipedia.org/wiki/Yeongam"
     },
     "country": "South Korea",
-    "turns": "18",
+    "last_length_used_km": 5.615,
+    "last_length_used_mi": 3.489,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "Korean Grand Prix",
@@ -4484,16 +4487,14 @@
         "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "4",
-    "circuit_status": "former",
-    "last_length_used_km": "5.615",
-    "last_length_used_mi": "3.489"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Kyalami Grand Prix Circuit",
       "url": "https://en.wikipedia.org/wiki/Kyalami_Racing_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4501,7 +4502,9 @@
       "url": "https://en.wikipedia.org/wiki/Midrand"
     },
     "country": "South Africa",
-    "turns": "13",
+    "last_length_used_km": 4.261,
+    "last_length_used_mi": 2.648,
+    "turns": 13,
     "grands_prix": [
       {
         "text": "South African Grand Prix",
@@ -4590,16 +4593,14 @@
         "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "20",
-    "circuit_status": "former",
-    "last_length_used_km": "4.261",
-    "last_length_used_mi": "2.648"
+    "grands_prix_held": 20
   },
   {
     "circuit": {
       "text": "Las Vegas Strip Circuit",
       "url": "https://en.wikipedia.org/wiki/Las_Vegas_Strip_Circuit"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4607,7 +4608,9 @@
       "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
     },
     "country": "United States",
-    "turns": "17",
+    "last_length_used_km": 6.201,
+    "last_length_used_mi": 3.853,
+    "turns": 17,
     "grands_prix": [
       {
         "text": "Las Vegas Grand Prix",
@@ -4628,16 +4631,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "3",
-    "circuit_status": "current",
-    "last_length_used_km": "6.201",
-    "last_length_used_mi": "3.853"
+    "grands_prix_held": 3
   },
   {
     "circuit": {
       "text": "Long Beach Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -4645,7 +4646,9 @@
       "url": "https://en.wikipedia.org/wiki/Long_Beach,_California"
     },
     "country": "United States",
-    "turns": "18",
+    "last_length_used_km": 3.275,
+    "last_length_used_mi": 2.035,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "United States Grand Prix West",
@@ -4686,16 +4689,14 @@
         "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "8",
-    "circuit_status": "former",
-    "last_length_used_km": "3.275",
-    "last_length_used_mi": "2.035"
+    "grands_prix_held": 8
   },
   {
     "circuit": {
       "text": "Lusail International Circuit",
       "url": "https://en.wikipedia.org/wiki/Lusail_International_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4703,7 +4704,9 @@
       "url": "https://en.wikipedia.org/wiki/Lusail"
     },
     "country": "Qatar",
-    "turns": "16",
+    "last_length_used_km": 5.419,
+    "last_length_used_mi": 3.367,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Qatar Grand Prix",
@@ -4722,18 +4725,20 @@
       {
         "year": 2024,
         "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "3",
-    "circuit_status": "current",
-    "last_length_used_km": "5.419",
-    "last_length_used_mi": "3.367"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Madring",
       "url": "https://en.wikipedia.org/wiki/Madring"
     },
+    "circuit_status": "future",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -4741,7 +4746,9 @@
       "url": "https://en.wikipedia.org/wiki/Barajas_(Madrid)"
     },
     "country": "Spain",
-    "turns": "22",
+    "last_length_used_km": 5.474,
+    "last_length_used_mi": 3.401,
+    "turns": 22,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -4749,16 +4756,14 @@
       }
     ],
     "seasons": [],
-    "grands_prix_held": "0",
-    "circuit_status": "future",
-    "last_length_used_km": "5.474",
-    "last_length_used_mi": "3.401"
+    "grands_prix_held": 0
   },
   {
     "circuit": {
       "text": "Marina Bay Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4766,7 +4771,9 @@
       "url": "https://en.wikipedia.org/wiki/Marina_Bay,_Singapore"
     },
     "country": "Singapore",
-    "turns": "19",
+    "last_length_used_km": 4.94,
+    "last_length_used_mi": 3.07,
+    "turns": 19,
     "grands_prix": [
       {
         "text": "Singapore Grand Prix",
@@ -4839,16 +4846,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "16",
-    "circuit_status": "current",
-    "last_length_used_km": "4.940",
-    "last_length_used_mi": "3.070"
+    "grands_prix_held": 16
   },
   {
     "circuit": {
       "text": "Miami International Autodrome",
       "url": "https://en.wikipedia.org/wiki/Miami_International_Autodrome"
     },
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4856,7 +4861,9 @@
       "url": "https://en.wikipedia.org/wiki/Miami_Gardens,_Florida"
     },
     "country": "United States",
-    "turns": "19",
+    "last_length_used_km": 5.412,
+    "last_length_used_mi": 3.363,
+    "turns": 19,
     "grands_prix": [
       {
         "text": "Miami Grand Prix",
@@ -4881,16 +4888,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "4",
-    "circuit_status": "current",
-    "last_length_used_km": "5.412",
-    "last_length_used_mi": "3.363"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Montjuïc circuit",
       "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4898,7 +4903,9 @@
       "url": "https://en.wikipedia.org/wiki/Barcelona"
     },
     "country": "Spain",
-    "turns": "18",
+    "last_length_used_km": 3.791,
+    "last_length_used_mi": 2.356,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "Spanish Grand Prix",
@@ -4923,16 +4930,14 @@
         "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "4",
-    "circuit_status": "former",
-    "last_length_used_km": "3.791",
-    "last_length_used_mi": "2.356"
+    "grands_prix_held": 4
   },
   {
     "circuit": {
       "text": "Mosport International Raceway",
       "url": "https://en.wikipedia.org/wiki/Canadian_Tire_Motorsport_Park"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4940,7 +4945,9 @@
       "url": "https://en.wikipedia.org/wiki/Bowmanville"
     },
     "country": "Canada",
-    "turns": "10",
+    "last_length_used_km": 3.957,
+    "last_length_used_mi": 2.459,
+    "turns": 10,
     "grands_prix": [
       {
         "text": "Canadian Grand Prix",
@@ -4981,16 +4988,14 @@
         "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "8",
-    "circuit_status": "former",
-    "last_length_used_km": "3.957",
-    "last_length_used_mi": "2.459"
+    "grands_prix_held": 8
   },
   {
     "circuit": {
       "text": "Nivelles-Baulers",
       "url": "https://en.wikipedia.org/wiki/Nivelles-Baulers"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -4998,7 +5003,9 @@
       "url": "https://en.wikipedia.org/wiki/Nivelles"
     },
     "country": "Belgium",
-    "turns": "7",
+    "last_length_used_km": 3.724,
+    "last_length_used_mi": 2.314,
+    "turns": 7,
     "grands_prix": [
       {
         "text": "Belgian Grand Prix",
@@ -5015,16 +5022,14 @@
         "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "3.724",
-    "last_length_used_mi": "2.314"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Nürburgring",
       "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5032,7 +5037,9 @@
       "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
     },
     "country": "Germany",
-    "turns": "15",
+    "last_length_used_km": 5.148,
+    "last_length_used_mi": 3.199,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "German Grand Prix",
@@ -5217,16 +5224,14 @@
         "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "41",
-    "circuit_status": "former",
-    "last_length_used_km": "5.148",
-    "last_length_used_mi": "3.199"
+    "grands_prix_held": 41
   },
   {
     "circuit": {
       "text": "Pescara Circuit",
       "url": "https://en.wikipedia.org/wiki/Pescara_Circuit"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -5234,7 +5239,9 @@
       "url": "https://en.wikipedia.org/wiki/Pescara"
     },
     "country": "Italy",
-    "turns": "24*",
+    "last_length_used_km": 25.8,
+    "last_length_used_mi": 16.031,
+    "turns": 24,
     "grands_prix": [
       {
         "text": "Pescara Grand Prix",
@@ -5247,16 +5254,14 @@
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "25.800",
-    "last_length_used_mi": "16.031"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Phoenix Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Phoenix_Street_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -5264,7 +5269,9 @@
       "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
     },
     "country": "United States",
-    "turns": "12",
+    "last_length_used_km": 3.72,
+    "last_length_used_mi": 2.312,
+    "turns": 12,
     "grands_prix": [
       {
         "text": "United States Grand Prix",
@@ -5285,16 +5292,14 @@
         "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "3",
-    "circuit_status": "former",
-    "last_length_used_km": "3.720",
-    "last_length_used_mi": "2.312"
+    "grands_prix_held": 3
   },
   {
     "circuit": {
       "text": "Prince George Circuit",
       "url": "https://en.wikipedia.org/wiki/Prince_George_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5302,7 +5307,9 @@
       "url": "https://en.wikipedia.org/wiki/East_London,_Eastern_Cape"
     },
     "country": "South Africa",
-    "turns": "8",
+    "last_length_used_km": 3.92,
+    "last_length_used_mi": 2.436,
+    "turns": 8,
     "grands_prix": [
       {
         "text": "South African Grand Prix",
@@ -5323,16 +5330,14 @@
         "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "3",
-    "circuit_status": "former",
-    "last_length_used_km": "3.920",
-    "last_length_used_mi": "2.436"
+    "grands_prix_held": 3
   },
   {
     "circuit": {
       "text": "Red Bull Ring",
       "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5340,7 +5345,9 @@
       "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
     },
     "country": "Austria",
-    "turns": "10",
+    "last_length_used_km": 4.318,
+    "last_length_used_mi": 2.683,
+    "turns": 10,
     "grands_prix": [
       {
         "text": "Austrian Grand Prix",
@@ -5501,16 +5508,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "39",
-    "circuit_status": "current",
-    "last_length_used_km": "4.318",
-    "last_length_used_mi": "2.683"
+    "grands_prix_held": 39
   },
   {
     "circuit": {
       "text": "Riverside International Raceway",
       "url": "https://en.wikipedia.org/wiki/Riverside_International_Raceway"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5518,7 +5523,9 @@
       "url": "https://en.wikipedia.org/wiki/Moreno_Valley,_California"
     },
     "country": "United States",
-    "turns": "9",
+    "last_length_used_km": 5.271,
+    "last_length_used_mi": 3.275,
+    "turns": 9,
     "grands_prix": [
       {
         "text": "United States Grand Prix",
@@ -5531,16 +5538,14 @@
         "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "5.271",
-    "last_length_used_mi": "3.275"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Rouen-Les-Essarts",
       "url": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -5548,7 +5553,9 @@
       "url": "https://en.wikipedia.org/wiki/Orival,_Seine-Maritime"
     },
     "country": "France",
-    "turns": "13",
+    "last_length_used_km": 6.542,
+    "last_length_used_mi": 4.065,
+    "turns": 13,
     "grands_prix": [
       {
         "text": "French Grand Prix",
@@ -5577,16 +5584,14 @@
         "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "5",
-    "circuit_status": "former",
-    "last_length_used_km": "6.542",
-    "last_length_used_mi": "4.065"
+    "grands_prix_held": 5
   },
   {
     "circuit": {
       "text": "Scandinavian Raceway",
       "url": "https://en.wikipedia.org/wiki/Anderstorp_Raceway"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5594,7 +5599,9 @@
       "url": "https://en.wikipedia.org/wiki/Anderstorp"
     },
     "country": "Sweden",
-    "turns": "8",
+    "last_length_used_km": 4.031,
+    "last_length_used_mi": 2.505,
+    "turns": 8,
     "grands_prix": [
       {
         "text": "Swedish Grand Prix",
@@ -5627,16 +5634,14 @@
         "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "6",
-    "circuit_status": "former",
-    "last_length_used_km": "4.031",
-    "last_length_used_mi": "2.505"
+    "grands_prix_held": 6
   },
   {
     "circuit": {
       "text": "Sebring Raceway",
       "url": "https://en.wikipedia.org/wiki/Sebring_International_Raceway"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -5644,7 +5649,9 @@
       "url": "https://en.wikipedia.org/wiki/Sebring,_Florida"
     },
     "country": "United States",
-    "turns": "12",
+    "last_length_used_km": 8.356,
+    "last_length_used_mi": 5.192,
+    "turns": 12,
     "grands_prix": [
       {
         "text": "United States Grand Prix",
@@ -5657,16 +5664,14 @@
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "8.356",
-    "last_length_used_mi": "5.192"
+    "grands_prix_held": 1
   },
   {
     "circuit": {
       "text": "Sepang International Circuit",
       "url": "https://en.wikipedia.org/wiki/Sepang_International_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5674,7 +5679,9 @@
       "url": "https://en.wikipedia.org/wiki/Sepang_District"
     },
     "country": "Malaysia",
-    "turns": "15",
+    "last_length_used_km": 5.543,
+    "last_length_used_mi": 3.444,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Malaysian Grand Prix",
@@ -5759,16 +5766,14 @@
         "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "19",
-    "circuit_status": "former",
-    "last_length_used_km": "5.543",
-    "last_length_used_mi": "3.444"
+    "grands_prix_held": 19
   },
   {
     "circuit": {
       "text": "Shanghai International Circuit",
       "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5776,7 +5781,9 @@
       "url": "https://en.wikipedia.org/wiki/Shanghai"
     },
     "country": "China",
-    "turns": "16",
+    "last_length_used_km": 5.451,
+    "last_length_used_mi": 3.387,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Chinese Grand Prix",
@@ -5857,16 +5864,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "18",
-    "circuit_status": "current",
-    "last_length_used_km": "5.451",
-    "last_length_used_mi": "3.387"
+    "grands_prix_held": 18
   },
   {
     "circuit": {
       "text": "Silverstone Circuit",
       "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -5874,7 +5879,9 @@
       "url": "https://en.wikipedia.org/wiki/Silverstone"
     },
     "country": "United Kingdom",
-    "turns": "18",
+    "last_length_used_km": 5.891,
+    "last_length_used_mi": 3.66,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "British Grand Prix",
@@ -6123,16 +6130,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "60",
-    "circuit_status": "current",
-    "last_length_used_km": "5.891",
-    "last_length_used_mi": "3.660"
+    "grands_prix_held": 60
   },
   {
     "circuit": {
       "text": "Sochi Autodrom",
       "url": "https://en.wikipedia.org/wiki/Sochi_Autodrom"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6140,7 +6145,9 @@
       "url": "https://en.wikipedia.org/wiki/Sochi"
     },
     "country": "Russia",
-    "turns": "15",
+    "last_length_used_km": 5.848,
+    "last_length_used_mi": 3.634,
+    "turns": 15,
     "grands_prix": [
       {
         "text": "Russian Grand Prix",
@@ -6181,16 +6188,14 @@
         "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "8",
-    "circuit_status": "former",
-    "last_length_used_km": "5.848",
-    "last_length_used_mi": "3.634"
+    "grands_prix_held": 8
   },
   {
     "circuit": {
       "text": "Suzuka International Racing Course",
       "url": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Part clockwise and part anti-clockwise (figure eight)",
     "location": {
@@ -6198,7 +6203,9 @@
       "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
     },
     "country": "Japan",
-    "turns": "18",
+    "last_length_used_km": 5.807,
+    "last_length_used_mi": 3.608,
+    "turns": 18,
     "grands_prix": [
       {
         "text": "Japanese Grand Prix",
@@ -6347,16 +6354,14 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "35",
-    "circuit_status": "current",
-    "last_length_used_km": "5.807",
-    "last_length_used_mi": "3.608"
+    "grands_prix_held": 35
   },
   {
     "circuit": {
       "text": "TI Circuit Aida",
       "url": "https://en.wikipedia.org/wiki/Okayama_International_Circuit"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6364,7 +6369,9 @@
       "url": "https://en.wikipedia.org/wiki/Mimasaka,_Okayama"
     },
     "country": "Japan",
-    "turns": "11",
+    "last_length_used_km": 3.703,
+    "last_length_used_mi": 2.301,
+    "turns": 11,
     "grands_prix": [
       {
         "text": "Pacific Grand Prix",
@@ -6381,16 +6388,14 @@
         "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "2",
-    "circuit_status": "former",
-    "last_length_used_km": "3.703",
-    "last_length_used_mi": "2.301"
+    "grands_prix_held": 2
   },
   {
     "circuit": {
       "text": "Valencia Street Circuit",
       "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
     },
+    "circuit_status": "former",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {
@@ -6398,7 +6403,9 @@
       "url": "https://en.wikipedia.org/wiki/Valencia"
     },
     "country": "Spain",
-    "turns": "25",
+    "last_length_used_km": 5.419,
+    "last_length_used_mi": 3.367,
+    "turns": 25,
     "grands_prix": [
       {
         "text": "European Grand Prix",
@@ -6427,16 +6434,14 @@
         "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "5",
-    "circuit_status": "former",
-    "last_length_used_km": "5.419",
-    "last_length_used_mi": "3.367"
+    "grands_prix_held": 5
   },
   {
     "circuit": {
       "text": "Watkins Glen International",
       "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
     },
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -6444,7 +6449,9 @@
       "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
     },
     "country": "United States",
-    "turns": "10",
+    "last_length_used_km": 5.43,
+    "last_length_used_mi": 3.374,
+    "turns": 10,
     "grands_prix": [
       {
         "text": "United States Grand Prix",
@@ -6533,16 +6540,14 @@
         "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "20",
-    "circuit_status": "former",
-    "last_length_used_km": "5.430",
-    "last_length_used_mi": "3.374"
+    "grands_prix_held": 20
   },
   {
     "circuit": {
       "text": "Yas Marina Circuit",
       "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
     },
+    "circuit_status": "current",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -6550,7 +6555,9 @@
       "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
     },
     "country": "United Arab Emirates",
-    "turns": "16",
+    "last_length_used_km": 5.281,
+    "last_length_used_mi": 3.281,
+    "turns": 16,
     "grands_prix": [
       {
         "text": "Abu Dhabi Grand Prix",
@@ -6623,16 +6630,14 @@
         "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "16",
-    "circuit_status": "current",
-    "last_length_used_km": "5.281",
-    "last_length_used_mi": "3.281"
+    "grands_prix_held": 16
   },
   {
     "circuit": {
       "text": "Zeltweg Airfield",
       "url": "https://en.wikipedia.org/wiki/Zeltweg_Airfield"
     },
+    "circuit_status": "former",
     "type": "Road circuit",
     "direction": "Clockwise",
     "location": {
@@ -6640,7 +6645,9 @@
       "url": "https://en.wikipedia.org/wiki/Zeltweg"
     },
     "country": "Austria",
-    "turns": "4",
+    "last_length_used_km": 3.186,
+    "last_length_used_mi": 1.98,
+    "turns": 4,
     "grands_prix": [
       {
         "text": "Austrian Grand Prix",
@@ -6653,9 +6660,6 @@
         "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": "1",
-    "circuit_status": "former",
-    "last_length_used_km": "3.186",
-    "last_length_used_mi": "1.980"
+    "grands_prix_held": 1
   }
 ]
