@@ -1,12 +1,90 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, Optional, Sequence
-
-from bs4 import Tag
+from typing import Dict
 
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.column_context import ColumnContext
+from scrapers.helpers.columns.columns import SkipColumn, SeasonsColumn, IntColumn, MultiColumn, FuncColumn
 
+
+def _strip_marks(text: str | None) -> str | None:
+    if text is None:
+        return None
+    return text.replace("*", "").replace("†", "").strip()
+
+
+# --- małe helpery do FuncColumn ---
+
+def circuit_url_func(ctx: ColumnContext) -> Dict[str, object] | None:
+    """
+    Wyciąga pierwszy link z nazwy toru i czyści * / † z tekstu.
+    """
+    if not ctx.links:
+        if not ctx.clean_text:
+            return None
+        return {"text": _strip_marks(ctx.clean_text), "url": None}
+
+    first = dict(ctx.links[0])
+    if isinstance(first.get("text"), str):
+        first["text"] = _strip_marks(first["text"])
+    return first
+
+
+def circuit_status_func(ctx: ColumnContext) -> str:
+    """
+    Enum na podstawie znaków w raw_text:
+    * -> current, † -> future, brak -> former.
+    """
+    text = ctx.raw_text or ""
+    if "†" in text:
+        return "future"
+    if "*" in text:
+        return "current"
+    return "former"
+
+
+_KM_RE = re.compile(r"(?P<km>[\d\.,]+)\s*km", flags=re.IGNORECASE)
+_MI_RE = re.compile(r"(?P<mi>[\d\.,]+)\s*mi", flags=re.IGNORECASE)
+
+
+def _parse_float_part(text: str, pattern: re.Pattern) -> float | None:
+    text = text.replace("\xa0", " ")
+    m = pattern.search(text)
+    if not m:
+        return None
+    num = m.group(1).strip().replace(",", "")
+    try:
+        return float(num)
+    except ValueError:
+        return None
+
+
+def length_km_func(ctx: ColumnContext) -> float | None:
+    return _parse_float_part(ctx.clean_text or "", _KM_RE)
+
+
+def length_mi_func(ctx: ColumnContext) -> float | None:
+    return _parse_float_part(ctx.clean_text or "", _MI_RE)
+
+
+def grands_prix_func(ctx: ColumnContext) -> list[Dict[str, object]]:
+    """
+    Lista GP jako list_of_links, z wyczyszczonym tekstem (* / †).
+    """
+    result: list[Dict[str, object]] = []
+    for link in ctx.links:
+        d = dict(link)
+        if isinstance(d.get("text"), str):
+            d["text"] = _strip_marks(d["text"])
+        d.setdefault("url", None)
+        result.append(d)
+    return result
+
+
+# ============================================================
+#  GŁÓWNY SCRAPER
+# ============================================================
 
 class F1CircuitsScraper(F1TableScraper):
     """
@@ -39,102 +117,33 @@ class F1CircuitsScraper(F1TableScraper):
         "Grands Prix held": "grands_prix_held",
     }
 
-    # typy kolumn (klucze mogą być nagłówkami)
-    column_types = {
-        "Map": "skip",          # w ogóle pomijamy
-        "Season(s)": "seasons", # specjalny parser sezonów -> lista dict{year,url}
-        "Grands Prix": "list_of_links",  # upewnia się, że zawsze jest lista
+    # klucz/nagłówek -> kolumna
+    columns = {
+        # prosto:
+        "map": SkipColumn(),
+        "seasons": SeasonsColumn(),
+        "turns": IntColumn(),
+        "grands_prix_held": IntColumn(),
+
+        # Circuit → MultiColumn: (url, status)
+        "circuit": MultiColumn(
+            {
+                "circuit": FuncColumn(circuit_url_func),
+                "circuit_status": FuncColumn(circuit_status_func),
+            }
+        ),
+
+        # Last length used → MultiColumn: (km, mi)
+        "last_length_used": MultiColumn(
+            {
+                "last_length_used_km": FuncColumn(length_km_func),
+                "last_length_used_mi": FuncColumn(length_mi_func),
+            }
+        ),
+
+        # Grands Prix → lista linków
+        "grands_prix": FuncColumn(grands_prix_func),
     }
-
-    _LENGTH_RE = re.compile(
-        r"(?P<km>[\d\.,]+)\s*km.*?(?P<mi>[\d\.,]+)\s*mi",
-        flags=re.IGNORECASE,
-    )
-
-    @staticmethod
-    def _clean_marks(text: str | None) -> str | None:
-        if text is None:
-            return None
-        return text.replace("*", "").replace("†", "").strip()
-
-    def parse_row(
-        self,
-        row: Tag,
-        cells: Sequence[Tag],
-        headers: Sequence[str],
-    ) -> Optional[Dict[str, Any]]:
-        # bazowa logika: kolumny, typy (w tym skip + seasons),
-        # auto linki, czysty tekst bez [przypisów]
-        record = super().parse_row(row, cells, headers)
-        if record is None:
-            return None
-
-        # --- 1) Status toru na podstawie ORYGINALNEJ nazwy z tabeli ---
-        raw_circuit_name: Optional[str] = None
-        for header, cell in zip(headers, cells):
-            if header == "Circuit":
-                raw_circuit_name = cell.get_text(" ", strip=True).replace("\xa0", " ")
-                break
-
-        if raw_circuit_name:
-            if "†" in raw_circuit_name:
-                status = "future"
-            elif "*" in raw_circuit_name:
-                status = "current"
-            else:
-                status = "former"
-        else:
-            status = "former"
-
-        record["circuit_status"] = status
-
-        # --- 2) Czyścimy nazwę toru z * i † ---
-        circuit_val = record.get("circuit")
-        if isinstance(circuit_val, dict):
-            cleaned = dict(circuit_val)
-            cleaned["text"] = self._clean_marks(cleaned.get("text"))
-            record["circuit"] = cleaned
-        elif isinstance(circuit_val, str):
-            record["circuit"] = self._clean_marks(circuit_val)
-
-        # --- 3) Last length used -> km / mi ---
-        raw_length = record.get("last_length_used")
-        km = mi = None
-
-        if isinstance(raw_length, str):
-            raw_norm = raw_length.replace("\xa0", " ")
-            m = self._LENGTH_RE.search(raw_norm)
-            if m:
-                km = m.group("km").strip()
-                mi = m.group("mi").strip()
-
-        record["last_length_used_km"] = km
-        record["last_length_used_mi"] = mi
-        record.pop("last_length_used", None)
-
-        # --- 4) Grands Prix -> upewniamy się, że lista dictów {text, url} bez * / † ---
-        def _normalize_gp_item(item: Any) -> Dict[str, Any]:
-            if isinstance(item, dict):
-                d = dict(item)
-                if isinstance(d.get("text"), str):
-                    d["text"] = self._clean_marks(d["text"])
-                d.setdefault("url", None)
-                return d
-            text = self._clean_marks(str(item)) if item is not None else None
-            return {"text": text, "url": None}
-
-        gp = record.get("grands_prix")
-        if gp is None:
-            record["grands_prix"] = []
-        elif isinstance(gp, list):
-            record["grands_prix"] = [_normalize_gp_item(x) for x in gp]
-        else:
-            record["grands_prix"] = [_normalize_gp_item(gp)]
-
-        # --- 5) seasons jest już listą dictów {year, url} z F1TableScraper (typ 'seasons') ---
-        # nic więcej nie trzeba robić
-
-        return record
 
 
 if __name__ == "__main__":

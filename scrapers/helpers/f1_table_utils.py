@@ -26,9 +26,7 @@ def parse_seasons(text: str, *, current_year: int | None = None) -> list[dict[st
     na listę:
         [{"year": 1973, "url": ...}, {"year": 1975, "url": ...}, ..., {"year": 1984, "url": ...}]
 
-    Dodatkowo:
-    - 'present' (case-insensitive) jest zamieniane na aktualny rok (domyślnie datetime.now().year),
-      więc np. '2014–present' w roku 2025 stanie się '2014–2025'.
+    'present' (case-insensitive) → aktualny rok.
     """
     result: list[dict[str, Any]] = []
     seen: set[int] = set()
@@ -51,7 +49,7 @@ def parse_seasons(text: str, *, current_year: int | None = None) -> list[dict[st
             start = int(m_range.group(1))
             end = int(m_range.group(2))
             if end < start:
-                start, end = end, start  # na wszelki wypadek
+                start, end = end, start
             years = range(start, end + 1)
         else:
             # pojedynczy rok: 1973
@@ -109,7 +107,7 @@ def extract_links_from_cell(
 ) -> list[dict[str, Any]]:
     """
     Zwraca listę linków {text, url} z komórki,
-    ignorując linki będące przypisami (cite_note/reference).
+    ignorując przypisy (cite_note / reference).
     """
     links: list[dict[str, Any]] = []
 

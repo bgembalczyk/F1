@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, Any
 
 from bs4 import Tag
 
@@ -13,23 +13,17 @@ class ColumnContext:
     """
     Kontekst pojedynczej komórki tabeli.
 
-    - udostępnia cell (Tag),
-    - leniwie wylicza raw_text / clean_text,
-    - niesie helper do budowania pełnego URL,
-    - niesie sentinel _SKIP z F1TableScraper.
+    Kolumny operują głównie na:
+    - raw_text,
+    - clean_text,
+    - links (lista {text, url}),
+    ale nadal mają dostęp do cell, jeśli bardzo potrzebują.
     """
 
     header: str
     key: str
+    raw_text: str
+    clean_text: str
+    links: list[dict[str, Any]]
     cell: Tag
-    include_urls: bool
-    full_url: Callable[[str | None], str | None]
     skip_sentinel: object
-
-    @property
-    def raw_text(self) -> str:
-        return self.cell.get_text(" ", strip=True)
-
-    @property
-    def clean_text(self) -> str:
-        return clean_wiki_text(self.raw_text)

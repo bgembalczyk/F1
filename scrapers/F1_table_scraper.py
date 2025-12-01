@@ -8,7 +8,8 @@ from bs4 import BeautifulSoup, Tag
 
 from scrapers.F1_scraper import F1Scraper
 from scrapers.helpers.columns.column_context import ColumnContext
-from scrapers.helpers.columns.column_type import ColumnTypeRegistry, ColumnType
+from scrapers.helpers.columns.columns import BaseColumn, AutoColumn
+from scrapers.helpers.f1_table_utils import clean_wiki_text, extract_links_from_cell
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -17,20 +18,12 @@ class F1TableScraper(F1Scraper, ABC):
 
     Konfiguracja przez pola klasowe:
 
-    - section_id      – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
-                         jeśli None – szukamy po całej stronie.
+    - section_id    – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
+                       jeśli None – szukamy po całej stronie.
     - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
-    - column_map      – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - column_types    – typ danych dla danego KLUCZA (po column_map):
-                         "auto" (domyślnie),
-                         "text",
-                         "list",
-                         "seasons",
-                         "skip",
-                         "list_of_links",  # lista obiektów linków {text, url}
-                         "link",           # pojedynczy link {text, url} lub None
-                         "int",            # liczba całkowita
-                         "float",          # liczba zmiennoprzecinkowa
+    - column_map    – mapowanie "nagłówek z tabeli" -> "klucz w dict".
+    - columns       – mapowanie klucza/nagłówka -> BaseColumn
+                      (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
     _SKIP = object()
@@ -39,16 +32,15 @@ class F1TableScraper(F1Scraper, ABC):
     expected_headers: Sequence[str] | None = None
     column_map: Mapping[str, str] = {}
 
-    # konfiguracja typów kolumn po stronie scraperów potomnych:
-    # np. {"years_held": "seasons", "country": "list", "grands_prix": "list_of_links"}
-    column_types: Mapping[str, str] = {}
+    # klucz (po column_map) lub nagłówek -> BaseColumn
+    columns: Mapping[str, BaseColumn] = {}
 
     table_css_class: str = "wikitable"
 
-    _column_type_registry = ColumnTypeRegistry()
-
-    # pozostaje jeśli gdzieś jest używany, ale główne czyszczenie jest w clean_wiki_text
     _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
+    # domyślna kolumna dla pól, które nie mają przypisanej logiki
+    default_column: BaseColumn = AutoColumn()
 
     # --- szablon parsowania ---
 
@@ -117,15 +109,6 @@ class F1TableScraper(F1Scraper, ABC):
         header_set = set(headers)
         return all(h in header_set for h in self.expected_headers)
 
-    def get_column_type(self, name: str) -> ColumnType:
-        """
-        Hook do pobierania handlera typu kolumny.
-
-        Domyślnie korzysta z globalnego rejestru,
-        ale konkretne scrapery mogą to nadpisać, żeby dodać własne typy.
-        """
-        return self._column_type_registry.get(name)
-
     # --- hook per-wiersz ---
 
     def parse_row(
@@ -145,29 +128,30 @@ class F1TableScraper(F1Scraper, ABC):
         for header, cell in zip(headers, cells):
             key = self.column_map.get(header, self._normalize_header(header))
 
-            col_type_name = (
-                self.column_types.get(header)
-                or self.column_types.get(key)
-                or "auto"
-            )
+            raw_text = cell.get_text(" ", strip=True)
+            clean_text = clean_wiki_text(raw_text)
 
-            handler = self.get_column_type(col_type_name)
+            links: list[dict[str, Any]] = []
+            if self.include_urls:
+                links = extract_links_from_cell(cell, full_url=self._full_url)
 
             ctx = ColumnContext(
                 header=header,
                 key=key,
+                raw_text=raw_text,
+                clean_text=clean_text,
+                links=links,
                 cell=cell,
-                include_urls=self.include_urls,
-                full_url=self._full_url,  # z F1Scraper
                 skip_sentinel=self._SKIP,
             )
 
-            value = handler.parse(ctx)
+            col = (
+                self.columns.get(key)
+                or self.columns.get(header)
+                or self.default_column
+            )
 
-            if value is self._SKIP:
-                continue
-
-            record[key] = value
+            col.apply(ctx, record)
 
         return record
 
