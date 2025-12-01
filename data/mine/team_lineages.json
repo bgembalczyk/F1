@@ -1,0 +1,376 @@
+[
+  {
+    "lineage_name": "Team Enstone",
+    "base": "Enstone, United Kingdom",
+    "teams": [
+      {
+        "name": "Toleman",
+        "from": 1981,
+        "to": 1985
+      },
+      {
+        "name": "Benetton",
+        "from": 1986,
+        "to": 2001
+      },
+      {
+        "name": "Renault",
+        "from": 2002,
+        "to": 2010
+      },
+      {
+        "name": "Lotus Renault GP",
+        "from": 2011,
+        "to": 2011
+      },
+      {
+        "name": "Lotus F1 Team",
+        "from": 2012,
+        "to": 2015
+      },
+      {
+        "name": "Renault",
+        "from": 2016,
+        "to": 2020
+      },
+      {
+        "name": "Alpine",
+        "from": 2021,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Brackley",
+    "base": "Brackley, United Kingdom",
+    "teams": [
+      {
+        "name": "Tyrrell",
+        "from": 1970,
+        "to": 1998
+      },
+      {
+        "name": "BAR",
+        "from": 1999,
+        "to": 2005
+      },
+      {
+        "name": "Honda",
+        "from": 2006,
+        "to": 2008
+      },
+      {
+        "name": "Brawn GP",
+        "from": 2009,
+        "to": 2009
+      },
+      {
+        "name": "Mercedes",
+        "from": 2010,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Silverstone",
+    "base": "Silverstone, United Kingdom",
+    "teams": [
+      {
+        "name": "Jordan",
+        "from": 1991,
+        "to": 2005
+      },
+      {
+        "name": "Midland",
+        "from": 2006,
+        "to": 2006
+      },
+      {
+        "name": "Spyker",
+        "from": 2007,
+        "to": 2007
+      },
+      {
+        "name": "Force India",
+        "from": 2008,
+        "to": 2018
+      },
+      {
+        "name": "Racing Point Force India",
+        "from": 2018,
+        "to": 2018
+      },
+      {
+        "name": "Racing Point",
+        "from": 2019,
+        "to": 2020
+      },
+      {
+        "name": "Aston Martin",
+        "from": 2021,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Milton Keynes",
+    "base": "Milton Keynes, United Kingdom",
+    "teams": [
+      {
+        "name": "Stewart Grand Prix",
+        "from": 1997,
+        "to": 1999
+      },
+      {
+        "name": "Jaguar Racing",
+        "from": 2000,
+        "to": 2004
+      },
+      {
+        "name": "Red Bull Racing",
+        "from": 2005,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Faenza",
+    "base": "Faenza, Italy",
+    "teams": [
+      {
+        "name": "Minardi",
+        "from": 1985,
+        "to": 2005
+      },
+      {
+        "name": "Scuderia Toro Rosso",
+        "from": 2006,
+        "to": 2019
+      },
+      {
+        "name": "AlphaTauri",
+        "from": 2020,
+        "to": 2023
+      },
+      {
+        "name": "Racing Bulls (RB)",
+        "from": 2024,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Hinwil",
+    "base": "Hinwil, Switzerland",
+    "teams": [
+      {
+        "name": "Sauber",
+        "from": 1993,
+        "to": 2005
+      },
+      {
+        "name": "BMW Sauber",
+        "from": 2006,
+        "to": 2009
+      },
+      {
+        "name": "Sauber",
+        "from": 2010,
+        "to": 2018
+      },
+      {
+        "name": "Alfa Romeo",
+        "from": 2019,
+        "to": 2023
+      },
+      {
+        "name": "Kick Sauber",
+        "from": 2024,
+        "to": 2025
+      },
+      {
+        "name": "Audi",
+        "from": 2026,
+        "to": null
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Williams-Wolf",
+    "base": "United Kingdom",
+    "teams": [
+      {
+        "name": "Frank Williams Racing Cars",
+        "from": 1969,
+        "to": 1975
+      },
+      {
+        "name": "Wolf–Williams Racing",
+        "from": 1976,
+        "to": 1976
+      },
+      {
+        "name": "Walter Wolf Racing",
+        "from": 1977,
+        "to": 1979
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Leafield",
+    "base": "Leafield, United Kingdom",
+    "teams": [
+      {
+        "name": "Lotus Racing",
+        "from": 2010,
+        "to": 2010
+      },
+      {
+        "name": "Team Lotus",
+        "from": 2011,
+        "to": 2011
+      },
+      {
+        "name": "Caterham F1 Team",
+        "from": 2012,
+        "to": 2014
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Arrows",
+    "base": "Milton Keynes / Leafield, United Kingdom",
+    "teams": [
+      {
+        "name": "Shadow Racing Cars",
+        "from": 1973,
+        "to": 1980
+      },
+      {
+        "name": "Arrows",
+        "from": 1978,
+        "to": 1990
+      },
+      {
+        "name": "Footwork Arrows",
+        "from": 1991,
+        "to": 1996
+      },
+      {
+        "name": "Arrows",
+        "from": 1997,
+        "to": 2002
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Osella",
+    "base": "Volpiano / Turin area, Italy",
+    "teams": [
+      {
+        "name": "Osella",
+        "from": 1980,
+        "to": 1990
+      },
+      {
+        "name": "Fondmetal",
+        "from": 1991,
+        "to": 1992
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Coloni",
+    "base": "Italy",
+    "teams": [
+      {
+        "name": "Coloni",
+        "from": 1987,
+        "to": 1991
+      },
+      {
+        "name": "Andrea Moda",
+        "from": 1992,
+        "to": 1992
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team March",
+    "base": "United Kingdom",
+    "teams": [
+      {
+        "name": "March Engineering",
+        "from": 1987,
+        "to": 1989
+      },
+      {
+        "name": "Leyton House Racing",
+        "from": 1990,
+        "to": 1991
+      },
+      {
+        "name": "March Engineering",
+        "from": 1992,
+        "to": 1992
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Ligier",
+    "base": "France (Magny-Cours area)",
+    "teams": [
+      {
+        "name": "Ligier",
+        "from": 1976,
+        "to": 1980
+      },
+      {
+        "name": "Talbot Ligier",
+        "from": 1981,
+        "to": 1982
+      },
+      {
+        "name": "Ligier",
+        "from": 1983,
+        "to": 1996
+      },
+      {
+        "name": "Prost Grand Prix",
+        "from": 1997,
+        "to": 2001
+      }
+    ]
+  },
+  {
+    "lineage_name": "Team Manor",
+    "base": "United Kingdom",
+    "teams": [
+      {
+        "name": "Virgin Racing",
+        "from": 2010,
+        "to": 2010
+      },
+      {
+        "name": "Marussia Virgin Racing",
+        "from": 2011,
+        "to": 2011
+      },
+      {
+        "name": "Marussia F1 Team",
+        "from": 2012,
+        "to": 2014
+      },
+      {
+        "name": "Manor Marussia F1 Team",
+        "from": 2015,
+        "to": 2015
+      },
+      {
+        "name": "Manor Racing",
+        "from": 2016,
+        "to": 2016
+      }
+    ]
+  }
+]
