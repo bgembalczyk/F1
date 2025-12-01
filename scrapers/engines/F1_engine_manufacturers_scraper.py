@@ -1,22 +1,41 @@
+from __future__ import annotations
+
+from typing import Dict
+
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.columns import (
+    SeasonsColumn,
+    IntColumn,
+    FloatColumn,
+    MultiColumn,
+    UrlColumn,
+    EnumMarksColumn,
+)
 
 
 class F1EngineManufacturersScraper(F1TableScraper):
     """
-    Tabela 'Engine manufacturers' ze strony:
-    https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers
+    Lista konstruktorów silników F1:
+    https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
+
+    # sekcja z główną tabelą
     section_id = "Engine_manufacturers"
 
+    # wystarczy podzbiór nagłówków żeby znaleźć właściwą tabelę
     expected_headers = [
         "Manufacturer",
         "Engines built in",
         "Seasons",
+        "Races Entered",
+        "Races Started",
+        "Wins",
+        "Points",
     ]
 
-    column_map = {
+    column_map: Dict[str, str] = {
         "Manufacturer": "manufacturer",
         "Engines built in": "engines_built_in",
         "Seasons": "seasons",
@@ -27,22 +46,49 @@ class F1EngineManufacturersScraper(F1TableScraper):
         "Poles": "poles",
         "FL": "fastest_laps",
         "Podiums": "podiums",
-        "WCC": "wcc_titles",
-        "WDC": "wdc_titles",
+        "WCC": "wcc",
+        "WDC": "wdc",
     }
 
-    url_columns = ("Manufacturer",)
+    # klucz/nagłówek -> kolumna
+    columns = {
+        # Manufacturer → MultiColumn:
+        # - manufacturer: {text, url}
+        # - manufacturer_status: enum na podstawie markera
+        #
+        # Na wiki aktualni konstruktorzy mają w komórce nazwę z "~",
+        # np. "Ferrari~" – to mapujemy na "current", reszta na "former".
+        "manufacturer": MultiColumn(
+            {
+                "manufacturer": UrlColumn(),  # czyści tekst, zwraca dict{text, url}
+                "manufacturer_status": EnumMarksColumn(
+                    {"~": "current"},
+                    default="former",
+                ),
+            }
+        ),
+
+        # sezony jako struktura (np. listy zakresów)
+        "seasons": SeasonsColumn(),
+
+        # pola liczbowe
+        "races_entered": IntColumn(),
+        "races_started": IntColumn(),
+        "wins": IntColumn(),
+        "points": FloatColumn(),        # ma np. 405.5 itd.
+        "poles": IntColumn(),
+        "fastest_laps": IntColumn(),
+        "podiums": IntColumn(),
+        "wcc": IntColumn(),
+        "wdc": IntColumn(),
+    }
 
 
 if __name__ == "__main__":
     scraper = F1EngineManufacturersScraper(include_urls=True)
 
-    engines = scraper.fetch()
-    print(f"Pobrano rekordów: {len(engines)}")
+    manufacturers = scraper.fetch()
+    print(f"Pobrano rekordów: {len(manufacturers)}")
 
-    scraper.to_json("f1_engine_manufacturers.json")
-    scraper.to_csv("f1_engine_manufacturers.csv")
-
-    # opcjonalnie:
-    # df = scraper.to_dataframe()
-    # print(df.head())
+    scraper.to_json("../../data/wiki/engines/f1_engine_manufacturers.json")
+    scraper.to_csv("../../data/wiki/engines/f1_engine_manufacturers.csv")
