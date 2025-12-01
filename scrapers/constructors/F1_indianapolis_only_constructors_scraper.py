@@ -32,8 +32,8 @@ if __name__ == "__main__":
     indy_only = scraper.fetch()
     print(f"Pobrano rekordów: {len(indy_only)}")
 
-    scraper.to_json("f1_indianapolis_only_constructors.json")
-    scraper.to_csv("f1_indianapolis_only_constructors.csv")
+    scraper.to_json("../../data/wiki/constructors/f1_indianapolis_only_constructors.json")
+    scraper.to_csv("../../data/wiki/constructors/f1_indianapolis_only_constructors.csv")
 
     # opcjonalnie:
     # import pprint
