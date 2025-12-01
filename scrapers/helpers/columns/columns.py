@@ -184,7 +184,8 @@ class UrlColumn(BaseColumn):
 class LinksListColumn(BaseColumn):
     """
     Zwraca ZAWSZE listę linków [{text, url}, ...]
-    AUTOMATYCZNE czyszczenie * † z .text
+    AUTOMATYCZNE czyszczenie * † ~ ^ itp. z .text
+    Wyrzuca linki, które mają pusty tekst.
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
@@ -192,9 +193,21 @@ class LinksListColumn(BaseColumn):
 
         for link in ctx.links:
             d = dict(link)
-            if isinstance(d.get("text"), str):
-                d["text"] = strip_marks(d["text"])
+            text = d.get("text")
+
+            # 1) strip marks
+            if isinstance(text, str):
+                text = strip_marks(text).strip()
+                d["text"] = text
+
+            # 2) skip if no text
+            if not text:
+                # brak tekstu → NIE dodajemy tego linku do listy
+                continue
+
+            # 3) ensure url exists
             d.setdefault("url", None)
+
             cleaned.append(d)
 
         return cleaned

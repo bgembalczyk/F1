@@ -1,4 +1,14 @@
+from __future__ import annotations
+
+from typing import Dict
+
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.columns import (
+    UrlColumn,
+    LinksListColumn,
+    SeasonsColumn,
+    IntColumn,
+)
 
 
 class F1Constructors2025Scraper(F1TableScraper):
@@ -19,7 +29,7 @@ class F1Constructors2025Scraper(F1TableScraper):
     ]
 
     # nagłówek z tabeli -> klucz w dict
-    column_map = {
+    column_map: Dict[str, str] = {
         "Constructor": "constructor",
         "Engine": "engine",
         "Licensed in": "licensed_in",
@@ -39,13 +49,35 @@ class F1Constructors2025Scraper(F1TableScraper):
         "Antecedent teams": "antecedent_teams",
     }
 
-    # typy kolumn po STRONIE KLUCZA (po column_map)
-    column_types = {
-        "constructor": "link",
-        "engine": "list_of_links",
-        "seasons": "seasons",
-        "antecedent_teams": "list_of_links",
+    # logika kolumn po stronie KLUCZA (po column_map)
+    columns = {
+        # nazwa konstruktora – pojedynczy link {text, url}
+        "constructor": UrlColumn(),
+
+        # silnik – lista linków [{text, url}, ...]
+        "engine": LinksListColumn(),
+        "based_in": LinksListColumn(),
+
+        # sezony – standardowy parser sezonów
+        "seasons": SeasonsColumn(),
+
+        # statystyki – liczby całkowite
+        "races_entered": IntColumn(),
+        "races_started": IntColumn(),
+        "drivers": IntColumn(),
+        "total_entries": IntColumn(),
+        "wins": IntColumn(),
+        "points": IntColumn(),
+        "poles": IntColumn(),
+        "fastest_laps": IntColumn(),
+        "podiums": IntColumn(),
+        "wcc_titles": IntColumn(),
+        "wdc_titles": IntColumn(),
+
+        # poprzednie zespoły – lista linków
+        "antecedent_teams": LinksListColumn(),
     }
+    # pozostałe kolumny ("licensed_in", "based_in", "drivers") obsłuży domyślny AutoColumn
 
 
 if __name__ == "__main__":
