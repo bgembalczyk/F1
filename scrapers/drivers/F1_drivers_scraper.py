@@ -4,6 +4,15 @@ import re
 from typing import Any, Dict, List
 
 from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.helpers.columns.columns import (
+    UrlColumn,
+    TextColumn,
+    SeasonsColumn,
+    IntColumn,
+    MultiColumn,
+    FuncColumn, BoolColumn,
+)
+from scrapers.helpers.f1_table_utils import parse_seasons
 
 
 class F1DriversScraper(F1TableScraper):
@@ -53,23 +62,37 @@ class F1DriversScraper(F1TableScraper):
         "Points": "points",
     }
 
-    column_types = {
-        # driver – jako pojedynczy link {text, url}
-        "driver": "link",
-        # kraj jako zwykły tekst
-        "nationality": "text",
-        # sezony startów – używamy wbudowanego parsera "seasons"
-        "seasons_competed": "seasons",
-        # Championships – najpierw "goły" tekst, a potem przerabiamy go w fetch()
-        "drivers_championships": "text",
-        # punkty jako tekst (bo bywają nawiasy / komentarze)
-        "points": "text",
-        # reszta = "auto"
+    columns = {
+        "driver": MultiColumn(
+            {
+                "driver": UrlColumn(),
+
+                # bool na podstawie raw_text – nowa BoolColumn
+                "is_active": BoolColumn(
+                    lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
+                ),
+                "is_world_champion": BoolColumn(
+                    lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "^"))
+                ),
+            }
+        ),
+
+        "nationality": TextColumn(),
+        "seasons_competed": SeasonsColumn(),
+        "drivers_championships": TextColumn(),
+        "race_entries": IntColumn(),
+        "race_starts": IntColumn(),
+        "pole_positions": IntColumn(),
+        "race_wins": IntColumn(),
+        "podiums": IntColumn(),
+        "fastest_laps": IntColumn(),
+        "points": TextColumn(),
     }
 
-    # ------------------------------------------------------------------ #
-    #  Pomocniczy parser kolumny "Drivers' Championships"
-    # ------------------------------------------------------------------ #
+    # =====================================================================
+    #  Parsowanie kolumny Drivers' Championships
+    # =====================================================================
+
     def _parse_drivers_championships(self, raw: Any) -> Dict[str, Any]:
         """
         Parsuje tekst z komórki "Drivers' Championships" do postaci:
@@ -119,85 +142,27 @@ class F1DriversScraper(F1TableScraper):
         if count == 0 or not seasons_parts:
             return {"count": count, "seasons": []}
 
-        # sklejamy resztę w coś w stylu:
-        # "2005–2006, 2010, 2012–2013"
         seasons_text = ", ".join(seasons_parts)
-
-        # i używamy dokładnie tej samej logiki, co dla kolumny "seasons"
-        # (F1TableScraper._parse_seasons) → lista dictów {year, url}
-        seasons = self._parse_seasons(seasons_text)
+        seasons = parse_seasons(seasons_text)
 
         return {"count": count, "seasons": seasons}
 
-    # ------------------------------------------------------------------ #
-    #  Główne fetch z postprocessingiem
-    # ------------------------------------------------------------------ #
+    # =====================================================================
+    #  Główne fetch
+    # =====================================================================
+
     def fetch(self) -> List[Dict[str, Any]]:
         """
-        Nadpisujemy fetch(), żeby po bazowym parsowaniu:
-        - usunąć symbole z nazw,
-        - dodać is_active / is_world_champion,
-        - przemapować drivers_championships → {count, seasons[{year,url}, ...]}.
+        Minimalne fetch:
+        - NIE nadpisujemy is_active / is_world_champion — to robi BoolColumn.
+        - Parsujemy tylko kolumnę 'drivers_championships' do dict {count, seasons}.
         """
         rows = super().fetch()
 
         for row in rows:
-            # ------------------------------
-            # 1) Symbol przy nazwisku (~, *, ^)
-            # ------------------------------
-            symbol: str | None = None
-
-            name_val = row.get("driver")
-            # driver może być dict {"text", "url"} albo zwykłym stringiem
-            if isinstance(name_val, dict):
-                text = (name_val.get("text") or "").strip()
-            else:
-                text = (name_val or "").strip()
-
-            if text and text[-1] in ("~", "*", "^"):
-                symbol = text[-1]
-                cleaned = text[:-1].rstrip()
-
-                if isinstance(name_val, dict):
-                    name_val["text"] = cleaned
-                    row["driver"] = name_val
-                else:
-                    row["driver"] = cleaned
-
-            # ------------------------------
-            # 2) Czy jest aktywny (startował w 2025)?
-            #    Zgodnie z key:
-            #      ~ / *  -> startował w 2025
-            #    + dodatkowo: jeśli w "Seasons competed" jest "2025"
-            # ------------------------------
-            # UWAGA: po typie "seasons" seasons_competed jest już listą dictów
-            seasons_val = row.get("seasons_competed") or []
-            has_2025 = any(
-                isinstance(item, dict) and item.get("year") == 2025
-                for item in seasons_val
-            )
-
-            is_active = has_2025 or symbol in ("~", "*")
-
-            # ------------------------------
-            # 3) Parsowanie Drivers' Championships -> dict {count, seasons}
-            # ------------------------------
             champs_raw = row.get("drivers_championships")
             champs_info = self._parse_drivers_championships(champs_raw)
-
-            # nadpisujemy kolumnę zparsowanym dict'em
             row["drivers_championships"] = champs_info
-
-            # ------------------------------
-            # 4) Czy jest mistrzem świata?
-            #    - count > 0
-            #    - lub symbol w {~, ^} (oznacza mistrza świata)
-            # ------------------------------
-            count = champs_info.get("count", 0) or 0
-            is_world_champion = (count > 0) or symbol in ("~", "^")
-
-            row["is_active"] = is_active
-            row["is_world_champion"] = is_world_champion
 
         return rows
 
@@ -210,4 +175,3 @@ if __name__ == "__main__":
 
     scraper.to_json("../../data/wiki/drivers/f1_drivers.json")
     scraper.to_csv("../../data/wiki/drivers/f1_drivers.csv")
-

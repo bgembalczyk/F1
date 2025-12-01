@@ -145,5 +145,7 @@ def strip_marks(text: str | None) -> str | None:
         .replace("‡", "")
         .replace("✝", "")
         .replace("✚", "")
+        .replace("~", "")
+        .replace("^", "")
         .strip()
     )
