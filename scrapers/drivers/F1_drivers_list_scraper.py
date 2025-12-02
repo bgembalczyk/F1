@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
-from scrapers.F1_table_scraper import F1TableScraper
+from scrapers.base.F1_table_scraper import F1TableScraper
 from scrapers.helpers.columns.columns import (
     UrlColumn,
     TextColumn,

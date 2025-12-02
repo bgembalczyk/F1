@@ -3,7 +3,7 @@ import re
 
 from bs4 import Tag
 
-from scrapers.F1_list_scrapper import F1ListScraper
+from scrapers.base.F1_list_scrapper import F1ListScraper
 from scrapers.helpers.f1_table_utils import clean_wiki_text, parse_seasons
 
 
