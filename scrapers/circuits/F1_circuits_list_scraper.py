@@ -14,7 +14,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
-class F1CircuitsScraper(F1TableScraper):
+class F1CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -87,7 +87,7 @@ class F1CircuitsScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1CircuitsScraper(include_urls=True)
+    scraper = F1CircuitsListScraper(include_urls=True)
 
     circuits = scraper.fetch()
     print(f"Pobrano rekordów: {len(circuits)}")
