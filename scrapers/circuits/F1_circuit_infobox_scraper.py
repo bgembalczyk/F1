@@ -101,12 +101,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
                 "link": link,
             }
 
-        return {
-            "text": text or None,
-            "parts": parts or None,
-            "components": components,
-            "links": row.get("links") or None,
-        }
+        return components or None
 
     def _parse_coordinates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
@@ -279,18 +274,45 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
     ) -> List[Dict[str, Any]]:
         records: List[Dict[str, Any]] = []
 
-        base_record = self._parse_lap_record(base_record_row)
-        if base_record:
-            records.append({"race_lap_record": base_record})
-
         for layout in layouts:
             if layout.get("race_lap_record"):
                 records.append(self._prune_nulls(layout))
+
+        base_record = self._parse_lap_record(base_record_row)
+        if base_record and not self._lap_record_exists(base_record, records):
+            records.append({"race_lap_record": base_record})
 
         return records
 
     def _prune_nulls(self, data: Dict[str, Any]) -> Dict[str, Any]:
         return {k: v for k, v in data.items() if v is not None}
+
+    def _lap_record_exists(
+        self, candidate: Dict[str, Any], records: List[Dict[str, Any]]
+    ) -> bool:
+        for record in records:
+            if self._same_lap_record(candidate, record.get("race_lap_record")):
+                return True
+        return False
+
+    def _same_lap_record(
+        self, left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]
+    ) -> bool:
+        if not left or not right:
+            return False
+
+        def _text(obj: Optional[Dict[str, Any]]) -> Optional[str]:
+            if not obj:
+                return None
+            return obj.get("text") if isinstance(obj, dict) else None
+
+        return (
+            left.get("time") == right.get("time")
+            and _text(left.get("driver")) == _text(right.get("driver"))
+            and _text(left.get("car")) == _text(right.get("car"))
+            and left.get("year") == right.get("year")
+            and left.get("series") == right.get("series")
+        )
 
     def _find_link(
         self, text: Optional[str], links: List[Dict[str, str]]
