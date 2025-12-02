@@ -31,7 +31,10 @@ class WikipediaInfoboxScraper:
         """Pobiera i parsuje infobox z dowolnego artykułu Wikipedii."""
         html = self._fetch(url)
         soup = BeautifulSoup(html, "html.parser")
+        return self.parse_from_soup(soup)
 
+    def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
+        """Parsuje infobox z już utworzonego obiektu ``BeautifulSoup``."""
         infobox = self._find_infobox(soup)
         if infobox is None:
             return {"title": None, "rows": {}}
