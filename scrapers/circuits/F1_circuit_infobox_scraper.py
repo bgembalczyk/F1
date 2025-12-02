@@ -76,10 +76,9 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             "records": {
                 "race_lap": self._parse_lap_record(rows.get("Race lap record")),
             },
-            "raw_rows": rows,
         }
 
-        return {"raw": raw, "normalized": normalized}
+        return normalized
 
     def _get_text(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
@@ -92,12 +91,12 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             return None
         text = self._get_text(row) or ""
         parts = [part.strip(" ,") for part in re.split(r",|\u00b7|/|;", text) if part.strip(" ,")]
-        return {"raw": text or None, "parts": parts or None, "links": row.get("links", [])}
+        return {"text": text or None, "parts": parts or None, "links": row.get("links", [])}
 
     def _parse_coordinates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
-        return {"raw": self._get_text(row), "links": row.get("links", [])}
+        return {"text": self._get_text(row), "links": row.get("links", [])}
 
     def _parse_length(self, row: Optional[Dict[str, Any]], *, unit: str) -> Optional[float]:
         if not row:
@@ -118,7 +117,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             return None
         text = self._get_text(row) or ""
         iso_dates = re.findall(r"\d{4}-\d{2}-\d{2}", text)
-        return {"raw": text or None, "iso_dates": iso_dates or None}
+        return {"text": text or None, "iso_dates": iso_dates or None}
 
     def _split_simple_list(self, row: Optional[Dict[str, Any]]) -> Optional[List[str]]:
         if not row:
@@ -140,7 +139,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
                 events = [p.strip(" ;") for p in re.split(r"(?<=\))\s+|\s{2,}", content) if p.strip(" ;")]
             parsed_sections[name] = events
 
-        return {"raw": text or None, **parsed_sections}
+        return {"text": text or None, **parsed_sections}
 
     def _split_sections(self, text: str) -> Dict[str, str]:
         pattern = re.compile(r"\b(Current|Future|Former):")
@@ -168,7 +167,6 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             details = [part.strip() for part in details_match.group(1).split(",") if part.strip()]
 
         record: Dict[str, Any] = {
-            "raw": text or None,
             "time": time_match.group(0) if time_match else None,
         }
 
