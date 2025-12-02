@@ -11,7 +11,7 @@ from scrapers.base.F1_scraper import F1Scraper
 from scrapers.base.F1_table_scraper import F1TableScraper
 from scrapers.circuits.F1_circuits_list_scraper import F1CircuitsListScraper
 from scrapers.helpers.f1_table_utils import clean_wiki_text, extract_links_from_cell
-from scrapers.base.wiki_infobox_scraper import WikipediaInfoboxScraper
+from scrapers.circuits.F1_circuit_infobox_scraper import F1CircuitInfoboxScraper
 
 
 class _CircuitTableScraper(F1TableScraper):
@@ -126,7 +126,7 @@ class F1SingleCircuitScraper(F1Scraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        infobox_scraper = WikipediaInfoboxScraper(timeout=self.timeout)
+        infobox_scraper = F1CircuitInfoboxScraper(timeout=self.timeout)
         return infobox_scraper.parse_from_soup(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup, *, base_url: str) -> List[Dict[str, Any]]:
