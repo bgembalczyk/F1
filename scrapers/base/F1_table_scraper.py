@@ -6,7 +6,7 @@ from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.F1_scraper import F1Scraper
+from scrapers.base.F1_scraper import F1Scraper
 from scrapers.helpers.columns.column_context import ColumnContext
 from scrapers.helpers.columns.columns import BaseColumn, AutoColumn
 from scrapers.helpers.f1_table_utils import clean_wiki_text, extract_links_from_cell
