@@ -91,11 +91,15 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             part.strip(" ,") for part in re.split(r",|\u00b7|/|;", text) if part.strip(" ,")
         ]
 
-        components: Dict[str, Optional[str]] = {
-            "locality": parts[0] if len(parts) >= 1 else None,
-            "city_or_region": parts[1] if len(parts) >= 2 else None,
-            "country": parts[-1] if parts else None,
-        }
+        components: Dict[str, Optional[Dict[str, Any]]] = {}
+        links = row.get("links") or []
+        for idx, part in enumerate(parts):
+            key = f"localisation{idx + 1}"
+            link = self._find_link(part, links)
+            components[key] = {
+                "text": part,
+                "link": link,
+            }
 
         return {
             "text": text or None,
@@ -108,8 +112,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         if not row:
             return None
         text = self._get_text(row) or ""
-        position = self._parse_position(text)
-        return {"text": text or None, "position": position}
+        return self._parse_position(text)
 
     def _parse_position(self, text: str) -> Optional[Dict[str, float]]:
         if not text:
@@ -180,10 +183,12 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         }
 
         if details:
+            driver_text = details[0] if len(details) >= 1 else None
+            car_text = details[1] if len(details) >= 2 else None
             record.update(
                 {
-                    "driver": details[0] if len(details) >= 1 else None,
-                    "car": details[1] if len(details) >= 2 else None,
+                    "driver": self._with_link(driver_text, row.get("links")),
+                    "car": self._with_link(car_text, row.get("links")),
                     "year": details[2] if len(details) >= 3 else None,
                     "series": details[3] if len(details) >= 4 else None,
                 }
@@ -204,6 +209,10 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         closed_dates = self._parse_dates(rows.get("Closed")) or {}
         for date in closed_dates.get("iso_dates") or []:
             events.append({"event": "closed", "date": date})
+
+        events = sorted(
+            events, key=lambda e: e.get("date") or ""
+        )
 
         history = {
             "events": events or None,
@@ -272,17 +281,31 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
         base_record = self._parse_lap_record(base_record_row)
         if base_record:
-            records.append({
-                "layout": None,
-                "years": None,
-                "length_km": None,
-                "length_mi": None,
-                "turns": None,
-                "race_lap_record": base_record,
-            })
+            records.append({"race_lap_record": base_record})
 
         for layout in layouts:
             if layout.get("race_lap_record"):
-                records.append(layout)
+                records.append(self._prune_nulls(layout))
 
         return records
+
+    def _prune_nulls(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        return {k: v for k, v in data.items() if v is not None}
+
+    def _find_link(
+        self, text: Optional[str], links: List[Dict[str, str]]
+    ) -> Optional[Dict[str, str]]:
+        if not text:
+            return None
+        for link in links:
+            if link.get("text", "").strip().lower() == text.strip().lower():
+                return link
+        return None
+
+    def _with_link(
+        self, text: Optional[str], links: Optional[List[Dict[str, str]]]
+    ) -> Optional[Dict[str, Any]]:
+        if text is None:
+            return None
+        link = self._find_link(text, links or [])
+        return {"text": text, "url": link.get("url") if link else None}
