@@ -53,14 +53,11 @@ class F1Constructors2025ListScraper(F1TableScraper):
     columns = {
         # nazwa konstruktora – pojedynczy link {text, url}
         "constructor": UrlColumn(),
-
         # silnik – lista linków [{text, url}, ...]
         "engine": LinksListColumn(),
         "based_in": LinksListColumn(),
-
         # sezony – standardowy parser sezonów
         "seasons": SeasonsColumn(),
-
         # statystyki – liczby całkowite
         "races_entered": IntColumn(),
         "races_started": IntColumn(),
@@ -73,7 +70,6 @@ class F1Constructors2025ListScraper(F1TableScraper):
         "podiums": IntColumn(),
         "wcc_titles": IntColumn(),
         "wdc_titles": IntColumn(),
-
         # poprzednie zespoły – lista linków
         "antecedent_teams": LinksListColumn(),
     }

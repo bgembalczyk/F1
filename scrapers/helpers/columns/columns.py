@@ -2,16 +2,21 @@ from __future__ import annotations
 
 import re
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict, Callable
+from typing import Any, Dict, Callable
 
 from scrapers.helpers.columns.column_context import ColumnContext
-from scrapers.helpers.f1_table_utils import clean_wiki_text, parse_seasons, extract_links_from_cell, \
-    parse_int_from_text, parse_float_from_text, strip_marks
+from scrapers.helpers.f1_table_utils import (
+    parse_seasons,
+    parse_int_from_text,
+    parse_float_from_text,
+    strip_marks,
+)
 
 
 # ==========================
 #  BAZOWA KOLUMNA
 # ==========================
+
 
 class BaseColumn(ABC):
     """
@@ -98,6 +103,7 @@ class MultiColumn(BaseColumn):
 # ==========================
 #  PROSTE KOLUMNY
 # ==========================
+
 
 class SkipColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:

@@ -10,7 +10,7 @@ from scrapers.helpers.columns.columns import (
     SeasonsColumn,
     IntColumn,
     MultiColumn,
-    FuncColumn, BoolColumn,
+    BoolColumn,
 )
 from scrapers.helpers.f1_table_utils import parse_seasons
 
@@ -66,7 +66,6 @@ class F1DriversListScraper(F1TableScraper):
         "driver": MultiColumn(
             {
                 "driver": UrlColumn(),
-
                 # bool na podstawie raw_text – nowa BoolColumn
                 "is_active": BoolColumn(
                     lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
@@ -76,7 +75,6 @@ class F1DriversListScraper(F1TableScraper):
                 ),
             }
         ),
-
         "nationality": TextColumn(),
         "seasons_competed": SeasonsColumn(),
         "drivers_championships": TextColumn(),
@@ -121,7 +119,7 @@ class F1DriversListScraper(F1TableScraper):
             m = re.match(r"(\d+)", lines[0])
             if m:
                 count = int(m.group(1))
-                tail = lines[0][m.end():].strip()
+                tail = lines[0][m.end() :].strip()
                 if tail:
                     seasons_parts.append(tail)
                 # reszta linii traktujemy jako kolejne fragmenty z latami

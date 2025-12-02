@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable, Any
+from typing import Any
 
 from bs4 import Tag
-
-from scrapers.helpers.f1_table_utils import clean_wiki_text
 
 
 @dataclass

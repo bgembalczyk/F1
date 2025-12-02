@@ -30,8 +30,12 @@ if __name__ == "__main__":
     indy_engines = scraper.fetch()
     print(f"Pobrano rekordów: {len(indy_engines)}")
 
-    scraper.to_json("../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json")
-    scraper.to_csv("../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv")
+    scraper.to_json(
+        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json"
+    )
+    scraper.to_csv(
+        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv"
+    )
 
     # opcjonalnie:
     # for e in indy_engines:

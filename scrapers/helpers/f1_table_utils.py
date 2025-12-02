@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from datetime import datetime
-from typing import Any, Callable, Dict, List
+from typing import Any, Callable
 
 from bs4 import Tag
 
@@ -19,7 +19,9 @@ def clean_wiki_text(text: str) -> str:
     return t.strip()
 
 
-def parse_seasons(text: str, *, current_year: int | None = None) -> list[dict[str, Any]]:
+def parse_seasons(
+    text: str, *, current_year: int | None = None
+) -> list[dict[str, Any]]:
     """
     Zamienia tekst w stylu:
         '1973, 1975–1982, 1984'  lub '2014–present'
@@ -134,13 +136,13 @@ def extract_links_from_cell(
 
     return links
 
+
 def strip_marks(text: str | None) -> str | None:
     if text is None:
         return None
     # typowe znaki w tabelach F1
     return (
-        text
-        .replace("*", "")
+        text.replace("*", "")
         .replace("†", "")
         .replace("‡", "")
         .replace("✝", "")

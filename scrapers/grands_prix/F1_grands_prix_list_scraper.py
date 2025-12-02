@@ -57,13 +57,10 @@ class F1GrandsPrixListScraper(F1TableScraper):
                 ),
             }
         ),
-
         # Country → lista linków [{text, url}, ...] z czyszczeniem znaczników
         "country": LinksListColumn(),
-
         # Years held → sezony (lista zakresów/lat)
         "years_held": SeasonsColumn(),
-
         "circuits": IntColumn(),
         "total": IntColumn(),
     }

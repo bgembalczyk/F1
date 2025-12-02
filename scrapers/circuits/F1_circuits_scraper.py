@@ -1,10 +1,17 @@
 from __future__ import annotations
 
-from typing import Dict
 
 from scrapers.F1_table_scraper import F1TableScraper
-from scrapers.helpers.columns.columns import SkipColumn, SeasonsColumn, IntColumn, MultiColumn, UrlColumn, \
-    EnumMarksColumn, RegexColumn, LinksListColumn
+from scrapers.helpers.columns.columns import (
+    SkipColumn,
+    SeasonsColumn,
+    IntColumn,
+    MultiColumn,
+    UrlColumn,
+    EnumMarksColumn,
+    RegexColumn,
+    LinksListColumn,
+)
 
 
 class F1CircuitsScraper(F1TableScraper):
@@ -45,16 +52,16 @@ class F1CircuitsScraper(F1TableScraper):
         "seasons": SeasonsColumn(),
         "turns": IntColumn(),
         "grands_prix_held": IntColumn(),
-
         # Circuit → MultiColumn: circuit (url) + circuit_status (enum z raw_text)
-        "circuit": MultiColumn({
-            "circuit": UrlColumn(),  # już czyści tekst
-            "circuit_status": EnumMarksColumn(
-                {"*": "current", "†": "future"},
-                default="former",
-            ),
-        }),
-
+        "circuit": MultiColumn(
+            {
+                "circuit": UrlColumn(),  # już czyści tekst
+                "circuit_status": EnumMarksColumn(
+                    {"*": "current", "†": "future"},
+                    default="former",
+                ),
+            }
+        ),
         # Last length used → MultiColumn: km + mi z jednego raw_text
         # Last length used → MultiColumn: km + mi z tego samego tekstu
         "last_length_used": MultiColumn(
@@ -73,9 +80,8 @@ class F1CircuitsScraper(F1TableScraper):
                 ),
             }
         ),
-
         # Grands Prix → lista linków bez znaczników
-        "grands_prix": LinksListColumn()
+        "grands_prix": LinksListColumn(),
         # alternatywnie: LinksListColumn() + mała modyfikacja tekstu w osobnej kolumnie
     }
 

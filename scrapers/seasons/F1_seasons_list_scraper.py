@@ -39,13 +39,11 @@ class F1SeasonsListScraper(F1TableScraper):
     columns = {
         # Season → pojedynczy link {text, url} z automatycznym czyszczeniem * † itd.
         "season": UrlColumn(),
-
         # Races → int
         "races": IntColumn(),
         "countries": IntColumn(),
         "first": UrlColumn(),
         "last": UrlColumn(),
-
         # Mistrzowie → zawsze lista linków [{text, url}, ...]
         "drivers_champion_team": LinksListColumn(),
         "constructors_champion": LinksListColumn(),

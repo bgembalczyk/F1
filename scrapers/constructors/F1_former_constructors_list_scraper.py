@@ -6,7 +6,8 @@ from scrapers.F1_table_scraper import F1TableScraper
 from scrapers.helpers.columns.columns import (
     UrlColumn,
     SeasonsColumn,
-    IntColumn, LinksListColumn,
+    IntColumn,
+    LinksListColumn,
 )
 
 
@@ -49,10 +50,8 @@ class F1FormerConstructorsListScraper(F1TableScraper):
         # nazwa konstruktora – pojedynczy link {text, url}
         "constructor": UrlColumn(),
         "licensed_in": LinksListColumn(),
-
         # sezony – parser sezonów (lista lat/zakresów)
         "seasons": SeasonsColumn(),
-
         # statystyki – liczby całkowite
         "races_entered": IntColumn(),
         "races_started": IntColumn(),

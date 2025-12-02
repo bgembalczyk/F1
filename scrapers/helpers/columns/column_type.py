@@ -1,8 +1,17 @@
 from typing import Protocol, Any, Dict
 
 from scrapers.helpers.columns.column_context import ColumnContext
-from scrapers.helpers.columns.columns import AutoColumn, SkipColumn, TextColumn, ListColumn, SeasonsColumn, UrlColumn, \
-    LinksListColumn, IntColumn, FloatColumn
+from scrapers.helpers.columns.columns import (
+    AutoColumn,
+    SkipColumn,
+    TextColumn,
+    ListColumn,
+    SeasonsColumn,
+    UrlColumn,
+    LinksListColumn,
+    IntColumn,
+    FloatColumn,
+)
 
 
 class ColumnType(Protocol):

@@ -51,10 +51,7 @@ class F1TableScraper(F1Scraper, ABC):
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
 
         header_cells = header_row.find_all(["th", "td"])
-        headers = [
-            clean_wiki_text(c.get_text(" ", strip=True))
-            for c in header_cells
-        ]
+        headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
         records: List[Dict[str, Any]] = []
         for tr in table.find_all("tr")[1:]:
@@ -66,8 +63,7 @@ class F1TableScraper(F1Scraper, ABC):
 
             # --- nowy fragment: pomijamy footer/powtórzony nagłówek ---
             cleaned_cells = [
-                clean_wiki_text(c.get_text(" ", strip=True))
-                for c in cells
+                clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
             ]
             if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
                 # wiersz, który ma dokładnie to samo co nagłówki -> traktujemy jako footer
@@ -105,8 +101,7 @@ class F1TableScraper(F1Scraper, ABC):
                 continue
             header_cells = header_row.find_all(["th", "td"])
             headers = [
-                clean_wiki_text(c.get_text(" ", strip=True))
-                for c in header_cells
+                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
             ]
 
             if self._headers_match(headers):
@@ -163,9 +158,7 @@ class F1TableScraper(F1Scraper, ABC):
             )
 
             col = (
-                self.columns.get(key)
-                or self.columns.get(header)
-                or self.default_column
+                self.columns.get(key) or self.columns.get(header) or self.default_column
             )
 
             col.apply(ctx, record)
