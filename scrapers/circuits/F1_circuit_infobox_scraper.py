@@ -47,13 +47,16 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
         raw = super().parse_from_soup(soup)
-        return self._with_normalized(raw)
+        layout_records = self._parse_layout_sections(soup)
+        return self._with_normalized(raw, layout_records)
 
     # ------------------------------
     # Normalizacja pól
     # ------------------------------
 
-    def _with_normalized(self, raw: Dict[str, Any]) -> Dict[str, Any]:
+    def _with_normalized(
+        self, raw: Dict[str, Any], layout_records: Optional[List[Dict[str, Any]]]
+    ) -> Dict[str, Any]:
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
 
         normalized = {
@@ -61,21 +64,15 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             "location": self._parse_location(rows.get("Location")),
             "coordinates": self._parse_coordinates(rows.get("Coordinates")),
             "specs": {
-                "fia_grade": self._get_text(rows.get("FIA Grade")),
+                "fia_grade": self._parse_int(rows.get("FIA Grade")),
                 "length_km": self._parse_length(rows.get("Length"), unit="km"),
                 "length_mi": self._parse_length(rows.get("Length"), unit="mi"),
                 "turns": self._parse_int(rows.get("Turns")),
             },
-            "history": {
-                "opened": self._parse_dates(rows.get("Opened")),
-                "closed": self._parse_dates(rows.get("Closed")),
-                "former_names": self._split_simple_list(rows.get("Former names")),
-                "owner": self._get_text(rows.get("Owner")),
-            },
-            "events": self._parse_events(rows.get("Major events")),
-            "records": {
-                "race_lap": self._parse_lap_record(rows.get("Race lap record")),
-            },
+            "history": self._parse_history(rows),
+            "records": self._merge_records(
+                rows.get("Race lap record"), layout_records or []
+            ),
         }
 
         return normalized
@@ -90,13 +87,54 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         if not row:
             return None
         text = self._get_text(row) or ""
-        parts = [part.strip(" ,") for part in re.split(r",|\u00b7|/|;", text) if part.strip(" ,")]
-        return {"text": text or None, "parts": parts or None, "links": row.get("links", [])}
+        parts = [
+            part.strip(" ,") for part in re.split(r",|\u00b7|/|;", text) if part.strip(" ,")
+        ]
+
+        components: Dict[str, Optional[str]] = {
+            "locality": parts[0] if len(parts) >= 1 else None,
+            "city_or_region": parts[1] if len(parts) >= 2 else None,
+            "country": parts[-1] if parts else None,
+        }
+
+        return {
+            "text": text or None,
+            "parts": parts or None,
+            "components": components,
+            "links": row.get("links") or None,
+        }
 
     def _parse_coordinates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
-        return {"text": self._get_text(row), "links": row.get("links", [])}
+        text = self._get_text(row) or ""
+        position = self._parse_position(text)
+        return {"text": text or None, "position": position}
+
+    def _parse_position(self, text: str) -> Optional[Dict[str, float]]:
+        if not text:
+            return None
+
+        decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
+        if decimal_match:
+            return {
+                "lat": float(decimal_match.group(1)),
+                "lon": float(decimal_match.group(2)),
+            }
+
+        parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
+        if len(parts) >= 2:
+            lat_dir, lat_val = parts[0]
+            lon_dir, lon_val = parts[1]
+            lat = float(lat_val)
+            lon = float(lon_val)
+            if lat_dir.upper() == "S":
+                lat = -lat
+            if lon_dir.upper() == "W":
+                lon = -lon
+            return {"lat": lat, "lon": lon}
+
+        return None
 
     def _parse_length(self, row: Optional[Dict[str, Any]], *, unit: str) -> Optional[float]:
         if not row:
@@ -126,35 +164,6 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         parts = [p.strip() for p in re.split(r";|,|/", text) if p.strip()]
         return parts or None
 
-    def _parse_events(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-        if not row:
-            return None
-        text = self._get_text(row) or ""
-        sections = self._split_sections(text)
-
-        parsed_sections: Dict[str, List[str]] = {}
-        for name, content in sections.items():
-            events = re.findall(r"[^()]+\([^)]*\)", content)
-            if not events:
-                events = [p.strip(" ;") for p in re.split(r"(?<=\))\s+|\s{2,}", content) if p.strip(" ;")]
-            parsed_sections[name] = events
-
-        return {"text": text or None, **parsed_sections}
-
-    def _split_sections(self, text: str) -> Dict[str, str]:
-        pattern = re.compile(r"\b(Current|Future|Former):")
-        matches = list(pattern.finditer(text))
-        if not matches:
-            return {"unspecified": text.strip()}
-
-        sections: Dict[str, str] = {}
-        for idx, match in enumerate(matches):
-            start = match.end()
-            end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
-            section_text = text[start:end].strip()
-            sections[match.group(1).lower()] = section_text
-        return sections
-
     def _parse_lap_record(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
@@ -181,3 +190,99 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             )
 
         return record
+
+    def _parse_history(self, rows: Dict[str, Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        events: List[Dict[str, Any]] = []
+
+        opened_dates = self._parse_dates(rows.get("Opened")) or {}
+        for idx, date in enumerate(opened_dates.get("iso_dates") or []):
+            events.append({
+                "event": "opened" if idx == 0 else "reopened",
+                "date": date,
+            })
+
+        closed_dates = self._parse_dates(rows.get("Closed")) or {}
+        for date in closed_dates.get("iso_dates") or []:
+            events.append({"event": "closed", "date": date})
+
+        history = {
+            "events": events or None,
+            "former_names": self._split_simple_list(rows.get("Former names")),
+            "owner": self._get_text(rows.get("Owner")),
+        }
+
+        return history
+
+    def _parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        table = self._find_infobox(soup)
+        if table is None:
+            return []
+
+        layouts: List[Dict[str, Any]] = []
+        current: Optional[Dict[str, Any]] = None
+
+        for tr in table.find_all("tr"):
+            if tr.find_parent("table") is not table:
+                continue
+
+            header = tr.find("th", recursive=False)
+            data = tr.find("td", recursive=False)
+
+            if header and header.get("colspan"):
+                layout_name, years = self._parse_layout_header(header.get_text(" ", strip=True))
+                current = {
+                    "layout": layout_name,
+                    "years": years,
+                    "length_km": None,
+                    "length_mi": None,
+                    "turns": None,
+                    "race_lap_record": None,
+                }
+                layouts.append(current)
+                continue
+
+            if current is None or not header or not data:
+                continue
+
+            label = header.get_text(" ", strip=True)
+            cell_row = {"text": data.get_text(" ", strip=True), "links": self._extract_links(data)}
+
+            if label == "Length":
+                current["length_km"] = self._parse_length(cell_row, unit="km")
+                current["length_mi"] = self._parse_length(cell_row, unit="mi")
+            elif label == "Turns":
+                current["turns"] = self._parse_int(cell_row)
+            elif label == "Race lap record":
+                current["race_lap_record"] = self._parse_lap_record(cell_row)
+
+        return layouts
+
+    def _parse_layout_header(self, text: str) -> tuple[str, Optional[str]]:
+        match = re.match(r"^(.*?)(?:\((.*?)\))?$", text)
+        if not match:
+            return text, None
+        name = match.group(1).strip()
+        years = match.group(2).strip() if match.group(2) else None
+        return name, years
+
+    def _merge_records(
+        self, base_record_row: Optional[Dict[str, Any]], layouts: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        records: List[Dict[str, Any]] = []
+
+        base_record = self._parse_lap_record(base_record_row)
+        if base_record:
+            records.append({
+                "layout": None,
+                "years": None,
+                "length_km": None,
+                "length_mi": None,
+                "turns": None,
+                "race_lap_record": base_record,
+            })
+
+        for layout in layouts:
+            if layout.get("race_lap_record"):
+                records.append(layout)
+
+        return records
