@@ -59,6 +59,19 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
     ) -> Dict[str, Any]:
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
 
+        used_keys = {
+            "Location",
+            "Coordinates",
+            "FIA Grade",
+            "Length",
+            "Turns",
+            "Race lap record",
+            "Opened",
+            "Closed",
+            "Former names",
+            "Owner",
+        }
+
         normalized = {
             "name": raw.get("title"),
             "location": self._parse_location(rows.get("Location")),
@@ -75,7 +88,11 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             ),
         }
 
-        return normalized
+        extra_fields = self._collect_additional_info(rows, used_keys)
+        if extra_fields:
+            normalized.update(extra_fields)
+
+        return self._prune_nulls(normalized)
 
     def _get_text(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
@@ -284,8 +301,30 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
         return records
 
-    def _prune_nulls(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        return {k: v for k, v in data.items() if v is not None}
+    def _prune_nulls(self, data: Any) -> Any:
+        if isinstance(data, dict):
+            pruned_dict = {}
+            for key, value in data.items():
+                cleaned = self._prune_nulls(value)
+                if cleaned is None:
+                    continue
+                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
+                    continue
+                pruned_dict[key] = cleaned
+            return pruned_dict
+
+        if isinstance(data, list):
+            pruned_list = []
+            for value in data:
+                cleaned = self._prune_nulls(value)
+                if cleaned is None:
+                    continue
+                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
+                    continue
+                pruned_list.append(cleaned)
+            return pruned_list
+
+        return data
 
     def _lap_record_exists(
         self, candidate: Dict[str, Any], records: List[Dict[str, Any]]
@@ -313,6 +352,28 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             and left.get("year") == right.get("year")
             and left.get("series") == right.get("series")
         )
+
+    def _collect_additional_info(
+        self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
+    ) -> Optional[Dict[str, Dict[str, Any]]]:
+        additional: Dict[str, Dict[str, Any]] = {}
+
+        for key, row in rows.items():
+            if key in used_keys:
+                continue
+
+            text = self._get_text(row)
+            if not text:
+                continue
+
+            info: Dict[str, Any] = {"text": text}
+            links = row.get("links") or []
+            if links:
+                info["links"] = links
+
+            additional[key] = info
+
+        return additional or None
 
     def _find_link(
         self, text: Optional[str], links: List[Dict[str, str]]
