@@ -65,10 +65,16 @@ class WikipediaInfoboxScraper:
         if caption:
             data["title"] = caption.get_text(" ", strip=True)
 
-        # Faktyczne wiersze infoboksa
-        for tr in table.find_all("tr", recursive=False):
-            header = tr.find("th")
-            value = tr.find("td")
+        # Faktyczne wiersze infoboksa. W artykułach Wikipedii <tr> znajdują się
+        # zwykle wewnątrz <tbody>, dlatego szukamy w całej tabeli, ale
+        # odfiltrowujemy wiersze zagnieżdżonych tabel.
+        for tr in table.find_all("tr"):
+            # pomiń wiersze należące do zagnieżdżonych tabel (np. miniaturek)
+            if tr.find_parent("table") is not table:
+                continue
+
+            header = tr.find("th", recursive=False)
+            value = tr.find("td", recursive=False)
 
             # ignorujemy wiersze bez pary th/td
             if not header or not value:
