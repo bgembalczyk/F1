@@ -13,7 +13,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
-class F1GrandsPrixScraper(F1TableScraper):
+class F1GrandsPrixListScraper(F1TableScraper):
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
@@ -70,7 +70,7 @@ class F1GrandsPrixScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1GrandsPrixScraper(include_urls=True)
+    scraper = F1GrandsPrixListScraper(include_urls=True)
 
     races = scraper.fetch()
     print(f"Pobrano rekordów: {len(races)}")

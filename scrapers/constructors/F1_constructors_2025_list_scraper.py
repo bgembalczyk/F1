@@ -11,7 +11,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
-class F1Constructors2025Scraper(F1TableScraper):
+class F1Constructors2025ListScraper(F1TableScraper):
     """
     Aktualni konstruktorzy – sekcja
     'Constructors for the 2025 season' z:
@@ -81,7 +81,7 @@ class F1Constructors2025Scraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1Constructors2025Scraper(include_urls=True)
+    scraper = F1Constructors2025ListScraper(include_urls=True)
 
     constructors = scraper.fetch()
     print(f"Pobrano rekordów: {len(constructors)}")

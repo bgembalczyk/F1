@@ -5,7 +5,7 @@ from bs4 import Tag
 from scrapers.F1_list_scrapper import F1ListScraper
 
 
-class F1IndianapolisOnlyEngineManufacturersScraper(F1ListScraper):
+class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
     """
     Lista 'Indianapolis 500 only' dla producentów silników.
     """
@@ -25,7 +25,7 @@ class F1IndianapolisOnlyEngineManufacturersScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1IndianapolisOnlyEngineManufacturersScraper(include_urls=True)
+    scraper = F1IndianapolisOnlyEngineManufacturersListScraper(include_urls=True)
 
     indy_engines = scraper.fetch()
     print(f"Pobrano rekordów: {len(indy_engines)}")

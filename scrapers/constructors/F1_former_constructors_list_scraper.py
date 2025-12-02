@@ -10,7 +10,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
-class F1FormerConstructorsScraper(F1TableScraper):
+class F1FormerConstructorsListScraper(F1TableScraper):
     """
     Byli konstruktorzy – sekcja 'Former constructors'
     z:
@@ -70,7 +70,7 @@ class F1FormerConstructorsScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1FormerConstructorsScraper(include_urls=True)
+    scraper = F1FormerConstructorsListScraper(include_urls=True)
 
     constructors = scraper.fetch()
     print(f"Pobrano rekordów: {len(constructors)}")

@@ -15,7 +15,7 @@ from scrapers.helpers.columns.columns import (
 from scrapers.helpers.f1_table_utils import parse_seasons
 
 
-class F1DriversScraper(F1TableScraper):
+class F1DriversListScraper(F1TableScraper):
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
@@ -168,7 +168,7 @@ class F1DriversScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1DriversScraper(include_urls=True)
+    scraper = F1DriversListScraper(include_urls=True)
 
     drivers = scraper.fetch()
     print(f"Pobrano rekordów: {len(drivers)}")

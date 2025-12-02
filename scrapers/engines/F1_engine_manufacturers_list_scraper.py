@@ -13,7 +13,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
-class F1EngineManufacturersScraper(F1TableScraper):
+class F1EngineManufacturersListScraper(F1TableScraper):
     """
     Lista konstruktorów silników F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
@@ -86,7 +86,7 @@ class F1EngineManufacturersScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1EngineManufacturersScraper(include_urls=True)
+    scraper = F1EngineManufacturersListScraper(include_urls=True)
 
     manufacturers = scraper.fetch()
     print(f"Pobrano rekordów: {len(manufacturers)}")

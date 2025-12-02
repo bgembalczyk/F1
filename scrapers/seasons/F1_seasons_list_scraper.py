@@ -6,7 +6,7 @@ from scrapers.F1_table_scraper import F1TableScraper
 from scrapers.helpers.columns.columns import UrlColumn, LinksListColumn, IntColumn
 
 
-class F1SeasonsScraper(F1TableScraper):
+class F1SeasonsListScraper(F1TableScraper):
     """
     Scraper listy sezonów z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_seasons
@@ -54,7 +54,7 @@ class F1SeasonsScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1SeasonsScraper(include_urls=True)
+    scraper = F1SeasonsListScraper(include_urls=True)
 
     seasons = scraper.fetch()
     print(f"Pobrano rekordów: {len(seasons)}")

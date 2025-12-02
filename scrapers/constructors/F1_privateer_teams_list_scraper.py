@@ -7,7 +7,7 @@ from scrapers.F1_list_scrapper import F1ListScraper
 from scrapers.helpers.f1_table_utils import clean_wiki_text, parse_seasons
 
 
-class F1PrivateerTeamsScraper(F1ListScraper):
+class F1PrivateerTeamsListScraper(F1ListScraper):
     """
     Lista privateer teams (sekcja 'Privateer teams').
 
@@ -57,7 +57,7 @@ class F1PrivateerTeamsScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1PrivateerTeamsScraper(include_urls=True)
+    scraper = F1PrivateerTeamsListScraper(include_urls=True)
 
     teams = scraper.fetch()
     print(f"Pobrano rekordów: {len(teams)}")
