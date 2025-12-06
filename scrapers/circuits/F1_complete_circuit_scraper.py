@@ -130,19 +130,20 @@ class F1SingleCircuitScraper(F1Scraper):
         return infobox_scraper.parse_from_soup(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup, *, base_url: str) -> List[Dict[str, Any]]:
-        tables: List[Dict[str, Any]] = []
-
-        for idx, table in enumerate(
-            soup.find_all(
-                "table", class_=lambda c: c and "wikitable" in c.split()
-            )
-        ):
-            table_scraper = _CircuitTableScraper(
-                table=table, base_url=base_url, index=idx, session=self.session
-            )
-            tables.extend(table_scraper._parse_soup(table))
-
-        return tables
+        pass
+        # tables: List[Dict[str, Any]] = []
+        #
+        # for idx, table in enumerate(
+        #     soup.find_all(
+        #         "table", class_=lambda c: c and "wikitable" in c.split()
+        #     )
+        # ):
+        #     table_scraper = _CircuitTableScraper(
+        #         table=table, base_url=base_url, index=idx, session=self.session
+        #     )
+        #     tables.extend(table_scraper._parse_soup(table))
+        #
+        # return tables
 
 
 class F1CompleteCircuitScraper(F1Scraper):
@@ -198,3 +199,7 @@ if __name__ == "__main__":
     scraper = F1CompleteCircuitScraper(delay_seconds=1.0)
     data = scraper.fetch()
     print(f"Pobrano {len(data)} rekordów z pełnymi danymi torów.")
+
+    scraper.to_json("../../data/wiki/circuits/f1_circuits_extended.json")
+    scraper.to_csv("../../data/wiki/circuits/f1_circuits_extended.csv")
+

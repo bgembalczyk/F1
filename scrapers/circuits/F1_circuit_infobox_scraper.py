@@ -4,12 +4,9 @@ import re
 from typing import Any, Dict, List, Optional
 
 import requests
-
 from bs4 import BeautifulSoup
 
 from scrapers.base.wiki_infobox_scraper import WikipediaInfoboxScraper
-
-
 from scrapers.base.F1_scraper import F1Scraper
 
 
@@ -17,12 +14,12 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
-        self,
-        *,
-        timeout: int = 10,
-        include_urls: bool = True,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
+            self,
+            *,
+            timeout: int = 10,
+            include_urls: bool = True,
+            session: Optional[requests.Session] = None,
+            headers: Optional[Dict[str, str]] = None,
     ) -> None:
         F1Scraper.__init__(self, include_urls=include_urls, session=session, headers=headers)
         WikipediaInfoboxScraper.__init__(self, timeout=timeout)
@@ -46,6 +43,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return [self.parse_from_soup(soup)]
 
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
+        """Zwraca znormalizowany infobox + layouts (bez surowego `rows`)."""
         raw = super().parse_from_soup(soup)
         layout_records = self._parse_layout_sections(soup)
         return self._with_normalized(raw, layout_records)
@@ -55,7 +53,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
     # ------------------------------
 
     def _with_normalized(
-        self, raw: Dict[str, Any], layout_records: Optional[List[Dict[str, Any]]]
+            self, raw: Dict[str, Any], layout_records: Optional[List[Dict[str, Any]]]
     ) -> Dict[str, Any]:
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
 
@@ -70,29 +68,61 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             "Closed",
             "Former names",
             "Owner",
+            # nowe znormalizowane pola:
+            "Operator",
+            "Capacity",
+            "Broke ground",
+            "Built",
+            "Construction cost",
+            "Architect",
+            "Website",
+            "Banking",
+            "Area",
         }
 
-        normalized = {
-            "name": raw.get("title"),
-            "location": self._parse_location(rows.get("Location")),
-            "coordinates": self._parse_coordinates(rows.get("Coordinates")),
-            "specs": {
+        normalized: Dict[str, Any] = {"name": raw.get("title"), "location": self._parse_location(rows.get("Location")),
+                                      "coordinates": self._parse_coordinates(rows.get("Coordinates")), "specs": {
                 "fia_grade": self._parse_int(rows.get("FIA Grade")),
                 "length_km": self._parse_length(rows.get("Length"), unit="km"),
                 "length_mi": self._parse_length(rows.get("Length"), unit="mi"),
                 "turns": self._parse_int(rows.get("Turns")),
-            },
-            "history": self._parse_history(rows),
-            "records": self._merge_records(
-                rows.get("Race lap record"), layout_records or []
-            ),
-        }
+                "capacity": self._parse_capacity(rows.get("Capacity")),
+                "construction_cost": self._parse_construction_cost(
+                    rows.get("Construction cost")
+                ),
+                "banking": self._parse_banking(rows.get("Banking")),
+                "area": self._parse_area(rows.get("Area")),
+            }, "history": self._parse_history(rows), "operator": self._parse_linked_entity(rows.get("Operator")),
+                                      "architect": self._parse_linked_entity(rows.get("Architect")),
+                                      "website": self._parse_website(rows.get("Website"))}
+
+        # operator / architect jako pola "główne"
 
         extra_fields = self._collect_additional_info(rows, used_keys)
         if extra_fields:
-            normalized.update(extra_fields)
+            normalized["additional_info"] = extra_fields
 
-        return self._prune_nulls(normalized)
+        normalized = self._prune_nulls(normalized)
+
+        result: Dict[str, Any] = dict(raw or {})
+        # nie trzymamy surowych rows
+        result.pop("rows", None)
+
+        if layout_records:
+            result["layouts"] = self._prune_nulls(layout_records)
+
+        existing_norm = result.get("normalized")
+        if isinstance(existing_norm, dict):
+            existing_norm.update(normalized)
+            result["normalized"] = existing_norm
+        else:
+            result["normalized"] = normalized
+
+        return self._prune_nulls(result)
+
+    # ------------------------------
+    # Helpery parsujące pola
+    # ------------------------------
 
     def _get_text(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
@@ -166,11 +196,28 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return int(match.group()) if match else None
 
     def _parse_dates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        """Parsyje daty typu YYYY-MM-DD, YYYY-MM, YYYY i zwraca też listę lat."""
         if not row:
             return None
         text = self._get_text(row) or ""
-        iso_dates = re.findall(r"\d{4}-\d{2}-\d{2}", text)
-        return {"text": text or None, "iso_dates": iso_dates or None}
+        if not text:
+            return None
+
+        iso_full = re.findall(r"\d{4}-\d{2}-\d{2}", text)
+        iso_month = re.findall(r"\d{4}-\d{2}", text)
+        years = re.findall(r"\b(1[89]\d{2}|20\d{2})\b", text)
+
+        iso_dates: List[str] = []
+        if iso_full:
+            iso_dates = iso_full
+        elif iso_month:
+            iso_dates = iso_month
+
+        return {
+            "text": text or None,
+            "iso_dates": iso_dates or None,
+            "years": years or None,
+        }
 
     def _split_simple_list(self, row: Optional[Dict[str, Any]]) -> Optional[List[str]]:
         if not row:
@@ -208,23 +255,174 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
         return record
 
+    def _parse_capacity(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, int]]:
+        """Capacity: rozbicie na total / seating z tekstu typu '~125,000 (44,000 seating)'."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        # usuń przypisy [1], [2] itd.
+        text = re.sub(r"\[\d+]", "", text)
+        numbers = re.findall(r"[\d,]+", text)
+        if not numbers:
+            return None
+
+        def _to_int(s: str) -> int:
+            return int(s.replace(",", "").replace(" ", ""))
+
+        vals = [_to_int(n) for n in numbers]
+        result: Dict[str, int] = {}
+        if len(vals) >= 1:
+            result["total"] = vals[0]
+        if len(vals) >= 2:
+            result["seating"] = vals[1]
+        return result or None
+
+    def _parse_construction_cost(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        """Construction cost: amount + currency (+ opcjonalna skala)."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        text_clean = re.sub(r"\[\d+]", "", text)
+
+        symbol_map = {
+            "€": "EUR",
+            "$": "USD",
+            "£": "GBP",
+            "¥": "JPY",
+        }
+
+        currency: Optional[str] = None
+        for symbol, code in symbol_map.items():
+            if symbol in text_clean:
+                currency = code
+                break
+
+        if currency is None:
+            match_code = re.search(r"\b(EUR|USD|GBP|JPY|AUD|CAD|PLN|CHF)\b", text_clean)
+            if match_code:
+                currency = match_code.group(1)
+
+        amount_match = re.search(r"([\d.,]+)", text_clean)
+        if not amount_match and not currency:
+            return None
+
+        amount: Optional[float] = None
+        if amount_match:
+            try:
+                amount = float(amount_match.group(1).replace(",", ""))
+            except ValueError:
+                amount = None
+
+        scale_match = re.search(
+            r"\b(million|billion|thousand|mln|bn|k)\b", text_clean, flags=re.IGNORECASE
+        )
+        scale = scale_match.group(1).lower() if scale_match else None
+
+        result: Dict[str, Any] = {
+            "amount": amount,
+            "currency": currency,
+        }
+        if scale:
+            result["scale"] = scale
+        result["text"] = text_clean.strip() or None
+        return self._prune_nulls(result)
+
+    def _parse_banking(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        """Banking: liczba + jednostka + opcjonalna notka."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        angle_match = re.search(r"([\d.,]+)\s*°", text)
+        percent_match = re.search(r"([\d.,]+)\s*%", text)
+
+        value: Optional[float] = None
+        unit: Optional[str] = None
+
+        if angle_match:
+            value = float(angle_match.group(1).replace(",", "."))
+            unit = "deg"
+        elif percent_match:
+            value = float(percent_match.group(1).replace(",", "."))
+            unit = "percent"
+
+        result: Dict[str, Any] = {}
+        if value is not None:
+            result["value"] = value
+        if unit:
+            result["unit"] = unit
+
+        # reszta tekstu jako notka
+        cleaned = text
+        for m in (angle_match, percent_match):
+            if m:
+                cleaned = cleaned.replace(m.group(0), "")
+        cleaned = cleaned.strip(" ()-;,")
+        if cleaned:
+            result["note"] = cleaned
+
+        return result or None
+
+    def _parse_area(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, float]]:
+        """Area: np. '277 acres (112 ha)' -> acres + hectares."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        acres_match = re.search(r"([\d.,]+)\s*acres?", text, flags=re.IGNORECASE)
+        ha_match = re.search(r"([\d.,]+)\s*ha\b", text, flags=re.IGNORECASE)
+
+        def _to_float(s: str) -> float:
+            return float(s.replace(",", "."))
+
+        result: Dict[str, float] = {}
+        if acres_match:
+            result["acres"] = _to_float(acres_match.group(1))
+        if ha_match:
+            result["hectares"] = _to_float(ha_match.group(1))
+
+        return result or None
+
     def _parse_history(self, rows: Dict[str, Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         events: List[Dict[str, Any]] = []
 
+        def _dates_to_list(d: Dict[str, Any]) -> List[str]:
+            if not d:
+                return []
+            return (d.get("iso_dates") or d.get("years") or [])  # type: ignore[return-value]
+
         opened_dates = self._parse_dates(rows.get("Opened")) or {}
-        for idx, date in enumerate(opened_dates.get("iso_dates") or []):
-            events.append({
-                "event": "opened" if idx == 0 else "reopened",
-                "date": date,
-            })
+        for idx, date in enumerate(_dates_to_list(opened_dates)):
+            events.append(
+                {
+                    "event": "opened" if idx == 0 else "reopened",
+                    "date": date,
+                }
+            )
 
         closed_dates = self._parse_dates(rows.get("Closed")) or {}
-        for date in closed_dates.get("iso_dates") or []:
+        for date in _dates_to_list(closed_dates):
             events.append({"event": "closed", "date": date})
 
-        events = sorted(
-            events, key=lambda e: e.get("date") or ""
-        )
+        broke_ground_dates = self._parse_dates(rows.get("Broke ground")) or {}
+        for date in _dates_to_list(broke_ground_dates):
+            events.append({"event": "broke_ground", "date": date})
+
+        built_dates = self._parse_dates(rows.get("Built")) or {}
+        for date in _dates_to_list(built_dates):
+            events.append({"event": "built", "date": date})
+
+        events = sorted(events, key=lambda e: e.get("date") or "")
 
         history = {
             "events": events or None,
@@ -287,7 +485,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return name, years
 
     def _merge_records(
-        self, base_record_row: Optional[Dict[str, Any]], layouts: List[Dict[str, Any]]
+            self, base_record_row: Optional[Dict[str, Any]], layouts: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
         records: List[Dict[str, Any]] = []
 
@@ -327,7 +525,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return data
 
     def _lap_record_exists(
-        self, candidate: Dict[str, Any], records: List[Dict[str, Any]]
+            self, candidate: Dict[str, Any], records: List[Dict[str, Any]]
     ) -> bool:
         for record in records:
             if self._same_lap_record(candidate, record.get("race_lap_record")):
@@ -335,7 +533,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return False
 
     def _same_lap_record(
-        self, left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]
+            self, left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]
     ) -> bool:
         if not left or not right:
             return False
@@ -346,17 +544,45 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             return obj.get("text") if isinstance(obj, dict) else None
 
         return (
-            left.get("time") == right.get("time")
-            and _text(left.get("driver")) == _text(right.get("driver"))
-            and _text(left.get("car")) == _text(right.get("car"))
-            and left.get("year") == right.get("year")
-            and left.get("series") == right.get("series")
+                left.get("time") == right.get("time")
+                and _text(left.get("driver")) == _text(right.get("driver"))
+                and _text(left.get("car")) == _text(right.get("car"))
+                and left.get("year") == right.get("year")
+                and left.get("series") == right.get("series")
         )
 
+    def _parse_linked_entity(
+            self, row: Optional[Dict[str, Any]]
+    ) -> Optional[Dict[str, Any] | str]:
+        """Pola typu Operator / Architect – link jeśli jest, inaczej czysty tekst."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        links = row.get("links") or []
+        if not links:
+            return text or None
+
+        link = self._find_link(text, links) or links[0]
+        url = link.get("url")
+        if not url:
+            return text or None
+        return {"text": text, "url": url}
+
+    def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
+        """Website jako URL (z linku, jeśli jest)."""
+        if not row:
+            return None
+        text = self._get_text(row) or ""
+        links = row.get("links") or []
+        if links:
+            return links[0].get("url") or text or None
+        return text or None
+
     def _collect_additional_info(
-        self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
-    ) -> Optional[Dict[str, Dict[str, Any]]]:
-        additional: Dict[str, Dict[str, Any]] = {}
+            self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
+    ) -> Optional[Dict[str, Any]]:
+        """Dodatkowe pola – tekst + ewentualna lista wartości z linkami."""
+        additional: Dict[str, Any] = {}
 
         for key, row in rows.items():
             if key in used_keys:
@@ -368,7 +594,19 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
             info: Dict[str, Any] = {"text": text}
             links = row.get("links") or []
-            if links:
+
+            # jeżeli to jest wyliczenie, spróbuj rozbić na listę wartości
+            parts = [p.strip() for p in re.split(r";|,|/", text) if p.strip()]
+            if len(parts) > 1:
+                values: List[Any] = []
+                for part in parts:
+                    link = self._find_link(part, links)
+                    if link:
+                        values.append({"text": part, "url": link.get("url")})
+                    else:
+                        values.append(part)
+                info["values"] = values
+            elif links:
                 info["links"] = links
 
             additional[key] = info
@@ -376,7 +614,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return additional or None
 
     def _find_link(
-        self, text: Optional[str], links: List[Dict[str, str]]
+            self, text: Optional[str], links: List[Dict[str, str]]
     ) -> Optional[Dict[str, str]]:
         if not text:
             return None
@@ -386,7 +624,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         return None
 
     def _with_link(
-        self, text: Optional[str], links: Optional[List[Dict[str, str]]]
+            self, text: Optional[str], links: Optional[List[Dict[str, str]]]
     ) -> Optional[Dict[str, Any]]:
         if text is None:
             return None

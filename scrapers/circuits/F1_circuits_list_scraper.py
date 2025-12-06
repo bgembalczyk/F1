@@ -14,6 +14,7 @@ from scrapers.helpers.columns.columns import (
 )
 
 
+# TODO: Coś się zjebało i seasons nie działa jak kiedyś - trzeba to ogarnąć
 class F1CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
