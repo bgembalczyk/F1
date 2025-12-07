@@ -37,11 +37,19 @@ class HttpClient:
         self.retries = max(0, retries)
         self.backoff_seconds = backoff_seconds
 
-    def get(self, url: str, *, headers: Optional[Dict[str, str]] = None, timeout: Optional[int] = None):
+    def get(
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ):
         attempts = self.retries + 1
         for attempt in range(attempts):
             try:
-                response = self.session.get(url, headers=headers, timeout=timeout or self.timeout)
+                response = self.session.get(
+                    url, headers=headers, timeout=timeout or self.timeout
+                )
                 response.raise_for_status()
                 return response
             except requests.RequestException:
@@ -50,7 +58,11 @@ class HttpClient:
                 time.sleep(self.backoff_seconds * (attempt + 1))
 
     def get_text(
-        self, url: str, *, headers: Optional[Dict[str, str]] = None, timeout: Optional[int] = None
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
     ) -> str:
         response = self.get(url, headers=headers, timeout=timeout)
         return response.text

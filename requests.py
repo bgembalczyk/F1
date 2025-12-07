@@ -40,7 +40,12 @@ class Session:
     def __init__(self) -> None:
         self.headers: Dict[str, str] = {}
 
-    def get(self, url: str, headers: Optional[Dict[str, str]] = None, timeout: Optional[int] = None) -> Response:
+    def get(
+        self,
+        url: str,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ) -> Response:
         merged_headers = dict(self.headers)
         if headers:
             merged_headers.update(headers)
