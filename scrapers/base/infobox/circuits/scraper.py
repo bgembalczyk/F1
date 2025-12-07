@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
+from http_client import HttpClient
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
@@ -23,11 +24,23 @@ class F1CircuitInfoboxScraper(
         include_urls: bool = True,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
+        http_client: Optional[HttpClient] = None,
     ) -> None:
         F1Scraper.__init__(
-            self, include_urls=include_urls, session=session, headers=headers
+            self,
+            include_urls=include_urls,
+            session=session,
+            headers=headers,
+            http_client=http_client,
+            timeout=timeout,
         )
-        WikipediaInfoboxScraper.__init__(self, timeout=timeout)
+        WikipediaInfoboxScraper.__init__(
+            self,
+            timeout=timeout,
+            session=self.session,
+            headers=headers,
+            http_client=self.http_client,
+        )
         self.url: str = ""
 
     # ------------------------------

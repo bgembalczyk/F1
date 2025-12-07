@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import requests
 from bs4 import BeautifulSoup
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
+
+from http_client import HttpClient
 
 
 class WikipediaInfoboxScraper:
@@ -16,12 +18,31 @@ class WikipediaInfoboxScraper:
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
 
-    def __init__(self, *, user_agent: str | None = None, timeout: int = 10):
+    def __init__(
+        self,
+        *,
+        user_agent: str | None = None,
+        timeout: int = 10,
+        session: Optional[requests.Session] = None,
+        headers: Optional[Dict[str, str]] = None,
+        retries: int = 0,
+        http_client: Optional[HttpClient] = None,
+    ):
+        merged_headers: Dict[str, str] = {}
+        if user_agent:
+            merged_headers["User-Agent"] = user_agent
+        if headers:
+            merged_headers.update(headers)
+
+        self.http_client = http_client or HttpClient(
+            session=session,
+            headers=merged_headers or None,
+            timeout=timeout,
+            retries=retries,
+        )
+        self.session = self.http_client.session
+        self.headers = self.session.headers
         self.timeout = timeout
-        self.headers = {
-            "User-Agent": user_agent
-            or "Mozilla/5.0 (compatible; F1AI-InfoboxScraper/1.0)"
-        }
 
     # ------------------------------
     # Public API
@@ -46,9 +67,7 @@ class WikipediaInfoboxScraper:
     # ------------------------------
 
     def _fetch(self, url: str) -> str:
-        response = requests.get(url, headers=self.headers, timeout=self.timeout)
-        response.raise_for_status()
-        return response.text
+        return self.http_client.get_text(url, timeout=self.timeout)
 
     def _find_infobox(self, soup: BeautifulSoup):
         """
