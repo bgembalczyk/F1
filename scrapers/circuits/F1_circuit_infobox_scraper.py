@@ -27,8 +27,30 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
 
     def fetch(self, url: str) -> Dict[str, Any]:
         self.url = url
+        base_url, fragment = (url.split("#", 1) + [None])[:2]
+        self.url = base_url
+
         html = self._download()
-        soup = BeautifulSoup(html, "html.parser")
+        full_soup = BeautifulSoup(html, "html.parser")
+
+        # 1) Filtr po kategoriach – jeśli to nie wygląda na tor / tor wyścigowy,
+        #    nie dokładamy infoboksa, zostajemy przy tym co już mamy.
+        if not self._is_circuit_like_article(full_soup):
+            title = full_soup.title.get_text(strip=True) if full_soup.title else None
+            return self._prune_nulls(
+                {
+                    "url": url,
+                    "title": title,
+                },
+            )
+
+        # 2) Jeśli mamy #fragment, zawężamy się do tej sekcji
+        soup = full_soup
+        if fragment:
+            section = self._extract_section_by_id(full_soup, fragment)
+            if section is not None:
+                soup = section
+
         return self.parse_from_soup(soup)
 
     def _download(self) -> str:
@@ -37,6 +59,58 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         response = self.session.get(self.url, timeout=self.timeout)
         response.raise_for_status()
         return response.text
+
+    # ------------------------------
+    # Sekcje / kategorie
+    # ------------------------------
+
+    def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
+        """Sprawdza czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
+        cat_div = soup.find("div", id="mw-normal-catlinks")
+        if not cat_div:
+            return False
+
+        keywords = [
+            "circuit",
+            "race track",
+            "racetrack",
+            "racetrack",
+            "speedway",
+            "raceway",
+            "motor racing",
+            "motorsport venue",
+        ]
+        for a in cat_div.find_all("a"):
+            text = a.get_text(strip=True).lower()
+            if any(kw in text for kw in keywords):
+                return True
+        return False
+
+    def _extract_section_by_id(self, soup: BeautifulSoup, fragment: str) -> Optional[BeautifulSoup]:
+        """Zwraca pod-drzewo z daną sekcją (#id) lub None jeśli nie znaleziono."""
+        span = soup.find(id=fragment)
+        if not span:
+            return None
+
+        header = span.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"])
+        if not header:
+            return None
+
+        # Zbieramy header + wszystkie rodzeństwa aż do kolejnego nagłówka
+        container = BeautifulSoup("<div></div>", "html.parser")
+        root = container.div
+        root.append(header)
+
+        for sib in header.next_siblings:
+            if isinstance(sib, Tag) and sib.name in ["h1", "h2", "h3", "h4", "h5", "h6"]:
+                break
+            root.append(sib)
+
+        return container
+
+    # ------------------------------
+    # Główne API
+    # ------------------------------
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """API bazowej klasy – deleguje do parse_from_soup."""
@@ -53,7 +127,7 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
     # ------------------------------
 
     def _with_normalized(
-            self, raw: Dict[str, Any], layout_records: Optional[List[Dict[str, Any]]]
+            self, raw: Dict[str, Any], layout_records: Optional[List[Dict[str, Any]]],
     ) -> Dict[str, Any]:
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
 
@@ -76,28 +150,34 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             "Construction cost",
             "Architect",
             "Website",
-            "Banking",
+            "Banking",  # teraz per-layout, ale nie chcemy żeby wpadło do additional_info
+            "Surface",  # jw.
             "Area",
         }
 
-        normalized: Dict[str, Any] = {"name": raw.get("title"), "location": self._parse_location(rows.get("Location")),
-                                      "coordinates": self._parse_coordinates(rows.get("Coordinates")), "specs": {
+        normalized: Dict[str, Any] = {
+            "name": raw.get("title"),
+            "location": self._parse_location(rows.get("Location")),
+            "coordinates": self._parse_coordinates(rows.get("Coordinates")),
+            "specs": {
                 "fia_grade": self._parse_int(rows.get("FIA Grade")),
                 "length_km": self._parse_length(rows.get("Length"), unit="km"),
                 "length_mi": self._parse_length(rows.get("Length"), unit="mi"),
                 "turns": self._parse_int(rows.get("Turns")),
                 "capacity": self._parse_capacity(rows.get("Capacity")),
                 "construction_cost": self._parse_construction_cost(
-                    rows.get("Construction cost")
+                    rows.get("Construction cost"),
                 ),
-                "banking": self._parse_banking(rows.get("Banking")),
+                # banking wyjęty do layouts
                 "area": self._parse_area(rows.get("Area")),
-            }, "history": self._parse_history(rows), "operator": self._parse_linked_entity(rows.get("Operator")),
-                                      "architect": self._parse_linked_entity(rows.get("Architect")),
-                                      "website": self._parse_website(rows.get("Website"))}
+            },
+            "history": self._parse_history(rows),
+            "operator": self._parse_linked_entity(rows.get("Operator")),
+            "architect": self._parse_linked_entity(rows.get("Architect")),
+            "website": self._parse_website(rows.get("Website")),
+        }
 
-        # operator / architect jako pola "główne"
-
+        # Dodatkowe pola z infoboksa
         extra_fields = self._collect_additional_info(rows, used_keys)
         if extra_fields:
             normalized["additional_info"] = extra_fields
@@ -108,8 +188,25 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         # nie trzymamy surowych rows
         result.pop("rows", None)
 
-        if layout_records:
-            result["layouts"] = self._prune_nulls(layout_records)
+        # Layouty: jeśli nie znaleziono layout sekcji, tworzymy domyślny layout
+        layouts = layout_records or []
+        if not layouts:
+            default_layout: Dict[str, Any] = {
+                "layout": None,
+                "years": None,
+                "length_km": normalized.get("specs", {}).get("length_km"),
+                "length_mi": normalized.get("specs", {}).get("length_mi"),
+                "turns": normalized.get("specs", {}).get("turns"),
+                "race_lap_record": self._parse_lap_record(rows.get("Race lap record")),
+                "surface": self._parse_surface(rows.get("Surface")),
+                "banking": self._parse_banking(rows.get("Banking")),
+            }
+            default_layout = self._prune_nulls(default_layout)
+            if default_layout:
+                layouts = [default_layout]
+
+        if layouts:
+            result["layouts"] = self._prune_nulls(layouts)
 
         existing_norm = result.get("normalized")
         if isinstance(existing_norm, dict):
@@ -128,27 +225,142 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         if not row:
             return None
         text = row.get("text")
-        return text.strip() if isinstance(text, str) else None
+        if not isinstance(text, str):
+            return None
+
+        # usuwamy przypisy [ 2 ], [3] itd.
+        text = re.sub(r"\[\s*\d+\s*]", "", text)
+        # normalizacja whitespace
+        text = re.sub(r"\s+", " ", text)
+        return text.strip() or None
 
     def _parse_location(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
+
         text = self._get_text(row) or ""
-        parts = [
-            part.strip(" ,") for part in re.split(r",|\u00b7|/|;", text) if part.strip(" ,")
-        ]
-
-        components: Dict[str, Optional[Dict[str, Any]]] = {}
         links = row.get("links") or []
-        for idx, part in enumerate(parts):
-            key = f"localisation{idx + 1}"
-            link = self._find_link(part, links)
-            components[key] = {
-                "text": part,
-                "link": link,
-            }
 
-        return components or None
+        components: List[Dict[str, Any]] = []
+        cursor = 0
+
+        def _split_plain_segment(segment: str) -> List[str]:
+            return [
+                part.strip(" ,")
+                for part in re.split(r",|\u00b7|/|;", segment)
+                if part.strip(" ,")
+            ]
+
+        # przechodzimy po linkach po kolei, link = jeden element lokalizacji
+        for link in links:
+            link_text = (link.get("text") or "").strip()
+            if not link_text:
+                continue
+
+            idx = text.find(link_text, cursor)
+            if idx == -1:
+                continue
+
+            # tekst przed linkiem – bez rozbijania linków
+            before = text[cursor:idx]
+            for part in _split_plain_segment(before):
+                components.append({"text": part})
+
+            components.append(
+                {
+                    "text": link_text,
+                    "link": {
+                        "text": link_text,
+                        "url": link.get("url"),
+                    },
+                },
+            )
+            cursor = idx + len(link_text)
+
+        # ogon po ostatnim linku
+        tail = text[cursor:]
+        for part in _split_plain_segment(tail):
+            components.append({"text": part})
+
+        if not components:
+            return None
+
+        result: Dict[str, Any] = {}
+        for idx, comp in enumerate(components, start=1):
+            key = f"localisation{idx}"
+            result[key] = comp
+
+        return result or None
+
+    def _parse_surface(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        """Surface: normalizacja do listy materiałów + opcjonalna notka."""
+        if not row:
+            return None
+
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        # notka w nawiasach – np. "(start-finish line)"
+        note = None
+        m = re.search(r"\(([^)]*)\)", text)
+        if m:
+            note = m.group(1).strip()
+            base_text = re.sub(r"\([^)]*\)", "", text)
+        else:
+            base_text = text
+
+        # separatory: / , and & with
+        tmp = base_text
+        tmp = re.sub(r"\band\b", ",", tmp, flags=re.IGNORECASE)
+        tmp = tmp.replace("&", ",").replace("/", ",")
+        parts = [p.strip(" .") for p in tmp.split(",") if p.strip(" .")]
+
+        def _norm_surface_part(part: str) -> List[str]:
+            """Zwraca listę znormalizowanych materiałów z jednego fragmentu."""
+            s = part.lower()
+            mats: List[str] = []
+
+            if "tarmac" in s or "asphalt" in s or "asphalt concrete" in s:
+                mats.append("Asphalt")
+            if "concrete" in s and "asphalt" not in s:
+                mats.append("Concrete")
+            if "cobblestone" in s or "cobbles" in s or "cobbl" in s:
+                mats.append("Cobblestones")
+            if "brick" in s:
+                mats.append("Brick")
+            if "wood" in s:
+                mats.append("Wood")
+            if "dirt" in s:
+                mats.append("Dirt")
+            if "steel" in s:
+                mats.append("Steel")
+            if "graywacke" in s:
+                mats.append("Graywacke")
+
+            if not mats:
+                mats.append(part.strip().strip(". "))
+
+            # usuwamy duplikaty przy zachowaniu kolejności
+            out: List[str] = []
+            for m_ in mats:
+                if m_ and m_ not in out:
+                    out.append(m_)
+            return out
+
+        materials: List[str] = []
+        for part in parts:
+            for m_ in _norm_surface_part(part):
+                if m_ not in materials:
+                    materials.append(m_)
+
+        if not materials:
+            return None
+
+        result: Dict[str, Any] = {"values": materials, "text": text}
+        if note:
+            result["note"] = note
+        return result
 
     def _parse_coordinates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
@@ -447,24 +659,34 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
             header = tr.find("th", recursive=False)
             data = tr.find("td", recursive=False)
 
+            # Layout header: tylko <th class="infobox-header" colspan=...>
             if header and header.get("colspan"):
-                layout_name, years = self._parse_layout_header(header.get_text(" ", strip=True))
-                current = {
-                    "layout": layout_name,
-                    "years": years,
-                    "length_km": None,
-                    "length_mi": None,
-                    "turns": None,
-                    "race_lap_record": None,
-                }
-                layouts.append(current)
+                classes = header.get("class", [])
+                if "infobox-header" in classes:
+                    layout_name, years = self._parse_layout_header(
+                        header.get_text(" ", strip=True),
+                    )
+                    current = {
+                        "layout": layout_name,
+                        "years": years,
+                        "length_km": None,
+                        "length_mi": None,
+                        "turns": None,
+                        "race_lap_record": None,
+                        "surface": None,
+                        "banking": None,
+                    }
+                    layouts.append(current)
                 continue
 
             if current is None or not header or not data:
                 continue
 
             label = header.get_text(" ", strip=True)
-            cell_row = {"text": data.get_text(" ", strip=True), "links": self._extract_links(data)}
+            cell_row = {
+                "text": data.get_text(" ", strip=True),
+                "links": self._extract_links(data),
+            }
 
             if label == "Length":
                 current["length_km"] = self._parse_length(cell_row, unit="km")
@@ -473,6 +695,10 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
                 current["turns"] = self._parse_int(cell_row)
             elif label == "Race lap record":
                 current["race_lap_record"] = self._parse_lap_record(cell_row)
+            elif label == "Surface":
+                current["surface"] = self._parse_surface(cell_row)
+            elif label == "Banking":
+                current["banking"] = self._parse_banking(cell_row)
 
         return layouts
 
@@ -552,21 +778,58 @@ class F1CircuitInfoboxScraper(F1Scraper, WikipediaInfoboxScraper):
         )
 
     def _parse_linked_entity(
-            self, row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any] | str]:
-        """Pola typu Operator / Architect – link jeśli jest, inaczej czysty tekst."""
+            self, row: Optional[Dict[str, Any]],
+    ) -> Optional[Dict[str, Any] | str | List[Dict[str, Any]]]:
+        """
+        Pola typu Operator / Architect – link jeśli jest,
+        przy wielu osobach zwracamy listę dictów.
+        """
         if not row:
             return None
-        text = self._get_text(row) or ""
-        links = row.get("links") or []
-        if not links:
-            return text or None
 
-        link = self._find_link(text, links) or links[0]
-        url = link.get("url")
-        if not url:
-            return text or None
-        return {"text": text, "url": url}
+        text = self._get_text(row) or ""
+        if not text:
+            return None
+
+        links = row.get("links") or []
+
+        # Jeśli linków jest > 1, przyjmujemy że odpowiadają kolejnym osobom
+        if len(links) > 1:
+            entities: List[Dict[str, Any]] = []
+            for link in links:
+                link_text = (link.get("text") or "").strip()
+                if not link_text:
+                    continue
+                entities.append(
+                    {
+                        "text": link_text,
+                        "url": link.get("url"),
+                    },
+                )
+            return entities or None
+
+        # W przeciwnym razie próbujemy rozbić tekst na listę osób
+        parts = [
+            p.strip()
+            for p in re.split(r"\s*(?:,|&| and )\s*", text)
+            if p.strip()
+        ]
+
+        def _entity_for_part(part: str) -> Dict[str, Any]:
+            link = self._find_link(part, links)
+            if link and link.get("url"):
+                return {"text": part, "url": link.get("url")}
+            return {"text": part}
+
+        if len(parts) > 1:
+            return [_entity_for_part(p) for p in parts]
+
+        # single entity
+        if links:
+            url = links[0].get("url")
+            if url:
+                return {"text": text, "url": url}
+        return text or None
 
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         """Website jako URL (z linku, jeśli jest)."""

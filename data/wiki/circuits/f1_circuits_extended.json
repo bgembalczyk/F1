@@ -230,7 +230,7 @@
                 "text": "Vanwall VW 5",
                 "url": "https://en.wikipedia.org/wiki/Vanwall_Grand_Prix"
               },
-              "year": "1958 [ 1 ]",
+              "year": "1958",
               "series": "F1"
             }
           }
@@ -596,6 +596,12 @@
               },
               "year": "2024",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -616,6 +622,12 @@
               },
               "year": "2004",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -700,9 +712,6 @@
                 "Current: Formula One Australian Grand Prix (1996–2019",
                 "2022–present) Former: Australian Drivers' Championship (1957–1958)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -1348,6 +1357,12 @@
               },
               "year": "2015",
               "series": "Stock car racing"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1428,6 +1443,12 @@
               },
               "year": "1991",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1448,6 +1469,12 @@
               },
               "year": "2008",
               "series": "DP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1468,6 +1495,12 @@
               },
               "year": "2007",
               "series": "Champ Car"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1488,6 +1521,12 @@
               },
               "year": "2006",
               "series": "DP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1508,6 +1547,12 @@
               },
               "year": "2002",
               "series": "CART"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1528,6 +1573,12 @@
               },
               "year": "1969",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1548,6 +1599,12 @@
               },
               "year": "1982",
               "series": "Formula Atlantic"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -1613,9 +1670,6 @@
                 "Champ Car World Series Gran Premio Tecate (1980–1981",
                 "2002–2007) Grand Am Rolex Sports Car Series Mexico City 400k (2005–2008) A1 Grand Prix (2007–2008) IMSA GT Championship (1974) USRRC (1968)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -1710,6 +1764,12 @@
               },
               "year": "2009",
               "series": "F3"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1730,6 +1790,12 @@
               },
               "year": "2005",
               "series": "F3"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1749,6 +1815,12 @@
               },
               "year": "1999",
               "series": "CART"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1769,6 +1841,12 @@
               },
               "year": "1989",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -1830,9 +1908,6 @@
                 "2008–2009",
                 "2011–2012)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -1892,6 +1967,12 @@
               },
               "year": "2020",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -1912,6 +1993,13 @@
               },
               "year": "1970",
               "series": "Group 6"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -1929,6 +2017,13 @@
               },
               "year": "1955",
               "series": "Sports car racing"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -1948,6 +2043,13 @@
               },
               "year": "1928",
               "series": "GP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -1965,6 +2067,13 @@
               },
               "year": "1925",
               "series": "GP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -1984,6 +2093,13 @@
               },
               "year": "1924",
               "series": "GP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           }
         ],
@@ -2075,13 +2191,6 @@
                 "1975–1982",
                 "1985) FIA GT (1997",
                 "2006)"
-              ]
-            },
-            "Surface": {
-              "text": "Asphalt/Concrete",
-              "values": [
-                "Asphalt",
-                "Concrete"
               ]
             }
           }
@@ -2408,8 +2517,7 @@
             "length_mi": 3.118,
             "turns": 12,
             "capacity": {
-              "total": 78000,
-              "seating": 1
+              "total": 78000
             }
           },
           "history": {
@@ -3214,18 +3322,22 @@
         "title": "Monza Circuit",
         "layouts": [
           {
-            "layout": "The Temple of Speed"
-          },
-          {
             "layout": "Modern Grand Prix Circuit",
             "years": "2000–present",
+            "length_km": 5.793,
             "length_mi": 3.6,
             "turns": 11,
             "race_lap_record": {
               "time": "1:20.901",
               "driver": {
-                "text": "257.781 km/h (160.178 mph"
+                "text": "257.781 km/h (160.178 mph"
               }
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3246,11 +3358,18 @@
               },
               "year": "2013",
               "series": "World SBK"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
             "layout": "Junior Course",
             "years": "1959–present",
+            "length_km": 2.405,
             "length_mi": 1.494,
             "turns": 4,
             "race_lap_record": {
@@ -3265,6 +3384,12 @@
               },
               "year": "1976",
               "series": "Group 5"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3285,6 +3410,12 @@
               },
               "year": "1997",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3305,6 +3436,12 @@
               },
               "year": "1994",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3325,6 +3462,12 @@
               },
               "year": "1993",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3345,6 +3488,12 @@
               },
               "year": "1976",
               "series": "Group 6"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3365,6 +3514,12 @@
               },
               "year": "1973",
               "series": "Group 5"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -3385,18 +3540,37 @@
               },
               "year": "1971",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
             "layout": "Oval",
             "years": "1955–1971",
+            "length_km": 4.25,
             "length_mi": 2.641,
             "turns": 2,
             "race_lap_record": {
               "time": "0:54.000",
               "driver": {
-                "text": "283.34 km/h (176.06 mph"
+                "text": "283.34 km/h (176.06 mph"
               }
+            },
+            "surface": {
+              "values": [
+                "Concrete",
+                "Asphalt"
+              ],
+              "text": "Concrete/Asphalt"
+            },
+            "banking": {
+              "value": 30.0,
+              "unit": "deg",
+              "note": "≈"
             }
           },
           {
@@ -3408,8 +3582,15 @@
             "race_lap_record": {
               "time": "2:43.600",
               "driver": {
-                "text": "223.02 km/h (138.58 mph"
+                "text": "223.02 km/h (138.58 mph"
               }
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -3524,7 +3705,7 @@
               }
             },
             "localisation2": {
-              "text": "Italy [ 1 ]"
+              "text": "Italy"
             }
           },
           "coordinates": {
@@ -3537,13 +3718,7 @@
             "length_mi": 6.214,
             "turns": 9,
             "capacity": {
-              "total": 118865,
-              "seating": 2
-            },
-            "banking": {
-              "value": 30.0,
-              "unit": "deg",
-              "note": "≈"
+              "total": 118865
             }
           },
           "history": {
@@ -3562,9 +3737,9 @@
               "1983–present) Autodromo di Monza (1928–1964",
               "1975–1982) Circuito di Milano (1922–1927)"
             ],
-            "owner": "Communes of Monza & Milan [ 1 ]"
+            "owner": "Communes of Monza & Milan"
           },
-          "operator": "SIAS S.p.A. [ 1 ]",
+          "operator": "SIAS S.p.A.",
           "architect": "Alfredo Rosselli",
           "website": "https://www.monzanet.it",
           "additional_info": {
@@ -3593,13 +3768,6 @@
                 "2023–2024) WTCC Race of Italy (2005–2008",
                 "2010–2013",
                 "2017) Race of Two Worlds (1957–1958)"
-              ]
-            },
-            "Surface": {
-              "text": "Asphalt/Concrete",
-              "values": [
-                "Asphalt",
-                "Concrete"
               ]
             }
           }
@@ -3718,9 +3886,6 @@
       "infobox": {
         "title": "Autódromo de Buenos Aires Oscar y Juan Gálvez",
         "layouts": [
-          {
-            "layout": "Autódromo"
-          },
           {
             "layout": "No. 6 circuit with Senna S",
             "years": "1995–present",
@@ -3983,7 +4148,7 @@
               "List Autódromo Oscar Alfredo Gálvez (1989–2008) Autódromo Municipal del Parque Almirante Brown de la Ciudad de Buenos Aires (1960s–1989) Autódromo Municipal Ciudad de Buenos Aires (1955–1960s) Autódromo 17 de Octubre (1952–1955)"
             ]
           },
-          "operator": "Secretaría de Deportes of GCBA [ 1 ]",
+          "operator": "Secretaría de Deportes of GCBA",
           "website": "https://www.ciudadautodromo.com/",
           "additional_info": {
             "Major events": {
@@ -4170,6 +4335,11 @@
               },
               "year": "1959",
               "series": "F1"
+            },
+            "banking": {
+              "value": 43.0,
+              "unit": "deg",
+              "note": "Nord Kehre"
             }
           },
           {
@@ -4190,6 +4360,11 @@
               },
               "year": "1937",
               "series": "GP"
+            },
+            "banking": {
+              "value": 43.0,
+              "unit": "deg",
+              "note": "Nord Kehre"
             }
           },
           {
@@ -4210,6 +4385,11 @@
               },
               "year": "1935",
               "series": "GP"
+            },
+            "banking": {
+              "value": 10.0,
+              "unit": "deg",
+              "note": "Nord Kehre"
             }
           }
         ],
@@ -4238,12 +4418,7 @@
           "specs": {
             "length_km": 19.569,
             "length_mi": 12.16,
-            "turns": 4,
-            "banking": {
-              "value": 10.0,
-              "unit": "deg",
-              "note": "Nord Kehre"
-            }
+            "turns": 4
           },
           "history": {
             "events": [
@@ -4713,8 +4888,7 @@
             "length_mi": 3.73,
             "turns": 20,
             "capacity": {
-              "total": 18500,
-              "seating": 1
+              "total": 18500
             }
           },
           "history": {
@@ -5130,6 +5304,13 @@
               },
               "year": "2011",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Graywacke"
+              ],
+              "text": "Asphalt concrete with Graywacke aggregate"
             }
           },
           {
@@ -5150,6 +5331,13 @@
               },
               "year": "2023",
               "series": "MotoGP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Graywacke"
+              ],
+              "text": "Asphalt concrete with Graywacke aggregate"
             }
           },
           {
@@ -5169,6 +5357,13 @@
               },
               "year": "2017",
               "series": "Truck racing"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Graywacke"
+              ],
+              "text": "Asphalt concrete with Graywacke aggregate"
             }
           }
         ],
@@ -5213,7 +5408,7 @@
               "amount": 2000.0,
               "currency": "USD",
               "scale": "million",
-              "text": "₹ 2,000 crore (US$240 million) [ 2 ]"
+              "text": "₹ 2,000 crore (US$240 million)"
             }
           },
           "history": {
@@ -5259,19 +5454,6 @@
                   "url": "https://en.wikipedia.org/wiki/Asia_Road_Racing_Championship"
                 }
               ]
-            },
-            "Surface": {
-              "text": "Asphalt concrete with Graywacke aggregate",
-              "links": [
-                {
-                  "text": "Asphalt concrete",
-                  "url": "https://en.wikipedia.org/wiki/Asphalt_concrete"
-                },
-                {
-                  "text": "Graywacke",
-                  "url": "https://en.wikipedia.org/wiki/Graywacke"
-                }
-              ]
             }
           }
         }
@@ -5314,9 +5496,6 @@
         "title": "Circuit des 24 Heures",
         "layouts": [
           {
-            "layout": "Circuit de la Sarthe"
-          },
-          {
             "layout": "Circuit des 24 Heures du Mans",
             "years": "2018–present",
             "length_km": 13.626,
@@ -5334,6 +5513,12 @@
               },
               "year": "2019",
               "series": "LMP1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5354,6 +5539,12 @@
               },
               "year": "2015",
               "series": "LMP1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5374,6 +5565,12 @@
               },
               "year": "2006",
               "series": "LMP1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5394,6 +5591,12 @@
               },
               "year": "1999",
               "series": "LMGTP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5414,6 +5617,12 @@
               },
               "year": "1993",
               "series": "Group C1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5434,6 +5643,12 @@
               },
               "year": "1989",
               "series": "Group C1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5454,6 +5669,12 @@
               },
               "year": "1986",
               "series": "Group C1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5474,6 +5695,12 @@
               },
               "year": "1985",
               "series": "Group C1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5494,6 +5721,12 @@
               },
               "year": "1978",
               "series": "Group 6"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5514,6 +5747,12 @@
               },
               "year": "1971",
               "series": "Group 5"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5533,6 +5772,12 @@
               },
               "year": "1967",
               "series": "Group 4"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5553,6 +5798,12 @@
               },
               "year": "1955",
               "series": "Sports prototype"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5573,6 +5824,12 @@
               },
               "year": "1930",
               "series": "Sports prototype"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           },
           {
@@ -5593,6 +5850,12 @@
               },
               "year": "1928",
               "series": "Sports prototype"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           }
         ],
@@ -5647,9 +5910,6 @@
                 "1980–1989",
                 "1991–1992)"
               ]
-            },
-            "Surface": {
-              "text": "Tarmac"
             }
           }
         }
@@ -5710,9 +5970,6 @@
           },
           {
             "layout": "Fastest lap"
-          },
-          {
-            "layout": ""
           }
         ],
         "normalized": {
@@ -6982,9 +7239,23 @@
           "name": "Circuit de Monaco",
           "location": {
             "localisation1": {
-              "text": "La Condamine and Monte Carlo"
+              "text": "La Condamine",
+              "link": {
+                "text": "La Condamine",
+                "url": "https://en.wikipedia.org/wiki/La_Condamine"
+              }
             },
             "localisation2": {
+              "text": "and"
+            },
+            "localisation3": {
+              "text": "Monte Carlo",
+              "link": {
+                "text": "Monte Carlo",
+                "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+              }
+            },
+            "localisation4": {
               "text": "Monaco",
               "link": {
                 "text": "Monaco",
@@ -8192,10 +8463,16 @@
               }
             ]
           },
-          "architect": {
-            "text": "Jules de Thier and Henri Langlois van Ophem",
-            "url": "https://en.wikipedia.org/w/index.php?title=Jules_de_Thier&action=edit&redlink=1"
-          },
+          "architect": [
+            {
+              "text": "Jules de Thier",
+              "url": "https://en.wikipedia.org/w/index.php?title=Jules_de_Thier&action=edit&redlink=1"
+            },
+            {
+              "text": "Henri Langlois van Ophem",
+              "url": "https://en.wikipedia.org/w/index.php?title=Henri_Langlois_van_Ophem&action=edit&redlink=1"
+            }
+          ],
           "website": "http://www.spa-francorchamps.be/en",
           "additional_info": {
             "Major events": {
@@ -8767,7 +9044,7 @@
             ],
             "owner": "City of Montreal"
           },
-          "architect": "Roger Peart [ 2 ]",
+          "architect": "Roger Peart",
           "website": "http://www.circuitgillesvilleneuve.ca",
           "additional_info": {
             "Major events": {
@@ -8841,6 +9118,12 @@
               },
               "year": "2007",
               "series": "Champ Car"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -8861,6 +9144,12 @@
               },
               "year": "2008",
               "series": "SBK"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -8868,7 +9157,13 @@
             "years": "2002–present",
             "length_km": 1.91,
             "length_mi": 1.187,
-            "turns": 7
+            "turns": 7,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Road Course",
@@ -8886,6 +9181,12 @@
               },
               "year": "Dallara SP1",
               "series": "2002"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -8906,6 +9207,12 @@
               },
               "year": "1965",
               "series": "Group 4"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -8913,16 +9220,23 @@
           "name": "Circuit Mont-Tremblant",
           "location": {
             "localisation1": {
-              "text": "1281 Chemin du Village Mont-Tremblant"
+              "text": "1281 Chemin du Village"
             },
             "localisation2": {
+              "text": "Mont-Tremblant",
+              "link": {
+                "text": "Mont-Tremblant",
+                "url": "https://en.wikipedia.org/wiki/Mont-Tremblant,_Quebec"
+              }
+            },
+            "localisation3": {
               "text": "Quebec",
               "link": {
                 "text": "Quebec",
                 "url": "https://en.wikipedia.org/wiki/Quebec"
               }
             },
-            "localisation3": {
+            "localisation4": {
               "text": "Canada"
             }
           },
@@ -8959,9 +9273,6 @@
                 "2006–2007",
                 "2012–2013) Canadian Touring Car Championship (2012–2013)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -9052,9 +9363,6 @@
         "title": "Circuit of the Americas",
         "layouts": [
           {
-            "layout": "COTA"
-          },
-          {
             "layout": "Grand Prix Circuit",
             "years": "2012–present",
             "length_km": 5.513,
@@ -9119,12 +9427,13 @@
           "name": "Circuit of the Americas",
           "location": {
             "localisation1": {
-              "text": "Austin"
+              "text": "Austin, Texas",
+              "link": {
+                "text": "Austin, Texas",
+                "url": "https://en.wikipedia.org/wiki/Austin,_Texas"
+              }
             },
             "localisation2": {
-              "text": "Texas"
-            },
-            "localisation3": {
               "text": "United States"
             }
           },
@@ -9138,8 +9447,7 @@
             "length_mi": 2.3,
             "turns": 19,
             "capacity": {
-              "total": 120000,
-              "seating": 1
+              "total": 120000
             }
           },
           "history": {
@@ -9155,10 +9463,20 @@
             ],
             "owner": "Circuit of the Americas LLC (2012–present)"
           },
-          "architect": {
-            "text": "Tavo Hellmund , Kevin Schwantz , and Hermann Tilke",
-            "url": "https://en.wikipedia.org/wiki/Tavo_Hellmund"
-          },
+          "architect": [
+            {
+              "text": "Tavo Hellmund",
+              "url": "https://en.wikipedia.org/wiki/Tavo_Hellmund"
+            },
+            {
+              "text": "Kevin Schwantz",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Schwantz"
+            },
+            {
+              "text": "Hermann Tilke",
+              "url": "https://en.wikipedia.org/wiki/Hermann_Tilke"
+            }
+          ],
           "website": "http://circuitoftheamericas.com",
           "additional_info": {
             "Major events": {
@@ -9407,12 +9725,13 @@
           "name": "Circuit Paul Ricard",
           "location": {
             "localisation1": {
-              "text": "Le Castellet"
+              "text": "Le Castellet, Var",
+              "link": {
+                "text": "Le Castellet, Var",
+                "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
+              }
             },
             "localisation2": {
-              "text": "Var"
-            },
-            "localisation3": {
               "text": "France",
               "link": {
                 "text": "France",
@@ -10791,16 +11110,23 @@
               "text": "Second"
             },
             "localisation4": {
-              "text": "and Parry Aves. Dallas"
+              "text": "and Parry Aves."
             },
             "localisation5": {
+              "text": "Dallas",
+              "link": {
+                "text": "Dallas",
+                "url": "https://en.wikipedia.org/wiki/Dallas"
+              }
+            },
+            "localisation6": {
               "text": "Texas",
               "link": {
                 "text": "Texas",
                 "url": "https://en.wikipedia.org/wiki/Texas"
               }
             },
-            "localisation6": {
+            "localisation7": {
               "text": "U.S."
             }
           },
@@ -10826,10 +11152,15 @@
               }
             ]
           },
-          "architect": {
-            "text": "George L. Dahl , et al.",
-            "url": "https://en.wikipedia.org/wiki/George_Dahl"
-          },
+          "architect": [
+            {
+              "text": "George L. Dahl",
+              "url": "https://en.wikipedia.org/wiki/George_Dahl"
+            },
+            {
+              "text": "et al."
+            }
+          ],
           "website": "https://fairpark.org/index.php/en/",
           "additional_info": {
             "Architectural style": {
@@ -10842,7 +11173,7 @@
               ]
             },
             "NRHP reference No.": {
-              "text": "86003488 [ 1 ]",
+              "text": "86003488",
               "links": [
                 {
                   "text": "86003488",
@@ -10874,10 +11205,10 @@
               ]
             },
             "Designated NHLD": {
-              "text": "September 24, 1986 [ 3 ]",
+              "text": "September 24, 1986",
               "values": [
                 "September 24",
-                "1986 [ 3 ]"
+                "1986"
               ]
             },
             "Designated TSAL": {
@@ -10888,10 +11219,10 @@
               ]
             },
             "Designated DLMKHD": {
-              "text": "March 4, 1987 [ 2 ]",
+              "text": "March 4, 1987",
               "values": [
                 "March 4",
-                "1987 [ 2 ]"
+                "1987"
               ]
             }
           }
@@ -11023,12 +11354,13 @@
           "name": "Detroit street circuit",
           "location": {
             "localisation1": {
-              "text": "Detroit"
+              "text": "Detroit, Michigan",
+              "link": {
+                "text": "Detroit, Michigan",
+                "url": "https://en.wikipedia.org/wiki/Detroit,_Michigan"
+              }
             },
             "localisation2": {
-              "text": "Michigan"
-            },
-            "localisation3": {
               "text": "USA"
             }
           },
@@ -11704,6 +12036,12 @@
               },
               "year": "2004",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11724,6 +12062,12 @@
               },
               "year": "2010",
               "series": "F3"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11744,6 +12088,12 @@
               },
               "year": "2001",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11764,6 +12114,13 @@
               },
               "year": "2001",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt, concrete"
             }
           },
           {
@@ -11784,6 +12141,12 @@
               },
               "year": "1992",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11804,6 +12167,12 @@
               },
               "year": "1991",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11824,6 +12193,12 @@
               },
               "year": "1980",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11844,6 +12219,12 @@
               },
               "year": "1969",
               "series": "F5000"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11863,6 +12244,12 @@
               },
               "year": "1957",
               "series": "500cc"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -11870,7 +12257,13 @@
             "years": "1932–1938",
             "length_km": 12.045,
             "length_mi": 7.484,
-            "turns": 9
+            "turns": 9,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           }
         ],
         "normalized": {
@@ -11907,8 +12300,7 @@
             "length_mi": 7.484,
             "turns": 9,
             "capacity": {
-              "total": 70000,
-              "seating": 1
+              "total": 70000
             }
           },
           "history": {
@@ -11943,9 +12335,6 @@
                 "1977",
                 "1985)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -12255,7 +12644,14 @@
             ]
           },
           "operator": "Hungaroring Sport Zrt",
-          "architect": "István Papp & Ferenc Gulácsi",
+          "architect": [
+            {
+              "text": "István Papp"
+            },
+            {
+              "text": "Ferenc Gulácsi"
+            }
+          ],
           "website": "https://hungaroring.hu",
           "additional_info": {
             "Major events": {
@@ -12392,9 +12788,6 @@
         "title": "Indianapolis Motor Speedway",
         "layouts": [
           {
-            "layout": "The \"Brickyard\" IMS"
-          },
-          {
             "layout": "Rectangular Oval Track",
             "years": "1909–present",
             "length_km": 4.023,
@@ -12412,6 +12805,19 @@
               },
               "year": "1996",
               "series": "IndyCar"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick (start-finish line)",
+              "note": "start-finish line"
+            },
+            "banking": {
+              "value": 9.2,
+              "unit": "deg",
+              "note": "Turns:  Straights: 0°"
             }
           },
           {
@@ -12432,6 +12838,14 @@
               },
               "year": "2017",
               "series": "IndyCar"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick (start-finish line)",
+              "note": "start-finish line"
             }
           },
           {
@@ -12452,6 +12866,13 @@
               },
               "year": "2015",
               "series": "MotoGP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick"
             }
           },
           {
@@ -12472,6 +12893,14 @@
               },
               "year": "2021",
               "series": "Formula Atlantic"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick (start-finish line)",
+              "note": "start-finish line"
             }
           },
           {
@@ -12492,6 +12921,13 @@
               },
               "year": "2013",
               "series": "MotoGP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick"
             }
           },
           {
@@ -12512,6 +12948,14 @@
               },
               "year": "2013",
               "series": "DP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick (start-finish line)",
+              "note": "start-finish line"
             }
           },
           {
@@ -12532,6 +12976,14 @@
               },
               "year": "2004",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Brick"
+              ],
+              "text": "Asphalt and brick (start-finish line)",
+              "note": "start-finish line"
             }
           },
           {
@@ -12545,10 +12997,11 @@
               "text": "4790 W. 16th St."
             },
             "localisation2": {
-              "text": "Speedway"
-            },
-            "localisation3": {
-              "text": "Indiana"
+              "text": "Speedway, Indiana",
+              "link": {
+                "text": "Speedway, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+              }
             }
           },
           "coordinates": {
@@ -12568,12 +13021,7 @@
               "amount": 3.0,
               "currency": "USD",
               "scale": "million",
-              "text": "US$3 million ($86 million 2021 dollars)"
-            },
-            "banking": {
-              "value": 9.2,
-              "unit": "deg",
-              "note": "Turns:  Straights: 0°"
+              "text": "US$3 million ($86 million 2021 dollars)"
             }
           },
           "history": {
@@ -12601,8 +13049,22 @@
             ],
             "owner": "Penske Entertainment Group (2020–present) Hulman & Company (1945–2019) Eddie Rickenbacker (1927–1945) Carl G. Fisher (1909–1927)"
           },
-          "operator": "IMS, LLC (subsidiary of Penske Entertainment Group)",
-          "architect": "Andrews, Park Taliaferro",
+          "operator": [
+            {
+              "text": "IMS"
+            },
+            {
+              "text": "LLC (subsidiary of Penske Entertainment Group)"
+            }
+          ],
+          "architect": [
+            {
+              "text": "Andrews"
+            },
+            {
+              "text": "Park Taliaferro"
+            }
+          ],
           "website": "http://www.indianapolismotorspeedway.com/",
           "additional_info": {
             "Address": {
@@ -12624,14 +13086,11 @@
                 "2020) International Race of Champions IROC at Indy (1998–2003)"
               ]
             },
-            "Surface": {
-              "text": "Asphalt and brick (start-finish line)"
-            },
             "Architectural style": {
               "text": "Motor racing circuit"
             },
             "NRHP reference No.": {
-              "text": "75000044 [ 3 ]",
+              "text": "75000044",
               "links": [
                 {
                   "text": "75000044",
@@ -12647,10 +13106,10 @@
               ]
             },
             "Designated NHLD": {
-              "text": "February 27, 1987 [ 4 ]",
+              "text": "February 27, 1987",
               "values": [
                 "February 27",
-                "1987 [ 4 ]"
+                "1987"
               ]
             }
           }
@@ -12741,7 +13200,7 @@
                 "text": "McLaren MP4-20",
                 "url": "https://en.wikipedia.org/wiki/McLaren_MP4-20"
               },
-              "year": "2005 [ 4 ]",
+              "year": "2005",
               "series": "F1"
             }
           },
@@ -12815,12 +13274,22 @@
             ],
             "owner": "Vakıflar Genel Müdürlüğü (August 2005–present)"
           },
-          "operator": {
-            "text": "Turkish Automobile Sports Federation [ tr ] (June 2025–present) Can Bilim Eğitim Kurumları A.Ş. (April 2024–December 2024) Intercity (October 2012–March 2024) Bernie Ecclestone (April 2007–September 2012) FİYAŞ (August 2005–March 2007)",
-            "url": "https://en.wikipedia.org/w/index.php?title=Turkish_Automobile_Sports_Federation&action=edit&redlink=1"
-          },
+          "operator": [
+            {
+              "text": "Turkish Automobile Sports Federation",
+              "url": "https://en.wikipedia.org/w/index.php?title=Turkish_Automobile_Sports_Federation&action=edit&redlink=1"
+            },
+            {
+              "text": "tr",
+              "url": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Otomobil_Sporlar%C4%B1_Federasyonu"
+            },
+            {
+              "text": "Bernie Ecclestone",
+              "url": "https://en.wikipedia.org/wiki/Bernie_Ecclestone"
+            }
+          ],
           "architect": {
-            "text": "Hermann Tilke [ 3 ]",
+            "text": "Hermann Tilke",
             "url": "https://en.wikipedia.org/wiki/Hermann_Tilke"
           },
           "website": "https://intercitypark.com",
@@ -12907,6 +13376,12 @@
               },
               "year": "2021",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -12978,8 +13453,7 @@
             "length_mi": 2.144,
             "turns": 12,
             "capacity": {
-              "total": 50000,
-              "seating": 1
+              "total": 50000
             }
           },
           "history": {
@@ -12995,7 +13469,7 @@
             ]
           },
           "architect": {
-            "text": "Carsten Tilke [ 3 ]",
+            "text": "Carsten Tilke",
             "url": "https://en.wikipedia.org/w/index.php?title=Carsten_Tilke&action=edit&redlink=1"
           },
           "website": "https://jeddahcircuit.com/",
@@ -13032,9 +13506,6 @@
                   "url": "https://en.wikipedia.org/wiki/FIA_WTCR_Race_of_Saudi_Arabia"
                 }
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -13333,6 +13804,12 @@
               },
               "year": "2024",
               "series": "Sports car racing"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -13353,6 +13830,12 @@
               },
               "year": "1992",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -13373,6 +13856,12 @@
               },
               "year": "2009",
               "series": "A1 GP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -13393,6 +13882,12 @@
               },
               "year": "1990",
               "series": "Group A"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -13413,6 +13908,12 @@
               },
               "year": "1985",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -13433,6 +13934,12 @@
               },
               "year": "1967",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -13496,9 +14003,6 @@
                 "2009–2010) A1 Grand Prix (2009) World Sportscar Championship (1974",
                 "1983–1984) Rand Grand Prix (1961–1965)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -13566,6 +14070,12 @@
               },
               "year": "2025",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -13573,12 +14083,13 @@
           "name": "Las Vegas Strip Circuit",
           "location": {
             "localisation1": {
-              "text": "Paradise"
+              "text": "Paradise, Nevada",
+              "link": {
+                "text": "Paradise, Nevada",
+                "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
+              }
             },
             "localisation2": {
-              "text": "Nevada"
-            },
-            "localisation3": {
               "text": "United States",
               "link": {
                 "text": "United States",
@@ -13634,9 +14145,6 @@
                   "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_North_America"
                 }
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -13701,134 +14209,7 @@
       }
     ],
     "grands_prix_held": 8,
-    "details": {
-      "url": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit",
-      "infobox": {
-        "title": "Acura Grand Prix of Long Beach",
-        "layouts": [
-          {
-            "layout": "IndyCar Series"
-          },
-          {
-            "layout": "Circuit information",
-            "length_km": 3.167,
-            "length_mi": 1.968,
-            "turns": 11
-          }
-        ],
-        "normalized": {
-          "name": "Acura Grand Prix of Long Beach",
-          "location": {
-            "localisation1": {
-              "text": "Long Beach"
-            },
-            "localisation2": {
-              "text": "California 33°45′59″N 118°11′34″W ﻿"
-            },
-            "localisation3": {
-              "text": "﻿ 33.76639°N 118.19278°W ﻿"
-            },
-            "localisation4": {
-              "text": "33.76639"
-            },
-            "localisation5": {
-              "text": "-118.19278"
-            }
-          },
-          "specs": {
-            "length_km": 3.167,
-            "length_mi": 1.968,
-            "turns": 11
-          },
-          "additional_info": {
-            "Corporate sponsor": {
-              "text": "Acura ( Honda )",
-              "links": [
-                {
-                  "text": "Acura",
-                  "url": "https://en.wikipedia.org/wiki/Acura"
-                },
-                {
-                  "text": "Honda",
-                  "url": "https://en.wikipedia.org/wiki/Honda"
-                }
-              ]
-            },
-            "First race": {
-              "text": "1975"
-            },
-            "First ICS race": {
-              "text": "2009"
-            },
-            "Distance": {
-              "text": "177.12 mi (285.05 km)"
-            },
-            "Laps": {
-              "text": "90"
-            },
-            "Previous names": {
-              "text": "Long Beach Grand Prix (1975) United States Grand Prix West (1976–1983) Toyota Grand Prix of the United States (1980–1981, 1983) Toyota Grand Prix of Long Beach (1984–2018)",
-              "values": [
-                "Long Beach Grand Prix (1975) United States Grand Prix West (1976–1983) Toyota Grand Prix of the United States (1980–1981",
-                "1983) Toyota Grand Prix of Long Beach (1984–2018)"
-              ]
-            },
-            "Most wins (driver)": {
-              "text": "Al Unser Jr. (6)",
-              "links": [
-                {
-                  "text": "Al Unser Jr.",
-                  "url": "https://en.wikipedia.org/wiki/Al_Unser_Jr."
-                }
-              ]
-            },
-            "Most wins (team)": {
-              "text": "Team Penske (7) Ganassi (7)",
-              "links": [
-                {
-                  "text": "Team Penske",
-                  "url": "https://en.wikipedia.org/wiki/Team_Penske"
-                },
-                {
-                  "text": "Ganassi",
-                  "url": "https://en.wikipedia.org/wiki/Chip_Ganassi_Racing"
-                }
-              ]
-            },
-            "Most wins (manufacturer)": {
-              "text": "Chassis: Dallara (15) Engine: Honda (18) Tires: Firestone (21)",
-              "links": [
-                {
-                  "text": "Dallara",
-                  "url": "https://en.wikipedia.org/wiki/Dallara"
-                },
-                {
-                  "text": "Honda",
-                  "url": "https://en.wikipedia.org/wiki/Honda"
-                },
-                {
-                  "text": "Firestone",
-                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-                }
-              ]
-            },
-            "Lap record": {
-              "text": "1:05.309 ( Colton Herta , Dallara IR18 – Honda , 2022 , IndyCar )",
-              "values": [
-                "1:05.309 ( Colton Herta",
-                "Dallara IR18 – Honda",
-                {
-                  "text": "2022",
-                  "url": "https://en.wikipedia.org/wiki/2022_Acura_Grand_Prix_of_Long_Beach"
-                },
-                "IndyCar )"
-              ]
-            }
-          }
-        }
-      },
-      "tables": null
-    }
+    "details": null
   },
   {
     "circuit": {
@@ -14092,10 +14473,16 @@
               }
             ]
           },
-          "architect": {
-            "text": "Jarno Zaffelli [ it ]",
-            "url": "https://en.wikipedia.org/w/index.php?title=Jarno_Zaffelli&action=edit&redlink=1"
-          },
+          "architect": [
+            {
+              "text": "Jarno Zaffelli",
+              "url": "https://en.wikipedia.org/w/index.php?title=Jarno_Zaffelli&action=edit&redlink=1"
+            },
+            {
+              "text": "it",
+              "url": "https://it.wikipedia.org/wiki/Jarno_Zaffelli"
+            }
+          ],
           "website": "https://madring.com",
           "additional_info": {
             "Major events": {
@@ -14237,6 +14624,12 @@
               },
               "year": "2025",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14257,6 +14650,12 @@
               },
               "year": "2024",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14277,6 +14676,12 @@
               },
               "year": "2018",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14297,6 +14702,12 @@
               },
               "year": "2017",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14317,6 +14728,12 @@
               },
               "year": "2013",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14337,6 +14754,12 @@
               },
               "year": "2008",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -14344,13 +14767,28 @@
           "name": "Marina Bay Street Circuit",
           "location": {
             "localisation1": {
-              "text": "Downtown Core and Kallang"
+              "text": "Downtown Core",
+              "link": {
+                "text": "Downtown Core",
+                "url": "https://en.wikipedia.org/wiki/Downtown_Core"
+              }
             },
             "localisation2": {
-              "text": "Marina Bay"
+              "text": "and"
             },
             "localisation3": {
-              "text": "Singapore"
+              "text": "Kallang",
+              "link": {
+                "text": "Kallang",
+                "url": "https://en.wikipedia.org/wiki/Kallang"
+              }
+            },
+            "localisation4": {
+              "text": "Marina Bay, Singapore",
+              "link": {
+                "text": "Marina Bay, Singapore",
+                "url": "https://en.wikipedia.org/wiki/Marina_Bay,_Singapore"
+              }
             }
           },
           "coordinates": {
@@ -14369,7 +14807,7 @@
               "amount": 33.0,
               "currency": "USD",
               "scale": "million",
-              "text": "~ SGD $33 million [ 1 ]"
+              "text": "~ SGD $33 million"
             }
           },
           "history": {
@@ -14398,9 +14836,6 @@
                 "Current: Formula One Singapore Grand Prix (2008–2019",
                 "2022–present)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -14472,6 +14907,12 @@
               },
               "year": "2023",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14492,6 +14933,12 @@
               },
               "year": "2025",
               "series": "Ferrari Challenge"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -14499,21 +14946,39 @@
             "years": "2024–present",
             "length_km": 3.927,
             "length_mi": 2.44,
-            "turns": 18
+            "turns": 18,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Extended MIA Loop",
             "years": "2024–present",
             "length_km": 2.816,
             "length_mi": 1.75,
-            "turns": 14
+            "turns": 14,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "MIA Loop",
             "years": "2024–present",
             "length_km": 2.301,
             "length_mi": 1.43,
-            "turns": 13
+            "turns": 13,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           }
         ],
         "normalized": {
@@ -14527,12 +14992,13 @@
               }
             },
             "localisation2": {
-              "text": "Miami Gardens"
+              "text": "Miami Gardens, Florida",
+              "link": {
+                "text": "Miami Gardens, Florida",
+                "url": "https://en.wikipedia.org/wiki/Miami_Gardens,_Florida"
+              }
             },
             "localisation3": {
-              "text": "Florida"
-            },
-            "localisation4": {
               "text": "U.S."
             }
           },
@@ -14546,8 +15012,7 @@
             "length_mi": 1.43,
             "turns": 13,
             "capacity": {
-              "total": 65000,
-              "seating": 1
+              "total": 65000
             }
           },
           "history": {
@@ -14592,9 +15057,6 @@
                   "url": "https://en.wikipedia.org/wiki/Miami_ePrix"
                 }
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -14845,9 +15307,6 @@
         "title": "Canadian Tire Motorsport Park",
         "layouts": [
           {
-            "layout": "\"Canada's Home of Motorsport\" [ 1 ]"
-          },
-          {
             "layout": "Clockwise Grand Prix Circuit",
             "years": "1961–present",
             "length_km": 3.957,
@@ -14865,46 +15324,87 @@
               },
               "year": "2008",
               "series": "LMP1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
             "layout": "Driver Development Centre Advanced Course",
             "length_km": 2.88,
             "length_mi": 1.79,
-            "turns": 20
+            "turns": 20,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Driver Development Centre Intermediate Course",
             "length_km": 2.2,
-            "length_mi": 1.367
+            "length_mi": 1.367,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Kart Complex",
             "length_km": 1.4,
             "length_mi": 0.87,
-            "turns": 12
+            "turns": 12,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Speedway Oval",
             "years": "1989–2013",
             "length_km": 0.805,
-            "length_mi": 0.5
+            "length_mi": 0.5,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            },
+            "banking": {
+              "value": 6.0,
+              "unit": "deg"
+            }
           }
         ],
         "normalized": {
           "name": "Canadian Tire Motorsport Park",
           "location": {
             "localisation1": {
-              "text": "3233 Concession Road 10 Clarington"
+              "text": "3233 Concession Road 10"
             },
             "localisation2": {
+              "text": "Clarington",
+              "link": {
+                "text": "Clarington",
+                "url": "https://en.wikipedia.org/wiki/Clarington"
+              }
+            },
+            "localisation3": {
               "text": "Ontario",
               "link": {
                 "text": "Ontario",
                 "url": "https://en.wikipedia.org/wiki/Ontario"
               }
             },
-            "localisation3": {
+            "localisation4": {
               "text": "Canada"
             }
           },
@@ -14921,10 +15421,6 @@
               "amount": 500000.0,
               "currency": "USD",
               "text": "$500,000"
-            },
-            "banking": {
-              "value": 6.0,
-              "unit": "deg"
             }
           },
           "history": {
@@ -14975,9 +15471,6 @@
                 "1999–2012",
                 "2014–2019)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -15041,6 +15534,12 @@
               },
               "year": "1974",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Tarmac"
             }
           }
         ],
@@ -15098,15 +15597,6 @@
                 "Formula One Belgian Grand Prix (1972",
                 "1974) Formula 750 (1976",
                 "1978) Formula Two (1973) Formula 5000 (1972)"
-              ]
-            },
-            "Surface": {
-              "text": "Tarmac",
-              "links": [
-                {
-                  "text": "Tarmac",
-                  "url": "https://en.wikipedia.org/wiki/Asphalt_concrete"
-                }
               ]
             }
           }
@@ -15339,6 +15829,12 @@
               },
               "year": "2020",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15359,6 +15855,12 @@
               },
               "year": "2014",
               "series": "Auto GP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15378,6 +15880,12 @@
               },
               "year": "2018",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15398,6 +15906,13 @@
               },
               "year": "2023",
               "series": "GT3"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/concrete"
             }
           },
           {
@@ -15417,6 +15932,13 @@
               },
               "year": "1983",
               "series": "Group C"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/concrete"
             }
           },
           {
@@ -15437,6 +15959,12 @@
               },
               "year": "2001",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15457,6 +15985,12 @@
               },
               "year": "1991",
               "series": "C1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15476,6 +16010,13 @@
               },
               "year": "1975",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/concrete"
             }
           },
           {
@@ -15496,6 +16037,13 @@
               },
               "year": "1969",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/concrete"
             }
           },
           {
@@ -15515,6 +16063,12 @@
               },
               "year": "1965",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15534,6 +16088,12 @@
               },
               "year": "1970",
               "series": "Group 7"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -15553,6 +16113,12 @@
               },
               "year": "1929",
               "series": "Grand Prix"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -15602,9 +16168,6 @@
                 "1956–1984",
                 "1986–1991)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -15828,12 +16391,13 @@
           "name": "Phoenix Grand Prix Circuit",
           "location": {
             "localisation1": {
-              "text": "Phoenix"
+              "text": "Phoenix, Arizona",
+              "link": {
+                "text": "Phoenix, Arizona",
+                "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+              }
             },
             "localisation2": {
-              "text": "Arizona"
-            },
-            "localisation3": {
               "text": "United States"
             }
           },
@@ -15958,11 +16522,13 @@
           {
             "layout": "Modified Circuit",
             "years": "1936–1939",
+            "length_km": 18.619,
             "length_mi": 11.569
           },
           {
             "layout": "Original Circuit",
             "years": "1934",
+            "length_km": 24.461,
             "length_mi": 15.199
           }
         ],
@@ -15985,6 +16551,7 @@
             "lon": 27.87361
           },
           "specs": {
+            "length_km": 24.461,
             "length_mi": 15.199,
             "turns": 9
           },
@@ -16394,8 +16961,7 @@
             "length_mi": 3.673,
             "turns": 16,
             "capacity": {
-              "total": 105000,
-              "seating": 1
+              "total": 105000
             }
           },
           "history": {
@@ -16422,7 +16988,14 @@
             ],
             "owner": "Dietrich Mateschitz Beteiligungs GmbH (2004–present)"
           },
-          "operator": "Projekt Spielberg GmbH & Co KG (2011–present)",
+          "operator": [
+            {
+              "text": "Projekt Spielberg GmbH"
+            },
+            {
+              "text": "Co KG (2011–present)"
+            }
+          ],
           "website": "https://www.redbullring.com/de/",
           "additional_info": {
             "Major events": {
@@ -16483,9 +17056,6 @@
         "title": "Riverside International Raceway",
         "layouts": [
           {
-            "layout": "The dusty place"
-          },
-          {
             "layout": "Long Grand Prix Road Course",
             "years": "1969–1989",
             "length_km": 5.311,
@@ -16503,6 +17073,12 @@
               },
               "year": "1982",
               "series": "CART"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -16510,7 +17086,13 @@
             "years": "1969–1989",
             "length_km": 4.216,
             "length_mi": 2.62,
-            "turns": 9
+            "turns": 9,
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
+            }
           },
           {
             "layout": "Sports Car Short Course",
@@ -16530,6 +17112,12 @@
               },
               "year": "1984",
               "series": "Can-Am"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -16550,6 +17138,12 @@
               },
               "year": "1967",
               "series": "Can-Am"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -16570,6 +17164,12 @@
               },
               "year": "1968",
               "series": "Can-Am"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -16577,10 +17177,17 @@
           "name": "Riverside International Raceway",
           "location": {
             "localisation1": {
-              "text": "California 60 and Day Street 22255 Eucalyptus Ave Moreno Valley"
+              "text": "California 60 and Day Street 22255 Eucalyptus Ave"
             },
             "localisation2": {
-              "text": "California 92388"
+              "text": "Moreno Valley, California",
+              "link": {
+                "text": "Moreno Valley, California",
+                "url": "https://en.wikipedia.org/wiki/Moreno_Valley,_California"
+              }
+            },
+            "localisation3": {
+              "text": "92388"
             }
           },
           "coordinates": {
@@ -16617,10 +17224,16 @@
             ],
             "owner": "West Coast Automotive Testing Corp (1957) Ed Pauley, Bob Hope , and Fred Levy (1958–1969) American Raceways Inc. (1969–1971) Fritz Duda (1971–1989)"
           },
-          "operator": {
-            "text": "Les Richter (1959–1983) Fritz Duda (1983–1989)",
-            "url": "https://en.wikipedia.org/wiki/Les_Richter"
-          },
+          "operator": [
+            {
+              "text": "Les Richter",
+              "url": "https://en.wikipedia.org/wiki/Les_Richter"
+            },
+            {
+              "text": "Fritz Duda",
+              "url": "https://en.wikipedia.org/w/index.php?title=Fritz_Duda&action=edit&redlink=1"
+            }
+          ],
           "architect": {
             "text": "William L. Duquette",
             "url": "https://en.wikipedia.org/w/index.php?title=William_L._Duquette&action=edit&redlink=1"
@@ -16642,9 +17255,6 @@
                 "1966",
                 "1968) Formula One United States Grand Prix (1960)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -16720,6 +17330,13 @@
               },
               "year": "1978",
               "series": "F2"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Cobblestones"
+              ],
+              "text": "Asphalt, cobblestones"
             }
           },
           {
@@ -16740,6 +17357,13 @@
               },
               "year": "1970",
               "series": "F2"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Cobblestones"
+              ],
+              "text": "Asphalt, cobblestones"
             }
           },
           {
@@ -16760,6 +17384,13 @@
               },
               "year": "1954",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Cobblestones"
+              ],
+              "text": "Asphalt, cobblestones"
             }
           }
         ],
@@ -16811,13 +17442,6 @@
                 "1975–1978) French F3 (1964–1970",
                 "1972–1973",
                 "1980–1993) French Touring Car Championship"
-              ]
-            },
-            "Surface": {
-              "text": "Asphalt, cobblestones",
-              "values": [
-                "Asphalt",
-                "cobblestones"
               ]
             }
           }
@@ -17074,6 +17698,13 @@
               },
               "year": "2019",
               "series": "LMP1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt/Concrete"
             }
           },
           {
@@ -17269,10 +17900,14 @@
               }
             },
             "localisation2": {
-              "text": "east of Sebring"
+              "text": "east of"
             },
             "localisation3": {
-              "text": "Florida"
+              "text": "Sebring, Florida",
+              "link": {
+                "text": "Sebring, Florida",
+                "url": "https://en.wikipedia.org/wiki/Sebring,_Florida"
+              }
             },
             "localisation4": {
               "text": "U.S."
@@ -17297,7 +17932,14 @@
             ],
             "owner": "NASCAR via IMSA Holdings, LLC (September 2012–present)"
           },
-          "operator": "Sebring International Raceway, LLC (1997–present)",
+          "operator": [
+            {
+              "text": "Sebring International Raceway"
+            },
+            {
+              "text": "LLC (1997–present)"
+            }
+          ],
           "website": "http://www.sebringraceway.com/",
           "additional_info": {
             "Major events": {
@@ -17309,13 +17951,6 @@
                 "2011",
                 "2013–present) Former: FIA WEC 1000 Miles of Sebring (2019",
                 "2022–2023) Formula One United States Grand Prix (1959) FIA GT (1997)"
-              ]
-            },
-            "Surface": {
-              "text": "Asphalt/Concrete",
-              "values": [
-                "Asphalt",
-                "Concrete"
               ]
             }
           }
@@ -17798,7 +18433,14 @@
             ],
             "owner": "Shanghai Jiushi Group (92%) Shanghai International Automobile City (8%)"
           },
-          "operator": "Shanghai International Circuit Co., Ltd.",
+          "operator": [
+            {
+              "text": "Shanghai International Circuit Co."
+            },
+            {
+              "text": "Ltd."
+            }
+          ],
           "architect": {
             "text": "Hermann Tilke",
             "url": "https://en.wikipedia.org/wiki/Hermann_Tilke"
@@ -18096,11 +18738,9 @@
         "title": "Silverstone Circuit",
         "layouts": [
           {
-            "layout": "Home of British Motor Racing"
-          },
-          {
             "layout": "Arena Grand Prix Circuit",
             "years": "2011–present",
+            "length_km": 5.891,
             "length_mi": 3.66,
             "turns": 18,
             "race_lap_record": {
@@ -19015,7 +19655,7 @@
             "url": "https://en.wikipedia.org/wiki/Honda_Mobilityland"
           },
           "architect": {
-            "text": "John Hugenholtz [ 2 ] [ 3 ] [ 4 ] [ 5 ]",
+            "text": "John Hugenholtz",
             "url": "https://en.wikipedia.org/wiki/John_Hugenholtz"
           },
           "website": "https://www.suzukacircuit.jp/en/",
@@ -19264,6 +19904,12 @@
               },
               "year": "2009",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           }
         ],
@@ -19314,9 +19960,6 @@
                 "Formula One European Grand Prix (2008–2012) GP2 (2008–2012) GP3 (2010–2012) Porsche Supercup (2008–2010",
                 "2012) Formula BMW Europe (2008–2010) International GT Open (2008) Spanish F3 (2008)"
               ]
-            },
-            "Surface": {
-              "text": "Asphalt"
             }
           }
         }
@@ -19435,9 +20078,6 @@
         "title": "Watkins Glen International",
         "layouts": [
           {
-            "layout": "\"The Glen\""
-          },
-          {
             "layout": "Grand Prix Circuit",
             "years": "with Inner Loop Chicane) (1992–present",
             "length_km": 5.552,
@@ -19455,6 +20095,13 @@
               },
               "year": "2017",
               "series": "IndyCar"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Concrete"
+              ],
+              "text": "Asphalt and concrete"
             }
           },
           {
@@ -19475,6 +20122,12 @@
               },
               "year": "1992",
               "series": "IMSA GTP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19495,6 +20148,12 @@
               },
               "year": "1991",
               "series": "IMSA GTP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19515,6 +20174,12 @@
               },
               "year": "1990",
               "series": "IMSA GTP"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19535,6 +20200,12 @@
               },
               "year": "1980",
               "series": "F1"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19555,6 +20226,12 @@
               },
               "year": "1971",
               "series": "Can-Am"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19575,6 +20252,12 @@
               },
               "year": "1969",
               "series": "Can-Am"
+            },
+            "surface": {
+              "values": [
+                "Asphalt"
+              ],
+              "text": "Asphalt"
             }
           },
           {
@@ -19594,6 +20277,17 @@
               },
               "year": "1954",
               "series": "Sports car"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Cobblestones",
+                "Concrete",
+                "Wood",
+                "Dirt",
+                "Steel"
+              ],
+              "text": "Asphalt, cobbles, concrete, wood, dirt, steel"
             }
           },
           {
@@ -19614,6 +20308,17 @@
               },
               "year": "1950",
               "series": "FL"
+            },
+            "surface": {
+              "values": [
+                "Asphalt",
+                "Cobblestones",
+                "Concrete",
+                "Wood",
+                "Dirt",
+                "Steel"
+              ],
+              "text": "Asphalt, cobbles, concrete, wood, dirt, steel"
             }
           }
         ],
@@ -19621,10 +20326,11 @@
           "name": "Watkins Glen International",
           "location": {
             "localisation1": {
-              "text": "Watkins Glen"
-            },
-            "localisation2": {
-              "text": "New York"
+              "text": "Watkins Glen, New York",
+              "link": {
+                "text": "Watkins Glen, New York",
+                "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+              }
             }
           },
           "coordinates": {
@@ -19637,8 +20343,7 @@
             "length_mi": 6.6,
             "turns": 28,
             "capacity": {
-              "total": 38900,
-              "seating": 1
+              "total": 38900
             }
           },
           "history": {
@@ -19682,17 +20387,6 @@
                 "2007–2010",
                 "2018–2019",
                 "2021–2022)"
-              ]
-            },
-            "Surface": {
-              "text": "Asphalt, cobbles, concrete, wood, dirt, steel",
-              "values": [
-                "Asphalt",
-                "cobbles",
-                "concrete",
-                "wood",
-                "dirt",
-                "steel"
               ]
             }
           }
@@ -19970,7 +20664,7 @@
               "amount": 1.322,
               "currency": "USD",
               "scale": "billion",
-              "text": "US$ 1.322 billion [ 2 ] AED 4.856 billion"
+              "text": "US$ 1.322 billion AED 4.856 billion"
             }
           },
           "history": {
@@ -20041,9 +20735,6 @@
       "infobox": {
         "layouts": [
           {
-            "layout": "Zeltweg Air Base Fliegerhorst Hinterstoisser"
-          },
-          {
             "layout": "Summary"
           },
           {
@@ -20069,11 +20760,11 @@
           },
           "additional_info": {
             "Elevation AMSL": {
-              "text": "2,238 ft / 682 m",
+              "text": "2,238 ft / 682 m",
               "values": [
                 "2",
-                "238 ft",
-                "682 m"
+                "238 ft",
+                "682 m"
               ]
             }
           }
