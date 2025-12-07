@@ -26,23 +26,51 @@ class CircuitEntitiesMixin(
 
         links = row.get("links") or []
 
+        def _clean_link(link: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+            link_text = (link.get("text") or "").strip()
+            if not link_text:
+                return None
+
+            url = link.get("url")
+
+            # jeśli masz w mixinie helpery, używamy ich:
+            if hasattr(self, "_is_language_marker_link") and hasattr(
+                self, "_is_wikipedia_redlink"
+            ):
+                # 1) marker językowy: link typu [it] do nieangielnej wiki – wywalamy cały wpis
+                if self._is_language_marker_link(link_text, url):
+                    return None
+
+                # 2) redlink: obcinamy URL, zostawiamy tekst
+                if url and self._is_wikipedia_redlink(url):
+                    url = None
+
+            item: Dict[str, Any] = {"text": link_text}
+            if url:
+                item["url"] = url
+            return item
+
+        # wiele linków – np. architect z Jarno + [it]
         if len(links) > 1:
             entities: List[Dict[str, Any]] = []
             for link in links:
-                link_text = (link.get("text") or "").strip()
-                if not link_text:
-                    continue
-                entities.append(
-                    {
-                        "text": link_text,
-                        "url": link.get("url"),
-                    },
-                )
+                item = _clean_link(link)
+                if item:
+                    entities.append(item)
             return entities or None
 
+        # pojedynczy link, ale tekst może mieć kilka części (A, B & C)
         parts = [p.strip() for p in re.split(r"\s*(?:,|&| and )\s*", text) if p.strip()]
 
         def _entity_for_part(part: str) -> Dict[str, Any]:
+            # jeśli mamy _with_link z logiką redlinków/markerów – użyjmy go
+            if hasattr(self, "_with_link"):
+                ent = self._with_link(part, links)
+                if ent is None:
+                    return {"text": part}
+                return ent
+
+            # fallback: goły _find_link bez dodatkowych filtrów
             link = self._find_link(part, links)
             if link and link.get("url"):
                 return {"text": part, "url": link.get("url")}
@@ -51,10 +79,14 @@ class CircuitEntitiesMixin(
         if len(parts) > 1:
             return [_entity_for_part(p) for p in parts]
 
+        # jeden link, jedna część tekstu
         if links:
-            url = links[0].get("url")
-            if url:
-                return {"text": text, "url": url}
+            single = _clean_link(links[0])
+            if single:
+                # dbamy, by text z _get_text był nadrzędny (np. bez [it])
+                single["text"] = text
+                return single
+
         return text or None
 
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
@@ -87,12 +119,14 @@ class CircuitEntitiesMixin(
                 values: List[Any] = []
                 for part in parts:
                     link = self._find_link(part, links)
-                    if link:
+                    if link and link.get("url"):
                         values.append({"text": part, "url": link.get("url")})
                     else:
                         values.append(part)
                 info["values"] = values
             elif links:
+                # opcjonalnie można tu też przepuścić przez _clean_link_list,
+                # ale to pole jest w "additional_info", więc nie rusza architect/operator.
                 info["links"] = links
 
             additional[key] = info
@@ -104,6 +138,7 @@ class CircuitEntitiesMixin(
     ) -> Optional[Dict[str, Any]]:
         if not row:
             return None
+
         text = self._get_text(row) or ""
         time_match = re.search(r"\d+:\d{2}\.\d{3}", text)
         details_match = re.search(r"\(([^)]*)\)", text)
@@ -123,10 +158,26 @@ class CircuitEntitiesMixin(
         if details:
             driver_text = details[0] if len(details) >= 1 else None
             car_text = details[1] if len(details) >= 2 else None
+
+            links = row.get("links") or []
+
+            def _wrap_entity(entity_text: Optional[str]) -> Optional[Dict[str, Any]]:
+                if not entity_text:
+                    return None
+                # jeśli mamy _with_link (z filtrami redlink/marker) – użyjemy
+                if hasattr(self, "_with_link"):
+                    ent = self._with_link(entity_text, links)
+                    if ent is None:
+                        # na wszelki wypadek – zawsze zachowujemy tekst
+                        return {"text": entity_text}
+                    return ent
+                # fallback – zachowaj chociaż tekst
+                return {"text": entity_text}
+
             record.update(
                 {
-                    "driver": self._find_link(driver_text, row.get("links")),
-                    "car": self._find_link(car_text, row.get("links")),
+                    "driver": _wrap_entity(driver_text),
+                    "car": _wrap_entity(car_text),
                     "year": details[2] if len(details) >= 3 else None,
                     "series": details[3] if len(details) >= 4 else None,
                 }
