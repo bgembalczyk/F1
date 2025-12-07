@@ -7,27 +7,5 @@
     "text": "Caesars Palace Grand Prix Circuit",
     "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
   },
-  "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
-  "location": {
-    "localisation1": {
-      "text": "4790 W. 16th St."
-    },
-    "localisation2": {
-      "text": "Speedway, Indiana",
-      "link": {
-        "text": "Speedway, Indiana",
-        "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
-      }
-    }
-  },
-  "architect": [
-    {
-      "text": "Jarno Zaffelli",
-      "url": "https://en.wikipedia.org/w/index.php?title=Jarno_Zaffelli&action=edit&redlink=1"
-    },
-    {
-      "text": "it",
-      "url": "https://it.wikipedia.org/wiki/Jarno_Zaffelli"
-    }
-  ]
+  "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
 }

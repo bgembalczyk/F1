@@ -5958,12 +5958,6 @@
           },
           {
             "layout": "Pole position"
-          },
-          {
-            "layout": "Podium"
-          },
-          {
-            "layout": "Fastest lap"
           }
         ],
         "normalized": {
@@ -11080,142 +11074,7 @@
     "grands_prix_held": 1,
     "details": {
       "url": "https://en.wikipedia.org/wiki/Fair_Park#Other_notable_events",
-      "infobox": {
-        "layouts": [
-          {
-            "layout": "Significant dates"
-          }
-        ],
-        "normalized": {
-          "location": {
-            "localisation1": {
-              "text": "Bounded by Texas and Pacific RR"
-            },
-            "localisation2": {
-              "text": "Pennsylvania"
-            },
-            "localisation3": {
-              "text": "Second"
-            },
-            "localisation4": {
-              "text": "and Parry Aves."
-            },
-            "localisation5": {
-              "text": "Dallas",
-              "link": {
-                "text": "Dallas",
-                "url": "https://en.wikipedia.org/wiki/Dallas"
-              }
-            },
-            "localisation6": {
-              "text": "Texas",
-              "link": {
-                "text": "Texas",
-                "url": "https://en.wikipedia.org/wiki/Texas"
-              }
-            },
-            "localisation7": {
-              "text": "U.S."
-            }
-          },
-          "coordinates": {
-            "lat": 32.78194,
-            "lon": -96.76556
-          },
-          "specs": {
-            "area": {
-              "acres": 277.0,
-              "hectares": 112.0
-            }
-          },
-          "history": {
-            "events": [
-              {
-                "event": "built",
-                "date": "1936"
-              },
-              {
-                "event": "built",
-                "date": "1936"
-              }
-            ]
-          },
-          "architect": [
-            {
-              "text": "George L. Dahl",
-              "url": "https://en.wikipedia.org/wiki/George_Dahl"
-            },
-            {
-              "text": "et al."
-            }
-          ],
-          "website": "https://fairpark.org/index.php/en/",
-          "additional_info": {
-            "Architectural style": {
-              "text": "Art Deco",
-              "links": [
-                {
-                  "text": "Art Deco",
-                  "url": "https://en.wikipedia.org/wiki/Art_Deco"
-                }
-              ]
-            },
-            "NRHP reference No.": {
-              "text": "86003488",
-              "links": [
-                {
-                  "text": "86003488",
-                  "url": "https://npgallery.nps.gov/AssetDetail/NRIS/86003488"
-                }
-              ]
-            },
-            "TSAL No.": {
-              "text": "8200005923",
-              "links": [
-                {
-                  "text": "8200005923",
-                  "url": "https://atlas.thc.state.tx.us/Details/8200005923"
-                }
-              ]
-            },
-            "DLMKHD No.": {
-              "text": "H/33",
-              "values": [
-                "H",
-                "33"
-              ]
-            },
-            "Added to NRHP": {
-              "text": "September 24, 1986",
-              "values": [
-                "September 24",
-                "1986"
-              ]
-            },
-            "Designated NHLD": {
-              "text": "September 24, 1986",
-              "values": [
-                "September 24",
-                "1986"
-              ]
-            },
-            "Designated TSAL": {
-              "text": "January 1, 1984",
-              "values": [
-                "January 1",
-                "1984"
-              ]
-            },
-            "Designated DLMKHD": {
-              "text": "March 4, 1987",
-              "values": [
-                "March 4",
-                "1987"
-              ]
-            }
-          }
-        }
-      },
+      "infobox": {},
       "tables": null
     }
   },
@@ -12985,18 +12844,12 @@
               "text": "Asphalt and brick (start-finish line)",
               "note": "start-finish line"
             }
-          },
-          {
-            "layout": "Significant dates"
           }
         ],
         "normalized": {
           "name": "Indianapolis Motor Speedway",
           "location": {
             "localisation1": {
-              "text": "4790 W. 16th St."
-            },
-            "localisation2": {
               "text": "Speedway, Indiana",
               "link": {
                 "text": "Speedway, Indiana",
@@ -13041,10 +12894,6 @@
               {
                 "event": "broke_ground",
                 "date": "1909"
-              },
-              {
-                "event": "built",
-                "date": "1909"
               }
             ],
             "owner": "Penske Entertainment Group (2020–present) Hulman & Company (1945–2019) Eddie Rickenbacker (1927–1945) Carl G. Fisher (1909–1927)"
@@ -13059,10 +12908,20 @@
           ],
           "architect": [
             {
-              "text": "Andrews"
+              "text": "Carl G. Fisher",
+              "url": "https://en.wikipedia.org/wiki/Carl_G._Fisher"
             },
             {
-              "text": "Park Taliaferro"
+              "text": "James A. Allison",
+              "url": "https://en.wikipedia.org/wiki/James_A._Allison"
+            },
+            {
+              "text": "Frank H. Wheeler",
+              "url": "https://en.wikipedia.org/wiki/Frank_H._Wheeler"
+            },
+            {
+              "text": "Arthur C. Newby",
+              "url": "https://en.wikipedia.org/wiki/Arthur_C._Newby"
             }
           ],
           "website": "http://www.indianapolismotorspeedway.com/",
@@ -13084,32 +12943,6 @@
                 "2026) Former: Formula One United States Grand Prix (2000–2007) Indianapolis 500 (1950–1960) Grand Prix motorcycle racing Indianapolis motorcycle Grand Prix (2008–2015) Rolex Sports Car Series Brickyard Grand Prix (2012–2013) SCCA National Championship Runoffs (2017",
                 "2021) MotoAmerica (2015",
                 "2020) International Race of Champions IROC at Indy (1998–2003)"
-              ]
-            },
-            "Architectural style": {
-              "text": "Motor racing circuit"
-            },
-            "NRHP reference No.": {
-              "text": "75000044",
-              "links": [
-                {
-                  "text": "75000044",
-                  "url": "https://npgallery.nps.gov/AssetDetail/NRIS/75000044"
-                }
-              ]
-            },
-            "Added to NRHP": {
-              "text": "March 7, 1975",
-              "values": [
-                "March 7",
-                "1975"
-              ]
-            },
-            "Designated NHLD": {
-              "text": "February 27, 1987",
-              "values": [
-                "February 27",
-                "1987"
               ]
             }
           }
@@ -20713,44 +20546,7 @@
     "grands_prix_held": 1,
     "details": {
       "url": "https://en.wikipedia.org/wiki/Zeltweg_Airfield",
-      "infobox": {
-        "layouts": [
-          {
-            "layout": "Summary"
-          },
-          {
-            "layout": "Map"
-          },
-          {
-            "layout": "Runways"
-          }
-        ],
-        "normalized": {
-          "location": {
-            "localisation1": {
-              "text": "Austria",
-              "link": {
-                "text": "Austria",
-                "url": "https://en.wikipedia.org/wiki/Austria"
-              }
-            }
-          },
-          "coordinates": {
-            "lat": 47.20222,
-            "lon": 14.74222
-          },
-          "additional_info": {
-            "Elevation AMSL": {
-              "text": "2,238 ft / 682 m",
-              "values": [
-                "2",
-                "238 ft",
-                "682 m"
-              ]
-            }
-          }
-        }
-      },
+      "infobox": {},
       "tables": null
     }
   }

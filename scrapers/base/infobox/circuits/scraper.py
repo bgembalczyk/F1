@@ -79,11 +79,67 @@ class F1CircuitInfoboxScraper(
         """API bazowej klasy – deleguje do parse_from_soup."""
         return [self.parse_from_soup(soup)]
 
+    # >>> ZMIANA TUTAJ <<<
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        """Zwraca znormalizowany infobox + layouts (bez surowego `rows`)."""
-        raw = super().parse_from_soup(soup)
+        """
+        Zwraca znormalizowany infobox + layouts (bez surowego `rows`).
+
+        Od pierwszego wiersza z class="infobox-full-data" w danej tabeli
+        infoboksa ignorujemy resztę wierszy (wycinamy je z DOM-u),
+        żeby nie mieszać danych z pełnotabelarycznymi statystykami.
+        """
+        truncated_soup = self._truncate_infobox_after_full_data(soup)
+
+        # parsujemy infobox już bez "ogonów" po infobox-full-data
+        raw = super().parse_from_soup(truncated_soup)
+
+        # layouty wciąż parsujemy z pełnej sekcji artykułu
         layout_records = self._parse_layout_sections(soup)
         return self._with_normalized(raw, layout_records)
+
+    # ------------------------------
+    # Helper: przycinanie infoboksa
+    # ------------------------------
+
+    def _truncate_infobox_after_full_data(self, soup: BeautifulSoup) -> BeautifulSoup:
+        """
+        W każdej tabeli infoboksa usuwamy:
+        - pierwszy wiersz, który ma klasę `infobox-full-data`
+          LUB zawiera komórkę (td/th) z tą klasą,
+        - wszystkie kolejne wiersze poniżej.
+        """
+
+        # helper: tabela ma mieć klasę zawierającą 'infobox'
+        def _has_infobox_class(classes: Any) -> bool:
+            if not classes:
+                return False
+            if isinstance(classes, str):
+                classes = classes.split()
+            return "infobox" in classes
+
+        # każda tabela infoboksa
+        for table in soup.find_all("table", class_=_has_infobox_class):
+            rows: List[Tag] = table.find_all("tr")
+
+            cut_index: Optional[int] = None
+            for idx, row in enumerate(rows):
+                row_classes = row.get("class") or []
+                if isinstance(row_classes, str):
+                    row_classes = row_classes.split()
+
+                has_full_on_tr = "infobox-full-data" in row_classes
+                has_full_in_cell = row.find(["td", "th"], class_="infobox-full-data") is not None
+
+                if has_full_on_tr or has_full_in_cell:
+                    cut_index = idx
+                    break
+
+            # jeśli znaleziono początek sekcji 'full-data' → usuń wszystko od tego miejsca
+            if cut_index is not None:
+                for r in rows[cut_index:]:
+                    r.decompose()
+
+        return soup
 
     # ------------------------------
     # Pobieranie / sekcje / kategorie
