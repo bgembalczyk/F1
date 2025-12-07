@@ -6,9 +6,12 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
-import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+
+import requests
+
+from http_client import HttpClient
 
 try:
     import pandas as pd
@@ -43,24 +46,15 @@ class F1Scraper(ABC):
         include_urls: bool = True,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
+        http_client: Optional[HttpClient] = None,
+        timeout: int = 10,
+        retries: int = 0,
     ) -> None:
         self.include_urls = include_urls
-        self.session = session or requests.Session()
-
-        # --- ważne: sensowne domyślne nagłówki, żeby nie było 403 ---
-        default_headers: Dict[str, str] = {
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                "Version/18.0 Safari/605.1.15"
-            ),
-            "Accept-Language": "en-US,en;q=0.9",
-        }
-        if headers:
-            default_headers.update(headers)
-
-        # ustawiamy na sesji, żeby używały się przy każdym GET
-        self.session.headers.update(default_headers)
+        self.http_client = http_client or HttpClient(
+            session=session, headers=headers, timeout=timeout, retries=retries
+        )
+        self.session = self.http_client.session
 
         self._data: List[Dict[str, Any]] = []
 
@@ -120,10 +114,7 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        # możesz ewentualnie dorzucić timeout
-        resp = self.session.get(self.url, timeout=10)
-        resp.raise_for_status()
-        return resp.text
+        return self.http_client.get_text(self.url)
 
     @abstractmethod
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
