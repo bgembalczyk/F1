@@ -5,6 +5,10 @@ from typing import Optional, Dict, Any, List
 class InfoboxTextUtilsMixin:
     """Ogólne helpery do pracy na dictach z infoboksa."""
 
+    # ------------------------------
+    # Tekst
+    # ------------------------------
+
     def _get_text(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
             return None
@@ -12,9 +16,17 @@ class InfoboxTextUtilsMixin:
         if not isinstance(text, str):
             return None
 
-        text = re.sub(r"\[\s*\d+\s*]", "", text)  # przypisy [ 2 ], [3]
+        # usuwamy przypisy [ 2 ], [3] oraz markery językowe [ it ], [ fr ] itp.
+        # (typowy pattern w infoboksach: "Jarno Zaffelli [ it ]")
+        text = re.sub(r"\[\s*(?:\d+|[a-z]{1,3})\s*]", "", text)
+
+        # normalizacja whitespace
         text = re.sub(r"\s+", " ", text)
         return text.strip() or None
+
+    # ------------------------------
+    # Proste listy / liczby / długości
+    # ------------------------------
 
     def _split_simple_list(self, row: Optional[Dict[str, Any]]) -> Optional[List[str]]:
         if not row:
@@ -63,6 +75,10 @@ class InfoboxTextUtilsMixin:
             "years": years or None,
         }
 
+    # ------------------------------
+    # Linki
+    # ------------------------------
+
     def _find_link(
         self,
         text: Optional[str],
@@ -70,10 +86,22 @@ class InfoboxTextUtilsMixin:
     ) -> Optional[Dict[str, str]]:
         if not text:
             return None
+        wanted = text.strip().lower()
         for link in links:
-            if link.get("text", "").strip().lower() == text.strip().lower():
+            link_text = link.get("text", "")
+            if link_text and link_text.strip().lower() == wanted:
                 return link
         return None
+
+    @staticmethod
+    def _is_wikipedia_redlink(url: str) -> bool:
+        """Zwraca True dla redlinków Wikipedii typu ...&action=edit&redlink=1."""
+        url_l = url.lower()
+        return (
+            "wikipedia.org" in url_l
+            and "action=edit" in url_l
+            and "redlink=" in url_l
+        )
 
     def _with_link(
         self,
@@ -83,7 +111,19 @@ class InfoboxTextUtilsMixin:
         if text is None:
             return None
         link = self._find_link(text, links or [])
-        return {"text": text, "url": link.get("url") if link else None}
+
+        url: Optional[str] = None
+        if link:
+            candidate = link.get("url")
+            # ignorujemy redlinki Wikipedii
+            if candidate and not self._is_wikipedia_redlink(candidate):
+                url = candidate
+
+        return {"text": text, "url": url}
+
+    # ------------------------------
+    # Czyszczenie None / pustych struktur
+    # ------------------------------
 
     def _prune_nulls(self, data: Any) -> Any:
         if isinstance(data, dict):

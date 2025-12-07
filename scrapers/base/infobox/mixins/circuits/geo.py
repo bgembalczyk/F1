@@ -7,6 +7,9 @@ from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
 class CircuitGeoMixin(InfoboxTextUtilsMixin):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
 
+    # Możesz to wynieść na poziom modułu, jeśli będzie używane też gdzie indziej
+    _LOCATION_STOPWORDS = {"and", "&"}
+
     def _parse_location(
         self, row: Optional[Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
@@ -20,11 +23,16 @@ class CircuitGeoMixin(InfoboxTextUtilsMixin):
         cursor = 0
 
         def _split_plain_segment(segment: str) -> List[str]:
-            return [
-                part.strip(" ,")
-                for part in re.split(r",|\u00b7|/|;", segment)
-                if part.strip(" ,")
-            ]
+            parts: List[str] = []
+            for raw in re.split(r",|\u00b7|/|;", segment):
+                part = raw.strip(" ,")
+                if not part:
+                    continue
+                # wycinamy same spójniki typu "and"
+                if part.lower() in self._LOCATION_STOPWORDS:
+                    continue
+                parts.append(part)
+            return parts
 
         for link in links:
             link_text = (link.get("text") or "").strip()
@@ -57,8 +65,20 @@ class CircuitGeoMixin(InfoboxTextUtilsMixin):
         if not components:
             return None
 
+        # Ostateczny bezpiecznik: wytnijmy komponenty,
+        # które jakimś cudem nadal są samym "and" / "&"
+        filtered_components: List[Dict[str, Any]] = []
+        for comp in components:
+            txt = (comp.get("text") or "").strip()
+            if not txt or txt.lower() in self._LOCATION_STOPWORDS:
+                continue
+            filtered_components.append(comp)
+
+        if not filtered_components:
+            return None
+
         result: Dict[str, Any] = {}
-        for idx, comp in enumerate(components, start=1):
+        for idx, comp in enumerate(filtered_components, start=1):
             key = f"localisation{idx}"
             result[key] = comp
 

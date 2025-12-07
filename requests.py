@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import ssl
 import urllib.error
 import urllib.request
 from typing import Dict, Optional
+
+import certifi
 
 
 class RequestException(Exception):
@@ -17,6 +20,7 @@ class HTTPError(RequestException):
         self.url = url
         self.status_code = status_code
         self.headers = headers or {}
+        # kompatybilność z requests.Response
         self.response = self
 
 
@@ -36,6 +40,10 @@ class Response:
             raise HTTPError(self.url, self.status_code, self.text, self.headers)
 
 
+# Globalny kontekst SSL z bundlą CA z certifi
+_SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+
+
 class Session:
     def __init__(self) -> None:
         self.headers: Dict[str, str] = {}
@@ -51,8 +59,13 @@ class Session:
             merged_headers.update(headers)
 
         request = urllib.request.Request(url, headers=merged_headers)
+
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as resp:
+            with urllib.request.urlopen(
+                request,
+                timeout=timeout,
+                context=_SSL_CONTEXT,
+            ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or 0
                 return Response(url, body, status_code, headers=dict(resp.headers))
@@ -62,6 +75,7 @@ class Session:
             response.raise_for_status()
             return response
         except urllib.error.URLError as exc:  # pragma: no cover - delegacja błędów
+            # urllib zwykle używa socket.timeout, ale zostawiamy Twoją logikę
             if isinstance(exc.reason, TimeoutError):
                 raise Timeout(str(exc)) from exc
             raise RequestException(str(exc)) from exc

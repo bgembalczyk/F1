@@ -6,11 +6,10 @@ from typing import Optional, Dict, Any, List
 from scrapers.base.infobox.mixins.circuits.geo import CircuitGeoMixin
 from scrapers.base.infobox.mixins.circuits.history import CircuitHistoryMixin
 from scrapers.base.infobox.mixins.circuits.specs import CircuitSpecsMixin
-from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
 
 
 class CircuitEntitiesMixin(
-    InfoboxTextUtilsMixin, CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
+    CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
 ):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
@@ -126,8 +125,8 @@ class CircuitEntitiesMixin(
             car_text = details[1] if len(details) >= 2 else None
             record.update(
                 {
-                    "driver": self._with_link(driver_text, row.get("links")),
-                    "car": self._with_link(car_text, row.get("links")),
+                    "driver": self._find_link(driver_text, row.get("links")),
+                    "car": self._find_link(car_text, row.get("links")),
                     "year": details[2] if len(details) >= 3 else None,
                     "series": details[3] if len(details) >= 4 else None,
                 }

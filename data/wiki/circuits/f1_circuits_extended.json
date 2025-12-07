@@ -1590,8 +1590,7 @@
             "race_lap_record": {
               "time": "1:17.631",
               "driver": {
-                "text": "Norm Hunter",
-                "url": "https://en.wikipedia.org/w/index.php?title=Norm_Hunter&action=edit&redlink=1"
+                "text": "Norm Hunter"
               },
               "car": {
                 "text": "Ralt RT4",
@@ -3375,8 +3374,7 @@
             "race_lap_record": {
               "time": "0:54.300",
               "driver": {
-                "text": "Giorgio Schön",
-                "url": "https://en.wikipedia.org/w/index.php?title=Giorgio_Sch%C3%B6n&action=edit&redlink=1"
+                "text": "Giorgio Schön"
               },
               "car": {
                 "text": "Porsche 934/76",
@@ -3915,8 +3913,7 @@
             "race_lap_record": {
               "time": "1:40.006",
               "driver": {
-                "text": "Genaro Trappa",
-                "url": "https://en.wikipedia.org/w/index.php?title=Genaro_Trappa&action=edit&redlink=1"
+                "text": "Genaro Trappa"
               },
               "car": {
                 "text": "Tatuus F4-T421",
@@ -3955,7 +3952,7 @@
             "race_lap_record": {
               "time": "1:30.127",
               "driver": {
-                "text": "Juan Martín Trucco [ es ]"
+                "text": "Juan Martín Trucco"
               },
               "car": {
                 "text": "Dodge Challenger SRT Hellcat",
@@ -4014,8 +4011,7 @@
             "race_lap_record": {
               "time": "0:54.637",
               "driver": {
-                "text": "Javier Balzano",
-                "url": "https://en.wikipedia.org/w/index.php?title=Javier_Balzano&action=edit&redlink=1"
+                "text": "Javier Balzano"
               },
               "car": {
                 "text": "Chevrolet Vectra 16v",
@@ -4663,8 +4659,7 @@
             "race_lap_record": {
               "time": "1:03.819",
               "driver": {
-                "text": "Bashar Mardini",
-                "url": "https://en.wikipedia.org/w/index.php?title=Bashar_Mardini&action=edit&redlink=1"
+                "text": "Bashar Mardini"
               },
               "car": {
                 "text": "Porsche 911 (991 I"
@@ -5057,8 +5052,7 @@
             "race_lap_record": {
               "time": "1:16.170",
               "driver": {
-                "text": "Tony Worswick",
-                "url": "https://en.wikipedia.org/w/index.php?title=Tony_Worswick&action=edit&redlink=1"
+                "text": "Tony Worswick"
               },
               "car": {
                 "text": "Jordan 194 Judd",
@@ -5157,8 +5151,7 @@
             "race_lap_record": {
               "time": "0:49.600",
               "driver": {
-                "text": "Alan Fowler",
-                "url": "https://en.wikipedia.org/w/index.php?title=Alan_Fowler_(racing_driver)&action=edit&redlink=1"
+                "text": "Alan Fowler"
               },
               "car": {
                 "text": "Mercury 3- Ford"
@@ -5349,7 +5342,7 @@
             "race_lap_record": {
               "time": "1:47.204",
               "driver": {
-                "text": "David Vršecký [ cs ]"
+                "text": "David Vršecký"
               },
               "car": {
                 "text": "Tata Prima Racing",
@@ -7246,16 +7239,13 @@
               }
             },
             "localisation2": {
-              "text": "and"
-            },
-            "localisation3": {
               "text": "Monte Carlo",
               "link": {
                 "text": "Monte Carlo",
                 "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
               }
             },
-            "localisation4": {
+            "localisation3": {
               "text": "Monaco",
               "link": {
                 "text": "Monaco",
@@ -7853,7 +7843,7 @@
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6GCM"
               },
               "year": "1953",
-              "series": "F2 [ a ]"
+              "series": "F2"
             }
           },
           {
@@ -8581,8 +8571,7 @@
             "race_lap_record": {
               "time": "1:02.985",
               "driver": {
-                "text": "Ingo Gerstl",
-                "url": "https://en.wikipedia.org/w/index.php?title=Ingo_Gerstl&action=edit&redlink=1"
+                "text": "Ingo Gerstl"
               },
               "car": {
                 "text": "Toro Rosso STR1",
@@ -11816,8 +11805,19 @@
                 "date": "2005-04"
               }
             ],
-            "owner": "Toyota (2000–present) Mitsubishi Estate (1965–2000)"
+            "owner": "Toyota Motor (2000–present) Mitsubishi Estate (1965–2000)"
           },
+          "operator": [
+            {
+              "text": "Fuji Motorsports Forest"
+            },
+            {
+              "text": "Inc. (via Fuji International Speedway Co."
+            },
+            {
+              "text": "Ltd.)"
+            }
+          ],
           "website": "https://www.fsw.tv/",
           "additional_info": {
             "Major events": {
@@ -12079,8 +12079,7 @@
             "race_lap_record": {
               "time": "0:57.450",
               "driver": {
-                "text": "Josef Neuhauser",
-                "url": "https://en.wikipedia.org/w/index.php?title=Josef_Neuhauser&action=edit&redlink=1"
+                "text": "Josef Neuhauser"
               },
               "car": {
                 "text": "Minardi M190",
@@ -12240,7 +12239,7 @@
                 "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
               },
               "car": {
-                "text": "Gilera Saturno [ it ]"
+                "text": "Gilera Saturno"
               },
               "year": "1957",
               "series": "500cc"
@@ -12321,12 +12320,12 @@
           "website": "http://www.hockenheimring.net",
           "additional_info": {
             "Major events": {
-              "text": "Current: DTM (2000–present) International GT Open (2019, 2024–present) TCR Europe (2016, 2019, 2025) European Drag Racing Championship NitrolympX [ de ] (1986–2019, 2022–present) Former: Formula One German Grand Prix (Intermittently, 1970–2019) Grand Prix motorcycle racing German motorcycle Grand Prix (Intermittently, 1957–1994) FIA World RX World RX of Hockenheim (2015–2017) GT World Challenge Europe (2022–2024) World SBK (1988–1997, 1999–2000) FIM EWC (1986) FIA GT (1997–1999, 2004) World Sportscar Championship (1966–1967, 1977, 1985)",
+              "text": "Current: DTM (2000–present) International GT Open (2019, 2024–present) TCR Europe (2016, 2019, 2025) European Drag Racing Championship NitrolympX (1986–2019, 2022–present) Former: Formula One German Grand Prix (Intermittently, 1970–2019) Grand Prix motorcycle racing German motorcycle Grand Prix (Intermittently, 1957–1994) FIA World RX World RX of Hockenheim (2015–2017) GT World Challenge Europe (2022–2024) World SBK (1988–1997, 1999–2000) FIM EWC (1986) FIA GT (1997–1999, 2004) World Sportscar Championship (1966–1967, 1977, 1985)",
               "values": [
                 "Current: DTM (2000–present) International GT Open (2019",
                 "2024–present) TCR Europe (2016",
                 "2019",
-                "2025) European Drag Racing Championship NitrolympX [ de ] (1986–2019",
+                "2025) European Drag Racing Championship NitrolympX (1986–2019",
                 "2022–present) Former: Formula One German Grand Prix (Intermittently",
                 "1970–2019) Grand Prix motorcycle racing German motorcycle Grand Prix (Intermittently",
                 "1957–1994) FIA World RX World RX of Hockenheim (2015–2017) GT World Challenge Europe (2022–2024) World SBK (1988–1997",
@@ -14774,16 +14773,13 @@
               }
             },
             "localisation2": {
-              "text": "and"
-            },
-            "localisation3": {
               "text": "Kallang",
               "link": {
                 "text": "Kallang",
                 "url": "https://en.wikipedia.org/wiki/Kallang"
               }
             },
-            "localisation4": {
+            "localisation3": {
               "text": "Marina Bay, Singapore",
               "link": {
                 "text": "Marina Bay, Singapore",
@@ -14924,8 +14920,7 @@
             "race_lap_record": {
               "time": "1:36.999",
               "driver": {
-                "text": "Massimo Perrina",
-                "url": "https://en.wikipedia.org/w/index.php?title=Massimo_Perrina&action=edit&redlink=1"
+                "text": "Massimo Perrina"
               },
               "car": {
                 "text": "Ferrari 296 Challenge",
@@ -15142,7 +15137,7 @@
                 "url": "https://en.wikipedia.org/wiki/Umberto_Masetti"
               },
               "car": {
-                "text": "Gilera 500 Saturno \"Piuma\" [ it ]"
+                "text": "Gilera 500 Saturno \"Piuma\""
               },
               "year": "1952",
               "series": "500cc"
@@ -15160,7 +15155,7 @@
                 "url": "https://en.wikipedia.org/wiki/Enrico_Lorenzetti"
               },
               "car": {
-                "text": "Moto Guzzi 500 Bicilindrica [ it ]"
+                "text": "Moto Guzzi 500 Bicilindrica"
               },
               "year": "1951",
               "series": "500cc"
@@ -16830,8 +16825,7 @@
             "race_lap_record": {
               "time": "0:48.120",
               "driver": {
-                "text": "Andreas Fiedler",
-                "url": "https://en.wikipedia.org/w/index.php?title=Andreas_Fiedler&action=edit&redlink=1"
+                "text": "Andreas Fiedler"
               },
               "car": {
                 "text": "PRC WPR60 Turbo",
@@ -17513,8 +17507,7 @@
             "race_lap_record": {
               "time": "1:21.525",
               "driver": {
-                "text": "Marijn van Kalmthout",
-                "url": "https://en.wikipedia.org/w/index.php?title=Marijn_van_Kalmthout&action=edit&redlink=1"
+                "text": "Marijn van Kalmthout"
               },
               "car": {
                 "text": "Benetton B197",
@@ -18805,8 +18798,7 @@
             "race_lap_record": {
               "time": "1:00.485",
               "driver": {
-                "text": "John Seale",
-                "url": "https://en.wikipedia.org/w/index.php?title=John_Seale_(racing_driver)&action=edit&redlink=1"
+                "text": "John Seale"
               },
               "car": {
                 "text": "Lamborghini Huracán GT3",
@@ -19146,8 +19138,7 @@
             "race_lap_record": {
               "time": "1:02.145",
               "driver": {
-                "text": "Egor Stepanov-Kim",
-                "url": "https://en.wikipedia.org/w/index.php?title=Egor_Stepanov-Kim&action=edit&redlink=1"
+                "text": "Egor Stepanov-Kim"
               },
               "car": {
                 "text": "Tatuus F4-T421",
@@ -19748,8 +19739,7 @@
             "race_lap_record": {
               "time": "1:29.889",
               "driver": {
-                "text": "Yuki Okamoto",
-                "url": "https://en.wikipedia.org/w/index.php?title=Yuki_Okamoto_(motorcyclist)&action=edit&redlink=1"
+                "text": "Yuki Okamoto"
               },
               "car": {
                 "text": "Yamaha YZF-R1",
@@ -20268,8 +20258,7 @@
             "race_lap_record": {
               "time": "3:10.800",
               "driver": {
-                "text": "Bill Spear",
-                "url": "https://en.wikipedia.org/w/index.php?title=Bill_Spear&action=edit&redlink=1"
+                "text": "Bill Spear"
               },
               "car": {
                 "text": "Ferrari 375 MM",
@@ -20481,9 +20470,13 @@
       {
         "year": 2024,
         "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": 16,
+    "grands_prix_held": 17,
     "details": {
       "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit",
       "infobox": {
