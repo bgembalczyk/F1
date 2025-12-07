@@ -6,8 +6,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import Tag, BeautifulSoup
 
-from scrapers.base.F1_table_scraper import F1TableScraper
-from scrapers.helpers.f1_table_utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.table.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.table.scraper import F1TableScraper
 
 
 class _CircuitTableScraper(F1TableScraper):

@@ -2,15 +2,13 @@ from __future__ import annotations
 
 from typing import Dict
 
-from scrapers.base.F1_table_scraper import F1TableScraper
-from scrapers.helpers.columns.columns import (
-    SeasonsColumn,
-    IntColumn,
-    MultiColumn,
-    UrlColumn,
-    EnumMarksColumn,
-    LinksListColumn,
-)
+from scrapers.base.table.helpers.columns.types.enum_marks import EnumMarksColumn
+from scrapers.base.table.helpers.columns.types.int import IntColumn
+from scrapers.base.table.helpers.columns.types.links_list import LinksListColumn
+from scrapers.base.table.helpers.columns.types.multi import MultiColumn
+from scrapers.base.table.helpers.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.helpers.columns.types.url import UrlColumn
+from scrapers.base.table.scraper import F1TableScraper
 
 
 class F1GrandsPrixListScraper(F1TableScraper):

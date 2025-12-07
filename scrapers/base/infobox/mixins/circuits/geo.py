@@ -1,7 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
-from scrapers.circuits.infobox.mixins.text_utils import InfoboxTextUtilsMixin
+from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
 
 
 class CircuitGeoMixin(InfoboxTextUtilsMixin):

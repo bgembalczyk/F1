@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from scrapers.base.F1_scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 

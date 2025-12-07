@@ -52,7 +52,7 @@ class WikipediaInfoboxScraper:
 
     def _find_infobox(self, soup: BeautifulSoup):
         """
-        Znajduje <table class="infobox ...">.
+        Znajduje <table class=" ...">.
         Często infoboksy mają wiele klas: infobox biography, infobox vcard itd.
         """
         return soup.find("table", class_=lambda c: c and "infobox" in c.split())

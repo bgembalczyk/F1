@@ -4,8 +4,8 @@ from typing import Optional, Dict, Any, List
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.F1_scraper import F1Scraper
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
+from scrapers.base.scraper import F1Scraper
 
 
 class F1SingleCircuitScraper(F1Scraper):

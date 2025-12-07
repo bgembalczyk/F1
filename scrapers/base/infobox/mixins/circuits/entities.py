@@ -3,17 +3,14 @@ from __future__ import annotations
 import re
 from typing import Optional, Dict, Any, List
 
-from scrapers.circuits.infobox.mixins.geo import CircuitGeoMixin
-from scrapers.circuits.infobox.mixins.history import CircuitHistoryMixin
-from scrapers.circuits.infobox.mixins.specs import CircuitSpecsMixin
-from scrapers.circuits.infobox.mixins.text_utils import InfoboxTextUtilsMixin
+from scrapers.base.infobox.mixins.circuits.geo import CircuitGeoMixin
+from scrapers.base.infobox.mixins.circuits.history import CircuitHistoryMixin
+from scrapers.base.infobox.mixins.circuits.specs import CircuitSpecsMixin
+from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
 
 
 class CircuitEntitiesMixin(
-    InfoboxTextUtilsMixin,
-    CircuitGeoMixin,
-    CircuitSpecsMixin,
-    CircuitHistoryMixin,
+    InfoboxTextUtilsMixin, CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
 ):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 

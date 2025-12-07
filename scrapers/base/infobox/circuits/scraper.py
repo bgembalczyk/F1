@@ -5,17 +5,14 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.wiki_infobox_scraper import WikipediaInfoboxScraper
-from scrapers.base.F1_scraper import F1Scraper
-from scrapers.circuits.infobox.mixins.entities import CircuitEntitiesMixin
-from scrapers.circuits.infobox.mixins.layouts import CircuitInfoboxLayoutsMixin
+from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
+from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.scraper import F1Scraper
 
 
 class F1CircuitInfoboxScraper(
-    CircuitEntitiesMixin,
-    CircuitInfoboxLayoutsMixin,
-    F1Scraper,
-    WikipediaInfoboxScraper,
+    CircuitEntitiesMixin, CircuitInfoboxLayoutsMixin, F1Scraper, WikipediaInfoboxScraper
 ):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 

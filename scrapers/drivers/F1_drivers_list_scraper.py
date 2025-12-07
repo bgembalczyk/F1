@@ -3,16 +3,14 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
-from scrapers.base.F1_table_scraper import F1TableScraper
-from scrapers.helpers.columns.columns import (
-    UrlColumn,
-    TextColumn,
-    SeasonsColumn,
-    IntColumn,
-    MultiColumn,
-    BoolColumn,
-)
-from scrapers.helpers.f1_table_utils import parse_seasons
+from scrapers.base.table.helpers.columns.types.bool import BoolColumn
+from scrapers.base.table.helpers.columns.types.int import IntColumn
+from scrapers.base.table.helpers.columns.types.multi import MultiColumn
+from scrapers.base.table.helpers.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.helpers.columns.types.text import TextColumn
+from scrapers.base.table.helpers.columns.types.url import UrlColumn
+from scrapers.base.table.helpers.utils import parse_seasons
+from scrapers.base.table.scraper import F1TableScraper
 
 
 class F1DriversListScraper(F1TableScraper):

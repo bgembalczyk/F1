@@ -1,17 +1,14 @@
 from __future__ import annotations
 
-
-from scrapers.base.F1_table_scraper import F1TableScraper
-from scrapers.helpers.columns.columns import (
-    SkipColumn,
-    SeasonsColumn,
-    IntColumn,
-    MultiColumn,
-    UrlColumn,
-    EnumMarksColumn,
-    RegexColumn,
-    LinksListColumn,
-)
+from scrapers.base.table.helpers.columns.types.enum_marks import EnumMarksColumn
+from scrapers.base.table.helpers.columns.types.int import IntColumn
+from scrapers.base.table.helpers.columns.types.links_list import LinksListColumn
+from scrapers.base.table.helpers.columns.types.multi import MultiColumn
+from scrapers.base.table.helpers.columns.types.regex import RegexColumn
+from scrapers.base.table.helpers.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.helpers.columns.types.skip import SkipColumn
+from scrapers.base.table.helpers.columns.types.url import UrlColumn
+from scrapers.base.table.scraper import F1TableScraper
 
 
 class F1CircuitsListScraper(F1TableScraper):
