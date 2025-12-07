@@ -104,9 +104,6 @@ class WikipediaInfoboxScraper:
             if href.startswith("/"):
                 href = f"{self.WIKIPEDIA_BASE}{href}"
 
-            links.append({
-                "text": a.get_text(" ", strip=True),
-                "url": href
-            })
+            links.append({"text": a.get_text(" ", strip=True), "url": href})
 
         return links

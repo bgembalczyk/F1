@@ -1,205 +1,4 @@
 {
-  "Surface": {
-    "text": "Asphalt"
-  },
-  "Surface": {
-    "text": "Asphalt/Concrete",
-    "values": [
-      "Asphalt",
-      "Concrete"
-    ]
-  },
-  "Surface": {
-    "text": "Asphalt concrete with Graywacke aggregate",
-    "links": [
-      {
-        "text": "Asphalt concrete",
-        "url": "https://en.wikipedia.org/wiki/Asphalt_concrete"
-      },
-      {
-        "text": "Graywacke",
-        "url": "https://en.wikipedia.org/wiki/Graywacke"
-      }
-    ]
-  },
-  "Surface": {
-    "text": "Asphalt and brick (start-finish line)"
-  },
-  "Surface": {
-    "text": "Tarmac",
-    "links": [
-      {
-        "text": "Tarmac",
-        "url": "https://en.wikipedia.org/wiki/Asphalt_concrete"
-      }
-    ]
-  },
-  "Surface": {
-    "text": "Asphalt, cobblestones",
-    "values": [
-      "Asphalt",
-      "cobblestones"
-    ]
-  },
-  "Surface": {
-    "text": "Asphalt, cobbles, concrete, wood, dirt, steel",
-    "values": [
-      "Asphalt",
-      "cobbles",
-      "concrete",
-      "wood",
-      "dirt",
-      "steel"
-    ]
-  },
-  "layout": "The Temple of Speed",
-  "layout": "Autódromo",
-  "layout": "COTA",
-  "layout": "\"Canada's Home of Motorsport\" [ 1 ]",
-  "layout": "The dusty place",
-  "layout": "Home of British Motor Racing",
-  "layout": "\"The Glen\"",
-  "location": {
-    "localisation1": {
-      "text": "Monza",
-      "link": {
-        "text": "Monza",
-        "url": "https://en.wikipedia.org/wiki/Monza"
-      }
-    },
-    "localisation2": {
-      "text": "Italy [ 1 ]"
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Le Castellet"
-    },
-    "localisation2": {
-      "text": "Var"
-    },
-    "localisation3": {
-      "text": "France",
-      "link": {
-        "text": "France",
-        "url": "https://en.wikipedia.org/wiki/France"
-      }
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Paradise"
-    },
-    "localisation2": {
-      "text": "Nevada"
-    },
-    "localisation3": {
-      "text": "United States",
-      "link": {
-        "text": "United States",
-        "url": "https://en.wikipedia.org/wiki/United_States"
-      }
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Downtown Core and Kallang"
-    },
-    "localisation2": {
-      "text": "Marina Bay"
-    },
-    "localisation3": {
-      "text": "Singapore"
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Hard Rock Stadium",
-      "link": {
-        "text": "Hard Rock Stadium",
-        "url": "https://en.wikipedia.org/wiki/Hard_Rock_Stadium"
-      }
-    },
-    "localisation2": {
-      "text": "Miami Gardens"
-    },
-    "localisation3": {
-      "text": "Florida"
-    },
-    "localisation4": {
-      "text": "U.S."
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "3233 Concession Road 10 Clarington"
-    },
-    "localisation2": {
-      "text": "Ontario",
-      "link": {
-        "text": "Ontario",
-        "url": "https://en.wikipedia.org/wiki/Ontario"
-      }
-    },
-    "localisation3": {
-      "text": "Canada"
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Highlands County",
-      "link": {
-        "text": "Highlands County",
-        "url": "https://en.wikipedia.org/wiki/Highlands_County,_Florida"
-      }
-    },
-    "localisation2": {
-      "text": "east of Sebring"
-    },
-    "localisation3": {
-      "text": "Florida"
-    },
-    "localisation4": {
-      "text": "U.S."
-    }
-  },
-  "location": {
-    "localisation1": {
-      "text": "Watkins Glen"
-    },
-    "localisation2": {
-      "text": "New York"
-    }
-  },
-  "owner": "Communes of Monza & Milan [ 1 ]",
-  "architect": "Roger Peart [ 2 ]",
-  "architect": {
-    "text": "Hermann Tilke [ 3 ]",
-    "url": "https://en.wikipedia.org/wiki/Hermann_Tilke"
-  },
-  "architect": {
-    "text": "John Hugenholtz [ 2 ] [ 3 ] [ 4 ] [ 5 ]",
-    "url": "https://en.wikipedia.org/wiki/John_Hugenholtz"
-  },
-  "banking": {
-    "value": 30.0,
-    "unit": "deg",
-    "note": "≈"
-  },
-  "banking": {
-    "value": 10.0,
-    "unit": "deg",
-    "note": "Nord Kehre"
-  },
-  "banking": {
-    "value": 9.2,
-    "unit": "deg",
-    "note": "Turns:  Straights: 0°"
-  },
-  "banking": {
-    "value": 6.0,
-    "unit": "deg"
-  },
   "url": "https://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit",
   "url": "https://en.wikipedia.org/wiki/Fair_Park#Other_notable_events",
   "url": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit",
@@ -208,13 +7,30 @@
     "text": "Caesars Palace Grand Prix Circuit",
     "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
   },
-  "architect": {
-    "text": "Jules de Thier and Henri Langlois van Ophem",
-    "url": "https://en.wikipedia.org/w/index.php?title=Jules_de_Thier&action=edit&redlink=1"
+  "localisation2": {
+    "text": "and"
   },
-  "architect": {
-    "text": "Tavo Hellmund , Kevin Schwantz , and Hermann Tilke",
-    "url": "https://en.wikipedia.org/wiki/Tavo_Hellmund"
+  "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+  "location": {
+    "localisation1": {
+      "text": "4790 W. 16th St."
+    },
+    "localisation2": {
+      "text": "Speedway, Indiana",
+      "link": {
+        "text": "Speedway, Indiana",
+        "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+      }
+    }
   },
-  "architect": "István Papp & Ferenc Gulácsi"
+  "architect": [
+    {
+      "text": "Jarno Zaffelli",
+      "url": "https://en.wikipedia.org/w/index.php?title=Jarno_Zaffelli&action=edit&redlink=1"
+    },
+    {
+      "text": "it",
+      "url": "https://it.wikipedia.org/wiki/Jarno_Zaffelli"
+    }
+  ]
 }
