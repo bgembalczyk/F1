@@ -13,6 +13,56 @@ class CircuitEntitiesMixin(
 ):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
+    # ------------------------------------
+    # Pomocnicze do linków
+    # ------------------------------------
+
+    @staticmethod
+    def _is_wikipedia_redlink(url: Optional[str]) -> bool:
+        """Redlink typu ...w/index.php?title=...&action=edit&redlink=1."""
+        if not url:
+            return False
+        url_l = url.lower()
+        return (
+            "wikipedia.org" in url_l
+            and "action=edit" in url_l
+            and "redlink=" in url_l
+        )
+
+    @staticmethod
+    def _is_language_marker_link(text: str, url: Optional[str]) -> bool:
+        """
+        True dla markerów językowych typu:
+        text='it', url='https://it.wikipedia.org/wiki/...'
+
+        Warunki:
+        - text = 1–3 litery,
+        - URL do nieangielnej Wikipedii,
+        - subdomena Wikipedii == text.
+        """
+        if not url:
+            return False
+
+        t = (text or "").strip().lower()
+        if not re.fullmatch(r"[a-z]{1,3}", t):
+            return False
+
+        url_l = url.lower()
+        m = re.search(r"://([a-z]{2,3})\.wikipedia\.org/", url_l)
+        if not m:
+            return False
+
+        lang = m.group(1)
+        if lang == "en":
+            # en.wikipedia.org nie traktujemy jako marker językowy
+            return False
+
+        return lang == t
+
+    # ------------------------------------
+    # Encje typu Architect / Operator / Owner
+    # ------------------------------------
+
     def _parse_linked_entity(
         self,
         row: Optional[Dict[str, Any]],
@@ -33,24 +83,20 @@ class CircuitEntitiesMixin(
 
             url = link.get("url")
 
-            # jeśli masz w mixinie helpery, używamy ich:
-            if hasattr(self, "_is_language_marker_link") and hasattr(
-                self, "_is_wikipedia_redlink"
-            ):
-                # 1) marker językowy: link typu [it] do nieangielnej wiki – wywalamy cały wpis
-                if self._is_language_marker_link(link_text, url):
-                    return None
+            # 1) marker językowy [it], [fr] itp. → wywalamy cały wpis
+            if self._is_language_marker_link(link_text, url):
+                return None
 
-                # 2) redlink: obcinamy URL, zostawiamy tekst
-                if url and self._is_wikipedia_redlink(url):
-                    url = None
+            # 2) redlink → obcinamy URL, zostawiamy tylko tekst
+            if self._is_wikipedia_redlink(url):
+                url = None
 
             item: Dict[str, Any] = {"text": link_text}
             if url:
                 item["url"] = url
             return item
 
-        # wiele linków – np. architect z Jarno + [it]
+        # Przypadek wielu linków – np. "Jarno Zaffelli [it]"
         if len(links) > 1:
             entities: List[Dict[str, Any]] = []
             for link in links:
@@ -63,17 +109,14 @@ class CircuitEntitiesMixin(
         parts = [p.strip() for p in re.split(r"\s*(?:,|&| and )\s*", text) if p.strip()]
 
         def _entity_for_part(part: str) -> Dict[str, Any]:
-            # jeśli mamy _with_link z logiką redlinków/markerów – użyjmy go
-            if hasattr(self, "_with_link"):
-                ent = self._with_link(part, links)
-                if ent is None:
-                    return {"text": part}
-                return ent
-
-            # fallback: goły _find_link bez dodatkowych filtrów
+            # najpierw spróbuj dopasować link do konkretnej części tekstu
             link = self._find_link(part, links)
-            if link and link.get("url"):
-                return {"text": part, "url": link.get("url")}
+            if link:
+                cleaned = _clean_link(link)
+                if cleaned:
+                    cleaned["text"] = part
+                    return cleaned
+            # jak nie ma linku / został odrzucony – zwróć sam tekst
             return {"text": part}
 
         if len(parts) > 1:
@@ -83,11 +126,16 @@ class CircuitEntitiesMixin(
         if links:
             single = _clean_link(links[0])
             if single:
-                # dbamy, by text z _get_text był nadrzędny (np. bez [it])
+                # tekst z _get_text (bez [it])
                 single["text"] = text
                 return single
 
+        # brak linków – zwracamy sam tekst
         return text or None
+
+    # ------------------------------------
+    # Website
+    # ------------------------------------
 
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
@@ -97,6 +145,10 @@ class CircuitEntitiesMixin(
         if links:
             return links[0].get("url") or text or None
         return text or None
+
+    # ------------------------------------
+    # Dodatkowe pola (additional_info)
+    # ------------------------------------
 
     def _collect_additional_info(
         self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
@@ -125,13 +177,16 @@ class CircuitEntitiesMixin(
                         values.append(part)
                 info["values"] = values
             elif links:
-                # opcjonalnie można tu też przepuścić przez _clean_link_list,
-                # ale to pole jest w "additional_info", więc nie rusza architect/operator.
+                # tutaj nie czyścimy agresywnie – to tylko additional_info
                 info["links"] = links
 
             additional[key] = info
 
         return additional or None
+
+    # ------------------------------------
+    # Lap record
+    # ------------------------------------
 
     def _parse_lap_record(
         self, row: Optional[Dict[str, Any]]
@@ -140,6 +195,9 @@ class CircuitEntitiesMixin(
             return None
 
         text = self._get_text(row) or ""
+        if not text:
+            return None
+
         time_match = re.search(r"\d+:\d{2}\.\d{3}", text)
         details_match = re.search(r"\(([^)]*)\)", text)
 
@@ -158,21 +216,33 @@ class CircuitEntitiesMixin(
         if details:
             driver_text = details[0] if len(details) >= 1 else None
             car_text = details[1] if len(details) >= 2 else None
-
             links = row.get("links") or []
+
+            def _link_for_entity(entity_text: str) -> Optional[str]:
+                """Znajdź sensowny URL dla kierowcy/auta (o ile jest)."""
+                # próbujemy dopasować pełny tekst
+                link = self._find_link(entity_text, links)
+                if not link and "/" in entity_text:
+                    # dla "Mario Andretti / Denny Hulme" – spróbuj dopasować części
+                    for part in [p.strip() for p in entity_text.split("/") if p.strip()]:
+                        link = self._find_link(part, links)
+                        if link:
+                            break
+                if not link:
+                    return None
+                url = link.get("url")
+                if self._is_wikipedia_redlink(url):
+                    return None
+                return url
 
             def _wrap_entity(entity_text: Optional[str]) -> Optional[Dict[str, Any]]:
                 if not entity_text:
                     return None
-                # jeśli mamy _with_link (z filtrami redlink/marker) – użyjemy
-                if hasattr(self, "_with_link"):
-                    ent = self._with_link(entity_text, links)
-                    if ent is None:
-                        # na wszelki wypadek – zawsze zachowujemy tekst
-                        return {"text": entity_text}
-                    return ent
-                # fallback – zachowaj chociaż tekst
-                return {"text": entity_text}
+                url = _link_for_entity(entity_text)
+                obj: Dict[str, Any] = {"text": entity_text}
+                if url:
+                    obj["url"] = url
+                return obj
 
             record.update(
                 {
@@ -184,6 +254,10 @@ class CircuitEntitiesMixin(
             )
 
         return record
+
+    # ------------------------------------
+    # Porównanie / merge lap records
+    # ------------------------------------
 
     def _same_lap_record(
         self, left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]

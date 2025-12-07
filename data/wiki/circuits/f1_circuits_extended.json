@@ -5757,7 +5757,8 @@
             "race_lap_record": {
               "time": "3:23.600",
               "driver": {
-                "text": "Mario Andretti / Denny Hulme"
+                "text": "Mario Andretti / Denny Hulme",
+                "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
               },
               "car": {
                 "text": "Ford GT40 Mk IV",
@@ -8455,12 +8456,10 @@
           },
           "architect": [
             {
-              "text": "Jules de Thier",
-              "url": "https://en.wikipedia.org/w/index.php?title=Jules_de_Thier&action=edit&redlink=1"
+              "text": "Jules de Thier"
             },
             {
-              "text": "Henri Langlois van Ophem",
-              "url": "https://en.wikipedia.org/w/index.php?title=Henri_Langlois_van_Ophem&action=edit&redlink=1"
+              "text": "Henri Langlois van Ophem"
             }
           ],
           "website": "http://www.spa-francorchamps.be/en",
@@ -11495,10 +11494,12 @@
             "turns": 15,
             "race_lap_record": {
               "driver": {
-                "text": "Bernd Rosemeyer / Manfred von Brauchitsch"
+                "text": "Bernd Rosemeyer / Manfred von Brauchitsch",
+                "url": "https://en.wikipedia.org/wiki/Bernd_Rosemeyer"
               },
               "car": {
-                "text": "Auto Union Type C / Mercedes-Benz W125"
+                "text": "Auto Union Type C / Mercedes-Benz W125",
+                "url": "https://en.wikipedia.org/wiki/Auto_Union_racing_cars"
               },
               "year": "1937",
               "series": "GP"
@@ -13275,12 +13276,7 @@
           },
           "operator": [
             {
-              "text": "Turkish Automobile Sports Federation",
-              "url": "https://en.wikipedia.org/w/index.php?title=Turkish_Automobile_Sports_Federation&action=edit&redlink=1"
-            },
-            {
-              "text": "tr",
-              "url": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Otomobil_Sporlar%C4%B1_Federasyonu"
+              "text": "Turkish Automobile Sports Federation"
             },
             {
               "text": "Bernie Ecclestone",
@@ -13468,8 +13464,7 @@
             ]
           },
           "architect": {
-            "text": "Carsten Tilke",
-            "url": "https://en.wikipedia.org/w/index.php?title=Carsten_Tilke&action=edit&redlink=1"
+            "text": "Carsten Tilke"
           },
           "website": "https://jeddahcircuit.com/",
           "additional_info": {
@@ -14474,12 +14469,7 @@
           },
           "architect": [
             {
-              "text": "Jarno Zaffelli",
-              "url": "https://en.wikipedia.org/w/index.php?title=Jarno_Zaffelli&action=edit&redlink=1"
-            },
-            {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Jarno_Zaffelli"
+              "text": "Jarno Zaffelli"
             }
           ],
           "website": "https://madring.com",
@@ -17224,13 +17214,11 @@
               "url": "https://en.wikipedia.org/wiki/Les_Richter"
             },
             {
-              "text": "Fritz Duda",
-              "url": "https://en.wikipedia.org/w/index.php?title=Fritz_Duda&action=edit&redlink=1"
+              "text": "Fritz Duda"
             }
           ],
           "architect": {
-            "text": "William L. Duquette",
-            "url": "https://en.wikipedia.org/w/index.php?title=William_L._Duquette&action=edit&redlink=1"
+            "text": "William L. Duquette"
           },
           "additional_info": {
             "Major events": {
