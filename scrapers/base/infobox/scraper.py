@@ -1,9 +1,11 @@
 from __future__ import annotations
 
-import requests
 from bs4 import BeautifulSoup
 from typing import Dict, Any, List, Optional
 
+import requests
+
+from f1_http.interfaces import HttpClientProtocol
 from http_client import HttpClient
 from scrapers.base.helpers.utils import is_reference_link
 
@@ -27,7 +29,7 @@ class WikipediaInfoboxScraper:
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         retries: int = 0,
-        http_client: Optional[HttpClient] = None,
+        http_client: Optional[HttpClientProtocol] = None,
     ):
         merged_headers: Dict[str, str] = {}
         if user_agent:
@@ -41,8 +43,8 @@ class WikipediaInfoboxScraper:
             timeout=timeout,
             retries=retries,
         )
-        self.session = self.http_client.session
-        self.headers = self.session.headers
+        self.session = getattr(self.http_client, "session", None)
+        self.headers = getattr(self.session, "headers", {})
         self.timeout = timeout
 
     # ------------------------------

@@ -3,6 +3,12 @@ from __future__ import annotations
 from typing import Dict
 
 from scrapers.constructors.base import ConstructorsBaseScraper
+from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1FormerConstructorsListScraper(ConstructorsBaseScraper):
@@ -26,10 +32,9 @@ class F1FormerConstructorsListScraper(ConstructorsBaseScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1FormerConstructorsListScraper(include_urls=True)
-
-    constructors = scraper.fetch()
-    print(f"Pobrano rekordów: {len(constructors)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_former_constructors.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_former_constructors.csv")
+    run_and_export(
+        F1FormerConstructorsListScraper,
+        "../../data/wiki/constructors/f1_former_constructors.json",
+        "../../data/wiki/constructors/f1_former_constructors.csv",
+        include_urls=True,
+    )

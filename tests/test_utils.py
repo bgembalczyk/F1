@@ -1,7 +1,9 @@
 import pytest
 
-bs4 = pytest.importorskip("bs4")
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except Exception:
+    pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
 
 from scrapers.base.helpers.utils import is_reference_link
 

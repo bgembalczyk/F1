@@ -7,7 +7,10 @@ import urllib.error
 import urllib.request
 from typing import Dict, Optional
 
-import certifi
+try:  # pragma: no cover - zależne od środowiska
+    import certifi
+except Exception:  # pragma: no cover - brak optionala
+    certifi = None
 
 
 class RequestException(Exception):
@@ -40,8 +43,11 @@ class Response:
             raise HTTPError(self.url, self.status_code, self.text, self.headers)
 
 
-# Globalny kontekst SSL z bundlą CA z certifi
-_SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+# Globalny kontekst SSL z bundlą CA z certifi, jeśli dostępny
+if certifi:
+    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+else:
+    _SSL_CONTEXT = ssl.create_default_context()
 
 
 class Session:

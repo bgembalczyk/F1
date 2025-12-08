@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1GrandsPrixListScraper(F1TableScraper):
@@ -65,10 +66,9 @@ class F1GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1GrandsPrixListScraper(include_urls=True)
-
-    races = scraper.fetch()
-    print(f"Pobrano rekordów: {len(races)}")
-
-    scraper.to_json("../../data/wiki/grands_prix/f1_grands_prix_by_title.json")
-    scraper.to_csv("../../data/wiki/grands_prix/f1_grands_prix_by_title.csv")
+    run_and_export(
+        F1GrandsPrixListScraper,
+        "../../data/wiki/grands_prix/f1_grands_prix_by_title.json",
+        "../../data/wiki/grands_prix/f1_grands_prix_by_title.csv",
+        include_urls=True,
+    )

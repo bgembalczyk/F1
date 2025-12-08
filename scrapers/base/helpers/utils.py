@@ -124,7 +124,12 @@ def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    return _parse_number(text, pattern=r"[-+]?\d[\d,]*", cast=int)
+    return _parse_number(
+        text,
+        pattern=r"[-+]?\d[\d,]*",
+        cast=int,
+        normalizers=(lambda s: s.replace(",", ""),),
+    )
 
 
 def parse_float_from_text(text: str) -> float | None:
