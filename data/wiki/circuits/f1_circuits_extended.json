@@ -118,6 +118,21 @@
               "text": "Rogers AF01/V8",
               "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
             },
+            "time": "1:16.035",
+            "year": "2023",
+            "series": {
+              "text": "S5000"
+            }
+          },
+          {
+            "driver": {
+              "text": "Aaron Cameron",
+              "url": "https://en.wikipedia.org/wiki/Aaron_Cameron"
+            },
+            "vehicle": {
+              "text": "Rogers AF01/V8",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
+            },
             "time": 76.0357,
             "date": "2023-11-24",
             "series": {
@@ -880,14 +895,12 @@
               "text": "Stirling Moss",
               "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
             },
-            "vehicle": {
+            "car": {
               "text": "Vanwall VW 5",
               "url": "https://en.wikipedia.org/wiki/Vanwall_Grand_Prix"
             },
             "year": "1958",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           }
         ]
       }
@@ -974,14 +987,12 @@
               "text": "Jim Clark",
               "url": "https://en.wikipedia.org/wiki/Jim_Clark"
             },
-            "vehicle": {
+            "car": {
               "text": "Lotus 25",
               "url": "https://en.wikipedia.org/wiki/Lotus_25"
             },
             "year": "1963",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           },
           {
             "category": {
@@ -1630,6 +1641,18 @@
         "length_mi": 3.124,
         "turns": 9,
         "race_lap_records": [
+          {
+            "driver": {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            },
+            "car": {
+              "text": "Cooper T45",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T45"
+            },
+            "year": "1958",
+            "series": "Formula Libre"
+          },
           {
             "driver": {
               "text": "Stirling Moss",
@@ -5973,14 +5996,12 @@
               "text": "Juan Pablo Montoya",
               "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
             },
-            "vehicle": {
+            "car": {
               "text": "Reynard 99I",
               "url": "https://en.wikipedia.org/wiki/Reynard_99I"
             },
             "year": "1999",
-            "series": {
-              "text": "CART"
-            }
+            "series": "CART"
           },
           {
             "category": {
@@ -10826,14 +10847,12 @@
               "text": "Jacques Laffite",
               "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
             },
-            "vehicle": {
+            "car": {
               "text": "Ligier JS11",
               "url": "https://en.wikipedia.org/wiki/Ligier_JS11"
             },
             "year": "1979",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           },
           {
             "category": {
@@ -17301,6 +17320,21 @@
         "length_mi": 2.376,
         "turns": 10,
         "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jason Bright",
+              "url": "https://en.wikipedia.org/wiki/Jason_Bright"
+            },
+            "vehicle": {
+              "text": "Ford BA Falcon",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_(BA)#Ford_Falcon_BA_in_V8_Supercars"
+            },
+            "time": "1:24.910",
+            "year": "2006",
+            "series": {
+              "text": "V8 Supercars"
+            }
+          },
           {
             "event": {
               "text": "2006 Desert 400",
@@ -25686,14 +25720,12 @@
               "text": "Rudolf Caracciola",
               "url": "https://en.wikipedia.org/wiki/Rudolf_Caracciola"
             },
-            "vehicle": {
+            "car": {
               "text": "Mercedes-Benz W125",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W125"
             },
             "year": "1937",
-            "series": {
-              "text": "Grand Prix"
-            }
+            "series": "Grand Prix"
           }
         ]
       }
@@ -37594,6 +37626,18 @@
         "turns": 19,
         "race_lap_records": [
           {
+            "driver": {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            "car": {
+              "text": "Ferrari 312B",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_312B"
+            },
+            "year": "1970",
+            "series": "F1"
+          },
+          {
             "event": {
               "text": "1970 Dutch Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1970_Dutch_Grand_Prix"
@@ -39525,14 +39569,12 @@
               "text": "Stirling Moss",
               "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
             },
-            "vehicle": {
+            "car": {
               "text": "Cooper T51",
               "url": "https://en.wikipedia.org/wiki/Cooper_T51"
             },
             "year": "1959",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           }
         ]
       }
@@ -44339,14 +44381,12 @@
               "text": "Bernd Rosemeyer / Manfred von Brauchitsch",
               "url": "https://en.wikipedia.org/wiki/Bernd_Rosemeyer"
             },
-            "vehicle": {
+            "car": {
               "text": "Auto Union Type C / Mercedes-Benz W125",
               "url": "https://en.wikipedia.org/wiki/Auto_Union_racing_cars"
             },
             "year": "1937",
-            "series": {
-              "text": "GP"
-            }
+            "series": "GP"
           },
           {
             "category": {
@@ -44400,14 +44440,12 @@
               "text": "Giuseppe Farina",
               "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
             },
-            "vehicle": {
+            "car": {
               "text": "Maserati V8RI",
               "url": "https://en.wikipedia.org/wiki/Maserati_V8RI"
             },
             "year": "1935",
-            "series": {
-              "text": "GP"
-            }
+            "series": "GP"
           },
           {
             "category": {
@@ -44442,14 +44480,12 @@
               "text": "Earl Howe",
               "url": "https://en.wikipedia.org/wiki/Francis_Curzon,_5th_Earl_Howe"
             },
-            "vehicle": {
+            "car": {
               "text": "Bugatti Type 51",
               "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51"
             },
             "year": "1933",
-            "series": {
-              "text": "GP"
-            }
+            "series": "GP"
           },
           {
             "category": {
@@ -55787,14 +55823,12 @@
               "text": "Stefan Bellof",
               "url": "https://en.wikipedia.org/wiki/Stefan_Bellof"
             },
-            "vehicle": {
+            "car": {
               "text": "Porsche 956",
               "url": "https://en.wikipedia.org/wiki/Porsche_956"
             },
             "year": "1983",
-            "series": {
-              "text": "Group C"
-            }
+            "series": "Group C"
           },
           {
             "category": {
@@ -55991,14 +56025,12 @@
               "text": "Clay Regazzoni",
               "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
             },
-            "vehicle": {
+            "car": {
               "text": "Ferrari 312T",
               "url": "https://en.wikipedia.org/wiki/Ferrari_312T"
             },
             "year": "1975",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           }
         ]
       },
@@ -56216,14 +56248,12 @@
               "text": "Jim Clark",
               "url": "https://en.wikipedia.org/wiki/Jim_Clark"
             },
-            "vehicle": {
+            "car": {
               "text": "Lotus 33",
               "url": "https://en.wikipedia.org/wiki/Lotus_33"
             },
             "year": "1965",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           },
           {
             "category": {
@@ -56432,14 +56462,12 @@
               "text": "Helmut Kelleners",
               "url": "https://en.wikipedia.org/wiki/Helmut_Kelleners"
             },
-            "vehicle": {
+            "car": {
               "text": "March 707",
               "url": "https://en.wikipedia.org/wiki/March_707"
             },
             "year": "1970",
-            "series": {
-              "text": "Group 7"
-            }
+            "series": "Group 7"
           }
         ]
       },
@@ -56461,14 +56489,12 @@
               "text": "Louis Chiron",
               "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
             },
-            "vehicle": {
+            "car": {
               "text": "Bugatti Type35C",
               "url": "https://en.wikipedia.org/wiki/Bugatti_Type_35#Type_35C"
             },
             "year": "1929",
-            "series": {
-              "text": "Grand Prix"
-            }
+            "series": "Grand Prix"
           },
           {
             "category": {
@@ -68234,14 +68260,12 @@
               "text": "Ronnie Peterson",
               "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
             },
-            "vehicle": {
+            "car": {
               "text": "Lotus 72E",
               "url": "https://en.wikipedia.org/wiki/Lotus_72"
             },
             "year": "1973",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           },
           {
             "category": {
@@ -68520,14 +68544,12 @@
               "text": "Nino Farina",
               "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
             },
-            "vehicle": {
+            "car": {
               "text": "Alfa Romeo 159B",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
             },
             "year": "1951",
-            "series": {
-              "text": "F1"
-            }
+            "series": "F1"
           },
           {
             "category": {
@@ -68578,14 +68600,12 @@
               "text": "Luigi Villoresi",
               "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
             },
-            "vehicle": {
+            "car": {
               "text": "Maserati 4CLT/48",
               "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
             },
             "year": "1948",
-            "series": {
-              "text": "GP"
-            }
+            "series": "GP"
           },
           {
             "category": {

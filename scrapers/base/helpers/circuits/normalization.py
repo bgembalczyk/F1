@@ -21,14 +21,58 @@ def _safe_text(obj: Any) -> str:
     return str(obj).strip().lower()
 
 
+def _time_key(rec: Dict[str, Any]) -> Optional[float | str]:
+    """
+    Normalizuje time do postaci klucza:
+    - jeśli mamy seconds -> używamy seconds (float)
+    - jeśli mamy tekst, próbujemy sparsować MM:SS.xxx -> sekundy
+    - jak się nie uda, używamy znormalizowanego tekstu
+    """
+    t = rec.get("time")
+
+    # jeśli to już liczba (po naszym cleanupie), użyj bezpośrednio
+    if isinstance(t, (int, float)):
+        return float(t)
+
+    txt: Optional[str] = None
+
+    if isinstance(t, dict):
+        if "seconds" in t and isinstance(t["seconds"], (int, float)):
+            return float(t["seconds"])
+        txt = t.get("text")
+    elif t is not None:
+        txt = str(t)
+
+    if not txt:
+        return None
+
+    s = txt.strip()
+
+    # spróbuj sparsować MM:SS.xxx
+    m = re.match(r"(?:(\d+):)?(\d+(?:\.\d+)?)", s)
+    if m:
+        minutes = int(m.group(1)) if m.group(1) else 0
+        seconds = float(m.group(2))
+        return minutes * 60 + seconds
+
+    # fallback – traktujemy jako tekstowy klucz
+    return s.lower()
+
+
 def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
     """
     Klucz do rozpoznawania tego samego rekordu:
-    (driver_text, vehicle_text, year)
+
+    (driver_text, vehicle_text, year, time_key)
 
     - driver: rec["driver"]["text"] / rec["driver"]
     - vehicle: rec["vehicle"]["text"] / rec["car"]["text"]
     - year: rec["year"] albo rok z rec["date"]["iso"]
+    - time: seconds lub sparsowany MM:SS.xxx
+
+    UWAGA: series/category/class NIE jest częścią klucza – jeśli
+    wszystko powyższe się zgadza, a różni się tylko series/category,
+    traktujemy rekordy jako ten sam lap record.
     """
     driver_txt = _safe_text(rec.get("driver"))
 
@@ -37,6 +81,7 @@ def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
         vehicle_obj = rec.get("car")
     vehicle_txt = _safe_text(vehicle_obj)
 
+    # year z pola year lub z date.iso
     year: Optional[str] = None
     if "year" in rec and rec["year"] is not None:
         year = str(rec["year"])
@@ -47,10 +92,12 @@ def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
             if iso:
                 year = iso[:4]
 
-    if not driver_txt or not vehicle_txt or not year:
+    time_key = _time_key(rec)
+
+    if not driver_txt or not vehicle_txt or not year or time_key is None:
         return None
 
-    return (driver_txt, vehicle_txt, year)
+    return (driver_txt, vehicle_txt, year, time_key)
 
 
 def _merge_race_lap_records(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -186,18 +233,35 @@ def _merge_record_group(records: List[Dict[str, Any]]) -> Dict[str, Any]:
 
     best_series = None
     best_series_has_url = False
+    best_series_len = 0
+
     for r in records:
         cand = series_candidate(r)
         if not cand:
             continue
+
+        text = (cand.get("text") or "").strip()
         has_url = bool(cand.get("url"))
+        text_len = len(text)
+
         if best_series is None:
+            # pierwszy kandydat
             best_series = cand
             best_series_has_url = has_url
+            best_series_len = text_len
             continue
+
+        # jeśli ten ma URL, a dotychczasowy nie – bierzemy ten
         if has_url and not best_series_has_url:
             best_series = cand
             best_series_has_url = True
+            best_series_len = text_len
+            continue
+
+        # jeśli oba mają (albo oba nie mają) URL – wybieramy dłuższą nazwę
+        if has_url == best_series_has_url and text_len > best_series_len:
+            best_series = cand
+            best_series_len = text_len
 
     # 6) inne pola – pierwszy niepusty
     ignore_keys = {
