@@ -25,4 +25,6 @@ class BaseColumn(ABC):
         value = self.parse(ctx)
         if value is ctx.skip_sentinel:
             return
+        if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
+            return
         record[ctx.key] = value

@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from models.circuit import Circuit
 
 
 class F1CircuitsListScraper(F1TableScraper):
@@ -27,6 +28,8 @@ class F1CircuitsListScraper(F1TableScraper):
         "Location",
         "Country",
     ]
+
+    model_class = Circuit
 
     column_map = {
         "Circuit": "circuit",

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from abc import ABC
+from dataclasses import asdict, fields, is_dataclass
 from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
 
 from bs4 import BeautifulSoup, Tag
@@ -37,6 +38,8 @@ class F1TableScraper(F1Scraper, ABC):
     columns: Mapping[str, BaseColumn] = {}
 
     table_css_class: str = "wikitable"
+
+    model_class: type | None = None
 
     _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
@@ -137,6 +140,7 @@ class F1TableScraper(F1Scraper, ABC):
         - deleguje całą logikę do handlera kolumny.
         """
         record: Dict[str, Any] = {}
+        model_fields = self._model_fields()
 
         for header, cell in zip(headers, cells):
             key = self.column_map.get(header, self._normalize_header(header))
@@ -156,6 +160,7 @@ class F1TableScraper(F1Scraper, ABC):
                 links=links,
                 cell=cell,
                 skip_sentinel=self._SKIP,
+                model_fields=model_fields,
             )
 
             col = (
@@ -163,6 +168,15 @@ class F1TableScraper(F1Scraper, ABC):
             )
 
             col.apply(ctx, record)
+
+        if self.model_class:
+            model = self.model_class(**record)
+            if hasattr(model, "model_dump"):
+                return model.model_dump()
+            if hasattr(model, "dict"):
+                return model.dict()
+            if is_dataclass(model):
+                return asdict(model)
 
         return record
 
@@ -176,3 +190,21 @@ class F1TableScraper(F1Scraper, ABC):
             .replace(")", "")
             .replace("/", "_")
         )
+
+    def _model_fields(self) -> set[str] | None:
+        model_class = getattr(self, "model_class", None)
+        if not model_class:
+            return None
+
+        if is_dataclass(model_class):
+            return {f.name for f in fields(model_class)}
+
+        model_fields = getattr(model_class, "model_fields", None)
+        if model_fields:
+            return set(model_fields)
+
+        pydantic_fields = getattr(model_class, "__fields__", None)
+        if pydantic_fields:
+            return set(pydantic_fields)
+
+        return None

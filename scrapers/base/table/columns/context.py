@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Optional, Set
 
 from bs4 import Tag
 
@@ -23,5 +23,6 @@ class ColumnContext:
     raw_text: str
     clean_text: str
     links: list[dict[str, Any]]
-    cell: Tag
+    cell: Optional[Tag]
     skip_sentinel: object
+    model_fields: Optional[Set[str]] = None

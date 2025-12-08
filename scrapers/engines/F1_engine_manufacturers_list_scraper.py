@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from models.engine_manufacturer import EngineManufacturer
 
 
 class F1EngineManufacturersListScraper(F1TableScraper):
@@ -33,6 +34,8 @@ class F1EngineManufacturersListScraper(F1TableScraper):
         "Wins",
         "Points",
     ]
+
+    model_class = EngineManufacturer
 
     column_map: Dict[str, str] = {
         "Manufacturer": "manufacturer",
