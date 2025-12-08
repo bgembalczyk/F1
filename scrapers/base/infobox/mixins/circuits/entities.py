@@ -8,6 +8,27 @@ from scrapers.base.infobox.mixins.circuits.history import CircuitHistoryMixin
 from scrapers.base.infobox.mixins.circuits.specs import CircuitSpecsMixin
 
 
+IGNORED_TOP_LEVEL_KEYS: set[str] = {
+    # oryginalne labelki + wersje z małej litery na wszelki wypadek
+    "Owner",
+    "owner",
+    "Operator",
+    "operator",
+    "Capacity",
+    "capacity",
+    "Construction cost",
+    "construction cost",
+    "Website",
+    "website",
+    "Area",
+    "area",
+    "Major events",
+    "major events",
+    "Address",
+    "address",
+}
+
+
 class CircuitEntitiesMixin(
     CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
 ):
@@ -324,11 +345,13 @@ class CircuitEntitiesMixin(
             "Broke ground",
             "Built",
             "Construction cost",
-            "Architect",
             "Website",
+            "Area",
+            "Major events",
+            "Address",
+            "Architect",
             "Banking",
             "Surface",
-            "Area",
         }
 
         normalized: Dict[str, Any] = {
@@ -340,16 +363,9 @@ class CircuitEntitiesMixin(
                 "length_km": self._parse_length(rows.get("Length"), unit="km"),
                 "length_mi": self._parse_length(rows.get("Length"), unit="mi"),
                 "turns": self._parse_int(rows.get("Turns")),
-                "capacity": self._parse_capacity(rows.get("Capacity")),
-                "construction_cost": self._parse_construction_cost(
-                    rows.get("Construction cost"),
-                ),
-                "area": self._parse_area(rows.get("Area")),
             },
             "history": self._parse_history(rows),
-            "operator": self._parse_linked_entity(rows.get("Operator")),
             "architect": self._parse_linked_entity(rows.get("Architect")),
-            "website": self._parse_website(rows.get("Website")),
         }
 
         extra_fields = self._collect_additional_info(rows, used_keys)
@@ -358,8 +374,12 @@ class CircuitEntitiesMixin(
 
         normalized = self._prune_nulls(normalized)
 
+        # --- TU CZYŚCIMY RAW ---
         result: Dict[str, Any] = dict(raw or {})
         result.pop("rows", None)
+        # wywal niechciane top-levelowe pola
+        for key in IGNORED_TOP_LEVEL_KEYS:
+            result.pop(key, None)
 
         layouts = layout_records or []
         if not layouts:
