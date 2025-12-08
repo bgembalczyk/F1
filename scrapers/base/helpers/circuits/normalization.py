@@ -228,7 +228,7 @@ def _merge_record_group(records: List[Dict[str, Any]]) -> Dict[str, Any]:
         merged["time"] = best_time
     if best_date is not None:
         merged["date"] = best_date
-    if best_year is not None:
+    elif best_year is not None:
         merged["year"] = best_year
     if best_series is not None:
         merged["series"] = best_series
