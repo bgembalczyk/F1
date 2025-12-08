@@ -118,7 +118,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             {
                 "url": self._original_url or self.url,
                 "infobox": self._scrape_infobox(soup),
-                "tables": self._scrape_tables(soup, base_url=self.url),
+                "tables": self._scrape_tables(soup),
             }
         ]
 
@@ -152,8 +152,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         """
         lap_scraper = LapRecordsTableScraper(
             include_urls=self.include_urls,
-            session=self.session,
-            headers=self.headers,
+            http_client=self.http_client,  # <<< kluczowa zmiana
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
 

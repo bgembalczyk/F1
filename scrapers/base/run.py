@@ -20,7 +20,7 @@ def _ensure_parent(path: Path) -> None:
 def run_and_export(
     scraper_cls: Type[F1Scraper],
     json_path: str | Path,
-    csv_path: str | Path | None,
+    csv_path: str | Path | None = None,
     *,
     include_urls: bool = True,
     **scraper_kwargs: Any,
