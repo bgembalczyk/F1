@@ -3,6 +3,11 @@ from __future__ import annotations
 import re
 from typing import Optional, Dict, Any, List
 
+from scrapers.base.helpers.utils import (
+    is_language_marker_link,
+    is_wikipedia_redlink,
+    split_delimited_text,
+)
 from scrapers.base.infobox.mixins.circuits.geo import CircuitGeoMixin
 from scrapers.base.infobox.mixins.circuits.history import CircuitHistoryMixin
 from scrapers.base.infobox.mixins.circuits.specs import CircuitSpecsMixin
@@ -38,48 +43,6 @@ class CircuitEntitiesMixin(
     # Pomocnicze do linków
     # ------------------------------------
 
-    @staticmethod
-    def _is_wikipedia_redlink(url: Optional[str]) -> bool:
-        """Redlink typu ...w/index.php?title=...&action=edit&redlink=1."""
-        if not url:
-            return False
-        url_l = url.lower()
-        return (
-            "wikipedia.org" in url_l
-            and "action=edit" in url_l
-            and "redlink=" in url_l
-        )
-
-    @staticmethod
-    def _is_language_marker_link(text: str, url: Optional[str]) -> bool:
-        """
-        True dla markerów językowych typu:
-        text='it', url='https://it.wikipedia.org/wiki/...'
-
-        Warunki:
-        - text = 1–3 litery,
-        - URL do nieangielnej Wikipedii,
-        - subdomena Wikipedii == text.
-        """
-        if not url:
-            return False
-
-        t = (text or "").strip().lower()
-        if not re.fullmatch(r"[a-z]{1,3}", t):
-            return False
-
-        url_l = url.lower()
-        m = re.search(r"://([a-z]{2,3})\.wikipedia\.org/", url_l)
-        if not m:
-            return False
-
-        lang = m.group(1)
-        if lang == "en":
-            # en.wikipedia.org nie traktujemy jako marker językowy
-            return False
-
-        return lang == t
-
     # ------------------------------------
     # Encje typu Architect / Operator / Owner
     # ------------------------------------
@@ -105,11 +68,11 @@ class CircuitEntitiesMixin(
             url = link.get("url")
 
             # 1) marker językowy [it], [fr] itp. → wywalamy cały wpis
-            if self._is_language_marker_link(link_text, url):
+            if is_language_marker_link(link_text, url):
                 return None
 
             # 2) redlink → obcinamy URL, zostawiamy tylko tekst
-            if self._is_wikipedia_redlink(url):
+            if is_wikipedia_redlink(url):
                 url = None
 
             item: Dict[str, Any] = {"text": link_text}
@@ -187,7 +150,7 @@ class CircuitEntitiesMixin(
             info: Dict[str, Any] = {"text": text}
             links = row.get("links") or []
 
-            parts = [p.strip() for p in re.split(r";|,|/", text) if p.strip()]
+            parts = split_delimited_text(text)
             if len(parts) > 1:
                 values: List[Any] = []
                 for part in parts:
@@ -252,7 +215,7 @@ class CircuitEntitiesMixin(
                 if not link:
                     return None
                 url = link.get("url")
-                if self._is_wikipedia_redlink(url):
+                if is_wikipedia_redlink(url):
                     return None
                 return url
 

@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import re
 from datetime import datetime
-from typing import Any, Callable
+from typing import Any, Callable, Iterable, TypeVar
 
 from bs4 import Tag
 
 # przypisy Wikipedii: [1], [b], [note 3], [citation needed], ...
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
+T = TypeVar("T")
 
 
 def clean_wiki_text(text: str) -> str:
@@ -17,6 +19,54 @@ def clean_wiki_text(text: str) -> str:
     t = text.replace("\xa0", " ").replace("&nbsp;", " ")
     t = _REF_RE.sub("", t)
     return t.strip()
+
+
+def split_delimited_text(
+    text: str | None, *, separators: str = r";|,|/", min_parts: int = 1
+) -> list[str]:
+    """Split text by common delimiters and trim whitespace.
+
+    Returns an empty list for falsy input or when the number of non-empty parts is
+    below ``min_parts``.
+    """
+
+    if not text:
+        return []
+
+    parts = [p.strip() for p in re.split(separators, text) if p.strip()]
+    return parts if len(parts) >= min_parts else []
+
+
+def _parse_number(
+    text: str | None,
+    *,
+    pattern: str,
+    cast: Callable[[str], T],
+    group: int | str = 0,
+    normalizers: Iterable[Callable[[str], str]] | None = None,
+) -> T | None:
+    """Generic helper for extracting numbers with regex and casting.
+
+    ``pattern`` should contain the number either as the full match or a capturing
+    group referenced by ``group``. ``normalizers`` are applied in order to the
+    matched string before casting.
+    """
+
+    if not text:
+        return None
+
+    match = re.search(pattern, text)
+    if not match:
+        return None
+
+    raw = match.group(group)
+    for normalize in normalizers or []:
+        raw = normalize(raw)
+
+    try:
+        return cast(raw)
+    except (TypeError, ValueError):
+        return None
 
 
 def parse_seasons(
@@ -74,32 +124,36 @@ def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    if not text:
-        return None
-    m = re.search(r"[-+]?\d[\d,]*", text)
-    if not m:
-        return None
-    num_str = m.group(0).replace(",", "")
-    try:
-        return int(num_str)
-    except ValueError:
-        return None
+    return _parse_number(
+        text,
+        pattern=r"[-+]?\d[\d,]*",
+        cast=int,
+        normalizers=(lambda s: s.replace(",", ""),),
+    )
 
 
 def parse_float_from_text(text: str) -> float | None:
     """
     Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu (ignoruje przecinki 1,234.5).
     """
-    if not text:
-        return None
-    m = re.search(r"[-+]?\d[\d,]*\.?\d*", text)
-    if not m:
-        return None
-    num_str = m.group(0).replace(",", "")
-    try:
-        return float(num_str)
-    except ValueError:
-        return None
+    return _parse_number(
+        text,
+        pattern=r"[-+]?\d[\d,]*\.?\d*",
+        cast=float,
+        normalizers=(lambda s: s.replace(",", ""),),
+    )
+
+
+def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
+    """Extract a float immediately followed by the given unit."""
+
+    return _parse_number(
+        text,
+        pattern=rf"([-+]?[0-9][0-9,]*(?:\.[0-9]+)?)\s*{re.escape(unit)}",
+        cast=float,
+        group=1,
+        normalizers=(lambda s: s.replace(",", ""),),
+    )
 
 
 def extract_links_from_cell(
@@ -114,24 +168,21 @@ def extract_links_from_cell(
     links: list[dict[str, Any]] = []
 
     for a in cell.find_all("a", href=True):
+        if is_reference_link(a):
+            continue
+
         href = a.get("href") or ""
-        classes = a.get("class") or []
-
-        # 1) Ignore typical reference / footnote links
-        #    <a href="#cite_note-..." class="reference">[14]</a>
-        if "cite_note" in href:
-            continue
-        if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
-            continue
-
         text = clean_wiki_text(a.get_text(" ", strip=True))
 
-        # 2) Dodatkowy bezpiecznik – jak tekst jest pusty i to lokalny anchor,
-        #    to też traktujemy jako przypis / techniczny link.
+        # Dodatkowy bezpiecznik – jak tekst jest pusty i to lokalny anchor,
+        # to też traktujemy jako przypis / techniczny link.
         if not text and href.startswith("#"):
             continue
 
         url = full_url(href)
+        if is_wikipedia_redlink(url):
+            url = None
+
         links.append({"text": text, "url": url})
 
     return links
@@ -151,3 +202,59 @@ def strip_marks(text: str | None) -> str | None:
         .replace("^", "")
         .strip()
     )
+
+
+def is_reference_link(tag: Tag) -> bool:
+    """True for typical footnote/reference anchors."""
+
+    href = tag.get("href") or ""
+    if "cite_note" in href:
+        return True
+
+    classes = tag.get("class") or []
+    if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
+        return True
+
+    return False
+
+
+def is_wikipedia_redlink(url: str | None) -> bool:
+    """Return True for Wikipedia redlinks like ...&action=edit&redlink=1."""
+
+    if not url:
+        return False
+
+    url_l = url.lower()
+    return (
+        "wikipedia.org" in url_l
+        and "action=edit" in url_l
+        and "redlink=" in url_l
+    )
+
+
+def is_language_marker_link(text: str | None, url: str | None) -> bool:
+    """
+    Detect language marker links such as text='it' and url='https://it.wikipedia.org/...'.
+
+    Requirements:
+    - text is 1–3 letters
+    - URL points to non-English Wikipedia whose subdomain matches the text
+    """
+
+    if not url:
+        return False
+
+    t = (text or "").strip().lower()
+    if not re.fullmatch(r"[a-z]{1,3}", t):
+        return False
+
+    url_l = url.lower()
+    m = re.search(r"://([a-z]{2,3})\.wikipedia\.org/", url_l)
+    if not m:
+        return False
+
+    lang = m.group(1)
+    if lang == "en":
+        return False
+
+    return lang == t
