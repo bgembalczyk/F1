@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from decimal import Decimal, ROUND_HALF_UP
 from typing import Any, Optional
 
 from scrapers.base.table.columns.context import ColumnContext
@@ -40,9 +41,26 @@ class TimeColumn(BaseColumn):
     )
 
     def _to_seconds(self, minutes: Optional[str], seconds: str) -> float:
+        """
+        Parsuje sekundy z zachowaniem precyzji jak w oryginalnym stringu.
+
+        Przykład:
+        "1:16.0357" -> 76.0357 (a nie 76.03569999999999)
+        """
         m = int(minutes) if minutes is not None else 0
-        s = float(seconds)
-        return m * 60.0 + s
+
+        # używamy Decimal, żeby uniknąć błędów binarnego float
+        sec_dec = Decimal(seconds)
+
+        total = Decimal(m * 60) + sec_dec
+
+        # jeżeli mamy część dziesiętną, zaokrąglamy do tej samej liczby miejsc
+        if "." in seconds:
+            places = len(seconds.split(".", 1)[1])
+            quant = Decimal("1." + ("0" * places))
+            total = total.quantize(quant, rounding=ROUND_HALF_UP)
+
+        return float(total)
 
     def parse(self, ctx: ColumnContext) -> Any:
         text = (ctx.clean_text or "").strip()

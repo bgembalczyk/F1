@@ -55,18 +55,26 @@ class DateColumn(BaseColumn):
         return base
 
     def _parse_iso(self, base: str) -> Optional[str]:
+        # 1) Format pełny (dzień + miesiąc + rok)
         for fmt in self._FORMATS:
             try:
                 dt = datetime.strptime(base, fmt)
-                return dt.date().isoformat()
+                return dt.date().isoformat()  # YYYY-MM-DD
             except ValueError:
                 continue
 
-        # fallback – czasem pojawia się sama liczba roku, np. "2019"
-        year_match = re.fullmatch(r"\d{4}", base)
-        if year_match:
-            # zapisujemy jako 1 stycznia danego roku (konwencja)
-            return f"{base}-01-01"
+        # 2) Format miesiąc + rok → YYYY-MM
+        #    obsługujemy np. "February 2008", "Feb 2008"
+        for fmt in ("%B %Y", "%b %Y"):
+            try:
+                dt = datetime.strptime(base, fmt)
+                return dt.strftime("%Y-%m")
+            except ValueError:
+                continue
+
+        # 3) Sam rok → YYYY
+        if re.fullmatch(r"\d{4}", base):
+            return base  # bez "-01-01"
 
         return None
 

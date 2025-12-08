@@ -3,6 +3,7 @@ from typing import Optional, List, Dict, Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.date import DateColumn
+from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
@@ -41,8 +42,8 @@ class LapRecordsTableScraper(F1TableScraper):
         # Tekst + link (jeśli jest)
         "category": UrlColumn(),
         "class_": UrlColumn(),
-        "driver": UrlColumn(),
-        "driver_rider": UrlColumn(),
+        "driver": DriverColumn(),
+        "driver_rider": DriverColumn(),
         "vehicle": UrlColumn(),
         "event": UrlColumn(),
         # Nowe kolumny – parsują tekst do ustandaryzowanej postaci

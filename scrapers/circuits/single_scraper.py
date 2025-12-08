@@ -256,4 +256,29 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
                 results.append(record)
 
-        return results
+            # --- grupowanie po layoutach ---
+            layouts: Dict[str, List[Dict[str, Any]]] = {}
+            for rec in results:
+                layout_name = rec.get("layout")
+                if not layout_name:
+                    # interesują nas tylko rekordy, w których layout udało się ustalić
+                    continue
+
+                # nie powielamy layoutu w środku rekordu
+                rec_copy = dict(rec)
+                rec_copy.pop("layout", None)
+
+                if layout_name not in layouts:
+                    layouts[layout_name] = []
+                layouts[layout_name].append(rec_copy)
+
+            # tables = lista layoutów, każdy z listą rekordów (najszybszych czasów)
+            grouped = [
+                {
+                    "layout": layout_name,
+                    "lap_records": recs,
+                }
+                for layout_name, recs in layouts.items()
+            ]
+
+            return grouped
