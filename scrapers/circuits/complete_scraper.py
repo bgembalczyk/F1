@@ -65,8 +65,6 @@ class F1CompleteCircuitScraper(F1Scraper):
 
 
 if __name__ == "__main__":
-    scraper = F1CompleteCircuitScraper(delay_seconds=1.0)
-    data = scraper.fetch()
-    print(f"Pobrano {len(data)} rekordów z pełnymi danymi torów.")
+    from main import main
 
-    scraper.to_json("../../data/wiki/circuits/f1_circuits_extended.json")
+    main()

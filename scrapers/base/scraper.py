@@ -78,6 +78,7 @@ class F1Scraper(ABC):
     def to_json(self, path: str | Path, *, indent: int = 2) -> None:
         data = self.get_data()
         path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=indent), encoding="utf-8"
         )
@@ -90,6 +91,7 @@ class F1Scraper(ABC):
             return
 
         path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
 
         # Jeżeli nie podano fieldnames – bierzemy wszystkie klucze z unią
         if fieldnames is None:
@@ -105,6 +107,47 @@ class F1Scraper(ABC):
             writer.writeheader()
             for row in data:
                 writer.writerow(row)
+
+    def export_data(
+        self,
+        target_dir: str | Path,
+        *,
+        basename: str,
+        fieldnames: Optional[Sequence[str]] = None,
+        export_json: bool = True,
+        export_csv: bool = True,
+        verbose: bool = True,
+    ) -> Dict[str, Path]:
+        """Eksport danych do JSON/CSV z jednego miejsca.
+
+        Ułatwia tworzenie spójnych ścieżek i komunikatów dla wszystkich
+        scraperów korzystających ze wspólnego CLI.
+        """
+
+        data = self.get_data()
+        if verbose:
+            print(f"Pobrano rekordów: {len(data)}")
+
+        target_path = Path(target_dir)
+        target_path.mkdir(parents=True, exist_ok=True)
+
+        exported: Dict[str, Path] = {}
+
+        if export_json:
+            json_path = target_path / f"{basename}.json"
+            self.to_json(json_path)
+            exported["json"] = json_path
+            if verbose:
+                print(f"Zapisano JSON: {json_path}")
+
+        if export_csv:
+            csv_path = target_path / f"{basename}.csv"
+            self.to_csv(csv_path, fieldnames=fieldnames)
+            exported["csv"] = csv_path
+            if verbose:
+                print(f"Zapisano CSV: {csv_path}")
+
+        return exported
 
     def to_dataframe(self):
         if not _HAS_PANDAS:

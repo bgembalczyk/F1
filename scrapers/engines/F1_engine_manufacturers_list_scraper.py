@@ -83,10 +83,6 @@ class F1EngineManufacturersListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1EngineManufacturersListScraper(include_urls=True)
+    from main import main
 
-    manufacturers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(manufacturers)}")
-
-    scraper.to_json("../../data/wiki/engines/f1_engine_manufacturers.json")
-    scraper.to_csv("../../data/wiki/engines/f1_engine_manufacturers.csv")
+    main()

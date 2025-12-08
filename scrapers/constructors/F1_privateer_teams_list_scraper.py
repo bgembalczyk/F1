@@ -57,10 +57,6 @@ class F1PrivateerTeamsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1PrivateerTeamsListScraper(include_urls=True)
+    from main import main
 
-    teams = scraper.fetch()
-    print(f"Pobrano rekordów: {len(teams)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_privateer_teams.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_privateer_teams.csv")
+    main()
