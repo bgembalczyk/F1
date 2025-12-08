@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
+from f1_http.interfaces import HttpClientProtocol
 from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
@@ -26,15 +27,21 @@ class F1CompleteCircuitScraper(F1Scraper):
         delay_seconds: float = 1.0,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
+        http_client: Optional[HttpClientProtocol] = None,
     ) -> None:
-        super().__init__(include_urls=True, session=session, headers=headers)
+        super().__init__(
+            include_urls=True,
+            session=session,
+            headers=headers,
+            http_client=http_client,
+        )
         self.delay_seconds = delay_seconds
         self.list_scraper = F1CircuitsListScraper(
             include_urls=True,
-            session=self.session,
+            http_client=self.http_client,
         )
         self.single_scraper = F1SingleCircuitScraper(
-            session=self.session,
+            http_client=self.http_client,
             delay_seconds=delay_seconds,
         )
 

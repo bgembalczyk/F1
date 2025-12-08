@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
+from f1_http.interfaces import HttpClientProtocol
 from http_client import HttpClient
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
@@ -29,7 +30,7 @@ class F1CircuitInfoboxScraper(
         include_urls: bool = True,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClient] = None,
+        http_client: Optional[HttpClientProtocol] = None,
     ) -> None:
         F1Scraper.__init__(
             self,
@@ -154,9 +155,7 @@ class F1CircuitInfoboxScraper(
     def _download(self) -> str:
         if not self.url:
             raise ValueError("URL must be set before downloading")
-        response = self.session.get(self.url, timeout=self.timeout)
-        response.raise_for_status()
-        return response.text
+        return self.http_client.get_text(self.url, timeout=self.timeout)
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         """Sprawdza czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
