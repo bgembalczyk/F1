@@ -6,7 +6,6 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from f1_http.interfaces import HttpClientProtocol
-from http_client import HttpClient
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
@@ -135,7 +134,9 @@ class F1CircuitInfoboxScraper(
                     row_classes = row_classes.split()
 
                 has_full_on_tr = "infobox-full-data" in row_classes
-                has_full_in_cell = row.find(["td", "th"], class_="infobox-full-data") is not None
+                has_full_in_cell = (
+                    row.find(["td", "th"], class_="infobox-full-data") is not None
+                )
 
                 if has_full_on_tr or has_full_in_cell:
                     cut_index = idx

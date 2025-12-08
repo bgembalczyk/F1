@@ -9,8 +9,7 @@ class HttpResponseProtocol(Protocol):
     headers: Mapping[str, str]
     text: str
 
-    def raise_for_status(self) -> None:
-        ...
+    def raise_for_status(self) -> None: ...
 
 
 @runtime_checkable
@@ -23,8 +22,7 @@ class HttpClientProtocol(Protocol):
         *,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
-    ) -> HttpResponseProtocol:
-        ...
+    ) -> HttpResponseProtocol: ...
 
     def get_text(
         self,
@@ -32,5 +30,4 @@ class HttpClientProtocol(Protocol):
         *,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
-    ) -> str:
-        ...
+    ) -> str: ...

@@ -3,7 +3,9 @@ import re
 import sys
 import types
 from pathlib import Path
-
+from models.circuit import Circuit
+from models.engine_manufacturer import EngineManufacturer
+from scrapers.base.table.scraper import F1TableScraper
 import pytest
 
 if "bs4" not in sys.modules:
@@ -34,7 +36,7 @@ if "bs4" not in sys.modules:
         def __init__(self, html: str, *_):
             self.html = html
 
-        def find(self, name: str | None = None, *_ , **__):
+        def find(self, name: str | None = None, *_, **__):
             if name == "a":
                 return self._parse_a(self.html)
             return _StubTag()
@@ -67,10 +69,6 @@ if "certifi" not in sys.modules:
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
-
-from models.circuit import Circuit
-from models.engine_manufacturer import EngineManufacturer
-from scrapers.base.table.scraper import F1TableScraper
 
 
 def test_circuit_rejects_invalid_url():
@@ -119,4 +117,3 @@ def test_table_scraper_instantiates_model_and_filters_unknown_fields():
     )
 
     assert result == {"name": "Example"}
-

@@ -1,15 +1,15 @@
 import pytest
+from scrapers.base.helpers.utils import find_section_elements, is_reference_link
+from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
+import sys
+import types
+from pathlib import Path
 
 try:
     from bs4 import BeautifulSoup
 except Exception:
     pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
 
-from scrapers.base.helpers.utils import find_section_elements, is_reference_link
-
-import sys
-import types
-from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -23,8 +23,6 @@ if "bs4" not in sys.modules:
 
     bs4_module.Tag = Tag
     sys.modules["bs4"] = bs4_module
-
-from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
 
 
 def _tag(html: str):
@@ -107,8 +105,6 @@ def test_find_section_elements_returns_first_after_heading():
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    matches = find_section_elements(
-        soup, "target", ["table"], class_="wikitable"
-    )
+    matches = find_section_elements(soup, "target", ["table"], class_="wikitable")
 
     assert matches[0]["id"] == "match-1"

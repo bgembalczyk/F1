@@ -80,9 +80,10 @@ class WikipediaSectionByIdMixin:
         parent = header.parent
         if isinstance(parent, Tag):
             classes = parent.get("class") or []
-            if "mw-heading" in classes and parent.find(
-                header.name, recursive=False
-            ) is header:
+            if (
+                "mw-heading" in classes
+                and parent.find(header.name, recursive=False) is header
+            ):
                 heading_block = parent
 
         # UWAGA: nie przenosimy heading_block do nowego soup-a przed zebraniem rodzeństw.

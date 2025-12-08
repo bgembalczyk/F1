@@ -52,4 +52,3 @@ class EngineManufacturer:
         if status_normalized not in allowed:
             raise ValueError("manufacturer_status musi być current lub former")
         return status_normalized
-

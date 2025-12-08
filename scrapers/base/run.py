@@ -175,10 +175,7 @@ def _cli() -> None:
     scraper_cls = _load_scraper(module_path, class_name)
     kwargs = dict(default_kwargs)
 
-    if (
-        args.delay_seconds is not None
-        and _includes_param(scraper_cls, "delay_seconds")
-    ):
+    if args.delay_seconds is not None and _includes_param(scraper_cls, "delay_seconds"):
         kwargs["delay_seconds"] = args.delay_seconds
 
     json_path = args.output_dir / json_rel

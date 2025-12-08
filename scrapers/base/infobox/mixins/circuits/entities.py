@@ -34,9 +34,7 @@ IGNORED_TOP_LEVEL_KEYS: set[str] = {
 }
 
 
-class CircuitEntitiesMixin(
-    CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
-):
+class CircuitEntitiesMixin(CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
     # ------------------------------------
@@ -208,7 +206,9 @@ class CircuitEntitiesMixin(
                 link = self._find_link(entity_text, links)
                 if not link and "/" in entity_text:
                     # dla "Mario Andretti / Denny Hulme" – spróbuj dopasować części
-                    for part in [p.strip() for p in entity_text.split("/") if p.strip()]:
+                    for part in [
+                        p.strip() for p in entity_text.split("/") if p.strip()
+                    ]:
                         link = self._find_link(part, links)
                         if link:
                             break

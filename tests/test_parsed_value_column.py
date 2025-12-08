@@ -1,13 +1,15 @@
 from pathlib import Path
 import sys
 import types
+import re
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
 bs4_stub = types.ModuleType("bs4")
-import re
 
 
 class _StubTag:
@@ -36,7 +38,7 @@ class _StubBeautifulSoup:
     def __init__(self, html: str, *_):  # pragma: no cover - simple stub
         self.html = html
 
-    def find(self, name: str | None = None, *_ , **__):
+    def find(self, name: str | None = None, *_, **__):
         if name == "a":
             return self._parse_a(self.html)
         return _StubTag()
@@ -61,9 +63,6 @@ class _StubBeautifulSoup:
 bs4_stub.Tag = _StubTag
 bs4_stub.BeautifulSoup = _StubBeautifulSoup
 sys.modules.setdefault("bs4", bs4_stub)
-
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 
 
 def _ctx(clean_text: str) -> ColumnContext:

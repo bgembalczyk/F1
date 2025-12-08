@@ -3,7 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from models.validators import validate_float, validate_int, validate_link, validate_links
+from models.validators import (
+    validate_float,
+    validate_int,
+    validate_link,
+    validate_links,
+)
 from models.validators import validate_seasons
 
 
@@ -41,6 +46,7 @@ class Circuit:
         status_normalized = (status or "").strip().lower()
         allowed = {"current", "future", "former"}
         if status_normalized not in allowed:
-            raise ValueError("circuit_status musi być jedną z wartości current/future/former")
+            raise ValueError(
+                "circuit_status musi być jedną z wartości current/future/former"
+            )
         return status_normalized
-

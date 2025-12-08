@@ -134,8 +134,12 @@ class CircuitHistoryMixin(InfoboxTextUtilsMixin):
                 # pojedyncza wartość, np. samo "1960s" – ignorujemy "to" i ustawiamy tylko "from"
                 start_raw, end_raw = seg, ""
 
-            start = self._normalize_period_endpoint(start_raw, is_start=True, now_year=now_year)
-            end = self._normalize_period_endpoint(end_raw, is_start=False, now_year=now_year)
+            start = self._normalize_period_endpoint(
+                start_raw, is_start=True, now_year=now_year
+            )
+            end = self._normalize_period_endpoint(
+                end_raw, is_start=False, now_year=now_year
+            )
 
             if start is None and end is None:
                 continue

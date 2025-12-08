@@ -2,17 +2,14 @@ import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Callable
-
 import pytest
-
 from pathlib import Path
 import sys
+from http_client import HttpClient, UrllibHttpClient
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
-
-from http_client import HttpClient, UrllibHttpClient
 
 
 class _StubHandler(BaseHTTPRequestHandler):

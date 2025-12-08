@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
+from typing import Optional, Sequence, Mapping, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 

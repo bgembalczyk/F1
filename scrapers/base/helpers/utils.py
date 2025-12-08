@@ -259,11 +259,7 @@ def is_wikipedia_redlink(url: str | None) -> bool:
         return False
 
     url_l = url.lower()
-    return (
-        "wikipedia.org" in url_l
-        and "action=edit" in url_l
-        and "redlink=" in url_l
-    )
+    return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
 
 
 def is_language_marker_link(text: str | None, url: str | None) -> bool:

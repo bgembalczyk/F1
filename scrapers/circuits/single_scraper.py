@@ -2,7 +2,7 @@ import time
 from typing import Optional, Dict, Any, List
 
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from f1_http.interfaces import HttpClientProtocol
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper

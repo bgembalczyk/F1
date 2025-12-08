@@ -42,7 +42,9 @@ def validate_link(link: Dict[str, Any] | None, *, field_name: str) -> Dict[str, 
     return {"text": text, "url": url}
 
 
-def validate_links(links: Iterable[Dict[str, Any]] | None, *, field_name: str) -> list[Dict[str, Any]]:
+def validate_links(
+    links: Iterable[Dict[str, Any]] | None, *, field_name: str
+) -> list[Dict[str, Any]]:
     result: list[Dict[str, Any]] = []
     for link in links or []:
         validated = validate_link(link, field_name=field_name)
@@ -78,4 +80,3 @@ def model_to_dict(model: Any) -> Dict[str, Any]:
     if is_dataclass(model):
         return asdict(model)
     raise TypeError("Nieobsługiwany typ modelu")
-
