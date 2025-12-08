@@ -2,9 +2,11 @@ import time
 from typing import Optional, Dict, Any, List
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from f1_http.interfaces import HttpClientProtocol
+from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
+from scrapers.base.helpers.utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
@@ -133,26 +135,126 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
         return infobox_scraper.parse_from_soup(soup)
 
-    def _scrape_tables(
-        self, soup: BeautifulSoup, *, base_url: str
-    ) -> List[Dict[str, Any]]:
-        pass
-        # """
-        # Zwraca wszystkie tabele 'wikitable' z artykułu (lub z danej sekcji, jeśli
-        # `soup` został wcześniej zawężony do sekcji).
-        # """
-        # tables: List[Dict[str, Any]] = []
-        #
-        # for idx, table in enumerate(
-        #     soup.find_all("table", class_=lambda c: c and "wikitable" in c.split())
-        # ):
-        #     table_scraper = _CircuitTableScraper(
-        #         table=table,
-        #         base_url=base_url,
-        #         index=idx,
-        #         session=self.session,
-        #     )
-        #     # _parse_soup oczekuje soup, ale i tak używa self._table
-        #     tables.extend(table_scraper._parse_soup(table))
-        #
-        # return tables
+    def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        """
+        Zbiera tabele z najszybszymi okrążeniami („lap records / fastest laps”).
+
+        Zasady:
+        - przeglądamy wszystkie 'wikitable' na stronie,
+        - bierzemy tylko te, które mają nagłówki odpowiadające rekordom okrążeń,
+        - jeżeli w tabeli występują wiersze <th colspan="..."> – traktujemy je
+          jako nagłówki layoutów i przypisujemy ten layout do kolejnych wierszy
+          z danymi,
+        - jeżeli layout jest w captionie lub nagłówku nad tabelą – używamy go
+          jako domyślnej nazwy layoutu,
+        - każdy rekord dostaje pole 'layout' (string) – dzięki temu możesz
+          łatwo zgrupować wyniki po layoutach.
+        """
+        lap_scraper = LapRecordsTableScraper(
+            include_urls=self.include_urls,
+            session=self.session,
+            headers=self.headers,
+        )
+        lap_scraper.url = self.url  # żeby _full_url działało poprawnie
+
+        results: List[Dict[str, Any]] = []
+
+        # --- pomocnicza funkcja: zgadnij domyślną nazwę layoutu dla tabeli ---
+        def guess_table_layout(table: Tag) -> Optional[str]:
+            # 1) caption
+            caption = table.find("caption")
+            if caption:
+                txt = clean_wiki_text(caption.get_text(" ", strip=True))
+                if txt:
+                    return txt
+
+            # 2) najbliższy poprzedni nagłówek (h2/h3/h4)
+            prev = table
+            while prev:
+                prev = prev.previous_sibling
+                if not isinstance(prev, Tag):
+                    continue
+                if prev.name in {"h2", "h3", "h4"}:
+                    txt = clean_wiki_text(prev.get_text(" ", strip=True))
+                    if txt:
+                        return txt
+
+            return None
+
+        # --- iteracja po wszystkich kandydatach na tabele z rekordami ---
+        for table in soup.find_all("table", class_="wikitable"):
+            header_row = table.find("tr")
+            if not header_row:
+                continue
+
+            header_cells = header_row.find_all(["th", "td"])
+            headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+
+            # czy ta tabela wygląda jak rekordy okrążeń?
+            if not lap_scraper._headers_match(headers):
+                # dodatkowa heurystyka: niektóre tabele mogą mieć np. „Driver/Rider”
+                header_set = set(headers)
+                if not (
+                    "Time" in header_set
+                    and (
+                        "Driver" in header_set
+                        or "Driver/Rider" in header_set
+                    )
+                ):
+                    continue  # nie wygląda jak rekordy
+
+            base_layout = guess_table_layout(table)
+            current_layout = base_layout
+
+            # iterujemy po wierszach danych (pomijamy pierwszy z nagłówkami)
+            for tr in table.find_all("tr")[1:]:
+                cells = tr.find_all(["th", "td"])
+
+                # puste / ozdobne wiersze ignorujemy
+                if not cells or all(not c.get_text(strip=True) for c in cells):
+                    continue
+
+                # --- 1) wiersz nagłówka layoutu: <tr><th colspan="...">Layout...</th></tr> ---
+                th_only = all(c.name == "th" for c in cells)
+                td_only = all(c.name == "td" for c in cells)
+
+                if th_only and not td_only and len(cells) == 1:
+                    th = cells[0]
+                    try:
+                        colspan = int(th.get("colspan", "1"))
+                    except ValueError:
+                        colspan = 1
+
+                    text = clean_wiki_text(th.get_text(" ", strip=True))
+
+                    # traktujemy jako nagłówek layoutu, jeśli:
+                    # - colspan >= liczba kolumn nagłówka
+                    # - albo w tekście widać, że to layout (np. "Circuit", "Layout", "km", "mi", "present" itd.)
+                    if colspan >= len(headers) or any(
+                        kw in (text or "").lower()
+                        for kw in ["circuit", "layout", "course", "km", "mi", "present", "configuration"]
+                    ):
+                        if text:
+                            current_layout = text
+                        continue  # nie parsujemy tego wiersza jako danych
+
+                # --- 2) powtórzony nagłówek – ignorujemy (częsty pattern w wiki) ---
+                cleaned_cells = [
+                    clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
+                ]
+                if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+                    continue
+
+                # --- 3) normalny wiersz z danymi ---
+                record = lap_scraper.parse_row(tr, cells, headers)
+                if not record:
+                    continue
+
+                # przypisujemy layout – najpierw aktualny, potem baza, a jak nic nie ma to None
+                layout_name = current_layout or base_layout
+                if layout_name:
+                    record.setdefault("layout", layout_name)
+
+                results.append(record)
+
+        return results
