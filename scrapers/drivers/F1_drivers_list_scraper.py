@@ -3,12 +3,12 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
-from scrapers.base.table.helpers.columns.types.bool import BoolColumn
-from scrapers.base.table.helpers.columns.types.int import IntColumn
-from scrapers.base.table.helpers.columns.types.multi import MultiColumn
-from scrapers.base.table.helpers.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.helpers.columns.types.text import TextColumn
-from scrapers.base.table.helpers.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types.bool import BoolColumn
+from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.columns.types.multi import MultiColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.helpers.utils import parse_seasons
 from scrapers.base.table.scraper import F1TableScraper
 
