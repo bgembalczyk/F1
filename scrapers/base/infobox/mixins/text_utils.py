@@ -1,6 +1,13 @@
 import re
 from typing import Optional, Dict, Any, List
 
+from scrapers.base.helpers.utils import (
+    is_wikipedia_redlink,
+    parse_int_from_text,
+    parse_number_with_unit,
+    split_delimited_text,
+)
+
 
 class InfoboxTextUtilsMixin:
     """Ogólne helpery do pracy na dictach z infoboksa."""
@@ -32,15 +39,14 @@ class InfoboxTextUtilsMixin:
         if not row:
             return None
         text = self._get_text(row) or ""
-        parts = [p.strip() for p in re.split(r";|,|/", text) if p.strip()]
+        parts = split_delimited_text(text)
         return parts or None
 
     def _parse_int(self, row: Optional[Dict[str, Any]]) -> Optional[int]:
         if not row:
             return None
         text = self._get_text(row) or ""
-        match = re.search(r"\d+", text)
-        return int(match.group()) if match else None
+        return parse_int_from_text(text)
 
     def _parse_length(
         self, row: Optional[Dict[str, Any]], *, unit: str
@@ -48,8 +54,7 @@ class InfoboxTextUtilsMixin:
         if not row:
             return None
         text = self._get_text(row) or ""
-        match = re.search(r"([0-9]+(?:\.[0-9]+)?)\s*" + re.escape(unit), text)
-        return float(match.group(1)) if match else None
+        return parse_number_with_unit(text, unit=unit)
 
     def _parse_dates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         """Parsyje daty typu YYYY-MM-DD, YYYY-MM, YYYY i zwraca też listę lat."""
@@ -93,16 +98,6 @@ class InfoboxTextUtilsMixin:
                 return link
         return None
 
-    @staticmethod
-    def _is_wikipedia_redlink(url: str) -> bool:
-        """Zwraca True dla redlinków Wikipedii typu ...&action=edit&redlink=1."""
-        url_l = url.lower()
-        return (
-            "wikipedia.org" in url_l
-            and "action=edit" in url_l
-            and "redlink=" in url_l
-        )
-
     def _with_link(
         self,
         text: Optional[str],
@@ -116,7 +111,7 @@ class InfoboxTextUtilsMixin:
         if link:
             candidate = link.get("url")
             # ignorujemy redlinki Wikipedii
-            if candidate and not self._is_wikipedia_redlink(candidate):
+            if candidate and not is_wikipedia_redlink(candidate):
                 url = candidate
 
         return {"text": text, "url": url}

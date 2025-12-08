@@ -1,0 +1,15 @@
+Task 1: Centralize Wikipedia redlink detection
+- Problem: Both scrapers/base/infobox/mixins/text_utils.py and scrapers/base/infobox/mixins/circuits/entities.py define nearly identical _is_wikipedia_redlink helpers.
+- Action: Move the logic to a single helper (e.g., in helpers/utils.py or a shared mixin) and update both mixins to import/use it.
+
+Task 2: Share number parsing helpers across columns and infobox mixins
+- Problem: Numeric parsing exists in multiple places (parse_int_from_text/parse_float_from_text in scrapers/base/helpers/utils.py and _parse_int/_parse_length in scrapers/base/infobox/mixins/text_utils.py), while table columns (scrapers/base/table/columns/types/int.py and float.py) simply delegate to helpers.
+- Action: Extract a common numeric parsing utility that supports ints and floats with configurable patterns, then refactor both mixins and columns to call the shared helper instead of duplicating regex logic.
+
+Task 3: Reuse list-splitting logic for infobox rows and table columns
+- Problem: scrapers/base/infobox/mixins/text_utils.py::_split_simple_list and scrapers/base/table/columns/types/list.py perform similar comma/semicolon split-and-trim behavior.
+- Action: Implement a shared list-splitting helper (e.g., in helpers/utils.py) and have both code paths invoke it, ensuring consistent delimiters and trimming.
+
+Task 4: Consolidate link cleaning/filtering
+- Problem: Link processing is scattered: extract_links_from_cell in scrapers/base/helpers/utils.py filters cite_note/reference anchors, while scrapers/base/infobox/mixins/circuits/entities.py reimplements redlink cleanup and language-marker checks.
+- Action: Introduce shared predicates/helpers for reference-link skipping, redlink removal, and language-marker detection, then reuse them in infobox mixins and any table link extraction to avoid divergent rules.
