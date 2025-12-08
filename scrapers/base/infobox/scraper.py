@@ -71,10 +71,27 @@ class WikipediaInfoboxScraper:
 
     def _find_infobox(self, soup: BeautifulSoup):
         """
-        Znajduje <table class=" ...">.
-        Często infoboksy mają wiele klas: infobox biography, infobox vcard itd.
+        Znajduje <table> z klasą zawierającą 'infobox' w ramach przekazanego `soup`.
+
+        Obsługuje zarówno:
+        - class="infobox vcard"
+        - class=["infobox", "vcard"]
         """
-        return soup.find("table", class_=lambda c: c and "infobox" in c.split())
+
+        def _has_infobox_class(c) -> bool:
+            if not c:
+                return False
+            if isinstance(c, str):
+                classes = c.split()
+            else:
+                # BeautifulSoup zwykle daje listę
+                try:
+                    classes = list(c)
+                except TypeError:
+                    return False
+            return "infobox" in classes
+
+        return soup.find("table", class_=_has_infobox_class)
 
     def _parse_infobox(self, table) -> Dict[str, Any]:
         data: Dict[str, Any] = {"title": None, "rows": {}}
