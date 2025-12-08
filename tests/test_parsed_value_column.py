@@ -1,14 +1,14 @@
 from pathlib import Path
 import sys
-import types
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-bs4_stub = types.ModuleType("bs4")
-bs4_stub.Tag = object
-sys.modules.setdefault("bs4", bs4_stub)
+try:
+    from bs4 import Tag  # type: ignore
+except Exception:
+    from tests.bs4_stub import Tag  # type: ignore
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
