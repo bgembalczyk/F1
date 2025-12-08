@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import re
 from datetime import datetime
-from typing import Any, Callable
+from typing import Any, Callable, TypeVar
 
 from bs4 import Tag
 
 # przypisy Wikipedii: [1], [b], [note 3], [citation needed], ...
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
+
+T = TypeVar("T")
 
 
 def clean_wiki_text(text: str) -> str:
@@ -70,36 +73,43 @@ def parse_seasons(
     return result
 
 
+def _parse_number(
+    text: str, pattern: str | re.Pattern[str], caster: Callable[[str], T]
+) -> T | None:
+    """Wspólne kroki dla parserów liczb.
+
+    - Waliduje wejście.
+    - Wyszukuje pierwsze dopasowanie regexem.
+    - Normalizuje separatory tysięcy.
+    - Bezpiecznie rzutuje na docelowy typ.
+    """
+
+    if not text:
+        return None
+
+    m = re.search(pattern, text)
+    if not m:
+        return None
+
+    num_str = m.group(0).replace(",", "")
+    try:
+        return caster(num_str)
+    except (ValueError, TypeError):
+        return None
+
+
 def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    if not text:
-        return None
-    m = re.search(r"[-+]?\d[\d,]*", text)
-    if not m:
-        return None
-    num_str = m.group(0).replace(",", "")
-    try:
-        return int(num_str)
-    except ValueError:
-        return None
+    return _parse_number(text, r"[-+]?\d[\d,]*", int)
 
 
 def parse_float_from_text(text: str) -> float | None:
     """
     Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu (ignoruje przecinki 1,234.5).
     """
-    if not text:
-        return None
-    m = re.search(r"[-+]?\d[\d,]*\.?\d*", text)
-    if not m:
-        return None
-    num_str = m.group(0).replace(",", "")
-    try:
-        return float(num_str)
-    except ValueError:
-        return None
+    return _parse_number(text, r"[-+]?\d[\d,]*\.?\d*", float)
 
 
 def extract_links_from_cell(
