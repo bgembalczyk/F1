@@ -27,6 +27,6 @@ class DriverColumn(BaseColumn):
         if ctx.clean_text:
             txt = strip_marks(ctx.clean_text)
             if txt:
-                return {"text": txt, "url": None}
+                return {"text": txt}
 
         return None
