@@ -9,7 +9,7 @@ from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.helpers.utils import parse_seasons
+from scrapers.base.helpers.utils import parse_seasons
 from scrapers.base.table.scraper import F1TableScraper
 
 

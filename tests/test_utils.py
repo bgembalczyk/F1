@@ -1,26 +1,18 @@
 import pytest
 
-bs4 = pytest.importorskip("bs4")
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except Exception:
+    from tests.bs4_stub import BeautifulSoup
 
 from scrapers.base.helpers.utils import is_reference_link
 
 import sys
-import types
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
-
-if "bs4" not in sys.modules:
-    bs4_module = types.ModuleType("bs4")
-
-    class Tag:  # type: ignore
-        pass
-
-    bs4_module.Tag = Tag
-    sys.modules["bs4"] = bs4_module
 
 from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
 
