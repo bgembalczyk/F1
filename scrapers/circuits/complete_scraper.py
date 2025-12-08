@@ -76,6 +76,5 @@ if __name__ == "__main__":
     run_and_export(
         F1CompleteCircuitScraper,
         "../../data/wiki/circuits/f1_circuits_extended.json",
-        "../../data/wiki/circuits/f1_circuits_extended.csv",
         delay_seconds=1.0,
     )
