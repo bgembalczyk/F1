@@ -16,6 +16,8 @@ class F1SeasonsListScraper(F1TableScraper):
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_seasons"
+    data_resource = "seasons"
+    data_file_stem = "f1_seasons"
     # jeśli id sekcji się kiedyś zmieni – poprawiasz tylko to
     section_id = "Seasons"
 
@@ -51,13 +53,3 @@ class F1SeasonsListScraper(F1TableScraper):
         "constructors_champion": LinksListColumn(),
         "winners": IntColumn(),
     }
-
-
-if __name__ == "__main__":
-    scraper = F1SeasonsListScraper(include_urls=True)
-
-    seasons = scraper.fetch()
-    print(f"Pobrano rekordów: {len(seasons)}")
-
-    scraper.to_json("../../data/wiki/seasons/f1_seasons.json")
-    scraper.to_csv("../../data/wiki/seasons/f1_seasons.csv")

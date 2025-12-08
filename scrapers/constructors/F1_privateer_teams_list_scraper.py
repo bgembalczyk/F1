@@ -21,6 +21,9 @@ class F1PrivateerTeamsListScraper(F1ListScraper):
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
+
+    data_resource = "constructors"
+    data_file_stem = "f1_privateer_teams"
     section_id = "Privateer_teams"
 
     def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
@@ -54,13 +57,3 @@ class F1PrivateerTeamsListScraper(F1ListScraper):
                 record["seasons"] = seasons
 
         return record
-
-
-if __name__ == "__main__":
-    scraper = F1PrivateerTeamsListScraper(include_urls=True)
-
-    teams = scraper.fetch()
-    print(f"Pobrano rekordów: {len(teams)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_privateer_teams.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_privateer_teams.csv")
