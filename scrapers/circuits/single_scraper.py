@@ -93,7 +93,6 @@ class F1SingleCircuitScraper(F1Scraper):
             "speedway",
             "raceway",
             "motor racing",
-            "motorsport venue",
         ]
         for a in cat_div.find_all("a"):
             text = a.get_text(strip=True).lower()
