@@ -67,10 +67,6 @@ class F1FormerConstructorsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1FormerConstructorsListScraper(include_urls=True)
+    from main import main
 
-    constructors = scraper.fetch()
-    print(f"Pobrano rekordów: {len(constructors)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_former_constructors.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_former_constructors.csv")
+    main()

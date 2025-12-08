@@ -54,10 +54,6 @@ class F1SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1SeasonsListScraper(include_urls=True)
+    from main import main
 
-    seasons = scraper.fetch()
-    print(f"Pobrano rekordów: {len(seasons)}")
-
-    scraper.to_json("../../data/wiki/seasons/f1_seasons.json")
-    scraper.to_csv("../../data/wiki/seasons/f1_seasons.csv")
+    main()

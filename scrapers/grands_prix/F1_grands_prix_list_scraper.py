@@ -65,10 +65,6 @@ class F1GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1GrandsPrixListScraper(include_urls=True)
+    from main import main
 
-    races = scraper.fetch()
-    print(f"Pobrano rekordów: {len(races)}")
-
-    scraper.to_json("../../data/wiki/grands_prix/f1_grands_prix_by_title.json")
-    scraper.to_csv("../../data/wiki/grands_prix/f1_grands_prix_by_title.csv")
+    main()

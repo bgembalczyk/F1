@@ -164,10 +164,6 @@ class F1DriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1DriversListScraper(include_urls=True)
+    from main import main
 
-    drivers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(drivers)}")
-
-    scraper.to_json("../../data/wiki/drivers/f1_drivers.json")
-    scraper.to_csv("../../data/wiki/drivers/f1_drivers.csv")
+    main()

@@ -15,18 +15,6 @@ class F1IndianapolisOnlyConstructorsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1IndianapolisOnlyConstructorsListScraper(include_urls=True)
+    from main import main
 
-    indy_only = scraper.fetch()
-    print(f"Pobrano rekordów: {len(indy_only)}")
-
-    scraper.to_json(
-        "../../data/wiki/constructors/f1_indianapolis_only_constructors.json"
-    )
-    scraper.to_csv("../../data/wiki/constructors/f1_indianapolis_only_constructors.csv")
-
-    # opcjonalnie:
-    # import pprint
-    # pprint.pp(indy_only[:5])
-    # df = scraper.to_dataframe()
-    # print(df.head())
+    main()

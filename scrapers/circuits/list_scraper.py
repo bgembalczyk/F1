@@ -84,10 +84,6 @@ class F1CircuitsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1CircuitsListScraper(include_urls=True)
+    from main import main
 
-    circuits = scraper.fetch()
-    print(f"Pobrano rekordów: {len(circuits)}")
-
-    scraper.to_json("../../data/wiki/circuits/f1_circuits.json")
-    scraper.to_csv("../../data/wiki/circuits/f1_circuits.csv")
+    main()
