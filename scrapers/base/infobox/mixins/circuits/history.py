@@ -1,55 +1,62 @@
-# scrapers/base/infobox/mixins/circuits/history.py
-
-import re
 from typing import Dict, Any, Optional, List
+import re
 
 from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
 
 
 class CircuitHistoryMixin(InfoboxTextUtilsMixin):
-    """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground...)."""
+    """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground, Former names...)."""
 
     def _parse_former_names(
         self, row: Optional[Dict[str, Any]]
     ) -> Optional[List[Dict[str, Any]]]:
         """
-        Parsuje pole 'Former names' do listy dictów:
+        Parsuje 'Former names' do listy dictów:
 
         [
-          {"name": "Adelaide International Raceway", "years": "1982–1988"},
-          {"name": "New Adelaide Circuit", "years": "1989–1995"},
+          {"name": "Autodromo Dino Ferrari", "years": "1957–1988"},
+          {"name": "Autodromo di Imola", "years": "1953–1956"},
           ...
         ]
 
-        Jeżeli nie uda się wyciągnąć lat, 'years' będzie None.
+        Szukamy wielokrotnych sekwencji:
+            <NAME> (<YEARS>)
+        w jednym stringu.
         """
         if not row:
             return None
 
-        items = self._split_simple_list(row) or []
-        if not items:
+        text = self._get_text(row) or ""
+        if not text:
             return None
 
         result: List[Dict[str, Any]] = []
 
-        for item in items:
-            s = (item or "").strip()
-            if not s:
-                continue
+        # NAME (YEARS) NAME2 (YEARS2) ...
+        # NAME – minimalnie zachłanny, YEARS – zawartość nawiasu
+        pattern = re.compile(
+            r"(?P<name>.+?)\s*\((?P<years>[^)]*?\d{3,4}[^)]*?)\)\s*"
+        )
 
-            # próbujemy wyciągnąć lata z nawiasów
-            # np. "Adelaide International Raceway (1982–1988)"
-            m = re.match(r"^(?P<name>.+?)\s*\((?P<years>[^)]+)\)\s*$", s)
-            if m:
-                name = m.group("name").strip()
-                years = m.group("years").strip()
-                if name:
-                    result.append({"name": name, "years": years or None})
-            else:
-                # brak wzorca z nawiasami → mamy tylko nazwę
-                result.append({"name": s, "years": None})
+        for m in pattern.finditer(text):
+            name = (m.group("name") or "").strip(" ,;/")
+            years = (m.group("years") or "").strip()
+            if name:
+                result.append(
+                    {
+                        "name": name,
+                        "years": years or None,
+                    }
+                )
 
-        return result or None
+        if result:
+            return result
+
+        # fallback – nic nie dopasowało wzorca NAME (YEARS)
+        text = text.strip()
+        if not text:
+            return None
+        return [{"name": text, "years": None}]
 
     def _parse_history(
         self, rows: Dict[str, Dict[str, Any]]
@@ -59,7 +66,6 @@ class CircuitHistoryMixin(InfoboxTextUtilsMixin):
         def _dates_to_list(d: Dict[str, Any]) -> List[str]:
             if not d:
                 return []
-            # iso_dates preferowane, w przeciwnym razie surowe lata
             return d.get("iso_dates") or d.get("years") or []  # type: ignore[return-value]
 
         opened_dates = self._parse_dates(rows.get("Opened")) or {}
@@ -87,9 +93,8 @@ class CircuitHistoryMixin(InfoboxTextUtilsMixin):
 
         history: Dict[str, Any] = {
             "events": events or None,
-            # Former names przeniesione tutaj i znormalizowane do listy dictów
             "former_names": self._parse_former_names(rows.get("Former names")),
-            # UWAGA: owner usunięty – nie zwracamy go już w historii
+            # owner usunięty – nie pojawia się w historii
         }
 
         return history

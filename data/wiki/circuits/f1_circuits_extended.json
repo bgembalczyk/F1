@@ -2347,7 +2347,11 @@
             ],
             "former_names": [
               {
-                "name": "Autodromo Dino Ferrari (1957–1988) Autodromo di Imola",
+                "name": "Autodromo Dino Ferrari",
+                "years": "1957–1988"
+              },
+              {
+                "name": "Autodromo di Imola",
                 "years": "1953–1956"
               }
             ]
@@ -3496,13 +3500,15 @@
             ],
             "former_names": [
               {
-                "name": "Autodromo Nazionale di Monza (1965–1974"
+                "name": "Autodromo Nazionale di Monza",
+                "years": "1965–1974, 1983–present"
               },
               {
-                "name": "1983–present) Autodromo di Monza (1928–1964"
+                "name": "Autodromo di Monza",
+                "years": "1928–1964, 1975–1982"
               },
               {
-                "name": "1975–1982) Circuito di Milano",
+                "name": "Circuito di Milano",
                 "years": "1922–1927"
               }
             ]
@@ -3878,7 +3884,19 @@
             ],
             "former_names": [
               {
-                "name": "List Autódromo Oscar Alfredo Gálvez (1989–2008) Autódromo Municipal del Parque Almirante Brown de la Ciudad de Buenos Aires (1960s–1989) Autódromo Municipal Ciudad de Buenos Aires (1955–1960s) Autódromo 17 de Octubre",
+                "name": "List Autódromo Oscar Alfredo Gálvez",
+                "years": "1989–2008"
+              },
+              {
+                "name": "Autódromo Municipal del Parque Almirante Brown de la Ciudad de Buenos Aires",
+                "years": "1960s–1989"
+              },
+              {
+                "name": "Autódromo Municipal Ciudad de Buenos Aires",
+                "years": "1955–1960s"
+              },
+              {
+                "name": "Autódromo 17 de Octubre",
                 "years": "1952–1955"
               }
             ]
@@ -9041,7 +9059,15 @@
             ],
             "former_names": [
               {
-                "name": "Circuit Zandvoort (2017–2019) Circuit Park Zandvoort (1989–2016) Circuit van Zandvoort",
+                "name": "Circuit Zandvoort",
+                "years": "2017–2019"
+              },
+              {
+                "name": "Circuit Park Zandvoort",
+                "years": "1989–2016"
+              },
+              {
+                "name": "Circuit van Zandvoort",
                 "years": "1948–1988"
               }
             ]
@@ -10985,7 +11011,11 @@
             ],
             "former_names": [
               {
-                "name": "Kurpfalzring (1938–1965) Hockenheimer-Dreieck",
+                "name": "Kurpfalzring",
+                "years": "1938–1965"
+              },
+              {
+                "name": "Hockenheimer-Dreieck",
                 "years": "1932–1938"
               }
             ]
@@ -11290,10 +11320,11 @@
             ],
             "former_names": [
               {
-                "name": "Hungaroring (1986–1994"
+                "name": "Hungaroring",
+                "years": "1986–1994, 2005–present"
               },
               {
-                "name": "2005–present) Hungaroring RT",
+                "name": "Hungaroring RT",
                 "years": "1995–2004"
               }
             ]
@@ -11834,10 +11865,11 @@
             ],
             "former_names": [
               {
-                "name": "İstanbul Park (August 2005–September 2012"
+                "name": "İstanbul Park",
+                "years": "August 2005–September 2012, April 2024–May 2025"
               },
               {
-                "name": "April 2024–May 2025) Intercity İstanbul Park",
+                "name": "Intercity İstanbul Park",
                 "years": "October 2012–March 2024"
               }
             ]
@@ -13738,7 +13770,11 @@
             ],
             "former_names": [
               {
-                "name": "Mosport International Raceway (1997–February 2012) Mosport Park",
+                "name": "Mosport International Raceway",
+                "years": "1997–February 2012"
+              },
+              {
+                "name": "Mosport Park",
                 "years": "1961–1996"
               }
             ]
@@ -15160,7 +15196,15 @@
             ],
             "former_names": [
               {
-                "name": "A1-Ring (1996–2004) Steiermark Österreichring (1986–1995) Österreichring",
+                "name": "A1-Ring",
+                "years": "1996–2004"
+              },
+              {
+                "name": "Steiermark Österreichring",
+                "years": "1986–1995"
+              },
+              {
+                "name": "Österreichring",
                 "years": "1969–1985"
               }
             ]
@@ -18271,7 +18315,11 @@
             ],
             "former_names": [
               {
-                "name": "Watkins Glen International Raceway (1982–2005) Watkins Glen Grand Prix Circuit",
+                "name": "Watkins Glen International Raceway",
+                "years": "1982–2005"
+              },
+              {
+                "name": "Watkins Glen Grand Prix Circuit",
                 "years": "1948–1981"
               }
             ]
