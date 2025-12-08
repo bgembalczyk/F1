@@ -1,0 +1,109 @@
+import threading
+import time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from typing import Callable
+
+import pytest
+
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
+from http_client import HttpClient, UrllibHttpClient
+
+
+class _StubHandler(BaseHTTPRequestHandler):
+    retry_count = 0
+    delay_seconds = 0.0
+    last_header = ""
+
+    def do_GET(self):  # noqa: N802 - zgodnie z BaseHTTPRequestHandler
+        if self.path == "/flaky":
+            type(self).retry_count += 1
+            if type(self).retry_count < 2:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(b"fail")
+                return
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"ok")
+            return
+
+        if self.path == "/headers":
+            type(self).last_header = self.headers.get("X-Test-Header", "")
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(type(self).last_header.encode("utf-8"))
+            return
+
+        if self.path == "/slow":
+            time.sleep(type(self).delay_seconds)
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"slow")
+            return
+
+        self.send_response(404)
+        self.end_headers()
+        self.wfile.write(b"not-found")
+
+    def log_message(self, *args, **kwargs):  # pragma: no cover - tłumienie logów
+        return
+
+
+@pytest.fixture(scope="module")
+def http_server():
+    server = ThreadingHTTPServer(("localhost", 0), _StubHandler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    base_url = f"http://{server.server_address[0]}:{server.server_address[1]}"
+
+    yield base_url, _StubHandler
+
+    server.shutdown()
+    thread.join()
+
+
+CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
+    ("requests", lambda **kwargs: HttpClient(backoff_seconds=0.01, **kwargs)),
+    ("urllib", lambda **kwargs: UrllibHttpClient(backoff_seconds=0.01, **kwargs)),
+]
+
+
+@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+def test_retries_on_server_errors(name, factory, http_server):
+    base_url, handler = http_server
+    handler.retry_count = 0
+
+    client = factory(retries=1, timeout=1)
+    response = client.get(f"{base_url}/flaky")
+
+    assert response.status_code == 200
+    assert handler.retry_count == 2
+
+
+@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+def test_custom_headers_are_forwarded(name, factory, http_server):
+    base_url, handler = http_server
+    handler.last_header = ""
+
+    client = factory()
+    response = client.get(f"{base_url}/headers", headers={"X-Test-Header": "demo"})
+
+    assert response.text == "demo"
+    assert handler.last_header == "demo"
+
+
+@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+def test_timeouts_are_respected(name, factory, http_server):
+    base_url, handler = http_server
+    handler.delay_seconds = 0.2
+
+    client = factory(timeout=0.05, retries=0)
+
+    with pytest.raises(Exception):
+        client.get(f"{base_url}/slow")

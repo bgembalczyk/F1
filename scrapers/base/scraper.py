@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 
 import requests
 
+from f1_http.interfaces import HttpClientProtocol
 from http_client import HttpClient
 
 try:
@@ -46,7 +47,7 @@ class F1Scraper(ABC):
         include_urls: bool = True,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClient] = None,
+        http_client: Optional[HttpClientProtocol] = None,
         timeout: int = 10,
         retries: int = 0,
     ) -> None:
@@ -54,7 +55,7 @@ class F1Scraper(ABC):
         self.http_client = http_client or HttpClient(
             session=session, headers=headers, timeout=timeout, retries=retries
         )
-        self.session = self.http_client.session
+        self.session = getattr(self.http_client, "session", None)
 
         self._data: List[Dict[str, Any]] = []
 

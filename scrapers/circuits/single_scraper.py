@@ -4,6 +4,7 @@ from typing import Optional, Dict, Any, List
 import requests
 from bs4 import BeautifulSoup, Tag
 
+from f1_http.interfaces import HttpClientProtocol
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
@@ -24,11 +25,18 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self,
         *,
         session: Optional[requests.Session] = None,
+        http_client: Optional[HttpClientProtocol] = None,
         delay_seconds: float = 1.0,
         timeout: int = 10,
         headers: Optional[Dict[str, str]] = None,
     ) -> None:
-        super().__init__(include_urls=True, session=session, headers=headers)
+        super().__init__(
+            include_urls=True,
+            session=session,
+            headers=headers,
+            http_client=http_client,
+            timeout=timeout,
+        )
         self.delay_seconds = delay_seconds
         self.timeout = timeout
         self.url: str = ""
@@ -73,9 +81,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         if self.delay_seconds:
             time.sleep(self.delay_seconds)
 
-        response = self.session.get(self.url, timeout=self.timeout)
-        response.raise_for_status()
-        return response.text
+        return self.http_client.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------
     # Heurystyki: kategorie + sekcje
@@ -122,7 +128,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         jest załatwiona na poziomie F1SingleCircuitScraper.fetch,
         więc tutaj po prostu parsujemy przekazany fragment drzewa.
         """
-        infobox_scraper = F1CircuitInfoboxScraper(timeout=self.timeout)
+        infobox_scraper = F1CircuitInfoboxScraper(
+            timeout=self.timeout, http_client=self.http_client
+        )
         return infobox_scraper.parse_from_soup(soup)
 
     def _scrape_tables(
