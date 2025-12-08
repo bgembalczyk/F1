@@ -1,7 +1,7 @@
 from typing import Dict, Any
 
-from scrapers.base.table.helpers.columns.context import ColumnContext
-from scrapers.base.table.helpers.columns.types.base import BaseColumn
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.base import BaseColumn
 
 
 class EnumMarksColumn(BaseColumn):

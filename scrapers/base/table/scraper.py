@@ -6,11 +6,11 @@ from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
-from scrapers.base.table.helpers.columns.context import ColumnContext
-from scrapers.base.table.helpers.columns.types.auto import AutoColumn
-from scrapers.base.table.helpers.columns.types.base import BaseColumn
-from scrapers.base.table.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.base import BaseColumn
 
 
 class F1TableScraper(F1Scraper, ABC):

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict
 
-from scrapers.base.table.helpers.columns.context import ColumnContext
+from scrapers.base.table.columns.context import ColumnContext
 
 
 class BaseColumn(ABC):
