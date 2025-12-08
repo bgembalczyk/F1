@@ -20,6 +20,9 @@ class F1EngineManufacturersListScraper(F1TableScraper):
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
 
+    data_resource = "engines"
+    data_file_stem = "f1_engine_manufacturers"
+
     # sekcja z główną tabelą
     section_id = "Engine_manufacturers"
 
@@ -80,13 +83,3 @@ class F1EngineManufacturersListScraper(F1TableScraper):
         "wcc": IntColumn(),
         "wdc": IntColumn(),
     }
-
-
-if __name__ == "__main__":
-    scraper = F1EngineManufacturersListScraper(include_urls=True)
-
-    manufacturers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(manufacturers)}")
-
-    scraper.to_json("../../data/wiki/engines/f1_engine_manufacturers.json")
-    scraper.to_csv("../../data/wiki/engines/f1_engine_manufacturers.csv")

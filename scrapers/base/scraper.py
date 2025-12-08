@@ -39,6 +39,10 @@ class F1Scraper(ABC):
 
     #: Pełny URL strony Wikipedii
     url: str
+    #: Nazwa katalogu w data/wiki, gdzie zapisywane są wyniki scrapera
+    data_resource: str | None = None
+    #: Nazwa pliku (bez rozszerzenia) dla eksportu JSON/CSV
+    data_file_stem: str | None = None
 
     def __init__(
         self,

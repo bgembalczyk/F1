@@ -19,6 +19,9 @@ class F1Constructors2025ListScraper(F1TableScraper):
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
     section_id = "Constructors_for_the_2025_season"
 
+    data_resource = "constructors"
+    data_file_stem = "f1_constructors_2025"
+
     expected_headers = [
         "Constructor",
         "Engine",
@@ -72,13 +75,3 @@ class F1Constructors2025ListScraper(F1TableScraper):
         "antecedent_teams": LinksListColumn(),
     }
     # pozostałe kolumny ("licensed_in", "based_in", "drivers") obsłuży domyślny AutoColumn
-
-
-if __name__ == "__main__":
-    scraper = F1Constructors2025ListScraper(include_urls=True)
-
-    constructors = scraper.fetch()
-    print(f"Pobrano rekordów: {len(constructors)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_constructors_2025.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_constructors_2025.csv")

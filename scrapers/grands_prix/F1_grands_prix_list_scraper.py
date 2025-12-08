@@ -19,6 +19,9 @@ class F1GrandsPrixListScraper(F1TableScraper):
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix"
+
+    data_resource = "grands_prix"
+    data_file_stem = "f1_grands_prix_by_title"
     section_id = "By_race_title"
 
     # podzbiór nagłówków – do znalezienia właściwej tabeli
@@ -62,13 +65,3 @@ class F1GrandsPrixListScraper(F1TableScraper):
         "circuits": IntColumn(),
         "total": IntColumn(),
     }
-
-
-if __name__ == "__main__":
-    scraper = F1GrandsPrixListScraper(include_urls=True)
-
-    races = scraper.fetch()
-    print(f"Pobrano rekordów: {len(races)}")
-
-    scraper.to_json("../../data/wiki/grands_prix/f1_grands_prix_by_title.json")
-    scraper.to_csv("../../data/wiki/grands_prix/f1_grands_prix_by_title.csv")

@@ -23,12 +23,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     def __init__(
         self,
         *,
+        include_urls: bool = True,
         session: Optional[requests.Session] = None,
         delay_seconds: float = 1.0,
         timeout: int = 10,
         headers: Optional[Dict[str, str]] = None,
     ) -> None:
-        super().__init__(include_urls=True, session=session, headers=headers)
+        super().__init__(include_urls=include_urls, session=session, headers=headers)
         self.delay_seconds = delay_seconds
         self.timeout = timeout
         self.url: str = ""

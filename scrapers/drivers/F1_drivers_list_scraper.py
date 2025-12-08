@@ -37,6 +37,9 @@ class F1DriversListScraper(F1TableScraper):
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
+
+    data_resource = "drivers"
+    data_file_stem = "f1_drivers"
     section_id = "Drivers"
 
     expected_headers = [
@@ -161,13 +164,3 @@ class F1DriversListScraper(F1TableScraper):
             row["drivers_championships"] = champs_info
 
         return rows
-
-
-if __name__ == "__main__":
-    scraper = F1DriversListScraper(include_urls=True)
-
-    drivers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(drivers)}")
-
-    scraper.to_json("../../data/wiki/drivers/f1_drivers.json")
-    scraper.to_csv("../../data/wiki/drivers/f1_drivers.csv")

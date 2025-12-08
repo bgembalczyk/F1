@@ -19,22 +19,26 @@ class F1CompleteCircuitScraper(F1Scraper):
     """
 
     url = F1CircuitsListScraper.url
+    data_resource = "circuits"
+    data_file_stem = "f1_circuits_extended"
 
     def __init__(
         self,
         *,
+        include_urls: bool = True,
         delay_seconds: float = 1.0,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
     ) -> None:
-        super().__init__(include_urls=True, session=session, headers=headers)
+        super().__init__(include_urls=include_urls, session=session, headers=headers)
         self.delay_seconds = delay_seconds
         self.list_scraper = F1CircuitsListScraper(
-            include_urls=True,
+            include_urls=include_urls,
             session=self.session,
         )
         self.single_scraper = F1SingleCircuitScraper(
             session=self.session,
+            include_urls=include_urls,
             delay_seconds=delay_seconds,
         )
 
@@ -62,11 +66,3 @@ class F1CompleteCircuitScraper(F1Scraper):
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""
         raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
-
-
-if __name__ == "__main__":
-    scraper = F1CompleteCircuitScraper(delay_seconds=1.0)
-    data = scraper.fetch()
-    print(f"Pobrano {len(data)} rekordów z pełnymi danymi torów.")
-
-    scraper.to_json("../../data/wiki/circuits/f1_circuits_extended.json")

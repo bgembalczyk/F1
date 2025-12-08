@@ -19,6 +19,8 @@ class F1CircuitsListScraper(F1TableScraper):
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits"
+    data_resource = "circuits"
+    data_file_stem = "f1_circuits"
     section_id = "Circuits"
 
     expected_headers = [
@@ -81,13 +83,3 @@ class F1CircuitsListScraper(F1TableScraper):
         "grands_prix": LinksListColumn(),
         # alternatywnie: LinksListColumn() + mała modyfikacja tekstu w osobnej kolumnie
     }
-
-
-if __name__ == "__main__":
-    scraper = F1CircuitsListScraper(include_urls=True)
-
-    circuits = scraper.fetch()
-    print(f"Pobrano rekordów: {len(circuits)}")
-
-    scraper.to_json("../../data/wiki/circuits/f1_circuits.json")
-    scraper.to_csv("../../data/wiki/circuits/f1_circuits.csv")
