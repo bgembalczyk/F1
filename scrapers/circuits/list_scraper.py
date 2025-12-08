@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1CircuitsListScraper(F1TableScraper):
@@ -84,10 +85,9 @@ class F1CircuitsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1CircuitsListScraper(include_urls=True)
-
-    circuits = scraper.fetch()
-    print(f"Pobrano rekordów: {len(circuits)}")
-
-    scraper.to_json("../../data/wiki/circuits/f1_circuits.json")
-    scraper.to_csv("../../data/wiki/circuits/f1_circuits.csv")
+    run_and_export(
+        F1CircuitsListScraper,
+        "../../data/wiki/circuits/f1_circuits.json",
+        "../../data/wiki/circuits/f1_circuits.csv",
+        include_urls=True,
+    )

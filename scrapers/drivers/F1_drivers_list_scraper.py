@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.helpers.utils import parse_seasons
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1DriversListScraper(F1TableScraper):
@@ -164,10 +165,9 @@ class F1DriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1DriversListScraper(include_urls=True)
-
-    drivers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(drivers)}")
-
-    scraper.to_json("../../data/wiki/drivers/f1_drivers.json")
-    scraper.to_csv("../../data/wiki/drivers/f1_drivers.csv")
+    run_and_export(
+        F1DriversListScraper,
+        "../../data/wiki/drivers/f1_drivers.json",
+        "../../data/wiki/drivers/f1_drivers.csv",
+        include_urls=True,
+    )

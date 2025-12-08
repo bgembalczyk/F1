@@ -1,4 +1,5 @@
 from scrapers.base.list.scrapper import F1ListScraper
+from scrapers.base.run import run_and_export
 
 
 class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
@@ -14,20 +15,9 @@ class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1IndianapolisOnlyEngineManufacturersListScraper(include_urls=True)
-
-    indy_engines = scraper.fetch()
-    print(f"Pobrano rekordów: {len(indy_engines)}")
-
-    scraper.to_json(
-        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json"
+    run_and_export(
+        F1IndianapolisOnlyEngineManufacturersListScraper,
+        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
+        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
+        include_urls=True,
     )
-    scraper.to_csv(
-        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv"
-    )
-
-    # opcjonalnie:
-    # for e in indy_engines:
-    #     print(e)
-    # df = scraper.to_dataframe()
-    # print(df.head())

@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from scrapers.base.list.scrapper import F1ListScraper
 from scrapers.base.table.helpers.utils import clean_wiki_text, parse_seasons
+from scrapers.base.run import run_and_export
 
 
 class F1PrivateerTeamsListScraper(F1ListScraper):
@@ -57,10 +58,9 @@ class F1PrivateerTeamsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1PrivateerTeamsListScraper(include_urls=True)
-
-    teams = scraper.fetch()
-    print(f"Pobrano rekordów: {len(teams)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_privateer_teams.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_privateer_teams.csv")
+    run_and_export(
+        F1PrivateerTeamsListScraper,
+        "../../data/wiki/constructors/f1_privateer_teams.json",
+        "../../data/wiki/constructors/f1_privateer_teams.csv",
+        include_urls=True,
+    )
