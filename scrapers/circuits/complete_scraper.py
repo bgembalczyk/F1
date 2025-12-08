@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
+import re
 import requests
 from bs4 import BeautifulSoup
 
@@ -88,42 +89,100 @@ def normalize_circuit_record(raw: Dict[str, Any]) -> Dict[str, Any]:
             out[key] = raw[key]
 
     # -----------------------
-    # location (zastępuje stare location + country)
+    # location -> nowa struktura:
+    #   {
+    #       "places": [ {text, url}, ... ],
+    #       "coordinates": {...}
+    #   }
+    #
+    # places = unikalne miejsca z:
+    #   - old_location
+    #   - new_location (infobox.normalized.location)
+    #   - country (dodawany jako miejsce)
     # -----------------------
-    old_location = raw.get("location")
-    country = raw.get("country")
 
+    country = raw.get("country")
+    old_location = raw.get("location")  # np. {"text": "Adelaide", "url": "..."}
     new_location = None
     coordinates = None
-    fia_grade = None
-    history_events = None
 
     if normalized:
         new_location = normalized.get("location")
         coordinates = normalized.get("coordinates")
 
-        specs = normalized.get("specs") or {}
-        fia_grade = specs.get("fia_grade")
+    # -----------------------
+    # Helpers
+    # -----------------------
 
-        history_norm = normalized.get("history") or {}
-        history_events = history_norm.get("events") or None
+    def extract_place(text: Optional[str], url: Optional[str]) -> Optional[Dict[str, Any]]:
+        if not text:
+            return None
+        clean = text.strip()
+        if not clean:
+            return None
+        return {"text": clean, "url": url}
 
+    # ordered-set by place text
+    places_map: Dict[str, Dict[str, Any]] = {}
+
+    # -----------------------
+    # 1) old_location → places
+    # -----------------------
+    if isinstance(old_location, dict):
+        p = extract_place(old_location.get("text"), old_location.get("url"))
+        if p:
+            places_map[p["text"]] = p
+
+    # -----------------------
+    # 2) new_location → places
+    # -----------------------
+    if isinstance(new_location, dict):
+        for key, val in new_location.items():
+            if not isinstance(val, dict):
+                continue
+
+            text = val.get("text") or val.get("label")
+            link = val.get("link") or {}
+            url = link.get("url")
+
+            p = extract_place(text, url)
+            if p:
+                places_map[p["text"]] = p
+
+    # -----------------------
+    # 3) country też trafia do places
+    # -----------------------
+    if country:
+        p = extract_place(country, None)
+        if p:
+            places_map.setdefault(p["text"], p)
+
+    # -----------------------
+    # Zapisujemy location BEZ pola "country"
+    # -----------------------
     out["location"] = {
-        "old_location": old_location,   # stare values
-        "new_location": new_location,   # z infobox.normalized.location
-        "coordinates": coordinates,     # z infobox.normalized.coordinates
-        "country": country,             # z pierwotnego pola country
+        "places": list(places_map.values()),
+        "coordinates": coordinates,
     }
 
     # -----------------------
     # fia_grade na wierzchu
     # -----------------------
-    if fia_grade is not None:
-        out["fia_grade"] = fia_grade
-
     # -----------------------
     # history (tylko lista events)
     # -----------------------
+    fia_grade = None
+    history_events = None
+
+    if normalized:
+        specs = normalized.get("specs") or {}
+        fia_grade = specs.get("fia_grade")
+        history_norm = normalized.get("history") or {}
+        history_events = history_norm.get("events") or None
+
+    if fia_grade is not None:
+        out["fia_grade"] = fia_grade
+
     if history_events is not None:
         out["history"] = history_events
 
@@ -152,16 +211,64 @@ def normalize_circuit_record(raw: Dict[str, Any]) -> Dict[str, Any]:
     tables = tables or []
 
     def find_layout_for_table(table_layout: str) -> Optional[Dict[str, Any]]:
+        """
+        Dopasowuje layout z tabeli do layoutu z infoboxa na podstawie:
+        - długości okrążenia (km),
+        - lat obowiązywania layoutu.
+
+        Format z tabeli jest zwykle typu:
+        "Supercars Circuit: 3.219 km (1999–present)"
+        """
         if not table_layout:
             return None
+
+        # --- parsujemy informacje z tekstu layoutu z tabeli ---
+        length_km: Optional[float] = None
+        years_str: Optional[str] = None
+
+        # długość w km
+        m_len = re.search(r"([\d.,]+)\s*km", table_layout)
+        if m_len:
+            # zamieniamy przecinek na kropkę na wszelki wypadek
+            length_km = float(m_len.group(1).replace(",", "."))
+
+        # lata w nawiasie na końcu
+        m_years = re.search(r"\(([^()]*)\)\s*$", table_layout)
+        if m_years:
+            years_str = m_years.group(1).strip().lower()
+
+        best_candidate: Optional[Dict[str, Any]] = None
+
         for lay in layouts:
-            base = lay.get("layout")
-            if not base:
-                continue
-            # dopasowanie: "Supercars Circuit: 3.219 km (1999–present)" -> "Supercars Circuit"
-            if table_layout == base or table_layout.startswith(base):
-                return lay
-        return None
+            lay_len = lay.get("length_km")
+            lay_years_raw = lay.get("years") or ""
+            lay_years = lay_years_raw.strip().lower()
+
+            # 1) dopasowanie długości
+            if length_km is not None and lay_len is not None:
+                if abs(lay_len - length_km) > 1e-3:
+                    # inne okrążenie – odrzucamy
+                    continue
+
+            # 2) dopasowanie lat
+            if years_str and lay_years:
+                # idealny przypadek – dokładnie ten sam string (po normalizacji)
+                if years_str == lay_years:
+                    return lay
+
+                # bardziej miękka heurystyka:
+                # porównujemy rok startowy (pierwszy rok w stringu)
+                y_tab = re.search(r"\d{4}", years_str)
+                y_lay = re.search(r"\d{4}", lay_years)
+                if y_tab and y_lay and y_tab.group(0) != y_lay.group(0):
+                    # inne lata startu – odrzucamy
+                    continue
+
+            # jeżeli przeszliśmy powyższe filtry – traktujemy jako kandydata
+            if best_candidate is None:
+                best_candidate = lay
+
+        return best_candidate
 
     for table_block in tables:
         t_layout_str = table_block.get("layout")
