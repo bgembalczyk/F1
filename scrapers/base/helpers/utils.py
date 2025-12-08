@@ -124,7 +124,12 @@ def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    return _parse_number(text, pattern=r"[-+]?\d[\d,]*", cast=int)
+    return _parse_number(
+        text,
+        pattern=r"[-+]?\d[\d,]*",
+        cast=int,
+        normalizers=(lambda s: s.replace(",", ""),),
+    )
 
 
 def parse_float_from_text(text: str) -> float | None:
@@ -199,9 +204,8 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
     if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
         return True
 
-    text = clean_wiki_text(tag.get_text(separator=" ", strip=True))
-    text = clean_wiki_text(tag.get_text(" ", strip=True))
     if href.startswith("#"):
+        text = clean_wiki_text(tag.get_text(" ", strip=True))
         if not text or not allow_local_anchors:
             return True
 

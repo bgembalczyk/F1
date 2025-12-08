@@ -1,9 +1,16 @@
 import pytest
 
 bs4 = pytest.importorskip("bs4")
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    pytest.skip("bs4 lacks BeautifulSoup", allow_module_level=True)
 
-from scrapers.base.helpers.utils import is_reference_link
+from scrapers.base.helpers.utils import (
+    extract_links_from_cell,
+    is_reference_link,
+    is_wikipedia_redlink,
+)
 
 import sys
 import types
@@ -59,6 +66,37 @@ def test_regular_link_is_not_reference():
     tag = _tag('<a href="/wiki/Example">Example</a>')
 
     assert not is_reference_link(tag)
+
+
+def test_is_wikipedia_redlink():
+    assert is_wikipedia_redlink(
+        "https://en.wikipedia.org/w/index.php?title=Test&action=edit&redlink=1"
+    )
+    assert not is_wikipedia_redlink("https://en.wikipedia.org/wiki/Test")
+
+
+def test_extract_links_handles_local_anchors_and_redlinks():
+    soup = BeautifulSoup(
+        """
+        <td>
+            <a href="#cite_note-1">[1]</a>
+            <a href="#section">Section</a>
+            <a href="/w/index.php?title=Missing&action=edit&redlink=1">Missing page</a>
+            <a href="/wiki/Example">Example</a>
+        </td>
+        """,
+        "html.parser",
+    )
+
+    links = extract_links_from_cell(
+        soup.td, full_url=lambda href: f"https://en.wikipedia.org{href}"
+    )
+
+    assert links == [
+        {"text": "Section", "url": "https://en.wikipedia.org#section"},
+        {"text": "Missing page", "url": None},
+        {"text": "Example", "url": "https://en.wikipedia.org/wiki/Example"},
+    ]
 
 
 @pytest.mark.parametrize(
