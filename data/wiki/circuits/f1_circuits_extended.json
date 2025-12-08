@@ -1543,7 +1543,12 @@
             "former_names": [
               {
                 "name": "Autódromo Magdalena Mixhuca",
-                "years": "1959–1979"
+                "periods": [
+                  {
+                    "from": "1959",
+                    "to": "1979"
+                  }
+                ]
               }
             ]
           }
@@ -2348,11 +2353,21 @@
             "former_names": [
               {
                 "name": "Autodromo Dino Ferrari",
-                "years": "1957–1988"
+                "periods": [
+                  {
+                    "from": "1957",
+                    "to": "1988"
+                  }
+                ]
               },
               {
                 "name": "Autodromo di Imola",
-                "years": "1953–1956"
+                "periods": [
+                  {
+                    "from": "1953",
+                    "to": "1956"
+                  }
+                ]
               }
             ]
           }
@@ -2752,7 +2767,12 @@
             "former_names": [
               {
                 "name": "Autódromo de Interlagos",
-                "years": "1940–1984"
+                "periods": [
+                  {
+                    "from": "1940",
+                    "to": "1984"
+                  }
+                ]
               }
             ]
           }
@@ -3501,15 +3521,38 @@
             "former_names": [
               {
                 "name": "Autodromo Nazionale di Monza",
-                "years": "1965–1974, 1983–present"
+                "periods": [
+                  {
+                    "from": "1965",
+                    "to": "1974"
+                  },
+                  {
+                    "from": "1983",
+                    "to": "2025"
+                  }
+                ]
               },
               {
                 "name": "Autodromo di Monza",
-                "years": "1928–1964, 1975–1982"
+                "periods": [
+                  {
+                    "from": "1928",
+                    "to": "1964"
+                  },
+                  {
+                    "from": "1975",
+                    "to": "1982"
+                  }
+                ]
               },
               {
                 "name": "Circuito di Milano",
-                "years": "1922–1927"
+                "periods": [
+                  {
+                    "from": "1922",
+                    "to": "1927"
+                  }
+                ]
               }
             ]
           },
@@ -3885,19 +3928,39 @@
             "former_names": [
               {
                 "name": "List Autódromo Oscar Alfredo Gálvez",
-                "years": "1989–2008"
+                "periods": [
+                  {
+                    "from": "1989",
+                    "to": "2008"
+                  }
+                ]
               },
               {
                 "name": "Autódromo Municipal del Parque Almirante Brown de la Ciudad de Buenos Aires",
-                "years": "1960s–1989"
+                "periods": [
+                  {
+                    "from": "1960",
+                    "to": "1989"
+                  }
+                ]
               },
               {
                 "name": "Autódromo Municipal Ciudad de Buenos Aires",
-                "years": "1955–1960s"
+                "periods": [
+                  {
+                    "from": "1955",
+                    "to": "1969"
+                  }
+                ]
               },
               {
                 "name": "Autódromo 17 de Octubre",
-                "years": "1952–1955"
+                "periods": [
+                  {
+                    "from": "1952",
+                    "to": "1955"
+                  }
+                ]
               }
             ]
           }
@@ -5857,7 +5920,12 @@
             "former_names": [
               {
                 "name": "Circuit de Catalunya",
-                "years": "1991–2013"
+                "periods": [
+                  {
+                    "from": "1991",
+                    "to": "2013"
+                  }
+                ]
               }
             ]
           }
@@ -6681,7 +6749,12 @@
             "former_names": [
               {
                 "name": "Circuit Jean Behra",
-                "years": "1960–1970"
+                "periods": [
+                  {
+                    "from": "1960",
+                    "to": "1970"
+                  }
+                ]
               }
             ]
           }
@@ -8044,7 +8117,12 @@
             "former_names": [
               {
                 "name": "Île Notre-Dame Circuit",
-                "years": "1978–1982"
+                "periods": [
+                  {
+                    "from": "1978",
+                    "to": "1982"
+                  }
+                ]
               }
             ]
           },
@@ -9060,15 +9138,30 @@
             "former_names": [
               {
                 "name": "Circuit Zandvoort",
-                "years": "2017–2019"
+                "periods": [
+                  {
+                    "from": "2017",
+                    "to": "2019"
+                  }
+                ]
               },
               {
                 "name": "Circuit Park Zandvoort",
-                "years": "1989–2016"
+                "periods": [
+                  {
+                    "from": "1989",
+                    "to": "2016"
+                  }
+                ]
               },
               {
                 "name": "Circuit van Zandvoort",
-                "years": "1948–1988"
+                "periods": [
+                  {
+                    "from": "1948",
+                    "to": "1988"
+                  }
+                ]
               }
             ]
           }
@@ -9700,7 +9793,12 @@
             "former_names": [
               {
                 "name": "Circuito de Jerez",
-                "years": "December 1985–May 2018"
+                "periods": [
+                  {
+                    "from": "1985-12",
+                    "to": "2018-05"
+                  }
+                ]
               }
             ]
           }
@@ -11012,11 +11110,21 @@
             "former_names": [
               {
                 "name": "Kurpfalzring",
-                "years": "1938–1965"
+                "periods": [
+                  {
+                    "from": "1938",
+                    "to": "1965"
+                  }
+                ]
               },
               {
                 "name": "Hockenheimer-Dreieck",
-                "years": "1932–1938"
+                "periods": [
+                  {
+                    "from": "1932",
+                    "to": "1938"
+                  }
+                ]
               }
             ]
           }
@@ -11321,11 +11429,25 @@
             "former_names": [
               {
                 "name": "Hungaroring",
-                "years": "1986–1994, 2005–present"
+                "periods": [
+                  {
+                    "from": "1986",
+                    "to": "1994"
+                  },
+                  {
+                    "from": "2005",
+                    "to": "2025"
+                  }
+                ]
               },
               {
                 "name": "Hungaroring RT",
-                "years": "1995–2004"
+                "periods": [
+                  {
+                    "from": "1995",
+                    "to": "2004"
+                  }
+                ]
               }
             ]
           },
@@ -11866,11 +11988,25 @@
             "former_names": [
               {
                 "name": "İstanbul Park",
-                "years": "August 2005–September 2012, April 2024–May 2025"
+                "periods": [
+                  {
+                    "from": "2005-08",
+                    "to": "2012-09"
+                  },
+                  {
+                    "from": "2024-04",
+                    "to": "2025-05"
+                  }
+                ]
               },
               {
                 "name": "Intercity İstanbul Park",
-                "years": "October 2012–March 2024"
+                "periods": [
+                  {
+                    "from": "2012-10",
+                    "to": "2024-03"
+                  }
+                ]
               }
             ]
           },
@@ -13771,11 +13907,21 @@
             "former_names": [
               {
                 "name": "Mosport International Raceway",
-                "years": "1997–February 2012"
+                "periods": [
+                  {
+                    "from": "1997",
+                    "to": "2012-02"
+                  }
+                ]
               },
               {
                 "name": "Mosport Park",
-                "years": "1961–1996"
+                "periods": [
+                  {
+                    "from": "1961",
+                    "to": "1996"
+                  }
+                ]
               }
             ]
           },
@@ -15197,15 +15343,30 @@
             "former_names": [
               {
                 "name": "A1-Ring",
-                "years": "1996–2004"
+                "periods": [
+                  {
+                    "from": "1996",
+                    "to": "2004"
+                  }
+                ]
               },
               {
                 "name": "Steiermark Österreichring",
-                "years": "1986–1995"
+                "periods": [
+                  {
+                    "from": "1986",
+                    "to": "1995"
+                  }
+                ]
               },
               {
                 "name": "Österreichring",
-                "years": "1969–1985"
+                "periods": [
+                  {
+                    "from": "1969",
+                    "to": "1985"
+                  }
+                ]
               }
             ]
           }
@@ -15410,7 +15571,12 @@
             "former_names": [
               {
                 "name": "Riverside International Motor Raceway",
-                "years": "1957–1960"
+                "periods": [
+                  {
+                    "from": "1957",
+                    "to": "1960"
+                  }
+                ]
               }
             ]
           },
@@ -16267,7 +16433,12 @@
             "former_names": [
               {
                 "name": "Sepang International Circuit",
-                "years": "March 1999–October 2023"
+                "periods": [
+                  {
+                    "from": "1999-03",
+                    "to": "2023-10"
+                  }
+                ]
               }
             ]
           },
@@ -17247,7 +17418,12 @@
             "former_names": [
               {
                 "name": "Sochi Autodrom",
-                "years": "September 2014–March 2024"
+                "periods": [
+                  {
+                    "from": "2014-09",
+                    "to": "2024-03"
+                  }
+                ]
               }
             ]
           },
@@ -17801,7 +17977,12 @@
             "former_names": [
               {
                 "name": "TI Circuit Aida",
-                "years": "November 1990–April 2005"
+                "periods": [
+                  {
+                    "from": "1990-11",
+                    "to": "2005-04"
+                  }
+                ]
               }
             ]
           }
@@ -18316,11 +18497,21 @@
             "former_names": [
               {
                 "name": "Watkins Glen International Raceway",
-                "years": "1982–2005"
+                "periods": [
+                  {
+                    "from": "1982",
+                    "to": "2005"
+                  }
+                ]
               },
               {
                 "name": "Watkins Glen Grand Prix Circuit",
-                "years": "1948–1981"
+                "periods": [
+                  {
+                    "from": "1948",
+                    "to": "1981"
+                  }
+                ]
               }
             ]
           }
