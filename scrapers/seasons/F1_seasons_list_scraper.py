@@ -6,6 +6,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1SeasonsListScraper(F1TableScraper):
@@ -54,10 +55,9 @@ class F1SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1SeasonsListScraper(include_urls=True)
-
-    seasons = scraper.fetch()
-    print(f"Pobrano rekordów: {len(seasons)}")
-
-    scraper.to_json("../../data/wiki/seasons/f1_seasons.json")
-    scraper.to_csv("../../data/wiki/seasons/f1_seasons.csv")
+    run_and_export(
+        F1SeasonsListScraper,
+        "../../data/wiki/seasons/f1_seasons.json",
+        "../../data/wiki/seasons/f1_seasons.csv",
+        include_urls=True,
+    )
