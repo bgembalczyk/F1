@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from typing import Dict, Any, List, Optional
 
 from http_client import HttpClient
+from scrapers.base.helpers.utils import is_reference_link
 
 
 class WikipediaInfoboxScraper:
@@ -133,7 +134,7 @@ class WikipediaInfoboxScraper:
             href = a["href"]
 
             # ignorujemy przypisy i lokalne kotwice
-            if href.startswith("#") or "cite_note" in href:
+            if is_reference_link(a):
                 continue
 
             # zamiana na absolutny URL

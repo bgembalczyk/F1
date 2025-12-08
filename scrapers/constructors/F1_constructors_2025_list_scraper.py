@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import Dict
 
-from scrapers.base.table.helpers.columns.types.int import IntColumn
-from scrapers.base.table.helpers.columns.types.links_list import LinksListColumn
-from scrapers.base.table.helpers.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.helpers.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 
 

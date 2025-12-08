@@ -12,6 +12,9 @@ _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 T = TypeVar("T")
 
 
+T = TypeVar("T")
+
+
 def clean_wiki_text(text: str) -> str:
     """
     Normalizacja whitespace + usunięcie przypisów Wikipedii.
@@ -124,12 +127,7 @@ def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    return _parse_number(
-        text,
-        pattern=r"[-+]?\d[\d,]*",
-        cast=int,
-        normalizers=(lambda s: s.replace(",", ""),),
-    )
+    return _parse_number(text, r"[-+]?\d[\d,]*", int)
 
 
 def parse_float_from_text(text: str) -> float | None:
@@ -168,15 +166,10 @@ def extract_links_from_cell(
     links: list[dict[str, Any]] = []
 
     for a in cell.find_all("a", href=True):
-        if is_reference_link(a):
-            continue
-
         href = a.get("href") or ""
         text = clean_wiki_text(a.get_text(" ", strip=True))
 
-        # Dodatkowy bezpiecznik – jak tekst jest pusty i to lokalny anchor,
-        # to też traktujemy jako przypis / techniczny link.
-        if not text and href.startswith("#"):
+        if is_reference_link(a, allow_local_anchors=True):
             continue
 
         url = full_url(href)
@@ -186,6 +179,36 @@ def extract_links_from_cell(
         links.append({"text": text, "url": url})
 
     return links
+
+
+def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
+    """
+    Sprawdza, czy ``<a>`` powinno być traktowane jako przypis/odnośnik techniczny.
+
+    Kryteria:
+    - ``href`` zawiera ``cite_note``;
+    - klasa ``reference`` lub ``mw-cite-backlink``;
+    - lokalne kotwice (``href`` zaczynające się od ``#``):
+      - zawsze ignorowane gdy ``allow_local_anchors`` jest False;
+      - ignorowane gdy tekst jest pusty nawet przy ``allow_local_anchors=True``.
+    """
+
+    href = tag.get("href") or ""
+    classes = tag.get("class") or []
+
+    if "cite_note" in href:
+        return True
+
+    if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
+        return True
+
+    text = clean_wiki_text(tag.get_text(" ", strip=True))
+
+    if href.startswith("#"):
+        if not text or not allow_local_anchors:
+            return True
+
+    return False
 
 
 def strip_marks(text: str | None) -> str | None:
