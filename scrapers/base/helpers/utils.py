@@ -199,10 +199,9 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
     if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
         return True
 
-    text = clean_wiki_text(tag.get_text(separator=" ", strip=True))
     text = clean_wiki_text(tag.get_text(" ", strip=True))
     if href.startswith("#"):
-        if not text or not allow_local_anchors:
+        if not allow_local_anchors or not text:
             return True
 
     return False
