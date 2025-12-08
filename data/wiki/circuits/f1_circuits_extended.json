@@ -5486,52 +5486,26 @@
     "details": {
       "url": "https://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit",
       "infobox": {
-        "title": "Circuit des 24 Heures",
+        "title": "Bugatti Circuit",
         "layouts": [
           {
-            "layout": "Circuit des 24 Heures du Mans",
-            "years": "2018–present",
-            "length_km": 13.626,
-            "length_mi": 8.467,
-            "turns": 38,
+            "layout": "Bugatti Circuit",
+            "years": "2002–present",
+            "length_km": 4.185,
+            "length_mi": 2.6,
+            "turns": 14,
             "race_lap_record": {
-              "time": "3:17.297",
+              "time": "1:22.981",
               "driver": {
-                "text": "Mike Conway",
-                "url": "https://en.wikipedia.org/wiki/Mike_Conway"
+                "text": "Matthieu Vaxivière",
+                "url": "https://en.wikipedia.org/wiki/Matthieu_Vaxivi%C3%A8re"
               },
               "car": {
-                "text": "Toyota TS050 Hybrid",
-                "url": "https://en.wikipedia.org/wiki/Toyota_TS050_Hybrid"
-              },
-              "year": "2019",
-              "series": "LMP1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "2007–2017",
-            "length_km": 13.629,
-            "length_mi": 8.469,
-            "turns": 38,
-            "race_lap_record": {
-              "time": "3:17.475",
-              "driver": {
-                "text": "André Lotterer",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Lotterer"
-              },
-              "car": {
-                "text": "Audi R18",
-                "url": "https://en.wikipedia.org/wiki/Audi_R18"
+                "text": "Dallara T12",
+                "url": "https://en.wikipedia.org/wiki/Dallara_T12"
               },
               "year": "2015",
-              "series": "LMP1"
+              "series": "FR 3.5"
             },
             "surface": {
               "values": [
@@ -5541,320 +5515,68 @@
             }
           },
           {
-            "layout": "Circuit de la Sarthe",
-            "years": "2002–2006",
-            "length_km": 13.65,
-            "length_mi": 8.482,
-            "turns": 38,
+            "layout": "Bugatti Circuit",
+            "years": "1989–2001",
+            "length_km": 4.43,
+            "length_mi": 2.753,
+            "turns": 11,
             "race_lap_record": {
-              "time": "3:31.211",
+              "time": "1:33.210",
               "driver": {
-                "text": "Tom Kristensen",
-                "url": "https://en.wikipedia.org/wiki/Tom_Kristensen"
+                "text": "Philippe Gache",
+                "url": "https://en.wikipedia.org/wiki/Philippe_Gache"
               },
               "car": {
-                "text": "Audi R10 TDI",
-                "url": "https://en.wikipedia.org/wiki/Audi_R10_TDI"
+                "text": "Lola T89/50",
+                "url": "https://en.wikipedia.org/wiki/Lola_T89/50"
               },
-              "year": "2006",
-              "series": "LMP1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
+              "year": "1990",
+              "series": "F3000"
             }
           },
           {
-            "layout": "Circuit de la Sarthe",
-            "years": "1997–2001",
-            "length_km": 13.605,
-            "length_mi": 8.454,
-            "turns": 36,
+            "layout": "Bugatti Circuit",
+            "years": "1986–1988",
+            "length_km": 4.24,
+            "length_mi": 2.635,
+            "turns": 11,
             "race_lap_record": {
-              "time": "3:35.032",
+              "time": "1:29.200",
               "driver": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
+                "text": "Emanuele Pirro",
+                "url": "https://en.wikipedia.org/wiki/Emanuele_Pirro"
               },
               "car": {
-                "text": "Toyota GT-One",
-                "url": "https://en.wikipedia.org/wiki/Toyota_GT-One"
-              },
-              "year": "1999",
-              "series": "LMGTP"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1990–1996",
-            "length_km": 13.6,
-            "length_mi": 8.451,
-            "turns": 36,
-            "race_lap_record": {
-              "time": "3:27.470",
-              "driver": {
-                "text": "Eddie Irvine",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-              },
-              "car": {
-                "text": "Toyota TS010",
-                "url": "https://en.wikipedia.org/wiki/Toyota_TS010"
-              },
-              "year": "1993",
-              "series": "Group C1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1987–1989",
-            "length_km": 13.535,
-            "length_mi": 8.41,
-            "turns": 30,
-            "race_lap_record": {
-              "time": "3:21.270",
-              "driver": {
-                "text": "Alain Ferté",
-                "url": "https://en.wikipedia.org/wiki/Alain_Fert%C3%A9"
-              },
-              "car": {
-                "text": "Jaguar XJR-9",
-                "url": "https://en.wikipedia.org/wiki/Jaguar_XJR-9"
-              },
-              "year": "1989",
-              "series": "Group C1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1986",
-            "length_km": 13.528,
-            "length_mi": 8.406,
-            "turns": 28,
-            "race_lap_record": {
-              "time": "3:23.300",
-              "driver": {
-                "text": "Klaus Ludwig",
-                "url": "https://en.wikipedia.org/wiki/Klaus_Ludwig"
-              },
-              "car": {
-                "text": "Porsche 956B",
-                "url": "https://en.wikipedia.org/wiki/Porsche_956"
+                "text": "March 86B",
+                "url": "https://en.wikipedia.org/wiki/March_86B"
               },
               "year": "1986",
-              "series": "Group C1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
+              "series": "F3000"
             }
           },
           {
-            "layout": "Circuit de la Sarthe",
-            "years": "1979–1985",
-            "length_km": 13.626,
-            "length_mi": 8.467,
-            "turns": 27,
+            "layout": "Bugatti Circuit",
+            "years": "1965–1985",
+            "length_km": 4.422,
+            "length_mi": 2.748,
+            "turns": 8,
             "race_lap_record": {
-              "time": "3:25.100",
+              "time": "1:36.620",
               "driver": {
-                "text": "Jochen Mass",
-                "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+                "text": "Pierre Petit",
+                "url": "https://en.wikipedia.org/wiki/Pierre_Petit_(racing_driver)"
               },
               "car": {
-                "text": "Porsche 962C",
-                "url": "https://en.wikipedia.org/wiki/Porsche_962"
+                "text": "Martini MK31",
+                "url": "https://en.wikipedia.org/wiki/Automobiles_Martini#Racecars"
               },
-              "year": "1985",
-              "series": "Group C1"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1972–1978",
-            "length_km": 13.64,
-            "length_mi": 8.476,
-            "turns": 26,
-            "race_lap_record": {
-              "time": "3:34.200",
-              "driver": {
-                "text": "Jean-Pierre Jabouille",
-                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
-              },
-              "car": {
-                "text": "Renault Alpine A443",
-                "url": "https://en.wikipedia.org/wiki/Renault_Alpine_A442"
-              },
-              "year": "1978",
-              "series": "Group 6"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1968–1971",
-            "length_km": 13.469,
-            "length_mi": 8.369,
-            "turns": 19,
-            "race_lap_record": {
-              "time": "3:18.400",
-              "driver": {
-                "text": "Jackie Oliver",
-                "url": "https://en.wikipedia.org/wiki/Jackie_Oliver"
-              },
-              "car": {
-                "text": "Porsche 917L",
-                "url": "https://en.wikipedia.org/wiki/Porsche_917#Variants"
-              },
-              "year": "1971",
-              "series": "Group 5"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1956–1967",
-            "length_km": 13.461,
-            "length_mi": 8.364,
-            "turns": 17,
-            "race_lap_record": {
-              "time": "3:23.600",
-              "driver": {
-                "text": "Mario Andretti / Denny Hulme",
-                "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
-              },
-              "car": {
-                "text": "Ford GT40 Mk IV",
-                "url": "https://en.wikipedia.org/wiki/Ford_GT40#Mk_IV"
-              },
-              "year": "1967",
-              "series": "Group 4"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1932–1955",
-            "length_km": 13.492,
-            "length_mi": 8.384,
-            "turns": 17,
-            "race_lap_record": {
-              "time": "4:06.600",
-              "driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "car": {
-                "text": "Jaguar D-Type",
-                "url": "https://en.wikipedia.org/wiki/Jaguar_D-Type"
-              },
-              "year": "1955",
-              "series": "Sports prototype"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1929–1931",
-            "length_km": 16.34,
-            "length_mi": 10.153,
-            "turns": 17,
-            "race_lap_record": {
-              "time": "6:48.000",
-              "driver": {
-                "text": "Henry Birkin",
-                "url": "https://en.wikipedia.org/wiki/Tim_Birkin"
-              },
-              "car": {
-                "text": "Bentley Blower",
-                "url": "https://en.wikipedia.org/wiki/Bentley_Blower_No.1"
-              },
-              "year": "1930",
-              "series": "Sports prototype"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
-            }
-          },
-          {
-            "layout": "Circuit de la Sarthe",
-            "years": "1923–1928",
-            "length_km": 17.262,
-            "length_mi": 10.726,
-            "turns": 16,
-            "race_lap_record": {
-              "time": "8:07.000",
-              "driver": {
-                "text": "Henry Birkin",
-                "url": "https://en.wikipedia.org/wiki/Tim_Birkin"
-              },
-              "car": {
-                "text": "Bentley 4½ Litre",
-                "url": "https://en.wikipedia.org/wiki/Bentley_4%C2%BD_Litre"
-              },
-              "year": "1928",
-              "series": "Sports prototype"
-            },
-            "surface": {
-              "values": [
-                "Asphalt"
-              ],
-              "text": "Tarmac"
+              "year": "1981",
+              "series": "F3"
             }
           }
         ],
         "normalized": {
-          "name": "Circuit des 24 Heures",
+          "name": "Bugatti Circuit",
           "location": {
             "localisation1": {
               "text": "Le Mans",
@@ -5864,27 +5586,31 @@
               }
             },
             "localisation2": {
-              "text": "Pays de la Loire"
+              "text": "Pays de la Loire",
+              "link": {
+                "text": "Pays de la Loire",
+                "url": "https://en.wikipedia.org/wiki/Pays_de_la_Loire"
+              }
             },
             "localisation3": {
-              "text": "France"
+              "text": "France",
+              "link": {
+                "text": "France",
+                "url": "https://en.wikipedia.org/wiki/France"
+              }
             }
-          },
-          "coordinates": {
-            "lat": 47.933,
-            "lon": 0.233
           },
           "specs": {
             "fia_grade": 2,
-            "length_km": 17.262,
-            "length_mi": 10.726,
-            "turns": 16
+            "length_km": 4.422,
+            "length_mi": 2.748,
+            "turns": 8
           },
           "history": {
             "events": [
               {
                 "event": "opened",
-                "date": "1923-05-26"
+                "date": "1965"
               }
             ],
             "owner": "Automobile Club de l'Ouest Ville du Mans"
@@ -5893,16 +5619,31 @@
           "website": "http://www.lemans.org/en/",
           "additional_info": {
             "Major events": {
-              "text": "Current: FIA WEC 24 Hours of Le Mans (1923–1935, 1937–1939, 1949–present) Le Mans Classic (intermittently 2002–2018, 2021–2023, 2025) Former: World Sportscar Championship (1953–1955, 1957–1974, 1980–1989, 1991–1992)",
+              "text": "Current: Grand Prix motorcycle racing French motorcycle Grand Prix (1969–1970, 1976, 1979, 1983, 1985, 1987, 1989–1990, 1994–1995, 2000–present) Vitesse du Mans motorcycle Grand Prix (1991) FIM EWC 24 Hours of Le Mans Moto (1978–present) ETRC 24 Heures Camions Le Mans (2003–present) Sidecar World Championship (1969–1970, 1976, 1979, 1983, 1985, 1987, 1989–1991, 1995, 2007–2019, 2021–2022, 2024–present) Former: World SBK (1988, 1990) DTM (2006, 2008) World Series by Renault (2005–2006, 2008–2009, 2015) F3000 (1986–1991) Formula One French Grand Prix (1967)",
               "values": [
-                "Current: FIA WEC 24 Hours of Le Mans (1923–1935",
-                "1937–1939",
-                "1949–present) Le Mans Classic (intermittently 2002–2018",
-                "2021–2023",
-                "2025) Former: World Sportscar Championship (1953–1955",
-                "1957–1974",
-                "1980–1989",
-                "1991–1992)"
+                "Current: Grand Prix motorcycle racing French motorcycle Grand Prix (1969–1970",
+                "1976",
+                "1979",
+                "1983",
+                "1985",
+                "1987",
+                "1989–1990",
+                "1994–1995",
+                "2000–present) Vitesse du Mans motorcycle Grand Prix (1991) FIM EWC 24 Hours of Le Mans Moto (1978–present) ETRC 24 Heures Camions Le Mans (2003–present) Sidecar World Championship (1969–1970",
+                "1976",
+                "1979",
+                "1983",
+                "1985",
+                "1987",
+                "1989–1991",
+                "1995",
+                "2007–2019",
+                "2021–2022",
+                "2024–present) Former: World SBK (1988",
+                "1990) DTM (2006",
+                "2008) World Series by Renault (2005–2006",
+                "2008–2009",
+                "2015) F3000 (1986–1991) Formula One French Grand Prix (1967)"
               ]
             }
           }
@@ -10985,7 +10726,103 @@
     "grands_prix_held": 1,
     "details": {
       "url": "https://en.wikipedia.org/wiki/Fair_Park#Other_notable_events",
-      "infobox": {},
+      "infobox": {
+        "title": "Dallas Grand Prix Circuit",
+        "layouts": [
+          {
+            "layout": "Trans-Am Circuit",
+            "years": "1988",
+            "length_km": 2.092,
+            "length_mi": 1.3,
+            "turns": 13,
+            "race_lap_record": {
+              "time": "0:58.269",
+              "driver": {
+                "text": "Hurley Haywood",
+                "url": "https://en.wikipedia.org/wiki/Hurley_Haywood"
+              },
+              "car": {
+                "text": "Audi 200 Quattro",
+                "url": "https://en.wikipedia.org/wiki/Audi_100#Motorsport"
+              },
+              "year": "1988",
+              "series": "Trans-Am"
+            }
+          },
+          {
+            "layout": "Grand Prix Circuit",
+            "years": "1984",
+            "length_km": 3.901,
+            "length_mi": 2.424,
+            "turns": 23,
+            "race_lap_record": {
+              "time": "1:45.165",
+              "driver": {
+                "text": "Michael Roe",
+                "url": "https://en.wikipedia.org/wiki/Michael_Roe_(racing_driver)"
+              },
+              "car": {
+                "text": "VDS-002",
+                "url": "https://en.wikipedia.org/wiki/VDS-002"
+              },
+              "year": "1984",
+              "series": "Can-Am"
+            }
+          }
+        ],
+        "normalized": {
+          "name": "Dallas Grand Prix Circuit",
+          "location": {
+            "localisation1": {
+              "text": "Fair Park"
+            },
+            "localisation2": {
+              "text": "Dallas"
+            }
+          },
+          "specs": {
+            "length_km": 3.901,
+            "length_mi": 2.424,
+            "turns": 23
+          },
+          "history": {
+            "events": [
+              {
+                "event": "opened",
+                "date": "1984-07-06"
+              },
+              {
+                "event": "closed",
+                "date": "1988-05-01"
+              }
+            ]
+          },
+          "website": "https://fairpark.org/index.php/en",
+          "additional_info": {
+            "Major events": {
+              "text": "Formula One Dallas Grand Prix (1984) Trans-Am Series (1988) Can-Am (1984)",
+              "links": [
+                {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/Formula_One"
+                },
+                {
+                  "text": "Dallas Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/Dallas_Grand_Prix"
+                },
+                {
+                  "text": "Trans-Am Series",
+                  "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+                },
+                {
+                  "text": "Can-Am",
+                  "url": "https://en.wikipedia.org/wiki/Can-Am"
+                }
+              ]
+            }
+          }
+        }
+      },
       "tables": null
     }
   },

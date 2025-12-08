@@ -70,4 +70,3 @@ if __name__ == "__main__":
     print(f"Pobrano {len(data)} rekordów z pełnymi danymi torów.")
 
     scraper.to_json("../../data/wiki/circuits/f1_circuits_extended.json")
-    scraper.to_csv("../../data/wiki/circuits/f1_circuits_extended.csv")

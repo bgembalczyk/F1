@@ -5,10 +5,11 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
+from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
 
 
-class F1SingleCircuitScraper(F1Scraper):
+class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     """
     Scraper pojedynczego toru – pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 
@@ -99,44 +100,6 @@ class F1SingleCircuitScraper(F1Scraper):
             if any(kw in text for kw in keywords):
                 return True
         return False
-
-    def _extract_section_by_id(
-        self, soup: BeautifulSoup, fragment: str
-    ) -> Optional[BeautifulSoup]:
-        """
-        Zwraca pod-drzewo z daną sekcją (#id) lub None, jeśli nie znaleziono.
-
-        W praktyce:
-        - szukamy elementu z id=fragment,
-        - bierzemy nadrzędny nagłówek (h1–h6),
-        - zbieramy jego rodzeństwa aż do kolejnego nagłówka – to jest zawartość sekcji.
-        """
-        span = soup.find(id=fragment)
-        if not span:
-            return None
-
-        header = span.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"])
-        if not header:
-            return None
-
-        # Tworzymy sztucznego "roota" z samą sekcją
-        container = BeautifulSoup("<div></div>", "html.parser")
-        root = container.div
-        root.append(header)
-
-        for sib in header.next_siblings:
-            if isinstance(sib, Tag) and sib.name in [
-                "h1",
-                "h2",
-                "h3",
-                "h4",
-                "h5",
-                "h6",
-            ]:
-                break
-            root.append(sib)
-
-        return container
 
     # ------------------------------
     # Parsowanie treści
