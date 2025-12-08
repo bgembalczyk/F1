@@ -7,6 +7,7 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.run import run_and_export
 
 
 class F1Constructors2025ListScraper(F1TableScraper):
@@ -75,10 +76,9 @@ class F1Constructors2025ListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1Constructors2025ListScraper(include_urls=True)
-
-    constructors = scraper.fetch()
-    print(f"Pobrano rekordów: {len(constructors)}")
-
-    scraper.to_json("../../data/wiki/constructors/f1_constructors_2025.json")
-    scraper.to_csv("../../data/wiki/constructors/f1_constructors_2025.csv")
+    run_and_export(
+        F1Constructors2025ListScraper,
+        "../../data/wiki/constructors/f1_constructors_2025.json",
+        "../../data/wiki/constructors/f1_constructors_2025.csv",
+        include_urls=True,
+    )

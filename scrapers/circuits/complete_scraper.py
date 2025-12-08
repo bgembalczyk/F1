@@ -5,9 +5,11 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
+from f1_http.interfaces import HttpClientProtocol
 from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.base.run import run_and_export
 
 
 class F1CompleteCircuitScraper(F1Scraper):
@@ -26,15 +28,21 @@ class F1CompleteCircuitScraper(F1Scraper):
         delay_seconds: float = 1.0,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
+        http_client: Optional[HttpClientProtocol] = None,
     ) -> None:
-        super().__init__(include_urls=True, session=session, headers=headers)
+        super().__init__(
+            include_urls=True,
+            session=session,
+            headers=headers,
+            http_client=http_client,
+        )
         self.delay_seconds = delay_seconds
         self.list_scraper = F1CircuitsListScraper(
             include_urls=True,
-            session=self.session,
+            http_client=self.http_client,
         )
         self.single_scraper = F1SingleCircuitScraper(
-            session=self.session,
+            http_client=self.http_client,
             delay_seconds=delay_seconds,
         )
 
@@ -65,8 +73,9 @@ class F1CompleteCircuitScraper(F1Scraper):
 
 
 if __name__ == "__main__":
-    scraper = F1CompleteCircuitScraper(delay_seconds=1.0)
-    data = scraper.fetch()
-    print(f"Pobrano {len(data)} rekordów z pełnymi danymi torów.")
-
-    scraper.to_json("../../data/wiki/circuits/f1_circuits_extended.json")
+    run_and_export(
+        F1CompleteCircuitScraper,
+        "../../data/wiki/circuits/f1_circuits_extended.json",
+        "../../data/wiki/circuits/f1_circuits_extended.csv",
+        delay_seconds=1.0,
+    )

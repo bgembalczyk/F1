@@ -1,9 +1,11 @@
 import pytest
 
-bs4 = pytest.importorskip("bs4")
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except Exception:
+    pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
 
-from scrapers.base.helpers.utils import is_reference_link
+from scrapers.base.helpers.utils import find_section_elements, is_reference_link
 
 import sys
 import types
@@ -86,3 +88,27 @@ def test_parse_int_from_text(text, expected):
 )
 def test_parse_float_from_text(text, expected):
     assert parse_float_from_text(text) == expected
+
+
+def test_find_section_elements_missing_heading():
+    soup = BeautifulSoup("<div></div>", "html.parser")
+
+    with pytest.raises(RuntimeError):
+        find_section_elements(soup, "missing", ["table"])
+
+
+def test_find_section_elements_returns_first_after_heading():
+    html = """
+    <h2><span id="intro">Intro</span></h2>
+    <table id="before"></table>
+    <h2><span id="target">Target</span></h2>
+    <table class="wikitable" id="match-1"></table>
+    <table class="wikitable" id="match-2"></table>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    matches = find_section_elements(
+        soup, "target", ["table"], class_="wikitable"
+    )
+
+    assert matches[0]["id"] == "match-1"

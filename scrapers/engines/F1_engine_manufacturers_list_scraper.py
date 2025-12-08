@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from models.engine_manufacturer import EngineManufacturer
+from scrapers.base.run import run_and_export
 
 
 class F1EngineManufacturersListScraper(F1TableScraper):
@@ -86,10 +87,9 @@ class F1EngineManufacturersListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    scraper = F1EngineManufacturersListScraper(include_urls=True)
-
-    manufacturers = scraper.fetch()
-    print(f"Pobrano rekordów: {len(manufacturers)}")
-
-    scraper.to_json("../../data/wiki/engines/f1_engine_manufacturers.json")
-    scraper.to_csv("../../data/wiki/engines/f1_engine_manufacturers.csv")
+    run_and_export(
+        F1EngineManufacturersListScraper,
+        "../../data/wiki/engines/f1_engine_manufacturers.json",
+        "../../data/wiki/engines/f1_engine_manufacturers.csv",
+        include_urls=True,
+    )
