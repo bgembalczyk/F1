@@ -12,9 +12,6 @@ _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 T = TypeVar("T")
 
 
-T = TypeVar("T")
-
-
 def clean_wiki_text(text: str) -> str:
     """
     Normalizacja whitespace + usunięcie przypisów Wikipedii.
@@ -127,7 +124,7 @@ def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
     """
-    return _parse_number(text, r"[-+]?\d[\d,]*", int)
+    return _parse_number(text, pattern=r"[-+]?\d[\d,]*", cast=int)
 
 
 def parse_float_from_text(text: str) -> float | None:
@@ -167,7 +164,7 @@ def extract_links_from_cell(
 
     for a in cell.find_all("a", href=True):
         href = a.get("href") or ""
-        text = clean_wiki_text(a.get_text(" ", strip=True))
+        text = clean_wiki_text(a.get_text(strip=True))
 
         if is_reference_link(a, allow_local_anchors=True):
             continue
@@ -202,8 +199,8 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
     if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
         return True
 
+    text = clean_wiki_text(tag.get_text(separator=" ", strip=True))
     text = clean_wiki_text(tag.get_text(" ", strip=True))
-
     if href.startswith("#"):
         if not text or not allow_local_anchors:
             return True
@@ -225,20 +222,6 @@ def strip_marks(text: str | None) -> str | None:
         .replace("^", "")
         .strip()
     )
-
-
-def is_reference_link(tag: Tag) -> bool:
-    """True for typical footnote/reference anchors."""
-
-    href = tag.get("href") or ""
-    if "cite_note" in href:
-        return True
-
-    classes = tag.get("class") or []
-    if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
-        return True
-
-    return False
 
 
 def is_wikipedia_redlink(url: str | None) -> bool:
