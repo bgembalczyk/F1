@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 from typing import Optional, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
@@ -12,9 +12,15 @@ class F1ListScraper(F1Scraper, ABC):
 
     Konfiguracja:
     - section_id  – id elementu <span id="..."> w nagłówku sekcji
+    - record_key  – klucz w słowniku rekordu; jeżeli jest ustawiony, bazowa
+      implementacja ``parse_item`` zwraca prosty słownik z nazwą elementu i
+      (opcjonalnym) URL-em,
+    - url_key     – klucz pod którym zapisywany jest pełny URL linku.
     """
 
     section_id: Optional[str] = None
+    record_key: Optional[str] = None
+    url_key: str = "url"
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         root_list = self._find_list_root(soup)
@@ -45,7 +51,21 @@ class F1ListScraper(F1Scraper, ABC):
             raise RuntimeError("Nie znaleziono żadnej listy.")
         return lst
 
-    @abstractmethod
     def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
         """Zamienia pojedynczy <li> na słownik."""
-        raise NotImplementedError
+
+        if not self.record_key:
+            raise NotImplementedError(
+                "record_key nie jest zdefiniowany; zaimplementuj parse_item"
+            )
+
+        a = li.find("a")
+        name = li.get_text(" ", strip=True)
+        if not name:
+            return None
+
+        record: Dict[str, Any] = {self.record_key: name}
+        if self.include_urls and a and a.has_attr("href"):
+            record[self.url_key] = self._full_url(a["href"])
+
+        return record
