@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 from typing import Any, Callable, Iterable, TypeVar
 
-from bs4 import Tag
+from bs4 import BeautifulSoup, Tag
 
 # przypisy Wikipedii: [1], [b], [note 3], [citation needed], ...
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
@@ -149,6 +149,29 @@ def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
         group=1,
         normalizers=(lambda s: s.replace(",", ""),),
     )
+
+
+def find_section_elements(
+    soup: BeautifulSoup,
+    section_id: str | None,
+    target_tags: Iterable[str],
+    **kwargs: Any,
+) -> list[Tag]:
+    """Find elements after a section heading or across the whole document.
+
+    When ``section_id`` is provided, the search starts after the heading with
+    the matching id. Otherwise, all matching elements in the soup are returned.
+    Additional ``kwargs`` are forwarded to ``find_all`` / ``find_all_next``.
+    """
+
+    if section_id:
+        heading = soup.find(id=section_id)
+        if not heading:
+            raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
+
+        return list(heading.find_all_next(target_tags, **kwargs))
+
+    return list(soup.find_all(target_tags, **kwargs))
 
 
 def extract_links_from_cell(

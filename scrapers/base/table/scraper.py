@@ -2,11 +2,15 @@ from __future__ import annotations
 
 import re
 from abc import ABC
-from typing import Optional, Sequence, Mapping, List, Dict, Any, Iterable
+from typing import Optional, Sequence, Mapping, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.utils import (
+    clean_wiki_text,
+    extract_links_from_cell,
+    find_section_elements,
+)
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -83,18 +87,9 @@ class F1TableScraper(F1Scraper, ABC):
         """
         Znajduje tabelę na podstawie section_id i / lub expected_headers.
         """
-        candidate_tables: Iterable[Tag]
-
-        if self.section_id:
-            # Szukamy nagłówka z danym id i pierwszej tabeli po nim
-            heading = soup.find(id=self.section_id)
-            if not heading:
-                raise RuntimeError(f"Nie znaleziono sekcji o id={self.section_id!r}")
-            candidate_tables = heading.find_all_next(
-                "table", class_=self.table_css_class
-            )
-        else:
-            candidate_tables = soup.find_all("table", class_=self.table_css_class)
+        candidate_tables = find_section_elements(
+            soup, self.section_id, ["table"], class_=self.table_css_class
+        )
 
         for table in candidate_tables:
             header_row = table.find("tr")

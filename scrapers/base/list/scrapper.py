@@ -3,6 +3,7 @@ from typing import Optional, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.utils import find_section_elements
 from scrapers.base.scraper import F1Scraper
 
 
@@ -28,22 +29,15 @@ class F1ListScraper(F1Scraper, ABC):
         return items
 
     def _find_list_root(self, soup: BeautifulSoup) -> Tag:
+        candidate_lists = find_section_elements(soup, self.section_id, ["ul", "ol"])
+
+        if candidate_lists:
+            return candidate_lists[0]
+
         if self.section_id:
-            heading = soup.find(id=self.section_id)
-            if not heading:
-                raise RuntimeError(f"Nie znaleziono sekcji o id={self.section_id!r}")
+            raise RuntimeError("Nie znaleziono listy w sekcji.")
 
-            # szukamy pierwszej listy (ul/ol) po nagłówku
-            lst = heading.find_next(["ul", "ol"])
-            if not lst:
-                raise RuntimeError("Nie znaleziono listy w sekcji.")
-            return lst
-
-        # fallback: pierwsza lista na stronie
-        lst = soup.find(["ul", "ol"])
-        if not lst:
-            raise RuntimeError("Nie znaleziono żadnej listy.")
-        return lst
+        raise RuntimeError("Nie znaleziono żadnej listy.")
 
     @abstractmethod
     def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
