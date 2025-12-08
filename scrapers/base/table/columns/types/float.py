@@ -1,10 +1,5 @@
-from typing import Any
-
-from scrapers.base.helpers.utils import parse_float_from_text
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 
 
-class FloatColumn(BaseColumn):
-    def parse(self, ctx: ColumnContext) -> Any:
-        return parse_float_from_text(ctx.clean_text)
+def FloatColumn() -> ParsedValueColumn:
+    return ParsedValueColumn(float)
