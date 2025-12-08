@@ -504,4 +504,119 @@ def normalize_circuit_record(raw: Dict[str, Any]) -> Dict[str, Any]:
     if layouts:
         out["layouts"] = layouts
 
+    # -----------------------
+    # FINAL CLEANUP JSON
+    # -----------------------
+
+    def cleanup_urls(obj: Any) -> Any:
+        """
+        Usuwa url=None oraz rekursywnie czyści elementy.
+        """
+        if isinstance(obj, list):
+            return [cleanup_urls(x) for x in obj if x is not None]
+
+        if isinstance(obj, dict):
+            cleaned = {}
+            for k, v in obj.items():
+                if v is None:
+                    continue
+                cv = cleanup_urls(v)
+                # pomiń puste listy
+                if cv == []:
+                    continue
+                # pomiń dict zawierający tylko url:null
+                if isinstance(cv, dict) and set(cv.keys()) == set():
+                    continue
+                cleaned[k] = cv
+            return cleaned
+
+        return obj
+
+    def simplify_time(rec: Dict[str, Any]) -> None:
+        """
+        Zamienia time dict na float jeśli jest seconds,
+        albo próbuje zparsować tekstowo.
+        """
+        t = rec.get("time")
+        if not isinstance(t, dict):
+            return
+
+        # preferuj seconds
+        if "seconds" in t:
+            rec["time"] = t["seconds"]
+            return
+
+        # fallback: spróbuj sparsować t["text"]
+        txt = t.get("text")
+        if not txt:
+            rec["time"] = None
+            return
+
+        # parse MM:SS.xxx
+        import re
+        m = re.match(r"(?:(\d+):)?(\d+\.\d+|\d+)", txt.strip())
+        if m:
+            minutes = int(m.group(1)) if m.group(1) else 0
+            seconds = float(m.group(2))
+            rec["time"] = minutes * 60 + seconds
+        else:
+            # jeśli się nie da — zostaw tekst
+            rec["time"] = txt
+
+    def simplify_date(rec: Dict[str, Any]) -> None:
+        """
+        Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY".
+        """
+        d = rec.get("date")
+        if not isinstance(d, dict):
+            return
+        iso = d.get("iso")
+        if iso:
+            rec["date"] = iso
+        else:
+            # fallback — jeśli był tylko rok
+            txt = d.get("text")
+            if txt:
+                rec["date"] = txt.strip()
+
+    # -----------------------
+    # APPLY CLEANUP TO LAYOUT RECORDS
+    # -----------------------
+
+    for lay in out.get("layouts", []):
+        records = lay.get("race_lap_records", [])
+        for r in records:
+            simplify_time(r)
+            simplify_date(r)
+
+    # -----------------------
+    # CLEAN URL=NULL IN WHOLE OUTPUT
+    # -----------------------
+
+    out = cleanup_urls(out)
+
+    # -----------------------
+    # REMOVE EMPTY LISTS (e.g. former_names: [])
+    # -----------------------
+
+    def remove_empty_lists(obj):
+        if isinstance(obj, dict):
+            keys_to_del = []
+            for k, v in obj.items():
+                rv = remove_empty_lists(v)
+                if rv == []:
+                    keys_to_del.append(k)
+                else:
+                    obj[k] = rv
+            for k in keys_to_del:
+                del obj[k]
+            return obj
+        if isinstance(obj, list):
+            new_list = [remove_empty_lists(x) for x in obj]
+            return [x for x in new_list if x != []]
+        return obj
+
+    out = remove_empty_lists(out)
+
     return out
+
