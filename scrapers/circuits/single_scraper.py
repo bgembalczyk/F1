@@ -245,16 +245,19 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                     continue
 
                 # --- 3) normalny wiersz z danymi ---
-                record = lap_scraper.parse_row(tr, cells, headers)
-                if not record:
+                # może zawierać wiele rekordów logicznych rozdzielonych <br>
+                row_records = lap_scraper.parse_multi_row(tr, cells, headers)
+                if not row_records:
                     continue
 
-                # przypisujemy layout – najpierw aktualny, potem baza, a jak nic nie ma to None
                 layout_name = current_layout or base_layout
-                if layout_name:
-                    record.setdefault("layout", layout_name)
 
-                results.append(record)
+                for record in row_records:
+                    if not record:
+                        continue
+                    if layout_name:
+                        record.setdefault("layout", layout_name)
+                    results.append(record)
 
             # --- grupowanie po layoutach ---
             layouts: Dict[str, List[Dict[str, Any]]] = {}

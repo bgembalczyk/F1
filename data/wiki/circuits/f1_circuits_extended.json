@@ -619,10 +619,22 @@
             }
           },
           {
-            "category": {
+            "driver": {
+              "text": "Ross Cheever",
+              "url": "https://en.wikipedia.org/wiki/Ross_Cheever"
+            },
+            "vehicle": {
+              "text": "Ralt RT4",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
+            },
+            "time": 93.2,
+            "date": "1985-11-02",
+            "series": {
               "text": "Formula Mondial",
               "url": "https://en.wikipedia.org/wiki/Formula_Mondial"
-            },
+            }
+          },
+          {
             "driver": {
               "text": "John Bowe",
               "url": "https://en.wikipedia.org/wiki/John_Bowe_(racing_driver)"
@@ -632,7 +644,11 @@
               "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
             },
             "time": 93.2,
-            "date": "2 November 1985  25 October 1986"
+            "date": "1986-10-25",
+            "series": {
+              "text": "Formula Mondial",
+              "url": "https://en.wikipedia.org/wiki/Formula_Mondial"
+            }
           },
           {
             "driver": {
@@ -2193,8 +2209,7 @@
             },
             "time": 103.894,
             "driver_rider": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Noam_Abramczyk"
+              "text": "Noam Abramczyk"
             },
             "vehicle": {
               "text": "Tatuus F4-T014",
@@ -2585,8 +2600,7 @@
             },
             "time": 114.414,
             "driver_rider": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/David_Salvador_(motociclista)"
+              "text": "David Salvador"
             },
             "vehicle": {
               "text": "Kawasaki Ninja 400",
@@ -3235,8 +3249,7 @@
             },
             "time": 98.366,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Unai_Orradre"
+              "text": "Unai Orradre"
             },
             "vehicle": {
               "text": "Kalex Moto2",
@@ -4169,8 +4182,7 @@
             },
             "time": 65.64,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Clemens_Schickentanz"
+              "text": "Clemens Schickentanz"
             },
             "vehicle": {
               "text": "Porsche Carrera RSR",
@@ -5393,8 +5405,7 @@
             },
             "time": 85.134,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Gerardo_Nieto_(piloto)"
+              "text": "Gerardo Nieto"
             },
             "vehicle": {
               "text": "Audi RS 3 LMS TCR",
@@ -5448,12 +5459,30 @@
             },
             "time": 44.395,
             "driver": {
-              "text": "José Luis Ramírez",
-              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Ram%C3%ADrez_(racing_driver)"
+              "text": "Xavi Razo"
             },
             "vehicle": {
               "text": "Toyota Camry NASCAR",
               "url": "https://en.wikipedia.org/wiki/Toyota_Camry_(XV50)"
+            },
+            "event": {
+              "text": "2017 Gran Premio FedEx",
+              "url": "https://en.wikipedia.org/wiki/2017_NASCAR_PEAK_Mexico_Series"
+            }
+          },
+          {
+            "category": {
+              "text": "Stock car racing",
+              "url": "https://en.wikipedia.org/wiki/Stock_car_racing"
+            },
+            "time": 44.395,
+            "driver": {
+              "text": "José Luis Ramírez",
+              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Ram%C3%ADrez_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Ford Fusion NASCAR",
+              "url": "https://en.wikipedia.org/wiki/Ford_Fusion_(Americas)#NASCAR"
             },
             "event": {
               "text": "2017 Gran Premio FedEx",
@@ -5540,8 +5569,7 @@
             },
             "time": 78.287,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Gerardo_Nieto_(piloto)"
+              "text": "Gerardo Nieto"
             },
             "vehicle": {
               "text": "Tatuus FA010",
@@ -5709,10 +5737,6 @@
             "event": {
               "text": "2009 Rio F3 Sudamericana round",
               "url": "https://en.wikipedia.org/wiki/2009_Formula_3_Sudamericana_season"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Jacarepagu%C3%A1-short_circuit.png"
             }
           },
           {
@@ -5760,8 +5784,7 @@
             },
             "time": 77.151,
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Alan_Hellmeister"
+              "text": "Alan Hellmeister"
             },
             "vehicle": {
               "text": "Aston Martin V8 Vantage GT4",
@@ -5779,8 +5802,7 @@
             },
             "time": 77.777,
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Alan_Hellmeister"
+              "text": "Alan Hellmeister"
             },
             "vehicle": {
               "text": "Ferrari F430 Challenge",
@@ -5856,10 +5878,6 @@
             },
             "event": {
               "text": "2005 Rio F3 Sudamericana round"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Jacarepagu%C3%A1.svg"
             }
           },
           {
@@ -5869,8 +5887,7 @@
             },
             "time": 109.647,
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Alan_Hellmeister"
+              "text": "Alan Hellmeister"
             },
             "vehicle": {
               "text": "Tatuus FR2000",
@@ -6020,10 +6037,6 @@
             "event": {
               "text": "1999 Grand Prix Telemar Rio 200",
               "url": "https://en.wikipedia.org/wiki/1999_Grand_Prix_Telemar_Rio_200"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Jacarepagu%C3%A1-oval.svg"
             }
           },
           {
@@ -6097,10 +6110,6 @@
             "event": {
               "text": "1989 Brazilian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Aut%C3%B3dromo_de_Jacarepagu%C3%A1_1978-1995.png"
             }
           },
           {
@@ -6484,8 +6493,7 @@
             },
             "time": 104.347,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ranieri_Randaccio"
+              "text": "Ranieri Randaccio"
             },
             "vehicle": {
               "text": "Spice SE90C",
@@ -7102,8 +7110,7 @@
             },
             "time": 118.169,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Bruno_Ieraci"
+              "text": "Bruno Ieraci"
             },
             "vehicle": {
               "text": "Triumph Daytona 660",
@@ -7437,12 +7444,30 @@
             },
             "time": 641.0,
             "driver": {
-              "text": "Umberto Maglioli",
-              "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
+              "text": "Giulio Cabianca",
+              "url": "https://en.wikipedia.org/wiki/Giulio_Cabianca"
             },
             "vehicle": {
               "text": "OSCA MT4",
               "url": "https://en.wikipedia.org/wiki/OSCA_MT4"
+            },
+            "event": {
+              "text": "1955 Mugello Grand Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            },
+            "time": 641.0,
+            "driver": {
+              "text": "Umberto Maglioli",
+              "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
+            },
+            "vehicle": {
+              "text": "Ferrari 750 Monza",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_750_Monza"
             },
             "event": {
               "text": "1955 Mugello Grand Prix"
@@ -7586,12 +7611,31 @@
             },
             "time": 853.6,
             "driver": {
-              "text": "Gastone Brilli-Peri",
-              "url": "https://en.wikipedia.org/wiki/Gastone_Brilli-Peri"
+              "text": "Emilio Materassi",
+              "url": "https://en.wikipedia.org/wiki/Emilio_Materassi"
             },
             "vehicle": {
               "text": "Itala Special 4.7",
               "url": "https://en.wikipedia.org/wiki/Itala_Special"
+            },
+            "event": {
+              "text": "1925 Mugello Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1925_Grand_Prix_season"
+            }
+          },
+          {
+            "category": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 853.6,
+            "driver": {
+              "text": "Gastone Brilli-Peri",
+              "url": "https://en.wikipedia.org/wiki/Gastone_Brilli-Peri"
+            },
+            "vehicle": {
+              "text": "Alfa Romeo P2",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_P2"
             },
             "event": {
               "text": "1925 Mugello Grand Prix",
@@ -8085,8 +8129,7 @@
             },
             "time": 99.784,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -8538,8 +8581,7 @@
             },
             "time": 117.009,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Bruno_Ieraci"
+              "text": "Bruno Ieraci"
             },
             "vehicle": {
               "text": "Triumph Daytona 660",
@@ -8557,8 +8599,7 @@
             },
             "time": 125.669,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Mattia_Martella"
+              "text": "Mattia Martella"
             },
             "vehicle": {
               "text": "Kawasaki Ninja 400",
@@ -8828,8 +8869,7 @@
             },
             "time": 113.122,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Kevin_Curtain"
+              "text": "Kevin Curtain"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -9526,8 +9566,7 @@
             },
             "time": 102.3,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Sandro_Cinotti"
+              "text": "Sandro Cinotti"
             },
             "vehicle": {
               "text": "Brabham BT35C",
@@ -9636,8 +9675,7 @@
             },
             "time": 124.1,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Herbert_Demetz"
+              "text": "Herbert Demetz"
             },
             "vehicle": {
               "text": "Abarth Simca 1300 GT",
@@ -10268,18 +10306,17 @@
               "text": "TCR Touring Car",
               "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
             },
-            "time": 102.304,
+            "time": 102.044,
             "driver": {
-              "text": "Pepe Oriola",
-              "url": "https://en.wikipedia.org/wiki/Pepe_Oriola"
+              "text": "Pedro Cardoso"
             },
             "vehicle": {
-              "text": "Honda Civic Type R TCR (FK8)",
-              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FK7/FK8_(2017)"
+              "text": "Peugeot 308 GTi TCR",
+              "url": "https://en.wikipedia.org/wiki/Peugeot_308"
             },
             "event": {
-              "text": "2021 Interlagos TCR South America round",
-              "url": "https://en.wikipedia.org/wiki/2021_TCR_South_America_Touring_Car_Championship"
+              "text": "2025 Interlagos TCR South America round",
+              "url": "https://es.wikipedia.org/wiki/Temporada_2025_de_TCR_South_America"
             }
           },
           {
@@ -10308,8 +10345,7 @@
             },
             "time": 102.598,
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Alan_Hellmeister"
+              "text": "Alan Hellmeister"
             },
             "vehicle": {
               "text": "Ferrari F430 Challenge",
@@ -10383,8 +10419,7 @@
             },
             "time": 106.03,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Marcelo_Bugliotti"
+              "text": "Marcelo Bugliotti"
             },
             "vehicle": {
               "text": "Chevrolet Astra",
@@ -10457,8 +10492,7 @@
             },
             "time": 124.355,
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Leandro_Totti"
+              "text": "Leandro Totti"
             },
             "vehicle": {
               "text": "Iveco Truck",
@@ -11884,8 +11918,7 @@
               "url": "https://en.wikipedia.org/wiki/SRO_GT2"
             },
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Reinhard_Kofler"
+              "text": "Reinhard Kofler"
             },
             "vehicle": {
               "text": "KTM X-Bow GT2",
@@ -12072,8 +12105,7 @@
               "url": "https://en.wikipedia.org/wiki/Group_CN"
             },
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Sabrina_Hungerb%C3%BChler"
+              "text": "Sabrina Hungerbühler"
             },
             "vehicle": {
               "text": "Osella PA20",
@@ -12597,8 +12629,7 @@
               "url": "https://en.wikipedia.org/wiki/Sport_bike#Classes"
             },
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Stefano_Cruciani"
+              "text": "Stefano Cruciani"
             },
             "vehicle": {
               "text": "Kawasaki Ninja ZX-6R",
@@ -12999,8 +13030,7 @@
               "url": "https://en.wikipedia.org/wiki/Formula_Three"
             },
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Michele_Gasparini"
+              "text": "Michele Gasparini"
             },
             "vehicle": {
               "text": "Dallara F394",
@@ -13143,8 +13173,7 @@
               "url": "https://en.wikipedia.org/wiki/Group_C"
             },
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ranieri_Randaccio"
+              "text": "Ranieri Randaccio"
             },
             "vehicle": {
               "text": "Spice SE90C",
@@ -13675,12 +13704,31 @@
               "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
             },
             "driver": {
-              "text": "Jochen Mass",
-              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+              "text": "Vittorio Brambilla",
+              "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
             },
             "vehicle": {
               "text": "BMW 3.0 CSL",
               "url": "https://en.wikipedia.org/wiki/BMW_E9#3.0_CSL"
+            },
+            "time": 98.3,
+            "event": {
+              "text": "1973 4 Hours of Monza",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+            }
+          },
+          {
+            "category": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "vehicle": {
+              "text": "Ford Capri RS 2600",
+              "url": "https://en.wikipedia.org/wiki/Ford_Capri#Mk_I_facelift"
             },
             "time": 98.3,
             "event": {
@@ -14627,8 +14675,7 @@
             },
             "time": 110.349,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Jorge_Barrio"
+              "text": "Jorge Barrio"
             },
             "vehicle": {
               "text": "Tito F4-A Renault"
@@ -14726,8 +14773,7 @@
             },
             "time": 129.572,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Juan_%C3%81ngel_Rosso"
+              "text": "Juan Ángel Rosso"
             },
             "vehicle": {
               "text": "Ford Focus",
@@ -14768,8 +14814,7 @@
             },
             "time": 90.127,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Juan_Mart%C3%ADn_Trucco"
+              "text": "Juan Martín Trucco"
             },
             "vehicle": {
               "text": "Dodge Challenger SRT Hellcat",
@@ -14980,8 +15025,7 @@
             },
             "time": 78.239,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Dami%C3%A1n_Fineschi"
+              "text": "Damián Fineschi"
             },
             "vehicle": {
               "text": "Chevrolet Cruze Mk.2",
@@ -15016,8 +15060,7 @@
             },
             "time": 80.257,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Jorge_Barrio"
+              "text": "Jorge Barrio"
             },
             "vehicle": {
               "text": "Tito F4-A Renault"
@@ -15151,8 +15194,7 @@
             },
             "time": 81.345,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Jorge_Barrio"
+              "text": "Jorge Barrio"
             },
             "vehicle": {
               "text": "Toyota GR Corolla Sport TCR",
@@ -15187,8 +15229,7 @@
             },
             "time": 81.372,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Federico_Hermida"
+              "text": "Federico Hermida"
             },
             "vehicle": {
               "text": "Mygale M14-F4",
@@ -15346,8 +15387,7 @@
               "url": "https://en.wikipedia.org/wiki/Stock_Car_Pro_Series"
             },
             "driver": {
-              "text": "pt",
-              "url": "https://pt.wikipedia.org/wiki/Ruben_Fontes"
+              "text": "Ruben Fontes"
             },
             "vehicle": {
               "text": "Chevrolet Astra",
@@ -15677,12 +15717,31 @@
             },
             "time": 139.5,
             "driver": {
-              "text": "Giuseppe Farina",
-              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
             },
             "vehicle": {
               "text": "Mercedes-Benz W196",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W196"
+            },
+            "event": {
+              "text": "1955 Buenos Aires Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1955_Buenos_Aires_Grand_Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "time": 139.5,
+            "driver": {
+              "text": "Giuseppe Farina",
+              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+            },
+            "vehicle": {
+              "text": "Ferrari 625 F1",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Tipo_500#625_F1"
             },
             "event": {
               "text": "1955 Buenos Aires Grand Prix",
@@ -16244,8 +16303,7 @@
             },
             "time": 139.12,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Rolf_G%C3%B6tz"
+              "text": "Rolf Götz"
             },
             "vehicle": {
               "text": "Chevron B31",
@@ -16282,8 +16340,7 @@
             },
             "time": 146.34,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Harald_Brutschin"
+              "text": "Harald Brutschin"
             },
             "vehicle": {
               "text": "Ralt RT3",
@@ -16349,8 +16406,7 @@
             },
             "time": 133.5,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Gerhard_Koch_(Rennfahrer)"
+              "text": "Gerhard Koch"
             },
             "vehicle": {
               "text": "Porsche 906",
@@ -17879,10 +17935,6 @@
             "event": {
               "text": "2008–09 A1 Grand Prix of Nations, Great Britain",
               "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_of_Nations,_Great_Britain"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_2003.svg"
             }
           },
           {
@@ -18447,10 +18499,6 @@
             "event": {
               "text": "2004 Brands Hatch EuroBOSS round",
               "url": "https://en.wikipedia.org/wiki/BOSS_GP"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_Indy_2003.svg"
             }
           },
           {
@@ -18517,8 +18565,7 @@
             },
             "time": 44.637,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Jos%C3%A9_Alonso_Liste"
+              "text": "José Alonso Liste"
             },
             "vehicle": {
               "text": "Formula Palmer Audi car",
@@ -18684,8 +18731,7 @@
             },
             "time": 46.762,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Euan_Hankey"
+              "text": "Euan Hankey"
             },
             "vehicle": {
               "text": "Mygale FB02",
@@ -18880,10 +18926,6 @@
             "event": {
               "text": "2001 Brands Hatch EuroBOSS round",
               "url": "https://en.wikipedia.org/wiki/BOSS_GP"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_1999-2002.svg"
             }
           },
           {
@@ -19058,10 +19100,6 @@
             "event": {
               "text": "1991 Brands Hatch F3000 round",
               "url": "https://en.wikipedia.org/wiki/1991_International_Formula_3000_Championship"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_1988-1998.svg"
             }
           },
           {
@@ -19166,8 +19204,7 @@
             },
             "time": 85.829,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Detlef_H%C3%BCbner"
+              "text": "Detlef Hübner"
             },
             "vehicle": {
               "text": "Porsche 911 GT2",
@@ -19223,8 +19260,7 @@
             },
             "time": 90.238,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/St%C3%A9phane_Chambon"
+              "text": "Stéphane Chambon"
             },
             "vehicle": {
               "text": "Suzuki GSX-R600",
@@ -19295,10 +19331,6 @@
             "event": {
               "text": "1996 1st Brands Hatch British F2 round",
               "url": "https://en.wikipedia.org/wiki/1996_British_Formula_Two_Championship"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_Indy.jpg"
             }
           },
           {
@@ -19531,10 +19563,6 @@
             "event": {
               "text": "1986 British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_1976-1987.svg"
             }
           },
           {
@@ -19739,8 +19767,8 @@
             },
             "time": 81.1,
             "driver": {
-              "text": "Tom Pryce",
-              "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
             },
             "vehicle": {
               "text": "Ferrari 312B3",
@@ -19749,10 +19777,25 @@
             "event": {
               "text": "1974 British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1974_British_Grand_Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_1960-1975.svg"
+            "time": 81.1,
+            "driver": {
+              "text": "Tom Pryce",
+              "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
+            },
+            "vehicle": {
+              "text": "Shadow DN5",
+              "url": "https://en.wikipedia.org/wiki/Shadow_DN5"
+            },
+            "event": {
+              "text": "1975 Race of Champions",
+              "url": "https://en.wikipedia.org/wiki/1975_Race_of_Champions"
             }
           },
           {
@@ -19942,10 +19985,6 @@
             "event": {
               "text": "1972 Brands Hatch MN GT round",
               "url": "https://en.wikipedia.org/wiki/European_Sportscar_Championship#1970_–_1975"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Brands_Hatch_1954-1959.svg"
             }
           },
           {
@@ -20423,8 +20462,7 @@
             },
             "time": 107.204,
             "driver": {
-              "text": "cs",
-              "url": "https://cs.wikipedia.org/wiki/David_Vr%C5%A1eck%C3%BD"
+              "text": "David Vršecký"
             },
             "vehicle": {
               "text": "Tata Prima Racing",
@@ -20672,8 +20710,7 @@
             },
             "time": 93.503,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -22063,12 +22100,30 @@
             },
             "time": 230.1,
             "driver": {
-              "text": "Lorenzo Bandini",
-              "url": "https://en.wikipedia.org/wiki/Lorenzo_Bandini"
+              "text": "Tony Hegbourne"
             },
             "vehicle": {
               "text": "Lotus 23B",
               "url": "https://en.wikipedia.org/wiki/Lotus_23#The_23B"
+            },
+            "event": {
+              "text": "1963 Trophées d'Auvergne",
+              "url": "https://en.wikipedia.org/wiki/1963_World_Sportscar_Championship"
+            }
+          },
+          {
+            "category": {
+              "text": "Sports cars",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            },
+            "time": 230.1,
+            "driver": {
+              "text": "Lorenzo Bandini",
+              "url": "https://en.wikipedia.org/wiki/Lorenzo_Bandini"
+            },
+            "vehicle": {
+              "text": "Ferrari 250 TRI61",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_250_Testa_Rossa#1961:_TRI61"
             },
             "event": {
               "text": "1963 Trophées d'Auvergne",
@@ -24716,8 +24771,7 @@
             },
             "time": 113.012,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Oliver_Mathai"
+              "text": "Oliver Mathai"
             },
             "vehicle": {
               "text": "Porsche 911 (996) GT3 Cup",
@@ -24977,8 +25031,7 @@
             },
             "time": 90.032,
             "driver": {
-              "text": "cs",
-              "url": "https://cs.wikipedia.org/wiki/David_Vr%C5%A1eck%C3%BD"
+              "text": "David Vršecký"
             },
             "vehicle": {
               "text": "Freightliner",
@@ -25934,10 +25987,6 @@
             "event": {
               "text": "2002 French Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2002_French_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_de_Nevers_Magny-Cours_(1992-2002).svg"
             }
           },
           {
@@ -26004,8 +26053,7 @@
             },
             "time": 89.78,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Val_Hillebrand"
+              "text": "Val Hillebrand"
             },
             "vehicle": {
               "text": "Dome S101",
@@ -26042,8 +26090,7 @@
             },
             "time": 94.879,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ranieri_Randaccio"
+              "text": "Ranieri Randaccio"
             },
             "vehicle": {
               "text": "Spice SE90C",
@@ -26322,10 +26369,6 @@
             "event": {
               "text": "1991 French Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1991_French_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_de_Nevers_Magny-Cours_(1991).svg"
             }
           },
           {
@@ -26354,8 +26397,7 @@
             },
             "time": 96.21,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Ludovic_Faure"
+              "text": "Ludovic Faure"
             },
             "vehicle": {
               "text": "Ralt RT35",
@@ -26443,8 +26485,7 @@
             },
             "event": {
               "text": "1975 Grand Prix de Magny-Cours"
-            },
-            "circuit_map": ""
+            }
           },
           {
             "category": {
@@ -26560,10 +26601,6 @@
             },
             "event": {
               "text": "1969 Magny-Cours Group 4 race"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_Jean_Behra.png"
             }
           },
           {
@@ -26626,10 +26663,6 @@
             "event": {
               "text": "2004 French Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2004_French_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_de_Nevers_Magny-Cours.svg"
             }
           },
           {
@@ -27018,8 +27051,7 @@
             },
             "time": 104.117,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Max_Weering"
+              "text": "Max Weering"
             },
             "vehicle": {
               "text": "Lamborghini Huracán LP 620-2 Super Trofeo EVO",
@@ -27223,8 +27255,7 @@
             },
             "time": 111.835,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Matteo_Vannucci"
+              "text": "Matteo Vannucci"
             },
             "vehicle": {
               "text": "Yamaha YZF-R3",
@@ -27475,6 +27506,25 @@
             },
             "event": {
               "text": "1946 Penya Rhin Grand Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 106.0,
+            "driver": {
+              "text": "Luigi Villoresi",
+              "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+            },
+            "vehicle": {
+              "text": "Maserati 4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT#The_4CLT"
+            },
+            "event": {
+              "text": "1948 Penya Rhin Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1948_Penya_Rhin_Grand_Prix"
             }
           },
           {
@@ -27993,8 +28043,7 @@
             },
             "time": 187.4,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Ren%C3%A9_Carri%C3%A8re"
+              "text": "René Carrière"
             },
             "vehicle": {
               "text": "Delahaye 145",
@@ -28731,8 +28780,7 @@
             },
             "time": 135.795,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -28994,8 +29042,7 @@
             },
             "time": 149.158,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Steven_Palette"
+              "text": "Steven Palette"
             },
             "vehicle": {
               "text": "Ligier JS2 R",
@@ -29835,8 +29882,7 @@
             },
             "time": 144.663,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Renaud_Derlot"
+              "text": "Renaud Derlot"
             },
             "vehicle": {
               "text": "Tatuus FR2000",
@@ -30224,12 +30270,31 @@
             },
             "time": 149.89,
             "driver": {
-              "text": "Fabrizio Pirovano",
-              "url": "https://en.wikipedia.org/wiki/Fabrizio_Pirovano"
+              "text": "Doug Polen",
+              "url": "https://en.wikipedia.org/wiki/Doug_Polen"
             },
             "vehicle": {
               "text": "Ducati 888 SBK",
               "url": "https://en.wikipedia.org/wiki/Ducati_888"
+            },
+            "event": {
+              "text": "1992 Spa World SBK round",
+              "url": "https://it.wikipedia.org/wiki/Gran_Premio_di_superbike_di_Spa-Francorchamps_1992"
+            }
+          },
+          {
+            "category": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            },
+            "time": 149.89,
+            "driver": {
+              "text": "Fabrizio Pirovano",
+              "url": "https://en.wikipedia.org/wiki/Fabrizio_Pirovano"
+            },
+            "vehicle": {
+              "text": "Yamaha FZR1000",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_FZR1000"
             },
             "event": {
               "text": "1992 Spa World SBK round",
@@ -30399,8 +30464,7 @@
             },
             "time": 169.25,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Kenny_Blake"
+              "text": "Kenny Blake"
             },
             "vehicle": {
               "text": "Yamaha YZR500",
@@ -30418,8 +30482,7 @@
             },
             "time": 170.08,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Eduard_St%C3%B6llinger"
+              "text": "Eduard Stöllinger"
             },
             "vehicle": {
               "text": "Kawasaki KR250",
@@ -30437,8 +30500,7 @@
             },
             "time": 181.28,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Jean-Fran%C3%A7ois_L%C3%A9cureux"
+              "text": "Jean-François Lécureux"
             },
             "vehicle": {
               "text": "Morbidelli 125 GP",
@@ -30685,8 +30747,7 @@
             },
             "time": 251.2,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Chris_Tuerlinx"
+              "text": "Chris Tuerlinx"
             },
             "vehicle": {
               "text": "Chevrolet Camaro",
@@ -30707,10 +30768,7 @@
               "text": "Rolf Steinhausen",
               "url": "https://en.wikipedia.org/wiki/Rolf_Steinhausen"
             },
-            "vehicle": {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-            },
+            "vehicle": "Busch-",
             "event": {
               "text": "1977 Belgian motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1977_Belgian_motorcycle_Grand_Prix"
@@ -31024,10 +31082,6 @@
             "event": {
               "text": "2015 BOSS GP Dijon Motors Cup",
               "url": "https://en.wikipedia.org/wiki/BOSS_GP"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_de_Dijon-Prenois-1975.svg"
             }
           },
           {
@@ -31485,8 +31539,7 @@
             },
             "time": 81.16,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Edgar_D%C3%B6ren"
+              "text": "Edgar Dören"
             },
             "vehicle": {
               "text": "Porsche 935 K3",
@@ -31559,8 +31612,7 @@
             },
             "time": 83.24,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Jean-Claude_Basso"
+              "text": "Jean-Claude Basso"
             },
             "vehicle": {
               "text": "Venturi 600 LM",
@@ -31705,10 +31757,6 @@
             "event": {
               "text": "1974 French Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1974_French_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_de_Dijon-Prenois-1972.svg"
             }
           },
           {
@@ -32348,8 +32396,7 @@
             },
             "time": 95.91,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Cort_Wagner"
+              "text": "Cort Wagner"
             },
             "vehicle": {
               "text": "Ferrari 360 Modena GT",
@@ -32595,12 +32642,30 @@
             },
             "time": 76.6,
             "driver": {
-              "text": "Ludwig Heimrath",
-              "url": "https://en.wikipedia.org/wiki/Ludwig_Heimrath"
+              "text": "Pedro Rodríguez",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
             },
             "vehicle": {
               "text": "Ferrari 275 P",
               "url": "https://en.wikipedia.org/wiki/Ferrari_P#275_P_and_330_P"
+            },
+            "event": {
+              "text": "1964 Player's Québec Trophy"
+            }
+          },
+          {
+            "category": {
+              "text": "Prototype",
+              "url": "https://en.wikipedia.org/wiki/Sports_prototype"
+            },
+            "time": 76.6,
+            "driver": {
+              "text": "Ludwig Heimrath",
+              "url": "https://en.wikipedia.org/wiki/Ludwig_Heimrath"
+            },
+            "vehicle": {
+              "text": "Cooper T61",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T61"
             },
             "event": {
               "text": "1964 Player's Québec Trophy"
@@ -32613,14 +32678,28 @@
             },
             "time": 80.8,
             "driver": {
-              "text": "Norm Evenden"
+              "text": "Walt Mackay"
             },
             "vehicle": {
               "text": "Lotus 18",
               "url": "https://en.wikipedia.org/wiki/Lotus_18"
             },
             "event": {
-              "text": "1964 Regional Mont-Tremblant (Invitational)  1964 Regional Mont-Tremblant (Trophy)"
+              "text": "1964 Regional Mont-Tremblant (Invitational)"
+            }
+          },
+          {
+            "category": {
+              "text": "Formula Junior",
+              "url": "https://en.wikipedia.org/wiki/Formula_Junior"
+            },
+            "time": 80.8,
+            "driver": {
+              "text": "Norm Evenden"
+            },
+            "vehicle": "Cooper Chevrolet",
+            "event": {
+              "text": "1964 Regional Mont-Tremblant (Trophy)"
             }
           },
           {
@@ -33694,8 +33773,7 @@
             },
             "time": 133.939,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Matteo_Bertelle"
+              "text": "Matteo Bertelle"
             },
             "vehicle": {
               "text": "KTM RC250GP",
@@ -34656,8 +34734,7 @@
             },
             "time": 123.447,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -34675,8 +34752,7 @@
             },
             "time": 124.614,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Reinhard_Kofler"
+              "text": "Reinhard Kofler"
             },
             "vehicle": {
               "text": "KTM X-Bow GT2",
@@ -34749,8 +34825,7 @@
             },
             "time": 128.334,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Piero_Longhi"
+              "text": "Piero Longhi"
             },
             "vehicle": {
               "text": "Dallara F308",
@@ -34786,8 +34861,7 @@
             },
             "time": 129.245,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Nicola_Cadei"
+              "text": "Nicola Cadei"
             },
             "vehicle": {
               "text": "Ferrari F430 GTC",
@@ -34824,8 +34898,7 @@
             },
             "time": 129.654,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Jorge_Bas_Viguera"
+              "text": "Jorge Bas Viguera"
             },
             "vehicle": {
               "text": "Tatuus FA010",
@@ -35260,8 +35333,7 @@
             },
             "time": 119.002,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Ivan_Bellarosa"
+              "text": "Ivan Bellarosa"
             },
             "vehicle": {
               "text": "Wolf GB08",
@@ -35567,8 +35639,7 @@
             },
             "time": 106.74,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ulrike_Krafft"
+              "text": "Ulrike Krafft"
             },
             "vehicle": {
               "text": "Ford Fiesta 1.6 16V",
@@ -35910,6 +35981,25 @@
             "event": {
               "text": "1988 French motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1988_French_motorcycle_Grand_Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "time": 129.9,
+            "driver": {
+              "text": "Chris Amon",
+              "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+            },
+            "vehicle": {
+              "text": "BMW 3.0 CSL",
+              "url": "https://en.wikipedia.org/wiki/BMW_E9#3.0_CSL"
+            },
+            "event": {
+              "text": "1973 Le Castellet ETCC round",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
             }
           },
           {
@@ -36571,8 +36661,7 @@
               "url": "https://en.wikipedia.org/wiki/2023_Prototype_Cup_Germany"
             },
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Xavier_Lloveras"
+              "text": "Xavier Lloveras"
             },
             "vehicle": {
               "text": "Duqueine D-08",
@@ -36921,7 +37010,7 @@
               "url": "https://en.wikipedia.org/wiki/2019_BOSS_GP_Series"
             },
             "driver": {
-              "text": "de",
+              "text": "Klaas Zwart",
               "url": "https://de.wikipedia.org/wiki/Klaas_Zwart"
             },
             "vehicle": {
@@ -37910,8 +37999,7 @@
             },
             "time": 74.108,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Klaas_Zwart"
+              "text": "Klaas Zwart"
             },
             "vehicle": {
               "text": "Jaguar R5",
@@ -38286,8 +38374,7 @@
             },
             "time": 96.506,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Lucas_Mauron"
+              "text": "Lucas Mauron"
             },
             "vehicle": {
               "text": "Audi R8 LMS GT4 Evo",
@@ -38362,8 +38449,7 @@
             },
             "time": 99.277,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Roy_Geerts"
+              "text": "Roy Geerts"
             },
             "vehicle": {
               "text": "Signatech FR 1.6",
@@ -38649,8 +38735,7 @@
             },
             "time": 93.331,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Marko_Nevalainen"
+              "text": "Marko Nevalainen"
             },
             "vehicle": {
               "text": "Reynard Formula Volkswagen",
@@ -38725,6 +38810,25 @@
             },
             "time": 98.05,
             "driver": {
+              "text": "Nicola Larini",
+              "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
+            },
+            "vehicle": {
+              "text": "Alfa Romeo 155 V6 TI",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_155#155_V6_TI"
+            },
+            "event": {
+              "text": "1994 Zolder DTM round",
+              "url": "https://en.wikipedia.org/wiki/1994_Deutsche_Tourenwagen_Meisterschaft"
+            }
+          },
+          {
+            "category": {
+              "text": "Class 1 Touring Cars",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
+            },
+            "time": 98.05,
+            "driver": {
               "text": "Alessandro Nannini",
               "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
             },
@@ -38744,8 +38848,7 @@
             },
             "time": 98.708,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Christer_Lindholm"
+              "text": "Christer Lindholm"
             },
             "vehicle": {
               "text": "Ducati 916",
@@ -40843,8 +40946,7 @@
             },
             "time": 87.49,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ranieri_Randaccio"
+              "text": "Ranieri Randaccio"
             },
             "vehicle": {
               "text": "Spice SE90C",
@@ -40957,8 +41059,7 @@
             },
             "time": 92.018,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Jean-Bernard_Bouvet"
+              "text": "Jean-Bernard Bouvet"
             },
             "vehicle": {
               "text": "Ferrari 488 GT3",
@@ -41127,8 +41228,7 @@
             },
             "time": 96.091,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Luca_Riccitelli"
+              "text": "Luca Riccitelli"
             },
             "vehicle": {
               "text": "Porsche 911 GT3-RS",
@@ -41201,8 +41301,7 @@
             },
             "time": 98.265,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Isidro_Callejas"
+              "text": "Isidro Callejas"
             },
             "vehicle": {
               "text": "Cupra Leon Competición TCR",
@@ -42766,8 +42865,7 @@
             },
             "time": 84.977,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Euan_Hankey"
+              "text": "Euan Hankey"
             },
             "vehicle": {
               "text": "McLaren 720S GT3 Evo",
@@ -42917,8 +43015,7 @@
             },
             "time": 88.033,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Thomas_Dagoneau"
+              "text": "Thomas Dagoneau"
             },
             "vehicle": {
               "text": "Oreca FLM09",
@@ -43593,8 +43690,7 @@
             },
             "time": 102.132,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Andy_Verdo%C3%AFa"
+              "text": "Andy Verdoïa"
             },
             "vehicle": {
               "text": "Yamaha YZF-R3",
@@ -44143,8 +44239,7 @@
             },
             "time": 68.368,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Nathan_Kinch"
+              "text": "Nathan Kinch"
             },
             "vehicle": {
               "text": "Ferrari 360 GTC",
@@ -44395,12 +44490,31 @@
             },
             "time": 131.4,
             "driver": {
-              "text": "Manfred von Brauchitsch",
-              "url": "https://en.wikipedia.org/wiki/Manfred_von_Brauchitsch"
+              "text": "Bernd Rosemeyer",
+              "url": "https://en.wikipedia.org/wiki/Bernd_Rosemeyer"
             },
             "vehicle": {
               "text": "Auto Union Type C",
               "url": "https://en.wikipedia.org/wiki/Auto_Union_racing_cars"
+            },
+            "event": {
+              "text": "1937 Donington Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1937_Donington_Grand_Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            },
+            "time": 131.4,
+            "driver": {
+              "text": "Manfred von Brauchitsch",
+              "url": "https://en.wikipedia.org/wiki/Manfred_von_Brauchitsch"
+            },
+            "vehicle": {
+              "text": "Mercedes-Benz W125",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W125"
             },
             "event": {
               "text": "1937 Donington Grand Prix",
@@ -45187,9 +45301,7 @@
               "text": "Lucas Auer",
               "url": "https://en.wikipedia.org/wiki/Lucas_Auer"
             },
-            "vehicle": {
-              "text": "Mercedes AMG GT3 EVO"
-            },
+            "vehicle": "Mercedes AMG GT3 EVO",
             "event": {
               "text": "2022 Hockenheim DTM round",
               "url": "https://en.wikipedia.org/wiki/2022_Deutsche_Tourenwagen_Masters"
@@ -45333,8 +45445,7 @@
             },
             "time": 101.459,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Nicola_Cadei"
+              "text": "Nicola Cadei"
             },
             "vehicle": {
               "text": "Ferrari F430 GTC",
@@ -45409,8 +45520,7 @@
             },
             "time": 105.491,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Bas_Schothorst"
+              "text": "Bas Schothorst"
             },
             "vehicle": {
               "text": "Renault Mégane Renault Sport II",
@@ -45466,8 +45576,7 @@
             },
             "time": 108.298,
             "driver": {
-              "text": "sv",
-              "url": "https://sv.wikipedia.org/wiki/Andreas_B%C3%A4ckman"
+              "text": "Andreas Bäckman"
             },
             "vehicle": {
               "text": "Hyundai i30 N TCR",
@@ -45646,8 +45755,7 @@
             },
             "time": 88.016,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Daniel_Blin_(Rennfahrer)"
+              "text": "Daniel Blin"
             },
             "vehicle": {
               "text": "Ducati Panigale V2",
@@ -45721,8 +45829,7 @@
             },
             "time": 96.928,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Dirk_Geiger"
+              "text": "Dirk Geiger"
             },
             "vehicle": {
               "text": "Kawasaki Ninja 400",
@@ -45880,8 +45987,7 @@
             },
             "time": 61.943,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Marcel_Las%C3%A9e"
+              "text": "Marcel Lasée"
             },
             "vehicle": {
               "text": "Tatuus FR2000",
@@ -46873,8 +46979,7 @@
             },
             "time": 138.3,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Clemens_Schickentanz"
+              "text": "Clemens Schickentanz"
             },
             "vehicle": {
               "text": "Porsche Carrera RSR",
@@ -46891,8 +46996,7 @@
             },
             "time": 139.42,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Denis_Morin"
+              "text": "Denis Morin"
             },
             "vehicle": {
               "text": "Martini MK26",
@@ -47023,8 +47127,7 @@
             },
             "time": 151.4,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Peter_N%C3%B6cker_(Rennfahrer)"
+              "text": "Peter Nöcker"
             },
             "vehicle": {
               "text": "Ferrari 250 GT",
@@ -47184,8 +47287,7 @@
             },
             "time": 60.467,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Bruno_Fechner"
+              "text": "Bruno Fechner"
             },
             "vehicle": {
               "text": "Tatuus FR2000",
@@ -47728,10 +47830,6 @@
             "event": {
               "text": "2020 Hungarian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Hungaroring.svg"
             }
           },
           {
@@ -48368,8 +48466,7 @@
             },
             "time": 111.092,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Valentin_Moineault"
+              "text": "Valentin Moineault"
             },
             "vehicle": {
               "text": "Signatech FR 1.6",
@@ -48387,8 +48484,7 @@
             },
             "time": 112.561,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Toni_Seiler"
+              "text": "Toni Seiler"
             },
             "vehicle": {
               "text": "Aston Martin DBRS9",
@@ -48406,8 +48502,7 @@
             },
             "time": 112.572,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Jan_B%C3%BChn"
+              "text": "Jan Bühn"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -48609,10 +48704,6 @@
             "event": {
               "text": "2002 Hungarian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2002_Hungarian_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Hungaroring_circuit_1989-2002.svg"
             }
           },
           {
@@ -48903,10 +48994,6 @@
             "event": {
               "text": "1987 Hungarian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Hungaroring_circuit_1986-1988.svg"
             }
           },
           {
@@ -48935,8 +49022,7 @@
             },
             "time": 103.73,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Otto_Rensing"
+              "text": "Otto Rensing"
             },
             "vehicle": {
               "text": "Reynard 883",
@@ -48973,8 +49059,7 @@
             },
             "time": 117.38,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Frank_Schmickler"
+              "text": "Frank Schmickler"
             },
             "vehicle": {
               "text": "BMW M3 (E30) Evo",
@@ -54961,8 +55046,7 @@
             },
             "time": 86.397,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Kenper_Miller"
+              "text": "Kenper Miller"
             },
             "vehicle": {
               "text": "BMW M1",
@@ -55324,8 +55408,7 @@
             },
             "time": 88.6,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Clemens_Schickentanz"
+              "text": "Clemens Schickentanz"
             },
             "vehicle": {
               "text": "Porsche Carrera RSR",
@@ -58037,8 +58120,7 @@
             },
             "time": 97.006,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Jan_Philipp_Springob"
+              "text": "Jan Philipp Springob"
             },
             "vehicle": {
               "text": "Aston Martin Vantage AMR GT4 Evo",
@@ -58056,8 +58138,7 @@
             },
             "time": 97.351,
             "driver": {
-              "text": "cs",
-              "url": "https://cs.wikipedia.org/wiki/Adam_Kout"
+              "text": "Adam Kout"
             },
             "vehicle": {
               "text": "Hyundai Elantra N TCR",
@@ -58630,8 +58711,7 @@
             },
             "time": 97.544,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Patrice_Lafargue"
+              "text": "Patrice Lafargue"
             },
             "vehicle": {
               "text": "Ligier JS P4",
@@ -58820,8 +58900,7 @@
             },
             "time": 97.488,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Patrick_Hobelsberger"
+              "text": "Patrick Hobelsberger"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -58893,8 +58972,7 @@
             },
             "time": 110.452,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Walid_Khan"
+              "text": "Walid Khan"
             },
             "vehicle": {
               "text": "KTM RC 390 R",
@@ -59245,8 +59323,7 @@
             },
             "time": 86.12,
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -59378,8 +59455,7 @@
             },
             "time": 89.397,
             "driver": {
-              "text": "es",
-              "url": "https://es.wikipedia.org/wiki/Erwan_Nigon"
+              "text": "Erwan Nigon"
             },
             "vehicle": {
               "text": "BMW S1000RR",
@@ -59511,8 +59587,7 @@
             },
             "time": 93.04,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Jan_B%C3%BChn"
+              "text": "Jan Bühn"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -59605,8 +59680,7 @@
             },
             "time": 95.453,
             "driver": {
-              "text": "it",
-              "url": "https://it.wikipedia.org/wiki/Luca_Riccitelli"
+              "text": "Luca Riccitelli"
             },
             "vehicle": {
               "text": "Porsche 911 (996) GT3-RS",
@@ -59828,8 +59902,7 @@
             },
             "time": 94.454,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Ranieri_Randaccio"
+              "text": "Ranieri Randaccio"
             },
             "vehicle": {
               "text": "Fondmetal FG-01",
@@ -59980,8 +60053,7 @@
             },
             "time": 107.77,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Roland_Binder"
+              "text": "Roland Binder"
             },
             "vehicle": {
               "text": "Persy 85-01"
@@ -60150,8 +60222,7 @@
             },
             "time": 114.44,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Clemens_Schickentanz"
+              "text": "Clemens Schickentanz"
             },
             "vehicle": {
               "text": "Porsche Carrera RSR",
@@ -60994,10 +61065,6 @@
             "event": {
               "text": "1978 Rouen F2 round",
               "url": "https://en.wikipedia.org/wiki/1978_European_Formula_Two_Championship"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Rouen-Les-Essarts.svg"
             }
           },
           {
@@ -61104,10 +61171,6 @@
             "event": {
               "text": "1970 Rouen F2 round",
               "url": "https://en.wikipedia.org/wiki/1970_European_Formula_Two_Championship"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Rouen_track_layout_1955-1971.gif"
             }
           },
           {
@@ -61231,10 +61294,6 @@
             "event": {
               "text": "1954 Rouen Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1954_Rouen_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Rouen-les-Essarts.jpg"
             }
           },
           {
@@ -61602,8 +61661,7 @@
             },
             "time": 92.902,
             "driver": {
-              "text": "sv",
-              "url": "https://sv.wikipedia.org/wiki/Fredrik_Lestrup"
+              "text": "Fredrik Lestrup"
             },
             "vehicle": {
               "text": "BMW Z4 GT3",
@@ -61800,10 +61858,6 @@
             "event": {
               "text": "1978 Swedish Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1978_Swedish_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Scandinavian_Raceway_1978.svg"
             }
           },
           {
@@ -61813,8 +61867,7 @@
             },
             "time": 89.846,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Peter_%C3%85slund"
+              "text": "Peter Åslund"
             },
             "vehicle": {
               "text": "Ralt RT35",
@@ -61998,10 +62051,6 @@
             "event": {
               "text": "1977 Swedish Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Circuit_Anderstorp.png"
             }
           },
           {
@@ -62158,10 +62207,6 @@
             "event": {
               "text": "1973 Swedish Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1973_Swedish_Grand_Prix"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Scandinavian_Raceway_1968%E2%80%931974.svg"
             }
           },
           {
@@ -62491,6 +62536,25 @@
             "event": {
               "text": "2019 1000 Miles of Sebring",
               "url": "https://en.wikipedia.org/wiki/2019_1000_Miles_of_Sebring"
+            }
+          },
+          {
+            "category": {
+              "text": "DPi",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+            },
+            "time": 106.151,
+            "driver": {
+              "text": "Felipe Nasr",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Nasr"
+            },
+            "vehicle": {
+              "text": "Cadillac DPi-V.R",
+              "url": "https://en.wikipedia.org/wiki/Cadillac_DPi-V.R"
+            },
+            "event": {
+              "text": "2021 12 Hours of Sebring",
+              "url": "https://en.wikipedia.org/wiki/2021_12_Hours_of_Sebring"
             }
           },
           {
@@ -63293,8 +63357,7 @@
             },
             "time": 121.271,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Ruggero_Melgrati"
+              "text": "Ruggero Melgrati"
             },
             "vehicle": {
               "text": "Spice SE89P",
@@ -63468,8 +63531,7 @@
             },
             "time": 132.499,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Ruggero_Melgrati"
+              "text": "Ruggero Melgrati"
             },
             "vehicle": {
               "text": "Spice SE89P",
@@ -64005,7 +64067,8 @@
   {
     "name": {
       "list": [
-        "Sepang International Circuit"
+        "Sepang International Circuit",
+        "Petronas Sepang International Circuit"
       ],
       "former_names": [
         {
@@ -64640,8 +64703,7 @@
             },
             "time": 129.394,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Philippe_Prette"
+              "text": "Philippe Prette"
             },
             "vehicle": {
               "text": "Ferrari 488 Challenge",
@@ -65748,8 +65810,7 @@
               "url": "https://en.wikipedia.org/wiki/Renault_Sport_Trophy"
             },
             "driver": {
-              "text": "nl",
-              "url": "https://nl.wikipedia.org/wiki/Pieter_Schothorst"
+              "text": "Pieter Schothorst"
             },
             "vehicle": {
               "text": "Renault Sport R.S. 01",
@@ -67844,8 +67905,7 @@
               "url": "https://en.wikipedia.org/wiki/Formula_Three"
             },
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/J%C3%A9r%C3%A9mie_Dufour"
+              "text": "Jérémie Dufour"
             },
             "vehicle": {
               "text": "Dallara F394",
@@ -68311,6 +68371,25 @@
               "url": "https://en.wikipedia.org/wiki/Formula_5000"
             },
             "driver": {
+              "text": "David Hobbs",
+              "url": "https://en.wikipedia.org/wiki/David_Hobbs_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Lola T330",
+              "url": "https://en.wikipedia.org/wiki/Lola_T330"
+            },
+            "time": 78.0,
+            "event": {
+              "text": "1973 GKN Vanwall Trophy",
+              "url": "https://en.wikipedia.org/wiki/1973_Rothmans_5000_European_Championship"
+            }
+          },
+          {
+            "category": {
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
+            },
+            "driver": {
               "text": "Brett Lunger",
               "url": "https://en.wikipedia.org/wiki/Brett_Lunger"
             },
@@ -68387,8 +68466,8 @@
               "url": "https://en.wikipedia.org/wiki/Formula_Two"
             },
             "driver": {
-              "text": "Graham Hill",
-              "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+              "text": "Jochen Rindt",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
             },
             "vehicle": {
               "text": "Brabham BT23",
@@ -68402,6 +68481,44 @@
           },
           {
             "category": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "driver": {
+              "text": "Graham Hill",
+              "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+            },
+            "vehicle": {
+              "text": "Lotus 48",
+              "url": "https://en.wikipedia.org/wiki/Lotus_48"
+            },
+            "time": 89.2,
+            "event": {
+              "text": "1967 BARC 200",
+              "url": "https://en.wikipedia.org/wiki/1967_European_Formula_Two_Championship"
+            }
+          },
+          {
+            "category": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            },
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "vehicle": {
+              "text": "Ford Capri RS 2600",
+              "url": "https://en.wikipedia.org/wiki/Ford_Capri#Mk_I_facelift"
+            },
+            "time": 92.4,
+            "event": {
+              "text": "1973 RAC Tourist Trophy",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship#European_Touring_Car_Challenge_/_Championship_(1963–1988)"
+            }
+          },
+          {
+            "category": {
               "text": "Group 2",
               "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
             },
@@ -68410,8 +68527,8 @@
               "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
             },
             "vehicle": {
-              "text": "Ford Capri RS 2600",
-              "url": "https://en.wikipedia.org/wiki/Ford_Capri#Mk_I_facelift"
+              "text": "BMW 3.0 CSL",
+              "url": "https://en.wikipedia.org/wiki/BMW_E9#3.0_CSL"
             },
             "time": 92.4,
             "event": {
@@ -68865,8 +68982,7 @@
               "url": "https://en.wikipedia.org/wiki/Formula_BMW"
             },
             "driver": {
-              "text": "no",
-              "url": "https://no.wikipedia.org/wiki/Stian_S%C3%B8rlie_(motorsportsut%C3%B8ver)"
+              "text": "Stian Sørlie"
             },
             "vehicle": {
               "text": "Mygale FB02",
@@ -69111,8 +69227,7 @@
               "url": "https://en.wikipedia.org/wiki/Formula_Three"
             },
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/J%C3%A9r%C3%A9mie_Dufour"
+              "text": "Jérémie Dufour"
             },
             "vehicle": {
               "text": "Dallara F394",
@@ -69853,13 +69968,13 @@
         "race_lap_records": [
           {
             "driver": {
-              "text": "Egor Stepanov-Kim"
+              "text": "Vladimir Verkholantsev"
             },
             "vehicle": {
               "text": "Tatuus F4-T421",
               "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
             },
-            "time": "1:02.145",
+            "time": "1:01.805",
             "year": "2025",
             "series": {
               "text": "F4"
@@ -69870,16 +69985,16 @@
               "text": "Formula 4",
               "url": "https://en.wikipedia.org/wiki/Formula_4"
             },
-            "time": 62.145,
+            "time": 61.805,
             "driver": {
-              "text": "Egor Stepanov-Kim"
+              "text": "Vladimir Verkholantsev"
             },
             "vehicle": {
               "text": "Tatuus F4-T421",
               "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
             },
             "event": {
-              "text": "2025 1st Sochi SMP F4 Winter Series round",
+              "text": "2025 2nd Sochi SMP F4 Winter Series round",
               "url": "https://en.wikipedia.org/wiki/2025_SMP_F4_Championship#Winter_series"
             }
           }
@@ -71355,8 +71470,7 @@
             },
             "time": 129.809,
             "driver": {
-              "text": "ja",
-              "url": "https://ja.wikipedia.org/wiki/Daisaku_Sakai"
+              "text": "Daisaku Sakai"
             },
             "vehicle": {
               "text": "Honda RS250R",
@@ -72047,8 +72161,8 @@
             },
             "time": 112.99,
             "driver": {
-              "text": "Teo Fabi",
-              "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+              "text": "Kazuyoshi Hoshino",
+              "url": "https://en.wikipedia.org/wiki/Kazuyoshi_Hoshino"
             },
             "vehicle": {
               "text": "March 802",
@@ -72057,6 +72171,25 @@
             "event": {
               "text": "1980 JAF Grand Prix",
               "url": "https://en.wikipedia.org/wiki/JAF_Grand_Prix"
+            }
+          },
+          {
+            "category": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            },
+            "time": 112.99,
+            "driver": {
+              "text": "Teo Fabi",
+              "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+            },
+            "vehicle": {
+              "text": "March 802",
+              "url": "https://en.wikipedia.org/wiki/March_802"
+            },
+            "event": {
+              "text": "1981 1st Suzuka Japanese F2 round",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Championship#All-Japan_Formula_Two_(1978–1986)"
             }
           },
           {
@@ -73909,8 +74042,7 @@
             },
             "time": 111.8,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Cort_Wagner"
+              "text": "Cort Wagner"
             },
             "vehicle": {
               "text": "Porsche 911 (996) GT2",
@@ -74618,8 +74750,7 @@
             },
             "time": 105.1,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Ruggero_Melgrati"
+              "text": "Ruggero Melgrati"
             },
             "vehicle": {
               "text": "Spice SE89P",
@@ -75745,7 +75876,7 @@
               "text": "Abu Dhabi Autonomous Racing League",
               "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League"
             },
-            "time": 139.2,
+            "time": 139.267,
             "driver": {
               "text": "Gianna (UNIMORE)"
             },
@@ -75882,7 +76013,8 @@
             },
             "time": 126.357,
             "driver": {
-              "text": "Stanislav Novikov"
+              "text": "Stanislav Novikov",
+              "url": "https://en.wikipedia.org/wiki/Stanislav_Novikov"
             },
             "vehicle": {
               "text": "Renault Clio R.S. V",
@@ -76020,7 +76152,7 @@
           {
             "category": {
               "text": "Supersport",
-              "url": "https://en.wikipedia.org/wiki/Sport_bike#Classes"
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
             },
             "time": 72.509,
             "driver": {
@@ -76350,8 +76482,7 @@
             },
             "time": 135.13,
             "driver": {
-              "text": "pl",
-              "url": "https://pl.wikipedia.org/wiki/Philipp_Baron"
+              "text": "Philipp Baron"
             },
             "vehicle": {
               "text": "Ferrari 458 Challenge Evo",
@@ -76368,8 +76499,7 @@
               "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
             },
             "driver": {
-              "text": "fi",
-              "url": "https://fi.wikipedia.org/wiki/Jani_Hjerppe"
+              "text": "Jani Hjerppe"
             },
             "vehicle": {
               "text": "Radical SR3",
@@ -76387,8 +76517,7 @@
             },
             "time": 138.823,
             "driver": {
-              "text": "fr",
-              "url": "https://fr.wikipedia.org/wiki/Ange_Barde"
+              "text": "Ange Barde"
             },
             "vehicle": {
               "text": "Maserati Trofeo",
@@ -76525,8 +76654,7 @@
             },
             "time": 116.203,
             "driver": {
-              "text": "de",
-              "url": "https://de.wikipedia.org/wiki/Rob_Barff"
+              "text": "Rob Barff"
             },
             "vehicle": {
               "text": "Ferrari 458 Italia GT3",
@@ -76738,6 +76866,25 @@
             "event": {
               "text": "1968 500km of Zeltweg",
               "url": "https://en.wikipedia.org/wiki/1968_World_Sportscar_Championship"
+            }
+          },
+          {
+            "category": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
+            },
+            "time": 69.4,
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "vehicle": {
+              "text": "Ford GT40",
+              "url": "https://en.wikipedia.org/wiki/Ford_GT40"
+            },
+            "event": {
+              "text": "1967 Sports Car Grand Prix Österrich",
+              "url": "https://en.wikipedia.org/wiki/1967_World_Sportscar_Championship"
             }
           },
           {
