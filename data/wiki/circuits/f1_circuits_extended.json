@@ -118,21 +118,6 @@
               "text": "Rogers AF01/V8",
               "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
             },
-            "time": "1:16.035",
-            "year": "2023",
-            "series": {
-              "text": "S5000"
-            }
-          },
-          {
-            "driver": {
-              "text": "Aaron Cameron",
-              "url": "https://en.wikipedia.org/wiki/Aaron_Cameron"
-            },
-            "vehicle": {
-              "text": "Rogers AF01/V8",
-              "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
-            },
             "time": 76.0357,
             "date": "2023-11-24",
             "series": {
@@ -986,18 +971,6 @@
         "turns": 8,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Jim Clark",
-              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-            },
-            "car": {
-              "text": "Lotus 25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
-            },
-            "year": "1963",
-            "series": "F1"
-          },
-          {
             "category": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
@@ -1641,18 +1614,6 @@
         "length_mi": 3.124,
         "turns": 9,
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Stirling Moss",
-              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-            },
-            "car": {
-              "text": "Cooper T45",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T45"
-            },
-            "year": "1958",
-            "series": "Formula Libre"
-          },
           {
             "driver": {
               "text": "Stirling Moss",
@@ -3718,13 +3679,18 @@
         "turns": 11,
         "race_lap_records": [
           {
-            "time": "1:35.895",
             "driver": {
               "text": "Francisco Mora",
               "url": "https://en.wikipedia.org/wiki/Francisco_Mora_(racing_driver)"
             },
-            "car": {
-              "text": "Porsche 911 (991 II"
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "time": "1:35.895",
+            "year": "2023",
+            "series": {
+              "text": "Carrera Cup"
             }
           },
           {
@@ -5997,12 +5963,15 @@
               "text": "Juan Pablo Montoya",
               "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
             },
-            "car": {
+            "vehicle": {
               "text": "Reynard 99I",
               "url": "https://en.wikipedia.org/wiki/Reynard_99I"
             },
+            "time": "38.891",
             "year": "1999",
-            "series": "CART"
+            "series": {
+              "text": "CART"
+            }
           },
           {
             "category": {
@@ -10857,18 +10826,6 @@
         "length_mi": 4.946,
         "turns": 26,
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Jacques Laffite",
-              "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
-            },
-            "car": {
-              "text": "Ligier JS11",
-              "url": "https://en.wikipedia.org/wiki/Ligier_JS11"
-            },
-            "year": "1979",
-            "series": "F1"
-          },
           {
             "category": {
               "text": "Formula One",
@@ -17352,21 +17309,6 @@
         "turns": 10,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Jason Bright",
-              "url": "https://en.wikipedia.org/wiki/Jason_Bright"
-            },
-            "vehicle": {
-              "text": "Ford BA Falcon",
-              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_(BA)#Ford_Falcon_BA_in_V8_Supercars"
-            },
-            "time": "1:24.910",
-            "year": "2006",
-            "series": {
-              "text": "V8 Supercars"
-            }
-          },
-          {
             "event": {
               "text": "2006 Desert 400",
               "url": "https://en.wikipedia.org/wiki/2006_V8_Supercar_Championship_Series"
@@ -17434,15 +17376,6 @@
         "length_mi": 1.584,
         "turns": 8,
         "race_lap_records": [
-          {
-            "time": "1:03.819",
-            "driver": {
-              "text": "Bashar Mardini"
-            },
-            "car": {
-              "text": "Porsche 911 (991 I"
-            }
-          },
           {
             "event": {
               "text": "2017 1st Sakhir Porsche Sprint Challenge Middle East round",
@@ -36935,28 +36868,12 @@
         "turns": 15,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Klaas Zwart",
-              "url": "https://de.wikipedia.org/wiki/Klaas_Zwart"
-            },
-            "vehicle": {
-              "text": "Jaguar R5 F1",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_R5"
-            },
-            "time": "1:21.044",
-            "year": "2019",
-            "series": {
-              "text": "F1"
-            }
-          },
-          {
             "event": {
               "text": "2019 BOSS GP Series Zandvoort round",
               "url": "https://en.wikipedia.org/wiki/2019_BOSS_GP_Series"
             },
             "driver": {
-              "text": "Klaas Zwart",
-              "url": "https://de.wikipedia.org/wiki/Klaas_Zwart"
+              "text": "Klaas Zwart"
             },
             "vehicle": {
               "text": "Jaguar R5 F1",
@@ -37659,18 +37576,6 @@
         "length_mi": 2.605,
         "turns": 19,
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Jacky Ickx",
-              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-            },
-            "car": {
-              "text": "Ferrari 312B",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_312B"
-            },
-            "year": "1970",
-            "series": "F1"
-          },
           {
             "event": {
               "text": "1970 Dutch Grand Prix",
@@ -42158,21 +42063,6 @@
         "turns": 10,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Kyle Kirkwood",
-              "url": "https://en.wikipedia.org/wiki/Kyle_Kirkwood"
-            },
-            "vehicle": {
-              "text": "Dallara DW12",
-              "url": "https://en.wikipedia.org/wiki/Dallara_DW12"
-            },
-            "time": "1:01.941",
-            "year": "2023",
-            "series": {
-              "text": "IndyCar"
-            }
-          },
-          {
             "category": {
               "text": "IndyCar",
               "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
@@ -44401,18 +44291,6 @@
         "turns": 15,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Bernd Rosemeyer / Manfred von Brauchitsch",
-              "url": "https://en.wikipedia.org/wiki/Bernd_Rosemeyer"
-            },
-            "car": {
-              "text": "Auto Union Type C / Mercedes-Benz W125",
-              "url": "https://en.wikipedia.org/wiki/Auto_Union_racing_cars"
-            },
-            "year": "1937",
-            "series": "GP"
-          },
-          {
             "category": {
               "text": "Grand Prix",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
@@ -44479,18 +44357,6 @@
         "turns": 13,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Giuseppe Farina",
-              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-            },
-            "car": {
-              "text": "Maserati V8RI",
-              "url": "https://en.wikipedia.org/wiki/Maserati_V8RI"
-            },
-            "year": "1935",
-            "series": "GP"
-          },
-          {
             "category": {
               "text": "Grand Prix",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
@@ -44518,18 +44384,6 @@
         "length_mi": 2.186,
         "turns": 13,
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Earl Howe",
-              "url": "https://en.wikipedia.org/wiki/Francis_Curzon,_5th_Earl_Howe"
-            },
-            "car": {
-              "text": "Bugatti Type 51",
-              "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51"
-            },
-            "year": "1933",
-            "series": "GP"
-          },
           {
             "category": {
               "text": "Grand Prix",
@@ -55822,18 +55676,6 @@
         },
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Stefan Bellof",
-              "url": "https://en.wikipedia.org/wiki/Stefan_Bellof"
-            },
-            "car": {
-              "text": "Porsche 956",
-              "url": "https://en.wikipedia.org/wiki/Porsche_956"
-            },
-            "year": "1983",
-            "series": "Group C"
-          },
-          {
             "category": {
               "text": "Group C",
               "url": "https://en.wikipedia.org/wiki/Group_C"
@@ -56247,18 +56089,6 @@
         },
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Jim Clark",
-              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-            },
-            "car": {
-              "text": "Lotus 33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            },
-            "year": "1965",
-            "series": "F1"
-          },
-          {
             "category": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
@@ -56487,18 +56317,6 @@
           "text": "Asphalt"
         },
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Louis Chiron",
-              "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
-            },
-            "car": {
-              "text": "Bugatti Type35C",
-              "url": "https://en.wikipedia.org/wiki/Bugatti_Type_35#Type_35C"
-            },
-            "year": "1929",
-            "series": "Grand Prix"
-          },
           {
             "category": {
               "text": "Grand Prix",
@@ -68211,18 +68029,6 @@
         "length_mi": 2.927,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Ronnie Peterson",
-              "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
-            },
-            "car": {
-              "text": "Lotus 72E",
-              "url": "https://en.wikipedia.org/wiki/Lotus_72"
-            },
-            "year": "1973",
-            "series": "F1"
-          },
-          {
             "category": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
@@ -68552,18 +68358,6 @@
         "length_mi": 2.889,
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Nino Farina",
-              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-            },
-            "car": {
-              "text": "Alfa Romeo 159B",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
-            },
-            "year": "1951",
-            "series": "F1"
-          },
-          {
             "category": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
@@ -68607,18 +68401,6 @@
         "length_km": 5.907,
         "length_mi": 3.67,
         "race_lap_records": [
-          {
-            "driver": {
-              "text": "Luigi Villoresi",
-              "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
-            },
-            "car": {
-              "text": "Maserati 4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            },
-            "year": "1948",
-            "series": "GP"
-          },
           {
             "category": {
               "text": "Grand Prix motor racing",
@@ -73311,21 +73093,6 @@
         },
         "race_lap_records": [
           {
-            "driver": {
-              "text": "Sébastien Bourdais",
-              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais"
-            },
-            "vehicle": {
-              "text": "Dallara DW12",
-              "url": "https://en.wikipedia.org/wiki/Dallara_DW12"
-            },
-            "time": "1:23.916",
-            "year": "2017",
-            "series": {
-              "text": "IndyCar"
-            }
-          },
-          {
             "category": {
               "text": "IndyCar",
               "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
@@ -75921,9 +75688,17 @@
         "turns": 8,
         "race_lap_records": [
           {
-            "time": "0:58.183",
             "driver": {
-              "text": "Hailey (TUM"
+              "text": "Hailey"
+            },
+            "vehicle": {
+              "text": "Dallara EAV24",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Autonomous_Racing_League#Technical_specifications"
+            },
+            "time": "0:58.183",
+            "year": "2025",
+            "series": {
+              "text": "A2RL"
             }
           },
           {

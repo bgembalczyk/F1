@@ -36,6 +36,7 @@ IGNORED_TOP_LEVEL_KEYS: set[str] = {
 
 class CircuitEntitiesMixin(CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
+    _LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
 
     # ------------------------------------
     # Pomocnicze do linków
@@ -170,96 +171,158 @@ class CircuitEntitiesMixin(CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMix
     # Lap record
     # ------------------------------------
 
-    def _parse_lap_record(
-        self, row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
+    def _strip_lang_markers(self, s: str) -> str:
+        """
+        Usuwa znaczniki typu '(es)', '( de )', '(it)' itp.
+        Nie rusza normalnych nawiasów typu '(motorcyclist)'.
+        """
+        s = (s or "").replace("\xa0", " ")
+        s = self._LANG_PAREN_RE.sub("", s)
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+
+    def _extract_outer_parens(self, text: str) -> Optional[str]:
+        """
+        Zwraca zawartość pierwszego 'zewnętrznego' nawiasu (...) z uwzględnieniem
+        zagnieżdżeń w środku (np. '(Juan (es), Car, 2024, TC)').
+        """
+        if not text:
+            return None
+        start = text.find("(")
+        if start < 0:
+            return None
+
+        depth = 0
+        inner_start = None
+
+        for i in range(start, len(text)):
+            ch = text[i]
+            if ch == "(":
+                depth += 1
+                if depth == 1:
+                    inner_start = i + 1
+            elif ch == ")":
+                if depth == 1 and inner_start is not None:
+                    return text[inner_start:i]
+                depth = max(depth - 1, 0)
+
+        return None
+
+    def _parse_lap_record(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
 
-        text = self._get_text(row) or ""
+        text = (self._get_text(row) or "").strip()
         if not text:
             return None
 
-        time_match = re.search(r"\d+:\d{2}\.\d{3}", text)
-        details_match = re.search(r"\(([^)]*)\)", text)
-
-        details: List[str] = []
-        if details_match:
-            details = [
-                part.strip()
-                for part in details_match.group(1).split(",")
-                if part.strip()
-            ]
-
+        # czas: wspieramy zarówno "M:SS.mmm" jak i "SS.mmm" (czasem takie się trafiają)
+        time_match = re.search(r"\b\d+:\d{2}\.\d{3}\b|\b\d{1,2}\.\d{3}\b", text)
         record: Dict[str, Any] = {
             "time": time_match.group(0) if time_match else None,
         }
 
-        if details:
-            driver_text = details[0] if len(details) >= 1 else None
-            car_text = details[1] if len(details) >= 2 else None
-            links = row.get("links") or []
+        # WYCIĄGAMY "detale" z nawiasu odpornego na zagnieżdżenia
+        details_blob = self._extract_outer_parens(text)
+        if not details_blob:
+            return record if record.get("time") else None
 
-            def _link_for_entity(entity_text: str) -> Optional[str]:
-                """Znajdź sensowny URL dla kierowcy/auta (o ile jest)."""
-                # próbujemy dopasować pełny tekst
-                link = self._find_link(entity_text, links)
-                if not link and "/" in entity_text:
-                    # dla "Mario Andretti / Denny Hulme" – spróbuj dopasować części
-                    for part in [
-                        p.strip() for p in entity_text.split("/") if p.strip()
-                    ]:
-                        link = self._find_link(part, links)
-                        if link:
-                            break
-                if not link:
-                    return None
-                url = link.get("url")
-                if is_wikipedia_redlink(url):
-                    return None
-                return url
+        # split po przecinku (w praktyce w lap recordach to jest stabilne)
+        details: List[str] = [p.strip() for p in details_blob.split(",") if p.strip()]
+        if not details:
+            return record if record.get("time") else None
 
-            def _wrap_entity(entity_text: Optional[str]) -> Optional[Dict[str, Any]]:
-                if not entity_text:
-                    return None
-                url = _link_for_entity(entity_text)
-                obj: Dict[str, Any] = {"text": entity_text}
-                if url:
-                    obj["url"] = url
-                return obj
+        # czyścimy śmieciowe markery językowe w polach
+        details = [self._strip_lang_markers(p) for p in details]
 
-            record.update(
-                {
-                    "driver": _wrap_entity(driver_text),
-                    "car": _wrap_entity(car_text),
-                    "year": details[2] if len(details) >= 3 else None,
-                    "series": details[3] if len(details) >= 4 else None,
-                }
-            )
+        driver_text = details[0] if len(details) >= 1 else None
+        vehicle_text = details[1] if len(details) >= 2 else None
+        year_text = details[2] if len(details) >= 3 else None
+        series_text = details[3] if len(details) >= 4 else None
 
-        return record
+        links = row.get("links") or []
+
+        def _is_en_wiki(url: Optional[str]) -> bool:
+            if not url:
+                return False
+            return url.startswith("https://en.wikipedia.org/") or url.startswith("http://en.wikipedia.org/")
+
+        def _link_for_entity(entity_text: str) -> Optional[str]:
+            """
+            Znajdź sensowny URL dla encji, ale:
+            - ignoruj redlinki,
+            - ignoruj NIE-en wiki (żeby nie podczepiać 'es/cs/fr' itp.).
+            """
+            if not entity_text:
+                return None
+
+            entity_text = self._strip_lang_markers(entity_text)
+
+            link = self._find_link(entity_text, links)
+
+            # dla "A / B" spróbuj dopasować części
+            if not link and "/" in entity_text:
+                for part in [p.strip() for p in entity_text.split("/") if p.strip()]:
+                    link = self._find_link(part, links)
+                    if link:
+                        break
+
+            if not link:
+                return None
+
+            url = link.get("url")
+            if is_wikipedia_redlink(url):
+                return None
+            if not _is_en_wiki(url):
+                return None
+            return url
+
+        def _wrap_entity(entity_text: Optional[str]) -> Optional[Dict[str, Any]]:
+            if not entity_text:
+                return None
+            cleaned = self._strip_lang_markers(entity_text)
+            if not cleaned:
+                return None
+            obj: Dict[str, Any] = {"text": cleaned}
+            url = _link_for_entity(cleaned)
+            if url:
+                obj["url"] = url
+            return obj
+
+        record.update(
+            {
+                "driver": _wrap_entity(driver_text),
+                # zamiast "car" używamy "vehicle" (to też pasuje do Twoich tabel)
+                "vehicle": _wrap_entity(vehicle_text),
+                "year": year_text or None,
+                "series": {"text": series_text} if series_text else None,
+            }
+        )
+
+        return record if record.get("time") else None
 
     # ------------------------------------
     # Porównanie / merge lap records
     # ------------------------------------
 
-    def _same_lap_record(
-        self, left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]
-    ) -> bool:
+    def _same_lap_record(self, left, right) -> bool:
         if not left or not right:
             return False
 
-        def _text(obj: Optional[Dict[str, Any]]) -> Optional[str]:
+        def _text(obj):
             if not obj:
                 return None
             return obj.get("text") if isinstance(obj, dict) else None
 
+        def _veh(rec):
+            return rec.get("vehicle") or rec.get("car")
+
         return (
-            left.get("time") == right.get("time")
-            and _text(left.get("driver")) == _text(right.get("driver"))
-            and _text(left.get("car")) == _text(right.get("car"))
-            and left.get("year") == right.get("year")
-            and left.get("series") == right.get("series")
+                left.get("time") == right.get("time")
+                and _text(left.get("driver")) == _text(right.get("driver"))
+                and _text(_veh(left)) == _text(_veh(right))
+                and left.get("year") == right.get("year")
+                and _text(left.get("series")) == _text(right.get("series"))
         )
 
     def _lap_record_exists(
