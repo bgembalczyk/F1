@@ -381,10 +381,7 @@
             "driver": {
               "text": "Kody Garland"
             },
-            "vehicle": {
-              "text": "Mustang",
-              "url": "https://en.wikipedia.org/wiki/Ford_Mustang"
-            },
+            "vehicle": "Mustang-Yamaha",
             "time": 90.3504,
             "date": "2025-11-28",
             "series": {
@@ -639,10 +636,7 @@
               "text": "John Bowe",
               "url": "https://en.wikipedia.org/wiki/John_Bowe_(racing_driver)"
             },
-            "vehicle": {
-              "text": "Ralt RT4",
-              "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
-            },
+            "vehicle": "Ralt RT4 Cosworth",
             "time": 93.2,
             "date": "1986-10-25",
             "series": {
@@ -671,10 +665,7 @@
               "text": "David Brabham",
               "url": "https://en.wikipedia.org/wiki/David_Brabham"
             },
-            "vehicle": {
-              "text": "Ralt RT30",
-              "url": "https://en.wikipedia.org/wiki/Ralt"
-            },
+            "vehicle": "Ralt RT30 Volkswagen",
             "time": 95.9,
             "date": "1987-11-15",
             "series": {
@@ -733,15 +724,11 @@
             "driver": {
               "text": "Stefan Rindeström"
             },
-            "vehicle": {
-              "text": "Superkart",
-              "url": "https://en.wikipedia.org/wiki/Superkart"
-            },
+            "vehicle": "250cc Superkart",
             "time": 97.99,
             "date": "1989-11-04",
             "series": {
-              "text": "Superkart",
-              "url": "https://en.wikipedia.org/wiki/Superkart"
+              "text": "250cc Superkart"
             }
           },
           {
@@ -1591,10 +1578,7 @@
             "driver": {
               "text": "James Small"
             },
-            "vehicle": {
-              "text": "Holden Commodore",
-              "url": "https://en.wikipedia.org/wiki/Holden_Commodore"
-            },
+            "vehicle": "Holden Commodore-Yamaha",
             "time": 136.0196,
             "date": "2008-03-15",
             "series": {
@@ -7277,10 +7261,7 @@
               "text": "Rolf Biland",
               "url": "https://en.wikipedia.org/wiki/Rolf_Biland"
             },
-            "vehicle": {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-            },
+            "vehicle": "Beo-Yamaha",
             "event": {
               "text": "1978 Nations motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1978_Nations_motorcycle_Grand_Prix"
@@ -13975,18 +13956,12 @@
             }
           },
           {
-            "category": {
-              "text": "USAC",
-              "url": "https://en.wikipedia.org/wiki/United_States_Auto_Club"
-            },
+            "category": "USAC Indycar",
             "driver": {
               "text": "Bob Veith",
               "url": "https://en.wikipedia.org/wiki/Bob_Veith"
             },
-            "vehicle": {
-              "text": "Kurtis Kraft 500G",
-              "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-            },
+            "vehicle": "Kurtis Kraft 500G-Offenhauser",
             "time": 54.0,
             "event": {
               "text": "1958 Race of Two Worlds",
@@ -18642,10 +18617,7 @@
             "driver": {
               "text": "John Riley"
             },
-            "vehicle": {
-              "text": "Superkart",
-              "url": "https://en.wikipedia.org/wiki/Superkart"
-            },
+            "vehicle": "Division 1 Superkart",
             "event": {
               "text": "2005 Brands Hatch Indy British Superkart round",
               "url": "https://en.wikipedia.org/wiki/British_Superkart_Championship"
@@ -19391,10 +19363,7 @@
             }
           },
           {
-            "category": {
-              "text": "USAC",
-              "url": "https://en.wikipedia.org/wiki/United_States_Auto_Club"
-            },
+            "category": "USAC IndyCar",
             "time": 41.4,
             "driver": {
               "text": "Danny Ongais",
@@ -19978,10 +19947,7 @@
             "driver": {
               "text": "Alan Fowler"
             },
-            "vehicle": {
-              "text": "Mercury Mk.3",
-              "url": "https://en.wikipedia.org/wiki/Mercury_Mk.3"
-            },
+            "vehicle": "Mercury Mk.3-Ford",
             "event": {
               "text": "1972 Brands Hatch MN GT round",
               "url": "https://en.wikipedia.org/wiki/European_Sportscar_Championship#1970_–_1975"
@@ -20048,9 +20014,7 @@
             "driver": {
               "text": "Jack Murrell"
             },
-            "vehicle": {
-              "text": "D.R.W."
-            },
+            "vehicle": "D.R.W. - Ford",
             "event": {
               "text": "1968 Brands Hatch sports car round"
             }
@@ -20073,10 +20037,7 @@
             }
           },
           {
-            "category": {
-              "text": "Open-wheel",
-              "url": "https://en.wikipedia.org/wiki/Open-wheel_car"
-            },
+            "category": "Open-wheel sports car",
             "time": 57.0,
             "driver": {
               "text": "Barry Foley"
@@ -21649,10 +21610,7 @@
               "text": "Rolf Biland",
               "url": "https://en.wikipedia.org/wiki/Rolf_Biland"
             },
-            "vehicle": {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-            },
+            "vehicle": "Yamaha sidecar",
             "event": {
               "text": "1976 French motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_French_motorcycle_Grand_Prix"
@@ -30768,7 +30726,7 @@
               "text": "Rolf Steinhausen",
               "url": "https://en.wikipedia.org/wiki/Rolf_Steinhausen"
             },
-            "vehicle": "Busch-",
+            "vehicle": "Busch-Yamaha sidecar",
             "event": {
               "text": "1977 Belgian motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1977_Belgian_motorcycle_Grand_Prix"
@@ -32697,7 +32655,7 @@
             "driver": {
               "text": "Norm Evenden"
             },
-            "vehicle": "Cooper Chevrolet",
+            "vehicle": "Cooper-Chevrolet",
             "event": {
               "text": "1964 Regional Mont-Tremblant (Trophy)"
             }
@@ -32808,10 +32766,7 @@
               "text": "Andy Lally",
               "url": "https://en.wikipedia.org/wiki/Andy_Lally"
             },
-            "vehicle": {
-              "text": "Picchio D-USA",
-              "url": "https://en.wikipedia.org/wiki/Picchio_Racing_Cars"
-            },
+            "vehicle": "Picchio D-USA-BMW",
             "event": {
               "text": "2002 6 Hours of Mont-Tremblant",
               "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
@@ -32960,10 +32915,7 @@
               "text": "Bruce McLaren",
               "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
             },
-            "vehicle": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
+            "vehicle": "McLaren-Elva Mk.IIB Chevrolet",
             "event": {
               "text": "1966 Labatt 50"
             }
@@ -33924,9 +33876,7 @@
             "driver": {
               "text": "James Weida"
             },
-            "vehicle": {
-              "text": "Scorpion W1"
-            },
+            "vehicle": "Scorpion W1",
             "event": {
               "text": "2023 Austin SCCA Formula Ford round",
               "url": "https://en.wikipedia.org/wiki/SCCA_National_Sports_Car_Championship"
@@ -36102,10 +36052,7 @@
             }
           },
           {
-            "category": {
-              "text": "Group 5",
-              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
-            },
+            "category": "Group 5 ( Sports 2000 )",
             "time": 75.8,
             "driver": {
               "text": "Jean-Pierre Jabouille",
@@ -36884,8 +36831,7 @@
             "time": 106.993,
             "date": "2020-09-06",
             "series": {
-              "text": "Formula Three",
-              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+              "text": "Historic Formula Three"
             }
           },
           {
@@ -36920,8 +36866,7 @@
             "time": 112.41,
             "date": "2020-09-05",
             "series": {
-              "text": "Group 2",
-              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+              "text": "Group 2 touring car"
             }
           },
           {
@@ -40629,10 +40574,7 @@
               "text": "Steve Webster",
               "url": "https://en.wikipedia.org/wiki/Steve_Webster_(sidecar_racer)"
             },
-            "vehicle": {
-              "text": "sidecar",
-              "url": "https://en.wikipedia.org/wiki/Sidecar"
-            },
+            "vehicle": "Krauser sidecar",
             "event": {
               "text": "1991 Spanish motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1991_Spanish_motorcycle_Grand_Prix"
@@ -42434,10 +42376,7 @@
               "text": "Ted Prappas",
               "url": "https://en.wikipedia.org/wiki/Ted_Prappas"
             },
-            "vehicle": {
-              "text": "Wildcat",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering#Car_designations"
-            },
+            "vehicle": "Wildcat-Buick",
             "event": {
               "text": "1989 Detroit Indy Lights round",
               "url": "https://en.wikipedia.org/wiki/1989_American_Racing_Series_season#Detroit_race"
@@ -42924,10 +42863,7 @@
               "text": "Peter Elkmann",
               "url": "https://en.wikipedia.org/wiki/Peter_Elkmann"
             },
-            "vehicle": {
-              "text": "Superkart",
-              "url": "https://en.wikipedia.org/wiki/Superkart"
-            },
+            "vehicle": "Anderson DEA Superkart",
             "event": {
               "text": "2017 MSA British Superkart GP",
               "url": "https://en.wikipedia.org/wiki/British_Superkart_Championship"
@@ -43702,9 +43638,7 @@
             }
           },
           {
-            "category": {
-              "text": "Mini Challenge"
-            },
+            "category": "Mini Challenge",
             "time": 105.549,
             "driver": {
               "text": "Chris Smith",
@@ -43727,9 +43661,7 @@
             "driver": {
               "text": "Paul Smith"
             },
-            "vehicle": {
-              "text": "Formula Vee"
-            },
+            "vehicle": "Formula Vee",
             "event": {
               "text": "2013 Donington Formula Vee round"
             }
@@ -43836,10 +43768,7 @@
             "driver": {
               "text": "Liam Morley"
             },
-            "vehicle": {
-              "text": "Superkart",
-              "url": "https://en.wikipedia.org/wiki/Superkart"
-            },
+            "vehicle": "Anderson VM Superkart",
             "event": {
               "text": "2023 Donington Superkart Super Series round"
             }
@@ -46887,10 +46816,7 @@
               "text": "Egbert Streuer",
               "url": "https://en.wikipedia.org/wiki/Egbert_Streuer"
             },
-            "vehicle": {
-              "text": "LCR",
-              "url": "https://en.wikipedia.org/wiki/Louis_Christen_Racing"
-            },
+            "vehicle": "LCR-Yamaha sidecar",
             "event": {
               "text": "1991 German motorcycle Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1991_German_motorcycle_Grand_Prix"
@@ -51222,10 +51148,7 @@
               "text": "Nigel Mansell",
               "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
             },
-            "vehicle": {
-              "text": "Delta Motorsport",
-              "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-            },
+            "vehicle": "Delta Motorsport GP Masters car",
             "event": {
               "text": "2005 Kyalami Grand Prix Masters",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters#2005"
@@ -52309,10 +52232,7 @@
               "text": "Pierluigi Martini",
               "url": "https://en.wikipedia.org/wiki/Pierluigi_Martini"
             },
-            "vehicle": {
-              "text": "Delta Motorsport",
-              "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-            },
+            "vehicle": "Delta Motorsport GP Masters car",
             "event": {
               "text": "2006 Losail Grand Prix Masters",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters#2006"
@@ -60121,10 +60041,7 @@
             }
           },
           {
-            "category": {
-              "text": "Group 5",
-              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)"
-            },
+            "category": "Group 5 prototype",
             "time": 95.81,
             "driver": {
               "text": "Jacky Ickx",
@@ -60721,10 +60638,7 @@
             }
           },
           {
-            "category": {
-              "text": "Group 7",
-              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)"
-            },
+            "category": "Group 7 ( Can-Am )",
             "time": 80.0,
             "driver": {
               "text": "Mark Donohue",
@@ -60768,10 +60682,7 @@
               "text": "Bruce McLaren",
               "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
             },
-            "vehicle": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
+            "vehicle": "McLaren Elva MkII",
             "event": {
               "text": "1965 Los Angeles Times Grand Prix",
               "url": "https://en.wikipedia.org/wiki/Los_Angeles_Times_Grand_Prix#Results"
@@ -60885,10 +60796,7 @@
             "driver": {
               "text": "Jeff Kline"
             },
-            "vehicle": {
-              "text": "Spice",
-              "url": "https://en.wikipedia.org/wiki/Spice_Engineering"
-            },
+            "vehicle": "Spice Pontiac Fiero GTP",
             "event": {
               "text": "1987 Los Angeles Times Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1987_IMSA_GT_Championship"
@@ -61493,17 +61401,10 @@
             "driver": {
               "text": "Marijn van Kalmthout"
             },
-            "vehicle": {
-              "text": "Benetton B197",
-              "url": "https://en.wikipedia.org/wiki/Benetton_B197"
-            },
+            "vehicle": "Benetton B197-Judd V10",
             "event": {
               "text": "2009 EuroBOSS Anderstorp Super Prix",
               "url": "https://en.wikipedia.org/wiki/BOSS_GP"
-            },
-            "circuit_map": {
-              "text": "",
-              "url": "https://en.wikipedia.org/wiki/File:Scandinavian_Raceway.svg"
             }
           },
           {
@@ -63453,10 +63354,7 @@
             "driver": {
               "text": "Sean Roe"
             },
-            "vehicle": {
-              "text": "Greenwood",
-              "url": "https://en.wikipedia.org/wiki/Greenwood_Corvettes"
-            },
+            "vehicle": "Greenwood Corvette",
             "event": {
               "text": "1995 12 Hours of Sebring",
               "url": "https://en.wikipedia.org/wiki/IMSA_Supercar_Championship"
@@ -67653,10 +67551,7 @@
               "text": "Christian Danner",
               "url": "https://en.wikipedia.org/wiki/Christian_Danner"
             },
-            "vehicle": {
-              "text": "Delta Motorsport",
-              "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-            },
+            "vehicle": "Delta Motorsport GP Masters car",
             "time": 120.537,
             "event": {
               "text": "2006 Silverstone GP Masters round",
@@ -69688,10 +69583,7 @@
             }
           },
           {
-            "category": {
-              "text": "USAC",
-              "url": "https://en.wikipedia.org/wiki/United_States_Auto_Club"
-            },
+            "category": "USAC IndyCar",
             "driver": {
               "text": "Danny Ongais",
               "url": "https://en.wikipedia.org/wiki/Danny_Ongais"
@@ -75122,10 +75014,7 @@
             }
           },
           {
-            "category": {
-              "text": "Group 7",
-              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
-            },
+            "category": "Group 7 ( Can-Am )",
             "time": 66.083,
             "driver": {
               "text": "Denny Hulme",
@@ -75209,10 +75098,7 @@
             }
           },
           {
-            "category": {
-              "text": "Group 7",
-              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
-            },
+            "category": "Group 7 ( Can-Am )",
             "time": 62.6,
             "driver": {
               "text": "Denny Hulme",

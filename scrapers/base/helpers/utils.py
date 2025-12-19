@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from datetime import datetime
 from typing import Any, Callable, Iterable, TypeVar
+from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
@@ -201,6 +202,9 @@ def extract_links_from_cell(
         if is_wikipedia_redlink(url):
             url = None
 
+        if is_language_marker_link(text, url):
+            continue
+
         links.append({"text": text, "url": url})
 
     return links
@@ -264,27 +268,26 @@ def is_wikipedia_redlink(url: str | None) -> bool:
 
 def is_language_marker_link(text: str | None, url: str | None) -> bool:
     """
-    Detect language marker links such as text='it' and url='https://it.wikipedia.org/...'.
-
-    Requirements:
-    - text is 1–3 letters
-    - URL points to non-English Wikipedia whose subdomain matches the text
+    True tylko dla interwiki markerów typu:
+    text='fr' i url='https://fr.wikipedia.org/wiki/...'
     """
-
-    if not url:
+    if not text or not url:
         return False
 
-    t = (text or "").strip().lower()
-    if not re.fullmatch(r"[a-z]{1,3}", t):
+    txt = text.strip().lower()
+    if not (2 <= len(txt) <= 3) or not txt.isalpha():
         return False
 
-    url_l = url.lower()
-    m = re.search(r"://([a-z]{2,3})\.wikipedia\.org/", url_l)
+    try:
+        host = (urlparse(url).hostname or "").lower()
+    except Exception:
+        return False
+
+    # interesuje nas wyłącznie <lang>.wikipedia.org (ew. m.wikipedia.org też bywa)
+    m = re.match(r"^([a-z]{2,3})\.(m\.)?wikipedia\.org$", host)
     if not m:
         return False
 
     lang = m.group(1)
-    if lang == "en":
-        return False
+    return txt == lang
 
-    return lang == t

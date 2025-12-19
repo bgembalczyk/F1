@@ -27,7 +27,7 @@ class F1CompleteCircuitScraper(F1Scraper):
     def __init__(
         self,
         *,
-        delay_seconds: float = 1.0,
+        delay_seconds: float = 0,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
@@ -45,7 +45,6 @@ class F1CompleteCircuitScraper(F1Scraper):
         )
         self.single_scraper = F1SingleCircuitScraper(
             http_client=self.http_client,
-            delay_seconds=delay_seconds,
         )
 
     def fetch(self) -> List[Dict[str, Any]]:

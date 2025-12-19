@@ -69,18 +69,10 @@ class LapRecordsTableScraper(F1TableScraper):
         )
 
     def _split_cell_on_br(self, cell: Tag) -> List[Tag]:
-        """
-        Dzieli komórkę na segmenty po <br>. Jeśli nie ma <br>, zwraca [cell].
-
-        Każdy segment jest nowym sztucznym <span>, żeby można było niezależnie
-        liczyć tekst i linki (bez grzebania w oryginalnym drzewie DOM).
-        """
         html = cell.decode_contents()
-        # <br>, <br/>, <br /> – wszystko liczymy jako separator
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
         segments: List[Tag] = []
-        # korzystamy z tego samego soup, żeby new_tag działał
         soup = cell.soup or BeautifulSoup("", "html.parser")
 
         for part in parts:
@@ -88,8 +80,10 @@ class LapRecordsTableScraper(F1TableScraper):
                 continue
             frag_soup = BeautifulSoup(part, "html.parser")
             span = soup.new_tag("span")
-            for el in frag_soup.contents:
+
+            for el in list(frag_soup.contents):
                 span.append(el)
+
             segments.append(span)
 
         return segments or [cell]
