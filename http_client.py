@@ -59,8 +59,10 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         if getattr(self.session, "headers", None) is not None:
             self.session.headers.update(merged_headers)
 
-    def _sleep_if_needed(self) -> None:
+    def _sleep_if_needed(self, *, apply_delay: bool = True) -> None:
         """Wymusza minimalny odstęp + jitter między requestami."""
+        if not apply_delay:
+            return
         now = time.monotonic()
         elapsed = now - self._last_request_ts
         delay = self.min_delay_seconds - elapsed
@@ -151,7 +153,7 @@ class HttpClient(BaseHttpClient):
         attempts = self.retries + 1
 
         for attempt in range(attempts):
-            self._sleep_if_needed()
+            self._sleep_if_needed(apply_delay=self._is_wikipedia_url(url))
             try:
                 response = self.session.get(
                     url,

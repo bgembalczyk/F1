@@ -27,7 +27,6 @@ class F1CompleteCircuitScraper(F1Scraper):
     def __init__(
         self,
         *,
-        delay_seconds: float = 0,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
@@ -38,7 +37,6 @@ class F1CompleteCircuitScraper(F1Scraper):
             headers=headers,
             http_client=http_client,
         )
-        self.delay_seconds = delay_seconds
         self.list_scraper = F1CircuitsListScraper(
             include_urls=True,
             http_client=self.http_client,
@@ -80,5 +78,4 @@ if __name__ == "__main__":
         F1CompleteCircuitScraper,
         "../../data/wiki/circuits/f1_circuits_extended.json",
         # csv_path pomijamy – jest opcjonalny
-        delay_seconds=1.0,
     )

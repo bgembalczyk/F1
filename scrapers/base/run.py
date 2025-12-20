@@ -130,7 +130,7 @@ SCRAPER_CONFIGS: Dict[str, _ScraperConfig] = {
         "F1CompleteCircuitScraper",
         Path("circuits/f1_circuits_extended.json"),
         Path("circuits/f1_circuits_extended.csv"),
-        {"delay_seconds": 1.0},
+        {},
     ),
 }
 
@@ -161,12 +161,6 @@ def _cli() -> None:
         help="Wyłącza zbieranie URL-i tam, gdzie scraper to wspiera.",
     )
     parser.set_defaults(include_urls=True)
-    parser.add_argument(
-        "--delay-seconds",
-        type=float,
-        help="Opcjonalne opóźnienie (obsługiwane przez scrapery, które mają ten parametr).",
-    )
-
     args = parser.parse_args()
 
     module_path, class_name, json_rel, csv_rel, default_kwargs = SCRAPER_CONFIGS[
@@ -174,9 +168,6 @@ def _cli() -> None:
     ]
     scraper_cls = _load_scraper(module_path, class_name)
     kwargs = dict(default_kwargs)
-
-    if args.delay_seconds is not None and _includes_param(scraper_cls, "delay_seconds"):
-        kwargs["delay_seconds"] = args.delay_seconds
 
     json_path = args.output_dir / json_rel
     csv_path = args.output_dir / csv_rel if csv_rel is not None else None
