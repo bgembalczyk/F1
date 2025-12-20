@@ -125,7 +125,7 @@ class HttpClient(BaseHttpClient):
         backoff_seconds: float = 0.5,
         min_delay_seconds: float = 1.5,
         jitter_seconds: float = 0.7,
-        cache_dir: Path | str | None = "data/wiki_cache",
+        cache_dir: Path | str | None = None,
         cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests.Session()
@@ -138,6 +138,9 @@ class HttpClient(BaseHttpClient):
             min_delay_seconds=min_delay_seconds,
             jitter_seconds=jitter_seconds,
         )
+        # Jeśli cache_dir nie jest podany, użyj domyślnej ścieżki data/wiki_cache w root projektu
+        if cache_dir is None:
+            cache_dir = Path(__file__).parent / "data" / "wiki_cache"
         self.cache_dir = Path(cache_dir) if cache_dir is not None else None
         self.cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
         if self.cache_dir is not None:
