@@ -1,0 +1,167 @@
+# scrapers/base/infobox/mixins/circuits/text_processing.py
+
+import re
+from typing import Any, Optional
+
+from scrapers.base.infobox.mixins.text_utils import InfoboxTextUtilsMixin
+
+
+class CircuitTextProcessingMixin(InfoboxTextUtilsMixin):
+    """Czyszczenie i normalizacja tekstu, konwersja czasów, wybór bogatszych encji."""
+
+    # tylko markery językowe w nawiasie: (es), ( de ), (it)
+    _LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)$", flags=re.IGNORECASE)
+    _LANG_PAREN_ANYWHERE_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
+
+    # do czyszczenia uciętych markerów typu "( es" / "( cs"
+    _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)
+
+    # do parsowania time -> seconds: "1:16.0357", "1:51.8", "38.891", "2:22.5"
+    _TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
+
+    def _entity_text(self, val: Any) -> Optional[str]:
+        if isinstance(val, dict):
+            s = (val.get("text") or "").strip()
+            return s or None
+        if val is None:
+            return None
+        s = str(val).strip()
+        return s or None
+
+    def _entity_url(self, val: Any) -> Optional[str]:
+        if isinstance(val, dict):
+            return val.get("url") or None
+        return None
+
+    def _norm_time(self, t: Any) -> Optional[str]:
+        """
+        Normalizuje time do stringa (dla prezentacji).
+        Uwaga: do porównań/scalania używamy _time_to_seconds.
+        """
+        if t is None:
+            return None
+        if isinstance(t, (int, float)):
+            return f"{float(t):.6f}".rstrip("0").rstrip(".")
+        s = str(t).strip()
+        return s or None
+
+    def _time_to_seconds(self, value: Any) -> Optional[float]:
+        """
+        Zamienia time (string lub number) na sekundy (float).
+        Obsługuje:
+        - "M:SS"
+        - "M:SS.d", "M:SS.dd", "M:SS.ddd", "M:SS.dddd"...
+        - "SS.ddd" itp.
+        """
+        if value is None:
+            return None
+        if isinstance(value, (int, float)):
+            return float(value)
+
+        s = str(value).strip()
+        m = self._TIME_PARSE_RE.match(s)
+        if not m:
+            return None
+
+        mm = m.group(1)
+        ss = m.group(2)
+        frac = m.group(3) or "0"
+
+        minutes = int(mm) if mm is not None else 0
+        seconds = int(ss)
+        frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
+        return minutes * 60.0 + seconds + frac_seconds
+
+    def _get_vehicle_field(self, rec: dict[str, Any]) -> Any:
+        return rec.get("vehicle") or rec.get("car")
+
+    def _get_class_field(self, rec: dict[str, Any]) -> Any:
+        # traktujemy category/class/series jako to samo semantycznie
+        return rec.get("series") or rec.get("category") or rec.get("class")
+
+    def _strip_lang_markers(self, s: str) -> str:
+        """
+        Usuwa tylko śmieciowe markery językowe:
+        - '(es)' '( de )' '(it)' itp. (również w środku tekstu, gdy psują parsing)
+        Nie dotyka normalnych nawiasów: '(motorcyclist)'.
+        """
+        s = (s or "").replace("\xa0", " ").strip()
+        s = self._LANG_PAREN_ANYWHERE_RE.sub("", s)
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+
+    def _strip_lang_marker_tail_only(self, s: str) -> str:
+        """
+        Usuwa ucięte markery na końcu:
+        - "Juan Martín Trucco ( es" -> "Juan Martín Trucco"
+        - "David Vršecký ( cs" -> "David Vršecký"
+        """
+        s = (s or "").replace("\xa0", " ").strip()
+        s = self._LANG_PAREN_TAIL_RE.sub("", s).strip()
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+
+    def _norm_text_for_key(self, x: Any) -> str:
+        if isinstance(x, dict):
+            x = x.get("text") or ""
+        return self._strip_lang_marker_tail_only(str(x or "")).strip().lower()
+
+    def _extract_outer_parens(self, text: str) -> Optional[str]:
+        """
+        Zwraca zawartość pierwszego zewnętrznego nawiasu (...) z uwzględnieniem
+        zagnieżdżeń w środku.
+        """
+        if not text:
+            return None
+        start = text.find("(")
+        if start < 0:
+            return None
+
+        depth = 0
+        inner_start: Optional[int] = None
+
+        for i in range(start, len(text)):
+            ch = text[i]
+            if ch == "(":
+                depth += 1
+                if depth == 1:
+                    inner_start = i + 1
+            elif ch == ")":
+                if depth == 1 and inner_start is not None:
+                    return text[inner_start:i]
+                depth = max(depth - 1, 0)
+
+        return None
+
+    def _is_en_wiki(self, url: Optional[str]) -> bool:
+        if not url:
+            return False
+        return url.startswith("https://en.wikipedia.org/") or url.startswith("http://en.wikipedia.org/")
+
+    def _choose_richer_entity(self, a: Any, b: Any) -> Any:
+        """
+        Preferuj encję z url; jeśli oba mają url albo oba nie mają,
+        wybierz tę z dłuższym textem.
+        """
+        if not a:
+            return b
+        if not b:
+            return a
+
+        # preferuj dicta nad stringi
+        if isinstance(a, dict) and not isinstance(b, dict):
+            return a
+        if isinstance(b, dict) and not isinstance(a, dict):
+            return b
+
+        a_url = self._entity_url(a)
+        b_url = self._entity_url(b)
+        if a_url and not b_url:
+            return a
+        if b_url and not a_url:
+            return b
+
+        a_txt = self._entity_text(a) or ""
+        b_txt = self._entity_text(b) or ""
+        return a if len(a_txt) >= len(b_txt) else b
+
