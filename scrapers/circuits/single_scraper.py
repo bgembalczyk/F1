@@ -1,4 +1,3 @@
-import time
 from typing import Optional, Dict, Any, List
 
 import requests
@@ -28,7 +27,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         *,
         session: Optional[requests.Session] = None,
         http_client: Optional[HttpClientProtocol] = None,
-        delay_seconds: float = 1.0,
         timeout: int = 10,
         headers: Optional[Dict[str, str]] = None,
     ) -> None:
@@ -39,7 +37,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             http_client=http_client,
             timeout=timeout,
         )
-        self.delay_seconds = delay_seconds
         self.timeout = timeout
         self.url: str = ""
         self._original_url: Optional[str] = None
@@ -79,9 +76,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     def _download(self) -> str:
         if not self.url:
             raise ValueError("URL must be set before downloading")
-
-        if self.delay_seconds:
-            time.sleep(self.delay_seconds)
 
         return self.http_client.get_text(self.url, timeout=self.timeout)
 
