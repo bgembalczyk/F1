@@ -883,12 +883,16 @@
               "text": "Stirling Moss",
               "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
             },
-            "car": {
+            "vehicle": {
               "text": "Vanwall VW 5",
               "url": "https://en.wikipedia.org/wiki/Vanwall_Grand_Prix"
             },
+            "time": "2:22.5",
             "year": "1958",
-            "series": "F1"
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
           }
         ]
       }
@@ -1726,7 +1730,8 @@
             "time": "1:18.750",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -2405,7 +2410,8 @@
             "time": "1:38.237",
             "year": "2025",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           },
           {
@@ -2577,7 +2583,8 @@
             "time": "1:32.113",
             "year": "2009",
             "series": {
-              "text": "GP2"
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
             }
           },
           {
@@ -2768,7 +2775,8 @@
             "time": "1:26.711",
             "year": "2008",
             "series": {
-              "text": "Superleague Formula"
+              "text": "Superleague Formula",
+              "url": "https://en.wikipedia.org/wiki/Superleague_Formula"
             }
           },
           {
@@ -3679,6 +3687,7 @@
         "turns": 11,
         "race_lap_records": [
           {
+            "time": "1:35.895",
             "driver": {
               "text": "Francisco Mora",
               "url": "https://en.wikipedia.org/wiki/Francisco_Mora_(racing_driver)"
@@ -3768,7 +3777,8 @@
             "time": "1:22.446",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -3868,7 +3878,8 @@
             "time": "1:52.186",
             "year": "1993",
             "series": {
-              "text": "World SBK"
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/World_Superbike"
             }
           },
           {
@@ -3911,7 +3922,8 @@
             "time": "1:14.859",
             "year": "1993",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -4085,7 +4097,8 @@
             "time": "0:58.450",
             "year": "1973",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
             }
           },
           {
@@ -4326,7 +4339,8 @@
             "time": "1:17.774",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -4500,7 +4514,8 @@
             "time": "1:12.547",
             "year": "2025",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           },
           {
@@ -4549,7 +4564,8 @@
             "time": "0:32.081",
             "year": "2015",
             "series": {
-              "text": "Stock car racing"
+              "text": "Stock car racing",
+              "url": "https://en.wikipedia.org/wiki/Stock_car_racing"
             }
           }
         ]
@@ -4573,7 +4589,8 @@
             "time": "1:09.487",
             "year": "2022",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           },
           {
@@ -4635,7 +4652,8 @@
             "time": "1:01.112",
             "year": "2019",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           },
           {
@@ -4697,7 +4715,8 @@
             "time": "1:04.569",
             "year": "2016",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           },
           {
@@ -4746,7 +4765,8 @@
             "time": "1:16.788",
             "year": "1991",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -4889,7 +4909,8 @@
             "time": "1:20.521",
             "year": "2008",
             "series": {
-              "text": "DP"
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
             }
           },
           {
@@ -4938,7 +4959,8 @@
             "time": "1:24.713",
             "year": "2007",
             "series": {
-              "text": "Champ Car"
+              "text": "Champ Car",
+              "url": "https://en.wikipedia.org/wiki/Champ_Car_World_Series"
             }
           },
           {
@@ -4987,7 +5009,8 @@
             "time": "1:22.931",
             "year": "2006",
             "series": {
-              "text": "DP"
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
             }
           },
           {
@@ -5036,7 +5059,8 @@
             "time": "1:27.248",
             "year": "2002",
             "series": {
-              "text": "CART"
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
             }
           },
           {
@@ -5160,7 +5184,8 @@
             "time": "1:43.050",
             "year": "1969",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -5227,7 +5252,8 @@
             "time": "1:17.631",
             "year": "1982",
             "series": {
-              "text": "Formula Atlantic"
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
             }
           },
           {
@@ -5668,7 +5694,8 @@
             "time": "1:06.756",
             "year": "2009",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -5809,7 +5836,8 @@
             "time": "1:43.275",
             "year": "2005",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -5970,7 +5998,8 @@
             "time": "38.891",
             "year": "1999",
             "series": {
-              "text": "CART"
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
             }
           },
           {
@@ -6038,7 +6067,8 @@
             "time": "1:32.507",
             "year": "1989",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -6171,7 +6201,8 @@
             "time": "1:18.833",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -7301,7 +7332,8 @@
             "time": "29:36.800",
             "year": "1970",
             "series": {
-              "text": "Group 6"
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)"
             }
           },
           {
@@ -7384,7 +7416,8 @@
             "time": "10:41.000",
             "year": "1955",
             "series": {
-              "text": "Sports car racing"
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
             }
           },
           {
@@ -7450,7 +7483,8 @@
             "time": "49:58.800",
             "year": "1928",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -7497,7 +7531,8 @@
             "time": "14:13.600",
             "year": "1925",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -7527,7 +7562,8 @@
             "time": "53:15.800",
             "year": "1924",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -7822,7 +7858,8 @@
             "time": "1:15.484",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -8483,7 +8520,8 @@
             "time": "1:45.727",
             "year": "2019",
             "series": {
-              "text": "World SBK"
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
             }
           },
           {
@@ -8581,7 +8619,8 @@
             "time": "1:20.411",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -8964,7 +9003,8 @@
             "time": "1:24.335",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -9216,7 +9256,8 @@
             "time": "1:33.610",
             "year": "1979",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -9430,7 +9471,8 @@
             "time": "1:27.700",
             "year": "1972",
             "series": {
-              "text": "Group 7"
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
             }
           },
           {
@@ -9912,7 +9954,8 @@
             "time": "1:10.540",
             "year": "2018",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -10474,7 +10517,8 @@
             "time": "1:40.066",
             "year": "2016",
             "series": {
-              "text": "Stock Car Brasil"
+              "text": "Stock Car Brasil",
+              "url": "https://en.wikipedia.org/wiki/Stock_Car_Pro_Series"
             }
           },
           {
@@ -10517,7 +10561,8 @@
             "time": "1:18.397",
             "year": "1997",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -10634,7 +10679,8 @@
             "time": "1:18.455",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -10714,7 +10760,8 @@
             "time": "1:42.872",
             "year": "1992",
             "series": {
-              "text": "500cc"
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
             }
           },
           {
@@ -10795,7 +10842,8 @@
             "time": "2:27.311",
             "year": "1980",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -12503,7 +12551,8 @@
             "time": "1:42.229",
             "year": "2013",
             "series": {
-              "text": "World SBK"
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
             }
           },
           {
@@ -12604,7 +12653,8 @@
             "time": "0:54.300",
             "year": "1976",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#4th_Generation_Group_5_–_\"Special_Production_Cars\"_(1976_to_1982)"
             }
           },
           {
@@ -12702,7 +12752,8 @@
             "time": "1:24.808",
             "year": "1997",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -12921,7 +12972,8 @@
             "time": "1:24.808",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -13045,7 +13097,8 @@
             "time": "1:23.575",
             "year": "1993",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -13433,7 +13486,8 @@
             "time": "1:29.600",
             "year": "1976",
             "series": {
-              "text": "Group 6"
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Two-Seater_Racing_Cars_(1976_to_1982)"
             }
           },
           {
@@ -13595,7 +13649,8 @@
             "time": "1:21.900",
             "year": "1973",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
             }
           },
           {
@@ -13737,7 +13792,8 @@
             "time": "1:23.800",
             "year": "1971",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -14006,7 +14062,8 @@
             "time": "1:56.200",
             "year": "1951",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -14139,7 +14196,8 @@
             "time": "2:34.200",
             "year": "1938",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -14182,7 +14240,8 @@
             "time": "2:49.800",
             "year": "1935",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -14225,7 +14284,8 @@
             "time": "2:13.600",
             "year": "1934",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -14249,7 +14309,8 @@
             "time": "3:13.200",
             "year": "1933",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -14461,7 +14522,8 @@
             "time": "1:27.981",
             "year": "1997",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -14522,7 +14584,8 @@
             "time": "1:40.006",
             "year": "2024",
             "series": {
-              "text": "F4"
+              "text": "F4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
             }
           },
           {
@@ -14657,7 +14720,8 @@
             "time": "1:45.287",
             "year": "1981",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -14852,7 +14916,8 @@
             "time": "1:09.300",
             "year": "1992",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -15060,7 +15125,8 @@
             "time": "1:13.279",
             "year": "2001",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -15267,7 +15333,8 @@
             "time": "0:54.637",
             "year": "1997",
             "series": {
-              "text": "Super Touring"
+              "text": "Super Touring",
+              "url": "https://en.wikipedia.org/wiki/Super_Touring"
             }
           }
         ]
@@ -15291,7 +15358,8 @@
             "time": "0:46.114",
             "year": "2006",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -15387,7 +15455,8 @@
             "time": "1:50.230",
             "year": "1971",
             "series": {
-              "text": "Group 7"
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)"
             }
           },
           {
@@ -15449,7 +15518,8 @@
             "time": "1:36.100",
             "year": "1960",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -15601,7 +15671,8 @@
             "time": "1:49.300",
             "year": "1968",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -15870,7 +15941,8 @@
             "time": "0:53.440",
             "year": "1994",
             "series": {
-              "text": "Class 1"
+              "text": "Class 1",
+              "url": "https://en.wikipedia.org/wiki/Class_1_Touring_Cars"
             }
           },
           {
@@ -15970,7 +16042,8 @@
             "time": "0:54.920",
             "year": "1993",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -16070,7 +16143,8 @@
             "time": "1:30.050",
             "year": "1991",
             "series": {
-              "text": "Group A"
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
             }
           },
           {
@@ -16130,7 +16204,8 @@
             "time": "2:02.130",
             "year": "1983",
             "series": {
-              "text": "Group C"
+              "text": "Group C",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
             }
           },
           {
@@ -16309,7 +16384,8 @@
             "time": "2:04.500",
             "year": "1959",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -16411,7 +16487,8 @@
             "time": "4:11.200",
             "year": "1937",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -16477,7 +16554,8 @@
             "time": "4:32.000",
             "year": "1935",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -17148,7 +17226,8 @@
             "time": "0:55.404",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -17631,7 +17710,8 @@
             "time": "1:43.009",
             "year": "2019",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -17823,7 +17903,8 @@
             "time": "1:12.276",
             "year": "2009",
             "series": {
-              "text": "A1GP"
+              "text": "A1GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
             }
           },
           {
@@ -18387,7 +18468,8 @@
             "time": "0:38.032",
             "year": "2004",
             "series": {
-              "text": "EuroBOSS/F1"
+              "text": "EuroBOSS/F1",
+              "url": "https://en.wikipedia.org/wiki/BOSS_GP"
             }
           },
           {
@@ -18812,7 +18894,8 @@
             "time": "1:16.170",
             "year": "2001",
             "series": {
-              "text": "EuroBOSS/F1"
+              "text": "EuroBOSS/F1",
+              "url": "https://en.wikipedia.org/wiki/BOSS_GP"
             }
           },
           {
@@ -18985,7 +19068,8 @@
             "time": "1:13.860",
             "year": "1991",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -19216,7 +19300,8 @@
             "time": "0:38.760",
             "year": "1996",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -19445,7 +19530,8 @@
             "time": "1:09.593",
             "year": "1986",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -19659,7 +19745,8 @@
             "time": "1:21.100",
             "year": "1974",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -19868,7 +19955,8 @@
             "time": "0:49.600",
             "year": "1972",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
             }
           },
           {
@@ -20117,7 +20205,8 @@
             "time": "1:27.249",
             "year": "2011",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -20186,7 +20275,8 @@
             "time": "1:45.028",
             "year": "2023",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           },
           {
@@ -20444,7 +20534,8 @@
             "time": "1:22.981",
             "year": "2015",
             "series": {
-              "text": "FR 3.5"
+              "text": "FR 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
             }
           },
           {
@@ -21028,7 +21119,8 @@
             "time": "1:33.210",
             "year": "1990",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -21278,7 +21370,8 @@
             "time": "1:29.200",
             "year": "1986",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -21378,7 +21471,8 @@
             "time": "1:36.620",
             "year": "1981",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -21696,7 +21790,8 @@
             "time": "1:43.827",
             "year": "1999",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -21776,7 +21871,8 @@
             "time": "2:53.900",
             "year": "1972",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -22129,7 +22225,8 @@
             "time": "2:34.500",
             "year": "1936",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -22546,7 +22643,8 @@
             "time": "1:15.743",
             "year": "2025",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -23088,7 +23186,8 @@
             "time": "1:18.149",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -23450,7 +23549,8 @@
             "time": "1:18.183",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -24041,7 +24141,8 @@
             "time": "1:15.641",
             "year": "2005",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -24350,7 +24451,8 @@
             "time": "1:20.143",
             "year": "2003",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -24732,7 +24834,8 @@
             "time": "1:25.155",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -24794,7 +24897,8 @@
             "time": "1:20.989",
             "year": "1993",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -25457,7 +25561,8 @@
             "time": "1:12.909",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25480,7 +25585,8 @@
             "time": "1:31.317",
             "year": "2021",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           }
         ]
@@ -25503,7 +25609,8 @@
             "time": "0:52.385",
             "year": "2019",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           }
         ]
@@ -25527,7 +25634,8 @@
             "time": "1:14.439",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25551,7 +25659,8 @@
             "time": "1:18.023",
             "year": "2002",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25575,7 +25684,8 @@
             "time": "1:21.076",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25599,7 +25709,8 @@
             "time": "1:22.637",
             "year": "1985",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25623,7 +25734,8 @@
             "time": "1:27.900",
             "year": "1974",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25647,7 +25759,8 @@
             "time": "1:22.200",
             "year": "1971",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25664,12 +25777,16 @@
               "text": "Rudolf Caracciola",
               "url": "https://en.wikipedia.org/wiki/Rudolf_Caracciola"
             },
-            "car": {
+            "vehicle": {
               "text": "Mercedes-Benz W125",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W125"
             },
+            "time": "1:46.5",
             "year": "1937",
-            "series": "Grand Prix"
+            "series": {
+              "text": "Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            }
           }
         ]
       }
@@ -25820,7 +25937,8 @@
             "time": "1:15.377",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -25858,7 +25976,8 @@
             "time": "1:15.045",
             "year": "2002",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -26240,7 +26359,8 @@
             "time": "1:19.168",
             "year": "1991",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -26357,7 +26477,8 @@
             "time": "1:20.200",
             "year": "1975",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -26473,7 +26594,8 @@
             "time": "0:47.900",
             "year": "1969",
             "series": {
-              "text": "Group 4"
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
             }
           },
           {
@@ -27275,7 +27397,8 @@
             "time": "2:20.400",
             "year": "1954",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -27336,7 +27459,8 @@
             "time": "2:16.930",
             "year": "1951",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -27378,7 +27502,8 @@
             "time": "1:46.000",
             "year": "1946 & 1948",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           },
           {
@@ -27550,7 +27675,8 @@
             "time": "2:10.500",
             "year": "1967",
             "series": {
-              "text": "Group 4"
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
             }
           },
           {
@@ -27762,7 +27888,8 @@
             "time": "2:41.000",
             "year": "1953",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -27805,7 +27932,8 @@
             "time": "2:28.200",
             "year": "1952",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -27867,7 +27995,8 @@
             "time": "2:27.800",
             "year": "1951",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -28243,7 +28372,8 @@
             "time": "1:44.701",
             "year": "2024",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -29130,7 +29260,8 @@
             "time": "2:19.140",
             "year": "2025",
             "series": {
-              "text": "SBK"
+              "text": "SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
             }
           },
           {
@@ -29172,7 +29303,8 @@
             "time": "1:45.108",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -29555,7 +29687,8 @@
             "time": "1:47.176",
             "year": "2002",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -29937,7 +30070,8 @@
             "time": "1:57.117",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -30037,7 +30171,8 @@
             "time": "1:51.095",
             "year": "1993",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -30326,7 +30461,8 @@
             "time": "2:48.800",
             "year": "1979",
             "series": {
-              "text": "Group 1"
+              "text": "Group 1",
+              "url": "https://en.wikipedia.org/wiki/Group_1_(motorsport)"
             }
           },
           {
@@ -30423,7 +30559,8 @@
             "time": "3:13.400",
             "year": "1973",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
             }
           }
         ]
@@ -30447,7 +30584,8 @@
             "time": "4:14.700",
             "year": "1956",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -30471,7 +30609,8 @@
             "time": "5:04.100",
             "year": "1937",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -30954,7 +31093,8 @@
             "time": "1:02.985",
             "year": "2015",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/BOSS_GP"
             }
           },
           {
@@ -31628,7 +31768,8 @@
             "time": "1:00.000",
             "year": "1974",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -32202,7 +32343,8 @@
             "time": "1:17.327",
             "year": "2007",
             "series": {
-              "text": "Champ Car"
+              "text": "Champ Car",
+              "url": "https://en.wikipedia.org/wiki/Champ_Car"
             }
           },
           {
@@ -32434,7 +32576,8 @@
             "time": "1:21.691",
             "year": "2008",
             "series": {
-              "text": "SBK"
+              "text": "SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
             }
           }
         ]
@@ -32475,7 +32618,8 @@
             "time": "1:24.201",
             "year": "Dallara SP1",
             "series": {
-              "text": "2002"
+              "text": "2002",
+              "url": "https://en.wikipedia.org/wiki/2002_Rolex_Sports_Car_Series"
             }
           }
         ]
@@ -32505,7 +32649,8 @@
             "time": "1:09.900",
             "year": "1965",
             "series": {
-              "text": "Group 4"
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
             }
           },
           {
@@ -33050,7 +33195,8 @@
             "time": "1:36.169",
             "year": "2019",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -33907,7 +34053,8 @@
             "time": "1:30.042",
             "year": "2025",
             "series": {
-              "text": "LMP3"
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
             }
           },
           {
@@ -34026,7 +34173,8 @@
             "time": "1:33.284",
             "year": "2013",
             "series": {
-              "text": "PWC GT"
+              "text": "PWC GT",
+              "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_America#Former_Classes"
             }
           },
           {
@@ -34287,7 +34435,8 @@
             "time": "1:32.740",
             "year": "2019",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -34979,7 +35128,8 @@
             "time": "1:40.139",
             "year": "2020",
             "series": {
-              "text": "LMP2"
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
             }
           },
           {
@@ -35322,7 +35472,8 @@
             "time": "1:18.347",
             "year": "2014",
             "series": {
-              "text": "Auto GP"
+              "text": "Auto GP",
+              "url": "https://en.wikipedia.org/wiki/Auto_GP"
             }
           },
           {
@@ -35554,7 +35705,8 @@
             "time": "1:08.012",
             "year": "1990",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -35749,7 +35901,8 @@
             "time": "1:39.914",
             "year": "1985",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -35981,7 +36134,8 @@
             "time": "1:15.800",
             "year": "1974",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
             }
           },
           {
@@ -36432,7 +36586,8 @@
             "time": "1:11.097",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -36873,7 +37028,8 @@
               "url": "https://en.wikipedia.org/wiki/2019_BOSS_GP_Series"
             },
             "driver": {
-              "text": "Klaas Zwart"
+              "text": "Klaas Zwart",
+              "url": "https://de.wikipedia.org/wiki/Klaas_Zwart"
             },
             "vehicle": {
               "text": "Jaguar R5 F1",
@@ -37820,7 +37976,8 @@
             "time": "1:14.089",
             "year": "2007",
             "series": {
-              "text": "Champ Car"
+              "text": "Champ Car",
+              "url": "https://en.wikipedia.org/wiki/Champ_Car"
             }
           },
           {
@@ -38462,7 +38619,8 @@
             "time": "1:28.270",
             "year": "1988",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
@@ -38786,7 +38944,8 @@
             "time": "1:19.294",
             "year": "1984",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -39073,7 +39232,8 @@
             "time": "1:23.850",
             "year": "1974",
             "series": {
-              "text": "F5000"
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
             }
           },
           {
@@ -39135,7 +39295,8 @@
             "time": "1:26.400",
             "year": "1970",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -39292,7 +39453,8 @@
             "time": "1:54.125",
             "year": "2007",
             "series": {
-              "text": "IFM"
+              "text": "IFM",
+              "url": "https://en.wikipedia.org/wiki/International_Formula_Master"
             }
           },
           {
@@ -39373,7 +39535,8 @@
             "time": "2:27.530",
             "year": "1960",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -39434,7 +39597,8 @@
             "time": "3:32.800",
             "year": "1951",
             "series": {
-              "text": "Sports car racing"
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
             }
           },
           {
@@ -39522,12 +39686,16 @@
               "text": "Stirling Moss",
               "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
             },
-            "car": {
+            "vehicle": {
               "text": "Cooper T51",
               "url": "https://en.wikipedia.org/wiki/Cooper_T51"
             },
+            "time": "2:05.07",
             "year": "1959",
-            "series": "F1"
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
           }
         ]
       }
@@ -39646,7 +39814,8 @@
             "time": "1:23.135",
             "year": "1997",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -40120,7 +40289,8 @@
             "time": "1:37.349",
             "year": "2025",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           },
           {
@@ -40352,7 +40522,8 @@
             "time": "1:24.513",
             "year": "1990",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -40634,7 +40805,8 @@
             "time": "1:20.011",
             "year": "2009",
             "series": {
-              "text": "Superleague Formula"
+              "text": "Superleague Formula",
+              "url": "https://en.wikipedia.org/wiki/Superleague_Formula"
             }
           },
           {
@@ -41274,7 +41446,8 @@
             "time": "1:15.467",
             "year": "1980",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -41507,7 +41680,8 @@
             "time": "1:16.440",
             "year": "1979",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -41881,7 +42055,8 @@
             "time": "0:58.269",
             "year": "1988",
             "series": {
-              "text": "Trans-Am"
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
             }
           },
           {
@@ -41924,7 +42099,8 @@
             "time": "1:45.165",
             "year": "1984",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           },
           {
@@ -42215,7 +42391,8 @@
             "time": "1:40.464",
             "year": "1987",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -42331,7 +42508,8 @@
             "time": "1:50.438",
             "year": "1982",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -42437,7 +42615,8 @@
             "time": "1:17.707",
             "year": "2013",
             "series": {
-              "text": "Auto GP"
+              "text": "Auto GP",
+              "url": "https://en.wikipedia.org/wiki/Auto_GP"
             }
           },
           {
@@ -43576,7 +43755,8 @@
             "time": "0:57.221",
             "year": "2011",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -44278,7 +44458,8 @@
             "time": "0:55.859",
             "year": "2004",
             "series": {
-              "text": "EuroBOSS/F1"
+              "text": "EuroBOSS/F1",
+              "url": "https://en.wikipedia.org/wiki/BOSS_GP"
             }
           }
         ]
@@ -44500,7 +44681,8 @@
             "time": "1:18.426",
             "year": "2008",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -44524,7 +44706,8 @@
             "time": "1:17.025",
             "year": "1994",
             "series": {
-              "text": "F3000"
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           }
         ]
@@ -44548,7 +44731,8 @@
             "time": "1:14.300",
             "year": "1977",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -44572,7 +44756,8 @@
             "time": "1:32.570",
             "year": "1973",
             "series": {
-              "text": "F2000"
+              "text": "F2000",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Championship#Formula_2000_(1973–1977)"
             }
           }
         ]
@@ -44825,7 +45010,8 @@
             "time": "1:13.780",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -45471,7 +45657,8 @@
             "time": "1:19.742",
             "year": "2010",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -45666,7 +45853,8 @@
             "time": "0:57.450",
             "year": "2001",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -45997,7 +46185,8 @@
             "time": "1:41.808",
             "year": "2001",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -46198,7 +46387,8 @@
             "time": "1:41.591",
             "year": "1992",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -46304,7 +46494,8 @@
             "time": "1:43.569",
             "year": "1991",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -46448,7 +46639,8 @@
             "time": "1:48.490",
             "year": "1980",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -46833,7 +47025,8 @@
             "time": "1:54.600",
             "year": "1969",
             "series": {
-              "text": "F5000"
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
             }
           }
         ]
@@ -47590,7 +47783,8 @@
             "time": "1:16.627",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -48464,7 +48658,8 @@
             "time": "1:16.207",
             "year": "2002",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -48754,7 +48949,8 @@
             "time": "1:30.149",
             "year": "1987",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -49024,7 +49220,8 @@
             "time": "0:38.119",
             "year": "1996",
             "series": {
-              "text": "IndyCar"
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
             }
           }
         ]
@@ -49053,10 +49250,11 @@
               "text": "Dallara DW12",
               "url": "https://en.wikipedia.org/wiki/Dallara_DW12"
             },
-            "time": "1:09.388",
+            "time": "1:09.3888",
             "year": "2017",
             "series": {
-              "text": "IndyCar"
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
             }
           }
         ]
@@ -49087,7 +49285,8 @@
             "time": "1:32.625",
             "year": "2015",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           }
         ]
@@ -49119,7 +49318,8 @@
             "time": "1:30.650",
             "year": "2021",
             "series": {
-              "text": "Formula Atlantic"
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
             }
           }
         ]
@@ -49150,7 +49350,8 @@
             "time": "1:39.044",
             "year": "2013",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           }
         ]
@@ -49182,7 +49383,8 @@
             "time": "1:22.191",
             "year": "2013",
             "series": {
-              "text": "DP"
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
             }
           }
         ]
@@ -49214,7 +49416,8 @@
             "time": "1:10.399",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -49352,7 +49555,8 @@
             "time": "1:24.770",
             "year": "2005",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -49897,7 +50101,8 @@
             "time": "1:30.734",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -50033,7 +50238,8 @@
             "time": "1:17.179",
             "year": "2025",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           },
           {
@@ -50076,7 +50282,8 @@
             "time": "1:16.986",
             "year": "2022",
             "series": {
-              "text": "TCR"
+              "text": "TCR",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
             }
           },
           {
@@ -50188,7 +50395,8 @@
             "time": "1:39.605",
             "year": "2011",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -50212,7 +50420,8 @@
             "time": "1:20.191",
             "year": "2018",
             "series": {
-              "text": "TCR"
+              "text": "TCR",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
             }
           },
           {
@@ -50551,7 +50760,8 @@
             "time": "1:40.303",
             "year": "2024",
             "series": {
-              "text": "Sports car racing"
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
             }
           },
           {
@@ -50789,7 +50999,8 @@
             "time": "1:17.578",
             "year": "1992",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -50932,7 +51143,8 @@
             "time": "1:28.306",
             "year": "2009",
             "series": {
-              "text": "A1 GP"
+              "text": "A1 GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
             }
           },
           {
@@ -51128,7 +51340,8 @@
             "time": "1:30.660",
             "year": "1990",
             "series": {
-              "text": "Group A"
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
             }
           },
           {
@@ -51176,7 +51389,8 @@
             "time": "1:08.149",
             "year": "1985",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -51394,7 +51608,8 @@
             "time": "1:27.600",
             "year": "1967",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -51527,7 +51742,8 @@
             "time": "1:33.365",
             "year": "2025",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -51738,7 +51954,8 @@
             "time": "1:22.384",
             "year": "2024",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52035,7 +52252,8 @@
             "time": "1:23.196",
             "year": "2021",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52567,7 +52785,8 @@
             "time": "1:33.808",
             "year": "2025",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52654,7 +52873,8 @@
             "time": "1:34.486",
             "year": "2024",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52759,7 +52979,8 @@
             "time": "1:41.905",
             "year": "2018",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52862,7 +53083,8 @@
             "time": "1:45.008",
             "year": "2017",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -52949,7 +53171,8 @@
             "time": "1:48.574",
             "year": "2013",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -53036,7 +53259,8 @@
             "time": "1:45.599",
             "year": "2008",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -53221,7 +53445,8 @@
             "time": "1:29.708",
             "year": "2023",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -53326,7 +53551,8 @@
             "time": "1:36.999",
             "year": "2025",
             "series": {
-              "text": "Ferrari Challenge"
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
             }
           },
           {
@@ -53479,7 +53705,8 @@
             "time": "1:23.800",
             "year": "1973",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -53948,7 +54175,8 @@
             "time": "1:05.823",
             "year": "2008",
             "series": {
-              "text": "LMP1"
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
             }
           },
           {
@@ -55115,7 +55343,8 @@
             "time": "1:11.310",
             "year": "1974",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -55433,7 +55662,8 @@
             "time": "1:28.139",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -55463,7 +55693,8 @@
             "time": "1:19.322",
             "year": "2014",
             "series": {
-              "text": "Auto GP"
+              "text": "Auto GP",
+              "url": "https://en.wikipedia.org/wiki/Auto_GP"
             }
           }
         ]
@@ -55492,7 +55723,8 @@
             "time": "1:36.325",
             "year": "2018",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -55523,7 +55755,8 @@
             "time": "8:08.006",
             "year": "2023",
             "series": {
-              "text": "GT3"
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
             }
           },
           {
@@ -55816,7 +56049,8 @@
             "time": "1:18.354",
             "year": "2001",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -55846,7 +56080,8 @@
             "time": "1:21.533",
             "year": "1991",
             "series": {
-              "text": "C1"
+              "text": "C1",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
             }
           }
         ]
@@ -55870,12 +56105,16 @@
               "text": "Clay Regazzoni",
               "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
             },
-            "car": {
+            "vehicle": {
               "text": "Ferrari 312T",
               "url": "https://en.wikipedia.org/wiki/Ferrari_312T"
             },
+            "time": "7:06.4",
             "year": "1975",
-            "series": "F1"
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
           }
         ]
       },
@@ -55905,7 +56144,8 @@
             "time": "7:40.800",
             "year": "1969",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -56295,12 +56535,16 @@
               "text": "Helmut Kelleners",
               "url": "https://en.wikipedia.org/wiki/Helmut_Kelleners"
             },
-            "car": {
+            "vehicle": {
               "text": "March 707",
               "url": "https://en.wikipedia.org/wiki/March_707"
             },
+            "time": "2:38.6",
             "year": "1970",
-            "series": "Group 7"
+            "series": {
+              "text": "Group 7",
+              "url": "https://en.wikipedia.org/wiki/Group_7_(motorsport)#Group_7_two-seater_racing_cars_(1966_to_1975)"
+            }
           }
         ]
       },
@@ -56929,7 +57173,8 @@
             "time": "9:44.600",
             "year": "1957",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -57047,7 +57292,8 @@
             "time": "10:25.400",
             "year": "1932",
             "series": {
-              "text": "GP"
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
             }
           }
         ]
@@ -57310,7 +57556,8 @@
             "time": "1:24.300",
             "year": "1968",
             "series": {
-              "text": "SA F1"
+              "text": "SA F1",
+              "url": "https://en.wikipedia.org/wiki/South_African_Formula_One_Championship"
             }
           },
           {
@@ -57662,7 +57909,8 @@
             "time": "1:07.924",
             "year": "2025",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -57926,7 +58174,8 @@
             "time": "1:05.619",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -58571,7 +58820,8 @@
             "time": "1:29.519",
             "year": "2024",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_era"
             }
           },
           {
@@ -58740,7 +58990,8 @@
             "time": "0:48.120",
             "year": "2014",
             "series": {
-              "text": "CN"
+              "text": "CN",
+              "url": "https://en.wikipedia.org/wiki/Group_CN"
             }
           },
           {
@@ -58817,7 +59068,8 @@
             "time": "1:08.337",
             "year": "2003",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -59988,7 +60240,8 @@
             "time": "1:31.228",
             "year": "1993",
             "series": {
-              "text": "Group C"
+              "text": "Group C",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
             }
           }
         ]
@@ -60012,7 +60265,8 @@
             "time": "1:28.318",
             "year": "1987",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -60036,7 +60290,8 @@
             "time": "1:35.810",
             "year": "1974",
             "series": {
-              "text": "Group 5"
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)"
             }
           }
         ]
@@ -60142,7 +60397,8 @@
             "time": "1:30.656",
             "year": "1982",
             "series": {
-              "text": "CART"
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
             }
           },
           {
@@ -60335,7 +60591,8 @@
             "time": "1:11.079",
             "year": "1984",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           }
         ]
@@ -60365,7 +60622,8 @@
             "time": "1:40.400",
             "year": "1967",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           },
           {
@@ -60452,7 +60710,8 @@
             "time": "1:20.000",
             "year": "1968",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           },
           {
@@ -60771,7 +61030,8 @@
             "time": "1:46.310",
             "year": "1978",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -60877,7 +61137,8 @@
             "time": "2:00.800",
             "year": "1970",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -61000,7 +61261,8 @@
             "time": "2:09.900",
             "year": "1954",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -61207,7 +61469,8 @@
             "time": "1:21.525",
             "year": "2009",
             "series": {
-              "text": "EuroBOSS/F1"
+              "text": "EuroBOSS/F1",
+              "url": "https://en.wikipedia.org/wiki/BOSS_GP"
             }
           },
           {
@@ -61557,7 +61820,8 @@
             "time": "1:24.836",
             "year": "1978",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -61750,7 +62014,8 @@
             "time": "1:27.607",
             "year": "1977",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -61906,7 +62171,8 @@
             "time": "1:26.146",
             "year": "1973",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -62235,7 +62501,8 @@
             "time": "1:41.800",
             "year": "2019",
             "series": {
-              "text": "LMP1"
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
             }
           },
           {
@@ -62947,7 +63214,8 @@
             "time": "1:51.867",
             "year": "1997",
             "series": {
-              "text": "WSC"
+              "text": "WSC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#Name_variations"
             }
           },
           {
@@ -63047,7 +63315,8 @@
             "time": "1:49.616",
             "year": "1992",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -63199,7 +63468,8 @@
             "time": "1:58.582",
             "year": "1990",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -63297,7 +63567,8 @@
             "time": "2:13.857",
             "year": "1986",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -63396,7 +63667,8 @@
             "time": "2:12.750",
             "year": "1983",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -63476,7 +63748,8 @@
             "time": "2:28.630",
             "year": "1981",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -63630,7 +63903,8 @@
             "time": "1:04.800",
             "year": "1969",
             "series": {
-              "text": "F5000"
+              "text": "F5000",
+              "url": "https://en.wikipedia.org/wiki/Formula_5000"
             }
           },
           {
@@ -63673,7 +63947,8 @@
             "time": "2:54.800",
             "year": "1966",
             "series": {
-              "text": "Group 4"
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
             }
           },
           {
@@ -63938,7 +64213,8 @@
             "time": "1:34.080",
             "year": "2017",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -64674,7 +64950,8 @@
             "time": "0:59.761",
             "year": "2008",
             "series": {
-              "text": "FR 3.5"
+              "text": "FR 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
             }
           },
           {
@@ -64849,7 +65126,8 @@
             "time": "1:32.238",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -64873,7 +65151,8 @@
             "time": "1:59.273",
             "year": "2008",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           }
         ]
@@ -64897,7 +65176,8 @@
             "time": "1:35.177",
             "year": "2008",
             "series": {
-              "text": "A1GP"
+              "text": "A1GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
             }
           }
         ]
@@ -64921,7 +65201,8 @@
             "time": "1:10.564",
             "year": "2025",
             "series": {
-              "text": "F-E"
+              "text": "F-E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
             }
           }
         ]
@@ -65233,7 +65514,8 @@
             "time": "1:27.097",
             "year": "2020",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -65927,7 +66209,8 @@
             "time": "1:58.895",
             "year": "2024",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           },
           {
@@ -66347,7 +66630,8 @@
             "time": "1:30.874",
             "year": "2010",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -66370,7 +66654,8 @@
             "time": "1:00.485",
             "year": "2021",
             "series": {
-              "text": "GT3"
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
             }
           },
           {
@@ -66516,7 +66801,8 @@
             "time": "0:47.404",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -66887,7 +67173,8 @@
             "time": "1:18.739",
             "year": "2004",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -67179,7 +67466,8 @@
               "url": "https://en.wikipedia.org/wiki/Superkart"
             },
             "driver": {
-              "text": "Gavin Bennett"
+              "text": "Gavin Bennett",
+              "url": "https://en.wikipedia.org/wiki/Gavin_Bennett"
             },
             "vehicle": {
               "text": "Anderson Maverick-DEA",
@@ -67415,7 +67703,8 @@
             "time": "1:29.288",
             "year": "1996",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -67571,7 +67860,8 @@
             "time": "1:27.100",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -67707,7 +67997,8 @@
             "time": "1:22.515",
             "year": "1993",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -67880,7 +68171,8 @@
             "time": "1:09.832",
             "year": "1987",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -68017,7 +68309,8 @@
             "time": "1:09.866",
             "year": "1985",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           }
         ]
@@ -69651,7 +69944,8 @@
             "time": "1:01.805",
             "year": "2025",
             "series": {
-              "text": "F4"
+              "text": "F4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
             }
           },
           {
@@ -69693,7 +69987,8 @@
             "time": "1:35.761",
             "year": "2019",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -70097,7 +70392,8 @@
             "time": "1:30.965",
             "year": "2025",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -70480,7 +70776,8 @@
             "time": "2:04.387",
             "year": "2019",
             "series": {
-              "text": "SBK"
+              "text": "SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
             }
           },
           {
@@ -70614,7 +70911,8 @@
             "time": "0:48.245",
             "year": "1999",
             "series": {
-              "text": "F3"
+              "text": "F3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
@@ -70806,7 +71104,8 @@
             "time": "0:58.396",
             "year": "2000",
             "series": {
-              "text": "Formula Nippon"
+              "text": "Formula Nippon",
+              "url": "https://en.wikipedia.org/wiki/Formula_Nippon_Championship"
             }
           },
           {
@@ -70868,7 +71167,8 @@
             "time": "2:04.970",
             "year": "2003",
             "series": {
-              "text": "MotoGP"
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
             }
           },
           {
@@ -70986,7 +71286,8 @@
             "time": "1:36.125",
             "year": "2002",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -71250,7 +71551,8 @@
             "time": "1:36.944",
             "year": "2001",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -71763,7 +72065,8 @@
             "time": "1:54.400",
             "year": "1984",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -71825,7 +72128,8 @@
             "time": "1:52.990",
             "year": "1980",
             "series": {
-              "text": "F2"
+              "text": "F2",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
             }
           },
           {
@@ -72083,7 +72387,8 @@
             "time": "1:14.023",
             "year": "1994",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -72633,7 +72938,8 @@
             "time": "1:29.889",
             "year": "2024",
             "series": {
-              "text": "SBK"
+              "text": "SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
             }
           },
           {
@@ -72792,7 +73098,8 @@
             "time": "1:38.683",
             "year": "2009",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -73925,7 +74232,8 @@
             "time": "0:59.920",
             "year": "1992",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -74217,7 +74525,8 @@
             "time": "0:59.920",
             "year": "1991",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -74304,7 +74613,8 @@
             "time": "1:35.600",
             "year": "1990",
             "series": {
-              "text": "IMSA GTP"
+              "text": "IMSA GTP",
+              "url": "https://en.wikipedia.org/wiki/IMSA_GT_classes#Grand_Touring_Prototype"
             }
           },
           {
@@ -74521,7 +74831,8 @@
             "time": "1:34.068",
             "year": "1980",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -74777,7 +75088,8 @@
             "time": "1:06.083",
             "year": "1971",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           },
           {
@@ -74861,7 +75173,8 @@
             "time": "1:02.600",
             "year": "1969",
             "series": {
-              "text": "Can-Am"
+              "text": "Can-Am",
+              "url": "https://en.wikipedia.org/wiki/Can-Am"
             }
           },
           {
@@ -75024,7 +75337,8 @@
             "time": "3:10.800",
             "year": "1954",
             "series": {
-              "text": "Sports car"
+              "text": "Sports car",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
             }
           },
           {
@@ -75076,7 +75390,8 @@
             "time": "5:13.500",
             "year": "1950",
             "series": {
-              "text": "FL"
+              "text": "FL",
+              "url": "https://en.wikipedia.org/wiki/Formula_Libre"
             }
           },
           {
@@ -75242,7 +75557,8 @@
             "time": "1:25.637",
             "year": "2024",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -75563,7 +75879,8 @@
             "time": "1:42.189",
             "year": "2025",
             "series": {
-              "text": "F-Regional"
+              "text": "F-Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
             }
           },
           {
@@ -75868,7 +76185,8 @@
             "time": "1:39.283",
             "year": "2019",
             "series": {
-              "text": "F1"
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -76248,7 +76566,8 @@
             "time": "1:37.656",
             "year": "2011",
             "series": {
-              "text": "GP2"
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
             }
           },
           {
@@ -76384,7 +76703,8 @@
             "time": "1:10.027",
             "year": "2018",
             "series": {
-              "text": "F4"
+              "text": "F4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
             }
           },
           {
@@ -76446,7 +76766,8 @@
             "time": "0:59.572",
             "year": "2017",
             "series": {
-              "text": "F4"
+              "text": "F4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
             }
           },
           {
