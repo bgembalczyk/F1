@@ -3,6 +3,9 @@ from __future__ import annotations
 import importlib
 import random
 import time
+from hashlib import sha256
+from pathlib import Path
+from urllib.parse import urlparse
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional, cast
 
@@ -120,6 +123,8 @@ class HttpClient(BaseHttpClient):
         backoff_seconds: float = 0.5,
         min_delay_seconds: float = 1.5,
         jitter_seconds: float = 0.7,
+        cache_dir: Path | str | None = "data/wiki_cache",
+        cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests.Session()
         super().__init__(
@@ -131,6 +136,10 @@ class HttpClient(BaseHttpClient):
             min_delay_seconds=min_delay_seconds,
             jitter_seconds=jitter_seconds,
         )
+        self.cache_dir = Path(cache_dir) if cache_dir is not None else None
+        self.cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
+        if self.cache_dir is not None:
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     def get(
         self,
@@ -170,3 +179,37 @@ class HttpClient(BaseHttpClient):
 
         assert False, "Unreachable code"
 
+    def get_text(
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ) -> str:
+        cache_path = self._cache_path_for_url(url)
+        if cache_path is not None and self._is_cache_fresh(cache_path):
+            return cache_path.read_text(encoding="utf-8")
+
+        response = self.get(url, headers=headers, timeout=timeout)
+        text = response.text
+        if cache_path is not None:
+            cache_path.write_text(text, encoding="utf-8")
+        return text
+
+    def _cache_path_for_url(self, url: str) -> Path | None:
+        if self.cache_dir is None or not self._is_wikipedia_url(url):
+            return None
+        digest = sha256(url.encode("utf-8")).hexdigest()
+        return self.cache_dir / f"{digest}.html"
+
+    def _is_cache_fresh(self, path: Path) -> bool:
+        if not path.exists() or self.cache_ttl_seconds <= 0:
+            return False
+        age_seconds = time.time() - path.stat().st_mtime
+        return age_seconds <= self.cache_ttl_seconds
+
+    @staticmethod
+    def _is_wikipedia_url(url: str) -> bool:
+        parsed = urlparse(url)
+        hostname = (parsed.hostname or "").lower()
+        return hostname == "wikipedia.org" or hostname.endswith(".wikipedia.org")
