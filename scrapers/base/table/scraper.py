@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Sequence, Mapping, List, Dict, Any
+from typing import Optional, Sequence, Mapping, List, Dict, Any, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
@@ -11,6 +11,15 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell, find_section_elements
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.config import ScraperConfig
+
+if TYPE_CHECKING:
+    import requests
+
+    from http_client.interfaces import HttpClientProtocol
+    from http_client.policies import ResponseCache
+    from scrapers.base.exporters import DataExporter
 from scrapers.base.table.columns.registry import resolve_column_type
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -21,7 +30,7 @@ class F1TableScraper(F1Scraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
-    Konfiguracja przez pola klasowe:
+    Konfiguracja przez ScraperConfig:
 
     - section_id    – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
                        jeśli None – szukamy po całej stronie.
@@ -33,21 +42,49 @@ class F1TableScraper(F1Scraper, ABC):
 
     _SKIP = object()
 
-    section_id: Optional[str] = None
-    expected_headers: Sequence[str] | None = None
-    column_map: Mapping[str, str] = {}
+    CONFIG: ScraperConfig | None = None
 
-    # klucz (po column_map) lub nagłówek -> BaseColumn
-    columns: Mapping[str, BaseColumn] = {}
-
-    table_css_class: str = "wikitable"
-
-    model_class: type | None = None
-
+    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
 
     # --- szablon parsowania ---
+    def __init__(
+        self,
+        *,
+        config: ScraperConfig | None = None,
+        include_urls: bool = True,
+        session: Optional["requests.Session"] = None,
+        headers: Optional[Dict[str, str]] = None,
+        http_client: Optional["HttpClientProtocol"] = None,
+        exporter: Optional["DataExporter"] = None,
+        timeout: int = 10,
+        retries: int = 0,
+        cache: "ResponseCache | None" = None,
+    ) -> None:
+        super().__init__(
+            include_urls=include_urls,
+            session=session,
+            headers=headers,
+            http_client=http_client,
+            exporter=exporter,
+            timeout=timeout,
+            retries=retries,
+            cache=cache,
+        )
+        resolved_config = config or self.CONFIG
+        if resolved_config is None:
+            raise ValueError("ScraperConfig must be provided for F1TableScraper.")
+
+        self.config = resolved_config
+        self.url = resolved_config.url
+        self.section_id = resolved_config.section_id
+        self.expected_headers = resolved_config.expected_headers
+        self.column_map = resolved_config.column_map
+        self.columns = resolved_config.columns
+        self.table_css_class = resolved_config.table_css_class
+        self.model_class = resolved_config.model_class
+        self.default_column = resolved_config.default_column
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         records: List[Dict[str, Any]] = []

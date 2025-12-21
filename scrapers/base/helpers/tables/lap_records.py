@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 
 # NOWE:
@@ -29,39 +30,39 @@ class LapRecordsTableScraper(F1TableScraper):
     logiki kolumn / ColumnContext / extract_links_from_cell itd.
     """
 
-    # Nie wiążemy się z żadną konkretną sekcją
-    section_id: Optional[str] = None
-
-    # Minimalny zestaw nagłówków, żeby uznać tabelę za „rekordową”.
-    # (kolejność nie ma znaczenia)
-    expected_headers = [
-        "Time",
-    ]
-
-    # mapowanie oryginalnych nagłówków → klucze w rekordzie
-    column_map = {
-        "Category": "category",
-        "Class": "class_",
-        "Driver": "driver",
-        "Driver/Rider": "driver_rider",
-        "Vehicle": "vehicle",
-        "Event": "event",
-        "Time": "time",
-        "Date": "date",
-    }
-
-    columns = {
-        # Tekst + link (jeśli jest)
-        "category": AutoColumn(),
-        "class_": AutoColumn(),
-        "driver": DriverColumn(),
-        "driver_rider": DriverColumn(),
-        "vehicle": AutoColumn(),
-        "event": UrlColumn(),
-        # Nowe kolumny – parsują tekst do ustandaryzowanej postaci
-        "time": TimeColumn(),
-        "date": DateColumn(),
-    }
+    CONFIG = ScraperConfig(
+        url="",
+        # Nie wiążemy się z żadną konkretną sekcją
+        section_id=None,
+        # Minimalny zestaw nagłówków, żeby uznać tabelę za „rekordową”.
+        # (kolejność nie ma znaczenia)
+        expected_headers=[
+            "Time",
+        ],
+        # mapowanie oryginalnych nagłówków → klucze w rekordzie
+        column_map={
+            "Category": "category",
+            "Class": "class_",
+            "Driver": "driver",
+            "Driver/Rider": "driver_rider",
+            "Vehicle": "vehicle",
+            "Event": "event",
+            "Time": "time",
+            "Date": "date",
+        },
+        columns={
+            # Tekst + link (jeśli jest)
+            "category": AutoColumn(),
+            "class_": AutoColumn(),
+            "driver": DriverColumn(),
+            "driver_rider": DriverColumn(),
+            "vehicle": AutoColumn(),
+            "event": UrlColumn(),
+            # Nowe kolumny – parsują tekst do ustandaryzowanej postaci
+            "time": TimeColumn(),
+            "date": DateColumn(),
+        },
+    )
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
