@@ -1,8 +1,78 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import re
 
+
+_YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
+
+
+def _norm_driver_text(obj: Any) -> str:
+    s = _safe_text(obj)
+    if not s:
+        return ""
+    # usuń dopiski w nawiasach: "hailey (tum)" -> "hailey"
+    s = re.sub(r"\s*\([^)]*\)\s*", " ", s)
+    s = " ".join(s.split())
+    return s
+
+def _driver_loose_match(a: Any, b: Any, *, min_len: int = 4) -> bool:
+    da = _norm_driver_text(a)
+    db = _norm_driver_text(b)
+    if not da or not db:
+        return False
+    if len(da) < min_len or len(db) < min_len:
+        return False
+    return da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+
+def _is_subset_record(small: Dict[str, Any], big: Dict[str, Any]) -> bool:
+    """
+    True, jeśli small nie wnosi sprzecznych danych względem big.
+    Używamy tylko do bezpiecznego fallback-merge.
+    """
+    # porównujemy tylko klucze, które są w small
+    for k, sv in small.items():
+        if sv is None:
+            continue
+        if k not in big or big.get(k) is None:
+            continue
+
+        bv = big.get(k)
+
+        # time porównujemy jako sekundy
+        if k == "time":
+            st = _time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
+            bt = _time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
+            if st is None or bt is None:
+                continue
+            if round(float(st), 6) != round(float(bt), 6):
+                return False
+            continue
+
+        # driver/vehicle porównujemy po tekście (luźno)
+        if k == "driver":
+            if not _driver_loose_match(sv, bv):
+                return False
+            continue
+        if k in ("vehicle", "car"):
+            # jeśli small ma vehicle, a big też, to prefix match OK
+            if not _vehicle_prefix_match(sv, bv, min_len=6):
+                return False
+            continue
+
+        # dicty: porównuj po "text" jeśli jest
+        if isinstance(sv, dict) and isinstance(bv, dict):
+            stxt = (sv.get("text") or sv.get("name") or "").strip().lower()
+            btxt = (bv.get("text") or bv.get("name") or "").strip().lower()
+            if stxt and btxt and stxt != btxt:
+                return False
+            continue
+
+        # fallback: proste porównanie
+        if sv != bv:
+            return False
+
+    return True
 
 def _add_name(names_set: set[str], name_list: List[str], value: Optional[str]) -> None:
     if not value:
@@ -12,14 +82,12 @@ def _add_name(names_set: set[str], name_list: List[str], value: Optional[str]) -
         names_set.add(value)
         name_list.append(value)
 
-
 def _safe_text(obj: Any) -> str:
     if isinstance(obj, dict):
         return (obj.get("text") or "").strip().lower()
     if obj is None:
         return ""
     return str(obj).strip().lower()
-
 
 def _time_key(rec: Dict[str, Any]) -> Optional[float | str]:
     """
@@ -58,12 +126,79 @@ def _time_key(rec: Dict[str, Any]) -> Optional[float | str]:
     # fallback – traktujemy jako tekstowy klucz
     return s.lower()
 
+def _extract_year_from_event(rec: Dict[str, Any]) -> Optional[str]:
+    """
+    Fallback dla rekordów tabelarycznych, które nie mają `year` ani `date`,
+    ale mają `event` (np. "1963 Aintree 200", url: ".../1963_Aintree_200").
+    """
+    event = rec.get("event")
+    candidates: List[str] = []
+
+    if isinstance(event, dict):
+        if event.get("text"):
+            candidates.append(str(event["text"]))
+        if event.get("url"):
+            candidates.append(str(event["url"]))
+    elif isinstance(event, str):
+        candidates.append(event)
+
+    for s in candidates:
+        m = _YEAR_RE.search(s)
+        if m:
+            return m.group(1)
+
+    return None
+
+def _time_seconds(rec: Dict[str, Any]) -> Optional[float]:
+    """
+    Zwraca czas WYŁĄCZNIE jako sekundy (float) albo None.
+    Obsługuje:
+    - rec["time_seconds"] (jeśli istnieje)
+    - rec["time"] jako liczba
+    - rec["time"] jako dict {"seconds": ...}
+    - rec["time"] jako tekst: "M:SS.xxx" albo "SS.xxx"
+    """
+    # 1) jeśli masz już time_seconds – traktuj jako prawdę
+    ts = rec.get("time_seconds")
+    if isinstance(ts, (int, float)):
+        return float(ts)
+
+    t = rec.get("time")
+
+    # 2) liczba
+    if isinstance(t, (int, float)):
+        return float(t)
+
+    # 3) dict z seconds
+    if isinstance(t, dict):
+        sec = t.get("seconds")
+        if isinstance(sec, (int, float)):
+            return float(sec)
+        txt = t.get("text")
+    else:
+        txt = t
+
+    if txt is None:
+        return None
+
+    s = str(txt).strip()
+    if not s:
+        return None
+
+    # 4) parsuj "M:SS.xxx" lub "SS.xxx"
+    m = re.match(r"^(?:(\d+):)?(\d+(?:\.\d+)?)$", s)
+    if not m:
+        return None
+
+    minutes = int(m.group(1)) if m.group(1) else 0
+    seconds = float(m.group(2))
+    return minutes * 60.0 + seconds
 
 def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
     """
     Klucz do rozpoznawania tego samego rekordu:
 
-    (driver_text, vehicle_text, year, time_key)
+    (driver_text, vehicle_text, year, time_seconds)
 
     - driver: rec["driver"]["text"] / rec["driver"]
     - vehicle: rec["vehicle"]["text"] / rec["car"]["text"]
@@ -76,14 +211,12 @@ def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
     """
     driver_txt = _safe_text(rec.get("driver"))
 
-    vehicle_obj = rec.get("vehicle")
-    if vehicle_obj is None:
-        vehicle_obj = rec.get("car")
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
     vehicle_txt = _safe_text(vehicle_obj)
 
-    # year z pola year lub z date.iso
+    # year: najpierw pole year, potem date.iso, potem event
     year: Optional[str] = None
-    if "year" in rec and rec["year"] is not None:
+    if rec.get("year") is not None:
         year = str(rec["year"])
     else:
         date_obj = rec.get("date")
@@ -92,42 +225,252 @@ def _record_key(rec: Dict[str, Any]) -> Optional[tuple]:
             if iso:
                 year = iso[:4]
 
-    time_key = _time_key(rec)
+    if not year:
+        year = _extract_year_from_event(rec)
 
-    if not driver_txt or not vehicle_txt or not year or time_key is None:
+    time_sec = _time_seconds(rec)
+
+    if not driver_txt or not vehicle_txt or not year or time_sec is None:
         return None
 
-    return (driver_txt, vehicle_txt, year, time_key)
+    # round dla stabilności klucza (minimalne różnice floatów)
+    return (driver_txt, vehicle_txt, year, round(time_sec, 6))
 
+def _core_key(rec: Dict[str, Any]) -> Optional[tuple]:
+    """
+    Klucz „rdzeniowy” do łączenia rekordów nawet jeśli brakuje time.
+
+    (driver_text, vehicle_text, year)
+
+    - vehicle może być ucięty → dopasujemy fallbackiem prefiksowym w merge
+    """
+    driver_txt = _safe_text(rec.get("driver"))
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
+    vehicle_txt = _safe_text(vehicle_obj)
+
+    year: Optional[str] = None
+    if rec.get("year") is not None:
+        year = str(rec["year"])
+    else:
+        date_obj = rec.get("date")
+        if isinstance(date_obj, dict):
+            iso = (date_obj.get("iso") or "").strip()
+            if iso:
+                year = iso[:4]
+
+    if not year:
+        year = _extract_year_from_event(rec)
+
+    if not driver_txt or not vehicle_txt or not year:
+        return None
+
+    return (driver_txt, vehicle_txt, year)
+
+def _norm_vehicle_text(v: Any) -> str:
+    if isinstance(v, dict):
+        v = v.get("text") or ""
+    s = str(v or "").strip().lower()
+    s = " ".join(s.split())
+    return s
+
+def _vehicle_prefix_match(a: Any, b: Any, *, min_len: int = 10) -> bool:
+    va = _norm_vehicle_text(a)
+    vb = _norm_vehicle_text(b)
+    if not va or not vb:
+        return False
+    if len(va) < min_len or len(vb) < min_len:
+        return False
+    return va.startswith(vb) or vb.startswith(va)
+
+def _merge_two_records(base: Dict[str, Any], extra: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Scala dwa rekordy w jeden, preferując bogatsze dane:
+    - driver/vehicle: preferuj dict z url
+    - series: wybierz najlepsze przez _select_best_series([..])
+    - date/year: wybierz najlepsze przez _select_best_date_year([..]) + fallback z event
+    - event/pozostałe: pierwszy niepusty
+    - time: zawsze float w sekundach
+    """
+    merged: Dict[str, Any] = dict(base)
+
+    # driver / vehicle (preferuj z URL)
+    for key in ("driver",):
+        a = base.get(key)
+        b = extra.get(key)
+        if isinstance(a, dict) and a.get("url"):
+            merged[key] = a
+        elif b is not None:
+            merged[key] = b
+
+    # vehicle może być w vehicle albo car
+    a_v = base.get("vehicle") or base.get("car")
+    b_v = extra.get("vehicle") or extra.get("car")
+    if isinstance(a_v, dict) and a_v.get("url"):
+        merged["vehicle"] = a_v
+    elif b_v is not None:
+        merged["vehicle"] = b_v
+
+    # time -> sekundy
+    t = _time_seconds(base)
+    if t is None:
+        t = _time_seconds(extra)
+    if t is not None:
+        merged["time"] = float(t)
+    merged.pop("time_seconds", None)
+
+    # date / year
+    best_date, best_year = _select_best_date_year([base, extra])
+    if best_year is None:
+        best_year = _extract_year_from_event(base) or _extract_year_from_event(extra)
+
+    if best_date is not None:
+        merged["date"] = best_date
+        merged.pop("year", None)
+    elif best_year is not None:
+        merged["year"] = best_year
+
+    # series/category/class -> series
+    best_series = _select_best_series([base, extra])
+    if best_series is not None:
+        merged["series"] = best_series
+    merged.pop("category", None)
+    merged.pop("class", None)
+    merged.pop("class_", None)
+
+    # event i inne pola: pierwszy niepusty
+    for k, v in extra.items():
+        if k in {"time_seconds", "category", "class", "class_"}:
+            continue
+        if merged.get(k) is None and v is not None:
+            merged[k] = v
+
+    return merged
 
 def _merge_race_lap_records(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Łączy duplikujące się rekordy (infobox + tabela) w jeden bogaty rekord.
+
+    Etap A: twardy merge po _record_key (driver+vehicle+year+time).
+    Etap B: merge po _core_key (driver+vehicle+year) – pozwala łączyć brakujące time.
+    Etap C: fallback merge dla uciętych vehicle / braków year (driver+time + prefiks vehicle).
     """
-    result: List[Dict[str, Any]] = []
-    processed_keys: set[tuple] = set()
+    # --- Etap A: twarde buckety po _record_key
+    key_buckets: Dict[tuple, List[Dict[str, Any]]] = {}
+    leftovers: List[Dict[str, Any]] = []
 
     for rec in records:
-        key = _record_key(rec)
-        if key is None:
-            # nie umiemy dobrze dopasować – zostawiamy jak jest
-            result.append(rec)
+        k = _record_key(rec)
+        if k is None:
+            leftovers.append(rec)
+        else:
+            key_buckets.setdefault(k, []).append(rec)
+
+    merged_main: List[Dict[str, Any]] = [_merge_record_group(rs) for rs in key_buckets.values()]
+
+    # --- Etap B: spróbuj dołączyć leftovers po _core_key (nie wymaga time)
+    core_index: Dict[tuple, List[int]] = {}
+    for i, rec in enumerate(merged_main):
+        ck = _core_key(rec)
+        if ck is not None:
+            core_index.setdefault(ck, []).append(i)
+
+    still_left: List[Dict[str, Any]] = []
+    for rec in leftovers:
+        ck = _core_key(rec)
+        if ck is None:
+            still_left.append(rec)
             continue
 
-        if key in processed_keys:
+        cand_ids = core_index.get(ck, [])
+        if not cand_ids:
+            still_left.append(rec)
             continue
 
-        # zbierz wszystkie rekordy z tym samym kluczem
-        same: List[Dict[str, Any]] = [
-            r for r in records if _record_key(r) == key
-        ]
+        # jeśli jest kilka kandydatów (rzadkie), spróbuj dopasować po time jeśli rec ma time
+        rec_t = _time_seconds(rec)
+        chosen_idx = None
+        if rec_t is not None:
+            for idx in cand_ids:
+                tgt_t = _time_seconds(merged_main[idx])
+                if tgt_t is not None and round(float(tgt_t), 6) == round(float(rec_t), 6):
+                    chosen_idx = idx
+                    break
 
-        merged = _merge_record_group(same)
-        result.append(merged)
-        processed_keys.add(key)
+        # fallback: pierwszy kandydat
+        if chosen_idx is None:
+            chosen_idx = cand_ids[0]
 
-    return result
+        merged_main[chosen_idx] = _merge_two_records(merged_main[chosen_idx], rec)
 
+    # --- Etap C: dodatkowy fallback (driver+time + prefiks vehicle) dla uciętych wartości
+    index_dt: Dict[tuple, List[int]] = {}
+    for i, rec in enumerate(merged_main):
+        d = _safe_text(rec.get("driver"))
+        t = _time_seconds(rec)
+        if d and t is not None:
+            index_dt.setdefault((d, round(float(t), 6)), []).append(i)
+
+    final_left: List[Dict[str, Any]] = []
+    for rec in still_left:
+        d = _safe_text(rec.get("driver"))
+        t = _time_seconds(rec)
+        if not d or t is None:
+            final_left.append(rec)
+            continue
+
+        cand_ids = index_dt.get((d, round(float(t), 6)), [])
+        if not cand_ids:
+            final_left.append(rec)
+            continue
+
+        v = rec.get("vehicle") or rec.get("car")
+        matched = False
+        for idx in cand_ids:
+            target = merged_main[idx]
+            tv = target.get("vehicle") or target.get("car")
+            if _vehicle_prefix_match(v, tv, min_len=10):
+                merged_main[idx] = _merge_two_records(target, rec)
+                matched = True
+                break
+
+        if not matched:
+            final_left.append(rec)
+
+    # --- Etap D: fallback dla rekordów typu tylko (driver+time)
+    # indeks po time -> kandydaci w merged_main
+    time_index: Dict[float, List[int]] = {}
+    for i, rec in enumerate(merged_main):
+        t = _time_seconds(rec)
+        if t is None:
+            continue
+        time_index.setdefault(round(float(t), 6), []).append(i)
+
+    last_left: List[Dict[str, Any]] = []
+    for rec in final_left:
+        t = _time_seconds(rec)
+        if t is None:
+            last_left.append(rec)
+            continue
+
+        cand_ids = time_index.get(round(float(t), 6), [])
+        if not cand_ids:
+            last_left.append(rec)
+            continue
+
+        matched = False
+        for idx in cand_ids:
+            target = merged_main[idx]
+
+            # driver luźno + small jest podzbiorem target -> bezpiecznie scal
+            if _driver_loose_match(rec.get("driver"), target.get("driver")) and _is_subset_record(rec, target):
+                merged_main[idx] = _merge_two_records(target, rec)
+                matched = True
+                break
+
+        if not matched:
+            last_left.append(rec)
+
+    return merged_main + last_left
 
 def _select_best_driver(records: List[Dict[str, Any]]) -> Optional[Any]:
     """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
@@ -146,7 +489,6 @@ def _select_best_driver(records: List[Dict[str, Any]]) -> Optional[Any]:
             best = d
     return best
 
-
 def _select_best_vehicle(records: List[Dict[str, Any]]) -> Optional[Any]:
     """Wybiera najlepszy rekord pojazdu (preferuje wersję z URL)."""
     best = None
@@ -164,26 +506,39 @@ def _select_best_vehicle(records: List[Dict[str, Any]]) -> Optional[Any]:
             best = v
     return best
 
+def _select_best_time(records: List[Dict[str, Any]]) -> Optional[float]:
+    """
+    Zwraca czas WYŁĄCZNIE jako sekundy (float).
 
-def _select_best_time(records: List[Dict[str, Any]]) -> Optional[Any]:
-    """Wybiera najlepszy czas (preferuje wersję z 'seconds')."""
-    def has_seconds(val: Any) -> bool:
-        return isinstance(val, dict) and "seconds" in val
+    Obsługuje:
+    - float/int (już sekundy),
+    - str typu "1:35.895" albo "38.891",
+    - dict z TimeColumn: {"text": "...", "seconds": ...}.
+    """
+    # korzystamy z istniejącej logiki klucza czasu (ona już umie parsować stringi itp.)
+    for r in records:
+        tk = _time_key(r)
+        if isinstance(tk, (int, float)):
+            return float(tk)
 
-    best = None
+    # fallback (gdyby _time_key zwrócił string w nietypowym przypadku)
     for r in records:
         t = r.get("time")
-        if not t:
-            continue
-        if best is None:
-            best = t
-            continue
-        if has_seconds(t) and not has_seconds(best):
-            best = t
-    return best
+        if isinstance(t, dict):
+            sec = t.get("seconds")
+            if isinstance(sec, (int, float)):
+                return float(sec)
+        if isinstance(t, (int, float)):
+            return float(t)
+        if isinstance(t, str):
+            try:
+                return float(t.strip())
+            except ValueError:
+                continue
 
+    return None
 
-def _select_best_date_year(records: List[Dict[str, Any]]) -> tuple[Optional[Any], Optional[Any]]:
+def _select_best_date_year(records: List[Dict[str, Any]]) -> Tuple[Optional[Any], Optional[Any]]:
     """Wybiera najlepszą datę i rok (preferuje dokładniejszy iso)."""
     best_date = None
     best_year = None
@@ -209,24 +564,18 @@ def _select_best_date_year(records: List[Dict[str, Any]]) -> tuple[Optional[Any]
 
     return best_date, best_year
 
-
 def _select_best_series(records: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
     def series_candidate(r: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        cand = (
-            r.get("series")
-            or r.get("category")
-            or r.get("class")
-            or r.get("class_")
-        )
+        cand = r.get("series") or r.get("category") or r.get("class") or r.get("class_")
         if cand is None:
             return None
         if isinstance(cand, dict):
             return {
-                "text": cand.get("text") or cand.get("name") or "",
+                "text": (cand.get("text") or cand.get("name") or "").strip(),
                 "url": cand.get("url"),
             }
-        return {"text": str(cand), "url": None}
+        return {"text": str(cand).strip(), "url": None}
 
     best = None
     best_has_url = False
@@ -261,14 +610,18 @@ def _select_best_series(records: List[Dict[str, Any]]) -> Optional[Dict[str, Any
 
     return best
 
-
 def _collect_other_fields(records: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Zbiera pozostałe pola (nie uwzględniane w scalaniu)."""
+    """
+    Zbiera pozostałe pola, ale NIE przenosi dubli typu:
+    - time_seconds (bo wynikowo i tak będzie time w sekundach)
+    - category/class (bo wynikowo i tak będzie series)
+    """
     ignore_keys = {
         "driver",
         "vehicle",
         "car",
         "time",
+        "time_seconds",
         "date",
         "year",
         "series",
@@ -277,7 +630,7 @@ def _collect_other_fields(records: List[Dict[str, Any]]) -> Dict[str, Any]:
         "class_",
     }
 
-    merged = {}
+    merged: Dict[str, Any] = {}
     for r in records:
         for k, v in r.items():
             if k in ignore_keys:
@@ -286,42 +639,52 @@ def _collect_other_fields(records: List[Dict[str, Any]]) -> Dict[str, Any]:
                 merged[k] = v
     return merged
 
-
 def _merge_record_group(records: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
-    Scala grupę rekordów opisujących ten sam lap record.
-
-    Reguły:
-    - time: preferujemy wersję z 'seconds'
-    - date: preferujemy dokładniejszą iso (dłuższy string)
-    - series/category/class: wynikowo pole 'series' (preferujemy wersję z linkiem)
-    - vehicle/car: wynikowo 'vehicle' (preferujemy wersję z linkiem)
-    - driver: preferujemy wersję z linkiem
-    - inne pola: bierzemy pierwszy niepusty
+    Wynik:
+    - time: float (sekundy)  ✅ (bez time_seconds)
+    - series: dict{text,url} ✅ (z category/class)
+    - year: jeśli brak date, bierzemy year (również z event)
     """
     merged = _collect_other_fields(records)
 
     best_driver = _select_best_driver(records)
     best_vehicle = _select_best_vehicle(records)
-    best_time = _select_best_time(records)
     best_date, best_year = _select_best_date_year(records)
     best_series = _select_best_series(records)
+
+    # time zawsze w sekundach (float)
+    # bierzemy pierwsze sensowne z grupy (one są tym samym rekordem)
+    t = None
+    for r in records:
+        t = _time_seconds(r)
+        if t is not None:
+            break
+
+    # year fallback z event (gdy nadal brak)
+    if best_year is None:
+        for r in records:
+            y = _extract_year_from_event(r)
+            if y:
+                best_year = y
+                break
 
     if best_driver is not None:
         merged["driver"] = best_driver
     if best_vehicle is not None:
         merged["vehicle"] = best_vehicle
-    if best_time is not None:
-        merged["time"] = best_time
+    if t is not None:
+        merged["time"] = float(t)
+
     if best_date is not None:
         merged["date"] = best_date
     elif best_year is not None:
         merged["year"] = best_year
+
     if best_series is not None:
         merged["series"] = best_series
 
     return merged
-
 
 def _extract_circuit_names(raw: Dict[str, Any], infobox: Dict[str, Any], normalized: Dict[str, Any]) -> Dict[str, Any]:
     """Ekstrakcja nazwy i poprzednich nazw toru."""
@@ -349,14 +712,12 @@ def _extract_circuit_names(raw: Dict[str, Any], infobox: Dict[str, Any], normali
         "former_names": former_names,
     }
 
-
 def _extract_circuit_url(raw: Dict[str, Any], details: Optional[Dict[str, Any]]) -> Optional[str]:
     """Ekstrakcja URL toru (None jeśli brak szczegółów)."""
     circuit = raw.get("circuit") or {}
     if details is None:
         return None
     return circuit.get("url")
-
 
 def _extract_circuit_location(raw: Dict[str, Any], normalized: Dict[str, Any]) -> Dict[str, Any]:
     """Ekstrakcja lokalizacji toru z konsolidacją miejsc i współrzędnych."""
@@ -404,7 +765,6 @@ def _extract_circuit_location(raw: Dict[str, Any], normalized: Dict[str, Any]) -
         "coordinates": coordinates,
     }
 
-
 def _extract_circuit_grade_and_history(normalized: Dict[str, Any]) -> tuple[Optional[str], Optional[List[Any]]]:
     """Ekstrakcja klasy FIA i historii zdarzeń."""
     if not normalized:
@@ -417,7 +777,6 @@ def _extract_circuit_grade_and_history(normalized: Dict[str, Any]) -> tuple[Opti
     history_events = history_norm.get("events")
 
     return fia_grade, history_events
-
 
 def _extract_infobox_layouts(infobox: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Ekstrakcja layoutów z infoboxu i konwersja race_lap_record na listę."""
@@ -436,7 +795,6 @@ def _extract_infobox_layouts(infobox: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     return layouts
 
-
 def _parse_table_layout_info(table_layout: str) -> tuple[Optional[float], Optional[str]]:
     """Parsuje informacje o długości i latach z tekstu layoutu tabeli."""
     length_km: Optional[float] = None
@@ -453,7 +811,6 @@ def _parse_table_layout_info(table_layout: str) -> tuple[Optional[float], Option
         years_str = m_years.group(1).strip().lower()
 
     return length_km, years_str
-
 
 def _find_layout_for_table(table_layout: str, layouts: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     """
@@ -494,7 +851,6 @@ def _find_layout_for_table(table_layout: str, layouts: List[Dict[str, Any]]) -> 
 
     return best_candidate
 
-
 def _merge_tables_into_layouts(tables: List[Dict[str, Any]], layouts: List[Dict[str, Any]]) -> None:
     """Łączy rekordy z tabel w odpowiednie layouty."""
     for table_block in tables:
@@ -521,7 +877,6 @@ def _merge_tables_into_layouts(tables: List[Dict[str, Any]], layouts: List[Dict[
         if records:
             lay["race_lap_records"] = _merge_race_lap_records(records)
 
-
 def _cleanup_urls(obj: Any) -> Any:
     """Usuwa url=None oraz rekursywnie czyści elementy."""
     if isinstance(obj, list):
@@ -541,7 +896,6 @@ def _cleanup_urls(obj: Any) -> Any:
         return cleaned
 
     return obj
-
 
 def _simplify_time(rec: Dict[str, Any]) -> None:
     """Zamienia time dict na float jeśli jest seconds, albo próbuje zparsować tekstowo."""
@@ -566,7 +920,6 @@ def _simplify_time(rec: Dict[str, Any]) -> None:
     else:
         rec["time"] = txt
 
-
 def _simplify_date(rec: Dict[str, Any]) -> None:
     """Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY"."""
     d = rec.get("date")
@@ -579,7 +932,6 @@ def _simplify_date(rec: Dict[str, Any]) -> None:
         txt = d.get("text")
         if txt:
             rec["date"] = txt.strip()
-
 
 def _remove_empty_lists(obj: Any) -> Any:
     """Rekursywnie usuwa puste listy ze struktury."""
@@ -598,7 +950,6 @@ def _remove_empty_lists(obj: Any) -> Any:
         new_list = [_remove_empty_lists(x) for x in obj]
         return [x for x in new_list if x != []]
     return obj
-
 
 def normalize_circuit_record(raw: Dict[str, Any]) -> Dict[str, Any]:
     """
