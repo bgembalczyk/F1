@@ -43,7 +43,14 @@ class DataExporter:
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
+        fieldnames_strategy: str = "union",
     ) -> None:
+        """Zapisz dane do CSV.
+
+        Domyślnie pola są wyznaczane jako stabilna unia kluczy z kolejnych wierszy
+        (strategy="union"). Alternatywnie można użyć tylko pól z pierwszego wiersza
+        (strategy="first_row") lub przekazać własne fieldnames.
+        """
         data = self._extract_data(result)
         if not data:
             return
@@ -52,12 +59,15 @@ class DataExporter:
 
         # Jeżeli nie podano fieldnames – bierzemy wszystkie klucze z unią
         if fieldnames is None:
-            keys: List[str] = []
-            for row in data:
-                for key in row.keys():
-                    if key not in keys:
-                        keys.append(key)
-            fieldnames = keys
+            if fieldnames_strategy == "union":
+                fieldnames = self._fieldnames_from_union(data)
+            elif fieldnames_strategy == "first_row":
+                fieldnames = self._fieldnames_from_first_row(data)
+            else:
+                raise ValueError(
+                    "Nieznana strategia fieldnames: "
+                    f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
+                )
 
         with path.open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -96,3 +106,14 @@ class DataExporter:
             }
 
         return {"meta": None, "data": result}
+
+    def _fieldnames_from_union(self, data: List[Dict[str, Any]]) -> List[str]:
+        keys: List[str] = []
+        for row in data:
+            for key in row.keys():
+                if key not in keys:
+                    keys.append(key)
+        return keys
+
+    def _fieldnames_from_first_row(self, data: List[Dict[str, Any]]) -> List[str]:
+        return list(data[0].keys())
