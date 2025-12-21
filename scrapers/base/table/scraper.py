@@ -16,12 +16,11 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
-from infrastructure.http_client.policies import ResponseCache
 
 if TYPE_CHECKING:
     import requests
-
-    from scrapers.base.exporters import DataExporter
+    from infrastructure.http_client.policies import ResponseCache
+    from scrapers.base.export.exporters import DataExporter
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -48,17 +47,17 @@ class F1TableScraper(F1Scraper, ABC):
     default_column: BaseColumn = AutoColumn()
 
     def __init__(
-        self,
-        *,
-        config: ScraperConfig | None = None,
-        include_urls: bool = True,
-        session: Optional["requests.Session"] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional["HttpClientProtocol"] = None,
-        exporter: Optional["DataExporter"] = None,
-        timeout: int = 10,
-        retries: int = 0,
-        cache: "ResponseCache | None" = None,
+            self,
+            *,
+            config: ScraperConfig | None = None,
+            include_urls: bool = True,
+            session: Optional["requests.Session"] = None,
+            headers: Optional[Dict[str, str]] = None,
+            http_client: Optional["HttpClientProtocol"] = None,
+            exporter: Optional["DataExporter"] = None,
+            timeout: int = 10,
+            retries: int = 0,
+            cache: "ResponseCache | None" = None,
     ) -> None:
         super().__init__(
             include_urls=include_urls,
@@ -183,7 +182,7 @@ class F1TableScraper(F1Scraper, ABC):
             )
 
             col = (
-                self.columns.get(key) or self.columns.get(header) or self.default_column
+                    self.columns.get(key) or self.columns.get(header) or self.default_column
             )
             col.apply(ctx, record)
 

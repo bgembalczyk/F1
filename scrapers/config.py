@@ -10,7 +10,7 @@ from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.policies import ResponseCache
 
 if TYPE_CHECKING:
-    from scrapers.base.exporters import DataExporter
+    from scrapers.base.export.exporters import DataExporter
     from scrapers.base.html_fetcher import HtmlFetcher
     from scrapers.base.parsers import SoupParser
 

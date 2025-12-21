@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.exporters import DataExporter
+from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
