@@ -1,15 +1,22 @@
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from typing import Callable
-import pytest
 from pathlib import Path
+from typing import Callable
 import sys
-from http_client import HttpClient, UrllibHttpClient
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
+
+import pytest
+from http_client import (
+    DefaultRetryPolicy,
+    FileCache,
+    HttpClient,
+    UrllibHttpClient,
+    WikipediaCachePolicy,
+)
 
 
 class _StubHandler(BaseHTTPRequestHandler):
@@ -104,3 +111,37 @@ def test_timeouts_are_respected(name, factory, http_server):
 
     with pytest.raises(Exception):
         client.get(f"{base_url}/slow")
+
+
+def test_wikipedia_cache_policy_hit_and_miss(tmp_path):
+    cache = WikipediaCachePolicy(FileCache(cache_dir=tmp_path, ttl_seconds=60))
+    url = "https://en.wikipedia.org/wiki/Formula_One"
+    other_url = "https://example.com"
+
+    assert cache.get(url) is None
+    cache.set(url, "cached")
+    assert cache.get(url) == "cached"
+
+    cache.set(other_url, "skip")
+    assert cache.get(other_url) is None
+
+
+def test_default_retry_policy_for_statuses():
+    policy = DefaultRetryPolicy(retries=1, backoff_seconds=0.01)
+
+    class _Response:
+        def __init__(self, status_code, text=""):
+            self.status_code = status_code
+            self.text = text
+
+    assert policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
+    assert policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
+    assert policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+    assert (
+        policy.should_retry(
+            response=_Response(403, text="Please respect our robot policy"),
+            exception=None,
+            attempt=0,
+        )
+        is True
+    )
