@@ -1,6 +1,5 @@
 from typing import Any
 
-from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.parsing import split_delimited_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.registry import column_type_registry
