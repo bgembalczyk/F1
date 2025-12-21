@@ -3,11 +3,16 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Optional, Sequence
 
-from scrapers.base.export.export_helpers import NormalizationRule, _normalize_record_keys, _drop_empty_fields, \
-    _fieldnames_from_union, _fieldnames_from_first_row, ExportRecord, _extract_data
+from scrapers.base.export.export_helpers import (
+    _extract_data,
+    _fieldnames_from_first_row,
+    _fieldnames_from_union,
+)
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
+from scrapers.base.normalization import NormalizationRule, RecordNormalizer
+from scrapers.base.records import ExportRecord
 from scrapers.base.results import ScrapeResult
 
 
@@ -24,24 +29,10 @@ class DataExporter:
         self._json_formatter = json_formatter or JsonFormatter()
         self._csv_formatter = csv_formatter or CsvFormatter()
         self._dataframe_formatter = dataframe_formatter or PandasDataFrameFormatter()
-        self._normalization_rules = self._build_normalization_rules(
+        self._record_normalizer = RecordNormalizer(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-
-    @staticmethod
-    def _build_normalization_rules(
-        *,
-        normalize_keys: bool,
-        normalization_rules: Sequence[NormalizationRule] | None,
-    ) -> list[NormalizationRule]:
-        rules: list[NormalizationRule] = []
-        if normalize_keys:
-            rules.append(_normalize_record_keys)
-            rules.append(_drop_empty_fields)
-        if normalization_rules:
-            rules.extend(normalization_rules)
-        return rules
 
     def _apply_normalization(
         self, result: ScrapeResult | list[ExportRecord]
@@ -58,7 +49,7 @@ class DataExporter:
         else:
             normalized_result = ScrapeResult(data=list(result), source_url=None)
 
-        if not self._normalization_rules:
+        if not self._record_normalizer.has_rules:
             return normalized_result
 
         data = _extract_data(normalized_result)
@@ -69,10 +60,7 @@ class DataExporter:
                 normalized.append(item)
                 continue
 
-            updated: dict[str, Any] = dict(item)
-            for rule in self._normalization_rules:
-                updated = rule(updated)
-            normalized.append(updated)
+            normalized.append(self._record_normalizer.normalize_record(item))
 
         return ScrapeResult(
             data=normalized,  # type: ignore[arg-type]
