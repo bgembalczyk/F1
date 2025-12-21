@@ -6,6 +6,7 @@ import types
 
 from models.circuit import Circuit
 from models.engine_manufacturer import EngineManufacturer
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.scraper import F1TableScraper
 
 if "bs4" not in sys.modules:
@@ -105,7 +106,7 @@ def test_table_scraper_instantiates_model_and_filters_unknown_fields():
         def contents(self):
             return [self.text]
 
-    scraper = DummyScraper(include_urls=False)
+    scraper = DummyScraper(options=ScraperOptions(include_urls=False))
     result = scraper.parse_row(
         row={
             "Name": FakeCell("Example"),

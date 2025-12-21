@@ -6,17 +6,10 @@ from typing import Any, Dict, List, Optional, Sequence
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-import requests
-
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
-from scrapers.base.exporters import DataExporter, ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.parsers import SoupParser
+from scrapers.base.options import ScraperOptions
 
 
 # ======================================================================
@@ -38,18 +31,18 @@ class F1Scraper(ABC):
     #: Pełny URL strony Wikipedii
     url: str
 
-    def __init__(
-        self,
-        *,
-        include_urls: bool = True,
-        exporter: Optional[DataExporter] = None,
-        fetcher: HtmlFetcher | None = None,
-        parser: SoupParser | None = None,
-    ) -> None:
-        self.include_urls = include_urls
-        self.fetcher = fetcher or HtmlFetcher()
-        self.parser = parser
-        self.exporter = exporter or DataExporter()
+    def __init__(self, *, options: ScraperOptions) -> None:
+        self.include_urls = options.include_urls
+        self.fetcher = options.fetcher or HtmlFetcher(
+            session=options.session,
+            headers=options.headers,
+            http_client=options.http_client,
+            timeout=options.timeout,
+            retries=options.retries,
+            cache=options.cache,
+        )
+        self.parser = options.parser
+        self.exporter = options.exporter or DataExporter()
 
         self._data: List[Dict[str, Any]] = []
 
