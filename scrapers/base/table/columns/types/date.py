@@ -6,9 +6,11 @@ from datetime import datetime
 from typing import Any, Optional, List
 
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
+@column_type_registry.register("date")
 class DateColumn(BaseColumn):
     """
     Parsuje daty z Wikipedii do formatu ISO (YYYY-MM-DD), jeśli to możliwe.
