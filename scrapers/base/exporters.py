@@ -9,6 +9,7 @@ from scrapers.base.formatters import (
     JsonFormatter,
     PandasDataFrameFormatter,
 )
+from scrapers.base.records import ExportRecord
 from scrapers.base.results import ScrapeResult
 
 NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
@@ -28,11 +29,13 @@ class DataExporter:
         self._csv_formatter = csv_formatter or CsvFormatter()
         self._dataframe_formatter = dataframe_formatter or PandasDataFrameFormatter()
         self._normalization_rules = self._build_normalization_rules(
-            normalize_keys, normalization_rules
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
         )
 
     @staticmethod
     def _build_normalization_rules(
+        *,
         normalize_keys: bool,
         normalization_rules: Sequence[NormalizationRule] | None,
     ) -> List[NormalizationRule]:
@@ -45,23 +48,24 @@ class DataExporter:
         return rules
 
     def _apply_normalization(
-        self, result: ScrapeResult | List[Dict[str, Any]]
-    ) -> ScrapeResult | List[Dict[str, Any]]:
+        self, result: ScrapeResult | List[ExportRecord]
+    ) -> ScrapeResult | List[ExportRecord]:
         if not self._normalization_rules:
             return result
 
         data = _extract_data(result)
-        normalized: List[Dict[str, Any]] = []
+        normalized: List[ExportRecord] = []
 
         for record in data:
-            updated = dict(record)
+            # ExportRecord jest w praktyce dict-like; normalizacja działa na dict[str, Any]
+            updated: Dict[str, Any] = dict(record)
             for rule in self._normalization_rules:
                 updated = rule(updated)
-            normalized.append(updated)
+            normalized.append(updated)  # type: ignore[arg-type]
 
         if isinstance(result, ScrapeResult):
             return ScrapeResult(
-                data=normalized,
+                data=normalized,  # type: ignore[arg-type]
                 source_url=result.source_url,
                 timestamp=result.timestamp,
             )
@@ -70,7 +74,7 @@ class DataExporter:
 
     def to_json(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         path: str | Path,
         *,
         indent: int = 2,
@@ -85,7 +89,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -121,13 +125,13 @@ class DataExporter:
 
         Path(path).write_text(payload, encoding="utf-8")
 
-    def to_dataframe(self, result: ScrapeResult | List[Dict[str, Any]]):
+    def to_dataframe(self, result: ScrapeResult | List[ExportRecord]):
         return self._dataframe_formatter.format(self._apply_normalization(result))
 
 
-def _extract_data(result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def _extract_data(result: ScrapeResult | List[ExportRecord]) -> List[ExportRecord]:
     if isinstance(result, ScrapeResult):
-        return result.data
+        return result.data  # type: ignore[return-value]
     return result
 
 
@@ -161,7 +165,7 @@ def _to_snake_case(value: str) -> str:
     return cleaned.lower()
 
 
-def _fieldnames_from_union(data: List[Dict[str, Any]]) -> List[str]:
+def _fieldnames_from_union(data: List[ExportRecord]) -> List[str]:
     keys: List[str] = []
     for row in data:
         for key in row.keys():
@@ -170,5 +174,5 @@ def _fieldnames_from_union(data: List[Dict[str, Any]]) -> List[str]:
     return keys
 
 
-def _fieldnames_from_first_row(data: List[Dict[str, Any]]) -> List[str]:
+def _fieldnames_from_first_row(data: List[ExportRecord]) -> List[str]:
     return list(data[0].keys()) if data else []

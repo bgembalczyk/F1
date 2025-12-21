@@ -90,8 +90,8 @@ class F1TableScraper(F1Scraper, ABC):
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
 
-        Z PR bierzemy logikę pomijania wierszy będących kopią nagłówka (częste w <tfoot>
-        lub w tabelach z powtórzonym headerem pośrodku).
+        Pomijamy wiersze będące kopią nagłówka (częste w <tfoot> albo jako
+        "repeated header" w środku tabeli).
         """
         records: List[Dict[str, Any]] = []
 
@@ -127,7 +127,7 @@ class F1TableScraper(F1Scraper, ABC):
         if not isinstance(tr, Tag):
             return False
 
-        # Nagłówki w kolejności tabeli: bierzemy TYLKO str-key'e i pomijamy meta.
+        # Nagłówki w kolejności tabeli: tylko str-key'e i bez metadanych.
         headers_ordered: List[str] = [
             h
             for h in row.keys()
@@ -144,7 +144,6 @@ class F1TableScraper(F1Scraper, ABC):
 
         cell_texts = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
 
-        # Dokładne dopasowanie 1:1 -> traktujemy jako powtórzony nagłówek.
         return len(cell_texts) == len(headers_clean) and cell_texts == headers_clean
 
     def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
