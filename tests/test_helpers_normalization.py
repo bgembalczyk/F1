@@ -5,6 +5,13 @@ import pytest
 
 from scrapers.base.helpers.records import merge_two_records
 from scrapers.base.helpers.text import split_delimited_text
+from scrapers.base.helpers.text_normalization import (
+    clean_text,
+    is_language_link,
+    normalize_dashes,
+    strip_lang_suffix,
+    strip_refs,
+)
 from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
 
 try:
@@ -31,6 +38,32 @@ def test_clean_wiki_text_removes_references_and_whitespace():
 
     assert clean_wiki_text(text) == "Foo bar"
 
+
+def test_clean_text_normalizes_refs_dashes_and_lang_suffix():
+    text = "  Foo\xa0bar [1] A - B (es)  "
+
+    assert clean_text(text) == "Foo bar A-B"
+
+
+def test_strip_refs_removes_bracketed_references():
+    assert strip_refs("Foo [1] bar [note 2]") == "Foo  bar "
+
+
+def test_normalize_dashes_compacts_spaces():
+    assert normalize_dashes("A – B") == "A-B"
+    assert normalize_dashes("A -B") == "A-B"
+    assert normalize_dashes("A- B") == "A-B"
+
+
+def test_strip_lang_suffix_ignores_word_endings():
+    assert strip_lang_suffix("David Salvador (es)") == "David Salvador"
+    assert strip_lang_suffix("Yamaha YZF-R9 ( de )") == "Yamaha YZF-R9"
+    assert strip_lang_suffix("Silverstone circuit") == "Silverstone circuit"
+
+
+def test_is_language_link_matches_language_wikipedia_urls():
+    assert is_language_link("fr", "https://fr.wikipedia.org/wiki/Test") is True
+    assert is_language_link("fr", "https://en.wikipedia.org/wiki/fr") is False
 
 def test_split_delimited_text_respects_min_parts():
     assert split_delimited_text("a", min_parts=2) == []

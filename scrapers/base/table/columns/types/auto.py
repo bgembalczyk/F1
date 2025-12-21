@@ -3,6 +3,7 @@ from typing import Any
 import re
 
 from models.records import LinkRecord
+from scrapers.base.helpers.text_normalization import clean_text, is_language_link
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -18,106 +19,15 @@ class AutoColumn(BaseColumn):
     - dodatkowo ignoruje linki „językowe” (es/fr/de/it/...) przy decyzji o zwróceniu dict/listy.
     """
 
-    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")  # [1], [note 3], ...
-
-    # krótkie kody językowe (interwiki / znaczniki języka)
-    _LANG_CODES = {
-        "en",
-        "es",
-        "fr",
-        "de",
-        "it",
-        "pt",
-        "pl",
-        "ru",
-        "cs",
-        "sk",
-        "hu",
-        "ro",
-        "bg",
-        "sr",
-        "hr",
-        "sl",
-        "nl",
-        "sv",
-        "no",
-        "da",
-        "fi",
-        "el",
-        "tr",
-        "ar",
-        "he",
-        "id",
-        "ms",
-        "th",
-        "vi",
-        "ja",
-        "ko",
-        "zh",
-        "uk",
-        "ca",
-        "eu",
-        "gl",
-    }
-
-    def _is_lang_link(self, link: LinkRecord) -> bool:
-        txt = (link.get("text") or "").strip().lower()
-        url = (link.get("url") or "").strip().lower()
-        if not txt or not url:
-            return False
-
-        # typowy przypadek: tekst "es" i URL do es.wikipedia.org
-        if txt in self._LANG_CODES and f"://{txt}.wikipedia.org/" in url:
-            return True
-
-        # czasem interwiki bywa do innej wiki z kodem jako tekst
-        if txt in self._LANG_CODES and (
-            ".wikipedia.org/" in url or ".wikimedia.org/" in url
-        ):
-            return True
-
-        return False
-
     def _normalize_link(self, link: LinkRecord) -> LinkRecord:
         return {"text": link.get("text") or "", "url": link.get("url")}
-
-    def _clean_text(self, text: str) -> str:
-        t = (text or "").replace("\xa0", " ").replace("&nbsp;", " ")
-        t = self._REF_RE.sub("", t)
-        t = re.sub(r"\s+", " ", t).strip()
-
-        # normalizuj różne myślniki do '-'
-        t = t.replace("–", "-").replace("—", "-").replace("−", "-").replace("-", "-")
-
-        # sklej myślnik "A - B" -> "A-B" oraz "A- B" / "A -B"
-        t = re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
-
-        # ⚠️ usuń znacznik językowy TYLKO gdy jest osobnym tokenem na końcu
-        # np: "David Salvador (es)" / "David Salvador es" / "Yamaha YZF-R9 ( de )"
-        # NIGDY nie tnij końcówek słów typu "...circuit" / "...series" / "...cosworth".
-        lang_alt = "|".join(sorted(self._LANG_CODES, key=len, reverse=True))
-
-        while True:
-            before = t
-
-            # "(es)" / "( es )" na końcu
-            t = re.sub(
-                rf"\s*\(\s*(?:{lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE
-            ).strip()
-            # " es" na końcu (musi być poprzedzone co najmniej 1 spacją)
-            t = re.sub(rf"\s+(?:{lang_alt})\s*$", "", t, flags=re.IGNORECASE).strip()
-
-            if t == before:
-                break
-
-        return t
 
     def _cell_text(self, ctx: ColumnContext) -> str:
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
             raw = " ".join(list(ctx.cell.stripped_strings))
-            return self._clean_text(raw)
-        return self._clean_text(ctx.clean_text or getattr(ctx, "raw_text", "") or "")
+            return clean_text(raw)
+        return clean_text(ctx.clean_text or getattr(ctx, "raw_text", "") or "")
 
     def parse(self, ctx: ColumnContext) -> Any:
         value = self._cell_text(ctx)
@@ -126,14 +36,14 @@ class AutoColumn(BaseColumn):
         links = [
             self._normalize_link(link)
             for link in (ctx.links or [])
-            if not self._is_lang_link(link)
+            if not is_language_link(link.get("text"), link.get("url"))
         ]
 
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:
             link = links[0]
-            link_text = self._clean_text(link.get("text") or "")
-            cell_text = self._clean_text(value or "")
+            link_text = clean_text(link.get("text") or "")
+            cell_text = clean_text(value or "")
             if cell_text and link_text and cell_text.lower() == link_text.lower():
                 return link
             return value or None

@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 
-import re
 from typing import Any, Callable, Iterable
-from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
 from models.records import LinkRecord
-
-_REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+from scrapers.base.helpers.text_normalization import clean_text, is_language_link
 
 # ============================================================================
 # Text Normalization
@@ -19,9 +16,7 @@ _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
 def clean_wiki_text(text: str) -> str:
     """Normalizuje whitespace i usuwa przypisy Wikipedii."""
-    t = text.replace("\xa0", " ").replace("&nbsp;", " ")
-    t = _REF_RE.sub("", t)
-    return t.strip()
+    return clean_text(text)
 
 
 def strip_marks(text: str | None) -> str | None:
@@ -94,7 +89,7 @@ def extract_links_from_cell(
         if is_wikipedia_redlink(url):
             url = None
 
-        if is_language_marker_link(text, url):
+        if is_language_link(text, url):
             continue
 
         links.append({"text": text, "url": url})
@@ -137,28 +132,3 @@ def is_wikipedia_redlink(url: str | None) -> bool:
     url_l = url.lower()
     return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
 
-
-def is_language_marker_link(text: str | None, url: str | None) -> bool:
-    """
-    True tylko dla interwiki markerów typu:
-    text='fr' i url='https://fr.wikipedia.org/wiki/...'
-    """
-    if not text or not url:
-        return False
-
-    txt = text.strip().lower()
-    if not (2 <= len(txt) <= 3) or not txt.isalpha():
-        return False
-
-    try:
-        host = (urlparse(url).hostname or "").lower()
-    except Exception:
-        return False
-
-    # interesuje nas wyłącznie <lang>.wikipedia.org (ew. m.wikipedia.org też bywa)
-    m = re.match(r"^([a-z]{2,3})\.(m\.)?wikipedia\.org$", host)
-    if not m:
-        return False
-
-    lang = m.group(1)
-    return txt == lang
