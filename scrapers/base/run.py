@@ -6,6 +6,7 @@ import inspect
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Type
 
+from scrapers.base.exporters import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 
@@ -42,14 +43,16 @@ def run_and_export(
 
     print(f"Pobrano rekordów: {len(data)}")
 
+    result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
+
     json_path = Path(json_path)
     _ensure_parent(json_path)
-    scraper.to_json(json_path)
+    scraper.exporter.to_json(result, json_path)
 
     if csv_path:
         csv_path = Path(csv_path)
         _ensure_parent(csv_path)
-        scraper.to_csv(csv_path)
+        scraper.exporter.to_csv(result, csv_path)
 
 
 _ScraperConfig = Tuple[str, str, Path, Optional[Path], Dict[str, Any]]
