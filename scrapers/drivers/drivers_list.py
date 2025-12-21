@@ -10,6 +10,7 @@ from models.scrape_types import (
 from scrapers.base.helpers.parsing import parse_seasons
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
@@ -141,5 +142,5 @@ if __name__ == "__main__":
         F1DriversListScraper,
         "../../data/wiki/drivers/f1_drivers.json",
         "../../data/wiki/drivers/f1_drivers.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )

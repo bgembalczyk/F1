@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABC
 from dataclasses import fields, is_dataclass
+import warnings
 from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
@@ -10,6 +11,7 @@ from bs4 import BeautifulSoup, Tag
 from infrastructure.http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.wiki import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -49,26 +51,62 @@ class F1TableScraper(F1Scraper, ABC):
     def __init__(
             self,
             *,
+            options: ScraperOptions | None = None,
             config: ScraperConfig | None = None,
-            include_urls: bool = True,
+            include_urls: bool | None = None,
             session: Optional["requests.Session"] = None,
             headers: Optional[Dict[str, str]] = None,
             http_client: Optional["HttpClientProtocol"] = None,
             exporter: Optional["DataExporter"] = None,
-            timeout: int = 10,
-            retries: int = 0,
+            timeout: int | None = None,
+            retries: int | None = None,
             cache: "ResponseCache | None" = None,
     ) -> None:
-        super().__init__(
-            include_urls=include_urls,
-            session=session,
-            headers=headers,
-            http_client=http_client,
-            exporter=exporter,
-            timeout=timeout,
-            retries=retries,
-            cache=cache,
+        legacy_used = any(
+            value is not None
+            for value in (
+                include_urls,
+                session,
+                headers,
+                http_client,
+                exporter,
+                timeout,
+                retries,
+                cache,
+            )
         )
+
+        if options is None:
+            options = ScraperOptions.from_legacy(
+                include_urls=include_urls,
+                session=session,
+                headers=headers,
+                http_client=http_client,
+                exporter=exporter,
+                timeout=timeout,
+                retries=retries,
+                cache=cache,
+            )
+            if options is None:
+                options = ScraperOptions()
+            else:
+                warnings.warn(
+                    "Parametry include_urls/session/headers/http_client/exporter/"
+                    "timeout/retries/cache w F1TableScraper są przestarzałe. "
+                    "Przekaż je przez ScraperOptions.",
+                    DeprecationWarning,
+                    stacklevel=2,
+                )
+        elif legacy_used:
+            warnings.warn(
+                "Parametry include_urls/session/headers/http_client/exporter/"
+                "timeout/retries/cache w F1TableScraper są ignorowane, gdy "
+                "przekazujesz ScraperOptions.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+
+        super().__init__(options=options)
 
         resolved_config = config or self.CONFIG
         if resolved_config is None:

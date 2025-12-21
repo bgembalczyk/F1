@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from models.engine_manufacturer import EngineManufacturer
+from scrapers.base.options import ScraperOptions
 from scrapers.base.run import run_and_export
 
 
@@ -93,5 +94,5 @@ if __name__ == "__main__":
         EngineManufacturersListScraper,
         "../../data/wiki/engines/f1_engine_manufacturers.json",
         "../../data/wiki/engines/f1_engine_manufacturers.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )
