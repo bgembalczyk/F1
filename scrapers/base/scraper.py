@@ -9,6 +9,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from scrapers.base.export.exporters import DataExporter
+from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
@@ -44,6 +45,7 @@ class F1Scraper(ABC):
         # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
+        self._record_normalizer = RecordNormalizer()
 
         self._data: Optional[List[ExportRecord]] = None
 
@@ -172,7 +174,7 @@ class F1Scraper(ABC):
     # ---------- Hooki: normalize/export ----------
 
     def normalize_records(self, records: List[RawRecord]) -> List[NormalizedRecord]:
-        return records
+        return self._record_normalizer.normalize(list(records))
 
     def to_export_records(self, records: List[NormalizedRecord]) -> List[ExportRecord]:
         return records
