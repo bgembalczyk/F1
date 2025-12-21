@@ -10,6 +10,13 @@ from typing import Dict, Optional
 import certifi
 
 
+# Globalny kontekst SSL z bundlą CA z certifi, jeśli dostępny
+if certifi:
+    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+else:
+    _SSL_CONTEXT = ssl.create_default_context()
+
+
 class RequestException(Exception):
     pass
 
@@ -38,13 +45,6 @@ class Response:
     def raise_for_status(self) -> None:
         if 400 <= self.status_code:
             raise HTTPError(self.url, self.status_code, self.text, self.headers)
-
-
-# Globalny kontekst SSL z bundlą CA z certifi, jeśli dostępny
-if certifi:
-    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
-else:
-    _SSL_CONTEXT = ssl.create_default_context()
 
 
 class Session:

@@ -9,13 +9,13 @@ from typing import Any, Callable, Dict, Optional, cast
 
 from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.interfaces import HttpResponseProtocol
 from infrastructure.http_client.policies import RateLimiter, ResponseCache, RetryPolicy
 from infrastructure.http_client.rate_limiting import MinDelayRateLimiter
 from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
-class BaseHttpClient(ABC, HttpClientProtocol):
+class BaseHttpClient(ABC):
     """Wspólna klasa bazowa dla klientów HTTP."""
 
     DEFAULT_HEADERS: Dict[str, str] = {
@@ -140,7 +140,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         *,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
-    ):
+    ) -> HttpResponseProtocol:
         """Pobiera URL i zwraca response."""
         ...
 
