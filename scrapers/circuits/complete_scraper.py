@@ -6,10 +6,8 @@ import requests
 from bs4 import BeautifulSoup
 
 from http_client.interfaces import HttpClientProtocol
+from models.services.circuit_service import CircuitService
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.helpers.circuits.circuit_normalization import (
-    normalize_circuit_record,
-)
 from scrapers.base.registry import register_scraper
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
@@ -77,7 +75,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             full_record = dict(circuit)
             full_record["details"] = details
 
-            normalized = normalize_circuit_record(full_record)
+            normalized = CircuitService.normalize_record(full_record)
             complete.append(normalized)
 
         self._data = complete
