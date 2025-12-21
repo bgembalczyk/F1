@@ -1,6 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
+from models.records import LinkRecord
 from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 
 
@@ -16,7 +17,7 @@ class CircuitGeoParser(InfoboxTextUtils):
             return None
 
         text = self._get_text(row) or ""
-        links = row.get("links") or []
+        links: List[LinkRecord] = row.get("links") or []
 
         components: List[Dict[str, Any]] = []
         cursor = 0

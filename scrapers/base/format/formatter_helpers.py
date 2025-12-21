@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import asdict, is_dataclass
-from typing import Any, Dict, List
+from typing import Any, Dict, List, cast
+
+from models.records import LinkRecord
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.results import ScrapeResult
@@ -24,6 +26,13 @@ def _normalize_payload(value: Any) -> Any:
     if is_dataclass(value):
         return _normalize_payload(asdict(value))
     if isinstance(value, dict):
+        if "text" in value and "url" in value and set(value.keys()).issubset(
+            {"text", "url"}
+        ):
+            return cast(
+                LinkRecord,
+                {"text": value.get("text") or "", "url": value.get("url")},
+            )
         return {k: _normalize_payload(v) for k, v in value.items()}
     if isinstance(value, list):
         return [_normalize_payload(v) for v in value]

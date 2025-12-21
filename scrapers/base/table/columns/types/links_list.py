@@ -1,5 +1,6 @@
 from typing import Any
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -13,10 +14,10 @@ class LinksListColumn(BaseColumn):
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
-        cleaned: list[dict[str, Any]] = []
+        cleaned: list[LinkRecord] = []
 
         for link in ctx.links:
-            d = dict(link)
+            d: LinkRecord = {"text": link.get("text") or "", "url": link.get("url")}
             text = d.get("text")
 
             # 1) strip marks

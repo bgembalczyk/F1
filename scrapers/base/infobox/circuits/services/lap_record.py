@@ -1,6 +1,7 @@
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
@@ -11,7 +12,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
 
     def _wrap_entity_from_links(
-        self, entity_text: Optional[str], links: List[Dict[str, Any]]
+        self, entity_text: Optional[str], links: List[LinkRecord]
     ) -> Optional[Dict[str, Any]]:
         if not entity_text:
             return None
@@ -21,7 +22,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         if not cleaned:
             return None
 
-        obj: Dict[str, Any] = {"text": cleaned}
+        obj: Dict[str, Any] = {"text": cleaned, "url": None}
 
         link = self._find_link(cleaned, links) if links else None
 

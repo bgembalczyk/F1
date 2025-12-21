@@ -1,5 +1,6 @@
 from typing import Any
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -17,7 +18,10 @@ class DriverColumn(BaseColumn):
         # 1) Spróbuj znaleźć link z niepustym tekstem, patrząc od końca
         if ctx.links:
             for raw_link in reversed(ctx.links):
-                link = dict(raw_link)
+                link: LinkRecord = {
+                    "text": raw_link.get("text") or "",
+                    "url": raw_link.get("url"),
+                }
                 txt = strip_marks(link.get("text") or "")
                 if txt:
                     return {"text": txt, "url": link.get("url")}
@@ -27,6 +31,6 @@ class DriverColumn(BaseColumn):
         if ctx.clean_text:
             txt = strip_marks(ctx.clean_text)
             if txt:
-                return {"text": txt}
+                return {"text": txt, "url": None}
 
         return None

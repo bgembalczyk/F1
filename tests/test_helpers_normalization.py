@@ -1,13 +1,17 @@
 import sys
 import types
 
+import pytest
+
 from scrapers.base.helpers.records import merge_two_records
 from scrapers.base.helpers.text import split_delimited_text
-from scrapers.base.helpers.wiki import clean_wiki_text
+from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
 
 try:
-    import bs4  # noqa: F401
+    from bs4 import BeautifulSoup  # type: ignore
+    _HAS_BS4 = True
 except Exception:
+    _HAS_BS4 = False
     bs4_module = types.ModuleType("bs4")
 
     class Tag:  # type: ignore
@@ -46,3 +50,32 @@ def test_merge_two_records_prefers_richer_data_and_normalizes_time():
     assert merged["driver"]["url"] == "https://example.com"
     assert merged["time"] == 90.0
     assert "time_seconds" not in merged
+
+
+def test_extract_links_from_cell_filters_reference_and_language_links():
+    if not _HAS_BS4:
+        pytest.skip("beautifulsoup4 is required for link extraction test")
+    html = """
+    <td>
+        <a href="/wiki/Good">Good</a>
+        <a href="/w/index.php?title=Red&action=edit&redlink=1">Red</a>
+        <a href="https://fr.wikipedia.org/wiki/Test">fr</a>
+        <a href="#cite_note-1">[1]</a>
+    </td>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    cell = soup.find("td")
+
+    def full_url(href):
+        if not href:
+            return None
+        if href.startswith("http"):
+            return href
+        return f"https://en.wikipedia.org{href}"
+
+    links = extract_links_from_cell(cell, full_url=full_url)
+
+    assert links == [
+        {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
+        {"text": "Red", "url": None},
+    ]

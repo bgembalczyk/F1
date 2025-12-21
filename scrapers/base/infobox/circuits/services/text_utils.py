@@ -1,6 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
+from models.records import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
 from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
@@ -84,8 +85,8 @@ class InfoboxTextUtils:
     def _find_link(
         self,
         text: Optional[str],
-        links: List[Dict[str, str]],
-    ) -> Optional[Dict[str, str]]:
+        links: List[LinkRecord],
+    ) -> Optional[LinkRecord]:
         if not text:
             return None
         wanted = text.strip().lower()
@@ -98,7 +99,7 @@ class InfoboxTextUtils:
     def _with_link(
         self,
         text: Optional[str],
-        links: Optional[List[Dict[str, str]]],
+        links: Optional[List[LinkRecord]],
     ) -> Optional[Dict[str, Any]]:
         if text is None:
             return None

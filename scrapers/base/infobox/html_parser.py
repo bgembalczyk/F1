@@ -4,6 +4,7 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import is_reference_link
 
 
@@ -80,11 +81,11 @@ class InfoboxHtmlParser:
 
         return data
 
-    def _extract_links(self, td) -> List[dict]:
+    def _extract_links(self, td) -> List[LinkRecord]:
         """
         Wyciąga wszystkie linki z komórki, pomijając linki do przypisów.
         """
-        links = []
+        links: List[LinkRecord] = []
         for a in td.find_all("a", href=True):
             href = a["href"]
 

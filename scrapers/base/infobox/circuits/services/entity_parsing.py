@@ -1,6 +1,7 @@
 import re
 from typing import Any, Dict, List, Optional, Union
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import is_language_marker_link, is_wikipedia_redlink
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
@@ -23,7 +24,7 @@ class CircuitEntityParser(CircuitTextProcessing):
 
         links = row.get("links") or []
 
-        def _clean_link(link: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        def _clean_link(link: LinkRecord) -> Optional[LinkRecord]:
             link_text = (link.get("text") or "").strip()
             if not link_text:
                 return None
@@ -38,10 +39,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             if is_wikipedia_redlink(url):
                 url = None
 
-            item: Dict[str, Any] = {"text": link_text}
-            if url:
-                item["url"] = url
-            return item
+            return {"text": link_text, "url": url}
 
         # wiele linków -> lista (pomijamy językowe)
         if len(links) > 1:
@@ -64,7 +62,7 @@ class CircuitEntityParser(CircuitTextProcessing):
                     cleaned["text"] = part
                     return cleaned
             # jak nie ma linku / został odrzucony – zwróć sam tekst
-            return {"text": part}
+            return {"text": part, "url": None}
 
         if len(parts) > 1:
             return [_entity_for_part(p) for p in parts]

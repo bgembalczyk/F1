@@ -8,6 +8,8 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from models.records import LinkRecord
+
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
 # ============================================================================
@@ -74,12 +76,12 @@ def extract_links_from_cell(
     cell: Tag,
     *,
     full_url: Callable[[str | None], str | None],
-) -> list[dict[str, Any]]:
+) -> list[LinkRecord]:
     """
     Zwraca listę linków {text, url} z komórki,
     ignorując przypisy (cite_note / reference).
     """
-    links: list[dict[str, Any]] = []
+    links: list[LinkRecord] = []
 
     for a in cell.find_all("a", href=True):
         href = a.get("href") or ""

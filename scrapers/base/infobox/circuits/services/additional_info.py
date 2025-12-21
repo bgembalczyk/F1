@@ -1,5 +1,6 @@
 from typing import Any, Dict, List, Optional
 
+from models.records import LinkRecord
 from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
 
@@ -21,7 +22,7 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
                 continue
 
             info: Dict[str, Any] = {"text": text}
-            links = row.get("links") or []
+            links: List[LinkRecord] = row.get("links") or []
 
             parts = split_delimited_text(text)
             if len(parts) > 1:
