@@ -28,6 +28,9 @@ class F1Scraper(ABC):
     - trzymanie danych w pamięci
     - delegowanie eksportu
     - wspólną obsługę błędów (network/parse + soft-skip)
+
+    Kontrakt:
+    - fetch() zawsze zwraca listę ExportRecord (może być pusta).
     """
 
     #: Pełny URL strony Wikipedii (ustawiany w klasach potomnych)
@@ -65,6 +68,8 @@ class F1Scraper(ABC):
         Error handling:
         - ScraperError z critical=True -> propagujemy
         - pozostałe -> warning + soft-skip (puste dane)
+
+        Zwraca zawsze listę ExportRecord (może być pusta).
         """
         if not getattr(self, "url", None):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")

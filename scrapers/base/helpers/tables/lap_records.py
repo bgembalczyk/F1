@@ -27,7 +27,7 @@ class LapRecordsTableScraper(F1TableScraper):
     """
 
     CONFIG = ScraperConfig(
-        url="",
+        url="https://example.com",
         section_id=None,
         expected_headers=["Time"],
         column_map={
