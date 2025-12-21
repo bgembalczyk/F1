@@ -33,7 +33,9 @@ class DataExporter:
     ) -> None:
         payload = self._json_payload(result, include_metadata=include_metadata)
         path = Path(path)
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=indent), encoding="utf-8")
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=indent), encoding="utf-8"
+        )
 
     def to_csv(
         self,
@@ -68,7 +70,9 @@ class DataExporter:
             raise RuntimeError("Pandas nie jest zainstalowane.")
         return pd.DataFrame(self._extract_data(result))
 
-    def _extract_data(self, result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def _extract_data(
+        self, result: ScrapeResult | List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
         if isinstance(result, ScrapeResult):
             return result.data
         return result

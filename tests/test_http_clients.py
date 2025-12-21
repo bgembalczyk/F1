@@ -5,10 +5,6 @@ from pathlib import Path
 from typing import Callable
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
-
 import pytest
 from http_client import (
     DefaultRetryPolicy,
@@ -17,6 +13,10 @@ from http_client import (
     UrllibHttpClient,
     WikipediaCachePolicy,
 )
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 
 class _StubHandler(BaseHTTPRequestHandler):
@@ -134,9 +134,15 @@ def test_default_retry_policy_for_statuses():
             self.status_code = status_code
             self.text = text
 
-    assert policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
-    assert policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
-    assert policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+    assert (
+        policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
+    )
+    assert (
+        policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
+    )
+    assert (
+        policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+    )
     assert (
         policy.should_retry(
             response=_Response(403, text="Please respect our robot policy"),

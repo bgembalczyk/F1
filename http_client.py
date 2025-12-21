@@ -9,8 +9,8 @@ from pathlib import Path
 from typing import Any, Callable, Dict, Optional, cast
 from urllib.parse import urlparse
 
-from f1_http.interfaces import HttpClientProtocol
 from f1_http import requests_shim
+from f1_http.interfaces import HttpClientProtocol
 
 try:  # pragma: no cover - zależne od środowiska
     requests = importlib.import_module("requests")
@@ -42,11 +42,11 @@ class RetryPolicy(ABC):
 
 
 class DefaultRetryPolicy(RetryPolicy):
-    """Domyślna strategia retry dla błędów 429/5xx."""
+    """Domyślna strategia retry dla błędów 429/5xx (+częsty 403 od bot-policy)."""
 
     def __init__(self, *, retries: int = 0, backoff_seconds: float = 0.5) -> None:
         self._max_retries = max(0, int(retries))
-        self._backoff_seconds = float(backoff_seconds)
+        self._backoff_seconds = max(0.0, float(backoff_seconds))
 
     @property
     def max_retries(self) -> int:
@@ -63,9 +63,12 @@ class DefaultRetryPolicy(RetryPolicy):
             return True
         if response is None:
             return False
+
         status = int(getattr(response, "status_code", 0) or 0)
         if status == 429 or 500 <= status <= 599:
             return True
+
+        # Wikipedia czasem zwraca 403 z treścią o robot policy / rate limit.
         if status == 403:
             body_text = (getattr(response, "text", "") or "").lower()
             if (
@@ -74,9 +77,11 @@ class DefaultRetryPolicy(RetryPolicy):
                 or "please respect our robot policy" in body_text
             ):
                 return True
+
         return False
 
     def backoff_seconds(self, attempt: int) -> float:
+        # Exponential backoff + jitter
         base = self._backoff_seconds * (2**attempt)
         return base + random.random()
 
@@ -150,6 +155,7 @@ class FileCache(ResponseCache):
         return self.cache_dir / f"{digest}.html"
 
     def _is_cache_fresh(self, path: Path) -> bool:
+        # ttl_seconds == 0 => cache wyłączony
         if not path.exists() or self.ttl_seconds <= 0:
             return False
         age_seconds = time.time() - path.stat().st_mtime
@@ -183,44 +189,38 @@ class BaseHttpClient(ABC, HttpClientProtocol):
     """Wspólna klasa bazowa dla klientów HTTP."""
 
     DEFAULT_HEADERS: Dict[str, str] = {
-        "User-Agent": ("F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl "),
+        "User-Agent": "F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl ",
         "Accept-Language": "en-US,en;q=0.9",
     }
 
     def __init__(
         self,
         *,
-        session: Any = None,
+        session: Any,
         headers: Optional[Dict[str, str]] = None,
         timeout: int = 10,
-        retries: int = 0,
-        backoff_seconds: float = 0.5,
-        min_delay_seconds: float = 1.5,
-        jitter_seconds: float = 0.7,
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
-        request_exception_cls: type[Exception] = requests.RequestException,
+        request_exception_cls: type[Exception],
     ) -> None:
         self.session = session
-        self.timeout = timeout
+        self.timeout = int(timeout)
+
         self.retry_policy = retry_policy or DefaultRetryPolicy(
-            retries=retries,
-            backoff_seconds=backoff_seconds,
+            retries=0, backoff_seconds=0.5
         )
-        self.rate_limiter = rate_limiter or MinDelayRateLimiter(
-            min_delay_seconds=min_delay_seconds,
-            jitter_seconds=jitter_seconds,
-        )
+        self.rate_limiter = rate_limiter or MinDelayRateLimiter()
+
         self.request_exception_cls = request_exception_cls
 
-        # Merging headers
         merged_headers = dict(self.DEFAULT_HEADERS)
         if headers:
             merged_headers.update(headers)
 
-        # session.headers może nie istnieć w niektórych shimach — zabezpieczenie
-        if getattr(self.session, "headers", None) is not None:
-            self.session.headers.update(merged_headers)
+        # session.headers może nie istnieć w shimach — zabezpieczenie
+        session_headers = getattr(self.session, "headers", None)
+        if session_headers is not None and hasattr(session_headers, "update"):
+            session_headers.update(merged_headers)
 
     def _backoff_sleep(self, attempt: int) -> None:
         delay = self.retry_policy.backoff_seconds(attempt)
@@ -240,6 +240,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         for attempt in range(attempts):
             if self.rate_limiter is not None:
                 self.rate_limiter.wait(url)
+
             try:
                 response = request_func(
                     url,
@@ -247,10 +248,13 @@ class BaseHttpClient(ABC, HttpClientProtocol):
                     timeout=timeout or self.timeout,
                 )
             except self.request_exception_cls as exc:
-                if attempt >= self.retry_policy.max_retries or not self.retry_policy.should_retry(
-                    response=None,
-                    exception=exc,
-                    attempt=attempt,
+                if (
+                    attempt >= self.retry_policy.max_retries
+                    or not self.retry_policy.should_retry(
+                        response=None,
+                        exception=exc,
+                        attempt=attempt,
+                    )
                 ):
                     raise
                 self._backoff_sleep(attempt)
@@ -293,53 +297,8 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         return response.text
 
 
-class UrllibHttpClient(BaseHttpClient):
-    """Klient HTTP oparty o urllib (requests_shim)."""
-
-    def __init__(
-        self,
-        *,
-        session: Optional[requests_shim.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: int = 10,
-        retries: int = 0,
-        backoff_seconds: float = 0.5,
-        min_delay_seconds: float = 1.5,
-        jitter_seconds: float = 0.7,
-        retry_policy: RetryPolicy | None = None,
-        rate_limiter: RateLimiter | None = None,
-    ) -> None:
-        session = session or requests_shim.Session()
-        super().__init__(
-            session=session,
-            headers=headers,
-            timeout=timeout,
-            retries=retries,
-            backoff_seconds=backoff_seconds,
-            min_delay_seconds=min_delay_seconds,
-            jitter_seconds=jitter_seconds,
-            retry_policy=retry_policy,
-            rate_limiter=rate_limiter,
-            request_exception_cls=requests_shim.RequestException,
-        )
-
-    def get(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
-    ):
-        return self._request_with_retries(
-            url,
-            headers=headers,
-            timeout=timeout,
-            request_func=self.session.get,
-        )
-
-
 class HttpClient(BaseHttpClient):
-    """Klient HTTP ze współdzieloną sesją i domyślnymi nagłówkami."""
+    """Klient HTTP (requests) ze współdzieloną sesją, retry, rate-limit i cache."""
 
     def __init__(
         self,
@@ -358,17 +317,27 @@ class HttpClient(BaseHttpClient):
         cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests.Session()
+
+        if retry_policy is None:
+            retry_policy = DefaultRetryPolicy(
+                retries=retries, backoff_seconds=backoff_seconds
+            )
+
+        if rate_limiter is None:
+            rate_limiter = MinDelayRateLimiter(
+                min_delay_seconds=min_delay_seconds,
+                jitter_seconds=jitter_seconds,
+            )
+
         super().__init__(
             session=session,
             headers=headers,
             timeout=timeout,
-            retries=retries,
-            backoff_seconds=backoff_seconds,
-            min_delay_seconds=min_delay_seconds,
-            jitter_seconds=jitter_seconds,
             retry_policy=retry_policy,
             rate_limiter=rate_limiter,
+            request_exception_cls=requests.RequestException,
         )
+
         if cache is None:
             if cache_dir is None:
                 cache_dir = Path(__file__).parent / "data" / "wiki_cache"
@@ -406,31 +375,15 @@ class HttpClient(BaseHttpClient):
 
         response = self.get(url, headers=headers, timeout=timeout)
         text = response.text
+
         if self.cache is not None:
             self.cache.set(url, text)
+
         return text
-
-    def _cache_path_for_url(self, url: str) -> Path | None:
-        if self.cache_dir is None or not self._is_wikipedia_url(url):
-            return None
-        digest = sha256(url.encode("utf-8")).hexdigest()
-        return self.cache_dir / f"{digest}.html"
-
-    def _is_cache_fresh(self, path: Path) -> bool:
-        if not path.exists() or self.cache_ttl_seconds <= 0:
-            return False
-        age_seconds = time.time() - path.stat().st_mtime
-        return age_seconds <= self.cache_ttl_seconds
-
-    @staticmethod
-    def _is_wikipedia_url(url: str) -> bool:
-        parsed = urlparse(url)
-        hostname = (parsed.hostname or "").lower()
-        return hostname == "wikipedia.org" or hostname.endswith(".wikipedia.org")
 
 
 class UrllibHttpClient(BaseHttpClient):
-    """Klient HTTP oparty na urllib, zgodny z HttpClientProtocol."""
+    """Klient HTTP oparty o urllib (requests_shim), zgodny z HttpClientProtocol."""
 
     def __init__(
         self,
@@ -442,25 +395,42 @@ class UrllibHttpClient(BaseHttpClient):
         backoff_seconds: float = 0.5,
         min_delay_seconds: float = 1.5,
         jitter_seconds: float = 0.7,
+        retry_policy: RetryPolicy | None = None,
+        rate_limiter: RateLimiter | None = None,
+        cache: ResponseCache | None = None,
         cache_dir: Path | str | None = None,
         cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests_shim.Session()
+
+        if retry_policy is None:
+            retry_policy = DefaultRetryPolicy(
+                retries=retries, backoff_seconds=backoff_seconds
+            )
+
+        if rate_limiter is None:
+            rate_limiter = MinDelayRateLimiter(
+                min_delay_seconds=min_delay_seconds,
+                jitter_seconds=jitter_seconds,
+            )
+
         super().__init__(
             session=session,
             headers=headers,
             timeout=timeout,
-            retries=retries,
-            backoff_seconds=backoff_seconds,
-            min_delay_seconds=min_delay_seconds,
-            jitter_seconds=jitter_seconds,
+            retry_policy=retry_policy,
+            rate_limiter=rate_limiter,
+            request_exception_cls=requests_shim.RequestException,
         )
-        if cache_dir is None:
-            cache_dir = Path(__file__).parent / "data" / "wiki_cache"
-        self.cache_dir = Path(cache_dir) if cache_dir is not None else None
-        self.cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
-        if self.cache_dir is not None:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
+
+        if cache is None:
+            if cache_dir is None:
+                cache_dir = Path(__file__).parent / "data" / "wiki_cache"
+            cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
+            cache = WikipediaCachePolicy(
+                FileCache(cache_dir=cache_dir, ttl_seconds=cache_ttl_seconds)
+            )
+        self.cache = cache
 
     def get(
         self,
@@ -469,37 +439,12 @@ class UrllibHttpClient(BaseHttpClient):
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
     ):
-        attempts = self.retries + 1
-
-        for attempt in range(attempts):
-            self._sleep_if_needed(apply_delay=self._is_wikipedia_url(url))
-            try:
-                response = self.session.get(
-                    url,
-                    headers=headers,
-                    timeout=timeout or self.timeout,
-                )
-                self._note_request_made()
-
-                status = int(getattr(response, "status_code", 0) or 0)
-                if status and self._should_retry_status(
-                    status, getattr(response, "text", "")
-                ):
-                    if attempt >= self.retries:
-                        response.raise_for_status()
-                    self._backoff_sleep(attempt)
-                    continue
-
-                response.raise_for_status()
-                return cast(Any, response)
-
-            except requests_shim.RequestException:
-                self._note_request_made()
-                if attempt >= self.retries:
-                    raise
-                self._backoff_sleep(attempt)
-
-        assert False, "Unreachable code"
+        return self._request_with_retries(
+            url,
+            headers=headers,
+            timeout=timeout,
+            request_func=self.session.get,
+        )
 
     def get_text(
         self,
@@ -508,30 +453,15 @@ class UrllibHttpClient(BaseHttpClient):
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
     ) -> str:
-        cache_path = self._cache_path_for_url(url)
-        if cache_path is not None and self._is_cache_fresh(cache_path):
-            return cache_path.read_text(encoding="utf-8")
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
 
         response = self.get(url, headers=headers, timeout=timeout)
         text = response.text
-        if cache_path is not None:
-            cache_path.write_text(text, encoding="utf-8")
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
         return text
-
-    def _cache_path_for_url(self, url: str) -> Path | None:
-        if self.cache_dir is None or not self._is_wikipedia_url(url):
-            return None
-        digest = sha256(url.encode("utf-8")).hexdigest()
-        return self.cache_dir / f"{digest}.html"
-
-    def _is_cache_fresh(self, path: Path) -> bool:
-        if not path.exists() or self.cache_ttl_seconds <= 0:
-            return False
-        age_seconds = time.time() - path.stat().st_mtime
-        return age_seconds <= self.cache_ttl_seconds
-
-    @staticmethod
-    def _is_wikipedia_url(url: str) -> bool:
-        parsed = urlparse(url)
-        hostname = (parsed.hostname or "").lower()
-        return hostname == "wikipedia.org" or hostname.endswith(".wikipedia.org")
