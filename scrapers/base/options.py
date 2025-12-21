@@ -7,32 +7,26 @@ from typing import Dict, Optional
 import requests
 
 from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
-from scrapers.config import HttpConfig
+from scrapers.config import HttpPolicy, default_http_policy
 
 
-def build_http_config(
+def build_http_policy(
     *,
-    session: requests.Session | None = None,
-    headers: Dict[str, str] | None = None,
-    user_agent: str | None = None,
     timeout: int = 10,
     retries: int = 0,
     cache: ResponseCache | None = None,
-    http_client: HttpClientProtocol | None = None,
-) -> HttpConfig:
-    return HttpConfig(
-        session=session,
-        headers=headers,
-        user_agent=user_agent,
+) -> HttpPolicy:
+    return HttpPolicy(
         timeout=timeout,
         retries=retries,
         cache=cache,
-        http_client=http_client,
     )
 
 
@@ -41,8 +35,8 @@ class ScraperOptions:
     """
     Konfiguracja scrapera.
 
-    Legacy pola HTTP (session/headers/http_client/timeout/retries/cache) są
-    przestarzałe — docelowo używaj HttpConfig przekazywanego przez `http`.
+    Legacy pola HTTP (session/headers/timeout/retries/cache) są
+    przestarzałe — docelowo używaj HttpPolicy przekazywanego przez `policy`.
     """
 
     _DEFAULT_TIMEOUT = 10
@@ -53,11 +47,11 @@ class ScraperOptions:
     fetcher: HtmlFetcher | None = None
     source_adapter: SourceAdapter | None = None
     parser: SoupParser | None = None
-    http: HttpConfig | None = None
-    # Legacy pola HTTP — do usunięcia po migracji na HttpConfig.
+    policy: HttpPolicy | None = None
+    http_client: Optional[HttpClientProtocol] = None
+    # Legacy pola HTTP — do usunięcia po migracji na HttpPolicy.
     session: Optional[requests.Session] = None
     headers: Optional[Dict[str, str]] = None
-    http_client: Optional[HttpClientProtocol] = None
     timeout: int = _DEFAULT_TIMEOUT
     retries: int = _DEFAULT_RETRIES
     cache: ResponseCache | None = None
@@ -74,7 +68,6 @@ class ScraperOptions:
             (
                 self.session is not None,
                 self.headers is not None,
-                self.http_client is not None,
                 self.cache is not None,
                 self.timeout != self._DEFAULT_TIMEOUT,
                 self.retries != self._DEFAULT_RETRIES,
@@ -85,15 +78,15 @@ class ScraperOptions:
         if not self._legacy_fields_used():
             return
 
-        if self.http is not None:
+        if self.policy is not None:
             message = (
                 "Legacy pola HTTP w ScraperOptions są przestarzałe i będą "
-                "ignorowane, gdy używasz http=HttpConfig."
+                "ignorowane, gdy używasz policy=HttpPolicy."
             )
         else:
             message = (
                 "Legacy pola HTTP w ScraperOptions są przestarzałe. "
-                "Użyj http=HttpConfig."
+                "Użyj policy=HttpPolicy."
             )
         warnings.warn(
             message,
@@ -101,24 +94,40 @@ class ScraperOptions:
             stacklevel=3,
         )
 
-    def to_http_config(self) -> HttpConfig:
-        if self.http is not None:
-            return self.http
-        return build_http_config(
-            session=self.session,
-            headers=self.headers,
+    def to_http_policy(self) -> HttpPolicy:
+        if self.policy is not None:
+            return self.policy
+        default_policy = default_http_policy()
+        cache = self.cache if self.cache is not None else default_policy.cache
+        self.policy = build_http_policy(
             timeout=self.timeout,
             retries=self.retries,
-            cache=self.cache,
-            http_client=self.http_client,
+            cache=cache,
         )
+        return self.policy
+
+    def _ensure_http_client(self, policy: HttpPolicy) -> HttpClientProtocol:
+        if self.http_client is None:
+            client_config = HttpClientConfig(
+                timeout=policy.timeout,
+                retries=policy.retries,
+                cache=policy.cache,
+                headers=self.headers,
+            )
+            self.http_client = UrllibHttpClient(
+                session=self.session,
+                config=client_config,
+            )
+        return self.http_client
 
     def with_fetcher(self) -> HtmlFetcher:
         if self.fetcher is None:
             if isinstance(self.source_adapter, HtmlFetcher):
                 self.fetcher = self.source_adapter
             else:
-                self.fetcher = HtmlFetcher(config=self.to_http_config())
+                policy = self.to_http_policy()
+                http_client = self._ensure_http_client(policy)
+                self.fetcher = HtmlFetcher(policy=policy, http_client=http_client)
                 if self.source_adapter is None:
                     self.source_adapter = self.fetcher
         return self.fetcher
@@ -128,7 +137,9 @@ class ScraperOptions:
             if self.fetcher is not None:
                 self.source_adapter = self.fetcher
             else:
-                self.fetcher = HtmlFetcher(config=self.to_http_config())
+                policy = self.to_http_policy()
+                http_client = self._ensure_http_client(policy)
+                self.fetcher = HtmlFetcher(policy=policy, http_client=http_client)
                 self.source_adapter = self.fetcher
         elif isinstance(self.source_adapter, HtmlFetcher):
             self.fetcher = self.source_adapter

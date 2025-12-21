@@ -35,7 +35,7 @@ class WikipediaInfoboxScraper:
             options.fetcher = fetcher
 
         self.fetcher = options.with_fetcher()
-        self.timeout = options.to_http_config().timeout
+        self.timeout = options.to_http_policy().timeout
         self.parser = parser or InfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper()
 

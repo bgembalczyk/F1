@@ -9,6 +9,8 @@ from infrastructure.http_client.caching import WikipediaCachePolicy, FileCache
 from infrastructure.http_client.clients import UrllibHttpClient, HttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.retry import DefaultRetryPolicy
+from scrapers.base.options import ScraperOptions
+from scrapers.config import HttpPolicy
 
 
 class _StubHandler(BaseHTTPRequestHandler):
@@ -195,3 +197,27 @@ def test_default_retry_policy_for_statuses():
         )
         is True
     )
+
+
+class _DummyHttpClient:
+    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+        return f"{url}::{timeout}"
+
+
+def test_http_policy_shared_between_scraper_options_and_fetchers():
+    policy = HttpPolicy(timeout=5, retries=1, cache=None)
+    http_client = _DummyHttpClient()
+
+    options = ScraperOptions(policy=policy, http_client=http_client)
+    fetcher = options.with_fetcher()
+
+    sub_options = ScraperOptions(
+        policy=options.policy,
+        http_client=options.http_client,
+        source_adapter=fetcher,
+    )
+    sub_fetcher = sub_options.with_fetcher()
+
+    assert fetcher.policy is policy
+    assert sub_fetcher is fetcher
+    assert sub_fetcher.policy is policy
