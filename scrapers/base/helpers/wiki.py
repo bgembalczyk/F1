@@ -57,3 +57,37 @@ def is_wikipedia_redlink(url: str | None) -> bool:
 
     url_l = url.lower()
     return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
+
+
+def is_language_marker_link(text: str | None, url: str | None) -> bool:
+    """
+    Sprawdza czy link jest markerem językowym (np. '(it)' z linkiem do it.wikipedia.org).
+
+    Args:
+        text: Tekst linku (np. 'it', 'de', 'es')
+        url: URL linku
+
+    Returns:
+        True jeśli to marker językowy do odfiltrowania
+    """
+    if not text or not url:
+        return False
+
+    # Typowe 2-3 znakowe kody języków
+    text_clean = text.strip().lower()
+    if len(text_clean) not in (2, 3):
+        return False
+
+    # Sprawdź czy URL prowadzi do innej wersji językowej Wikipedii
+    # np. https://it.wikipedia.org/, https://de.wikipedia.org/
+    url_lower = url.lower()
+    if "wikipedia.org" in url_lower:
+        # Wzorzec: {kod}.wikipedia.org
+        if f"{text_clean}.wikipedia.org" in url_lower:
+            return True
+        # Wzorzec: wikipedia.org/{kod}/
+        if f"wikipedia.org/{text_clean}/" in url_lower:
+            return True
+
+    return False
+

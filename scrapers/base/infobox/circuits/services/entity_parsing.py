@@ -2,7 +2,10 @@ import re
 from typing import Any, Dict, List, Optional, Union
 
 from models.records import LinkRecord
-from scrapers.base.helpers.wiki import is_language_marker_link, is_wikipedia_redlink
+from scrapers.base.helpers.wiki import (
+    is_language_marker_link,
+    is_wikipedia_redlink,
+)
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
 )
@@ -39,7 +42,8 @@ class CircuitEntityParser(CircuitTextProcessing):
             if is_wikipedia_redlink(url):
                 url = None
 
-            return {"text": link_text, "url": url}
+            result: LinkRecord = {"text": link_text, "url": url}
+            return result
 
         # wiele linków -> lista (pomijamy językowe)
         if len(links) > 1:
@@ -47,7 +51,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             for link in links:
                 item = _clean_link(link)
                 if item:
-                    out.append(item)
+                    out.append(dict(item))
             return out or self._strip_lang_markers(text) or None
 
         # pojedynczy link, ale tekst bywa "A, B and C"
@@ -59,8 +63,9 @@ class CircuitEntityParser(CircuitTextProcessing):
             if link:
                 cleaned = _clean_link(link)
                 if cleaned:
-                    cleaned["text"] = part
-                    return cleaned
+                    result = dict(cleaned)
+                    result["text"] = part
+                    return result
             # jak nie ma linku / został odrzucony – zwróć sam tekst
             return {"text": part, "url": None}
 
@@ -71,9 +76,10 @@ class CircuitEntityParser(CircuitTextProcessing):
         if links:
             single = _clean_link(links[0])
             if single:
+                result = dict(single)
                 # tekst z _get_text (bez [it])
-                single["text"] = text
-                return single
+                result["text"] = text
+                return result
 
         # brak linków – zwracamy sam tekst
         return text or None

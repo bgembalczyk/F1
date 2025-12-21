@@ -37,7 +37,7 @@ class RecordKey:
     time_seconds: float | None = None
 
     def to_tuple(self) -> tuple[str, str, str, float | None]:
-        return (self.driver_text, self.vehicle_text, self.year, self.time_seconds)
+        return self.driver_text, self.vehicle_text, self.year, self.time_seconds
 
     def to_dict(self) -> dict[str, Any]:
         return {

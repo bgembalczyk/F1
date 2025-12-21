@@ -169,7 +169,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         if not year:
             return None
 
-        return (d, v, int(round(sec * 1000)), year)
+        return d, v, int(round(sec * 1000)), year
 
     def _merge_two_lap_records(
         self, a: Dict[str, Any], b: Dict[str, Any]
