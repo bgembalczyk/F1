@@ -58,31 +58,17 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         zwraca None (nie dokładamy szczegółów).
         """
         self._original_url = url
-
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        # --- download + error handling spójny z F1Scraper ---
-        try:
-            soup_full = BeautifulSoup(self._download(), "html.parser")
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._handle_scraper_error(exc):
-                return None
-            raise
-        except Exception as exc:
-            raise self._wrap_network_error(exc) from exc
-
+        soup_full = self._fetch_soup(base_url)
         if not self._is_circuit_like_article(soup_full):
             return None
 
-        working_soup = soup_full
-        if fragment:
-            section = self._extract_section_by_id(soup_full, fragment)
-            if section is not None:
-                working_soup = section
+        working_soup = self._select_section(soup_full, fragment)
 
         try:
-            parsed = self._parse_soup(working_soup)
+            parsed = self._parse_details(working_soup)
         except ScraperError as exc:  # type: ignore[misc]
             if self._handle_scraper_error(exc):
                 return None
@@ -93,7 +79,36 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 return None
             raise parse_error from exc
 
-        return parsed[0] if parsed else None
+        if not parsed:
+            return None
+
+        return {
+            "url": self._original_url or self.url,
+            **parsed,
+        }
+
+    def _fetch_soup(self, url: str) -> BeautifulSoup:
+        # --- download + error handling spójny z F1Scraper ---
+        self.url = url
+        try:
+            return BeautifulSoup(self._download(), "html.parser")
+        except ScraperError as exc:  # type: ignore[misc]
+            if self._handle_scraper_error(exc):
+                return BeautifulSoup("", "html.parser")
+            raise
+        except Exception as exc:
+            raise self._wrap_network_error(exc) from exc
+
+    def _select_section(
+        self,
+        soup: BeautifulSoup,
+        fragment: Optional[str],
+    ) -> BeautifulSoup:
+        if not fragment:
+            return soup
+
+        section = self._extract_section_by_id(soup, fragment)
+        return section or soup
 
     def _download(self) -> str:
         if not self.url:
@@ -120,12 +135,17 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 return True
         return False
 
+    def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
+        return {
+            "infobox": self._scrape_infobox(soup),
+            "tables": self._scrape_tables(soup),
+        }
+
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return [
             {
                 "url": self._original_url or self.url,
-                "infobox": self._scrape_infobox(soup),
-                "tables": self._scrape_tables(soup),
+                **self._parse_details(soup),
             }
         ]
 
