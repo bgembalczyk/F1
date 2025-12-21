@@ -78,11 +78,52 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             record["time"] = sec
 
         # 2) detale w nawiasie: driver, car, year, series
-        details_match = re.search(r"\(([^)]*)\)", text)
-        details: List[str] = []
-        if details_match:
-            details = [p.strip() for p in details_match.group(1).split(",") if p.strip()]
+        #    UWAGA: w Monzy pierwszy nawias to średnia prędkość (km/h, mph) -> ignorujemy.
+        parens = re.findall(r"\(([^)]*)\)", text)
 
+        def _is_speed_paren(s: str) -> bool:
+            s_low = s.lower()
+            return ("km/h" in s_low) or ("mph" in s_low)
+
+        def _score_details_candidate(s: str) -> int:
+            """
+            Im wyższy score tym bardziej wygląda na "driver, vehicle, year, series".
+            """
+            if not s:
+                return -10
+            if _is_speed_paren(s):
+                return -100
+
+            parts = [p.strip() for p in s.split(",") if p.strip()]
+            score = 0
+
+            # najczęściej mamy >= 3-4 elementy rozdzielone przecinkami
+            if len(parts) >= 4:
+                score += 5
+            elif len(parts) == 3:
+                score += 2
+            elif len(parts) == 2:
+                score += 1
+            else:
+                score -= 2
+
+            # obecność roku (często 4 cyfry) bardzo pomaga
+            if any(re.fullmatch(r"\d{4}", p) for p in parts):
+                score += 5
+
+            # jeśli w ogóle nie ma przecinków i nie ma roku -> raczej nie detale
+            if "," not in s and score < 3:
+                score -= 3
+
+            return score
+
+        details: List[str] = []
+        if parens:
+            best = max(parens, key=_score_details_candidate)
+            if _score_details_candidate(best) > 0:
+                details = [p.strip() for p in best.split(",") if p.strip()]
+
+        # jeśli nic sensownego nie znaleźliśmy, nie próbujemy zgadywać z prędkości
         if not details:
             return self._prune_nulls(record) or None
 
