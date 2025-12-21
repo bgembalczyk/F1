@@ -3,11 +3,9 @@ from typing import Any
 import re
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
-@column_type_registry.register("auto")
 class AutoColumn(BaseColumn):
     """
     Zachowanie:

@@ -23,7 +23,7 @@ def _as_dict(rec: Any) -> dict[str, Any]:
     """Akceptuje dict albo LapRecord; zawsze zwraca dict."""
     if isinstance(rec, dict):
         return rec
-    if LapRecord is not None and isinstance(rec, LapRecord):
+    if isinstance(rec, LapRecord):
         return rec.to_dict()
     try:
         return dict(rec)  # type: ignore[arg-type]

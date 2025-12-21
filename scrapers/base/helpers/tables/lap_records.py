@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.wiki import extract_links_from_cell, clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import resolve_column_type
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
@@ -54,16 +53,6 @@ class LapRecordsTableScraper(F1TableScraper):
             "date": DateColumn(),
         },
     )
-
-    # ------------------------------
-    # Backward-compat shims (PR branch)
-    # ------------------------------
-    # Jeśli gdzieś jeszcze istnieje kod, który oczekuje tych atrybutów na klasie,
-    # mapujemy je na CONFIG.
-    section_id = CONFIG.section_id
-    expected_headers = list(CONFIG.expected_headers)
-    column_map = dict(CONFIG.column_map)
-    columns = dict(CONFIG.columns)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
@@ -154,12 +143,11 @@ class LapRecordsTableScraper(F1TableScraper):
                     model_fields=model_fields,
                 )
 
-                col_spec = (
+                col = (
                     self.columns.get(key)
                     or self.columns.get(header)
                     or self.default_column
                 )
-                col = resolve_column_type(col_spec)
                 col.apply(ctx, record)
 
             # Mapowanie do modelu (jeśli ktoś kiedyś doda model_class)

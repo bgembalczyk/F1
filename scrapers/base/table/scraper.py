@@ -11,7 +11,6 @@ from scrapers.base.helpers.wiki import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import resolve_column_type
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
@@ -181,12 +180,11 @@ class F1TableScraper(F1Scraper, ABC):
                 model_fields=model_fields,
             )
 
-            col_spec = (
+            col = (
                 self.columns.get(key)
                 or self.columns.get(header)
                 or self.default_column
             )
-            col = resolve_column_type(col_spec)
             col.apply(ctx, record)
 
         return record

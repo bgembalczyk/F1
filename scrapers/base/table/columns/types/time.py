@@ -7,11 +7,9 @@ from typing import Any, Optional
 
 from scrapers.base.helpers.value_objects import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
-@column_type_registry.register("time")
 class TimeColumn(BaseColumn):
     """
     Parsuje czasy okrążeń z typowych formatów Wikipedii do sekund.

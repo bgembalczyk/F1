@@ -2,11 +2,9 @@ from typing import Any
 
 from scrapers.base.helpers.wiki import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
-@column_type_registry.register("url")
 class UrlColumn(BaseColumn):
     """
     Zwraca pierwszy link ({text, url}) albo None.

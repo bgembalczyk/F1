@@ -123,8 +123,7 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
                 records.append(rlr)
             # PR: wspieramy LapRecord, ale tylko jeśli jest dostępny w projekcie
             elif (
-                LapRecord is not None
-                and isinstance(rlr, LapRecord)
+                isinstance(rlr, LapRecord)
                 and as_lap_record is not None
             ):
                 records.append(as_lap_record(rlr))
@@ -264,7 +263,7 @@ def _lap_record_to_dict(rec: Any) -> dict[str, Any]:
     """
     if isinstance(rec, dict):
         return rec
-    if LapRecord is not None and isinstance(rec, LapRecord):
+    if isinstance(rec, LapRecord):
         return rec.to_dict()
     try:
         return dict(rec)  # type: ignore[arg-type]
