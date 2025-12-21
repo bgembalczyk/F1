@@ -11,6 +11,7 @@ from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
+from scrapers.config import default_http_config
 
 from scrapers.base.errors import ScraperError, ScraperParseError
 
@@ -39,7 +40,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         # HtmlFetcher po merge jest config-driven — jeśli nie ma fetchera w options,
         # tworzymy domyślny.
         if options.fetcher is None:
-            options.fetcher = HtmlFetcher()
+            options.fetcher = HtmlFetcher(config=default_http_config())
 
         super().__init__(options=options)
         self.timeout = options.timeout

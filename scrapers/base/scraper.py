@@ -14,6 +14,7 @@ from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
+from scrapers.config import default_http_config
 
 # PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
@@ -65,7 +66,7 @@ class F1Scraper(ABC):
                     stacklevel=2,
                 )
 
-            self.fetcher = HtmlFetcher()
+            self.fetcher = HtmlFetcher(config=default_http_config())
         else:
             self.fetcher = options.fetcher
 
