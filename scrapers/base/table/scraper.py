@@ -9,15 +9,12 @@ from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
 from bs4 import BeautifulSoup, Tag
 
 from infrastructure.http_client.interfaces import HttpClientProtocol
-from scrapers.base.helpers.wiki import clean_wiki_text
-from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.parser import HtmlTableParser
+from scrapers.base.table.pipeline import TablePipeline
 
 if TYPE_CHECKING:
     import requests
@@ -121,25 +118,19 @@ class F1TableScraper(F1Scraper, ABC):
         self.table_css_class = resolved_config.table_css_class
         self.model_class = resolved_config.model_class
         self.default_column = resolved_config.default_column or AutoColumn()
+        self.pipeline = TablePipeline(
+            config=resolved_config,
+            include_urls=self.include_urls,
+            full_url=self._full_url,
+            skip_sentinel=self._SKIP,
+            model_fields=self._model_fields(),
+        )
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
         """
-        records: List[Dict[str, Any]] = []
-
-        parser = HtmlTableParser(
-            section_id=self.section_id,
-            expected_headers=self.expected_headers,
-            table_css_class=self.table_css_class,
-        )
-
-        for row in parser.parse(soup):
-            record = self.parse_row(row)
-            if record:
-                records.append(record)
-
-        return records
+        return self.pipeline.parse_soup(soup)
 
     def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
         """
@@ -148,53 +139,11 @@ class F1TableScraper(F1Scraper, ABC):
         - wybiera typ kolumny z `columns`,
         - deleguje całą logikę do handlera kolumny.
         """
-        record: Dict[str, Any] = {}
-        model_fields = self._model_fields()
-
-        for header, cell in row.items():
-            # (jeśli parser niesie metadane typu "__row__", pomijamy je)
-            if not isinstance(header, str):
-                continue
-            if header in {"__row__", "_row", "__tr__"}:
-                continue
-
-            key = self.column_map.get(header, self._normalize_header(header))
-
-            raw_text = cell.get_text(" ", strip=True)
-            clean_text = clean_wiki_text(raw_text)
-
-            links: list[dict[str, Any]] = []
-            if self.include_urls:
-                links = extract_links_from_cell(cell, full_url=self._full_url)
-
-            ctx = ColumnContext(
-                header=header,
-                key=key,
-                raw_text=raw_text,
-                clean_text=clean_text,
-                links=links,
-                cell=cell,
-                skip_sentinel=self._SKIP,
-                model_fields=model_fields,
-            )
-
-            col = (
-                    self.columns.get(key) or self.columns.get(header) or self.default_column
-            )
-            col.apply(ctx, record)
-
-        return record
+        return self.pipeline.parse_row(row)
 
     @staticmethod
     def _normalize_header(header: str) -> str:
-        return (
-            header.strip()
-            .lower()
-            .replace(" ", "_")
-            .replace("(", "")
-            .replace(")", "")
-            .replace("/", "_")
-        )
+        return TablePipeline.normalize_header(header)
 
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
