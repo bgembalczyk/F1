@@ -1,24 +1,28 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
+
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
-from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
+from scrapers.base.infobox.circuits.services import (
+    CircuitAdditionalInfoParser,
+    CircuitEntitiesParser,
+    CircuitEntityParser,
+    CircuitGeoParser,
+    CircuitHistoryParser,
+    CircuitLapRecordParser,
+    CircuitLayoutsParser,
+    CircuitSpecsParser,
+    InfoboxTextUtils,
+    WikipediaSectionExtractor,
+)
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 
 
-class F1CircuitInfoboxScraper(
-    WikipediaSectionByIdMixin,
-    CircuitEntitiesMixin,
-    CircuitInfoboxLayoutsMixin,
-    F1Scraper,
-    WikipediaInfoboxScraper,
-):
+class F1CircuitInfoboxScraper(F1Scraper):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
@@ -28,6 +32,8 @@ class F1CircuitInfoboxScraper(
     ) -> None:
         if options is None:
             options = ScraperOptions()
+
+        # Zapewniamy fetcher (zgodnie z main)
         if options.fetcher is None:
             options.fetcher = HtmlFetcher(
                 session=options.session,
@@ -37,15 +43,46 @@ class F1CircuitInfoboxScraper(
                 retries=options.retries,
                 cache=options.cache,
             )
-        F1Scraper.__init__(
-            self,
-            options=options,
-        )
-        WikipediaInfoboxScraper.__init__(
-            self,
+
+        super().__init__(options=options)
+
+        # Dla czytelności (F1Scraper zwykle i tak to trzyma)
+        self.fetcher = options.fetcher
+        self.timeout = options.timeout
+
+        # WikipediaInfoboxScraper w stylu "main": przez fetcher
+        self.infobox_scraper = WikipediaInfoboxScraper(
             timeout=options.timeout,
             fetcher=options.fetcher,
         )
+
+        # --- Serwisy z PR ---
+        self.section_extractor = WikipediaSectionExtractor()
+        self.text_utils = InfoboxTextUtils()
+        self.geo_parser = CircuitGeoParser()
+        self.history_parser = CircuitHistoryParser()
+        self.specs_parser = CircuitSpecsParser()
+        self.lap_record_parser = CircuitLapRecordParser()
+        self.entity_parser = CircuitEntityParser()
+        self.additional_info_parser = CircuitAdditionalInfoParser()
+
+        self.entities_parser = CircuitEntitiesParser(
+            text_utils=self.text_utils,
+            geo_parser=self.geo_parser,
+            history_parser=self.history_parser,
+            specs_parser=self.specs_parser,
+            lap_record_parser=self.lap_record_parser,
+            entity_parser=self.entity_parser,
+            additional_info_parser=self.additional_info_parser,
+        )
+
+        self.layouts_parser = CircuitLayoutsParser(
+            infobox_scraper=self.infobox_scraper,
+            text_utils=self.text_utils,
+            lap_record_parser=self.lap_record_parser,
+            specs_parser=self.specs_parser,
+        )
+
         self.url: str = ""
 
     # ------------------------------
@@ -66,7 +103,7 @@ class F1CircuitInfoboxScraper(
 
         if not self._is_circuit_like_article(full_soup):
             title = full_soup.title.get_text(strip=True) if full_soup.title else None
-            return self._prune_nulls(
+            return self.text_utils._prune_nulls(
                 {
                     "url": url,
                     "title": title,
@@ -75,7 +112,7 @@ class F1CircuitInfoboxScraper(
 
         soup = full_soup
         if fragment:
-            section = self._extract_section_by_id(full_soup, fragment)
+            section = self.section_extractor.extract_section_by_id(full_soup, fragment)
             if section is not None:
                 soup = section
 
@@ -95,12 +132,10 @@ class F1CircuitInfoboxScraper(
         """
         truncated_soup = self._truncate_infobox_after_full_data(soup)
 
-        # parsujemy infobox już bez "ogonów" po infobox-full-data
-        raw = super().parse_from_soup(truncated_soup)
+        raw = self.infobox_scraper.parse_from_soup(truncated_soup)
 
-        # layouty wciąż parsujemy z pełnej sekcji artykułu
-        layout_records = self._parse_layout_sections(soup)
-        return self._with_normalized(raw, layout_records)
+        layout_records = self.layouts_parser.parse_layout_sections(soup)
+        return self.entities_parser.with_normalized(raw, layout_records)
 
     # ------------------------------
     # Helper: przycinanie infoboksa
@@ -114,7 +149,6 @@ class F1CircuitInfoboxScraper(
         - wszystkie kolejne wiersze poniżej.
         """
 
-        # helper: tabela ma mieć klasę zawierającą 'infobox'
         def _has_infobox_class(classes: Any) -> bool:
             if not classes:
                 return False
@@ -122,7 +156,6 @@ class F1CircuitInfoboxScraper(
                 classes = classes.split()
             return "infobox" in classes
 
-        # każda tabela infoboksa
         for table in soup.find_all("table", class_=_has_infobox_class):
             rows: List[Tag] = table.find_all("tr")
 
@@ -141,7 +174,6 @@ class F1CircuitInfoboxScraper(
                     cut_index = idx
                     break
 
-            # jeśli znaleziono początek sekcji 'full-data' → usuń wszystko od tego miejsca
             if cut_index is not None:
                 for r in rows[cut_index:]:
                     r.decompose()
