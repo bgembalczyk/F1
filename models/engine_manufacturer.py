@@ -9,6 +9,7 @@ from models.validators import (
     validate_link,
     validate_links,
     validate_seasons,
+    validate_status,
 )
 
 
@@ -30,7 +31,11 @@ class EngineManufacturer:
 
     def __post_init__(self) -> None:
         self.manufacturer = validate_link(self.manufacturer, field_name="manufacturer")
-        self.manufacturer_status = self._validate_status(self.manufacturer_status)
+        self.manufacturer_status = validate_status(
+            self.manufacturer_status,
+            {"current", "former"},
+            "manufacturer_status",
+        )
         self.engines_built_in = validate_links(
             self.engines_built_in, field_name="engines_built_in"
         )
@@ -44,11 +49,3 @@ class EngineManufacturer:
         self.podiums = validate_int(self.podiums, "podiums")
         self.wcc = validate_int(self.wcc, "wcc")
         self.wdc = validate_int(self.wdc, "wdc")
-
-    @staticmethod
-    def _validate_status(status: str) -> str:
-        status_normalized = (status or "").strip().lower()
-        allowed = {"current", "former"}
-        if status_normalized not in allowed:
-            raise ValueError("manufacturer_status musi być current lub former")
-        return status_normalized
