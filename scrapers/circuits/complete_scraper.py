@@ -4,7 +4,6 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
-from models.mappers.serialization import to_dict
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
@@ -66,8 +65,13 @@ class F1CompleteCircuitScraper(F1Scraper):
         complete: List[Dict[str, Any]] = []
 
         for circuit in circuits:
-            # list_scraper może zwracać dict albo model/dataclass — normalizujemy wejście
-            circuit_payload = to_dict(circuit)
+            if not isinstance(circuit, dict):
+                raise TypeError(
+                    "CircuitsListScraper musi zwracać dict, "
+                    f"otrzymano: {type(circuit).__name__}"
+                )
+
+            circuit_payload = circuit
 
             circuit_url: Optional[str] = None
             circuit_data = circuit_payload.get("circuit")
