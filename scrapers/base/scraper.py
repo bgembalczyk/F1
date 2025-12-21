@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from pathlib import Path
+from dataclasses import replace
 from typing import Any, Dict, List, Optional, Sequence
+import warnings
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -11,6 +13,7 @@ import requests
 
 from http_client.caching import WikipediaCachePolicy, FileCache
 from http_client.clients import UrllibHttpClient
+from http_client.config import HttpClientConfig
 from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter, ScrapeResult
@@ -43,26 +46,47 @@ class F1Scraper(ABC):
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
         exporter: Optional[DataExporter] = None,
-        timeout: int = 10,
-        retries: int = 0,
+        config: HttpClientConfig | None = None,
+        timeout: int | None = None,
+        retries: int | None = None,
         cache: ResponseCache | None = None,
     ) -> None:
         self.include_urls = include_urls
         if http_client is None:
-            if cache is None:
+            legacy_used = any(value is not None for value in (headers, timeout, retries, cache))
+            if legacy_used:
+                warnings.warn(
+                    "Konfigurację HTTP przekazuj przez HttpClientConfig.",
+                    DeprecationWarning,
+                    stacklevel=2,
+                )
+            config = config or HttpClientConfig()
+            overrides: dict[str, object] = {}
+            if headers is not None:
+                overrides["headers"] = headers
+            if timeout is not None:
+                overrides["timeout"] = timeout
+            if retries is not None:
+                overrides["retries"] = retries
+            if cache is not None:
+                overrides["cache"] = cache
+            if overrides:
+                config = replace(config, **overrides)
+
+            if config.cache is None:
                 cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
+                config = replace(
+                    config,
+                    cache=WikipediaCachePolicy(
+                        FileCache(
+                            cache_dir=cache_dir,
+                            ttl_seconds=30 * 24 * 60 * 60,
+                        )
+                    ),
                 )
             http_client = UrllibHttpClient(
                 session=session,
-                headers=headers,
-                timeout=timeout,
-                retries=retries,
-                cache=cache,
+                config=config,
             )
         self.http_client = http_client
         self.session = getattr(self.http_client, "session", None)

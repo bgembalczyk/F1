@@ -7,6 +7,7 @@ import pytest
 
 from http_client.caching import WikipediaCachePolicy, FileCache
 from http_client.clients import UrllibHttpClient
+from http_client.config import HttpClientConfig
 from http_client.retry import DefaultRetryPolicy
 
 
@@ -64,7 +65,12 @@ def http_server():
 
 
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
-    ("urllib", lambda **kwargs: UrllibHttpClient(backoff_seconds=0.01, **kwargs)),
+    (
+        "urllib",
+        lambda **kwargs: UrllibHttpClient(
+            config=HttpClientConfig(backoff_seconds=0.01, **kwargs)
+        ),
+    ),
 ]
 
 
