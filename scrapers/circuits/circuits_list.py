@@ -12,8 +12,10 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from models.circuit import Circuit
+from pathlib import Path
+
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 
 
 @register_scraper(
@@ -95,7 +97,11 @@ class CircuitsListScraper(F1TableScraper):
 if __name__ == "__main__":
     run_and_export(
         CircuitsListScraper,
-        "../../data/wiki/circuits/f1_circuits.json",
-        "../../data/wiki/circuits/f1_circuits.csv",
-        options=ScraperOptions(include_urls=True),
+        "circuits/f1_circuits.json",
+        "circuits/f1_circuits.csv",
+        run_config=RunConfig(
+            include_urls=True,
+            output_dir=Path("../../data/wiki"),
+            options=ScraperOptions(include_urls=True),
+        ),
     )

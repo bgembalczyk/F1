@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
@@ -9,7 +10,7 @@ from scrapers.base.helpers.circuits.circuit_normalization import (
 )
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.circuits_list import CircuitsListScraper
@@ -100,6 +101,6 @@ class F1CompleteCircuitScraper(F1Scraper):
 if __name__ == "__main__":
     run_and_export(
         F1CompleteCircuitScraper,
-        "../../data/wiki/circuits/f1_circuits_extended.json",
-        # csv_path pomijamy – jest opcjonalny
+        "circuits/f1_circuits_extended.json",
+        run_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

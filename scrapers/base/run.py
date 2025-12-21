@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import inspect
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Type
 
@@ -15,6 +16,14 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 from scrapers.base.logging import configure_logging, get_logger
+
+
+@dataclass(frozen=True)
+class RunConfig:
+    include_urls: bool = True
+    output_dir: str | Path = Path(".")
+    scraper_kwargs: dict[str, Any] = field(default_factory=dict)
+    options: ScraperOptions | None = None
 
 
 def _scraper_choices() -> list[str]:
@@ -83,13 +92,11 @@ def _make_scraper(
 
 def run_and_export(
     scraper_cls: Type[F1Scraper],
-    json_path: str | Path,
-    csv_path: str | Path | None = None,
+    json_rel: str | Path,
+    csv_rel: str | Path | None = None,
     *,
-    include_urls: bool = True,
+    run_config: RunConfig,
     supports_urls: bool = True,
-    options: ScraperOptions | None = None,
-    **scraper_kwargs: Any,
 ) -> None:
     """
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
@@ -100,12 +107,12 @@ def run_and_export(
     - wypisuje liczbę pobranych rekordów,
     - eksport obsługuje ScrapeResult.
     """
-    kwargs = dict(scraper_kwargs)
-    options = options or ScraperOptions()
+    kwargs = dict(run_config.scraper_kwargs)
+    options = run_config.options or ScraperOptions()
 
     scraper = _make_scraper(
         scraper_cls,
-        include_urls=include_urls,
+        include_urls=run_config.include_urls,
         supports_urls=supports_urls,
         options=options,
         kwargs=kwargs,
@@ -121,12 +128,13 @@ def run_and_export(
         source_url=getattr(scraper, "url", None),
     )
 
-    json_path = Path(json_path)
+    output_dir = Path(run_config.output_dir)
+    json_path = output_dir / Path(json_rel)
     _ensure_parent(json_path)
     result.to_json(json_path, exporter=scraper.exporter)
 
-    if csv_path:
-        csv_path = Path(csv_path)
+    if csv_rel:
+        csv_path = output_dir / Path(csv_rel)
         _ensure_parent(csv_path)
         result.to_csv(csv_path, exporter=scraper.exporter)
 
@@ -175,18 +183,20 @@ def _cli() -> None:
     if json_rel is None:
         raise RuntimeError(f"Config dla {args.scraper!r} nie ma json_rel/json_rel_path")
 
-    json_path = args.output_dir / Path(json_rel)
-    csv_path = args.output_dir / Path(csv_rel) if csv_rel is not None else None
-
     supports_urls = getattr(config, "supports_urls", True)
+
+    run_config = RunConfig(
+        include_urls=args.include_urls,
+        output_dir=args.output_dir,
+        scraper_kwargs=kwargs,
+    )
 
     run_and_export(
         scraper_cls,
-        json_path,
-        csv_path,
-        include_urls=args.include_urls,
+        json_rel,
+        csv_rel,
+        run_config=run_config,
         supports_urls=supports_urls,
-        **kwargs,
     )
 
 

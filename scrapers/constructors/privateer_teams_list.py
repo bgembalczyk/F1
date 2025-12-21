@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Dict, Any, Optional
 import re
 
@@ -7,7 +8,7 @@ from scrapers.base.helpers.parsing import parse_seasons
 from scrapers.base.helpers.wiki import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 
 
 @register_scraper(
@@ -67,6 +68,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
 if __name__ == "__main__":
     run_and_export(
         PrivateerTeamsListScraper,
-        "../../data/wiki/constructors/f1_privateer_teams.json",
-        "../../data/wiki/constructors/f1_privateer_teams.csv",
+        "constructors/f1_privateer_teams.json",
+        "constructors/f1_privateer_teams.csv",
+        run_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

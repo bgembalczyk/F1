@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from pathlib import Path
 from typing import Any, List
 
 from models.scrape_types import (
@@ -9,7 +10,7 @@ from models.scrape_types import (
 )  # typing-only, ale OK
 from scrapers.base.helpers.parsing import parse_seasons
 from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -140,7 +141,11 @@ class F1DriversListScraper(F1TableScraper):
 if __name__ == "__main__":
     run_and_export(
         F1DriversListScraper,
-        "../../data/wiki/drivers/f1_drivers.json",
-        "../../data/wiki/drivers/f1_drivers.csv",
-        options=ScraperOptions(include_urls=True),
+        "drivers/f1_drivers.json",
+        "drivers/f1_drivers.csv",
+        run_config=RunConfig(
+            include_urls=True,
+            output_dir=Path("../../data/wiki"),
+            options=ScraperOptions(include_urls=True),
+        ),
     )
