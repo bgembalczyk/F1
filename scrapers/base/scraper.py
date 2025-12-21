@@ -6,6 +6,14 @@ from typing import Any, Dict, List, Optional, Sequence
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
+import requests
+
+from http_client.caching import WikipediaCachePolicy, FileCache
+from http_client.clients import UrllibHttpClient
+from http_client.interfaces import HttpClientProtocol
+from http_client.policies import ResponseCache
+from scrapers.base.exporters import DataExporter
+from scrapers.base.results import ScrapeResult
 from scrapers.base.exporters import DataExporter, ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers import SoupParser
