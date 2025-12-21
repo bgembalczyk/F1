@@ -8,6 +8,7 @@ from typing import Dict, Optional
 from http_client import requests_shim
 from http_client.base import BaseHttpClient
 from http_client.caching import WikipediaCachePolicy
+from http_client.interfaces import HttpResponseProtocol
 from http_client.policies import RetryPolicy, RateLimiter, ResponseCache
 from http_client.rate_limiting import MinDelayRateLimiter
 from http_client.retry import DefaultRetryPolicy
@@ -65,7 +66,7 @@ class HttpClient(BaseHttpClient):
         *,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
-    ):
+    ) -> HttpResponseProtocol:
         return self._request_with_retries(
             url,
             headers=headers,
@@ -146,7 +147,7 @@ class UrllibHttpClient(BaseHttpClient):
         *,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
-    ):
+    ) -> HttpResponseProtocol:
         return self._request_with_retries(
             url,
             headers=headers,
