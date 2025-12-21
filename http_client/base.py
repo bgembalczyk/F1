@@ -5,8 +5,9 @@ import time
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, Optional, cast
 
+from http_client.caching import WikipediaCachePolicy
 from http_client.interfaces import HttpClientProtocol
-from http_client.policies import RetryPolicy, RateLimiter
+from http_client.policies import RetryPolicy, RateLimiter, ResponseCache
 from http_client.rate_limiting import MinDelayRateLimiter
 from http_client.retry import DefaultRetryPolicy
 
@@ -27,6 +28,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         timeout: int = 10,
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
+        cache: ResponseCache | None = None,
         request_exception_cls: type[Exception],
     ) -> None:
         self.session = session
@@ -36,6 +38,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
             retries=0, backoff_seconds=0.5
         )
         self.rate_limiter = rate_limiter or MinDelayRateLimiter()
+        self.cache = cache or WikipediaCachePolicy.with_file_cache()
 
         self.request_exception_cls = request_exception_cls
 
@@ -118,5 +121,15 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
     ) -> str:
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
+
         response = self.get(url, headers=headers, timeout=timeout)
-        return response.text
+        text = response.text
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
+        return text

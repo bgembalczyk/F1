@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
-from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import requests
 
-from http_client.caching import WikipediaCachePolicy, FileCache
 from http_client.clients import UrllibHttpClient
 from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from http_client.policies import ResponseCache, RetryPolicy, RateLimiter
 from scrapers.base.helpers.utils import is_reference_link
 
 
@@ -31,9 +29,10 @@ class WikipediaInfoboxScraper:
         timeout: int = 10,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
-        retries: int = 0,
         http_client: Optional[HttpClientProtocol] = None,
         cache: ResponseCache | None = None,
+        retry_policy: RetryPolicy | None = None,
+        rate_limiter: RateLimiter | None = None,
     ):
         merged_headers: Dict[str, str] = {}
         if user_agent:
@@ -42,19 +41,12 @@ class WikipediaInfoboxScraper:
             merged_headers.update(headers)
 
         if http_client is None:
-            if cache is None:
-                cache_dir = Path(__file__).resolve().parents[3] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
-                )
             http_client = UrllibHttpClient(
                 session=session,
                 headers=merged_headers or None,
                 timeout=timeout,
-                retries=retries,
+                retry_policy=retry_policy,
+                rate_limiter=rate_limiter,
                 cache=cache,
             )
         self.http_client = http_client

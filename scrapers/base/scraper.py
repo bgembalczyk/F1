@@ -9,10 +9,9 @@ from urllib.parse import urljoin
 
 import requests
 
-from http_client.caching import WikipediaCachePolicy, FileCache
 from http_client.clients import UrllibHttpClient
 from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from http_client.policies import ResponseCache, RetryPolicy, RateLimiter
 from scrapers.base.exporters import DataExporter, ScrapeResult
 
 
@@ -44,24 +43,18 @@ class F1Scraper(ABC):
         http_client: Optional[HttpClientProtocol] = None,
         exporter: Optional[DataExporter] = None,
         timeout: int = 10,
-        retries: int = 0,
+        retry_policy: RetryPolicy | None = None,
+        rate_limiter: RateLimiter | None = None,
         cache: ResponseCache | None = None,
     ) -> None:
         self.include_urls = include_urls
         if http_client is None:
-            if cache is None:
-                cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
-                )
             http_client = UrllibHttpClient(
                 session=session,
                 headers=headers,
                 timeout=timeout,
-                retries=retries,
+                retry_policy=retry_policy,
+                rate_limiter=rate_limiter,
                 cache=cache,
             )
         self.http_client = http_client
