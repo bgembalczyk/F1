@@ -1,19 +1,15 @@
 import pytest
-from scrapers.base.helpers.utils import find_section_elements, is_reference_link
-from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
 import sys
 import types
-from pathlib import Path
+
+from scrapers.base.helpers.utils import find_section_elements, is_reference_link
+from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
 
 try:
     from bs4 import BeautifulSoup
 except Exception:
     pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
 
-
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
 
 if "bs4" not in sys.modules:
     bs4_module = types.ModuleType("bs4")

@@ -1,9 +1,7 @@
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
 from typing import Callable
-import sys
 
 import pytest
 from http_client import (
@@ -13,10 +11,6 @@ from http_client import (
     UrllibHttpClient,
     WikipediaCachePolicy,
 )
-
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
 
 
 class _StubHandler(BaseHTTPRequestHandler):

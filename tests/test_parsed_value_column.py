@@ -1,13 +1,9 @@
-from pathlib import Path
+import re
 import sys
 import types
-import re
+
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
 
 bs4_stub = types.ModuleType("bs4")
 
