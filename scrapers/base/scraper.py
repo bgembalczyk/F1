@@ -15,6 +15,7 @@ from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 
 # PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
 
 
@@ -46,6 +47,7 @@ class F1Scraper(ABC):
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
         self._record_normalizer = RecordNormalizer()
+        self._error_handler = ErrorHandler(logger=logger)
 
         self._data: Optional[List[ExportRecord]] = None
 
@@ -70,17 +72,18 @@ class F1Scraper(ABC):
 
         try:
             html = self._download()
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._handle_scraper_error(exc):
-                self._data = []
-                return self._data
-            raise
         except Exception as exc:
-            wrapped = self._wrap_network_error(exc)
-            if self._handle_scraper_error(wrapped):
+            error: Exception
+            if isinstance(exc, ScraperError):
+                error = exc
+            else:
+                error = self._wrap_network_error(exc)
+            if self._handle_scraper_error(error):
                 self._data = []
                 return self._data
-            raise wrapped from exc
+            if error is exc:
+                raise
+            raise error from exc
 
         try:
             soup = BeautifulSoup(html, "html.parser")
@@ -93,17 +96,14 @@ class F1Scraper(ABC):
 
             normalized_records = self.normalize_records(raw_records)
             self._data = self.to_export_records(normalized_records)
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._handle_scraper_error(exc):
-                self._data = []
-                return self._data
-            raise
         except Exception as exc:
-            parse_error = self._wrap_parse_error(exc)
-            if self._handle_scraper_error(parse_error):
+            error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            if self._handle_scraper_error(error):
                 self._data = []
                 return self._data
-            raise parse_error from exc
+            if error is exc:
+                raise
+            raise error from exc
 
         return self._data
 
@@ -189,28 +189,10 @@ class F1Scraper(ABC):
     # ---------- Error handling ----------
 
     def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
-        return ScraperNetworkError(
-            "Błąd sieci podczas pobierania danych.",
-            url=getattr(self, "url", None),
-            cause=exc,
-        )
+        return self._error_handler.wrap_network(exc, url=getattr(self, "url", None))
 
     def _wrap_parse_error(self, exc: Exception) -> ScraperParseError:
-        return ScraperParseError(
-            "Błąd parsowania danych.",
-            url=getattr(self, "url", None),
-            cause=exc,
-        )
+        return self._error_handler.wrap_parse(exc, url=getattr(self, "url", None))
 
     def _handle_scraper_error(self, error: Exception) -> bool:
-        """
-        Domyślne zachowanie:
-        - jeśli błąd ma atrybut `critical=True` -> nie połykamy
-        - inaczej logujemy warning i soft-skip (zwracamy puste dane)
-        """
-        critical = bool(getattr(error, "critical", False))
-        if critical:
-            return False
-
-        logger.warning("Pomijam dane ze względu na błąd: %s", error)
-        return True
+        return self._error_handler.handle(error)
