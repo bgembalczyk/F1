@@ -14,3 +14,20 @@ def test_scraper_options_rejects_non_positive_timeout():
 def test_scraper_options_rejects_negative_retries():
     with pytest.raises(ValueError):
         ScraperOptions(retries=-1)
+
+
+def test_scraper_options_legacy_http_fields_warn_and_apply():
+    with pytest.warns(DeprecationWarning):
+        options = ScraperOptions(timeout=5, retries=2)
+
+    config = options.to_http_config()
+    assert config.timeout == 5
+    assert config.retries == 2
+
+
+def test_scraper_options_legacy_timeout_applies_to_fetcher():
+    with pytest.warns(DeprecationWarning):
+        options = ScraperOptions(timeout=7)
+
+    fetcher = options.with_fetcher()
+    assert fetcher.timeout == 7

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import warnings
 from typing import Dict, Optional
 
 import requests
@@ -36,15 +37,27 @@ def build_http_config(
 
 @dataclass(slots=True)
 class ScraperOptions:
+    """
+    Konfiguracja scrapera.
+
+    Legacy pola HTTP (session/headers/http_client/timeout/retries/cache) są
+    przestarzałe — docelowo używaj HttpConfig przekazywanego przez `http`.
+    """
+
+    _DEFAULT_TIMEOUT = 10
+    _DEFAULT_RETRIES = 0
+
     include_urls: bool = True
     exporter: Optional[DataExporter] = None
     fetcher: HtmlFetcher | None = None
     parser: SoupParser | None = None
+    http: HttpConfig | None = None
+    # Legacy pola HTTP — do usunięcia po migracji na HttpConfig.
     session: Optional[requests.Session] = None
     headers: Optional[Dict[str, str]] = None
     http_client: Optional[HttpClientProtocol] = None
-    timeout: int = 10
-    retries: int = 0
+    timeout: int = _DEFAULT_TIMEOUT
+    retries: int = _DEFAULT_RETRIES
     cache: ResponseCache | None = None
 
     def __post_init__(self) -> None:
@@ -52,8 +65,43 @@ class ScraperOptions:
             raise ValueError("timeout must be greater than 0")
         if self.retries < 0:
             raise ValueError("retries must be >= 0")
+        self._warn_legacy_fields_if_used()
+
+    def _legacy_fields_used(self) -> bool:
+        return any(
+            (
+                self.session is not None,
+                self.headers is not None,
+                self.http_client is not None,
+                self.cache is not None,
+                self.timeout != self._DEFAULT_TIMEOUT,
+                self.retries != self._DEFAULT_RETRIES,
+            )
+        )
+
+    def _warn_legacy_fields_if_used(self) -> None:
+        if not self._legacy_fields_used():
+            return
+
+        if self.http is not None:
+            message = (
+                "Legacy pola HTTP w ScraperOptions są przestarzałe i będą "
+                "ignorowane, gdy używasz http=HttpConfig."
+            )
+        else:
+            message = (
+                "Legacy pola HTTP w ScraperOptions są przestarzałe. "
+                "Użyj http=HttpConfig."
+            )
+        warnings.warn(
+            message,
+            DeprecationWarning,
+            stacklevel=3,
+        )
 
     def to_http_config(self) -> HttpConfig:
+        if self.http is not None:
+            return self.http
         return build_http_config(
             session=self.session,
             headers=self.headers,
@@ -62,6 +110,11 @@ class ScraperOptions:
             cache=self.cache,
             http_client=self.http_client,
         )
+
+    def with_fetcher(self) -> HtmlFetcher:
+        if self.fetcher is None:
+            self.fetcher = HtmlFetcher(config=self.to_http_config())
+        return self.fetcher
 
     @classmethod
     def from_legacy(

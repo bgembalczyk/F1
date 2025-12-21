@@ -1,14 +1,10 @@
 from __future__ import annotations
 
-from typing import Any, Dict, Optional
-
-import requests
+from typing import Any, Dict
 from bs4 import BeautifulSoup
 
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.options import build_http_config
+from scrapers.base.options import ScraperOptions
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 
@@ -25,32 +21,17 @@ class WikipediaInfoboxScraper:
     def __init__(
         self,
         *,
-        user_agent: str | None = None,
-        timeout: int = 10,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        retries: int = 0,
-        http_client: Optional[HttpClientProtocol] = None,
-        cache: ResponseCache | None = None,
+        options: ScraperOptions | None = None,
         fetcher: HtmlFetcher | None = None,
         parser: InfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
     ) -> None:
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                config=build_http_config(
-                    session=session,
-                    headers=headers,
-                    user_agent=user_agent,
-                    timeout=timeout,
-                    retries=retries,
-                    cache=cache,
-                    http_client=http_client,
-                ),
-            )
+        options = options or ScraperOptions()
+        if fetcher is not None:
+            options.fetcher = fetcher
 
-        self.fetcher = fetcher
-        self.timeout = timeout
+        self.fetcher = options.with_fetcher()
+        self.timeout = options.to_http_config().timeout
         self.parser = parser or InfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper()
 
