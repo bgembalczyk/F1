@@ -66,6 +66,7 @@ if "certifi" not in sys.modules:
     certifi_stub.where = lambda: ""
     sys.modules["certifi"] = certifi_stub
 
+
 def test_circuit_rejects_invalid_url():
     with pytest.raises(ValueError):
         Circuit(circuit={"text": "Test", "url": "notaurl"}, circuit_status="current")

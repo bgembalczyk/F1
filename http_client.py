@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import random
 import time
+import requests
+
 from abc import ABC, abstractmethod
 from hashlib import sha256
 from pathlib import Path
@@ -399,6 +401,8 @@ class UrllibHttpClient(BaseHttpClient):
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
         cache: ResponseCache | None = None,
+        cache_dir: Path | str | None = None,
+        cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests_shim.Session()
 
