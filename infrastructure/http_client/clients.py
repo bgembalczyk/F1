@@ -86,4 +86,3 @@ class UrllibHttpClient(BaseHttpClient):
             timeout=timeout,
             request_func=self.session.get,
         )
-

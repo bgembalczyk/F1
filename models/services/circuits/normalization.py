@@ -229,4 +229,3 @@ def remove_empty_lists(obj: Any) -> Any:
     if isinstance(obj, list):
         return [remove_empty_lists(item) for item in obj]
     return obj
-

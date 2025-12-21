@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, TypeAlias
+from typing import Any, Dict, TypeAlias
 
 RawRecord: TypeAlias = Dict[str, Any]
 NormalizedRecord: TypeAlias = Dict[str, Any]

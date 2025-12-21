@@ -3,6 +3,17 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 import types
+import pytest
+from scrapers.base.errors import (
+    ScraperNetworkError,
+    ScraperNotFoundError,
+    ScraperParseError,
+)
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper import F1Scraper
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -64,18 +75,6 @@ if "pandas" not in sys.modules:
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
-
-import pytest
-from scrapers.base.errors import (
-    ScraperNetworkError,
-    ScraperNotFoundError,
-    ScraperParseError,
-)
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
 class DummyFetcher:

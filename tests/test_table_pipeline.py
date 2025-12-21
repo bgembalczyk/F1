@@ -32,7 +32,9 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
         skip_sentinel=object(),
     )
 
-    assert pipeline.parse_soup(soup) == [{"driver": "Max Verstappen", "time": "1:20.000"}]
+    assert pipeline.parse_soup(soup) == [
+        {"driver": "Max Verstappen", "time": "1:20.000"}
+    ]
 
 
 def test_table_pipeline_maps_columns_for_cells():

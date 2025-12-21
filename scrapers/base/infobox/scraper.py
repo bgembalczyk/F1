@@ -49,7 +49,11 @@ class WikipediaInfoboxScraper:
         try:
             html = self._fetch(url)
         except Exception as exc:
-            error = exc if isinstance(exc, ScraperError) else handler.wrap_network(exc, url=url)
+            error = (
+                exc
+                if isinstance(exc, ScraperError)
+                else handler.wrap_network(exc, url=url)
+            )
             if handler.handle(error):
                 return {}
             if error is exc:
@@ -60,7 +64,11 @@ class WikipediaInfoboxScraper:
             soup = BeautifulSoup(html, "html.parser")
             return self.parse_from_soup(soup)
         except Exception as exc:
-            error = exc if isinstance(exc, ScraperError) else handler.wrap_parse(exc, url=url)
+            error = (
+                exc
+                if isinstance(exc, ScraperError)
+                else handler.wrap_parse(exc, url=url)
+            )
             if handler.handle(error):
                 return {}
             if error is exc:

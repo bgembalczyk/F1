@@ -91,7 +91,9 @@ class F1Scraper(ABC):
             normalized_records = self.normalize_records(raw_records)
             self._data = self.to_export_records(normalized_records)
         except Exception as exc:
-            error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            error = (
+                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            )
             if self._handle_scraper_error(error):
                 self._data = []
                 return self._data

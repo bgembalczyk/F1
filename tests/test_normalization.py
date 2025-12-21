@@ -26,7 +26,9 @@ def test_record_normalizer_applies_custom_rules_after_default() -> None:
         record["total_wins"] = value
         return record
 
-    normalizer = RecordNormalizer(normalize_keys=True, normalization_rules=[rename_wins])
+    normalizer = RecordNormalizer(
+        normalize_keys=True, normalization_rules=[rename_wins]
+    )
     data = [{"Wins": 41, "Notes": ""}]
 
     normalized = normalizer.normalize(data)

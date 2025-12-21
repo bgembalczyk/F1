@@ -12,14 +12,18 @@ class ErrorHandler:
     def __init__(self, *, logger: Optional[logging.Logger] = None) -> None:
         self._logger = logger or logging.getLogger(__name__)
 
-    def wrap_network(self, exc: Exception, *, url: Optional[str] = None) -> ScraperNetworkError:
+    def wrap_network(
+        self, exc: Exception, *, url: Optional[str] = None
+    ) -> ScraperNetworkError:
         return ScraperNetworkError(
             "Błąd sieci podczas pobierania danych.",
             url=url,
             cause=exc,
         )
 
-    def wrap_parse(self, exc: Exception, *, url: Optional[str] = None) -> ScraperParseError:
+    def wrap_parse(
+        self, exc: Exception, *, url: Optional[str] = None
+    ) -> ScraperParseError:
         return ScraperParseError(
             "Błąd parsowania danych.",
             url=url,

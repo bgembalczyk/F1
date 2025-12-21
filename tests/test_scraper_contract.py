@@ -209,7 +209,9 @@ def test_scraper_config_rejects_invalid_column_map() -> None:
 
 
 def test_scraper_config_rejects_invalid_columns() -> None:
-    with pytest.raises(ValueError, match="columns must map str keys to BaseColumn values"):
+    with pytest.raises(
+        ValueError, match="columns must map str keys to BaseColumn values"
+    ):
         ScraperConfig(
             url="https://example.com",
             columns={"Header": "not-a-column"},
@@ -227,7 +229,9 @@ def test_table_scraper_validates_config_in_init() -> None:
     object.__setattr__(config, "model_class", None)
     object.__setattr__(config, "default_column", AutoColumn())
 
-    with pytest.raises(ValueError, match="columns must map str keys to BaseColumn values"):
+    with pytest.raises(
+        ValueError, match="columns must map str keys to BaseColumn values"
+    ):
         DummyTableScraper(
             options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
             config=config,

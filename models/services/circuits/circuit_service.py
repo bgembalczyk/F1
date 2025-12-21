@@ -124,4 +124,3 @@ class CircuitService:
     def core_key(rec: dict[str, Any]) -> tuple | None:
         """Zwraca klucz rdzeniowy (bez czasu) dla identyfikacji duplikatów."""
         return build_core_key(rec)
-

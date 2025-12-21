@@ -573,4 +573,3 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
     )
 
     return merged_main + last_left
-

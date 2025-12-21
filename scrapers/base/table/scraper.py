@@ -46,18 +46,18 @@ class F1TableScraper(F1Scraper, ABC):
     default_column: BaseColumn = AutoColumn()
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config: ScraperConfig | None = None,
-            include_urls: bool | None = None,
-            session: Optional["requests.Session"] = None,
-            headers: Optional[Dict[str, str]] = None,
-            http_client: Optional["HttpClientProtocol"] = None,
-            exporter: Optional["DataExporter"] = None,
-            timeout: int | None = None,
-            retries: int | None = None,
-            cache: "ResponseCache | None" = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+        include_urls: bool | None = None,
+        session: Optional["requests.Session"] = None,
+        headers: Optional[Dict[str, str]] = None,
+        http_client: Optional["HttpClientProtocol"] = None,
+        exporter: Optional["DataExporter"] = None,
+        timeout: int | None = None,
+        retries: int | None = None,
+        cache: "ResponseCache | None" = None,
     ) -> None:
         legacy_used = any(
             value is not None
