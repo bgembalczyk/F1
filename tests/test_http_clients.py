@@ -9,6 +9,9 @@ from http_client.caching import FileCache, WikipediaCachePolicy
 from http_client.clients import HttpClient, UrllibHttpClient
 from http_client.config import HttpClientConfig
 from http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client.caching import WikipediaCachePolicy, FileCache
+from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
 class _StubHandler(BaseHTTPRequestHandler):

@@ -9,14 +9,14 @@ from typing import Dict, Optional
 
 import requests
 
-from http_client import requests_shim
-from http_client.base import BaseHttpClient
-from http_client.caching import WikipediaCachePolicy
-from http_client.config import HttpClientConfig
-from http_client.interfaces import HttpResponseProtocol
-from http_client.policies import RateLimiter, ResponseCache, RetryPolicy
-from http_client.rate_limiting import MinDelayRateLimiter
-from http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client import requests_shim
+from infrastructure.http_client.base import BaseHttpClient
+from infrastructure.http_client.caching import WikipediaCachePolicy
+from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.interfaces import HttpResponseProtocol
+from infrastructure.http_client.policies import RateLimiter, ResponseCache, RetryPolicy
+from infrastructure.http_client.rate_limiting import MinDelayRateLimiter
+from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
 def _resolve_config(
@@ -95,7 +95,7 @@ def _build_effective_policies(
     config: HttpClientConfig,
 ) -> tuple[RetryPolicy, RateLimiter, ResponseCache | None]:
     """
-    Buduje retry/rate-limit/cache w stylu `main`, ale z wartościami z HttpClientConfig.
+    Buduje retry/rate-limit/cache na podstawie HttpClientConfig.
 
     Zasada:
     - jeśli w config jest jawnie ustawione retry_policy / rate_limiter / cache -> używamy tego,
@@ -178,9 +178,11 @@ class HttpClient(BaseHttpClient):
             timeout=config.timeout,
             retry_policy=eff_retry,
             rate_limiter=eff_rate,
-            cache=eff_cache,
             request_exception_cls=requests.RequestException,
         )
+
+        # Cache trzymamy w kliencie (nie w Base), żeby Base był “czysty”.
+        self.cache: ResponseCache | None = eff_cache
 
     def get(
         self,
@@ -195,6 +197,28 @@ class HttpClient(BaseHttpClient):
             timeout=timeout,
             request_func=self.session.get,
         )
+
+    def get_text(
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ) -> str:
+        # Cache jest świadomie *tylko po URL* (headers/timeout pomijamy),
+        # bo to typowy use-case: Wikipedia GET.
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
+
+        response = self.get(url, headers=headers, timeout=timeout)
+        text = response.text
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
+        return text
 
 
 class UrllibHttpClient(BaseHttpClient):
@@ -243,9 +267,10 @@ class UrllibHttpClient(BaseHttpClient):
             timeout=config.timeout,
             retry_policy=eff_retry,
             rate_limiter=eff_rate,
-            cache=eff_cache,
             request_exception_cls=requests_shim.RequestException,
         )
+
+        self.cache: ResponseCache | None = eff_cache
 
     def get(
         self,
@@ -260,3 +285,23 @@ class UrllibHttpClient(BaseHttpClient):
             timeout=timeout,
             request_func=self.session.get,
         )
+
+    def get_text(
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ) -> str:
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
+
+        response = self.get(url, headers=headers, timeout=timeout)
+        text = response.text
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
+        return text

@@ -5,8 +5,8 @@ from typing import Any, Dict, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser

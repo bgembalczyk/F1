@@ -40,16 +40,11 @@ class F1CircuitInfoboxScraper(F1Scraper):
     ) -> None:
         options = options or ScraperOptions()
 
-        # Zapewniamy fetcher (spójnie z resztą repo)
+        # Zapewniamy fetcher (spójnie z resztą repo).
+        # HtmlFetcher po merge jest config-driven (default_http_config), więc bezpiecznie
+        # tworzymy go bez “legacy” parametrów.
         if options.fetcher is None:
-            options.fetcher = HtmlFetcher(
-                session=options.session,
-                headers=options.headers,
-                http_client=options.http_client,
-                timeout=options.timeout,
-                retries=options.retries,
-                cache=options.cache,
-            )
+            options.fetcher = HtmlFetcher()
 
         super().__init__(options=options)
 
@@ -114,12 +109,12 @@ class F1CircuitInfoboxScraper(F1Scraper):
             html = self._download()
         except ScraperError as exc:  # type: ignore[misc]
             if self._maybe_handle_scraper_error(exc):
-                return {}
+                return {"url": url}
             raise
         except Exception as exc:
             wrapped = self._maybe_wrap_network_error(exc)
             if self._maybe_handle_scraper_error(wrapped):
-                return {}
+                return {"url": url}
             raise wrapped from exc
 
         full_soup = BeautifulSoup(html, "html.parser")
@@ -143,12 +138,12 @@ class F1CircuitInfoboxScraper(F1Scraper):
             return self.parse_from_soup(soup)
         except ScraperError as exc:  # type: ignore[misc]
             if self._maybe_handle_scraper_error(exc):
-                return {}
+                return {"url": url}
             raise
         except Exception as exc:
             wrapped = self._maybe_wrap_parse_error(exc)
             if self._maybe_handle_scraper_error(wrapped):
-                return {}
+                return {"url": url}
             raise wrapped from exc
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
@@ -245,7 +240,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         return False
 
     # ------------------------------
-    # Kompatybilne hooki error-handling (PR), bez wymogu miksinów
+    # Kompatybilne hooki error-handling, bez wymogu miksinów
     # ------------------------------
 
     def _maybe_handle_scraper_error(self, exc: Exception) -> bool:

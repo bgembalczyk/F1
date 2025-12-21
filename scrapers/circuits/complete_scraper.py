@@ -73,6 +73,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         complete: List[Dict[str, Any]] = []
 
         for circuit in circuits:
+            # list_scraper może zwracać dict albo model/dataclass — normalizujemy wejście
             circuit_payload = to_dict(circuit)
 
             circuit_url: Optional[str] = None

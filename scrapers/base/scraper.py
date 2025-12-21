@@ -69,7 +69,8 @@ class F1Scraper(ABC):
         self.include_urls = options.include_urls
 
         # Preferuj gotowy fetcher w options.
-        # Jeśli nie ma — budujemy HtmlFetcher z pól opcji (legacy).
+        # HtmlFetcher po merge jest config-driven (default_http_config),
+        # więc jeśli go nie ma — tworzymy go "domyślnie".
         if options.fetcher is None:
             legacy_used = any(
                 value is not None
@@ -87,19 +88,13 @@ class F1Scraper(ABC):
                     "Konfigurację HTTP przekazuj przez skonfigurowany HttpClient "
                     "(ScraperOptions.http_client) albo gotowy HtmlFetcher "
                     "(ScraperOptions.fetcher). Parametry session/headers/timeout/"
-                    "retries/cache w ScraperOptions traktuj jako legacy.",
+                    "retries/cache w ScraperOptions traktuj jako legacy i nie są "
+                    "już używane do budowy HtmlFetcher.",
                     DeprecationWarning,
                     stacklevel=2,
                 )
 
-            self.fetcher = HtmlFetcher(
-                session=options.session,
-                headers=options.headers,
-                http_client=options.http_client,
-                timeout=options.timeout,
-                retries=options.retries,
-                cache=options.cache,
-            )
+            self.fetcher = HtmlFetcher()
         else:
             self.fetcher = options.fetcher
 
@@ -136,7 +131,11 @@ class F1Scraper(ABC):
                 return self._data
             raise
         except Exception as exc:
-            raise self._wrap_network_error(exc) from exc
+            wrapped = self._wrap_network_error(exc)
+            if self._handle_scraper_error(wrapped):
+                self._data = []
+                return self._data
+            raise wrapped from exc
 
         try:
             soup = BeautifulSoup(html, "html.parser")

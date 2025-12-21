@@ -41,15 +41,10 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
         options.include_urls = True
 
+        # HtmlFetcher po merge jest config-driven — jeśli nie ma fetchera w options,
+        # tworzymy domyślny.
         if options.fetcher is None:
-            options.fetcher = HtmlFetcher(
-                session=options.session,
-                headers=options.headers,
-                http_client=options.http_client,
-                timeout=options.timeout,
-                retries=options.retries,
-                cache=options.cache,
-            )
+            options.fetcher = HtmlFetcher()
 
         super().__init__(options=options)
         self.timeout = options.timeout
@@ -175,15 +170,15 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                         return txt
             return None
 
+        all_records: List[Dict[str, Any]] = []
+
         for table in soup.find_all("table", class_="wikitable"):
             header_row = table.find("tr")
             if not header_row:
                 continue
 
             header_cells = header_row.find_all(["th", "td"])
-            headers = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
-            ]
+            headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
             if not lap_scraper._headers_match(headers):
                 header_set = set(headers)
@@ -195,7 +190,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
             base_layout = guess_table_layout(table)
             current_layout = base_layout
-            results: List[Dict[str, Any]] = []
 
             for tr in table.find_all("tr")[1:]:
                 cells = tr.find_all(["th", "td"])
@@ -229,9 +223,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                             current_layout = text
                         continue
 
-                cleaned_cells = [
-                    clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
-                ]
+                cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
                 if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
                     continue
 
@@ -245,21 +237,20 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                         continue
                     if layout_name:
                         record.setdefault("layout", layout_name)
-                    results.append(record)
+                    all_records.append(record)
 
-            layouts: Dict[str, List[Dict[str, Any]]] = {}
-            for rec in results:
-                layout_name = rec.get("layout")
-                if not layout_name:
-                    continue
+        # Grupowanie po layoutach (sumarycznie z wszystkich tabel)
+        layouts: Dict[str, List[Dict[str, Any]]] = {}
+        for rec in all_records:
+            layout_name = rec.get("layout")
+            if not layout_name:
+                continue
 
-                rec_copy = dict(rec)
-                rec_copy.pop("layout", None)
-                layouts.setdefault(layout_name, []).append(rec_copy)
+            rec_copy = dict(rec)
+            rec_copy.pop("layout", None)
+            layouts.setdefault(layout_name, []).append(rec_copy)
 
-            return [
-                {"layout": layout_name, "lap_records": recs}
-                for layout_name, recs in layouts.items()
-            ]
-
-        return []
+        return [
+            {"layout": layout_name, "lap_records": recs}
+            for layout_name, recs in layouts.items()
+        ]

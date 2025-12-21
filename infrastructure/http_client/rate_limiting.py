@@ -5,7 +5,7 @@ import random
 import time
 from typing import Callable
 
-from http_client.policies import RateLimiter
+from infrastructure.http_client.policies import RateLimiter
 
 
 class MinDelayRateLimiter(RateLimiter):

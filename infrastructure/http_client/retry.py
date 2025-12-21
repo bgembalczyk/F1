@@ -4,7 +4,7 @@ from __future__ import annotations
 import random
 from typing import Any
 
-from http_client.policies import RetryPolicy
+from infrastructure.http_client.policies import RetryPolicy
 
 
 class DefaultRetryPolicy(RetryPolicy):
