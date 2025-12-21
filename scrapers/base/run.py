@@ -6,7 +6,7 @@ import inspect
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Type
 
-from scrapers.base.exporters import ScrapeResult
+from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 
