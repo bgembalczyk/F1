@@ -1,17 +1,41 @@
 from __future__ import annotations
 
+import logging
 import warnings
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 
 from scrapers.base.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
+
+# PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
+try:  # pragma: no cover
+    from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
+except Exception:  # pragma: no cover
+    ScraperError = Exception  # type: ignore[misc,assignment]
+
+    class ScraperNetworkError(RuntimeError):  # type: ignore[no-redef]
+        def __init__(self, message: str, *, url: str | None = None, cause: Exception | None = None):
+            super().__init__(message)
+            self.url = url
+            self.cause = cause
+            self.critical = True
+
+    class ScraperParseError(RuntimeError):  # type: ignore[no-redef]
+        def __init__(self, message: str, *, url: str | None = None, cause: Exception | None = None):
+            super().__init__(message)
+            self.url = url
+            self.cause = cause
+            self.critical = True
+
+
+logger = logging.getLogger(__name__)
 
 
 class F1Scraper(ABC):
@@ -73,11 +97,39 @@ class F1Scraper(ABC):
     # ---------- API wysokiego poziomu ----------
 
     def fetch(self) -> List[Dict[str, Any]]:
-        """Pobierz HTML i sparsuj do listy rekordów."""
-        html = self._download()
-        soup = BeautifulSoup(html, "html.parser")
-        parser = self.parser or self
-        self._data = parser.parse(soup)
+        """
+        Pobierz HTML i sparsuj do listy rekordów.
+
+        Merge:
+        - zachowujemy main-ową konfigurację (ScraperOptions + fetcher),
+        - dokładamy PR-owy szablon obsługi błędów (network/parse + soft-skip).
+        """
+        try:
+            html = self._download()
+        except ScraperError as exc:  # type: ignore[misc]
+            if self._handle_scraper_error(exc):
+                self._data = []
+                return self._data
+            raise
+        except Exception as exc:
+            raise self._wrap_network_error(exc) from exc
+
+        try:
+            soup = BeautifulSoup(html, "html.parser")
+            parser = self.parser or self
+            self._data = parser.parse(soup)
+        except ScraperError as exc:  # type: ignore[misc]
+            if self._handle_scraper_error(exc):
+                self._data = []
+                return self._data
+            raise
+        except Exception as exc:
+            parse_error = self._wrap_parse_error(exc)
+            if self._handle_scraper_error(parse_error):
+                self._data = []
+                return self._data
+            raise parse_error from exc
+
         return self._data
 
     def get_data(self) -> List[Dict[str, Any]]:
@@ -150,3 +202,32 @@ class F1Scraper(ABC):
         if not href:
             return None
         return urljoin(self.url, href)
+
+    # ---------- Error handling (z PR, ale kompatybilnie z main) ----------
+
+    def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
+        return ScraperNetworkError(
+            "Błąd sieci podczas pobierania danych.",
+            url=getattr(self, "url", None),
+            cause=exc,
+        )
+
+    def _wrap_parse_error(self, exc: Exception) -> ScraperParseError:
+        return ScraperParseError(
+            "Błąd parsowania danych.",
+            url=getattr(self, "url", None),
+            cause=exc,
+        )
+
+    def _handle_scraper_error(self, error: Exception) -> bool:
+        """
+        Domyślne zachowanie jak w PR:
+        - jeśli błąd ma atrybut `critical=True` -> nie połykamy
+        - inaczej logujemy warning i soft-skip (zwracamy puste dane)
+        """
+        critical = bool(getattr(error, "critical", False))
+        if critical:
+            return False
+
+        logger.warning("Pomijam dane ze względu na błąd: %s", error)
+        return True

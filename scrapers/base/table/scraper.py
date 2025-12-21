@@ -8,20 +8,21 @@ from typing import Optional, Mapping, List, Dict, Any, TYPE_CHECKING
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.wiki import extract_links_from_cell, find_section_elements
+from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.registry import resolve_column_type
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.parser import HtmlTableParser
 
 if TYPE_CHECKING:
     import requests
 
+    from http_client.caching import ResponseCache
     from http_client.interfaces import HttpClientProtocol
     from scrapers.base.exporters import DataExporter
-from scrapers.base.table.columns.registry import resolve_column_type
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.parser import HtmlTableParser
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -30,12 +31,12 @@ class F1TableScraper(F1Scraper, ABC):
 
     Konfiguracja przez ScraperConfig:
 
-    - section_id    – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
-                       jeśli None – szukamy po całej stronie.
+    - section_id       – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
+                         jeśli None – szukamy po całej stronie.
     - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
-    - column_map    – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - columns       – mapowanie klucza/nagłówka -> BaseColumn
-                      (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
+    - column_map       – mapowanie "nagłówek z tabeli" -> "klucz w dict".
+    - columns          – mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
+                         (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
     _SKIP = object()
@@ -43,10 +44,10 @@ class F1TableScraper(F1Scraper, ABC):
     CONFIG: ScraperConfig | None = None
 
     _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
 
-    # --- szablon parsowania ---
     def __init__(
         self,
         *,
@@ -70,6 +71,7 @@ class F1TableScraper(F1Scraper, ABC):
             retries=retries,
             cache=cache,
         )
+
         resolved_config = config or self.CONFIG
         if resolved_config is None:
             raise ValueError("ScraperConfig must be provided for F1TableScraper.")
@@ -82,38 +84,66 @@ class F1TableScraper(F1Scraper, ABC):
         self.columns = resolved_config.columns
         self.table_css_class = resolved_config.table_css_class
         self.model_class = resolved_config.model_class
-        self.default_column = resolved_config.default_column
+        self.default_column = resolved_config.default_column or AutoColumn()
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        """
+        Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
+
+        UWAGA: PR dodawał pomijanie wierszy będących powtórzonym nagłówkiem (footer).
+        W architekturze z HtmlTableParser najlepiej robić to w samym parserze,
+        ale dodajemy tu "best-effort" filtr, jeśli parser udostępnia <tr>.
+        """
         records: List[Dict[str, Any]] = []
+
         parser = HtmlTableParser(
             section_id=self.section_id,
             expected_headers=self.expected_headers,
             table_css_class=self.table_css_class,
         )
+
         for row in parser.parse(soup):
+            # --- best-effort: pomiń powtórzony header/footer ---
+            # Jeżeli HtmlTableParser zwraca referencję do źródłowego <tr> w specjalnym kluczu,
+            # to możemy wykryć wiersz, który jest kopią nagłówka (częste w tabelach z <tfoot>).
+            tr = None
+            if hasattr(row, "get"):
+                tr = row.get("__row__") or row.get("_row") or row.get("__tr__")
+
+            if isinstance(tr, Tag):
+                header_texts = [clean_wiki_text(h) for h in row.keys() if isinstance(h, str)]
+                cell_texts = [
+                    clean_wiki_text(c.get_text(" ", strip=True))
+                    for c in tr.find_all(["th", "td"], recursive=False)
+                ]
+                # jeśli to 1:1 kopia nagłówków -> skip
+                if header_texts and len(cell_texts) == len(header_texts) and cell_texts == header_texts:
+                    continue
+            # --- koniec best-effort filtra ---
+
             record = self.parse_row(row)
             if record:
                 records.append(record)
 
         return records
 
-    # --- hook per-wiersz ---
-
-    def parse_row(
-        self,
-        row: Mapping[str, Tag],
-    ) -> Optional[Dict[str, Any]]:
+    def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
-        - wybiera typ kolumny z column_types,
+        - wybiera typ kolumny z `columns`,
         - deleguje całą logikę do handlera kolumny.
         """
         record: Dict[str, Any] = {}
         model_fields = self._model_fields()
 
         for header, cell in row.items():
+            # (jeśli parser niesie metadane typu "__row__", pomijamy je)
+            if not isinstance(header, str):
+                continue
+            if header in {"__row__", "_row", "__tr__"}:
+                continue
+
             key = self.column_map.get(header, self._normalize_header(header))
 
             raw_text = cell.get_text(" ", strip=True)
@@ -134,11 +164,8 @@ class F1TableScraper(F1Scraper, ABC):
                 model_fields=model_fields,
             )
 
-            col_spec = (
-                self.columns.get(key) or self.columns.get(header) or self.default_column
-            )
+            col_spec = self.columns.get(key) or self.columns.get(header) or self.default_column
             col = resolve_column_type(col_spec)
-
             col.apply(ctx, record)
 
         if self.model_class:

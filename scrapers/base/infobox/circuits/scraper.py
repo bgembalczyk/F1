@@ -5,7 +5,9 @@ from typing import Any, Dict, List, Optional
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.infobox.circuits.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.base.infobox.circuits.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.base.infobox.circuits.services.entities import CircuitEntitiesParser
 from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
 from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
@@ -18,6 +20,14 @@ from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
+
+# PR wnosił ustandaryzowane wyjątki – bierzemy je, jeśli istnieją w projekcie.
+# Jeśli u Ciebie pliki/klasy nazywają się inaczej, zmień importy poniżej.
+try:  # pragma: no cover
+    from scrapers.base.errors import ScraperError, ScraperParseError
+except Exception:  # pragma: no cover
+    ScraperError = Exception  # type: ignore[misc,assignment]
+    ScraperParseError = ValueError  # type: ignore[misc,assignment]
 
 
 class F1CircuitInfoboxScraper(F1Scraper):
@@ -54,7 +64,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
             fetcher=options.fetcher,
         )
 
-        # --- Serwisy z PR ---
+        # --- Serwisy ---
         self.section_extractor = WikipediaSectionExtractor()
         self.text_utils = InfoboxTextUtils()
         self.geo_parser = CircuitGeoParser()
@@ -91,12 +101,28 @@ class F1CircuitInfoboxScraper(F1Scraper):
         """
         Główne API używane wewnętrznie – obsługuje #fragment (sekcje),
         przycina infoboksy po infobox-full-data itd.
+
+        Wersja po merge:
+        - zostawiamy serwisy z main,
+        - dokładamy PR-owy „shield” na błędy sieci/parsowania (bez narzucania miksinów).
         """
         self.url = url
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        html = self._download()
+        # --- download + obsługa błędów (z PR, ale kompatybilnie) ---
+        try:
+            html = self._download()
+        except ScraperError as exc:
+            if self._maybe_handle_scraper_error(exc):
+                return {}
+            raise
+        except Exception as exc:
+            wrapped = self._maybe_wrap_network_error(exc)
+            if isinstance(wrapped, Exception) and self._maybe_handle_scraper_error(wrapped):
+                return {}
+            raise wrapped from exc
+
         full_soup = BeautifulSoup(html, "html.parser")
 
         if not self._is_circuit_like_article(full_soup):
@@ -114,7 +140,17 @@ class F1CircuitInfoboxScraper(F1Scraper):
             if section is not None:
                 soup = section
 
-        return self.parse_from_soup(soup)
+        try:
+            return self.parse_from_soup(soup)
+        except ScraperError as exc:
+            if self._maybe_handle_scraper_error(exc):
+                return {}
+            raise
+        except Exception as exc:
+            wrapped = self._maybe_wrap_parse_error(exc)
+            if self._maybe_handle_scraper_error(wrapped):
+                return {}
+            raise wrapped from exc
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """API bazowej klasy – deleguje do parse_from_soup."""
@@ -184,7 +220,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
     def _download(self) -> str:
         if not self.url:
-            raise ValueError("URL must be set before downloading")
+            raise ScraperParseError("URL must be set before downloading")
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
@@ -207,3 +243,29 @@ class F1CircuitInfoboxScraper(F1Scraper):
             if any(kw in text for kw in keywords):
                 return True
         return False
+
+    # ------------------------------
+    # Kompatybilne hooki error-handling (PR), bez wymogu miksinów
+    # ------------------------------
+
+    def _maybe_handle_scraper_error(self, exc: Exception) -> bool:
+        """
+        Jeśli Twoje bazowe F1Scraper ma mechanizm obsługi błędów (np. retry/skip),
+        to go użyjemy. W przeciwnym razie: nie obsługujemy i puszczamy wyjątek dalej.
+        """
+        handler = getattr(self, "_handle_scraper_error", None)
+        if callable(handler):
+            return bool(handler(exc))
+        return False
+
+    def _maybe_wrap_network_error(self, exc: Exception) -> Exception:
+        wrapper = getattr(self, "_wrap_network_error", None)
+        if callable(wrapper):
+            return wrapper(exc)
+        return exc
+
+    def _maybe_wrap_parse_error(self, exc: Exception) -> Exception:
+        wrapper = getattr(self, "_wrap_parse_error", None)
+        if callable(wrapper):
+            return wrapper(exc)
+        return exc
