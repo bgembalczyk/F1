@@ -3,7 +3,8 @@ import sys
 import types
 
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
-from scrapers.base.helpers.wiki import find_section_elements, is_reference_link
+from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 
 try:
@@ -118,6 +119,19 @@ def test_find_section_elements_returns_first_after_heading():
     matches = find_section_elements(soup, "target", ["table"], class_="wikitable")
 
     assert matches[0]["id"] == "match-1"
+
+
+def test_find_section_elements_without_section_id_returns_all_matches():
+    html = """
+    <h2><span id="intro">Intro</span></h2>
+    <table class="wikitable" id="match-1"></table>
+    <table class="wikitable" id="match-2"></table>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    matches = find_section_elements(soup, None, ["table"], class_="wikitable")
+
+    assert [match["id"] for match in matches] == ["match-1", "match-2"]
 
 
 def test_split_url_fragment_returns_base_and_fragment():

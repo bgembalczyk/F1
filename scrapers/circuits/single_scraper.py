@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.wiki import clean_wiki_text  # spójnie z resztą helperów
+from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
