@@ -10,6 +10,7 @@ from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
 from scrapers.config import HttpConfig
 
@@ -50,6 +51,7 @@ class ScraperOptions:
     include_urls: bool = True
     exporter: Optional[DataExporter] = None
     fetcher: HtmlFetcher | None = None
+    source_adapter: SourceAdapter | None = None
     parser: SoupParser | None = None
     http: HttpConfig | None = None
     # Legacy pola HTTP — do usunięcia po migracji na HttpConfig.
@@ -113,8 +115,24 @@ class ScraperOptions:
 
     def with_fetcher(self) -> HtmlFetcher:
         if self.fetcher is None:
-            self.fetcher = HtmlFetcher(config=self.to_http_config())
+            if isinstance(self.source_adapter, HtmlFetcher):
+                self.fetcher = self.source_adapter
+            else:
+                self.fetcher = HtmlFetcher(config=self.to_http_config())
+                if self.source_adapter is None:
+                    self.source_adapter = self.fetcher
         return self.fetcher
+
+    def with_source_adapter(self) -> SourceAdapter:
+        if self.source_adapter is None:
+            if self.fetcher is not None:
+                self.source_adapter = self.fetcher
+            else:
+                self.fetcher = HtmlFetcher(config=self.to_http_config())
+                self.source_adapter = self.fetcher
+        elif isinstance(self.source_adapter, HtmlFetcher):
+            self.fetcher = self.source_adapter
+        return self.source_adapter
 
     @classmethod
     def from_legacy(

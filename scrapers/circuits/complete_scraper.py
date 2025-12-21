@@ -11,6 +11,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 from scrapers.base.scraper import F1Scraper
+from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.circuits_list import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
@@ -42,26 +43,27 @@ class F1CompleteCircuitScraper(F1Scraper):
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
 
-        # Zapewniamy fetcher (spójnie z resztą repo)
-        options.with_fetcher()
+        # Zapewniamy adapter źródła (spójnie z resztą repo)
+        html_adapter = options.with_source_adapter()
 
         super().__init__(options=options)
 
-        # Pod-scrapery współdzielą ten sam fetcher (cache + retry + headers)
+        # Pod-scrapery współdzielą ten sam adapter (cache + retry + headers)
         self.list_scraper = CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
-                fetcher=self.fetcher,
+                source_adapter=html_adapter,
             ),
         )
         self.single_scraper = F1SingleCircuitScraper(
             options=ScraperOptions(
-                fetcher=self.fetcher,
+                source_adapter=html_adapter,
             ),
         )
+        self.circuits_adapter = IterableSourceAdapter(self.list_scraper.fetch)
 
     def fetch(self) -> List[Dict[str, Any]]:
-        circuits = self.list_scraper.fetch()
+        circuits = self.circuits_adapter.get()
         complete: List[Dict[str, Any]] = []
 
         for circuit in circuits:

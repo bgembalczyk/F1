@@ -36,9 +36,10 @@ class F1Scraper(ABC):
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
 
-        # Preferuj gotowy fetcher w options.
+        # Preferuj gotowy source_adapter w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
-        self.fetcher = options.with_fetcher()
+        self.source_adapter = options.with_source_adapter()
+        self.fetcher = options.fetcher
 
         # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser
@@ -155,8 +156,8 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        # Fetcher jest jedyną “bramką” do HTTP.
-        return self.fetcher.get_text(self.url)
+        # Adapter jest jedyną “bramką” do źródła.
+        return self.source_adapter.get(self.url)
 
     @abstractmethod
     def _parse_soup(self, soup: BeautifulSoup) -> List[RawRecord]:
