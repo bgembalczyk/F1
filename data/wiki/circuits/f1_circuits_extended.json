@@ -14558,12 +14558,6 @@
         "turns": 8,
         "race_lap_records": [
           {
-            "time": 90.127,
-            "driver": {
-              "text": "Juan Martín Trucco"
-            }
-          },
-          {
             "event": {
               "text": "2024 Buenos Aires Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2024_Turismo_Carretera"
@@ -17096,15 +17090,6 @@
         "length_mi": 1.584,
         "turns": 8,
         "race_lap_records": [
-          {
-            "time": 63.819,
-            "driver": {
-              "text": "Bashar Mardini"
-            },
-            "vehicle": {
-              "text": "Porsche 911 (991 I"
-            }
-          },
           {
             "event": {
               "text": "2017 1st Sakhir Porsche Sprint Challenge Middle East round",
@@ -20058,12 +20043,6 @@
           "text": "Asphalt concrete with Graywacke aggregate"
         },
         "race_lap_records": [
-          {
-            "time": 107.204,
-            "driver": {
-              "text": "David Vršecký"
-            }
-          },
           {
             "event": {
               "text": "2017 T1 Prima Truck Racing Championship",
@@ -75530,18 +75509,12 @@
         "turns": 8,
         "race_lap_records": [
           {
-            "time": 58.183,
-            "driver": {
-              "text": "Hailey"
-            }
-          },
-          {
             "event": {
               "text": "2025 Abu Dhabi Autonomous Racing League",
               "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Autonomous_Racing_League"
             },
             "driver": {
-              "text": "Hailey (TUM)"
+              "text": "Hailey"
             },
             "vehicle": {
               "text": "Dallara EAV24",

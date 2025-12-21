@@ -9,8 +9,7 @@ from urllib.parse import urlparse
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional, cast
 
-from f1_http import requests_shim
-from f1_http.interfaces import HttpClientProtocol, HttpResponseProtocol
+from f1_http.interfaces import HttpClientProtocol
 
 try:  # pragma: no cover - zależne od środowiska
     requests = importlib.import_module("requests")
