@@ -32,13 +32,13 @@ def _normalize_payload(value: Any) -> Any:
     return value
 
 
-def _extract_data(result: ScrapeResult | List[Any]) -> List[Dict[str, Any]]:
+def _extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
     """
     Główna, spójna ścieżka ekstrakcji danych:
     - zawsze zwracamy list[dict[str,Any]]
     - wykorzystujemy to_dict_list (Twoja wspólna warstwa serializacji)
     """
-    data = result.data if isinstance(result, ScrapeResult) else result
+    data = result.data
 
     try:
         return to_dict_list(list(data))
@@ -53,4 +53,3 @@ def _extract_data(result: ScrapeResult | List[Any]) -> List[Dict[str, Any]]:
                     out.append({"value": item})
             return out
         return [{"value": normalized}]
-

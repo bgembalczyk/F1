@@ -44,18 +44,24 @@ class DataExporter:
         return rules
 
     def _apply_normalization(
-        self, result: ScrapeResult | list[Any]
-    ) -> ScrapeResult | list[Any]:
+        self, result: ScrapeResult | list[ExportRecord]
+    ) -> ScrapeResult:
         """
         Normalizacja działa TYLKO dla listy rekordów dict-like.
 
         Jeśli data zawiera obiekty niebędące mappingiem — pozostawiamy je bez zmian
         (kompatybilność ze ścieżkami, gdzie formatter sam potrafi serializować).
+        Lista wejściowa jest zawsze opakowana w ScrapeResult.
         """
-        if not self._normalization_rules:
-            return result
+        if isinstance(result, ScrapeResult):
+            normalized_result = result
+        else:
+            normalized_result = ScrapeResult(data=list(result), source_url=None)
 
-        data = _extract_data(result)
+        if not self._normalization_rules:
+            return normalized_result
+
+        data = _extract_data(normalized_result)
 
         normalized: list[Any] = []
         for item in data:
@@ -68,17 +74,15 @@ class DataExporter:
                 updated = rule(updated)
             normalized.append(updated)
 
-        if isinstance(result, ScrapeResult):
-            return ScrapeResult(
-                data=normalized,  # type: ignore[arg-type]
-                source_url=result.source_url,
-                timestamp=result.timestamp,
-            )
-        return normalized
+        return ScrapeResult(
+            data=normalized,  # type: ignore[arg-type]
+            source_url=normalized_result.source_url,
+            timestamp=normalized_result.timestamp,
+        )
 
     def to_json(
         self,
-        result: ScrapeResult | list[Any],
+        result: ScrapeResult | list[ExportRecord],
         path: str | Path,
         *,
         indent: int = 2,
@@ -93,7 +97,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | list[Any],
+        result: ScrapeResult | list[ExportRecord],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -132,5 +136,5 @@ class DataExporter:
 
         Path(path).write_text(payload, encoding="utf-8")
 
-    def to_dataframe(self, result: ScrapeResult | list[Any]):
+    def to_dataframe(self, result: ScrapeResult | list[ExportRecord]):
         return self._dataframe_formatter.format(self._apply_normalization(result))
