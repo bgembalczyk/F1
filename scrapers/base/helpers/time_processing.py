@@ -42,6 +42,7 @@ def time_key(rec: dict[str, Any]) -> float | str | None:
     # fallback – traktujemy jako tekstowy klucz
     return s.lower()
 
+
 def time_seconds(rec: dict[str, Any]) -> float | None:
     """
     Zwraca czas WYŁĄCZNIE jako sekundy (float) albo None.
@@ -87,6 +88,7 @@ def time_seconds(rec: dict[str, Any]) -> float | None:
     seconds = float(m.group(2))
     return minutes * 60.0 + seconds
 
+
 def simplify_time(rec: dict[str, Any]) -> None:
     """Zamienia time dict na float jeśli jest seconds, albo próbuje sparsować tekstowo."""
     t = rec.get("time")
@@ -109,6 +111,7 @@ def simplify_time(rec: dict[str, Any]) -> None:
         rec["time"] = minutes * 60 + seconds
     else:
         rec["time"] = txt
+
 
 def simplify_date(rec: dict[str, Any]) -> None:
     """Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY"."""

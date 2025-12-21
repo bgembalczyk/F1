@@ -50,4 +50,3 @@ class DefaultRetryPolicy(RetryPolicy):
         # Exponential backoff + jitter
         base = self._backoff_seconds * (2**attempt)
         return base + random.random()
-

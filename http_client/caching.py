@@ -73,4 +73,3 @@ class WikipediaCachePolicy(ResponseCache):
         parsed = urlparse(url)
         hostname = (parsed.hostname or "").lower()
         return hostname == "wikipedia.org" or hostname.endswith(".wikipedia.org")
-

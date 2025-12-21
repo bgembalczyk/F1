@@ -21,6 +21,7 @@ def clean_wiki_text(text: str) -> str:
     t = _REF_RE.sub("", t)
     return t.strip()
 
+
 def split_delimited_text(
     text: str | None, *, separators: str = r";|,|/", min_parts: int = 1
 ) -> list[str]:
@@ -35,6 +36,7 @@ def split_delimited_text(
 
     parts = [p.strip() for p in re.split(separators, text) if p.strip()]
     return parts if len(parts) >= min_parts else []
+
 
 def _parse_number(
     text: str | None,
@@ -66,6 +68,7 @@ def _parse_number(
         return cast(raw)
     except (TypeError, ValueError):
         return None
+
 
 def parse_seasons(
     text: str, *, current_year: int | None = None
@@ -117,6 +120,7 @@ def parse_seasons(
 
     return result
 
+
 def parse_int_from_text(text: str) -> int | None:
     """
     Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234).
@@ -127,6 +131,7 @@ def parse_int_from_text(text: str) -> int | None:
         cast=int,
         normalizers=(lambda s: s.replace(",", ""),),
     )
+
 
 def parse_float_from_text(text: str) -> float | None:
     """
@@ -139,6 +144,7 @@ def parse_float_from_text(text: str) -> float | None:
         normalizers=(lambda s: s.replace(",", ""),),
     )
 
+
 def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
     """Extract a float immediately followed by the given unit."""
 
@@ -149,6 +155,7 @@ def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
         group=1,
         normalizers=(lambda s: s.replace(",", ""),),
     )
+
 
 def find_section_elements(
     soup: BeautifulSoup,
@@ -171,6 +178,7 @@ def find_section_elements(
         return list(heading.find_all_next(target_tags, **kwargs))
 
     return list(soup.find_all(target_tags, **kwargs))
+
 
 def extract_links_from_cell(
     cell: Tag,
@@ -201,6 +209,7 @@ def extract_links_from_cell(
 
     return links
 
+
 def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
     """
     Sprawdza, czy ``<a>`` powinno być traktowane jako przypis/odnośnik techniczny.
@@ -228,6 +237,7 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
 
     return False
 
+
 def strip_marks(text: str | None) -> str | None:
     if text is None:
         return None
@@ -243,6 +253,7 @@ def strip_marks(text: str | None) -> str | None:
         .strip()
     )
 
+
 def is_wikipedia_redlink(url: str | None) -> bool:
     """Return True for Wikipedia redlinks like ...&action=edit&redlink=1."""
 
@@ -251,6 +262,7 @@ def is_wikipedia_redlink(url: str | None) -> bool:
 
     url_l = url.lower()
     return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
+
 
 def is_language_marker_link(text: str | None, url: str | None) -> bool:
     """

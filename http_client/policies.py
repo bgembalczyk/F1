@@ -46,4 +46,3 @@ class ResponseCache(ABC):
     @abstractmethod
     def set(self, url: str, text: str) -> None:
         """Zapisuje tekst do cache."""
-

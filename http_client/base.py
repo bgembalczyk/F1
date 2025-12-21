@@ -120,4 +120,3 @@ class BaseHttpClient(ABC, HttpClientProtocol):
     ) -> str:
         response = self.get(url, headers=headers, timeout=timeout)
         return response.text
-

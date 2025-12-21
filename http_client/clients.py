@@ -173,4 +173,3 @@ class UrllibHttpClient(BaseHttpClient):
             self.cache.set(url, text)
 
         return text
-

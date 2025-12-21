@@ -96,8 +96,10 @@ SCRAPER_CONFIGS: Dict[str, _ScraperConfig] = {
 def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
     return name in inspect.signature(cls.__init__).parameters
 
+
 def _ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
 
 def run_and_export(
     scraper_cls: Type[F1Scraper],
@@ -135,9 +137,11 @@ def run_and_export(
         _ensure_parent(csv_path)
         scraper.exporter.to_csv(result, csv_path)
 
+
 def _load_scraper(module_path: str, class_name: str) -> Type[F1Scraper]:
     module = importlib.import_module(module_path)
     return getattr(module, class_name)
+
 
 def _cli() -> None:
     parser = argparse.ArgumentParser(

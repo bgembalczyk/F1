@@ -13,6 +13,7 @@ def safe_text(obj: Any) -> str:
         return ""
     return str(obj).strip().lower()
 
+
 def norm_driver_text(obj: Any) -> str:
     """Normalizuje tekst kierowcy: usuwa dopiski w nawiasach i zbędne spacje."""
     s = safe_text(obj)
@@ -22,6 +23,7 @@ def norm_driver_text(obj: Any) -> str:
     s = re.sub(r"\s*\([^)]*\)\s*", " ", s)
     s = " ".join(s.split())
     return s
+
 
 def driver_loose_match(a: Any, b: Any, *, min_len: int = 4) -> bool:
     """Porównuje kierowców z tolerancją na przedrostki i sufiksy."""
@@ -35,6 +37,7 @@ def driver_loose_match(a: Any, b: Any, *, min_len: int = 4) -> bool:
         da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
     )
 
+
 def norm_vehicle_text(v: Any) -> str:
     """Normalizuje tekst pojazdu."""
     if isinstance(v, dict):
@@ -42,6 +45,7 @@ def norm_vehicle_text(v: Any) -> str:
     s = str(v or "").strip().lower()
     s = " ".join(s.split())
     return s
+
 
 def vehicle_prefix_match(a: Any, b: Any, *, min_len: int = 10) -> bool:
     """Porównuje pojazdy na podstawie prefiksu."""
@@ -52,6 +56,7 @@ def vehicle_prefix_match(a: Any, b: Any, *, min_len: int = 10) -> bool:
     if len(va) < min_len or len(vb) < min_len:
         return False
     return va.startswith(vb) or vb.startswith(va)
+
 
 def add_name(names_set: set[str], name_list: list[str], value: str | None) -> None:
     """Dodaje nazwę do listy nazw, unikając duplikatów."""
