@@ -1,9 +1,11 @@
 # scrapers/base/wiki_sections.py
 from __future__ import annotations
 
-from typing import Any, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from bs4 import BeautifulSoup, Tag
+
+from scrapers.base.errors import ScraperError
 
 
 class WikipediaSectionByIdMixin:
@@ -15,6 +17,52 @@ class WikipediaSectionByIdMixin:
     Wyjście: BeautifulSoup zawierający tylko daną sekcję (nagłówek + treść),
              lub None, jeśli sekcja nie istnieje.
     """
+
+    def split_url_fragment(self, url: str) -> Tuple[str, Optional[str]]:
+        base_url, fragment = (url.split("#", 1) + [None])[:2]
+        if fragment is not None:
+            fragment = fragment.lstrip("#").strip() or None
+        return base_url, fragment
+
+    def fetch(self, url: str) -> Optional[Dict[str, Any]]:
+        """
+        Zwraca dict z kluczami:
+        - url     – oryginalny URL (z ewentualnym fragmentem),
+        - infobox – wynik F1CircuitInfoboxScraper.parse_from_soup,
+        - tables  – lista zparsowanych wikitabel.
+
+        Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),
+        zwraca None (nie dokładamy szczegółów).
+        """
+        self._original_url = url
+        base_url, fragment = self.split_url_fragment(url)
+        self.url = base_url
+
+        soup_full = self._fetch_soup(base_url)
+        if not self._is_circuit_like_article(soup_full):
+            return None
+
+        working_soup = self._select_section(soup_full, fragment)
+
+        try:
+            parsed = self._parse_details(working_soup)
+        except Exception as exc:
+            error = (
+                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            )
+            if self._handle_scraper_error(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
+
+        if not parsed:
+            return None
+
+        return {
+            "url": self._original_url or self.url,
+            **parsed,
+        }
 
     def _extract_section_by_id(
         self,

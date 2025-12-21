@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any, Callable, Mapping, Sequence
+from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup, Tag
 
@@ -43,10 +44,16 @@ class TablePipeline:
         self.columns = config.columns
         self.table_css_class = config.table_css_class
         self.default_column: BaseColumn = config.default_column or AutoColumn()
+        self.fragment: str | None = None
+        if not self.section_id:
+            fragment = urlsplit(config.url).fragment
+            if fragment:
+                self.fragment = fragment
 
     def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = HtmlTableParser(
             section_id=self.section_id,
+            fragment=self.fragment,
             expected_headers=self.expected_headers,
             table_css_class=self.table_css_class,
         )
