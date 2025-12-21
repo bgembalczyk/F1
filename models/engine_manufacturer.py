@@ -1,24 +1,22 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 
+from models.value_objects import Link, SeasonRef
 from models.validators import (
     validate_float,
     validate_int,
-    validate_link,
-    validate_links,
-    validate_seasons,
     validate_status,
 )
 
 
 @dataclass
 class EngineManufacturer:
-    manufacturer: Dict[str, Optional[str]]
+    manufacturer: Link
     manufacturer_status: str
-    engines_built_in: List[Dict[str, Optional[str]]] = field(default_factory=list)
-    seasons: List[Dict[str, Any]] = field(default_factory=list)
+    engines_built_in: List[Link] = field(default_factory=list)
+    seasons: List[SeasonRef] = field(default_factory=list)
     races_entered: Optional[int] = None
     races_started: Optional[int] = None
     wins: Optional[int] = None
@@ -30,16 +28,32 @@ class EngineManufacturer:
     wdc: Optional[int] = None
 
     def __post_init__(self) -> None:
-        self.manufacturer = validate_link(self.manufacturer, field_name="manufacturer")
+        self.manufacturer = (
+            self.manufacturer
+            if isinstance(self.manufacturer, Link)
+            else Link.from_dict(self.manufacturer)
+        )
         self.manufacturer_status = validate_status(
             self.manufacturer_status,
             {"current", "former"},
             "manufacturer_status",
         )
-        self.engines_built_in = validate_links(
-            self.engines_built_in, field_name="engines_built_in"
-        )
-        self.seasons = validate_seasons(self.seasons)
+        self.engines_built_in = [
+            link
+            for link in (
+                item if isinstance(item, Link) else Link.from_dict(item)
+                for item in self.engines_built_in
+            )
+            if not link.is_empty()
+        ]
+        self.seasons = [
+            season
+            for season in (
+                item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
+                for item in self.seasons
+            )
+            if season is not None
+        ]
         self.races_entered = validate_int(self.races_entered, "races_entered")
         self.races_started = validate_int(self.races_started, "races_started")
         self.wins = validate_int(self.wins, "wins")

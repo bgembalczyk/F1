@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
@@ -9,6 +10,11 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "seasons",
+    "seasons/f1_seasons.json",
+    "seasons/f1_seasons.csv",
+)
 class F1SeasonsListScraper(F1TableScraper):
     """
     Scraper listy sezonów z:

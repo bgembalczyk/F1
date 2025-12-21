@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -10,6 +11,11 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "constructors_former",
+    "constructors/f1_former_constructors.json",
+    "constructors/f1_former_constructors.csv",
+)
 class F1FormerConstructorsListScraper(F1TableScraper):
     """
     Byli konstruktorzy – sekcja 'Former constructors'

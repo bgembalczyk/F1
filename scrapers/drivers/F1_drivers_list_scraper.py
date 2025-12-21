@@ -4,6 +4,8 @@ import re
 from typing import Any, Dict, List
 
 from scrapers.base.helpers.text import parse_seasons
+from scrapers.base.helpers.utils import parse_seasons
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
@@ -14,6 +16,11 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "drivers",
+    "drivers/f1_drivers.json",
+    "drivers/f1_drivers.csv",
+)
 class F1DriversListScraper(F1TableScraper):
     """
     Scraper listy kierowców F1 z:
