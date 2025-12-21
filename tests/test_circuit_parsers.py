@@ -1,7 +1,9 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.circuits.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.base.infobox.circuits.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.base.infobox.circuits.services.entities import CircuitEntitiesParser
 from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
 from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
@@ -55,7 +57,11 @@ def test_circuit_history_parser_former_names() -> None:
 def test_circuit_specs_parser_surface_and_banking() -> None:
     parser = CircuitSpecsParser()
     surface = parser._parse_surface({"text": "Asphalt (since 2020)"})
-    assert surface == {"values": ["Asphalt"], "text": "Asphalt (since 2020)", "note": "since 2020"}
+    assert surface == {
+        "values": ["Asphalt"],
+        "text": "Asphalt (since 2020)",
+        "note": "since 2020",
+    }
 
     banking = parser._parse_banking({"text": "18° (Turn 1)"})
     assert banking == {"value": 18.0, "unit": "deg", "note": "Turn 1"}

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Callable, Iterable, TypeVar
+from typing import Any
 
 
 # ============================================================================
@@ -20,7 +20,9 @@ def normalize_text(obj: Any) -> str:
     return str(obj).strip().lower()
 
 
-def add_unique_name(names_set: set[str], name_list: list[str], value: str | None) -> None:
+def add_unique_name(
+    names_set: set[str], name_list: list[str], value: str | None
+) -> None:
     """Dodaje nazwę do listy nazw, unikając duplikatów."""
     if not value:
         return
@@ -52,7 +54,9 @@ def match_driver_loose(a: Any, b: Any, *, min_len: int = 4) -> bool:
         return False
     if len(da) < min_len or len(db) < min_len:
         return False
-    return da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+    return (
+        da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+    )
 
 
 def normalize_vehicle_text(v: Any) -> str:
@@ -92,5 +96,3 @@ def split_delimited_text(
 
     parts = [p.strip() for p in re.split(separators, text) if p.strip()]
     return parts if len(parts) >= min_parts else []
-
-

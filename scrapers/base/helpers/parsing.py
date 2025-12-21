@@ -114,4 +114,3 @@ def parse_seasons(
             result.append({"year": y, "url": url})
 
     return result
-

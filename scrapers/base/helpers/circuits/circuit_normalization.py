@@ -122,10 +122,7 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
             if isinstance(rlr, dict):
                 records.append(rlr)
             # PR: wspieramy LapRecord, ale tylko jeśli jest dostępny w projekcie
-            elif (
-                isinstance(rlr, LapRecord)
-                and as_lap_record is not None
-            ):
+            elif isinstance(rlr, LapRecord) and as_lap_record is not None:
                 records.append(as_lap_record(rlr))
 
         lay["race_lap_records"] = records

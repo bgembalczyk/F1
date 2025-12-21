@@ -173,7 +173,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 continue
 
             header_cells = header_row.find_all(["th", "td"])
-            headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+            headers = [
+                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
+            ]
 
             if not lap_scraper._headers_match(headers):
                 header_set = set(headers)
@@ -218,8 +220,12 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                             current_layout = text
                         continue
 
-                cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
-                if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+                cleaned_cells = [
+                    clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
+                ]
+                if len(cleaned_cells) == len(headers) and cleaned_cells == list(
+                    headers
+                ):
                     continue
 
                 row_records = lap_scraper.parse_multi_row(tr, cells, headers)

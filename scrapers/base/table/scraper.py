@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import re
 from abc import ABC
-from dataclasses import asdict, fields, is_dataclass
+from dataclasses import fields, is_dataclass
 from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
+from infrastructure.http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.wiki import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
@@ -15,6 +16,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
+from infrastructure.http_client.policies import ResponseCache
 
 if TYPE_CHECKING:
     import requests
@@ -181,9 +183,7 @@ class F1TableScraper(F1Scraper, ABC):
             )
 
             col = (
-                self.columns.get(key)
-                or self.columns.get(header)
-                or self.default_column
+                self.columns.get(key) or self.columns.get(header) or self.default_column
             )
             col.apply(ctx, record)
 

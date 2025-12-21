@@ -20,7 +20,6 @@ from scrapers.base.helpers.time import (
 )
 
 
-
 @dataclass(frozen=True)
 class CircuitService:
     @staticmethod
@@ -165,7 +164,9 @@ def _extract_circuit_names(
     }
 
 
-def _extract_circuit_url(raw: dict[str, Any], details: dict[str, Any] | None) -> str | None:
+def _extract_circuit_url(
+    raw: dict[str, Any], details: dict[str, Any] | None
+) -> str | None:
     """Ekstrakcja URL toru (None jeśli brak szczegółów)."""
     circuit = raw.get("circuit") or {}
     if details is None:
@@ -501,8 +502,12 @@ def _is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
         # time porównujemy jako sekundy
         if k == "time":
-            st = parse_time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
-            bt = parse_time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
+            st = parse_time_seconds(
+                {"time": sv} if not isinstance(sv, dict) else {"time": sv}
+            )
+            bt = parse_time_seconds(
+                {"time": bv} if not isinstance(bv, dict) else {"time": bv}
+            )
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -641,8 +646,10 @@ def _select_best_driver(records: list[dict[str, Any]]) -> Any:
             best = d
             continue
         # preferuj driver jako dict z URL
-        if isinstance(d, dict) and d.get("url") and (
-            not isinstance(best, dict) or not best.get("url")
+        if (
+            isinstance(d, dict)
+            and d.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
         ):
             best = d
     return best
@@ -659,8 +666,10 @@ def _select_best_vehicle(records: list[dict[str, Any]]) -> Any:
             best = v
             continue
         # preferuj wersję z linkiem
-        if isinstance(v, dict) and v.get("url") and (
-            not isinstance(best, dict) or not best.get("url")
+        if (
+            isinstance(v, dict)
+            and v.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
         ):
             best = v
     return best

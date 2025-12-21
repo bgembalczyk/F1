@@ -5,6 +5,11 @@ from pathlib import Path
 import types
 
 import pytest
+from scrapers.base.errors import ScraperNetworkError, ScraperParseError
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.scraper import F1Scraper
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -48,14 +53,11 @@ if "requests" not in sys.modules:
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
-from scrapers.base.errors import ScraperNetworkError, ScraperParseError
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.scraper import F1Scraper
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-
 
 class DummyFetcher:
-    def __init__(self, *, html: str | None = None, exc: Exception | None = None) -> None:
+    def __init__(
+        self, *, html: str | None = None, exc: Exception | None = None
+    ) -> None:
         self.html = html
         self.exc = exc
 

@@ -32,7 +32,9 @@ def _is_valid_url(url: str) -> bool:
     return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
 
 
-def validate_link(link: Dict[str, Any] | Link | None, *, field_name: str) -> Dict[str, Any]:
+def validate_link(
+    link: Dict[str, Any] | Link | None, *, field_name: str
+) -> Dict[str, Any]:
     """
     Normalizuje link do postaci dict: {"text": str, "url": Optional[str]}.
 
@@ -74,7 +76,9 @@ def validate_links(
     return result
 
 
-def validate_seasons(seasons: Iterable[Dict[str, Any] | SeasonRef] | None) -> list[Dict[str, Any]]:
+def validate_seasons(
+    seasons: Iterable[Dict[str, Any] | SeasonRef] | None,
+) -> list[Dict[str, Any]]:
     """
     Normalizuje sezony do listy dictów.
 

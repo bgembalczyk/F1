@@ -130,8 +130,12 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
         bv = big.get(k)
 
         if k == "time":
-            st = parse_time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
-            bt = parse_time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
+            st = parse_time_seconds(
+                {"time": sv} if not isinstance(sv, dict) else {"time": sv}
+            )
+            bt = parse_time_seconds(
+                {"time": bv} if not isinstance(bv, dict) else {"time": bv}
+            )
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -266,7 +270,11 @@ def select_best_driver(records: list[dict[str, Any]]) -> Any:
         if best is None:
             best = d
             continue
-        if isinstance(d, dict) and d.get("url") and (not isinstance(best, dict) or not best.get("url")):
+        if (
+            isinstance(d, dict)
+            and d.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
+        ):
             best = d
     return best
 
@@ -280,7 +288,11 @@ def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
         if best is None:
             best = v
             continue
-        if isinstance(v, dict) and v.get("url") and (not isinstance(best, dict) or not best.get("url")):
+        if (
+            isinstance(v, dict)
+            and v.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
+        ):
             best = v
     return best
 
@@ -432,7 +444,9 @@ def merge_race_lap_records(records: list[Any]) -> list[dict[str, Any]]:
         else:
             key_buckets.setdefault(k, []).append(rec)
 
-    merged_main: list[dict[str, Any]] = [merge_record_group(rs) for rs in key_buckets.values()]
+    merged_main: list[dict[str, Any]] = [
+        merge_record_group(rs) for rs in key_buckets.values()
+    ]
 
     core_index: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
@@ -457,7 +471,9 @@ def merge_race_lap_records(records: list[Any]) -> list[dict[str, Any]]:
         if rec_t is not None:
             for idx in cand_ids:
                 tgt_t = parse_time_seconds(merged_main[idx])
-                if tgt_t is not None and round(float(tgt_t), 6) == round(float(rec_t), 6):
+                if tgt_t is not None and round(float(tgt_t), 6) == round(
+                    float(rec_t), 6
+                ):
                     chosen_idx = idx
                     break
 
@@ -521,7 +537,9 @@ def merge_race_lap_records(records: list[Any]) -> list[dict[str, Any]]:
         matched = False
         for idx in cand_ids:
             target = merged_main[idx]
-            if match_driver_loose(rec.get("driver"), target.get("driver")) and is_record_subset(rec, target):
+            if match_driver_loose(
+                rec.get("driver"), target.get("driver")
+            ) and is_record_subset(rec, target):
                 merged_main[idx] = merge_two_records(target, rec)
                 matched = True
                 break

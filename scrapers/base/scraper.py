@@ -19,7 +19,6 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
 
 
-
 logger = logging.getLogger(__name__)
 
 

@@ -9,9 +9,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
 
     # tylko markery językowe w nawiasie: (es), ( de ), (it)
     _LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)$", flags=re.IGNORECASE)
-    _LANG_PAREN_ANYWHERE_RE = re.compile(
-        r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE
-    )
+    _LANG_PAREN_ANYWHERE_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
 
     # do czyszczenia uciętych markerów typu "( es" / "( cs"
     _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)

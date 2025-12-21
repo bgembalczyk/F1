@@ -91,8 +91,12 @@ class CircuitEntitiesParser:
             "coordinates": self.geo_parser._parse_coordinates(rows.get("Coordinates")),
             "specs": {
                 "fia_grade": self.text_utils._parse_int(rows.get("FIA Grade")),
-                "length_km": self.text_utils._parse_length(rows.get("Length"), unit="km"),
-                "length_mi": self.text_utils._parse_length(rows.get("Length"), unit="mi"),
+                "length_km": self.text_utils._parse_length(
+                    rows.get("Length"), unit="km"
+                ),
+                "length_mi": self.text_utils._parse_length(
+                    rows.get("Length"), unit="mi"
+                ),
                 "turns": self.text_utils._parse_int(rows.get("Turns")),
             },
             "history": self.history_parser._parse_history(rows),
@@ -144,8 +148,10 @@ class CircuitEntitiesParser:
                         continue
 
                     if self.lap_record_parser._same_lap_record(base_record, existing):
-                        lay["race_lap_record"] = self.lap_record_parser._merge_lap_record(
-                            existing, base_record
+                        lay["race_lap_record"] = (
+                            self.lap_record_parser._merge_lap_record(
+                                existing, base_record
+                            )
                         )
                         matched = True
                         break

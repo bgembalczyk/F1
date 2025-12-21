@@ -59,7 +59,7 @@ class EngineManufacturer(ValidatedModel):
 
         # --- seasons: koercja do SeasonRef + filtr None ---
         normalized_seasons: list[SeasonRef] = []
-        for item in (self.seasons or []):
+        for item in self.seasons or []:
             season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
             if season is not None:
                 normalized_seasons.append(season)

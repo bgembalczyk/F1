@@ -88,7 +88,9 @@ def _client_with_config(client_cls, **config_kwargs):
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
     (
         "requests",
-        lambda **kwargs: _client_with_config(HttpClient, backoff_seconds=0.01, **kwargs),
+        lambda **kwargs: _client_with_config(
+            HttpClient, backoff_seconds=0.01, **kwargs
+        ),
     ),
     (
         "urllib",
@@ -176,9 +178,15 @@ def test_default_retry_policy_for_statuses():
             self.status_code = status_code
             self.text = text
 
-    assert policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
-    assert policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
-    assert policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+    assert (
+        policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
+    )
+    assert (
+        policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
+    )
+    assert (
+        policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+    )
     assert (
         policy.should_retry(
             response=_Response(403, text="Please respect our robot policy"),

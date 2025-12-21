@@ -9,7 +9,9 @@ from typing import Any
 @dataclass(frozen=True)
 class SeasonService:
     @staticmethod
-    def parse_seasons(text: str, *, current_year: int | None = None) -> list[dict[str, Any]]:
+    def parse_seasons(
+        text: str, *, current_year: int | None = None
+    ) -> list[dict[str, Any]]:
         """
         Zamienia tekst w stylu:
             '1973, 1975–1982, 1984'  lub '2014–present'
@@ -52,7 +54,9 @@ class SeasonService:
                 if y in seen:
                     continue
                 seen.add(y)
-                url = f"https://en.wikipedia.org/wiki/{y}_Formula_One_World_Championship"
+                url = (
+                    f"https://en.wikipedia.org/wiki/{y}_Formula_One_World_Championship"
+                )
                 result.append({"year": y, "url": url})
 
         return result

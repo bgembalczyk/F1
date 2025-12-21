@@ -5,7 +5,9 @@ from typing import Any, Dict, List, Optional
 from bs4 import BeautifulSoup
 
 from models.mappers.serialization import to_dict
-from scrapers.base.helpers.circuits.circuit_normalization import normalize_circuit_record
+from scrapers.base.helpers.circuits.circuit_normalization import (
+    normalize_circuit_record,
+)
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper

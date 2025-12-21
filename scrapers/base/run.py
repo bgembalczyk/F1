@@ -6,13 +6,16 @@ from pathlib import Path
 from typing import Any, Type
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.registry import SCRAPER_REGISTRY, ScraperConfig, load_default_scrapers
+from scrapers.base.registry import (
+    SCRAPER_REGISTRY,
+    ScraperConfig,
+    load_default_scrapers,
+)
 from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 # Logging (z PR). Jeśli moduł nie istnieje w repo, fallback na print.
 from scrapers.base.logging import configure_logging, logger  # type: ignore
-
 
 
 def _scraper_choices() -> list[str]:
@@ -191,7 +194,9 @@ def _cli() -> None:
     kwargs = dict(getattr(config, "default_kwargs", {}) or {})
 
     # kompatybilność z różnymi nazwami w configu (na przyszłość)
-    json_rel = getattr(config, "json_rel", None) or getattr(config, "json_rel_path", None)
+    json_rel = getattr(config, "json_rel", None) or getattr(
+        config, "json_rel_path", None
+    )
     csv_rel = getattr(config, "csv_rel", None) or getattr(config, "csv_rel_path", None)
 
     if json_rel is None:

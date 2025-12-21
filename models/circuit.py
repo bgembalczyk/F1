@@ -34,7 +34,11 @@ class Circuit(ValidatedModel):
 
     def validate(self) -> None:
         # --- circuit ---
-        self.circuit = self.circuit if isinstance(self.circuit, Link) else Link.from_dict(self.circuit)
+        self.circuit = (
+            self.circuit
+            if isinstance(self.circuit, Link)
+            else Link.from_dict(self.circuit)
+        )
 
         # --- status + proste pola liczbowe ---
         self.circuit_status = validate_status(
@@ -42,8 +46,12 @@ class Circuit(ValidatedModel):
             ALLOWED_CIRCUIT_STATUSES,
             "circuit_status",
         )
-        self.last_length_used_km = validate_float(self.last_length_used_km, "last_length_used_km")
-        self.last_length_used_mi = validate_float(self.last_length_used_mi, "last_length_used_mi")
+        self.last_length_used_km = validate_float(
+            self.last_length_used_km, "last_length_used_km"
+        )
+        self.last_length_used_mi = validate_float(
+            self.last_length_used_mi, "last_length_used_mi"
+        )
         self.turns = validate_int(self.turns, "turns")
         self.grands_prix_held = validate_int(self.grands_prix_held, "grands_prix_held")
 
@@ -56,7 +64,7 @@ class Circuit(ValidatedModel):
 
         # --- seasons: koercja do SeasonRef + filtr None ---
         normalized_seasons: list[SeasonRef] = []
-        for item in (self.seasons or []):
+        for item in self.seasons or []:
             season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
             if season is not None:
                 normalized_seasons.append(season)

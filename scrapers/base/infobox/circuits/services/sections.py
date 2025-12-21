@@ -67,7 +67,10 @@ class WikipediaSectionExtractor:
         parent = header.parent
         if isinstance(parent, Tag):
             classes = parent.get("class") or []
-            if "mw-heading" in classes and parent.find(header.name, recursive=False) is header:
+            if (
+                "mw-heading" in classes
+                and parent.find(header.name, recursive=False) is header
+            ):
                 heading_block = parent
 
         collected: List[Any] = [heading_block]

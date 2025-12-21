@@ -4,7 +4,11 @@ import re
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence, TypeAlias
 
-from scrapers.base.formatters import CsvFormatter, JsonFormatter, PandasDataFrameFormatter
+from scrapers.base.formatters import (
+    CsvFormatter,
+    JsonFormatter,
+    PandasDataFrameFormatter,
+)
 from scrapers.base.results import ScrapeResult
 
 # Nie wiążemy się twardo z "scrapers.base.types.ExportableRecord",

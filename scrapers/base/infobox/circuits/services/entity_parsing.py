@@ -2,7 +2,9 @@ import re
 from typing import Any, Dict, List, Optional, Union
 
 from scrapers.base.helpers.wiki import is_language_marker_link, is_wikipedia_redlink
-from scrapers.base.infobox.circuits.services.text_processing import CircuitTextProcessing
+from scrapers.base.infobox.circuits.services.text_processing import (
+    CircuitTextProcessing,
+)
 
 
 class CircuitEntityParser(CircuitTextProcessing):

@@ -6,7 +6,11 @@ import importlib.util
 
 import pytest
 
-from scrapers.base.formatters import CsvFormatter, JsonFormatter, PandasDataFrameFormatter
+from scrapers.base.formatters import (
+    CsvFormatter,
+    JsonFormatter,
+    PandasDataFrameFormatter,
+)
 from scrapers.base.results import ScrapeResult
 
 

@@ -5,7 +5,9 @@ from models.value_objects import SeasonRef
 
 
 def test_validate_link_accepts_link_dict():
-    link = validate_link({"text": "Site", "url": "https://example.com"}, field_name="link")
+    link = validate_link(
+        {"text": "Site", "url": "https://example.com"}, field_name="link"
+    )
 
     assert link == {"text": "Site", "url": "https://example.com"}
 
