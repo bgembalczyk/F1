@@ -216,11 +216,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         merged_headers = dict(self.DEFAULT_HEADERS)
         if headers:
             merged_headers.update(headers)
-
-        # session.headers może nie istnieć w shimach — zabezpieczenie
-        session_headers = getattr(self.session, "headers", None)
-        if session_headers is not None and hasattr(session_headers, "update"):
-            session_headers.update(merged_headers)
+        self.default_headers = merged_headers
 
     def _backoff_sleep(self, attempt: int) -> None:
         delay = self.retry_policy.backoff_seconds(attempt)
@@ -242,9 +238,12 @@ class BaseHttpClient(ABC, HttpClientProtocol):
                 self.rate_limiter.wait(url)
 
             try:
+                merged_headers = dict(self.default_headers)
+                if headers:
+                    merged_headers.update(headers)
                 response = request_func(
                     url,
-                    headers=headers,
+                    headers=merged_headers,
                     timeout=timeout or self.timeout,
                 )
             except self.request_exception_cls as exc:
