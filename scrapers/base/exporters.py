@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import List, Optional, Sequence
 
 from scrapers.base.formatters import (
     CsvFormatter,
     JsonFormatter,
     PandasDataFrameFormatter,
 )
+from scrapers.base.records import ExportRecord
 from scrapers.base.results import ScrapeResult
 
 
@@ -25,7 +26,7 @@ class DataExporter:
 
     def to_json(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         path: str | Path,
         *,
         indent: int = 2,
@@ -39,7 +40,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -50,5 +51,5 @@ class DataExporter:
         path = Path(path)
         path.write_text(payload, encoding="utf-8")
 
-    def to_dataframe(self, result: ScrapeResult | List[Dict[str, Any]]):
+    def to_dataframe(self, result: ScrapeResult | List[ExportRecord]):
         return self._dataframe_formatter.format(result)

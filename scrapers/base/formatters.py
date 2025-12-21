@@ -5,8 +5,9 @@ import importlib.util
 import io
 import json
 import warnings
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, List, Optional, Sequence
 
+from scrapers.base.records import ExportRecord
 from scrapers.base.results import ScrapeResult
 
 _HAS_PANDAS = importlib.util.find_spec("pandas") is not None
@@ -14,7 +15,7 @@ if _HAS_PANDAS:
     import pandas as pd
 
 
-def _extract_data(result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def _extract_data(result: ScrapeResult | List[ExportRecord]) -> List[ExportRecord]:
     if isinstance(result, ScrapeResult):
         return result.data
     return result
@@ -23,7 +24,7 @@ def _extract_data(result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str,
 class JsonFormatter:
     def format(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         *,
         indent: int = 2,
         include_metadata: bool = False,
@@ -33,7 +34,7 @@ class JsonFormatter:
 
     def _json_payload(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         *,
         include_metadata: bool,
     ) -> Any:
@@ -55,7 +56,7 @@ class JsonFormatter:
 class CsvFormatter:
     def format(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult | List[ExportRecord],
         *,
         fieldnames: Optional[Sequence[str]] = None,
     ) -> str:
@@ -81,7 +82,7 @@ class CsvFormatter:
 
 
 class PandasDataFrameFormatter:
-    def format(self, result: ScrapeResult | List[Dict[str, Any]]):
+    def format(self, result: ScrapeResult | List[ExportRecord]):
         if not _HAS_PANDAS:
             warnings.warn(
                 "Pandas nie jest zainstalowane. Zwracam surową listę rekordów; "
