@@ -20,7 +20,7 @@ from scrapers.base.run import run_and_export
     "engines/f1_engine_manufacturers.json",
     "engines/f1_engine_manufacturers.csv",
 )
-class F1EngineManufacturersListScraper(F1TableScraper):
+class EngineManufacturersListScraper(F1TableScraper):
     """
     Lista konstruktorów silników F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
@@ -94,7 +94,7 @@ class F1EngineManufacturersListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1EngineManufacturersListScraper,
+        EngineManufacturersListScraper,
         "../../data/wiki/engines/f1_engine_manufacturers.json",
         "../../data/wiki/engines/f1_engine_manufacturers.csv",
         include_urls=True,

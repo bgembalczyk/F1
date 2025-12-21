@@ -8,7 +8,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_indianapolis_only_constructors.json",
     "constructors/f1_indianapolis_only_constructors.csv",
 )
-class F1IndianapolisOnlyConstructorsListScraper(F1ListScraper):
+class IndianapolisOnlyConstructorsListScraper(F1ListScraper):
     """
     Lista konstruktorów 'Indianapolis 500 only'
     ze strony List_of_Formula_One_constructors.
@@ -23,7 +23,7 @@ class F1IndianapolisOnlyConstructorsListScraper(F1ListScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1IndianapolisOnlyConstructorsListScraper,
+        IndianapolisOnlyConstructorsListScraper,
         "../../data/wiki/constructors/f1_indianapolis_only_constructors.json",
         "../../data/wiki/constructors/f1_indianapolis_only_constructors.csv",
         include_urls=True,

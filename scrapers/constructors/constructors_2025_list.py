@@ -16,7 +16,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_constructors_2025.json",
     "constructors/f1_constructors_2025.csv",
 )
-class F1Constructors2025ListScraper(F1TableScraper):
+class Constructors2025ListScraper(F1TableScraper):
     """
     Aktualni konstruktorzy – sekcja
     'Constructors for the 2025 season' z:
@@ -83,7 +83,7 @@ class F1Constructors2025ListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1Constructors2025ListScraper,
+        Constructors2025ListScraper,
         "../../data/wiki/constructors/f1_constructors_2025.json",
         "../../data/wiki/constructors/f1_constructors_2025.csv",
         include_urls=True,

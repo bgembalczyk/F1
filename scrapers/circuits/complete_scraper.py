@@ -12,7 +12,7 @@ from scrapers.base.helpers.circuits.circuit_normalization import (
 from scrapers.base.registry import register_scraper
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
-from scrapers.circuits.list_scraper import F1CircuitsListScraper
+from scrapers.circuits.circuits_list import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
@@ -31,7 +31,7 @@ class F1CompleteCircuitScraper(F1Scraper):
     mogą być puste.
     """
 
-    url = F1CircuitsListScraper.url
+    url = CircuitsListScraper.url
 
     def __init__(
         self,
@@ -46,7 +46,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             headers=headers,
             http_client=http_client,
         )
-        self.list_scraper = F1CircuitsListScraper(
+        self.list_scraper = CircuitsListScraper(
             include_urls=True,
             http_client=self.http_client,
         )

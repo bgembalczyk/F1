@@ -19,7 +19,7 @@ from scrapers.base.run import run_and_export
     "circuits/f1_circuits.json",
     "circuits/f1_circuits.csv",
 )
-class F1CircuitsListScraper(F1TableScraper):
+class CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -95,7 +95,7 @@ class F1CircuitsListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1CircuitsListScraper,
+        CircuitsListScraper,
         "../../data/wiki/circuits/f1_circuits.json",
         "../../data/wiki/circuits/f1_circuits.csv",
         include_urls=True,

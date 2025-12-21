@@ -75,7 +75,7 @@ def _cli() -> None:
     parser.add_argument(
         "scraper",
         choices=_scraper_choices(),
-        help="Nazwa scrappera (klucz z konfiguracji w scrapers/base/run.py)",
+        help="Nazwa scrappera (klucz z konfiguracji w scrapers/base/registry.py)",
     )
     parser.add_argument(
         "output_dir",
