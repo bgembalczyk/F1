@@ -12,13 +12,17 @@ from models.services.circuits.normalization import (
 )
 
 
-
 def _normalize_circuit_record_local(raw: dict[str, Any]) -> dict[str, Any]:
     """Fallback do wspólnej implementacji normalizacji (gdy CircuitService nie istnieje)."""
+
     def normalize_lap_record(rec: Any) -> None:
         """Konwertuj na dict i normalizuj czas/daty (in-place)."""
         # Wspiera LapRecord, ale musimy pracować z dict dla normalize_time_value/normalize_date_value
-        rec_dict = rec if isinstance(rec, dict) else (rec.to_dict() if hasattr(rec, "to_dict") else rec)
+        rec_dict = (
+            rec
+            if isinstance(rec, dict)
+            else (rec.to_dict() if hasattr(rec, "to_dict") else rec)
+        )
         if isinstance(rec_dict, dict):
             normalize_time_value(rec_dict)
             normalize_date_value(rec_dict)
@@ -37,5 +41,3 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     if CircuitService is not None:
         return CircuitService.normalize_record(raw)
     return _normalize_circuit_record_local(raw)
-
-

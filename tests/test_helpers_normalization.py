@@ -16,6 +16,7 @@ from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
 
 try:
     from bs4 import BeautifulSoup  # type: ignore
+
     _HAS_BS4 = True
 except Exception:
     _HAS_BS4 = False
@@ -64,6 +65,7 @@ def test_strip_lang_suffix_ignores_word_endings():
 def test_is_language_link_matches_language_wikipedia_urls():
     assert is_language_link("fr", "https://fr.wikipedia.org/wiki/Test") is True
     assert is_language_link("fr", "https://en.wikipedia.org/wiki/fr") is False
+
 
 def test_split_delimited_text_respects_min_parts():
     assert split_delimited_text("a", min_parts=2) == []

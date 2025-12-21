@@ -131,4 +131,3 @@ def is_wikipedia_redlink(url: str | None) -> bool:
 
     url_l = url.lower()
     return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
-

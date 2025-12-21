@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Optional, Set
+from typing import Optional, Set
 
 from bs4 import Tag
 
 from models.records import LinkRecord
+
 
 @dataclass
 class ColumnContext:

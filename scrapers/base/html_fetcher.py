@@ -53,4 +53,6 @@ class HtmlFetcher(SourceAdapter[str]):
         if source is None:
             raise ValueError("HtmlFetcher wymaga URL-a jako źródła.")
         timeout = kwargs.get("timeout")
-        return self.get_text(source, timeout=timeout if isinstance(timeout, int) else None)
+        return self.get_text(
+            source, timeout=timeout if isinstance(timeout, int) else None
+        )

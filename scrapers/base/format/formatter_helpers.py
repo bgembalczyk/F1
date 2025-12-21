@@ -26,8 +26,10 @@ def _normalize_payload(value: Any) -> Any:
     if is_dataclass(value):
         return _normalize_payload(asdict(value))
     if isinstance(value, dict):
-        if "text" in value and "url" in value and set(value.keys()).issubset(
-            {"text", "url"}
+        if (
+            "text" in value
+            and "url" in value
+            and set(value.keys()).issubset({"text", "url"})
         ):
             return cast(
                 LinkRecord,
