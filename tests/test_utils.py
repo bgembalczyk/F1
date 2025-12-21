@@ -4,6 +4,7 @@ import types
 
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
 from scrapers.base.helpers.wiki import find_section_elements, is_reference_link
+from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 
 try:
     from bs4 import BeautifulSoup
@@ -117,3 +118,23 @@ def test_find_section_elements_returns_first_after_heading():
     matches = find_section_elements(soup, "target", ["table"], class_="wikitable")
 
     assert matches[0]["id"] == "match-1"
+
+
+def test_split_url_fragment_returns_base_and_fragment():
+    mixin = WikipediaSectionByIdMixin()
+
+    base_url, fragment = mixin.split_url_fragment(
+        "https://en.wikipedia.org/wiki/Foo#Bar_Baz"
+    )
+
+    assert base_url == "https://en.wikipedia.org/wiki/Foo"
+    assert fragment == "Bar_Baz"
+
+
+def test_split_url_fragment_handles_missing_fragment():
+    mixin = WikipediaSectionByIdMixin()
+
+    base_url, fragment = mixin.split_url_fragment("https://en.wikipedia.org/wiki/Foo")
+
+    assert base_url == "https://en.wikipedia.org/wiki/Foo"
+    assert fragment is None

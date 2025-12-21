@@ -37,3 +37,37 @@ def test_html_table_parser_skips_repeated_header_rows() -> None:
         "Juan Manuel Fangio",
         "1951",
     ]
+
+
+def test_html_table_parser_uses_fragment_when_section_id_missing() -> None:
+    html = """
+    <html>
+      <body>
+        <h2><span id="Target">Target</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td>First</td>
+          </tr>
+        </table>
+        <h2><span id="Other">Other</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td>Second</td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+
+    soup = BeautifulSoup(html, "html.parser")
+    parser = HtmlTableParser(fragment="Target", expected_headers=["Name"])
+
+    rows = parser.parse(soup)
+
+    assert [cell.get_text(strip=True) for cell in rows[0].values()] == ["First"]

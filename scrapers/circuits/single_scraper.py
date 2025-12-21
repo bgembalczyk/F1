@@ -44,46 +44,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.url: str = ""
         self._original_url: Optional[str] = None
 
-    def fetch(self, url: str) -> Optional[Dict[str, Any]]:
-        """
-        Zwraca dict z kluczami:
-        - url     – oryginalny URL (z ewentualnym fragmentem),
-        - infobox – wynik F1CircuitInfoboxScraper.parse_from_soup,
-        - tables  – lista zparsowanych wikitabel.
-
-        Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),
-        zwraca None (nie dokładamy szczegółów).
-        """
-        self._original_url = url
-        base_url, fragment = (url.split("#", 1) + [None])[:2]
-        self.url = base_url
-
-        soup_full = self._fetch_soup(base_url)
-        if not self._is_circuit_like_article(soup_full):
-            return None
-
-        working_soup = self._select_section(soup_full, fragment)
-
-        try:
-            parsed = self._parse_details(working_soup)
-        except Exception as exc:
-            error = (
-                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
-            )
-            if self._handle_scraper_error(error):
-                return None
-            if error is exc:
-                raise
-            raise error from exc
-
-        if not parsed:
-            return None
-
-        return {
-            "url": self._original_url or self.url,
-            **parsed,
-        }
-
     def _fetch_soup(self, url: str) -> BeautifulSoup:
         # --- download + error handling spójny z F1Scraper ---
         self.url = url

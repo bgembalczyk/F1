@@ -20,10 +20,12 @@ class HtmlTableParser:
         self,
         *,
         section_id: Optional[str] = None,
+        fragment: Optional[str] = None,
         expected_headers: Sequence[str] | None = None,
         table_css_class: str = "wikitable",
     ) -> None:
         self.section_id = section_id
+        self.fragment = fragment
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
 
@@ -56,8 +58,9 @@ class HtmlTableParser:
         return records
 
     def _find_table(self, soup: BeautifulSoup) -> Tag:
+        section_id = self.section_id or self._normalize_fragment(self.fragment)
         candidate_tables = find_section_elements(
-            soup, self.section_id, ["table"], class_=self.table_css_class
+            soup, section_id, ["table"], class_=self.table_css_class
         )
 
         for table in candidate_tables:
@@ -80,6 +83,13 @@ class HtmlTableParser:
 
         header_set = set(headers)
         return all(h in header_set for h in self.expected_headers)
+
+    @staticmethod
+    def _normalize_fragment(fragment: Optional[str]) -> Optional[str]:
+        if not fragment:
+            return None
+        normalized = fragment.lstrip("#").strip()
+        return normalized or None
 
     @staticmethod
     def _is_repeated_header_row(
