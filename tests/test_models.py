@@ -107,9 +107,10 @@ def test_table_scraper_instantiates_model_and_filters_unknown_fields():
 
     scraper = DummyScraper(include_urls=False)
     result = scraper.parse_row(
-        row=None,
-        cells=[FakeCell("Example"), FakeCell("Ignored")],
-        headers=["Name", "Extra"],
+        row={
+            "Name": FakeCell("Example"),
+            "Extra": FakeCell("Ignored"),
+        },
     )
 
     assert result == {"name": "Example"}

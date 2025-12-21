@@ -1,21 +1,17 @@
 from __future__ import annotations
 
-import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
 from typing import Optional, Sequence, Mapping, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import (
-    clean_wiki_text,
-    extract_links_from_cell,
-    find_section_elements,
-)
+from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.parser import HtmlTableParser
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -45,88 +41,30 @@ class F1TableScraper(F1Scraper, ABC):
 
     model_class: type | None = None
 
-    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
-
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
 
     # --- szablon parsowania ---
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        table = self._find_table(soup)
-        header_row = table.find("tr")
-        if not header_row:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
-
-        header_cells = header_row.find_all(["th", "td"])
-        headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
-
         records: List[Dict[str, Any]] = []
-        for tr in table.find_all("tr")[1:]:
-            cells = tr.find_all(["td", "th"])
-
-            # omijamy np. puste wiersze / separatory
-            if not cells or all(not c.get_text(strip=True) for c in cells):
-                continue
-
-            # --- nowy fragment: pomijamy footer/powtórzony nagłówek ---
-            cleaned_cells = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
-            ]
-            if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
-                # wiersz, który ma dokładnie to samo co nagłówki -> traktujemy jako footer
-                continue
-            # --- koniec nowego fragmentu ---
-
-            record = self.parse_row(tr, cells, headers)
+        parser = HtmlTableParser(
+            section_id=self.section_id,
+            expected_headers=self.expected_headers,
+            table_css_class=self.table_css_class,
+        )
+        for row in parser.parse(soup):
+            record = self.parse_row(row)
             if record:
                 records.append(record)
 
         return records
 
-    # --- szukanie odpowiedniej tabeli ---
-
-    def _find_table(self, soup: BeautifulSoup) -> Tag:
-        """
-        Znajduje tabelę na podstawie section_id i / lub expected_headers.
-        """
-        candidate_tables = find_section_elements(
-            soup, self.section_id, ["table"], class_=self.table_css_class
-        )
-
-        for table in candidate_tables:
-            header_row = table.find("tr")
-            if not header_row:
-                continue
-            header_cells = header_row.find_all(["th", "td"])
-            headers = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
-            ]
-
-            if self._headers_match(headers):
-                return table
-
-        raise RuntimeError("Nie znaleziono pasującej tabeli.")
-
-    def _headers_match(self, headers: Sequence[str]) -> bool:
-        """
-        Domyślnie: jeśli expected_headers jest ustawione, to sprawdzamy,
-        czy wszystkie jej elementy występują w 'headers' (kolejność nieistotna).
-        Jeśli expected_headers = None -> bierzemy pierwszą napotkaną tabelę.
-        """
-        if not self.expected_headers:
-            return True
-
-        header_set = set(headers)
-        return all(h in header_set for h in self.expected_headers)
-
     # --- hook per-wiersz ---
 
     def parse_row(
         self,
-        row: Tag,
-        cells: Sequence[Tag],
-        headers: Sequence[str],
+        row: Mapping[str, Tag],
     ) -> Optional[Dict[str, Any]]:
         """
         Dla każdej komórki:
@@ -137,7 +75,7 @@ class F1TableScraper(F1Scraper, ABC):
         record: Dict[str, Any] = {}
         model_fields = self._model_fields()
 
-        for header, cell in zip(headers, cells):
+        for header, cell in row.items():
             key = self.column_map.get(header, self._normalize_header(header))
 
             raw_text = cell.get_text(" ", strip=True)
