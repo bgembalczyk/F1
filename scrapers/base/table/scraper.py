@@ -4,7 +4,7 @@ import re
 from abc import ABC
 from dataclasses import fields, is_dataclass
 import warnings
-from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
+from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
@@ -15,6 +15,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.base.table.row import TableRow
 
 if TYPE_CHECKING:
     import requests
@@ -133,14 +134,15 @@ class F1TableScraper(F1Scraper, ABC):
         """
         return self.pipeline.parse_soup(soup)
 
-    def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
+    def parse_row(self, row: TableRow) -> Optional[Dict[str, Any]]:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
         - wybiera typ kolumny z `columns`,
         - deleguje całą logikę do handlera kolumny.
         """
-        return self.pipeline.parse_row(row)
+        mapped_row = dict(zip(row.headers, row.cells))
+        return self.pipeline.parse_row(mapped_row)
 
     @staticmethod
     def _normalize_header(header: str) -> str:

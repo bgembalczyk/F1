@@ -33,10 +33,12 @@ def test_html_table_parser_skips_repeated_header_rows() -> None:
     rows = parser.parse(soup)
 
     assert len(rows) == 1
-    assert [cell.get_text(strip=True) for cell in rows[0].values()] == [
+    assert rows[0].headers == ["Driver", "Season"]
+    assert [cell.get_text(strip=True) for cell in rows[0].cells] == [
         "Juan Manuel Fangio",
         "1951",
     ]
+    assert rows[0].raw_tr.name == "tr"
 
 
 def test_html_table_parser_uses_fragment_when_section_id_missing() -> None:
@@ -70,4 +72,5 @@ def test_html_table_parser_uses_fragment_when_section_id_missing() -> None:
 
     rows = parser.parse(soup)
 
-    assert [cell.get_text(strip=True) for cell in rows[0].values()] == ["First"]
+    assert rows[0].headers == ["Name"]
+    assert [cell.get_text(strip=True) for cell in rows[0].cells] == ["First"]

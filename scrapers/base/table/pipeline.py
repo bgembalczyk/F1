@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
+from scrapers.base.table.row import TableRow
 
 
 class TablePipeline:
@@ -60,11 +61,14 @@ class TablePipeline:
 
         records: list[dict[str, Any]] = []
         for row in parser.parse(soup):
-            record = self.parse_row(row)
+            record = self.parse_table_row(row)
             if record:
                 records.append(record)
 
         return records
+
+    def parse_table_row(self, row: TableRow) -> dict[str, Any]:
+        return self.parse_cells(row.headers, row.cells)
 
     def parse_row(self, row: Mapping[str, Tag]) -> dict[str, Any]:
         record: dict[str, Any] = {}
