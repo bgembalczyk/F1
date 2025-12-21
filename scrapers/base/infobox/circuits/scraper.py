@@ -41,14 +41,14 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         # Dla czytelności (F1Scraper i tak to trzyma)
         self.fetcher = options.fetcher
-        self.http_config = options.to_http_config()
-        self.timeout = self.http_config.timeout
+        self.policy = options.to_http_policy()
+        self.timeout = self.policy.timeout
 
         # WikipediaInfoboxScraper w stylu "main": przez ScraperOptions + fetcher
         self.infobox_scraper = WikipediaInfoboxScraper(
             options=ScraperOptions(
                 fetcher=self.fetcher,
-                http=self.http_config,
+                policy=self.policy,
             ),
         )
 

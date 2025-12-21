@@ -46,6 +46,7 @@ class F1CompleteCircuitScraper(F1Scraper):
 
         # Zapewniamy adapter źródła (spójnie z resztą repo)
         html_adapter = options.with_source_adapter()
+        policy = options.to_http_policy()
 
         super().__init__(options=options)
 
@@ -53,11 +54,13 @@ class F1CompleteCircuitScraper(F1Scraper):
         self.list_scraper = CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
+                policy=policy,
                 source_adapter=html_adapter,
             ),
         )
         self.single_scraper = F1SingleCircuitScraper(
             options=ScraperOptions(
+                policy=policy,
                 source_adapter=html_adapter,
             ),
         )
