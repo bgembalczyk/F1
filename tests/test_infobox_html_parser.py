@@ -50,7 +50,7 @@ def test_parser_extracts_title_rows_and_links():
     soup = BeautifulSoup(html, "html.parser")
     parser = InfoboxHtmlParser()
 
-    result = parser.parse_from_soup(soup)
+    result = parser.parse(soup)
 
     assert result["title"] == "Test Circuit"
     assert result["rows"]["Location"]["text"] == "Test Link [1]"
@@ -65,4 +65,4 @@ def test_parser_returns_empty_payload_without_infobox():
     soup = BeautifulSoup("<div>No infobox here</div>", "html.parser")
     parser = InfoboxHtmlParser()
 
-    assert parser.parse_from_soup(soup) == {"title": None, "rows": {}}
+    assert parser.parse(soup) == {"title": None, "rows": {}}

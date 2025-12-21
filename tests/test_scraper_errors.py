@@ -113,7 +113,7 @@ class DummyListScraper(F1ListScraper):
 
 
 class DummyInfoboxParser:
-    def parse_from_soup(self, soup):
+    def parse(self, soup):
         raise ScraperNotFoundError("Brak infoboksu")
 
 

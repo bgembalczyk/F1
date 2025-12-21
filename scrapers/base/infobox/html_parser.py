@@ -15,12 +15,15 @@ class InfoboxHtmlParser:
     def __init__(self, wikipedia_base: str | None = None) -> None:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
 
-    def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def parse(self, soup: BeautifulSoup) -> Dict[str, Any]:
         infobox = self._find_infobox(soup)
         if infobox is None:
             return {"title": None, "rows": {}}
 
         return self._parse_infobox(infobox)
+
+    def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
+        return self.parse(soup)
 
     def _find_infobox(self, soup: BeautifulSoup):
         """

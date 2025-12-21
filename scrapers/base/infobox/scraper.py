@@ -69,7 +69,7 @@ class WikipediaInfoboxScraper:
 
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
         """Parsuje infobox z już utworzonego obiektu ``BeautifulSoup``."""
-        raw = self.parser.parse_from_soup(soup)
+        raw = self.parser.parse(soup)
         return self.mapper.map(raw)
 
     # ------------------------------
