@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
+from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
@@ -30,21 +31,25 @@ class F1CircuitInfoboxScraper(
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
+        fetcher: HtmlFetcher | None = None,
     ) -> None:
+        if fetcher is None:
+            fetcher = HtmlFetcher(
+                session=session,
+                headers=headers,
+                http_client=http_client,
+                timeout=timeout,
+            )
         F1Scraper.__init__(
             self,
             include_urls=include_urls,
-            session=session,
-            headers=headers,
-            http_client=http_client,
-            timeout=timeout,
+            fetcher=fetcher,
         )
         WikipediaInfoboxScraper.__init__(
             self,
             timeout=timeout,
-            session=self.session,
             headers=headers,
-            http_client=self.http_client,
+            fetcher=fetcher,
         )
         self.url: str = ""
 
@@ -155,7 +160,7 @@ class F1CircuitInfoboxScraper(
     def _download(self) -> str:
         if not self.url:
             raise ValueError("URL must be set before downloading")
-        return self.http_client.get_text(self.url, timeout=self.timeout)
+        return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         """Sprawdza czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""

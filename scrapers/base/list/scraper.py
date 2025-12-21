@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import find_section_elements
+from scrapers.base.helpers.wiki import find_section_elements
 from scrapers.base.scraper import F1Scraper
 
 
