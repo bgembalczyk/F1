@@ -4,7 +4,6 @@ import re
 from typing import Any, Dict, List
 
 from scrapers.base.helpers.text import parse_seasons
-from scrapers.base.helpers.utils import parse_seasons
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn

@@ -5,7 +5,8 @@ from typing import Optional, Sequence
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import clean_wiki_text, find_section_elements
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.wiki import find_section_elements
 
 
 class HtmlTableParser:

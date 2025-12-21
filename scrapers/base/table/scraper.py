@@ -1,17 +1,16 @@
 from __future__ import annotations
 
+import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Sequence, Mapping, List, Dict, Any, TYPE_CHECKING
+from typing import Optional, Mapping, List, Dict, Any, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell, find_section_elements
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 
 if TYPE_CHECKING:

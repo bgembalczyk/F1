@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.utils import is_reference_link
+from scrapers.base.helpers.wiki import is_reference_link
 
 
 class InfoboxHtmlParser:

@@ -1,7 +1,7 @@
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from scrapers.base.helpers.utils import is_wikipedia_redlink
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.infobox.circuits.services.text_processing import CircuitTextProcessing
 
 

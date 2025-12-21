@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 
-from scrapers.base.helpers.utils import split_delimited_text
+from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
 
 
