@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import importlib
 import random
 import time
 from abc import ABC, abstractmethod
@@ -11,11 +10,6 @@ from urllib.parse import urlparse
 
 from f1_http import requests_shim
 from f1_http.interfaces import HttpClientProtocol
-
-try:  # pragma: no cover - zależne od środowiska
-    requests = importlib.import_module("requests")
-except Exception:  # pragma: no cover - fallback, gdy brak dependency
-    from f1_http import requests_shim as requests  # type: ignore
 
 
 class RetryPolicy(ABC):
@@ -297,91 +291,6 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         return response.text
 
 
-class HttpClient(BaseHttpClient):
-    """Klient HTTP (requests) ze współdzieloną sesją, retry, rate-limit i cache."""
-
-    def __init__(
-        self,
-        *,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: int = 10,
-        retries: int = 0,
-        backoff_seconds: float = 0.5,
-        min_delay_seconds: float = 1.5,
-        jitter_seconds: float = 0.7,
-        retry_policy: RetryPolicy | None = None,
-        rate_limiter: RateLimiter | None = None,
-        cache: ResponseCache | None = None,
-        cache_dir: Path | str | None = None,
-        cache_ttl_days: int = 30,
-    ) -> None:
-        session = session or requests.Session()
-
-        if retry_policy is None:
-            retry_policy = DefaultRetryPolicy(
-                retries=retries, backoff_seconds=backoff_seconds
-            )
-
-        if rate_limiter is None:
-            rate_limiter = MinDelayRateLimiter(
-                min_delay_seconds=min_delay_seconds,
-                jitter_seconds=jitter_seconds,
-            )
-
-        super().__init__(
-            session=session,
-            headers=headers,
-            timeout=timeout,
-            retry_policy=retry_policy,
-            rate_limiter=rate_limiter,
-            request_exception_cls=requests.RequestException,
-        )
-
-        if cache is None:
-            if cache_dir is None:
-                cache_dir = Path(__file__).parent / "data" / "wiki_cache"
-            cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
-            cache = WikipediaCachePolicy(
-                FileCache(cache_dir=cache_dir, ttl_seconds=cache_ttl_seconds)
-            )
-        self.cache = cache
-
-    def get(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
-    ):
-        return self._request_with_retries(
-            url,
-            headers=headers,
-            timeout=timeout,
-            request_func=self.session.get,
-        )
-
-    def get_text(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
-    ) -> str:
-        if self.cache is not None:
-            cached = self.cache.get(url)
-            if cached is not None:
-                return cached
-
-        response = self.get(url, headers=headers, timeout=timeout)
-        text = response.text
-
-        if self.cache is not None:
-            self.cache.set(url, text)
-
-        return text
-
-
 class UrllibHttpClient(BaseHttpClient):
     """Klient HTTP oparty o urllib (requests_shim), zgodny z HttpClientProtocol."""
 
@@ -398,8 +307,6 @@ class UrllibHttpClient(BaseHttpClient):
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
         cache: ResponseCache | None = None,
-        cache_dir: Path | str | None = None,
-        cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests_shim.Session()
 
@@ -422,14 +329,6 @@ class UrllibHttpClient(BaseHttpClient):
             rate_limiter=rate_limiter,
             request_exception_cls=requests_shim.RequestException,
         )
-
-        if cache is None:
-            if cache_dir is None:
-                cache_dir = Path(__file__).parent / "data" / "wiki_cache"
-            cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
-            cache = WikipediaCachePolicy(
-                FileCache(cache_dir=cache_dir, ttl_seconds=cache_ttl_seconds)
-            )
         self.cache = cache
 
     def get(

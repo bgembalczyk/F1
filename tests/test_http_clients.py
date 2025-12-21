@@ -9,7 +9,6 @@ import pytest
 from http_client import (
     DefaultRetryPolicy,
     FileCache,
-    HttpClient,
     UrllibHttpClient,
     WikipediaCachePolicy,
 )
@@ -73,7 +72,6 @@ def http_server():
 
 
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
-    ("requests", lambda **kwargs: HttpClient(backoff_seconds=0.01, **kwargs)),
     ("urllib", lambda **kwargs: UrllibHttpClient(backoff_seconds=0.01, **kwargs)),
 ]
 
