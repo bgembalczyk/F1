@@ -1,16 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 from pathlib import Path
 from typing import Any, Type
 
 from scrapers.base.exporters import ScrapeResult
-from scrapers.base.registry import (
-    SCRAPER_REGISTRY,
-    ScraperConfig,
-    load_default_scrapers,
-)
 from scrapers.base.options import ScraperOptions
+from scrapers.base.registry import SCRAPER_REGISTRY, ScraperConfig, load_default_scrapers
 from scrapers.base.scraper import F1Scraper
 
 
@@ -28,31 +25,89 @@ def _ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
 
 
+def _supports_param(cls: type, param_name: str) -> bool:
+    """
+    True jeśli __init__ klasy przyjmuje param o nazwie param_name
+    albo ma **kwargs (wtedy też możemy bezpiecznie podać).
+    """
+    try:
+        sig = inspect.signature(cls.__init__)
+    except (TypeError, ValueError):
+        return False
+
+    params = sig.parameters
+    if param_name in params:
+        return True
+    return any(p.kind == inspect.Parameter.VAR_KEYWORD for p in params.values())
+
+
+def _make_scraper(
+    scraper_cls: Type[F1Scraper],
+    *,
+    include_urls: bool,
+    supports_urls: bool,
+    options: ScraperOptions,
+    kwargs: dict[str, Any],
+) -> F1Scraper:
+    """
+    Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
+
+    - jeśli scraper wspiera `options`, przekazujemy options
+    - jeśli nie wspiera `options`, ale wspiera `include_urls`, to przekazujemy include_urls jako kwarg
+    - jeśli supports_urls=False -> nie próbujemy ustawiać include_urls w ogóle
+    """
+    ctor_kwargs = dict(kwargs)
+
+    if supports_urls:
+        # Preferowany sposób: options.include_urls
+        if hasattr(options, "include_urls"):
+            options.include_urls = include_urls
+
+        # Przekazuj options tylko jeśli scraper to wspiera
+        if _supports_param(scraper_cls, "options"):
+            ctor_kwargs.setdefault("options", options)
+        else:
+            # Fallback: jeżeli nie ma options, spróbuj include_urls jako kwarg
+            if _supports_param(scraper_cls, "include_urls"):
+                ctor_kwargs.setdefault("include_urls", include_urls)
+    else:
+        # supports_urls=False -> nadal możemy przekazać options, jeśli scraper go wymaga/używa,
+        # ale nie ruszamy include_urls
+        if _supports_param(scraper_cls, "options"):
+            ctor_kwargs.setdefault("options", options)
+
+    return scraper_cls(**ctor_kwargs)
+
+
 def run_and_export(
     scraper_cls: Type[F1Scraper],
     json_path: str | Path,
     csv_path: str | Path | None = None,
     *,
     include_urls: bool = True,
+    supports_urls: bool = True,
+    options: ScraperOptions | None = None,
     **scraper_kwargs: Any,
 ) -> None:
     """
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
-    - automatycznie przekazuje flagę ``include_urls`` (o ile scraper ją wspiera),
+    - bezpiecznie przekazuje include_urls tylko jeśli ma sens,
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów.
     """
-
     kwargs = dict(scraper_kwargs)
-    options = kwargs.pop("options", None)
-    if options is None:
-        options = ScraperOptions()
-    options.include_urls = include_urls
+    options = options or ScraperOptions()
 
-    scraper = scraper_cls(options=options, **kwargs)
+    scraper = _make_scraper(
+        scraper_cls,
+        include_urls=include_urls,
+        supports_urls=supports_urls,
+        options=options,
+        kwargs=kwargs,
+    )
+
     data = scraper.fetch()
-
     print(f"Pobrano rekordów: {len(data)}")
 
     result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
@@ -74,7 +129,7 @@ def _cli() -> None:
     parser.add_argument(
         "scraper",
         choices=_scraper_choices(),
-        help="Nazwa scrappera (klucz z konfiguracji w scrapers/base/run.py)",
+        help="Nazwa scrapera (klucz z SCRAPER_REGISTRY).",
     )
     parser.add_argument(
         "output_dir",
@@ -92,16 +147,25 @@ def _cli() -> None:
 
     config = _get_scraper_config(args.scraper)
     scraper_cls = config.scraper_cls
-    kwargs = dict(config.default_kwargs)
+    kwargs = dict(getattr(config, "default_kwargs", {}) or {})
 
-    json_path = args.output_dir / config.json_rel
-    csv_path = args.output_dir / config.csv_rel if config.csv_rel is not None else None
+    json_rel = getattr(config, "json_rel", None) or getattr(config, "json_rel_path", None)
+    csv_rel = getattr(config, "csv_rel", None) or getattr(config, "csv_rel_path", None)
+
+    if json_rel is None:
+        raise RuntimeError(f"Config dla {args.scraper!r} nie ma json_rel/json_rel_path")
+
+    json_path = args.output_dir / Path(json_rel)
+    csv_path = args.output_dir / Path(csv_rel) if csv_rel is not None else None
+
+    supports_urls = getattr(config, "supports_urls", True)
 
     run_and_export(
         scraper_cls,
         json_path,
         csv_path,
         include_urls=args.include_urls,
+        supports_urls=supports_urls,
         **kwargs,
     )
 
