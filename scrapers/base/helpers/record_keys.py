@@ -106,4 +106,3 @@ def core_key(rec: dict[str, Any]) -> tuple | None:
         return None
 
     return (driver_txt, vehicle_txt, year)
-

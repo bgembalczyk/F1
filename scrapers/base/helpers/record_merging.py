@@ -3,8 +3,16 @@
 from __future__ import annotations
 from typing import Any
 
-from scrapers.base.helpers.record_keys import extract_year_from_event, record_key, core_key
-from scrapers.base.helpers.text_processing import driver_loose_match, vehicle_prefix_match, safe_text
+from scrapers.base.helpers.record_keys import (
+    extract_year_from_event,
+    record_key,
+    core_key,
+)
+from scrapers.base.helpers.text_processing import (
+    driver_loose_match,
+    vehicle_prefix_match,
+    safe_text,
+)
 from scrapers.base.helpers.time_processing import time_seconds
 
 
@@ -24,8 +32,12 @@ def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
         # time porównujemy jako sekundy
         if k == "time":
-            st = time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
-            bt = time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
+            st = time_seconds(
+                {"time": sv} if not isinstance(sv, dict) else {"time": sv}
+            )
+            bt = time_seconds(
+                {"time": bv} if not isinstance(bv, dict) else {"time": bv}
+            )
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -164,8 +176,10 @@ def select_best_driver(records: list[dict[str, Any]]) -> Any:
             best = d
             continue
         # preferuj driver jako dict z URL
-        if isinstance(d, dict) and d.get("url") and (
-            not isinstance(best, dict) or not best.get("url")
+        if (
+            isinstance(d, dict)
+            and d.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
         ):
             best = d
     return best
@@ -182,8 +196,10 @@ def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
             best = v
             continue
         # preferuj wersję z linkiem
-        if isinstance(v, dict) and v.get("url") and (
-            not isinstance(best, dict) or not best.get("url")
+        if (
+            isinstance(v, dict)
+            and v.get("url")
+            and (not isinstance(best, dict) or not best.get("url"))
         ):
             best = v
     return best
@@ -200,6 +216,7 @@ def select_best_time(records: list[dict[str, Any]]) -> float | None:
     """
     # korzystamy z istniejącej logiki klucza czasu (ona już umie parsować stringi itp.)
     from .time_processing import time_key
+
     for r in records:
         tk = time_key(r)
         if isinstance(tk, (int, float)):
@@ -252,6 +269,7 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
 
 def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
     """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
+
     def series_candidate(r: dict[str, Any]) -> dict[str, Any] | None:
         cand = r.get("series") or r.get("category") or r.get("class") or r.get("class_")
         if cand is None:
@@ -364,7 +382,9 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         else:
             key_buckets.setdefault(k, []).append(rec)
 
-    merged_main: list[dict[str, Any]] = [merge_record_group(rs) for rs in key_buckets.values()]
+    merged_main: list[dict[str, Any]] = [
+        merge_record_group(rs) for rs in key_buckets.values()
+    ]
 
     # --- Etap B: spróbuj dołączyć leftovers po core_key (nie wymaga time)
     core_index: dict[tuple, list[int]] = {}
@@ -391,7 +411,9 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         if rec_t is not None:
             for idx in cand_ids:
                 tgt_t = time_seconds(merged_main[idx])
-                if tgt_t is not None and round(float(tgt_t), 6) == round(float(rec_t), 6):
+                if tgt_t is not None and round(float(tgt_t), 6) == round(
+                    float(rec_t), 6
+                ):
                     chosen_idx = idx
                     break
 
@@ -461,7 +483,9 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
             target = merged_main[idx]
 
             # driver luźno + small jest podzbiorem target -> bezpiecznie scal
-            if driver_loose_match(rec.get("driver"), target.get("driver")) and is_subset_record(rec, target):
+            if driver_loose_match(
+                rec.get("driver"), target.get("driver")
+            ) and is_subset_record(rec, target):
                 merged_main[idx] = merge_two_records(target, rec)
                 matched = True
                 break
@@ -470,4 +494,3 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
             last_left.append(rec)
 
     return merged_main + last_left
-

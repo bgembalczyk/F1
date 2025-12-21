@@ -32,8 +32,8 @@ class DateColumn(BaseColumn):
 
     # typowe formaty dat z Wikipedii
     _FORMATS: List[str] = [
-        "%d %B %Y",   # 7 June 2019
-        "%d %b %Y",   # 7 Jun 2019
+        "%d %B %Y",  # 7 June 2019
+        "%d %b %Y",  # 7 Jun 2019
         "%B %d, %Y",  # June 7, 2019
         "%b %d, %Y",  # Jun 7, 2019
     ]

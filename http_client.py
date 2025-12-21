@@ -21,10 +21,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
     """Wspólna klasa bazowa dla klientów HTTP."""
 
     DEFAULT_HEADERS: Dict[str, str] = {
-        "User-Agent": (
-            "F1Scrapers/1.0 "
-            "contact: bartosz.gembalczyk.stud@pw.edu.pl "
-        ),
+        "User-Agent": ("F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl "),
         "Accept-Language": "en-US,en;q=0.9",
     }
 
@@ -76,7 +73,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         Exponential backoff + jitter.
         attempt: 0..retries-1
         """
-        base = self.backoff_seconds * (2 ** attempt)
+        base = self.backoff_seconds * (2**attempt)
         time.sleep(base + random.random())
 
     def _should_retry_status(self, status_code: int, body_text: str) -> bool:
@@ -85,7 +82,11 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         # Wikipedia potrafi zwracać 403 z tekstem o robot policy / too many requests
         if status_code == 403:
             t = (body_text or "").lower()
-            if "too many requests" in t or "robot policy" in t or "please respect our robot policy" in t:
+            if (
+                "too many requests" in t
+                or "robot policy" in t
+                or "please respect our robot policy" in t
+            ):
                 return True
         return False
 
@@ -166,7 +167,9 @@ class HttpClient(BaseHttpClient):
 
                 # ręczna obsługa “rate limit” / chwilowych błędów
                 status = int(getattr(response, "status_code", 0) or 0)
-                if status and self._should_retry_status(status, getattr(response, "text", "")):
+                if status and self._should_retry_status(
+                    status, getattr(response, "text", "")
+                ):
                     if attempt >= self.retries:
                         response.raise_for_status()
                     self._backoff_sleep(attempt)

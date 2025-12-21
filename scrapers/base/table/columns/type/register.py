@@ -11,8 +11,8 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.columns.types.time import TimeColumn   # NEW
-from scrapers.base.table.columns.types.date import DateColumn   # NEW
+from scrapers.base.table.columns.types.time import TimeColumn  # NEW
+from scrapers.base.table.columns.types.date import DateColumn  # NEW
 
 
 class ColumnTypeRegistry:
@@ -32,8 +32,8 @@ class ColumnTypeRegistry:
             "list_of_links": LinksListColumn(),
             "int": IntColumn(),
             "float": FloatColumn(),
-            "time": TimeColumn(),   # NEW
-            "date": DateColumn(),   # NEW
+            "time": TimeColumn(),  # NEW
+            "date": DateColumn(),  # NEW
         }
 
     def get(self, name: str) -> ColumnType:

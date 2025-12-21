@@ -9,7 +9,9 @@ from scrapers.base.helpers.text_processing import add_name
 from scrapers.base.helpers.time_processing import simplify_time, simplify_date
 
 
-def extract_circuit_names(raw: dict[str, Any], infobox: dict[str, Any], normalized: dict[str, Any]) -> dict[str, Any]:
+def extract_circuit_names(
+    raw: dict[str, Any], infobox: dict[str, Any], normalized: dict[str, Any]
+) -> dict[str, Any]:
     """Ekstrakcja nazwy i poprzednich nazw toru."""
     circuit = raw.get("circuit") or {}
     name_set: set[str] = set()
@@ -36,7 +38,9 @@ def extract_circuit_names(raw: dict[str, Any], infobox: dict[str, Any], normaliz
     }
 
 
-def extract_circuit_url(raw: dict[str, Any], details: dict[str, Any] | None) -> str | None:
+def extract_circuit_url(
+    raw: dict[str, Any], details: dict[str, Any] | None
+) -> str | None:
     """Ekstrakcja URL toru (None jeśli brak szczegółów)."""
     circuit = raw.get("circuit") or {}
     if details is None:
@@ -44,7 +48,9 @@ def extract_circuit_url(raw: dict[str, Any], details: dict[str, Any] | None) -> 
     return circuit.get("url")
 
 
-def extract_circuit_location(raw: dict[str, Any], normalized: dict[str, Any]) -> dict[str, Any]:
+def extract_circuit_location(
+    raw: dict[str, Any], normalized: dict[str, Any]
+) -> dict[str, Any]:
     """Ekstrakcja lokalizacji toru z konsolidacją miejsc i współrzędnych."""
     country = raw.get("country")
     old_location = raw.get("location")
@@ -91,7 +97,9 @@ def extract_circuit_location(raw: dict[str, Any], normalized: dict[str, Any]) ->
     }
 
 
-def extract_circuit_grade_and_history(normalized: dict[str, Any]) -> tuple[str | None, list[Any] | None]:
+def extract_circuit_grade_and_history(
+    normalized: dict[str, Any],
+) -> tuple[str | None, list[Any] | None]:
     """Ekstrakcja klasy FIA i historii zdarzeń."""
     if not normalized:
         return None, None
@@ -142,7 +150,9 @@ def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None
     return length_km, years_str
 
 
-def find_layout_for_table(table_layout: str, layouts: list[dict[str, Any]]) -> dict[str, Any] | None:
+def find_layout_for_table(
+    table_layout: str, layouts: list[dict[str, Any]]
+) -> dict[str, Any] | None:
     """
     Dopasowuje layout z tabeli do layoutu z infoboxa na podstawie:
     - długości okrążenia (km),
@@ -182,7 +192,9 @@ def find_layout_for_table(table_layout: str, layouts: list[dict[str, Any]]) -> d
     return best_candidate
 
 
-def merge_tables_into_layouts(tables: list[dict[str, Any]], layouts: list[dict[str, Any]]) -> None:
+def merge_tables_into_layouts(
+    tables: list[dict[str, Any]], layouts: list[dict[str, Any]]
+) -> None:
     """Łączy rekordy z tabel w odpowiednie layouty."""
     for table_block in tables:
         t_layout_str = table_block.get("layout")
@@ -265,7 +277,6 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     """
     out: dict[str, Any] = {}
 
-    circuit = raw.get("circuit") or {}
     details = raw.get("details")
 
     infobox = None
@@ -344,4 +355,3 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     out = remove_empty_lists(out)
 
     return out
-

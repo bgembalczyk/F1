@@ -21,9 +21,42 @@ class AutoColumn(BaseColumn):
 
     # krótkie kody językowe (interwiki / znaczniki języka)
     _LANG_CODES = {
-        "en", "es", "fr", "de", "it", "pt", "pl", "ru", "cs", "sk", "hu", "ro", "bg", "sr",
-        "hr", "sl", "nl", "sv", "no", "da", "fi", "el", "tr", "ar", "he", "id", "ms", "th",
-        "vi", "ja", "ko", "zh", "uk", "ca", "eu", "gl",
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "pl",
+        "ru",
+        "cs",
+        "sk",
+        "hu",
+        "ro",
+        "bg",
+        "sr",
+        "hr",
+        "sl",
+        "nl",
+        "sv",
+        "no",
+        "da",
+        "fi",
+        "el",
+        "tr",
+        "ar",
+        "he",
+        "id",
+        "ms",
+        "th",
+        "vi",
+        "ja",
+        "ko",
+        "zh",
+        "uk",
+        "ca",
+        "eu",
+        "gl",
     }
 
     def _is_lang_link(self, link: dict) -> bool:
@@ -37,7 +70,9 @@ class AutoColumn(BaseColumn):
             return True
 
         # czasem interwiki bywa do innej wiki z kodem jako tekst
-        if txt in self._LANG_CODES and (".wikipedia.org/" in url or ".wikimedia.org/" in url):
+        if txt in self._LANG_CODES and (
+            ".wikipedia.org/" in url or ".wikimedia.org/" in url
+        ):
             return True
 
         return False
@@ -62,7 +97,9 @@ class AutoColumn(BaseColumn):
             before = t
 
             # "(es)" / "( es )" na końcu
-            t = re.sub(rf"\s*\(\s*(?:{lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE).strip()
+            t = re.sub(
+                rf"\s*\(\s*(?:{lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE
+            ).strip()
             # " es" na końcu (musi być poprzedzone co najmniej 1 spacją)
             t = re.sub(rf"\s+(?:{lang_alt})\s*$", "", t, flags=re.IGNORECASE).strip()
 
@@ -82,7 +119,9 @@ class AutoColumn(BaseColumn):
         value = self._cell_text(ctx)
 
         # usuń linki “językowe” zanim podejmiesz decyzję o zwróceniu dict-a / listy
-        links = [dict(l) for l in (ctx.links or []) if not self._is_lang_link(l)]
+        links = [
+            dict(link) for link in (ctx.links or []) if not self._is_lang_link(link)
+        ]
 
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:

@@ -33,7 +33,9 @@ def driver_loose_match(a: Any, b: Any, *, min_len: int = 4) -> bool:
         return False
     if len(da) < min_len or len(db) < min_len:
         return False
-    return da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+    return (
+        da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+    )
 
 
 def norm_vehicle_text(v: Any) -> str:
@@ -64,4 +66,3 @@ def add_name(names_set: set[str], name_list: list[str], value: str | None) -> No
     if value and value not in names_set:
         names_set.add(value)
         name_list.append(value)
-

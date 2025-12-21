@@ -6,11 +6,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from f1_http.interfaces import HttpClientProtocol
-from scrapers.base.helpers.circuits.circuit_normalization import normalize_circuit_record
+from scrapers.base.helpers.circuits.circuit_normalization import (
+    normalize_circuit_record,
+)
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+
 
 class F1CompleteCircuitScraper(F1Scraper):
     """

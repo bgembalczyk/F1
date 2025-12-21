@@ -125,4 +125,3 @@ def simplify_date(rec: dict[str, Any]) -> None:
         txt = d.get("text")
         if txt:
             rec["date"] = txt.strip()
-

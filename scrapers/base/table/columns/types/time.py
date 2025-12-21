@@ -27,9 +27,7 @@ class TimeColumn(BaseColumn):
         }
     """
 
-    _RE_COLON = re.compile(
-        r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$"
-    )
+    _RE_COLON = re.compile(r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$")
     _RE_MINSEC = re.compile(
         r"^\s*(?:(?P<min>\d+)\s*(?:m|min|minute(?:s)?)\s*)?"
         r"(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|second(?:s)?)\s*$",

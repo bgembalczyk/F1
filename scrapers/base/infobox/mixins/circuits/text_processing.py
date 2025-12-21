@@ -136,7 +136,9 @@ class CircuitTextProcessingMixin(InfoboxTextUtilsMixin):
     def _is_en_wiki(self, url: Optional[str]) -> bool:
         if not url:
             return False
-        return url.startswith("https://en.wikipedia.org/") or url.startswith("http://en.wikipedia.org/")
+        return url.startswith("https://en.wikipedia.org/") or url.startswith(
+            "http://en.wikipedia.org/"
+        )
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:
         """
@@ -164,4 +166,3 @@ class CircuitTextProcessingMixin(InfoboxTextUtilsMixin):
         a_txt = self._entity_text(a) or ""
         b_txt = self._entity_text(b) or ""
         return a if len(a_txt) >= len(b_txt) else b
-

@@ -290,4 +290,3 @@ def is_language_marker_link(text: str | None, url: str | None) -> bool:
 
     lang = m.group(1)
     return txt == lang
-

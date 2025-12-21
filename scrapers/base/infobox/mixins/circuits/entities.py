@@ -29,9 +29,10 @@ IGNORED_TOP_LEVEL_KEYS: set[str] = {
 }
 
 
-class CircuitEntitiesMixin(CircuitLapRecordMixin, CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin):
+class CircuitEntitiesMixin(
+    CircuitLapRecordMixin, CircuitGeoMixin, CircuitSpecsMixin, CircuitHistoryMixin
+):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
-
 
     # ------------------------------------
     # Normalized/layouts
@@ -126,7 +127,9 @@ class CircuitEntitiesMixin(CircuitLapRecordMixin, CircuitGeoMixin, CircuitSpecsM
                         continue
 
                     if self._same_lap_record(base_record, existing):
-                        lay["race_lap_record"] = self._merge_lap_record(existing, base_record)
+                        lay["race_lap_record"] = self._merge_lap_record(
+                            existing, base_record
+                        )
                         matched = True
                         break
 

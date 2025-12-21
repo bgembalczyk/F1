@@ -171,4 +171,3 @@ class LapRecordsTableScraper(F1TableScraper):
             records.append(record)
 
         return records
-

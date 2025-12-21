@@ -4,7 +4,9 @@ import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from scrapers.base.helpers.utils import is_wikipedia_redlink
-from scrapers.base.infobox.mixins.circuits.additional_info import CircuitAdditionalInfoMixin
+from scrapers.base.infobox.mixins.circuits.additional_info import (
+    CircuitAdditionalInfoMixin,
+)
 
 
 class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
@@ -38,7 +40,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return obj
 
-    def _parse_lap_record(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    def _parse_lap_record(
+        self, row: Optional[Dict[str, Any]]
+    ) -> Optional[Dict[str, Any]]:
         """
         Parsuje pojedynczą komórkę "Race lap record" z infoboksa.
 
@@ -137,7 +141,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
                 "driver": self._wrap_entity_from_links(driver_text, links),
                 "vehicle": self._wrap_entity_from_links(car_text, links),
                 "year": year_text,
-                "series": self._wrap_entity_from_links(series_text, links) if series_text else None,
+                "series": self._wrap_entity_from_links(series_text, links)
+                if series_text
+                else None,
             }
         )
 
@@ -166,7 +172,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return None
 
-    def _lap_record_key(self, rec: Dict[str, Any]) -> Optional[Tuple[str, str, int, str]]:
+    def _lap_record_key(
+        self, rec: Dict[str, Any]
+    ) -> Optional[Tuple[str, str, int, str]]:
         """
         Klucz porównania IGNORUJE różnice series/category/class.
         Porównuje:
@@ -193,7 +201,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return (d, v, int(round(sec * 1000)), year)
 
-    def _merge_two_lap_records(self, a: Dict[str, Any], b: Dict[str, Any]) -> Dict[str, Any]:
+    def _merge_two_lap_records(
+        self, a: Dict[str, Any], b: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """
         Łączy dwa rekordy w jeden "bogatszy".
         Normalizuje wynik:
@@ -213,7 +223,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
         out.pop("car", None)
 
         # series/category/class -> series (bogatszy)
-        picked_series = self._choose_richer_entity(self._get_class_field(a), self._get_class_field(b))
+        picked_series = self._choose_richer_entity(
+            self._get_class_field(a), self._get_class_field(b)
+        )
         if picked_series:
             out["series"] = picked_series
         out.pop("category", None)
@@ -271,10 +283,14 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return None
 
-    def _merge_lap_record(self, existing: Dict[str, Any], candidate: Dict[str, Any]) -> Dict[str, Any]:
+    def _merge_lap_record(
+        self, existing: Dict[str, Any], candidate: Dict[str, Any]
+    ) -> Dict[str, Any]:
         return self._merge_two_lap_records(existing, candidate)
 
-    def _upsert_lap_record(self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]) -> None:
+    def _upsert_lap_record(
+        self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]
+    ) -> None:
         if not candidate:
             return
         hit = self._find_lap_record(candidate, records)
@@ -283,4 +299,3 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
         else:
             i, existing = hit
             records[i]["race_lap_record"] = self._merge_lap_record(existing, candidate)
-

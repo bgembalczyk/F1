@@ -181,7 +181,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 continue
 
             header_cells = header_row.find_all(["th", "td"])
-            headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+            headers = [
+                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
+            ]
 
             # czy ta tabela wygląda jak rekordy okrążeń?
             if not lap_scraper._headers_match(headers):
@@ -189,10 +191,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 header_set = set(headers)
                 if not (
                     "Time" in header_set
-                    and (
-                        "Driver" in header_set
-                        or "Driver/Rider" in header_set
-                    )
+                    and ("Driver" in header_set or "Driver/Rider" in header_set)
                 ):
                     continue  # nie wygląda jak rekordy
 
@@ -225,7 +224,15 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                     # - albo w tekście widać, że to layout (np. "Circuit", "Layout", "km", "mi", "present" itd.)
                     if colspan >= len(headers) or any(
                         kw in (text or "").lower()
-                        for kw in ["circuit", "layout", "course", "km", "mi", "present", "configuration"]
+                        for kw in [
+                            "circuit",
+                            "layout",
+                            "course",
+                            "km",
+                            "mi",
+                            "present",
+                            "configuration",
+                        ]
                     ):
                         if text:
                             current_layout = text
@@ -235,7 +242,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 cleaned_cells = [
                     clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
                 ]
-                if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+                if len(cleaned_cells) == len(headers) and cleaned_cells == list(
+                    headers
+                ):
                     continue
 
                 # --- 3) normalny wiersz z danymi ---
