@@ -24,15 +24,15 @@ class WikipediaSectionByIdMixin:
             fragment = fragment.lstrip("#").strip() or None
         return base_url, fragment
 
-    def fetch(self, url: str) -> Optional[Dict[str, Any]]:
+    def fetch(self, url: str) -> List[Dict[str, Any]]:
         """
-        Zwraca dict z kluczami:
+        Zwraca listę z pojedynczym dict (lub pustą listę) z kluczami:
         - url     – oryginalny URL (z ewentualnym fragmentem),
         - infobox – wynik F1CircuitInfoboxScraper.parse_from_soup,
         - tables  – lista zparsowanych wikitabel.
 
         Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),
-        zwraca None (nie dokładamy szczegółów).
+        zwraca pustą listę (nie dokładamy szczegółów).
         """
         self._original_url = url
         base_url, fragment = self.split_url_fragment(url)
@@ -40,7 +40,7 @@ class WikipediaSectionByIdMixin:
 
         soup_full = self._fetch_soup(base_url)
         if not self._is_circuit_like_article(soup_full):
-            return None
+            return []
 
         working_soup = self._select_section(soup_full, fragment)
 
@@ -51,18 +51,20 @@ class WikipediaSectionByIdMixin:
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
             )
             if self._handle_scraper_error(error):
-                return None
+                return []
             if error is exc:
                 raise
             raise error from exc
 
         if not parsed:
-            return None
+            return []
 
-        return {
-            "url": self._original_url or self.url,
-            **parsed,
-        }
+        return [
+            {
+                "url": self._original_url or self.url,
+                **parsed,
+            }
+        ]
 
     def _extract_section_by_id(
         self,

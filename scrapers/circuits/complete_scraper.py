@@ -86,7 +86,8 @@ class F1CompleteCircuitScraper(F1Scraper):
 
             details: Optional[Dict[str, Any]] = None
             if circuit_url:
-                details = self.single_scraper.fetch(circuit_url)
+                details_list = self.single_scraper.fetch(circuit_url)
+                details = details_list[0] if details_list else None
 
             full_record = dict(circuit_payload)
             full_record["details"] = details

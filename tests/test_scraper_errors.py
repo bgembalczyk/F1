@@ -169,7 +169,7 @@ def test_single_circuit_scraper_soft_skips_not_found():
         options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
     )
 
-    assert scraper.fetch("https://example.com/wiki/Test") is None
+    assert scraper.fetch("https://example.com/wiki/Test") == []
 
 
 def test_infobox_scraper_soft_skips_not_found():
