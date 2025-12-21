@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -12,6 +13,11 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "grands_prix",
+    "grands_prix/f1_grands_prix_by_title.json",
+    "grands_prix/f1_grands_prix_by_title.csv",
+)
 class F1GrandsPrixListScraper(F1TableScraper):
     """
     Uproszczony scraper np. dla tabeli 'By race title'
