@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Type
 
 from scrapers.base.exporters import ScrapeResult
+from scrapers.base.logging import configure_logging, logger
 from scrapers.base.scraper import F1Scraper
 
 
@@ -124,7 +125,7 @@ def run_and_export(
     scraper = scraper_cls(**kwargs)
     data = scraper.fetch()
 
-    print(f"Pobrano rekordów: {len(data)}")
+    logger.info("Pobrano rekordów: %s", len(data))
 
     result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
 
@@ -163,8 +164,16 @@ def _cli() -> None:
         action="store_false",
         help="Wyłącza zbieranie URL-i tam, gdzie scraper to wspiera.",
     )
+    parser.add_argument(
+        "--log-level",
+        default="INFO",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        help="Poziom logowania (domyślnie: INFO).",
+    )
     parser.set_defaults(include_urls=True)
     args = parser.parse_args()
+
+    configure_logging(args.log_level)
 
     module_path, class_name, json_rel, csv_rel, default_kwargs = SCRAPER_CONFIGS[
         args.scraper
