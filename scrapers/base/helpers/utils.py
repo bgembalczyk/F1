@@ -7,6 +7,8 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.errors import ScraperNotFoundError
+
 # przypisy Wikipedii: [1], [b], [note 3], [citation needed], ...
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
@@ -173,7 +175,9 @@ def find_section_elements(
     if section_id:
         heading = soup.find(id=section_id)
         if not heading:
-            raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
+            raise ScraperNotFoundError(
+                f"Nie znaleziono sekcji o id={section_id!r}"
+            )
 
         return list(heading.find_all_next(target_tags, **kwargs))
 

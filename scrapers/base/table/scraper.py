@@ -7,6 +7,7 @@ from typing import Optional, Sequence, Mapping, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.errors import ScraperNotFoundError, ScraperParseError
 from scrapers.base.helpers.utils import (
     clean_wiki_text,
     extract_links_from_cell,
@@ -56,7 +57,7 @@ class F1TableScraper(F1Scraper, ABC):
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+            raise ScraperParseError("Nie znaleziono wiersza nagłówkowego w tabeli.")
 
         header_cells = header_row.find_all(["th", "td"])
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
@@ -106,7 +107,7 @@ class F1TableScraper(F1Scraper, ABC):
             if self._headers_match(headers):
                 return table
 
-        raise RuntimeError("Nie znaleziono pasującej tabeli.")
+        raise ScraperNotFoundError("Nie znaleziono pasującej tabeli.")
 
     def _headers_match(self, headers: Sequence[str]) -> bool:
         """

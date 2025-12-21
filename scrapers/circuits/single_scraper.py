@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
+from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.utils import clean_wiki_text
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -63,7 +64,14 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        soup_full = BeautifulSoup(self._download(), "html.parser")
+        try:
+            soup_full = BeautifulSoup(self._download(), "html.parser")
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                return None
+            raise
+        except Exception as exc:
+            raise self._wrap_network_error(exc) from exc
 
         # 1) filtr po kategoriach – jeżeli to nie wygląda na tor, nie scrapujemy dalej
         if not self._is_circuit_like_article(soup_full):
@@ -76,12 +84,23 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             if section is not None:
                 working_soup = section
 
-        parsed = self._parse_soup(working_soup)
+        try:
+            parsed = self._parse_soup(working_soup)
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                return None
+            raise
+        except Exception as exc:
+            parse_error = self._wrap_parse_error(exc)
+            if self._handle_scraper_error(parse_error):
+                return None
+            raise parse_error from exc
+
         return parsed[0] if parsed else None
 
     def _download(self) -> str:
         if not self.url:
-            raise ValueError("URL must be set before downloading")
+            raise ScraperParseError("URL must be set before downloading")
 
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 

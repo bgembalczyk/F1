@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
+from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
@@ -66,7 +67,15 @@ class F1CircuitInfoboxScraper(
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        html = self._download()
+        try:
+            html = self._download()
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                return {}
+            raise
+        except Exception as exc:
+            raise self._wrap_network_error(exc) from exc
+
         full_soup = BeautifulSoup(html, "html.parser")
 
         if not self._is_circuit_like_article(full_soup):
@@ -84,7 +93,17 @@ class F1CircuitInfoboxScraper(
             if section is not None:
                 soup = section
 
-        return self.parse_from_soup(soup)
+        try:
+            return self.parse_from_soup(soup)
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                return {}
+            raise
+        except Exception as exc:
+            parse_error = self._wrap_parse_error(exc)
+            if self._handle_scraper_error(parse_error):
+                return {}
+            raise parse_error from exc
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """API bazowej klasy – deleguje do parse_from_soup."""
@@ -159,7 +178,7 @@ class F1CircuitInfoboxScraper(
 
     def _download(self) -> str:
         if not self.url:
-            raise ValueError("URL must be set before downloading")
+            raise ScraperParseError("URL must be set before downloading")
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:

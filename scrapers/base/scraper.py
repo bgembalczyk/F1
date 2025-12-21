@@ -1,22 +1,24 @@
 from __future__ import annotations
 
 from abc import ABC
+import logging
 from typing import Any, Dict, List, Optional, Sequence
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-import requests
-
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from scrapers.base.errors import (
+    ScraperError,
+    ScraperNetworkError,
+    ScraperParseError,
+)
 from scrapers.base.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
-from scrapers.base.exporters import DataExporter, ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers import SoupParser
+
+
+logger = logging.getLogger(__name__)
 
 
 # ======================================================================
@@ -57,10 +59,32 @@ class F1Scraper(ABC):
 
     def fetch(self) -> List[Dict[str, Any]]:
         """Pobierz dane z sieci i sparsuj je do listy słowników."""
-        html = self._download()
-        soup = BeautifulSoup(html, "html.parser")
-        parser = self.parser or self
-        self._data = parser.parse(soup)
+        try:
+            html = self._download()
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                self._data = []
+                return self._data
+            raise
+        except Exception as exc:
+            raise self._wrap_network_error(exc) from exc
+
+        try:
+            soup = BeautifulSoup(html, "html.parser")
+            parser = self.parser or self
+            self._data = parser.parse(soup)
+        except ScraperError as exc:
+            if self._handle_scraper_error(exc):
+                self._data = []
+                return self._data
+            raise
+        except Exception as exc:
+            parse_error = self._wrap_parse_error(exc)
+            if self._handle_scraper_error(parse_error):
+                self._data = []
+                return self._data
+            raise parse_error from exc
+
         return self._data
 
     def get_data(self) -> List[Dict[str, Any]]:
@@ -118,3 +142,26 @@ class F1Scraper(ABC):
             return None
         # Linki wewnętrzne z Wikipedii typu "/wiki/..."
         return urljoin(self.url, href)
+
+    def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
+        return ScraperNetworkError(
+            "Błąd sieci podczas pobierania danych.",
+            url=getattr(self, "url", None),
+            cause=exc,
+        )
+
+    def _wrap_parse_error(self, exc: Exception) -> ScraperParseError:
+        return ScraperParseError(
+            "Błąd parsowania danych.",
+            url=getattr(self, "url", None),
+            cause=exc,
+        )
+
+    def _handle_scraper_error(self, error: ScraperError) -> bool:
+        if error.critical:
+            return False
+        logger.warning(
+            "Pomijam dane ze względu na błąd: %s",
+            error,
+        )
+        return True

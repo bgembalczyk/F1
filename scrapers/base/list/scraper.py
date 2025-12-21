@@ -4,6 +4,7 @@ from typing import Optional, List, Dict, Any
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.utils import find_section_elements
+from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.scraper import F1Scraper
 
 
@@ -41,9 +42,9 @@ class F1ListScraper(F1Scraper, ABC):
             return candidate_lists[0]
 
         if self.section_id:
-            raise RuntimeError("Nie znaleziono listy w sekcji.")
+            raise ScraperNotFoundError("Nie znaleziono listy w sekcji.")
 
-        raise RuntimeError("Nie znaleziono żadnej listy.")
+        raise ScraperNotFoundError("Nie znaleziono żadnej listy.")
 
     def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
         """Zamienia pojedynczy <li> na słownik."""
