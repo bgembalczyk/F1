@@ -4,6 +4,9 @@ import logging
 import pytest
 
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.circuits.circuits_list import CircuitsListScraper
 
@@ -16,6 +19,11 @@ class StubFetcher:
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
         self.calls += 1
         return self.html
+
+
+class DummyTableScraper(F1TableScraper):
+    def _parse_soup(self, soup):
+        return []
 
 
 def test_privateer_scraper_contract_builds_consistent_result() -> None:
@@ -185,3 +193,42 @@ def test_scraper_sets_logger_adapter() -> None:
     assert scraper.logger is not None
     assert isinstance(scraper.logger, logging.LoggerAdapter)
     assert scraper.logger.extra.get("scraper") == scraper.__class__.__name__
+
+
+def test_scraper_config_rejects_blank_url() -> None:
+    with pytest.raises(ValueError, match="url must be a non-empty string"):
+        ScraperConfig(url=" ")
+
+
+def test_scraper_config_rejects_invalid_column_map() -> None:
+    with pytest.raises(ValueError, match="column_map must map str keys to str values"):
+        ScraperConfig(
+            url="https://example.com",
+            column_map={"Header": 123},
+        )
+
+
+def test_scraper_config_rejects_invalid_columns() -> None:
+    with pytest.raises(ValueError, match="columns must map str keys to BaseColumn values"):
+        ScraperConfig(
+            url="https://example.com",
+            columns={"Header": "not-a-column"},
+        )
+
+
+def test_table_scraper_validates_config_in_init() -> None:
+    config = object.__new__(ScraperConfig)
+    object.__setattr__(config, "url", "https://example.com")
+    object.__setattr__(config, "section_id", None)
+    object.__setattr__(config, "expected_headers", None)
+    object.__setattr__(config, "column_map", {})
+    object.__setattr__(config, "columns", {"Header": "not-a-column"})
+    object.__setattr__(config, "table_css_class", "wikitable")
+    object.__setattr__(config, "model_class", None)
+    object.__setattr__(config, "default_column", AutoColumn())
+
+    with pytest.raises(ValueError, match="columns must map str keys to BaseColumn values"):
+        DummyTableScraper(
+            options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
+            config=config,
+        )

@@ -17,3 +17,30 @@ class ScraperConfig:
     table_css_class: str = "wikitable"
     model_class: type | None = None
     default_column: BaseColumn = field(default_factory=AutoColumn)
+
+    def __post_init__(self) -> None:
+        self.validate()
+
+    def validate(self) -> None:
+        if not isinstance(self.url, str) or not self.url.strip():
+            raise ValueError("ScraperConfig.url must be a non-empty string.")
+
+        if not isinstance(self.column_map, Mapping):
+            raise TypeError("ScraperConfig.column_map must be a mapping.")
+
+        for key, value in self.column_map.items():
+            if not isinstance(key, str) or not isinstance(value, str):
+                raise ValueError(
+                    "ScraperConfig.column_map must map str keys to str values."
+                )
+
+        if not isinstance(self.columns, Mapping):
+            raise TypeError("ScraperConfig.columns must be a mapping.")
+
+        for key, value in self.columns.items():
+            if not isinstance(key, str):
+                raise ValueError("ScraperConfig.columns must use str keys.")
+            if not isinstance(value, BaseColumn):
+                raise ValueError(
+                    "ScraperConfig.columns must map str keys to BaseColumn values."
+                )
