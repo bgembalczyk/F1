@@ -4,6 +4,7 @@ from typing import Any, Callable, Mapping, Sequence
 
 from bs4 import BeautifulSoup, Tag
 
+from models.records import LinkRecord
 from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -86,7 +87,7 @@ class TablePipeline:
         raw_text = cell.get_text(" ", strip=True)
         clean_text = clean_wiki_text(raw_text)
 
-        links: list[dict[str, Any]] = []
+        links: list[LinkRecord] = []
         if self.include_urls:
             links = extract_links_from_cell(cell, full_url=self.full_url)
 

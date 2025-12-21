@@ -5,6 +5,7 @@ from typing import Any, Optional, Set
 
 from bs4 import Tag
 
+from models.records import LinkRecord
 
 @dataclass
 class ColumnContext:
@@ -22,7 +23,7 @@ class ColumnContext:
     key: str
     raw_text: str
     clean_text: str
-    links: list[dict[str, Any]]
+    links: list[LinkRecord]
     cell: Optional[Tag]
     skip_sentinel: object
     model_fields: Optional[Set[str]] = None

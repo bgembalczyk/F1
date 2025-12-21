@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from typing import Literal, Optional, TypedDict
+from typing import Literal, Optional, TypeAlias, TypedDict
+
+from models.records import LinkRecord
 
 
-class LinkPayload(TypedDict):
-    text: str
-    url: Optional[str]
+LinkPayload: TypeAlias = LinkRecord
 
 
 class SeasonRefPayload(TypedDict):

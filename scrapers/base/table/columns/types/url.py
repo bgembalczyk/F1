@@ -17,6 +17,8 @@ class UrlColumn(BaseColumn):
                 return {"text": strip_marks(ctx.clean_text), "url": None}
             return None
 
-        link = dict(ctx.links[0])
-        link["text"] = strip_marks(link.get("text"))
-        return link
+        link = ctx.links[0]
+        return {
+            "text": strip_marks(link.get("text")),
+            "url": link.get("url"),
+        }

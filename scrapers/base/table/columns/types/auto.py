@@ -2,6 +2,7 @@
 from typing import Any
 import re
 
+from models.records import LinkRecord
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -59,7 +60,7 @@ class AutoColumn(BaseColumn):
         "gl",
     }
 
-    def _is_lang_link(self, link: dict) -> bool:
+    def _is_lang_link(self, link: LinkRecord) -> bool:
         txt = (link.get("text") or "").strip().lower()
         url = (link.get("url") or "").strip().lower()
         if not txt or not url:
@@ -76,6 +77,9 @@ class AutoColumn(BaseColumn):
             return True
 
         return False
+
+    def _normalize_link(self, link: LinkRecord) -> LinkRecord:
+        return {"text": link.get("text") or "", "url": link.get("url")}
 
     def _clean_text(self, text: str) -> str:
         t = (text or "").replace("\xa0", " ").replace("&nbsp;", " ")
@@ -120,7 +124,9 @@ class AutoColumn(BaseColumn):
 
         # usuń linki “językowe” zanim podejmiesz decyzję o zwróceniu dict-a / listy
         links = [
-            dict(link) for link in (ctx.links or []) if not self._is_lang_link(link)
+            self._normalize_link(link)
+            for link in (ctx.links or [])
+            if not self._is_lang_link(link)
         ]
 
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
