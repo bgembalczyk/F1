@@ -3,10 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
 
 import requests
+
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import ResponseCache
 
 if TYPE_CHECKING:
     from scrapers.base.exporters import DataExporter

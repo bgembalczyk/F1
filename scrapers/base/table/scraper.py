@@ -20,8 +20,6 @@ from scrapers.base.table.parser import HtmlTableParser
 if TYPE_CHECKING:
     import requests
 
-    from http_client.caching import ResponseCache
-    from http_client.interfaces import HttpClientProtocol
     from scrapers.base.exporters import DataExporter
 
 

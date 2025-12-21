@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Optional
 
-from http_client.policies import RateLimiter, ResponseCache, RetryPolicy
+from infrastructure.http_client.policies import RetryPolicy, RateLimiter, ResponseCache
 
 
 @dataclass

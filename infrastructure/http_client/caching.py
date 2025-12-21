@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
-from .policies import ResponseCache
+from infrastructure.http_client.policies import ResponseCache
 
 
 class FileCache(ResponseCache):

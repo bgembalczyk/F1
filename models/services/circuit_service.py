@@ -6,18 +6,6 @@ from dataclasses import dataclass
 from typing import Any
 import re
 
-from scrapers.base.helpers.text_processing import (
-    add_name,
-    driver_loose_match,
-    safe_text,
-    vehicle_prefix_match,
-)
-from scrapers.base.helpers.time_processing import (
-    simplify_date,
-    simplify_time,
-    time_key,
-    time_seconds,
-)
 
 
 @dataclass(frozen=True)
