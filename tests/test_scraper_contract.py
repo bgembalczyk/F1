@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import pytest
 
+from scrapers.base.options import ScraperOptions
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.circuits.circuits_list import CircuitsListScraper
 
 
 class StubFetcher:
@@ -34,7 +36,9 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
     """
 
     fetcher = StubFetcher(html)
-    scraper = PrivateerTeamsListScraper(fetcher=fetcher)
+    scraper = PrivateerTeamsListScraper(
+        options=ScraperOptions(fetcher=fetcher, include_urls=True)
+    )
 
     data = scraper.get_data()
     assert fetcher.calls == 1
@@ -109,7 +113,64 @@ def test_scraper_propagates_parsing_errors() -> None:
     </html>
     """
 
-    scraper = PrivateerTeamsListScraper(fetcher=StubFetcher(html))
+    scraper = PrivateerTeamsListScraper(
+        options=ScraperOptions(fetcher=StubFetcher(html))
+    )
 
     with pytest.raises(RuntimeError, match="Nie znaleziono sekcji"):
         scraper.get_data()
+
+
+def test_list_scraper_returns_dict_records() -> None:
+    html = """
+    <html>
+      <body>
+        <h2><span id="Privateer_teams">Privateer teams</span></h2>
+        <ul>
+          <li>
+            <a href="/wiki/Tyrrell_Racing">Tyrrell</a> (1970)
+          </li>
+        </ul>
+      </body>
+    </html>
+    """
+
+    scraper = PrivateerTeamsListScraper(
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+    )
+    data = scraper.get_data()
+
+    assert data
+    assert all(isinstance(record, dict) for record in data)
+
+
+def test_table_scraper_returns_dict_records() -> None:
+    html = """
+    <html>
+      <body>
+        <h2><span id="Circuits">Circuits</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Circuit</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td><a href="/wiki/Test_Circuit">Test Circuit</a></td>
+            <td>Street</td>
+            <td>Test City</td>
+            <td>Testland</td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+
+    scraper = CircuitsListScraper(
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+    )
+    data = scraper.get_data()
+
+    assert data
+    assert all(isinstance(record, dict) for record in data)
