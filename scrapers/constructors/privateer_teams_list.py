@@ -9,7 +9,6 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
-from models.scrape_types import ConstructorRow
 
 
 @register_scraper(
