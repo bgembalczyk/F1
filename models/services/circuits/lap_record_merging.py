@@ -68,7 +68,7 @@ def build_record_key(rec: dict[str, Any]) -> tuple | None:
     if not driver_txt or not vehicle_txt or not year or time_sec is None:
         return None
 
-    return (driver_txt, vehicle_txt, year, round(time_sec, 6))
+    return driver_txt, vehicle_txt, year, round(time_sec, 6)
 
 
 def build_core_key(rec: dict[str, Any]) -> tuple | None:
@@ -96,7 +96,7 @@ def build_core_key(rec: dict[str, Any]) -> tuple | None:
     if not driver_txt or not vehicle_txt or not year:
         return None
 
-    return (driver_txt, vehicle_txt, year)
+    return driver_txt, vehicle_txt, year
 
 
 def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:

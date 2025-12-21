@@ -3,7 +3,6 @@ import types
 
 import pytest
 
-from scrapers.base.helpers.records import merge_two_records
 from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.text_normalization import (
     clean_text,
