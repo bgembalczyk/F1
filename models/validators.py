@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from dataclasses import asdict, is_dataclass
 from typing import Any, Dict, Iterable, Optional
-from urllib.parse import urlparse
 
+from models.value_objects import Link, SeasonRef
 
 def _coerce_number(value: Any, type_: type, field_name: str):
     if value is None:
@@ -25,21 +25,14 @@ def validate_float(value: Any, field_name: str) -> Optional[float]:
     return _coerce_number(value, float, field_name)
 
 
-def _is_valid_url(url: str) -> bool:
-    parsed = urlparse(url)
-    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
-
-
 def validate_link(link: Dict[str, Any] | None, *, field_name: str) -> Dict[str, Any]:
-    link = link or {}
-    text = str(link.get("text") or "").strip()
-    url = link.get("url")
-
-    if url:
-        if not isinstance(url, str) or not _is_valid_url(url):
-            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
-
-    return {"text": text, "url": url}
+    if isinstance(link, Link):
+        return link.to_dict()
+    try:
+        parsed = Link.from_dict(link)
+    except ValueError as exc:
+        raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL") from exc
+    return parsed.to_dict()
 
 
 def validate_links(
@@ -56,19 +49,13 @@ def validate_links(
 def validate_seasons(seasons: Iterable[Dict[str, Any]] | None) -> list[Dict[str, Any]]:
     result: list[Dict[str, Any]] = []
     for item in seasons or []:
-        year = item.get("year")
-        url = item.get("url")
-        if year is None:
+        if isinstance(item, SeasonRef):
+            season = item
+        else:
+            season = SeasonRef.from_dict(item)
+        if season is None:
             continue
-        year_int = validate_int(year, "year")
-        if year_int is None:
-            continue
-        validated = {"year": year_int}
-        if url:
-            if not _is_valid_url(url):
-                raise ValueError("Sezon zawiera nieprawidłowy URL")
-            validated["url"] = url
-        result.append(validated)
+        result.append(season.to_dict())
     return result
 
 
