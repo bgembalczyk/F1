@@ -88,11 +88,7 @@ class F1Scraper(ABC):
         try:
             soup = BeautifulSoup(html, "html.parser")
 
-            # Poprawka: zawsze wołamy publiczne parse(), a nie zakładamy .parse na parserze
-            if self.parser is None:
-                raw_records = self.parse(soup)
-            else:
-                raw_records = self.parser.parse(soup)  # type: ignore[call-arg, attr-defined]
+            raw_records = self.parse(soup)
 
             normalized_records = self.normalize_records(raw_records)
             self._data = self.to_export_records(normalized_records)
@@ -168,8 +164,9 @@ class F1Scraper(ABC):
         raise NotImplementedError
 
     def parse(self, soup: BeautifulSoup) -> List[RawRecord]:
-        # publiczna metoda parse deleguje do _parse_soup
-        return self._parse_soup(soup)
+        if self.parser is None:
+            return self._parse_soup(soup)
+        return self.parser.parse(soup)
 
     # ---------- Hooki: normalize/export ----------
 
