@@ -6,13 +6,10 @@ from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.wiki import clean_wiki_text  # spójnie z resztą helperów
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
-from scrapers.config import default_http_config
-
 from scrapers.base.errors import ScraperError, ScraperParseError
 
 
@@ -37,13 +34,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
         options.include_urls = True
 
-        # HtmlFetcher po merge jest config-driven — jeśli nie ma fetchera w options,
+        # HtmlFetcher jest config-driven — jeśli nie ma fetchera w options,
         # tworzymy domyślny.
-        if options.fetcher is None:
-            options.fetcher = HtmlFetcher(config=default_http_config())
+        options.with_fetcher()
 
         super().__init__(options=options)
-        self.timeout = options.timeout
+        self.http_config = options.to_http_config()
+        self.timeout = self.http_config.timeout
         self.url: str = ""
         self._original_url: Optional[str] = None
 
@@ -154,7 +151,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,
-                timeout=self.timeout,
+                http=self.http_config,
             ),
         )
         return infobox_scraper.parse_from_soup(soup)

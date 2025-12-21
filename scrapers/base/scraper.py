@@ -9,7 +9,6 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from scrapers.base.export.exporters import DataExporter
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
@@ -40,10 +39,7 @@ class F1Scraper(ABC):
 
         # Preferuj gotowy fetcher w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
-        if options.fetcher is None:
-            self.fetcher = HtmlFetcher(config=options.to_http_config())
-        else:
-            self.fetcher = options.fetcher
+        self.fetcher = options.with_fetcher()
 
         # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser

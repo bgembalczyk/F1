@@ -4,7 +4,6 @@ from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
@@ -21,8 +20,6 @@ from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
-from scrapers.config import default_http_config
-
 from scrapers.base.errors import ScraperError, ScraperParseError
 
 
@@ -37,21 +34,22 @@ class F1CircuitInfoboxScraper(F1Scraper):
         options = options or ScraperOptions()
 
         # Zapewniamy fetcher (spójnie z resztą repo).
-        # HtmlFetcher po merge jest config-driven (default_http_config), więc bezpiecznie
-        # tworzymy go bez “legacy” parametrów.
-        if options.fetcher is None:
-            options.fetcher = HtmlFetcher(config=default_http_config())
+        # HtmlFetcher jest config-driven, więc tworzymy go bez “legacy” parametrów.
+        options.with_fetcher()
 
         super().__init__(options=options)
 
         # Dla czytelności (F1Scraper i tak to trzyma)
         self.fetcher = options.fetcher
-        self.timeout = options.timeout
+        self.http_config = options.to_http_config()
+        self.timeout = self.http_config.timeout
 
-        # WikipediaInfoboxScraper w stylu "main": przez fetcher
+        # WikipediaInfoboxScraper w stylu "main": przez ScraperOptions + fetcher
         self.infobox_scraper = WikipediaInfoboxScraper(
-            timeout=options.timeout,
-            fetcher=options.fetcher,
+            options=ScraperOptions(
+                fetcher=self.fetcher,
+                http=self.http_config,
+            ),
         )
 
         # --- Serwisy ---

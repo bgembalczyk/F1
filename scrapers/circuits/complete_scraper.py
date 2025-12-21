@@ -8,7 +8,6 @@ from models.mappers.serialization import to_dict
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
@@ -45,10 +44,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         options.include_urls = True
 
         # Zapewniamy fetcher (spójnie z resztą repo)
-        if options.fetcher is None:
-            options.fetcher = HtmlFetcher(
-                config=options.to_http_config(),
-            )
+        options.with_fetcher()
 
         super().__init__(options=options)
 
