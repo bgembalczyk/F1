@@ -10,6 +10,8 @@ from models.validators import (
     validate_float,
     validate_int,
     validate_status,
+    normalize_link_list,
+    normalize_season_list,
 )
 
 
@@ -49,21 +51,10 @@ class EngineManufacturer(ValidatedModel):
         )
 
         # --- engines_built_in: koercja do Link + filtr pustych ---
-        self.engines_built_in = [
-            (item if isinstance(item, Link) else Link.from_dict(item))
-            for item in (self.engines_built_in or [])
-        ]
-        self.engines_built_in = [
-            link for link in self.engines_built_in if not link.is_empty()
-        ]
+        self.engines_built_in = normalize_link_list(self.engines_built_in)
 
         # --- seasons: koercja do SeasonRef + filtr None ---
-        normalized_seasons: list[SeasonRef] = []
-        for item in self.seasons or []:
-            season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
-            if season is not None:
-                normalized_seasons.append(season)
-        self.seasons = normalized_seasons
+        self.seasons = normalize_season_list(self.seasons)
 
         # --- stats ---
         self.races_entered = validate_int(self.races_entered, "races_entered")

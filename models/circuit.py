@@ -10,6 +10,8 @@ from models.validators import (
     validate_float,
     validate_int,
     validate_status,
+    normalize_link_list,
+    normalize_season_list,
 )
 
 
@@ -56,16 +58,7 @@ class Circuit(ValidatedModel):
         self.grands_prix_held = validate_int(self.grands_prix_held, "grands_prix_held")
 
         # --- grands_prix: koercja do Link + filtr pustych ---
-        self.grands_prix = [
-            (item if isinstance(item, Link) else Link.from_dict(item))
-            for item in (self.grands_prix or [])
-        ]
-        self.grands_prix = [link for link in self.grands_prix if not link.is_empty()]
+        self.grands_prix = normalize_link_list(self.grands_prix)
 
         # --- seasons: koercja do SeasonRef + filtr None ---
-        normalized_seasons: list[SeasonRef] = []
-        for item in self.seasons or []:
-            season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
-            if season is not None:
-                normalized_seasons.append(season)
-        self.seasons = normalized_seasons
+        self.seasons = normalize_season_list(self.seasons)

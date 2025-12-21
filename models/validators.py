@@ -163,3 +163,44 @@ def model_to_dict(model: Any) -> Dict[str, Any]:
     if is_dataclass(model):
         return asdict(model)
     raise TypeError("Nieobsługiwany typ modelu")
+
+
+def normalize_link_list(
+    items: list[Link | Dict[str, Any]] | None,
+) -> list[Link]:
+    """
+    Normalizuje listę Link | dict -> list[Link], filtrując puste linki.
+
+    Używane w Circuit.grands_prix i EngineManufacturer.engines_built_in.
+    """
+    if not items:
+        return []
+
+    result: list[Link] = []
+    for item in items:
+        link = item if isinstance(item, Link) else Link.from_dict(item)
+        if not link.is_empty():
+            result.append(link)
+
+    return result
+
+
+def normalize_season_list(
+    items: list[SeasonRef | Dict[str, Any]] | None,
+) -> list[SeasonRef]:
+    """
+    Normalizuje listę SeasonRef | dict -> list[SeasonRef], filtrując None.
+
+    Używane w Circuit.seasons i EngineManufacturer.seasons.
+    """
+    if not items:
+        return []
+
+    result: list[SeasonRef] = []
+    for item in items:
+        season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
+        if season is not None:
+            result.append(season)
+
+    return result
+
