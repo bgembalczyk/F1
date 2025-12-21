@@ -125,9 +125,6 @@ class F1TableScraper(F1Scraper, ABC):
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
-
-        Pomijamy wiersze będące kopią nagłówka (częste w <tfoot> albo jako
-        "repeated header" w środku tabeli).
         """
         records: List[Dict[str, Any]] = []
 
@@ -138,49 +135,11 @@ class F1TableScraper(F1Scraper, ABC):
         )
 
         for row in parser.parse(soup):
-            if self._is_repeated_header_row(row):
-                continue
-
             record = self.parse_row(row)
             if record:
                 records.append(record)
 
         return records
-
-    def _is_repeated_header_row(self, row: Mapping[str, Any]) -> bool:
-        """
-        Wykrywa "footer / repeated header row":
-
-        - jeśli parser przemyca źródłowy <tr> w metadanych (__row__/__tr__/etc.),
-          porównujemy teksty komórek w tym <tr> do listy nagłówków (kluczy row)
-          w tej samej kolejności;
-        - jeżeli nie ma <tr>, robimy bezpieczny fallback: nic nie pomijamy.
-        """
-        tr = None
-        if hasattr(row, "get"):
-            tr = row.get("__row__") or row.get("_row") or row.get("__tr__")
-
-        if not isinstance(tr, Tag):
-            return False
-
-        # Nagłówki w kolejności tabeli: tylko str-key'e i bez metadanych.
-        headers_ordered: List[str] = [
-            h
-            for h in row.keys()
-            if isinstance(h, str) and h not in {"__row__", "_row", "__tr__"}
-        ]
-        if not headers_ordered:
-            return False
-
-        headers_clean = [clean_wiki_text(h) for h in headers_ordered]
-
-        cells = tr.find_all(["th", "td"], recursive=False)
-        if not cells:
-            return False
-
-        cell_texts = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
-
-        return len(cell_texts) == len(headers_clean) and cell_texts == headers_clean
 
     def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
         """
