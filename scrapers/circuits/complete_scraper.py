@@ -15,6 +15,7 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from models.mappers.serialization import to_dict
 
 
 @register_scraper(
@@ -65,8 +66,9 @@ class F1CompleteCircuitScraper(F1Scraper):
         complete: List[Dict[str, Any]] = []
 
         for circuit in circuits:
+            circuit_payload = to_dict(circuit)
             circuit_url: Optional[str] = None
-            circuit_data = circuit.get("circuit")
+            circuit_data = circuit_payload.get("circuit")
             if isinstance(circuit_data, dict):
                 circuit_url = circuit_data.get("url")
 
@@ -74,7 +76,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             if circuit_url:
                 details = self.single_scraper.fetch(circuit_url)
 
-            full_record = dict(circuit)
+            full_record = dict(circuit_payload)
             full_record["details"] = details
 
             normalized = normalize_circuit_record(full_record)

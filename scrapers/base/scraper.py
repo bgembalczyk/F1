@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Callable
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -51,25 +51,25 @@ class F1Scraper(ABC):
         self.parser = parser
         self.exporter = exporter or DataExporter()
 
-        self._data: List[Dict[str, Any]] = []
+        self._data: List[Any] = []
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> List[Any]:
         """Pobierz dane z sieci i sparsuj je do listy słowników."""
         html = self._download()
         soup = BeautifulSoup(html, "html.parser")
         parser = self.parser or self
-        self._data = parser.parse(soup)
+        self._data = self._map_records(parser.parse(soup))
         return self._data
 
-    def get_data(self) -> List[Dict[str, Any]]:
+    def get_data(self) -> List[Any]:
         """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
         if not self._data:
             self.fetch()
         return self._data
 
-    def build_result(self, data: Optional[List[Dict[str, Any]]] = None) -> ScrapeResult:
+    def build_result(self, data: Optional[List[Any]] = None) -> ScrapeResult:
         """Utwórz ScrapeResult z metadanymi."""
         return ScrapeResult(
             data=data or self.get_data(),
@@ -110,6 +110,12 @@ class F1Scraper(ABC):
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return self._parse_soup(soup)
+
+    def _map_records(self, records: List[Dict[str, Any]]) -> List[Any]:
+        mapper: Callable[[Dict[str, Any]], Any] | None = getattr(self, "mapper", None)
+        if mapper is None:
+            return records
+        return [mapper(record) for record in records]
 
     # ---------- Pomocnicze ----------
 

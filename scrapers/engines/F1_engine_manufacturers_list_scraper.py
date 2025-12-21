@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from models.engine_manufacturer import EngineManufacturer
+from models.mappers import from_scraped_engine_manufacturer
 from scrapers.base.run import run_and_export
 
 
@@ -43,6 +44,7 @@ class F1EngineManufacturersListScraper(F1TableScraper):
     ]
 
     model_class = EngineManufacturer
+    mapper = staticmethod(from_scraped_engine_manufacturer)
 
     column_map: Dict[str, str] = {
         "Manufacturer": "manufacturer",

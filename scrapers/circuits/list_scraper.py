@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from models.circuit import Circuit
+from models.mappers import from_scraped_circuit
 from scrapers.base.run import run_and_export
 
 
@@ -37,6 +38,7 @@ class F1CircuitsListScraper(F1TableScraper):
     ]
 
     model_class = Circuit
+    mapper = staticmethod(from_scraped_circuit)
 
     column_map = {
         "Circuit": "circuit",

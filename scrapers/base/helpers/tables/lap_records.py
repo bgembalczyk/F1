@@ -159,15 +159,6 @@ class LapRecordsTableScraper(F1TableScraper):
 
                 col.apply(ctx, record)
 
-            # Ewentualne mapowanie do modelu, gdyby kiedyś zostało dodane
-            if self.model_class:
-                model = self.model_class(**record)
-                if hasattr(model, "model_dump"):
-                    record = model.model_dump()
-                elif hasattr(model, "dict"):
-                    record = model.dict()
-                # dataclass też można obsłużyć, ale tu nie jest używane
-
             records.append(record)
 
         return records
