@@ -397,13 +397,12 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
     return merged
 
 
-def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _stage_a_partition_by_record_key(
+    records: list[dict[str, Any]],
+) -> tuple[dict[tuple, list[dict[str, Any]]], list[dict[str, Any]]]:
     """
-    Łączy duplikujące się rekordy (infobox + tabela) w jeden bogaty rekord.
-
-    Etap A: twardy merge po record_key (driver+vehicle+year+time).
-    Etap B: merge po core_key (driver+vehicle+year) – pozwala łączyć brakujące time.
-    Etap C: fallback merge dla uciętych vehicle / braków year (driver+time + prefiks vehicle).
+    Etap A: Partycjonowanie rekordów po record_key (driver+vehicle+year+time).
+    Zwraca buckety matching'owe i pozostałe rekordy.
     """
     key_buckets: dict[tuple, list[dict[str, Any]]] = {}
     leftovers: list[dict[str, Any]] = []
@@ -415,10 +414,16 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         else:
             key_buckets.setdefault(k, []).append(rec)
 
-    merged_main: list[dict[str, Any]] = [
-        merge_record_group(rs) for rs in key_buckets.values()
-    ]
+    return key_buckets, leftovers
 
+
+def _stage_b_merge_by_core_key(
+    merged_main: list[dict[str, Any]], leftovers: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap B: Merge po core_key (driver+vehicle+year) – łączy rekordy nawet bez time.
+    Zwraca zaktualizowane merged_main i pozostałe rekordy.
+    """
     core_index: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
         ck = build_core_key(rec)
@@ -453,6 +458,16 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
 
         merged_main[chosen_idx] = merge_two_records(merged_main[chosen_idx], rec)
 
+    return merged_main, still_left
+
+
+def _stage_c_merge_by_driver_time(
+    merged_main: list[dict[str, Any]], still_left: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap C: Merge po (driver+time) z prefixem vehicle – dla uciętych vehicle.
+    Zwraca zaktualizowane merged_main i pozostałe rekordy.
+    """
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
         d = normalize_text(rec.get("driver"))
@@ -486,6 +501,16 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         if not matched:
             final_left.append(rec)
 
+    return merged_main, final_left
+
+
+def _stage_d_fallback_merge_by_time_and_driver(
+    merged_main: list[dict[str, Any]], final_left: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """
+    Etap D: Fallback merge po (time) z walidacją driver + subset – ostatnia szansa.
+    Zwraca zaktualizowane merged_main i ostatecznie pozostałe rekordy.
+    """
     time_index: dict[float, list[int]] = {}
     for i, rec in enumerate(merged_main):
         t = parse_time_seconds(rec)
@@ -518,6 +543,34 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
 
         if not matched:
             last_left.append(rec)
+
+    return merged_main, last_left
+
+
+def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """
+    Łączy duplikujące się rekordy (infobox + tabela) w jeden bogaty rekord.
+
+    Etapy:
+    - A: twardy merge po record_key (driver+vehicle+year+time).
+    - B: merge po core_key (driver+vehicle+year) – pozwala łączyć brakujące time.
+    - C: merge po (driver+time) z prefixem vehicle – dla uciętych vehicle.
+    - D: fallback merge po (time) z walidacją – ostatnia szansa.
+    """
+    # Etap A: Partycjonowanie po record_key
+    key_buckets, leftovers = _stage_a_partition_by_record_key(records)
+    merged_main = [merge_record_group(rs) for rs in key_buckets.values()]
+
+    # Etap B: Merge po core_key
+    merged_main, still_left = _stage_b_merge_by_core_key(merged_main, leftovers)
+
+    # Etap C: Merge po (driver+time) z prefixem vehicle
+    merged_main, final_left = _stage_c_merge_by_driver_time(merged_main, still_left)
+
+    # Etap D: Fallback merge po (time) z walidacją
+    merged_main, last_left = _stage_d_fallback_merge_by_time_and_driver(
+        merged_main, final_left
+    )
 
     return merged_main + last_left
 
