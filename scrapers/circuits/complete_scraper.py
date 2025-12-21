@@ -13,6 +13,12 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
+# Optional: jeśli istnieje domenowy serwis, użyj go; inaczej fallback do helpera.
+try:  # pragma: no cover
+    from models.services.circuit_service import CircuitService  # type: ignore
+except Exception:  # pragma: no cover
+    CircuitService = None  # type: ignore[assignment]
+
 
 @register_scraper(
     "circuits_complete",
@@ -68,6 +74,16 @@ class F1CompleteCircuitScraper(F1Scraper):
             ),
         )
 
+    def _normalize(self, full_record: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Normalizacja rekordu:
+        - jeśli dostępny CircuitService → delegujemy do domeny
+        - inaczej → używamy lokalnej normalizacji (helpers).
+        """
+        if CircuitService is not None:
+            return CircuitService.normalize_record(full_record)
+        return normalize_circuit_record(full_record)
+
     def fetch(self) -> List[Dict[str, Any]]:
         circuits = self.list_scraper.fetch()
         complete: List[Dict[str, Any]] = []
@@ -85,8 +101,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             full_record = dict(circuit)
             full_record["details"] = details
 
-            normalized = normalize_circuit_record(full_record)
-            complete.append(normalized)
+            complete.append(self._normalize(full_record))
 
         self._data = complete
         return self._data

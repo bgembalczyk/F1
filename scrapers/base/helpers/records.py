@@ -18,6 +18,12 @@ try:  # pragma: no cover
 except Exception:  # pragma: no cover
     LapRecord = None  # type: ignore[assignment]
 
+# Optional: domenowy serwis, jeśli istnieje w projekcie.
+try:  # pragma: no cover
+    from models.services.circuit_service import CircuitService  # type: ignore
+except Exception:  # pragma: no cover
+    CircuitService = None  # type: ignore[assignment]
+
 _YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
 
 
@@ -413,6 +419,16 @@ def merge_race_lap_records(records: list[Any]) -> list[dict[str, Any]]:
     Zwraca WYŁĄCZNIE list[dict].
     """
     records_dicts: list[dict[str, Any]] = [_as_dict(r) for r in records]
+
+    # PR: delegacja, jeśli serwis istnieje (ale nie psujemy kompatybilności)
+    if CircuitService is not None and hasattr(CircuitService, "merge_race_lap_records"):
+        try:
+            out = CircuitService.merge_race_lap_records(records_dicts)  # type: ignore[misc]
+            if isinstance(out, list) and all(isinstance(x, dict) for x in out):
+                return out  # type: ignore[return-value]
+        except Exception:
+            # fallback do lokalnej logiki
+            pass
 
     key_buckets: dict[tuple, list[dict[str, Any]]] = {}
     leftovers: list[dict[str, Any]] = []

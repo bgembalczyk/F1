@@ -1,4 +1,4 @@
-"""Normalizacja rekordów torów - główna logika."""
+"""Normalizacja rekordów torów - główna logika (z opcjonalną delegacją do CircuitService)."""
 
 from __future__ import annotations
 
@@ -16,6 +16,13 @@ try:  # pragma: no cover
 except Exception:  # pragma: no cover
     LapRecord = None  # type: ignore[assignment]
     as_lap_record = None  # type: ignore[assignment]
+
+# Optional: jeśli w projekcie istnieje domenowy serwis normalizacji, użyj go.
+# Jeśli nie – fallback do implementacji lokalnej (poniżej).
+try:  # pragma: no cover
+    from models.services.circuit_service import CircuitService  # type: ignore
+except Exception:  # pragma: no cover
+    CircuitService = None  # type: ignore[assignment]
 
 
 def extract_circuit_names(
@@ -41,7 +48,9 @@ def extract_circuit_names(
     return {"list": name_list, "former_names": former_names}
 
 
-def extract_circuit_url(raw: dict[str, Any], details: dict[str, Any] | None) -> str | None:
+def extract_circuit_url(
+    raw: dict[str, Any], details: dict[str, Any] | None
+) -> str | None:
     """Ekstrakcja URL toru (None jeśli brak szczegółów)."""
     circuit = raw.get("circuit") or {}
     if details is None:
@@ -49,7 +58,9 @@ def extract_circuit_url(raw: dict[str, Any], details: dict[str, Any] | None) -> 
     return circuit.get("url")
 
 
-def extract_circuit_location(raw: dict[str, Any], normalized: dict[str, Any]) -> dict[str, Any]:
+def extract_circuit_location(
+    raw: dict[str, Any], normalized: dict[str, Any]
+) -> dict[str, Any]:
     """Ekstrakcja lokalizacji toru z konsolidacją miejsc i współrzędnych."""
     country = raw.get("country")
     old_location = raw.get("location")
@@ -90,7 +101,9 @@ def extract_circuit_location(raw: dict[str, Any], normalized: dict[str, Any]) ->
     return {"places": list(places_map.values()), "coordinates": coordinates}
 
 
-def extract_circuit_grade_and_history(normalized: dict[str, Any]) -> tuple[str | None, list[Any] | None]:
+def extract_circuit_grade_and_history(
+    normalized: dict[str, Any],
+) -> tuple[str | None, list[Any] | None]:
     """Ekstrakcja klasy FIA i historii zdarzeń."""
     if not normalized:
         return None, None
@@ -120,7 +133,11 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
             if isinstance(rlr, dict):
                 records.append(rlr)
             # PR: wspieramy LapRecord, ale tylko jeśli jest dostępny w projekcie
-            elif LapRecord is not None and isinstance(rlr, LapRecord) and as_lap_record is not None:
+            elif (
+                LapRecord is not None
+                and isinstance(rlr, LapRecord)
+                and as_lap_record is not None
+            ):
                 records.append(as_lap_record(rlr))
 
         lay["race_lap_records"] = records
@@ -145,7 +162,9 @@ def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None
     return length_km, years_str
 
 
-def find_layout_for_table(table_layout: str, layouts: list[dict[str, Any]]) -> dict[str, Any] | None:
+def find_layout_for_table(
+    table_layout: str, layouts: list[dict[str, Any]]
+) -> dict[str, Any] | None:
     """
     Dopasowuje layout z tabeli do layoutu z infoboxa na podstawie:
     - długości okrążenia (km),
@@ -181,7 +200,9 @@ def find_layout_for_table(table_layout: str, layouts: list[dict[str, Any]]) -> d
     return best_candidate
 
 
-def merge_tables_into_layouts(tables: list[dict[str, Any]], layouts: list[dict[str, Any]]) -> None:
+def merge_tables_into_layouts(
+    tables: list[dict[str, Any]], layouts: list[dict[str, Any]]
+) -> None:
     """Łączy rekordy z tabel w odpowiednie layouty."""
     for table_block in tables:
         t_layout_str = table_block.get("layout")
@@ -191,7 +212,9 @@ def merge_tables_into_layouts(tables: list[dict[str, Any]], layouts: list[dict[s
 
         target_layout = find_layout_for_table(t_layout_str, layouts)
         if target_layout is None:
-            layouts.append({"layout": t_layout_str, "race_lap_records": list(lap_records)})
+            layouts.append(
+                {"layout": t_layout_str, "race_lap_records": list(lap_records)}
+            )
         else:
             target_layout.setdefault("race_lap_records", [])
             target_layout["race_lap_records"].extend(lap_records)
@@ -253,20 +276,15 @@ def _lap_record_to_dict(rec: Any) -> dict[str, Any]:
     if isinstance(rec, dict):
         return rec
     if LapRecord is not None and isinstance(rec, LapRecord):
-        # zgodnie z PR: LapRecord ma to_dict()
         return rec.to_dict()
-    # ostatni fallback (żeby nie wybuchać na nietypowym obiekcie)
     try:
         return dict(rec)  # type: ignore[arg-type]
     except Exception:
         return {}
 
 
-def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
-    """
-    Normalizuje pojedynczy rekord toru wg ustalonych zasad.
-    Finalnie zawsze zwraca JSON-owalne dicty (bez VO w środku).
-    """
+def _normalize_circuit_record_local(raw: dict[str, Any]) -> dict[str, Any]:
+    """Lokalna implementacja normalizacji (fallback, gdy CircuitService nie istnieje)."""
     out: dict[str, Any] = {}
     details = raw.get("details")
 
@@ -324,3 +342,13 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     out = cleanup_urls(out)
     out = remove_empty_lists(out)
     return out
+
+
+def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
+    """
+    Normalizuje pojedynczy rekord toru wg ustalonych zasad.
+    Jeśli istnieje CircuitService – deleguje; w przeciwnym razie używa fallbacku.
+    """
+    if CircuitService is not None:
+        return CircuitService.normalize_record(raw)
+    return _normalize_circuit_record_local(raw)
