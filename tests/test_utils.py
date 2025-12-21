@@ -2,8 +2,8 @@ import pytest
 import sys
 import types
 
-from scrapers.base.helpers.utils import find_section_elements, is_reference_link
-from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
+from scrapers.base.helpers.html import find_section_elements, is_reference_link
+from scrapers.base.helpers.parsing import parse_float_from_text, parse_int_from_text
 
 try:
     from bs4 import BeautifulSoup

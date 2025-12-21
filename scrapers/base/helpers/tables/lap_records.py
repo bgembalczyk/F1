@@ -11,7 +11,8 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 
 # NOWE:
-from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.html import extract_links_from_cell
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 
 

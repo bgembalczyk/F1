@@ -2,7 +2,7 @@ from typing import Any, Callable, Mapping
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.helpers.utils import parse_float_from_text, parse_int_from_text
+from scrapers.base.helpers.parsing import parse_float_from_text, parse_int_from_text
 
 
 class ParsedValueColumn(BaseColumn):

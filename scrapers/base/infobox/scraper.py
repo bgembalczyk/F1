@@ -8,7 +8,7 @@ import requests
 from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.helpers.utils import is_reference_link
+from scrapers.base.helpers.html import is_reference_link
 
 
 class WikipediaInfoboxScraper:

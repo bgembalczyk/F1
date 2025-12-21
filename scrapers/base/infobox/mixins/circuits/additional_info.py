@@ -2,7 +2,7 @@
 
 from typing import Any, Dict, List, Optional
 
-from scrapers.base.helpers.utils import split_delimited_text
+from scrapers.base.helpers.parsing import split_delimited_text
 from scrapers.base.infobox.mixins.circuits.entity_parsing import (
     CircuitEntityParsingMixin,
 )
