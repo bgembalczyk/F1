@@ -225,17 +225,15 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
     href = tag.get("href") or ""
     classes = tag.get("class") or []
 
-    if "cite_note" in href:
-        return True
-
     if any(cls in ("reference", "mw-cite-backlink") for cls in classes):
         return True
 
-    text = clean_wiki_text(tag.get_text(separator=" ", strip=True))
-    text = clean_wiki_text(tag.get_text(" ", strip=True))
+    if "cite_note" in href:
+        return True
+
     if href.startswith("#"):
-        if not text or not allow_local_anchors:
-            return True
+        text = clean_wiki_text(tag.get_text(" ", strip=True))
+        return not text or not allow_local_anchors
 
     return False
 

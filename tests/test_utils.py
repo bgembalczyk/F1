@@ -55,6 +55,19 @@ def test_local_anchor_with_text_respects_allow_local_anchors():
     assert is_reference_link(tag, allow_local_anchors=False)
 
 
+@pytest.mark.parametrize(
+    "allow_local_anchors, expected",
+    [
+        (True, False),
+        (False, True),
+    ],
+)
+def test_local_anchor_with_text_allows_toggle(allow_local_anchors, expected):
+    tag = _tag('<a href="#section">Section</a>')
+
+    assert is_reference_link(tag, allow_local_anchors=allow_local_anchors) is expected
+
+
 def test_regular_link_is_not_reference():
     tag = _tag('<a href="/wiki/Example">Example</a>')
 
