@@ -1,13 +1,13 @@
 from abc import ABC
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict, Any, cast
 
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.utils import find_section_elements
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, RowT
 
 
-class F1ListScraper(F1Scraper, ABC):
+class F1ListScraper(F1Scraper[RowT], ABC):
     """
     Scraper dla list (ul/ol) w konkretnej sekcji.
 
@@ -23,14 +23,14 @@ class F1ListScraper(F1Scraper, ABC):
     record_key: Optional[str] = None
     url_key: str = "url"
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> List[RowT]:
         root_list = self._find_list_root(soup)
-        items: List[Dict[str, Any]] = []
+        items: List[RowT] = []
 
         for li in root_list.find_all("li", recursive=False):
             rec = self.parse_item(li)
             if rec:
-                items.append(rec)
+                items.append(cast(RowT, rec))
 
         return items
 

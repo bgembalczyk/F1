@@ -5,7 +5,7 @@ import json
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, List, Optional, Sequence, Mapping, TypeVar, Generic
 
 try:
     import pandas as pd
@@ -15,9 +15,12 @@ except Exception:  # opcjonalne
     _HAS_PANDAS = False
 
 
+RowT = TypeVar("RowT", bound=Mapping[str, Any])
+
+
 @dataclass(frozen=True)
-class ScrapeResult:
-    data: List[Dict[str, Any]]
+class ScrapeResult(Generic[RowT]):
+    data: List[RowT]
     source_url: Optional[str]
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -25,7 +28,7 @@ class ScrapeResult:
 class DataExporter:
     def to_json(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult[RowT] | List[RowT],
         path: str | Path,
         *,
         indent: int = 2,
@@ -39,7 +42,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult[RowT] | List[RowT],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -65,21 +68,21 @@ class DataExporter:
             for row in data:
                 writer.writerow(row)
 
-    def to_dataframe(self, result: ScrapeResult | List[Dict[str, Any]]):
+    def to_dataframe(self, result: ScrapeResult[RowT] | List[RowT]):
         if not _HAS_PANDAS:
             raise RuntimeError("Pandas nie jest zainstalowane.")
         return pd.DataFrame(self._extract_data(result))
 
     def _extract_data(
-        self, result: ScrapeResult | List[Dict[str, Any]]
-    ) -> List[Dict[str, Any]]:
+        self, result: ScrapeResult[RowT] | List[RowT]
+    ) -> List[RowT]:
         if isinstance(result, ScrapeResult):
             return result.data
         return result
 
     def _json_payload(
         self,
-        result: ScrapeResult | List[Dict[str, Any]],
+        result: ScrapeResult[RowT] | List[RowT],
         *,
         include_metadata: bool,
     ) -> Any:

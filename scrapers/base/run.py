@@ -23,7 +23,7 @@ def _get_scraper_config(name: str) -> ScraperConfig:
     return SCRAPER_REGISTRY[name]
 
 
-def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
+def _includes_param(cls: Type[F1Scraper[Any]], name: str) -> bool:
     return name in inspect.signature(cls.__init__).parameters
 
 
@@ -32,7 +32,7 @@ def _ensure_parent(path: Path) -> None:
 
 
 def run_and_export(
-    scraper_cls: Type[F1Scraper],
+    scraper_cls: Type[F1Scraper[Any]],
     json_path: str | Path,
     csv_path: str | Path | None = None,
     *,

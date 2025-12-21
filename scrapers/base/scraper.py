@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, TypeVar, Generic, Mapping
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -21,7 +21,10 @@ from scrapers.base.exporters import DataExporter, ScrapeResult
 # ======================================================================
 
 
-class F1Scraper(ABC):
+RowT = TypeVar("RowT", bound=Mapping[str, Any])
+
+
+class F1Scraper(Generic[RowT], ABC):
     """
     Bazowa klasa dla wszystkich scrapperów F1.
 
@@ -68,24 +71,24 @@ class F1Scraper(ABC):
         self.session = getattr(self.http_client, "session", None)
         self.exporter = exporter or DataExporter()
 
-        self._data: List[Dict[str, Any]] = []
+        self._data: List[RowT] = []
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> List[RowT]:
         """Pobierz dane z sieci i sparsuj je do listy słowników."""
         html = self._download()
         soup = BeautifulSoup(html, "html.parser")
         self._data = self._parse_soup(soup)
         return self._data
 
-    def get_data(self) -> List[Dict[str, Any]]:
+    def get_data(self) -> List[RowT]:
         """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
         if not self._data:
             self.fetch()
         return self._data
 
-    def build_result(self, data: Optional[List[Dict[str, Any]]] = None) -> ScrapeResult:
+    def build_result(self, data: Optional[List[RowT]] = None) -> ScrapeResult[RowT]:
         """Utwórz ScrapeResult z metadanymi."""
         return ScrapeResult(
             data=data or self.get_data(),
@@ -121,7 +124,7 @@ class F1Scraper(ABC):
         return self.http_client.get_text(self.url)
 
     @abstractmethod
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> List[RowT]:
         """Parsowanie BS4 -> lista rekordów."""
         raise NotImplementedError
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Sequence, Mapping, List, Dict, Any
+from typing import Optional, Sequence, Mapping, List, Dict, Any, cast
 
 from bs4 import BeautifulSoup, Tag
 
@@ -12,13 +12,13 @@ from scrapers.base.helpers.utils import (
     extract_links_from_cell,
     find_section_elements,
 )
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, RowT
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
-class F1TableScraper(F1Scraper, ABC):
+class F1TableScraper(F1Scraper[RowT], ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
@@ -52,7 +52,7 @@ class F1TableScraper(F1Scraper, ABC):
 
     # --- szablon parsowania ---
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> List[RowT]:
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
@@ -61,7 +61,7 @@ class F1TableScraper(F1Scraper, ABC):
         header_cells = header_row.find_all(["th", "td"])
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
-        records: List[Dict[str, Any]] = []
+        records: List[RowT] = []
         for tr in table.find_all("tr")[1:]:
             cells = tr.find_all(["td", "th"])
 
@@ -80,7 +80,7 @@ class F1TableScraper(F1Scraper, ABC):
 
             record = self.parse_row(tr, cells, headers)
             if record:
-                records.append(record)
+                records.append(cast(RowT, record))
 
         return records
 

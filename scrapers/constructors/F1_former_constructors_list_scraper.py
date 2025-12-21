@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
+from models.scrape_types import ConstructorRow
 
 
 @register_scraper(
@@ -16,7 +17,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_former_constructors.json",
     "constructors/f1_former_constructors.csv",
 )
-class F1FormerConstructorsListScraper(F1TableScraper):
+class F1FormerConstructorsListScraper(F1TableScraper[ConstructorRow]):
     """
     Byli konstruktorzy – sekcja 'Former constructors'
     z:

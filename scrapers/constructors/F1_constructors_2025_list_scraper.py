@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
+from models.scrape_types import ConstructorRow
 
 
 @register_scraper(
@@ -16,7 +17,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_constructors_2025.json",
     "constructors/f1_constructors_2025.csv",
 )
-class F1Constructors2025ListScraper(F1TableScraper):
+class F1Constructors2025ListScraper(F1TableScraper[ConstructorRow]):
     """
     Aktualni konstruktorzy – sekcja
     'Constructors for the 2025 season' z:

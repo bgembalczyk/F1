@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from models.circuit import Circuit
+from models.scrape_types import CircuitRow
 from scrapers.base.run import run_and_export
 
 
@@ -19,7 +20,7 @@ from scrapers.base.run import run_and_export
     "circuits/f1_circuits.json",
     "circuits/f1_circuits.csv",
 )
-class F1CircuitsListScraper(F1TableScraper):
+class F1CircuitsListScraper(F1TableScraper[CircuitRow]):
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits

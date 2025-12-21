@@ -7,6 +7,7 @@ from scrapers.base.helpers.utils import clean_wiki_text, parse_seasons
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
+from models.scrape_types import ConstructorRow
 
 
 @register_scraper(
@@ -14,7 +15,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_privateer_teams.json",
     "constructors/f1_privateer_teams.csv",
 )
-class F1PrivateerTeamsListScraper(F1ListScraper):
+class F1PrivateerTeamsListScraper(F1ListScraper[ConstructorRow]):
     """
     Lista privateer teams (sekcja 'Privateer teams').
 

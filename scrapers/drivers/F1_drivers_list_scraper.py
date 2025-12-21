@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List
+from typing import Any, List
 
 from scrapers.base.helpers.utils import parse_seasons
 from scrapers.base.registry import register_scraper
@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
+from models.scrape_types import DriverChampionshipsPayload, DriverRow
 
 
 @register_scraper(
@@ -20,7 +21,7 @@ from scrapers.base.run import run_and_export
     "drivers/f1_drivers.json",
     "drivers/f1_drivers.csv",
 )
-class F1DriversListScraper(F1TableScraper):
+class F1DriversListScraper(F1TableScraper[DriverRow]):
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
@@ -96,7 +97,9 @@ class F1DriversListScraper(F1TableScraper):
     #  Parsowanie kolumny Drivers' Championships
     # =====================================================================
 
-    def _parse_drivers_championships(self, raw: Any) -> Dict[str, Any]:
+    def _parse_drivers_championships(
+        self, raw: Any
+    ) -> DriverChampionshipsPayload:
         """
         Parsuje tekst z komórki "Drivers' Championships" do postaci:
 
@@ -154,7 +157,7 @@ class F1DriversListScraper(F1TableScraper):
     #  Główne fetch
     # =====================================================================
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> List[DriverRow]:
         """
         Minimalne fetch:
         - NIE nadpisujemy is_active / is_world_champion — to robi BoolColumn.
