@@ -5,16 +5,14 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from models.services.circuits.circuit_service import CircuitService
 from scrapers.base.helpers.text import (
     match_driver_loose,
     match_vehicle_prefix,
     normalize_text,
 )
 from scrapers.base.helpers.time import parse_time_key, parse_time_seconds
-
 from scrapers.base.helpers.value_objects import LapRecord
-
-from models.services.circuit_service import CircuitService
 
 _YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
 
