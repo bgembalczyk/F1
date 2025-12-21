@@ -3,21 +3,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Optional, Sequence
 
-from scrapers.base.formatters import (
-    CsvFormatter,
-    JsonFormatter,
-    PandasDataFrameFormatter,
-)
+from scrapers.base.export.export_helpers import NormalizationRule, _normalize_record_keys, _drop_empty_fields, \
+    _fieldnames_from_union, _fieldnames_from_first_row, ExportRecord, _extract_data
+from scrapers.base.format.csv_formatter import CsvFormatter
+from scrapers.base.format.json_formatter import JsonFormatter
+from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 from scrapers.base.results import ScrapeResult
-from scrapers.base.export_helpers import (
-    ExportRecord,
-    NormalizationRule,
-    _extract_data,
-    _normalize_record_keys,
-    _drop_empty_fields,
-    _fieldnames_from_union,
-    _fieldnames_from_first_row,
-)
 
 
 class DataExporter:
