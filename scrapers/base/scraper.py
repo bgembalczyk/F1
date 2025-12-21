@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import logging
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import List, Optional, Sequence
@@ -17,9 +16,7 @@ from scrapers.base.results import ScrapeResult
 # PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
-
-
-logger = logging.getLogger(__name__)
+from scrapers.base.logging import get_logger
 
 
 class F1Scraper(ABC):
@@ -47,7 +44,8 @@ class F1Scraper(ABC):
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
         self._record_normalizer = RecordNormalizer()
-        self._error_handler = ErrorHandler(logger=logger)
+        self.logger = get_logger(self.__class__.__name__)
+        self._error_handler = ErrorHandler(logger=self.logger)
 
         self._data: Optional[List[ExportRecord]] = None
 

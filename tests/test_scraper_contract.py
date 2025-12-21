@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import pytest
 
 from scrapers.base.options import ScraperOptions
@@ -174,3 +175,13 @@ def test_table_scraper_returns_dict_records() -> None:
 
     assert data
     assert all(isinstance(record, dict) for record in data)
+
+
+def test_scraper_sets_logger_adapter() -> None:
+    scraper = PrivateerTeamsListScraper(
+        options=ScraperOptions(fetcher=StubFetcher("<html></html>"))
+    )
+
+    assert scraper.logger is not None
+    assert isinstance(scraper.logger, logging.LoggerAdapter)
+    assert scraper.logger.extra.get("scraper") == scraper.__class__.__name__

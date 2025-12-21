@@ -14,8 +14,7 @@ from scrapers.base.registry import (
 from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
-# Logging (z PR). Jeśli moduł nie istnieje w repo, fallback na print.
-from scrapers.base.logging import configure_logging, logger  # type: ignore
+from scrapers.base.logging import configure_logging, get_logger
 
 
 def _scraper_choices() -> list[str]:
@@ -114,10 +113,8 @@ def run_and_export(
 
     data = scraper.fetch()
 
-    if logger is not None:
-        logger.info("Pobrano rekordów: %s", len(data))
-    else:
-        print(f"Pobrano rekordów: {len(data)}")
+    scraper_logger = getattr(scraper, "logger", get_logger(scraper_cls.__name__))
+    scraper_logger.info("Pobrano rekordów: %s", len(data))
 
     result = ScrapeResult(
         data=data,
