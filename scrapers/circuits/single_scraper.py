@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.utils import clean_wiki_text
+from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
@@ -29,13 +31,18 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         http_client: Optional[HttpClientProtocol] = None,
         timeout: int = 10,
         headers: Optional[Dict[str, str]] = None,
+        fetcher: HtmlFetcher | None = None,
     ) -> None:
+        if fetcher is None:
+            fetcher = HtmlFetcher(
+                session=session,
+                headers=headers,
+                http_client=http_client,
+                timeout=timeout,
+            )
         super().__init__(
             include_urls=True,
-            session=session,
-            headers=headers,
-            http_client=http_client,
-            timeout=timeout,
+            fetcher=fetcher,
         )
         self.timeout = timeout
         self.url: str = ""
@@ -77,7 +84,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         if not self.url:
             raise ValueError("URL must be set before downloading")
 
-        return self.http_client.get_text(self.url, timeout=self.timeout)
+        return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------
     # Heurystyki: kategorie + sekcje
@@ -125,7 +132,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         więc tutaj po prostu parsujemy przekazany fragment drzewa.
         """
         infobox_scraper = F1CircuitInfoboxScraper(
-            timeout=self.timeout, http_client=self.http_client
+            timeout=self.timeout,
+            fetcher=self.fetcher,
         )
         return infobox_scraper.parse_from_soup(soup)
 
@@ -146,7 +154,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         """
         lap_scraper = LapRecordsTableScraper(
             include_urls=self.include_urls,
-            http_client=self.http_client,  # <<< kluczowa zmiana
+            fetcher=self.fetcher,
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
 
