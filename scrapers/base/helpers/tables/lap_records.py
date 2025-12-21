@@ -1,10 +1,16 @@
 """Helper table scraper for lap record tables."""
 
-from typing import Optional, List, Dict, Any
+from __future__ import annotations
 
-from bs4 import BeautifulSoup, Tag  # <-- rozszerzamy o Tag
-import re  # <-- nowy
+import re
+from typing import Any, Dict, List
 
+from bs4 import BeautifulSoup, Tag
+
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.wiki import extract_links_from_cell
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.registry import resolve_column_type
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
@@ -13,11 +19,11 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 
-# NOWE:
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.wiki import extract_links_from_cell
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.registry import resolve_column_type
+# Opcjonalne VO – używane tylko jeśli caller poprosi.
+try:  # pragma: no cover
+    from scrapers.base.helpers.value_objects import LapRecord
+except Exception:  # pragma: no cover
+    LapRecord = None  # type: ignore[assignment]
 
 
 class LapRecordsTableScraper(F1TableScraper):
@@ -30,14 +36,8 @@ class LapRecordsTableScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="",
-        # Nie wiążemy się z żadną konkretną sekcją
         section_id=None,
-        # Minimalny zestaw nagłówków, żeby uznać tabelę za „rekordową”.
-        # (kolejność nie ma znaczenia)
-        expected_headers=[
-            "Time",
-        ],
-        # mapowanie oryginalnych nagłówków → klucze w rekordzie
+        expected_headers=["Time"],
         column_map={
             "Category": "category",
             "Class": "class_",
@@ -49,14 +49,12 @@ class LapRecordsTableScraper(F1TableScraper):
             "Date": "date",
         },
         columns={
-            # Tekst + link (jeśli jest)
             "category": AutoColumn(),
             "class_": AutoColumn(),
             "driver": DriverColumn(),
             "driver_rider": DriverColumn(),
             "vehicle": AutoColumn(),
             "event": UrlColumn(),
-            # Nowe kolumny – parsują tekst do ustandaryzowanej postaci
             "time": TimeColumn(),
             "date": DateColumn(),
         },
@@ -69,8 +67,8 @@ class LapRecordsTableScraper(F1TableScraper):
         Metoda zostaje tylko po to, żeby klasa była kompletna.
         """
         raise NotImplementedError(
-            "_LapRecordsTableScraper nie jest używany bezpośrednio – "
-            "korzystaj z parse_row() na konkretnych tabelach."
+            "LapRecordsTableScraper nie jest używany bezpośrednio – "
+            "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
         )
 
     def _split_cell_on_br(self, cell: Tag) -> List[Tag]:
@@ -85,10 +83,8 @@ class LapRecordsTableScraper(F1TableScraper):
                 continue
             frag_soup = BeautifulSoup(part, "html.parser")
             span = soup.new_tag("span")
-
             for el in list(frag_soup.contents):
                 span.append(el)
-
             segments.append(span)
 
         return segments or [cell]
@@ -98,44 +94,31 @@ class LapRecordsTableScraper(F1TableScraper):
         row: Tag,
         cells: List[Tag],
         headers: List[str],
-    ) -> List[Dict[str, Any]]:
+        *,
+        as_value_objects: bool = False,
+    ) -> List[Any]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
 
-        Jeśli w którejkolwiek komórce są wartości rozdzielone <br>, traktujemy je
-        jako osobne „podwiersze”, np.:
-
-        - Driver:  "Ross Cheever<br>John Bowe"
-        - Vehicle: "Ralt RT4<br>Ralt RT4 Cosworth"
-        - Time:    "1:33.20"
-
-        → dwa rekordy:
-          - [driver=Ross Cheever, vehicle=Ralt RT4,           time=1:33.20]
-          - [driver=John Bowe,   vehicle=Ralt RT4 Cosworth,  time=1:33.20]
-
-        Komórki z jedną wartością są duplikowane do wszystkich segmentów.
+        Domyślnie zwraca list[dict[str, Any]] (bezpieczne dla JSON).
+        Jeśli as_value_objects=True i LapRecord jest dostępny → list[LapRecord].
         """
-        # Najpierw dla każdej komórki zbuduj listę segmentów
         per_cell_segments: List[List[Tag]] = []
         max_segments = 1
 
         for cell in cells:
             segs = self._split_cell_on_br(cell)
             per_cell_segments.append(segs)
-            if len(segs) > max_segments:
-                max_segments = len(segs)
+            max_segments = max(max_segments, len(segs))
 
         model_fields = self._model_fields()
-        records: List[Dict[str, Any]] = []
+        out_records: List[Any] = []
 
-        # Dla każdego segmentu budujemy osobny rekord
         for idx in range(max_segments):
             record: Dict[str, Any] = {}
 
-            for header, cell, segs in zip(headers, cells, per_cell_segments):
-                # jeśli komórka ma mniej segmentów, powielamy ostatni
+            for header, segs in zip(headers, per_cell_segments):
                 seg_cell = segs[idx] if idx < len(segs) else segs[-1]
-
                 key = self.column_map.get(header, self._normalize_header(header))
 
                 raw_text = seg_cell.get_text(" ", strip=True)
@@ -162,18 +145,23 @@ class LapRecordsTableScraper(F1TableScraper):
                     or self.default_column
                 )
                 col = resolve_column_type(col_spec)
-
                 col.apply(ctx, record)
 
-            # Ewentualne mapowanie do modelu, gdyby kiedyś zostało dodane
+            # Mapowanie do modelu (jeśli ktoś kiedyś doda model_class)
             if self.model_class:
                 model = self.model_class(**record)
                 if hasattr(model, "model_dump"):
                     record = model.model_dump()
                 elif hasattr(model, "dict"):
                     record = model.dict()
-                # dataclass też można obsłużyć, ale tu nie jest używane
 
-            records.append(record)
+            if as_value_objects:
+                if LapRecord is None:
+                    raise RuntimeError(
+                        "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie."
+                    )
+                out_records.append(LapRecord.from_dict(record))
+            else:
+                out_records.append(record)
 
-        return records
+        return out_records

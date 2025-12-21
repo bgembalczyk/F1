@@ -3,14 +3,36 @@
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from scrapers.base.helpers.utils import is_wikipedia_redlink
 from scrapers.base.infobox.mixins.circuits.additional_info import (
     CircuitAdditionalInfoMixin,
 )
 
+# Opcjonalne VO: pozwalamy przyjąć LapRecord, ale na zewnątrz trzymamy dicty.
+try:  # pragma: no cover
+    from scrapers.base.helpers.value_objects import LapRecord, as_lap_record
+except Exception:  # pragma: no cover
+    LapRecord = None  # type: ignore[assignment]
+    as_lap_record = None  # type: ignore[assignment]
+
 
 class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
     """Logika parsowania, porównywania i scalania lap record'ów."""
+
+    def _as_rec(self, rec: Any) -> Dict[str, Any]:
+        """
+        Normalizuje rekord do dict (toleruje LapRecord).
+        To jest kluczowe, żeby reszta miksinów nie musiała znać VO.
+        """
+        if isinstance(rec, dict):
+            return rec
+        if LapRecord is not None and isinstance(rec, LapRecord) and as_lap_record is not None:
+            return as_lap_record(rec).to_dict()
+        # fallback: jeśli ktoś poda mapping-like
+        try:
+            return dict(rec)  # type: ignore[arg-type]
+        except Exception:
+            return {}
 
     def _wrap_entity_from_links(
         self, entity_text: Optional[str], links: List[Dict[str, Any]]
@@ -90,9 +112,7 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             return ("km/h" in s_low) or ("mph" in s_low)
 
         def _score_details_candidate(s: str) -> int:
-            """
-            Im wyższy score tym bardziej wygląda na "driver, vehicle, year, series".
-            """
+            """Im wyższy score tym bardziej wygląda na "driver, vehicle, year, series"."""
             if not s:
                 return -10
             if _is_speed_paren(s):
@@ -101,7 +121,6 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             parts = [p.strip() for p in s.split(",") if p.strip()]
             score = 0
 
-            # najczęściej mamy >= 3-4 elementy rozdzielone przecinkami
             if len(parts) >= 4:
                 score += 5
             elif len(parts) == 3:
@@ -111,11 +130,9 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             else:
                 score -= 2
 
-            # obecność roku (często 4 cyfry) bardzo pomaga
             if any(re.fullmatch(r"\d{4}", p) for p in parts):
                 score += 5
 
-            # jeśli w ogóle nie ma przecinków i nie ma roku -> raczej nie detale
             if "," not in s and score < 3:
                 score -= 3
 
@@ -156,6 +173,7 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
         return record
 
     def _year_from_record(self, rec: Dict[str, Any]) -> Optional[str]:
+        rec = self._as_rec(rec)
         y = rec.get("year")
         if y:
             return str(y).strip()
@@ -172,17 +190,16 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return None
 
-    def _lap_record_key(
-        self, rec: Dict[str, Any]
-    ) -> Optional[Tuple[str, str, int, str]]:
+    def _lap_record_key(self, rec: Dict[str, Any]) -> Optional[Tuple[str, str, int, str]]:
         """
         Klucz porównania IGNORUJE różnice series/category/class.
         Porównuje:
-        - driver.text (znormalizowany + czyszczenie "( es" / "( cs")
-        - vehicle/car (znormalizowany)
-        - time w sekundach (ms) -> żeby 1:16.0357 == 76.0357
+        - driver.text
+        - vehicle/car
+        - time w sekundach (ms)
         - rok (year lub z date/event)
         """
+        rec = self._as_rec(rec)
         driver = rec.get("driver")
         vehicle = self._get_vehicle_field(rec)
 
@@ -201,28 +218,25 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         return (d, v, int(round(sec * 1000)), year)
 
-    def _merge_two_lap_records(
-        self, a: Dict[str, Any], b: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def _merge_two_lap_records(self, a: Dict[str, Any], b: Dict[str, Any]) -> Dict[str, Any]:
         """
         Łączy dwa rekordy w jeden "bogatszy".
         Normalizuje wynik:
         - vehicle jako pole główne (usuwa car),
         - series jako pole główne (usuwa category/class),
-        - time: zawsze float w sekundach (bez time_seconds i bez stringów).
+        - time: zawsze float w sekundach.
         """
+        a = self._as_rec(a)
+        b = self._as_rec(b)
         out = dict(a)
 
-        # driver
         out["driver"] = self._choose_richer_entity(a.get("driver"), b.get("driver"))
 
-        # vehicle/car -> vehicle
         out["vehicle"] = self._choose_richer_entity(
             self._get_vehicle_field(a), self._get_vehicle_field(b)
         )
         out.pop("car", None)
 
-        # series/category/class -> series (bogatszy)
         picked_series = self._choose_richer_entity(
             self._get_class_field(a), self._get_class_field(b)
         )
@@ -231,12 +245,10 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
         out.pop("category", None)
         out.pop("class", None)
 
-        # proste pola: doklej brakujące
         for k in ("event", "date", "year", "source", "notes"):
             if not out.get(k) and b.get(k):
                 out[k] = b[k]
 
-        # time: zawsze sekundy (float)
         a_sec = self._time_to_seconds(a.get("time"))
         b_sec = self._time_to_seconds(b.get("time"))
         sec = a_sec if a_sec is not None else b_sec
@@ -245,22 +257,12 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
         else:
             out.pop("time", None)
 
-        # posprzątaj ewentualne stare pola
         out.pop("time_seconds", None)
-
-        # year: jeśli brak, spróbuj wydedukować (np. z date/event)
         out["year"] = out.get("year") or self._year_from_record(out)
 
         return self._prune_nulls(out)
 
     def _same_lap_record(self, left: dict, right: dict) -> bool:
-        """
-        Nowa definicja "to ten sam rekord":
-        - ignorujemy series/category/class
-        - normalizujemy driver/vehicle
-        - porównujemy time w ms
-        - porównujemy rok (year lub z date/event)
-        """
         if not left or not right:
             return False
         kl = self._lap_record_key(left)
@@ -279,13 +281,11 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             if not existing:
                 continue
             if self._lap_record_key(existing) == cand_key:
-                return i, existing
+                return i, self._as_rec(existing)
 
         return None
 
-    def _merge_lap_record(
-        self, existing: Dict[str, Any], candidate: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def _merge_lap_record(self, existing: Dict[str, Any], candidate: Dict[str, Any]) -> Dict[str, Any]:
         return self._merge_two_lap_records(existing, candidate)
 
     def _upsert_lap_record(
@@ -293,9 +293,13 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
     ) -> None:
         if not candidate:
             return
-        hit = self._find_lap_record(candidate, records)
+
+        # jeśli ktoś poda LapRecord, normalizujemy do dict (nie przechowujemy VO w records)
+        candidate_dict = self._as_rec(candidate)
+
+        hit = self._find_lap_record(candidate_dict, records)
         if hit is None:
-            records.append({"race_lap_record": candidate})
+            records.append({"race_lap_record": candidate_dict})
         else:
             i, existing = hit
-            records[i]["race_lap_record"] = self._merge_lap_record(existing, candidate)
+            records[i]["race_lap_record"] = self._merge_lap_record(existing, candidate_dict)

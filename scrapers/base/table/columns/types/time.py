@@ -5,6 +5,7 @@ import re
 from decimal import Decimal, ROUND_HALF_UP
 from typing import Any, Optional
 
+from scrapers.base.helpers.value_objects import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -65,7 +66,7 @@ class TimeColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         text = (ctx.clean_text or "").strip()
         if not text:
-            return {"text": None, "seconds": None}
+            return NormalizedTime(text=None, seconds=None)
 
         # czasem w polu mogą być dodatki typu "(qualifying)", bierzemy to, co przed nawiasem
         base = text.split("(", 1)[0].strip()
@@ -74,19 +75,19 @@ class TimeColumn(BaseColumn):
         m = self._RE_COLON.match(base)
         if m:
             seconds = self._to_seconds(m.group("min"), m.group("sec"))
-            return {"text": text, "seconds": seconds}
+            return NormalizedTime(text=text, seconds=seconds)
 
         # 2) format "M min SS(.sss)s" / "M m SS.s s"
         m = self._RE_MINSEC.match(base)
         if m:
             seconds = self._to_seconds(m.group("min"), m.group("sec"))
-            return {"text": text, "seconds": seconds}
+            return NormalizedTime(text=text, seconds=seconds)
 
         # 3) format tylko z sekundami "SS(.sss)" lub "SS(.sss)s"
         m = self._RE_SECONDS.match(base)
         if m:
             seconds = self._to_seconds(None, m.group("sec"))
-            return {"text": text, "seconds": seconds}
+            return NormalizedTime(text=text, seconds=seconds)
 
         # nie udało się sparsować – zwracamy tylko tekst
-        return {"text": text, "seconds": None}
+        return NormalizedTime(text=text, seconds=None)

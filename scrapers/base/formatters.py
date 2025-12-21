@@ -5,6 +5,7 @@ import importlib.util
 import io
 import json
 import warnings
+from dataclasses import asdict, is_dataclass
 from typing import Any, Dict, List, Optional, Sequence
 
 from scrapers.base.results import ScrapeResult
@@ -14,10 +15,24 @@ if _HAS_PANDAS:
     import pandas as pd
 
 
+def _normalize_payload(value: Any) -> Any:
+    if hasattr(value, "to_dict") and callable(value.to_dict):
+        return _normalize_payload(value.to_dict())
+    if is_dataclass(value):
+        return _normalize_payload(asdict(value))
+    if isinstance(value, dict):
+        return {k: _normalize_payload(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_normalize_payload(v) for v in value]
+    if isinstance(value, tuple):
+        return tuple(_normalize_payload(v) for v in value)
+    return value
+
+
 def _extract_data(result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if isinstance(result, ScrapeResult):
-        return result.data
-    return result
+        return _normalize_payload(result.data)
+    return _normalize_payload(result)
 
 
 class JsonFormatter:
@@ -46,10 +61,10 @@ class JsonFormatter:
                     "source_url": result.source_url,
                     "timestamp": result.timestamp.isoformat(),
                 },
-                "data": result.data,
+                "data": _normalize_payload(result.data),
             }
 
-        return {"meta": None, "data": result}
+        return {"meta": None, "data": _normalize_payload(result)}
 
 
 class CsvFormatter:
