@@ -6,7 +6,7 @@ from typing import Callable
 import pytest
 
 from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
+from http_client.clients import HttpClient, UrllibHttpClient
 from http_client.retry import DefaultRetryPolicy
 
 
@@ -35,11 +35,23 @@ class _StubHandler(BaseHTTPRequestHandler):
             self.wfile.write(type(self).last_header.encode("utf-8"))
             return
 
+        if self.path == "/json":
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b'{"status": "ok", "value": 1}')
+            return
+
         if self.path == "/slow":
             time.sleep(type(self).delay_seconds)
             self.send_response(200)
             self.end_headers()
             self.wfile.write(b"slow")
+            return
+
+        if self.path == "/text":
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"plain-text")
             return
 
         self.send_response(404)
@@ -64,6 +76,7 @@ def http_server():
 
 
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
+    ("requests", lambda **kwargs: HttpClient(backoff_seconds=0.01, **kwargs)),
     ("urllib", lambda **kwargs: UrllibHttpClient(backoff_seconds=0.01, **kwargs)),
 ]
 
@@ -101,6 +114,27 @@ def test_timeouts_are_respected(name, factory, http_server):
 
     with pytest.raises(Exception):
         client.get(f"{base_url}/slow")
+
+
+@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+def test_get_text_contract(name, factory, http_server):
+    base_url, _handler = http_server
+
+    client = factory()
+    payload = client.get_text(f"{base_url}/text")
+
+    assert payload == "plain-text"
+    assert isinstance(payload, str)
+
+
+@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+def test_get_json_contract(name, factory, http_server):
+    base_url, _handler = http_server
+
+    client = factory()
+    payload = client.get_json(f"{base_url}/json")
+
+    assert payload == {"status": "ok", "value": 1}
 
 
 def test_wikipedia_cache_policy_hit_and_miss(tmp_path):

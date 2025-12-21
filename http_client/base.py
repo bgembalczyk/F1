@@ -1,6 +1,7 @@
 """Klasa bazowa dla klientów HTTP."""
 
 from __future__ import annotations
+import json
 import time
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, Optional, cast
@@ -120,3 +121,13 @@ class BaseHttpClient(ABC, HttpClientProtocol):
     ) -> str:
         response = self.get(url, headers=headers, timeout=timeout)
         return response.text
+
+    def get_json(
+        self,
+        url: str,
+        *,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[int] = None,
+    ) -> Any:
+        response = self.get(url, headers=headers, timeout=timeout)
+        return json.loads(response.text)
