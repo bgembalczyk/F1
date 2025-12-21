@@ -41,28 +41,44 @@ def extract_year_from_event(rec: dict[str, Any]) -> str | None:
     return None
 
 
+def _extract_year(rec: dict[str, Any]) -> str | None:
+    """
+    Wspólna logika ekstrakcji roku z rekordu.
+    Próbuje kolejno: year, date.iso, event.
+    """
+    if rec.get("year") is not None:
+        return str(rec["year"])
+
+    date_obj = rec.get("date")
+    if isinstance(date_obj, dict):
+        iso = (date_obj.get("iso") or "").strip()
+        if iso:
+            return iso[:4]
+
+    return extract_year_from_event(rec)
+
+
+def _extract_driver_vehicle_year(
+    rec: dict[str, Any]
+) -> tuple[str | None, str | None, str | None]:
+    """
+    Wspólna logika ekstrakcji driver_text, vehicle_text, year.
+    Używana przez build_record_key i build_core_key.
+    """
+    driver_txt = normalize_text(rec.get("driver"))
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
+    vehicle_txt = normalize_text(vehicle_obj)
+    year = _extract_year(rec)
+
+    return driver_txt, vehicle_txt, year
+
+
 def build_record_key(rec: dict[str, Any]) -> tuple | None:
     """
     Klucz do rozpoznawania tego samego rekordu:
     (driver_text, vehicle_text, year, time_seconds)
     """
-    driver_txt = normalize_text(rec.get("driver"))
-    vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = normalize_text(vehicle_obj)
-
-    year: str | None = None
-    if rec.get("year") is not None:
-        year = str(rec["year"])
-    else:
-        date_obj = rec.get("date")
-        if isinstance(date_obj, dict):
-            iso = (date_obj.get("iso") or "").strip()
-            if iso:
-                year = iso[:4]
-
-    if not year:
-        year = extract_year_from_event(rec)
-
+    driver_txt, vehicle_txt, year = _extract_driver_vehicle_year(rec)
     time_sec = parse_time_seconds(rec)
 
     if not driver_txt or not vehicle_txt or not year or time_sec is None:
@@ -76,22 +92,7 @@ def build_core_key(rec: dict[str, Any]) -> tuple | None:
     Klucz „rdzeniowy" do łączenia rekordów nawet jeśli brakuje time.
     (driver_text, vehicle_text, year)
     """
-    driver_txt = normalize_text(rec.get("driver"))
-    vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = normalize_text(vehicle_obj)
-
-    year: str | None = None
-    if rec.get("year") is not None:
-        year = str(rec["year"])
-    else:
-        date_obj = rec.get("date")
-        if isinstance(date_obj, dict):
-            iso = (date_obj.get("iso") or "").strip()
-            if iso:
-                year = iso[:4]
-
-    if not year:
-        year = extract_year_from_event(rec)
+    driver_txt, vehicle_txt, year = _extract_driver_vehicle_year(rec)
 
     if not driver_txt or not vehicle_txt or not year:
         return None
@@ -147,42 +148,49 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
     return True
 
 
-def select_best_driver(records: list[dict[str, Any]]) -> Any:
-    """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
+def _select_best_field_with_url(
+    records: list[dict[str, Any]], *field_names: str
+) -> Any:
+    """
+    Wspólna logika wyboru najlepszego pola (preferuje wersję z URL).
+
+    Args:
+        records: Lista rekordów do przeszukania
+        field_names: Nazwy pól do sprawdzenia (w kolejności priorytetów)
+
+    Returns:
+        Najlepszą wartość pola (preferuje dict z URL)
+    """
     best = None
     for r in records:
-        d = r.get("driver")
-        if not d:
+        value = None
+        for field_name in field_names:
+            value = r.get(field_name)
+            if value is not None:
+                break
+
+        if not value:
             continue
         if best is None:
-            best = d
+            best = value
             continue
         if (
-            isinstance(d, dict)
-            and d.get("url")
+            isinstance(value, dict)
+            and value.get("url")
             and (not isinstance(best, dict) or not best.get("url"))
         ):
-            best = d
+            best = value
     return best
+
+
+def select_best_driver(records: list[dict[str, Any]]) -> Any:
+    """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
+    return _select_best_field_with_url(records, "driver")
 
 
 def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
     """Wybiera najlepszy rekord pojazdu (preferuje wersję z URL)."""
-    best = None
-    for r in records:
-        v = r.get("vehicle") or r.get("car")
-        if not v:
-            continue
-        if best is None:
-            best = v
-            continue
-        if (
-            isinstance(v, dict)
-            and v.get("url")
-            and (not isinstance(best, dict) or not best.get("url"))
-        ):
-            best = v
-    return best
+    return _select_best_field_with_url(records, "vehicle", "car")
 
 
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
