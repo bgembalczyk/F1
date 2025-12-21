@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from http_client.interfaces import HttpClientProtocol
+from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
@@ -33,19 +34,24 @@ class F1CompleteCircuitScraper(F1Scraper):
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
+        fetcher: HtmlFetcher | None = None,
     ) -> None:
+        if fetcher is None:
+            fetcher = HtmlFetcher(
+                session=session,
+                headers=headers,
+                http_client=http_client,
+            )
         super().__init__(
             include_urls=True,
-            session=session,
-            headers=headers,
-            http_client=http_client,
+            fetcher=fetcher,
         )
         self.list_scraper = F1CircuitsListScraper(
             include_urls=True,
-            http_client=self.http_client,
+            fetcher=self.fetcher,
         )
         self.single_scraper = F1SingleCircuitScraper(
-            http_client=self.http_client,
+            fetcher=self.fetcher,
         )
 
     def fetch(self) -> List[Dict[str, Any]]:

@@ -1,19 +1,14 @@
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
-from pathlib import Path
+from abc import ABC
 from typing import Any, Dict, List, Optional, Sequence
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-import requests
-
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter, ScrapeResult
+from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.parsers import SoupParser
 
 
 # ======================================================================
@@ -26,7 +21,7 @@ class F1Scraper(ABC):
     Bazowa klasa dla wszystkich scrapperów F1.
 
     Odpowiada za:
-    - pobranie HTML (requests)
+    - orkiestrację fetch → parse → build result
     - trzymanie danych w pamięci
     - delegowanie eksportu
     - szablon metody fetch()
@@ -39,33 +34,13 @@ class F1Scraper(ABC):
         self,
         *,
         include_urls: bool = True,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClientProtocol] = None,
         exporter: Optional[DataExporter] = None,
-        timeout: int = 10,
-        retries: int = 0,
-        cache: ResponseCache | None = None,
+        fetcher: HtmlFetcher | None = None,
+        parser: SoupParser | None = None,
     ) -> None:
         self.include_urls = include_urls
-        if http_client is None:
-            if cache is None:
-                cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
-                )
-            http_client = UrllibHttpClient(
-                session=session,
-                headers=headers,
-                timeout=timeout,
-                retries=retries,
-                cache=cache,
-            )
-        self.http_client = http_client
-        self.session = getattr(self.http_client, "session", None)
+        self.fetcher = fetcher or HtmlFetcher()
+        self.parser = parser
         self.exporter = exporter or DataExporter()
 
         self._data: List[Dict[str, Any]] = []
@@ -76,7 +51,8 @@ class F1Scraper(ABC):
         """Pobierz dane z sieci i sparsuj je do listy słowników."""
         html = self._download()
         soup = BeautifulSoup(html, "html.parser")
-        self._data = self._parse_soup(soup)
+        parser = self.parser or self
+        self._data = parser.parse(soup)
         return self._data
 
     def get_data(self) -> List[Dict[str, Any]]:
@@ -118,12 +94,14 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        return self.http_client.get_text(self.url)
+        return self.fetcher.get_text(self.url)
 
-    @abstractmethod
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """Parsowanie BS4 -> lista rekordów."""
         raise NotImplementedError
+
+    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        return self._parse_soup(soup)
 
     # ---------- Pomocnicze ----------
 
