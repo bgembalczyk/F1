@@ -2,7 +2,8 @@ import sys
 import types
 
 from scrapers.base.helpers.records import merge_two_records
-from scrapers.base.helpers.text import clean_wiki_text, split_delimited_text
+from scrapers.base.helpers.text import split_delimited_text
+from scrapers.base.helpers.wiki import clean_wiki_text
 
 try:
     import bs4  # noqa: F401

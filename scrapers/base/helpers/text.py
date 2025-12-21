@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from datetime import datetime
 import re
 from typing import Any, Callable, Iterable, TypeVar
 
-_REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
-T = TypeVar("T")
+# ============================================================================
+# Text Normalization
+# ============================================================================
 
 
 def normalize_text(obj: Any) -> str:
@@ -18,6 +18,21 @@ def normalize_text(obj: Any) -> str:
     if obj is None:
         return ""
     return str(obj).strip().lower()
+
+
+def add_unique_name(names_set: set[str], name_list: list[str], value: str | None) -> None:
+    """Dodaje nazwę do listy nazw, unikając duplikatów."""
+    if not value:
+        return
+    value = value.strip()
+    if value and value not in names_set:
+        names_set.add(value)
+        name_list.append(value)
+
+
+# ============================================================================
+# Driver & Vehicle Matching
+# ============================================================================
 
 
 def normalize_driver_text(obj: Any) -> str:
@@ -59,21 +74,9 @@ def match_vehicle_prefix(a: Any, b: Any, *, min_len: int = 10) -> bool:
     return va.startswith(vb) or vb.startswith(va)
 
 
-def add_unique_name(names_set: set[str], name_list: list[str], value: str | None) -> None:
-    """Dodaje nazwę do listy nazw, unikając duplikatów."""
-    if not value:
-        return
-    value = value.strip()
-    if value and value not in names_set:
-        names_set.add(value)
-        name_list.append(value)
-
-
-def clean_wiki_text(text: str) -> str:
-    """Normalizuje whitespace i usuwa przypisy Wikipedii."""
-    t = text.replace("\xa0", " ").replace("&nbsp;", " ")
-    t = _REF_RE.sub("", t)
-    return t.strip()
+# ============================================================================
+# Text Parsing
+# ============================================================================
 
 
 def split_delimited_text(
@@ -91,121 +94,3 @@ def split_delimited_text(
     return parts if len(parts) >= min_parts else []
 
 
-def _parse_number(
-    text: str | None,
-    *,
-    pattern: str,
-    cast: Callable[[str], T],
-    group: int | str = 0,
-    normalizers: Iterable[Callable[[str], str]] | None = None,
-) -> T | None:
-    """Generic helper for extracting numbers with regex and casting."""
-    if not text:
-        return None
-
-    match = re.search(pattern, text)
-    if not match:
-        return None
-
-    raw = match.group(group)
-    for normalize in normalizers or []:
-        raw = normalize(raw)
-
-    try:
-        return cast(raw)
-    except (TypeError, ValueError):
-        return None
-
-
-def parse_seasons(
-    text: str, *, current_year: int | None = None
-) -> list[dict[str, Any]]:
-    """
-    Zamienia tekst w stylu:
-        '1973, 1975–1982, 1984'  lub '2014–present'
-    na listę:
-        [{"year": 1973, "url": ...}, {"year": 1975, "url": ...}, ..., {"year": 1984, "url": ...}]
-
-    'present' (case-insensitive) → aktualny rok.
-    """
-    result: list[dict[str, Any]] = []
-    seen: set[int] = set()
-
-    if not text:
-        return result
-
-    if current_year is None:
-        current_year = datetime.now().year
-
-    text = re.sub(r"\bpresent\b", str(current_year), text, flags=re.IGNORECASE)
-    parts = [p.strip() for p in text.split(",") if p.strip()]
-
-    for part in parts:
-        m_range = re.fullmatch(r"(\d{4})\s*[\u2013-]\s*(\d{4})", part)
-        if m_range:
-            start = int(m_range.group(1))
-            end = int(m_range.group(2))
-            if end < start:
-                start, end = end, start
-            years = range(start, end + 1)
-        else:
-            m_year = re.fullmatch(r"\d{4}", part)
-            if not m_year:
-                continue
-            years = [int(part)]
-
-        for y in years:
-            if y in seen:
-                continue
-            seen.add(y)
-            url = f"https://en.wikipedia.org/wiki/{y}_Formula_One_World_Championship"
-            result.append({"year": y, "url": url})
-
-    return result
-
-
-def parse_int_from_text(text: str) -> int | None:
-    """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234)."""
-    return _parse_number(
-        text,
-        pattern=r"[-+]?\d[\d,]*",
-        cast=int,
-        normalizers=(lambda s: s.replace(",", ""),),
-    )
-
-
-def parse_float_from_text(text: str) -> float | None:
-    """Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu (ignoruje przecinki 1,234.5)."""
-    return _parse_number(
-        text,
-        pattern=r"[-+]?\d[\d,]*\.?\d*",
-        cast=float,
-        normalizers=(lambda s: s.replace(",", ""),),
-    )
-
-
-def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
-    """Extract a float immediately followed by the given unit."""
-    return _parse_number(
-        text,
-        pattern=rf"([-+]?[0-9][0-9,]*(?:\.[0-9]+)?)\s*{re.escape(unit)}",
-        cast=float,
-        group=1,
-        normalizers=(lambda s: s.replace(",", ""),),
-    )
-
-
-def strip_marks(text: str | None) -> str | None:
-    """Usuwa typowe znaki oznaczeń z tabel."""
-    if text is None:
-        return None
-    return (
-        text.replace("*", "")
-        .replace("†", "")
-        .replace("‡", "")
-        .replace("✝", "")
-        .replace("✚", "")
-        .replace("~", "")
-        .replace("^", "")
-        .strip()
-    )

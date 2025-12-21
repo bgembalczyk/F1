@@ -7,10 +7,7 @@ import urllib.error
 import urllib.request
 from typing import Dict, Optional
 
-try:  # pragma: no cover - zależne od środowiska
-    import certifi
-except Exception:  # pragma: no cover - brak optionala
-    certifi = None
+import certifi
 
 
 class RequestException(Exception):

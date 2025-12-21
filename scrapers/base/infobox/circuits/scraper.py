@@ -22,12 +22,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 
-# PR wnosił ustandaryzowane wyjątki – bierzemy je, jeśli istnieją w projekcie.
-try:  # pragma: no cover
-    from scrapers.base.errors import ScraperError, ScraperParseError
-except Exception:  # pragma: no cover
-    ScraperError = Exception  # type: ignore[misc,assignment]
-    ScraperParseError = ValueError  # type: ignore[misc,assignment]
+from scrapers.base.errors import ScraperError, ScraperParseError
 
 
 class F1CircuitInfoboxScraper(F1Scraper):

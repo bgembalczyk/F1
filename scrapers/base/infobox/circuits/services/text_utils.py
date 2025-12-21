@@ -1,7 +1,8 @@
 import re
 from typing import Optional, Dict, Any, List
 
-from scrapers.base.helpers.text import split_delimited_text, parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 

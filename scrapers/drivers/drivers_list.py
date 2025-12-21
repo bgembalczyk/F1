@@ -4,7 +4,7 @@ import re
 from typing import Any, List
 
 from models.scrape_types import DriverChampionshipsPayload, DriverRow  # typing-only, ale OK
-from scrapers.base.helpers.text import parse_seasons
+from scrapers.base.helpers.parsing import parse_seasons
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 from scrapers.base.table.columns.types.bool import BoolColumn

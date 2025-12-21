@@ -16,36 +16,8 @@ from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 
 # PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
-try:  # pragma: no cover
-    from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
-except Exception:  # pragma: no cover
-    ScraperError = Exception  # type: ignore[misc,assignment]
+from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
 
-    class ScraperNetworkError(RuntimeError):  # type: ignore[no-redef]
-        def __init__(
-            self,
-            message: str,
-            *,
-            url: str | None = None,
-            cause: Exception | None = None,
-        ):
-            super().__init__(message)
-            self.url = url
-            self.cause = cause
-            self.critical = True
-
-    class ScraperParseError(RuntimeError):  # type: ignore[no-redef]
-        def __init__(
-            self,
-            message: str,
-            *,
-            url: str | None = None,
-            cause: Exception | None = None,
-        ):
-            super().__init__(message)
-            self.url = url
-            self.cause = cause
-            self.critical = True
 
 
 logger = logging.getLogger(__name__)

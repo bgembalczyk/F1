@@ -5,19 +5,14 @@ from typing import Any, Dict, List, Optional
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.text import clean_wiki_text  # spójnie z resztą helperów
+from scrapers.base.helpers.wiki import clean_wiki_text  # spójnie z resztą helperów
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 
-# PR wnosił ustandaryzowane wyjątki – używamy jeśli są w projekcie.
-try:  # pragma: no cover
-    from scrapers.base.errors import ScraperError, ScraperParseError
-except Exception:  # pragma: no cover
-    ScraperError = Exception  # type: ignore[misc,assignment]
-    ScraperParseError = ValueError  # type: ignore[misc,assignment]
+from scrapers.base.errors import ScraperError, ScraperParseError
 
 
 class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):

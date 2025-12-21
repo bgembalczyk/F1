@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.wiki import clean_wiki_text
 from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext

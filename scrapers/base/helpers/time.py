@@ -6,11 +6,7 @@ import re
 from typing import Any
 
 
-# Opcjonalne VO – jeśli jest w repo, wspieramy go bez wymuszania zależności.
-try:  # pragma: no cover
-    from scrapers.base.helpers.value_objects import NormalizedTime
-except Exception:  # pragma: no cover
-    NormalizedTime = None  # type: ignore[assignment]
+from scrapers.base.helpers.value_objects import NormalizedTime
 
 
 def _extract_time_value(value: Any) -> tuple[str | None, float | None]:

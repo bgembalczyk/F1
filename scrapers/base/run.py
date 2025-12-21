@@ -11,13 +11,8 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 # Logging (z PR). Jeśli moduł nie istnieje w repo, fallback na print.
-try:  # pragma: no cover
-    from scrapers.base.logging import configure_logging, logger  # type: ignore
-except Exception:  # pragma: no cover
-    logger = None
+from scrapers.base.logging import configure_logging, logger  # type: ignore
 
-    def configure_logging(level: str) -> None:  # type: ignore
-        return
 
 
 def _scraper_choices() -> list[str]:

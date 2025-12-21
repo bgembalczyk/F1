@@ -9,20 +9,9 @@ from scrapers.base.helpers.records import merge_race_lap_records
 from scrapers.base.helpers.text import add_unique_name
 from scrapers.base.helpers.time import normalize_date_value, normalize_time_value
 
-# Optional: jeśli masz VO w projekcie, to wspieramy je miękko,
-# ale NIE zostawiamy ich w wynikowym JSONie.
-try:  # pragma: no cover
-    from scrapers.base.helpers.value_objects import LapRecord, as_lap_record
-except Exception:  # pragma: no cover
-    LapRecord = None  # type: ignore[assignment]
-    as_lap_record = None  # type: ignore[assignment]
+from scrapers.base.helpers.value_objects import LapRecord, as_lap_record
 
-# Optional: jeśli w projekcie istnieje domenowy serwis normalizacji, użyj go.
-# Jeśli nie – fallback do implementacji lokalnej (poniżej).
-try:  # pragma: no cover
-    from models.services.circuit_service import CircuitService  # type: ignore
-except Exception:  # pragma: no cover
-    CircuitService = None  # type: ignore[assignment]
+from models.services.circuit_service import CircuitService  # type: ignore
 
 
 def extract_circuit_names(

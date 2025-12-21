@@ -4,7 +4,7 @@ from typing import Optional
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.errors import ScraperNotFoundError
-from scrapers.base.helpers.html import find_section_elements
+from scrapers.base.helpers.wiki import find_section_elements
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 

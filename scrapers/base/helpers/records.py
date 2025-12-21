@@ -12,17 +12,9 @@ from scrapers.base.helpers.text import (
 )
 from scrapers.base.helpers.time import parse_time_key, parse_time_seconds
 
-# Opcjonalne VO – przyjmujemy, ale nie wypuszczamy na zewnątrz.
-try:  # pragma: no cover
-    from scrapers.base.helpers.value_objects import LapRecord
-except Exception:  # pragma: no cover
-    LapRecord = None  # type: ignore[assignment]
+from scrapers.base.helpers.value_objects import LapRecord
 
-# Optional: domenowy serwis, jeśli istnieje w projekcie.
-try:  # pragma: no cover
-    from models.services.circuit_service import CircuitService  # type: ignore
-except Exception:  # pragma: no cover
-    CircuitService = None  # type: ignore[assignment]
+from models.services.circuit_service import CircuitService
 
 _YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
 

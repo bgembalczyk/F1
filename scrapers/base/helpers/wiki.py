@@ -8,7 +8,39 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
+_REF_RE = re.compile(r"\[\s*[^]]+\s*]")
+
+# ============================================================================
+# Text Normalization
+# ============================================================================
+
+
+def clean_wiki_text(text: str) -> str:
+    """Normalizuje whitespace i usuwa przypisy Wikipedii."""
+    t = text.replace("\xa0", " ").replace("&nbsp;", " ")
+    t = _REF_RE.sub("", t)
+    return t.strip()
+
+
+def strip_marks(text: str | None) -> str | None:
+    """Usuwa typowe znaki oznaczeń z tabel."""
+    if text is None:
+        return None
+    return (
+        text.replace("*", "")
+        .replace("†", "")
+        .replace("‡", "")
+        .replace("✝", "")
+        .replace("✚", "")
+        .replace("~", "")
+        .replace("^", "")
+        .strip()
+    )
+
+
+# ============================================================================
+# Section & Element Finding
+# ============================================================================
 
 
 def find_section_elements(
@@ -17,7 +49,12 @@ def find_section_elements(
     target_tags: Iterable[str],
     **kwargs: Any,
 ) -> list[Tag]:
-    """Find elements after a section heading or across the whole document."""
+    """Find elements after a section heading or across the whole document.
+
+    When ``section_id`` is provided, the search starts after the heading with
+    the matching id. Otherwise, all matching elements in the soup are returned.
+    Additional ``kwargs`` are forwarded to ``find_all`` / ``find_all_next``.
+    """
     if section_id:
         heading = soup.find(id=section_id)
         if not heading:
@@ -26,6 +63,11 @@ def find_section_elements(
         return list(heading.find_all_next(target_tags, **kwargs))
 
     return list(soup.find_all(target_tags, **kwargs))
+
+
+# ============================================================================
+# Link Extraction & Validation
+# ============================================================================
 
 
 def extract_links_from_cell(
@@ -79,7 +121,7 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
         return True
 
     if href.startswith("#"):
-        text = clean_wiki_text(tag.get_text(" ", strip=True))
+        text = clean_wiki_text(tag.get_text(strip=True))
         return not text or not allow_local_anchors
 
     return False
@@ -111,6 +153,7 @@ def is_language_marker_link(text: str | None, url: str | None) -> bool:
     except Exception:
         return False
 
+    # interesuje nas wyłącznie <lang>.wikipedia.org (ew. m.wikipedia.org też bywa)
     m = re.match(r"^([a-z]{2,3})\.(m\.)?wikipedia\.org$", host)
     if not m:
         return False
