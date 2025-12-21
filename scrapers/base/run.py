@@ -5,9 +5,9 @@ import inspect
 from pathlib import Path
 from typing import Any, Type
 
-from scrapers.base.exporters import ScrapeResult
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import SCRAPER_REGISTRY, ScraperConfig, load_default_scrapers
+from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 # Logging (z PR). Jeśli moduł nie istnieje w repo, fallback na print.
@@ -87,27 +87,25 @@ def _make_scraper(
 def _write_json(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
     """
     Kompatybilność eksportu między:
-    - nowym API: result.to_json(path)
-    - starym API: scraper.exporter.to_json(result, path)
+    - nowym API (jeśli kiedyś będzie): result.to_json(path)
+    - obecnym API: scraper.exporter.to_json(result, path)
     """
     if hasattr(result, "to_json") and callable(getattr(result, "to_json")):
         result.to_json(path)  # type: ignore[call-arg]
         return
-    # fallback (stare API)
-    scraper.exporter.to_json(result, path)  # type: ignore[attr-defined]
+    scraper.exporter.to_json(result, path)
 
 
 def _write_csv(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
     """
     Kompatybilność eksportu między:
-    - nowym API: result.to_csv(path)
-    - starym API: scraper.exporter.to_csv(result, path)
+    - nowym API (jeśli kiedyś będzie): result.to_csv(path)
+    - obecnym API: scraper.exporter.to_csv(result, path)
     """
     if hasattr(result, "to_csv") and callable(getattr(result, "to_csv")):
         result.to_csv(path)  # type: ignore[call-arg]
         return
-    # fallback (stare API)
-    scraper.exporter.to_csv(result, path)  # type: ignore[attr-defined]
+    scraper.exporter.to_csv(result, path)
 
 
 def run_and_export(
@@ -124,7 +122,7 @@ def run_and_export(
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
     - bezpiecznie przekazuje include_urls tylko jeśli ma sens,
-    - wspiera zarówno scrapery na `options`, jak i legacy konstruktory,
+    - wspiera scrapery na `options` oraz legacy konstruktory,
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów,
     - wspiera 2 style eksportu (result.to_* oraz exporter.to_*(result,...)).
@@ -150,7 +148,6 @@ def run_and_export(
     result = ScrapeResult(
         data=data,
         source_url=getattr(scraper, "url", None),
-        exporter=getattr(scraper, "exporter", None),
     )
 
     json_path = Path(json_path)
@@ -198,7 +195,7 @@ def _cli() -> None:
     scraper_cls = config.scraper_cls
     kwargs = dict(getattr(config, "default_kwargs", {}) or {})
 
-    # kompatybilność z różnymi nazwami w configu
+    # kompatybilność z różnymi nazwami w configu (na przyszłość)
     json_rel = getattr(config, "json_rel", None) or getattr(config, "json_rel_path", None)
     csv_rel = getattr(config, "csv_rel", None) or getattr(config, "csv_rel_path", None)
 

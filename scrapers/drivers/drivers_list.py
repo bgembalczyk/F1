@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List
+from typing import Any, List
 
+from models.scrape_types import DriverChampionshipsPayload, DriverRow  # typing-only, ale OK
 from scrapers.base.helpers.text import parse_seasons
 from scrapers.base.registry import register_scraper
+from scrapers.base.run import run_and_export
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
@@ -13,7 +15,6 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.run import run_and_export
 
 
 @register_scraper(
@@ -21,27 +22,15 @@ from scrapers.base.run import run_and_export
     "drivers/f1_drivers.json",
     "drivers/f1_drivers.csv",
 )
-class DriversListScraper(F1TableScraper):
+class F1DriversListScraper(F1TableScraper):
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
 
-    Parsuje główną tabelę w sekcji "Drivers" i dodatkowo:
-    - czyści symbol (~, *, ^) z kolumny 'Driver name',
-    - dodaje pola:
-        * is_active          – czy kierowca startował w sezonie 2025,
-        * is_world_champion  – czy kierowca jest mistrzem świata,
-    - przetwarza kolumnę 'Drivers' Championships' do dicta:
-        * drivers_championships = {
-              "count": <int>,
-              "seasons": [
-                  {"year": 2005, "url": "..."},
-                  {"year": 2006, "url": "..."},
-                  ...
-              ]
-          }
-      gdzie "seasons" są parsowane tą samą logiką co kolumna seasons_competed
-      (typ kolumny "seasons" w F1TableScraper).
+    Dodatkowo:
+    - is_active: (~ lub * na końcu raw_text w kolumnie "Driver name")
+    - is_world_champion: (~ lub ^ na końcu raw_text w kolumnie "Driver name")
+    - drivers_championships: parsowane do dict {count, seasons}
     """
 
     CONFIG = ScraperConfig(
@@ -70,7 +59,6 @@ class DriversListScraper(F1TableScraper):
             "driver": MultiColumn(
                 {
                     "driver": UrlColumn(),
-                    # bool na podstawie raw_text – nowa BoolColumn
                     "is_active": BoolColumn(
                         lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
                     ),
@@ -81,7 +69,7 @@ class DriversListScraper(F1TableScraper):
             ),
             "nationality": TextColumn(),
             "seasons_competed": SeasonsColumn(),
-            "drivers_championships": TextColumn(),
+            "drivers_championships": TextColumn(),  # zparsujemy ręcznie w fetch()
             "race_entries": IntColumn(),
             "race_starts": IntColumn(),
             "pole_positions": IntColumn(),
@@ -92,20 +80,9 @@ class DriversListScraper(F1TableScraper):
         },
     )
 
-    # =====================================================================
-    #  Parsowanie kolumny Drivers' Championships
-    # =====================================================================
-
-    def _parse_drivers_championships(self, raw: Any) -> Dict[str, Any]:
+    def _parse_drivers_championships(self, raw: Any) -> DriverChampionshipsPayload:
         """
-        Parsuje tekst z komórki "Drivers' Championships" do postaci:
-
-            {
-                "count": <int>,              # liczba tytułów
-                "seasons": [ {year, url}, ... ]  # sezony zdobycia tytułu
-            }
-
-        Przykładowe wejście (raw, po bazowym parsowaniu typu "text"):
+        Wejście (po TextColumn) bywa np.:
         - "0"
         - "2\\n2005–2006"
         - "7\\n1994–1995, 2000–2004"
@@ -120,28 +97,23 @@ class DriversListScraper(F1TableScraper):
         seasons_parts: List[str] = []
 
         if lines:
-            # pierwsza linia zwykle zaczyna się od liczby tytułów
             m = re.match(r"(\d+)", lines[0])
             if m:
                 count = int(m.group(1))
                 tail = lines[0][m.end() :].strip()
                 if tail:
                     seasons_parts.append(tail)
-                # reszta linii traktujemy jako kolejne fragmenty z latami
                 seasons_parts.extend(lines[1:])
             else:
-                # fallback – spróbuj wyciągnąć liczbę z całego tekstu
                 m2 = re.search(r"\d+", text)
                 if m2:
-                    count = int(m2.group(1))
+                    count = int(m2.group(0))
                 seasons_parts = lines[1:] if len(lines) > 1 else []
         else:
-            # gdyby coś poszło nie tak z lines
             m2 = re.search(r"\d+", text)
             if m2:
-                count = int(m2.group(1))
+                count = int(m2.group(0))
 
-        # jeśli count == 0 albo nie ma fragmentu z latami – nie ma sezonów
         if count == 0 or not seasons_parts:
             return {"count": count, "seasons": []}
 
@@ -150,29 +122,20 @@ class DriversListScraper(F1TableScraper):
 
         return {"count": count, "seasons": seasons}
 
-    # =====================================================================
-    #  Główne fetch
-    # =====================================================================
-
-    def fetch(self) -> List[Dict[str, Any]]:
-        """
-        Minimalne fetch:
-        - NIE nadpisujemy is_active / is_world_champion — to robi BoolColumn.
-        - Parsujemy tylko kolumnę 'drivers_championships' do dict {count, seasons}.
-        """
+    def fetch(self) -> List[DriverRow]:
         rows = super().fetch()
 
         for row in rows:
             champs_raw = row.get("drivers_championships")
-            champs_info = self._parse_drivers_championships(champs_raw)
-            row["drivers_championships"] = champs_info
+            row["drivers_championships"] = self._parse_drivers_championships(champs_raw)
 
-        return rows
+        # runtime: nadal zwracamy list[dict], typy są dla Ciebie
+        return rows  # type: ignore[return-value]
 
 
 if __name__ == "__main__":
     run_and_export(
-        DriversListScraper,
+        F1DriversListScraper,
         "../../data/wiki/drivers/f1_drivers.json",
         "../../data/wiki/drivers/f1_drivers.csv",
         include_urls=True,

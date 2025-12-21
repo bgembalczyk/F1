@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+import warnings
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
-import warnings
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -14,33 +14,23 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 
 
-# ======================================================================
-# BAZA
-# ======================================================================
-
-
 class F1Scraper(ABC):
     """
-    Bazowa klasa dla wszystkich scrapperów F1.
+    Bazowa klasa dla wszystkich scraperów F1.
 
     Odpowiada za:
-    - orkiestrację fetch → parse → build result
+    - orkiestrację download → parse → build result
     - trzymanie danych w pamięci
     - delegowanie eksportu
-    - szablon metody fetch()
     """
 
-    #: Pełny URL strony Wikipedii
-    url: str
+    url: str  # pełny URL strony Wikipedii
 
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
 
-        # Zachowujemy podejście z main: preferuj gotowy fetcher w options.
-        # Jeżeli nie ma fetchera — budujemy go z pól opcji.
-        #
-        # Z PR przenosimy: ostrzeżenie jeśli używa się "legacy" konfigu HTTP
-        # zamiast przekazać w pełni skonfigurowany fetcher / http_client.
+        # Preferuj gotowy fetcher w options.
+        # Jeśli nie ma — budujemy HtmlFetcher z pól opcji (legacy).
         if options.fetcher is None:
             legacy_used = any(
                 value is not None
@@ -55,10 +45,10 @@ class F1Scraper(ABC):
             )
             if legacy_used:
                 warnings.warn(
-                    "Konfigurację HTTP przekazuj przez HttpClientConfig / skonfigurowany "
-                    "HttpClient (w ScraperOptions.http_client) albo gotowy HtmlFetcher "
-                    "(w ScraperOptions.fetcher). Parametry session/headers/timeout/retries/cache "
-                    "w ScraperOptions traktuj jako legacy.",
+                    "Konfigurację HTTP przekazuj przez skonfigurowany HttpClient "
+                    "(ScraperOptions.http_client) albo gotowy HtmlFetcher "
+                    "(ScraperOptions.fetcher). Parametry session/headers/timeout/"
+                    "retries/cache w ScraperOptions traktuj jako legacy.",
                     DeprecationWarning,
                     stacklevel=2,
                 )
@@ -74,7 +64,7 @@ class F1Scraper(ABC):
         else:
             self.fetcher = options.fetcher
 
-        # Parser w main może być “zewnętrzny” (np. mixin/adapter). Zostawiamy to.
+        # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
 
@@ -83,7 +73,7 @@ class F1Scraper(ABC):
     # ---------- API wysokiego poziomu ----------
 
     def fetch(self) -> List[Dict[str, Any]]:
-        """Pobierz dane z sieci i sparsuj je do listy słowników."""
+        """Pobierz HTML i sparsuj do listy rekordów."""
         html = self._download()
         soup = BeautifulSoup(html, "html.parser")
         parser = self.parser or self
@@ -101,7 +91,6 @@ class F1Scraper(ABC):
         return ScrapeResult(
             data=data or self.get_data(),
             source_url=getattr(self, "url", None),
-            exporter=self.exporter,
         )
 
     # ---------- Eksport (delegowany) ----------
@@ -143,7 +132,7 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        # main: fetcher jest jedyną “bramką” do HTTP.
+        # Fetcher jest jedyną “bramką” do HTTP.
         return self.fetcher.get_text(self.url)
 
     @abstractmethod
@@ -152,7 +141,7 @@ class F1Scraper(ABC):
         raise NotImplementedError
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        # main: publiczna metoda parse deleguje do _parse_soup
+        # publiczna metoda parse deleguje do _parse_soup
         return self._parse_soup(soup)
 
     # ---------- Pomocnicze ----------
@@ -160,5 +149,4 @@ class F1Scraper(ABC):
     def _full_url(self, href: str | None) -> Optional[str]:
         if not href:
             return None
-        # Linki wewnętrzne z Wikipedii typu "/wiki/..."
         return urljoin(self.url, href)
