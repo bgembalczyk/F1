@@ -7,6 +7,12 @@ from scrapers.base.helpers.text import (
     split_delimited_text,
 )
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from scrapers.base.helpers.html import is_wikipedia_redlink
+from scrapers.base.helpers.parsing import (
+    parse_int_from_text,
+    parse_number_with_unit,
+    split_delimited_text,
+)
 
 
 class InfoboxTextUtilsMixin:

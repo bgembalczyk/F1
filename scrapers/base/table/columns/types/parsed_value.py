@@ -4,6 +4,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.registry import column_type_registry
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.helpers.text import parse_float_from_text, parse_int_from_text
+from scrapers.base.helpers.parsing import parse_float_from_text, parse_int_from_text
 
 
 @column_type_registry.register("parsed_value")

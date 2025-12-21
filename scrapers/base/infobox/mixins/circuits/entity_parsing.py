@@ -4,6 +4,7 @@ import re
 from typing import Any, Dict, List, Optional, Union
 
 from scrapers.base.helpers.wiki import is_language_marker_link, is_wikipedia_redlink
+from scrapers.base.helpers.html import is_language_marker_link, is_wikipedia_redlink
 from scrapers.base.infobox.mixins.circuits.text_processing import (
     CircuitTextProcessingMixin,
 )

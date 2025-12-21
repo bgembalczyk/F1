@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Mapping, List, Dict, Any, TYPE_CHECKING
+from typing import Any, Dict, List, Mapping, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup, Tag
 
@@ -90,9 +90,8 @@ class F1TableScraper(F1Scraper, ABC):
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
 
-        UWAGA: PR dodawał pomijanie wierszy będących powtórzonym nagłówkiem (footer).
-        W architekturze z HtmlTableParser najlepiej robić to w samym parserze,
-        ale dodajemy tu "best-effort" filtr, jeśli parser udostępnia <tr>.
+        Z PR bierzemy logikę pomijania wierszy będących kopią nagłówka (częste w <tfoot>
+        lub w tabelach z powtórzonym headerem pośrodku).
         """
         records: List[Dict[str, Any]] = []
 
@@ -103,29 +102,50 @@ class F1TableScraper(F1Scraper, ABC):
         )
 
         for row in parser.parse(soup):
-            # --- best-effort: pomiń powtórzony header/footer ---
-            # Jeżeli HtmlTableParser zwraca referencję do źródłowego <tr> w specjalnym kluczu,
-            # to możemy wykryć wiersz, który jest kopią nagłówka (częste w tabelach z <tfoot>).
-            tr = None
-            if hasattr(row, "get"):
-                tr = row.get("__row__") or row.get("_row") or row.get("__tr__")
-
-            if isinstance(tr, Tag):
-                header_texts = [clean_wiki_text(h) for h in row.keys() if isinstance(h, str)]
-                cell_texts = [
-                    clean_wiki_text(c.get_text(" ", strip=True))
-                    for c in tr.find_all(["th", "td"], recursive=False)
-                ]
-                # jeśli to 1:1 kopia nagłówków -> skip
-                if header_texts and len(cell_texts) == len(header_texts) and cell_texts == header_texts:
-                    continue
-            # --- koniec best-effort filtra ---
+            if self._is_repeated_header_row(row):
+                continue
 
             record = self.parse_row(row)
             if record:
                 records.append(record)
 
         return records
+
+    def _is_repeated_header_row(self, row: Mapping[str, Any]) -> bool:
+        """
+        Wykrywa "footer / repeated header row":
+
+        - jeśli parser przemyca źródłowy <tr> w metadanych (__row__/__tr__/etc.),
+          porównujemy teksty komórek w tym <tr> do listy nagłówków (kluczy row)
+          w tej samej kolejności;
+        - jeżeli nie ma <tr>, robimy bezpieczny fallback: nic nie pomijamy.
+        """
+        tr = None
+        if hasattr(row, "get"):
+            tr = row.get("__row__") or row.get("_row") or row.get("__tr__")
+
+        if not isinstance(tr, Tag):
+            return False
+
+        # Nagłówki w kolejności tabeli: bierzemy TYLKO str-key'e i pomijamy meta.
+        headers_ordered: List[str] = [
+            h
+            for h in row.keys()
+            if isinstance(h, str) and h not in {"__row__", "_row", "__tr__"}
+        ]
+        if not headers_ordered:
+            return False
+
+        headers_clean = [clean_wiki_text(h) for h in headers_ordered]
+
+        cells = tr.find_all(["th", "td"], recursive=False)
+        if not cells:
+            return False
+
+        cell_texts = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
+
+        # Dokładne dopasowanie 1:1 -> traktujemy jako powtórzony nagłówek.
+        return len(cell_texts) == len(headers_clean) and cell_texts == headers_clean
 
     def parse_row(self, row: Mapping[str, Tag]) -> Optional[Dict[str, Any]]:
         """
@@ -164,7 +184,11 @@ class F1TableScraper(F1Scraper, ABC):
                 model_fields=model_fields,
             )
 
-            col_spec = self.columns.get(key) or self.columns.get(header) or self.default_column
+            col_spec = (
+                self.columns.get(key)
+                or self.columns.get(header)
+                or self.default_column
+            )
             col = resolve_column_type(col_spec)
             col.apply(ctx, record)
 

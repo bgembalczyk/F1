@@ -72,6 +72,12 @@ class LapRecordsTableScraper(F1TableScraper):
         )
 
     def _split_cell_on_br(self, cell: Tag) -> List[Tag]:
+        """
+        Dzieli komórkę na segmenty po <br>. Jeśli nie ma <br>, zwraca [cell].
+
+        Każdy segment jest nowym sztucznym <span>, żeby można było niezależnie
+        liczyć tekst i linki (bez grzebania w oryginalnym drzewie DOM).
+        """
         html = cell.decode_contents()
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
@@ -103,6 +109,8 @@ class LapRecordsTableScraper(F1TableScraper):
         Domyślnie zwraca list[dict[str, Any]] (bezpieczne dla JSON).
         Jeśli as_value_objects=True i LapRecord jest dostępny → list[LapRecord].
         """
+        _ = row  # API zgodne z innymi helperami; tu nie jest potrzebne
+
         per_cell_segments: List[List[Tag]] = []
         max_segments = 1
 
