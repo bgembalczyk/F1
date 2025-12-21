@@ -5,9 +5,9 @@ from typing import Callable
 
 import pytest
 
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client.caching import WikipediaCachePolicy, FileCache
+from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
 class _StubHandler(BaseHTTPRequestHandler):

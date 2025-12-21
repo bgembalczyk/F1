@@ -5,10 +5,10 @@ import time
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, Optional, cast
 
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import RetryPolicy, RateLimiter
-from http_client.rate_limiting import MinDelayRateLimiter
-from http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import RetryPolicy, RateLimiter
+from infrastructure.http_client.rate_limiting import MinDelayRateLimiter
+from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
 class BaseHttpClient(ABC, HttpClientProtocol):

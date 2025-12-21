@@ -5,10 +5,10 @@ from typing import Dict, Optional
 
 import requests
 
-from http_client.caching import FileCache, WikipediaCachePolicy
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from infrastructure.http_client.caching import FileCache, WikipediaCachePolicy
+from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import ResponseCache
 
 
 class HtmlFetcher:

@@ -5,12 +5,12 @@ import requests
 from pathlib import Path
 from typing import Dict, Optional
 
-from http_client import requests_shim
-from http_client.base import BaseHttpClient
-from http_client.caching import WikipediaCachePolicy
-from http_client.policies import RetryPolicy, RateLimiter, ResponseCache
-from http_client.rate_limiting import MinDelayRateLimiter
-from http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client import requests_shim
+from infrastructure.http_client.base import BaseHttpClient
+from infrastructure.http_client.caching import WikipediaCachePolicy
+from infrastructure.http_client.policies import RetryPolicy, RateLimiter, ResponseCache
+from infrastructure.http_client.rate_limiting import MinDelayRateLimiter
+from infrastructure.http_client.retry import DefaultRetryPolicy
 
 
 class HttpClient(BaseHttpClient):

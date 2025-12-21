@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,

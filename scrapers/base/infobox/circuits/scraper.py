@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin

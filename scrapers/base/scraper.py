@@ -8,10 +8,10 @@ from urllib.parse import urljoin
 
 import requests
 
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from infrastructure.http_client.caching import WikipediaCachePolicy, FileCache
+from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
 from scrapers.base.exporters import DataExporter, ScrapeResult

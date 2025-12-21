@@ -5,8 +5,8 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
+from infrastructure.http_client.interfaces import HttpClientProtocol
+from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.utils import is_reference_link
 
