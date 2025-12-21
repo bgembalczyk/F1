@@ -14,12 +14,6 @@ from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from models.mappers.serialization import to_dict
 
-# Optional: jeśli istnieje domenowy serwis, użyj go; inaczej fallback do helpera.
-try:  # pragma: no cover
-    from models.services.circuit_service import CircuitService  # type: ignore
-except Exception:  # pragma: no cover
-    CircuitService = None  # type: ignore[assignment]
-
 
 @register_scraper(
     "circuits_complete",
@@ -43,8 +37,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        if options is None:
-            options = ScraperOptions()
+        options = options or ScraperOptions()
 
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
@@ -75,22 +68,13 @@ class F1CompleteCircuitScraper(F1Scraper):
             ),
         )
 
-    def _normalize(self, full_record: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Normalizacja rekordu:
-        - jeśli dostępny CircuitService → delegujemy do domeny
-        - inaczej → używamy lokalnej normalizacji (helpers).
-        """
-        if CircuitService is not None:
-            return CircuitService.normalize_record(full_record)
-        return normalize_circuit_record(full_record)
-
     def fetch(self) -> List[Dict[str, Any]]:
         circuits = self.list_scraper.fetch()
         complete: List[Dict[str, Any]] = []
 
         for circuit in circuits:
             circuit_payload = to_dict(circuit)
+
             circuit_url: Optional[str] = None
             circuit_data = circuit_payload.get("circuit")
             if isinstance(circuit_data, dict):
@@ -103,7 +87,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             full_record = dict(circuit_payload)
             full_record["details"] = details
 
-            complete.append(self._normalize(full_record))
+            complete.append(normalize_circuit_record(full_record))
 
         self._data = complete
         return self._data

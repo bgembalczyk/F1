@@ -25,5 +25,4 @@ if __name__ == "__main__":
         IndianapolisOnlyEngineManufacturersListScraper,
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
-        include_urls=True,
     )

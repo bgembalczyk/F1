@@ -26,5 +26,4 @@ if __name__ == "__main__":
         IndianapolisOnlyConstructorsListScraper,
         "../../data/wiki/constructors/f1_indianapolis_only_constructors.json",
         "../../data/wiki/constructors/f1_indianapolis_only_constructors.csv",
-        include_urls=True,
     )

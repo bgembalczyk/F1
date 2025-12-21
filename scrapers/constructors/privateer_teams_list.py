@@ -70,5 +70,4 @@ if __name__ == "__main__":
         PrivateerTeamsListScraper,
         "../../data/wiki/constructors/f1_privateer_teams.json",
         "../../data/wiki/constructors/f1_privateer_teams.csv",
-        include_urls=True,
     )

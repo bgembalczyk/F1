@@ -22,7 +22,6 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 
 # PR wnosił ustandaryzowane wyjątki – bierzemy je, jeśli istnieją w projekcie.
-# Jeśli u Ciebie pliki/klasy nazywają się inaczej, zmień importy poniżej.
 try:  # pragma: no cover
     from scrapers.base.errors import ScraperError, ScraperParseError
 except Exception:  # pragma: no cover
@@ -38,10 +37,9 @@ class F1CircuitInfoboxScraper(F1Scraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        if options is None:
-            options = ScraperOptions()
+        options = options or ScraperOptions()
 
-        # Zapewniamy fetcher (zgodnie z main)
+        # Zapewniamy fetcher (spójnie z resztą repo)
         if options.fetcher is None:
             options.fetcher = HtmlFetcher(
                 session=options.session,
@@ -54,7 +52,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         super().__init__(options=options)
 
-        # Dla czytelności (F1Scraper zwykle i tak to trzyma)
+        # Dla czytelności (F1Scraper i tak to trzyma)
         self.fetcher = options.fetcher
         self.timeout = options.timeout
 
@@ -102,24 +100,24 @@ class F1CircuitInfoboxScraper(F1Scraper):
         Główne API używane wewnętrznie – obsługuje #fragment (sekcje),
         przycina infoboksy po infobox-full-data itd.
 
-        Wersja po merge:
-        - zostawiamy serwisy z main,
-        - dokładamy PR-owy „shield” na błędy sieci/parsowania (bez narzucania miksinów).
+        Merge:
+        - serwisy z main,
+        - osłona błędów w stylu nowego F1Scraper (network/parse + soft-skip jeśli _handle_scraper_error).
         """
         self.url = url
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        # --- download + obsługa błędów (z PR, ale kompatybilnie) ---
+        # --- download + obsługa błędów (kompatybilnie z F1Scraper) ---
         try:
             html = self._download()
-        except ScraperError as exc:
+        except ScraperError as exc:  # type: ignore[misc]
             if self._maybe_handle_scraper_error(exc):
                 return {}
             raise
         except Exception as exc:
             wrapped = self._maybe_wrap_network_error(exc)
-            if isinstance(wrapped, Exception) and self._maybe_handle_scraper_error(wrapped):
+            if self._maybe_handle_scraper_error(wrapped):
                 return {}
             raise wrapped from exc
 
@@ -131,7 +129,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
                 {
                     "url": url,
                     "title": title,
-                },
+                }
             )
 
         soup = full_soup
@@ -142,7 +140,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         try:
             return self.parse_from_soup(soup)
-        except ScraperError as exc:
+        except ScraperError as exc:  # type: ignore[misc]
             if self._maybe_handle_scraper_error(exc):
                 return {}
             raise
@@ -168,6 +166,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         raw = self.infobox_scraper.parse_from_soup(truncated_soup)
 
+        # layouty parsujemy z pełnej sekcji artykułu
         layout_records = self.layouts_parser.parse_layout_sections(soup)
         return self.entities_parser.with_normalized(raw, layout_records)
 
@@ -250,8 +249,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
     def _maybe_handle_scraper_error(self, exc: Exception) -> bool:
         """
-        Jeśli Twoje bazowe F1Scraper ma mechanizm obsługi błędów (np. retry/skip),
-        to go użyjemy. W przeciwnym razie: nie obsługujemy i puszczamy wyjątek dalej.
+        Jeśli bazowy F1Scraper ma mechanizm obsługi błędów (skip/warn),
+        to go użyjemy. W przeciwnym razie: nie obsługujemy.
         """
         handler = getattr(self, "_handle_scraper_error", None)
         if callable(handler):

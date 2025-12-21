@@ -5,7 +5,7 @@ from typing import Optional, Dict, Any, List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.utils import clean_wiki_text  # <- FIX: spójnie z resztą helperów
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
@@ -36,8 +36,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        if options is None:
-            options = ScraperOptions()
+        options = options or ScraperOptions()
 
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
         options.include_urls = True
@@ -66,28 +65,21 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),
         zwraca None (nie dokładamy szczegółów).
-
-        Merge:
-        - logika main,
-        - osłona błędów jak w PR (network/parse + soft-skip jeśli _handle_scraper_error).
         """
         self._original_url = url
 
-        # rozbijamy ewentualny fragment po "#"
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
+        # --- download + error handling spójny z F1Scraper ---
         try:
             soup_full = BeautifulSoup(self._download(), "html.parser")
         except ScraperError as exc:  # type: ignore[misc]
-            if getattr(self, "_handle_scraper_error", None) and self._handle_scraper_error(exc):  # type: ignore[attr-defined]
+            if self._handle_scraper_error(exc):
                 return None
             raise
         except Exception as exc:
-            wrap = getattr(self, "_wrap_network_error", None)
-            if callable(wrap):
-                raise wrap(exc) from exc
-            raise
+            raise self._wrap_network_error(exc) from exc
 
         # 1) filtr po kategoriach – jeżeli to nie wygląda na tor, nie scrapujemy dalej
         if not self._is_circuit_like_article(soup_full):
@@ -103,25 +95,20 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         try:
             parsed = self._parse_soup(working_soup)
         except ScraperError as exc:  # type: ignore[misc]
-            if getattr(self, "_handle_scraper_error", None) and self._handle_scraper_error(exc):  # type: ignore[attr-defined]
+            if self._handle_scraper_error(exc):
                 return None
             raise
         except Exception as exc:
-            wrap = getattr(self, "_wrap_parse_error", None)
-            if callable(wrap):
-                parse_error = wrap(exc)
-                handler = getattr(self, "_handle_scraper_error", None)
-                if callable(handler) and handler(parse_error):
-                    return None
-                raise parse_error from exc
-            raise
+            parse_error = self._wrap_parse_error(exc)
+            if self._handle_scraper_error(parse_error):
+                return None
+            raise parse_error from exc
 
         return parsed[0] if parsed else None
 
     def _download(self) -> str:
         if not self.url:
             raise ScraperParseError("URL must be set before downloading")
-
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------
@@ -164,10 +151,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
         """
         Parsuje infobox toru z przekazanego soup.
-
-        Logika filtrowania po kategoriach i zawężania do sekcji (#fragment)
-        jest załatwiona na poziomie F1SingleCircuitScraper.fetch,
-        więc tutaj po prostu parsujemy przekazany fragment drzewa.
         """
         infobox_scraper = F1CircuitInfoboxScraper(
             options=ScraperOptions(
@@ -183,7 +166,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         Zbiera tabele z najszybszymi okrążeniami („lap records / fastest laps”).
 
         UWAGA: Zwracamy listę layoutów dla *pierwszej* pasującej tabeli (jak w main).
-        Jeśli chcesz agregować z wielu tabel – trzeba to zmienić (da się łatwo).
         """
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
@@ -193,16 +175,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
 
-        # --- pomocnicza funkcja: zgadnij domyślną nazwę layoutu dla tabeli ---
         def guess_table_layout(table: Tag) -> Optional[str]:
-            # 1) caption
             caption = table.find("caption")
             if caption:
                 txt = clean_wiki_text(caption.get_text(" ", strip=True))
                 if txt:
                     return txt
 
-            # 2) najbliższy poprzedni nagłówek (h2/h3/h4)
             prev = table
             while prev:
                 prev = prev.previous_sibling
@@ -212,10 +191,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                     txt = clean_wiki_text(prev.get_text(" ", strip=True))
                     if txt:
                         return txt
-
             return None
 
-        # --- iteracja po wszystkich kandydatach na tabele z rekordami ---
         for table in soup.find_all("table", class_="wikitable"):
             header_row = table.find("tr")
             if not header_row:
@@ -224,7 +201,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             header_cells = header_row.find_all(["th", "td"])
             headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
-            # czy ta tabela wygląda jak rekordy okrążeń?
             if not lap_scraper._headers_match(headers):
                 header_set = set(headers)
                 if not (
@@ -235,19 +211,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
             base_layout = guess_table_layout(table)
             current_layout = base_layout
-
-            # wyniki tylko dla tej tabeli
             results: List[Dict[str, Any]] = []
 
-            # iterujemy po wierszach danych (pomijamy pierwszy z nagłówkami)
             for tr in table.find_all("tr")[1:]:
                 cells = tr.find_all(["th", "td"])
-
-                # puste / ozdobne wiersze ignorujemy
                 if not cells or all(not c.get_text(strip=True) for c in cells):
                     continue
 
-                # --- 1) wiersz nagłówka layoutu: <tr><th colspan="...">Layout...</th></tr> ---
                 th_only = all(c.name == "th" for c in cells)
                 td_only = all(c.name == "td" for c in cells)
 
@@ -259,7 +229,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                         colspan = 1
 
                     text = clean_wiki_text(th.get_text(" ", strip=True))
-
                     if colspan >= len(headers) or any(
                         kw in (text or "").lower()
                         for kw in (
@@ -274,20 +243,17 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                     ):
                         if text:
                             current_layout = text
-                        continue  # nie parsujemy tego wiersza jako danych
+                        continue
 
-                # --- 2) powtórzony nagłówek – ignorujemy (częsty pattern w wiki) ---
                 cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
                 if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
                     continue
 
-                # --- 3) normalny wiersz z danymi (może być multi-row po <br>) ---
                 row_records = lap_scraper.parse_multi_row(tr, cells, headers)
                 if not row_records:
                     continue
 
                 layout_name = current_layout or base_layout
-
                 for record in row_records:
                     if not record:
                         continue
@@ -295,7 +261,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                         record.setdefault("layout", layout_name)
                     results.append(record)
 
-            # --- grupowanie po layoutach ---
             layouts: Dict[str, List[Dict[str, Any]]] = {}
             for rec in results:
                 layout_name = rec.get("layout")
@@ -304,14 +269,11 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
                 rec_copy = dict(rec)
                 rec_copy.pop("layout", None)
-
                 layouts.setdefault(layout_name, []).append(rec_copy)
 
-            grouped = [
+            return [
                 {"layout": layout_name, "lap_records": recs}
                 for layout_name, recs in layouts.items()
             ]
-
-            return grouped
 
         return []
