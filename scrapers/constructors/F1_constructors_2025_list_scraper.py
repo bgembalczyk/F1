@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -10,6 +11,11 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "constructors_2025",
+    "constructors/f1_constructors_2025.json",
+    "constructors/f1_constructors_2025.csv",
+)
 class F1Constructors2025ListScraper(F1TableScraper):
     """
     Aktualni konstruktorzy – sekcja

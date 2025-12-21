@@ -9,12 +9,18 @@ from http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
+from scrapers.base.registry import register_scraper
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
+@register_scraper(
+    "circuits_complete",
+    "circuits/f1_circuits_extended.json",
+    "circuits/f1_circuits_extended.csv",
+)
 class F1CompleteCircuitScraper(F1Scraper):
     """
     Pobiera listę torów, a następnie zaciąga szczegóły każdego toru (infobox + tabele),
