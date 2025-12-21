@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from dataclasses import asdict, is_dataclass
 from typing import Any, Dict, Iterable, Optional
+from urllib.parse import urlparse
 
 from models.value_objects import Link, SeasonRef
+
 
 def _coerce_number(value: Any, type_: type, field_name: str):
     if value is None:
@@ -11,9 +13,9 @@ def _coerce_number(value: Any, type_: type, field_name: str):
     try:
         number = type_(value)
     except (TypeError, ValueError):
-        raise ValueError(f"{field_name} musi być liczbą") from None
+        raise ValueError(f"Pole {field_name} musi być liczbą") from None
     if number < 0:
-        raise ValueError(f"{field_name} nie może być ujemne")
+        raise ValueError(f"Pole {field_name} nie może być ujemne")
     return number
 
 
@@ -25,37 +27,110 @@ def validate_float(value: Any, field_name: str) -> Optional[float]:
     return _coerce_number(value, float, field_name)
 
 
-def validate_link(link: Dict[str, Any] | None, *, field_name: str) -> Dict[str, Any]:
+def _is_valid_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
+
+
+def validate_link(link: Dict[str, Any] | Link | None, *, field_name: str) -> Dict[str, Any]:
+    """
+    Normalizuje link do postaci dict: {"text": str, "url": Optional[str]}.
+
+    Akceptuje:
+    - Link (value object) -> waliduje przez Link i zwraca jego dict,
+    - dict -> waliduje text/url (w tym URL), a potem przepuszcza przez Link.from_dict
+             (żeby mieć jedno źródło prawdy dla normalizacji).
+    """
     if isinstance(link, Link):
         return link.to_dict()
+
+    data: Dict[str, Any] = dict(link or {})
+    text = str(data.get("text") or "").strip()
+    url = data.get("url")
+
+    if url is not None and url != "":
+        if not isinstance(url, str) or not _is_valid_url(url):
+            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
+    else:
+        url = None
+
     try:
-        parsed = Link.from_dict(link)
+        parsed = Link.from_dict({"text": text, "url": url})
     except ValueError as exc:
+        # utrzymujemy komunikat z pliku 1, ale oparty o pre-check z pliku 2
         raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL") from exc
+
     return parsed.to_dict()
 
 
 def validate_links(
-    links: Iterable[Dict[str, Any]] | None, *, field_name: str
+    links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str
 ) -> list[Dict[str, Any]]:
     result: list[Dict[str, Any]] = []
     for link in links or []:
         validated = validate_link(link, field_name=field_name)
-        if validated["text"] or validated["url"] is not None:
+        if validated.get("text") or validated.get("url") is not None:
             result.append(validated)
     return result
 
 
-def validate_seasons(seasons: Iterable[Dict[str, Any]] | None) -> list[Dict[str, Any]]:
+def validate_seasons(seasons: Iterable[Dict[str, Any] | SeasonRef] | None) -> list[Dict[str, Any]]:
+    """
+    Normalizuje sezony do listy dictów.
+
+    Akceptuje:
+    - SeasonRef -> to_dict(),
+    - dict -> próbuje SeasonRef.from_dict(item) (jak plik 1),
+             a jeśli to się nie uda, fallback na prostą walidację {year,url} (jak plik 2).
+    """
     result: list[Dict[str, Any]] = []
+
     for item in seasons or []:
+        if item is None:
+            continue
+
+        # 1) VO
         if isinstance(item, SeasonRef):
             season = item
-        else:
-            season = SeasonRef.from_dict(item)
-        if season is None:
+            season_dict = season.to_dict()
+            if season_dict is not None:
+                result.append(season_dict)
             continue
-        result.append(season.to_dict())
+
+        # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
+        try:
+            season = SeasonRef.from_dict(item)
+        except Exception:
+            season = None
+
+        if season is not None:
+            season_dict = season.to_dict()
+            if season_dict is not None:
+                result.append(season_dict)
+            continue
+
+        # 3) fallback: minimalny schemat {year,url}
+        if not isinstance(item, dict):
+            continue
+
+        year = item.get("year")
+        if year is None:
+            continue
+
+        year_int = validate_int(year, "year")
+        if year_int is None:
+            continue
+
+        validated: Dict[str, Any] = {"year": year_int}
+
+        url = item.get("url")
+        if url:
+            if not isinstance(url, str) or not _is_valid_url(url):
+                raise ValueError("Pole seasons zawiera nieprawidłowy URL")
+            validated["url"] = url
+
+        result.append(validated)
+
     return result
 
 

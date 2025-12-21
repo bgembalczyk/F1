@@ -3,16 +3,20 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from models.base import ValidatedModel
 from models.value_objects import Link, SeasonRef
 from models.validators import (
     validate_float,
     validate_int,
+    validate_link,
+    validate_links,
+    validate_seasons,
     validate_status,
 )
 
 
 @dataclass
-class EngineManufacturer:
+class EngineManufacturer(ValidatedModel):
     manufacturer: Link
     manufacturer_status: str
     engines_built_in: List[Link] = field(default_factory=list)
@@ -27,33 +31,39 @@ class EngineManufacturer:
     wcc: Optional[int] = None
     wdc: Optional[int] = None
 
-    def __post_init__(self) -> None:
-        self.manufacturer = (
-            self.manufacturer
-            if isinstance(self.manufacturer, Link)
-            else Link.from_dict(self.manufacturer)
+    def validate(self) -> None:
+        # --- manufacturer ---
+        self.manufacturer = Link.from_dict(
+            validate_link(self.manufacturer.to_dict(), field_name="manufacturer")
         )
+
         self.manufacturer_status = validate_status(
             self.manufacturer_status,
             {"current", "former"},
             "manufacturer_status",
         )
+
+        # --- engines_built_in ---
+        engines_dicts = [e.to_dict() for e in self.engines_built_in]
+        engines_validated = validate_links(
+            engines_dicts, field_name="engines_built_in"
+        )
         self.engines_built_in = [
-            link
-            for link in (
-                item if isinstance(item, Link) else Link.from_dict(item)
-                for item in self.engines_built_in
-            )
-            if not link.is_empty()
+            Link.from_dict(d)
+            for d in engines_validated
+            if not Link.from_dict(d).is_empty()
         ]
+
+        # --- seasons ---
+        seasons_dicts = [s.to_dict() for s in self.seasons]
+        seasons_validated = validate_seasons(seasons_dicts)
         self.seasons = [
-            season
-            for season in (
-                item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
-                for item in self.seasons
-            )
-            if season is not None
+            SeasonRef.from_dict(d)
+            for d in seasons_validated
+            if d is not None
         ]
+
+        # --- stats ---
         self.races_entered = validate_int(self.races_entered, "races_entered")
         self.races_started = validate_int(self.races_started, "races_started")
         self.wins = validate_int(self.wins, "wins")
