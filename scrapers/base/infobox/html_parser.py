@@ -74,8 +74,8 @@ class InfoboxHtmlParser:
                 continue
 
             key = header.get_text(" ", strip=True)
-        text = value.get_text(" ", strip=True)
-        links = self._extract_links(value)
+            text = value.get_text(" ", strip=True)
+            links = self._extract_links(value)
 
             data["rows"][key] = {"text": text, "links": links}
 
