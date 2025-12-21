@@ -14,7 +14,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_privateer_teams.json",
     "constructors/f1_privateer_teams.csv",
 )
-class F1PrivateerTeamsListScraper(F1ListScraper):
+class PrivateerTeamsListScraper(F1ListScraper):
     """
     Lista privateer teams (sekcja 'Privateer teams').
 
@@ -65,7 +65,7 @@ class F1PrivateerTeamsListScraper(F1ListScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1PrivateerTeamsListScraper,
+        PrivateerTeamsListScraper,
         "../../data/wiki/constructors/f1_privateer_teams.json",
         "../../data/wiki/constructors/f1_privateer_teams.csv",
         include_urls=True,

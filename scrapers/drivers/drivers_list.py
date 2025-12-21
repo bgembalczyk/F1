@@ -21,7 +21,7 @@ from scrapers.base.run import run_and_export
     "drivers/f1_drivers.json",
     "drivers/f1_drivers.csv",
 )
-class F1DriversListScraper(F1TableScraper):
+class DriversListScraper(F1TableScraper):
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
@@ -172,7 +172,7 @@ class F1DriversListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1DriversListScraper,
+        DriversListScraper,
         "../../data/wiki/drivers/f1_drivers.json",
         "../../data/wiki/drivers/f1_drivers.csv",
         include_urls=True,

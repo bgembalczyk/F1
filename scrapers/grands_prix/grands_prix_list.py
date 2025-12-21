@@ -17,7 +17,7 @@ from scrapers.base.run import run_and_export
     "grands_prix/f1_grands_prix_by_title.json",
     "grands_prix/f1_grands_prix_by_title.csv",
 )
-class F1GrandsPrixListScraper(F1TableScraper):
+class GrandsPrixListScraper(F1TableScraper):
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
@@ -71,7 +71,7 @@ class F1GrandsPrixListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1GrandsPrixListScraper,
+        GrandsPrixListScraper,
         "../../data/wiki/grands_prix/f1_grands_prix_by_title.json",
         "../../data/wiki/grands_prix/f1_grands_prix_by_title.csv",
         include_urls=True,

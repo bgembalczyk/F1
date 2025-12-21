@@ -43,17 +43,17 @@ def register_scraper(
 
 def load_default_scrapers() -> None:
     from scrapers.circuits import complete_scraper  # noqa: F401
-    from scrapers.circuits import list_scraper  # noqa: F401
+    from scrapers.circuits import circuits_list  # noqa: F401
     from scrapers.constructors import (  # noqa: F401
-        F1_constructors_2025_list_scraper,
-        F1_former_constructors_list_scraper,
-        F1_indianapolis_only_constructors_list_scraper,
-        F1_privateer_teams_list_scraper,
+        constructors_2025_list,
+        former_constructors_list,
+        indianapolis_only_constructors_list,
+        privateer_teams_list,
     )
-    from scrapers.drivers import F1_drivers_list_scraper  # noqa: F401
+    from scrapers.drivers import drivers_list  # noqa: F401
     from scrapers.engines import (  # noqa: F401
-        F1_engine_manufacturers_list_scraper,
-        F1_indianapolis_only_engine_manufacturers_list_scraper,
+        engine_manufacturers_list,
+        indianapolis_only_engine_manufacturers_list,
     )
-    from scrapers.grands_prix import F1_grands_prix_list_scraper  # noqa: F401
-    from scrapers.seasons import F1_seasons_list_scraper  # noqa: F401
+    from scrapers.grands_prix import grands_prix_list  # noqa: F401
+    from scrapers.seasons import seasons_list  # noqa: F401

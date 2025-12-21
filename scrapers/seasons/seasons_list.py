@@ -14,7 +14,7 @@ from scrapers.base.run import run_and_export
     "seasons/f1_seasons.json",
     "seasons/f1_seasons.csv",
 )
-class F1SeasonsListScraper(F1TableScraper):
+class SeasonsListScraper(F1TableScraper):
     """
     Scraper listy sezonów z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_seasons
@@ -60,7 +60,7 @@ class F1SeasonsListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1SeasonsListScraper,
+        SeasonsListScraper,
         "../../data/wiki/seasons/f1_seasons.json",
         "../../data/wiki/seasons/f1_seasons.csv",
         include_urls=True,

@@ -15,7 +15,7 @@ from scrapers.base.run import run_and_export
     "constructors/f1_former_constructors.json",
     "constructors/f1_former_constructors.csv",
 )
-class F1FormerConstructorsListScraper(F1TableScraper):
+class FormerConstructorsListScraper(F1TableScraper):
     """
     Byli konstruktorzy – sekcja 'Former constructors'
     z:
@@ -73,7 +73,7 @@ class F1FormerConstructorsListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1FormerConstructorsListScraper,
+        FormerConstructorsListScraper,
         "../../data/wiki/constructors/f1_former_constructors.json",
         "../../data/wiki/constructors/f1_former_constructors.csv",
         include_urls=True,

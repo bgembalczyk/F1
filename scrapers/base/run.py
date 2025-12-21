@@ -84,6 +84,32 @@ def _make_scraper(
     return scraper_cls(**ctor_kwargs)
 
 
+def _write_json(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
+    """
+    Kompatybilność eksportu między:
+    - nowym API: result.to_json(path)
+    - starym API: scraper.exporter.to_json(result, path)
+    """
+    if hasattr(result, "to_json") and callable(getattr(result, "to_json")):
+        result.to_json(path)  # type: ignore[call-arg]
+        return
+    # fallback (stare API)
+    scraper.exporter.to_json(result, path)  # type: ignore[attr-defined]
+
+
+def _write_csv(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
+    """
+    Kompatybilność eksportu między:
+    - nowym API: result.to_csv(path)
+    - starym API: scraper.exporter.to_csv(result, path)
+    """
+    if hasattr(result, "to_csv") and callable(getattr(result, "to_csv")):
+        result.to_csv(path)  # type: ignore[call-arg]
+        return
+    # fallback (stare API)
+    scraper.exporter.to_csv(result, path)  # type: ignore[attr-defined]
+
+
 def run_and_export(
     scraper_cls: Type[F1Scraper],
     json_path: str | Path,
@@ -98,8 +124,10 @@ def run_and_export(
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
     - bezpiecznie przekazuje include_urls tylko jeśli ma sens,
+    - wspiera zarówno scrapery na `options`, jak i legacy konstruktory,
     - tworzy katalogi dla ścieżek wyjściowych,
-    - wypisuje liczbę pobranych rekordów.
+    - wypisuje liczbę pobranych rekordów,
+    - wspiera 2 style eksportu (result.to_* oraz exporter.to_*(result,...)).
     """
     kwargs = dict(scraper_kwargs)
     options = options or ScraperOptions()
@@ -122,17 +150,17 @@ def run_and_export(
     result = ScrapeResult(
         data=data,
         source_url=getattr(scraper, "url", None),
-        exporter=scraper.exporter,
+        exporter=getattr(scraper, "exporter", None),
     )
 
     json_path = Path(json_path)
     _ensure_parent(json_path)
-    result.to_json(json_path)
+    _write_json(result, scraper=scraper, path=json_path)
 
     if csv_path:
         csv_path = Path(csv_path)
         _ensure_parent(csv_path)
-        result.to_csv(csv_path)
+        _write_csv(result, scraper=scraper, path=csv_path)
 
 
 def _cli() -> None:

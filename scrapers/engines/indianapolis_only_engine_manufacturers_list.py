@@ -8,7 +8,7 @@ from scrapers.base.run import run_and_export
     "engines/f1_indianapolis_only_engine_manufacturers.json",
     "engines/f1_indianapolis_only_engine_manufacturers.csv",
 )
-class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
+class IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
     """
     Lista 'Indianapolis 500 only' dla producentów silników.
     """
@@ -22,7 +22,7 @@ class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        F1IndianapolisOnlyEngineManufacturersListScraper,
+        IndianapolisOnlyEngineManufacturersListScraper,
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
         include_urls=True,

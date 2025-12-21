@@ -1,16 +1,15 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
+
 from bs4 import BeautifulSoup
 
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.helpers.circuits.circuit_normalization import (
-    normalize_circuit_record,
-)
+from scrapers.base.helpers.circuits.circuit_normalization import normalize_circuit_record
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
-from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
+from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
@@ -39,7 +38,11 @@ class F1CompleteCircuitScraper(F1Scraper):
     ) -> None:
         if options is None:
             options = ScraperOptions()
+
+        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
+
+        # Zapewniamy fetcher (spójnie z resztą repo)
         if options.fetcher is None:
             options.fetcher = HtmlFetcher(
                 session=options.session,
@@ -49,9 +52,10 @@ class F1CompleteCircuitScraper(F1Scraper):
                 retries=options.retries,
                 cache=options.cache,
             )
-        super().__init__(
-            options=options,
-        )
+
+        super().__init__(options=options)
+
+        # Pod-scrapery współdzielą ten sam fetcher (cache + retry + headers)
         self.list_scraper = F1CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
