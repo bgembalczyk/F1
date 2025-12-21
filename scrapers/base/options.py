@@ -10,6 +10,28 @@ from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers import SoupParser
+from scrapers.config import HttpConfig
+
+
+def build_http_config(
+    *,
+    session: requests.Session | None = None,
+    headers: Dict[str, str] | None = None,
+    user_agent: str | None = None,
+    timeout: int = 10,
+    retries: int = 0,
+    cache: ResponseCache | None = None,
+    http_client: HttpClientProtocol | None = None,
+) -> HttpConfig:
+    return HttpConfig(
+        session=session,
+        headers=headers,
+        user_agent=user_agent,
+        timeout=timeout,
+        retries=retries,
+        cache=cache,
+        http_client=http_client,
+    )
 
 
 @dataclass(slots=True)
@@ -30,6 +52,16 @@ class ScraperOptions:
             raise ValueError("timeout must be greater than 0")
         if self.retries < 0:
             raise ValueError("retries must be >= 0")
+
+    def to_http_config(self) -> HttpConfig:
+        return build_http_config(
+            session=self.session,
+            headers=self.headers,
+            timeout=self.timeout,
+            retries=self.retries,
+            cache=self.cache,
+            http_client=self.http_client,
+        )
 
     @classmethod
     def from_legacy(

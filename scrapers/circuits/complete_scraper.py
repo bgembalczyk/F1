@@ -15,7 +15,6 @@ from scrapers.base.run import run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.circuits_list import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from scrapers.config import HttpConfig
 
 
 @register_scraper(
@@ -48,14 +47,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         # Zapewniamy fetcher (spójnie z resztą repo)
         if options.fetcher is None:
             options.fetcher = HtmlFetcher(
-                config=HttpConfig(
-                    session=options.session,
-                    headers=options.headers,
-                    timeout=options.timeout,
-                    retries=options.retries,
-                    cache=options.cache,
-                    http_client=options.http_client,
-                )
+                config=options.to_http_config(),
             )
 
         super().__init__(options=options)
