@@ -86,5 +86,4 @@ if __name__ == "__main__":
         F1Constructors2025ListScraper,
         "../../data/wiki/constructors/f1_constructors_2025.json",
         "../../data/wiki/constructors/f1_constructors_2025.csv",
-        include_urls=True,
     )

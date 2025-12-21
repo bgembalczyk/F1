@@ -76,5 +76,4 @@ if __name__ == "__main__":
         F1GrandsPrixListScraper,
         "../../data/wiki/grands_prix/f1_grands_prix_by_title.json",
         "../../data/wiki/grands_prix/f1_grands_prix_by_title.csv",
-        include_urls=True,
     )

@@ -98,5 +98,4 @@ if __name__ == "__main__":
         F1CircuitsListScraper,
         "../../data/wiki/circuits/f1_circuits.json",
         "../../data/wiki/circuits/f1_circuits.csv",
-        include_urls=True,
     )

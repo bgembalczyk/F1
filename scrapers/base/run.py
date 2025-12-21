@@ -1,30 +1,27 @@
 from __future__ import annotations
 
 import argparse
-import inspect
 from pathlib import Path
-from typing import Any, Type
+from dataclasses import replace
+from typing import Type
 
 from scrapers.base.exporters import ScrapeResult
 from scrapers.base.registry import (
     SCRAPER_REGISTRY,
-    ScraperConfig,
+    ScraperRegistryConfig,
     load_default_scrapers,
 )
 from scrapers.base.scraper import F1Scraper
+from scrapers.config import ScraperConfig, default_config
 
 def _scraper_choices() -> list[str]:
     load_default_scrapers()
     return sorted(SCRAPER_REGISTRY.keys())
 
 
-def _get_scraper_config(name: str) -> ScraperConfig:
+def _get_scraper_config(name: str) -> ScraperRegistryConfig:
     load_default_scrapers()
     return SCRAPER_REGISTRY[name]
-
-
-def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
-    return name in inspect.signature(cls.__init__).parameters
 
 
 def _ensure_parent(path: Path) -> None:
@@ -36,22 +33,18 @@ def run_and_export(
     json_path: str | Path,
     csv_path: str | Path | None = None,
     *,
-    include_urls: bool = True,
-    **scraper_kwargs: Any,
+    config: ScraperConfig | None = None,
 ) -> None:
     """
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
-    - automatycznie przekazuje flagę ``include_urls`` (o ile scraper ją wspiera),
+    - używa obiektu konfiguracji do ustawień scrapera,
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów.
     """
 
-    kwargs = dict(scraper_kwargs)
-    if _includes_param(scraper_cls, "include_urls") and "include_urls" not in kwargs:
-        kwargs["include_urls"] = include_urls
-
-    scraper = scraper_cls(**kwargs)
+    config = config or default_config()
+    scraper = scraper_cls(config=config)
     data = scraper.fetch()
 
     print(f"Pobrano rekordów: {len(data)}")
@@ -93,17 +86,16 @@ def _cli() -> None:
 
     config = _get_scraper_config(args.scraper)
     scraper_cls = config.scraper_cls
-    kwargs = dict(config.default_kwargs)
 
     json_path = args.output_dir / config.json_rel
     csv_path = args.output_dir / config.csv_rel if config.csv_rel is not None else None
 
+    scraper_config = replace(config.config_factory(), include_urls=args.include_urls)
     run_and_export(
         scraper_cls,
         json_path,
         csv_path,
-        include_urls=args.include_urls,
-        **kwargs,
+        config=scraper_config,
     )
 
 

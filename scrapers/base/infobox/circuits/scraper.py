@@ -1,17 +1,16 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from typing import Any, Dict, List, Optional
 
-import requests
 from bs4 import BeautifulSoup, Tag
-
-from http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
+from scrapers.config import ScraperConfig, default_config
 
 
 class F1CircuitInfoboxScraper(
@@ -26,30 +25,18 @@ class F1CircuitInfoboxScraper(
     def __init__(
         self,
         *,
-        timeout: int = 10,
-        include_urls: bool = True,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClientProtocol] = None,
-        fetcher: HtmlFetcher | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                session=session,
-                headers=headers,
-                http_client=http_client,
-                timeout=timeout,
-            )
+        config = config or default_config()
+        fetcher = config.fetcher or HtmlFetcher(config=config.http)
+        config = replace(config, fetcher=fetcher)
         F1Scraper.__init__(
             self,
-            include_urls=include_urls,
-            fetcher=fetcher,
+            config=config,
         )
         WikipediaInfoboxScraper.__init__(
             self,
-            timeout=timeout,
-            headers=headers,
-            fetcher=fetcher,
+            config=config,
         )
         self.url: str = ""
 

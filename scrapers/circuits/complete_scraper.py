@@ -1,11 +1,9 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from typing import Any, Dict, List, Optional
-
-import requests
 from bs4 import BeautifulSoup
 
-from http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
@@ -15,6 +13,7 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.config import ScraperConfig, default_config
 
 
 @register_scraper(
@@ -37,27 +36,19 @@ class F1CompleteCircuitScraper(F1Scraper):
     def __init__(
         self,
         *,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClientProtocol] = None,
-        fetcher: HtmlFetcher | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                session=session,
-                headers=headers,
-                http_client=http_client,
-            )
+        config = config or default_config()
+        fetcher = config.fetcher or HtmlFetcher(config=config.http)
+        config = replace(config, fetcher=fetcher, include_urls=True)
         super().__init__(
-            include_urls=True,
-            fetcher=fetcher,
+            config=config,
         )
         self.list_scraper = F1CircuitsListScraper(
-            include_urls=True,
-            fetcher=self.fetcher,
+            config=config,
         )
         self.single_scraper = F1SingleCircuitScraper(
-            fetcher=self.fetcher,
+            config=config,
         )
 
     def fetch(self) -> List[Dict[str, Any]]:

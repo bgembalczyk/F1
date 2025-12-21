@@ -1,14 +1,11 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
-import requests
-
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.utils import is_reference_link
+from scrapers.config import ScraperConfig, default_config
 
 
 class WikipediaInfoboxScraper:
@@ -25,32 +22,12 @@ class WikipediaInfoboxScraper:
     def __init__(
         self,
         *,
-        user_agent: str | None = None,
-        timeout: int = 10,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        retries: int = 0,
-        http_client: Optional[HttpClientProtocol] = None,
-        cache: ResponseCache | None = None,
-        fetcher: HtmlFetcher | None = None,
+        config: ScraperConfig | None = None,
     ):
-        merged_headers: Dict[str, str] = {}
-        if user_agent:
-            merged_headers["User-Agent"] = user_agent
-        if headers:
-            merged_headers.update(headers)
-
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                session=session,
-                headers=merged_headers or None,
-                http_client=http_client,
-                timeout=timeout,
-                retries=retries,
-                cache=cache,
-            )
+        config = config or default_config()
+        fetcher = config.fetcher or HtmlFetcher(config=config.http)
         self.fetcher = fetcher
-        self.timeout = timeout
+        self.timeout = config.http.timeout
 
     # ------------------------------
     # Public API

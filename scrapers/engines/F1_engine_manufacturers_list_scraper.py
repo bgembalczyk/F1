@@ -97,5 +97,4 @@ if __name__ == "__main__":
         F1EngineManufacturersListScraper,
         "../../data/wiki/engines/f1_engine_manufacturers.json",
         "../../data/wiki/engines/f1_engine_manufacturers.csv",
-        include_urls=True,
     )

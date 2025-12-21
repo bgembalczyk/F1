@@ -6,17 +6,11 @@ from typing import Any, Dict, List, Optional, Sequence
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-import requests
-
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
-from http_client.interfaces import HttpClientProtocol
-from http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
-from scrapers.base.exporters import DataExporter, ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers import SoupParser
+from scrapers.config import ScraperConfig, default_config
 
 
 # ======================================================================
@@ -41,15 +35,14 @@ class F1Scraper(ABC):
     def __init__(
         self,
         *,
-        include_urls: bool = True,
-        exporter: Optional[DataExporter] = None,
-        fetcher: HtmlFetcher | None = None,
-        parser: SoupParser | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
-        self.include_urls = include_urls
-        self.fetcher = fetcher or HtmlFetcher()
-        self.parser = parser
-        self.exporter = exporter or DataExporter()
+        config = config or default_config()
+        self.config = config
+        self.include_urls = config.include_urls
+        self.fetcher = config.fetcher or HtmlFetcher(config=config.http)
+        self.parser = config.parser
+        self.exporter = config.exporter or DataExporter()
 
         self._data: List[Dict[str, Any]] = []
 

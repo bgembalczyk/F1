@@ -175,5 +175,4 @@ if __name__ == "__main__":
         F1DriversListScraper,
         "../../data/wiki/drivers/f1_drivers.json",
         "../../data/wiki/drivers/f1_drivers.csv",
-        include_urls=True,
     )

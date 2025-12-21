@@ -65,5 +65,4 @@ if __name__ == "__main__":
         F1SeasonsListScraper,
         "../../data/wiki/seasons/f1_seasons.json",
         "../../data/wiki/seasons/f1_seasons.csv",
-        include_urls=True,
     )
