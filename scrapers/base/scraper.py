@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import csv
-import json
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
@@ -13,13 +11,7 @@ import requests
 
 from f1_http.interfaces import HttpClientProtocol
 from http_client import HttpClient
-
-try:
-    import pandas as pd
-
-    _HAS_PANDAS = True
-except Exception:  # opcjonalne
-    _HAS_PANDAS = False
+from scrapers.base.exporters import DataExporter, ScrapeResult
 
 
 # ======================================================================
@@ -34,7 +26,7 @@ class F1Scraper(ABC):
     Odpowiada za:
     - pobranie HTML (requests)
     - trzymanie danych w pamięci
-    - eksport do JSON / CSV / DataFrame
+    - delegowanie eksportu
     - szablon metody fetch()
     """
 
@@ -48,6 +40,7 @@ class F1Scraper(ABC):
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
+        exporter: Optional[DataExporter] = None,
         timeout: int = 10,
         retries: int = 0,
     ) -> None:
@@ -56,6 +49,7 @@ class F1Scraper(ABC):
             session=session, headers=headers, timeout=timeout, retries=retries
         )
         self.session = getattr(self.http_client, "session", None)
+        self.exporter = exporter or DataExporter()
 
         self._data: List[Dict[str, Any]] = []
 
@@ -74,43 +68,33 @@ class F1Scraper(ABC):
             self.fetch()
         return self._data
 
-    # ---------- Eksport ----------
-
-    def to_json(self, path: str | Path, *, indent: int = 2) -> None:
-        data = self.get_data()
-        path = Path(path)
-        path.write_text(
-            json.dumps(data, ensure_ascii=False, indent=indent), encoding="utf-8"
+    def build_result(self, data: Optional[List[Dict[str, Any]]] = None) -> ScrapeResult:
+        """Utwórz ScrapeResult z metadanymi."""
+        return ScrapeResult(
+            data=data or self.get_data(),
+            source_url=getattr(self, "url", None),
         )
 
-    def to_csv(
-        self, path: str | Path, *, fieldnames: Optional[Sequence[str]] = None
+    # ---------- Eksport (delegowany) ----------
+
+    def to_json(
+        self, path: str | Path, *, indent: int = 2, include_metadata: bool = False
     ) -> None:
-        data = self.get_data()
-        if not data:
-            return
+        result = self.build_result()
+        self.exporter.to_json(result, path, indent=indent, include_metadata=include_metadata)
 
-        path = Path(path)
-
-        # Jeżeli nie podano fieldnames – bierzemy wszystkie klucze z unią
-        if fieldnames is None:
-            keys: List[str] = []
-            for row in data:
-                for k in row.keys():
-                    if k not in keys:
-                        keys.append(k)
-            fieldnames = keys
-
-        with path.open("w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            for row in data:
-                writer.writerow(row)
+    def to_csv(
+        self,
+        path: str | Path,
+        *,
+        fieldnames: Optional[Sequence[str]] = None,
+    ) -> None:
+        result = self.build_result()
+        self.exporter.to_csv(result, path, fieldnames=fieldnames)
 
     def to_dataframe(self):
-        if not _HAS_PANDAS:
-            raise RuntimeError("Pandas nie jest zainstalowane.")
-        return pd.DataFrame(self.get_data())
+        result = self.build_result()
+        return self.exporter.to_dataframe(result)
 
     # ---------- Metody wewnętrzne ----------
 

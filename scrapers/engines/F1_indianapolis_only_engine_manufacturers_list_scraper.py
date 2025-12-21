@@ -1,4 +1,4 @@
-from scrapers.base.list.scrapper import F1ListScraper
+from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.run import run_and_export
 
 
