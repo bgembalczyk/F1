@@ -1,50 +1,23 @@
 from __future__ import annotations
 
-from pathlib import Path
-
-from infrastructure.http_client.caching import FileCache, WikipediaCachePolicy
-from infrastructure.http_client.clients import UrllibHttpClient
-from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.interfaces import HttpClientProtocol
 
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.config import HttpConfig, default_http_config
+from scrapers.config import HttpPolicy
 
 
 class HtmlFetcher(SourceAdapter[str]):
     """Warstwa pobierania HTML z opcjonalnym cache."""
 
-    def __init__(self, *, config: HttpConfig | None = None) -> None:
-        config = config or default_http_config()
-
-        http_client = config.http_client
-        cache = config.cache
-        headers = config.merged_headers()
-
-        if http_client is None:
-            if cache is None:
-                cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
-                )
-
-            # Używamy HttpClientConfig
-            client_config = HttpClientConfig(
-                headers=headers,
-                timeout=config.timeout,
-                retries=config.retries,
-                cache=cache,
-            )
-
-            http_client = UrllibHttpClient(
-                session=config.session,
-                config=client_config,
-            )
-
+    def __init__(
+        self,
+        *,
+        policy: HttpPolicy,
+        http_client: HttpClientProtocol,
+    ) -> None:
+        self.policy = policy
         self.http_client = http_client
-        self.timeout = config.timeout
+        self.timeout = policy.timeout
 
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
         return self.http_client.get_text(url, timeout=timeout or self.timeout)

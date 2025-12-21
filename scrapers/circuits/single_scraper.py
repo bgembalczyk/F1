@@ -39,8 +39,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         options.with_fetcher()
 
         super().__init__(options=options)
-        self.http_config = options.to_http_config()
-        self.timeout = self.http_config.timeout
+        self.policy = options.to_http_policy()
+        self.timeout = self.policy.timeout
         self.url: str = ""
         self._original_url: Optional[str] = None
 
@@ -111,7 +111,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,
-                http=self.http_config,
+                policy=self.policy,
             ),
         )
         return infobox_scraper.parse_from_soup(soup)
@@ -121,6 +121,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,
+                policy=self.policy,
             ),
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
