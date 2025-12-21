@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-import re
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Sequence, TypeAlias
+from typing import Any, Optional, Sequence
 
 from scrapers.base.formatters import (
     CsvFormatter,
@@ -10,11 +9,15 @@ from scrapers.base.formatters import (
     PandasDataFrameFormatter,
 )
 from scrapers.base.results import ScrapeResult
-
-# Nie wiążemy się twardo z "scrapers.base.types.ExportableRecord",
-# bo w Twoich branchach to nie jest stabilne API.
-ExportRecord: TypeAlias = Dict[str, Any]
-NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
+from scrapers.base.export_helpers import (
+    ExportRecord,
+    NormalizationRule,
+    _extract_data,
+    _normalize_record_keys,
+    _drop_empty_fields,
+    _fieldnames_from_union,
+    _fieldnames_from_first_row,
+)
 
 
 class DataExporter:
@@ -40,8 +43,8 @@ class DataExporter:
         *,
         normalize_keys: bool,
         normalization_rules: Sequence[NormalizationRule] | None,
-    ) -> List[NormalizationRule]:
-        rules: List[NormalizationRule] = []
+    ) -> list[NormalizationRule]:
+        rules: list[NormalizationRule] = []
         if normalize_keys:
             rules.append(_normalize_record_keys)
             rules.append(_drop_empty_fields)
@@ -50,8 +53,8 @@ class DataExporter:
         return rules
 
     def _apply_normalization(
-        self, result: ScrapeResult | List[Any]
-    ) -> ScrapeResult | List[Any]:
+        self, result: ScrapeResult | list[Any]
+    ) -> ScrapeResult | list[Any]:
         """
         Normalizacja działa TYLKO dla listy rekordów dict-like.
 
@@ -63,13 +66,13 @@ class DataExporter:
 
         data = _extract_data(result)
 
-        normalized: List[Any] = []
+        normalized: list[Any] = []
         for item in data:
             if not isinstance(item, dict):
                 normalized.append(item)
                 continue
 
-            updated: Dict[str, Any] = dict(item)
+            updated: dict[str, Any] = dict(item)
             for rule in self._normalization_rules:
                 updated = rule(updated)
             normalized.append(updated)
@@ -84,7 +87,7 @@ class DataExporter:
 
     def to_json(
         self,
-        result: ScrapeResult | List[Any],
+        result: ScrapeResult | list[Any],
         path: str | Path,
         *,
         indent: int = 2,
@@ -99,7 +102,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | List[Any],
+        result: ScrapeResult | list[Any],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -117,7 +120,7 @@ class DataExporter:
         data = _extract_data(normalized)
 
         # CSV ma sens tylko dla dict-like rekordów
-        dict_rows: List[ExportRecord] = [r for r in data if isinstance(r, dict)]
+        dict_rows: list[ExportRecord] = [r for r in data if isinstance(r, dict)]
         if not dict_rows:
             return
 
@@ -138,54 +141,5 @@ class DataExporter:
 
         Path(path).write_text(payload, encoding="utf-8")
 
-    def to_dataframe(self, result: ScrapeResult | List[Any]):
+    def to_dataframe(self, result: ScrapeResult | list[Any]):
         return self._dataframe_formatter.format(self._apply_normalization(result))
-
-
-def _extract_data(result: ScrapeResult | List[Any]) -> List[Any]:
-    if isinstance(result, ScrapeResult):
-        return list(result.data)
-    return list(result)
-
-
-def _normalize_record_keys(record: Dict[str, Any]) -> Dict[str, Any]:
-    normalized: Dict[str, Any] = {}
-    for key, value in record.items():
-        normalized_key = _to_snake_case(str(key))
-        if not normalized_key:
-            continue
-        normalized[normalized_key] = value
-    return normalized
-
-
-def _drop_empty_fields(record: Dict[str, Any]) -> Dict[str, Any]:
-    return {key: value for key, value in record.items() if not _is_empty(value)}
-
-
-def _is_empty(value: Any) -> bool:
-    if value is None:
-        return True
-    if isinstance(value, str):
-        return value.strip() == ""
-    if isinstance(value, (list, tuple, set, dict)):
-        return len(value) == 0
-    return False
-
-
-def _to_snake_case(value: str) -> str:
-    cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
-    cleaned = re.sub(r"_+", "_", cleaned).strip("_")
-    return cleaned.lower()
-
-
-def _fieldnames_from_union(data: List[ExportRecord]) -> List[str]:
-    keys: List[str] = []
-    for row in data:
-        for key in row.keys():
-            if key not in keys:
-                keys.append(key)
-    return keys
-
-
-def _fieldnames_from_first_row(data: List[ExportRecord]) -> List[str]:
-    return list(data[0].keys()) if data else []
