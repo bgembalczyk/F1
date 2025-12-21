@@ -1,8 +1,14 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from models.services.circuit_service import CircuitService
 from models.services.driver_service import DriverService
 from models.services.season_service import SeasonService
+from scrapers.base.export.exporters import DataExporter
+from scrapers.base.options import ScraperOptions
+from scrapers.base.run import RunConfig, run_and_export
 
 
 def test_season_service_parses_years_and_ranges() -> None:
@@ -91,3 +97,46 @@ def test_circuit_service_normalizes_record_and_merges_laps() -> None:
     records = layouts[0]["race_lap_records"]
     assert len(records) == 1
     assert records[0]["time"] == 80.0
+
+
+def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
+    class DummyScraper:
+        def __init__(self, *, options: ScraperOptions, marker: str) -> None:
+            self.options = options
+            self.marker = marker
+            self.exporter = DataExporter()
+
+        def fetch(self):
+            return [
+                {
+                    "name": "test",
+                    "marker": self.marker,
+                    "url": "https://example.com" if self.options.include_urls else None,
+                }
+            ]
+
+    run_config = RunConfig(
+        include_urls=False,
+        output_dir=tmp_path,
+        scraper_kwargs={"marker": "custom"},
+        options=ScraperOptions(include_urls=True),
+    )
+
+    run_and_export(
+        DummyScraper,
+        "dummy.json",
+        "dummy.csv",
+        run_config=run_config,
+    )
+
+    json_path = tmp_path / "dummy.json"
+    csv_path = tmp_path / "dummy.csv"
+
+    assert json_path.exists()
+    assert csv_path.exists()
+
+    payload = json.loads(json_path.read_text(encoding="utf-8"))
+    assert payload == [
+        {"name": "test", "marker": "custom", "url": None},
+    ]
+    assert "marker" in csv_path.read_text(encoding="utf-8")

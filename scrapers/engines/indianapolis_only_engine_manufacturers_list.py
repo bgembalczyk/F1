@@ -1,6 +1,8 @@
+from pathlib import Path
+
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 
 
 @register_scraper(
@@ -23,6 +25,7 @@ class IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
 if __name__ == "__main__":
     run_and_export(
         IndianapolisOnlyEngineManufacturersListScraper,
-        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
-        "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
+        "engines/f1_indianapolis_only_engine_manufacturers.json",
+        "engines/f1_indianapolis_only_engine_manufacturers.csv",
+        run_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

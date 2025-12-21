@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
@@ -12,7 +14,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from models.engine_manufacturer import EngineManufacturer
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run import run_and_export
+from scrapers.base.run import RunConfig, run_and_export
 
 
 @register_scraper(
@@ -92,7 +94,11 @@ class EngineManufacturersListScraper(F1TableScraper):
 if __name__ == "__main__":
     run_and_export(
         EngineManufacturersListScraper,
-        "../../data/wiki/engines/f1_engine_manufacturers.json",
-        "../../data/wiki/engines/f1_engine_manufacturers.csv",
-        options=ScraperOptions(include_urls=True),
+        "engines/f1_engine_manufacturers.json",
+        "engines/f1_engine_manufacturers.csv",
+        run_config=RunConfig(
+            include_urls=True,
+            output_dir=Path("../../data/wiki"),
+            options=ScraperOptions(include_urls=True),
+        ),
     )
