@@ -13,6 +13,7 @@ from scrapers.base.table.scraper import F1TableScraper
 # NOWE:
 from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.registry import resolve_column_type
 
 
 class LapRecordsTableScraper(F1TableScraper):
@@ -151,11 +152,12 @@ class LapRecordsTableScraper(F1TableScraper):
                     model_fields=model_fields,
                 )
 
-                col = (
+                col_spec = (
                     self.columns.get(key)
                     or self.columns.get(header)
                     or self.default_column
                 )
+                col = resolve_column_type(col_spec)
 
                 col.apply(ctx, record)
 
