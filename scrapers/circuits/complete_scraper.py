@@ -10,7 +10,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 from scrapers.base.scraper import F1Scraper
-from scrapers.circuits.list_scraper import F1CircuitsListScraper
+from scrapers.circuits.circuits_list import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
@@ -29,7 +29,7 @@ class F1CompleteCircuitScraper(F1Scraper):
     mogą być puste.
     """
 
-    url = F1CircuitsListScraper.url
+    url = CircuitsListScraper.url
 
     def __init__(
         self,
@@ -56,7 +56,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         super().__init__(options=options)
 
         # Pod-scrapery współdzielą ten sam fetcher (cache + retry + headers)
-        self.list_scraper = F1CircuitsListScraper(
+        self.list_scraper = CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
                 fetcher=self.fetcher,

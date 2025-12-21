@@ -1,8 +1,6 @@
 import sys
 import types
 
-import pytest
-
 from scrapers.base.helpers.records import merge_two_records
 from scrapers.base.helpers.text import clean_wiki_text, split_delimited_text
 

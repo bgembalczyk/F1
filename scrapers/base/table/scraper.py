@@ -17,7 +17,6 @@ if TYPE_CHECKING:
     import requests
 
     from http_client.interfaces import HttpClientProtocol
-    from http_client.policies import ResponseCache
     from scrapers.base.exporters import DataExporter
 from scrapers.base.table.columns.registry import resolve_column_type
 from scrapers.base.table.columns.types.auto import AutoColumn

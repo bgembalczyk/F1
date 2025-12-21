@@ -2,9 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from scrapers.constructors.F1_privateer_teams_list_scraper import (
-    F1PrivateerTeamsListScraper,
-)
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 
 
 class StubFetcher:
@@ -36,7 +34,7 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
     """
 
     fetcher = StubFetcher(html)
-    scraper = F1PrivateerTeamsListScraper(fetcher=fetcher)
+    scraper = PrivateerTeamsListScraper(fetcher=fetcher)
 
     data = scraper.get_data()
     assert fetcher.calls == 1
@@ -111,7 +109,7 @@ def test_scraper_propagates_parsing_errors() -> None:
     </html>
     """
 
-    scraper = F1PrivateerTeamsListScraper(fetcher=StubFetcher(html))
+    scraper = PrivateerTeamsListScraper(fetcher=StubFetcher(html))
 
     with pytest.raises(RuntimeError, match="Nie znaleziono sekcji"):
         scraper.get_data()
