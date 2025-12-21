@@ -92,9 +92,15 @@ class F1Scraper(ABC):
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
+        fieldnames_strategy: str = "union",
     ) -> None:
         result = self.build_result()
-        self.exporter.to_csv(result, path, fieldnames=fieldnames)
+        self.exporter.to_csv(
+            result,
+            path,
+            fieldnames=fieldnames,
+            fieldnames_strategy=fieldnames_strategy,
+        )
 
     def to_dataframe(self):
         result = self.build_result()

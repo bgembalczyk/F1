@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from pathlib import Path
 import re
+from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence
 
 from scrapers.base.formatters import (
@@ -51,7 +51,8 @@ class DataExporter:
             return result
 
         data = _extract_data(result)
-        normalized = []
+        normalized: List[Dict[str, Any]] = []
+
         for record in data:
             updated = dict(record)
             for rule in self._normalization_rules:
@@ -64,6 +65,7 @@ class DataExporter:
                 source_url=result.source_url,
                 timestamp=result.timestamp,
             )
+
         return normalized
 
     def to_json(
@@ -79,8 +81,7 @@ class DataExporter:
             indent=indent,
             include_metadata=include_metadata,
         )
-        path = Path(path)
-        path.write_text(payload, encoding="utf-8")
+        Path(path).write_text(payload, encoding="utf-8")
 
     def to_csv(
         self,
@@ -88,14 +89,37 @@ class DataExporter:
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
+        fieldnames_strategy: str = "union",
     ) -> None:
-        payload = self._csv_formatter.format(
-            self._apply_normalization(result), fieldnames=fieldnames
-        )
+        """
+        Zapisz dane do CSV.
+
+        - Jeśli fieldnames podane -> używamy wprost.
+        - Jeśli fieldnames == None:
+            - strategy="union": stabilna unia kluczy z kolejnych rekordów
+            - strategy="first_row": tylko klucze z pierwszego rekordu
+        """
+        normalized = self._apply_normalization(result)
+        data = _extract_data(normalized)
+        if not data:
+            return
+
+        if fieldnames is None:
+            if fieldnames_strategy == "union":
+                fieldnames = _fieldnames_from_union(data)
+            elif fieldnames_strategy == "first_row":
+                fieldnames = _fieldnames_from_first_row(data)
+            else:
+                raise ValueError(
+                    "Nieznana strategia fieldnames: "
+                    f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
+                )
+
+        payload = self._csv_formatter.format(normalized, fieldnames=fieldnames)
         if not payload:
             return
-        path = Path(path)
-        path.write_text(payload, encoding="utf-8")
+
+        Path(path).write_text(payload, encoding="utf-8")
 
     def to_dataframe(self, result: ScrapeResult | List[Dict[str, Any]]):
         return self._dataframe_formatter.format(self._apply_normalization(result))
@@ -135,3 +159,16 @@ def _to_snake_case(value: str) -> str:
     cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
     cleaned = re.sub(r"_+", "_", cleaned).strip("_")
     return cleaned.lower()
+
+
+def _fieldnames_from_union(data: List[Dict[str, Any]]) -> List[str]:
+    keys: List[str] = []
+    for row in data:
+        for key in row.keys():
+            if key not in keys:
+                keys.append(key)
+    return keys
+
+
+def _fieldnames_from_first_row(data: List[Dict[str, Any]]) -> List[str]:
+    return list(data[0].keys()) if data else []
