@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
 from typing import Any, Dict, Optional
 
 import requests
+from bs4 import BeautifulSoup
 
 from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
-from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
@@ -35,7 +34,7 @@ class WikipediaInfoboxScraper:
         fetcher: HtmlFetcher | None = None,
         parser: InfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
-    ):
+    ) -> None:
         merged_headers: Dict[str, str] = {}
         if user_agent:
             merged_headers["User-Agent"] = user_agent
@@ -51,6 +50,7 @@ class WikipediaInfoboxScraper:
                 retries=retries,
                 cache=cache,
             )
+
         self.fetcher = fetcher
         self.timeout = timeout
         self.parser = parser or InfoboxHtmlParser()

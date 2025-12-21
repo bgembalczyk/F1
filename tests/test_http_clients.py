@@ -86,7 +86,10 @@ def test_retries_on_server_errors(name, factory, http_server):
     base_url, handler = http_server
     handler.retry_count = 0
 
-    client = factory(retries=1, timeout=1)
+    client = factory(
+        retry_policy=DefaultRetryPolicy(retries=1, backoff_seconds=0.01),
+        timeout=1,
+    )
     response = client.get(f"{base_url}/flaky")
 
     assert response.status_code == 200
@@ -110,7 +113,10 @@ def test_timeouts_are_respected(name, factory, http_server):
     base_url, handler = http_server
     handler.delay_seconds = 0.2
 
-    client = factory(timeout=0.05, retries=0)
+    client = factory(
+        timeout=0.05,
+        retry_policy=DefaultRetryPolicy(retries=0, backoff_seconds=0.01),
+    )
 
     with pytest.raises(Exception):
         client.get(f"{base_url}/slow")

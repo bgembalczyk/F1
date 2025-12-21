@@ -1,13 +1,15 @@
 """Klasa bazowa dla klientów HTTP."""
 
 from __future__ import annotations
+
 import json
 import time
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, Optional, cast
 
+from http_client.caching import WikipediaCachePolicy
 from http_client.interfaces import HttpClientProtocol
-from http_client.policies import RetryPolicy, RateLimiter
+from http_client.policies import RateLimiter, ResponseCache, RetryPolicy
 from http_client.rate_limiting import MinDelayRateLimiter
 from http_client.retry import DefaultRetryPolicy
 
@@ -28,15 +30,20 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         timeout: int = 10,
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
+        cache: ResponseCache | None = None,
         request_exception_cls: type[Exception],
     ) -> None:
         self.session = session
         self.timeout = int(timeout)
 
         self.retry_policy = retry_policy or DefaultRetryPolicy(
-            retries=0, backoff_seconds=0.5
+            retries=0,
+            backoff_seconds=0.5,
         )
         self.rate_limiter = rate_limiter or MinDelayRateLimiter()
+
+        # Domyślny cache dla Wikipedii (można wyłączyć: cache=None)
+        self.cache: ResponseCache | None = cache or WikipediaCachePolicy.with_file_cache()
 
         self.request_exception_cls = request_exception_cls
 
@@ -68,6 +75,7 @@ class BaseHttpClient(ABC, HttpClientProtocol):
                 merged_headers = dict(self.default_headers)
                 if headers:
                     merged_headers.update(headers)
+
                 response = request_func(
                     url,
                     headers=merged_headers,
@@ -119,8 +127,20 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
     ) -> str:
+        # Cache jest świadomie *tylko po URL* (headers/timeout pomijamy),
+        # bo to typowy use-case: Wikipedia GET.
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
+
         response = self.get(url, headers=headers, timeout=timeout)
-        return response.text
+        text = response.text
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
+        return text
 
     def get_json(
         self,
@@ -129,5 +149,5 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = None,
     ) -> Any:
-        response = self.get(url, headers=headers, timeout=timeout)
-        return json.loads(response.text)
+        # Celowo bazuje na get_text(), żeby cache zadziałał również dla JSON.
+        return json.loads(self.get_text(url, headers=headers, timeout=timeout))

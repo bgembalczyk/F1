@@ -1,15 +1,16 @@
 from __future__ import annotations
 
 from abc import ABC
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 from scrapers.base.exporters import DataExporter
-from scrapers.base.results import ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
+from scrapers.base.results import ScrapeResult
 
 
 # ======================================================================
@@ -72,11 +73,18 @@ class F1Scraper(ABC):
     # ---------- Eksport (delegowany) ----------
 
     def to_json(
-        self, path: str | Path, *, indent: int = 2, include_metadata: bool = False
+        self,
+        path: str | Path,
+        *,
+        indent: int = 2,
+        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         self.exporter.to_json(
-            result, path, indent=indent, include_metadata=include_metadata
+            result,
+            path,
+            indent=indent,
+            include_metadata=include_metadata,
         )
 
     def to_csv(
