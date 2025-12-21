@@ -7,6 +7,7 @@ import requests
 
 from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
+from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.utils import is_reference_link
 

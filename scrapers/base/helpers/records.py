@@ -1,27 +1,125 @@
-"""Funkcje do scalania i selekcji rekordów."""
+"""Record keying and merging helpers for lap record data."""
 
 from __future__ import annotations
+
 from typing import Any
+import re
 
-from scrapers.base.helpers.record_keys import (
-    extract_year_from_event,
-    record_key,
-    core_key,
+from scrapers.base.helpers.text import (
+    match_driver_loose,
+    match_vehicle_prefix,
+    normalize_text,
 )
-from scrapers.base.helpers.text_processing import (
-    driver_loose_match,
-    vehicle_prefix_match,
-    safe_text,
-)
-from scrapers.base.helpers.time_processing import time_seconds
+from scrapers.base.helpers.time import parse_time_key, parse_time_seconds
+
+_YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
+
+__all__ = [
+    "build_core_key",
+    "build_record_key",
+    "collect_other_fields",
+    "merge_race_lap_records",
+    "merge_record_group",
+    "merge_two_records",
+    "parse_event_year",
+    "select_best_date_and_year",
+    "select_best_driver",
+    "select_best_series",
+    "select_best_time",
+    "select_best_vehicle",
+]
 
 
-def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
+def parse_event_year(rec: dict[str, Any]) -> str | None:
+    """
+    Fallback dla rekordów tabelarycznych, które nie mają `year` ani `date`,
+    ale mają `event` (np. "1963 Aintree 200", url: ".../1963_Aintree_200").
+    """
+    event = rec.get("event")
+    candidates: list[str] = []
+
+    if isinstance(event, dict):
+        if event.get("text"):
+            candidates.append(str(event["text"]))
+        if event.get("url"):
+            candidates.append(str(event["url"]))
+    elif isinstance(event, str):
+        candidates.append(event)
+
+    for s in candidates:
+        m = _YEAR_RE.search(s)
+        if m:
+            return m.group(1)
+
+    return None
+
+
+def build_record_key(rec: dict[str, Any]) -> tuple | None:
+    """
+    Klucz do rozpoznawania tego samego rekordu:
+
+    (driver_text, vehicle_text, year, time_seconds)
+    """
+    driver_txt = normalize_text(rec.get("driver"))
+
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
+    vehicle_txt = normalize_text(vehicle_obj)
+
+    year: str | None = None
+    if rec.get("year") is not None:
+        year = str(rec["year"])
+    else:
+        date_obj = rec.get("date")
+        if isinstance(date_obj, dict):
+            iso = (date_obj.get("iso") or "").strip()
+            if iso:
+                year = iso[:4]
+
+    if not year:
+        year = parse_event_year(rec)
+
+    time_sec = parse_time_seconds(rec)
+
+    if not driver_txt or not vehicle_txt or not year or time_sec is None:
+        return None
+
+    return (driver_txt, vehicle_txt, year, round(time_sec, 6))
+
+
+def build_core_key(rec: dict[str, Any]) -> tuple | None:
+    """
+    Klucz „rdzeniowy" do łączenia rekordów nawet jeśli brakuje time.
+
+    (driver_text, vehicle_text, year)
+    """
+    driver_txt = normalize_text(rec.get("driver"))
+    vehicle_obj = rec.get("vehicle") or rec.get("car")
+    vehicle_txt = normalize_text(vehicle_obj)
+
+    year: str | None = None
+    if rec.get("year") is not None:
+        year = str(rec["year"])
+    else:
+        date_obj = rec.get("date")
+        if isinstance(date_obj, dict):
+            iso = (date_obj.get("iso") or "").strip()
+            if iso:
+                year = iso[:4]
+
+    if not year:
+        year = parse_event_year(rec)
+
+    if not driver_txt or not vehicle_txt or not year:
+        return None
+
+    return (driver_txt, vehicle_txt, year)
+
+
+def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
     """
     True, jeśli small nie wnosi sprzecznych danych względem big.
     Używamy tylko do bezpiecznego fallback-merge.
     """
-    # porównujemy tylko klucze, które są w small
     for k, sv in small.items():
         if sv is None:
             continue
@@ -30,12 +128,11 @@ def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
         bv = big.get(k)
 
-        # time porównujemy jako sekundy
         if k == "time":
-            st = time_seconds(
+            st = parse_time_seconds(
                 {"time": sv} if not isinstance(sv, dict) else {"time": sv}
             )
-            bt = time_seconds(
+            bt = parse_time_seconds(
                 {"time": bv} if not isinstance(bv, dict) else {"time": bv}
             )
             if st is None or bt is None:
@@ -44,18 +141,15 @@ def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
                 return False
             continue
 
-        # driver/vehicle porównujemy po tekście (luźno)
         if k == "driver":
-            if not driver_loose_match(sv, bv):
+            if not match_driver_loose(sv, bv):
                 return False
             continue
         if k in ("vehicle", "car"):
-            # jeśli small ma vehicle, a big też, to prefix match OK
-            if not vehicle_prefix_match(sv, bv, min_len=6):
+            if not match_vehicle_prefix(sv, bv, min_len=6):
                 return False
             continue
 
-        # dicty: porównuj po "text" jeśli jest
         if isinstance(sv, dict) and isinstance(bv, dict):
             stxt = (sv.get("text") or sv.get("name") or "").strip().lower()
             btxt = (bv.get("text") or bv.get("name") or "").strip().lower()
@@ -63,7 +157,6 @@ def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
                 return False
             continue
 
-        # fallback: proste porównanie
         if sv != bv:
             return False
 
@@ -75,13 +168,12 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     Scala dwa rekordy w jeden, preferując bogatsze dane:
     - driver/vehicle: preferuj dict z url
     - series: wybierz najlepsze przez select_best_series([..])
-    - date/year: wybierz najlepsze przez select_best_date_year([..]) + fallback z event
+    - date/year: wybierz najlepsze przez select_best_date_and_year([..]) + fallback z event
     - event/pozostałe: pierwszy niepusty
     - time: zawsze float w sekundach
     """
     merged: dict[str, Any] = dict(base)
 
-    # driver / vehicle (preferuj z URL)
     for key in ("driver",):
         a = base.get(key)
         b = extra.get(key)
@@ -90,7 +182,6 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
         elif b is not None:
             merged[key] = b
 
-    # vehicle może być w vehicle albo car
     a_v = base.get("vehicle") or base.get("car")
     b_v = extra.get("vehicle") or extra.get("car")
     if isinstance(a_v, dict) and a_v.get("url"):
@@ -98,18 +189,16 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     elif b_v is not None:
         merged["vehicle"] = b_v
 
-    # time -> sekundy
-    t = time_seconds(base)
+    t = parse_time_seconds(base)
     if t is None:
-        t = time_seconds(extra)
+        t = parse_time_seconds(extra)
     if t is not None:
         merged["time"] = float(t)
     merged.pop("time_seconds", None)
 
-    # date / year
-    best_date, best_year = select_best_date_year([base, extra])
+    best_date, best_year = select_best_date_and_year([base, extra])
     if best_year is None:
-        best_year = extract_year_from_event(base) or extract_year_from_event(extra)
+        best_year = parse_event_year(base) or parse_event_year(extra)
 
     if best_date is not None:
         merged["date"] = best_date
@@ -117,7 +206,6 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     elif best_year is not None:
         merged["year"] = best_year
 
-    # series/category/class -> series
     best_series = select_best_series([base, extra])
     if best_series is not None:
         merged["series"] = best_series
@@ -125,7 +213,6 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     merged.pop("class", None)
     merged.pop("class_", None)
 
-    # event i inne pola: pierwszy niepusty
     for k, v in extra.items():
         if k in {"time_seconds", "category", "class", "class_"}:
             continue
@@ -175,7 +262,6 @@ def select_best_driver(records: list[dict[str, Any]]) -> Any:
         if best is None:
             best = d
             continue
-        # preferuj driver jako dict z URL
         if (
             isinstance(d, dict)
             and d.get("url")
@@ -195,7 +281,6 @@ def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
         if best is None:
             best = v
             continue
-        # preferuj wersję z linkiem
         if (
             isinstance(v, dict)
             and v.get("url")
@@ -208,21 +293,12 @@ def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
     """
     Zwraca czas WYŁĄCZNIE jako sekundy (float).
-
-    Obsługuje:
-    - float/int (już sekundy),
-    - str typu "1:35.895" albo "38.891",
-    - dict z TimeColumn: {"text": "...", "seconds": ...}.
     """
-    # korzystamy z istniejącej logiki klucza czasu (ona już umie parsować stringi itp.)
-    from .time_processing import time_key
-
     for r in records:
-        tk = time_key(r)
+        tk = parse_time_key(r)
         if isinstance(tk, (int, float)):
             return float(tk)
 
-    # fallback (gdyby time_key zwrócił string w nietypowym przypadku)
     for r in records:
         t = r.get("time")
         if isinstance(t, dict):
@@ -240,17 +316,15 @@ def select_best_time(records: list[dict[str, Any]]) -> float | None:
     return None
 
 
-def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
+def select_best_date_and_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
     """Wybiera najlepszą datę i rok (preferuje dokładniejszy iso)."""
     best_date = None
     best_year = None
 
     for r in records:
-        # year
         if best_year is None and r.get("year") is not None:
             best_year = r.get("year")
 
-        # date
         d = r.get("date")
         if not d:
             continue
@@ -260,7 +334,6 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
 
         iso_cur = (best_date.get("iso") if isinstance(best_date, dict) else "") or ""
         iso_new = (d.get("iso") if isinstance(d, dict) else "") or ""
-        # preferuj dłuższy iso (YYYY-MM-DD > YYYY-MM > YYYY)
         if len(iso_new) > len(iso_cur):
             best_date = d
 
@@ -300,14 +373,12 @@ def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
             best_len = text_len
             continue
 
-        # jeśli ten ma URL, a dotychczasowy nie – bierzemy ten
         if has_url and not best_has_url:
             best = cand
             best_has_url = True
             best_len = text_len
             continue
 
-        # jeśli oba mają (albo oba nie mają) URL – wybieramy dłuższą nazwę
         if has_url == best_has_url and text_len > best_len:
             best = cand
             best_len = text_len
@@ -318,29 +389,26 @@ def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
 def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
     """
     Wynik:
-    - time: float (sekundy)  ✅ (bez time_seconds)
-    - series: dict{text,url} ✅ (z category/class)
+    - time: float (sekundy)
+    - series: dict{text,url}
     - year: jeśli brak date, bierzemy year (również z event)
     """
     merged = collect_other_fields(records)
 
     best_driver = select_best_driver(records)
     best_vehicle = select_best_vehicle(records)
-    best_date, best_year = select_best_date_year(records)
+    best_date, best_year = select_best_date_and_year(records)
     best_series = select_best_series(records)
 
-    # time zawsze w sekundach (float)
-    # bierzemy pierwsze sensowne z grupy (one są tym samym rekordem)
     t = None
     for r in records:
-        t = time_seconds(r)
+        t = parse_time_seconds(r)
         if t is not None:
             break
 
-    # year fallback z event (gdy nadal brak)
     if best_year is None:
         for r in records:
-            y = extract_year_from_event(r)
+            y = parse_event_year(r)
             if y:
                 best_year = y
                 break
@@ -366,17 +434,12 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
 def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """
     Łączy duplikujące się rekordy (infobox + tabela) w jeden bogaty rekord.
-
-    Etap A: twardy merge po record_key (driver+vehicle+year+time).
-    Etap B: merge po core_key (driver+vehicle+year) – pozwala łączyć brakujące time.
-    Etap C: fallback merge dla uciętych vehicle / braków year (driver+time + prefiks vehicle).
     """
-    # --- Etap A: twarde buckety po record_key
     key_buckets: dict[tuple, list[dict[str, Any]]] = {}
     leftovers: list[dict[str, Any]] = []
 
     for rec in records:
-        k = record_key(rec)
+        k = build_record_key(rec)
         if k is None:
             leftovers.append(rec)
         else:
@@ -386,16 +449,15 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         merge_record_group(rs) for rs in key_buckets.values()
     ]
 
-    # --- Etap B: spróbuj dołączyć leftovers po core_key (nie wymaga time)
     core_index: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        ck = core_key(rec)
+        ck = build_core_key(rec)
         if ck is not None:
             core_index.setdefault(ck, []).append(i)
 
     still_left: list[dict[str, Any]] = []
     for rec in leftovers:
-        ck = core_key(rec)
+        ck = build_core_key(rec)
         if ck is None:
             still_left.append(rec)
             continue
@@ -405,36 +467,33 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
             still_left.append(rec)
             continue
 
-        # jeśli jest kilka kandydatów (rzadkie), spróbuj dopasować po time jeśli rec ma time
-        rec_t = time_seconds(rec)
+        rec_t = parse_time_seconds(rec)
         chosen_idx = None
         if rec_t is not None:
             for idx in cand_ids:
-                tgt_t = time_seconds(merged_main[idx])
+                tgt_t = parse_time_seconds(merged_main[idx])
                 if tgt_t is not None and round(float(tgt_t), 6) == round(
                     float(rec_t), 6
                 ):
                     chosen_idx = idx
                     break
 
-        # fallback: pierwszy kandydat
         if chosen_idx is None:
             chosen_idx = cand_ids[0]
 
         merged_main[chosen_idx] = merge_two_records(merged_main[chosen_idx], rec)
 
-    # --- Etap C: dodatkowy fallback (driver+time + prefiks vehicle) dla uciętych wartości
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        d = safe_text(rec.get("driver"))
-        t = time_seconds(rec)
+        d = normalize_text(rec.get("driver"))
+        t = parse_time_seconds(rec)
         if d and t is not None:
             index_dt.setdefault((d, round(float(t), 6)), []).append(i)
 
     final_left: list[dict[str, Any]] = []
     for rec in still_left:
-        d = safe_text(rec.get("driver"))
-        t = time_seconds(rec)
+        d = normalize_text(rec.get("driver"))
+        t = parse_time_seconds(rec)
         if not d or t is None:
             final_left.append(rec)
             continue
@@ -449,7 +508,7 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         for idx in cand_ids:
             target = merged_main[idx]
             tv = target.get("vehicle") or target.get("car")
-            if vehicle_prefix_match(v, tv, min_len=10):
+            if match_vehicle_prefix(v, tv, min_len=10):
                 merged_main[idx] = merge_two_records(target, rec)
                 matched = True
                 break
@@ -457,18 +516,16 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         if not matched:
             final_left.append(rec)
 
-    # --- Etap D: fallback dla rekordów typu tylko (driver+time)
-    # indeks po time -> kandydaci w merged_main
     time_index: dict[float, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        t = time_seconds(rec)
+        t = parse_time_seconds(rec)
         if t is None:
             continue
         time_index.setdefault(round(float(t), 6), []).append(i)
 
     last_left: list[dict[str, Any]] = []
     for rec in final_left:
-        t = time_seconds(rec)
+        t = parse_time_seconds(rec)
         if t is None:
             last_left.append(rec)
             continue
@@ -481,11 +538,9 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
         matched = False
         for idx in cand_ids:
             target = merged_main[idx]
-
-            # driver luźno + small jest podzbiorem target -> bezpiecznie scal
-            if driver_loose_match(
+            if match_driver_loose(
                 rec.get("driver"), target.get("driver")
-            ) and is_subset_record(rec, target):
+            ) and is_record_subset(rec, target):
                 merged_main[idx] = merge_two_records(target, rec)
                 matched = True
                 break

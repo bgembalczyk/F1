@@ -1,3 +1,5 @@
+"""Helper table scraper for lap record tables."""
+
 from typing import Optional, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag  # <-- rozszerzamy o Tag
@@ -11,8 +13,11 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 
 # NOWE:
-from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
+
+__all__ = ["LapRecordsTableScraper"]
 
 
 class LapRecordsTableScraper(F1TableScraper):
