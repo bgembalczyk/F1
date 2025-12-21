@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any
+from typing import Any, Callable
 
 from scrapers.base.helpers.text import add_unique_name
 
@@ -96,14 +96,14 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
 
     result: list[dict[str, Any]] = []
     for lay in layouts:
-        lay_copy = dict(lay)
+        lay_copy: dict[str, Any] = dict(lay)
 
         # race_lap_record -> race_lap_records (lista)
         rlr = lay_copy.pop("race_lap_record", None)
         if rlr is not None:
             if not isinstance(rlr, list):
                 rlr = [rlr]
-            lay_copy["race_lap_records"] = rlr
+            lay_copy["race_lap_records"] = list(rlr)
 
         result.append(lay_copy)
 
@@ -229,3 +229,84 @@ def remove_empty_lists(obj: Any) -> Any:
     if isinstance(obj, list):
         return [remove_empty_lists(item) for item in obj]
     return obj
+
+
+def normalize_circuit_record_impl(
+    raw: dict[str, Any],
+    normalize_lap_records_fn: Callable[[dict[str, Any]], None] | None = None,
+) -> dict[str, Any]:
+    """
+    Wspólna implementacja normalizacji rekordu toru, używana zarówno przez
+    CircuitService.normalize_record() jak i _normalize_circuit_record_local().
+
+    Args:
+        raw: Surowy rekord toru
+        normalize_lap_records_fn: Opcjonalna funkcja do normalizacji rekordów okrążeń
+                                  (przyjmuje dict rekordu in-place)
+
+    Returns:
+        Znormalizowany rekord
+    """
+    out: dict[str, Any] = {}
+
+    details = raw.get("details")
+
+    infobox: dict[str, Any] = {}
+    normalized: dict[str, Any] = {}
+    if isinstance(details, dict):
+        infobox = (details or {}).get("infobox") or {}
+        normalized = infobox.get("normalized") or {}
+
+    # name + url
+    out["name"] = extract_circuit_names(raw, infobox, normalized)
+    out["url"] = extract_circuit_url(raw, details)
+
+    # proste pola z wierzchu
+    for key in (
+        "circuit_status",
+        "type",
+        "direction",
+        "grands_prix",
+        "seasons",
+        "grands_prix_held",
+    ):
+        if key in raw:
+            out[key] = raw[key]
+
+    # location
+    out["location"] = extract_circuit_location(raw, normalized)
+
+    # fia_grade + history (events)
+    fia_grade, history_events = extract_circuit_grade_and_history(normalized)
+    if fia_grade is not None:
+        out["fia_grade"] = fia_grade
+    if history_events is not None:
+        out["history"] = history_events
+
+    # layouts
+    layouts = extract_infobox_layouts(infobox)
+
+    # tables łączymy z layouts
+    tables = None
+    if isinstance(details, dict):
+        tables = details.get("tables")
+    tables = tables or []
+
+    merge_tables_into_layouts(tables, layouts)
+
+    if layouts:
+        out["layouts"] = layouts
+
+    # Normalizacja rekordów okrążeń (jeśli dostarczona funkcja)
+    if normalize_lap_records_fn is not None:
+        for lay in out.get("layouts", []):
+            records = lay.get("race_lap_records", []) or []
+            for r in records:
+                normalize_lap_records_fn(r)
+
+    # Clean url=None w całym wyjściu
+    out = cleanup_urls(out)
+    out = remove_empty_lists(out)
+
+    return out
+
