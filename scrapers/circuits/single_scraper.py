@@ -66,15 +66,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         try:
             parsed = self._parse_details(working_soup)
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._handle_scraper_error(exc):
-                return None
-            raise
         except Exception as exc:
-            parse_error = self._wrap_parse_error(exc)
-            if self._handle_scraper_error(parse_error):
+            error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            if self._handle_scraper_error(error):
                 return None
-            raise parse_error from exc
+            if error is exc:
+                raise
+            raise error from exc
 
         if not parsed:
             return None

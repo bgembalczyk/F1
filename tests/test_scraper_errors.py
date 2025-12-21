@@ -4,13 +4,6 @@ import sys
 from pathlib import Path
 import types
 
-import pytest
-from scrapers.base.errors import ScraperNetworkError, ScraperParseError
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.scraper import F1Scraper
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
@@ -53,6 +46,37 @@ if "requests" not in sys.modules:
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
+if "certifi" not in sys.modules:
+    certifi_stub = types.ModuleType("certifi")
+
+    def _where():
+        return ""
+
+    certifi_stub.where = _where
+    sys.modules["certifi"] = certifi_stub
+
+if "pandas" not in sys.modules:
+    pandas_stub = types.ModuleType("pandas")
+
+    class _StubDataFrame:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+    pandas_stub.DataFrame = _StubDataFrame
+    sys.modules["pandas"] = pandas_stub
+
+import pytest
+from scrapers.base.errors import (
+    ScraperNetworkError,
+    ScraperNotFoundError,
+    ScraperParseError,
+)
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper import F1Scraper
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+
 
 class DummyFetcher:
     def __init__(
@@ -88,28 +112,71 @@ class DummyListScraper(F1ListScraper):
     record_key = "item"
 
 
+class DummyInfoboxParser:
+    def parse_from_soup(self, soup):
+        raise ScraperNotFoundError("Brak infoboksu")
+
+
+class DummySingleCircuitScraper(F1SingleCircuitScraper):
+    def _fetch_soup(self, url: str):
+        from bs4 import BeautifulSoup
+
+        return BeautifulSoup("<html></html>", "html.parser")
+
+    def _is_circuit_like_article(self, soup) -> bool:
+        return True
+
+    def _parse_details(self, soup):
+        raise ScraperNotFoundError("Brak danych")
+
+
 def test_fetch_maps_network_errors_to_domain_exception():
-    scraper = DummyScraper(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+    scraper = DummyScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+    )
 
     with pytest.raises(ScraperNetworkError):
         scraper.fetch()
 
 
 def test_fetch_maps_parse_errors_to_domain_exception():
-    scraper = DummyParseScraper(fetcher=DummyFetcher(html="<html></html>"))
+    scraper = DummyParseScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+    )
 
     with pytest.raises(ScraperParseError):
         scraper.fetch()
 
 
 def test_list_scraper_skips_missing_list_with_log():
-    scraper = DummyListScraper(fetcher=DummyFetcher(html="<html></html>"))
+    scraper = DummyListScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+    )
 
     assert scraper.fetch() == []
 
 
 def test_single_circuit_scraper_wraps_network_errors():
-    scraper = F1SingleCircuitScraper(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+    scraper = F1SingleCircuitScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+    )
 
     with pytest.raises(ScraperNetworkError):
         scraper.fetch("https://example.com/wiki/Test")
+
+
+def test_single_circuit_scraper_soft_skips_not_found():
+    scraper = DummySingleCircuitScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+    )
+
+    assert scraper.fetch("https://example.com/wiki/Test") is None
+
+
+def test_infobox_scraper_soft_skips_not_found():
+    scraper = WikipediaInfoboxScraper(
+        fetcher=DummyFetcher(html="<html></html>"),
+        parser=DummyInfoboxParser(),
+    )
+
+    assert scraper.scrape("https://example.com/wiki/Test") == {}
