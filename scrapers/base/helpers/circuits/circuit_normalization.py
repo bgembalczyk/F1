@@ -4,9 +4,9 @@ from __future__ import annotations
 from typing import Any
 import re
 
-from scrapers.base.helpers.record_merging import merge_race_lap_records
-from scrapers.base.helpers.text_processing import add_name
-from scrapers.base.helpers.time_processing import simplify_time, simplify_date
+from scrapers.base.helpers.records import merge_race_lap_records
+from scrapers.base.helpers.text import add_unique_name
+from scrapers.base.helpers.time import normalize_date_value, normalize_time_value
 
 
 def extract_circuit_names(
@@ -18,13 +18,13 @@ def extract_circuit_names(
     name_list: list[str] = []
 
     # 1) circuit[text] -> name.list
-    add_name(name_set, name_list, circuit.get("text"))
+    add_unique_name(name_set, name_list, circuit.get("text"))
 
     # 2) infobox.title + infobox.normalized.name
     if infobox:
-        add_name(name_set, name_list, infobox.get("title"))
+        add_unique_name(name_set, name_list, infobox.get("title"))
     if normalized:
-        add_name(name_set, name_list, normalized.get("name"))
+        add_unique_name(name_set, name_list, normalized.get("name"))
 
     # 3) former_names -> name.former_names
     former_names: list[dict[str, Any]] = []
@@ -345,8 +345,8 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     for lay in out.get("layouts", []):
         records = lay.get("race_lap_records", [])
         for r in records:
-            simplify_time(r)
-            simplify_date(r)
+            normalize_time_value(r)
+            normalize_date_value(r)
 
     # Clean url=None in whole output
     out = cleanup_urls(out)

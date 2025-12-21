@@ -7,11 +7,8 @@ from typing import Optional, Sequence, Mapping, List, Dict, Any
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.utils import (
-    clean_wiki_text,
-    extract_links_from_cell,
-    find_section_elements,
-)
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.wiki import extract_links_from_cell, find_section_elements
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn

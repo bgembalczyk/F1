@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.utils import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
