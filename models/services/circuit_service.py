@@ -6,6 +6,19 @@ from dataclasses import dataclass
 from typing import Any
 import re
 
+from scrapers.base.helpers.text import (
+    add_unique_name,
+    normalize_text,
+    match_driver_loose,
+    match_vehicle_prefix,
+)
+from scrapers.base.helpers.time import (
+    parse_time_key,
+    parse_time_seconds,
+    normalize_time_value,
+    normalize_date_value,
+)
+
 
 
 @dataclass(frozen=True)
@@ -95,8 +108,8 @@ class CircuitService:
         for lay in out.get("layouts", []):
             records = lay.get("race_lap_records", [])
             for r in records:
-                simplify_time(r)
-                simplify_date(r)
+                normalize_time_value(r)
+                normalize_date_value(r)
 
         # Clean url=None in whole output
         out = _cleanup_urls(out)
@@ -132,13 +145,13 @@ def _extract_circuit_names(
     name_list: list[str] = []
 
     # 1) circuit[text] -> name.list
-    add_name(name_set, name_list, circuit.get("text"))
+    add_unique_name(name_set, name_list, circuit.get("text"))
 
     # 2) infobox.title + infobox.normalized.name
     if infobox:
-        add_name(name_set, name_list, infobox.get("title"))
+        add_unique_name(name_set, name_list, infobox.get("title"))
     if normalized:
-        add_name(name_set, name_list, normalized.get("name"))
+        add_unique_name(name_set, name_list, normalized.get("name"))
 
     # 3) former_names -> name.former_names
     former_names: list[dict[str, Any]] = []
@@ -413,10 +426,10 @@ def _record_key(rec: dict[str, Any]) -> tuple | None:
     wszystko powyższe się zgadza, a różni się tylko series/category,
     traktujemy rekordy jako ten sam lap record.
     """
-    driver_txt = safe_text(rec.get("driver"))
+    driver_txt = normalize_text(rec.get("driver"))
 
     vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = safe_text(vehicle_obj)
+    vehicle_txt = normalize_text(vehicle_obj)
 
     # year: najpierw pole year, potem date.iso, potem event
     year: str | None = None
@@ -432,7 +445,7 @@ def _record_key(rec: dict[str, Any]) -> tuple | None:
     if not year:
         year = _extract_year_from_event(rec)
 
-    time_sec = time_seconds(rec)
+    time_sec = parse_time_seconds(rec)
 
     if not driver_txt or not vehicle_txt or not year or time_sec is None:
         return None
@@ -449,9 +462,9 @@ def _core_key(rec: dict[str, Any]) -> tuple | None:
 
     - vehicle może być ucięty → dopasujemy fallbackiem prefiksowym w merge
     """
-    driver_txt = safe_text(rec.get("driver"))
+    driver_txt = normalize_text(rec.get("driver"))
     vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = safe_text(vehicle_obj)
+    vehicle_txt = normalize_text(vehicle_obj)
 
     year: str | None = None
     if rec.get("year") is not None:
@@ -488,8 +501,8 @@ def _is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
         # time porównujemy jako sekundy
         if k == "time":
-            st = time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
-            bt = time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
+            st = parse_time_seconds({"time": sv} if not isinstance(sv, dict) else {"time": sv})
+            bt = parse_time_seconds({"time": bv} if not isinstance(bv, dict) else {"time": bv})
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -498,12 +511,12 @@ def _is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
         # driver/vehicle porównujemy po tekście (luźno)
         if k == "driver":
-            if not driver_loose_match(sv, bv):
+            if not match_driver_loose(sv, bv):
                 return False
             continue
         if k in ("vehicle", "car"):
             # jeśli small ma vehicle, a big też, to prefix match OK
-            if not vehicle_prefix_match(sv, bv, min_len=6):
+            if not match_vehicle_prefix(sv, bv, min_len=6):
                 return False
             continue
 
@@ -551,9 +564,9 @@ def _merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str,
         merged["vehicle"] = b_v
 
     # time -> sekundy
-    t = time_seconds(base)
+    t = parse_time_seconds(base)
     if t is None:
-        t = time_seconds(extra)
+        t = parse_time_seconds(extra)
     if t is not None:
         merged["time"] = float(t)
     merged.pop("time_seconds", None)
@@ -663,7 +676,7 @@ def _select_best_time(records: list[dict[str, Any]]) -> float | None:
     - dict z TimeColumn: {"text": "...", "seconds": ...}.
     """
     for r in records:
-        tk = time_key(r)
+        tk = parse_time_key(r)
         if isinstance(tk, (int, float)):
             return float(tk)
 
@@ -778,7 +791,7 @@ def _merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
     # bierzemy pierwsze sensowne z grupy (one są tym samym rekordem)
     t = None
     for r in records:
-        t = time_seconds(r)
+        t = parse_time_seconds(r)
         if t is not None:
             break
 
@@ -851,11 +864,11 @@ def _merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any
             continue
 
         # jeśli jest kilka kandydatów (rzadkie), spróbuj dopasować po time jeśli rec ma time
-        rec_t = time_seconds(rec)
+        rec_t = parse_time_seconds(rec)
         chosen_idx = None
         if rec_t is not None:
             for idx in cand_ids:
-                tgt_t = time_seconds(merged_main[idx])
+                tgt_t = parse_time_seconds(merged_main[idx])
                 if tgt_t is not None and round(float(tgt_t), 6) == round(
                     float(rec_t), 6
                 ):
@@ -871,15 +884,15 @@ def _merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any
     # --- Etap C: dodatkowy fallback (driver+time + prefiks vehicle) dla uciętych wartości
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        d = safe_text(rec.get("driver"))
-        t = time_seconds(rec)
+        d = normalize_text(rec.get("driver"))
+        t = parse_time_seconds(rec)
         if d and t is not None:
             index_dt.setdefault((d, round(float(t), 6)), []).append(i)
 
     final_left: list[dict[str, Any]] = []
     for rec in still_left:
-        d = safe_text(rec.get("driver"))
-        t = time_seconds(rec)
+        d = normalize_text(rec.get("driver"))
+        t = parse_time_seconds(rec)
         if not d or t is None:
             final_left.append(rec)
             continue
@@ -894,7 +907,7 @@ def _merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any
         for idx in cand_ids:
             target = merged_main[idx]
             tv = target.get("vehicle") or target.get("car")
-            if vehicle_prefix_match(v, tv, min_len=10):
+            if match_vehicle_prefix(v, tv, min_len=10):
                 merged_main[idx] = _merge_two_records(target, rec)
                 matched = True
                 break
@@ -906,14 +919,14 @@ def _merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any
     # indeks po time -> kandydaci w merged_main
     time_index: dict[float, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        t = time_seconds(rec)
+        t = parse_time_seconds(rec)
         if t is None:
             continue
         time_index.setdefault(round(float(t), 6), []).append(i)
 
     last_left: list[dict[str, Any]] = []
     for rec in final_left:
-        t = time_seconds(rec)
+        t = parse_time_seconds(rec)
         if t is None:
             last_left.append(rec)
             continue
@@ -928,7 +941,7 @@ def _merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any
             target = merged_main[idx]
 
             # driver luźno + small jest podzbiorem target -> bezpiecznie scal
-            if driver_loose_match(
+            if match_driver_loose(
                 rec.get("driver"), target.get("driver")
             ) and _is_subset_record(rec, target):
                 merged_main[idx] = _merge_two_records(target, rec)
