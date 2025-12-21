@@ -46,7 +46,7 @@ class HtmlTableParser:
             cleaned_cells = [
                 clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
             ]
-            if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+            if self._is_repeated_header_row(cleaned_cells, headers):
                 continue
 
             row = dict(zip(headers, cells))
@@ -80,3 +80,12 @@ class HtmlTableParser:
 
         header_set = set(headers)
         return all(h in header_set for h in self.expected_headers)
+
+    @staticmethod
+    def _is_repeated_header_row(
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
+    ) -> bool:
+        return len(cleaned_cells) == len(headers) and list(cleaned_cells) == list(
+            headers
+        )
