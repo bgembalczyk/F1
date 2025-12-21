@@ -66,20 +66,31 @@ class WikipediaSectionByIdMixin:
             }
         ]
 
+    def extract_section_by_id(
+        self,
+        soup: BeautifulSoup,
+        fragment: str,
+    ) -> Optional[BeautifulSoup]:
+        """
+        Publiczna metoda do wycinania sekcji (dla kompatybilności wstecznej).
+        Deleguje do _extract_section_by_id().
+        """
+        return self._extract_section_by_id(soup, fragment)
+
     def _extract_section_by_id(
         self,
         soup: BeautifulSoup,
         fragment: str,
     ) -> Optional[BeautifulSoup]:
         """
+        Wycina sekcję artykułu Wikipedii na podstawie fragmentu URL.
+
         1) Próbuje znaleźć element o id=fragment (oraz warianty z _ / spacjami).
         2) Jeśli się nie uda – szuka nagłówka po tekście (np. "Bugatti Circuit").
         3) Sekcję definiuje jako:
            [blok nagłówka] + wszystkie rodzeństwa aż do kolejnego nagłówka
            TEGO SAMEGO poziomu (hN).
         """
-
-        # --- 1) znajdź węzeł po id (z normalizacją _) ---
         candidates = {fragment}
         candidates.add(fragment.replace(" ", "_"))
         candidates.add(fragment.replace("_", " "))
@@ -93,13 +104,11 @@ class WikipediaSectionByIdMixin:
         header: Optional[Tag] = None
 
         if node:
-            # przypadek: id jest BEZPOŚREDNIO na <hN>
             if node.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
                 header = node
             else:
                 header = node.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"])
 
-        # --- 2) fallback: szukanie nagłówka po tekście ---
         if header is None:
             target_text = fragment.replace("_", " ").strip().lower()
 
@@ -119,13 +128,11 @@ class WikipediaSectionByIdMixin:
         if header is None:
             return None
 
-        # Poziom nagłówka (np. 2 dla h2)
         try:
             header_level = int(header.name[1])
         except (TypeError, ValueError, IndexError):
             header_level = None
 
-        # --- 3) uwzględnij wrapper <div class="mw-heading ..."> jeśli jest ---
         heading_block: Tag = header
         parent = header.parent
         if isinstance(parent, Tag):
@@ -136,19 +143,14 @@ class WikipediaSectionByIdMixin:
             ):
                 heading_block = parent
 
-        # UWAGA: nie przenosimy heading_block do nowego soup-a przed zebraniem rodzeństw.
         collected: List[Any] = [heading_block]
 
-        # --- 4) zbierz rodzeństwa aż do nagłówka tego samego poziomu ---
         for sib in heading_block.next_siblings:
             if isinstance(sib, Tag):
                 same_level_header_tag: Optional[Tag] = None
 
-                # Przypadek 1: nagłówek bez wrappera
                 if sib.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
                     same_level_header_tag = sib
-
-                # Przypadek 2: wrapper <div class="mw-heading ..."><hN>...</hN></div>
                 elif "mw-heading" in (sib.get("class") or []):
                     h_child = sib.find(
                         ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False
@@ -163,7 +165,6 @@ class WikipediaSectionByIdMixin:
                         sib_level = None
 
                     if sib_level == header_level:
-                        # doszliśmy do następnej sekcji tego samego poziomu
                         break
 
             collected.append(sib)
@@ -174,3 +175,4 @@ class WikipediaSectionByIdMixin:
 
         section_soup = BeautifulSoup(html, "html.parser")
         return section_soup
+

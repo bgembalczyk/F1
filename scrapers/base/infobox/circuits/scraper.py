@@ -13,10 +13,10 @@ from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
 from scrapers.base.infobox.circuits.services.history import CircuitHistoryParser
 from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordParser
 from scrapers.base.infobox.circuits.services.layouts import CircuitLayoutsParser
-from scrapers.base.infobox.circuits.services.sections import WikipediaSectionExtractor
 from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
 from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
@@ -53,7 +53,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         )
 
         # --- Serwisy ---
-        self.section_extractor = WikipediaSectionExtractor()
+        self.section_extractor = WikipediaSectionByIdMixin()
         self.text_utils = InfoboxTextUtils()
         self.geo_parser = CircuitGeoParser()
         self.history_parser = CircuitHistoryParser()
