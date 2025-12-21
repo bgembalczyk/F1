@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import warnings
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import List, Optional, Sequence
@@ -14,7 +13,6 @@ from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
-from scrapers.config import default_http_config
 
 # PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
@@ -41,32 +39,9 @@ class F1Scraper(ABC):
         self.include_urls = options.include_urls
 
         # Preferuj gotowy fetcher w options.
-        # HtmlFetcher po merge jest config-driven (default_http_config),
-        # więc jeśli go nie ma — tworzymy go "domyślnie".
+        # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
         if options.fetcher is None:
-            legacy_used = any(
-                value is not None
-                for value in (
-                    options.session,
-                    options.headers,
-                    options.http_client,
-                    options.timeout,
-                    options.retries,
-                    options.cache,
-                )
-            )
-            if legacy_used:
-                warnings.warn(
-                    "Konfigurację HTTP przekazuj przez skonfigurowany HttpClient "
-                    "(ScraperOptions.http_client) albo gotowy HtmlFetcher "
-                    "(ScraperOptions.fetcher). Parametry session/headers/timeout/"
-                    "retries/cache w ScraperOptions traktuj jako legacy i nie są "
-                    "już używane do budowy HtmlFetcher.",
-                    DeprecationWarning,
-                    stacklevel=2,
-                )
-
-            self.fetcher = HtmlFetcher(config=default_http_config())
+            self.fetcher = HtmlFetcher(config=options.to_http_config())
         else:
             self.fetcher = options.fetcher
 
