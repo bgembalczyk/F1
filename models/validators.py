@@ -72,6 +72,23 @@ def validate_seasons(seasons: Iterable[Dict[str, Any]] | None) -> list[Dict[str,
     return result
 
 
+def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
+    status_normalized = (value or "").strip().lower()
+    allowed_normalized: list[str] = []
+    allowed_set: set[str] = set()
+    for option in allowed:
+        normalized = str(option).strip().lower()
+        if normalized and normalized not in allowed_set:
+            allowed_set.add(normalized)
+            allowed_normalized.append(normalized)
+    if status_normalized not in allowed_set:
+        allowed_display = ", ".join(allowed_normalized)
+        raise ValueError(
+            f"Pole {field_name} musi mieć jedną z wartości: {allowed_display}"
+        )
+    return status_normalized
+
+
 def model_to_dict(model: Any) -> Dict[str, Any]:
     if hasattr(model, "model_dump"):
         return model.model_dump()

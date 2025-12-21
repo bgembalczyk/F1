@@ -1,12 +1,12 @@
+import pytest
 from dataclasses import dataclass
 import re
 import sys
 import types
-from pathlib import Path
+
 from models.circuit import Circuit
 from models.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.scraper import F1TableScraper
-import pytest
 
 if "bs4" not in sys.modules:
     bs4_stub = types.ModuleType("bs4")
@@ -65,11 +65,6 @@ if "certifi" not in sys.modules:
     certifi_stub = types.ModuleType("certifi")
     certifi_stub.where = lambda: ""
     sys.modules["certifi"] = certifi_stub
-
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))
-
 
 def test_circuit_rejects_invalid_url():
     with pytest.raises(ValueError):

@@ -8,6 +8,7 @@ from models.validators import (
     validate_int,
     validate_link,
     validate_links,
+    validate_status,
 )
 from models.validators import validate_seasons
 
@@ -29,7 +30,11 @@ class Circuit:
 
     def __post_init__(self) -> None:
         self.circuit = validate_link(self.circuit, field_name="circuit")
-        self.circuit_status = self._validate_status(self.circuit_status)
+        self.circuit_status = validate_status(
+            self.circuit_status,
+            {"current", "future", "former"},
+            "circuit_status",
+        )
         self.last_length_used_km = validate_float(
             self.last_length_used_km, "last_length_used_km"
         )
@@ -40,13 +45,3 @@ class Circuit:
         self.grands_prix = validate_links(self.grands_prix, field_name="grands_prix")
         self.grands_prix_held = validate_int(self.grands_prix_held, "grands_prix_held")
         self.seasons = validate_seasons(self.seasons)
-
-    @staticmethod
-    def _validate_status(status: str) -> str:
-        status_normalized = (status or "").strip().lower()
-        allowed = {"current", "future", "former"}
-        if status_normalized not in allowed:
-            raise ValueError(
-                "circuit_status musi być jedną z wartości current/future/former"
-            )
-        return status_normalized
