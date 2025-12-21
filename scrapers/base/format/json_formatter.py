@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from typing import List, Any
+from typing import Any
 
 from scrapers.base.format.formatter_helpers import _extract_data
 from scrapers.base.results import ScrapeResult
@@ -10,7 +10,7 @@ from scrapers.base.results import ScrapeResult
 class JsonFormatter:
     def format(
         self,
-        result: ScrapeResult | List[Any],
+        result: ScrapeResult,
         *,
         indent: int = 2,
         include_metadata: bool = False,
@@ -20,20 +20,17 @@ class JsonFormatter:
 
     def _json_payload(
         self,
-        result: ScrapeResult | List[Any],
+        result: ScrapeResult,
         *,
         include_metadata: bool,
     ) -> Any:
         if not include_metadata:
             return _extract_data(result)
 
-        if isinstance(result, ScrapeResult):
-            return {
-                "meta": {
-                    "source_url": result.source_url,
-                    "timestamp": result.timestamp.isoformat(),
-                },
-                "data": _extract_data(result),
-            }
-
-        return {"meta": None, "data": _extract_data(result)}
+        return {
+            "meta": {
+                "source_url": result.source_url,
+                "timestamp": result.timestamp.isoformat(),
+            },
+            "data": _extract_data(result),
+        }

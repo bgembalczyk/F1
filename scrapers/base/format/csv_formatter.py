@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import csv
 import io
-from typing import List, Any, Optional, Sequence
+from typing import List, Optional, Sequence
 
 from scrapers.base.format.formatter_helpers import _extract_data
 from scrapers.base.results import ScrapeResult
@@ -11,7 +11,7 @@ from scrapers.base.results import ScrapeResult
 class CsvFormatter:
     def format(
         self,
-        result: ScrapeResult | List[Any],
+        result: ScrapeResult,
         *,
         fieldnames: Optional[Sequence[str]] = None,
     ) -> str:

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Any
+from typing import Any
 
 import pandas as pd
 
@@ -9,5 +9,5 @@ from scrapers.base.results import ScrapeResult
 
 
 class PandasDataFrameFormatter:
-    def format(self, result: ScrapeResult | List[Any]):
+    def format(self, result: ScrapeResult) -> Any:
         return pd.DataFrame(_extract_data(result))

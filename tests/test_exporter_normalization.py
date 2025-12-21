@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 
-from scrapers.base.exporters import DataExporter
+from scrapers.base.export.exporters import DataExporter
+from scrapers.base.results import ScrapeResult
 
 
 def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:
@@ -39,6 +40,22 @@ def test_exporter_allows_custom_normalization_rules(tmp_path) -> None:
 
     output = tmp_path / "custom.json"
     exporter.to_json(data, output)
+
+
+def test_exporter_json_matches_for_list_and_result(tmp_path) -> None:
+    exporter = DataExporter()
+    data = [{"driver": "Max"}, {"driver": "Lewis"}]
+    result = ScrapeResult(data=data, source_url=None)
+
+    output_list = tmp_path / "list.json"
+    output_result = tmp_path / "result.json"
+
+    exporter.to_json(data, output_list)
+    exporter.to_json(result, output_result)
+
+    assert output_list.read_text(encoding="utf-8") == output_result.read_text(
+        encoding="utf-8"
+    )
 
     normalized = json.loads(output.read_text(encoding="utf-8"))
     assert normalized == [{"total_wins": 41}]

@@ -9,13 +9,13 @@ ExportRecord: TypeAlias = Dict[str, Any]
 NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
 
 
-def _extract_data(result: "ScrapeResult | List[Any]") -> List[Any]:
+def _extract_data(result: "ScrapeResult") -> List[Any]:
     # Lekka lokalna stubs — import typu w czasie wykonania, żeby uniknąć cyklicznych importów
     from scrapers.base.results import ScrapeResult
 
     if isinstance(result, ScrapeResult):
         return list(result.data)
-    return list(result)
+    raise TypeError("Expected ScrapeResult.")
 
 
 def _normalize_record_keys(record: Dict[str, Any]) -> Dict[str, Any]:
