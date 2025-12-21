@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 from abc import ABC
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Optional, Sequence
+
+from pathlib import Path
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -14,9 +16,9 @@ from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
 from scrapers.base.exporters import DataExporter
 from scrapers.base.results import ScrapeResult
-from scrapers.base.exporters import DataExporter, ScrapeResult
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.parsers import SoupParser
+from scrapers.base.types import ExportableRecord
 
 
 # ======================================================================
@@ -51,11 +53,11 @@ class F1Scraper(ABC):
         self.parser = parser
         self.exporter = exporter or DataExporter()
 
-        self._data: List[Dict[str, Any]] = []
+        self._data: list[ExportableRecord] = []
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> list[ExportableRecord]:
         """Pobierz dane z sieci i sparsuj je do listy słowników."""
         html = self._download()
         soup = BeautifulSoup(html, "html.parser")
@@ -63,13 +65,15 @@ class F1Scraper(ABC):
         self._data = parser.parse(soup)
         return self._data
 
-    def get_data(self) -> List[Dict[str, Any]]:
+    def get_data(self) -> list[ExportableRecord]:
         """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
         if not self._data:
             self.fetch()
         return self._data
 
-    def build_result(self, data: Optional[List[Dict[str, Any]]] = None) -> ScrapeResult:
+    def build_result(
+        self, data: Optional[list[ExportableRecord]] = None
+    ) -> ScrapeResult:
         """Utwórz ScrapeResult z metadanymi."""
         return ScrapeResult(
             data=data or self.get_data(),
@@ -104,11 +108,11 @@ class F1Scraper(ABC):
     def _download(self) -> str:
         return self.fetcher.get_text(self.url)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         """Parsowanie BS4 -> lista rekordów."""
         raise NotImplementedError
 
-    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         return self._parse_soup(soup)
 
     # ---------- Pomocnicze ----------

@@ -1,9 +1,10 @@
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any
 
 import requests
 from bs4 import BeautifulSoup, Tag
 
 from http_client.interfaces import HttpClientProtocol
+from models.records import CircuitDetailsRecord
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.utils import clean_wiki_text
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -47,7 +48,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.url: str = ""
         self._original_url: Optional[str] = None
 
-    def fetch(self, url: str) -> Optional[Dict[str, Any]]:
+    def fetch(self, url: str) -> Optional[CircuitDetailsRecord]:
         """
         Zwraca dict z kluczami:
         - url     – oryginalny URL (z ewentualnym fragmentem),
@@ -113,7 +114,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     # Parsowanie treści
     # ------------------------------
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[CircuitDetailsRecord]:
         return [
             {
                 "url": self._original_url or self.url,
@@ -136,7 +137,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
         return infobox_scraper.parse_from_soup(soup)
 
-    def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """
         Zbiera tabele z najszybszymi okrążeniami („lap records / fastest laps”).
 
@@ -157,7 +158,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
 
-        results: List[Dict[str, Any]] = []
+        results: list[dict[str, Any]] = []
 
         # --- pomocnicza funkcja: zgadnij domyślną nazwę layoutu dla tabeli ---
         def guess_table_layout(table: Tag) -> Optional[str]:
@@ -270,7 +271,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                     results.append(record)
 
             # --- grupowanie po layoutach ---
-            layouts: Dict[str, List[Dict[str, Any]]] = {}
+            layouts: Dict[str, list[dict[str, Any]]] = {}
             for rec in results:
                 layout_name = rec.get("layout")
                 if not layout_name:

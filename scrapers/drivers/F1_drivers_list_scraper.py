@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List
+from typing import Any, cast
 
+from models.records import DriverRecord, DriversChampionshipsRecord, SeasonRecord
 from scrapers.base.helpers.utils import parse_seasons
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.bool import BoolColumn
@@ -96,7 +97,7 @@ class F1DriversListScraper(F1TableScraper):
     #  Parsowanie kolumny Drivers' Championships
     # =====================================================================
 
-    def _parse_drivers_championships(self, raw: Any) -> Dict[str, Any]:
+    def _parse_drivers_championships(self, raw: Any) -> DriversChampionshipsRecord:
         """
         Parsuje tekst z komórki "Drivers' Championships" do postaci:
 
@@ -117,7 +118,7 @@ class F1DriversListScraper(F1TableScraper):
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
 
         count = 0
-        seasons_parts: List[str] = []
+        seasons_parts: list[str] = []
 
         if lines:
             # pierwsza linia zwykle zaczyna się od liczby tytułów
@@ -146,7 +147,7 @@ class F1DriversListScraper(F1TableScraper):
             return {"count": count, "seasons": []}
 
         seasons_text = ", ".join(seasons_parts)
-        seasons = parse_seasons(seasons_text)
+        seasons: list[SeasonRecord] = parse_seasons(seasons_text)
 
         return {"count": count, "seasons": seasons}
 
@@ -154,13 +155,13 @@ class F1DriversListScraper(F1TableScraper):
     #  Główne fetch
     # =====================================================================
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> list[DriverRecord]:
         """
         Minimalne fetch:
         - NIE nadpisujemy is_active / is_world_champion — to robi BoolColumn.
         - Parsujemy tylko kolumnę 'drivers_championships' do dict {count, seasons}.
         """
-        rows = super().fetch()
+        rows = cast(list[DriverRecord], super().fetch())
 
         for row in rows:
             champs_raw = row.get("drivers_championships")

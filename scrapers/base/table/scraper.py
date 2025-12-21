@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABC
 from dataclasses import asdict, fields, is_dataclass
-from typing import Optional, Sequence, Mapping, List, Dict, Any
+from typing import Optional, Sequence, Mapping, Any
 
 from bs4 import BeautifulSoup, Tag
 
@@ -16,6 +16,7 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.types import ExportableRecord
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -52,7 +53,7 @@ class F1TableScraper(F1Scraper, ABC):
 
     # --- szablon parsowania ---
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
@@ -61,7 +62,7 @@ class F1TableScraper(F1Scraper, ABC):
         header_cells = header_row.find_all(["th", "td"])
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
-        records: List[Dict[str, Any]] = []
+        records: list[ExportableRecord] = []
         for tr in table.find_all("tr")[1:]:
             cells = tr.find_all(["td", "th"])
 
@@ -127,14 +128,14 @@ class F1TableScraper(F1Scraper, ABC):
         row: Tag,
         cells: Sequence[Tag],
         headers: Sequence[str],
-    ) -> Optional[Dict[str, Any]]:
+    ) -> Optional[ExportableRecord]:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
         - wybiera typ kolumny z column_types,
         - deleguje całą logikę do handlera kolumny.
         """
-        record: Dict[str, Any] = {}
+        record: dict[str, Any] = {}
         model_fields = self._model_fields()
 
         for header, cell in zip(headers, cells):

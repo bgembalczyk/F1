@@ -7,6 +7,8 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from models.records import SeasonRecord
+
 # przypisy Wikipedii: [1], [b], [note 3], [citation needed], ...
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
@@ -70,9 +72,7 @@ def _parse_number(
         return None
 
 
-def parse_seasons(
-    text: str, *, current_year: int | None = None
-) -> list[dict[str, Any]]:
+def parse_seasons(text: str, *, current_year: int | None = None) -> list[SeasonRecord]:
     """
     Zamienia tekst w stylu:
         '1973, 1975–1982, 1984'  lub '2014–present'
@@ -81,7 +81,7 @@ def parse_seasons(
 
     'present' (case-insensitive) → aktualny rok.
     """
-    result: list[dict[str, Any]] = []
+    result: list[SeasonRecord] = []
     seen: set[int] = set()
 
     if not text:

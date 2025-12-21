@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 import requests
 from bs4 import BeautifulSoup, Tag
@@ -12,6 +12,7 @@ from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsM
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.scraper import F1Scraper
+from scrapers.base.types import ExportableRecord
 
 
 class F1CircuitInfoboxScraper(
@@ -57,7 +58,7 @@ class F1CircuitInfoboxScraper(
     # Publiczne API
     # ------------------------------
 
-    def fetch(self, url: str) -> Dict[str, Any]:
+    def fetch(self, url: str) -> ExportableRecord:
         """
         Główne API używane wewnętrznie – obsługuje #fragment (sekcje),
         przycina infoboksy po infobox-full-data itd.
@@ -86,7 +87,7 @@ class F1CircuitInfoboxScraper(
 
         return self.parse_from_soup(soup)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         """API bazowej klasy – deleguje do parse_from_soup."""
         return [self.parse_from_soup(soup)]
 
@@ -129,7 +130,7 @@ class F1CircuitInfoboxScraper(
 
         # każda tabela infoboksa
         for table in soup.find_all("table", class_=_has_infobox_class):
-            rows: List[Tag] = table.find_all("tr")
+            rows: list[Tag] = table.find_all("tr")
 
             cut_index: Optional[int] = None
             for idx, row in enumerate(rows):

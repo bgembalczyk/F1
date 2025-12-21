@@ -1,10 +1,11 @@
 from abc import ABC
-from typing import Optional, List, Dict, Any
+from typing import Optional
 
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.utils import find_section_elements
 from scrapers.base.scraper import F1Scraper
+from scrapers.base.types import ExportableRecord
 
 
 class F1ListScraper(F1Scraper, ABC):
@@ -23,9 +24,9 @@ class F1ListScraper(F1Scraper, ABC):
     record_key: Optional[str] = None
     url_key: str = "url"
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         root_list = self._find_list_root(soup)
-        items: List[Dict[str, Any]] = []
+        items: list[ExportableRecord] = []
 
         for li in root_list.find_all("li", recursive=False):
             rec = self.parse_item(li)
@@ -45,7 +46,7 @@ class F1ListScraper(F1Scraper, ABC):
 
         raise RuntimeError("Nie znaleziono żadnej listy.")
 
-    def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
+    def parse_item(self, li: Tag) -> Optional[ExportableRecord]:
         """Zamienia pojedynczy <li> na słownik."""
 
         if not self.record_key:
@@ -58,7 +59,7 @@ class F1ListScraper(F1Scraper, ABC):
         if not name:
             return None
 
-        record: Dict[str, Any] = {self.record_key: name}
+        record: dict[str, object] = {self.record_key: name}
         if self.include_urls and a and a.has_attr("href"):
             record[self.url_key] = self._full_url(a["href"])
 

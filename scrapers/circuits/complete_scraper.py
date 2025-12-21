@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Dict, Optional, cast
 
 import requests
 from bs4 import BeautifulSoup
@@ -10,6 +10,7 @@ from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
+from models.records import CircuitCompleteRecord, CircuitRecord
 from scrapers.base.registry import register_scraper
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
@@ -60,9 +61,9 @@ class F1CompleteCircuitScraper(F1Scraper):
             fetcher=self.fetcher,
         )
 
-    def fetch(self) -> List[Dict[str, Any]]:
-        circuits = self.list_scraper.fetch()
-        complete: List[Dict[str, Any]] = []
+    def fetch(self) -> list[CircuitCompleteRecord]:
+        circuits = cast(list[CircuitRecord], self.list_scraper.fetch())
+        complete: list[CircuitCompleteRecord] = []
 
         for circuit in circuits:
             circuit_url: Optional[str] = None
@@ -77,13 +78,15 @@ class F1CompleteCircuitScraper(F1Scraper):
             full_record = dict(circuit)
             full_record["details"] = details
 
-            normalized = normalize_circuit_record(full_record)
+            normalized = cast(
+                CircuitCompleteRecord, normalize_circuit_record(full_record)
+            )
             complete.append(normalized)
 
         self._data = complete
         return self._data
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[CircuitCompleteRecord]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""
         raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
 

@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from typing import cast
+
+from models.records import CircuitRecord
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -91,6 +94,9 @@ class F1CircuitsListScraper(F1TableScraper):
         "grands_prix": LinksListColumn(),
         # alternatywnie: LinksListColumn() + mała modyfikacja tekstu w osobnej kolumnie
     }
+
+    def fetch(self) -> list[CircuitRecord]:
+        return cast(list[CircuitRecord], super().fetch())
 
 
 if __name__ == "__main__":

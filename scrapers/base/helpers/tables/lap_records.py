@@ -1,4 +1,4 @@
-from typing import Optional, List, Dict, Any
+from typing import Optional, Any
 
 from bs4 import BeautifulSoup, Tag  # <-- rozszerzamy o Tag
 import re  # <-- nowy
@@ -13,6 +13,7 @@ from scrapers.base.table.scraper import F1TableScraper
 # NOWE:
 from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.types import ExportableRecord
 
 
 class LapRecordsTableScraper(F1TableScraper):
@@ -57,7 +58,7 @@ class LapRecordsTableScraper(F1TableScraper):
         "date": DateColumn(),
     }
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         """
         Nie używamy standardowego fetch()/_parse_soup – w F1SingleCircuitScraper
         sami podajemy konkretne tabele i nagłówki i wołamy parse_row().
@@ -68,11 +69,11 @@ class LapRecordsTableScraper(F1TableScraper):
             "korzystaj z parse_row() na konkretnych tabelach."
         )
 
-    def _split_cell_on_br(self, cell: Tag) -> List[Tag]:
+    def _split_cell_on_br(self, cell: Tag) -> list[Tag]:
         html = cell.decode_contents()
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
-        segments: List[Tag] = []
+        segments: list[Tag] = []
         soup = cell.soup or BeautifulSoup("", "html.parser")
 
         for part in parts:
@@ -91,9 +92,9 @@ class LapRecordsTableScraper(F1TableScraper):
     def parse_multi_row(
         self,
         row: Tag,
-        cells: List[Tag],
-        headers: List[str],
-    ) -> List[Dict[str, Any]]:
+        cells: list[Tag],
+        headers: list[str],
+    ) -> list[ExportableRecord]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
 
@@ -111,7 +112,7 @@ class LapRecordsTableScraper(F1TableScraper):
         Komórki z jedną wartością są duplikowane do wszystkich segmentów.
         """
         # Najpierw dla każdej komórki zbuduj listę segmentów
-        per_cell_segments: List[List[Tag]] = []
+        per_cell_segments: list[list[Tag]] = []
         max_segments = 1
 
         for cell in cells:
@@ -121,11 +122,11 @@ class LapRecordsTableScraper(F1TableScraper):
                 max_segments = len(segs)
 
         model_fields = self._model_fields()
-        records: List[Dict[str, Any]] = []
+        records: list[ExportableRecord] = []
 
         # Dla każdego segmentu budujemy osobny rekord
         for idx in range(max_segments):
-            record: Dict[str, Any] = {}
+            record: dict[str, Any] = {}
 
             for header, cell, segs in zip(headers, cells, per_cell_segments):
                 # jeśli komórka ma mniej segmentów, powielamy ostatni
