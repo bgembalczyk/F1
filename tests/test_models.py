@@ -4,6 +4,7 @@ import re
 import sys
 import types
 
+from models.base import ValidatedModel
 from models.circuit import Circuit
 from models.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.scraper import F1TableScraper
@@ -79,6 +80,38 @@ def test_engine_manufacturer_rejects_negative_values():
             manufacturer_status="former",
             races_entered=-1,
         )
+
+
+def test_circuit_rejects_invalid_status():
+    with pytest.raises(ValueError, match="Pole circuit_status"):
+        Circuit(
+            circuit={"text": "Test", "url": "https://example.com"},
+            circuit_status="invalid",
+        )
+
+
+def test_circuit_rejects_invalid_season_url():
+    with pytest.raises(ValueError, match="Pole seasons zawiera nieprawidłowy URL"):
+        Circuit(
+            circuit={"text": "Test", "url": "https://example.com"},
+            circuit_status="current",
+            seasons=[{"year": 2024, "url": "invalid"}],
+        )
+
+
+def test_validated_model_calls_validate():
+    calls = []
+
+    @dataclass
+    class DummyModel(ValidatedModel):
+        value: int
+
+        def validate(self) -> None:
+            calls.append(self.value)
+
+    DummyModel(1)
+
+    assert calls == [1]
 
 
 def test_table_scraper_instantiates_model_and_filters_unknown_fields():

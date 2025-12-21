@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
+from models.base import ValidatedModel
 from models.validators import (
     validate_float,
     validate_int,
@@ -14,7 +15,7 @@ from models.validators import (
 
 
 @dataclass
-class EngineManufacturer:
+class EngineManufacturer(ValidatedModel):
     manufacturer: Dict[str, Optional[str]]
     manufacturer_status: str
     engines_built_in: List[Dict[str, Optional[str]]] = field(default_factory=list)
@@ -29,7 +30,7 @@ class EngineManufacturer:
     wcc: Optional[int] = None
     wdc: Optional[int] = None
 
-    def __post_init__(self) -> None:
+    def validate(self) -> None:
         self.manufacturer = validate_link(self.manufacturer, field_name="manufacturer")
         self.manufacturer_status = validate_status(
             self.manufacturer_status,

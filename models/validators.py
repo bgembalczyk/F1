@@ -11,9 +11,9 @@ def _coerce_number(value: Any, type_: type, field_name: str):
     try:
         number = type_(value)
     except (TypeError, ValueError):
-        raise ValueError(f"{field_name} musi być liczbą") from None
+        raise ValueError(f"Pole {field_name} musi być liczbą") from None
     if number < 0:
-        raise ValueError(f"{field_name} nie może być ujemne")
+        raise ValueError(f"Pole {field_name} nie może być ujemne")
     return number
 
 
@@ -66,7 +66,7 @@ def validate_seasons(seasons: Iterable[Dict[str, Any]] | None) -> list[Dict[str,
         validated = {"year": year_int}
         if url:
             if not _is_valid_url(url):
-                raise ValueError("Sezon zawiera nieprawidłowy URL")
+            raise ValueError("Pole seasons zawiera nieprawidłowy URL")
             validated["url"] = url
         result.append(validated)
     return result

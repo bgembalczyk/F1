@@ -3,18 +3,19 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
+from models.base import ValidatedModel
 from models.validators import (
     validate_float,
     validate_int,
     validate_link,
     validate_links,
+    validate_seasons,
     validate_status,
 )
-from models.validators import validate_seasons
 
 
 @dataclass
-class Circuit:
+class Circuit(ValidatedModel):
     circuit: Dict[str, Optional[str]]
     circuit_status: str
     type: Optional[str] = None
@@ -28,7 +29,7 @@ class Circuit:
     seasons: List[Dict[str, Any]] = field(default_factory=list)
     grands_prix_held: Optional[int] = None
 
-    def __post_init__(self) -> None:
+    def validate(self) -> None:
         self.circuit = validate_link(self.circuit, field_name="circuit")
         self.circuit_status = validate_status(
             self.circuit_status,
