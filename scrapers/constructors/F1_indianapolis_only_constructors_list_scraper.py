@@ -1,7 +1,13 @@
 from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "constructors_indy",
+    "constructors/f1_indianapolis_only_constructors.json",
+    "constructors/f1_indianapolis_only_constructors.csv",
+)
 class F1IndianapolisOnlyConstructorsListScraper(F1ListScraper):
     """
     Lista konstruktorów 'Indianapolis 500 only'

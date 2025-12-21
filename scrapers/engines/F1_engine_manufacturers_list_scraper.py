@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -14,6 +15,11 @@ from models.engine_manufacturer import EngineManufacturer
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "engine_manufacturers",
+    "engines/f1_engine_manufacturers.json",
+    "engines/f1_engine_manufacturers.csv",
+)
 class F1EngineManufacturersListScraper(F1TableScraper):
     """
     Lista konstruktorów silników F1:

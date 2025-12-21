@@ -1,96 +1,26 @@
 from __future__ import annotations
 
 import argparse
-import importlib
 import inspect
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Type
+from typing import Any, Type
 
 from scrapers.base.exporters import ScrapeResult
+from scrapers.base.registry import (
+    SCRAPER_REGISTRY,
+    ScraperConfig,
+    load_default_scrapers,
+)
 from scrapers.base.scraper import F1Scraper
 
+def _scraper_choices() -> list[str]:
+    load_default_scrapers()
+    return sorted(SCRAPER_REGISTRY.keys())
 
-_ScraperConfig = Tuple[str, str, Path, Optional[Path], Dict[str, Any]]
 
-SCRAPER_CONFIGS: Dict[str, _ScraperConfig] = {
-    "drivers": (
-        "scrapers.drivers.F1_drivers_list_scraper",
-        "F1DriversListScraper",
-        Path("drivers/f1_drivers.json"),
-        Path("drivers/f1_drivers.csv"),
-        {},
-    ),
-    "grands_prix": (
-        "scrapers.grands_prix.F1_grands_prix_list_scraper",
-        "F1GrandsPrixListScraper",
-        Path("grands_prix/f1_grands_prix_by_title.json"),
-        Path("grands_prix/f1_grands_prix_by_title.csv"),
-        {},
-    ),
-    "engine_manufacturers": (
-        "scrapers.engines.F1_engine_manufacturers_list_scraper",
-        "F1EngineManufacturersListScraper",
-        Path("engines/f1_engine_manufacturers.json"),
-        Path("engines/f1_engine_manufacturers.csv"),
-        {},
-    ),
-    "engine_manufacturers_indy": (
-        "scrapers.engines.F1_indianapolis_only_engine_manufacturers_list_scraper",
-        "F1IndianapolisOnlyEngineManufacturersListScraper",
-        Path("engines/f1_indianapolis_only_engine_manufacturers.json"),
-        Path("engines/f1_indianapolis_only_engine_manufacturers.csv"),
-        {},
-    ),
-    "constructors_2025": (
-        "scrapers.constructors.F1_constructors_2025_list_scraper",
-        "F1Constructors2025ListScraper",
-        Path("constructors/f1_constructors_2025.json"),
-        Path("constructors/f1_constructors_2025.csv"),
-        {},
-    ),
-    "constructors_former": (
-        "scrapers.constructors.F1_former_constructors_list_scraper",
-        "F1FormerConstructorsListScraper",
-        Path("constructors/f1_former_constructors.json"),
-        Path("constructors/f1_former_constructors.csv"),
-        {},
-    ),
-    "constructors_indy": (
-        "scrapers.constructors.F1_indianapolis_only_constructors_list_scraper",
-        "F1IndianapolisOnlyConstructorsListScraper",
-        Path("constructors/f1_indianapolis_only_constructors.json"),
-        Path("constructors/f1_indianapolis_only_constructors.csv"),
-        {},
-    ),
-    "constructors_privateer": (
-        "scrapers.constructors.F1_privateer_teams_list_scraper",
-        "F1PrivateerTeamsListScraper",
-        Path("constructors/f1_privateer_teams.json"),
-        Path("constructors/f1_privateer_teams.csv"),
-        {},
-    ),
-    "seasons": (
-        "scrapers.seasons.F1_seasons_list_scraper",
-        "F1SeasonsListScraper",
-        Path("seasons/f1_seasons.json"),
-        Path("seasons/f1_seasons.csv"),
-        {},
-    ),
-    "circuits": (
-        "scrapers.circuits.list_scraper",
-        "F1CircuitsListScraper",
-        Path("circuits/f1_circuits.json"),
-        Path("circuits/f1_circuits.csv"),
-        {},
-    ),
-    "circuits_complete": (
-        "scrapers.circuits.complete_scraper",
-        "F1CompleteCircuitScraper",
-        Path("circuits/f1_circuits_extended.json"),
-        Path("circuits/f1_circuits_extended.csv"),
-        {},
-    ),
-}
+def _get_scraper_config(name: str) -> ScraperConfig:
+    load_default_scrapers()
+    return SCRAPER_REGISTRY[name]
 
 
 def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
@@ -138,18 +68,13 @@ def run_and_export(
         scraper.exporter.to_csv(result, csv_path)
 
 
-def _load_scraper(module_path: str, class_name: str) -> Type[F1Scraper]:
-    module = importlib.import_module(module_path)
-    return getattr(module, class_name)
-
-
 def _cli() -> None:
     parser = argparse.ArgumentParser(
         description="Uruchamia wskazany scraper i zapisuje dane do JSON oraz CSV.",
     )
     parser.add_argument(
         "scraper",
-        choices=sorted(SCRAPER_CONFIGS.keys()),
+        choices=_scraper_choices(),
         help="Nazwa scrappera (klucz z konfiguracji w scrapers/base/run.py)",
     )
     parser.add_argument(
@@ -166,14 +91,12 @@ def _cli() -> None:
     parser.set_defaults(include_urls=True)
     args = parser.parse_args()
 
-    module_path, class_name, json_rel, csv_rel, default_kwargs = SCRAPER_CONFIGS[
-        args.scraper
-    ]
-    scraper_cls = _load_scraper(module_path, class_name)
-    kwargs = dict(default_kwargs)
+    config = _get_scraper_config(args.scraper)
+    scraper_cls = config.scraper_cls
+    kwargs = dict(config.default_kwargs)
 
-    json_path = args.output_dir / json_rel
-    csv_path = args.output_dir / csv_rel if csv_rel is not None else None
+    json_path = args.output_dir / config.json_rel
+    csv_path = args.output_dir / config.csv_rel if config.csv_rel is not None else None
 
     run_and_export(
         scraper_cls,
