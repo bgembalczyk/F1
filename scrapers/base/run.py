@@ -10,6 +10,15 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import SCRAPER_REGISTRY, ScraperConfig, load_default_scrapers
 from scrapers.base.scraper import F1Scraper
 
+# Logging (z PR). Jeśli moduł nie istnieje w repo, fallback na print.
+try:  # pragma: no cover
+    from scrapers.base.logging import configure_logging, logger  # type: ignore
+except Exception:  # pragma: no cover
+    logger = None
+
+    def configure_logging(level: str) -> None:  # type: ignore
+        return
+
 
 def _scraper_choices() -> list[str]:
     load_default_scrapers()
@@ -58,23 +67,19 @@ def _make_scraper(
     """
     ctor_kwargs = dict(kwargs)
 
-    if supports_urls:
-        # Preferowany sposób: options.include_urls
-        if hasattr(options, "include_urls"):
+    if _supports_param(scraper_cls, "options"):
+        # Scraper może (ale nie musi) używać include_urls z options.
+        if supports_urls and hasattr(options, "include_urls"):
             options.include_urls = include_urls
+        ctor_kwargs.setdefault("options", options)
+        return scraper_cls(**ctor_kwargs)
 
-        # Przekazuj options tylko jeśli scraper to wspiera
-        if _supports_param(scraper_cls, "options"):
-            ctor_kwargs.setdefault("options", options)
-        else:
-            # Fallback: jeżeli nie ma options, spróbuj include_urls jako kwarg
-            if _supports_param(scraper_cls, "include_urls"):
-                ctor_kwargs.setdefault("include_urls", include_urls)
-    else:
-        # supports_urls=False -> nadal możemy przekazać options, jeśli scraper go wymaga/używa,
-        # ale nie ruszamy include_urls
-        if _supports_param(scraper_cls, "options"):
-            ctor_kwargs.setdefault("options", options)
+    # Brak parametru "options" -> ewentualnie include_urls jako kwarg,
+    # ale tylko jeśli:
+    # - caller mówi, że ma to sens (supports_urls=True),
+    # - scraper to przyjmuje (albo ma **kwargs).
+    if supports_urls and _supports_param(scraper_cls, "include_urls"):
+        ctor_kwargs.setdefault("include_urls", include_urls)
 
     return scraper_cls(**ctor_kwargs)
 
@@ -108,7 +113,11 @@ def run_and_export(
     )
 
     data = scraper.fetch()
-    print(f"Pobrano rekordów: {len(data)}")
+
+    if logger is not None:
+        logger.info("Pobrano rekordów: %s", len(data))
+    else:
+        print(f"Pobrano rekordów: {len(data)}")
 
     result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
 
@@ -142,13 +151,22 @@ def _cli() -> None:
         action="store_false",
         help="Wyłącza zbieranie URL-i tam, gdzie scraper to wspiera.",
     )
+    parser.add_argument(
+        "--log-level",
+        default="INFO",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        help="Poziom logowania (domyślnie: INFO).",
+    )
     parser.set_defaults(include_urls=True)
     args = parser.parse_args()
+
+    configure_logging(args.log_level)
 
     config = _get_scraper_config(args.scraper)
     scraper_cls = config.scraper_cls
     kwargs = dict(getattr(config, "default_kwargs", {}) or {})
 
+    # kompatybilność z różnymi nazwami w configu
     json_rel = getattr(config, "json_rel", None) or getattr(config, "json_rel_path", None)
     csv_rel = getattr(config, "csv_rel", None) or getattr(config, "csv_rel_path", None)
 
