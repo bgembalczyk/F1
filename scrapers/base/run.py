@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import inspect
 from pathlib import Path
 from typing import Any, Type
 
@@ -11,7 +10,9 @@ from scrapers.base.registry import (
     ScraperConfig,
     load_default_scrapers,
 )
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
+
 
 def _scraper_choices() -> list[str]:
     load_default_scrapers()
@@ -21,10 +22,6 @@ def _scraper_choices() -> list[str]:
 def _get_scraper_config(name: str) -> ScraperConfig:
     load_default_scrapers()
     return SCRAPER_REGISTRY[name]
-
-
-def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
-    return name in inspect.signature(cls.__init__).parameters
 
 
 def _ensure_parent(path: Path) -> None:
@@ -48,10 +45,12 @@ def run_and_export(
     """
 
     kwargs = dict(scraper_kwargs)
-    if _includes_param(scraper_cls, "include_urls") and "include_urls" not in kwargs:
-        kwargs["include_urls"] = include_urls
+    options = kwargs.pop("options", None)
+    if options is None:
+        options = ScraperOptions()
+    options.include_urls = include_urls
 
-    scraper = scraper_cls(**kwargs)
+    scraper = scraper_cls(options=options, **kwargs)
     data = scraper.fetch()
 
     print(f"Pobrano rekordów: {len(data)}")

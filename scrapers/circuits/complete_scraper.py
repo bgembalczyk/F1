@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
-
-import requests
 from bs4 import BeautifulSoup
 
-from http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
+from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.run import run_and_export
@@ -37,27 +35,33 @@ class F1CompleteCircuitScraper(F1Scraper):
     def __init__(
         self,
         *,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClientProtocol] = None,
-        fetcher: HtmlFetcher | None = None,
+        options: ScraperOptions | None = None,
     ) -> None:
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                session=session,
-                headers=headers,
-                http_client=http_client,
+        if options is None:
+            options = ScraperOptions()
+        options.include_urls = True
+        if options.fetcher is None:
+            options.fetcher = HtmlFetcher(
+                session=options.session,
+                headers=options.headers,
+                http_client=options.http_client,
+                timeout=options.timeout,
+                retries=options.retries,
+                cache=options.cache,
             )
         super().__init__(
-            include_urls=True,
-            fetcher=fetcher,
+            options=options,
         )
         self.list_scraper = F1CircuitsListScraper(
-            include_urls=True,
-            fetcher=self.fetcher,
+            options=ScraperOptions(
+                include_urls=True,
+                fetcher=self.fetcher,
+            ),
         )
         self.single_scraper = F1SingleCircuitScraper(
-            fetcher=self.fetcher,
+            options=ScraperOptions(
+                fetcher=self.fetcher,
+            ),
         )
 
     def fetch(self) -> List[Dict[str, Any]]:

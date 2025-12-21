@@ -1,16 +1,14 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
-
-import requests
 from bs4 import BeautifulSoup, Tag
 
-from http_client.interfaces import HttpClientProtocol
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 
 
@@ -26,30 +24,27 @@ class F1CircuitInfoboxScraper(
     def __init__(
         self,
         *,
-        timeout: int = 10,
-        include_urls: bool = True,
-        session: Optional[requests.Session] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional[HttpClientProtocol] = None,
-        fetcher: HtmlFetcher | None = None,
+        options: ScraperOptions | None = None,
     ) -> None:
-        if fetcher is None:
-            fetcher = HtmlFetcher(
-                session=session,
-                headers=headers,
-                http_client=http_client,
-                timeout=timeout,
+        if options is None:
+            options = ScraperOptions()
+        if options.fetcher is None:
+            options.fetcher = HtmlFetcher(
+                session=options.session,
+                headers=options.headers,
+                http_client=options.http_client,
+                timeout=options.timeout,
+                retries=options.retries,
+                cache=options.cache,
             )
         F1Scraper.__init__(
             self,
-            include_urls=include_urls,
-            fetcher=fetcher,
+            options=options,
         )
         WikipediaInfoboxScraper.__init__(
             self,
-            timeout=timeout,
-            headers=headers,
-            fetcher=fetcher,
+            timeout=options.timeout,
+            fetcher=options.fetcher,
         )
         self.url: str = ""
 
