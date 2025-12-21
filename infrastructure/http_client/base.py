@@ -7,8 +7,10 @@ import time
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, Optional, cast
 
+from infrastructure.http_client.caching import WikipediaCachePolicy
+from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.policies import RateLimiter, RetryPolicy
+from infrastructure.http_client.policies import RateLimiter, ResponseCache, RetryPolicy
 from infrastructure.http_client.rate_limiting import MinDelayRateLimiter
 from infrastructure.http_client.retry import DefaultRetryPolicy
 
@@ -25,26 +27,53 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         self,
         *,
         session: Any,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: int = 10,
-        retry_policy: RetryPolicy | None = None,
-        rate_limiter: RateLimiter | None = None,
+        config: HttpClientConfig,
         request_exception_cls: type[Exception],
     ) -> None:
+        """
+        Inicjalizacja klienta HTTP.
+
+        Args:
+            session: Obiekt sesji (requests.Session lub requests_shim.Session)
+            config: Konfiguracja klienta HTTP
+            request_exception_cls: Klasa wyjątku dla błędów requestów
+        """
         self.session = session
-        self.timeout = int(timeout)
-
-        self.retry_policy = retry_policy or DefaultRetryPolicy(
-            retries=0,
-            backoff_seconds=0.5,
-        )
-        self.rate_limiter = rate_limiter or MinDelayRateLimiter()
-
+        self.config = config
+        self.timeout = int(config.timeout)
         self.request_exception_cls = request_exception_cls
 
+        # Buduj retry policy
+        if config.retry_policy is None:
+            self.retry_policy: RetryPolicy = DefaultRetryPolicy(
+                retries=config.retries,
+                backoff_seconds=config.backoff_seconds,
+            )
+        else:
+            self.retry_policy = config.retry_policy
+
+        # Buduj rate limiter
+        if config.rate_limiter is None:
+            self.rate_limiter: RateLimiter = MinDelayRateLimiter(
+                min_delay_seconds=config.min_delay_seconds,
+                jitter_seconds=config.jitter_seconds,
+            )
+        else:
+            self.rate_limiter = config.rate_limiter
+
+        # Buduj cache
+        if config.cache is None:
+            self.cache: ResponseCache | None = WikipediaCachePolicy.with_file_cache(
+                cache_dir=config.cache_dir,
+                ttl_days=config.cache_ttl_days,
+            )
+        else:
+            self.cache = config.cache
+
+        # Merge headers
         merged_headers = dict(self.DEFAULT_HEADERS)
-        if headers:
-            merged_headers.update(headers)
+        if config.headers:
+            merged_headers.update(config.headers)
         self.default_headers = merged_headers
 
     def _backoff_sleep(self, attempt: int) -> None:
@@ -123,14 +152,22 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         timeout: Optional[int] = None,
     ) -> str:
         """
-        Zwraca response.text.
+        Zwraca response.text z obsługą cache.
 
-        UWAGA: cache nie jest w BaseHttpClient — jeśli chcesz cache,
-        użyj konkretnego klienta (np. HttpClient/UrllibHttpClient),
-        który go implementuje.
+        Cache działa tylko po URL (headers/timeout są ignorowane w cache key).
         """
+        if self.cache is not None:
+            cached = self.cache.get(url)
+            if cached is not None:
+                return cached
+
         response = self.get(url, headers=headers, timeout=timeout)
-        return response.text
+        text = response.text
+
+        if self.cache is not None:
+            self.cache.set(url, text)
+
+        return text
 
     def get_json(
         self,
@@ -142,7 +179,6 @@ class BaseHttpClient(ABC, HttpClientProtocol):
         """
         Parsuje JSON z odpowiedzi.
 
-        Celowo bazuje na get_text(), żeby jeśli konkretny klient
-        nadpisuje get_text() (np. dodaje cache), to cache działał też dla JSON.
+        Bazuje na get_text(), więc cache działa również dla JSON.
         """
         return json.loads(self.get_text(url, headers=headers, timeout=timeout))

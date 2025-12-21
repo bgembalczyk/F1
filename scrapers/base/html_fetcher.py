@@ -4,6 +4,7 @@ from pathlib import Path
 
 from infrastructure.http_client.caching import FileCache, WikipediaCachePolicy
 from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.config import HttpClientConfig
 
 from scrapers.config import HttpConfig, default_http_config
 
@@ -28,13 +29,17 @@ class HtmlFetcher:
                     )
                 )
 
-            http_client = UrllibHttpClient(
-                session=config.session,
-                config=None,  # używamy "legacy overrides" (kompatybilne z clients.py)
+            # Używamy HttpClientConfig
+            client_config = HttpClientConfig(
                 headers=headers,
                 timeout=config.timeout,
                 retries=config.retries,
                 cache=cache,
+            )
+
+            http_client = UrllibHttpClient(
+                session=config.session,
+                config=client_config,
             )
 
         self.http_client = http_client
