@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
 
@@ -20,6 +20,7 @@ from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
+from scrapers.base.types import ExportableRecord
 
 # PR wnosił ustandaryzowane wyjątki – bierzemy je, jeśli istnieją w projekcie.
 try:  # pragma: no cover
@@ -95,7 +96,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
     # Publiczne API
     # ------------------------------
 
-    def fetch(self, url: str) -> Dict[str, Any]:
+    def fetch(self, url: str) -> ExportableRecord:
         """
         Główne API używane wewnętrznie – obsługuje #fragment (sekcje),
         przycina infoboksy po infobox-full-data itd.
@@ -150,7 +151,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
                 return {}
             raise wrapped from exc
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         """API bazowej klasy – deleguje do parse_from_soup."""
         return [self.parse_from_soup(soup)]
 
@@ -190,7 +191,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
             return "infobox" in classes
 
         for table in soup.find_all("table", class_=_has_infobox_class):
-            rows: List[Tag] = table.find_all("tr")
+            rows: list[Tag] = table.find_all("tr")
 
             cut_index: Optional[int] = None
             for idx, row in enumerate(rows):

@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from typing import Optional, Dict, Any, List
+from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.utils import clean_wiki_text  # <- FIX: spójnie z resztą helperów
+from scrapers.base.helpers.text import clean_wiki_text  # spójnie z resztą helperów
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
@@ -81,11 +81,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         except Exception as exc:
             raise self._wrap_network_error(exc) from exc
 
-        # 1) filtr po kategoriach – jeżeli to nie wygląda na tor, nie scrapujemy dalej
         if not self._is_circuit_like_article(soup_full):
             return None
 
-        # 2) jeśli mamy fragment, zawężamy się do danej sekcji
         working_soup = soup_full
         if fragment:
             section = self._extract_section_by_id(soup_full, fragment)
@@ -111,10 +109,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             raise ScraperParseError("URL must be set before downloading")
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
-    # ------------------------------
-    # Heurystyki: kategorie + sekcje
-    # ------------------------------
-
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         """Sprawdza, czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
         cat_div = soup.find("div", id="mw-normal-catlinks")
@@ -135,10 +129,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 return True
         return False
 
-    # ------------------------------
-    # Parsowanie treści
-    # ------------------------------
-
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return [
             {
@@ -149,9 +139,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        """
-        Parsuje infobox toru z przekazanego soup.
-        """
         infobox_scraper = F1CircuitInfoboxScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -162,11 +149,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         return infobox_scraper.parse_from_soup(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        """
-        Zbiera tabele z najszybszymi okrążeniami („lap records / fastest laps”).
-
-        UWAGA: Zwracamy listę layoutów dla *pierwszej* pasującej tabeli (jak w main).
-        """
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -199,7 +181,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 continue
 
             header_cells = header_row.find_all(["th", "td"])
-            headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+            headers = [
+                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
+            ]
 
             if not lap_scraper._headers_match(headers):
                 header_set = set(headers)
@@ -245,7 +229,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                             current_layout = text
                         continue
 
-                cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
+                cleaned_cells = [
+                    clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
+                ]
                 if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
                     continue
 

@@ -140,8 +140,13 @@ class F1Scraper(ABC):
 
         try:
             soup = BeautifulSoup(html, "html.parser")
-            parser = self.parser or self
-            raw_records = parser.parse(soup)  # type: ignore[assignment]
+
+            # Poprawka: zawsze wołamy publiczne parse(), a nie zakładamy .parse na parserze
+            if self.parser is None:
+                raw_records = self.parse(soup)
+            else:
+                raw_records = self.parser.parse(soup)  # type: ignore[call-arg, attr-defined]
+
             normalized_records = self.normalize_records(raw_records)
             self._data = self.to_export_records(normalized_records)
         except ScraperError as exc:  # type: ignore[misc]

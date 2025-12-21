@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Sequence, TypeAlias, Union
+from typing import Any, Callable, Dict, List, Optional, Sequence, TypeAlias
 
 from scrapers.base.formatters import CsvFormatter, JsonFormatter, PandasDataFrameFormatter
 from scrapers.base.results import ScrapeResult
 
-# ExportRecord: nie wiążemy się twardo z "scrapers.base.records.ExportRecord",
-# bo w Twoich branchach to wygląda na element "main-only".
+# Nie wiążemy się twardo z "scrapers.base.types.ExportableRecord",
+# bo w Twoich branchach to nie jest stabilne API.
 ExportRecord: TypeAlias = Dict[str, Any]
 NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
 
@@ -52,7 +52,7 @@ class DataExporter:
         Normalizacja działa TYLKO dla listy rekordów dict-like.
 
         Jeśli data zawiera obiekty niebędące mappingiem — pozostawiamy je bez zmian
-        (to utrzymuje kompatybilność z PR-owym API).
+        (kompatybilność ze ścieżkami, gdzie formatter sam potrafi serializować).
         """
         if not self._normalization_rules:
             return result

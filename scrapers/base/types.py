@@ -1,0 +1,11 @@
+from __future__ import annotations
+
+from typing import Any, Iterable, Protocol
+
+
+class ExportableRecord(Protocol):
+    def __getitem__(self, key: str) -> Any: ...
+
+    def keys(self) -> Iterable[str]: ...
+
+    def items(self) -> Iterable[tuple[str, Any]]: ...

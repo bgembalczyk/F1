@@ -6,6 +6,7 @@ from typing import List, Optional
 
 from scrapers.base.records import ExportRecord
 
+
 @dataclass(frozen=True)
 class ScrapeResult:
     data: List[ExportRecord]

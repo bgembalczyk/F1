@@ -4,15 +4,15 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.html_fetcher import HtmlFetcher
+from models.mappers.serialization import to_dict
 from scrapers.base.helpers.circuits.circuit_normalization import normalize_circuit_record
+from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from models.mappers.serialization import to_dict
 
 
 @register_scraper(
