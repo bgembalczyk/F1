@@ -5,9 +5,15 @@ from bs4 import Tag
 
 from scrapers.base.helpers.utils import clean_wiki_text, parse_seasons
 from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "constructors_privateer",
+    "constructors/f1_privateer_teams.json",
+    "constructors/f1_privateer_teams.csv",
+)
 class F1PrivateerTeamsListScraper(F1ListScraper):
     """
     Lista privateer teams (sekcja 'Privateer teams').

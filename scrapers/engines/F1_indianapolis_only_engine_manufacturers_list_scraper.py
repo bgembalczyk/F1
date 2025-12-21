@@ -1,7 +1,13 @@
 from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "engine_manufacturers_indy",
+    "engines/f1_indianapolis_only_engine_manufacturers.json",
+    "engines/f1_indianapolis_only_engine_manufacturers.csv",
+)
 class F1IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
     """
     Lista 'Indianapolis 500 only' dla producentów silników.

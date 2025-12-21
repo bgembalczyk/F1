@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
-from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import requests
 
-from http_client.caching import WikipediaCachePolicy, FileCache
-from http_client.clients import UrllibHttpClient
 from http_client.interfaces import HttpClientProtocol
 from http_client.policies import ResponseCache
+from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.helpers.utils import is_reference_link
 
 
@@ -34,6 +32,7 @@ class WikipediaInfoboxScraper:
         retries: int = 0,
         http_client: Optional[HttpClientProtocol] = None,
         cache: ResponseCache | None = None,
+        fetcher: HtmlFetcher | None = None,
     ):
         merged_headers: Dict[str, str] = {}
         if user_agent:
@@ -41,25 +40,16 @@ class WikipediaInfoboxScraper:
         if headers:
             merged_headers.update(headers)
 
-        if http_client is None:
-            if cache is None:
-                cache_dir = Path(__file__).resolve().parents[3] / "data" / "wiki_cache"
-                cache = WikipediaCachePolicy(
-                    FileCache(
-                        cache_dir=cache_dir,
-                        ttl_seconds=30 * 24 * 60 * 60,
-                    )
-                )
-            http_client = UrllibHttpClient(
+        if fetcher is None:
+            fetcher = HtmlFetcher(
                 session=session,
                 headers=merged_headers or None,
+                http_client=http_client,
                 timeout=timeout,
                 retries=retries,
                 cache=cache,
             )
-        self.http_client = http_client
-        self.session = getattr(self.http_client, "session", None)
-        self.headers = getattr(self.session, "headers", {})
+        self.fetcher = fetcher
         self.timeout = timeout
 
     # ------------------------------
@@ -85,7 +75,7 @@ class WikipediaInfoboxScraper:
     # ------------------------------
 
     def _fetch(self, url: str) -> str:
-        return self.http_client.get_text(url, timeout=self.timeout)
+        return self.fetcher.get_text(url, timeout=self.timeout)
 
     def _find_infobox(self, soup: BeautifulSoup):
         """

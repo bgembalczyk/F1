@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -13,6 +14,11 @@ from models.circuit import Circuit
 from scrapers.base.run import run_and_export
 
 
+@register_scraper(
+    "circuits",
+    "circuits/f1_circuits.json",
+    "circuits/f1_circuits.csv",
+)
 class F1CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
