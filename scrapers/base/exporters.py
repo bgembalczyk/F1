@@ -2,16 +2,14 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Sequence
+from typing import Any, Callable, Dict, List, Optional, Sequence, TypeAlias, Union
 
-from scrapers.base.formatters import (
-    CsvFormatter,
-    JsonFormatter,
-    PandasDataFrameFormatter,
-)
-from scrapers.base.records import ExportRecord
+from scrapers.base.formatters import CsvFormatter, JsonFormatter, PandasDataFrameFormatter
 from scrapers.base.results import ScrapeResult
 
+# ExportRecord: nie wiążemy się twardo z "scrapers.base.records.ExportRecord",
+# bo w Twoich branchach to wygląda na element "main-only".
+ExportRecord: TypeAlias = Dict[str, Any]
 NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
 
 
@@ -48,20 +46,29 @@ class DataExporter:
         return rules
 
     def _apply_normalization(
-        self, result: ScrapeResult | List[ExportRecord]
-    ) -> ScrapeResult | List[ExportRecord]:
+        self, result: ScrapeResult | List[Any]
+    ) -> ScrapeResult | List[Any]:
+        """
+        Normalizacja działa TYLKO dla listy rekordów dict-like.
+
+        Jeśli data zawiera obiekty niebędące mappingiem — pozostawiamy je bez zmian
+        (to utrzymuje kompatybilność z PR-owym API).
+        """
         if not self._normalization_rules:
             return result
 
         data = _extract_data(result)
-        normalized: List[ExportRecord] = []
 
-        for record in data:
-            # ExportRecord jest w praktyce dict-like; normalizacja działa na dict[str, Any]
-            updated: Dict[str, Any] = dict(record)
+        normalized: List[Any] = []
+        for item in data:
+            if not isinstance(item, dict):
+                normalized.append(item)
+                continue
+
+            updated: Dict[str, Any] = dict(item)
             for rule in self._normalization_rules:
                 updated = rule(updated)
-            normalized.append(updated)  # type: ignore[arg-type]
+            normalized.append(updated)
 
         if isinstance(result, ScrapeResult):
             return ScrapeResult(
@@ -69,12 +76,11 @@ class DataExporter:
                 source_url=result.source_url,
                 timestamp=result.timestamp,
             )
-
         return normalized
 
     def to_json(
         self,
-        result: ScrapeResult | List[ExportRecord],
+        result: ScrapeResult | List[Any],
         path: str | Path,
         *,
         indent: int = 2,
@@ -89,7 +95,7 @@ class DataExporter:
 
     def to_csv(
         self,
-        result: ScrapeResult | List[ExportRecord],
+        result: ScrapeResult | List[Any],
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
@@ -105,14 +111,17 @@ class DataExporter:
         """
         normalized = self._apply_normalization(result)
         data = _extract_data(normalized)
-        if not data:
+
+        # CSV ma sens tylko dla dict-like rekordów
+        dict_rows: List[ExportRecord] = [r for r in data if isinstance(r, dict)]
+        if not dict_rows:
             return
 
         if fieldnames is None:
             if fieldnames_strategy == "union":
-                fieldnames = _fieldnames_from_union(data)
+                fieldnames = _fieldnames_from_union(dict_rows)
             elif fieldnames_strategy == "first_row":
-                fieldnames = _fieldnames_from_first_row(data)
+                fieldnames = _fieldnames_from_first_row(dict_rows)
             else:
                 raise ValueError(
                     "Nieznana strategia fieldnames: "
@@ -125,14 +134,14 @@ class DataExporter:
 
         Path(path).write_text(payload, encoding="utf-8")
 
-    def to_dataframe(self, result: ScrapeResult | List[ExportRecord]):
+    def to_dataframe(self, result: ScrapeResult | List[Any]):
         return self._dataframe_formatter.format(self._apply_normalization(result))
 
 
-def _extract_data(result: ScrapeResult | List[ExportRecord]) -> List[ExportRecord]:
+def _extract_data(result: ScrapeResult | List[Any]) -> List[Any]:
     if isinstance(result, ScrapeResult):
-        return result.data  # type: ignore[return-value]
-    return result
+        return list(result.data)
+    return list(result)
 
 
 def _normalize_record_keys(record: Dict[str, Any]) -> Dict[str, Any]:

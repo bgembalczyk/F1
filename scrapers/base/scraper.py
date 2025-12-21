@@ -4,7 +4,7 @@ import logging
 import warnings
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import List, Optional, Sequence
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -107,7 +107,7 @@ class F1Scraper(ABC):
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
 
-        self._data: List[ExportRecord] = []
+        self._data: Optional[List[ExportRecord]] = None
 
     # ---------- API wysokiego poziomu ----------
 
@@ -125,6 +125,9 @@ class F1Scraper(ABC):
         - ScraperError z critical=True -> propagujemy
         - pozostałe -> warning + soft-skip (puste dane)
         """
+        if not getattr(self, "url", None):
+            raise ValueError("Scraper.url musi być ustawiony przed fetch().")
+
         try:
             html = self._download()
         except ScraperError as exc:  # type: ignore[misc]
@@ -157,14 +160,14 @@ class F1Scraper(ABC):
 
     def get_data(self) -> List[ExportRecord]:
         """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
-        if not self._data:
-            self.fetch()
+        if self._data is None:
+            return self.fetch()
         return self._data
 
     def build_result(self, data: Optional[List[ExportRecord]] = None) -> ScrapeResult:
         """Utwórz ScrapeResult z metadanymi."""
         return ScrapeResult(
-            data=data or self.get_data(),
+            data=data if data is not None else self.get_data(),
             source_url=getattr(self, "url", None),
         )
 
@@ -219,7 +222,7 @@ class F1Scraper(ABC):
         # publiczna metoda parse deleguje do _parse_soup
         return self._parse_soup(soup)
 
-    # ---------- Hooki z PR: normalize/export ----------
+    # ---------- Hooki: normalize/export ----------
 
     def normalize_records(self, records: List[RawRecord]) -> List[NormalizedRecord]:
         return records
@@ -234,7 +237,7 @@ class F1Scraper(ABC):
             return None
         return urljoin(self.url, href)
 
-    # ---------- Error handling (z PR, ale kompatybilnie z main) ----------
+    # ---------- Error handling ----------
 
     def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
         return ScraperNetworkError(

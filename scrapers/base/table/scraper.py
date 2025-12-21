@@ -191,15 +191,6 @@ class F1TableScraper(F1Scraper, ABC):
             col = resolve_column_type(col_spec)
             col.apply(ctx, record)
 
-        if self.model_class:
-            model = self.model_class(**record)
-            if hasattr(model, "model_dump"):
-                return model.model_dump()
-            if hasattr(model, "dict"):
-                return model.dict()
-            if is_dataclass(model):
-                return asdict(model)
-
         return record
 
     @staticmethod

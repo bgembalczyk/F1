@@ -6,9 +6,9 @@ import io
 import json
 import warnings
 from dataclasses import asdict, is_dataclass
-from typing import Any, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence
 
-from scrapers.base.records import ExportRecord
+from models.mappers.serialization import to_dict_list
 from scrapers.base.results import ScrapeResult
 
 _HAS_PANDAS = importlib.util.find_spec("pandas") is not None
@@ -18,13 +18,18 @@ if _HAS_PANDAS:
 
 def _normalize_payload(value: Any) -> Any:
     """
-    Normalizuje payload do struktur JSON-serializowalnych:
-    - obiekty z .to_dict()
-    - dataclass -> asdict
-    - rekurencyjnie: dict/list/tuple
+    Fallback normalizacji do struktur JSON-serializowalnych.
+
+    Zasada:
+    - najpierw próbujemy oficjalnej ścieżki (to_dict_list w _extract_data),
+      a to jest tylko "plan B" na pojedyncze wartości w meta/data.
     """
     if hasattr(value, "to_dict") and callable(value.to_dict):
         return _normalize_payload(value.to_dict())
+    if hasattr(value, "model_dump") and callable(value.model_dump):
+        return _normalize_payload(value.model_dump())
+    if hasattr(value, "dict") and callable(value.dict):
+        return _normalize_payload(value.dict())
     if is_dataclass(value):
         return _normalize_payload(asdict(value))
     if isinstance(value, dict):
@@ -36,16 +41,36 @@ def _normalize_payload(value: Any) -> Any:
     return value
 
 
-def _extract_data(result: ScrapeResult | List[ExportRecord]) -> List[ExportRecord]:
-    if isinstance(result, ScrapeResult):
-        return _normalize_payload(result.data)
-    return _normalize_payload(result)
+def _extract_data(result: ScrapeResult | List[Any]) -> List[Dict[str, Any]]:
+    """
+    Główna, spójna ścieżka ekstrakcji danych:
+    - zawsze zwracamy list[dict[str,Any]]
+    - wykorzystujemy to_dict_list (Twoja wspólna warstwa serializacji)
+    """
+    data = result.data if isinstance(result, ScrapeResult) else result
+
+    # to_dict_list już obsługuje: Mapping, pydantic (.model_dump/.dict), dataclass itd.
+    try:
+        return to_dict_list(list(data))
+    except TypeError:
+        # ultra-fallback: jeśli trafi się coś dziwnego, spróbujmy znormalizować ręcznie
+        normalized = _normalize_payload(list(data))
+        # po normalizacji nadal chcemy dict-y
+        if isinstance(normalized, list):
+            out: List[Dict[str, Any]] = []
+            for item in normalized:
+                if isinstance(item, dict):
+                    out.append(item)
+                else:
+                    out.append({"value": item})
+            return out
+        return [{"value": normalized}]
 
 
 class JsonFormatter:
     def format(
         self,
-        result: ScrapeResult | List[ExportRecord],
+        result: ScrapeResult | List[Any],
         *,
         indent: int = 2,
         include_metadata: bool = False,
@@ -55,7 +80,7 @@ class JsonFormatter:
 
     def _json_payload(
         self,
-        result: ScrapeResult | List[ExportRecord],
+        result: ScrapeResult | List[Any],
         *,
         include_metadata: bool,
     ) -> Any:
@@ -68,16 +93,16 @@ class JsonFormatter:
                     "source_url": result.source_url,
                     "timestamp": result.timestamp.isoformat(),
                 },
-                "data": _normalize_payload(result.data),
+                "data": _extract_data(result),
             }
 
-        return {"meta": None, "data": _normalize_payload(result)}
+        return {"meta": None, "data": _extract_data(result)}
 
 
 class CsvFormatter:
     def format(
         self,
-        result: ScrapeResult | List[ExportRecord],
+        result: ScrapeResult | List[Any],
         *,
         fieldnames: Optional[Sequence[str]] = None,
     ) -> str:
@@ -85,7 +110,6 @@ class CsvFormatter:
         if not data:
             return ""
 
-        # Jeżeli nie podano fieldnames – bierzemy wszystkie klucze z unią
         if fieldnames is None:
             keys: List[str] = []
             for row in data:
@@ -103,7 +127,7 @@ class CsvFormatter:
 
 
 class PandasDataFrameFormatter:
-    def format(self, result: ScrapeResult | List[ExportRecord]):
+    def format(self, result: ScrapeResult | List[Any]):
         if not _HAS_PANDAS:
             warnings.warn(
                 "Pandas nie jest zainstalowane. Zwracam surową listę rekordów; "

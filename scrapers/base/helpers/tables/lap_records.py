@@ -60,6 +60,16 @@ class LapRecordsTableScraper(F1TableScraper):
         },
     )
 
+    # ------------------------------
+    # Backward-compat shims (PR branch)
+    # ------------------------------
+    # Jeśli gdzieś jeszcze istnieje kod, który oczekuje tych atrybutów na klasie,
+    # mapujemy je na CONFIG.
+    section_id = CONFIG.section_id
+    expected_headers = list(CONFIG.expected_headers)
+    column_map = dict(CONFIG.column_map)
+    columns = dict(CONFIG.columns)
+
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
         Nie używamy standardowego fetch()/_parse_soup – w F1SingleCircuitScraper
@@ -125,6 +135,8 @@ class LapRecordsTableScraper(F1TableScraper):
         for idx in range(max_segments):
             record: Dict[str, Any] = {}
 
+            # UWAGA: zip(headers, per_cell_segments) jest poprawny, bo PR-owe `zip(headers, cells, ...)`
+            # i tak nie używało "cell" do niczego logicznego (to był tylko relikt).
             for header, segs in zip(headers, per_cell_segments):
                 seg_cell = segs[idx] if idx < len(segs) else segs[-1]
                 key = self.column_map.get(header, self._normalize_header(header))
