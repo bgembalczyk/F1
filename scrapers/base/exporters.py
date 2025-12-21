@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+import re
+from typing import Any, Callable, Dict, List, Optional, Sequence
 
 from scrapers.base.formatters import (
     CsvFormatter,
@@ -9,6 +10,8 @@ from scrapers.base.formatters import (
     PandasDataFrameFormatter,
 )
 from scrapers.base.results import ScrapeResult
+
+NormalizationRule = Callable[[Dict[str, Any]], Dict[str, Any]]
 
 
 class DataExporter:
@@ -18,10 +21,50 @@ class DataExporter:
         json_formatter: JsonFormatter | None = None,
         csv_formatter: CsvFormatter | None = None,
         dataframe_formatter: PandasDataFrameFormatter | None = None,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
         self._json_formatter = json_formatter or JsonFormatter()
         self._csv_formatter = csv_formatter or CsvFormatter()
         self._dataframe_formatter = dataframe_formatter or PandasDataFrameFormatter()
+        self._normalization_rules = self._build_normalization_rules(
+            normalize_keys, normalization_rules
+        )
+
+    @staticmethod
+    def _build_normalization_rules(
+        normalize_keys: bool,
+        normalization_rules: Sequence[NormalizationRule] | None,
+    ) -> List[NormalizationRule]:
+        rules: List[NormalizationRule] = []
+        if normalize_keys:
+            rules.append(_normalize_record_keys)
+            rules.append(_drop_empty_fields)
+        if normalization_rules:
+            rules.extend(normalization_rules)
+        return rules
+
+    def _apply_normalization(
+        self, result: ScrapeResult | List[Dict[str, Any]]
+    ) -> ScrapeResult | List[Dict[str, Any]]:
+        if not self._normalization_rules:
+            return result
+
+        data = _extract_data(result)
+        normalized = []
+        for record in data:
+            updated = dict(record)
+            for rule in self._normalization_rules:
+                updated = rule(updated)
+            normalized.append(updated)
+
+        if isinstance(result, ScrapeResult):
+            return ScrapeResult(
+                data=normalized,
+                source_url=result.source_url,
+                timestamp=result.timestamp,
+            )
+        return normalized
 
     def to_json(
         self,
@@ -32,7 +75,9 @@ class DataExporter:
         include_metadata: bool = False,
     ) -> None:
         payload = self._json_formatter.format(
-            result, indent=indent, include_metadata=include_metadata
+            self._apply_normalization(result),
+            indent=indent,
+            include_metadata=include_metadata,
         )
         path = Path(path)
         path.write_text(payload, encoding="utf-8")
@@ -44,11 +89,49 @@ class DataExporter:
         *,
         fieldnames: Optional[Sequence[str]] = None,
     ) -> None:
-        payload = self._csv_formatter.format(result, fieldnames=fieldnames)
+        payload = self._csv_formatter.format(
+            self._apply_normalization(result), fieldnames=fieldnames
+        )
         if not payload:
             return
         path = Path(path)
         path.write_text(payload, encoding="utf-8")
 
     def to_dataframe(self, result: ScrapeResult | List[Dict[str, Any]]):
-        return self._dataframe_formatter.format(result)
+        return self._dataframe_formatter.format(self._apply_normalization(result))
+
+
+def _extract_data(result: ScrapeResult | List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    if isinstance(result, ScrapeResult):
+        return result.data
+    return result
+
+
+def _normalize_record_keys(record: Dict[str, Any]) -> Dict[str, Any]:
+    normalized: Dict[str, Any] = {}
+    for key, value in record.items():
+        normalized_key = _to_snake_case(str(key))
+        if not normalized_key:
+            continue
+        normalized[normalized_key] = value
+    return normalized
+
+
+def _drop_empty_fields(record: Dict[str, Any]) -> Dict[str, Any]:
+    return {key: value for key, value in record.items() if not _is_empty(value)}
+
+
+def _is_empty(value: Any) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str):
+        return value.strip() == ""
+    if isinstance(value, (list, tuple, set, dict)):
+        return len(value) == 0
+    return False
+
+
+def _to_snake_case(value: str) -> str:
+    cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
+    cleaned = re.sub(r"_+", "_", cleaned).strip("_")
+    return cleaned.lower()
