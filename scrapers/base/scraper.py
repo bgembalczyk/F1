@@ -10,7 +10,7 @@ from urllib.parse import urljoin
 import requests
 
 from f1_http.interfaces import HttpClientProtocol
-from http_client import HttpClient
+from http_client import FileCache, ResponseCache, UrllibHttpClient, WikipediaCachePolicy
 from scrapers.base.exporters import DataExporter, ScrapeResult
 
 
@@ -43,11 +43,26 @@ class F1Scraper(ABC):
         exporter: Optional[DataExporter] = None,
         timeout: int = 10,
         retries: int = 0,
+        cache: ResponseCache | None = None,
     ) -> None:
         self.include_urls = include_urls
-        self.http_client = http_client or HttpClient(
-            session=session, headers=headers, timeout=timeout, retries=retries
-        )
+        if http_client is None:
+            if cache is None:
+                cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
+                cache = WikipediaCachePolicy(
+                    FileCache(
+                        cache_dir=cache_dir,
+                        ttl_seconds=30 * 24 * 60 * 60,
+                    )
+                )
+            http_client = UrllibHttpClient(
+                session=session,
+                headers=headers,
+                timeout=timeout,
+                retries=retries,
+                cache=cache,
+            )
+        self.http_client = http_client
         self.session = getattr(self.http_client, "session", None)
         self.exporter = exporter or DataExporter()
 

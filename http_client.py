@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import importlib
 import random
 import time
 from abc import ABC, abstractmethod
@@ -11,11 +10,6 @@ from urllib.parse import urlparse
 
 from f1_http import requests_shim
 from f1_http.interfaces import HttpClientProtocol
-
-try:  # pragma: no cover - zależne od środowiska
-    requests = importlib.import_module("requests")
-except Exception:  # pragma: no cover - fallback, gdy brak dependency
-    from f1_http import requests_shim as requests  # type: ignore
 
 
 class RetryPolicy(ABC):
@@ -405,8 +399,6 @@ class UrllibHttpClient(BaseHttpClient):
         retry_policy: RetryPolicy | None = None,
         rate_limiter: RateLimiter | None = None,
         cache: ResponseCache | None = None,
-        cache_dir: Path | str | None = None,
-        cache_ttl_days: int = 30,
     ) -> None:
         session = session or requests_shim.Session()
 
