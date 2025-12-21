@@ -10,7 +10,7 @@ from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, ScraperOptions
 
 
 class F1CircuitInfoboxScraper(
@@ -26,18 +26,20 @@ class F1CircuitInfoboxScraper(
         self,
         *,
         timeout: int = 10,
-        include_urls: bool = True,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
+        options: ScraperOptions | None = None,
+        **kwargs: Any,
     ) -> None:
         F1Scraper.__init__(
             self,
-            include_urls=include_urls,
+            options=options,
             session=session,
             headers=headers,
             http_client=http_client,
             timeout=timeout,
+            **kwargs,
         )
         WikipediaInfoboxScraper.__init__(
             self,

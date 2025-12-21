@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
+from scrapers.base.scraper import ScraperOptions
 
 
 @register_scraper(
@@ -86,5 +87,5 @@ if __name__ == "__main__":
         F1Constructors2025ListScraper,
         "../../data/wiki/constructors/f1_constructors_2025.json",
         "../../data/wiki/constructors/f1_constructors_2025.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )

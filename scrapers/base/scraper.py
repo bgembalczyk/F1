@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
@@ -21,6 +22,11 @@ from scrapers.base.exporters import DataExporter, ScrapeResult
 # ======================================================================
 
 
+@dataclass(frozen=True)
+class ScraperOptions:
+    include_urls: bool = True
+
+
 class F1Scraper(ABC):
     """
     Bazowa klasa dla wszystkich scrapperów F1.
@@ -38,7 +44,8 @@ class F1Scraper(ABC):
     def __init__(
         self,
         *,
-        include_urls: bool = True,
+        options: ScraperOptions | None = None,
+        include_urls: bool | None = None,
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
@@ -47,7 +54,15 @@ class F1Scraper(ABC):
         retries: int = 0,
         cache: ResponseCache | None = None,
     ) -> None:
-        self.include_urls = include_urls
+        if options is None:
+            options = ScraperOptions(
+                include_urls=True if include_urls is None else include_urls
+            )
+        elif include_urls is not None:
+            options = ScraperOptions(include_urls=include_urls)
+
+        self.options = options
+        self.include_urls = options.include_urls
         if http_client is None:
             if cache is None:
                 cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"

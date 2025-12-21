@@ -8,7 +8,7 @@ from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, ScraperOptions
 
 
 class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
@@ -29,13 +29,16 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         http_client: Optional[HttpClientProtocol] = None,
         timeout: int = 10,
         headers: Optional[Dict[str, str]] = None,
+        options: ScraperOptions | None = None,
+        **kwargs: Any,
     ) -> None:
         super().__init__(
-            include_urls=True,
+            options=options,
             session=session,
             headers=headers,
             http_client=http_client,
             timeout=timeout,
+            **kwargs,
         )
         self.timeout = timeout
         self.url: str = ""
@@ -125,7 +128,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         więc tutaj po prostu parsujemy przekazany fragment drzewa.
         """
         infobox_scraper = F1CircuitInfoboxScraper(
-            timeout=self.timeout, http_client=self.http_client
+            options=self.options,
+            timeout=self.timeout,
+            http_client=self.http_client,
         )
         return infobox_scraper.parse_from_soup(soup)
 
@@ -145,7 +150,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
           łatwo zgrupować wyniki po layoutach.
         """
         lap_scraper = LapRecordsTableScraper(
-            include_urls=self.include_urls,
+            options=self.options,
             http_client=self.http_client,  # <<< kluczowa zmiana
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie

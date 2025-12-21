@@ -11,7 +11,7 @@ from scrapers.base.registry import (
     ScraperConfig,
     load_default_scrapers,
 )
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, ScraperOptions
 
 def _scraper_choices() -> list[str]:
     load_default_scrapers()
@@ -36,19 +36,31 @@ def run_and_export(
     json_path: str | Path,
     csv_path: str | Path | None = None,
     *,
-    include_urls: bool = True,
+    options: ScraperOptions | None = None,
+    include_urls: bool | None = None,
     **scraper_kwargs: Any,
 ) -> None:
     """
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
-    - automatycznie przekazuje flagę ``include_urls`` (o ile scraper ją wspiera),
+    - automatycznie przekazuje opcje (np. ``include_urls``),
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów.
     """
 
     kwargs = dict(scraper_kwargs)
-    if _includes_param(scraper_cls, "include_urls") and "include_urls" not in kwargs:
+    if options is None:
+        options = ScraperOptions(
+            include_urls=True if include_urls is None else include_urls
+        )
+
+    if _includes_param(scraper_cls, "options") and "options" not in kwargs:
+        kwargs["options"] = options
+    elif (
+        include_urls is not None
+        and _includes_param(scraper_cls, "include_urls")
+        and "include_urls" not in kwargs
+    ):
         kwargs["include_urls"] = include_urls
 
     scraper = scraper_cls(**kwargs)
@@ -102,7 +114,7 @@ def _cli() -> None:
         scraper_cls,
         json_path,
         csv_path,
-        include_urls=args.include_urls,
+        options=ScraperOptions(include_urls=args.include_urls),
         **kwargs,
     )
 

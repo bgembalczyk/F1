@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.scraper import ScraperOptions
 from models.circuit import Circuit
 from scrapers.base.run import run_and_export
 
@@ -98,5 +99,5 @@ if __name__ == "__main__":
         F1CircuitsListScraper,
         "../../data/wiki/circuits/f1_circuits.json",
         "../../data/wiki/circuits/f1_circuits.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )

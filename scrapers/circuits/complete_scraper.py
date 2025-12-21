@@ -10,7 +10,7 @@ from scrapers.base.helpers.circuits.circuit_normalization import (
     normalize_circuit_record,
 )
 from scrapers.base.registry import register_scraper
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.scraper import F1Scraper, ScraperOptions
 from scrapers.base.run import run_and_export
 from scrapers.circuits.list_scraper import F1CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
@@ -39,18 +39,22 @@ class F1CompleteCircuitScraper(F1Scraper):
         session: Optional[requests.Session] = None,
         headers: Optional[Dict[str, str]] = None,
         http_client: Optional[HttpClientProtocol] = None,
+        options: ScraperOptions | None = None,
+        **kwargs: Any,
     ) -> None:
         super().__init__(
-            include_urls=True,
+            options=options,
             session=session,
             headers=headers,
             http_client=http_client,
+            **kwargs,
         )
         self.list_scraper = F1CircuitsListScraper(
-            include_urls=True,
+            options=options,
             http_client=self.http_client,
         )
         self.single_scraper = F1SingleCircuitScraper(
+            options=options,
             http_client=self.http_client,
         )
 

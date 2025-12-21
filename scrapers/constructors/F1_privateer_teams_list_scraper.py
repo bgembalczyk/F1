@@ -7,6 +7,7 @@ from scrapers.base.helpers.utils import clean_wiki_text, parse_seasons
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
+from scrapers.base.scraper import ScraperOptions
 
 
 @register_scraper(
@@ -68,5 +69,5 @@ if __name__ == "__main__":
         F1PrivateerTeamsListScraper,
         "../../data/wiki/constructors/f1_privateer_teams.json",
         "../../data/wiki/constructors/f1_privateer_teams.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )

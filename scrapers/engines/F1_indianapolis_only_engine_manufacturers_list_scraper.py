@@ -1,6 +1,7 @@
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import run_and_export
+from scrapers.base.scraper import ScraperOptions
 
 
 @register_scraper(
@@ -25,5 +26,5 @@ if __name__ == "__main__":
         F1IndianapolisOnlyEngineManufacturersListScraper,
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
         "../../data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
-        include_urls=True,
+        options=ScraperOptions(include_urls=True),
     )
