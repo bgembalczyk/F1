@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from abc import ABC
+from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
+import warnings
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -34,14 +35,46 @@ class F1Scraper(ABC):
 
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
-        self.fetcher = options.fetcher or HtmlFetcher(
-            session=options.session,
-            headers=options.headers,
-            http_client=options.http_client,
-            timeout=options.timeout,
-            retries=options.retries,
-            cache=options.cache,
-        )
+
+        # Zachowujemy podejście z main: preferuj gotowy fetcher w options.
+        # Jeżeli nie ma fetchera — budujemy go z pól opcji.
+        #
+        # Z PR przenosimy: ostrzeżenie jeśli używa się "legacy" konfigu HTTP
+        # zamiast przekazać w pełni skonfigurowany fetcher / http_client.
+        if options.fetcher is None:
+            legacy_used = any(
+                value is not None
+                for value in (
+                    options.session,
+                    options.headers,
+                    options.http_client,
+                    options.timeout,
+                    options.retries,
+                    options.cache,
+                )
+            )
+            if legacy_used:
+                warnings.warn(
+                    "Konfigurację HTTP przekazuj przez HttpClientConfig / skonfigurowany "
+                    "HttpClient (w ScraperOptions.http_client) albo gotowy HtmlFetcher "
+                    "(w ScraperOptions.fetcher). Parametry session/headers/timeout/retries/cache "
+                    "w ScraperOptions traktuj jako legacy.",
+                    DeprecationWarning,
+                    stacklevel=2,
+                )
+
+            self.fetcher = HtmlFetcher(
+                session=options.session,
+                headers=options.headers,
+                http_client=options.http_client,
+                timeout=options.timeout,
+                retries=options.retries,
+                cache=options.cache,
+            )
+        else:
+            self.fetcher = options.fetcher
+
+        # Parser w main może być “zewnętrzny” (np. mixin/adapter). Zostawiamy to.
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
 
@@ -109,13 +142,16 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
+        # main: fetcher jest jedyną “bramką” do HTTP.
         return self.fetcher.get_text(self.url)
 
+    @abstractmethod
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """Parsowanie BS4 -> lista rekordów."""
         raise NotImplementedError
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        # main: publiczna metoda parse deleguje do _parse_soup
         return self._parse_soup(soup)
 
     # ---------- Pomocnicze ----------

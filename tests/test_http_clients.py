@@ -5,8 +5,9 @@ from typing import Callable
 
 import pytest
 
-from http_client.caching import WikipediaCachePolicy, FileCache
+from http_client.caching import FileCache, WikipediaCachePolicy
 from http_client.clients import HttpClient, UrllibHttpClient
+from http_client.config import HttpClientConfig
 from http_client.retry import DefaultRetryPolicy
 
 
@@ -75,9 +76,26 @@ def http_server():
     thread.join()
 
 
+def _client_with_config(client_cls, **config_kwargs):
+    """
+    Helper: buduje klienta przez HttpClientConfig (nowy styl),
+    ale zostawia testom możliwość podania dowolnych pól configu.
+    """
+    cfg = HttpClientConfig(**config_kwargs)
+    return client_cls(config=cfg)
+
+
 CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
-    ("requests", lambda **kwargs: HttpClient(backoff_seconds=0.01, **kwargs)),
-    ("urllib", lambda **kwargs: UrllibHttpClient(backoff_seconds=0.01, **kwargs)),
+    (
+        "requests",
+        lambda **kwargs: _client_with_config(HttpClient, backoff_seconds=0.01, **kwargs),
+    ),
+    (
+        "urllib",
+        lambda **kwargs: _client_with_config(
+            UrllibHttpClient, backoff_seconds=0.01, **kwargs
+        ),
+    ),
 ]
 
 
@@ -86,10 +104,7 @@ def test_retries_on_server_errors(name, factory, http_server):
     base_url, handler = http_server
     handler.retry_count = 0
 
-    client = factory(
-        retry_policy=DefaultRetryPolicy(retries=1, backoff_seconds=0.01),
-        timeout=1,
-    )
+    client = factory(retries=1, timeout=1)
     response = client.get(f"{base_url}/flaky")
 
     assert response.status_code == 200
@@ -113,10 +128,7 @@ def test_timeouts_are_respected(name, factory, http_server):
     base_url, handler = http_server
     handler.delay_seconds = 0.2
 
-    client = factory(
-        timeout=0.05,
-        retry_policy=DefaultRetryPolicy(retries=0, backoff_seconds=0.01),
-    )
+    client = factory(timeout=0.05, retries=0)
 
     with pytest.raises(Exception):
         client.get(f"{base_url}/slow")
@@ -164,15 +176,9 @@ def test_default_retry_policy_for_statuses():
             self.status_code = status_code
             self.text = text
 
-    assert (
-        policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
-    )
-    assert (
-        policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
-    )
-    assert (
-        policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
-    )
+    assert policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
+    assert policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
+    assert policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
     assert (
         policy.should_retry(
             response=_Response(403, text="Please respect our robot policy"),
