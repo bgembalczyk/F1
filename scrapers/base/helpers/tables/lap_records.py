@@ -12,6 +12,7 @@ from scrapers.base.table.scraper import F1TableScraper
 
 # NOWE:
 from scrapers.base.helpers.utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.value_objects import LapRecord
 from scrapers.base.table.columns.context import ColumnContext
 
 
@@ -93,7 +94,7 @@ class LapRecordsTableScraper(F1TableScraper):
         row: Tag,
         cells: List[Tag],
         headers: List[str],
-    ) -> List[Dict[str, Any]]:
+    ) -> List[LapRecord]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
 
@@ -121,7 +122,7 @@ class LapRecordsTableScraper(F1TableScraper):
                 max_segments = len(segs)
 
         model_fields = self._model_fields()
-        records: List[Dict[str, Any]] = []
+        records: List[LapRecord] = []
 
         # Dla każdego segmentu budujemy osobny rekord
         for idx in range(max_segments):
@@ -167,7 +168,6 @@ class LapRecordsTableScraper(F1TableScraper):
                 elif hasattr(model, "dict"):
                     record = model.dict()
                 # dataclass też można obsłużyć, ale tu nie jest używane
-
-            records.append(record)
+            records.append(LapRecord.from_dict(record))
 
         return records

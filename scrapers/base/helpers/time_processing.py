@@ -4,6 +4,24 @@ from __future__ import annotations
 from typing import Any
 import re
 
+from scrapers.base.helpers.value_objects import NormalizedTime
+
+
+def _extract_time_value(value: Any) -> tuple[str | None, float | None]:
+    if isinstance(value, NormalizedTime):
+        return value.text, value.seconds
+    if isinstance(value, dict):
+        text = value.get("text")
+        seconds = value.get("seconds")
+        sec = float(seconds) if isinstance(seconds, (int, float)) else None
+        txt = str(text).strip() if text is not None else None
+        return txt or None, sec
+    if isinstance(value, (int, float)):
+        return None, float(value)
+    if value is not None:
+        return str(value), None
+    return None, None
+
 
 def time_key(rec: dict[str, Any]) -> float | str | None:
     """
@@ -15,17 +33,9 @@ def time_key(rec: dict[str, Any]) -> float | str | None:
     t = rec.get("time")
 
     # jeśli to już liczba (po naszym cleanupie), użyj bezpośrednio
-    if isinstance(t, (int, float)):
-        return float(t)
-
-    txt: str | None = None
-
-    if isinstance(t, dict):
-        if "seconds" in t and isinstance(t["seconds"], (int, float)):
-            return float(t["seconds"])
-        txt = t.get("text")
-    elif t is not None:
-        txt = str(t)
+    txt, seconds = _extract_time_value(t)
+    if seconds is not None:
+        return seconds
 
     if not txt:
         return None
@@ -60,17 +70,9 @@ def time_seconds(rec: dict[str, Any]) -> float | None:
     t = rec.get("time")
 
     # 2) liczba
-    if isinstance(t, (int, float)):
-        return float(t)
-
-    # 3) dict z seconds
-    if isinstance(t, dict):
-        sec = t.get("seconds")
-        if isinstance(sec, (int, float)):
-            return float(sec)
-        txt = t.get("text")
-    else:
-        txt = t
+    txt, seconds = _extract_time_value(t)
+    if seconds is not None:
+        return seconds
 
     if txt is None:
         return None
@@ -90,16 +92,16 @@ def time_seconds(rec: dict[str, Any]) -> float | None:
 
 
 def simplify_time(rec: dict[str, Any]) -> None:
-    """Zamienia time dict na float jeśli jest seconds, albo próbuje sparsować tekstowo."""
+    """Zamienia time w NormalizedTime na float jeśli jest seconds, albo próbuje sparsować tekstowo."""
     t = rec.get("time")
-    if not isinstance(t, dict):
+    if not isinstance(t, (dict, NormalizedTime)):
         return
 
-    if "seconds" in t:
-        rec["time"] = t["seconds"]
+    txt, seconds = _extract_time_value(t)
+    if seconds is not None:
+        rec["time"] = seconds
         return
 
-    txt = t.get("text")
     if not txt:
         rec["time"] = None
         return
@@ -107,8 +109,8 @@ def simplify_time(rec: dict[str, Any]) -> None:
     m = re.match(r"(?:(\d+):)?(\d+\.\d+|\d+)", txt.strip())
     if m:
         minutes = int(m.group(1)) if m.group(1) else 0
-        seconds = float(m.group(2))
-        rec["time"] = minutes * 60 + seconds
+        seconds_val = float(m.group(2))
+        rec["time"] = minutes * 60 + seconds_val
     else:
         rec["time"] = txt
 

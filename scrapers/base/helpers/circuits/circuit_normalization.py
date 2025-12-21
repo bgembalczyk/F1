@@ -7,6 +7,7 @@ import re
 from scrapers.base.helpers.record_merging import merge_race_lap_records
 from scrapers.base.helpers.text_processing import add_name
 from scrapers.base.helpers.time_processing import simplify_time, simplify_date
+from scrapers.base.helpers.value_objects import LapRecord, as_lap_record
 
 
 def extract_circuit_names(
@@ -122,10 +123,10 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
     for layout in infobox.get("layouts") or []:
         lay = dict(layout)
         rlr = lay.pop("race_lap_record", None)
-        records: list[dict[str, Any]] = []
+        records: list[LapRecord] = []
         if rlr is not None:
-            if isinstance(rlr, dict):
-                records.append(rlr)
+            if isinstance(rlr, (dict, LapRecord)):
+                records.append(as_lap_record(rlr))
         lay["race_lap_records"] = records
         layouts.append(lay)
 
@@ -344,9 +345,15 @@ def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     # Apply cleanup to layout records
     for lay in out.get("layouts", []):
         records = lay.get("race_lap_records", [])
-        for r in records:
-            simplify_time(r)
-            simplify_date(r)
+        normalized_records: list[dict[str, Any]] = []
+        for record in records:
+            record_dict = (
+                record.to_dict() if isinstance(record, LapRecord) else dict(record)
+            )
+            simplify_time(record_dict)
+            simplify_date(record_dict)
+            normalized_records.append(record_dict)
+        lay["race_lap_records"] = normalized_records
 
     # Clean url=None in whole output
     out = cleanup_urls(out)

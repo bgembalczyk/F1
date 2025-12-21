@@ -6,6 +6,7 @@ import re
 
 from scrapers.base.helpers.text_processing import safe_text
 from scrapers.base.helpers.time_processing import time_seconds
+from scrapers.base.helpers.value_objects import RecordKey
 
 _YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
 
@@ -34,7 +35,7 @@ def extract_year_from_event(rec: dict[str, Any]) -> str | None:
     return None
 
 
-def record_key(rec: dict[str, Any]) -> tuple | None:
+def record_key(rec: dict[str, Any]) -> RecordKey | None:
     """
     Klucz do rozpoznawania tego samego rekordu:
 
@@ -74,10 +75,15 @@ def record_key(rec: dict[str, Any]) -> tuple | None:
         return None
 
     # round dla stabilności klucza (minimalne różnice floatów)
-    return (driver_txt, vehicle_txt, year, round(time_sec, 6))
+    return RecordKey(
+        driver_text=driver_txt,
+        vehicle_text=vehicle_txt,
+        year=year,
+        time_seconds=round(time_sec, 6),
+    )
 
 
-def core_key(rec: dict[str, Any]) -> tuple | None:
+def core_key(rec: dict[str, Any]) -> RecordKey | None:
     """
     Klucz „rdzeniowy" do łączenia rekordów nawet jeśli brakuje time.
 
@@ -105,4 +111,9 @@ def core_key(rec: dict[str, Any]) -> tuple | None:
     if not driver_txt or not vehicle_txt or not year:
         return None
 
-    return (driver_txt, vehicle_txt, year)
+    return RecordKey(
+        driver_text=driver_txt,
+        vehicle_text=vehicle_txt,
+        year=year,
+        time_seconds=None,
+    )
