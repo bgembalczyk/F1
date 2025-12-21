@@ -6,6 +6,7 @@ from typing import Optional, Sequence
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.wiki import find_section_elements, clean_wiki_text
+from scrapers.base.table.row import TableRow
 
 
 class HtmlTableParser:
@@ -29,7 +30,7 @@ class HtmlTableParser:
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
 
-    def parse(self, soup: BeautifulSoup) -> list[dict[str, Tag]]:
+    def parse(self, soup: BeautifulSoup) -> list[TableRow]:
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
@@ -38,7 +39,7 @@ class HtmlTableParser:
         header_cells = header_row.find_all(["th", "td"])
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
-        records: list[dict[str, Tag]] = []
+        records: list[TableRow] = []
         for tr in table.find_all("tr")[1:]:
             cells = tr.find_all(["td", "th"])
 
@@ -51,9 +52,8 @@ class HtmlTableParser:
             if self._is_repeated_header_row(cleaned_cells, headers):
                 continue
 
-            row = dict(zip(headers, cells))
-            if row:
-                records.append(row)
+            if cells:
+                records.append(TableRow(headers=headers, cells=cells, raw_tr=tr))
 
         return records
 
