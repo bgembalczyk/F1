@@ -33,7 +33,6 @@ def extract_year_from_event(rec: dict[str, Any]) -> str | None:
 
     return None
 
-
 def record_key(rec: dict[str, Any]) -> tuple | None:
     """
     Klucz do rozpoznawania tego samego rekordu:
@@ -75,7 +74,6 @@ def record_key(rec: dict[str, Any]) -> tuple | None:
 
     # round dla stabilności klucza (minimalne różnice floatów)
     return (driver_txt, vehicle_txt, year, round(time_sec, 6))
-
 
 def core_key(rec: dict[str, Any]) -> tuple | None:
     """

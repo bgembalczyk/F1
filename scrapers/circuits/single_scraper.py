@@ -3,7 +3,7 @@ from typing import Optional, Dict, Any, List
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from f1_http.interfaces import HttpClientProtocol
+from http_client.interfaces import HttpClientProtocol
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper

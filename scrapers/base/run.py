@@ -10,51 +10,6 @@ from scrapers.base.exporters import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 
 
-def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
-    return name in inspect.signature(cls.__init__).parameters
-
-
-def _ensure_parent(path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-
-def run_and_export(
-    scraper_cls: Type[F1Scraper],
-    json_path: str | Path,
-    csv_path: str | Path | None = None,
-    *,
-    include_urls: bool = True,
-    **scraper_kwargs: Any,
-) -> None:
-    """
-    Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
-
-    - automatycznie przekazuje flagę ``include_urls`` (o ile scraper ją wspiera),
-    - tworzy katalogi dla ścieżek wyjściowych,
-    - wypisuje liczbę pobranych rekordów.
-    """
-
-    kwargs = dict(scraper_kwargs)
-    if _includes_param(scraper_cls, "include_urls") and "include_urls" not in kwargs:
-        kwargs["include_urls"] = include_urls
-
-    scraper = scraper_cls(**kwargs)
-    data = scraper.fetch()
-
-    print(f"Pobrano rekordów: {len(data)}")
-
-    result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
-
-    json_path = Path(json_path)
-    _ensure_parent(json_path)
-    scraper.exporter.to_json(result, json_path)
-
-    if csv_path:
-        csv_path = Path(csv_path)
-        _ensure_parent(csv_path)
-        scraper.exporter.to_csv(result, csv_path)
-
-
 _ScraperConfig = Tuple[str, str, Path, Optional[Path], Dict[str, Any]]
 
 SCRAPER_CONFIGS: Dict[str, _ScraperConfig] = {
@@ -138,10 +93,51 @@ SCRAPER_CONFIGS: Dict[str, _ScraperConfig] = {
 }
 
 
+def _includes_param(cls: Type[F1Scraper], name: str) -> bool:
+    return name in inspect.signature(cls.__init__).parameters
+
+def _ensure_parent(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+def run_and_export(
+    scraper_cls: Type[F1Scraper],
+    json_path: str | Path,
+    csv_path: str | Path | None = None,
+    *,
+    include_urls: bool = True,
+    **scraper_kwargs: Any,
+) -> None:
+    """
+    Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
+
+    - automatycznie przekazuje flagę ``include_urls`` (o ile scraper ją wspiera),
+    - tworzy katalogi dla ścieżek wyjściowych,
+    - wypisuje liczbę pobranych rekordów.
+    """
+
+    kwargs = dict(scraper_kwargs)
+    if _includes_param(scraper_cls, "include_urls") and "include_urls" not in kwargs:
+        kwargs["include_urls"] = include_urls
+
+    scraper = scraper_cls(**kwargs)
+    data = scraper.fetch()
+
+    print(f"Pobrano rekordów: {len(data)}")
+
+    result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
+
+    json_path = Path(json_path)
+    _ensure_parent(json_path)
+    scraper.exporter.to_json(result, json_path)
+
+    if csv_path:
+        csv_path = Path(csv_path)
+        _ensure_parent(csv_path)
+        scraper.exporter.to_csv(result, csv_path)
+
 def _load_scraper(module_path: str, class_name: str) -> Type[F1Scraper]:
     module = importlib.import_module(module_path)
     return getattr(module, class_name)
-
 
 def _cli() -> None:
     parser = argparse.ArgumentParser(

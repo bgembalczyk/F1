@@ -37,7 +37,6 @@ def extract_circuit_names(
         "former_names": former_names,
     }
 
-
 def extract_circuit_url(
     raw: dict[str, Any], details: dict[str, Any] | None
 ) -> str | None:
@@ -46,7 +45,6 @@ def extract_circuit_url(
     if details is None:
         return None
     return circuit.get("url")
-
 
 def extract_circuit_location(
     raw: dict[str, Any], normalized: dict[str, Any]
@@ -96,7 +94,6 @@ def extract_circuit_location(
         "coordinates": coordinates,
     }
 
-
 def extract_circuit_grade_and_history(
     normalized: dict[str, Any],
 ) -> tuple[str | None, list[Any] | None]:
@@ -111,7 +108,6 @@ def extract_circuit_grade_and_history(
     history_events = history_norm.get("events")
 
     return fia_grade, history_events
-
 
 def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
     """Ekstrakcja layoutów z infoboxu i konwersja race_lap_record na listę."""
@@ -131,7 +127,6 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
 
     return layouts
 
-
 def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None]:
     """Parsuje informacje o długości i latach z tekstu layoutu tabeli."""
     length_km: float | None = None
@@ -148,7 +143,6 @@ def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None
         years_str = m_years.group(1).strip().lower()
 
     return length_km, years_str
-
 
 def find_layout_for_table(
     table_layout: str, layouts: list[dict[str, Any]]
@@ -191,7 +185,6 @@ def find_layout_for_table(
 
     return best_candidate
 
-
 def merge_tables_into_layouts(
     tables: list[dict[str, Any]], layouts: list[dict[str, Any]]
 ) -> None:
@@ -220,7 +213,6 @@ def merge_tables_into_layouts(
         if records:
             lay["race_lap_records"] = merge_race_lap_records(records)
 
-
 def cleanup_urls(obj: Any) -> Any:
     """Usuwa url=None oraz rekursywnie czyści elementy."""
     if isinstance(obj, list):
@@ -241,7 +233,6 @@ def cleanup_urls(obj: Any) -> Any:
 
     return obj
 
-
 def remove_empty_lists(obj: Any) -> Any:
     """Rekursywnie usuwa puste listy ze struktury."""
     if isinstance(obj, dict):
@@ -259,7 +250,6 @@ def remove_empty_lists(obj: Any) -> Any:
         new_list = [remove_empty_lists(x) for x in obj]
         return [x for x in new_list if x != []]
     return obj
-
 
 def normalize_circuit_record(raw: dict[str, Any]) -> dict[str, Any]:
     """

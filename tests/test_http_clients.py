@@ -4,12 +4,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Callable
 
 import pytest
-from http_client import (
-    DefaultRetryPolicy,
-    FileCache,
-    UrllibHttpClient,
-    WikipediaCachePolicy,
-)
+
+from http_client.caching import WikipediaCachePolicy, FileCache
+from http_client.clients import UrllibHttpClient
+from http_client.retry import DefaultRetryPolicy
 
 
 class _StubHandler(BaseHTTPRequestHandler):

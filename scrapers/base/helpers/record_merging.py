@@ -69,7 +69,6 @@ def is_subset_record(small: dict[str, Any], big: dict[str, Any]) -> bool:
 
     return True
 
-
 def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
     """
     Scala dwa rekordy w jeden, preferując bogatsze dane:
@@ -134,7 +133,6 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
 
     return merged
 
-
 def collect_other_fields(records: list[dict[str, Any]]) -> dict[str, Any]:
     """
     Zbiera pozostałe pola, ale NIE przenosi dubli typu:
@@ -164,7 +162,6 @@ def collect_other_fields(records: list[dict[str, Any]]) -> dict[str, Any]:
                 merged[k] = v
     return merged
 
-
 def select_best_driver(records: list[dict[str, Any]]) -> Any:
     """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
     best = None
@@ -184,7 +181,6 @@ def select_best_driver(records: list[dict[str, Any]]) -> Any:
             best = d
     return best
 
-
 def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
     """Wybiera najlepszy rekord pojazdu (preferuje wersję z URL)."""
     best = None
@@ -203,7 +199,6 @@ def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
         ):
             best = v
     return best
-
 
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
     """
@@ -239,7 +234,6 @@ def select_best_time(records: list[dict[str, Any]]) -> float | None:
 
     return None
 
-
 def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
     """Wybiera najlepszą datę i rok (preferuje dokładniejszy iso)."""
     best_date = None
@@ -265,7 +259,6 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
             best_date = d
 
     return best_date, best_year
-
 
 def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
     """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
@@ -314,7 +307,6 @@ def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
 
     return best
 
-
 def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
     """
     Wynik:
@@ -361,7 +353,6 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
         merged["series"] = best_series
 
     return merged
-
 
 def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """

@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from f1_http.interfaces import HttpClientProtocol
+from http_client.interfaces import HttpClientProtocol
 from scrapers.base.infobox.mixins.circuits.entities import CircuitEntitiesMixin
 from scrapers.base.infobox.mixins.circuits.layouts import CircuitInfoboxLayoutsMixin
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
@@ -85,7 +85,6 @@ class F1CircuitInfoboxScraper(
         """API bazowej klasy – deleguje do parse_from_soup."""
         return [self.parse_from_soup(soup)]
 
-    # >>> ZMIANA TUTAJ <<<
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
         """
         Zwraca znormalizowany infobox + layouts (bez surowego `rows`).
