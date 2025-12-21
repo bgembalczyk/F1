@@ -101,6 +101,7 @@ class F1Scraper(ABC):
         return ScrapeResult(
             data=data or self.get_data(),
             source_url=getattr(self, "url", None),
+            exporter=self.exporter,
         )
 
     # ---------- Eksport (delegowany) ----------

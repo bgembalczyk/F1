@@ -119,16 +119,20 @@ def run_and_export(
     else:
         print(f"Pobrano rekordów: {len(data)}")
 
-    result = ScrapeResult(data=data, source_url=getattr(scraper, "url", None))
+    result = ScrapeResult(
+        data=data,
+        source_url=getattr(scraper, "url", None),
+        exporter=scraper.exporter,
+    )
 
     json_path = Path(json_path)
     _ensure_parent(json_path)
-    scraper.exporter.to_json(result, json_path)
+    result.to_json(json_path)
 
     if csv_path:
         csv_path = Path(csv_path)
         _ensure_parent(csv_path)
-        scraper.exporter.to_csv(result, csv_path)
+        result.to_csv(csv_path)
 
 
 def _cli() -> None:
