@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+from models.constants import (
+    CIRCUIT_STATUS_CURRENT,
+    CIRCUIT_STATUS_FORMER,
+    CIRCUIT_STATUS_FUTURE,
+)
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -64,8 +69,8 @@ class F1CircuitsListScraper(F1TableScraper):
             {
                 "circuit": UrlColumn(),  # już czyści tekst
                 "circuit_status": EnumMarksColumn(
-                    {"*": "current", "†": "future"},
-                    default="former",
+                    {"*": CIRCUIT_STATUS_CURRENT, "†": CIRCUIT_STATUS_FUTURE},
+                    default=CIRCUIT_STATUS_FORMER,
                 ),
             }
         ),

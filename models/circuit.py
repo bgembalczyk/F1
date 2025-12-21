@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from models.constants import ALLOWED_CIRCUIT_STATUSES
 from models.value_objects import Link, SeasonRef
 from models.validators import (
     validate_float,
@@ -34,7 +35,7 @@ class Circuit:
         )
         self.circuit_status = validate_status(
             self.circuit_status,
-            {"current", "future", "former"},
+            ALLOWED_CIRCUIT_STATUSES,
             "circuit_status",
         )
         self.last_length_used_km = validate_float(

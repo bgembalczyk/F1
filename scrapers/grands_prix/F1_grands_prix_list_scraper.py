@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Dict
 
+from models.constants import RACE_STATUS_ACTIVE, RACE_STATUS_PAST
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -57,8 +58,8 @@ class F1GrandsPrixListScraper(F1TableScraper):
             {
                 "race_title": UrlColumn(),
                 "race_status": EnumMarksColumn(
-                    {"*": "active"},
-                    default="past",
+                    {"*": RACE_STATUS_ACTIVE},
+                    default=RACE_STATUS_PAST,
                 ),
             }
         ),

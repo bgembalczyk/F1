@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from typing import Dict
 
+from models.constants import (
+    MANUFACTURER_STATUS_CURRENT,
+    MANUFACTURER_STATUS_FORMER,
+)
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
@@ -71,8 +75,8 @@ class F1EngineManufacturersListScraper(F1TableScraper):
             {
                 "manufacturer": UrlColumn(),  # czyści tekst, zwraca dict{text, url}
                 "manufacturer_status": EnumMarksColumn(
-                    {"~": "current"},
-                    default="former",
+                    {"~": MANUFACTURER_STATUS_CURRENT},
+                    default=MANUFACTURER_STATUS_FORMER,
                 ),
             }
         ),

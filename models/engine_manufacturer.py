@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from models.constants import ALLOWED_MANUFACTURER_STATUSES
 from models.value_objects import Link, SeasonRef
 from models.validators import (
     validate_float,
@@ -35,7 +36,7 @@ class EngineManufacturer:
         )
         self.manufacturer_status = validate_status(
             self.manufacturer_status,
-            {"current", "former"},
+            ALLOWED_MANUFACTURER_STATUSES,
             "manufacturer_status",
         )
         self.engines_built_in = [

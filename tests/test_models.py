@@ -5,6 +5,7 @@ import sys
 import types
 
 from models.circuit import Circuit
+from models.constants import CIRCUIT_STATUS_CURRENT, MANUFACTURER_STATUS_FORMER
 from models.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.scraper import F1TableScraper
 
@@ -69,14 +70,17 @@ if "certifi" not in sys.modules:
 
 def test_circuit_rejects_invalid_url():
     with pytest.raises(ValueError):
-        Circuit(circuit={"text": "Test", "url": "notaurl"}, circuit_status="current")
+        Circuit(
+            circuit={"text": "Test", "url": "notaurl"},
+            circuit_status=CIRCUIT_STATUS_CURRENT,
+        )
 
 
 def test_engine_manufacturer_rejects_negative_values():
     with pytest.raises(ValueError):
         EngineManufacturer(
             manufacturer={"text": "Test", "url": "https://example.com"},
-            manufacturer_status="former",
+            manufacturer_status=MANUFACTURER_STATUS_FORMER,
             races_entered=-1,
         )
 
