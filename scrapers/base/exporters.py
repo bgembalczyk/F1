@@ -15,13 +15,6 @@ except Exception:  # opcjonalne
     _HAS_PANDAS = False
 
 
-@dataclass(frozen=True)
-class ScrapeResult:
-    data: List[Dict[str, Any]]
-    source_url: Optional[str]
-    timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-
-
 class DataExporter:
     def to_json(
         self,
@@ -96,3 +89,37 @@ class DataExporter:
             }
 
         return {"meta": None, "data": result}
+
+
+@dataclass(frozen=True)
+class ScrapeResult:
+    data: List[Dict[str, Any]]
+    source_url: Optional[str]
+    timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    exporter: Optional[DataExporter] = None
+
+    def __post_init__(self) -> None:
+        if self.exporter is None:
+            object.__setattr__(self, "exporter", DataExporter())
+
+    def to_json(
+        self,
+        path: str | Path,
+        *,
+        indent: int = 2,
+        include_metadata: bool = False,
+    ) -> None:
+        self.exporter.to_json(
+            self, path, indent=indent, include_metadata=include_metadata
+        )
+
+    def to_csv(
+        self,
+        path: str | Path,
+        *,
+        fieldnames: Optional[Sequence[str]] = None,
+    ) -> None:
+        self.exporter.to_csv(self, path, fieldnames=fieldnames)
+
+    def to_dataframe(self):
+        return self.exporter.to_dataframe(self)
