@@ -108,6 +108,7 @@ class F1TableScraper(F1Scraper, ABC):
         resolved_config = config or self.CONFIG
         if resolved_config is None:
             raise ValueError("ScraperConfig must be provided for F1TableScraper.")
+        resolved_config.validate()
 
         self.config = resolved_config
         self.url = resolved_config.url
