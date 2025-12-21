@@ -178,6 +178,18 @@ class WikipediaCachePolicy(ResponseCache):
             return
         self.cache.set(url, text)
 
+    @classmethod
+    def with_file_cache(
+        cls,
+        *,
+        cache_dir: Path | str | None = None,
+        ttl_days: int = 30,
+    ) -> "WikipediaCachePolicy":
+        if cache_dir is None:
+            cache_dir = Path(__file__).parent / "data" / "wiki_cache"
+        ttl_seconds = max(0, int(ttl_days)) * 24 * 60 * 60
+        return cls(FileCache(cache_dir=cache_dir, ttl_seconds=ttl_seconds))
+
     @staticmethod
     def _is_wikipedia_url(url: str) -> bool:
         parsed = urlparse(url)
@@ -338,14 +350,10 @@ class HttpClient(BaseHttpClient):
             request_exception_cls=requests.RequestException,
         )
 
-        if cache is None:
-            if cache_dir is None:
-                cache_dir = Path(__file__).parent / "data" / "wiki_cache"
-            cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
-            cache = WikipediaCachePolicy(
-                FileCache(cache_dir=cache_dir, ttl_seconds=cache_ttl_seconds)
-            )
-        self.cache = cache
+        self.cache = cache or WikipediaCachePolicy.with_file_cache(
+            cache_dir=cache_dir,
+            ttl_days=cache_ttl_days,
+        )
 
     def get(
         self,
@@ -423,14 +431,10 @@ class UrllibHttpClient(BaseHttpClient):
             request_exception_cls=requests_shim.RequestException,
         )
 
-        if cache is None:
-            if cache_dir is None:
-                cache_dir = Path(__file__).parent / "data" / "wiki_cache"
-            cache_ttl_seconds = max(0, int(cache_ttl_days)) * 24 * 60 * 60
-            cache = WikipediaCachePolicy(
-                FileCache(cache_dir=cache_dir, ttl_seconds=cache_ttl_seconds)
-            )
-        self.cache = cache
+        self.cache = cache or WikipediaCachePolicy.with_file_cache(
+            cache_dir=cache_dir,
+            ttl_days=cache_ttl_days,
+        )
 
     def get(
         self,
