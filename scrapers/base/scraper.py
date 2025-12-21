@@ -179,9 +179,7 @@ class F1Scraper(ABC):
 
     # ---------- Pomocnicze ----------
 
-    def _full_url(self, href: str | None) -> Optional[str]:
-        if not href:
-            return None
+    def _full_url(self, href: str) -> str:
         return urljoin(self.url, href)
 
     # ---------- Error handling ----------

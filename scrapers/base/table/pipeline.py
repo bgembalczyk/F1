@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup, Tag
 
 from models.records import LinkRecord
-from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -29,7 +29,7 @@ class TablePipeline:
         *,
         config: ScraperConfig,
         include_urls: bool,
-        full_url: Callable[[str | None], str | None],
+        full_url: Callable[[str], str] | None,
         skip_sentinel: object,
         model_fields: set[str] | None = None,
     ) -> None:

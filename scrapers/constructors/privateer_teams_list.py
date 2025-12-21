@@ -5,7 +5,7 @@ import re
 from bs4 import Tag
 
 from scrapers.base.helpers.parsing import parse_seasons
-from scrapers.base.helpers.wiki import clean_wiki_text
+from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import RunConfig, run_and_export

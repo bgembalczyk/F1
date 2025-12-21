@@ -5,7 +5,7 @@ from typing import Optional, Sequence
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.wiki import find_section_elements, clean_wiki_text
+from scrapers.base.helpers.html_utils import clean_wiki_text, find_section_elements
 from scrapers.base.table.row import TableRow
 
 

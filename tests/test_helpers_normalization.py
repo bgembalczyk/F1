@@ -11,7 +11,7 @@ from scrapers.base.helpers.text_normalization import (
     strip_lang_suffix,
     strip_refs,
 )
-from scrapers.base.helpers.wiki import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 
 try:
     from bs4 import BeautifulSoup  # type: ignore
@@ -100,14 +100,34 @@ def test_extract_links_from_cell_filters_reference_and_language_links():
     soup = BeautifulSoup(html, "html.parser")
     cell = soup.find("td")
 
-    def full_url(href):
-        if not href:
-            return None
+    def full_url(href: str) -> str:
         if href.startswith("http"):
             return href
         return f"https://en.wikipedia.org{href}"
 
     links = extract_links_from_cell(cell, full_url=full_url)
+
+    assert links == [
+        {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
+        {"text": "Red", "url": None},
+    ]
+
+
+def test_extract_links_from_cell_handles_default_full_url():
+    if not _HAS_BS4:
+        pytest.skip("beautifulsoup4 is required for link extraction test")
+    html = """
+    <td>
+        <a href="https://en.wikipedia.org/wiki/Good">Good</a>
+        <a href="https://en.wikipedia.org/w/index.php?title=Red&action=edit&redlink=1">Red</a>
+        <a href="https://fr.wikipedia.org/wiki/Test">fr</a>
+        <a href="#cite_note-1">[1]</a>
+    </td>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    cell = soup.find("td")
+
+    links = extract_links_from_cell(cell)
 
     assert links == [
         {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
