@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime
 from typing import Callable, TypeVar, Iterable, Any
 
 T = TypeVar("T")
@@ -73,6 +72,9 @@ def parse_seasons(
     text: str, *, current_year: int | None = None
 ) -> list[dict[str, Any]]:
     """
+    Deleguje do SeasonService.parse_seasons.
+
+    Zachowane dla kompatybilności wstecznej.
     Zamienia tekst w stylu:
         '1973, 1975–1982, 1984'  lub '2014–present'
     na listę:
@@ -80,37 +82,5 @@ def parse_seasons(
 
     'present' (case-insensitive) → aktualny rok.
     """
-    result: list[dict[str, Any]] = []
-    seen: set[int] = set()
-
-    if not text:
-        return result
-
-    if current_year is None:
-        current_year = datetime.now().year
-
-    text = re.sub(r"\bpresent\b", str(current_year), text, flags=re.IGNORECASE)
-    parts = [p.strip() for p in text.split(",") if p.strip()]
-
-    for part in parts:
-        m_range = re.fullmatch(r"(\d{4})\s*[\u2013-]\s*(\d{4})", part)
-        if m_range:
-            start = int(m_range.group(1))
-            end = int(m_range.group(2))
-            if end < start:
-                start, end = end, start
-            years = range(start, end + 1)
-        else:
-            m_year = re.fullmatch(r"\d{4}", part)
-            if not m_year:
-                continue
-            years = [int(part)]
-
-        for y in years:
-            if y in seen:
-                continue
-            seen.add(y)
-            url = f"https://en.wikipedia.org/wiki/{y}_Formula_One_World_Championship"
-            result.append({"year": y, "url": url})
-
-    return result
+    from models.services.season_service import SeasonService
+    return SeasonService.parse_seasons(text, current_year=current_year)
