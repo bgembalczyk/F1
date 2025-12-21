@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
+from models.services.circuits.circuit_service import CircuitService
 from scrapers.base.helpers.time import normalize_date_value, normalize_time_value
 
-from models.services.circuit_service import CircuitService  # type: ignore
 from models.services.circuits.normalization import (
     normalize_circuit_record_impl,
 )
