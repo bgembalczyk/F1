@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.run import run_and_export
 
@@ -43,54 +44,53 @@ class F1DriversListScraper(F1TableScraper):
       (typ kolumny "seasons" w F1TableScraper).
     """
 
-    url = "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-    section_id = "Drivers"
-
-    expected_headers = [
-        "Driver name",
-        "Nationality",
-        "Seasons competed",
-        "Drivers' Championships",
-    ]
-
-    column_map = {
-        "Driver name": "driver",
-        "Nationality": "nationality",
-        "Seasons competed": "seasons_competed",
-        "Drivers' Championships": "drivers_championships",
-        "Race entries": "race_entries",
-        "Race starts": "race_starts",
-        "Pole positions": "pole_positions",
-        "Race wins": "race_wins",
-        "Podiums": "podiums",
-        "Fastest laps": "fastest_laps",
-        "Points": "points",
-    }
-
-    columns = {
-        "driver": MultiColumn(
-            {
-                "driver": UrlColumn(),
-                # bool na podstawie raw_text – nowa BoolColumn
-                "is_active": BoolColumn(
-                    lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
-                ),
-                "is_world_champion": BoolColumn(
-                    lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "^"))
-                ),
-            }
-        ),
-        "nationality": TextColumn(),
-        "seasons_competed": SeasonsColumn(),
-        "drivers_championships": TextColumn(),
-        "race_entries": IntColumn(),
-        "race_starts": IntColumn(),
-        "pole_positions": IntColumn(),
-        "race_wins": IntColumn(),
-        "podiums": IntColumn(),
-        "fastest_laps": IntColumn(),
-        "points": TextColumn(),
-    }
+    CONFIG = ScraperConfig(
+        url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
+        section_id="Drivers",
+        expected_headers=[
+            "Driver name",
+            "Nationality",
+            "Seasons competed",
+            "Drivers' Championships",
+        ],
+        column_map={
+            "Driver name": "driver",
+            "Nationality": "nationality",
+            "Seasons competed": "seasons_competed",
+            "Drivers' Championships": "drivers_championships",
+            "Race entries": "race_entries",
+            "Race starts": "race_starts",
+            "Pole positions": "pole_positions",
+            "Race wins": "race_wins",
+            "Podiums": "podiums",
+            "Fastest laps": "fastest_laps",
+            "Points": "points",
+        },
+        columns={
+            "driver": MultiColumn(
+                {
+                    "driver": UrlColumn(),
+                    # bool na podstawie raw_text – nowa BoolColumn
+                    "is_active": BoolColumn(
+                        lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
+                    ),
+                    "is_world_champion": BoolColumn(
+                        lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "^"))
+                    ),
+                }
+            ),
+            "nationality": TextColumn(),
+            "seasons_competed": SeasonsColumn(),
+            "drivers_championships": TextColumn(),
+            "race_entries": IntColumn(),
+            "race_starts": IntColumn(),
+            "pole_positions": IntColumn(),
+            "race_wins": IntColumn(),
+            "podiums": IntColumn(),
+            "fastest_laps": IntColumn(),
+            "points": TextColumn(),
+        },
+    )
 
     # =====================================================================
     #  Parsowanie kolumny Drivers' Championships
