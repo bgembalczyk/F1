@@ -125,7 +125,7 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
 
         # jeśli nic sensownego nie znaleźliśmy, nie próbujemy zgadywać z prędkości
         if not details:
-            return self._prune_nulls(record) or None
+            return None
 
         driver_text = details[0] if len(details) >= 1 else None
         car_text = details[1] if len(details) >= 2 else None
@@ -141,7 +141,13 @@ class CircuitLapRecordMixin(CircuitAdditionalInfoMixin):
             }
         )
 
-        return self._prune_nulls(record) or None
+        record = self._prune_nulls(record) or {}
+
+        # nie emituj "gołego czasu"
+        if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
+            return None
+
+        return record
 
     def _year_from_record(self, rec: Dict[str, Any]) -> Optional[str]:
         y = rec.get("year")

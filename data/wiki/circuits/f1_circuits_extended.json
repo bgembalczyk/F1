@@ -11212,12 +11212,6 @@
         },
         "race_lap_records": [
           {
-            "time": 80.901,
-            "driver": {
-              "text": "257.781 km/h (160.178 mph"
-            }
-          },
-          {
             "event": {
               "text": "2025 Italian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
@@ -13801,9 +13795,18 @@
         },
         "race_lap_records": [
           {
-            "time": 54.0,
             "driver": {
-              "text": "283.34 km/h (176.06 mph"
+              "text": "Bob Veith",
+              "url": "https://en.wikipedia.org/wiki/Bob_Veith"
+            },
+            "vehicle": {
+              "text": "Bowes Seal Fast Special"
+            },
+            "time": 54.0,
+            "year": "1958",
+            "series": {
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar"
             }
           },
           {
@@ -13838,12 +13841,6 @@
           "text": "Asphalt/Concrete"
         },
         "race_lap_records": [
-          {
-            "time": 163.6,
-            "driver": {
-              "text": "223.02 km/h (138.58 mph"
-            }
-          },
           {
             "event": {
               "text": "1960 Italian Grand Prix",
@@ -20060,16 +20057,6 @@
             "series": {
               "text": "Truck racing",
               "url": "https://en.wikipedia.org/wiki/Truck_racing"
-            }
-          }
-        ]
-      },
-      {
-        "race_lap_records": [
-          {
-            "time": 107.204,
-            "driver": {
-              "text": "David Vršecký"
             }
           }
         ]
@@ -46622,16 +46609,6 @@
         },
         "race_lap_records": [
           {
-            "time": 133.3,
-            "driver": {
-              "text": "Bob McIntyre",
-              "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
-            },
-            "vehicle": {
-              "text": "Gilera Saturno"
-            }
-          },
-          {
             "event": {
               "text": "1957 German motorcycle Grand Prix"
             },
@@ -46795,16 +46772,6 @@
       },
       {
         "race_lap_records": [
-          {
-            "time": 133.3,
-            "driver": {
-              "text": "Bob McIntyre",
-              "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
-            },
-            "vehicle": {
-              "text": "Gilera Saturno"
-            }
-          },
           {
             "event": {
               "text": "2002 1st Hockenheim German F3 round",
@@ -47131,6 +47098,16 @@
             "series": {
               "text": "50cc",
               "url": "https://en.wikipedia.org/wiki/50_cc_Grand_Prix_motorcycle_racing"
+            }
+          },
+          {
+            "time": 133.3,
+            "driver": {
+              "text": "Bob McIntyre",
+              "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
+            },
+            "vehicle": {
+              "text": "Gilera Saturno"
             }
           }
         ]
@@ -75514,7 +75491,7 @@
               "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Autonomous_Racing_League"
             },
             "driver": {
-              "text": "Hailey"
+              "text": "Hailey (TUM)"
             },
             "vehicle": {
               "text": "Dallara EAV24",
