@@ -14,21 +14,6 @@ from scrapers.base.helpers.time import parse_time_key, parse_time_seconds
 
 _YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
 
-__all__ = [
-    "build_core_key",
-    "build_record_key",
-    "collect_other_fields",
-    "merge_race_lap_records",
-    "merge_record_group",
-    "merge_two_records",
-    "parse_event_year",
-    "select_best_date_and_year",
-    "select_best_driver",
-    "select_best_series",
-    "select_best_time",
-    "select_best_vehicle",
-]
-
 
 def parse_event_year(rec: dict[str, Any]) -> str | None:
     """

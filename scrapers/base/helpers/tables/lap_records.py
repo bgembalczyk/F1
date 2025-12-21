@@ -19,8 +19,6 @@ from scrapers.base.helpers.wiki import extract_links_from_cell
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.registry import resolve_column_type
 
-__all__ = ["LapRecordsTableScraper"]
-
 
 class LapRecordsTableScraper(F1TableScraper):
     """
