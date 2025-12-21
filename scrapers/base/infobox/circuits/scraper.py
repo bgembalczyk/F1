@@ -21,6 +21,7 @@ from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
+from scrapers.config import default_http_config
 
 from scrapers.base.errors import ScraperError, ScraperParseError
 
@@ -39,7 +40,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         # HtmlFetcher po merge jest config-driven (default_http_config), więc bezpiecznie
         # tworzymy go bez “legacy” parametrów.
         if options.fetcher is None:
-            options.fetcher = HtmlFetcher()
+            options.fetcher = HtmlFetcher(config=default_http_config())
 
         super().__init__(options=options)
 

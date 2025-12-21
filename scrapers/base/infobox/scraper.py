@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.config import HttpConfig
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 
@@ -35,20 +36,17 @@ class WikipediaInfoboxScraper:
         parser: InfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
     ) -> None:
-        merged_headers: Dict[str, str] = {}
-        if user_agent:
-            merged_headers["User-Agent"] = user_agent
-        if headers:
-            merged_headers.update(headers)
-
         if fetcher is None:
             fetcher = HtmlFetcher(
-                session=session,
-                headers=merged_headers or None,
-                http_client=http_client,
-                timeout=timeout,
-                retries=retries,
-                cache=cache,
+                config=HttpConfig(
+                    session=session,
+                    headers=headers,
+                    user_agent=user_agent,
+                    timeout=timeout,
+                    retries=retries,
+                    cache=cache,
+                    http_client=http_client,
+                )
             )
 
         self.fetcher = fetcher
