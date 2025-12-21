@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from pathlib import Path
 from typing import Any, List
 
@@ -8,7 +7,7 @@ from models.scrape_types import (
     DriverChampionshipsPayload,
     DriverRow,
 )  # typing-only, ale OK
-from scrapers.base.helpers.parsing import parse_seasons
+from models.services.driver_service import DriverService
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import RunConfig, run_and_export
 from scrapers.base.options import ScraperOptions
@@ -87,45 +86,14 @@ class F1DriversListScraper(F1TableScraper):
 
     def _parse_drivers_championships(self, raw: Any) -> DriverChampionshipsPayload:
         """
+        Deleguje parsowanie do DriverService.parse_championships.
+
         Wejście (po TextColumn) bywa np.:
         - "0"
         - "2\\n2005–2006"
         - "7\\n1994–1995, 2000–2004"
         """
-        text = (str(raw) if raw is not None else "").strip()
-        if not text:
-            return {"count": 0, "seasons": []}
-
-        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-
-        count = 0
-        seasons_parts: List[str] = []
-
-        if lines:
-            m = re.match(r"(\d+)", lines[0])
-            if m:
-                count = int(m.group(1))
-                tail = lines[0][m.end() :].strip()
-                if tail:
-                    seasons_parts.append(tail)
-                seasons_parts.extend(lines[1:])
-            else:
-                m2 = re.search(r"\d+", text)
-                if m2:
-                    count = int(m2.group(0))
-                seasons_parts = lines[1:] if len(lines) > 1 else []
-        else:
-            m2 = re.search(r"\d+", text)
-            if m2:
-                count = int(m2.group(0))
-
-        if count == 0 or not seasons_parts:
-            return {"count": count, "seasons": []}
-
-        seasons_text = ", ".join(seasons_parts)
-        seasons = parse_seasons(seasons_text)
-
-        return {"count": count, "seasons": seasons}
+        return DriverService.parse_championships(raw)  # type: ignore[return-value]
 
     def fetch(self) -> List[DriverRow]:
         rows = super().fetch()
