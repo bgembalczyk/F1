@@ -82,30 +82,6 @@ def _make_scraper(
     return scraper_cls(**ctor_kwargs)
 
 
-def _write_json(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
-    """
-    Kompatybilność eksportu między:
-    - nowym API (jeśli kiedyś będzie): result.to_json(path)
-    - obecnym API: scraper.exporter.to_json(result, path)
-    """
-    if hasattr(result, "to_json") and callable(getattr(result, "to_json")):
-        result.to_json(path)  # type: ignore[call-arg]
-        return
-    scraper.exporter.to_json(result, path)
-
-
-def _write_csv(result: ScrapeResult, *, scraper: F1Scraper, path: Path) -> None:
-    """
-    Kompatybilność eksportu między:
-    - nowym API (jeśli kiedyś będzie): result.to_csv(path)
-    - obecnym API: scraper.exporter.to_csv(result, path)
-    """
-    if hasattr(result, "to_csv") and callable(getattr(result, "to_csv")):
-        result.to_csv(path)  # type: ignore[call-arg]
-        return
-    scraper.exporter.to_csv(result, path)
-
-
 def run_and_export(
     scraper_cls: Type[F1Scraper],
     json_path: str | Path,
@@ -123,7 +99,7 @@ def run_and_export(
     - wspiera scrapery na `options` oraz legacy konstruktory,
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów,
-    - wspiera 2 style eksportu (result.to_* oraz exporter.to_*(result,...)).
+    - eksport obsługuje ScrapeResult.
     """
     kwargs = dict(scraper_kwargs)
     options = options or ScraperOptions()
@@ -150,12 +126,12 @@ def run_and_export(
 
     json_path = Path(json_path)
     _ensure_parent(json_path)
-    _write_json(result, scraper=scraper, path=json_path)
+    result.to_json(json_path, exporter=scraper.exporter)
 
     if csv_path:
         csv_path = Path(csv_path)
         _ensure_parent(csv_path)
-        _write_csv(result, scraper=scraper, path=csv_path)
+        result.to_csv(csv_path, exporter=scraper.exporter)
 
 
 def _cli() -> None:

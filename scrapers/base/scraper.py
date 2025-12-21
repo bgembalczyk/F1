@@ -126,9 +126,9 @@ class F1Scraper(ABC):
         include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
-        self.exporter.to_json(
-            result,
+        result.to_json(
             path,
+            exporter=self.exporter,
             indent=indent,
             include_metadata=include_metadata,
         )
@@ -141,16 +141,16 @@ class F1Scraper(ABC):
         fieldnames_strategy: str = "union",
     ) -> None:
         result = self.build_result()
-        self.exporter.to_csv(
-            result,
+        result.to_csv(
             path,
+            exporter=self.exporter,
             fieldnames=fieldnames,
             fieldnames_strategy=fieldnames_strategy,
         )
 
     def to_dataframe(self):
         result = self.build_result()
-        return self.exporter.to_dataframe(result)
+        return result.to_dataframe(exporter=self.exporter)
 
     # ---------- Metody wewnętrzne ----------
 

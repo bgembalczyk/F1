@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 from datetime import datetime, timezone
-from typing import List, Optional
+from typing import List, Optional, Sequence, TYPE_CHECKING
 
+from scrapers.base.normalization import NormalizationRule, RecordNormalizer
 from scrapers.base.records import ExportRecord
+
+if TYPE_CHECKING:
+    from scrapers.base.export.exporters import DataExporter
 
 
 @dataclass(frozen=True)
@@ -12,3 +17,107 @@ class ScrapeResult:
     data: List[ExportRecord]
     source_url: Optional[str]
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+
+    def _with_normalized_data(
+        self,
+        *,
+        normalize_keys: bool,
+        normalization_rules: Sequence[NormalizationRule] | None,
+    ) -> "ScrapeResult":
+        normalizer = RecordNormalizer(
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
+        )
+        if not normalizer.has_rules:
+            return self
+
+        normalized: list[ExportRecord] = []
+        for item in self.data:
+            if isinstance(item, dict):
+                normalized.append(normalizer.normalize_record(item))
+            else:
+                normalized.append(item)
+
+        return ScrapeResult(
+            data=normalized,
+            source_url=self.source_url,
+            timestamp=self.timestamp,
+        )
+
+    def to_json(
+        self,
+        path: str | Path,
+        *,
+        exporter: "DataExporter | None" = None,
+        indent: int = 2,
+        include_metadata: bool = False,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+    ) -> None:
+        from scrapers.base.export.exporters import DataExporter
+
+        normalized = self._with_normalized_data(
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
+        )
+        exporter = exporter or DataExporter()
+        exporter.to_json(
+            normalized,
+            path,
+            indent=indent,
+            include_metadata=include_metadata,
+        )
+
+    def to_csv(
+        self,
+        path: str | Path,
+        *,
+        exporter: "DataExporter | None" = None,
+        fieldnames: Sequence[str] | None = None,
+        fieldnames_strategy: str = "union",
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+    ) -> None:
+        from scrapers.base.export.export_helpers import (
+            _fieldnames_from_first_row,
+            _fieldnames_from_union,
+        )
+        from scrapers.base.export.exporters import DataExporter
+        from scrapers.base.format.formatter_helpers import _extract_data
+
+        normalized = self._with_normalized_data(
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
+        )
+
+        if fieldnames is None:
+            data = _extract_data(normalized)
+            if data:
+                if fieldnames_strategy == "union":
+                    fieldnames = _fieldnames_from_union(data)
+                elif fieldnames_strategy == "first_row":
+                    fieldnames = _fieldnames_from_first_row(data)
+                else:
+                    raise ValueError(
+                        "Nieznana strategia fieldnames: "
+                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
+                    )
+
+        exporter = exporter or DataExporter()
+        exporter.to_csv(normalized, path, fieldnames=fieldnames)
+
+    def to_dataframe(
+        self,
+        *,
+        exporter: "DataExporter | None" = None,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+    ):
+        from scrapers.base.export.exporters import DataExporter
+
+        normalized = self._with_normalized_data(
+            normalize_keys=normalize_keys,
+            normalization_rules=normalization_rules,
+        )
+        exporter = exporter or DataExporter()
+        return exporter.to_dataframe(normalized)
