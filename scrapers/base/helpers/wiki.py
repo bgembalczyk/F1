@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import Tag
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import is_language_link, clean_wiki_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 
 
 def strip_marks(text: str | None) -> str | None:
@@ -92,43 +92,10 @@ def is_wikipedia_redlink(url: str | None) -> bool:
     return "wikipedia.org" in url_l and "action=edit" in url_l and "redlink=" in url_l
 
 
-def is_language_marker_link(text: str | None, url: str | None) -> bool:
-    """
-    Sprawdza czy link jest markerem językowym (np. '(it)' z linkiem do it.wikipedia.org).
-
-    Args:
-        text: Tekst linku (np. 'it', 'de', 'es')
-        url: URL linku
-
-    Returns:
-        True jeśli to marker językowy do odfiltrowania
-    """
-    if not text or not url:
-        return False
-
-    # Typowe 2-3 znakowe kody języków
-    text_clean = text.strip().lower()
-    if len(text_clean) not in (2, 3):
-        return False
-
-    # Sprawdź czy URL prowadzi do innej wersji językowej Wikipedii
-    # np. https://it.wikipedia.org/, https://de.wikipedia.org/
-    url_lower = url.lower()
-    if "wikipedia.org" in url_lower:
-        # Wzorzec: {kod}.wikipedia.org
-        if f"{text_clean}.wikipedia.org" in url_lower:
-            return True
-        # Wzorzec: wikipedia.org/{kod}/
-        if f"wikipedia.org/{text_clean}/" in url_lower:
-            return True
-
-    return False
-
-
 def clean_link_record(link: LinkRecord) -> LinkRecord | None:
     """
     Ujednolica linki:
-    - usuwa markery językowe (logika z is_language_link i is_language_marker_link),
+    - usuwa markery językowe (logika z is_language_link),
     - zamienia redlink na url=None,
     - zwraca None dla pustego tekstu.
     """
@@ -138,7 +105,7 @@ def clean_link_record(link: LinkRecord) -> LinkRecord | None:
 
     url = link.get("url")
 
-    if is_language_link(link_text, url) or is_language_marker_link(link_text, url):
+    if is_language_link(link_text, url):
         return None
 
     if is_wikipedia_redlink(url):
