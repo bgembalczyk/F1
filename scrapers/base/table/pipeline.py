@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from typing import Any, Callable, Mapping, Sequence
+from typing import Any, Mapping, Sequence
 from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup, Tag
 
 from models.records import LinkRecord
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -29,13 +30,12 @@ class TablePipeline:
         *,
         config: ScraperConfig,
         include_urls: bool,
-        full_url: Callable[[str], str] | None,
         skip_sentinel: object,
         model_fields: set[str] | None = None,
     ) -> None:
         self.config = config
         self.include_urls = include_urls
-        self.full_url = full_url
+        self.base_url = config.url
         self.skip_sentinel = skip_sentinel
         self.model_fields = model_fields
 
@@ -101,7 +101,10 @@ class TablePipeline:
     def _extract_links(self, cell: Tag) -> list[LinkRecord]:
         if not self.include_urls:
             return []
-        return extract_links_from_cell(cell, full_url=self.full_url)
+        return extract_links_from_cell(
+            cell,
+            full_url=lambda href: build_full_url(self.base_url, href),
+        )
 
     def _select_column(self, key: str, header: str) -> BaseColumn:
         return self.columns.get(key) or self.columns.get(header) or self.default_column

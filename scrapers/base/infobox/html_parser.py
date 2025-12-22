@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from models.records import LinkRecord
 from scrapers.base.helpers.html_utils import extract_links_from_cell
+from scrapers.base.helpers.wiki import build_full_url
 
 
 class InfoboxHtmlParser:
@@ -86,14 +87,8 @@ class InfoboxHtmlParser:
         """
         Wyciąga wszystkie linki z komórki, pomijając linki do przypisów.
         """
-
-        def _full_url(href: str) -> str:
-            if href.startswith("/"):
-                return f"{self.wikipedia_base}{href}"
-            return href
-
         return extract_links_from_cell(
             td,
-            full_url=_full_url,
+            full_url=lambda href: build_full_url(self.wikipedia_base, href),
             allow_local_anchors=False,
         )

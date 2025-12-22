@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from urllib.parse import urljoin, urlsplit, urlunsplit
+
 from bs4 import Tag
 
 from models.records import LinkRecord
@@ -22,6 +24,34 @@ def strip_marks(text: str | None) -> str | None:
         .replace("^", "")
         .strip()
     )
+
+
+def build_full_url(base: str, href: str) -> str:
+    """
+    Buduje pełny URL na podstawie bazy i href.
+
+    Obsługuje przypadki:
+    - względne ścieżki (/wiki/...),
+    - schemowe URL-e (//...),
+    - absolutne URL-e (http/https i inne schematy).
+    """
+    href = href.strip()
+    if not href:
+        return href
+
+    parsed = urlsplit(href)
+    if parsed.scheme:
+        return href
+
+    if href.startswith("//"):
+        base_scheme = urlsplit(base).scheme or "https"
+        return f"{base_scheme}:{href}"
+
+    if href.startswith("/"):
+        base_parts = urlsplit(base)
+        return urlunsplit((base_parts.scheme or "https", base_parts.netloc, href, "", ""))
+
+    return urljoin(base, href)
 
 
 def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
