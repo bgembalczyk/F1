@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from dataclasses import asdict, is_dataclass
+import logging
 from typing import Any, Dict, Iterable, Optional
 from urllib.parse import urlparse
 
 from models.value_objects import Link, SeasonRef
+from models.serializers import to_dict_any
 
 
 def _coerce_number(value: Any, type_: type, field_name: str):
@@ -155,14 +156,15 @@ def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
     return status_normalized
 
 
-def model_to_dict(model: Any) -> Dict[str, Any]:
-    if hasattr(model, "model_dump"):
-        return model.model_dump()
-    if hasattr(model, "dict"):
-        return model.dict()
-    if is_dataclass(model):
-        return asdict(model)
-    raise TypeError("Nieobsługiwany typ modelu")
+def model_to_dict(
+    model: Any,
+    *,
+    logger: logging.Logger | logging.LoggerAdapter | None = None,
+) -> Dict[str, Any]:
+    result = to_dict_any(model, logger=logger)
+    if not isinstance(result, dict):
+        raise TypeError("Nieobsługiwany typ modelu")
+    return result
 
 
 def normalize_link_list(
