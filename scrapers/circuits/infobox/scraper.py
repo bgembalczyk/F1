@@ -116,7 +116,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
             soup = full_soup
             if fragment:
-                section = self.section_extractor.extract_section_by_id(
+                section = self.section_extractor._extract_section_by_id(
                     full_soup, fragment
                 )
                 if section is not None:
