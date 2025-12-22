@@ -87,7 +87,7 @@ class F1DriversListScraper(F1TableScraper):
     def _parse_drivers_championships(self, raw: Any) -> DriverChampionshipsPayload:
         """
         Deleguje parsowanie do DriverService.parse_championships.
-
+        
         Wejście (po TextColumn) bywa np.:
         - "0"
         - "2\\n2005–2006"

@@ -36,7 +36,6 @@ class CircuitService:
         - history: tylko lista events
         - nie kopiujemy last_length_used_km, last_length_used_mi, turns, specs (poza fia_grade)
         """
-
         def normalize_lap_record(rec: dict[str, Any]) -> None:
             """Normalizuj czas/daty w rekordzie okrążenia (in-place)."""
             normalize_time_value(rec)
