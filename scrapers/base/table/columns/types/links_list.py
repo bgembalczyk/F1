@@ -1,6 +1,7 @@
 from typing import Any
 
 from models.records import LinkRecord
+from models.validation.validators import normalize_link_record
 from scrapers.base.helpers.wiki import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -26,13 +27,11 @@ class LinksListColumn(BaseColumn):
                 d["text"] = text
 
             # 2) skip if no text
-            if not text:
+            normalized = normalize_link_record(d)
+            if not normalized:
                 # brak tekstu → NIE dodajemy tego linku do listy
                 continue
 
-            # 3) ensure url exists
-            d.setdefault("url", None)
-
-            cleaned.append(d)
+            cleaned.append(normalized)
 
         return cleaned

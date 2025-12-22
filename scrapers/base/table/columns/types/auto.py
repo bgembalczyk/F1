@@ -2,7 +2,7 @@
 from typing import Any
 import re
 
-from models.records import LinkRecord
+from models.validation.validators import normalize_link_record
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.helpers.wiki import clean_link_record
 from scrapers.base.table.columns.context import ColumnContext
@@ -31,10 +31,6 @@ class AutoColumn(BaseColumn):
         self.strip_refs = strip_refs
         self.normalize_dashes = normalize_dashes
 
-    @staticmethod
-    def _normalize_link(link: LinkRecord) -> LinkRecord:
-        return {"text": link.get("text") or "", "url": link.get("url")}
-
     def _cell_text(self, ctx: ColumnContext) -> str:
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
@@ -60,7 +56,9 @@ class AutoColumn(BaseColumn):
         for link in ctx.links or []:
             cleaned = clean_link_record(link)
             if cleaned:
-                links.append(self._normalize_link(cleaned))
+                normalized = normalize_link_record(cleaned)
+                if normalized:
+                    links.append(normalized)
 
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:

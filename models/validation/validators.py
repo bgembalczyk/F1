@@ -4,6 +4,7 @@ import logging
 from typing import Any, Dict, Iterable, Optional
 from urllib.parse import urlparse
 
+from models.records import LinkRecord
 from models.value_objects import Link, SeasonRef
 from models.serializers import to_dict_any
 
@@ -48,14 +49,18 @@ def validate_link(
         return link.to_dict()
 
     data: Dict[str, Any] = dict(link or {})
-    text = str(data.get("text") or "").strip()
-    url = data.get("url")
+    normalized = normalize_link_record(
+        {"text": data.get("text") or "", "url": data.get("url")}
+    )
+    if normalized is None:
+        return {"text": "", "url": None}
 
-    if url is not None and url != "":
+    text = normalized.get("text") or ""
+    url = normalized.get("url")
+
+    if url is not None:
         if not isinstance(url, str) or not _is_valid_url(url):
             raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
-    else:
-        url = None
 
     try:
         parsed = Link.from_dict({"text": text, "url": url})
@@ -205,6 +210,16 @@ def _is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
         if url == "":
             url = None
     return text == "" and url is None
+
+
+def normalize_link_record(link: LinkRecord) -> LinkRecord | None:
+    text = str(link.get("text") or "").strip()
+    url = link.get("url")
+    if url == "":
+        url = None
+    if text == "" and url is None:
+        return None
+    return {"text": text, "url": url}
 
 
 def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:
