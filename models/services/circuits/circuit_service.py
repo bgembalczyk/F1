@@ -10,11 +10,6 @@ from scrapers.base.helpers.time import normalize_time_value, normalize_date_valu
 from models.services.circuits.normalization import (
     normalize_circuit_record_impl,
 )
-from models.services.circuits.lap_record_merging import (
-    merge_race_lap_records,
-    build_record_key,
-    build_core_key,
-)
 
 
 @dataclass(frozen=True)
@@ -36,6 +31,7 @@ class CircuitService:
         - history: tylko lista events
         - nie kopiujemy last_length_used_km, last_length_used_mi, turns, specs (poza fia_grade)
         """
+
         def normalize_lap_record(rec: dict[str, Any]) -> None:
             """Normalizuj czas/daty w rekordzie okrążenia (in-place)."""
             normalize_time_value(rec)
@@ -45,22 +41,3 @@ class CircuitService:
             raw,
             normalize_lap_records_fn=normalize_lap_record,
         )
-
-    @staticmethod
-    def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        """
-        Łączy duplikujące się rekordy okrążeń (infobox + tabela) w jeden bogaty rekord.
-
-        Deleguje do modułu lap_record_merging.
-        """
-        return merge_race_lap_records(records)
-
-    @staticmethod
-    def record_key(rec: dict[str, Any]) -> tuple | None:
-        """Zwraca klucz rekordu dla identyfikacji duplikatów."""
-        return build_record_key(rec)
-
-    @staticmethod
-    def core_key(rec: dict[str, Any]) -> tuple | None:
-        """Zwraca klucz rdzeniowy (bez czasu) dla identyfikacji duplikatów."""
-        return build_core_key(rec)

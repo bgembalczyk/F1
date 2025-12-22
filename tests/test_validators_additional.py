@@ -2,8 +2,16 @@ from dataclasses import dataclass
 
 import pytest
 
-from models.validation.validators import validate_int, validate_float, validate_link, validate_links, validate_seasons, \
-    model_to_dict, normalize_link_list, normalize_season_list
+from models.validation.validators import (
+    validate_int,
+    validate_float,
+    validate_link,
+    validate_links,
+    validate_seasons,
+    model_to_dict,
+    normalize_link_list,
+    normalize_season_list,
+)
 from models.value_objects import Link, SeasonRef
 
 

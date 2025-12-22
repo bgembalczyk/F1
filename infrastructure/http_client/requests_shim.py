@@ -77,8 +77,7 @@ class Session:
             response = Response(url, body, exc.code, headers=dict(exc.headers))
             response.raise_for_status()
             return response
-        except urllib.error.URLError as exc:  # pragma: no cover - delegacja błędów
-            # urllib zwykle używa socket.timeout, ale zostawiamy Twoją logikę
+        except urllib.error.URLError as exc:
             if isinstance(exc.reason, TimeoutError):
                 raise Timeout(str(exc)) from exc
             raise RequestException(str(exc)) from exc

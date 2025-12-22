@@ -1,6 +1,8 @@
 from typing import Optional, Dict, Any, List
 
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
 from scrapers.circuits.infobox.services.history import CircuitHistoryParser

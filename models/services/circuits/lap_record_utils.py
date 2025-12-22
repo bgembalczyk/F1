@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any, Callable, Iterable, Mapping
 
-from scrapers.base.helpers.text import normalize_text
-from scrapers.base.helpers.time import parse_time_seconds, parse_time_seconds_from_text
+from scrapers.base.helpers.text_normalization import normalize_text
+from scrapers.base.helpers.time import parse_time_seconds_from_text
 
 
 def normalize_lap_record_entity(
@@ -21,28 +21,23 @@ def normalize_lap_record_entity(
     return text
 
 
-def normalize_lap_record_driver(
-    value: Any, *, sanitizer: Callable[[str], str] | None = None
-) -> str:
-    """Normalizuje tekst kierowcy."""
-    return normalize_lap_record_entity(value, sanitizer=sanitizer)
-
-
-def normalize_lap_record_vehicle(
-    value: Any, *, sanitizer: Callable[[str], str] | None = None
-) -> str:
-    """Normalizuje tekst pojazdu."""
-    return normalize_lap_record_entity(value, sanitizer=sanitizer)
-
-
-def parse_lap_record_time(value: Any) -> float | None:
-    """Parsuje wartość czasu na sekundy (float)."""
-    return parse_time_seconds_from_text(value)
-
-
 def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
-    """Parsuje czas z rekordu (obsługa time_seconds/time)."""
-    return parse_time_seconds(rec)
+    """
+    Parsuje czas z rekordu (obsługa time_seconds/time).
+    Zwraca czas WYŁĄCZNIE jako sekundy (float) albo None.
+    Obsługuje:
+    - rec["time_seconds"] (jeśli istnieje)
+    - rec["time"] jako liczba
+    - rec["time"] jako dict {"seconds": ...}
+    - rec["time"] jako tekst: "M:SS.xxx" albo "SS.xxx"
+    - rec["time"] jako NormalizedTime
+    """
+    ts = rec.get("time_seconds")
+    if isinstance(ts, (int, float)):
+        return float(ts)
+
+    t = rec.get("time")
+    return parse_time_seconds_from_text(t)
 
 
 def choose_richer_entity(a: Any, b: Any) -> Any:
@@ -119,12 +114,12 @@ def build_lap_record_key(
     driver_norm = (
         driver_normalizer(driver_value)
         if driver_normalizer is not None
-        else normalize_lap_record_driver(driver_value)
+        else normalize_lap_record_entity(driver_value)
     )
     vehicle_norm = (
         vehicle_normalizer(vehicle_value)
         if vehicle_normalizer is not None
-        else normalize_lap_record_vehicle(vehicle_value)
+        else normalize_lap_record_entity(vehicle_value)
     )
 
     time_value = (
@@ -132,9 +127,7 @@ def build_lap_record_key(
         if time_extractor is not None
         else parse_lap_record_time_from_record(rec)
     )
-    year_value = (
-        year_extractor(rec) if year_extractor is not None else rec.get("year")
-    )
+    year_value = year_extractor(rec) if year_extractor is not None else rec.get("year")
     year_norm = str(year_value).strip() if year_value is not None else ""
 
     if not driver_norm or not vehicle_norm or not year_norm or time_value is None:

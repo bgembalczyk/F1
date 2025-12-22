@@ -11,7 +11,9 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser

@@ -1,6 +1,10 @@
 import pytest
 
-from models.validation.validators import validate_link, validate_seasons, validate_status
+from models.validation.validators import (
+    validate_link,
+    validate_seasons,
+    validate_status,
+)
 from models.value_objects import SeasonRef
 
 

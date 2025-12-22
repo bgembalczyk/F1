@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Optional
+from typing import Any
 
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.value_objects import NormalizedTime
@@ -50,9 +50,7 @@ class TimeColumn(BaseColumn):
         # 1) format "M:SS(.sss)"
         m = self._RE_COLON.match(base)
         if m:
-            seconds = parse_time_seconds_from_text(
-                f"{m.group('min')}:{m.group('sec')}"
-            )
+            seconds = parse_time_seconds_from_text(f"{m.group('min')}:{m.group('sec')}")
             return NormalizedTime(text=text, seconds=seconds)
 
         # 2) format "M min SS(.sss)s" / "M m SS.s s"

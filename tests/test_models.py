@@ -8,7 +8,10 @@ import types
 
 from models.validation.base import ValidatedModel
 from models.validation.circuit import Circuit
-from models.validation.constants import CIRCUIT_STATUS_CURRENT, MANUFACTURER_STATUS_FORMER
+from models.validation.constants import (
+    CIRCUIT_STATUS_CURRENT,
+    MANUFACTURER_STATUS_FORMER,
+)
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.scraper import F1TableScraper

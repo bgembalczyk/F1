@@ -52,16 +52,12 @@ class DriverService:
         - "2\n2005–2006"
         - "7\n1994–1995, 2000–2004"
         """
-        text = (str(raw) if raw is not None else "")
+        text = str(raw) if raw is not None else ""
         text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
         if not text:
             return {"count": 0, "seasons": []}
 
         count, seasons_parts = DriverService._extract_count(text)
-        seasons = (
-            []
-            if count == 0
-            else DriverService._parse_season_parts(seasons_parts)
-        )
+        seasons = [] if count == 0 else DriverService._parse_season_parts(seasons_parts)
 
         return {"count": count, "seasons": seasons}

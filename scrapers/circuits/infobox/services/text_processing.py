@@ -1,7 +1,6 @@
 import re
 from typing import Any, Optional
 
-from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -43,16 +42,6 @@ class CircuitTextProcessing(InfoboxTextUtils):
             return f"{float(t):.6f}".rstrip("0").rstrip(".")
         s = str(t).strip()
         return s or None
-
-    def _time_to_seconds(self, value: Any) -> Optional[float]:
-        """
-        Zamienia time (string lub number) na sekundy (float).
-        Obsługuje:
-        - "M:SS"
-        - "M:SS.d", "M:SS.dd", "M:SS.ddd", "M:SS.dddd"...
-        - "SS.ddd" itp.
-        """
-        return parse_time_seconds_from_text(value)
 
     @staticmethod
     def _get_vehicle_field(rec: dict[str, Any]) -> Any:

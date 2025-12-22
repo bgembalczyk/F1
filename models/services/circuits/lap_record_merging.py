@@ -5,16 +5,14 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from scrapers.base.helpers.text import match_driver_loose, match_vehicle_prefix
-from scrapers.base.helpers.time import parse_time_key
+from scrapers.base.helpers.text_normalization import match_driver_loose, match_vehicle_prefix
+from scrapers.base.helpers.time import parse_time_key, parse_time_seconds_from_text
 
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
-    normalize_lap_record_driver,
-    normalize_lap_record_vehicle,
-    parse_lap_record_time,
     parse_lap_record_time_from_record,
     select_best_field_with_url,
+    normalize_lap_record_entity,
 )
 
 
@@ -67,9 +65,9 @@ def _extract_driver_vehicle_year(
     Wspólna logika ekstrakcji driver_text, vehicle_text, year.
     Używana przez build_record_key i build_core_key.
     """
-    driver_txt = normalize_lap_record_driver(rec.get("driver"))
+    driver_txt = normalize_lap_record_entity(rec.get("driver"))
     vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = normalize_lap_record_vehicle(vehicle_obj)
+    vehicle_txt = normalize_lap_record_entity(vehicle_obj)
     year = _extract_year(rec)
 
     return driver_txt, vehicle_txt, year
@@ -114,8 +112,8 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
         bv = big.get(k)
 
         if k == "time":
-            st = parse_lap_record_time(sv)
-            bt = parse_lap_record_time(bv)
+            st = parse_time_seconds_from_text(sv)
+            bt = parse_time_seconds_from_text(bv)
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -446,14 +444,14 @@ def _stage_c_merge_by_driver_time(
     """
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        d = normalize_lap_record_driver(rec.get("driver"))
+        d = normalize_lap_record_entity(rec.get("driver"))
         t = parse_lap_record_time_from_record(rec)
         if d and t is not None:
             index_dt.setdefault((d, round(float(t), 6)), []).append(i)
 
     final_left: list[dict[str, Any]] = []
     for rec in still_left:
-        d = normalize_lap_record_driver(rec.get("driver"))
+        d = normalize_lap_record_entity(rec.get("driver"))
         t = parse_lap_record_time_from_record(rec)
         if not d or t is None:
             final_left.append(rec)

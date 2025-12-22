@@ -7,7 +7,7 @@ from typing import Optional, Sequence
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
-from scrapers.base.helpers.tables import is_repeated_header_row
+from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.row import TableRow
 
@@ -54,7 +54,7 @@ class HtmlTableParser:
             cleaned_cells = [
                 clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
             ]
-            if self._is_repeated_header_row(cleaned_cells, headers):
+            if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
@@ -96,10 +96,3 @@ class HtmlTableParser:
             return None
         normalized = fragment.lstrip("#").strip()
         return normalized or None
-
-    @staticmethod
-    def _is_repeated_header_row(
-        cleaned_cells: Sequence[str],
-        headers: Sequence[str],
-    ) -> bool:
-        return is_repeated_header_row(cleaned_cells, headers)

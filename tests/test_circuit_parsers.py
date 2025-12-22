@@ -2,12 +2,18 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
 from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser, extract_time, select_details_paren
+from scrapers.circuits.infobox.services.lap_record import (
+    CircuitLapRecordParser,
+    extract_time,
+    select_details_paren,
+)
 from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils

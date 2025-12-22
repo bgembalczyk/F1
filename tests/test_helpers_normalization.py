@@ -3,12 +3,10 @@ import types
 
 import pytest
 
-from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.text_normalization import (
-    clean_text,
     is_language_link,
     normalize_dashes,
-    strip_lang_suffix,
+    strip_lang_suffix, split_delimited_text,
 )
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
@@ -43,11 +41,7 @@ def test_clean_wiki_text_removes_references_and_whitespace():
 def test_clean_text_normalizes_refs_dashes_and_lang_suffix():
     text = "  Foo\xa0bar [1] A - B (es)  "
 
-    assert clean_text(text) == "Foo bar A-B"
-
-
-def test_strip_refs_removes_bracketed_references():
-    assert strip_refs("Foo [1] bar [note 2]") == "Foo  bar "
+    assert clean_wiki_text(text) == "Foo bar A-B"
 
 
 def test_normalize_dashes_compacts_spaces():
@@ -124,19 +118,14 @@ def test_extract_links_from_cell_handles_default_full_url():
 def test_parse_time_seconds_from_text_handles_various_inputs():
     assert parse_time_seconds_from_text(12.5) == 12.5
     assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
-    assert (
-        parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
-    )
-    assert (
-        parse_time_seconds_from_text(NormalizedTime(text="0:59.9", seconds=None))
-        == pytest.approx(59.9)
-    )
+    assert parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
+    assert parse_time_seconds_from_text(
+        NormalizedTime(text="0:59.9", seconds=None)
+    ) == pytest.approx(59.9)
     assert parse_time_seconds_from_text("no time") is None
 
 
 def test_parse_time_text_prefers_text_fields():
-    assert (
-        parse_time_text(NormalizedTime(text="1:20.000", seconds=80.0)) == "1:20.000"
-    )
+    assert parse_time_text(NormalizedTime(text="1:20.000", seconds=80.0)) == "1:20.000"
     assert parse_time_text({"text": "  2:05.9 "}) == "2:05.9"
     assert parse_time_text(123.0) is None

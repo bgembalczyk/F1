@@ -6,8 +6,8 @@ from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
     choose_richer_entity,
     normalize_lap_record_entity,
-    parse_lap_record_time,
 )
+from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
@@ -20,12 +20,12 @@ def extract_time(text: str) -> Optional[float]:
     time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
     time_str = time_match.group(1) if time_match else None
 
-    sec = parse_lap_record_time(time_str) if time_str else None
+    sec = parse_time_seconds_from_text(time_str) if time_str else None
 
     if sec is None:
         m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
         if m:
-            sec = parse_lap_record_time(m.group(1))
+            sec = parse_time_seconds_from_text(m.group(1))
 
     return sec
 
@@ -182,7 +182,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             rec,
             year_extractor=self._year_from_record,
             vehicle_getter=self._get_vehicle_field,
-            time_extractor=lambda r: parse_lap_record_time(r.get("time")),
+            time_extractor=lambda r: parse_time_seconds_from_text(r.get("time")),
             driver_normalizer=lambda value: normalize_lap_record_entity(
                 value, sanitizer=sanitizer
             ),
@@ -217,8 +217,8 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             if not out.get(k) and b.get(k):
                 out[k] = b[k]
 
-        a_sec = parse_lap_record_time(a.get("time"))
-        b_sec = parse_lap_record_time(b.get("time"))
+        a_sec = parse_time_seconds_from_text(a.get("time"))
+        b_sec = parse_time_seconds_from_text(b.get("time"))
         sec = a_sec if a_sec is not None else b_sec
         if sec is not None:
             out["time"] = sec

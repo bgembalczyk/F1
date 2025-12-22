@@ -24,9 +24,6 @@ class InfoboxHtmlParser:
 
         return self._parse_infobox(infobox)
 
-    def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        return self.parse(soup)
-
     @staticmethod
     def find_infobox(soup: BeautifulSoup):
         """
