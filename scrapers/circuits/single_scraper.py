@@ -194,7 +194,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             "tables": self._scrape_tables(soup),
         }
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        if self.parser is not None:
+            return self.parser.parse(soup)
         return [
             {
                 "url": self._original_url or self.url,

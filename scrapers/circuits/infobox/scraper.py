@@ -129,9 +129,10 @@ class F1CircuitInfoboxScraper(F1Scraper):
         )
         return result or {"url": url}
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
-        """API bazowej klasy – zwraca pojedynczy rekord infobox."""
-        return [self._parse_infobox(soup)]
+    def parse(self, soup: BeautifulSoup) -> list[ExportableRecord]:
+        if self.parser is None:
+            return [self._parse_infobox(soup)]
+        return self.parser.parse(soup)
 
     def _parse_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
         """
