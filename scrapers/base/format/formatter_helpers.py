@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-from dataclasses import asdict, is_dataclass
-from typing import Any, Dict, List, cast
-
-from models.records import LinkRecord
+from typing import Any, Dict, List
 
 from models.mappers.serialization import to_dict_list
+from models.serializers import to_dict_any
 from scrapers.base.results import ScrapeResult
 
 
@@ -17,30 +15,7 @@ def normalize_payload(value: Any) -> Any:
     - najpierw próbujemy oficjalnej ścieżki (to_dict_list w _extract_data),
       a to jest tylko "plan B" na pojedyncze wartości w meta/data.
     """
-    if hasattr(value, "to_dict") and callable(value.to_dict):
-        return normalize_payload(value.to_dict())
-    if hasattr(value, "model_dump") and callable(value.model_dump):
-        return normalize_payload(value.model_dump())
-    if hasattr(value, "dict") and callable(value.dict):
-        return normalize_payload(value.dict())
-    if is_dataclass(value):
-        return normalize_payload(asdict(value))
-    if isinstance(value, dict):
-        if (
-            "text" in value
-            and "url" in value
-            and set(value.keys()).issubset({"text", "url"})
-        ):
-            return cast(
-                LinkRecord,
-                {"text": value.get("text") or "", "url": value.get("url")},
-            )
-        return {k: normalize_payload(v) for k, v in value.items()}
-    if isinstance(value, list):
-        return [normalize_payload(v) for v in value]
-    if isinstance(value, tuple):
-        return tuple(normalize_payload(v) for v in value)
-    return value
+    return to_dict_any(value)
 
 
 def extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
