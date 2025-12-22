@@ -2,6 +2,7 @@ import re
 from typing import Any, Optional
 
 from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
+from scrapers.base.helpers.time import parse_time_seconds_from_text
 
 
 class CircuitTextProcessing(InfoboxTextUtils):
@@ -13,9 +14,6 @@ class CircuitTextProcessing(InfoboxTextUtils):
 
     # do czyszczenia uciętych markerów typu "( es" / "( cs"
     _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)
-
-    # do parsowania time -> seconds: "1:16.0357", "1:51.8", "38.891", "2:22.5"
-    _TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
 
     @staticmethod
     def _entity_text(val: Any) -> Optional[str]:
@@ -54,24 +52,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         - "M:SS.d", "M:SS.dd", "M:SS.ddd", "M:SS.dddd"...
         - "SS.ddd" itp.
         """
-        if value is None:
-            return None
-        if isinstance(value, (int, float)):
-            return float(value)
-
-        s = str(value).strip()
-        m = self._TIME_PARSE_RE.match(s)
-        if not m:
-            return None
-
-        mm = m.group(1)
-        ss = m.group(2)
-        frac = m.group(3) or "0"
-
-        minutes = int(mm) if mm is not None else 0
-        seconds = int(ss)
-        frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
-        return minutes * 60.0 + seconds + frac_seconds
+        return parse_time_seconds_from_text(value)
 
     @staticmethod
     def _get_vehicle_field(rec: dict[str, Any]) -> Any:

@@ -11,7 +11,9 @@ from scrapers.base.helpers.text_normalization import (
     strip_lang_suffix,
     strip_refs,
 )
+from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.value_objects import NormalizedTime
 
 try:
     from bs4 import BeautifulSoup  # type: ignore
@@ -118,3 +120,24 @@ def test_extract_links_from_cell_handles_default_full_url():
         {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
         {"text": "Red", "url": None},
     ]
+
+
+def test_parse_time_seconds_from_text_handles_various_inputs():
+    assert parse_time_seconds_from_text(12.5) == 12.5
+    assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
+    assert (
+        parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
+    )
+    assert (
+        parse_time_seconds_from_text(NormalizedTime(text="0:59.9", seconds=None))
+        == pytest.approx(59.9)
+    )
+    assert parse_time_seconds_from_text("no time") is None
+
+
+def test_parse_time_text_prefers_text_fields():
+    assert (
+        parse_time_text(NormalizedTime(text="1:20.000", seconds=80.0)) == "1:20.000"
+    )
+    assert parse_time_text({"text": "  2:05.9 "}) == "2:05.9"
+    assert parse_time_text(123.0) is None
