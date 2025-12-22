@@ -17,7 +17,8 @@ class CircuitTextProcessing(InfoboxTextUtils):
     # do parsowania time -> seconds: "1:16.0357", "1:51.8", "38.891", "2:22.5"
     _TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
 
-    def _entity_text(self, val: Any) -> Optional[str]:
+    @staticmethod
+    def _entity_text(val: Any) -> Optional[str]:
         if isinstance(val, dict):
             s = (val.get("text") or "").strip()
             return s or None
@@ -26,12 +27,14 @@ class CircuitTextProcessing(InfoboxTextUtils):
         s = str(val).strip()
         return s or None
 
-    def _entity_url(self, val: Any) -> Optional[str]:
+    @staticmethod
+    def _entity_url(val: Any) -> Optional[str]:
         if isinstance(val, dict):
             return val.get("url") or None
         return None
 
-    def _norm_time(self, t: Any) -> Optional[str]:
+    @staticmethod
+    def _norm_time(t: Any) -> Optional[str]:
         """
         Normalizuje time do stringa (dla prezentacji).
         Uwaga: do porównań/scalania używamy _time_to_seconds.
@@ -70,10 +73,12 @@ class CircuitTextProcessing(InfoboxTextUtils):
         frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
         return minutes * 60.0 + seconds + frac_seconds
 
-    def _get_vehicle_field(self, rec: dict[str, Any]) -> Any:
+    @staticmethod
+    def _get_vehicle_field(rec: dict[str, Any]) -> Any:
         return rec.get("vehicle") or rec.get("car")
 
-    def _get_class_field(self, rec: dict[str, Any]) -> Any:
+    @staticmethod
+    def _get_class_field(rec: dict[str, Any]) -> Any:
         # traktujemy category/class/series jako to samo semantycznie
         return rec.get("series") or rec.get("category") or rec.get("class")
 
@@ -104,7 +109,8 @@ class CircuitTextProcessing(InfoboxTextUtils):
             x = x.get("text") or ""
         return self._strip_lang_marker_tail_only(str(x or "")).strip().lower()
 
-    def _extract_outer_parens(self, text: str) -> Optional[str]:
+    @staticmethod
+    def _extract_outer_parens(text: str) -> Optional[str]:
         """
         Zwraca zawartość pierwszego zewnętrznego nawiasu (...) z uwzględnieniem
         zagnieżdżeń w środku.
@@ -131,7 +137,8 @@ class CircuitTextProcessing(InfoboxTextUtils):
 
         return None
 
-    def _is_en_wiki(self, url: Optional[str]) -> bool:
+    @staticmethod
+    def _is_en_wiki(url: Optional[str]) -> bool:
         if not url:
             return False
         return url.startswith("https://en.wikipedia.org/") or url.startswith(

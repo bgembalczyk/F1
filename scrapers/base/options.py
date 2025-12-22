@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import warnings
-from typing import Dict, Optional
+from typing import Dict, Optional, cast
 
 import requests
 
@@ -114,9 +114,12 @@ class ScraperOptions:
                 cache=policy.cache,
                 headers=self.headers,
             )
-            self.http_client = UrllibHttpClient(
-                session=self.session,
-                config=client_config,
+            self.http_client = cast(
+                HttpClientProtocol,
+                UrllibHttpClient(
+                    session=self.session,
+                    config=client_config,
+                ),
             )
         return self.http_client
 

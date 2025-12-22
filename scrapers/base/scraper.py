@@ -179,7 +179,8 @@ class F1Scraper(ABC):
     def normalize_records(self, records: List[RawRecord]) -> List[NormalizedRecord]:
         return self._record_normalizer.normalize(list(records))
 
-    def to_export_records(self, records: List[NormalizedRecord]) -> List[ExportRecord]:
+    @staticmethod
+    def to_export_records(records: List[NormalizedRecord]) -> List[ExportRecord]:
         return records
 
     # ---------- Pomocnicze ----------

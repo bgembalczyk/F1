@@ -26,7 +26,7 @@ class CircuitLayoutsParser:
         self.specs_parser = specs_parser
 
     def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        table = self.infobox_scraper._find_infobox(soup)
+        table = self.infobox_scraper.parser.find_infobox(soup)
         if table is None:
             return []
 
@@ -65,30 +65,31 @@ class CircuitLayoutsParser:
             label = header.get_text(" ", strip=True)
             cell_row = {
                 "text": data.get_text(" ", strip=True),
-                "links": self.infobox_scraper._extract_links(data),
+                "links": self.infobox_scraper.parser.extract_links(data),
             }
 
             if label == "Length":
-                current["length_km"] = self.text_utils._parse_length(
+                current["length_km"] = self.text_utils.parse_length(
                     cell_row, unit="km"
                 )
-                current["length_mi"] = self.text_utils._parse_length(
+                current["length_mi"] = self.text_utils.parse_length(
                     cell_row, unit="mi"
                 )
             elif label == "Turns":
-                current["turns"] = self.text_utils._parse_int(cell_row)
+                current["turns"] = self.text_utils.parse_int(cell_row)
             elif label == "Race lap record":
-                current["race_lap_record"] = self.lap_record_parser._parse_lap_record(
+                current["race_lap_record"] = self.lap_record_parser.parse_lap_record(
                     cell_row
                 )
             elif label == "Surface":
-                current["surface"] = self.specs_parser._parse_surface(cell_row)
+                current["surface"] = self.specs_parser.parse_surface(cell_row)
             elif label == "Banking":
-                current["banking"] = self.specs_parser._parse_banking(cell_row)
+                current["banking"] = self.specs_parser.parse_banking(cell_row)
 
         return layouts
 
-    def _parse_layout_header(self, text: str) -> tuple[str, Optional[str]]:
+    @staticmethod
+    def _parse_layout_header(text: str) -> tuple[str, Optional[str]]:
         match = re.match(r"^(.*?)(?:\((.*?)\))?$", text)
         if not match:
             return text, None

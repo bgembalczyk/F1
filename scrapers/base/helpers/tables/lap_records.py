@@ -63,7 +63,8 @@ class LapRecordsTableScraper(F1TableScraper):
             "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
         )
 
-    def _split_cell_on_br(self, cell: Tag) -> List[Tag]:
+    @staticmethod
+    def _split_cell_on_br(cell: Tag) -> List[Tag]:
         """
         Dzieli komórkę na segmenty po <br>. Jeśli nie ma <br>, zwraca [cell].
 
@@ -137,3 +138,11 @@ class LapRecordsTableScraper(F1TableScraper):
                 out_records.append(record)
 
         return out_records
+
+    def headers_match(self, headers: list[str]) -> bool:
+        """Sprawdza czy nagłówki zawierają wymagane expected_headers (po normalizacji)."""
+        if not self.expected_headers:
+            return True
+        normalized = {self._normalize_header(h) for h in headers}
+        expected = {self._normalize_header(h) for h in self.expected_headers}
+        return expected.issubset(normalized)

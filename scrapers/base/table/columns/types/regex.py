@@ -51,5 +51,5 @@ class RegexColumn(BaseColumn):
 
         try:
             return self.cast(s)
-        except Exception:
+        except (ValueError, TypeError):
             return self.default

@@ -9,11 +9,14 @@ from scrapers.base.errors import ScraperNetworkError, ScraperParseError
 class ErrorHandler:
     """Wspólna obsługa błędów scraperów (wrap + soft-skip)."""
 
-    def __init__(self, *, logger: Optional[logging.Logger] = None) -> None:
+    def __init__(
+        self, *, logger: Optional[logging.Logger | logging.LoggerAdapter] = None
+    ) -> None:
         self._logger = logger or logging.getLogger(__name__)
 
+    @staticmethod
     def wrap_network(
-        self, exc: Exception, *, url: Optional[str] = None
+        exc: Exception, *, url: Optional[str] = None
     ) -> ScraperNetworkError:
         return ScraperNetworkError(
             "Błąd sieci podczas pobierania danych.",
@@ -21,8 +24,9 @@ class ErrorHandler:
             cause=exc,
         )
 
+    @staticmethod
     def wrap_parse(
-        self, exc: Exception, *, url: Optional[str] = None
+        exc: Exception, *, url: Optional[str] = None
     ) -> ScraperParseError:
         return ScraperParseError(
             "Błąd parsowania danych.",

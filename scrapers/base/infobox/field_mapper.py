@@ -6,7 +6,8 @@ from typing import Any, Dict
 class InfoboxFieldMapper:
     """Mapuje surowe pola infoboxa do docelowego formatu."""
 
-    def map(self, raw: Dict[str, Any] | None) -> Dict[str, Any]:
+    @staticmethod
+    def map(raw: Dict[str, Any] | None) -> Dict[str, Any]:
         if not raw:
             return {"title": None, "rows": {}}
 

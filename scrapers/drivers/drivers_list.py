@@ -84,7 +84,8 @@ class F1DriversListScraper(F1TableScraper):
         },
     )
 
-    def _parse_drivers_championships(self, raw: Any) -> DriverChampionshipsPayload:
+    @staticmethod
+    def _parse_drivers_championships(raw: Any) -> DriverChampionshipsPayload:
         """
         Deleguje parsowanie do DriverService.parse_championships.
         

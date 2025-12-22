@@ -9,7 +9,7 @@ from models.mappers.serialization import to_dict_list
 from scrapers.base.results import ScrapeResult
 
 
-def _normalize_payload(value: Any) -> Any:
+def normalize_payload(value: Any) -> Any:
     """
     Fallback normalizacji do struktur JSON-serializowalnych.
 
@@ -18,13 +18,13 @@ def _normalize_payload(value: Any) -> Any:
       a to jest tylko "plan B" na pojedyncze wartości w meta/data.
     """
     if hasattr(value, "to_dict") and callable(value.to_dict):
-        return _normalize_payload(value.to_dict())
+        return normalize_payload(value.to_dict())
     if hasattr(value, "model_dump") and callable(value.model_dump):
-        return _normalize_payload(value.model_dump())
+        return normalize_payload(value.model_dump())
     if hasattr(value, "dict") and callable(value.dict):
-        return _normalize_payload(value.dict())
+        return normalize_payload(value.dict())
     if is_dataclass(value):
-        return _normalize_payload(asdict(value))
+        return normalize_payload(asdict(value))
     if isinstance(value, dict):
         if (
             "text" in value
@@ -35,15 +35,15 @@ def _normalize_payload(value: Any) -> Any:
                 LinkRecord,
                 {"text": value.get("text") or "", "url": value.get("url")},
             )
-        return {k: _normalize_payload(v) for k, v in value.items()}
+        return {k: normalize_payload(v) for k, v in value.items()}
     if isinstance(value, list):
-        return [_normalize_payload(v) for v in value]
+        return [normalize_payload(v) for v in value]
     if isinstance(value, tuple):
-        return tuple(_normalize_payload(v) for v in value)
+        return tuple(normalize_payload(v) for v in value)
     return value
 
 
-def _extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
+def extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
     """
     Główna, spójna ścieżka ekstrakcji danych:
     - zawsze zwracamy list[dict[str,Any]]
@@ -54,7 +54,7 @@ def _extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
     try:
         return to_dict_list(list(data))
     except TypeError:
-        normalized = _normalize_payload(list(data))
+        normalized = normalize_payload(list(data))
         if isinstance(normalized, list):
             out: List[Dict[str, Any]] = []
             for item in normalized:

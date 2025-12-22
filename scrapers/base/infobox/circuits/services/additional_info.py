@@ -8,7 +8,7 @@ from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntity
 class CircuitAdditionalInfoParser(CircuitEntityParser):
     """Zbieranie dodatkowych pól (additional_info)."""
 
-    def _collect_additional_info(
+    def collect_additional_info(
         self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
     ) -> Optional[Dict[str, Any]]:
         additional: Dict[str, Any] = {}

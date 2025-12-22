@@ -18,7 +18,8 @@ class WikipediaSectionByIdMixin:
              lub None, jeśli sekcja nie istnieje.
     """
 
-    def split_url_fragment(self, url: str) -> Tuple[str, Optional[str]]:
+    @staticmethod
+    def split_url_fragment(url: str) -> Tuple[str, Optional[str]]:
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         if fragment is not None:
             fragment = fragment.lstrip("#").strip() or None
@@ -77,8 +78,8 @@ class WikipediaSectionByIdMixin:
         """
         return self._extract_section_by_id(soup, fragment)
 
+    @staticmethod
     def _extract_section_by_id(
-        self,
         soup: BeautifulSoup,
         fragment: str,
     ) -> Optional[BeautifulSoup]:
@@ -175,4 +176,3 @@ class WikipediaSectionByIdMixin:
 
         section_soup = BeautifulSoup(html, "html.parser")
         return section_soup
-

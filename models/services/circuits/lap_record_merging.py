@@ -244,16 +244,16 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
 def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
     """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
 
-    def series_candidate(r: dict[str, Any]) -> dict[str, Any] | None:
-        cand = r.get("series") or r.get("category") or r.get("class") or r.get("class_")
-        if cand is None:
+    def series_candidate(record: dict[str, Any]) -> dict[str, Any] | None:
+        field_value = record.get("series") or record.get("category") or record.get("class") or record.get("class_")
+        if field_value is None:
             return None
-        if isinstance(cand, dict):
+        if isinstance(field_value, dict):
             return {
-                "text": (cand.get("text") or cand.get("name") or "").strip(),
-                "url": cand.get("url"),
+                "text": (field_value.get("text") or field_value.get("name") or "").strip(),
+                "url": field_value.get("url"),
             }
-        return {"text": str(cand).strip(), "url": None}
+        return {"text": str(field_value).strip(), "url": None}
 
     best = None
     best_has_url = False

@@ -156,7 +156,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
             ]
 
-            if not lap_scraper._headers_match(headers):
+            if not lap_scraper.headers_match(headers):
                 header_set = set(headers)
                 if not (
                     "Time" in header_set

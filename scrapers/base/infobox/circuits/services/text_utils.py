@@ -14,7 +14,8 @@ class InfoboxTextUtils:
     # Tekst
     # ------------------------------
 
-    def _get_text(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
+    @staticmethod
+    def _get_text(row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
             return None
         text = row.get("text")
@@ -40,13 +41,13 @@ class InfoboxTextUtils:
         parts = split_delimited_text(text)
         return parts or None
 
-    def _parse_int(self, row: Optional[Dict[str, Any]]) -> Optional[int]:
+    def parse_int(self, row: Optional[Dict[str, Any]]) -> Optional[int]:
         if not row:
             return None
         text = self._get_text(row) or ""
         return parse_int_from_text(text)
 
-    def _parse_length(
+    def parse_length(
         self, row: Optional[Dict[str, Any]], *, unit: str
     ) -> Optional[float]:
         if not row:
@@ -82,8 +83,8 @@ class InfoboxTextUtils:
     # Linki
     # ------------------------------
 
+    @staticmethod
     def _find_link(
-        self,
         text: Optional[str],
         links: List[LinkRecord],
     ) -> Optional[LinkRecord]:
@@ -118,11 +119,11 @@ class InfoboxTextUtils:
     # Czyszczenie None / pustych struktur
     # ------------------------------
 
-    def _prune_nulls(self, data: Any) -> Any:
+    def prune_nulls(self, data: Any) -> Any:
         if isinstance(data, dict):
             pruned_dict = {}
             for key, value in data.items():
-                cleaned = self._prune_nulls(value)
+                cleaned = self.prune_nulls(value)
                 if cleaned is None:
                     continue
                 if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
@@ -133,7 +134,7 @@ class InfoboxTextUtils:
         if isinstance(data, list):
             pruned_list = []
             for value in data:
-                cleaned = self._prune_nulls(value)
+                cleaned = self.prune_nulls(value)
                 if cleaned is None:
                     continue
                 if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:

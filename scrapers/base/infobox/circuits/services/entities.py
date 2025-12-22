@@ -87,29 +87,29 @@ class CircuitEntitiesParser:
 
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),
-            "location": self.geo_parser._parse_location(rows.get("Location")),
-            "coordinates": self.geo_parser._parse_coordinates(rows.get("Coordinates")),
+            "location": self.geo_parser.parse_location(rows.get("Location")),
+            "coordinates": self.geo_parser.parse_coordinates(rows.get("Coordinates")),
             "specs": {
-                "fia_grade": self.text_utils._parse_int(rows.get("FIA Grade")),
-                "length_km": self.text_utils._parse_length(
+                "fia_grade": self.text_utils.parse_int(rows.get("FIA Grade")),
+                "length_km": self.text_utils.parse_length(
                     rows.get("Length"), unit="km"
                 ),
-                "length_mi": self.text_utils._parse_length(
+                "length_mi": self.text_utils.parse_length(
                     rows.get("Length"), unit="mi"
                 ),
-                "turns": self.text_utils._parse_int(rows.get("Turns")),
+                "turns": self.text_utils.parse_int(rows.get("Turns")),
             },
-            "history": self.history_parser._parse_history(rows),
-            "architect": self.entity_parser._parse_linked_entity(rows.get("Architect")),
+            "history": self.history_parser.parse_history(rows),
+            "architect": self.entity_parser.parse_linked_entity(rows.get("Architect")),
         }
 
-        extra_fields = self.additional_info_parser._collect_additional_info(
+        extra_fields = self.additional_info_parser.collect_additional_info(
             rows, used_keys
         )
         if extra_fields:
             normalized["additional_info"] = extra_fields
 
-        normalized = self.text_utils._prune_nulls(normalized)
+        normalized = self.text_utils.prune_nulls(normalized)
 
         result: Dict[str, Any] = dict(raw or {})
         result.pop("rows", None)
@@ -125,18 +125,18 @@ class CircuitEntitiesParser:
                 "length_km": normalized.get("specs", {}).get("length_km"),
                 "length_mi": normalized.get("specs", {}).get("length_mi"),
                 "turns": normalized.get("specs", {}).get("turns"),
-                "race_lap_record": self.lap_record_parser._parse_lap_record(
+                "race_lap_record": self.lap_record_parser.parse_lap_record(
                     rows.get("Race lap record")
                 ),
-                "surface": self.specs_parser._parse_surface(rows.get("Surface")),
-                "banking": self.specs_parser._parse_banking(rows.get("Banking")),
+                "surface": self.specs_parser.parse_surface(rows.get("Surface")),
+                "banking": self.specs_parser.parse_banking(rows.get("Banking")),
             }
-            default_layout = self.text_utils._prune_nulls(default_layout)
+            default_layout = self.text_utils.prune_nulls(default_layout)
             if default_layout:
                 layouts = [default_layout]
 
         if layouts:
-            base_record = self.lap_record_parser._parse_lap_record(
+            base_record = self.lap_record_parser.parse_lap_record(
                 rows.get("Race lap record")
             )
             if base_record:
@@ -147,9 +147,9 @@ class CircuitEntitiesParser:
                     if not existing:
                         continue
 
-                    if self.lap_record_parser._same_lap_record(base_record, existing):
+                    if self.lap_record_parser.same_lap_record(base_record, existing):
                         lay["race_lap_record"] = (
-                            self.lap_record_parser._merge_lap_record(
+                            self.lap_record_parser.merge_lap_record(
                                 existing, base_record
                             )
                         )
@@ -161,7 +161,7 @@ class CircuitEntitiesParser:
                         layouts[0]["race_lap_record"] = base_record
                     else:
                         layouts.append(
-                            self.text_utils._prune_nulls(
+                            self.text_utils.prune_nulls(
                                 {
                                     "layout": None,
                                     "years": None,
@@ -170,7 +170,7 @@ class CircuitEntitiesParser:
                             )
                         )
 
-            result["layouts"] = self.text_utils._prune_nulls(layouts)
+            result["layouts"] = self.text_utils.prune_nulls(layouts)
 
         existing_norm = result.get("normalized")
         if isinstance(existing_norm, dict):
@@ -179,4 +179,4 @@ class CircuitEntitiesParser:
         else:
             result["normalized"] = normalized
 
-        return self.text_utils._prune_nulls(result)
+        return self.text_utils.prune_nulls(result)

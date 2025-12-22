@@ -39,7 +39,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
 
         return obj
 
-    def _parse_lap_record(
+    def parse_lap_record(
         self, row: Optional[Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
         """
@@ -126,14 +126,15 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             }
         )
 
-        record = self._prune_nulls(record) or {}
+        record = self.prune_nulls(record) or {}
 
         if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
             return None
 
         return record
 
-    def _year_from_record(self, rec: Dict[str, Any]) -> Optional[str]:
+    @staticmethod
+    def _year_from_record(rec: Dict[str, Any]) -> Optional[str]:
         y = rec.get("year")
         if y:
             return str(y).strip()
@@ -207,9 +208,9 @@ class CircuitLapRecordParser(CircuitTextProcessing):
 
         out["year"] = out.get("year") or self._year_from_record(out)
 
-        return self._prune_nulls(out)
+        return self.prune_nulls(out)
 
-    def _same_lap_record(self, left: dict, right: dict) -> bool:
+    def same_lap_record(self, left: dict, right: dict) -> bool:
         if not left or not right:
             return False
         kl = self._lap_record_key(left)
@@ -232,7 +233,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
 
         return None
 
-    def _merge_lap_record(
+    def merge_lap_record(
         self, existing: Dict[str, Any], candidate: Dict[str, Any]
     ) -> Dict[str, Any]:
         return self._merge_two_lap_records(existing, candidate)
@@ -247,4 +248,4 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             records.append({"race_lap_record": candidate})
         else:
             i, existing = hit
-            records[i]["race_lap_record"] = self._merge_lap_record(existing, candidate)
+            records[i]["race_lap_record"] = self.merge_lap_record(existing, candidate)

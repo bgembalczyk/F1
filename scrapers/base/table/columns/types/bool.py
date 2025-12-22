@@ -31,5 +31,5 @@ class BoolColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> bool:
         try:
             return bool(self.predicate(ctx))
-        except Exception:
+        except (ValueError, TypeError, AttributeError, KeyError):
             return self.default

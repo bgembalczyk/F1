@@ -6,7 +6,7 @@ from dataclasses import fields, is_dataclass
 import warnings
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from infrastructure.http_client.interfaces import HttpClientProtocol
 from scrapers.base.options import ScraperOptions
@@ -19,7 +19,6 @@ from scrapers.base.table.row import TableRow
 
 if TYPE_CHECKING:
     import requests
-    from infrastructure.http_client.policies import ResponseCache
     from scrapers.base.export.exporters import DataExporter
 
 
@@ -153,7 +152,8 @@ class F1TableScraper(F1Scraper, ABC):
         if not model_class:
             return None
 
-        if is_dataclass(model_class):
+        # Dla dataclass sprawdzamy czy to typ (klasa), nie instancja
+        if isinstance(model_class, type) and is_dataclass(model_class):
             return {f.name for f in fields(model_class)}
 
         model_fields = getattr(model_class, "model_fields", None)

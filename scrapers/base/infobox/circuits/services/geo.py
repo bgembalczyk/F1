@@ -10,7 +10,7 @@ class CircuitGeoParser(InfoboxTextUtils):
 
     _LOCATION_STOPWORDS = {"and", "&"}
 
-    def _parse_location(
+    def parse_location(
         self, row: Optional[Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
         if not row:
@@ -23,15 +23,15 @@ class CircuitGeoParser(InfoboxTextUtils):
         cursor = 0
 
         def _split_plain_segment(segment: str) -> List[str]:
-            parts: List[str] = []
-            for raw in re.split(r",|\u00b7|/|;", segment):
-                part = raw.strip(" ,")
-                if not part:
+            segment_parts: List[str] = []
+            for raw_part in re.split(r"[,·/;]", segment):
+                cleaned_part = raw_part.strip(" ,")
+                if not cleaned_part:
                     continue
-                if part.lower() in self._LOCATION_STOPWORDS:
+                if cleaned_part.lower() in self._LOCATION_STOPWORDS:
                     continue
-                parts.append(part)
-            return parts
+                segment_parts.append(cleaned_part)
+            return segment_parts
 
         for link in links:
             link_text = (link.get("text") or "").strip()
@@ -81,7 +81,7 @@ class CircuitGeoParser(InfoboxTextUtils):
 
         return result or None
 
-    def _parse_coordinates(
+    def parse_coordinates(
         self, row: Optional[Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
         if not row:
@@ -89,7 +89,8 @@ class CircuitGeoParser(InfoboxTextUtils):
         text = self._get_text(row) or ""
         return self._parse_position(text)
 
-    def _parse_position(self, text: str) -> Optional[Dict[str, float]]:
+    @staticmethod
+    def _parse_position(text: str) -> Optional[Dict[str, float]]:
         if not text:
             return None
 

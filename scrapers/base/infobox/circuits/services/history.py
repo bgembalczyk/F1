@@ -111,8 +111,9 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
         return periods
 
+    @staticmethod
     def _normalize_period_endpoint(
-        self, raw: str, *, is_start: bool, now_year: int
+        raw: str, *, is_start: bool, now_year: int
     ) -> Optional[str]:
         """
         Normalizuje pojedynczy kraniec zakresu (from/to) do stringa.
@@ -150,7 +151,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
         return None
 
-    def _parse_history(
+    def parse_history(
         self, rows: Dict[str, Dict[str, Any]]
     ) -> Optional[Dict[str, Any]]:
         events: List[Dict[str, Any]] = []

@@ -30,16 +30,17 @@ class TimeColumn(BaseColumn):
 
     _RE_COLON = re.compile(r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$")
     _RE_MINSEC = re.compile(
-        r"^\s*(?:(?P<min>\d+)\s*(?:m|min|minute(?:s)?)\s*)?"
-        r"(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|second(?:s)?)\s*$",
+        r"^\s*(?:(?P<min>\d+)\s*(?:m|min|minutes?)\s*)?"
+        r"(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)\s*$",
         re.IGNORECASE,
     )
     _RE_SECONDS = re.compile(
-        r"^\s*(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|second(?:s)?)?\s*$",
+        r"^\s*(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)?\s*$",
         re.IGNORECASE,
     )
 
-    def _to_seconds(self, minutes: Optional[str], seconds: str) -> float:
+    @staticmethod
+    def _to_seconds(minutes: Optional[str], seconds: str) -> float:
         """
         Parsuje sekundy z zachowaniem precyzji jak w oryginalnym stringu.
 

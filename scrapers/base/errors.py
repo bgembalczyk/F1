@@ -32,4 +32,8 @@ class ScraperNotFoundError(ScraperError):
     """Brak wymaganych elementów strony (niekrytyczny)."""
 
     def __init__(self, message: str, *, url: Optional[str] = None) -> None:
-        super().__init__(message=message, url=url, critical=False)
+        self.message = message
+        self.url = url
+        self.cause = None
+        self.critical = False
+        Exception.__init__(self, message)

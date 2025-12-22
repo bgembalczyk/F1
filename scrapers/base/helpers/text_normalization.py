@@ -65,10 +65,15 @@ def strip_lang_suffix(text: str) -> str:
     while True:
         before = t
 
+        # Usuń tokeny w nawiasach: (es), (fr), etc.
         t = re.sub(
-            rf"\s*\(\s*(?:{lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE
-        ).strip()
-        t = re.sub(rf"\s+(?:{lang_alt})\s*$", "", t, flags=re.IGNORECASE).strip()
+            rf"\s*\(\s*({lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE
+        )
+        t = t.strip()
+
+        # Usuń tokeny bez nawiasów: " es", " fr", etc.
+        t = re.sub(rf"\s+({lang_alt})\s*$", "", t, flags=re.IGNORECASE)
+        t = t.strip()
 
         if t == before:
             break

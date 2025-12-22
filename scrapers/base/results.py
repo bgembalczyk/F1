@@ -79,11 +79,11 @@ class ScrapeResult:
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
         from scrapers.base.export.export_helpers import (
-            _fieldnames_from_first_row,
-            _fieldnames_from_union,
+            fieldnames_from_first_row,
+            fieldnames_from_union,
         )
         from scrapers.base.export.exporters import DataExporter
-        from scrapers.base.format.formatter_helpers import _extract_data
+        from scrapers.base.format.formatter_helpers import extract_data
 
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
@@ -91,12 +91,12 @@ class ScrapeResult:
         )
 
         if fieldnames is None:
-            data = _extract_data(normalized)
+            data = extract_data(normalized)
             if data:
                 if fieldnames_strategy == "union":
-                    fieldnames = _fieldnames_from_union(data)
+                    fieldnames = fieldnames_from_union(data)
                 elif fieldnames_strategy == "first_row":
-                    fieldnames = _fieldnames_from_first_row(data)
+                    fieldnames = fieldnames_from_first_row(data)
                 else:
                     raise ValueError(
                         "Nieznana strategia fieldnames: "

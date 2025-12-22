@@ -85,10 +85,10 @@ class F1CircuitInfoboxScraper(F1Scraper):
     # Publiczne API
     # ------------------------------
 
-    def fetch(self, url: str) -> ExportableRecord:
+    def scrape_url(self, url: str) -> ExportableRecord:
         """
-        Główne API używane wewnętrznie – obsługuje #fragment (sekcje),
-        przycina infoboksy po infobox-full-data itd.
+        Główne API – pobiera i parsuje infobox z podanego URL.
+        Obsługuje #fragment (sekcje), przycina infoboksy po infobox-full-data itd.
 
         Merge:
         - serwisy z main,
@@ -115,7 +115,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         if not self._is_circuit_like_article(full_soup):
             title = full_soup.title.get_text(strip=True) if full_soup.title else None
-            return self.text_utils._prune_nulls(
+            return self.text_utils.prune_nulls(
                 {
                     "url": url,
                     "title": title,
@@ -164,7 +164,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
     # Helper: przycinanie infoboksa
     # ------------------------------
 
-    def _truncate_infobox_after_full_data(self, soup: BeautifulSoup) -> BeautifulSoup:
+    @staticmethod
+    def _truncate_infobox_after_full_data(soup: BeautifulSoup) -> BeautifulSoup:
         """
         W każdej tabeli infoboksa usuwamy:
         - pierwszy wiersz, który ma klasę `infobox-full-data`
@@ -212,7 +213,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
             raise ScraperParseError("URL must be set before downloading")
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
-    def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
+    @staticmethod
+    def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
         """Sprawdza czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
         cat_div = soup.find("div", id="mw-normal-catlinks")
         if not cat_div:
@@ -250,11 +252,13 @@ class F1CircuitInfoboxScraper(F1Scraper):
     def _maybe_wrap_network_error(self, exc: Exception) -> Exception:
         wrapper = getattr(self, "_wrap_network_error", None)
         if callable(wrapper):
-            return wrapper(exc)
+            result = wrapper(exc)
+            return result if isinstance(result, Exception) else exc
         return exc
 
     def _maybe_wrap_parse_error(self, exc: Exception) -> Exception:
         wrapper = getattr(self, "_wrap_parse_error", None)
         if callable(wrapper):
-            return wrapper(exc)
+            result = wrapper(exc)
+            return result if isinstance(result, Exception) else exc
         return exc

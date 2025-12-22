@@ -17,7 +17,7 @@ class InfoboxHtmlParser:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
 
     def parse(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        infobox = self._find_infobox(soup)
+        infobox = self.find_infobox(soup)
         if infobox is None:
             return {"title": None, "rows": {}}
 
@@ -26,7 +26,8 @@ class InfoboxHtmlParser:
     def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
         return self.parse(soup)
 
-    def _find_infobox(self, soup: BeautifulSoup):
+    @staticmethod
+    def find_infobox(soup: BeautifulSoup):
         """
         Znajduje <table> z klasą zawierającą 'infobox' w ramach przekazanego `soup`.
 
@@ -75,13 +76,13 @@ class InfoboxHtmlParser:
 
             key = header.get_text(" ", strip=True)
             text = value.get_text(" ", strip=True)
-            links = self._extract_links(value)
+            links = self.extract_links(value)
 
             data["rows"][key] = {"text": text, "links": links}
 
         return data
 
-    def _extract_links(self, td) -> List[LinkRecord]:
+    def extract_links(self, td) -> List[LinkRecord]:
         """
         Wyciąga wszystkie linki z komórki, pomijając linki do przypisów.
         """

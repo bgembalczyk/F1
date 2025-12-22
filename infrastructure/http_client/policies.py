@@ -21,7 +21,7 @@ class RetryPolicy(ABC):
         exception: Exception | None,
         attempt: int,
     ) -> bool:
-        """Czy ponawiać próbę."""
+        """Czy ponawiać próbę?"""
 
     @abstractmethod
     def backoff_seconds(self, attempt: int) -> float:

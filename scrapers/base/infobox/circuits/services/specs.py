@@ -7,7 +7,7 @@ from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 class CircuitSpecsParser(InfoboxTextUtils):
     """Parsowanie parametrów technicznych toru (surface, cost, capacity, banking)."""
 
-    def _parse_surface(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    def parse_surface(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
 
@@ -28,35 +28,35 @@ class CircuitSpecsParser(InfoboxTextUtils):
         tmp = tmp.replace("&", ",").replace("/", ",")
         parts = [p.strip(" .") for p in tmp.split(",") if p.strip(" .")]
 
-        def _norm_surface_part(part: str) -> List[str]:
-            s = part.lower()
-            mats: List[str] = []
+        def _norm_surface_part(surface_part: str) -> List[str]:
+            surface_lower = surface_part.lower()
+            detected_materials: List[str] = []
 
-            if "tarmac" in s or "asphalt" in s or "asphalt concrete" in s:
-                mats.append("Asphalt")
-            if "concrete" in s and "asphalt" not in s:
-                mats.append("Concrete")
-            if "cobblestone" in s or "cobbles" in s or "cobbl" in s:
-                mats.append("Cobblestones")
-            if "brick" in s:
-                mats.append("Brick")
-            if "wood" in s:
-                mats.append("Wood")
-            if "dirt" in s:
-                mats.append("Dirt")
-            if "steel" in s:
-                mats.append("Steel")
-            if "graywacke" in s:
-                mats.append("Graywacke")
+            if "tarmac" in surface_lower or "asphalt" in surface_lower or "asphalt concrete" in surface_lower:
+                detected_materials.append("Asphalt")
+            if "concrete" in surface_lower and "asphalt" not in surface_lower:
+                detected_materials.append("Concrete")
+            if "cobblestone" in surface_lower or "cobbles" in surface_lower or "cobbl" in surface_lower:
+                detected_materials.append("Cobblestones")
+            if "brick" in surface_lower:
+                detected_materials.append("Brick")
+            if "wood" in surface_lower:
+                detected_materials.append("Wood")
+            if "dirt" in surface_lower:
+                detected_materials.append("Dirt")
+            if "steel" in surface_lower:
+                detected_materials.append("Steel")
+            if "graywacke" in surface_lower:
+                detected_materials.append("Graywacke")
 
-            if not mats:
-                mats.append(part.strip().strip(". "))
+            if not detected_materials:
+                detected_materials.append(surface_part.strip().strip(". "))
 
-            out: List[str] = []
-            for m_ in mats:
-                if m_ and m_ not in out:
-                    out.append(m_)
-            return out
+            unique_materials: List[str] = []
+            for material in detected_materials:
+                if material and material not in unique_materials:
+                    unique_materials.append(material)
+            return unique_materials
 
         materials: List[str] = []
         for part in parts:
@@ -151,9 +151,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
         if scale:
             result["scale"] = scale
         result["text"] = text_clean.strip() or None
-        return self._prune_nulls(result)
+        return self.prune_nulls(result)
 
-    def _parse_banking(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    def parse_banking(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         """Banking: liczba + jednostka + opcjonalna notka."""
         if not row:
             return None

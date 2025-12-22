@@ -14,7 +14,7 @@ from scrapers.base.infobox.circuits.services.text_processing import (
 class CircuitEntityParser(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
-    def _parse_linked_entity(
+    def parse_linked_entity(
         self,
         row: Optional[Dict[str, Any]],
     ) -> Optional[Union[Dict[str, Any], str, List[Dict[str, Any]]]]:
@@ -27,12 +27,12 @@ class CircuitEntityParser(CircuitTextProcessing):
 
         links = row.get("links") or []
 
-        def _clean_link(link: LinkRecord) -> Optional[LinkRecord]:
-            link_text = (link.get("text") or "").strip()
+        def _clean_link(link_record: LinkRecord) -> Optional[LinkRecord]:
+            link_text = (link_record.get("text") or "").strip()
             if not link_text:
                 return None
 
-            url = link.get("url")
+            url = link_record.get("url")
 
             # marker językowy typu "it" + https://it.wikipedia.org/... -> OUT
             if is_language_marker_link(link_text, url):
@@ -42,8 +42,8 @@ class CircuitEntityParser(CircuitTextProcessing):
             if is_wikipedia_redlink(url):
                 url = None
 
-            result: LinkRecord = {"text": link_text, "url": url}
-            return result
+            cleaned_link: LinkRecord = {"text": link_text, "url": url}
+            return cleaned_link
 
         # wiele linków -> lista (pomijamy językowe)
         if len(links) > 1:
@@ -59,13 +59,13 @@ class CircuitEntityParser(CircuitTextProcessing):
 
         def _entity_for_part(part: str) -> Dict[str, Any]:
             # najpierw spróbuj dopasować link do konkretnej części tekstu
-            link = self._find_link(part, links)
-            if link:
-                cleaned = _clean_link(link)
+            matched_link = self._find_link(part, links)
+            if matched_link:
+                cleaned = _clean_link(matched_link)
                 if cleaned:
-                    result = dict(cleaned)
-                    result["text"] = part
-                    return result
+                    entity_dict = dict(cleaned)
+                    entity_dict["text"] = part
+                    return entity_dict
             # jak nie ma linku / został odrzucony – zwróć sam tekst
             return {"text": part, "url": None}
 

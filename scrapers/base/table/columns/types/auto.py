@@ -19,10 +19,12 @@ class AutoColumn(BaseColumn):
     - dodatkowo ignoruje linki „językowe” (es/fr/de/it/...) przy decyzji o zwróceniu dict/listy.
     """
 
-    def _normalize_link(self, link: LinkRecord) -> LinkRecord:
+    @staticmethod
+    def _normalize_link(link: LinkRecord) -> LinkRecord:
         return {"text": link.get("text") or "", "url": link.get("url")}
 
-    def _cell_text(self, ctx: ColumnContext) -> str:
+    @staticmethod
+    def _cell_text(ctx: ColumnContext) -> str:
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
             raw = " ".join(list(ctx.cell.stripped_strings))

@@ -51,19 +51,20 @@ def extract_links_from_cell(
     links: list[LinkRecord] = []
 
     for a in cell.find_all("a", href=True):
-        href = a.get("href") or ""
+        href = str(a.get("href") or "")
         text = clean_wiki_text(a.get_text(strip=True))
 
         if is_reference_link(a, allow_local_anchors=allow_local_anchors):
             continue
 
-        url = full_url(href) if full_url else href
+        url: str | None = full_url(href) if full_url else href
         if url and is_wikipedia_redlink(url):
             url = None
 
         if is_language_link(text, url):
             continue
 
-        links.append({"text": text, "url": url})
+        link: LinkRecord = {"text": text, "url": url}
+        links.append(link)
 
     return links

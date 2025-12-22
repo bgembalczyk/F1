@@ -309,4 +309,3 @@ def normalize_circuit_record_impl(
     out = remove_empty_lists(out)
 
     return out
-

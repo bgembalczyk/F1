@@ -67,7 +67,7 @@ class SeasonRef:
         return cls(year=year, url=payload.get("url"))
 
     def to_dict(self) -> dict[str, Any]:
-        result = {"year": self.year}
+        result: dict[str, Any] = {"year": self.year}
         if self.url:
             result["url"] = self.url
         return result

@@ -104,7 +104,7 @@ def validate_seasons(
         # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
         try:
             season = SeasonRef.from_dict(item)
-        except Exception:
+        except (ValueError, TypeError):
             season = None
 
         if season is not None:
@@ -203,4 +203,3 @@ def normalize_season_list(
             result.append(season)
 
     return result
-

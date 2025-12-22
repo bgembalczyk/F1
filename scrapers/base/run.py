@@ -9,8 +9,7 @@ from typing import Any, Type
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import (
     SCRAPER_REGISTRY,
-    ScraperConfig,
-    load_default_scrapers,
+    load_default_scrapers, ScraperRegistryConfig,
 )
 from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
@@ -31,7 +30,7 @@ def _scraper_choices() -> list[str]:
     return sorted(SCRAPER_REGISTRY.keys())
 
 
-def _get_scraper_config(name: str) -> ScraperConfig:
+def _get_scraper_config(name: str) -> ScraperRegistryConfig:
     load_default_scrapers()
     return SCRAPER_REGISTRY[name]
 

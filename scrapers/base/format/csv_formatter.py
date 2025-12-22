@@ -4,18 +4,18 @@ import csv
 import io
 from typing import List, Optional, Sequence
 
-from scrapers.base.format.formatter_helpers import _extract_data
+from scrapers.base.format.formatter_helpers import extract_data
 from scrapers.base.results import ScrapeResult
 
 
 class CsvFormatter:
+    @staticmethod
     def format(
-        self,
         result: ScrapeResult,
         *,
         fieldnames: Optional[Sequence[str]] = None,
     ) -> str:
-        data = _extract_data(result)
+        data = extract_data(result)
         if not data:
             return ""
 
