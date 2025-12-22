@@ -69,12 +69,8 @@ def validate_link(
 def validate_links(
     links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str
 ) -> list[Dict[str, Any]]:
-    result: list[Dict[str, Any]] = []
-    for link in links or []:
-        validated = validate_link(link, field_name=field_name)
-        if validated.get("text") or validated.get("url") is not None:
-            result.append(validated)
-    return result
+    validated = (validate_link(link, field_name=field_name) for link in links or [])
+    return filter_nonempty(validated, key=_is_empty_link)
 
 
 def validate_seasons(
@@ -88,19 +84,13 @@ def validate_seasons(
     - dict -> próbuje SeasonRef.from_dict(item) (jak plik 1),
              a jeśli to się nie uda, fallback na prostą walidację {year,url} (jak plik 2).
     """
-    result: list[Dict[str, Any]] = []
-
-    for item in seasons or []:
+    def normalize_season_item(item: Dict[str, Any] | SeasonRef | None) -> Dict[str, Any] | None:
         if item is None:
-            continue
+            return None
 
         # 1) VO
         if isinstance(item, SeasonRef):
-            season = item
-            season_dict = season.to_dict()
-            if season_dict is not None:
-                result.append(season_dict)
-            continue
+            return item.to_dict()
 
         # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
         try:
@@ -109,22 +99,19 @@ def validate_seasons(
             season = None
 
         if season is not None:
-            season_dict = season.to_dict()
-            if season_dict is not None:
-                result.append(season_dict)
-            continue
+            return season.to_dict()
 
         # 3) fallback: minimalny schemat {year,url}
         if not isinstance(item, dict):
-            continue
+            return None
 
         year = item.get("year")
         if year is None:
-            continue
+            return None
 
         year_int = validate_int(year, "year")
         if year_int is None:
-            continue
+            return None
 
         validated: Dict[str, Any] = {"year": year_int}
 
@@ -134,9 +121,10 @@ def validate_seasons(
                 raise ValueError("Pole seasons zawiera nieprawidłowy URL")
             validated["url"] = url
 
-        result.append(validated)
+        return validated
 
-    return result
+    normalized = (normalize_season_item(item) for item in seasons or [])
+    return filter_nonempty(normalized)
 
 
 def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
@@ -178,13 +166,10 @@ def normalize_link_list(
     if not items:
         return []
 
-    result: list[Link] = []
-    for item in items:
-        link = item if isinstance(item, Link) else Link.from_dict(item)
-        if not link.is_empty():
-            result.append(link)
-
-    return result
+    normalized = (
+        item if isinstance(item, Link) else Link.from_dict(item) for item in items
+    )
+    return filter_nonempty(normalized, key=_is_empty_link)
 
 
 def normalize_season_list(
@@ -198,10 +183,33 @@ def normalize_season_list(
     if not items:
         return []
 
-    result: list[SeasonRef] = []
-    for item in items:
-        season = item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
-        if season is not None:
-            result.append(season)
+    normalized = (
+        item if isinstance(item, SeasonRef) else SeasonRef.from_dict(item)
+        for item in items
+    )
+    return filter_nonempty(normalized)
 
+
+def _is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, Link):
+        text = value.text
+        url = value.url
+    else:
+        text = str(value.get("text") or "").strip()
+        url = value.get("url")
+        if url == "":
+            url = None
+    return text == "" and url is None
+
+
+def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:
+    result: list[Any] = []
+    for item in items or []:
+        if item is None:
+            continue
+        if key is not None and key(item):
+            continue
+        result.append(item)
     return result
