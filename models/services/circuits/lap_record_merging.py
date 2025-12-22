@@ -9,7 +9,11 @@ from scrapers.base.helpers.text_normalization import (
     match_driver_loose,
     match_vehicle_prefix,
 )
-from scrapers.base.helpers.time import parse_time_key, parse_time_seconds_from_text
+from scrapers.base.helpers.time import (
+    normalize_time_value,
+    parse_time_key,
+    parse_time_seconds_from_text,
+)
 
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
@@ -17,6 +21,71 @@ from models.services.circuits.lap_record_utils import (
     select_best_field_with_url,
     normalize_lap_record_entity,
 )
+
+
+def _normalize_entity_value(value: Any) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    if isinstance(value, dict):
+        text = (value.get("text") or value.get("name") or "").strip()
+        url = value.get("url")
+        if not text and not url:
+            return None
+        return {"text": text, "url": url}
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return None
+        return {"text": text, "url": None}
+    return None
+
+
+def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
+    """Normalizuje rekord okrążenia (driver/vehicle/series oraz czas)."""
+    if not record:
+        return record
+
+    if record.get("driver") is None and record.get("driver_rider") is not None:
+        record["driver"] = record.get("driver_rider")
+
+    driver = _normalize_entity_value(record.get("driver"))
+    if driver is not None:
+        record["driver"] = driver
+    else:
+        record.pop("driver", None)
+
+    vehicle_value = record.get("vehicle") or record.get("car")
+    vehicle = _normalize_entity_value(vehicle_value)
+    if vehicle is not None:
+        record["vehicle"] = vehicle
+    else:
+        record.pop("vehicle", None)
+    record.pop("car", None)
+
+    series_value = (
+        record.get("series")
+        or record.get("category")
+        or record.get("class")
+        or record.get("class_")
+    )
+    series = _normalize_entity_value(series_value)
+    if series is not None:
+        record["series"] = series
+    else:
+        record.pop("series", None)
+    record.pop("category", None)
+    record.pop("class", None)
+    record.pop("class_", None)
+
+    normalize_time_value(record)
+    time_seconds = parse_lap_record_time_from_record(record)
+    if time_seconds is not None:
+        record["time"] = float(time_seconds)
+    record.pop("time_seconds", None)
+
+    record.pop("driver_rider", None)
+
+    return record
 
 
 def extract_year_from_event(rec: dict[str, Any]) -> str | None:

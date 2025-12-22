@@ -4,8 +4,11 @@ from typing import Any, Dict, List, Optional, Tuple
 from models.records import LinkRecord
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
-    choose_richer_entity,
     normalize_lap_record_entity,
+)
+from models.services.circuits.lap_record_merging import (
+    merge_two_records,
+    normalize_lap_record,
 )
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
@@ -150,6 +153,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         )
 
         record = self.prune_nulls(record) or {}
+        normalize_lap_record(record)
 
         if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
             return {}
@@ -193,44 +197,6 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             key_order=("driver", "vehicle", "time", "year"),
         )
 
-    def _merge_two_lap_records(
-        self, a: Dict[str, Any], b: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        out = dict(a)
-
-        out["driver"] = choose_richer_entity(a.get("driver"), b.get("driver"))
-
-        out["vehicle"] = choose_richer_entity(
-            self._get_vehicle_field(a), self._get_vehicle_field(b)
-        )
-        out.pop("car", None)
-
-        picked_series = choose_richer_entity(
-            self._get_class_field(a), self._get_class_field(b)
-        )
-        if picked_series:
-            out["series"] = picked_series
-        out.pop("category", None)
-        out.pop("class", None)
-
-        for k in ("event", "date", "year", "source", "notes"):
-            if not out.get(k) and b.get(k):
-                out[k] = b[k]
-
-        a_sec = parse_time_seconds_from_text(a.get("time"))
-        b_sec = parse_time_seconds_from_text(b.get("time"))
-        sec = a_sec if a_sec is not None else b_sec
-        if sec is not None:
-            out["time"] = sec
-        else:
-            out.pop("time", None)
-
-        out.pop("time_seconds", None)
-
-        out["year"] = out.get("year") or self._year_from_record(out)
-
-        return self.prune_nulls(out)
-
     def same_lap_record(self, left: dict, right: dict) -> bool:
         if not left or not right:
             return False
@@ -257,7 +223,10 @@ class CircuitLapRecordParser(CircuitTextProcessing):
     def merge_lap_record(
         self, existing: Dict[str, Any], candidate: Dict[str, Any]
     ) -> Dict[str, Any]:
-        return self._merge_two_lap_records(existing, candidate)
+        normalize_lap_record(existing)
+        normalize_lap_record(candidate)
+        merged = merge_two_records(existing, candidate)
+        return self.prune_nulls(merged)
 
     def _upsert_lap_record(
         self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]

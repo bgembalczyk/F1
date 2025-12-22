@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
+from models.services.circuits.lap_record_merging import normalize_lap_record
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
@@ -124,6 +125,7 @@ def collect_lap_records(
         for record in row_records:
             if not record:
                 continue
+            normalize_lap_record(record)
             if layout_name:
                 record.setdefault("layout", layout_name)
             all_records.append(record)
