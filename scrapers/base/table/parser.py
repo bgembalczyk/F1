@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import re
 from typing import Optional, Sequence
 
 from bs4 import BeautifulSoup, Tag
@@ -20,8 +19,6 @@ class HtmlTableParser:
     nagłówków na komórki.
     """
 
-    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
-
     def __init__(
         self,
         *,
@@ -29,11 +26,17 @@ class HtmlTableParser:
         fragment: Optional[str] = None,
         expected_headers: Sequence[str] | None = None,
         table_css_class: str = "wikitable",
+        strip_lang_suffix: bool = True,
+        strip_refs: bool = True,
+        normalize_dashes: bool = True,
     ) -> None:
         self.section_id = section_id
         self.fragment = fragment
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
+        self.strip_lang_suffix = strip_lang_suffix
+        self.strip_refs = strip_refs
+        self.normalize_dashes = normalize_dashes
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
         table = self._find_table(soup)
@@ -42,7 +45,15 @@ class HtmlTableParser:
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
 
         header_cells = header_row.find_all(["th", "td"])
-        headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+        headers = [
+            clean_wiki_text(
+                c.get_text(" ", strip=True),
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+            for c in header_cells
+        ]
 
         records: list[TableRow] = []
         for tr in table.find_all("tr")[1:]:
@@ -52,7 +63,13 @@ class HtmlTableParser:
                 continue
 
             cleaned_cells = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
+                clean_wiki_text(
+                    c.get_text(" ", strip=True),
+                    strip_lang_suffix=self.strip_lang_suffix,
+                    strip_refs=self.strip_refs,
+                    normalize_dashes=self.normalize_dashes,
+                )
+                for c in cells
             ]
             if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
@@ -75,7 +92,13 @@ class HtmlTableParser:
                 continue
             header_cells = header_row.find_all(["th", "td"])
             headers = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
+                clean_wiki_text(
+                    c.get_text(" ", strip=True),
+                    strip_lang_suffix=self.strip_lang_suffix,
+                    strip_refs=self.strip_refs,
+                    normalize_dashes=self.normalize_dashes,
+                )
+                for c in header_cells
             ]
 
             if self._headers_match(headers):

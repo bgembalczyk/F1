@@ -2,22 +2,8 @@ import re
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
+from scrapers.base.infobox.circuits.services.constants import _MONTHS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-
-_MONTHS = {
-    "january": 1,
-    "february": 2,
-    "march": 3,
-    "april": 4,
-    "may": 5,
-    "june": 6,
-    "july": 7,
-    "august": 8,
-    "september": 9,
-    "october": 10,
-    "november": 11,
-    "december": 12,
-}
 
 
 class CircuitHistoryParser(InfoboxTextUtils):

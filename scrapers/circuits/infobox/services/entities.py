@@ -3,32 +3,17 @@ from typing import Optional, Dict, Any, List
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
+from scrapers.base.infobox.circuits.services.constants import (
+    IGNORED_TOP_LEVEL_KEYS,
+    used_keys,
+)
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
 from scrapers.circuits.infobox.services.history import CircuitHistoryParser
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-
-IGNORED_TOP_LEVEL_KEYS: set[str] = {
-    "Owner",
-    "owner",
-    "Operator",
-    "operator",
-    "Capacity",
-    "capacity",
-    "Construction cost",
-    "construction cost",
-    "Website",
-    "website",
-    "Area",
-    "area",
-    "Major events",
-    "major events",
-    "Address",
-    "address",
-}
-
 
 class CircuitEntitiesParser:
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
@@ -58,31 +43,6 @@ class CircuitEntitiesParser:
         layout_records: Optional[List[Dict[str, Any]]],
     ) -> Dict[str, Any]:
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
-
-        used_keys = {
-            "Location",
-            "Coordinates",
-            "FIA Grade",
-            "Length",
-            "Turns",
-            "Race lap record",
-            "Opened",
-            "Closed",
-            "Former names",
-            "Owner",
-            "Operator",
-            "Capacity",
-            "Broke ground",
-            "Built",
-            "Construction cost",
-            "Website",
-            "Area",
-            "Major events",
-            "Address",
-            "Architect",
-            "Banking",
-            "Surface",
-        }
 
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),

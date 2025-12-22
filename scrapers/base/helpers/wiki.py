@@ -8,6 +8,7 @@ from bs4 import Tag
 
 from models.records import LinkRecord
 from scrapers.base.helpers.text_normalization import is_language_link, clean_wiki_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 
 
 def strip_marks(text: str | None) -> str | None:
