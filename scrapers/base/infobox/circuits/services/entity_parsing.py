@@ -16,7 +16,8 @@ class CircuitEntityParser(CircuitTextProcessing):
 
     _ENTITY_PARTS_RE = re.compile(r"\s*(?:,|&|\band\b)\s*", flags=re.IGNORECASE)
 
-    def _clean_link(self, link_record: LinkRecord) -> Optional[LinkRecord]:
+    @staticmethod
+    def _clean_link(link_record: LinkRecord) -> Optional[LinkRecord]:
         link_text = (link_record.get("text") or "").strip()
         if not link_text:
             return None
