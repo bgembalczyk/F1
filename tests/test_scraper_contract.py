@@ -68,7 +68,7 @@ except Exception:
         def __init__(self, *_, **__):
             pass
 
-        def parse_from_soup(self, soup):
+        def parse(self, soup):
             return {}
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
