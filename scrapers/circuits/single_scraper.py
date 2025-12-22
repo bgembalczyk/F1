@@ -13,6 +13,120 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.errors import ScraperError, ScraperParseError
 
 
+_LAP_RECORDS_CONTEXT: LapRecordsTableScraper | None = None
+
+
+def _layout_from_spanning_header(
+    cells: list[Tag],
+    headers: list[str],
+) -> Optional[str]:
+    if len(cells) != 1 or cells[0].name != "th":
+        return None
+
+    th = cells[0]
+    try:
+        colspan = int(th.get("colspan", "1"))
+    except ValueError:
+        colspan = 1
+
+    text = clean_wiki_text(th.get_text(" ", strip=True))
+    if not text:
+        return None
+
+    keywords = (
+        "circuit",
+        "layout",
+        "course",
+        "km",
+        "mi",
+        "present",
+        "configuration",
+    )
+
+    if colspan >= len(headers) or any(kw in text.lower() for kw in keywords):
+        return text
+
+    return None
+
+
+def is_lap_record_table(headers: list[str]) -> bool:
+    lap_scraper = LapRecordsTableScraper()
+    if lap_scraper.headers_match(headers):
+        return True
+
+    header_set = set(headers)
+    return "Time" in header_set and (
+        "Driver" in header_set or "Driver/Rider" in header_set
+    )
+
+
+def detect_layout_name(table: Tag, headers: list[str]) -> Optional[str]:
+    caption = table.find("caption")
+    if caption:
+        txt = clean_wiki_text(caption.get_text(" ", strip=True))
+        if txt:
+            return txt
+
+    prev = table
+    while prev:
+        prev = prev.previous_sibling
+        if not isinstance(prev, Tag):
+            continue
+        if prev.name in {"h2", "h3", "h4"}:
+            txt = clean_wiki_text(prev.get_text(" ", strip=True))
+            if txt:
+                return txt
+
+    for tr in table.find_all("tr"):
+        cells = tr.find_all(["th", "td"])
+        if not cells:
+            continue
+        layout = _layout_from_spanning_header(cells, headers)
+        if layout:
+            return layout
+
+    return None
+
+
+def collect_lap_records(
+    table: Tag,
+    headers: list[str],
+    base_layout: Optional[str],
+) -> list[dict[str, Any]]:
+    lap_scraper = _LAP_RECORDS_CONTEXT or LapRecordsTableScraper()
+
+    all_records: list[dict[str, Any]] = []
+    current_layout = base_layout
+
+    for tr in table.find_all("tr")[1:]:
+        cells = tr.find_all(["th", "td"])
+        if not cells or all(not c.get_text(strip=True) for c in cells):
+            continue
+
+        layout = _layout_from_spanning_header(cells, headers)
+        if layout:
+            current_layout = layout
+            continue
+
+        cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
+        if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+            continue
+
+        row_records = lap_scraper.parse_multi_row(tr, cells, headers)
+        if not row_records:
+            continue
+
+        layout_name = current_layout or base_layout
+        for record in row_records:
+            if not record:
+                continue
+            if layout_name:
+                record.setdefault("layout", layout_name)
+            all_records.append(record)
+
+    return all_records
+
+
 class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     """
     Scraper pojedynczego toru – pobiera infobox i wszystkie tabele z artykułu Wikipedii.
@@ -117,6 +231,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         return infobox_scraper.parse_from_soup(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        global _LAP_RECORDS_CONTEXT
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -125,99 +240,26 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             ),
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
-
-        def guess_table_layout(table: Tag) -> Optional[str]:
-            caption = table.find("caption")
-            if caption:
-                txt = clean_wiki_text(caption.get_text(" ", strip=True))
-                if txt:
-                    return txt
-
-            prev = table
-            while prev:
-                prev = prev.previous_sibling
-                if not isinstance(prev, Tag):
-                    continue
-                if prev.name in {"h2", "h3", "h4"}:
-                    txt = clean_wiki_text(prev.get_text(" ", strip=True))
-                    if txt:
-                        return txt
-            return None
-
         all_records: List[Dict[str, Any]] = []
-
-        for table in soup.find_all("table", class_="wikitable"):
-            header_row = table.find("tr")
-            if not header_row:
-                continue
-
-            header_cells = header_row.find_all(["th", "td"])
-            headers = [
-                clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
-            ]
-
-            if not lap_scraper.headers_match(headers):
-                header_set = set(headers)
-                if not (
-                    "Time" in header_set
-                    and ("Driver" in header_set or "Driver/Rider" in header_set)
-                ):
+        _LAP_RECORDS_CONTEXT = lap_scraper
+        try:
+            for table in soup.find_all("table", class_="wikitable"):
+                header_row = table.find("tr")
+                if not header_row:
                     continue
 
-            base_layout = guess_table_layout(table)
-            current_layout = base_layout
-
-            for tr in table.find_all("tr")[1:]:
-                cells = tr.find_all(["th", "td"])
-                if not cells or all(not c.get_text(strip=True) for c in cells):
-                    continue
-
-                th_only = all(c.name == "th" for c in cells)
-                td_only = all(c.name == "td" for c in cells)
-
-                if th_only and not td_only and len(cells) == 1:
-                    th = cells[0]
-                    try:
-                        colspan = int(th.get("colspan", "1"))
-                    except ValueError:
-                        colspan = 1
-
-                    text = clean_wiki_text(th.get_text(" ", strip=True))
-                    if colspan >= len(headers) or any(
-                        kw in (text or "").lower()
-                        for kw in (
-                            "circuit",
-                            "layout",
-                            "course",
-                            "km",
-                            "mi",
-                            "present",
-                            "configuration",
-                        )
-                    ):
-                        if text:
-                            current_layout = text
-                        continue
-
-                cleaned_cells = [
-                    clean_wiki_text(c.get_text(" ", strip=True)) for c in cells
+                header_cells = header_row.find_all(["th", "td"])
+                headers = [
+                    clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
                 ]
-                if len(cleaned_cells) == len(headers) and cleaned_cells == list(
-                    headers
-                ):
+
+                if not is_lap_record_table(headers):
                     continue
 
-                row_records = lap_scraper.parse_multi_row(tr, cells, headers)
-                if not row_records:
-                    continue
-
-                layout_name = current_layout or base_layout
-                for record in row_records:
-                    if not record:
-                        continue
-                    if layout_name:
-                        record.setdefault("layout", layout_name)
-                    all_records.append(record)
+                base_layout = detect_layout_name(table, headers)
+                all_records.extend(collect_lap_records(table, headers, base_layout))
+        finally:
+            _LAP_RECORDS_CONTEXT = None
 
         # Grupowanie po layoutach (sumarycznie z wszystkich tabel)
         layouts: Dict[str, List[Dict[str, Any]]] = {}

@@ -1,6 +1,10 @@
 from bs4 import BeautifulSoup
 
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.circuits.single_scraper import (
+    F1SingleCircuitScraper,
+    detect_layout_name,
+    is_lap_record_table,
+)
 
 
 def test_is_circuit_like_article_true_when_category_matches() -> None:
@@ -58,3 +62,49 @@ def test_select_section_returns_full_soup_when_missing_fragment() -> None:
 
     assert "Some history text." in section.get_text(" ")
     assert "Legacy text." in section.get_text(" ")
+
+
+def test_is_lap_record_table_true_when_time_and_driver_present() -> None:
+    assert is_lap_record_table(["Time", "Driver", "Vehicle"]) is True
+
+
+def test_is_lap_record_table_false_when_time_missing() -> None:
+    assert is_lap_record_table(["Driver", "Vehicle"]) is False
+
+
+def test_detect_layout_name_prefers_caption() -> None:
+    soup = BeautifulSoup(
+        """
+        <table class="wikitable">
+            <caption>Grand Prix Layout</caption>
+            <tr><th>Driver</th><th>Time</th></tr>
+        </table>
+        """,
+        "html.parser",
+    )
+
+    table = soup.find("table")
+    assert table is not None
+
+    layout = detect_layout_name(table, ["Driver", "Time"])
+
+    assert layout == "Grand Prix Layout"
+
+
+def test_detect_layout_name_falls_back_to_spanning_header() -> None:
+    soup = BeautifulSoup(
+        """
+        <table class="wikitable">
+            <tr><th colspan="3">Short Circuit</th></tr>
+            <tr><th>Driver</th><th>Time</th><th>Vehicle</th></tr>
+        </table>
+        """,
+        "html.parser",
+    )
+
+    table = soup.find("table")
+    assert table is not None
+
+    layout = detect_layout_name(table, ["Driver", "Time", "Vehicle"])
+
+    assert layout == "Short Circuit"
