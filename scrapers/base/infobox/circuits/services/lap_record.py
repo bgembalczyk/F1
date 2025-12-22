@@ -2,31 +2,14 @@ import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from models.records import LinkRecord
+from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
 )
 
-
-_TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
-
-
 def _time_to_seconds(value: Optional[str]) -> Optional[float]:
-    if value is None:
-        return None
-    s = str(value).strip()
-    m = _TIME_PARSE_RE.match(s)
-    if not m:
-        return None
-
-    mm = m.group(1)
-    ss = m.group(2)
-    frac = m.group(3) or "0"
-
-    minutes = int(mm) if mm is not None else 0
-    seconds = int(ss)
-    frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
-    return minutes * 60.0 + seconds + frac_seconds
+    return parse_time_seconds_from_text(value)
 
 
 def extract_time(text: str) -> Optional[float]:
