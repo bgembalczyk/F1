@@ -62,7 +62,7 @@ class WikipediaInfoboxScraper:
 
         try:
             soup = BeautifulSoup(html, "html.parser")
-            return self.parse(soup)
+            return parse_infobox_from_soup(self, soup)
         except Exception as exc:
             error = (
                 exc
@@ -75,14 +75,17 @@ class WikipediaInfoboxScraper:
                 raise
             raise error from exc
 
-    def parse(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        """Parsuje infobox z już utworzonego obiektu ``BeautifulSoup``."""
-        raw = self.parser.parse(soup)
-        return self.mapper.map(raw)
-
     # ------------------------------
     # Internal helpers
     # ------------------------------
 
     def _fetch(self, url: str) -> str:
         return self.fetcher.get_text(url, timeout=self.timeout)
+
+
+def parse_infobox_from_soup(
+    infobox_scraper: WikipediaInfoboxScraper,
+    soup: BeautifulSoup,
+) -> Dict[str, Any]:
+    raw = infobox_scraper.parser.parse(soup)
+    return infobox_scraper.mapper.map(raw)
