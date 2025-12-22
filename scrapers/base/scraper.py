@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
+from abc import ABC
 from pathlib import Path
 from typing import Callable, List, Optional, Sequence, TypeVar
 from urllib.parse import urljoin
@@ -166,10 +166,11 @@ class F1Scraper(ABC):
         # Adapter jest jedyną “bramką” do źródła.
         return self.source_adapter.get(self.url)
 
-    @abstractmethod
     def _parse_soup(self, soup: BeautifulSoup) -> List[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
-        raise NotImplementedError
+        raise NotImplementedError(
+            f"{self.__class__.__name__} must implement _parse_soup() or override parse()."
+        )
 
     def parse(self, soup: BeautifulSoup) -> List[RawRecord]:
         if self.parser is None:
