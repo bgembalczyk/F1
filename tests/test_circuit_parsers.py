@@ -8,7 +8,11 @@ from scrapers.base.infobox.circuits.services.entities import CircuitEntitiesPars
 from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
 from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
 from scrapers.base.infobox.circuits.services.history import CircuitHistoryParser
-from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordParser
+from scrapers.base.infobox.circuits.services.lap_record import (
+    CircuitLapRecordParser,
+    extract_time,
+    select_details_paren,
+)
 from scrapers.base.infobox.circuits.services.layouts import CircuitLayoutsParser
 from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
 from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
@@ -76,7 +80,7 @@ def test_circuit_lap_record_parser_basic() -> None:
             {"text": "Formula One", "url": "https://en.wikipedia.org/wiki/Formula_One"},
         ],
     }
-    record = parser._parse_lap_record(row)
+    record = parser.parse_lap_record(row)
     assert record is not None
     assert record["time"] == pytest.approx(80.123)
     assert record["driver"] == {
@@ -88,6 +92,28 @@ def test_circuit_lap_record_parser_basic() -> None:
         "url": "https://en.wikipedia.org/wiki/Fast_Car",
     }
     assert record["year"] == "2023"
+
+
+def test_extract_time_parser() -> None:
+    assert extract_time("1:20.123 (John Doe, Fast Car, 2023)") == pytest.approx(80.123)
+    assert extract_time("Record (John Doe, 2023) 1:02.500") == pytest.approx(62.5)
+    assert extract_time("No time here") is None
+
+
+def test_select_details_paren() -> None:
+    text = "1:20.123 (John Doe, Fast Car, 2023, Formula One) (234 km/h)"
+    assert select_details_paren(text) == [
+        "John Doe",
+        "Fast Car",
+        "2023",
+        "Formula One",
+    ]
+
+    text = "1:20.123 (234 km/h) (John Doe, Fast Car)"
+    assert select_details_paren(text) == ["John Doe", "Fast Car"]
+
+    text = "1:20.123 (John Doe)"
+    assert select_details_paren(text) == []
 
 
 def test_circuit_layouts_parser_basic() -> None:

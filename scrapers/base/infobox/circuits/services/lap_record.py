@@ -8,6 +8,87 @@ from scrapers.base.infobox.circuits.services.text_processing import (
 )
 
 
+_TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
+
+
+def _time_to_seconds(value: Optional[str]) -> Optional[float]:
+    if value is None:
+        return None
+    s = str(value).strip()
+    m = _TIME_PARSE_RE.match(s)
+    if not m:
+        return None
+
+    mm = m.group(1)
+    ss = m.group(2)
+    frac = m.group(3) or "0"
+
+    minutes = int(mm) if mm is not None else 0
+    seconds = int(ss)
+    frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
+    return minutes * 60.0 + seconds + frac_seconds
+
+
+def extract_time(text: str) -> Optional[float]:
+    if not text:
+        return None
+
+    head = text.split("(", 1)[0].strip()
+    time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
+    time_str = time_match.group(1) if time_match else None
+
+    sec = _time_to_seconds(time_str) if time_str else None
+
+    if sec is None:
+        m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
+        if m:
+            sec = _time_to_seconds(m.group(1))
+
+    return sec
+
+
+def select_details_paren(text: str) -> list[str]:
+    parens = re.findall(r"\(([^)]*)\)", text or "")
+    if not parens:
+        return []
+
+    def _is_speed_paren(s: str) -> bool:
+        s_low = s.lower()
+        return ("km/h" in s_low) or ("mph" in s_low)
+
+    def _score_details_candidate(s: str) -> int:
+        if not s:
+            return -10
+        if _is_speed_paren(s):
+            return -100
+
+        parts = [p.strip() for p in s.split(",") if p.strip()]
+        score = 0
+
+        if len(parts) >= 4:
+            score += 5
+        elif len(parts) == 3:
+            score += 2
+        elif len(parts) == 2:
+            score += 1
+        else:
+            score -= 2
+
+        if any(re.fullmatch(r"\d{4}", p) for p in parts):
+            score += 5
+
+        if "," not in s and score < 3:
+            score -= 3
+
+        return score
+
+    best = max(parens, key=_score_details_candidate)
+    if _score_details_candidate(best) <= 0:
+        return []
+
+    return [p.strip() for p in best.split(",") if p.strip()]
+
+
 class CircuitLapRecordParser(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
 
@@ -53,62 +134,21 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             return None
 
         links = row.get("links") or []
-
-        head = text.split("(", 1)[0].strip()
-        time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
-        time_str = time_match.group(1) if time_match else None
-
-        sec: Optional[float] = self._time_to_seconds(time_str) if time_str else None
-
-        if sec is None:
-            m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
-            if m:
-                sec = self._time_to_seconds(m.group(1))
-
-        record: Dict[str, Any] = {}
-        if sec is not None:
-            record["time"] = sec
-
-        parens = re.findall(r"\(([^)]*)\)", text)
-
-        def _is_speed_paren(s: str) -> bool:
-            s_low = s.lower()
-            return ("km/h" in s_low) or ("mph" in s_low)
-
-        def _score_details_candidate(s: str) -> int:
-            if not s:
-                return -10
-            if _is_speed_paren(s):
-                return -100
-
-            parts = [p.strip() for p in s.split(",") if p.strip()]
-            score = 0
-
-            if len(parts) >= 4:
-                score += 5
-            elif len(parts) == 3:
-                score += 2
-            elif len(parts) == 2:
-                score += 1
-            else:
-                score -= 2
-
-            if any(re.fullmatch(r"\d{4}", p) for p in parts):
-                score += 5
-
-            if "," not in s and score < 3:
-                score -= 3
-
-            return score
-
-        details: List[str] = []
-        if parens:
-            best = max(parens, key=_score_details_candidate)
-            if _score_details_candidate(best) > 0:
-                details = [p.strip() for p in best.split(",") if p.strip()]
+        sec = extract_time(text)
+        details = select_details_paren(text)
 
         if not details:
             return None
+
+        record = self.build_lap_record(details, links, sec)
+        return record or None
+
+    def build_lap_record(
+        self, details: List[str], links: List[LinkRecord], time: Optional[float]
+    ) -> Dict[str, Any]:
+        record: Dict[str, Any] = {}
+        if time is not None:
+            record["time"] = time
 
         driver_text = details[0] if len(details) >= 1 else None
         car_text = details[1] if len(details) >= 2 else None
@@ -129,7 +169,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         record = self.prune_nulls(record) or {}
 
         if not any(record.get(k) for k in ("driver", "vehicle", "year", "series")):
-            return None
+            return {}
 
         return record
 
