@@ -5,13 +5,13 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
+from models.services.circuits.circuit_service import CircuitService
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.circuits_list import CircuitsListScraper
-from scrapers.circuits.helpers.normalization import normalize_circuit_record
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
@@ -90,7 +90,7 @@ class F1CompleteCircuitScraper(F1Scraper):
             full_record = dict(circuit_payload)
             full_record["details"] = details
 
-            complete.append(normalize_circuit_record(full_record))
+            complete.append(CircuitService.normalize_record(full_record))
 
         self._data = complete
         return self._data
