@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Callable, Sequence
+from typing import Callable, Sequence
 
+from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.records import ExportRecord
 
 NormalizationRule = Callable[[ExportRecord], ExportRecord]
@@ -61,17 +62,17 @@ def _normalize_record_keys(record: ExportRecord) -> ExportRecord:
 
 
 def _drop_empty_fields(record: ExportRecord) -> ExportRecord:
-    return {key: value for key, value in record.items() if not _is_empty(value)}
-
-
-def _is_empty(value: Any) -> bool:
-    if value is None:
-        return True
-    if isinstance(value, str):
-        return value.strip() == ""
-    if isinstance(value, (list, tuple, set, dict)):
-        return len(value) == 0
-    return False
+    pruned = prune_empty(
+        record,
+        drop_empty_lists=True,
+        drop_none=True,
+        drop_empty_dicts=True,
+    )
+    return {
+        key: value
+        for key, value in pruned.items()
+        if not (isinstance(value, str) and value.strip() == "")
+    }
 
 
 def _to_snake_case(value: str) -> str:

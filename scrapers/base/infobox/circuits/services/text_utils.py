@@ -3,6 +3,7 @@ from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
@@ -119,26 +120,9 @@ class InfoboxTextUtils:
     # ------------------------------
 
     def prune_nulls(self, data: Any) -> Any:
-        if isinstance(data, dict):
-            pruned_dict = {}
-            for key, value in data.items():
-                cleaned = self.prune_nulls(value)
-                if cleaned is None:
-                    continue
-                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
-                    continue
-                pruned_dict[key] = cleaned
-            return pruned_dict
-
-        if isinstance(data, list):
-            pruned_list = []
-            for value in data:
-                cleaned = self.prune_nulls(value)
-                if cleaned is None:
-                    continue
-                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
-                    continue
-                pruned_list.append(cleaned)
-            return pruned_list
-
-        return data
+        return prune_empty(
+            data,
+            drop_empty_lists=True,
+            drop_none=True,
+            drop_empty_dicts=True,
+        )

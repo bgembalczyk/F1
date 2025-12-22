@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Callable
 
+from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.text import add_unique_name
 
 
@@ -203,34 +204,6 @@ def merge_tables_into_layouts(
             existing.extend(records)
 
 
-def cleanup_urls(obj: Any) -> Any:
-    """Rekurencyjnie usuwa klucze url o wartości None."""
-    if isinstance(obj, dict):
-        cleaned = {}
-        for k, v in obj.items():
-            if k == "url" and v is None:
-                continue
-            cleaned[k] = cleanup_urls(v)
-        return cleaned
-    if isinstance(obj, list):
-        return [cleanup_urls(item) for item in obj]
-    return obj
-
-
-def remove_empty_lists(obj: Any) -> Any:
-    """Rekurencyjnie usuwa klucze z pustymi listami."""
-    if isinstance(obj, dict):
-        cleaned = {}
-        for k, v in obj.items():
-            if isinstance(v, list) and not v:
-                continue
-            cleaned[k] = remove_empty_lists(v)
-        return cleaned
-    if isinstance(obj, list):
-        return [remove_empty_lists(item) for item in obj]
-    return obj
-
-
 def normalize_circuit_record_impl(
     raw: dict[str, Any],
     normalize_lap_records_fn: Callable[[dict[str, Any]], None] | None = None,
@@ -305,8 +278,12 @@ def normalize_circuit_record_impl(
                 normalize_lap_records_fn(r)
 
     # Clean url=None w całym wyjściu
-    out = cleanup_urls(out)
-    out = remove_empty_lists(out)
+    out = prune_empty(
+        out,
+        drop_empty_lists=True,
+        drop_none=False,
+        drop_empty_dicts=False,
+        drop_url_none=True,
+    )
 
     return out
-
