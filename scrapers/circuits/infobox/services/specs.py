@@ -2,6 +2,7 @@ import re
 from typing import Optional, Dict, Any, List
 
 from scrapers.base.infobox.circuits.services.constants import symbol_map
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -12,7 +13,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         if not row:
             return None
 
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 
@@ -87,7 +88,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         """Capacity: '~125,000 (44,000 seating)' -> total / seating."""
         if not row:
             return None
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 
@@ -113,7 +114,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         """Construction cost: amount + currency (+ opcjonalna skala)."""
         if not row:
             return None
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 
@@ -159,7 +160,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         """Banking: liczba + jednostka + opcjonalna notka."""
         if not row:
             return None
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 

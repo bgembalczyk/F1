@@ -3,6 +3,7 @@ from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
 from scrapers.base.infobox.circuits.services.constants import _LOCATION_STOPWORDS
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -13,7 +14,7 @@ class CircuitGeoParser(InfoboxTextUtils):
         if not row:
             return None
 
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         links: List[LinkRecord] = row.get("links") or []
 
         components: List[Dict[str, Any]] = []
@@ -83,7 +84,7 @@ class CircuitGeoParser(InfoboxTextUtils):
     ) -> Optional[Dict[str, Any]]:
         if not row:
             return None
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         return self._parse_position(text)
 
     @staticmethod
@@ -116,7 +117,7 @@ class CircuitGeoParser(InfoboxTextUtils):
         """Area: np. '277 acres (112 ha)' -> acres + hectares."""
         if not row:
             return None
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 

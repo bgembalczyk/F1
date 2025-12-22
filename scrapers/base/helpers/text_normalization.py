@@ -99,6 +99,14 @@ def clean_wiki_text(
     return t
 
 
+def clean_infobox_text(text: Any) -> str | None:
+    """Czyści tekst z infoboxa i zwraca None dla pustych wartości."""
+    if not isinstance(text, str):
+        return None
+    cleaned = clean_wiki_text(text, strip_lang_suffix=False)
+    return cleaned or None
+
+
 def is_language_link(text: str | None, url: str | None) -> bool:
     """Zwraca True dla linków językowych typu 'fr' -> fr.wikipedia.org."""
     txt = (text or "").strip().lower()

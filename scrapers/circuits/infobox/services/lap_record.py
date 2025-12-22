@@ -10,6 +10,7 @@ from models.services.circuits.lap_record_merging import (
     merge_two_records,
     normalize_lap_record,
 )
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
@@ -115,7 +116,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         if not row:
             return None
 
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 
