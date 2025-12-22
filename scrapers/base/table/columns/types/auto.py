@@ -20,17 +20,37 @@ class AutoColumn(BaseColumn):
     - dodatkowo ignoruje linki „językowe” (es/fr/de/it/...) przy decyzji o zwróceniu dict/listy.
     """
 
+    def __init__(
+        self,
+        *,
+        strip_lang_suffix: bool = True,
+        strip_refs: bool = True,
+        normalize_dashes: bool = True,
+    ) -> None:
+        self.strip_lang_suffix = strip_lang_suffix
+        self.strip_refs = strip_refs
+        self.normalize_dashes = normalize_dashes
+
     @staticmethod
     def _normalize_link(link: LinkRecord) -> LinkRecord:
         return {"text": link.get("text") or "", "url": link.get("url")}
 
-    @staticmethod
-    def _cell_text(ctx: ColumnContext) -> str:
+    def _cell_text(self, ctx: ColumnContext) -> str:
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
             raw = " ".join(list(ctx.cell.stripped_strings))
-            return clean_wiki_text(raw)
-        return clean_wiki_text(ctx.clean_text or getattr(ctx, "raw_text", "") or "")
+            return clean_wiki_text(
+                raw,
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+        return clean_wiki_text(
+            ctx.clean_text or getattr(ctx, "raw_text", "") or "",
+            strip_lang_suffix=self.strip_lang_suffix,
+            strip_refs=self.strip_refs,
+            normalize_dashes=self.normalize_dashes,
+        )
 
     def parse(self, ctx: ColumnContext) -> Any:
         value = self._cell_text(ctx)
@@ -45,8 +65,18 @@ class AutoColumn(BaseColumn):
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:
             link = links[0]
-            link_text = clean_wiki_text(link.get("text") or "")
-            cell_text = clean_wiki_text(value or "")
+            link_text = clean_wiki_text(
+                link.get("text") or "",
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+            cell_text = clean_wiki_text(
+                value or "",
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
             if cell_text and link_text and cell_text.lower() == link_text.lower():
                 return link
             return value or None

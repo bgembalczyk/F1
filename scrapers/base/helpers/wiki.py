@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import Tag
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_text, is_language_link
+from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 
 
 def strip_marks(text: str | None) -> str | None:
@@ -75,7 +75,7 @@ def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
         return True
 
     if href.startswith("#"):
-        text = clean_text(tag.get_text(strip=True))
+        text = clean_wiki_text(tag.get_text(strip=True))
         return not text or not allow_local_anchors
 
     return False
@@ -130,7 +130,7 @@ def clean_link_record(link: LinkRecord) -> LinkRecord | None:
     - zamienia redlink na url=None,
     - zwraca None dla pustego tekstu.
     """
-    link_text = clean_text(link.get("text") or "")
+    link_text = clean_wiki_text(link.get("text") or "")
     if not link_text:
         return None
 

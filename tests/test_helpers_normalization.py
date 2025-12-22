@@ -4,12 +4,7 @@ import types
 import pytest
 
 from scrapers.base.helpers.text import split_delimited_text
-from scrapers.base.helpers.text_normalization import (
-    clean_text,
-    is_language_link,
-    normalize_dashes,
-    strip_lang_suffix,
-)
+from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.value_objects import NormalizedTime
@@ -40,26 +35,37 @@ def test_clean_wiki_text_removes_references_and_whitespace():
     assert clean_wiki_text(text) == "Foo bar"
 
 
-def test_clean_text_normalizes_refs_dashes_and_lang_suffix():
+def test_clean_wiki_text_normalizes_refs_dashes_and_lang_suffix():
     text = "  Foo\xa0bar [1] A - B (es)  "
 
-    assert clean_text(text) == "Foo bar A-B"
+    assert clean_wiki_text(text) == "Foo bar A-B"
 
 
-def test_strip_refs_removes_bracketed_references():
-    assert strip_refs("Foo [1] bar [note 2]") == "Foo  bar "
+def test_clean_wiki_text_can_preserve_refs():
+    assert clean_wiki_text("Foo [1] bar [note 2]", strip_refs=False) == (
+        "Foo [1] bar [note 2]"
+    )
 
 
-def test_normalize_dashes_compacts_spaces():
-    assert normalize_dashes("A – B") == "A-B"
-    assert normalize_dashes("A -B") == "A-B"
-    assert normalize_dashes("A- B") == "A-B"
+def test_clean_wiki_text_normalize_dashes_compacts_spaces():
+    assert clean_wiki_text("A – B") == "A-B"
+    assert clean_wiki_text("A -B") == "A-B"
+    assert clean_wiki_text("A- B") == "A-B"
 
 
-def test_strip_lang_suffix_ignores_word_endings():
-    assert strip_lang_suffix("David Salvador (es)") == "David Salvador"
-    assert strip_lang_suffix("Yamaha YZF-R9 ( de )") == "Yamaha YZF-R9"
-    assert strip_lang_suffix("Silverstone circuit") == "Silverstone circuit"
+def test_clean_wiki_text_strip_lang_suffix_ignores_word_endings():
+    assert (
+        clean_wiki_text("David Salvador (es)", strip_lang_suffix=True)
+        == "David Salvador"
+    )
+    assert (
+        clean_wiki_text("Yamaha YZF-R9 ( de )", strip_lang_suffix=True)
+        == "Yamaha YZF-R9"
+    )
+    assert (
+        clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
+        == "Silverstone circuit"
+    )
 
 
 def test_is_language_link_matches_language_wikipedia_urls():

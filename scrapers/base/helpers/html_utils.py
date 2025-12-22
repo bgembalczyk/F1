@@ -11,9 +11,20 @@ from scrapers.base.helpers.text_normalization import clean_wiki_text as base_cle
 from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
 
 
-def clean_wiki_text(text: str) -> str:
+def clean_wiki_text(
+    text: str,
+    *,
+    strip_refs: bool = True,
+    strip_lang_suffix: bool = True,
+    normalize_dashes: bool = True,
+) -> str:
     """Normalizuje whitespace i usuwa przypisy Wikipedii."""
-    return base_clean_wiki_text(text)
+    return base_clean_wiki_text(
+        text,
+        strip_refs=strip_refs,
+        strip_lang_suffix=strip_lang_suffix,
+        normalize_dashes=normalize_dashes,
+    )
 
 
 def find_section_elements(
