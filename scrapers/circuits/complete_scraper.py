@@ -32,7 +32,7 @@ class F1CompleteCircuitScraper(F1Scraper):
     mogą być puste.
     """
 
-    url = CircuitsListScraper.url
+    url = CircuitsListScraper.CONFIG.url
 
     def __init__(
         self,
