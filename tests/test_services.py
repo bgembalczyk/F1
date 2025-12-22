@@ -26,6 +26,20 @@ def test_driver_service_parses_championships() -> None:
     assert [season["year"] for season in result["seasons"]] == [2005, 2006]
 
 
+def test_driver_service_parses_championships_variants() -> None:
+    cases = [
+        ("0", 0, []),
+        ("2\n2005–2006", 2, [2005, 2006]),
+        ("7\n1994–1995, 2000–2004", 7, [1994, 1995, 2000, 2001, 2002, 2003, 2004]),
+    ]
+
+    for raw, expected_count, expected_years in cases:
+        result = DriverService.parse_championships(raw)
+
+        assert result["count"] == expected_count
+        assert [season["year"] for season in result["seasons"]] == expected_years
+
+
 def test_circuit_service_normalizes_record_and_merges_laps() -> None:
     raw = {
         "circuit": {"text": "Test Circuit", "url": "https://example.com"},
