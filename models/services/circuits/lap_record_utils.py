@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Callable, Iterable, Mapping
 
+from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.base.helpers.text_normalization import normalize_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 
@@ -40,37 +41,10 @@ def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
     return parse_time_seconds_from_text(t)
 
 
-def choose_richer_entity(a: Any, b: Any) -> Any:
-    """
-    Preferuj encję z url; jeśli oba mają url albo oba nie mają,
-    wybierz tę z dłuższym textem.
-    """
-    if not a:
-        return b
-    if not b:
-        return a
-
-    if isinstance(a, dict) and not isinstance(b, dict):
-        return a
-    if isinstance(b, dict) and not isinstance(a, dict):
-        return b
-
-    a_url = a.get("url") if isinstance(a, dict) else None
-    b_url = b.get("url") if isinstance(b, dict) else None
-    if a_url and not b_url:
-        return a
-    if b_url and not a_url:
-        return b
-
-    a_txt = (a.get("text") if isinstance(a, dict) else str(a or "")).strip()
-    b_txt = (b.get("text") if isinstance(b, dict) else str(b or "")).strip()
-    return a if len(a_txt) >= len(b_txt) else b
-
-
 def select_best_field_with_url(
     records: Iterable[Mapping[str, Any]], *field_names: str
 ) -> Any:
-    """Wybiera najlepszą wartość pola (preferuje dict z URL)."""
+    """Wybiera najlepszą wartość pola (preferuje bogatszą encję)."""
     best = None
     for r in records:
         value = None
@@ -81,15 +55,7 @@ def select_best_field_with_url(
 
         if not value:
             continue
-        if best is None:
-            best = value
-            continue
-        if (
-            isinstance(value, dict)
-            and value.get("url")
-            and (not isinstance(best, dict) or not best.get("url"))
-        ):
-            best = value
+        best = choose_richer_entity(best, value)
     return best
 
 
