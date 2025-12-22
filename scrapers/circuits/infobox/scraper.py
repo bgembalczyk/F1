@@ -4,7 +4,10 @@ from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.infobox.scraper import (
+    WikipediaInfoboxScraper,
+    parse_infobox_from_soup,
+)
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
@@ -143,7 +146,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         """
         truncated_soup = self._truncate_infobox_after_full_data(soup)
 
-        raw = self.infobox_scraper.parse(truncated_soup)
+        raw = parse_infobox_from_soup(self.infobox_scraper, truncated_soup)
 
         # layouty parsujemy z pełnej sekcji artykułu
         layout_records = self.layouts_parser.parse_layout_sections(soup)
