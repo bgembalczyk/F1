@@ -5,7 +5,6 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.errors import ScraperError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 
 
@@ -40,33 +39,29 @@ class WikipediaSectionByIdMixin:
         base_url, fragment = self.split_url_fragment(url)
         self.url = base_url
 
-        soup_full = self._fetch_soup(base_url)
-        if not self._is_circuit_like_article(soup_full):
-            return []
-
-        working_soup = self._select_section(soup_full, fragment)
-
-        try:
-            parsed = self._parse_details(working_soup)
-        except Exception as exc:
-            error = (
-                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
-            )
-            if self._handle_scraper_error(error):
+        def _parse_full(soup: BeautifulSoup) -> List[Dict[str, Any]]:
+            if not self._is_circuit_like_article(soup):
                 return []
-            if error is exc:
-                raise
-            raise error from exc
 
-        if not parsed:
-            return []
+            working_soup = self._select_section(soup, fragment)
+            parsed = self._parse_details(working_soup)
 
-        return [
-            {
-                "url": self._original_url or self.url,
-                **parsed,
-            }
-        ]
+            if not parsed:
+                return []
+
+            return [
+                {
+                    "url": self._original_url or self.url,
+                    **parsed,
+                }
+            ]
+
+        result = self.run_with_error_handling(
+            lambda: self._download(),
+            _parse_full,
+            base_url,
+        )
+        return result or []
 
     @staticmethod
     def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
