@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import List, Optional, Sequence
+from typing import Callable, List, Optional, Sequence, TypeVar
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -17,6 +17,8 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
 from scrapers.base.logging import get_logger
+
+T = TypeVar("T")
 
 
 class F1Scraper(ABC):
@@ -198,3 +200,47 @@ class F1Scraper(ABC):
 
     def _handle_scraper_error(self, error: Exception) -> bool:
         return self._error_handler.handle(error)
+
+    # ---------- Wspólne narzędzie do error handling ----------
+
+    def run_with_error_handling(
+        self,
+        fetch_fn: Callable[[], str],
+        parse_fn: Callable[[BeautifulSoup], T],
+        url: str,
+    ) -> Optional[T]:
+        try:
+            html = fetch_fn()
+        except Exception as exc:
+            error: Exception
+            if isinstance(exc, ScraperError):
+                error = exc
+            else:
+                error = self._wrap_network_error(exc)
+            self._log_error_debug("network", url, error)
+            if self._handle_scraper_error(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
+
+        try:
+            soup = BeautifulSoup(html, "html.parser")
+            return parse_fn(soup)
+        except Exception as exc:
+            error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            self._log_error_debug("parse", url, error)
+            if self._handle_scraper_error(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
+
+    def _log_error_debug(self, stage: str, url: str, error: Exception) -> None:
+        self.logger.debug(
+            "Scraper error in %s stage for url=%s (type=%s): %s",
+            stage,
+            url,
+            type(error).__name__,
+            error,
+        )

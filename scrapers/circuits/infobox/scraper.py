@@ -9,7 +9,7 @@ from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
-from scrapers.base.errors import ScraperError, ScraperParseError
+from scrapers.base.errors import ScraperParseError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
@@ -97,47 +97,34 @@ class F1CircuitInfoboxScraper(F1Scraper):
         base_url, fragment = (url.split("#", 1) + [None])[:2]
         self.url = base_url
 
-        # --- download + obsługa błędów (kompatybilnie z F1Scraper) ---
-        try:
-            html = self._download()
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._maybe_handle_scraper_error(exc):
-                return {"url": url}
-            raise
-        except Exception as exc:
-            wrapped = self._maybe_wrap_network_error(exc)
-            if self._maybe_handle_scraper_error(wrapped):
-                return {"url": url}
-            raise wrapped from exc
+        def _parse_full(full_soup: BeautifulSoup) -> ExportableRecord:
+            if not is_circuit_like_article(full_soup):
+                title = (
+                    full_soup.title.get_text(strip=True) if full_soup.title else None
+                )
+                return self.text_utils.prune_nulls(
+                    {
+                        "url": url,
+                        "title": title,
+                    }
+                )
 
-        full_soup = BeautifulSoup(html, "html.parser")
+            soup = full_soup
+            if fragment:
+                section = self.section_extractor.extract_section_by_id(
+                    full_soup, fragment
+                )
+                if section is not None:
+                    soup = section
 
-        if not is_circuit_like_article(full_soup):
-            title = full_soup.title.get_text(strip=True) if full_soup.title else None
-            return self.text_utils.prune_nulls(
-                {
-                    "url": url,
-                    "title": title,
-                }
-            )
-
-        soup = full_soup
-        if fragment:
-            section = self.section_extractor.extract_section_by_id(full_soup, fragment)
-            if section is not None:
-                soup = section
-
-        try:
             return self.parse_from_soup(soup)
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._maybe_handle_scraper_error(exc):
-                return {"url": url}
-            raise
-        except Exception as exc:
-            wrapped = self._maybe_wrap_parse_error(exc)
-            if self._maybe_handle_scraper_error(wrapped):
-                return {"url": url}
-            raise wrapped from exc
+
+        result = self.run_with_error_handling(
+            lambda: self._download(),
+            _parse_full,
+            base_url,
+        )
+        return result or {"url": url}
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
         """API bazowej klasy – deleguje do parse_from_soup."""
@@ -213,29 +200,3 @@ class F1CircuitInfoboxScraper(F1Scraper):
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------
-    # Kompatybilne hooki error-handling, bez wymogu miksinów
-    # ------------------------------
-
-    def _maybe_handle_scraper_error(self, exc: Exception) -> bool:
-        """
-        Jeśli bazowy F1Scraper ma mechanizm obsługi błędów (skip/warn),
-        to go użyjemy. W przeciwnym razie: nie obsługujemy.
-        """
-        handler = getattr(self, "_handle_scraper_error", None)
-        if callable(handler):
-            return bool(handler(exc))
-        return False
-
-    def _maybe_wrap_network_error(self, exc: Exception) -> Exception:
-        wrapper = getattr(self, "_wrap_network_error", None)
-        if callable(wrapper):
-            result = wrapper(exc)
-            return result if isinstance(result, Exception) else exc
-        return exc
-
-    def _maybe_wrap_parse_error(self, exc: Exception) -> Exception:
-        wrapper = getattr(self, "_wrap_parse_error", None)
-        if callable(wrapper):
-            result = wrapper(exc)
-            return result if isinstance(result, Exception) else exc
-        return exc
