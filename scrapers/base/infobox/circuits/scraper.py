@@ -15,6 +15,7 @@ from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordP
 from scrapers.base.infobox.circuits.services.layouts import CircuitLayoutsParser
 from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
 from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
+from scrapers.base.helpers.circuits import is_circuit_like_article
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
@@ -113,7 +114,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
         full_soup = BeautifulSoup(html, "html.parser")
 
-        if not self._is_circuit_like_article(full_soup):
+        if not is_circuit_like_article(full_soup):
             title = full_soup.title.get_text(strip=True) if full_soup.title else None
             return self.text_utils.prune_nulls(
                 {
@@ -212,28 +213,6 @@ class F1CircuitInfoboxScraper(F1Scraper):
         if not self.url:
             raise ScraperParseError("URL must be set before downloading")
         return self.fetcher.get_text(self.url, timeout=self.timeout)
-
-    @staticmethod
-    def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
-        """Sprawdza czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
-        cat_div = soup.find("div", id="mw-normal-catlinks")
-        if not cat_div:
-            return False
-
-        keywords = [
-            "circuit",
-            "race track",
-            "racetrack",
-            "speedway",
-            "raceway",
-            "motor racing",
-            "motorsport venue",
-        ]
-        for a in cat_div.find_all("a"):
-            text = a.get_text(strip=True).lower()
-            if any(kw in text for kw in keywords):
-                return True
-        return False
 
     # ------------------------------
     # Kompatybilne hooki error-handling, bez wymogu miksinów

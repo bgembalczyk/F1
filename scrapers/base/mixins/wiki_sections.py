@@ -6,6 +6,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.errors import ScraperError
+from scrapers.base.helpers.circuits import is_circuit_like_article
 
 
 class WikipediaSectionByIdMixin:
@@ -66,6 +67,10 @@ class WikipediaSectionByIdMixin:
                 **parsed,
             }
         ]
+
+    @staticmethod
+    def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
+        return is_circuit_like_article(soup)
 
     def extract_section_by_id(
         self,

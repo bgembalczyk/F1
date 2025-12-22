@@ -2,32 +2,16 @@ import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from models.records import LinkRecord
+from models.services.circuits.lap_record_utils import (
+    build_lap_record_key,
+    choose_richer_entity,
+    normalize_lap_record_entity,
+    parse_lap_record_time,
+)
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
 )
-
-
-_TIME_PARSE_RE = re.compile(r"^\s*(?:(\d+):)?(\d{1,2})(?:\.(\d+))?\s*$")
-
-
-def _time_to_seconds(value: Optional[str]) -> Optional[float]:
-    if value is None:
-        return None
-    s = str(value).strip()
-    m = _TIME_PARSE_RE.match(s)
-    if not m:
-        return None
-
-    mm = m.group(1)
-    ss = m.group(2)
-    frac = m.group(3) or "0"
-
-    minutes = int(mm) if mm is not None else 0
-    seconds = int(ss)
-    frac_seconds = int(frac) / (10 ** len(frac)) if frac else 0.0
-    return minutes * 60.0 + seconds + frac_seconds
-
 
 def extract_time(text: str) -> Optional[float]:
     if not text:
@@ -37,12 +21,12 @@ def extract_time(text: str) -> Optional[float]:
     time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
     time_str = time_match.group(1) if time_match else None
 
-    sec = _time_to_seconds(time_str) if time_str else None
+    sec = parse_lap_record_time(time_str) if time_str else None
 
     if sec is None:
         m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
         if m:
-            sec = _time_to_seconds(m.group(1))
+            sec = parse_lap_record_time(m.group(1))
 
     return sec
 
@@ -194,37 +178,35 @@ class CircuitLapRecordParser(CircuitTextProcessing):
     def _lap_record_key(
         self, rec: Dict[str, Any]
     ) -> Optional[Tuple[str, str, int, str]]:
-        driver = rec.get("driver")
-        vehicle = self._get_vehicle_field(rec)
-
-        d = self._norm_text_for_key(driver)
-        v = self._norm_text_for_key(vehicle)
-        if not d or not v:
-            return None
-
-        sec = self._time_to_seconds(rec.get("time"))
-        if sec is None:
-            return None
-
-        year = self._year_from_record(rec)
-        if not year:
-            return None
-
-        return d, v, int(round(sec * 1000)), year
+        sanitizer = self._strip_lang_marker_tail_only
+        return build_lap_record_key(
+            rec,
+            year_extractor=self._year_from_record,
+            vehicle_getter=self._get_vehicle_field,
+            time_extractor=lambda r: parse_lap_record_time(r.get("time")),
+            driver_normalizer=lambda value: normalize_lap_record_entity(
+                value, sanitizer=sanitizer
+            ),
+            vehicle_normalizer=lambda value: normalize_lap_record_entity(
+                value, sanitizer=sanitizer
+            ),
+            time_key_factory=lambda sec: int(round(sec * 1000)),
+            key_order=("driver", "vehicle", "time", "year"),
+        )
 
     def _merge_two_lap_records(
         self, a: Dict[str, Any], b: Dict[str, Any]
     ) -> Dict[str, Any]:
         out = dict(a)
 
-        out["driver"] = self._choose_richer_entity(a.get("driver"), b.get("driver"))
+        out["driver"] = choose_richer_entity(a.get("driver"), b.get("driver"))
 
-        out["vehicle"] = self._choose_richer_entity(
+        out["vehicle"] = choose_richer_entity(
             self._get_vehicle_field(a), self._get_vehicle_field(b)
         )
         out.pop("car", None)
 
-        picked_series = self._choose_richer_entity(
+        picked_series = choose_richer_entity(
             self._get_class_field(a), self._get_class_field(b)
         )
         if picked_series:
@@ -236,8 +218,8 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             if not out.get(k) and b.get(k):
                 out[k] = b[k]
 
-        a_sec = self._time_to_seconds(a.get("time"))
-        b_sec = self._time_to_seconds(b.get("time"))
+        a_sec = parse_lap_record_time(a.get("time"))
+        b_sec = parse_lap_record_time(b.get("time"))
         sec = a_sec if a_sec is not None else b_sec
         if sec is not None:
             out["time"] = sec

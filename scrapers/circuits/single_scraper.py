@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.circuits import is_circuit_like_article
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
@@ -187,24 +188,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
-        """Sprawdza, czy artykuł wygląda na tor/tor wyścigowy po kategoriach."""
-        cat_div = soup.find("div", id="mw-normal-catlinks")
-        if not cat_div:
-            return False
-
-        keywords = [
-            "circuit",
-            "race track",
-            "racetrack",
-            "speedway",
-            "raceway",
-            "motor racing",
-        ]
-        for a in cat_div.find_all("a"):
-            text = a.get_text(strip=True).lower()
-            if any(kw in text for kw in keywords):
-                return True
-        return False
+        return is_circuit_like_article(soup)
 
     def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
         return {

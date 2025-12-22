@@ -1,9 +1,11 @@
-import re
 from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.prune import prune_empty
+from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text import split_delimited_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 
@@ -22,13 +24,8 @@ class InfoboxTextUtils:
         if not isinstance(text, str):
             return None
 
-        # usuwamy przypisy [ 2 ], [3] oraz markery językowe [ it ], [ fr ] itp.
-        # (typowy pattern w infoboksach: "Jarno Zaffelli [ it ]")
-        text = re.sub(r"\[\s*(?:\d+|[a-z]{1,3})\s*]", "", text)
-
-        # normalizacja whitespace
-        text = re.sub(r"\s+", " ", text)
-        return text.strip() or None
+        cleaned = clean_wiki_text(text, strip_lang_suffix=False)
+        return cleaned or None
 
     # ------------------------------
     # Proste listy / liczby / długości
@@ -62,21 +59,19 @@ class InfoboxTextUtils:
         text = self._get_text(row) or ""
         if not text:
             return None
-
-        iso_full = re.findall(r"\d{4}-\d{2}-\d{2}", text)
-        iso_month = re.findall(r"\d{4}-\d{2}", text)
-        years = re.findall(r"\b(1[89]\d{2}|20\d{2})\b", text)
-
-        iso_dates: List[str] = []
-        if iso_full:
-            iso_dates = iso_full
-        elif iso_month:
-            iso_dates = iso_month
+        parsed = parse_date_text(text)
+        iso = parsed.get("iso")
+        if isinstance(iso, list):
+            iso_dates = iso or None
+        elif isinstance(iso, str):
+            iso_dates = [iso]
+        else:
+            iso_dates = None
 
         return {
-            "text": text or None,
-            "iso_dates": iso_dates or None,
-            "years": years or None,
+            "text": parsed.get("text"),
+            "iso_dates": iso_dates,
+            "years": parsed.get("years"),
         }
 
     # ------------------------------
@@ -120,26 +115,9 @@ class InfoboxTextUtils:
     # ------------------------------
 
     def prune_nulls(self, data: Any) -> Any:
-        if isinstance(data, dict):
-            pruned_dict = {}
-            for key, value in data.items():
-                cleaned = self.prune_nulls(value)
-                if cleaned is None:
-                    continue
-                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
-                    continue
-                pruned_dict[key] = cleaned
-            return pruned_dict
-
-        if isinstance(data, list):
-            pruned_list = []
-            for value in data:
-                cleaned = self.prune_nulls(value)
-                if cleaned is None:
-                    continue
-                if isinstance(cleaned, (dict, list)) and len(cleaned) == 0:
-                    continue
-                pruned_list.append(cleaned)
-            return pruned_list
-
-        return data
+        return prune_empty(
+            data,
+            drop_empty_lists=True,
+            drop_none=True,
+            drop_empty_dicts=True,
+        )
