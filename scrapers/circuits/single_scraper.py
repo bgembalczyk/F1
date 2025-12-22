@@ -5,16 +5,15 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.circuits import is_circuit_like_article
 from scrapers.base.helpers.tables import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
-from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.errors import ScraperError, ScraperParseError
-
+from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 
 _LAP_RECORDS_CONTEXT: LapRecordsTableScraper | None = None
 

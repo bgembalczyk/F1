@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from models.services.circuit_service import CircuitService
+from models.services.circuits.circuit_service import CircuitService
 from models.services.driver_service import DriverService
 from models.services.season_service import SeasonService
 from scrapers.base.export.exporters import DataExporter

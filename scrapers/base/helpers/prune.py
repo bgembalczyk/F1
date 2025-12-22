@@ -11,6 +11,15 @@ def prune_empty(
     drop_empty_dicts: bool = True,
     drop_url_none: bool = False,
 ) -> Any:
+    def _should_skip(value: Any) -> bool:
+        if drop_none and value is None:
+            return True
+        if drop_empty_lists and isinstance(value, list) and len(value) == 0:
+            return True
+        if drop_empty_dicts and isinstance(value, dict) and len(value) == 0:
+            return True
+        return False
+
     if isinstance(obj, dict):
         cleaned: dict[str, Any] = {}
         for key, value in obj.items():
@@ -23,11 +32,7 @@ def prune_empty(
                 drop_empty_dicts=drop_empty_dicts,
                 drop_url_none=drop_url_none,
             )
-            if drop_none and pruned is None:
-                continue
-            if drop_empty_lists and isinstance(pruned, list) and len(pruned) == 0:
-                continue
-            if drop_empty_dicts and isinstance(pruned, dict) and len(pruned) == 0:
+            if _should_skip(pruned):
                 continue
             cleaned[key] = pruned
         return cleaned
@@ -42,11 +47,7 @@ def prune_empty(
                 drop_empty_dicts=drop_empty_dicts,
                 drop_url_none=drop_url_none,
             )
-            if drop_none and pruned is None:
-                continue
-            if drop_empty_lists and isinstance(pruned, list) and len(pruned) == 0:
-                continue
-            if drop_empty_dicts and isinstance(pruned, dict) and len(pruned) == 0:
+            if _should_skip(pruned):
                 continue
             cleaned_list.append(pruned)
         return cleaned_list

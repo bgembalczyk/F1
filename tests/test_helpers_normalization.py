@@ -9,7 +9,6 @@ from scrapers.base.helpers.text_normalization import (
     is_language_link,
     normalize_dashes,
     strip_lang_suffix,
-    strip_refs,
 )
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell

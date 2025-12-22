@@ -2,8 +2,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
-
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 _MONTHS = {
     "january": 1,

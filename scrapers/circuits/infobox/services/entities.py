@@ -1,15 +1,12 @@
 from typing import Optional, Dict, Any, List
 
-from scrapers.base.infobox.circuits.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
-from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
-from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
-from scrapers.base.infobox.circuits.services.history import CircuitHistoryParser
-from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordParser
-from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
-
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.infobox.services.history import CircuitHistoryParser
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 IGNORED_TOP_LEVEL_KEYS: set[str] = {
     "Owner",

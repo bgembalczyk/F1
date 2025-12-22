@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from models.validation.circuit import Circuit
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -11,7 +12,6 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from models.circuit import Circuit
 from pathlib import Path
 
 from scrapers.base.options import ScraperOptions

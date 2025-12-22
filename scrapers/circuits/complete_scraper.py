@@ -5,15 +5,13 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.circuits.circuit_normalization import (
-    normalize_circuit_record,
-)
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import register_scraper
 from scrapers.base.run import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.circuits_list import CircuitsListScraper
+from scrapers.circuits.helpers.normalization import normalize_circuit_record
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 

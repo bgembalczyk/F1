@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional
 
 from models.records import LinkRecord
 from scrapers.base.helpers.text import split_delimited_text
-from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 
 
 class CircuitAdditionalInfoParser(CircuitEntityParser):

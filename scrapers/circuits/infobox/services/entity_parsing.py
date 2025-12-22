@@ -3,9 +3,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from models.records import LinkRecord
 from scrapers.base.helpers.wiki import clean_link_record
-from scrapers.base.infobox.circuits.services.text_processing import (
-    CircuitTextProcessing,
-)
+from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
 
 class CircuitEntityParser(CircuitTextProcessing):

@@ -1,7 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitSpecsParser(InfoboxTextUtils):

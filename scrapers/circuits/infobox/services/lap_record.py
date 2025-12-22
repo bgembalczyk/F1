@@ -9,9 +9,8 @@ from models.services.circuits.lap_record_utils import (
     parse_lap_record_time,
 )
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
-from scrapers.base.infobox.circuits.services.text_processing import (
-    CircuitTextProcessing,
-)
+from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
+
 
 def extract_time(text: str) -> Optional[float]:
     if not text:

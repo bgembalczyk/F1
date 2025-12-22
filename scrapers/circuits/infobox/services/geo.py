@@ -2,7 +2,7 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitGeoParser(InfoboxTextUtils):

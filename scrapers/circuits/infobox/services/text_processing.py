@@ -1,8 +1,8 @@
 import re
 from typing import Any, Optional
 
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitTextProcessing(InfoboxTextUtils):

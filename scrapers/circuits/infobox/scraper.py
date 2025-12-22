@@ -4,24 +4,22 @@ from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.infobox.circuits.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
-from scrapers.base.infobox.circuits.services.entities import CircuitEntitiesParser
-from scrapers.base.infobox.circuits.services.entity_parsing import CircuitEntityParser
-from scrapers.base.infobox.circuits.services.geo import CircuitGeoParser
-from scrapers.base.infobox.circuits.services.history import CircuitHistoryParser
-from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordParser
-from scrapers.base.infobox.circuits.services.layouts import CircuitLayoutsParser
-from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
-from scrapers.base.helpers.circuits import is_circuit_like_article
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 from scrapers.base.errors import ScraperError, ScraperParseError
+from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.infobox.services.additional_info import CircuitAdditionalInfoParser
+from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.infobox.services.history import CircuitHistoryParser
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class F1CircuitInfoboxScraper(F1Scraper):

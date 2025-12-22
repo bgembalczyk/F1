@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from models.engine_manufacturer import EngineManufacturer
+from models.validation.engine_manufacturer import EngineManufacturer
 
 
 def from_scraped_engine_manufacturer(

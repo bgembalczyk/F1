@@ -3,10 +3,10 @@ from typing import List, Dict, Any, Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.infobox.circuits.services.lap_record import CircuitLapRecordParser
-from scrapers.base.infobox.circuits.services.specs import CircuitSpecsParser
-from scrapers.base.infobox.circuits.services.text_utils import InfoboxTextUtils
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitLayoutsParser:
