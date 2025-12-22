@@ -67,17 +67,6 @@ class WikipediaSectionByIdMixin:
     def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
 
-    def extract_section_by_id(
-        self,
-        soup: BeautifulSoup,
-        fragment: str,
-    ) -> Optional[BeautifulSoup]:
-        """
-        Publiczna metoda do wycinania sekcji (dla kompatybilności wstecznej).
-        Deleguje do _extract_section_by_id().
-        """
-        return self._extract_section_by_id(soup, fragment)
-
     @staticmethod
     def _extract_section_by_id(
         soup: BeautifulSoup,
