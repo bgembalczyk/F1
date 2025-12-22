@@ -3,6 +3,7 @@ from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text import split_delimited_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
@@ -62,21 +63,19 @@ class InfoboxTextUtils:
         text = self._get_text(row) or ""
         if not text:
             return None
-
-        iso_full = re.findall(r"\d{4}-\d{2}-\d{2}", text)
-        iso_month = re.findall(r"\d{4}-\d{2}", text)
-        years = re.findall(r"\b(1[89]\d{2}|20\d{2})\b", text)
-
-        iso_dates: List[str] = []
-        if iso_full:
-            iso_dates = iso_full
-        elif iso_month:
-            iso_dates = iso_month
+        parsed = parse_date_text(text)
+        iso = parsed.get("iso")
+        if isinstance(iso, list):
+            iso_dates = iso or None
+        elif isinstance(iso, str):
+            iso_dates = [iso]
+        else:
+            iso_dates = None
 
         return {
-            "text": text or None,
-            "iso_dates": iso_dates or None,
-            "years": years or None,
+            "text": parsed.get("text"),
+            "iso_dates": iso_dates,
+            "years": parsed.get("years"),
         }
 
     # ------------------------------
