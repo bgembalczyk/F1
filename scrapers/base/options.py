@@ -30,6 +30,17 @@ def build_http_policy(
     )
 
 
+def init_scraper_options(
+    options: "ScraperOptions | None",
+    *,
+    include_urls: bool | None = None,
+) -> "ScraperOptions":
+    resolved = options or ScraperOptions()
+    if include_urls is not None:
+        resolved.include_urls = include_urls
+    return resolved
+
+
 @dataclass(slots=True)
 class ScraperOptions:
     """
