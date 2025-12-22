@@ -14,6 +14,74 @@ from scrapers.base.infobox.circuits.services.text_processing import (
 class CircuitEntityParser(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
+    _ENTITY_PARTS_RE = re.compile(r"\s*(?:,|&|\band\b)\s*", flags=re.IGNORECASE)
+
+    def _clean_link(self, link_record: LinkRecord) -> Optional[LinkRecord]:
+        link_text = (link_record.get("text") or "").strip()
+        if not link_text:
+            return None
+
+        url = link_record.get("url")
+
+        # marker językowy typu "it" + https://it.wikipedia.org/... -> OUT
+        if is_language_marker_link(link_text, url):
+            return None
+
+        # redlink -> url None, zostaw tekst
+        if is_wikipedia_redlink(url):
+            url = None
+
+        cleaned_link: LinkRecord = {"text": link_text, "url": url}
+        return cleaned_link
+
+    def _split_entity_parts(self, text: str) -> list[str]:
+        if not text:
+            return []
+        parts = [part.strip() for part in self._ENTITY_PARTS_RE.split(text)]
+        return [part for part in parts if part]
+
+    def _build_entity_from_links(
+        self, parts: list[str], links: list[LinkRecord]
+    ) -> Union[List[Dict[str, Any]], Dict[str, Any], str, None]:
+        if len(links) > 1:
+            out: List[Dict[str, Any]] = []
+            for link in links:
+                item = self._clean_link(link)
+                if item:
+                    out.append(dict(item))
+            if out:
+                return out
+            fallback = self._strip_lang_markers(", ".join(parts))
+            return fallback or None
+
+        if not links:
+            if len(parts) > 1:
+                return [{"text": part, "url": None} for part in parts]
+            return parts[0] if parts else None
+
+        if len(parts) > 1:
+            entities: List[Dict[str, Any]] = []
+            for part in parts:
+                matched_link = self._find_link(part, links)
+                if matched_link:
+                    cleaned = self._clean_link(matched_link)
+                    if cleaned:
+                        entity_dict = dict(cleaned)
+                        entity_dict["text"] = part
+                        entities.append(entity_dict)
+                        continue
+                entities.append({"text": part, "url": None})
+            return entities
+
+        single = self._clean_link(links[0])
+        if single:
+            result = dict(single)
+            if parts:
+                result["text"] = parts[0]
+            return result
+
+        return parts[0] if parts else None
+
     def parse_linked_entity(
         self,
         row: Optional[Dict[str, Any]],
@@ -26,63 +94,8 @@ class CircuitEntityParser(CircuitTextProcessing):
             return None
 
         links = row.get("links") or []
-
-        def _clean_link(link_record: LinkRecord) -> Optional[LinkRecord]:
-            link_text = (link_record.get("text") or "").strip()
-            if not link_text:
-                return None
-
-            url = link_record.get("url")
-
-            # marker językowy typu "it" + https://it.wikipedia.org/... -> OUT
-            if is_language_marker_link(link_text, url):
-                return None
-
-            # redlink -> url None, zostaw tekst
-            if is_wikipedia_redlink(url):
-                url = None
-
-            cleaned_link: LinkRecord = {"text": link_text, "url": url}
-            return cleaned_link
-
-        # wiele linków -> lista (pomijamy językowe)
-        if len(links) > 1:
-            out: List[Dict[str, Any]] = []
-            for link in links:
-                item = _clean_link(link)
-                if item:
-                    out.append(dict(item))
-            return out or self._strip_lang_markers(text) or None
-
-        # pojedynczy link, ale tekst bywa "A, B and C"
-        parts = [p.strip() for p in re.split(r"\s*(?:,|&| and )\s*", text) if p.strip()]
-
-        def _entity_for_part(part: str) -> Dict[str, Any]:
-            # najpierw spróbuj dopasować link do konkretnej części tekstu
-            matched_link = self._find_link(part, links)
-            if matched_link:
-                cleaned = _clean_link(matched_link)
-                if cleaned:
-                    entity_dict = dict(cleaned)
-                    entity_dict["text"] = part
-                    return entity_dict
-            # jak nie ma linku / został odrzucony – zwróć sam tekst
-            return {"text": part, "url": None}
-
-        if len(parts) > 1:
-            return [_entity_for_part(p) for p in parts]
-
-        # jeden link, jedna część tekstu
-        if links:
-            single = _clean_link(links[0])
-            if single:
-                result = dict(single)
-                # tekst z _get_text (bez [it])
-                result["text"] = text
-                return result
-
-        # brak linków – zwracamy sam tekst
-        return text or None
+        parts = self._split_entity_parts(text)
+        return self._build_entity_from_links(parts, links)
 
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
