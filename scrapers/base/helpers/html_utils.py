@@ -7,8 +7,8 @@ from typing import Any, Callable, Iterable
 from bs4 import BeautifulSoup, Tag
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_text, is_language_link
-from scrapers.base.helpers.wiki import is_reference_link, is_wikipedia_redlink
+from scrapers.base.helpers.text_normalization import clean_text
+from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
 
 
 def clean_wiki_text(text: str) -> str:
@@ -58,13 +58,9 @@ def extract_links_from_cell(
             continue
 
         url: str | None = full_url(href) if full_url else href
-        if url and is_wikipedia_redlink(url):
-            url = None
-
-        if is_language_link(text, url):
-            continue
-
         link: LinkRecord = {"text": text, "url": url}
-        links.append(link)
+        cleaned = clean_link_record(link)
+        if cleaned:
+            links.append(cleaned)
 
     return links
