@@ -1,6 +1,7 @@
 import re
 from typing import Any, Optional
 
+from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -116,28 +117,4 @@ class CircuitTextProcessing(InfoboxTextUtils):
         )
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:
-        """
-        Preferuj encję z url; jeśli oba mają url albo oba nie mają,
-        wybierz tę z dłuższym textem.
-        """
-        if not a:
-            return b
-        if not b:
-            return a
-
-        # preferuj dicta nad stringi
-        if isinstance(a, dict) and not isinstance(b, dict):
-            return a
-        if isinstance(b, dict) and not isinstance(a, dict):
-            return b
-
-        a_url = self._entity_url(a)
-        b_url = self._entity_url(b)
-        if a_url and not b_url:
-            return a
-        if b_url and not a_url:
-            return b
-
-        a_txt = self._entity_text(a) or ""
-        b_txt = self._entity_text(b) or ""
-        return a if len(a_txt) >= len(b_txt) else b
+        return choose_richer_entity(a, b)
