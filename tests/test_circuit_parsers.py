@@ -230,3 +230,50 @@ def test_circuit_entities_parser_default_layout() -> None:
     }
     assert result["layouts"][0]["surface"]["values"] == ["Asphalt"]
     assert result["normalized"]["additional_info"]["Nickname"]["text"] == "The Test"
+
+
+def test_entity_parser_multiple_links_language_marker() -> None:
+    parser = CircuitEntityParser()
+    row = {
+        "text": "Example [it]",
+        "links": [
+            {"text": "it", "url": "https://it.wikipedia.org/wiki/Example"},
+            {"text": "Example", "url": "https://en.wikipedia.org/wiki/Example"},
+        ],
+    }
+    result = parser.parse_linked_entity(row)
+    assert result == [
+        {"text": "Example", "url": "https://en.wikipedia.org/wiki/Example"}
+    ]
+
+
+def test_entity_parser_single_link_with_multiple_parts() -> None:
+    parser = CircuitEntityParser()
+    row = {
+        "text": "A, B and C",
+        "links": [{"text": "B", "url": "https://en.wikipedia.org/wiki/B"}],
+    }
+    result = parser.parse_linked_entity(row)
+    assert result == [
+        {"text": "A", "url": None},
+        {"text": "B", "url": "https://en.wikipedia.org/wiki/B"},
+        {"text": "C", "url": None},
+    ]
+
+
+def test_entity_parser_redlink_url_none() -> None:
+    parser = CircuitEntityParser()
+    row = {
+        "text": "Red Page",
+        "links": [
+            {
+                "text": "Red Page",
+                "url": (
+                    "https://en.wikipedia.org/w/index.php?title=Red_Page"
+                    "&action=edit&redlink=1"
+                ),
+            }
+        ],
+    }
+    result = parser.parse_linked_entity(row)
+    assert result == {"text": "Red Page", "url": None}
