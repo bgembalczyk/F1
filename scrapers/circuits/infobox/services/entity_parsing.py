@@ -2,6 +2,7 @@ import re
 from typing import Any, Dict, List, Optional, Union
 
 from models.records import LinkRecord
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.wiki import clean_link_record
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
@@ -66,7 +67,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         if not row:
             return None
 
-        text = (self._get_text(row) or "").strip()
+        text = (clean_infobox_text(row.get("text")) or "").strip()
         if not text:
             return None
 
@@ -77,7 +78,7 @@ class CircuitEntityParser(CircuitTextProcessing):
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
             return None
-        text = (self._get_text(row) or "").strip()
+        text = (clean_infobox_text(row.get("text")) or "").strip()
         links = row.get("links") or []
         if links:
             return links[0].get("url") or text or None

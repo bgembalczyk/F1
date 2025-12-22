@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 
 from scrapers.base.infobox.circuits.services.constants import _MONTHS
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -19,7 +20,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
         if not row:
             return None
 
-        text = self._get_text(row) or ""
+        text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
 

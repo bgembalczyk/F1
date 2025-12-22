@@ -1,7 +1,10 @@
 from typing import Any, Dict, List, Optional
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import split_delimited_text
+from scrapers.base.helpers.text_normalization import (
+    clean_infobox_text,
+    split_delimited_text,
+)
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 
 
@@ -17,7 +20,7 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
             if key in used_keys:
                 continue
 
-            text = (self._get_text(row) or "").strip()
+            text = (clean_infobox_text(row.get("text")) or "").strip()
             if not text:
                 continue
 
