@@ -4,7 +4,8 @@ from __future__ import annotations
 
 from bs4 import Tag
 
-from scrapers.base.helpers.text_normalization import clean_text
+from models.records import LinkRecord
+from scrapers.base.helpers.text_normalization import clean_text, is_language_link
 
 
 def strip_marks(text: str | None) -> str | None:
@@ -90,3 +91,25 @@ def is_language_marker_link(text: str | None, url: str | None) -> bool:
             return True
 
     return False
+
+
+def clean_link_record(link: LinkRecord) -> LinkRecord | None:
+    """
+    Ujednolica linki:
+    - usuwa markery językowe (logika z is_language_link i is_language_marker_link),
+    - zamienia redlink na url=None,
+    - zwraca None dla pustego tekstu.
+    """
+    link_text = clean_text(link.get("text") or "")
+    if not link_text:
+        return None
+
+    url = link.get("url")
+
+    if is_language_link(link_text, url) or is_language_marker_link(link_text, url):
+        return None
+
+    if is_wikipedia_redlink(url):
+        url = None
+
+    return {"text": link_text, "url": url}

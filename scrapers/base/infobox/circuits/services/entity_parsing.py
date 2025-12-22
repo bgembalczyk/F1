@@ -2,10 +2,7 @@ import re
 from typing import Any, Dict, List, Optional, Union
 
 from models.records import LinkRecord
-from scrapers.base.helpers.wiki import (
-    is_language_marker_link,
-    is_wikipedia_redlink,
-)
+from scrapers.base.helpers.wiki import clean_link_record
 from scrapers.base.infobox.circuits.services.text_processing import (
     CircuitTextProcessing,
 )
@@ -15,25 +12,6 @@ class CircuitEntityParser(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
     _ENTITY_PARTS_RE = re.compile(r"\s*(?:,|&|\band\b)\s*", flags=re.IGNORECASE)
-
-    @staticmethod
-    def _clean_link(link_record: LinkRecord) -> Optional[LinkRecord]:
-        link_text = (link_record.get("text") or "").strip()
-        if not link_text:
-            return None
-
-        url = link_record.get("url")
-
-        # marker językowy typu "it" + https://it.wikipedia.org/... -> OUT
-        if is_language_marker_link(link_text, url):
-            return None
-
-        # redlink -> url None, zostaw tekst
-        if is_wikipedia_redlink(url):
-            url = None
-
-        cleaned_link: LinkRecord = {"text": link_text, "url": url}
-        return cleaned_link
 
     def _split_entity_parts(self, text: str) -> list[str]:
         if not text:
@@ -47,7 +25,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         if len(links) > 1:
             out: List[Dict[str, Any]] = []
             for link in links:
-                item = self._clean_link(link)
+                item = clean_link_record(link)
                 if item:
                     out.append(dict(item))
             if out:
@@ -65,7 +43,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             for part in parts:
                 matched_link = self._find_link(part, links)
                 if matched_link:
-                    cleaned = self._clean_link(matched_link)
+                    cleaned = clean_link_record(matched_link)
                     if cleaned:
                         entity_dict = dict(cleaned)
                         entity_dict["text"] = part
@@ -74,7 +52,7 @@ class CircuitEntityParser(CircuitTextProcessing):
                 entities.append({"text": part, "url": None})
             return entities
 
-        single = self._clean_link(links[0])
+        single = clean_link_record(links[0])
         if single:
             result = dict(single)
             if parts:
