@@ -85,7 +85,7 @@ class WikipediaSectionByIdMixin:
     ) -> Optional[BeautifulSoup]:
         """
         Wycina sekcję artykułu Wikipedii na podstawie fragmentu URL.
-        
+
         1) Próbuje znaleźć element o id=fragment (oraz warianty z _ / spacjami).
         2) Jeśli się nie uda – szuka nagłówka po tekście (np. "Bugatti Circuit").
         3) Sekcję definiuje jako:

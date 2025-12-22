@@ -25,9 +25,7 @@ class ErrorHandler:
         )
 
     @staticmethod
-    def wrap_parse(
-        exc: Exception, *, url: Optional[str] = None
-    ) -> ScraperParseError:
+    def wrap_parse(exc: Exception, *, url: Optional[str] = None) -> ScraperParseError:
         return ScraperParseError(
             "Błąd parsowania danych.",
             url=url,

@@ -69,12 +69,8 @@ class CircuitLayoutsParser:
             }
 
             if label == "Length":
-                current["length_km"] = self.text_utils.parse_length(
-                    cell_row, unit="km"
-                )
-                current["length_mi"] = self.text_utils.parse_length(
-                    cell_row, unit="mi"
-                )
+                current["length_km"] = self.text_utils.parse_length(cell_row, unit="km")
+                current["length_mi"] = self.text_utils.parse_length(cell_row, unit="mi")
             elif label == "Turns":
                 current["turns"] = self.text_utils.parse_int(cell_row)
             elif label == "Race lap record":

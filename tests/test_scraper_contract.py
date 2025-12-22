@@ -6,8 +6,17 @@ import sys
 from pathlib import Path
 import types
 from typing import Any, Dict, List
-
 import pytest
+from bs4 import BeautifulSoup
+
+from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper import F1Scraper
+from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.scraper import F1TableScraper
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.circuits.circuits_list import CircuitsListScraper
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -49,7 +58,6 @@ if importlib.util.find_spec("pandas") is None:
 if importlib.util.find_spec("bs4") is None:
     pytest.skip("bs4 is required for scraper contract tests", allow_module_level=True)
 
-from bs4 import BeautifulSoup
 
 try:
     import scrapers.base.infobox.circuits.scraper  # noqa: F401
@@ -65,15 +73,6 @@ except Exception:
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
     sys.modules["scrapers.base.infobox.circuits.scraper"] = infobox_stub
-
-from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
-from scrapers.circuits.circuits_list import CircuitsListScraper
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
 class StubFetcher:

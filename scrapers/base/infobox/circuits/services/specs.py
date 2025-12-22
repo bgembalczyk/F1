@@ -32,11 +32,19 @@ class CircuitSpecsParser(InfoboxTextUtils):
             surface_lower = surface_part.lower()
             detected_materials: List[str] = []
 
-            if "tarmac" in surface_lower or "asphalt" in surface_lower or "asphalt concrete" in surface_lower:
+            if (
+                "tarmac" in surface_lower
+                or "asphalt" in surface_lower
+                or "asphalt concrete" in surface_lower
+            ):
                 detected_materials.append("Asphalt")
             if "concrete" in surface_lower and "asphalt" not in surface_lower:
                 detected_materials.append("Concrete")
-            if "cobblestone" in surface_lower or "cobbles" in surface_lower or "cobbl" in surface_lower:
+            if (
+                "cobblestone" in surface_lower
+                or "cobbles" in surface_lower
+                or "cobbl" in surface_lower
+            ):
                 detected_materials.append("Cobblestones")
             if "brick" in surface_lower:
                 detected_materials.append("Brick")

@@ -38,7 +38,7 @@ class DriverService:
             m = re.match(r"(\d+)", lines[0])
             if m:
                 count = int(m.group(1))
-                tail = lines[0][m.end():].strip()
+                tail = lines[0][m.end() :].strip()
                 if tail:
                     seasons_parts.append(tail)
                 # reszta linii traktujemy jako kolejne fragmenty z latami

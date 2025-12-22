@@ -10,9 +10,7 @@ class CircuitGeoParser(InfoboxTextUtils):
 
     _LOCATION_STOPWORDS = {"and", "&"}
 
-    def parse_location(
-        self, row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
+    def parse_location(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
 

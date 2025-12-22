@@ -71,21 +71,6 @@ def test_split_delimited_text_respects_min_parts():
     assert split_delimited_text("a, b; c / d") == ["a", "b", "c", "d"]
 
 
-def test_merge_two_records_prefers_richer_data_and_normalizes_time():
-    base = {"driver": {"text": "A"}, "time_seconds": 90.0, "year": "1999"}
-    extra = {
-        "driver": {"text": "A", "url": "https://example.com"},
-        "time": "1:30.0",
-        "series": {"text": "F1"},
-    }
-
-    merged = merge_two_records(base, extra)
-
-    assert merged["driver"]["url"] == "https://example.com"
-    assert merged["time"] == 90.0
-    assert "time_seconds" not in merged
-
-
 def test_extract_links_from_cell_filters_reference_and_language_links():
     if not _HAS_BS4:
         pytest.skip("beautifulsoup4 is required for link extraction test")

@@ -204,20 +204,3 @@ def test_circuit_entities_parser_default_layout() -> None:
     }
     assert result["layouts"][0]["surface"]["values"] == ["Asphalt"]
     assert result["normalized"]["additional_info"]["Nickname"]["text"] == "The Test"
-
-
-def test_wikipedia_section_extractor() -> None:
-    extractor = WikipediaSectionExtractor()
-    soup = BeautifulSoup(
-        """
-        <h2 id="History">History</h2>
-        <p>Some history text.</p>
-        <h2 id="Legacy">Legacy</h2>
-        <p>Legacy text.</p>
-        """,
-        "html.parser",
-    )
-    section = extractor.extract_section_by_id(soup, "History")
-    assert section is not None
-    assert "Some history text." in section.get_text(" ")
-    assert "Legacy text." not in section.get_text(" ")

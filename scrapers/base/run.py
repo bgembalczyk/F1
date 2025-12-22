@@ -9,7 +9,8 @@ from typing import Any, Type
 from scrapers.base.options import ScraperOptions
 from scrapers.base.registry import (
     SCRAPER_REGISTRY,
-    load_default_scrapers, ScraperRegistryConfig,
+    load_default_scrapers,
+    ScraperRegistryConfig,
 )
 from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper

@@ -59,7 +59,7 @@ def _extract_year(rec: dict[str, Any]) -> str | None:
 
 
 def _extract_driver_vehicle_year(
-    rec: dict[str, Any]
+    rec: dict[str, Any],
 ) -> tuple[str | None, str | None, str | None]:
     """
     Wspólna logika ekstrakcji driver_text, vehicle_text, year.
@@ -245,12 +245,19 @@ def select_best_series(records: list[dict[str, Any]]) -> dict[str, Any] | None:
     """Wybiera najlepszą serię/kategorię (preferuje wersję z linkiem)."""
 
     def series_candidate(record: dict[str, Any]) -> dict[str, Any] | None:
-        field_value = record.get("series") or record.get("category") or record.get("class") or record.get("class_")
+        field_value = (
+            record.get("series")
+            or record.get("category")
+            or record.get("class")
+            or record.get("class_")
+        )
         if field_value is None:
             return None
         if isinstance(field_value, dict):
             return {
-                "text": (field_value.get("text") or field_value.get("name") or "").strip(),
+                "text": (
+                    field_value.get("text") or field_value.get("name") or ""
+                ).strip(),
                 "url": field_value.get("url"),
             }
         return {"text": str(field_value).strip(), "url": None}

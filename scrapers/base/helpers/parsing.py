@@ -83,4 +83,5 @@ def parse_seasons(
     'present' (case-insensitive) → aktualny rok.
     """
     from models.services.season_service import SeasonService
+
     return SeasonService.parse_seasons(text, current_year=current_year)
