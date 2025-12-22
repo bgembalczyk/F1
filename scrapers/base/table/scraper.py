@@ -91,7 +91,6 @@ class F1TableScraper(F1Scraper, ABC):
         self.pipeline = TablePipeline(
             config=resolved_config,
             include_urls=self.include_urls,
-            full_url=self._full_url,
             skip_sentinel=self._SKIP,
             model_fields=self._model_fields(),
         )

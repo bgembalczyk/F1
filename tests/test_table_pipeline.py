@@ -28,7 +28,6 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        full_url=lambda href: href,
         skip_sentinel=object(),
     )
 
@@ -56,7 +55,6 @@ def test_table_pipeline_maps_columns_for_cells():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        full_url=lambda href: href,
         skip_sentinel=object(),
     )
 
@@ -78,7 +76,6 @@ def test_table_pipeline_normalize_cell_maps_header_and_cleans_text():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        full_url=lambda href: href,
         skip_sentinel=object(),
     )
 
@@ -100,7 +97,6 @@ def test_table_pipeline_extract_links_respects_include_urls_flag():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        full_url=lambda href: f"https://example.com{href}",
         skip_sentinel=object(),
     )
 
