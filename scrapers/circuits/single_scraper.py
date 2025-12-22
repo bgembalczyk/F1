@@ -29,7 +29,7 @@ def _layout_from_spanning_header(
     except ValueError:
         colspan = 1
 
-    text = clean_wiki_text(th.get_text(" ", strip=True))
+    text = clean_wiki_text(th.get_text(strip=True))
     if not text:
         return None
 
@@ -63,7 +63,7 @@ def is_lap_record_table(headers: list[str]) -> bool:
 def detect_layout_name(table: Tag, headers: list[str]) -> Optional[str]:
     caption = table.find("caption")
     if caption:
-        txt = clean_wiki_text(caption.get_text(" ", strip=True))
+        txt = clean_wiki_text(caption.get_text(strip=True))
         if txt:
             return txt
 
@@ -73,7 +73,7 @@ def detect_layout_name(table: Tag, headers: list[str]) -> Optional[str]:
         if not isinstance(prev, Tag):
             continue
         if prev.name in {"h2", "h3", "h4"}:
-            txt = clean_wiki_text(prev.get_text(" ", strip=True))
+            txt = clean_wiki_text(prev.get_text(strip=True))
             if txt:
                 return txt
 
@@ -108,7 +108,7 @@ def collect_lap_records(
             current_layout = layout
             continue
 
-        cleaned_cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
+        cleaned_cells = [clean_wiki_text(c.get_text(strip=True)) for c in cells]
         if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
             continue
 
@@ -242,26 +242,25 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
         all_records: List[Dict[str, Any]] = []
         _LAP_RECORDS_CONTEXT = lap_scraper
-        try:
-            for table in soup.find_all("table", class_="wikitable"):
-                header_row = table.find("tr")
-                if not header_row:
-                    continue
 
-                header_cells = header_row.find_all(["th", "td"])
-                headers = [
-                    clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells
-                ]
+        for table in soup.find_all("table", class_="wikitable"):
+            header_row = table.find("tr")
+            if not header_row:
+                continue
 
-                if not is_lap_record_table(headers):
-                    continue
+            header_cells = header_row.find_all(["th", "td"])
+            headers = [
+                clean_wiki_text(c.get_text(strip=True)) for c in header_cells
+            ]
 
-                base_layout = detect_layout_name(table, headers)
-                all_records.extend(collect_lap_records(table, headers, base_layout))
-        finally:
-            _LAP_RECORDS_CONTEXT = None
+            if not is_lap_record_table(headers):
+                continue
 
-        # Grupowanie po layoutach (sumarycznie z wszystkich tabel)
+            base_layout = detect_layout_name(table, headers)
+            all_records.extend(collect_lap_records(table, headers, base_layout))
+
+        _LAP_RECORDS_CONTEXT = None
+
         layouts: Dict[str, List[Dict[str, Any]]] = {}
         for rec in all_records:
             layout_name = rec.get("layout")
