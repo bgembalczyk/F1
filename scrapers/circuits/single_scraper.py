@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import logging
 from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.circuits import is_circuit_like_article
+from scrapers.base.helpers.tables import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.infobox.circuits.scraper import F1CircuitInfoboxScraper
@@ -15,6 +17,8 @@ from scrapers.base.errors import ScraperError, ScraperParseError
 
 
 _LAP_RECORDS_CONTEXT: LapRecordsTableScraper | None = None
+
+logger = logging.getLogger(__name__)
 
 
 def _layout_from_spanning_header(
@@ -110,7 +114,8 @@ def collect_lap_records(
             continue
 
         cleaned_cells = [clean_wiki_text(c.get_text(strip=True)) for c in cells]
-        if len(cleaned_cells) == len(headers) and cleaned_cells == list(headers):
+        if is_repeated_header_row(cleaned_cells, headers):
+            logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli rekordów.")
             continue
 
         row_records = lap_scraper.parse_multi_row(tr, cells, headers)
