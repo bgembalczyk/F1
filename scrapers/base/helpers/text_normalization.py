@@ -46,18 +46,18 @@ _LANG_CODES = {
 }
 
 
-def strip_wiki_refs(text: str) -> str:
+def _strip_wiki_refs(text: str) -> str:
     """Usuń przypisy w formacie [1], [note 3], ..."""
     return _REF_RE.sub("", text)
 
 
-def normalize_dashes(text: str) -> str:
+def _normalize_dashes(text: str) -> str:
     """Ujednolić warianty myślników i usuń spacje wokół '-'."""
     t = text.replace("–", "-").replace("—", "-").replace("−", "-")
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
-def strip_lang_suffix(text: str) -> str:
+def _strip_lang_suffix(text: str) -> str:
     """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
     lang_alt = "|".join(sorted(_LANG_CODES, key=len, reverse=True))
     t = text
@@ -84,21 +84,18 @@ def clean_wiki_text(
     *,
     strip_lang_suffix: bool = True,
     strip_refs: bool = True,
+    normalize_dashes: bool = True,
 ) -> str:
     """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
     t = (text or "").replace("\xa0", " ").replace("&nbsp;", " ")
     if strip_refs:
-        t = strip_wiki_refs(t)
+        t = _strip_wiki_refs(t)
     t = re.sub(r"\s+", " ", t).strip()
-    t = normalize_dashes(t)
+    if normalize_dashes:
+        t = _normalize_dashes(t)
     if strip_lang_suffix:
-        t = strip_lang_suffix(t)
+        t = _strip_lang_suffix(t)
     return t
-
-
-def clean_text(text: str) -> str:
-    """Normalizuje whitespace, usuwa przypisy i końcowe markery językowe."""
-    return clean_wiki_text(text)
 
 
 def is_language_link(text: str | None, url: str | None) -> bool:
