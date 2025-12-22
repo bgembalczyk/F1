@@ -99,7 +99,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         - osłona błędów w stylu nowego F1Scraper (network/parse + soft-skip jeśli _handle_scraper_error).
         """
         self.url = url
-        base_url, fragment = (url.split("#", 1) + [None])[:2]
+        base_url, fragment = self.section_extractor.split_url_fragment(url)
         self.url = base_url
 
         def _parse_full(full_soup: BeautifulSoup) -> ExportableRecord:
