@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime
 from decimal import Decimal, ROUND_HALF_UP
 from typing import Any
 
@@ -12,6 +13,13 @@ from scrapers.base.helpers.value_objects import NormalizedTime
 
 _TIME_SECONDS_RE = re.compile(r"^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$")
 _TIME_KEY_RE = re.compile(r"(?:(\d+):)?(\d+(?:\.\d+)?)")
+_DATE_RANGE_SPLIT = re.compile(r"\s*[–-]\s*")
+_DATE_FORMATS = [
+    "%d %B %Y",  # 7 June 2019
+    "%d %b %Y",  # 7 Jun 2019
+    "%B %d, %Y",  # June 7, 2019
+    "%b %d, %Y",  # Jun 7, 2019
+]
 
 
 def _extract_time_value(value: Any) -> tuple[str | None, float | None]:
@@ -89,6 +97,66 @@ def parse_time_text(value: Any) -> str | None:
         return None
     s = str(txt).strip()
     return s or None
+
+
+def _clean_date_base(text: str) -> str:
+    base = text.split("(", 1)[0].strip()
+    parts = _DATE_RANGE_SPLIT.split(base)
+    if len(parts) > 1:
+        first = parts[0].strip()
+        tail = parts[-1].strip()
+        if any(ch.isalpha() for ch in tail):
+            base = f"{first} {tail}"
+        else:
+            base = parts[0].strip()
+    return base
+
+
+def _parse_date_iso(base: str) -> str | None:
+    for fmt in _DATE_FORMATS:
+        try:
+            dt = datetime.strptime(base, fmt)
+            return dt.date().isoformat()
+        except ValueError:
+            continue
+
+    for fmt in ("%B %Y", "%b %Y"):
+        try:
+            dt = datetime.strptime(base, fmt)
+            return dt.strftime("%Y-%m")
+        except ValueError:
+            continue
+
+    if re.fullmatch(r"\d{4}", base):
+        return base
+
+    return None
+
+
+def parse_date_text(text: str) -> dict[str, Any]:
+    stripped = text.strip() if text else ""
+    if not stripped:
+        return {"text": None, "iso": None, "years": None}
+
+    iso_full = re.findall(r"\d{4}-\d{2}-\d{2}", stripped)
+    iso_month = re.findall(r"\d{4}-\d{2}", stripped)
+    years = re.findall(r"\b(1[89]\d{2}|20\d{2})\b", stripped)
+
+    iso: str | list[str] | None = None
+    if iso_full:
+        iso = iso_full
+    elif iso_month:
+        iso = iso_month
+
+    if iso is None:
+        base = _clean_date_base(stripped)
+        iso = _parse_date_iso(base)
+
+    return {
+        "text": stripped or None,
+        "iso": iso,
+        "years": years or None,
+    }
 
 
 def parse_time_key(rec: dict[str, Any]) -> float | str | None:
@@ -169,9 +237,12 @@ def normalize_date_value(rec: dict[str, Any]) -> None:
     if not isinstance(d, dict):
         return
     iso = d.get("iso")
+    if isinstance(iso, list):
+        rec["date"] = iso[0] if iso else None
+        return
     if iso:
         rec["date"] = iso
-    else:
-        txt = d.get("text")
-        if txt:
-            rec["date"] = txt.strip()
+        return
+
+    txt = d.get("text")
+    rec["date"] = txt.strip() if isinstance(txt, str) and txt.strip() else None
