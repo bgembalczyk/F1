@@ -1,5 +1,5 @@
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from models.records import LinkRecord
 from models.services.circuits.lap_record_utils import (
@@ -205,38 +205,26 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         kr = self._lap_record_key(right)
         return bool(kl and kr and kl == kr)
 
-    def _find_lap_record(
-        self, candidate: Dict[str, Any], records: List[Dict[str, Any]]
-    ) -> Optional[Tuple[int, Dict[str, Any]]]:
+    def _upsert_lap_record(
+        self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]
+    ) -> None:
+        if not candidate:
+            return
+
         cand_key = self._lap_record_key(candidate)
         if cand_key is None:
-            return None
+            records.append({"race_lap_record": candidate})
+            return
 
         for i, record in enumerate(records):
             existing = record.get("race_lap_record")
             if not existing:
                 continue
             if self._lap_record_key(existing) == cand_key:
-                return i, existing
+                normalize_lap_record(existing)
+                normalize_lap_record(candidate)
+                merged = merge_two_records(existing, candidate)
+                records[i]["race_lap_record"] = self.prune_nulls(merged)
+                return
 
-        return None
-
-    def merge_lap_record(
-        self, existing: Dict[str, Any], candidate: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        normalize_lap_record(existing)
-        normalize_lap_record(candidate)
-        merged = merge_two_records(existing, candidate)
-        return self.prune_nulls(merged)
-
-    def _upsert_lap_record(
-        self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]
-    ) -> None:
-        if not candidate:
-            return
-        hit = self._find_lap_record(candidate, records)
-        if hit is None:
-            records.append({"race_lap_record": candidate})
-        else:
-            i, existing = hit
-            records[i]["race_lap_record"] = self.merge_lap_record(existing, candidate)
+        records.append({"race_lap_record": candidate})

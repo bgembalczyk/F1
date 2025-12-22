@@ -13,6 +13,10 @@ from scrapers.circuits.infobox.services.history import CircuitHistoryParser
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from models.services.circuits.lap_record_merging import (
+    merge_two_records,
+    normalize_lap_record,
+)
 
 
 class CircuitEntitiesParser:
@@ -107,11 +111,10 @@ class CircuitEntitiesParser:
                         continue
 
                     if self.lap_record_parser.same_lap_record(base_record, existing):
-                        lay["race_lap_record"] = (
-                            self.lap_record_parser.merge_lap_record(
-                                existing, base_record
-                            )
-                        )
+                        normalize_lap_record(existing)
+                        normalize_lap_record(base_record)
+                        merged = merge_two_records(existing, base_record)
+                        lay["race_lap_record"] = self.text_utils.prune_nulls(merged)
                         matched = True
                         break
 
