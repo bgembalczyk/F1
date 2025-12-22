@@ -228,7 +228,9 @@ class F1Scraper(ABC):
             soup = BeautifulSoup(html, "html.parser")
             return parse_fn(soup)
         except Exception as exc:
-            error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            error = (
+                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            )
             self._log_error_debug("parse", url, error)
             if self._handle_scraper_error(error):
                 return None

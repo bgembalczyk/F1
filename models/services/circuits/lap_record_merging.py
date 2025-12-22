@@ -5,7 +5,10 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from scrapers.base.helpers.text_normalization import match_driver_loose, match_vehicle_prefix
+from scrapers.base.helpers.text_normalization import (
+    match_driver_loose,
+    match_vehicle_prefix,
+)
 from scrapers.base.helpers.time import parse_time_key, parse_time_seconds_from_text
 
 from models.services.circuits.lap_record_utils import (

@@ -84,7 +84,10 @@ def validate_seasons(
     - dict -> próbuje SeasonRef.from_dict(item) (jak plik 1),
              a jeśli to się nie uda, fallback na prostą walidację {year,url} (jak plik 2).
     """
-    def normalize_season_item(item: Dict[str, Any] | SeasonRef | None) -> Dict[str, Any] | None:
+
+    def normalize_season_item(
+        item: Dict[str, Any] | SeasonRef | None,
+    ) -> Dict[str, Any] | None:
         if item is None:
             return None
 

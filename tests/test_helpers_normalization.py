@@ -3,15 +3,13 @@ import types
 
 import pytest
 
+from scrapers.base.helpers.html_utils import extract_links_from_cell
 from scrapers.base.helpers.text_normalization import (
+    clean_wiki_text,
     is_language_link,
-    normalize_dashes,
-    strip_lang_suffix, split_delimited_text,
+    split_delimited_text,
 )
-from scrapers.base.helpers.text import split_delimited_text
-from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
-from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.value_objects import NormalizedTime
 
 try:
