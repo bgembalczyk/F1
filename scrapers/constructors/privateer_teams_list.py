@@ -4,7 +4,7 @@ import re
 
 from bs4 import Tag
 
-from scrapers.base.helpers.parsing import parse_seasons
+from models.services.season_service import SeasonService
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.registry import register_scraper
@@ -58,7 +58,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
         m = re.search(r"\((.+?)\)", full_text)
         if m:
             seasons_raw = clean_wiki_text(m.group(1))
-            seasons = parse_seasons(seasons_raw)
+            seasons = SeasonService.parse_seasons(seasons_raw)
             if seasons:
                 record["seasons"] = seasons
 

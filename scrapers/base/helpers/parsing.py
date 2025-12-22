@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Callable, TypeVar, Iterable, Any
+from typing import Callable, TypeVar, Iterable
 
 T = TypeVar("T")
 
@@ -66,22 +66,3 @@ def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
         group=1,
         normalizers=(lambda s: s.replace(",", ""),),
     )
-
-
-def parse_seasons(
-    text: str, *, current_year: int | None = None
-) -> list[dict[str, Any]]:
-    """
-    Deleguje do SeasonService.parse_seasons.
-
-    Zachowane dla kompatybilności wstecznej.
-    Zamienia tekst w stylu:
-        '1973, 1975–1982, 1984'  lub '2014–present'
-    na listę:
-        [{"year": 1973, "url": ...}, {"year": 1975, "url": ...}, ..., {"year": 1984, "url": ...}]
-
-    'present' (case-insensitive) → aktualny rok.
-    """
-    from models.services.season_service import SeasonService
-
-    return SeasonService.parse_seasons(text, current_year=current_year)
