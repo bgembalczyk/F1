@@ -5,14 +5,16 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from scrapers.base.helpers.text import (
-    normalize_text,
-    match_driver_loose,
-    match_vehicle_prefix,
-)
-from scrapers.base.helpers.time import (
-    parse_time_key,
-    parse_time_seconds,
+from scrapers.base.helpers.text import match_driver_loose, match_vehicle_prefix
+from scrapers.base.helpers.time import parse_time_key
+
+from models.services.circuits.lap_record_utils import (
+    build_lap_record_key,
+    normalize_lap_record_driver,
+    normalize_lap_record_vehicle,
+    parse_lap_record_time,
+    parse_lap_record_time_from_record,
+    select_best_field_with_url,
 )
 
 
@@ -65,9 +67,9 @@ def _extract_driver_vehicle_year(
     Wspólna logika ekstrakcji driver_text, vehicle_text, year.
     Używana przez build_record_key i build_core_key.
     """
-    driver_txt = normalize_text(rec.get("driver"))
+    driver_txt = normalize_lap_record_driver(rec.get("driver"))
     vehicle_obj = rec.get("vehicle") or rec.get("car")
-    vehicle_txt = normalize_text(vehicle_obj)
+    vehicle_txt = normalize_lap_record_vehicle(vehicle_obj)
     year = _extract_year(rec)
 
     return driver_txt, vehicle_txt, year
@@ -78,13 +80,11 @@ def build_record_key(rec: dict[str, Any]) -> tuple | None:
     Klucz do rozpoznawania tego samego rekordu:
     (driver_text, vehicle_text, year, time_seconds)
     """
-    driver_txt, vehicle_txt, year = _extract_driver_vehicle_year(rec)
-    time_sec = parse_time_seconds(rec)
-
-    if not driver_txt or not vehicle_txt or not year or time_sec is None:
-        return None
-
-    return driver_txt, vehicle_txt, year, round(time_sec, 6)
+    return build_lap_record_key(
+        rec,
+        year_extractor=_extract_year,
+        key_order=("driver", "vehicle", "year", "time"),
+    )
 
 
 def build_core_key(rec: dict[str, Any]) -> tuple | None:
@@ -114,12 +114,8 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
         bv = big.get(k)
 
         if k == "time":
-            st = parse_time_seconds(
-                {"time": sv} if not isinstance(sv, dict) else {"time": sv}
-            )
-            bt = parse_time_seconds(
-                {"time": bv} if not isinstance(bv, dict) else {"time": bv}
-            )
+            st = parse_lap_record_time(sv)
+            bt = parse_lap_record_time(bv)
             if st is None or bt is None:
                 continue
             if round(float(st), 6) != round(float(bt), 6):
@@ -148,49 +144,14 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
     return True
 
 
-def _select_best_field_with_url(
-    records: list[dict[str, Any]], *field_names: str
-) -> Any:
-    """
-    Wspólna logika wyboru najlepszego pola (preferuje wersję z URL).
-
-    Args:
-        records: Lista rekordów do przeszukania
-        field_names: Nazwy pól do sprawdzenia (w kolejności priorytetów)
-
-    Returns:
-        Najlepszą wartość pola (preferuje dict z URL)
-    """
-    best = None
-    for r in records:
-        value = None
-        for field_name in field_names:
-            value = r.get(field_name)
-            if value is not None:
-                break
-
-        if not value:
-            continue
-        if best is None:
-            best = value
-            continue
-        if (
-            isinstance(value, dict)
-            and value.get("url")
-            and (not isinstance(best, dict) or not best.get("url"))
-        ):
-            best = value
-    return best
-
-
 def select_best_driver(records: list[dict[str, Any]]) -> Any:
     """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
-    return _select_best_field_with_url(records, "driver")
+    return select_best_field_with_url(records, "driver")
 
 
 def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
     """Wybiera najlepszy rekord pojazdu (preferuje wersję z URL)."""
-    return _select_best_field_with_url(records, "vehicle", "car")
+    return select_best_field_with_url(records, "vehicle", "car")
 
 
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
@@ -339,9 +300,9 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     elif b_v is not None:
         merged["vehicle"] = b_v
 
-    t = parse_time_seconds(base)
+    t = parse_lap_record_time_from_record(base)
     if t is None:
-        t = parse_time_seconds(extra)
+        t = parse_lap_record_time_from_record(extra)
     if t is not None:
         merged["time"] = float(t)
     merged.pop("time_seconds", None)
@@ -383,7 +344,7 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
 
     t = None
     for r in records:
-        t = parse_time_seconds(r)
+        t = parse_lap_record_time_from_record(r)
         if t is not None:
             break
 
@@ -457,11 +418,11 @@ def _stage_b_merge_by_core_key(
             still_left.append(rec)
             continue
 
-        rec_t = parse_time_seconds(rec)
+        rec_t = parse_lap_record_time_from_record(rec)
         chosen_idx = None
         if rec_t is not None:
             for idx in cand_ids:
-                tgt_t = parse_time_seconds(merged_main[idx])
+                tgt_t = parse_lap_record_time_from_record(merged_main[idx])
                 if tgt_t is not None and round(float(tgt_t), 6) == round(
                     float(rec_t), 6
                 ):
@@ -485,15 +446,15 @@ def _stage_c_merge_by_driver_time(
     """
     index_dt: dict[tuple, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        d = normalize_text(rec.get("driver"))
-        t = parse_time_seconds(rec)
+        d = normalize_lap_record_driver(rec.get("driver"))
+        t = parse_lap_record_time_from_record(rec)
         if d and t is not None:
             index_dt.setdefault((d, round(float(t), 6)), []).append(i)
 
     final_left: list[dict[str, Any]] = []
     for rec in still_left:
-        d = normalize_text(rec.get("driver"))
-        t = parse_time_seconds(rec)
+        d = normalize_lap_record_driver(rec.get("driver"))
+        t = parse_lap_record_time_from_record(rec)
         if not d or t is None:
             final_left.append(rec)
             continue
@@ -528,14 +489,14 @@ def _stage_d_fallback_merge_by_time_and_driver(
     """
     time_index: dict[float, list[int]] = {}
     for i, rec in enumerate(merged_main):
-        t = parse_time_seconds(rec)
+        t = parse_lap_record_time_from_record(rec)
         if t is None:
             continue
         time_index.setdefault(round(float(t), 6), []).append(i)
 
     last_left: list[dict[str, Any]] = []
     for rec in final_left:
-        t = parse_time_seconds(rec)
+        t = parse_lap_record_time_from_record(rec)
         if t is None:
             last_left.append(rec)
             continue
