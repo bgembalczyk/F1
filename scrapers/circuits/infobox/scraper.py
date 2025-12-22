@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions
+from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 from scrapers.base.errors import ScraperParseError
@@ -30,7 +30,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        options = options or ScraperOptions()
+        options = init_scraper_options(options)
 
         # Zapewniamy fetcher (spójnie z resztą repo).
         # HtmlFetcher jest config-driven, więc tworzymy go bez “legacy” parametrów.

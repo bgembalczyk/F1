@@ -9,7 +9,7 @@ from scrapers.base.helpers.tables import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions
+from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
@@ -148,10 +148,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
-        options.include_urls = True
+        options = init_scraper_options(options, include_urls=True)
 
         # HtmlFetcher jest config-driven — jeśli nie ma fetchera w options,
         # tworzymy domyślny.
