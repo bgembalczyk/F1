@@ -92,15 +92,23 @@ class TablePipeline:
             self._apply_cell(record, header, cell)
         return record
 
-    def _apply_cell(self, record: dict[str, Any], header: str, cell: Tag) -> None:
+    def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str]:
         key = self.column_map.get(header, self.normalize_header(header))
-
         raw_text = cell.get_text(" ", strip=True)
         clean_text = clean_wiki_text(raw_text)
+        return key, raw_text, clean_text
 
-        links: list[LinkRecord] = []
-        if self.include_urls:
-            links = extract_links_from_cell(cell, full_url=self.full_url)
+    def _extract_links(self, cell: Tag) -> list[LinkRecord]:
+        if not self.include_urls:
+            return []
+        return extract_links_from_cell(cell, full_url=self.full_url)
+
+    def _select_column(self, key: str, header: str) -> BaseColumn:
+        return self.columns.get(key) or self.columns.get(header) or self.default_column
+
+    def _apply_cell(self, record: dict[str, Any], header: str, cell: Tag) -> None:
+        key, raw_text, clean_text = self._normalize_cell(header, cell)
+        links = self._extract_links(cell)
 
         ctx = ColumnContext(
             header=header,
@@ -113,7 +121,7 @@ class TablePipeline:
             model_fields=self.model_fields,
         )
 
-        col = self.columns.get(key) or self.columns.get(header) or self.default_column
+        col = self._select_column(key, header)
         col.apply(ctx, record)
 
     @staticmethod
