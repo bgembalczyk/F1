@@ -3,7 +3,7 @@ from typing import Any
 import re
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.helpers.wiki import clean_link_record
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -29,8 +29,8 @@ class AutoColumn(BaseColumn):
         if ctx.cell is not None:
             # stripped_strings zachowuje np. "-" jako osobny token
             raw = " ".join(list(ctx.cell.stripped_strings))
-            return clean_text(raw)
-        return clean_text(ctx.clean_text or getattr(ctx, "raw_text", "") or "")
+            return clean_wiki_text(raw)
+        return clean_wiki_text(ctx.clean_text or getattr(ctx, "raw_text", "") or "")
 
     def parse(self, ctx: ColumnContext) -> Any:
         value = self._cell_text(ctx)
@@ -45,8 +45,8 @@ class AutoColumn(BaseColumn):
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:
             link = links[0]
-            link_text = clean_text(link.get("text") or "")
-            cell_text = clean_text(value or "")
+            link_text = clean_wiki_text(link.get("text") or "")
+            cell_text = clean_wiki_text(value or "")
             if cell_text and link_text and cell_text.lower() == link_text.lower():
                 return link
             return value or None

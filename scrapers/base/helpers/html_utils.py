@@ -7,13 +7,13 @@ from typing import Any, Callable, Iterable
 from bs4 import BeautifulSoup, Tag
 
 from models.records import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text as base_clean_wiki_text
 from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
 
 
 def clean_wiki_text(text: str) -> str:
     """Normalizuje whitespace i usuwa przypisy Wikipedii."""
-    return clean_text(text)
+    return base_clean_wiki_text(text)
 
 
 def find_section_elements(

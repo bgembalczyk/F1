@@ -1,4 +1,3 @@
-import re
 from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
@@ -6,6 +5,7 @@ from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with
 from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text import split_delimited_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 
@@ -24,13 +24,8 @@ class InfoboxTextUtils:
         if not isinstance(text, str):
             return None
 
-        # usuwamy przypisy [ 2 ], [3] oraz markery językowe [ it ], [ fr ] itp.
-        # (typowy pattern w infoboksach: "Jarno Zaffelli [ it ]")
-        text = re.sub(r"\[\s*(?:\d+|[a-z]{1,3})\s*]", "", text)
-
-        # normalizacja whitespace
-        text = re.sub(r"\s+", " ", text)
-        return text.strip() or None
+        cleaned = clean_wiki_text(text, strip_lang_suffix=False)
+        return cleaned or None
 
     # ------------------------------
     # Proste listy / liczby / długości
