@@ -2,13 +2,12 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records import LinkRecord
+from scrapers.base.infobox.circuits.services.constants import _LOCATION_STOPWORDS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitGeoParser(InfoboxTextUtils):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
-
-    _LOCATION_STOPWORDS = {"and", "&"}
 
     def parse_location(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
@@ -26,7 +25,7 @@ class CircuitGeoParser(InfoboxTextUtils):
                 cleaned_part = raw_part.strip(" ,")
                 if not cleaned_part:
                     continue
-                if cleaned_part.lower() in self._LOCATION_STOPWORDS:
+                if cleaned_part.lower() in _LOCATION_STOPWORDS:
                     continue
                 segment_parts.append(cleaned_part)
             return segment_parts
@@ -65,7 +64,7 @@ class CircuitGeoParser(InfoboxTextUtils):
         filtered_components: List[Dict[str, Any]] = []
         for comp in components:
             txt = (comp.get("text") or "").strip()
-            if not txt or txt.lower() in self._LOCATION_STOPWORDS:
+            if not txt or txt.lower() in _LOCATION_STOPWORDS:
                 continue
             filtered_components.append(comp)
 

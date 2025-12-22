@@ -1,6 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
+from scrapers.base.infobox.circuits.services.constants import symbol_map
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
@@ -117,13 +118,6 @@ class CircuitSpecsParser(InfoboxTextUtils):
             return None
 
         text_clean = re.sub(r"\[\d+]", "", text)
-
-        symbol_map = {
-            "€": "EUR",
-            "$": "USD",
-            "£": "GBP",
-            "¥": "JPY",
-        }
 
         currency: Optional[str] = None
         for symbol, code in symbol_map.items():
