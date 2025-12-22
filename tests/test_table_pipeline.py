@@ -64,3 +64,44 @@ def test_table_pipeline_maps_columns_for_cells():
         "driver_name": "Lewis Hamilton",
         "team": "Mercedes",
     }
+
+
+def test_table_pipeline_normalize_cell_maps_header_and_cleans_text():
+    html = "<table><tr><td>Lewis Hamilton [1]</td></tr></table>"
+    soup = BeautifulSoup(html, "html.parser")
+    cell = soup.find("td")
+    config = ScraperConfig(
+        url="https://example.com",
+        column_map={"Driver": "driver_name"},
+        columns={"driver_name": AutoColumn()},
+    )
+    pipeline = TablePipeline(
+        config=config,
+        include_urls=False,
+        full_url=lambda href: href,
+        skip_sentinel=object(),
+    )
+
+    key, raw_text, clean_text = pipeline._normalize_cell("Driver", cell)
+
+    assert key == "driver_name"
+    assert raw_text == "Lewis Hamilton [1]"
+    assert clean_text == "Lewis Hamilton"
+
+
+def test_table_pipeline_extract_links_respects_include_urls_flag():
+    html = '<table><tr><td><a href="/wiki/Lewis">Lewis</a></td></tr></table>'
+    soup = BeautifulSoup(html, "html.parser")
+    cell = soup.find("td")
+    config = ScraperConfig(
+        url="https://example.com",
+        columns={"driver": AutoColumn()},
+    )
+    pipeline = TablePipeline(
+        config=config,
+        include_urls=False,
+        full_url=lambda href: f"https://example.com{href}",
+        skip_sentinel=object(),
+    )
+
+    assert pipeline._extract_links(cell) == []
