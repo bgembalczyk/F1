@@ -210,7 +210,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 policy=self.policy,
             ),
         )
-        return infobox_scraper.parse_from_soup(soup)
+        records = infobox_scraper.parse(soup)
+        return records[0] if records else {}
 
     def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         global _LAP_RECORDS_CONTEXT

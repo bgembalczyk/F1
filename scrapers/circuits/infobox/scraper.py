@@ -119,7 +119,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
                 if section is not None:
                     soup = section
 
-            return self.parse_from_soup(soup)
+            records = self.parse(soup)
+            return records[0] if records else {}
 
         result = self.run_with_error_handling(
             lambda: self._download(),
@@ -129,10 +130,10 @@ class F1CircuitInfoboxScraper(F1Scraper):
         return result or {"url": url}
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
-        """API bazowej klasy – deleguje do parse_from_soup."""
-        return [self.parse_from_soup(soup)]
+        """API bazowej klasy – zwraca pojedynczy rekord infobox."""
+        return [self._parse_infobox(soup)]
 
-    def parse_from_soup(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
         """
         Zwraca znormalizowany infobox + layouts (bez surowego `rows`).
 
@@ -142,7 +143,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         """
         truncated_soup = self._truncate_infobox_after_full_data(soup)
 
-        raw = self.infobox_scraper.parse_from_soup(truncated_soup)
+        raw = self.infobox_scraper.parse(truncated_soup)
 
         # layouty parsujemy z pełnej sekcji artykułu
         layout_records = self.layouts_parser.parse_layout_sections(soup)
