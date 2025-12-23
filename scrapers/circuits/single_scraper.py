@@ -12,7 +12,6 @@ from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
-from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 
 logger = logging.getLogger(__name__)
@@ -160,18 +159,10 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.timeout = self.policy.timeout
         self.url: str = ""
         self._original_url: Optional[str] = None
+        self._section_fragment: Optional[str] = None
 
-    def _fetch_soup(self, url: str) -> BeautifulSoup:
-        # --- download + error handling spójny z F1Scraper ---
-        self.url = url
-        try:
-            return BeautifulSoup(self._download(), "html.parser")
-        except ScraperError as exc:  # type: ignore[misc]
-            if self._handle_scraper_error(exc):
-                return BeautifulSoup("", "html.parser")
-            raise
-        except Exception as exc:
-            raise self._wrap_network_error(exc) from exc
+    def fetch_html(self, url: str) -> str:
+        return self.source_adapter.get(url, timeout=self.timeout)
 
     def _select_section(
         self,
@@ -184,11 +175,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         section = self._extract_section_by_id(soup, fragment)
         return section or soup
 
-    def _download(self) -> str:
-        if not self.url:
-            raise ScraperParseError("URL must be set before downloading")
-        return self.fetcher.get_text(self.url, timeout=self.timeout)
-
     def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
         return {
             "infobox": self._scrape_infobox(soup),
@@ -196,12 +182,22 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         }
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        if not self._is_circuit_like_article(soup):
+            return []
+
+        working_soup = self._select_section(soup, self._section_fragment)
+
         if self.parser is not None:
-            return self.parser.parse(soup)
+            return self.parser.parse(working_soup)
+
+        parsed = self._parse_details(working_soup)
+        if not parsed:
+            return []
+
         return [
             {
                 "url": self._original_url or self.url,
-                **self._parse_details(soup),
+                **parsed,
             }
         ]
 

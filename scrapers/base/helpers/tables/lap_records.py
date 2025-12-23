@@ -54,9 +54,9 @@ class LapRecordsTableScraper(F1TableScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
-        Nie używamy standardowego fetch()/_parse_soup – w F1SingleCircuitScraper
-        sami podajemy konkretne tabele i nagłówki i wołamy parse_row().
-        Metoda zostaje tylko po to, żeby klasa była kompletna.
+        LapRecordsTableScraper nie jest używany bezpośrednio – w
+        F1SingleCircuitScraper sami podajemy konkretne tabele i nagłówki
+        i wołamy parse_row().
         """
         raise NotImplementedError(
             "LapRecordsTableScraper nie jest używany bezpośrednio – "

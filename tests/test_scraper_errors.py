@@ -90,6 +90,9 @@ class DummyFetcher:
         assert self.html is not None
         return self.html
 
+    def get(self, url: str) -> str:
+        return self.get_text(url)
+
 
 class DummyScraper(F1Scraper):
     url = "https://example.com"
@@ -117,11 +120,6 @@ class DummyInfoboxParser:
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
-    def _fetch_soup(self, url: str):
-        from bs4 import BeautifulSoup
-
-        return BeautifulSoup("<html></html>", "html.parser")
-
     def _is_circuit_like_article(self, soup) -> bool:
         return True
 
