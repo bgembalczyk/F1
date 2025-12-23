@@ -55,13 +55,11 @@ class ScrapeResult:
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
-        from scrapers.base.export.exporters import DataExporter
-
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        exporter = exporter or DataExporter()
+        exporter = self._resolve_exporter(exporter)
         exporter.to_json(
             normalized,
             path,
@@ -83,7 +81,6 @@ class ScrapeResult:
             fieldnames_from_first_row,
             fieldnames_from_union,
         )
-        from scrapers.base.export.exporters import DataExporter
         from scrapers.base.format.formatter_helpers import extract_data
 
         normalized = self._with_normalized_data(
@@ -104,7 +101,7 @@ class ScrapeResult:
                         f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
                     )
 
-        exporter = exporter or DataExporter()
+        exporter = self._resolve_exporter(exporter)
         exporter.to_csv(normalized, path, fieldnames=fieldnames)
 
     def to_dataframe(
@@ -118,3 +115,9 @@ class ScrapeResult:
             normalization_rules=normalization_rules,
         )
         return PandasDataFrameFormatter().format(normalized)
+
+    @staticmethod
+    def _resolve_exporter(exporter: "DataExporter | None") -> "DataExporter":
+        from scrapers.base.export.exporters import DataExporter
+
+        return exporter or DataExporter()
