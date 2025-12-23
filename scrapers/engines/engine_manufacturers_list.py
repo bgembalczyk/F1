@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
@@ -11,7 +12,6 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
-from models.engine_manufacturer import EngineManufacturer
 
 
 class EngineManufacturersListScraper(F1TableScraper):
