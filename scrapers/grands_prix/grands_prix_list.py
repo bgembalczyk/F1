@@ -11,8 +11,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.base.run import RunConfig, run_and_export
+from scrapers.base.run import run_scraper_by_name
 
 
 @register_scraper(
@@ -73,13 +72,4 @@ class GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        GrandsPrixListScraper,
-        "grands_prix/f1_grands_prix_by_title.json",
-        "grands_prix/f1_grands_prix_by_title.csv",
-        run_config=RunConfig(
-            include_urls=True,
-            output_dir=Path("../../data/wiki"),
-            options=ScraperOptions(include_urls=True),
-        ),
-    )
+    run_scraper_by_name("grands_prix", Path("../../data/wiki"), include_urls=True)
