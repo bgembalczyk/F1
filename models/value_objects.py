@@ -2,24 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional
-from urllib.parse import urlparse
 
-
-def _is_valid_url(url: str) -> bool:
-    parsed = urlparse(url)
-    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
-
-
-def _coerce_number(value: Any, type_: type, field_name: str):
-    if value is None:
-        raise ValueError(f"{field_name} jest wymagane")
-    try:
-        number = type_(value)
-    except (TypeError, ValueError):
-        raise ValueError(f"{field_name} musi być liczbą") from None
-    if number < 0:
-        raise ValueError(f"{field_name} nie może być ujemne")
-    return number
+from models.validation.utils import coerce_number, is_valid_url
 
 
 @dataclass
@@ -31,7 +15,7 @@ class Link:
         self.text = str(self.text or "").strip()
         self.url = self.url or None
         if self.url:
-            if not isinstance(self.url, str) or not _is_valid_url(self.url):
+            if not isinstance(self.url, str) or not is_valid_url(self.url):
                 raise ValueError("Pole link zawiera nieprawidłowy URL")
 
     def is_empty(self) -> bool:
@@ -52,11 +36,11 @@ class SeasonRef:
     url: Optional[str] = None
 
     def __post_init__(self) -> None:
-        self.year = _coerce_number(self.year, int, "year")
+        self.year = coerce_number(self.year, int, "year")
         self.url = self.url or None
         if self.url:
-            if not isinstance(self.url, str) or not _is_valid_url(self.url):
-                raise ValueError("Sezon zawiera nieprawidłowy URL")
+            if not isinstance(self.url, str) or not is_valid_url(self.url):
+                raise ValueError("Pole seasons zawiera nieprawidłowy URL")
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any] | None) -> SeasonRef | None:

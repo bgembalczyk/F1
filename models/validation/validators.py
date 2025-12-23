@@ -2,36 +2,19 @@ from __future__ import annotations
 
 import logging
 from typing import Any, Dict, Iterable, Optional
-from urllib.parse import urlparse
 
 from models.records import LinkRecord
 from models.value_objects import Link, SeasonRef
 from models.serializers import to_dict_any
-
-
-def _coerce_number(value: Any, type_: type, field_name: str):
-    if value is None:
-        return None
-    try:
-        number = type_(value)
-    except (TypeError, ValueError):
-        raise ValueError(f"Pole {field_name} musi być liczbą") from None
-    if number < 0:
-        raise ValueError(f"Pole {field_name} nie może być ujemne")
-    return number
+from models.validation.utils import coerce_number, is_valid_url
 
 
 def validate_int(value: Any, field_name: str) -> Optional[int]:
-    return _coerce_number(value, int, field_name)
+    return coerce_number(value, int, field_name, allow_none=True)
 
 
 def validate_float(value: Any, field_name: str) -> Optional[float]:
-    return _coerce_number(value, float, field_name)
-
-
-def _is_valid_url(url: str) -> bool:
-    parsed = urlparse(url)
-    return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
+    return coerce_number(value, float, field_name, allow_none=True)
 
 
 def _normalize_and_validate_link_dict(
@@ -45,7 +28,7 @@ def _normalize_and_validate_link_dict(
     if text == "" and url is None:
         return None
     if url is not None:
-        if not isinstance(url, str) or not _is_valid_url(url):
+        if not isinstance(url, str) or not is_valid_url(url):
             raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
     return {"text": text, "url": url}
 
@@ -125,7 +108,7 @@ def validate_seasons(
 
         url = item.get("url")
         if url:
-            if not isinstance(url, str) or not _is_valid_url(url):
+            if not isinstance(url, str) or not is_valid_url(url):
                 raise ValueError("Pole seasons zawiera nieprawidłowy URL")
             validated["url"] = url
 
