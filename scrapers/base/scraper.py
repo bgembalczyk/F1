@@ -64,7 +64,7 @@ class F1Scraper(ABC):
         Pipeline:
         - download
         - parse -> RawRecord[]
-        - normalize_records -> NormalizedRecord[]
+        - RecordNormalizer.normalize -> NormalizedRecord[]
         - to_export_records -> ExportRecord[]
 
         Error handling:
@@ -96,7 +96,7 @@ class F1Scraper(ABC):
 
             raw_records = self.parse(soup)
 
-            normalized_records = self.normalize_records(raw_records)
+            normalized_records = self._record_normalizer.normalize(list(raw_records))
             self._data = self.to_export_records(normalized_records)
         except Exception as exc:
             error = (
@@ -178,9 +178,6 @@ class F1Scraper(ABC):
         return self.parser.parse(soup)
 
     # ---------- Hooki: normalize/export ----------
-
-    def normalize_records(self, records: List[RawRecord]) -> List[NormalizedRecord]:
-        return self._record_normalizer.normalize(list(records))
 
     @staticmethod
     def to_export_records(records: List[NormalizedRecord]) -> List[ExportRecord]:
