@@ -14,6 +14,7 @@ from models.validation.constants import (
 )
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 
 if "bs4" not in sys.modules:
@@ -122,6 +123,11 @@ def test_validated_model_calls_validate():
     DummyModel(1)
 
     assert calls == [1]
+
+
+def test_scraper_config_validates_on_init():
+    with pytest.raises(ValueError, match="ScraperConfig.url must be a non-empty string."):
+        ScraperConfig(url="")
 
 
 def test_table_scraper_instantiates_model_and_filters_unknown_fields():
