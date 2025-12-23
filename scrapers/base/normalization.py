@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Callable, Sequence
+from typing import Any, Callable, Sequence
 
 from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.records import ExportRecord
@@ -25,10 +25,16 @@ class RecordNormalizer:
     def has_rules(self) -> bool:
         return bool(self._rules)
 
-    def normalize(self, data: list[ExportRecord]) -> list[ExportRecord]:
+    def normalize(self, data: Sequence[ExportRecord | Any]) -> list[ExportRecord | Any]:
         if not self._rules:
             return list(data)
-        return [self.normalize_record(item) for item in data]
+        normalized: list[ExportRecord | Any] = []
+        for item in data:
+            if isinstance(item, dict):
+                normalized.append(self.normalize_record(item))
+            else:
+                normalized.append(item)
+        return normalized
 
     def normalize_record(self, record: ExportRecord) -> ExportRecord:
         updated: ExportRecord = dict(record)
