@@ -8,12 +8,13 @@ from bs4 import BeautifulSoup, Tag
 from models.records import LinkRecord
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.wiki import build_full_url
+from scrapers.base.errors import ScraperParseError
+from scrapers.base.logging import get_logger
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.row import TableRow
 
 
 class TablePipeline:
@@ -46,6 +47,7 @@ class TablePipeline:
         self.table_css_class = config.table_css_class
         self.default_column: BaseColumn = config.default_column or AutoColumn()
         self.fragment: str | None = None
+        self.logger = get_logger(self.__class__.__name__)
         if not self.section_id:
             fragment = urlsplit(config.url).fragment
             if fragment:
@@ -60,14 +62,19 @@ class TablePipeline:
         )
 
         records: list[dict[str, Any]] = []
-        for row in parser.parse(soup):
-            record = self.parse_cells(row.headers, row.cells)
+        for row_index, row in enumerate(parser.parse(soup)):
+            record = self.parse_cells(row.headers, row.cells, row_index=row_index)
             if record:
                 records.append(record)
 
         return records
 
-    def parse_row(self, row: Mapping[str, Tag]) -> dict[str, Any]:
+    def parse_row(
+        self,
+        row: Mapping[str, Tag],
+        *,
+        row_index: int | None = None,
+    ) -> dict[str, Any]:
         record: dict[str, Any] = {}
 
         for header, cell in row.items():
@@ -75,7 +82,7 @@ class TablePipeline:
                 continue
             if header in {"__row__", "_row", "__tr__"}:
                 continue
-            self._apply_cell(record, header, cell)
+            self._apply_cell(record, header, cell, row_index=row_index)
 
         return record
 
@@ -83,10 +90,12 @@ class TablePipeline:
         self,
         headers: Sequence[str],
         cells: Sequence[Tag],
+        *,
+        row_index: int | None = None,
     ) -> dict[str, Any]:
         record: dict[str, Any] = {}
         for header, cell in zip(headers, cells):
-            self._apply_cell(record, header, cell)
+            self._apply_cell(record, header, cell, row_index=row_index)
         return record
 
     def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str]:
@@ -106,7 +115,14 @@ class TablePipeline:
     def _select_column(self, key: str, header: str) -> BaseColumn:
         return self.columns.get(key) or self.columns.get(header) or self.default_column
 
-    def _apply_cell(self, record: dict[str, Any], header: str, cell: Tag) -> None:
+    def _apply_cell(
+        self,
+        record: dict[str, Any],
+        header: str,
+        cell: Tag,
+        *,
+        row_index: int | None = None,
+    ) -> None:
         key, raw_text, clean_text = self._normalize_cell(header, cell)
         links = self._extract_links(cell)
 
@@ -122,7 +138,23 @@ class TablePipeline:
         )
 
         col = self._select_column(key, header)
-        col.apply(ctx, record)
+        try:
+            col.apply(ctx, record)
+        except Exception as exc:
+            self.logger.exception(
+                "Failed parsing column (header=%s key=%s row_index=%s base_url=%s raw_text=%s)",
+                header,
+                key,
+                row_index,
+                self.base_url,
+                raw_text,
+            )
+            row_label = row_index if row_index is not None else "unknown"
+            raise ScraperParseError(
+                f"Failed parsing column {header} in row {row_label}",
+                url=self.base_url,
+                cause=exc,
+            ) from exc
 
     @staticmethod
     def normalize_header(header: str) -> str:
