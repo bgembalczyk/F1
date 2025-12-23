@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from models.records import LinkRecord
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
+    extract_year,
     normalize_lap_record_entity,
 )
 from models.services.circuits.lap_record_merging import (
@@ -12,7 +13,6 @@ from models.services.circuits.lap_record_merging import (
 )
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.base.helpers.value_objects import NormalizedDate
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
@@ -162,35 +162,13 @@ class CircuitLapRecordParser(CircuitTextProcessing):
 
         return record
 
-    @staticmethod
-    def _year_from_record(rec: Dict[str, Any]) -> Optional[str]:
-        y = rec.get("year")
-        if y:
-            return str(y).strip()
-
-        d = rec.get("date")
-        if isinstance(d, NormalizedDate):
-            iso = (d.iso or "").strip()
-            if len(iso) >= 4 and iso[:4].isdigit():
-                return iso[:4]
-        if isinstance(d, str) and len(d) >= 4 and d[:4].isdigit():
-            return d[:4]
-
-        ev = rec.get("event")
-        ev_txt = ev.get("text") if isinstance(ev, dict) else (str(ev) if ev else "")
-        ev_txt = (ev_txt or "").strip()
-        if len(ev_txt) >= 4 and ev_txt[:4].isdigit():
-            return ev_txt[:4]
-
-        return None
-
     def _lap_record_key(
         self, rec: Dict[str, Any]
     ) -> Optional[Tuple[str, str, int, str]]:
         sanitizer = self._strip_lang_marker_tail_only
         return build_lap_record_key(
             rec,
-            year_extractor=self._year_from_record,
+            year_extractor=extract_year,
             vehicle_getter=self._get_vehicle_field,
             time_extractor=lambda r: parse_time_seconds_from_text(r.get("time")),
             driver_normalizer=lambda value: normalize_lap_record_entity(

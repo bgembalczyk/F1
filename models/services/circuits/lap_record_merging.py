@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import re
 from typing import Any
 
 from scrapers.base.helpers.text_normalization import (
@@ -18,6 +17,8 @@ from scrapers.base.helpers.value_objects import NormalizedDate
 
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
+    extract_year,
+    extract_year_from_event,
     parse_lap_record_time_from_record,
     select_best_field_with_url,
     normalize_lap_record_entity,
@@ -89,52 +90,6 @@ def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
     return record
 
 
-def extract_year_from_event(rec: dict[str, Any]) -> str | None:
-    """
-    Fallback dla rekordów tabelarycznych, które nie mają `year` ani `date`,
-    ale mają `event` (np. "1963 Aintree 200", url: ".../1963_Aintree_200").
-    """
-    event = rec.get("event")
-    candidates: list[str] = []
-
-    if isinstance(event, dict):
-        if event.get("text"):
-            candidates.append(str(event["text"]))
-        if event.get("url"):
-            candidates.append(str(event["url"]))
-    elif isinstance(event, str):
-        candidates.append(event)
-
-    year_re = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
-    for s in candidates:
-        m = year_re.search(s)
-        if m:
-            return m.group(1)
-
-    return None
-
-
-def _extract_year(rec: dict[str, Any]) -> str | None:
-    """
-    Wspólna logika ekstrakcji roku z rekordu.
-    Próbuje kolejno: year, date.iso, event.
-    """
-    if rec.get("year") is not None:
-        return str(rec["year"])
-
-    date_obj = rec.get("date")
-    if isinstance(date_obj, dict):
-        iso = (date_obj.get("iso") or "").strip()
-        if iso:
-            return iso[:4]
-    if isinstance(date_obj, NormalizedDate):
-        iso = (date_obj.iso or "").strip()
-        if iso:
-            return iso[:4]
-
-    return extract_year_from_event(rec)
-
-
 def _extract_driver_vehicle_year(
     rec: dict[str, Any],
 ) -> tuple[str | None, str | None, str | None]:
@@ -145,7 +100,7 @@ def _extract_driver_vehicle_year(
     driver_txt = normalize_lap_record_entity(rec.get("driver"))
     vehicle_obj = rec.get("vehicle") or rec.get("car")
     vehicle_txt = normalize_lap_record_entity(vehicle_obj)
-    year = _extract_year(rec)
+    year = extract_year(rec)
 
     return driver_txt, vehicle_txt, year
 
@@ -157,7 +112,7 @@ def build_record_key(rec: dict[str, Any]) -> tuple | None:
     """
     return build_lap_record_key(
         rec,
-        year_extractor=_extract_year,
+        year_extractor=extract_year,
         key_order=("driver", "vehicle", "year", "time"),
     )
 
