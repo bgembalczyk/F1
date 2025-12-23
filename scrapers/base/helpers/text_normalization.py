@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
+# Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
 _LANG_CODES = {
