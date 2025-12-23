@@ -3,7 +3,10 @@ import sys
 import types
 
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
+from scrapers.base.table.columns.types.time import TimeColumn
+from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
 
 bs4_stub = types.ModuleType("bs4")
 
@@ -85,3 +88,16 @@ def test_parsed_value_column_respects_custom_parser_for_type():
     column = ParsedValueColumn(list, parser=lambda text: text.split(","))
 
     assert column.parse(_ctx("a,b,c")) == ["a", "b", "c"]
+
+
+def test_date_and_time_columns_return_normalized_value_objects():
+    date_column = DateColumn()
+    time_column = TimeColumn()
+
+    date_value = date_column.parse(_ctx("7 June 2019"))
+    time_value = time_column.parse(_ctx("1:23.456"))
+
+    assert isinstance(date_value, NormalizedDate)
+    assert date_value.to_dict() == {"text": "7 June 2019", "iso": "2019-06-07"}
+    assert isinstance(time_value, NormalizedTime)
+    assert time_value.to_dict() == {"text": "1:23.456", "seconds": 83.456}

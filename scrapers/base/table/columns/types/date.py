@@ -6,6 +6,7 @@ from typing import Any
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.helpers.time import parse_date_text
+from scrapers.base.helpers.value_objects import NormalizedDate
 
 
 class DateColumn(BaseColumn):
@@ -30,11 +31,11 @@ class DateColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         text = (ctx.clean_text or "").strip()
         if not text:
-            return {"text": None, "iso": None}
+            return NormalizedDate(text=None, iso=None)
 
         parsed = parse_date_text(text)
         iso = parsed.get("iso")
         if isinstance(iso, list):
             iso = iso[0] if iso else None
 
-        return {"text": parsed.get("text"), "iso": iso}
+        return NormalizedDate(text=parsed.get("text"), iso=iso)
