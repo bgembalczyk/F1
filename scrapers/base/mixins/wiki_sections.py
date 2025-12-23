@@ -25,7 +25,7 @@ class WikipediaSectionByIdMixin:
             fragment = fragment.lstrip("#").strip() or None
         return base_url, fragment
 
-    def fetch(self, url: str) -> List[Dict[str, Any]]:
+    def fetch_url(self, url: str) -> List[Dict[str, Any]]:
         """
         Zwraca listę z pojedynczym dict (lub pustą listę) z kluczami:
         - url     – oryginalny URL (z ewentualnym fragmentem),
@@ -39,7 +39,7 @@ class WikipediaSectionByIdMixin:
         base_url, fragment = self.split_url_fragment(url)
         self.url = base_url
         self._section_fragment = fragment
-        return super().fetch(base_url)  # type: ignore[misc]
+        return super().fetch()  # type: ignore[misc]
 
     @staticmethod
     def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
