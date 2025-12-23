@@ -7,6 +7,8 @@ from typing import Any, Mapping
 def to_dict(value: Any) -> dict[str, Any]:
     if value is None:
         return {}
+    if hasattr(value, "to_dict") and callable(value.to_dict):
+        return value.to_dict()
     if isinstance(value, Mapping):
         return dict(value)
     if hasattr(value, "model_dump"):
