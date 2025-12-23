@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from dataclasses import dataclass, field
 from pathlib import Path
-from datetime import datetime, timezone
 from typing import List, Optional, Sequence, TYPE_CHECKING
 
+from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 from scrapers.base.normalization import NormalizationRule, RecordNormalizer
 from scrapers.base.records import ExportRecord
 
@@ -109,15 +110,11 @@ class ScrapeResult:
     def to_dataframe(
         self,
         *,
-        exporter: "DataExporter | None" = None,
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ):
-        from scrapers.base.export.exporters import DataExporter
-
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,
         )
-        exporter = exporter or DataExporter()
-        return exporter.to_dataframe(normalized)
+        return PandasDataFrameFormatter().format(normalized)

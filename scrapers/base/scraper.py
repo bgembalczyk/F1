@@ -158,7 +158,7 @@ class F1Scraper(ABC):
 
     def to_dataframe(self):
         result = self.build_result()
-        return result.to_dataframe(exporter=self.exporter)
+        return result.to_dataframe()
 
     # ---------- Metody wewnętrzne ----------
 
