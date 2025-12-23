@@ -150,16 +150,6 @@ def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
     return True
 
 
-def select_best_driver(records: list[dict[str, Any]]) -> Any:
-    """Wybiera najlepszy rekord kierowcy (preferuje wersję z URL)."""
-    return select_best_field_with_url(records, "driver")
-
-
-def select_best_vehicle(records: list[dict[str, Any]]) -> Any:
-    """Wybiera najlepszy rekord pojazdu (preferuje wersję z URL)."""
-    return select_best_field_with_url(records, "vehicle", "car")
-
-
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
     """Zwraca czas WYŁĄCZNIE jako sekundy (float)."""
     for r in records:
@@ -350,8 +340,8 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
     """Scal grupę rekordów do jednego."""
     merged = collect_other_fields(records)
 
-    best_driver = select_best_driver(records)
-    best_vehicle = select_best_vehicle(records)
+    best_driver = select_best_field_with_url(records, "driver")
+    best_vehicle = select_best_field_with_url(records, "vehicle", "car")
     best_date, best_year = select_best_date_year(records)
     best_series = select_best_series(records)
 
