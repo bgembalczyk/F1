@@ -14,6 +14,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 
 
@@ -99,7 +100,7 @@ class TablePipeline:
         return record
 
     def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str]:
-        key = self.column_map.get(header, self.normalize_header(header))
+        key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
         clean_text = clean_wiki_text(raw_text)
         return key, raw_text, clean_text
@@ -155,14 +156,3 @@ class TablePipeline:
                 url=self.base_url,
                 cause=exc,
             ) from exc
-
-    @staticmethod
-    def normalize_header(header: str) -> str:
-        return (
-            header.strip()
-            .lower()
-            .replace(" ", "_")
-            .replace("(", "")
-            .replace(")", "")
-            .replace("/", "_")
-        )
