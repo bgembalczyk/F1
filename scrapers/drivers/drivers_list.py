@@ -8,8 +8,7 @@ from models.scrape_types import (
     DriverRow,
 )  # typing-only, ale OK
 from models.services.driver_service import DriverService
-from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_scraper_by_name
+from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
@@ -20,11 +19,6 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 
 
-@register_scraper(
-    "drivers",
-    "drivers/f1_drivers.json",
-    "drivers/f1_drivers.csv",
-)
 class F1DriversListScraper(F1TableScraper):
     """
     Scraper listy kierowców F1 z:
@@ -107,4 +101,12 @@ class F1DriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name("drivers", Path("../../data/wiki"), include_urls=True)
+    run_and_export(
+        F1DriversListScraper,
+        "drivers/f1_drivers.json",
+        "drivers/f1_drivers.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )

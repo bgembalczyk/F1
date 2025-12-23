@@ -2,20 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from scrapers.base.registry import register_scraper
+from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.run import run_scraper_by_name
 
 
-@register_scraper(
-    "seasons",
-    "seasons/f1_seasons.json",
-    "seasons/f1_seasons.csv",
-)
 class SeasonsListScraper(F1TableScraper):
     """
     Scraper listy sezonów z:
@@ -61,4 +55,12 @@ class SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name("seasons", Path("../../data/wiki"), include_urls=True)
+    run_and_export(
+        SeasonsListScraper,
+        "seasons/f1_seasons.json",
+        "seasons/f1_seasons.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )

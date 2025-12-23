@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from models.validation.circuit import Circuit
-from scrapers.base.registry import register_scraper
+from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -14,14 +14,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from pathlib import Path
 
-from scrapers.base.run import run_scraper_by_name
 
-
-@register_scraper(
-    "circuits",
-    "circuits/f1_circuits.json",
-    "circuits/f1_circuits.csv",
-)
 class CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
@@ -94,4 +87,12 @@ class CircuitsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name("circuits", Path("../../data/wiki"), include_urls=True)
+    run_and_export(
+        CircuitsListScraper,
+        "circuits/f1_circuits.json",
+        "circuits/f1_circuits.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )
