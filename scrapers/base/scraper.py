@@ -57,7 +57,7 @@ class F1Scraper(ABC):
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self) -> List[ExportRecord]:
+    def fetch(self, url: str | None = None) -> List[ExportRecord]:
         """
         Pobierz HTML i sparsuj do listy rekordów eksportowych.
 
@@ -73,6 +73,8 @@ class F1Scraper(ABC):
 
         Zwraca zawsze listę ExportRecord (może być pusta).
         """
+        if url:
+            self.url = url
         if not getattr(self, "url", None):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")
 
@@ -164,7 +166,10 @@ class F1Scraper(ABC):
 
     def _download(self) -> str:
         # Adapter jest jedyną “bramką” do źródła.
-        return self.source_adapter.get(self.url)
+        return self.fetch_html(self.url)
+
+    def fetch_html(self, url: str) -> str:
+        return self.source_adapter.get(url)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""

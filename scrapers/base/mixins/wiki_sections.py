@@ -38,30 +38,8 @@ class WikipediaSectionByIdMixin:
         self._original_url = url
         base_url, fragment = self.split_url_fragment(url)
         self.url = base_url
-
-        def _parse_full(soup: BeautifulSoup) -> List[Dict[str, Any]]:
-            if not self._is_circuit_like_article(soup):
-                return []
-
-            working_soup = self._select_section(soup, fragment)
-            parsed = self._parse_details(working_soup)
-
-            if not parsed:
-                return []
-
-            return [
-                {
-                    "url": self._original_url or self.url,
-                    **parsed,
-                }
-            ]
-
-        result = self.run_with_error_handling(
-            lambda: self._download(),
-            _parse_full,
-            base_url,
-        )
-        return result or []
+        self._section_fragment = fragment
+        return super().fetch(base_url)  # type: ignore[misc]
 
     @staticmethod
     def _is_circuit_like_article(soup: BeautifulSoup) -> bool:

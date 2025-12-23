@@ -115,15 +115,15 @@ class DummyFetcher:
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
         return self.html
 
+    def get(self, url: str) -> str:
+        return self.get_text(url)
+
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
     def __init__(self, *, is_circuit: bool, details: Dict[str, Any] | None) -> None:
         super().__init__(options=ScraperOptions(fetcher=DummyFetcher("")))
         self._is_circuit = is_circuit
         self._details = details
-
-    def _fetch_soup(self, url: str) -> BeautifulSoup:
-        return BeautifulSoup("<html></html>", "html.parser")
 
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         return self._is_circuit
