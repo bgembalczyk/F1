@@ -34,6 +34,22 @@ def _is_valid_url(url: str) -> bool:
     return bool(parsed.scheme in {"http", "https"} and parsed.netloc)
 
 
+def _normalize_and_validate_link_dict(
+    link: Dict[str, Any] | None, *, field_name: str
+) -> LinkRecord | None:
+    data: Dict[str, Any] = dict(link or {})
+    text = str(data.get("text") or "").strip()
+    url = data.get("url")
+    if url == "":
+        url = None
+    if text == "" and url is None:
+        return None
+    if url is not None:
+        if not isinstance(url, str) or not _is_valid_url(url):
+            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
+    return {"text": text, "url": url}
+
+
 def validate_link(
     link: Dict[str, Any] | Link | None, *, field_name: str
 ) -> Dict[str, Any]:
@@ -48,27 +64,11 @@ def validate_link(
     if isinstance(link, Link):
         return link.to_dict()
 
-    data: Dict[str, Any] = dict(link or {})
-    normalized = normalize_link_record(
-        {"text": data.get("text") or "", "url": data.get("url")}
-    )
+    normalized = _normalize_and_validate_link_dict(link, field_name=field_name)
     if normalized is None:
         return {"text": "", "url": None}
 
-    text = normalized.get("text") or ""
-    url = normalized.get("url")
-
-    if url is not None:
-        if not isinstance(url, str) or not _is_valid_url(url):
-            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
-
-    try:
-        parsed = Link.from_dict({"text": text, "url": url})
-    except ValueError as exc:
-        # utrzymujemy komunikat z pliku 1, ale oparty o pre-check z pliku 2
-        raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL") from exc
-
-    return parsed.to_dict()
+    return Link.from_dict(normalized).to_dict()
 
 
 def validate_links(
@@ -213,13 +213,7 @@ def _is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
 
 
 def normalize_link_record(link: LinkRecord) -> LinkRecord | None:
-    text = str(link.get("text") or "").strip()
-    url = link.get("url")
-    if url == "":
-        url = None
-    if text == "" and url is None:
-        return None
-    return {"text": text, "url": url}
+    return _normalize_and_validate_link_dict(link, field_name="link")
 
 
 def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:
