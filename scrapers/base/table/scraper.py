@@ -1,11 +1,9 @@
 from abc import ABC
 from dataclasses import fields, is_dataclass
-from typing import Any, Dict, List, Optional, TYPE_CHECKING
+from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -13,10 +11,6 @@ from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.base.table.row import TableRow
-
-if TYPE_CHECKING:
-    import requests
-    from scrapers.base.export.exporters import DataExporter
 
 
 class F1TableScraper(F1Scraper, ABC):
@@ -45,26 +39,8 @@ class F1TableScraper(F1Scraper, ABC):
         *,
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
-        include_urls: bool | None = None,
-        session: Optional["requests.Session"] = None,
-        headers: Optional[Dict[str, str]] = None,
-        http_client: Optional["HttpClientProtocol"] = None,
-        exporter: Optional["DataExporter"] = None,
-        timeout: int | None = None,
-        retries: int | None = None,
-        cache: "ResponseCache | None" = None,
     ) -> None:
-        options = ScraperOptions.resolve(
-            options=options,
-            include_urls=include_urls,
-            session=session,
-            headers=headers,
-            http_client=http_client,
-            exporter=exporter,
-            timeout=timeout,
-            retries=retries,
-            cache=cache,
-        )
+        options = options or ScraperOptions()
 
         super().__init__(options=options)
 

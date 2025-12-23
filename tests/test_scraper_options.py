@@ -1,33 +1,49 @@
 import pytest
 
-from scrapers.base.options import ScraperOptions
+from scrapers.base.options import ScraperOptions, HttpPolicy
 
 
-def test_scraper_options_rejects_non_positive_timeout():
+def test_scraper_options_uses_default_policy_when_none_provided():
+    options = ScraperOptions()
+    
+    assert options.policy is not None
+    assert options.policy.timeout == 10
+    assert options.policy.retries == 0
+
+
+def test_scraper_options_uses_provided_policy():
+    policy = HttpPolicy(timeout=5, retries=2)
+    options = ScraperOptions(policy=policy)
+    
+    assert options.policy.timeout == 5
+    assert options.policy.retries == 2
+
+
+def test_http_policy_rejects_non_positive_timeout():
     with pytest.raises(ValueError):
-        ScraperOptions(timeout=0)
+        HttpPolicy(timeout=0)
 
     with pytest.raises(ValueError):
-        ScraperOptions(timeout=-1)
+        HttpPolicy(timeout=-1)
 
 
-def test_scraper_options_rejects_negative_retries():
+def test_http_policy_rejects_negative_retries():
     with pytest.raises(ValueError):
-        ScraperOptions(retries=-1)
+        HttpPolicy(retries=-1)
 
 
-def test_scraper_options_legacy_http_fields_warn_and_apply():
-    with pytest.warns(DeprecationWarning):
-        options = ScraperOptions(timeout=5, retries=2)
+def test_scraper_options_to_http_policy():
+    policy = HttpPolicy(timeout=7, retries=3)
+    options = ScraperOptions(policy=policy)
 
-    policy = options.to_http_policy()
-    assert policy.timeout == 5
-    assert policy.retries == 2
+    result_policy = options.to_http_policy()
+    assert result_policy.timeout == 7
+    assert result_policy.retries == 3
 
 
-def test_scraper_options_legacy_timeout_applies_to_fetcher():
-    with pytest.warns(DeprecationWarning):
-        options = ScraperOptions(timeout=7)
+def test_scraper_options_applies_policy_to_fetcher():
+    policy = HttpPolicy(timeout=7)
+    options = ScraperOptions(policy=policy)
 
     fetcher = options.with_fetcher()
     assert fetcher.timeout == 7

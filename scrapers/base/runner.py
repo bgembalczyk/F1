@@ -106,7 +106,6 @@ def run_and_export(
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.
 
     - bezpiecznie przekazuje include_urls tylko jeśli ma sens,
-    - wspiera scrapery na `options` oraz legacy konstruktory,
     - tworzy katalogi dla ścieżek wyjściowych,
     - wypisuje liczbę pobranych rekordów,
     - eksport obsługuje ScrapeResult.
