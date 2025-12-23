@@ -2,19 +2,38 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import warnings
-from typing import Dict, Optional, cast
+from typing import Dict, Optional, TYPE_CHECKING, cast
 
 import requests
 
+from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.interfaces import HttpClientProtocol
 from infrastructure.http_client.clients import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.export.exporters import DataExporter
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
-from scrapers.config import HttpPolicy, default_http_policy
+
+if TYPE_CHECKING:
+    from scrapers.base.html_fetcher import HtmlFetcher
+
+
+@dataclass(frozen=True)
+class HttpPolicy:
+    cache: ResponseCache | None = None
+    retries: int = 0
+    timeout: int = 10
+
+    def __post_init__(self) -> None:
+        if self.timeout <= 0:
+            raise ValueError("timeout must be greater than 0")
+        if self.retries < 0:
+            raise ValueError("retries must be >= 0")
+
+
+def default_http_policy() -> "HttpPolicy":
+    return HttpPolicy(cache=WikipediaCachePolicy.with_file_cache())
 
 
 def build_http_policy(
@@ -135,6 +154,8 @@ class ScraperOptions:
         return self.http_client
 
     def with_fetcher(self) -> HtmlFetcher:
+        from scrapers.base.html_fetcher import HtmlFetcher
+
         if self.fetcher is None:
             if isinstance(self.source_adapter, HtmlFetcher):
                 self.fetcher = self.source_adapter
@@ -147,6 +168,8 @@ class ScraperOptions:
         return self.fetcher
 
     def with_source_adapter(self) -> SourceAdapter:
+        from scrapers.base.html_fetcher import HtmlFetcher
+
         if self.source_adapter is None:
             if self.fetcher is not None:
                 self.source_adapter = self.fetcher

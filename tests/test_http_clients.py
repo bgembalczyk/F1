@@ -10,7 +10,7 @@ from infrastructure.http_client.clients import UrllibHttpClient, HttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.retry import DefaultRetryPolicy
 from scrapers.base.options import ScraperOptions
-from scrapers.config import HttpPolicy
+from scrapers.base.options import HttpPolicy
 
 
 class _StubHandler(BaseHTTPRequestHandler):

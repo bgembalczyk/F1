@@ -3,7 +3,7 @@ from __future__ import annotations
 from infrastructure.http_client.interfaces import HttpClientProtocol
 
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.config import HttpPolicy
+from scrapers.base.options import HttpPolicy
 
 
 class HtmlFetcher(SourceAdapter[str]):
