@@ -2,11 +2,59 @@
 
 from __future__ import annotations
 
+import re
 from typing import Any, Callable, Iterable, Mapping
 
 from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.base.helpers.text_normalization import normalize_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.base.helpers.value_objects import NormalizedDate
+
+
+def extract_year_from_event(rec: Mapping[str, Any]) -> str | None:
+    """
+    Fallback dla rekordów tabelarycznych, które nie mają `year` ani `date`,
+    ale mają `event` (np. "1963 Aintree 200", url: ".../1963_Aintree_200").
+    """
+    event = rec.get("event")
+    candidates: list[str] = []
+
+    if isinstance(event, dict):
+        if event.get("text"):
+            candidates.append(str(event["text"]))
+        if event.get("url"):
+            candidates.append(str(event["url"]))
+    elif isinstance(event, str):
+        candidates.append(event)
+
+    year_re = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
+    for s in candidates:
+        m = year_re.search(s)
+        if m:
+            return m.group(1)
+
+    return None
+
+
+def extract_year(rec: Mapping[str, Any]) -> str | None:
+    """
+    Wspólna logika ekstrakcji roku z rekordu.
+    Próbuje kolejno: year, date.iso, event.
+    """
+    if rec.get("year") is not None:
+        return str(rec["year"])
+
+    date_obj = rec.get("date")
+    if isinstance(date_obj, dict):
+        iso = (date_obj.get("iso") or "").strip()
+        if iso:
+            return iso[:4]
+    if isinstance(date_obj, NormalizedDate):
+        iso = (date_obj.iso or "").strip()
+        if iso:
+            return iso[:4]
+
+    return extract_year_from_event(rec)
 
 
 def normalize_lap_record_entity(
