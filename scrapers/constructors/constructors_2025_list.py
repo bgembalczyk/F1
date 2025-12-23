@@ -5,9 +5,9 @@ from pathlib import Path
 from scrapers.base.registry import register_scraper
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run import RunConfig, run_and_export
@@ -40,16 +40,9 @@ class Constructors2025ListScraper(F1TableScraper):
             "Engine": "engine",
             "Licensed in": "licensed_in",
             "Based in": "based_in",
-            "Seasons": "seasons",
-            "Races Entered": "races_entered",
-            "Races Started": "races_started",
+            **BASE_STATS_MAP,
             "Drivers": "drivers",
             "Total Entries": "total_entries",
-            "Wins": "wins",
-            "Points": "points",
-            "Poles": "poles",
-            "FL": "fastest_laps",
-            "Podiums": "podiums",
             "WCC": "wcc_titles",
             "WDC": "wdc_titles",
             "Antecedent teams": "antecedent_teams",
@@ -61,18 +54,9 @@ class Constructors2025ListScraper(F1TableScraper):
             # silnik – lista linków [{text, url}, ...]
             "engine": LinksListColumn(),
             "based_in": LinksListColumn(),
-            # sezony – standardowy parser sezonów
-            "seasons": SeasonsColumn(),
-            # statystyki – liczby całkowite
-            "races_entered": IntColumn(),
-            "races_started": IntColumn(),
+            **BASE_STATS_COLUMNS,
             "drivers": IntColumn(),
             "total_entries": IntColumn(),
-            "wins": IntColumn(),
-            "points": IntColumn(),
-            "poles": IntColumn(),
-            "fastest_laps": IntColumn(),
-            "podiums": IntColumn(),
             "wcc_titles": IntColumn(),
             "wdc_titles": IntColumn(),
             # poprzednie zespoły – lista linków
