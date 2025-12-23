@@ -213,3 +213,63 @@ class ScraperOptions:
             kwargs["cache"] = cache
 
         return cls(**kwargs)
+
+    @classmethod
+    def resolve(
+        cls,
+        *,
+        options: "ScraperOptions | None",
+        include_urls: bool | None = None,
+        session: Optional[requests.Session] = None,
+        headers: Optional[Dict[str, str]] = None,
+        http_client: Optional[HttpClientProtocol] = None,
+        exporter: Optional[DataExporter] = None,
+        timeout: int | None = None,
+        retries: int | None = None,
+        cache: ResponseCache | None = None,
+    ) -> "ScraperOptions":
+        legacy_used = any(
+            value is not None
+            for value in (
+                include_urls,
+                session,
+                headers,
+                http_client,
+                exporter,
+                timeout,
+                retries,
+                cache,
+            )
+        )
+
+        if options is None:
+            resolved = cls.from_legacy(
+                include_urls=include_urls,
+                session=session,
+                headers=headers,
+                http_client=http_client,
+                exporter=exporter,
+                timeout=timeout,
+                retries=retries,
+                cache=cache,
+            )
+            if resolved is None:
+                return cls()
+            warnings.warn(
+                "Parametry include_urls/session/headers/http_client/exporter/"
+                "timeout/retries/cache w F1TableScraper są przestarzałe. "
+                "Przekaż je przez ScraperOptions.",
+                DeprecationWarning,
+                stacklevel=3,
+            )
+            return resolved
+
+        if legacy_used:
+            warnings.warn(
+                "Parametry include_urls/session/headers/http_client/exporter/"
+                "timeout/retries/cache w F1TableScraper są ignorowane, gdy "
+                "przekazujesz ScraperOptions.",
+                DeprecationWarning,
+                stacklevel=3,
+            )
+        return options

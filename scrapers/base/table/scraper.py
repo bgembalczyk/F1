@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from abc import ABC
 from dataclasses import fields, is_dataclass
-import warnings
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
 from bs4 import BeautifulSoup
@@ -57,7 +56,7 @@ class F1TableScraper(F1Scraper, ABC):
         retries: int | None = None,
         cache: "ResponseCache | None" = None,
     ) -> None:
-        options = self._resolve_options(
+        options = ScraperOptions.resolve(
             options=options,
             include_urls=include_urls,
             session=session,
@@ -91,65 +90,6 @@ class F1TableScraper(F1Scraper, ABC):
             skip_sentinel=self._SKIP,
             model_fields=self._model_fields(),
         )
-
-    def _resolve_options(
-        self,
-        *,
-        options: ScraperOptions | None,
-        include_urls: bool | None,
-        session: Optional["requests.Session"],
-        headers: Optional[Dict[str, str]],
-        http_client: Optional["HttpClientProtocol"],
-        exporter: Optional["DataExporter"],
-        timeout: int | None,
-        retries: int | None,
-        cache: "ResponseCache | None",
-    ) -> ScraperOptions:
-        legacy_used = any(
-            value is not None
-            for value in (
-                include_urls,
-                session,
-                headers,
-                http_client,
-                exporter,
-                timeout,
-                retries,
-                cache,
-            )
-        )
-
-        if options is None:
-            resolved = ScraperOptions.from_legacy(
-                include_urls=include_urls,
-                session=session,
-                headers=headers,
-                http_client=http_client,
-                exporter=exporter,
-                timeout=timeout,
-                retries=retries,
-                cache=cache,
-            )
-            if resolved is None:
-                return ScraperOptions()
-            warnings.warn(
-                "Parametry include_urls/session/headers/http_client/exporter/"
-                "timeout/retries/cache w F1TableScraper są przestarzałe. "
-                "Przekaż je przez ScraperOptions.",
-                DeprecationWarning,
-                stacklevel=2,
-            )
-            return resolved
-
-        if legacy_used:
-            warnings.warn(
-                "Parametry include_urls/session/headers/http_client/exporter/"
-                "timeout/retries/cache w F1TableScraper są ignorowane, gdy "
-                "przekazujesz ScraperOptions.",
-                DeprecationWarning,
-                stacklevel=2,
-            )
-        return options
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """
