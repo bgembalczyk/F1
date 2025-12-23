@@ -8,7 +8,7 @@ from models.services.driver_service import DriverService
 from models.services.season_service import SeasonService
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run import RunConfig, run_and_export
+from scrapers.base.runner import RunConfig, run_and_export
 
 
 def test_season_service_parses_years_and_ranges() -> None:

@@ -1,15 +1,9 @@
 from pathlib import Path
 
 from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_scraper_by_name
+from scrapers.base.runner import RunConfig, run_and_export
 
 
-@register_scraper(
-    "constructors_indy",
-    "constructors/f1_indianapolis_only_constructors.json",
-    "constructors/f1_indianapolis_only_constructors.csv",
-)
 class IndianapolisOnlyConstructorsListScraper(F1ListScraper):
     """
     Lista konstruktorów 'Indianapolis 500 only'
@@ -24,4 +18,12 @@ class IndianapolisOnlyConstructorsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name("constructors_indy", Path("../../data/wiki"), include_urls=True)
+    run_and_export(
+        IndianapolisOnlyConstructorsListScraper,
+        "constructors/f1_indianapolis_only_constructors.json",
+        "constructors/f1_indianapolis_only_constructors.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )

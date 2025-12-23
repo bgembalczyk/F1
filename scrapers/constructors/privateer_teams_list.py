@@ -7,15 +7,9 @@ from bs4 import Tag
 from models.services.season_service import SeasonService
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.registry import register_scraper
-from scrapers.base.run import run_scraper_by_name
+from scrapers.base.runner import RunConfig, run_and_export
 
 
-@register_scraper(
-    "constructors_privateer",
-    "constructors/f1_privateer_teams.json",
-    "constructors/f1_privateer_teams.csv",
-)
 class PrivateerTeamsListScraper(F1ListScraper):
     """
     Lista privateer teams (sekcja 'Privateer teams').
@@ -66,6 +60,12 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name(
-        "constructors_privateer", Path("../../data/wiki"), include_urls=True
+    run_and_export(
+        PrivateerTeamsListScraper,
+        "constructors/f1_privateer_teams.json",
+        "constructors/f1_privateer_teams.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
     )

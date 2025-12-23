@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from scrapers.base.registry import register_scraper
+from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -11,14 +11,8 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.run import run_scraper_by_name
 
 
-@register_scraper(
-    "grands_prix",
-    "grands_prix/f1_grands_prix_by_title.json",
-    "grands_prix/f1_grands_prix_by_title.csv",
-)
 class GrandsPrixListScraper(F1TableScraper):
     """
     Uproszczony scraper np. dla tabeli 'By race title'
@@ -72,4 +66,12 @@ class GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_scraper_by_name("grands_prix", Path("../../data/wiki"), include_urls=True)
+    run_and_export(
+        GrandsPrixListScraper,
+        "grands_prix/f1_grands_prix_by_title.json",
+        "grands_prix/f1_grands_prix_by_title.csv",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )

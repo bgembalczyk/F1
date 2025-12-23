@@ -7,19 +7,13 @@ from bs4 import BeautifulSoup
 
 from models.services.circuits.circuit_service import CircuitService
 from scrapers.base.options import ScraperOptions
-from scrapers.base.registry import register_scraper
-from scrapers.base.run import RunConfig, run_and_export
+from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.circuits_list import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
-@register_scraper(
-    "circuits_complete",
-    "circuits/f1_circuits_extended.json",
-    "circuits/f1_circuits_extended.csv",
-)
 class F1CompleteCircuitScraper(F1Scraper):
     """
     Pobiera listę torów, a następnie zaciąga szczegóły każdego toru (infobox + tabele),
