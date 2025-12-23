@@ -1,6 +1,4 @@
 # scrapers/base/table/columns/types/date.py
-from __future__ import annotations
-
 from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext

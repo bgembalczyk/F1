@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 

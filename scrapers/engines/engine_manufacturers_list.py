@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from pathlib import Path
 
 from models.validation.engine_manufacturer import EngineManufacturer

@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
@@ -38,7 +36,6 @@ class F1CircuitInfoboxScraper(F1Scraper):
         options = init_scraper_options(options)
 
         # Zapewniamy fetcher (spójnie z resztą repo).
-        # HtmlFetcher jest config-driven, więc tworzymy go bez “legacy” parametrów.
         options.with_fetcher()
 
         super().__init__(options=options)

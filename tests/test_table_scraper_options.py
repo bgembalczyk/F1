@@ -1,7 +1,3 @@
-from __future__ import annotations
-
-import warnings
-
 import pytest
 
 from scrapers.base.options import ScraperOptions
@@ -22,21 +18,22 @@ class DummyTableScraper(F1TableScraper):
         return []
 
 
-def test_table_scraper_options_without_legacy_params_has_no_warning() -> None:
+def test_table_scraper_with_options():
     config = ScraperConfig(url="https://example.com")
     options = ScraperOptions(source_adapter=DummySourceAdapter("<html></html>"))
 
-    with warnings.catch_warnings(record=True) as caught:
-        warnings.simplefilter("always")
-        DummyTableScraper(options=options, config=config)
+    scraper = DummyTableScraper(options=options, config=config)
 
-    assert not any(issubclass(item.category, DeprecationWarning) for item in caught)
+    assert scraper.include_urls is True
 
 
-def test_table_scraper_legacy_params_emit_warning_and_set_options() -> None:
+def test_table_scraper_with_include_urls_option():
     config = ScraperConfig(url="https://example.com")
+    options = ScraperOptions(
+        include_urls=False,
+        source_adapter=DummySourceAdapter("<html></html>")
+    )
 
-    with pytest.warns(DeprecationWarning, match="Parametry include_urls"):
-        scraper = DummyTableScraper(config=config, include_urls=False)
+    scraper = DummyTableScraper(options=options, config=config)
 
     assert scraper.include_urls is False

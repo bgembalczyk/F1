@@ -1,7 +1,5 @@
 """Minimalna implementacja biblioteki `requests` oparta na urllib."""
 
-from __future__ import annotations
-
 import ssl
 import urllib.error
 import urllib.request

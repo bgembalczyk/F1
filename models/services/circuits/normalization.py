@@ -1,7 +1,5 @@
 """Funkcje pomocnicze do normalizacji danych torów."""
 
-from __future__ import annotations
-
 import re
 from typing import Any
 

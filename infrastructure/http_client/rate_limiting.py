@@ -1,6 +1,5 @@
 """Implementacje rate limiting."""
 
-from __future__ import annotations
 import random
 import time
 from typing import Callable

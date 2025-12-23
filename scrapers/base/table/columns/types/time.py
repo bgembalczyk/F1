@@ -1,6 +1,4 @@
 # scrapers/base/table/columns/types/time.py
-from __future__ import annotations
-
 import re
 from typing import Any
 

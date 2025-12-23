@@ -1,7 +1,5 @@
 """Wikipedia helper utilities used by scrapers."""
 
-from __future__ import annotations
-
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import Tag

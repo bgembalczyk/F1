@@ -1,7 +1,6 @@
 """Funkcje pomocnicze do scalania rekordów okrążeń."""
 
-from __future__ import annotations
-
+import re
 from typing import Any
 
 from scrapers.base.helpers.text_normalization import (
