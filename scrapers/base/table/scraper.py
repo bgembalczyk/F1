@@ -106,10 +106,6 @@ class F1TableScraper(F1Scraper, ABC):
         mapped_row = dict(zip(row.headers, row.cells))
         return self.pipeline.parse_row(mapped_row)
 
-    @staticmethod
-    def _normalize_header(header: str) -> str:
-        return TablePipeline.normalize_header(header)
-
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
         if not model_class:

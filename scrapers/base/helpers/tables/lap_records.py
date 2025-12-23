@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
 
 from scrapers.base.helpers.value_objects import LapRecord
@@ -143,6 +144,6 @@ class LapRecordsTableScraper(F1TableScraper):
         """Sprawdza czy nagłówki zawierają wymagane expected_headers (po normalizacji)."""
         if not self.expected_headers:
             return True
-        normalized = {self._normalize_header(h) for h in headers}
-        expected = {self._normalize_header(h) for h in self.expected_headers}
+        normalized = {normalize_header(h) for h in headers}
+        expected = {normalize_header(h) for h in self.expected_headers}
         return expected.issubset(normalized)
