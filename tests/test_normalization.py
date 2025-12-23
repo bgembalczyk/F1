@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
+
 from scrapers.base.normalization import RecordNormalizer
 
 
@@ -34,3 +36,18 @@ def test_record_normalizer_applies_custom_rules_after_default() -> None:
     normalized = normalizer.normalize(data)
 
     assert normalized == [{"total_wins": 41}]
+
+
+def test_record_normalizer_passes_through_non_dict_items() -> None:
+    @dataclass(frozen=True)
+    class Driver:
+        name: str
+
+    driver = Driver(name="Max")
+    normalizer = RecordNormalizer(normalize_keys=True)
+    data = [{"Driver Name": "Max"}, driver]
+
+    normalized = normalizer.normalize(data)
+
+    assert normalized[0] == {"driver_name": "Max"}
+    assert normalized[1] is driver

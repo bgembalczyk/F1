@@ -32,12 +32,7 @@ class ScrapeResult:
         if not normalizer.has_rules:
             return self
 
-        normalized: list[ExportRecord] = []
-        for item in self.data:
-            if isinstance(item, dict):
-                normalized.append(normalizer.normalize_record(item))
-            else:
-                normalized.append(item)
+        normalized = normalizer.normalize(self.data)
 
         return ScrapeResult(
             data=normalized,
