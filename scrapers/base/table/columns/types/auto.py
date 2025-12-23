@@ -2,9 +2,8 @@
 from typing import Any
 import re
 
-from models.validation.validators import normalize_link_record
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_wiki_text
-from scrapers.base.helpers.wiki import clean_link_record
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -52,13 +51,12 @@ class AutoColumn(BaseColumn):
         value = self._cell_text(ctx)
 
         # usuń linki “językowe” zanim podejmiesz decyzję o zwróceniu dict-a / listy
-        links = []
-        for link in ctx.links or []:
-            cleaned = clean_link_record(link)
-            if cleaned:
-                normalized = normalize_link_record(cleaned)
-                if normalized:
-                    links.append(normalized)
+        links = normalize_links(
+            ctx.links or [],
+            strip_marks=False,
+            drop_empty=True,
+            strip_lang_suffix=self.strip_lang_suffix,
+        )
 
         # 1) dokładnie jeden sensowny link: dict TYLKO gdy komórka to sam link
         if len(links) == 1:

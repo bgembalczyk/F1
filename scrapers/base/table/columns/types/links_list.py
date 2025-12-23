@@ -1,8 +1,6 @@
 from typing import Any
 
-from models.records import LinkRecord
-from models.validation.validators import normalize_link_record
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -15,23 +13,4 @@ class LinksListColumn(BaseColumn):
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
-        cleaned: list[LinkRecord] = []
-
-        for link in ctx.links:
-            d: LinkRecord = {"text": link.get("text") or "", "url": link.get("url")}
-            text = d.get("text")
-
-            # 1) strip marks
-            if isinstance(text, str):
-                text = strip_marks(text).strip()
-                d["text"] = text
-
-            # 2) skip if no text
-            normalized = normalize_link_record(d)
-            if not normalized:
-                # brak tekstu → NIE dodajemy tego linku do listy
-                continue
-
-            cleaned.append(normalized)
-
-        return cleaned
+        return normalize_links(ctx.links or [])

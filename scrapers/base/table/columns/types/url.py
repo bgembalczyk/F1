@@ -1,6 +1,6 @@
 from typing import Any
 
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -13,12 +13,9 @@ class UrlColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext) -> Any:
         if not ctx.links:
-            if ctx.clean_text:
-                return {"text": strip_marks(ctx.clean_text), "url": None}
-            return None
+            return normalize_links(
+                {"text": ctx.clean_text or "", "url": None},
+                strip_lang_suffix=False,
+            )
 
-        link = ctx.links[0]
-        return {
-            "text": strip_marks(link.get("text")),
-            "url": link.get("url"),
-        }
+        return normalize_links(ctx.links[0])
