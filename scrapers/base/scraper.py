@@ -57,7 +57,7 @@ class F1Scraper(ABC):
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self, url: str | None = None) -> List[ExportRecord]:
+    def fetch(self) -> List[ExportRecord]:
         """
         Pobierz HTML i sparsuj do listy rekordów eksportowych.
 
@@ -73,8 +73,6 @@ class F1Scraper(ABC):
 
         Zwraca zawsze listę ExportRecord (może być pusta).
         """
-        if url:
-            self.url = url
         if not getattr(self, "url", None):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")
 
