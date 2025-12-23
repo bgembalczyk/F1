@@ -14,6 +14,7 @@ from scrapers.base.helpers.time import (
     parse_time_key,
     parse_time_seconds_from_text,
 )
+from scrapers.base.helpers.value_objects import NormalizedDate
 
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
@@ -124,6 +125,10 @@ def _extract_year(rec: dict[str, Any]) -> str | None:
     date_obj = rec.get("date")
     if isinstance(date_obj, dict):
         iso = (date_obj.get("iso") or "").strip()
+        if iso:
+            return iso[:4]
+    if isinstance(date_obj, NormalizedDate):
+        iso = (date_obj.iso or "").strip()
         if iso:
             return iso[:4]
 
@@ -264,8 +269,15 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
             best_date = d
             continue
 
-        iso_cur = (best_date.get("iso") if isinstance(best_date, dict) else "") or ""
-        iso_new = (d.get("iso") if isinstance(d, dict) else "") or ""
+        if isinstance(best_date, NormalizedDate):
+            iso_cur = best_date.iso or ""
+        else:
+            iso_cur = (best_date.get("iso") if isinstance(best_date, dict) else "") or ""
+
+        if isinstance(d, NormalizedDate):
+            iso_new = d.iso or ""
+        else:
+            iso_new = (d.get("iso") if isinstance(d, dict) else "") or ""
         if len(iso_new) > len(iso_cur):
             best_date = d
 

@@ -12,6 +12,7 @@ from models.services.circuits.lap_record_merging import (
 )
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.base.helpers.value_objects import NormalizedDate
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
@@ -168,6 +169,10 @@ class CircuitLapRecordParser(CircuitTextProcessing):
             return str(y).strip()
 
         d = rec.get("date")
+        if isinstance(d, NormalizedDate):
+            iso = (d.iso or "").strip()
+            if len(iso) >= 4 and iso[:4].isdigit():
+                return iso[:4]
         if isinstance(d, str) and len(d) >= 4 and d[:4].isdigit():
             return d[:4]
 

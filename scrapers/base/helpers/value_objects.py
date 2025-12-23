@@ -30,6 +30,38 @@ class NormalizedTime:
 
 
 @dataclass(frozen=True)
+class NormalizedDate:
+    text: str | None = None
+    iso: str | None = None
+
+    @classmethod
+    def from_value(cls, value: Any) -> NormalizedDate | None:
+        if value is None:
+            return None
+        if isinstance(value, NormalizedDate):
+            return value
+        if isinstance(value, Mapping):
+            text = value.get("text")
+            iso = value.get("iso")
+            iso_val: str | None
+            if isinstance(iso, list):
+                iso_val = str(iso[0]).strip() if iso else None
+            elif iso is not None:
+                iso_val = str(iso).strip()
+            else:
+                iso_val = None
+            text_val = str(text).strip() if text is not None else None
+            return cls(text=text_val or None, iso=iso_val or None)
+        if isinstance(value, str):
+            text_val = value.strip()
+            return cls(text=text_val or None, iso=None)
+        return cls(text=str(value).strip(), iso=None)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"text": self.text, "iso": self.iso}
+
+
+@dataclass(frozen=True)
 class RecordKey:
     driver_text: str
     vehicle_text: str
@@ -59,6 +91,12 @@ class LapRecord:
             if normalized is not None:
                 self.data["time"] = normalized
 
+        date_val = self.data.get("date")
+        if isinstance(date_val, Mapping) or isinstance(date_val, NormalizedDate):
+            normalized = NormalizedDate.from_value(date_val)
+            if normalized is not None:
+                self.data["date"] = normalized
+
         if "class" in self.data and "class_" not in self.data:
             self.data["class_"] = self.data.get("class")
 
@@ -70,6 +108,8 @@ class LapRecord:
         result: dict[str, Any] = {}
         for key, value in self.data.items():
             if isinstance(value, NormalizedTime):
+                result[key] = value.to_dict()
+            elif isinstance(value, NormalizedDate):
                 result[key] = value.to_dict()
             elif hasattr(value, "to_dict") and callable(value.to_dict):
                 result[key] = value.to_dict()
@@ -101,6 +141,10 @@ class LapRecord:
     def __setitem__(self, key: str, value: Any) -> None:
         if key == "time" and not isinstance(value, NormalizedTime):
             normalized = NormalizedTime.from_value(value)
+            if normalized is not None:
+                value = normalized
+        if key == "date" and not isinstance(value, NormalizedDate):
+            normalized = NormalizedDate.from_value(value)
             if normalized is not None:
                 value = normalized
         self.data[key] = value

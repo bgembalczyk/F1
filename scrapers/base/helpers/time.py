@@ -8,7 +8,7 @@ from decimal import Decimal, ROUND_HALF_UP
 from typing import Any
 
 
-from scrapers.base.helpers.value_objects import NormalizedTime
+from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
 
 
 _TIME_SECONDS_RE = re.compile(r"^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$")
@@ -234,9 +234,14 @@ def normalize_time_value(rec: dict[str, Any]) -> None:
 def normalize_date_value(rec: dict[str, Any]) -> None:
     """Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY"."""
     d = rec.get("date")
-    if not isinstance(d, dict):
+    if not isinstance(d, dict) and not isinstance(d, NormalizedDate):
         return
-    iso = d.get("iso")
+    if isinstance(d, NormalizedDate):
+        iso = d.iso
+        text = d.text
+    else:
+        iso = d.get("iso")
+        text = d.get("text")
     if isinstance(iso, list):
         rec["date"] = iso[0] if iso else None
         return
@@ -244,5 +249,4 @@ def normalize_date_value(rec: dict[str, Any]) -> None:
         rec["date"] = iso
         return
 
-    txt = d.get("text")
-    rec["date"] = txt.strip() if isinstance(txt, str) and txt.strip() else None
+    rec["date"] = text.strip() if isinstance(text, str) and text.strip() else None
