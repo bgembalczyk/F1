@@ -1,7 +1,5 @@
 """Helpers for normalizing text and filtering language links."""
 
-from __future__ import annotations
-
 import re
 from typing import Any
 

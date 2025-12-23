@@ -1,7 +1,5 @@
 """HTML helper utilities used by scrapers."""
 
-from __future__ import annotations
-
 from typing import Any, Callable, Iterable
 
 from bs4 import BeautifulSoup, Tag

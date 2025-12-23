@@ -1,7 +1,5 @@
 """Implementacje klientów HTTP (requests i urllib)."""
 
-from __future__ import annotations
-
 from typing import Dict, Optional
 
 import requests

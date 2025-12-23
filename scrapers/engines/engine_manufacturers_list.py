@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from pathlib import Path
 
 from scrapers.base.runner import RunConfig, run_and_export

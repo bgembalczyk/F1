@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag

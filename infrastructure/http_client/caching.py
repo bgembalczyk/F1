@@ -1,6 +1,5 @@
 """Implementacje cachowania odpowiedzi HTTP."""
 
-from __future__ import annotations
 import time
 from hashlib import sha256
 from pathlib import Path

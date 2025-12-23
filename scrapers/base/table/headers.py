@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 
 def normalize_header(header: str) -> str:
     return (

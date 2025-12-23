@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from infrastructure.http_client.interfaces import HttpClientProtocol
 
 from scrapers.base.source_adapter import SourceAdapter

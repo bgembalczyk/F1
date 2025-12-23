@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from models.validation.circuit import Circuit
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn

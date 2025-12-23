@@ -1,7 +1,5 @@
 """Wspólne narzędzia do obsługi rekordów lap record."""
 
-from __future__ import annotations
-
 from typing import Any, Callable, Iterable, Mapping
 
 from scrapers.base.helpers.text import choose_richer_entity

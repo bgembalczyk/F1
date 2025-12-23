@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from abc import ABC
 from dataclasses import fields, is_dataclass
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
