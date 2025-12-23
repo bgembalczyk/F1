@@ -21,11 +21,8 @@ class DateColumn(BaseColumn):
     - "7–8 June 2019"  -> bierze pierwszą datę
     - "7 June 2019 (race 1)" -> ignoruje część w nawiasie
 
-    Zwraca dict:
-        {
-            "text": <oryginalny_tekst_bez_refów>,
-            "iso": <YYYY-MM-DD | None>,
-        }
+    Zwraca NormalizedDate:
+        NormalizedDate(text=<oryginalny_tekst_bez_refów>, iso=<YYYY-MM-DD | None>)
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
@@ -34,8 +31,4 @@ class DateColumn(BaseColumn):
             return NormalizedDate(text=None, iso=None)
 
         parsed = parse_date_text(text)
-        iso = parsed.get("iso")
-        if isinstance(iso, list):
-            iso = iso[0] if iso else None
-
-        return NormalizedDate(text=parsed.get("text"), iso=iso)
+        return NormalizedDate(text=parsed.get("text"), iso=parsed.get("iso"))

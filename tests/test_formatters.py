@@ -70,8 +70,8 @@ def test_json_formatter_serializes_normalized_value_objects() -> None:
     result = ScrapeResult(
         data=[
             {
-                "date": NormalizedDate(text="7 June 2019", iso="2019-06-07"),
-                "time": NormalizedTime(text="1:23.456", seconds=83.456),
+                "date": NormalizedDate(text=" 7 June 2019 ", iso=["2019-06-07"]),
+                "time": NormalizedTime(text=" 1:23.456 ", seconds="83.456"),
             }
         ],
         source_url="https://example.com",
