@@ -1,23 +1,7 @@
 import pytest
-import sys
-import types
-
-try:
-    from bs4 import BeautifulSoup
-except Exception:
-    pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
+from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
-
-
-if "bs4" not in sys.modules:
-    bs4_module = types.ModuleType("bs4")
-
-    class Tag:  # type: ignore
-        pass
-
-    bs4_module.Tag = Tag
-    sys.modules["bs4"] = bs4_module
 
 
 def test_parser_extracts_title_rows_and_links():

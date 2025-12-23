@@ -1,7 +1,5 @@
-import sys
-import types
-
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.html_utils import extract_links_from_cell
 from scrapers.base.helpers.links import normalize_links
@@ -12,25 +10,6 @@ from scrapers.base.helpers.text_normalization import (
 )
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.value_objects import NormalizedTime
-
-try:
-    from bs4 import BeautifulSoup  # type: ignore
-
-    _HAS_BS4 = True
-except Exception:
-    _HAS_BS4 = False
-    bs4_module = types.ModuleType("bs4")
-
-    class Tag:  # type: ignore
-        pass
-
-    class BeautifulSoup:  # type: ignore
-        def __init__(self, *_args, **_kwargs):
-            raise RuntimeError("BeautifulSoup not available in tests")
-
-    bs4_module.Tag = Tag
-    bs4_module.BeautifulSoup = BeautifulSoup
-    sys.modules["bs4"] = bs4_module
 
 
 def test_clean_wiki_text_removes_references_and_whitespace():
@@ -83,8 +62,6 @@ def test_split_delimited_text_respects_min_parts():
 
 
 def test_extract_links_from_cell_filters_reference_and_language_links():
-    if not _HAS_BS4:
-        pytest.skip("beautifulsoup4 is required for link extraction test")
     html = """
     <td>
         <a href="/wiki/Good">Good</a>
@@ -110,8 +87,6 @@ def test_extract_links_from_cell_filters_reference_and_language_links():
 
 
 def test_extract_links_from_cell_handles_default_full_url():
-    if not _HAS_BS4:
-        pytest.skip("beautifulsoup4 is required for link extraction test")
     html = """
     <td>
         <a href="https://en.wikipedia.org/wiki/Good">Good</a>

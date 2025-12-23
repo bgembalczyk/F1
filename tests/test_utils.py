@@ -1,26 +1,10 @@
 import pytest
-import sys
-import types
+from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-
-try:
-    from bs4 import BeautifulSoup
-except Exception:
-    pytest.skip("beautifulsoup4 is required for these tests", allow_module_level=True)
-
-
-if "bs4" not in sys.modules:
-    bs4_module = types.ModuleType("bs4")
-
-    class Tag:  # type: ignore
-        pass
-
-    bs4_module.Tag = Tag
-    sys.modules["bs4"] = bs4_module
 
 
 def _tag(html: str):
