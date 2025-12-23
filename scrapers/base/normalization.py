@@ -30,10 +30,10 @@ class RecordNormalizer:
             return list(data)
         normalized: list[ExportRecord | Any] = []
         for item in data:
-            if isinstance(item, dict):
-                normalized.append(self.normalize_record(item))
-            else:
+            if not isinstance(item, dict):
                 normalized.append(item)
+                continue
+            normalized.append(self.normalize_record(item))
         return normalized
 
     def normalize_record(self, record: ExportRecord) -> ExportRecord:
