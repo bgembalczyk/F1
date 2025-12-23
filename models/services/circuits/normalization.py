@@ -6,7 +6,7 @@ import re
 from typing import Any, Callable
 
 from scrapers.base.helpers.prune import prune_empty
-from scrapers.base.helpers.text import add_unique_name
+from scrapers.base.helpers.text_normalization import add_unique_name
 
 
 def extract_circuit_names(
