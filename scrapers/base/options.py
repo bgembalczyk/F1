@@ -92,6 +92,8 @@ class ScraperOptions:
         if self.retries < 0:
             raise ValueError("retries must be >= 0")
         self._warn_legacy_fields_if_used()
+        if self.policy is None and not self._legacy_fields_used():
+            self.policy = default_http_policy()
 
     def _legacy_fields_used(self) -> bool:
         return any(
