@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from abc import ABC
 from dataclasses import fields, is_dataclass
 import warnings
@@ -40,8 +39,6 @@ class F1TableScraper(F1Scraper, ABC):
     _SKIP = object()
 
     CONFIG: ScraperConfig | None = None
-
-    _REF_RE = re.compile(r"\[\s*[^]]+\s*]")
 
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
