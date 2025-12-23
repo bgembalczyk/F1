@@ -12,8 +12,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
 from models.engine_manufacturer import EngineManufacturer
-from scrapers.base.options import ScraperOptions
-from scrapers.base.run import RunConfig, run_and_export
+from scrapers.base.run import run_scraper_by_name
 
 
 @register_scraper(
@@ -72,13 +71,6 @@ class EngineManufacturersListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        EngineManufacturersListScraper,
-        "engines/f1_engine_manufacturers.json",
-        "engines/f1_engine_manufacturers.csv",
-        run_config=RunConfig(
-            include_urls=True,
-            output_dir=Path("../../data/wiki"),
-            options=ScraperOptions(include_urls=True),
-        ),
+    run_scraper_by_name(
+        "engine_manufacturers", Path("../../data/wiki"), include_urls=True
     )
