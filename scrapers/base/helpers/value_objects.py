@@ -4,10 +4,41 @@ from dataclasses import dataclass, field
 from typing import Any, Iterable, Mapping
 
 
+def _normalize_text(value: Any) -> str | None:
+    if value is None:
+        return None
+    text = str(value).strip()
+    return text or None
+
+
+def _normalize_seconds(value: Any) -> float | None:
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        stripped = value.strip()
+        if not stripped:
+            return None
+        try:
+            return float(stripped)
+        except ValueError:
+            return None
+    return None
+
+
+def _normalize_iso(value: Any) -> str | None:
+    if isinstance(value, list):
+        value = value[0] if value else None
+    return _normalize_text(value)
+
+
 @dataclass(frozen=True)
 class NormalizedTime:
     text: str | None = None
     seconds: float | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "text", _normalize_text(self.text))
+        object.__setattr__(self, "seconds", _normalize_seconds(self.seconds))
 
     @classmethod
     def from_value(cls, value: Any) -> NormalizedTime | None:
@@ -16,11 +47,7 @@ class NormalizedTime:
         if isinstance(value, NormalizedTime):
             return value
         if isinstance(value, Mapping):
-            text = value.get("text")
-            seconds = value.get("seconds")
-            seconds_val = float(seconds) if isinstance(seconds, (int, float)) else None
-            text_val = str(text).strip() if text is not None else None
-            return cls(text=text_val or None, seconds=seconds_val)
+            return cls(text=value.get("text"), seconds=value.get("seconds"))
         if isinstance(value, (int, float)):
             return cls(text=None, seconds=float(value))
         return cls(text=str(value).strip(), seconds=None)
@@ -34,6 +61,10 @@ class NormalizedDate:
     text: str | None = None
     iso: str | None = None
 
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "text", _normalize_text(self.text))
+        object.__setattr__(self, "iso", _normalize_iso(self.iso))
+
     @classmethod
     def from_value(cls, value: Any) -> NormalizedDate | None:
         if value is None:
@@ -41,20 +72,9 @@ class NormalizedDate:
         if isinstance(value, NormalizedDate):
             return value
         if isinstance(value, Mapping):
-            text = value.get("text")
-            iso = value.get("iso")
-            iso_val: str | None
-            if isinstance(iso, list):
-                iso_val = str(iso[0]).strip() if iso else None
-            elif iso is not None:
-                iso_val = str(iso).strip()
-            else:
-                iso_val = None
-            text_val = str(text).strip() if text is not None else None
-            return cls(text=text_val or None, iso=iso_val or None)
+            return cls(text=value.get("text"), iso=value.get("iso"))
         if isinstance(value, str):
-            text_val = value.strip()
-            return cls(text=text_val or None, iso=None)
+            return cls(text=value, iso=None)
         return cls(text=str(value).strip(), iso=None)
 
     def to_dict(self) -> dict[str, Any]:

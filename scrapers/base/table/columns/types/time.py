@@ -21,11 +21,8 @@ class TimeColumn(BaseColumn):
     - "1m 23.456s"
     - "1 min 23.4 s"
 
-    Zwraca dict:
-        {
-            "text": <oryginalny_tekst_bez_refów>,
-            "seconds": <float | None>,
-        }
+    Zwraca NormalizedTime:
+        NormalizedTime(text=<oryginalny_tekst_bez_refów>, seconds=<float | None>)
     """
 
     _RE_COLON = re.compile(r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$")
