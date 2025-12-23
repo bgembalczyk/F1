@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.circuits.single_scraper import (
     F1SingleCircuitScraper,
     detect_layout_name,
@@ -65,11 +66,13 @@ def test_select_section_returns_full_soup_when_missing_fragment() -> None:
 
 
 def test_is_lap_record_table_true_when_time_and_driver_present() -> None:
-    assert is_lap_record_table(["Time", "Driver", "Vehicle"]) is True
+    lap_scraper = LapRecordsTableScraper()
+    assert is_lap_record_table(["Time", "Driver", "Vehicle"], lap_scraper) is True
 
 
 def test_is_lap_record_table_false_when_time_missing() -> None:
-    assert is_lap_record_table(["Driver", "Vehicle"]) is False
+    lap_scraper = LapRecordsTableScraper()
+    assert is_lap_record_table(["Driver", "Vehicle"], lap_scraper) is False
 
 
 def test_detect_layout_name_prefers_caption() -> None:
