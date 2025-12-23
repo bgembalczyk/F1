@@ -4,6 +4,7 @@ import types
 import pytest
 
 from scrapers.base.helpers.html_utils import extract_links_from_cell
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import (
     clean_wiki_text,
     is_language_link,
@@ -127,6 +128,29 @@ def test_extract_links_from_cell_handles_default_full_url():
     assert links == [
         {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
         {"text": "Red", "url": None},
+    ]
+
+
+def test_normalize_links_filters_empty_and_language_links_and_marks():
+    links = [
+        {"text": "", "url": "https://example.com/empty"},
+        {"text": "Good*", "url": "https://example.com/good"},
+        {"text": "Marked~", "url": "https://example.com/marked"},
+        {"text": "Suffix (es)", "url": "https://example.com/suffix"},
+        {"text": "fr", "url": "https://fr.wikipedia.org/wiki/Test"},
+    ]
+
+    assert normalize_links(links) == [
+        {"text": "Good", "url": "https://example.com/good"},
+        {"text": "Marked", "url": "https://example.com/marked"},
+        {"text": "Suffix", "url": "https://example.com/suffix"},
+    ]
+
+
+def test_normalize_links_handles_none_and_single_link():
+    assert normalize_links(None) == []
+    assert normalize_links({"text": "Solo", "url": "https://example.com/solo"}) == [
+        {"text": "Solo", "url": "https://example.com/solo"},
     ]
 
 

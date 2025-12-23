@@ -13,9 +13,11 @@ class UrlColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext) -> Any:
         if not ctx.links:
-            return normalize_links(
-                {"text": ctx.clean_text or "", "url": None},
+            normalized = normalize_links(
+                [{"text": ctx.clean_text or "", "url": None}],
                 strip_lang_suffix=False,
             )
+            return normalized[0] if normalized else None
 
-        return normalize_links(ctx.links[0])
+        normalized = normalize_links(ctx.links)
+        return normalized[0] if normalized else None

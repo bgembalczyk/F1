@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Iterable, overload
+from typing import Iterable
 
 from models.records import LinkRecord
 from models.validation.validators import normalize_link_record
@@ -46,43 +46,20 @@ def _normalize_single_link(
     return normalized
 
 
-@overload
-def normalize_links(
-    links: LinkRecord,
-    *,
-    strip_marks: bool = True,
-    drop_empty: bool = True,
-    strip_lang_suffix: bool = True,
-) -> LinkRecord | None: ...
-
-
-@overload
-def normalize_links(
-    links: Iterable[LinkRecord] | None,
-    *,
-    strip_marks: bool = True,
-    drop_empty: bool = True,
-    strip_lang_suffix: bool = True,
-) -> list[LinkRecord]: ...
-
-
 def normalize_links(
     links: Iterable[LinkRecord] | LinkRecord | None,
     *,
     strip_marks: bool = True,
     drop_empty: bool = True,
     strip_lang_suffix: bool = True,
-) -> list[LinkRecord] | LinkRecord | None:
+) -> list[LinkRecord]:
     if isinstance(links, dict):
-        return _normalize_single_link(
-            links,
-            strip_marks_text=strip_marks,
-            drop_empty=drop_empty,
-            strip_lang_suffix=strip_lang_suffix,
-        )
+        links_iterable: Iterable[LinkRecord] = [links]
+    else:
+        links_iterable = links or []
 
     normalized_links: list[LinkRecord] = []
-    for link in links or []:
+    for link in links_iterable:
         normalized = _normalize_single_link(
             link,
             strip_marks_text=strip_marks,
