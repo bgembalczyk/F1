@@ -15,8 +15,6 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.errors import ScraperError, ScraperParseError
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 
-_LAP_RECORDS_CONTEXT: LapRecordsTableScraper | None = None
-
 logger = logging.getLogger(__name__)
 
 
@@ -53,8 +51,10 @@ def _layout_from_spanning_header(
     return None
 
 
-def is_lap_record_table(headers: list[str]) -> bool:
-    lap_scraper = LapRecordsTableScraper()
+def is_lap_record_table(
+    headers: list[str],
+    lap_scraper: LapRecordsTableScraper,
+) -> bool:
     if lap_scraper.headers_match(headers):
         return True
 
@@ -96,9 +96,8 @@ def collect_lap_records(
     table: Tag,
     headers: list[str],
     base_layout: Optional[str],
+    lap_scraper: LapRecordsTableScraper,
 ) -> list[dict[str, Any]]:
-    lap_scraper = _LAP_RECORDS_CONTEXT or LapRecordsTableScraper()
-
     all_records: list[dict[str, Any]] = []
     current_layout = base_layout
 
@@ -218,7 +217,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         return records[0] if records else {}
 
     def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        global _LAP_RECORDS_CONTEXT
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -228,7 +226,6 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
         all_records: List[Dict[str, Any]] = []
-        _LAP_RECORDS_CONTEXT = lap_scraper
 
         for table in soup.find_all("table", class_="wikitable"):
             header_row = table.find("tr")
@@ -238,13 +235,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             header_cells = header_row.find_all(["th", "td"])
             headers = [clean_wiki_text(c.get_text(strip=True)) for c in header_cells]
 
-            if not is_lap_record_table(headers):
+            if not is_lap_record_table(headers, lap_scraper):
                 continue
 
             base_layout = detect_layout_name(table, headers)
-            all_records.extend(collect_lap_records(table, headers, base_layout))
-
-        _LAP_RECORDS_CONTEXT = None
+            all_records.extend(
+                collect_lap_records(table, headers, base_layout, lap_scraper)
+            )
 
         layouts: Dict[str, List[Dict[str, Any]]] = {}
         for rec in all_records:
