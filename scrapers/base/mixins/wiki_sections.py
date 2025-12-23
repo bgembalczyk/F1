@@ -25,7 +25,7 @@ class WikipediaSectionByIdMixin:
             fragment = fragment.lstrip("#").strip() or None
         return base_url, fragment
 
-    def fetch_url(self, url: str) -> List[Dict[str, Any]]:
+    def fetch_by_url(self, url: str) -> List[Dict[str, Any]]:
         """
         Zwraca listę z pojedynczym dict (lub pustą listę) z kluczami:
         - url     – oryginalny URL (z ewentualnym fragmentem),

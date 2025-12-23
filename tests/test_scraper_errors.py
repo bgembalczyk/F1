@@ -159,7 +159,7 @@ def test_single_circuit_scraper_wraps_network_errors():
     )
 
     with pytest.raises(ScraperNetworkError):
-        scraper.fetch_url("https://example.com/wiki/Test")
+        scraper.fetch_by_url("https://example.com/wiki/Test")
 
 
 def test_single_circuit_scraper_soft_skips_not_found():
@@ -167,7 +167,7 @@ def test_single_circuit_scraper_soft_skips_not_found():
         options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
     )
 
-    assert scraper.fetch_url("https://example.com/wiki/Test") == []
+    assert scraper.fetch_by_url("https://example.com/wiki/Test") == []
 
 
 def test_infobox_scraper_soft_skips_not_found():
