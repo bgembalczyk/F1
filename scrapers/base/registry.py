@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import importlib
+import pkgutil
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Dict, Optional, Type
@@ -44,18 +46,16 @@ def register_scraper(
 
 
 def load_default_scrapers() -> None:
-    from scrapers.circuits import complete_scraper  # noqa: F401
-    from scrapers.circuits import circuits_list  # noqa: F401
-    from scrapers.constructors import (  # noqa: F401
-        constructors_2025_list,
-        former_constructors_list,
-        indianapolis_only_constructors_list,
-        privateer_teams_list,
-    )
-    from scrapers.drivers import drivers_list  # noqa: F401
-    from scrapers.engines import (  # noqa: F401
-        engine_manufacturers_list,
-        indianapolis_only_engine_manufacturers_list,
-    )
-    from scrapers.grands_prix import grands_prix_list  # noqa: F401
-    from scrapers.seasons import seasons_list  # noqa: F401
+    import scrapers
+
+    for module_info in pkgutil.walk_packages(scrapers.__path__, prefix="scrapers."):
+        if module_info.ispkg:
+            continue
+
+        if module_info.name.startswith("scrapers.base."):
+            continue
+
+        if module_info.name == "scrapers.config":
+            continue
+
+        importlib.import_module(module_info.name)
