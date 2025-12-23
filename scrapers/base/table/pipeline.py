@@ -61,14 +61,11 @@ class TablePipeline:
 
         records: list[dict[str, Any]] = []
         for row in parser.parse(soup):
-            record = self.parse_table_row(row)
+            record = self.parse_cells(row.headers, row.cells)
             if record:
                 records.append(record)
 
         return records
-
-    def parse_table_row(self, row: TableRow) -> dict[str, Any]:
-        return self.parse_cells(row.headers, row.cells)
 
     def parse_row(self, row: Mapping[str, Tag]) -> dict[str, Any]:
         record: dict[str, Any] = {}
