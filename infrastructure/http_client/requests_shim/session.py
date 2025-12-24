@@ -1,44 +1,11 @@
-"""Minimalna implementacja biblioteki `requests` oparta na urllib."""
+import urllib.request, urllib.error
+from typing import Dict
+from typing import Optional
 
-import ssl
-import urllib.error
-import urllib.request
-from typing import Dict, Optional
-
-import certifi
-
-
-_SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
-
-
-class RequestException(Exception):
-    pass
-
-
-class HTTPError(RequestException):
-    def __init__(self, url: str, status_code: int, message: str, headers=None):
-        super().__init__(message)
-        self.url = url
-        self.status_code = status_code
-        self.headers = headers or {}
-        # kompatybilność z requests.Response
-        self.response = self
-
-
-class Timeout(RequestException):
-    pass
-
-
-class Response:
-    def __init__(self, url: str, body: bytes, status_code: int, headers=None):
-        self.url = url
-        self.status_code = status_code
-        self.headers = headers or {}
-        self.text = body.decode("utf-8", errors="replace")
-
-    def raise_for_status(self) -> None:
-        if 400 <= self.status_code:
-            raise HTTPError(self.url, self.status_code, self.text, self.headers)
+from infrastructure.http_client.requests_shim.request_exception import RequestException
+from infrastructure.http_client.requests_shim.response import Response
+from infrastructure.http_client.requests_shim.ssl_context import SSL_CONTEXT
+from infrastructure.http_client.requests_shim.timeout import Timeout
 
 
 class Session:
@@ -61,7 +28,7 @@ class Session:
             with urllib.request.urlopen(
                 request,
                 timeout=timeout,
-                context=_SSL_CONTEXT,
+                context=SSL_CONTEXT,
             ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or 0

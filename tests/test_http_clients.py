@@ -8,7 +8,7 @@ import pytest
 from infrastructure.http_client.caching import WikipediaCachePolicy, FileCache
 from infrastructure.http_client.clients import UrllibHttpClient, HttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.retry import DefaultRetryPolicy
+from infrastructure.http_client.default_retry import DefaultRetryPolicy
 from scrapers.base.options import ScraperOptions
 from scrapers.base.options import HttpPolicy
 

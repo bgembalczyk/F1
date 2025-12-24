@@ -1,15 +1,10 @@
-from typing import Any, Dict, Mapping, Optional, Protocol, runtime_checkable
+from typing import Any
+from typing import Dict
+from typing import Optional
+from typing import Protocol
+from typing import runtime_checkable
 
-
-@runtime_checkable
-class HttpResponseProtocol(Protocol):
-    """Kontrakt minimalnej odpowiedzi HTTP wykorzystywanej przez klientów."""
-
-    status_code: int
-    headers: Mapping[str, str]
-    text: str
-
-    def raise_for_status(self) -> None: ...
+from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
 
 
 @runtime_checkable

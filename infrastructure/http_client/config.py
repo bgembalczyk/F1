@@ -4,7 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Optional
 
-from infrastructure.http_client.policies import RetryPolicy, RateLimiter, ResponseCache
+from infrastructure.http_client.policies.rate_limiter import RateLimiter
+from infrastructure.http_client.policies.response_cache import ResponseCache
+from infrastructure.http_client.policies.retry import RetryPolicy
 
 
 @dataclass

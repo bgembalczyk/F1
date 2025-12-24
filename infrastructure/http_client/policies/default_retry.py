@@ -3,7 +3,7 @@
 import random
 from typing import Any
 
-from infrastructure.http_client.policies import RetryPolicy
+from infrastructure.http_client.policies.retry import RetryPolicy
 
 
 class DefaultRetryPolicy(RetryPolicy):
