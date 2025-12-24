@@ -1,6 +1,5 @@
 """Funkcje pomocnicze do scalania rekordów okrążeń."""
 
-import re
 from typing import Any
 
 from scrapers.base.helpers.text_normalization import (
@@ -192,7 +191,9 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
         if isinstance(best_date, NormalizedDate):
             iso_cur = best_date.iso or ""
         else:
-            iso_cur = (best_date.get("iso") if isinstance(best_date, dict) else "") or ""
+            iso_cur = (
+                best_date.get("iso") if isinstance(best_date, dict) else ""
+            ) or ""
 
         if isinstance(d, NormalizedDate):
             iso_new = d.iso or ""

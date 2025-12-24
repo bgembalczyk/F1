@@ -1,4 +1,3 @@
-import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser

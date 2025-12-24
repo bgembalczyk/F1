@@ -124,7 +124,9 @@ def test_validated_model_calls_validate():
 
 
 def test_scraper_config_validates_on_init():
-    with pytest.raises(ValueError, match="ScraperConfig.url must be a non-empty string."):
+    with pytest.raises(
+        ValueError, match="ScraperConfig.url must be a non-empty string."
+    ):
         ScraperConfig(url="")
 
 

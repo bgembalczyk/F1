@@ -39,7 +39,7 @@ class NormalizedTime:
         object.__setattr__(self, "seconds", _normalize_seconds(self.seconds))
 
     @classmethod
-    def from_value(cls, value: Any) -> NormalizedTime | None:
+    def from_value(cls, value: Any):
         if value is None:
             return None
         if isinstance(value, NormalizedTime):
@@ -64,7 +64,7 @@ class NormalizedDate:
         object.__setattr__(self, "iso", _normalize_iso(self.iso))
 
     @classmethod
-    def from_value(cls, value: Any) -> NormalizedDate | None:
+    def from_value(cls, value: Any):
         if value is None:
             return None
         if isinstance(value, NormalizedDate):
@@ -119,7 +119,7 @@ class LapRecord:
             self.data["class_"] = self.data.get("class")
 
     @classmethod
-    def from_dict(cls, payload: Mapping[str, Any]) -> LapRecord:
+    def from_dict(cls, payload: Mapping[str, Any]):
         return cls(data=dict(payload))
 
     def to_dict(self) -> dict[str, Any]:

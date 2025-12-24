@@ -10,4 +10,5 @@ class PandasDataFrameFormatter:
     @staticmethod
     def format(result: ScrapeResult) -> Any:
         from scrapers.base.format.formatter_helpers import extract_data
+
         return pd.DataFrame(extract_data(result))

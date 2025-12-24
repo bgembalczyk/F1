@@ -5,7 +5,7 @@ from scrapers.base.options import ScraperOptions, HttpPolicy
 
 def test_scraper_options_uses_default_policy_when_none_provided():
     options = ScraperOptions()
-    
+
     assert options.policy is not None
     assert options.policy.timeout == 10
     assert options.policy.retries == 0
@@ -14,7 +14,7 @@ def test_scraper_options_uses_default_policy_when_none_provided():
 def test_scraper_options_uses_provided_policy():
     policy = HttpPolicy(timeout=5, retries=2)
     options = ScraperOptions(policy=policy)
-    
+
     assert options.policy.timeout == 5
     assert options.policy.retries == 2
 

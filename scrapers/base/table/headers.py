@@ -1,4 +1,3 @@
-
 def normalize_header(header: str) -> str:
     return (
         header.strip()

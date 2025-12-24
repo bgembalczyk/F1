@@ -199,4 +199,3 @@ def merge_tables_into_layouts(
         if target_layout is not None:
             existing = target_layout.setdefault("race_lap_records", [])
             existing.extend(records)
-

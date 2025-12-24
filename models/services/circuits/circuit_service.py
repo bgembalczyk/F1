@@ -102,4 +102,3 @@ class CircuitService:
         )
 
         return out
-

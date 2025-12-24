@@ -4,7 +4,10 @@ from models.records import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
 from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.helpers.text_normalization import clean_infobox_text, split_delimited_text
+from scrapers.base.helpers.text_normalization import (
+    clean_infobox_text,
+    split_delimited_text,
+)
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 

@@ -1,7 +1,6 @@
 from dataclasses import dataclass
-from typing import Dict, Optional, TYPE_CHECKING, cast
+from typing import Optional, TYPE_CHECKING, cast
 
-import requests
 
 from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.interfaces import HttpClientProtocol

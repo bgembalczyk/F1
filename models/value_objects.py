@@ -20,7 +20,7 @@ class Link:
         return not self.text and self.url is None
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None) -> Link:
+    def from_dict(cls, data: Mapping[str, Any] | None):
         payload = data or {}
         return cls(text=payload.get("text") or "", url=payload.get("url"))
 
@@ -41,7 +41,7 @@ class SeasonRef:
                 raise ValueError("Pole seasons zawiera nieprawidłowy URL")
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None) -> SeasonRef | None:
+    def from_dict(cls, data: Mapping[str, Any] | None):
         payload = data or {}
         year = payload.get("year")
         if year is None:
