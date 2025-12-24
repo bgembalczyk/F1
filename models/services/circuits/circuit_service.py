@@ -10,7 +10,8 @@ from models.services.circuits.normalization import (
     extract_circuit_names,
     extract_circuit_url,
     extract_circuit_location,
-    extract_circuit_grade_and_history,
+    extract_fia_grade,
+    extract_history_events,
     extract_infobox_layouts,
     merge_tables_into_layouts,
 )
@@ -65,7 +66,8 @@ class CircuitService:
         out["location"] = extract_circuit_location(raw, normalized)
 
         # fia_grade + history (events)
-        fia_grade, history_events = extract_circuit_grade_and_history(normalized)
+        fia_grade = extract_fia_grade(normalized)
+        history_events = extract_history_events(normalized)
         if fia_grade is not None:
             out["fia_grade"] = fia_grade
         if history_events is not None:

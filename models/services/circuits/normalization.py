@@ -67,21 +67,20 @@ def extract_circuit_location(
     }
 
 
-def extract_circuit_grade_and_history(
-    normalized: dict[str, Any],
-) -> tuple[Any, Any]:
-    """Zwraca (fia_grade, history_events)."""
-    fia_grade = None
-    history_events = None
+def extract_fia_grade(normalized: dict[str, Any]) -> Any:
+    """Zwraca wartość FIA Grade z normalized.specs.fia_grade (lub None)."""
+    if not normalized:
+        return None
+    specs = normalized.get("specs") or {}
+    return specs.get("fia_grade")
 
-    if normalized:
-        specs = normalized.get("specs") or {}
-        fia_grade = specs.get("fia_grade")
 
-        history_norm = normalized.get("history") or {}
-        history_events = history_norm.get("events")
-
-    return fia_grade, history_events
+def extract_history_events(normalized: dict[str, Any]) -> Any:
+    """Zwraca listę zdarzeń z normalized.history.events (lub None)."""
+    if not normalized:
+        return None
+    history_norm = normalized.get("history") or {}
+    return history_norm.get("events")
 
 
 def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
