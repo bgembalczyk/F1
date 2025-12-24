@@ -1,6 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, TYPE_CHECKING, cast
-
+from typing import Optional, cast
 
 from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.interfaces import HttpClientProtocol
@@ -10,9 +9,7 @@ from infrastructure.http_client.policies import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
-
-if TYPE_CHECKING:
-    from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.html_fetcher import HtmlFetcher
 
 
 @dataclass(frozen=True)
