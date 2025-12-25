@@ -48,19 +48,70 @@ def extract_circuit_url(
 def extract_circuit_location(
     raw: dict[str, Any], normalized: dict[str, Any]
 ) -> dict[str, Any]:
-    # TODO: TU JEST BŁĄD!!!
     """
     Buduje location = { places, coordinates }.
-    - places z raw.location.places (lista),
-    - coordinates z infobox.normalized.location.coordinates (dict).
+    - places z raw.location (lista/dict/string) oraz z infobox.normalized.location,
+    - coordinates z infobox.normalized.coordinates (dict).
     """
-    location_raw = raw.get("location") or {}
-    places = location_raw.get("places") or []
+    location_raw = raw.get("location")
+    places: list[dict[str, Any]] = []
+    seen_places: set[str] = set()
+
+    def add_place(text: str | None, url: str | None = None) -> None:
+        if not text:
+            return
+        key = text.strip().lower()
+        if not key or key in seen_places:
+            return
+        seen_places.add(key)
+        entry: dict[str, Any] = {"text": text.strip()}
+        if url:
+            entry["url"] = url
+        places.append(entry)
+
+    if isinstance(location_raw, dict):
+        raw_places = location_raw.get("places")
+        if isinstance(raw_places, list):
+            for place in raw_places:
+                if isinstance(place, dict):
+                    add_place(place.get("text"), place.get("url"))
+                elif isinstance(place, str):
+                    add_place(place)
+        elif "text" in location_raw:
+            add_place(location_raw.get("text"), location_raw.get("url"))
+        elif "name" in location_raw:
+            add_place(location_raw.get("name"))
+    elif isinstance(location_raw, list):
+        for place in location_raw:
+            if isinstance(place, dict):
+                add_place(place.get("text"), place.get("url"))
+            elif isinstance(place, str):
+                add_place(place)
+    elif isinstance(location_raw, str):
+        add_place(location_raw)
 
     coordinates = None
+    loc_norm = None
     if normalized:
+        coordinates = normalized.get("coordinates")
         loc_norm = normalized.get("location") or {}
-        coordinates = loc_norm.get("coordinates")
+        if coordinates is None and isinstance(loc_norm, dict):
+            coordinates = loc_norm.get("coordinates")
+
+    if isinstance(loc_norm, dict):
+        def _loc_sort_key(item: tuple[str, Any]) -> int:
+            match = re.search(r"(\d+)$", item[0])
+            return int(match.group(1)) if match else 0
+
+        for _, comp in sorted(loc_norm.items(), key=_loc_sort_key):
+            if isinstance(comp, dict):
+                link = comp.get("link") or {}
+                add_place(
+                    comp.get("text") or link.get("text"),
+                    link.get("url"),
+                )
+            else:
+                add_place(str(comp))
 
     return {
         "places": places,
