@@ -31,7 +31,7 @@ class WikipediaCachePolicy(ResponseCache):
         ttl_days: int = 30,
     ) -> "WikipediaCachePolicy":
         if cache_dir is None:
-            cache_dir = Path(__file__).resolve().parents[2] / "data" / "wiki_cache"
+            cache_dir = Path(__file__).resolve().parents[3] / "data" / "wiki_cache"
         ttl_seconds = max(0, int(ttl_days)) * 24 * 60 * 60
         return cls(FileCache(cache_dir=cache_dir, ttl_seconds=ttl_seconds))
 
