@@ -2,7 +2,7 @@
 
 from typing import Iterable
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from models.validation.validators import normalize_link_record
 from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 from scrapers.base.helpers.wiki import is_wikipedia_redlink, strip_marks

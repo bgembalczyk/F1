@@ -1,7 +1,7 @@
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
     extract_year,

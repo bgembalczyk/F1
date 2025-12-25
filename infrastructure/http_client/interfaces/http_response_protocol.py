@@ -12,5 +12,3 @@ class HttpResponseProtocol(Protocol):
     text: str
 
     def raise_for_status(self) -> None: ...
-
-

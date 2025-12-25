@@ -1,4 +1,5 @@
-import urllib.request, urllib.error
+import urllib.request
+import urllib.error
 from typing import Dict
 from typing import Optional
 

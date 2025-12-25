@@ -1,11 +1,13 @@
 from dataclasses import dataclass
 from typing import Optional, cast
 
-from infrastructure.http_client.caching import WikipediaCachePolicy
-from infrastructure.http_client.interfaces import HttpClientProtocol
-from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.policies import ResponseCache
+from infrastructure.http_client.interfaces.http_client_protocol import (
+    HttpClientProtocol,
+)
+from infrastructure.http_client.policies.response_cache import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser

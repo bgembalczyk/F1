@@ -3,7 +3,7 @@ from typing import Optional, Set
 
 from bs4 import Tag
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 
 
 @dataclass

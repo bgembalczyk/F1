@@ -1,7 +1,7 @@
 import logging
 from typing import Any, Dict, Iterable, Optional
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from models.value_objects import Link, SeasonRef
 from models.serializers import to_dict_any
 from models.validation.utils import coerce_number, is_valid_url

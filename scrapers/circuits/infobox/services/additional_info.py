@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import (
     clean_infobox_text,
     split_delimited_text,

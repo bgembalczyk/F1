@@ -2,7 +2,7 @@ import logging
 from dataclasses import asdict, is_dataclass
 from typing import Any, Mapping, cast
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 
 Primitive = str | int | float | bool | None
 

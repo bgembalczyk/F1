@@ -1,5 +1,6 @@
-from infrastructure.http_client.interfaces import HttpClientProtocol
-
+from infrastructure.http_client.interfaces.http_client_protocol import (
+    HttpClientProtocol,
+)
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.options import HttpPolicy
 

@@ -1,7 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.infobox.circuits.services.constants import _LOCATION_STOPWORDS
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils

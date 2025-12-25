@@ -4,7 +4,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import Tag
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 
 

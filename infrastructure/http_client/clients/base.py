@@ -7,9 +7,13 @@ from typing import Any, Callable, Dict, Optional, cast
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces.http_response_protocol import (
+    HttpResponseProtocol,
+)
 from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
-from infrastructure.http_client.policies.min_delay_rate_limiter import MinDelayRateLimiter
+from infrastructure.http_client.policies.min_delay_rate_limiter import (
+    MinDelayRateLimiter,
+)
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 from infrastructure.http_client.policies.response_cache import ResponseCache
 from infrastructure.http_client.policies.retry import RetryPolicy

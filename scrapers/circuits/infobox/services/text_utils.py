@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Any, List
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
 from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.time import parse_date_text

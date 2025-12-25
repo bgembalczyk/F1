@@ -3,7 +3,7 @@ from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError

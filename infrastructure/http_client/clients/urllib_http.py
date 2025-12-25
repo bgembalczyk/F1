@@ -3,7 +3,9 @@ from typing import Optional
 
 from infrastructure.http_client.clients.base import BaseHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces.http_response_protocol import (
+    HttpResponseProtocol,
+)
 from infrastructure.http_client.requests_shim.request_exception import RequestException
 from infrastructure.http_client.requests_shim.session import Session
 

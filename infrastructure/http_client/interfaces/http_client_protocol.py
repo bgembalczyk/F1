@@ -4,7 +4,9 @@ from typing import Optional
 from typing import Protocol
 from typing import runtime_checkable
 
-from infrastructure.http_client.interfaces.http_response_protocol import HttpResponseProtocol
+from infrastructure.http_client.interfaces.http_response_protocol import (
+    HttpResponseProtocol,
+)
 
 
 @runtime_checkable

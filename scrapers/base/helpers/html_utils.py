@@ -4,7 +4,7 @@ from typing import Any, Callable, Iterable
 
 from bs4 import BeautifulSoup, Tag
 
-from models.records import LinkRecord
+from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
 
