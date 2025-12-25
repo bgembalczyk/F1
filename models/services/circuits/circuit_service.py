@@ -63,7 +63,9 @@ class CircuitService:
                 out[key] = raw[key]
 
         # location
-        out["location"] = extract_circuit_location(raw, normalized)
+        # TODO: TU JEST BŁĄD!!!
+        out["location"] = extract_circuit_location(raw, normalized)  # TODO: TU JEST BŁĄD!!!
+        # TODO: TU JEST BŁĄD!!!
 
         # fia_grade + history (events)
         fia_grade = extract_fia_grade(normalized)

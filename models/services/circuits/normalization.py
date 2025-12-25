@@ -48,6 +48,7 @@ def extract_circuit_url(
 def extract_circuit_location(
     raw: dict[str, Any], normalized: dict[str, Any]
 ) -> dict[str, Any]:
+    # TODO: TU JEST BŁĄD!!!
     """
     Buduje location = { places, coordinates }.
     - places z raw.location.places (lista),
