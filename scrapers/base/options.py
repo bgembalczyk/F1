@@ -7,24 +7,12 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
+from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import ResponseCache
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
 from scrapers.base.html_fetcher import HtmlFetcher
-
-
-@dataclass(frozen=True)
-class HttpPolicy:
-    cache: ResponseCache | None = None
-    retries: int = 0
-    timeout: int = 10
-
-    def __post_init__(self) -> None:
-        if self.timeout <= 0:
-            raise ValueError("timeout must be greater than 0")
-        if self.retries < 0:
-            raise ValueError("retries must be >= 0")
 
 
 def default_http_policy() -> "HttpPolicy":

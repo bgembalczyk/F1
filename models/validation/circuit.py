@@ -10,7 +10,8 @@ from models.validation.validators import (
     normalize_link_list,
     normalize_season_list,
 )
-from models.value_objects import Link, SeasonRef
+from models.value_objects.link import Link
+from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
