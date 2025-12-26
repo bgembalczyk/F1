@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.base.helpers.time import normalize_time_value, normalize_date_value
+from scrapers.base.helpers.time import normalize_date_value
 from scrapers.base.helpers.prune import prune_empty
 
 from models.services.circuits.normalization import (
@@ -14,6 +14,10 @@ from models.services.circuits.normalization import (
     extract_history_events,
     extract_infobox_layouts,
     merge_tables_into_layouts,
+)
+from models.services.circuits.lap_record_merging import (
+    merge_race_lap_records,
+    normalize_lap_record,
 )
 
 
@@ -91,8 +95,10 @@ class CircuitService:
         for lay in out.get("layouts", []):
             records = lay.get("race_lap_records", []) or []
             for rec in records:
-                normalize_time_value(rec)
+                normalize_lap_record(rec)
                 normalize_date_value(rec)
+            if records:
+                lay["race_lap_records"] = merge_race_lap_records(records)
 
         # Clean url=None w całym wyjściu
         out = prune_empty(
