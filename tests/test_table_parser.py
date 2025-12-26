@@ -72,3 +72,73 @@ def test_html_table_parser_uses_fragment_when_section_id_missing() -> None:
 
     assert rows[0].headers == ["Name"]
     assert [cell.get_text(strip=True) for cell in rows[0].cells] == ["First"]
+
+
+def test_html_table_parser_skips_source_footer_row() -> None:
+    html = """
+    <html>
+      <body>
+        <table class="wikitable">
+          <tr>
+            <th>Year</th>
+            <th>Driver</th>
+          </tr>
+          <tr>
+            <td>1953</td>
+            <td>Alberto Ascari</td>
+          </tr>
+          <tr>
+            <th colspan="2">Source: Example</th>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+
+    soup = BeautifulSoup(html, "html.parser")
+    parser = HtmlTableParser(expected_headers=["Year", "Driver"])
+
+    rows = parser.parse(soup)
+
+    assert len(rows) == 1
+    assert [cell.get_text(strip=True) for cell in rows[0].cells] == [
+        "1953",
+        "Alberto Ascari",
+    ]
+
+
+def test_html_table_parser_expands_rowspans() -> None:
+    html = """
+    <html>
+      <body>
+        <table class="wikitable">
+          <tr>
+            <th>Year</th>
+            <th>Location</th>
+            <th>Report</th>
+          </tr>
+          <tr>
+            <td>1953</td>
+            <td rowspan="2">Buenos Aires</td>
+            <td>Report 1953</td>
+          </tr>
+          <tr>
+            <td>1954</td>
+            <td>Report 1954</td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+
+    soup = BeautifulSoup(html, "html.parser")
+    parser = HtmlTableParser(expected_headers=["Year", "Location", "Report"])
+
+    rows = parser.parse(soup)
+
+    assert len(rows) == 2
+    assert [cell.get_text(strip=True) for cell in rows[1].cells] == [
+        "1954",
+        "Buenos Aires",
+        "Report 1954",
+    ]
