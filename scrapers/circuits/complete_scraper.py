@@ -8,7 +8,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
-from scrapers.circuits.circuits_list import CircuitsListScraper
+from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 

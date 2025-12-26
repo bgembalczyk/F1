@@ -13,7 +13,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
-from scrapers.circuits.circuits_list import CircuitsListScraper
+from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
