@@ -113,7 +113,7 @@ def is_language_link(text: str | None, url: str | None) -> bool:
     if not txt or not url_l:
         return False
 
-    if txt not in _LANG_CODES and len(txt) not in (2, 3):
+    if txt not in _LANG_CODES:
         return False
 
     if f"://{txt}.wikipedia.org/" in url_l:
