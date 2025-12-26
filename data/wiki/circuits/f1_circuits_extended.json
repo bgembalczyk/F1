@@ -78,7 +78,8 @@
           "url": "https://en.wikipedia.org/wiki/South_Australia"
         },
         {
-          "text": "Australia"
+          "text": "Australia",
+          "url": "https://en.wikipedia.org/wiki/Australia"
         }
       ],
       "coordinates": {
@@ -952,7 +953,8 @@
           "url": "https://en.wikipedia.org/wiki/England"
         },
         {
-          "text": "United Kingdom"
+          "text": "United Kingdom",
+          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
         }
       ],
       "coordinates": {
@@ -1171,7 +1173,8 @@
           "url": "https://en.wikipedia.org/wiki/Victoria_(Australia)"
         },
         {
-          "text": "Australia"
+          "text": "Australia",
+          "url": "https://en.wikipedia.org/wiki/Australia"
         }
       ],
       "coordinates": {
@@ -17487,7 +17490,8 @@
           "text": "England"
         },
         {
-          "text": "United Kingdom"
+          "text": "United Kingdom",
+          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
         }
       ],
       "coordinates": {
@@ -19801,7 +19805,8 @@
           "url": "https://en.wikipedia.org/wiki/Uttar_Pradesh"
         },
         {
-          "text": "India"
+          "text": "India",
+          "url": "https://en.wikipedia.org/wiki/India"
         }
       ],
       "coordinates": {
@@ -21293,7 +21298,8 @@
           "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ]
     }
@@ -30618,7 +30624,8 @@
           "url": "https://en.wikipedia.org/wiki/C%C3%B4te-d%27Or"
         },
         {
-          "text": "France"
+          "text": "France",
+          "url": "https://en.wikipedia.org/wiki/France"
         }
       ],
       "coordinates": {
@@ -31704,7 +31711,8 @@
           "url": "https://en.wikipedia.org/wiki/Quebec"
         },
         {
-          "text": "Canada"
+          "text": "Canada",
+          "url": "https://en.wikipedia.org/wiki/Canada"
         }
       ],
       "coordinates": {
@@ -41553,13 +41561,15 @@
     "location": {
       "places": [
         {
-          "text": "Dallas"
+          "text": "Dallas",
+          "url": "https://en.wikipedia.org/wiki/Dallas_(Texas)"
         },
         {
           "text": "Fair Park"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ]
     },
@@ -41716,7 +41726,8 @@
           "text": "USA"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -42062,7 +42073,8 @@
           "text": "England"
         },
         {
-          "text": "United Kingdom"
+          "text": "United Kingdom",
+          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
         }
       ],
       "coordinates": {
@@ -48776,7 +48788,8 @@
           "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -51436,7 +51449,8 @@
           "url": "https://en.wikipedia.org/wiki/Long_Beach,_California"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ]
     }
@@ -52312,7 +52326,8 @@
           "url": "https://en.wikipedia.org/wiki/Marina_Bay,_Singapore"
         },
         {
-          "text": "Singapore"
+          "text": "Singapore",
+          "url": "https://en.wikipedia.org/wiki/Singapore"
         }
       ],
       "coordinates": {
@@ -52909,7 +52924,8 @@
           "text": "U.S."
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -59921,7 +59937,8 @@
           "text": "92388"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -61975,7 +61992,8 @@
           "text": "U.S."
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -63656,7 +63674,7 @@
       "places": [
         {
           "text": "Sepang",
-          "url": "https://en.wikipedia.org/wiki/Sepang"
+          "url": "https://en.wikipedia.org/wiki/Sepang_District"
         },
         {
           "text": "Selangor",
@@ -72888,7 +72906,8 @@
           "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
         },
         {
-          "text": "United States"
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
       "coordinates": {
@@ -75006,11 +75025,11 @@
           "url": "https://en.wikipedia.org/wiki/Yas_Island"
         },
         {
-          "text": "UAE",
-          "url": "https://en.wikipedia.org/wiki/UAE"
+          "text": "UAE"
         },
         {
-          "text": "United Arab Emirates"
+          "text": "United Arab Emirates",
+          "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
         }
       ],
       "coordinates": {

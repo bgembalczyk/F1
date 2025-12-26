@@ -52,6 +52,7 @@ def extract_circuit_location(
     Buduje location = { places, coordinates }.
     - places z raw.location (lista/dict/string) oraz z infobox.normalized.location,
     - coordinates z infobox.normalized.coordinates (dict).
+    - dodaje również raw.country do places (jeśli jeszcze go tam nie ma).
     """
     location_raw = raw.get("location")
     places: list[dict[str, Any]] = []
@@ -112,6 +113,14 @@ def extract_circuit_location(
                 )
             else:
                 add_place(str(comp))
+
+    # Dodaj country z raw, jeśli jeszcze go nie ma
+    country = raw.get("country")
+    if country:
+        if isinstance(country, dict):
+            add_place(country.get("text"), country.get("url"))
+        elif isinstance(country, str):
+            add_place(country)
 
     return {
         "places": places,
