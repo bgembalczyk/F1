@@ -10,8 +10,8 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.circuit_location import LocationColumn
 from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
+from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
@@ -60,7 +60,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
                 "Location": "location",
             },
             columns={
-                "year": IntColumn(),
+                "year": UrlColumn(),
                 "driver": DriverColumn(),
                 "constructor": MultiColumn(
                     {
