@@ -150,7 +150,7 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
         return []
 
     normalized = infobox.get("normalized") or {}
-    layouts = normalized.get("layouts") or []
+    layouts = infobox.get("layouts") or []
 
     result: list[dict[str, Any]] = []
     for lay in layouts:
