@@ -54,6 +54,7 @@ class HtmlTableParser:
         ]
 
         records: list[TableRow] = []
+        pending_rowspans: dict[int, dict[str, object]] = {}
         for tr in table.find_all("tr")[1:]:
             cells = tr.find_all(["td", "th"])
 
@@ -69,12 +70,20 @@ class HtmlTableParser:
                 )
                 for c in cells
             ]
+            if self._is_footer_row(cells, cleaned_cells, headers):
+                logger.debug("Pomijam wiersz stopki w tabeli.")
+                continue
             if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
             if cells:
-                records.append(TableRow(headers=headers, cells=cells, raw_tr=tr))
+                expanded_cells = self._expand_row_cells(
+                    cells,
+                    headers,
+                    pending_rowspans,
+                )
+                records.append(TableRow(headers=headers, cells=expanded_cells, raw_tr=tr))
 
         return records
 
@@ -117,3 +126,80 @@ class HtmlTableParser:
             return None
         normalized = fragment.lstrip("#").strip()
         return normalized or None
+
+    @staticmethod
+    def _is_footer_row(
+        cells: Sequence[Tag],
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
+    ) -> bool:
+        if not cleaned_cells:
+            return False
+        if len(cleaned_cells) != 1:
+            return False
+        if not cleaned_cells[0].lower().startswith("source"):
+            return False
+        colspan = cells[0].get("colspan")
+        if colspan is None:
+            return True
+        try:
+            return int(colspan) >= len(headers)
+        except ValueError:
+            return True
+
+    @staticmethod
+    def _expand_row_cells(
+        cells: Sequence[Tag],
+        headers: Sequence[str],
+        pending_rowspans: dict[int, dict[str, object]],
+    ) -> list[Tag]:
+        expanded: list[Tag] = []
+        col_index = 0
+
+        def consume_pending() -> None:
+            nonlocal col_index
+            while col_index < len(headers) and col_index in pending_rowspans:
+                pending = pending_rowspans[col_index]
+                cell = pending["cell"]
+                remaining = int(pending["remaining"])
+                expanded.append(cell)
+                remaining -= 1
+                if remaining <= 0:
+                    pending_rowspans.pop(col_index, None)
+                else:
+                    pending_rowspans[col_index] = {
+                        "cell": cell,
+                        "remaining": remaining,
+                    }
+                col_index += 1
+
+        for cell in cells:
+            consume_pending()
+            if col_index >= len(headers):
+                break
+
+            colspan = cell.get("colspan")
+            rowspan = cell.get("rowspan")
+            try:
+                colspan_value = int(colspan) if colspan else 1
+            except ValueError:
+                colspan_value = 1
+            try:
+                rowspan_value = int(rowspan) if rowspan else 1
+            except ValueError:
+                rowspan_value = 1
+
+            for offset in range(colspan_value):
+                if col_index >= len(headers):
+                    break
+                expanded.append(cell)
+                if rowspan_value > 1:
+                    pending_rowspans[col_index] = {
+                        "cell": cell,
+                        "remaining": rowspan_value - 1,
+                    }
+                col_index += 1
+
+        consume_pending()
+
+        return expanded
