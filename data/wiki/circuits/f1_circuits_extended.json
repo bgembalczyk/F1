@@ -120,11 +120,11 @@
               "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
             },
             "time": 76.0357,
-            "date": "2023-11-24",
             "series": {
               "text": "S5000",
               "url": "https://en.wikipedia.org/wiki/S5000_Australian_Drivers%27_Championship"
-            }
+            },
+            "date": "2023-11-24"
           },
           {
             "driver": {
@@ -367,7 +367,9 @@
             "driver": {
               "text": "Kody Garland"
             },
-            "vehicle": "Mustang-Yamaha",
+            "vehicle": {
+              "text": "Mustang-Yamaha"
+            },
             "time": 90.3504,
             "date": "2025-11-28",
             "series": {
@@ -563,11 +565,11 @@
               "url": "https://en.wikipedia.org/wiki/Williams_FW15C"
             },
             "time": 75.381,
-            "date": "1993-11-07",
             "series": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
-            }
+            },
+            "date": "1993-11-07"
           },
           {
             "driver": {
@@ -622,7 +624,9 @@
               "text": "John Bowe",
               "url": "https://en.wikipedia.org/wiki/John_Bowe_(racing_driver)"
             },
-            "vehicle": "Ralt RT4 Cosworth",
+            "vehicle": {
+              "text": "Ralt RT4 Cosworth"
+            },
             "time": 93.2,
             "date": "1986-10-25",
             "series": {
@@ -651,7 +655,9 @@
               "text": "David Brabham",
               "url": "https://en.wikipedia.org/wiki/David_Brabham"
             },
-            "vehicle": "Ralt RT30 Volkswagen",
+            "vehicle": {
+              "text": "Ralt RT30 Volkswagen"
+            },
             "time": 95.9,
             "date": "1987-11-15",
             "series": {
@@ -710,7 +716,9 @@
             "driver": {
               "text": "Stefan Rindeström"
             },
-            "vehicle": "250cc Superkart",
+            "vehicle": {
+              "text": "250cc Superkart"
+            },
             "time": 97.99,
             "date": "1989-11-04",
             "series": {
@@ -1221,11 +1229,11 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_SF-24"
             },
             "time": 79.813,
-            "date": "2024-03-24",
             "series": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
-            }
+            },
+            "date": "2024-03-24"
           },
           {
             "driver": {
@@ -1331,11 +1339,11 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_F2004"
             },
             "time": 84.125,
-            "date": "2004-03-07",
             "series": {
               "text": "Formula One",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
-            }
+            },
+            "date": "2004-03-07"
           },
           {
             "driver": {
@@ -1560,7 +1568,9 @@
             "driver": {
               "text": "James Small"
             },
-            "vehicle": "Holden Commodore-Yamaha",
+            "vehicle": {
+              "text": "Holden Commodore-Yamaha"
+            },
             "time": 136.0196,
             "date": "2008-03-15",
             "series": {
@@ -1633,11 +1643,11 @@
               "url": "https://en.wikipedia.org/wiki/Cooper_T45"
             },
             "time": 110.0,
-            "date": "1958-11-30",
             "series": {
               "text": "Formula Libre",
               "url": "https://en.wikipedia.org/wiki/Formula_Libre"
-            }
+            },
+            "date": "1958-11-30"
           },
           {
             "driver": {
@@ -1740,12 +1750,11 @@
             }
           },
           {
-            "category": {
-              "text": "F1",
-              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            "event": {
+              "text": "2020 Portuguese Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
             },
-            "time": 78.75,
-            "driver_rider": {
+            "driver": {
               "text": "Lewis Hamilton",
               "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
             },
@@ -1754,17 +1763,10 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_F1_W11_EQ_Performance"
             },
             "event": {
-              "text": "2020 Portuguese Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            }
-          },
-          {
-            "category": {
-              "text": "LMP2",
-              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+              "text": "2020 4 Hours of Portimão",
+              "url": "https://en.wikipedia.org/wiki/2020_4_Hours_of_Portim%C3%A3o"
             },
-            "time": 89.67,
-            "driver_rider": {
+            "driver": {
               "text": "Mikkel Jensen",
               "url": "https://en.wikipedia.org/wiki/Mikkel_Jensen_(racing_driver)"
             },
@@ -1772,18 +1774,19 @@
               "text": "Aurus 01",
               "url": "https://en.wikipedia.org/wiki/Oreca_07#Aurus_01"
             },
-            "event": {
-              "text": "2020 4 Hours of Portimão",
-              "url": "https://en.wikipedia.org/wiki/2020_4_Hours_of_Portim%C3%A3o"
+            "time": 89.67,
+            "year": "2020",
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
             }
           },
           {
-            "category": {
-              "text": "LMP1",
-              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            "event": {
+              "text": "2021 8 Hours of Portimão",
+              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
             },
-            "time": 90.919,
-            "driver_rider": {
+            "driver": {
               "text": "Nicolas Lapierre",
               "url": "https://en.wikipedia.org/wiki/Nicolas_Lapierre"
             },
@@ -1791,18 +1794,19 @@
               "text": "Alpine A480",
               "url": "https://en.wikipedia.org/wiki/Rebellion_R13#Alpine_A480"
             },
-            "event": {
-              "text": "2021 8 Hours of Portimão",
-              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
+            "time": 90.919,
+            "year": "2021",
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
             }
           },
           {
-            "category": {
-              "text": "LMH",
-              "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            "event": {
+              "text": "2021 8 Hours of Portimão",
+              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
             },
-            "time": 91.006,
-            "driver_rider": {
+            "driver": {
               "text": "Kazuki Nakajima",
               "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
             },
@@ -1811,17 +1815,10 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_GR010_Hybrid"
             },
             "event": {
-              "text": "2021 8 Hours of Portimão",
-              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
-            }
-          },
-          {
-            "category": {
-              "text": "A1GP",
-              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
+              "text": "2008-09 A1 Grand Prix of Nations, Portugal",
+              "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_of_Nations,_Portugal"
             },
-            "time": 91.404,
-            "driver_rider": {
+            "driver": {
               "text": "Adam Carroll",
               "url": "https://en.wikipedia.org/wiki/Adam_Carroll_(racing_driver)"
             },
@@ -1829,18 +1826,19 @@
               "text": "A1GP Powered by Ferrari car",
               "url": "https://en.wikipedia.org/wiki/A1GP_Powered_by_Ferrari_car"
             },
-            "event": {
-              "text": "2008–09 A1 Grand Prix of Nations, Portugal",
-              "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_of_Nations,_Portugal"
+            "time": 91.404,
+            "year": "2008",
+            "series": {
+              "text": "A1GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
             }
           },
           {
-            "category": {
-              "text": "Superleague Formula",
-              "url": "https://en.wikipedia.org/wiki/Superleague_Formula"
+            "event": {
+              "text": "2010 Portimão Superleague Formula round",
+              "url": "https://en.wikipedia.org/wiki/2010_Portim%C3%A3o_Superleague_Formula_round"
             },
-            "time": 91.935,
-            "driver_rider": {
+            "driver": {
               "text": "Andy Soucek",
               "url": "https://en.wikipedia.org/wiki/Andy_Soucek"
             },
@@ -1848,18 +1846,19 @@
               "text": "Panoz DP09",
               "url": "https://en.wikipedia.org/wiki/Panoz_DP09"
             },
-            "event": {
-              "text": "2010 Portimão Superleague Formula round",
-              "url": "https://en.wikipedia.org/wiki/2010_Portim%C3%A3o_Superleague_Formula_round"
+            "time": 91.935,
+            "year": "2010",
+            "series": {
+              "text": "Superleague Formula",
+              "url": "https://en.wikipedia.org/wiki/Superleague_Formula"
             }
           },
           {
-            "category": {
-              "text": "LMDh",
-              "url": "https://en.wikipedia.org/wiki/LMDh"
+            "event": {
+              "text": "2023 6 Hours of Portimão",
+              "url": "https://en.wikipedia.org/wiki/2023_6_Hours_of_Portim%C3%A3o"
             },
-            "time": 93.077,
-            "driver_rider": {
+            "driver": {
               "text": "Earl Bamber",
               "url": "https://en.wikipedia.org/wiki/Earl_Bamber"
             },
@@ -1867,18 +1866,19 @@
               "text": "Cadillac V-Series.R",
               "url": "https://en.wikipedia.org/wiki/Cadillac_V-Series.R"
             },
-            "event": {
-              "text": "2023 6 Hours of Portimão",
-              "url": "https://en.wikipedia.org/wiki/2023_6_Hours_of_Portim%C3%A3o"
+            "time": 93.077,
+            "year": "2023",
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
             }
           },
           {
-            "category": {
-              "text": "Formula 3000",
-              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            "event": {
+              "text": "2009 Portimão Euroseries 3000 round",
+              "url": "https://en.wikipedia.org/wiki/2009_Euroseries_3000"
             },
-            "time": 93.594,
-            "driver_rider": {
+            "driver": {
               "text": "Clivio Piccione",
               "url": "https://en.wikipedia.org/wiki/Clivio_Piccione"
             },
@@ -1886,18 +1886,19 @@
               "text": "Lola B05/52",
               "url": "https://en.wikipedia.org/wiki/Lola_B05/52"
             },
-            "event": {
-              "text": "2009 Portimão Euroseries 3000 round",
-              "url": "https://en.wikipedia.org/wiki/2009_Euroseries_3000"
+            "time": 93.594,
+            "year": "2009",
+            "series": {
+              "text": "Formula 3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
             }
           },
           {
-            "category": {
-              "text": "FA1",
-              "url": "https://en.wikipedia.org/wiki/Formula_Acceleration_1"
+            "event": {
+              "text": "2014 Portimão Formula Acceleration 1 round",
+              "url": "https://en.wikipedia.org/wiki/2014_Formula_Acceleration_1_season"
             },
-            "time": 93.808,
-            "driver_rider": {
+            "driver": {
               "text": "Mirko Bortolotti",
               "url": "https://en.wikipedia.org/wiki/Mirko_Bortolotti"
             },
@@ -1906,17 +1907,10 @@
               "url": "https://en.wikipedia.org/wiki/Lola_B05/52"
             },
             "event": {
-              "text": "2014 Portimão Formula Acceleration 1 round",
-              "url": "https://en.wikipedia.org/wiki/2014_Formula_Acceleration_1_season"
-            }
-          },
-          {
-            "category": {
-              "text": "Formula Renault 3.5",
-              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
+              "text": "2009 Portimão Formula Renault 3.5 Series round",
+              "url": "https://en.wikipedia.org/wiki/2009_Formula_Renault_3.5_Series"
             },
-            "time": 94.472,
-            "driver_rider": {
+            "driver": {
               "text": "Jaime Alguersuari",
               "url": "https://en.wikipedia.org/wiki/Jaime_Alguersuari"
             },
@@ -1924,18 +1918,19 @@
               "text": "Dallara T08",
               "url": "https://en.wikipedia.org/wiki/Dallara_T08"
             },
-            "event": {
-              "text": "2009 Portimão Formula Renault 3.5 Series round",
-              "url": "https://en.wikipedia.org/wiki/2009_Formula_Renault_3.5_Series"
+            "time": 94.472,
+            "year": "2009",
+            "series": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
             }
           },
           {
-            "category": {
-              "text": "F2 (2009–2012)",
-              "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)"
+            "event": {
+              "text": "2012 Portimão Formula Two round",
+              "url": "https://en.wikipedia.org/wiki/2012_FIA_Formula_Two_Championship"
             },
-            "time": 95.531,
-            "driver_rider": {
+            "driver": {
               "text": "Mathéo Tuscher",
               "url": "https://en.wikipedia.org/wiki/Math%C3%A9o_Tuscher"
             },
@@ -1943,18 +1938,19 @@
               "text": "Williams JPH1",
               "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)#The_car"
             },
-            "event": {
-              "text": "2012 Portimão Formula Two round",
-              "url": "https://en.wikipedia.org/wiki/2012_FIA_Formula_Two_Championship"
+            "time": 95.531,
+            "year": "2012",
+            "series": {
+              "text": "F2 (2009-2012)",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)"
             }
           },
           {
-            "category": {
-              "text": "Euroformula Open",
-              "url": "https://en.wikipedia.org/wiki/Euroformula_Open_Championship"
+            "event": {
+              "text": "2021 Portimão Euroformula Open round",
+              "url": "https://en.wikipedia.org/wiki/2021_Euroformula_Open_Championship"
             },
-            "time": 96.493,
-            "driver_rider": {
+            "driver": {
               "text": "Louis Foster",
               "url": "https://en.wikipedia.org/wiki/Louis_Foster"
             },
@@ -1962,18 +1958,19 @@
               "text": "Dallara 320",
               "url": "https://en.wikipedia.org/wiki/Dallara_320"
             },
-            "event": {
-              "text": "2021 Portimão Euroformula Open round",
-              "url": "https://en.wikipedia.org/wiki/2021_Euroformula_Open_Championship"
+            "time": 96.493,
+            "year": "2021",
+            "series": {
+              "text": "Euroformula Open",
+              "url": "https://en.wikipedia.org/wiki/Euroformula_Open_Championship"
             }
           },
           {
-            "category": {
-              "text": "LMP3",
-              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            "event": {
+              "text": "2020 Portimão Le Mans Cup round",
+              "url": "https://en.wikipedia.org/wiki/2020_Michelin_Le_Mans_Cup"
             },
-            "time": 96.881,
-            "driver_rider": {
+            "driver": {
               "text": "Matt Bell",
               "url": "https://en.wikipedia.org/wiki/Matt_Bell_(British_racing_driver)"
             },
@@ -1981,18 +1978,19 @@
               "text": "Ligier JS P320",
               "url": "https://en.wikipedia.org/wiki/Ligier_JS_P320"
             },
-            "event": {
-              "text": "2020 Portimão Le Mans Cup round",
-              "url": "https://en.wikipedia.org/wiki/2020_Michelin_Le_Mans_Cup"
+            "time": 96.881,
+            "year": "2020",
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
             }
           },
           {
-            "category": {
-              "text": "LM GTE",
-              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            "event": {
+              "text": "2021 8 Hours of Portimão",
+              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
             },
-            "time": 98.757,
-            "driver_rider": {
+            "driver": {
               "text": "Miguel Molina",
               "url": "https://en.wikipedia.org/wiki/Miguel_Molina_(racing_driver)"
             },
@@ -2000,18 +1998,19 @@
               "text": "Ferrari 488 GTE Evo",
               "url": "https://en.wikipedia.org/wiki/Ferrari_488_GTE#Ferrari_488_GTE_Evo"
             },
-            "event": {
-              "text": "2021 8 Hours of Portimão",
-              "url": "https://en.wikipedia.org/wiki/2021_8_Hours_of_Portim%C3%A3o"
+            "time": 98.757,
+            "year": "2021",
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
             }
           },
           {
-            "category": {
-              "text": "Formula Three",
-              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            "event": {
+              "text": "2009 Portimão British F3 round",
+              "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
             },
-            "time": 98.904,
-            "driver_rider": {
+            "driver": {
               "text": "Jules Bianchi",
               "url": "https://en.wikipedia.org/wiki/Jules_Bianchi"
             },
@@ -2019,18 +2018,19 @@
               "text": "Dallara F309",
               "url": "https://en.wikipedia.org/wiki/Dallara_F3_cars#F308"
             },
-            "event": {
-              "text": "2009 Portimão British F3 round",
-              "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
+            "time": 98.904,
+            "year": "2009",
+            "series": {
+              "text": "Formula Three",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
             }
           },
           {
-            "category": {
-              "text": "Formula Regional",
-              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            "event": {
+              "text": "2025 Portimão E3 Spanish Winter Championship round",
+              "url": "https://en.wikipedia.org/wiki/2025_Eurocup-3_season#Winter_series"
             },
-            "time": 99.696,
-            "driver_rider": {
+            "driver": {
               "text": "Valerio Rinicella",
               "url": "https://en.wikipedia.org/wiki/Valerio_Rinicella"
             },
@@ -2038,18 +2038,19 @@
               "text": "Tatuus F3 T-318-EC3",
               "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
             },
-            "event": {
-              "text": "2025 Portimão E3 Spanish Winter Championship round",
-              "url": "https://en.wikipedia.org/wiki/2025_Eurocup-3_season#Winter_series"
+            "time": 99.696,
+            "year": "2025",
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
             }
           },
           {
-            "category": {
-              "text": "LMPC",
-              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMPC"
+            "event": {
+              "text": "2009 Algarve Formula Le Mans Cup round",
+              "url": "https://en.wikipedia.org/wiki/2009_Formula_Le_Mans_Cup"
             },
-            "time": 100.048,
-            "driver_rider": {
+            "driver": {
               "text": "Jérôme d'Ambrosio",
               "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
             },
@@ -2057,18 +2058,19 @@
               "text": "Oreca FLM09",
               "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
             },
-            "event": {
-              "text": "2009 Algarve Formula Le Mans Cup round",
-              "url": "https://en.wikipedia.org/wiki/2009_Formula_Le_Mans_Cup"
+            "time": 100.048,
+            "year": "2009",
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMPC"
             }
           },
           {
-            "category": {
-              "text": "GT3",
-              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            "event": {
+              "text": "2020 Portimão Le Mans Cup round",
+              "url": "https://en.wikipedia.org/wiki/2020_Michelin_Le_Mans_Cup"
             },
-            "time": 100.795,
-            "driver_rider": {
+            "driver": {
               "text": "Julien Andlauer",
               "url": "https://en.wikipedia.org/wiki/Julien_Andlauer"
             },
@@ -2077,17 +2079,10 @@
               "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_R_(2019–2023)"
             },
             "event": {
-              "text": "2020 Portimão Le Mans Cup round",
-              "url": "https://en.wikipedia.org/wiki/2020_Michelin_Le_Mans_Cup"
-            }
-          },
-          {
-            "category": {
-              "text": "GT1 (GTS)",
-              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+              "text": "2009 FIA GT Algarve 2 Hours",
+              "url": "https://en.wikipedia.org/wiki/2009_FIA_GT_Algarve_2_Hours"
             },
-            "time": 101.828,
-            "driver_rider": {
+            "driver": {
               "text": "Alex Müller",
               "url": "https://en.wikipedia.org/wiki/Alex_M%C3%BCller_(racing_driver)"
             },
@@ -2095,18 +2090,19 @@
               "text": "Maserati MC12 GT1",
               "url": "https://en.wikipedia.org/wiki/Maserati_MC12#FIA_GT"
             },
-            "event": {
-              "text": "2009 FIA GT Algarve 2 Hours",
-              "url": "https://en.wikipedia.org/wiki/2009_FIA_GT_Algarve_2_Hours"
+            "time": 101.828,
+            "year": "2009",
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
             }
           },
           {
-            "category": {
-              "text": "Lamborghini Super Trofeo",
-              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
+            "event": {
+              "text": "2022 Lamborghini Super Trofeo World Final",
+              "url": "https://en.wikipedia.org/wiki/2022_Lamborghini_Super_Trofeo_Europe"
             },
-            "time": 102.79,
-            "driver_rider": {
+            "driver": {
               "text": "Loris Spinelli",
               "url": "https://en.wikipedia.org/wiki/Loris_Spinelli"
             },
@@ -2114,18 +2110,19 @@
               "text": "Lamborghini Huracán Super Trofeo Evo2",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_LP_620-2_Super_Trofeo_EVO2_(2022–present)"
             },
-            "event": {
-              "text": "2022 Lamborghini Super Trofeo World Final",
-              "url": "https://en.wikipedia.org/wiki/2022_Lamborghini_Super_Trofeo_Europe"
+            "time": 102.79,
+            "year": "2022",
+            "series": {
+              "text": "Lamborghini Super Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
             }
           },
           {
-            "category": {
-              "text": "Ferrari Challenge",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            "event": {
+              "text": "2024 Portimão Ferrari Challenge Europe round",
+              "url": "https://en.wikipedia.org/wiki/2024_Ferrari_Challenge_Europe"
             },
-            "time": 102.997,
-            "driver_rider": {
+            "driver": {
               "text": "Luca Ludwig",
               "url": "https://en.wikipedia.org/wiki/Luca_Ludwig"
             },
@@ -2133,18 +2130,19 @@
               "text": "Ferrari 296 Challenge",
               "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
             },
-            "event": {
-              "text": "2024 Portimão Ferrari Challenge Europe round",
-              "url": "https://en.wikipedia.org/wiki/2024_Ferrari_Challenge_Europe"
+            "time": 102.997,
+            "year": "2024",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
             }
           },
           {
-            "category": {
-              "text": "SRO GT2",
-              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
+            "event": {
+              "text": "2023 Portimão GT2 European Series round",
+              "url": "https://en.wikipedia.org/wiki/2023_GT2_European_Series"
             },
-            "time": 103.875,
-            "driver_rider": {
+            "driver": {
               "text": "Pierre Kaffer",
               "url": "https://en.wikipedia.org/wiki/Pierre_Kaffer"
             },
@@ -2152,36 +2150,37 @@
               "text": "Audi R8 LMS GT2",
               "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_4S)#R8_LMS_(GT2)"
             },
-            "event": {
-              "text": "2023 Portimão GT2 European Series round",
-              "url": "https://en.wikipedia.org/wiki/2023_GT2_European_Series"
+            "time": 103.875,
+            "year": "2023",
+            "series": {
+              "text": "SRO GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
             }
           },
           {
-            "category": {
-              "text": "Formula 4",
-              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            "event": {
+              "text": "2021 Portimão F4 Spain round",
+              "url": "https://en.wikipedia.org/wiki/2021_F4_Spanish_Championship"
             },
-            "time": 103.894,
-            "driver_rider": {
+            "driver": {
               "text": "Noam Abramczyk"
             },
             "vehicle": {
               "text": "Tatuus F4-T014",
               "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014"
             },
-            "event": {
-              "text": "2021 Portimão F4 Spain round",
-              "url": "https://en.wikipedia.org/wiki/2021_F4_Spanish_Championship"
+            "time": 103.894,
+            "year": "2021",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
             }
           },
           {
-            "category": {
-              "text": "Porsche Carrera Cup",
-              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            "event": {
+              "text": "2023 Portimão Porsche Sprint Challenge Southern Europe round"
             },
-            "time": 104.582,
-            "driver_rider": {
+            "driver": {
               "text": "Robert de Haan",
               "url": "https://en.wikipedia.org/wiki/Robert_de_Haan"
             },
@@ -2189,34 +2188,37 @@
               "text": "Porsche 911 (992) GT3 Cup",
               "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
             },
-            "event": {
-              "text": "2023 Portimão Porsche Sprint Challenge Southern Europe round"
+            "time": 104.582,
+            "year": "2023",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
             }
           },
           {
-            "category": {
-              "text": "Radical Cup",
-              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
+            "event": {
+              "text": "2023 Radical World Finals"
             },
-            "time": 105.145,
-            "driver_rider": {
+            "driver": {
               "text": "Indy Al Miller"
             },
             "vehicle": {
               "text": "Radical SR10 XXR",
               "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#SR10"
             },
-            "event": {
-              "text": "2023 Radical World Finals"
+            "time": 105.145,
+            "year": "2023",
+            "series": {
+              "text": "Radical Cup",
+              "url": "https://en.wikipedia.org/wiki/Radical_Sportscars#One-make_series"
             }
           },
           {
-            "category": {
-              "text": "JS P4",
-              "url": "https://en.wikipedia.org/wiki/Ligier_European_Series#JS_P4"
+            "event": {
+              "text": "2022 Portimão Ligier European Series round",
+              "url": "https://en.wikipedia.org/wiki/2022_Ligier_European_Series"
             },
-            "time": 105.462,
-            "driver_rider": {
+            "driver": {
               "text": "Gillian Henrion",
               "url": "https://en.wikipedia.org/wiki/Gillian_Henrion"
             },
@@ -2224,6 +2226,14 @@
               "text": "Ligier JS P4",
               "url": "https://en.wikipedia.org/wiki/Ligier_JS_P4"
             },
+            "time": 105.462,
+            "year": "2022",
+            "series": {
+              "text": "JS P4",
+              "url": "https://en.wikipedia.org/wiki/Ligier_European_Series#JS_P4"
+            }
+          },
+          {
             "event": {
               "text": "2022 Portimão Ligier European Series round",
               "url": "https://en.wikipedia.org/wiki/2022_Ligier_European_Series"
