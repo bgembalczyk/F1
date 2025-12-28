@@ -52,5 +52,3 @@ def _extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
         return None
 
     return clean_text
-
-

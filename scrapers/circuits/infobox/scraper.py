@@ -142,7 +142,9 @@ class F1CircuitInfoboxScraper(F1Scraper):
         infoboksa ignorujemy resztę wierszy (wycinamy je z DOM-u),
         żeby nie mieszać danych z pełnotabelarycznymi statystykami.
         """
-        truncated_soup = self._truncate_infobox_after_full_data(soup)  # TODO: co to robi?
+        truncated_soup = self._truncate_infobox_after_full_data(
+            soup
+        )  # TODO: co to robi?
 
         raw = parse_infobox_from_soup(self.infobox_scraper, truncated_soup)
 

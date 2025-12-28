@@ -10,7 +10,9 @@ GRAND_PRIX_NAVBOX_TEMPLATE = "Template:Formula_One_Grands_Prix"
 def _has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
     navboxes = soup.find_all("table", class_="navbox-inner")
     for navbox in navboxes:
-        if navbox.find("a", href=lambda href: href and GRAND_PRIX_NAVBOX_TEMPLATE in href):
+        if navbox.find(
+            "a", href=lambda href: href and GRAND_PRIX_NAVBOX_TEMPLATE in href
+        ):
             return True
     return False
 

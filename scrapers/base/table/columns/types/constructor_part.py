@@ -26,8 +26,9 @@ def _extract_constructor_part(ctx, index: int) -> LinkRecord | None:
     if "-" in clean_text:
         parts = [part.strip() for part in clean_text.split("-", 1)]
         if len(parts) == 2:
-            return {"text": parts[index] if index < len(parts) else parts[0], "url": None}
+            return {
+                "text": parts[index] if index < len(parts) else parts[0],
+                "url": None,
+            }
 
     return {"text": clean_text, "url": None}
-
-

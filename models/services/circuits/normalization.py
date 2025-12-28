@@ -100,6 +100,7 @@ def extract_circuit_location(
             coordinates = loc_norm.get("coordinates")
 
     if isinstance(loc_norm, dict):
+
         def _loc_sort_key(item: tuple[str, Any]) -> int:
             match = re.search(r"(\d+)$", item[0])
             return int(match.group(1)) if match else 0
@@ -149,7 +150,6 @@ def extract_infobox_layouts(infobox: dict[str, Any]) -> list[dict[str, Any]]:
     if not infobox:
         return []
 
-    normalized = infobox.get("normalized") or {}
     layouts = infobox.get("layouts") or []
 
     result: list[dict[str, Any]] = []

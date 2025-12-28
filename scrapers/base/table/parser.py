@@ -83,7 +83,9 @@ class HtmlTableParser:
                     headers,
                     pending_rowspans,
                 )
-                records.append(TableRow(headers=headers, cells=expanded_cells, raw_tr=tr))
+                records.append(
+                    TableRow(headers=headers, cells=expanded_cells, raw_tr=tr)
+                )
 
         return records
 

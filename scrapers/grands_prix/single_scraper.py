@@ -91,7 +91,12 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if not is_grand_prix_article(soup):
             return []
 
-        for section_id in ["By_year", "Winners", "By_year:_the_European_Grand_Prix_as_a_standalone_event", "Winners_of_the_Caesars_Palace_Grand_Prix"]:
+        for section_id in [
+            "By_year",
+            "Winners",
+            "By_year:_the_European_Grand_Prix_as_a_standalone_event",
+            "Winners_of_the_Caesars_Palace_Grand_Prix",
+        ]:
             try:
                 return [
                     {
