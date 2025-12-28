@@ -14528,7 +14528,68 @@
     ],
     "circuits": 1,
     "total": 2,
-    "by_year": []
+    "by_year": [
+      {
+        "year": {
+          "text": "1981",
+          "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Alan Jones",
+            "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Williams",
+          "url": "https://en.wikipedia.org/wiki/WilliamsF1"
+        },
+        "engine_constructor": {
+          "text": "Ford",
+          "url": "https://en.wikipedia.org/wiki/Cosworth"
+        },
+        "location": {
+          "circuit": {
+            "text": "Caesars Palace, Las Vegas",
+            "url": "https://en.wikipedia.org/wiki/Caesars_Palace"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1982",
+          "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michele Alboreto",
+            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Tyrrell",
+          "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+        },
+        "engine_constructor": {
+          "text": "Ford",
+          "url": "https://en.wikipedia.org/wiki/Cosworth"
+        },
+        "location": {
+          "circuit": {
+            "text": "Caesars Palace, Las Vegas",
+            "url": "https://en.wikipedia.org/wiki/Caesars_Palace"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+        }
+      }
+    ]
   },
   {
     "race_title": {
@@ -19276,7 +19337,779 @@
     ],
     "circuits": 6,
     "total": 23,
-    "by_year": []
+    "by_year": [
+      {
+        "year": {
+          "text": "1983",
+          "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Nelson Piquet",
+            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Brabham",
+          "url": "https://en.wikipedia.org/wiki/Brabham"
+        },
+        "engine_constructor": {
+          "text": "BMW",
+          "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Brands Hatch",
+            "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1983_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1984",
+          "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "McLaren",
+          "url": "https://en.wikipedia.org/wiki/McLaren"
+        },
+        "engine_constructor": {
+          "text": "TAG",
+          "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1984_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1985",
+          "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Nigel Mansell",
+            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Williams",
+          "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        },
+        "engine_constructor": {
+          "text": "Honda",
+          "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Brands Hatch",
+            "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1985_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1986-1992",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "engine_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held"
+      },
+      {
+        "year": {
+          "text": "1993",
+          "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Ayrton Senna",
+            "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "McLaren",
+          "url": "https://en.wikipedia.org/wiki/McLaren"
+        },
+        "engine_constructor": {
+          "text": "Ford",
+          "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+        },
+        "location": {
+          "circuit": {
+            "text": "Donington",
+            "url": "https://en.wikipedia.org/wiki/Donington_Park"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1993_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1994",
+          "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Benetton",
+          "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+        },
+        "engine_constructor": {
+          "text": "Ford",
+          "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+        },
+        "location": {
+          "circuit": {
+            "text": "Jerez",
+            "url": "https://en.wikipedia.org/wiki/Circuito_de_Jerez"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1994_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1995",
+          "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Benetton",
+          "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+        },
+        "engine_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1995_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1996",
+          "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Jacques Villeneuve",
+            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Williams",
+          "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        },
+        "engine_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1996_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1997",
+          "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "McLaren",
+          "url": "https://en.wikipedia.org/wiki/McLaren"
+        },
+        "engine_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+        },
+        "location": {
+          "circuit": {
+            "text": "Jerez",
+            "url": "https://en.wikipedia.org/wiki/Circuito_de_Jerez"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "1998",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "engine_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held"
+      },
+      {
+        "year": {
+          "text": "1999",
+          "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Johnny Herbert",
+            "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Stewart",
+          "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
+        },
+        "engine_constructor": {
+          "text": "Ford",
+          "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/1999_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2000",
+          "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2000_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2001",
+          "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2001_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2002",
+          "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Rubens Barrichello",
+            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2002_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2003",
+          "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Ralf Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Williams",
+          "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        },
+        "engine_constructor": {
+          "text": "BMW",
+          "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2003_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2004",
+          "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2004_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2005",
+          "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Fernando Alonso",
+            "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "engine_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2005_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2006",
+          "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2006_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2007",
+          "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Fernando Alonso",
+            "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "McLaren",
+          "url": "https://en.wikipedia.org/wiki/McLaren"
+        },
+        "engine_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+        },
+        "location": {
+          "circuit": {
+            "text": "Nürburgring GP-Strecke",
+            "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2007_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2008",
+          "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Felipe Massa",
+            "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Valencia",
+            "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2008_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2009",
+          "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Rubens Barrichello",
+            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Brawn",
+          "url": "https://en.wikipedia.org/wiki/Brawn_GP"
+        },
+        "engine_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+        },
+        "location": {
+          "circuit": {
+            "text": "Valencia",
+            "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2009_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2010",
+          "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Sebastian Vettel",
+            "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Red Bull",
+          "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+        },
+        "engine_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Valencia",
+            "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2010_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2011",
+          "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Sebastian Vettel",
+            "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Red Bull",
+          "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+        },
+        "engine_constructor": {
+          "text": "Renault",
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Valencia",
+            "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2011_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2012",
+          "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Fernando Alonso",
+            "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "engine_constructor": {
+          "text": "Ferrari",
+          "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+        },
+        "location": {
+          "circuit": {
+            "text": "Valencia",
+            "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2012_European_Grand_Prix"
+        }
+      },
+      {
+        "year": {
+          "text": "2013-2015",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "engine_constructor": {
+          "text": "Not held",
+          "url": null
+        },
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held"
+      },
+      {
+        "year": {
+          "text": "2016",
+          "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Nico Rosberg",
+            "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+        },
+        "engine_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Baku",
+            "url": "https://en.wikipedia.org/wiki/Baku_City_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2016_European_Grand_Prix"
+        }
+      }
+    ]
   },
   {
     "race_title": {
