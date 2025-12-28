@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import re
 from typing import Any, Dict, List
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
@@ -13,6 +14,7 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 
@@ -26,6 +28,14 @@ class F1SingleGrandPrixScraper(F1Scraper):
     """
 
     _SKIP = object()
+    _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})")
+    _BACKGROUND_MAP = {
+        "ffffcc": "pre_war_european_championship",
+        "d0ffb0": "pre_war_world_manufacturers_championship",
+        "ffcccc": "non_championship",
+    }
+    _DEFAULT_CHAMPIONSHIP = "formula_one_world_championship"
+    _UNKNOWN_CHAMPIONSHIP = "unknown"
 
     def __init__(
         self,
@@ -85,7 +95,56 @@ class F1SingleGrandPrixScraper(F1Scraper):
         section_id: str,
     ) -> List[Dict[str, Any]]:
         pipeline = self._build_pipeline(section_id)
-        return pipeline.parse_soup(soup)
+        parser = HtmlTableParser(
+            section_id=pipeline.section_id,
+            fragment=pipeline.fragment,
+            expected_headers=pipeline.expected_headers,
+            table_css_class=pipeline.table_css_class,
+        )
+        records: List[Dict[str, Any]] = []
+        for row_index, row in enumerate(parser.parse(soup)):
+            record = pipeline.parse_cells(
+                row.headers,
+                row.cells,
+                row_index=row_index,
+            )
+            if record:
+                record["championship"] = self._championship_from_row(row.raw_tr)
+                records.append(record)
+        return records
+
+    def _championship_from_row(self, row: Tag) -> str:
+        color = self._background_color(row)
+        if color is None:
+            return self._DEFAULT_CHAMPIONSHIP
+        return self._BACKGROUND_MAP.get(color, self._UNKNOWN_CHAMPIONSHIP)
+
+    def _background_color(self, row: Tag) -> str | None:
+        for candidate in [row.get("style"), row.get("bgcolor")]:
+            color = self._extract_color(candidate)
+            if color:
+                return color
+        for cell in row.find_all(["th", "td"], recursive=False):
+            for candidate in [cell.get("style"), cell.get("bgcolor")]:
+                color = self._extract_color(candidate)
+                if color:
+                    return color
+        return None
+
+    def _extract_color(self, candidate: str | None) -> str | None:
+        if not candidate:
+            return None
+        match = self._BACKGROUND_HEX.search(candidate)
+        if not match:
+            return None
+        return self._normalize_hex(match.group(1))
+
+    @staticmethod
+    def _normalize_hex(value: str) -> str:
+        normalized = value.lower()
+        if len(normalized) == 3:
+            return "".join(ch * 2 for ch in normalized)
+        return normalized
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         if not is_grand_prix_article(soup):
