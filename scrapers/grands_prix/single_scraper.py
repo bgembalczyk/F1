@@ -109,6 +109,8 @@ class F1SingleGrandPrixScraper(F1Scraper):
                 row_index=row_index,
             )
             if record:
+                if self._is_not_held_record(record):
+                    continue
                 record["championship"] = self._championship_from_row(row.raw_tr)
                 records.append(record)
         return records
@@ -145,6 +147,40 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if len(normalized) == 3:
             return "".join(ch * 2 for ch in normalized)
         return normalized
+
+    def _is_not_held_record(self, record: Dict[str, Any]) -> bool:
+        if self._get_text(record.get("report")) != "Not held":
+            return False
+
+        drivers = record.get("driver")
+        if not self._list_all_text(drivers, "Not held"):
+            return False
+
+        for key in ["chassis_constructor", "engine_constructor"]:
+            if self._get_text(record.get(key)) != "Not held":
+                return False
+
+        location = record.get("location")
+        circuit = location.get("circuit") if isinstance(location, dict) else None
+        if self._get_text(circuit) != "Not held":
+            return False
+
+        return True
+
+    @staticmethod
+    def _get_text(value: Any) -> str | None:
+        if isinstance(value, dict):
+            text = value.get("text")
+            if isinstance(text, str):
+                return text
+        if isinstance(value, str):
+            return value
+        return None
+
+    def _list_all_text(self, items: Any, expected: str) -> bool:
+        if not isinstance(items, list) or not items:
+            return False
+        return all(self._get_text(item) == expected for item in items)
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         if not is_grand_prix_article(soup):
