@@ -121,12 +121,23 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
     def _background_color(self, row: Tag) -> str | None:
         for candidate in [row.get("style"), row.get("bgcolor")]:
-            if not candidate:
-                continue
-            match = self._BACKGROUND_HEX.search(candidate)
-            if match:
-                return self._normalize_hex(match.group(1))
+            color = self._extract_color(candidate)
+            if color:
+                return color
+        for cell in row.find_all(["th", "td"], recursive=False):
+            for candidate in [cell.get("style"), cell.get("bgcolor")]:
+                color = self._extract_color(candidate)
+                if color:
+                    return color
         return None
+
+    def _extract_color(self, candidate: str | None) -> str | None:
+        if not candidate:
+            return None
+        match = self._BACKGROUND_HEX.search(candidate)
+        if not match:
+            return None
+        return self._normalize_hex(match.group(1))
 
     @staticmethod
     def _normalize_hex(value: str) -> str:
