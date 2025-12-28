@@ -28,7 +28,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
     """
 
     _SKIP = object()
-    _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})")
+    _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})")
     _BACKGROUND_MAP = {
         "ffffcc": "pre_war_european_championship",
         "d0ffb0": "pre_war_world_manufacturers_championship",
