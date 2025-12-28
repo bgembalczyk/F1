@@ -47,10 +47,10 @@ class F1SingleGrandPrixScraper(F1Scraper):
         self.url = url
         return super().fetch()
 
-    def _build_pipeline(self) -> TablePipeline:
+    def _build_pipeline(self, section_id: str) -> TablePipeline:
         config = ScraperConfig(
             url=self.url,
-            section_id="By_year",
+            section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],
             column_map={
                 "Year": "year",
@@ -78,8 +78,13 @@ class F1SingleGrandPrixScraper(F1Scraper):
             skip_sentinel=self._SKIP,
         )
 
-    def _parse_by_year_table(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        pipeline = self._build_pipeline()
+    def _parse_section_table(
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_id: str,
+    ) -> List[Dict[str, Any]]:
+        pipeline = self._build_pipeline(section_id)
         return pipeline.parse_soup(soup)
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
@@ -87,9 +92,15 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return []
 
         try:
-            by_year = self._parse_by_year_table(soup)
+            by_year = self._parse_section_table(soup, section_id="By_year")
         except RuntimeError:
             by_year = []
+
+        if not by_year:
+            try:
+                by_year = self._parse_section_table(soup, section_id="Winners")
+            except RuntimeError:
+                by_year = []
 
         return [
             {
