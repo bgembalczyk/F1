@@ -149,23 +149,43 @@ class F1SingleGrandPrixScraper(F1Scraper):
         return normalized
 
     def _is_not_held_record(self, record: Dict[str, Any]) -> bool:
-        if self._get_text(record.get("report")) != "Not held":
-            return False
-
-        drivers = record.get("driver")
-        if not self._list_all_text(drivers, "Not held"):
-            return False
-
-        for key in ["chassis_constructor", "engine_constructor"]:
-            if self._get_text(record.get(key)) != "Not held":
-                return False
-
+        report_text = self._get_text(record.get("report"))
         location = record.get("location")
-        circuit = location.get("circuit") if isinstance(location, dict) else None
-        if self._get_text(circuit) != "Not held":
+        layout_text = location.get("layout") if isinstance(location, dict) else None
+        circuit_text = (
+            self._get_text(location.get("circuit")) if isinstance(location, dict) else None
+        )
+
+        driver_text = self._list_text(record.get("driver"))
+        chassis_text = self._get_text(record.get("chassis_constructor"))
+        engine_text = self._get_text(record.get("engine_constructor"))
+
+        if not all([driver_text, chassis_text, engine_text, circuit_text]):
             return False
 
-        return True
+        if not (
+            driver_text == chassis_text == engine_text == circuit_text
+        ):
+            return False
+
+        if driver_text == "Not held":
+            return True
+
+        if self._is_cancellation_context(report_text, layout_text):
+            return True
+
+        return False
+
+    @staticmethod
+    def _is_cancellation_context(report_text: str | None, layout_text: str | None) -> bool:
+        if report_text and report_text.lower().startswith("not held"):
+            return True
+        if not layout_text:
+            return False
+        layout_lower = layout_text.lower()
+        return layout_lower.startswith("not held due to") or layout_lower.startswith(
+            "cancelled due to"
+        )
 
     @staticmethod
     def _get_text(value: Any) -> str | None:
@@ -177,10 +197,16 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return value
         return None
 
-    def _list_all_text(self, items: Any, expected: str) -> bool:
+    def _list_text(self, items: Any) -> str | None:
         if not isinstance(items, list) or not items:
-            return False
-        return all(self._get_text(item) == expected for item in items)
+            return None
+        first_text = self._get_text(items[0])
+        if not first_text:
+            return None
+        if all(self._get_text(item) == first_text for item in items):
+            return first_text
+        return None
+
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         if not is_grand_prix_article(soup):

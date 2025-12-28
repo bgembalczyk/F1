@@ -1824,35 +1824,6 @@
       },
       {
         "year": {
-          "text": "1940-1946",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "engine_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "location": {
-          "circuit": {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to World War II",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1947",
           "url": null
         },
@@ -4120,67 +4091,6 @@
       },
       {
         "year": {
-          "text": "2020",
-          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Cancelled due to"
-        },
-        "report": {
-          "text": "Report",
-          "url": "https://en.wikipedia.org/wiki/2020_Australian_Grand_Prix"
-        },
-        "championship": "unknown"
-      },
-      {
-        "year": {
-          "text": "2021",
-          "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to COVID-19 pandemic",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "2022",
           "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
         },
@@ -5256,35 +5166,6 @@
           "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "1988-1996",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Österreichring",
-            "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Österreichring",
-          "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
-        },
-        "engine_constructor": {
-          "text": "Österreichring",
-          "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
-        },
-        "location": {
-          "circuit": {
-            "text": "Österreichring",
-            "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
-          },
-          "layout": "Not held due to safety concerns with the"
-        },
-        "report": "Not held due to safety concerns with the Österreichring",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -7456,35 +7337,6 @@
       },
       {
         "year": {
-          "text": "1940-1945",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "engine_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "location": {
-          "circuit": {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to World War II",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1946",
           "url": "https://en.wikipedia.org/wiki/1946_Grand_Prix_season"
         },
@@ -7792,35 +7644,6 @@
           "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "1957",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Suez Crisis",
-            "url": "https://en.wikipedia.org/wiki/Suez_Crisis"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Suez Crisis",
-          "url": "https://en.wikipedia.org/wiki/Suez_Crisis"
-        },
-        "engine_constructor": {
-          "text": "Suez Crisis",
-          "url": "https://en.wikipedia.org/wiki/Suez_Crisis"
-        },
-        "location": {
-          "circuit": {
-            "text": "Suez Crisis",
-            "url": "https://en.wikipedia.org/wiki/Suez_Crisis"
-          },
-          "layout": "Not held due to budgetary reasons following the"
-        },
-        "report": "Not held due to budgetary reasons following the Suez Crisis",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -8134,34 +7957,6 @@
       },
       {
         "year": {
-          "text": "1969",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Not held due to safety concerns",
-            "url": null
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Not held due to safety concerns",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to safety concerns",
-          "url": null
-        },
-        "location": {
-          "circuit": {
-            "text": "Not held due to safety concerns",
-            "url": null
-          }
-        },
-        "report": "Not held due to safety concerns",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1970",
           "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
         },
@@ -8190,34 +7985,6 @@
           "url": "https://en.wikipedia.org/wiki/1970_Belgian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "1971",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Not held due to safety concerns",
-            "url": null
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Not held due to safety concerns",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to safety concerns",
-          "url": null
-        },
-        "location": {
-          "circuit": {
-            "text": "Not held due to safety concerns",
-            "url": null
-          }
-        },
-        "report": "Not held due to safety concerns",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -9182,34 +8949,6 @@
       },
       {
         "year": {
-          "text": "2003",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Not held due to Belgium's tobacco advertising laws",
-            "url": null
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Not held due to Belgium's tobacco advertising laws",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to Belgium's tobacco advertising laws",
-          "url": null
-        },
-        "location": {
-          "circuit": {
-            "text": "Not held due to Belgium's tobacco advertising laws",
-            "url": null
-          }
-        },
-        "report": "Not held due to Belgium's tobacco advertising laws",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "2004",
           "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
         },
@@ -9269,34 +9008,6 @@
           "url": "https://en.wikipedia.org/wiki/2005_Belgian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2006",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Not held due to circuit refurbishments",
-            "url": null
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Not held due to circuit refurbishments",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to circuit refurbishments",
-          "url": null
-        },
-        "location": {
-          "circuit": {
-            "text": "Not held due to circuit refurbishments",
-            "url": null
-          }
-        },
-        "report": "Not held due to circuit refurbishments",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -11581,35 +11292,6 @@
           "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2020",
-          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-          },
-          "layout": "Cancelled due to the"
-        },
-        "report": "Cancelled due to the COVID-19 pandemic",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -16672,35 +16354,6 @@
       },
       {
         "year": {
-          "text": "2020",
-          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to COVID-19 pandemic",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "2022",
           "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
         },
@@ -20589,35 +20242,6 @@
       },
       {
         "year": {
-          "text": "1915-1920",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "World War I",
-            "url": "https://en.wikipedia.org/wiki/World_War_I"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "World War I",
-          "url": "https://en.wikipedia.org/wiki/World_War_I"
-        },
-        "engine_constructor": {
-          "text": "World War I",
-          "url": "https://en.wikipedia.org/wiki/World_War_I"
-        },
-        "location": {
-          "circuit": {
-            "text": "World War I",
-            "url": "https://en.wikipedia.org/wiki/World_War_I"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to World War I",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1921",
           "url": "https://en.wikipedia.org/wiki/1921_Grand_Prix_season"
         },
@@ -21219,35 +20843,6 @@
       },
       {
         "year": {
-          "text": "1940-1946",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "engine_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "location": {
-          "circuit": {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to World War II",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1947",
           "url": "https://en.wikipedia.org/wiki/1947_Grand_Prix_season"
         },
@@ -21528,35 +21123,6 @@
           "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "1955",
-          "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-        },
-        "driver": [
-          {
-            "text": "1955 Le Mans disaster",
-            "url": "https://en.wikipedia.org/wiki/1955_Le_Mans_disaster"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "1955 Le Mans disaster",
-          "url": "https://en.wikipedia.org/wiki/1955_Le_Mans_disaster"
-        },
-        "engine_constructor": {
-          "text": "1955 Le Mans disaster",
-          "url": "https://en.wikipedia.org/wiki/1955_Le_Mans_disaster"
-        },
-        "location": {
-          "circuit": {
-            "text": "1955 Le Mans disaster",
-            "url": "https://en.wikipedia.org/wiki/1955_Le_Mans_disaster"
-          },
-          "layout": "Not held due to the"
-        },
-        "report": "Not held due to the 1955 Le Mans disaster",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -23262,35 +22828,6 @@
           "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2020",
-          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Not held due to the"
-        },
-        "report": "Not held due to the COVID-19 pandemic",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -28560,35 +28097,6 @@
       },
       {
         "year": {
-          "text": "1939-1946",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "engine_constructor": {
-          "text": "World War II",
-          "url": "https://en.wikipedia.org/wiki/World_War_II"
-        },
-        "location": {
-          "circuit": {
-            "text": "World War II",
-            "url": "https://en.wikipedia.org/wiki/World_War_II"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to World War II",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "1947",
           "url": "https://en.wikipedia.org/wiki/1947_Grand_Prix_season"
         },
@@ -32543,35 +32051,6 @@
       },
       {
         "year": {
-          "text": "2020",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Cancelled due to the"
-        },
-        "report": "Cancelled due to the COVID-19 pandemic",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "2021",
           "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
         },
@@ -33418,35 +32897,6 @@
           "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2020",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Cancelled due to the"
-        },
-        "report": "Cancelled due to the COVID-19 pandemic",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -40776,35 +40226,6 @@
       },
       {
         "year": {
-          "text": "2020",
-          "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Brazil"
-          },
-          "layout": "Cancelled due to the"
-        },
-        "report": "Cancelled due to the COVID-19 pandemic",
-        "championship": "unknown"
-      },
-      {
-        "year": {
           "text": "2021",
           "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
         },
@@ -41904,36 +41325,6 @@
           "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2020-2021",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "class": "Not held due to the COVID-19 pandemic",
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Not held due to the"
-        },
-        "report": "Not held due to the COVID-19 pandemic",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -43146,35 +42537,6 @@
           "url": "https://en.wikipedia.org/wiki/1985_South_African_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "1986-1991",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "Apartheid",
-            "url": "https://en.wikipedia.org/wiki/Apartheid"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "Apartheid",
-          "url": "https://en.wikipedia.org/wiki/Apartheid"
-        },
-        "engine_constructor": {
-          "text": "Apartheid",
-          "url": "https://en.wikipedia.org/wiki/Apartheid"
-        },
-        "location": {
-          "circuit": {
-            "text": "Apartheid",
-            "url": "https://en.wikipedia.org/wiki/Apartheid"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to Apartheid",
-        "championship": "unknown"
       },
       {
         "year": {
@@ -48639,35 +48001,6 @@
           "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
-      },
-      {
-        "year": {
-          "text": "2020",
-          "url": null
-        },
-        "driver": [
-          {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          }
-        ],
-        "chassis_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "engine_constructor": {
-          "text": "COVID-19 pandemic",
-          "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-        },
-        "location": {
-          "circuit": {
-            "text": "COVID-19 pandemic",
-            "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic"
-          },
-          "layout": "Not held due to"
-        },
-        "report": "Not held due to COVID-19 pandemic",
-        "championship": "unknown"
       },
       {
         "year": {
