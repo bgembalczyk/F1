@@ -91,20 +91,23 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if not is_grand_prix_article(soup):
             return []
 
-        try:
-            by_year = self._parse_section_table(soup, section_id="By_year")
-        except RuntimeError:
-            by_year = []
-
-        if not by_year:
+        for section_id in ["By_year", "Winners", "By year: the European Grand Prix as a standalone event", "Winners of the Caesars Palace Grand Prix"]:
             try:
-                by_year = self._parse_section_table(soup, section_id="Winners")
+                return [
+                    {
+                        "url": self.url,
+                        "by_year": self._parse_section_table(
+                            soup,
+                            section_id=section_id,
+                        ),
+                    }
+                ]
             except RuntimeError:
-                by_year = []
+                continue
 
         return [
             {
                 "url": self.url,
-                "by_year": by_year,
+                "by_year": [],
             }
         ]
