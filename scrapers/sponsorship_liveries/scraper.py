@@ -98,11 +98,23 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         return records
 
     @staticmethod
-    def _team_name_from_heading(heading: Tag) -> str:
-        headline = heading.find(class_="mw-headline")
+    def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
         if headline:
             return headline.get_text(" ", strip=True)
+        headline_span = heading.find(class_="mw-headline")
+        if headline_span:
+            return headline_span.get_text(" ", strip=True)
         return heading.get_text(" ", strip=True)
+
+    @staticmethod
+    def _is_section_start(element: Tag, *, current_heading: Tag, current_headline: Tag) -> bool:
+        if element is current_heading or element is current_headline:
+            return False
+        if "mw-headline" in (element.get("class") or []):
+            return True
+        if "mw-heading" in (element.get("class") or []):
+            return True
+        return element.name in {"h2", "h3", "h4", "h5", "h6"} and element.get("id")
 
     @staticmethod
     def _section_has_table(heading: Tag, headline: Tag) -> bool:
@@ -119,9 +131,11 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         for element in heading.next_elements:
             if not isinstance(element, Tag):
                 continue
-            if element is headline:
-                continue
-            if "mw-headline" in (element.get("class") or []):
+            if F1SponsorshipLiveriesScraper._is_section_start(
+                element,
+                current_heading=heading,
+                current_headline=headline,
+            ):
                 break
             elements.append(element)
         return elements
@@ -152,17 +166,29 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
     def _parse_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         records: List[Dict[str, Any]] = []
-        headings = soup.select(".mw-headline")
-        for headline in headings:
-            section_id = headline.get("id")
-            if not section_id:
-                continue
-
+        headings = []
+        for headline in soup.select(".mw-headline"):
             heading = headline.parent
-            if not isinstance(heading, Tag):
-                continue
+            if isinstance(heading, Tag):
+                headings.append((heading, headline))
+        for heading in soup.select(".mw-heading"):
+            headline = heading.find(["h2", "h3", "h4", "h5", "h6"], id=True)
+            if headline:
+                headings.append((heading, headline))
+        if not headings:
+            for headline in soup.select("h2[id], h3[id], h4[id], h5[id], h6[id]"):
+                heading = headline.parent
+                if isinstance(heading, Tag):
+                    headings.append((heading, headline))
 
-            team = self._team_name_from_heading(heading)
+        seen_sections = set()
+        for heading, headline in headings:
+            section_id = headline.get("id")
+            if not section_id or section_id in seen_sections:
+                continue
+            seen_sections.add(section_id)
+
+            team = self._team_name_from_heading(heading, headline)
             if not self._section_has_table(heading, headline):
                 continue
 
