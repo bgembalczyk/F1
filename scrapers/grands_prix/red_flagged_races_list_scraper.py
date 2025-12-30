@@ -76,10 +76,12 @@ class _RedFlaggedRacesBaseScraper(F1TableScraper):
     def _build_headers(table: Tag) -> tuple[List[str], int]:
         header_rows: List[Tag] = []
         for row in table.find_all("tr"):
-            if row.find_all("th"):
+            th_cells = row.find_all("th")
+            td_cells = row.find_all("td")
+            if th_cells and not td_cells:
                 header_rows.append(row)
                 continue
-            if row.find_all("td"):
+            if td_cells:
                 break
 
         if not header_rows:
