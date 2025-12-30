@@ -32,12 +32,12 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/Formula_One_tyres#Tyre_manufacturers_by_season",
         section_id="Tyre_manufacturers_by_season",
         expected_headers=[
-            "Seasons",
+            "Season",
             "Manufacturer 1",
             "Wins",
         ],
         column_map={
-            "Seasons": "seasons",
+            "Season": "seasons",
             "Manufacturer 1": "manufacturers",
             "Manufacturer 2": "manufacturers",
             "Manufacturer 3": "manufacturers",
