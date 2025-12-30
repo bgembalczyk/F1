@@ -75,12 +75,19 @@ class _RedFlaggedRacesBaseScraper(F1TableScraper):
     @staticmethod
     def _build_headers(table: Tag) -> tuple[List[str], int]:
         header_rows: List[Tag] = []
-        for row in table.find_all("tr"):
-            if row.find_all("th"):
-                header_rows.append(row)
-                continue
-            if row.find_all("td"):
-                break
+        thead = table.find("thead")
+        if thead:
+            header_rows = thead.find_all("tr")
+
+        if not header_rows:
+            for row in table.find_all("tr"):
+                has_th = bool(row.find_all("th"))
+                has_td = bool(row.find_all("td"))
+                if has_th and not has_td:
+                    header_rows.append(row)
+                    continue
+                if has_td:
+                    break
 
         if not header_rows:
             raise RuntimeError("Nie znaleziono nagłówków tabeli.")
