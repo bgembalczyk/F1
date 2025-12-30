@@ -28,7 +28,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "4",
     "constructors_championship": "N/A"
   },
@@ -49,7 +49,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "5",
     "constructors_championship": "N/A"
   },
@@ -70,7 +70,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "5",
     "constructors_championship": "N/A"
   },
@@ -95,7 +95,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "5",
     "constructors_championship": "N/A"
   },
@@ -116,7 +116,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "6",
     "constructors_championship": "6"
   },
@@ -137,7 +137,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "5",
     "constructors_championship": "5"
   },
@@ -158,7 +158,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "6",
     "constructors_championship": "6"
   },
@@ -179,7 +179,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "5",
     "constructors_championship": "5"
   },
@@ -200,7 +200,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "5",
     "constructors_championship": "5"
   },
@@ -221,7 +221,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "5",
     "constructors_championship": "5"
   },
@@ -250,7 +250,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "6",
     "constructors_championship": "6"
   },
@@ -271,7 +271,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "5",
     "constructors_championship": "5"
   },
@@ -292,7 +292,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
     "constructors_championship": "9 (5 from first 6, 4 from last 5)"
   },
@@ -313,7 +313,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "10 (5 from both first and last 6)",
     "constructors_championship": "10 (5 from both first and last 6)"
   },
@@ -334,7 +334,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
     "constructors_championship": "9 (5 from first 6, 4 from last 5)"
   },
@@ -355,7 +355,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "11 (6 from first 7, 5 from last 6)",
     "constructors_championship": "11 (6 from first 7, 5 from last 6)"
   },
@@ -376,7 +376,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "9 (5 from first 6, 4 from last 5)",
     "constructors_championship": "9 (5 from first 6, 4 from last 5)"
   },
@@ -397,7 +397,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "10 (5 from both first and last 6)",
     "constructors_championship": "10 (5 from both first and last 6)"
   },
@@ -422,7 +422,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "13 (7 from first 8, 6 from last 7)",
     "constructors_championship": "13 (7 from first 8, 6 from last 7)"
   },
@@ -443,7 +443,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "12 (6 each from first and last 7)",
     "constructors_championship": "12 (6 each from first and last 7)"
   },
@@ -464,7 +464,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "14 (7 from each of first and last 8)",
     "constructors_championship": "14 (7 from each of first and last 8)"
   },
@@ -485,7 +485,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "15 (8 from first 9, 7 from last 8)",
     "constructors_championship": "15 (8 from first 9, 7 from last 8)"
   },
@@ -506,7 +506,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "14 (7 from each of first and last 8)",
     "constructors_championship": "14 (7 from each of first and last 8)"
   },
@@ -527,7 +527,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "8 (4 from first 7, 4 from last 8)",
     "constructors_championship": "All"
   },
@@ -548,7 +548,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "10 (5 from both first and last 7)",
     "constructors_championship": "All"
   },
@@ -605,7 +605,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "11",
     "constructors_championship": "All"
   },
@@ -670,7 +670,7 @@
     "8th": null,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "All",
     "constructors_championship": "All"
   },
@@ -715,7 +715,7 @@
     "8th": 1,
     "9th": null,
     "10th": null,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "All",
     "constructors_championship": "All"
   },
@@ -768,7 +768,7 @@
     "8th": 4,
     "9th": 2,
     "10th": 1,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "All",
     "constructors_championship": "All"
   },
@@ -809,7 +809,7 @@
     "8th": 4,
     "9th": 2,
     "10th": 1,
-    "fastest_lap": "1",
+    "fastest_lap": 1,
     "drivers_championship": "All",
     "constructors_championship": "All"
   },
@@ -825,7 +825,7 @@
     "8th": 4,
     "9th": 2,
     "10th": 1,
-    "fastest_lap": "-",
+    "fastest_lap": null,
     "drivers_championship": "All",
     "constructors_championship": "All"
   }

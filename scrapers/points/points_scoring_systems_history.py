@@ -40,7 +40,7 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
             "seasons": SeasonsColumn(),
             "1st": AutoColumn(),
             **{position.lower(): IntColumn() for position in HISTORICAL_POSITIONS[1:]},
-            "fastest_lap": AutoColumn(),
+            "fastest_lap": IntColumn(),
             "drivers_championship": AutoColumn(),
             "constructors_championship": AutoColumn(),
             "notes": SkipColumn(),
