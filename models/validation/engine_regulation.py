@@ -5,7 +5,10 @@ from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_text
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
-from models.validation.validators import normalize_season_list, validate_float, validate_int
+from models.validation.validators import (
+    normalize_season_list,
+    validate_int,
+)
 from models.value_objects.season_ref import SeasonRef
 
 

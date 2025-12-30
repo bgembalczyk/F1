@@ -7,7 +7,6 @@ from models.validation.helpers import normalize_unit_value
 from models.validation.validators import (
     normalize_link_list,
     normalize_season_list,
-    validate_float,
 )
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef

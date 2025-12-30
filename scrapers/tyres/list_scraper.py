@@ -1,10 +1,7 @@
 from pathlib import Path
-from typing import Any, Dict
 
 from scrapers.base.runner import RunConfig, run_and_export
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.append_links import AppendLinksColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig

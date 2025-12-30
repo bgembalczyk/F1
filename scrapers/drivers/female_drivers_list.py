@@ -57,7 +57,12 @@ class FemaleDriversListScraper(F1TableScraper):
             entries = record.get("entries")
             starts = record.get("starts")
             points = record.get("points")
-            if entries == 0 and starts is not None and starts > 0 and points is not None:
+            if (
+                entries == 0
+                and starts is not None
+                and starts > 0
+                and points is not None
+            ):
                 record["entries"] = starts
                 record["starts"] = None
                 record["points"] = None

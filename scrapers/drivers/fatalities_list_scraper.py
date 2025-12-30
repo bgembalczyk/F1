@@ -54,7 +54,9 @@ class F1FatalitiesListScraper(F1TableScraper):
             "driver": UrlColumn(),
             "date": MultiColumn(
                 {
-                    "date": FuncColumn(lambda ctx: F1FatalitiesListScraper._parse_date(ctx)),
+                    "date": FuncColumn(
+                        lambda ctx: F1FatalitiesListScraper._parse_date(ctx)
+                    ),
                     "formula_category": FuncColumn(
                         lambda ctx: F1FatalitiesListScraper._parse_formula_category(ctx)
                     ),
