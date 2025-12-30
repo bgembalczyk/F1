@@ -42,7 +42,7 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
-        section_id="List_of_Formula_One_World_Championship_points_scoring_systems_used_throughout_history",
+        section_id="Points_scoring_systems",
         expected_headers=[
             "Seasons",
             *HISTORICAL_POSITIONS,
@@ -79,7 +79,7 @@ class SprintQualifyingPointsScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
-        section_id="Sprint_qualifying_and_the_sprints",
+        section_id="Sprint_races",
         expected_headers=[
             "Seasons",
             *SPRINT_POSITIONS,
@@ -103,7 +103,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
-        section_id="Shortened_race_points_criteria",
+        section_id="Shortened_races",
         expected_headers=[
             "Seasons",
             "Race length completed",
@@ -132,7 +132,6 @@ if __name__ == "__main__":
     run_and_export(
         PointsScoringSystemsHistoryScraper,
         "points/points_scoring_systems_history.json",
-        "points/points_scoring_systems_history.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
@@ -141,7 +140,6 @@ if __name__ == "__main__":
     run_and_export(
         SprintQualifyingPointsScraper,
         "points/points_scoring_systems_sprint.json",
-        "points/points_scoring_systems_sprint.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
@@ -150,7 +148,6 @@ if __name__ == "__main__":
     run_and_export(
         ShortenedRacePointsScraper,
         "points/points_scoring_systems_shortened.json",
-        "points/points_scoring_systems_shortened.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,

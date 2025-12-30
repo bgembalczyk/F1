@@ -1,0 +1,786 @@
+[
+  {
+    "seasons": [
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Less than 30%",
+    "1st": "-",
+    "2nd": "-",
+    "3rd": "-",
+    "4th": "-",
+    "5th": "-",
+    "6th": "-",
+    "7th": "-",
+    "8th": "-",
+    "9th": "-",
+    "10th": "-",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Between 30% and 60%",
+    "1st": "Half",
+    "2nd": "Half",
+    "3rd": "Half",
+    "4th": "Half",
+    "5th": "Half",
+    "6th": "Half",
+    "7th": "Half",
+    "8th": "Half",
+    "9th": "Half",
+    "10th": "Half",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "60% - 100%",
+    "1st": "Full",
+    "2nd": "Full",
+    "3rd": "Full",
+    "4th": "Full",
+    "5th": "Full",
+    "6th": "Full",
+    "7th": "Full",
+    "8th": "Full",
+    "9th": "Full",
+    "10th": "Full",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Less than two laps",
+    "1st": "-",
+    "2nd": "-",
+    "3rd": "-",
+    "4th": "-",
+    "5th": "-",
+    "6th": "-",
+    "7th": "-",
+    "8th": "-",
+    "9th": "-",
+    "10th": "-",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Between two laps and less than 75%",
+    "1st": "Half",
+    "2nd": "Half",
+    "3rd": "Half",
+    "4th": "Half",
+    "5th": "Half",
+    "6th": "Half",
+    "7th": "Half",
+    "8th": "Half",
+    "9th": "Half",
+    "10th": "Half",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "75% - 100%",
+    "1st": "Full",
+    "2nd": "Full",
+    "3rd": "Full",
+    "4th": "Full",
+    "5th": "Full",
+    "6th": "Full",
+    "7th": "Full",
+    "8th": "Full",
+    "9th": "Full",
+    "10th": "Full",
+    "fastest_lap": "1"
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Less than two full racing laps",
+    "1st": "-",
+    "2nd": "-",
+    "3rd": "-",
+    "4th": "-",
+    "5th": "-",
+    "6th": "-",
+    "7th": "-",
+    "8th": "-",
+    "9th": "-",
+    "10th": "-",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Between two racing laps and less than 25%",
+    "1st": "6",
+    "2nd": "4",
+    "3rd": "3",
+    "4th": "2",
+    "5th": "1",
+    "6th": "-",
+    "7th": "-",
+    "8th": "-",
+    "9th": "-",
+    "10th": "-",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Between 25% and 50%",
+    "1st": "13",
+    "2nd": "10",
+    "3rd": "8",
+    "4th": "6",
+    "5th": "5",
+    "6th": "4",
+    "7th": "3",
+    "8th": "2",
+    "9th": "1",
+    "10th": "-",
+    "fastest_lap": "-"
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "Between 50% and 75%",
+    "1st": "19",
+    "2nd": "14",
+    "3rd": "12",
+    "4th": "10",
+    "5th": "8",
+    "6th": "6",
+    "7th": "4",
+    "8th": "3",
+    "9th": "2",
+    "10th": "1",
+    "fastest_lap": "1"
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "race_length_completed": "75% - 100%",
+    "1st": "Full",
+    "2nd": "Full",
+    "3rd": "Full",
+    "4th": "Full",
+    "5th": "Full",
+    "6th": "Full",
+    "7th": "Full",
+    "8th": "Full",
+    "9th": "Full",
+    "10th": "Full",
+    "fastest_lap": "1"
+  }
+]
