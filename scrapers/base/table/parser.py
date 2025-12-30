@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup, Tag
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
 
 logger = logging.getLogger(__name__)
@@ -119,8 +120,9 @@ class HtmlTableParser:
         if not self.expected_headers:
             return True
 
-        header_set = set(headers)
-        return all(h in header_set for h in self.expected_headers)
+        header_set = {normalize_header(h) for h in headers}
+        expected = {normalize_header(h) for h in self.expected_headers}
+        return all(h in header_set for h in expected)
 
     @staticmethod
     def _normalize_fragment(fragment: Optional[str]) -> Optional[str]:
