@@ -24,11 +24,30 @@ def find_section_elements(
     if section_id:
         heading = soup.find(id=section_id)
         if not heading:
+            heading = _find_heading_by_text(soup, section_id)
+        if not heading:
             raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
 
         return list(heading.find_all_next(target_tags, **kwargs))
 
     return list(soup.find_all(target_tags, **kwargs))
+
+
+def _find_heading_by_text(soup: BeautifulSoup, section_id: str) -> Tag | None:
+    normalized_id = _normalize_heading_text(section_id)
+    if not normalized_id:
+        return None
+
+    for headline in soup.select(".mw-headline"):
+        headline_text = _normalize_heading_text(headline.get_text(" ", strip=True))
+        if headline_text == normalized_id:
+            return headline
+
+    return None
+
+
+def _normalize_heading_text(text: str) -> str:
+    return clean_wiki_text(text.replace("_", " ")).lower().strip()
 
 
 def extract_links_from_cell(
