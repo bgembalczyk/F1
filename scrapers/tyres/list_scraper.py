@@ -3,23 +3,12 @@ from typing import Any, Dict
 
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.append_links import AppendLinksColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-
-
-class AppendLinksColumn(LinksListColumn):
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
-        value = self.parse(ctx)
-        if value is ctx.skip_sentinel:
-            return
-        if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
-            return
-        if not value:
-            return
-        record.setdefault(ctx.key, []).extend(value)
 
 
 class TyreManufacturersBySeasonScraper(F1TableScraper):
