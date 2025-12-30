@@ -1,9 +1,7 @@
-from typing import TYPE_CHECKING, Any, List
+from typing import Any, List
 
 from scrapers.base.records import ExportRecord
-
-if TYPE_CHECKING:
-    from scrapers.base.results import ScrapeResult
+from scrapers.base.results import ScrapeResult
 
 
 def extract_data(result: ScrapeResult) -> List[Any]:

@@ -10,7 +10,8 @@ from models.validation.validators import (
     validate_int,
     validate_float,
 )
-from models.value_objects import Link, SeasonRef
+from models.value_objects.link import Link
+from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
