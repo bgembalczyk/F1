@@ -1,23 +1,155 @@
 [
   {
-    "season": null,
+    "season": 1971,
     "grand_prix": {
-      "text": "Crash, injured",
-      "url": null
+      "text": "Canadian",
+      "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
+    },
+    "lap": 64,
+    "restart_status": {
+      "code": "N",
+      "description": "race_was_not_restarted"
+    },
+    "winner": {
+      "text": "Jackie Stewart",
+      "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+    },
+    "incident": "Mist.",
+    "failed_to_make_restart": {
+      "drivers": [],
+      "reason": null
     }
   },
   {
-    "season": null,
+    "season": 1973,
     "grand_prix": {
-      "text": "Spun off",
-      "url": null
+      "text": "British",
+      "url": "https://en.wikipedia.org/wiki/1973_British_Grand_Prix"
+    },
+    "lap": 2,
+    "restart_status": {
+      "code": "Y",
+      "description": "race_was_restarted_over_original_distance"
+    },
+    "winner": {
+      "text": "Peter Revson",
+      "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+    },
+    "incident": "Crash involving Jody Scheckter , Jean-Pierre Beltoise , George Follmer , Mike Hailwood , Carlos Pace , Jochen Mass , Jackie Oliver , Roger Williamson and Andrea de Adamich",
+    "failed_to_make_restart": {
+      "drivers": [
+        {
+          "text": "Jody Scheckter",
+          "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+        },
+        {
+          "text": "Jean-Pierre Beltoise",
+          "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+        },
+        {
+          "text": "George Follmer",
+          "url": "https://en.wikipedia.org/wiki/George_Follmer"
+        },
+        {
+          "text": "Mike Hailwood",
+          "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+        },
+        {
+          "text": "Carlos Pace",
+          "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+        },
+        {
+          "text": "Jochen Mass",
+          "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+        },
+        {
+          "text": "Jackie Oliver",
+          "url": "https://en.wikipedia.org/wiki/Jackie_Oliver"
+        },
+        {
+          "text": "Roger Williamson",
+          "url": "https://en.wikipedia.org/wiki/Roger_Williamson"
+        }
+      ],
+      "reason": "Crash"
     }
   },
   {
-    "season": null,
+    "season": 1973,
     "grand_prix": {
-      "text": "Throttle",
-      "url": null
+      "text": "British",
+      "url": "https://en.wikipedia.org/wiki/1973_British_Grand_Prix"
+    },
+    "lap": 2,
+    "restart_status": {
+      "code": "Y",
+      "description": "race_was_restarted_over_original_distance"
+    },
+    "winner": {
+      "text": "Peter Revson",
+      "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+    },
+    "incident": "Crash involving Jody Scheckter , Jean-Pierre Beltoise , George Follmer , Mike Hailwood , Carlos Pace , Jochen Mass , Jackie Oliver , Roger Williamson and Andrea de Adamich",
+    "failed_to_make_restart": {
+      "drivers": [
+        {
+          "text": "Andrea de Adamich",
+          "url": "https://en.wikipedia.org/wiki/Andrea_de_Adamich"
+        }
+      ],
+      "reason": "Crash, injured"
+    }
+  },
+  {
+    "season": 1973,
+    "grand_prix": {
+      "text": "British",
+      "url": "https://en.wikipedia.org/wiki/1973_British_Grand_Prix"
+    },
+    "lap": 2,
+    "restart_status": {
+      "code": "Y",
+      "description": "race_was_restarted_over_original_distance"
+    },
+    "winner": {
+      "text": "Peter Revson",
+      "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+    },
+    "incident": "Crash involving Jody Scheckter , Jean-Pierre Beltoise , George Follmer , Mike Hailwood , Carlos Pace , Jochen Mass , Jackie Oliver , Roger Williamson and Andrea de Adamich",
+    "failed_to_make_restart": {
+      "drivers": [
+        {
+          "text": "David Purley",
+          "url": "https://en.wikipedia.org/wiki/David_Purley"
+        }
+      ],
+      "reason": "Spun off"
+    }
+  },
+  {
+    "season": 1973,
+    "grand_prix": {
+      "text": "British",
+      "url": "https://en.wikipedia.org/wiki/1973_British_Grand_Prix"
+    },
+    "lap": 2,
+    "restart_status": {
+      "code": "Y",
+      "description": "race_was_restarted_over_original_distance"
+    },
+    "winner": {
+      "text": "Peter Revson",
+      "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+    },
+    "incident": "Crash involving Jody Scheckter , Jean-Pierre Beltoise , George Follmer , Mike Hailwood , Carlos Pace , Jochen Mass , Jackie Oliver , Roger Williamson and Andrea de Adamich",
+    "failed_to_make_restart": {
+      "drivers": [
+        {
+          "text": "Graham McRae",
+          "url": "https://en.wikipedia.org/wiki/Graham_McRae"
+        }
+      ],
+      "reason": "Throttle"
     }
   },
   {
