@@ -5,6 +5,10 @@ from typing import List
 from typing import Optional
 from typing import Tuple
 
+from bs4 import BeautifulSoup
+
+from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.helpers.regex import ANGLE_RE
 from scrapers.drivers.helpers.regex import CONFIG_TYPE_RE
@@ -13,8 +17,18 @@ from scrapers.drivers.helpers.regex import RANGE_RE
 from scrapers.drivers.helpers.regex import UNIT_RE
 
 
+def _extract_visible_text(ctx: ColumnContext) -> str:
+    if ctx.cell is None:
+        return clean_wiki_text((ctx.clean_text or ctx.raw_text or "").strip())
+
+    soup = BeautifulSoup(str(ctx.cell), "html.parser")
+    for hidden in soup.select('[style*="display:none"]'):
+        hidden.decompose()
+    return clean_wiki_text(soup.get_text(" ", strip=True))
+
+
 def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[int]]:
-    text = (ctx.clean_text or ctx.raw_text or "").strip()
+    text = _extract_visible_text(ctx)
     if not text:
         return None, None
 
@@ -25,6 +39,11 @@ def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[in
     entries = values[0]
     starts = values[1] if len(values) > 1 else None
     return entries, starts
+
+
+def parse_points_from_cell(ctx: ColumnContext) -> float | None:
+    text = _extract_visible_text(ctx)
+    return parse_float_from_text(text)
 
 
 def parse_number(value: str | None) -> float | None:
