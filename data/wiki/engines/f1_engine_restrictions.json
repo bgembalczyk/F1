@@ -1,0 +1,312 @@
+[
+  {
+    "year": [
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 3.0,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V10",
+        "url": "https://en.wikipedia.org/wiki/V10"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "min": {
+          "value": 180.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 200.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 250.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 290.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": {
+      "has_limit": false,
+      "rate": null,
+      "applies_above_rpm": null
+    },
+    "fuel_injection_pressure_limit": {
+      "has_limit": false,
+      "limit": null
+    },
+    "engine_rpm_limit": {
+      "has_limit": false,
+      "limit": null
+    },
+    "power_output": {
+      "min": {
+        "value": 770.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 1000.0,
+        "unit": "hp"
+      }
+    }
+  },
+  {
+    "year": [
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 2.4,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V8",
+        "url": "https://en.wikipedia.org/wiki/V8"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "min": {
+          "value": 130.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 160.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 190.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 230.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": {
+      "has_limit": false,
+      "rate": null,
+      "applies_above_rpm": null
+    },
+    "fuel_injection_pressure_limit": {
+      "has_limit": false,
+      "limit": null
+    },
+    "engine_rpm_limit": {
+      "has_limit": true,
+      "limit": {
+        "min": 18000.0,
+        "max": 20500.0
+      }
+    },
+    "power_output": {
+      "min": {
+        "value": 730.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 840.0,
+        "unit": "hp"
+      }
+    }
+  },
+  {
+    "year": [
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      },
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 1.6,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V6",
+        "url": "https://en.wikipedia.org/wiki/V6"
+      },
+      {
+        "text": "turbo",
+        "url": "https://en.wikipedia.org/wiki/Turbocharged"
+      },
+      {
+        "text": "hybrid",
+        "url": "https://en.wikipedia.org/wiki/Hybrid_vehicle_drivetrain"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": true,
+      "is_estimated": false,
+      "range_kg": {
+        "min": {
+          "value": 100.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 110.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 130.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 145.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": {
+      "has_limit": true,
+      "rate": {
+        "value": 100.0,
+        "unit": "kg/h"
+      },
+      "applies_above_rpm": {
+        "value": 10500.0,
+        "unit": "RPM"
+      }
+    },
+    "fuel_injection_pressure_limit": {
+      "has_limit": true,
+      "limit": {
+        "value": 500.0,
+        "unit": "bar"
+      }
+    },
+    "engine_rpm_limit": {
+      "has_limit": true,
+      "limit": {
+        "min": 15000.0,
+        "max": 15000.0
+      }
+    },
+    "power_output": {
+      "min": {
+        "value": 750.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 1000.0,
+        "unit": "hp"
+      }
+    }
+  }
+]
