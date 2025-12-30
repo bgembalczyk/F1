@@ -39,6 +39,12 @@ class HtmlTableParser:
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
         table = self._find_table(soup)
+        return self._parse_table(table)
+
+    def parse_table(self, table: Tag) -> list[TableRow]:
+        return self._parse_table(table)
+
+    def _parse_table(self, table: Tag) -> list[TableRow]:
         header_row = table.find("tr")
         if not header_row:
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
@@ -78,15 +84,12 @@ class HtmlTableParser:
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
-            if cells:
-                expanded_cells = self._expand_row_cells(
-                    cells,
-                    headers,
-                    pending_rowspans,
-                )
-                records.append(
-                    TableRow(headers=headers, cells=expanded_cells, raw_tr=tr)
-                )
+            expanded_cells = self._expand_row_cells(
+                cells,
+                headers,
+                pending_rowspans,
+            )
+            records.append(TableRow(headers=headers, cells=expanded_cells, raw_tr=tr))
 
         return records
 

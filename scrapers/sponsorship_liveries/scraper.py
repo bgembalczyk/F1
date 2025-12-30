@@ -3,6 +3,7 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.scraper import F1Scraper
@@ -11,6 +12,7 @@ from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 
@@ -25,6 +27,12 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     """
 
     url = "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries"
+    _season_headers = {
+        "year",
+        "years",
+        "season",
+        "seasons",
+    }
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
@@ -34,9 +42,12 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     def _build_pipeline(self) -> TablePipeline:
         config = ScraperConfig(
             url=self.url,
-            expected_headers=["Year"],
             column_map={
                 "Year": "season",
+                "Years": "season",
+                "Season": "season",
+                "Seasons": "season",
+                "Year(s)": "season",
                 "Driver(s)": "drivers",
             },
             columns={
@@ -72,13 +83,10 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         team: str,
     ) -> List[Dict[str, Any]]:
         pipeline = self._build_pipeline()
-        parser = HtmlTableParser(
-            section_id=section_id,
-            expected_headers=pipeline.expected_headers,
-            table_css_class=pipeline.table_css_class,
-        )
+        parser = HtmlTableParser(table_css_class=pipeline.table_css_class)
+        table = self._find_section_table(soup, section_id=section_id)
         records: List[Dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(soup)):
+        for row_index, row in enumerate(parser.parse_table(table)):
             record = pipeline.parse_cells(
                 row.headers,
                 row.cells,
@@ -98,16 +106,49 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
     @staticmethod
     def _section_has_table(heading: Tag, headline: Tag) -> bool:
+        return any(
+            element.name == "table" and "wikitable" in (element.get("class") or [])
+            for element in F1SponsorshipLiveriesScraper._iter_section_elements(
+                heading, headline
+            )
+        )
+
+    @staticmethod
+    def _iter_section_elements(heading: Tag, headline: Tag) -> List[Tag]:
+        elements: List[Tag] = []
         for element in heading.next_elements:
             if not isinstance(element, Tag):
                 continue
             if element is headline:
                 continue
             if "mw-headline" in (element.get("class") or []):
-                return False
-            if element.name == "table" and "wikitable" in (element.get("class") or []):
-                return True
-        return False
+                break
+            elements.append(element)
+        return elements
+
+    def _find_section_table(self, soup: BeautifulSoup, *, section_id: str) -> Tag:
+        headline = soup.find(id=section_id)
+        if not isinstance(headline, Tag):
+            raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
+        heading = headline.parent
+        if not isinstance(heading, Tag):
+            raise RuntimeError(f"Nie znaleziono nagłówka sekcji {section_id!r}")
+
+        for element in self._iter_section_elements(heading, headline):
+            if element.name != "table" or "wikitable" not in (element.get("class") or []):
+                continue
+            header_row = element.find("tr")
+            if not header_row:
+                continue
+            header_cells = header_row.find_all(["th", "td"])
+            headers = [
+                normalize_header(clean_wiki_text(c.get_text(" ", strip=True)))
+                for c in header_cells
+            ]
+            if any(h in self._season_headers for h in headers):
+                return element
+
+        raise RuntimeError(f"Nie znaleziono tabeli w sekcji {section_id!r}")
 
     def _parse_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         records: List[Dict[str, Any]] = []
