@@ -60,19 +60,9 @@
         }
       }
     },
-    "fuel_flow_rate": {
-      "has_limit": false,
-      "rate": null,
-      "applies_above_rpm": null
-    },
-    "fuel_injection_pressure_limit": {
-      "has_limit": false,
-      "limit": null
-    },
-    "engine_rpm_limit": {
-      "has_limit": false,
-      "limit": null
-    },
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
+    "engine_rpm_limit": null,
     "power_output": {
       "min": {
         "value": 770.0,
@@ -153,17 +143,9 @@
         }
       }
     },
-    "fuel_flow_rate": {
-      "has_limit": false,
-      "rate": null,
-      "applies_above_rpm": null
-    },
-    "fuel_injection_pressure_limit": {
-      "has_limit": false,
-      "limit": null
-    },
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
     "engine_rpm_limit": {
-      "has_limit": true,
       "limit": {
         "min": 18000.0,
         "max": 20500.0
@@ -274,7 +256,6 @@
       }
     },
     "fuel_flow_rate": {
-      "has_limit": true,
       "rate": {
         "value": 100.0,
         "unit": "kg/h"
@@ -285,14 +266,12 @@
       }
     },
     "fuel_injection_pressure_limit": {
-      "has_limit": true,
       "limit": {
         "value": 500.0,
         "unit": "bar"
       }
     },
     "engine_rpm_limit": {
-      "has_limit": true,
       "limit": {
         "min": 15000.0,
         "max": 15000.0
