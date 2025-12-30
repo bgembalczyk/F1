@@ -17,110 +17,9 @@ from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-
-_UNIT_RE = re.compile(
-    r"(?P<value>[-+]?\d[\d,]*(?:\.\d+)?)\s*"
-    r"(?P<unit>cm³|cm3|cc|l|litre|litres)\b",
-    flags=re.IGNORECASE,
-)
-_ANGLE_RE = re.compile(
-    r"(?P<value>[-+]?\d[\d,]*(?:\.\d+)?)\s*(?:°|deg|degrees?)",
-    flags=re.IGNORECASE,
-)
-_CONFIG_TYPE_RE = re.compile(r"\b([A-Z]{1,2}\d+)\b")
-
-
-def _parse_number(value: str | None) -> float | None:
-    if value is None:
-        return None
-    cleaned = value.replace(",", "").strip()
-    if not cleaned:
-        return None
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None
-
-
-def _normalize_unit(unit: str) -> str:
-    normalized = unit.strip().lower()
-    if normalized in {"l", "litre", "litres"}:
-        return "L"
-    if normalized in {"cm3", "cm³", "cc"}:
-        return "cc"
-    return unit.strip()
-
-
-def _parse_unit_list(text: str) -> List[Dict[str, Any]]:
-    if not text:
-        return []
-    values: List[Dict[str, Any]] = []
-    for match in _UNIT_RE.finditer(text):
-        values.append(
-            {
-                "value": _parse_number(match.group("value")),
-                "unit": _normalize_unit(match.group("unit")),
-            }
-        )
-    return values
-
-
-def _parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
-    text = ctx.clean_text or ""
-    if not text:
-        return None
-
-    parts = [part.strip() for part in re.split(r"\s*\+\s*", text) if part.strip()]
-    base_text = parts[0] if parts else text
-    extras = parts[1:] if len(parts) > 1 else []
-
-    angle = None
-    angle_match = _ANGLE_RE.search(base_text)
-    if angle_match:
-        angle = {"value": _parse_number(angle_match.group("value")), "unit": "deg"}
-        base_text = _ANGLE_RE.sub("", base_text).strip()
-
-    type_match = _CONFIG_TYPE_RE.search(base_text)
-    config_type = type_match.group(1) if type_match else None
-
-    return {
-        "text": text,
-        "angle": angle,
-        "type": config_type,
-        "extras": extras,
-    }
-
-
-class _NestedUnitListColumn(BaseColumn):
-    def __init__(self, subkey: str) -> None:
-        self.subkey = subkey
-
-    def parse(self, ctx: ColumnContext) -> List[Dict[str, Any]]:
-        text = ctx.clean_text or ""
-        return _parse_unit_list(text)
-
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
-        if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
-            return
-        value = self.parse(ctx)
-        container = record.setdefault(ctx.key, {})
-        container[self.subkey] = value
-
-
-class _NestedTextColumn(BaseColumn):
-    def __init__(self, subkey: str) -> None:
-        self.subkey = subkey
-
-    def parse(self, ctx: ColumnContext) -> str | None:
-        text = (ctx.clean_text or "").strip()
-        return text or None
-
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
-        if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
-            return
-        value = self.parse(ctx)
-        container = record.setdefault(ctx.key, {})
-        container[self.subkey] = value
+from scrapers.drivers.helpers.columns.nested_text import NestedTextColumn
+from scrapers.drivers.helpers.columns.nested_unit_list import NestedUnitListColumn
+from scrapers.drivers.helpers.parsers import parse_configuration
 
 
 class EngineRegulationScraper(F1TableScraper):
@@ -148,17 +47,17 @@ class EngineRegulationScraper(F1TableScraper):
         columns={
             "seasons": SeasonsColumn(),
             "operating_principle": TextColumn(),
-            "Maximum displacement - Naturally aspirated": _NestedUnitListColumn(
+            "Maximum displacement - Naturally aspirated": NestedUnitListColumn(
                 "naturally_aspirated"
             ),
-            "Maximum displacement - Forced induction": _NestedUnitListColumn(
+            "Maximum displacement - Forced induction": NestedUnitListColumn(
                 "forced_induction"
             ),
-            "configuration": FuncColumn(_parse_configuration),
+            "configuration": FuncColumn(parse_configuration),
             "rpm_limit": UnitColumn(unit="rpm"),
             "fuel_flow_limit": TextColumn(),
-            "Fuel composition - Alcohol": _NestedTextColumn("alcohol"),
-            "Fuel composition - Petrol": _NestedTextColumn("petrol"),
+            "Fuel composition - Alcohol": NestedTextColumn("alcohol"),
+            "Fuel composition - Petrol": NestedTextColumn("petrol"),
         },
     )
 

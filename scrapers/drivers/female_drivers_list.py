@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.drivers.helpers.parsers import parse_entries_starts
 
 
 class FemaleDriversListScraper(F1TableScraper):
@@ -43,27 +44,13 @@ class FemaleDriversListScraper(F1TableScraper):
             "teams": LinksListColumn(),
             "entries_starts": MultiColumn(
                 {
-                    "entries": FuncColumn(lambda ctx: _parse_entries_starts(ctx)[0]),
-                    "starts": FuncColumn(lambda ctx: _parse_entries_starts(ctx)[1]),
+                    "entries": FuncColumn(lambda ctx: parse_entries_starts(ctx)[0]),
+                    "starts": FuncColumn(lambda ctx: parse_entries_starts(ctx)[1]),
                 }
             ),
             "points": IntColumn(),
         },
     )
-
-
-def _parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[int]]:
-    text = (ctx.clean_text or ctx.raw_text or "").strip()
-    if not text:
-        return None, None
-
-    values = [int(value) for value in re.findall(r"\d+", text)]
-    if not values:
-        return None, None
-
-    entries = values[0]
-    starts = values[1] if len(values) > 1 else None
-    return entries, starts
 
 
 if __name__ == "__main__":
