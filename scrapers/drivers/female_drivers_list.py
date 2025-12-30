@@ -2,7 +2,6 @@ from pathlib import Path
 
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.func import FuncColumn
-from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -10,6 +9,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.helpers.parsers import parse_entries_starts
+from scrapers.drivers.helpers.parsers import parse_points_from_cell
 
 
 class FemaleDriversListScraper(F1TableScraper):
@@ -47,7 +47,7 @@ class FemaleDriversListScraper(F1TableScraper):
                     "starts": FuncColumn(lambda ctx: parse_entries_starts(ctx)[1]),
                 }
             ),
-            "points": FloatColumn(),
+            "points": FuncColumn(parse_points_from_cell),
         },
     )
 
