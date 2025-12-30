@@ -43,6 +43,31 @@ class ShortenedRacePointsScraper(F1TableScraper):
         },
     )
 
+    @staticmethod
+    def to_export_records(records):
+        grouped: list[dict] = []
+        index: dict[tuple, int] = {}
+
+        for record in records:
+            seasons = record.get("seasons", [])
+            key = tuple(
+                (season.get("year"), season.get("url")) for season in seasons
+            )
+            if key not in index:
+                grouped.append(
+                    {
+                        "seasons": seasons,
+                        "race_length_points": [],
+                    }
+                )
+                index[key] = len(grouped) - 1
+
+            grouped[index[key]]["race_length_points"].append(
+                {key: value for key, value in record.items() if key != "seasons"}
+            )
+
+        return grouped
+
 
 if __name__ == "__main__":
     run_and_export(
