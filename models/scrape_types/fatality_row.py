@@ -1,17 +1,22 @@
 from typing import Optional, TypedDict
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.value_objects import NormalizedDate
+
+
+class CarRecord(LinkRecord, total=False):
+    formula_category: str
+
+
+class EventRecord(TypedDict, total=False):
+    event: Optional[str | LinkRecord | list[LinkRecord]]
+    championship: bool
 
 
 class FatalityRow(TypedDict, total=False):
     driver: LinkRecord
-    date: NormalizedDate
-    is_formula_two_car: bool
+    date: Optional[str]
     age: Optional[int]
-    event: Optional[str | LinkRecord | list[LinkRecord]]
-    event_is_non_championship: bool
-    event_is_test_drive: bool
+    event: Optional[EventRecord]
     circuit: Optional[LinkRecord]
-    car: Optional[LinkRecord]
+    car: Optional[CarRecord]
     session: Optional[str]
