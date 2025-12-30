@@ -177,7 +177,7 @@ class RedFlaggedNonChampionshipRacesScraper(_RedFlaggedRacesBaseScraper):
         section_id="Non-championship_races",
         expected_headers=[
             "Year",
-            "Grand Prix",
+            "Event",
             "Lap",
             "R",
             "Winner",
@@ -186,7 +186,7 @@ class RedFlaggedNonChampionshipRacesScraper(_RedFlaggedRacesBaseScraper):
         ],
         column_map={
             "Year": "season",
-            "Grand Prix": "grand_prix",
+            "Event": "event",
             "Lap": "lap",
             "R": "restart_status",
             "Winner": "winner",
@@ -197,7 +197,7 @@ class RedFlaggedNonChampionshipRacesScraper(_RedFlaggedRacesBaseScraper):
         },
         columns={
             "season": IntColumn(),
-            "grand_prix": UrlColumn(),
+            "event": UrlColumn(),
             "lap": IntColumn(),
             "restart_status": FuncColumn(_restart_status),
             "winner": DriverColumn(),
@@ -213,7 +213,6 @@ if __name__ == "__main__":
     run_and_export(
         RedFlaggedWorldChampionshipRacesScraper,
         "grands_prix/f1_red_flagged_world_championship_races.json",
-        "grands_prix/f1_red_flagged_world_championship_races.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
@@ -222,7 +221,6 @@ if __name__ == "__main__":
     run_and_export(
         RedFlaggedNonChampionshipRacesScraper,
         "grands_prix/f1_red_flagged_non_championship_races.json",
-        "grands_prix/f1_red_flagged_non_championship_races.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
