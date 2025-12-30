@@ -1,13 +1,9 @@
-import re
 from pathlib import Path
 
 from scrapers.base.runner import RunConfig
 from scrapers.base.runner import run_and_export
 
-from scrapers.base.helpers.parsing import parse_int_from_text
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn

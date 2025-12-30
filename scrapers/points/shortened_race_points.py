@@ -50,9 +50,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
 
         for record in records:
             seasons = record.get("seasons", [])
-            key = tuple(
-                (season.get("year"), season.get("url")) for season in seasons
-            )
+            key = tuple((season.get("year"), season.get("url")) for season in seasons)
             if key not in index:
                 grouped.append(
                     {
