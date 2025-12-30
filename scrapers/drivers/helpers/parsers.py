@@ -8,6 +8,7 @@ from typing import Tuple
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.drivers.helpers.regex import ANGLE_RE
 from scrapers.drivers.helpers.regex import CONFIG_TYPE_RE
+from scrapers.drivers.helpers.regex import MAX_CYLINDERS_RE
 from scrapers.drivers.helpers.regex import RANGE_RE
 from scrapers.drivers.helpers.regex import UNIT_RE
 
@@ -66,6 +67,11 @@ def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
     if not text:
         return None
 
+    max_cylinders = None
+    max_cylinders_match = MAX_CYLINDERS_RE.search(text)
+    if max_cylinders_match:
+        max_cylinders = int(max_cylinders_match.group("value"))
+
     parts = [part.strip() for part in re.split(r"\s*\+\s*", text) if part.strip()]
     base_text = parts[0] if parts else text
     extras = parts[1:] if len(parts) > 1 else []
@@ -78,9 +84,14 @@ def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
 
     type_match = CONFIG_TYPE_RE.search(base_text)
     config_type = type_match.group(1) if type_match else None
+    if max_cylinders is None and config_type:
+        digits_match = re.search(r"\d+", config_type)
+        if digits_match:
+            max_cylinders = int(digits_match.group(0))
 
     return {
         "text": text,
+        "max_cylinders": max_cylinders,
         "angle": angle,
         "type": config_type,
         "extras": extras,

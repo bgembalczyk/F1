@@ -2,7 +2,7 @@ import re
 
 UNIT_RE = re.compile(
     r"(?P<value>[-+]?\d[\d,]*(?:\.\d+)?)\s*"
-    r"(?P<unit>cm³|cm3|cc|l|litre|litres)\b",
+    r"(?P<unit>cm³|cm3|cc|l|litre|litres|bar)\b",
     flags=re.IGNORECASE,
 )
 ANGLE_RE = re.compile(
@@ -10,6 +10,7 @@ ANGLE_RE = re.compile(
     flags=re.IGNORECASE,
 )
 CONFIG_TYPE_RE = re.compile(r"\b([A-Z]{1,2}\d+)\b")
+MAX_CYLINDERS_RE = re.compile(r"\bup to\s+(?P<value>\d+)\s+cylinders?\b", re.IGNORECASE)
 RANGE_RE = re.compile(
     r"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[–-]\s*(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)",
     flags=re.IGNORECASE,
