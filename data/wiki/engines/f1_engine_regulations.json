@@ -47,6 +47,7 @@
     },
     "configuration": {
       "text": "Unrestricted",
+      "max_cylinders": null,
       "angle": null,
       "type": null,
       "extras": []
@@ -93,6 +94,7 @@
     },
     "configuration": {
       "text": "Unrestricted",
+      "max_cylinders": null,
       "angle": null,
       "type": null,
       "extras": []
@@ -135,6 +137,7 @@
     },
     "configuration": {
       "text": "Unrestricted",
+      "max_cylinders": null,
       "angle": null,
       "type": null,
       "extras": []
@@ -170,20 +173,21 @@
     ],
     "operating_principle": "Unspecified",
     "maximum_displacement": {
-      "naturally_aspirated": [
-        {
+      "naturally_aspirated": {
+        "max": {
           "value": 1.5,
           "unit": "L"
         },
-        {
+        "min": {
           "value": 1.3,
           "unit": "L"
         }
-      ],
-      "forced_induction": []
+      },
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "Unrestricted",
+      "max_cylinders": null,
       "angle": null,
       "type": null,
       "extras": []
@@ -238,6 +242,7 @@
     },
     "configuration": {
       "text": "Unrestricted",
+      "max_cylinders": null,
       "angle": null,
       "type": null,
       "extras": []
@@ -304,6 +309,7 @@
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -354,6 +360,7 @@
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -373,7 +380,7 @@
     ],
     "operating_principle": "4-stroke Piston",
     "maximum_displacement": {
-      "naturally_aspirated": [],
+      "naturally_aspirated": "prohibited",
       "forced_induction": [
         {
           "value": 1.5,
@@ -383,6 +390,7 @@
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -412,11 +420,16 @@
         {
           "value": 1.5,
           "unit": "L"
+        },
+        {
+          "value": 4.0,
+          "unit": "bar"
         }
       ]
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -446,11 +459,16 @@
         {
           "value": 1.5,
           "unit": "L"
+        },
+        {
+          "value": 2.5,
+          "unit": "bar"
         }
       ]
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -484,10 +502,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -521,10 +540,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -566,10 +586,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
       "angle": null,
       "type": null,
       "extras": []
@@ -615,10 +636,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "V10",
+      "max_cylinders": 10,
       "angle": null,
       "type": "V10",
       "extras": []
@@ -644,10 +666,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "90° V8",
+      "max_cylinders": 8,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -676,10 +699,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "90° V8",
+      "max_cylinders": 8,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -711,10 +735,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "90° V8",
+      "max_cylinders": 8,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -762,10 +787,11 @@
           "unit": "L"
         }
       ],
-      "forced_induction": []
+      "forced_induction": "prohibited"
     },
     "configuration": {
       "text": "90° V8 + KERS",
+      "max_cylinders": 8,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -836,6 +862,7 @@
     },
     "configuration": {
       "text": "90° V6 + MGU-K + MGU-H",
+      "max_cylinders": 6,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -899,6 +926,7 @@
     },
     "configuration": {
       "text": "90° V6 + MGU-K + MGU-H",
+      "max_cylinders": 6,
       "angle": {
         "value": 90.0,
         "unit": "deg"
@@ -942,6 +970,7 @@
     },
     "configuration": {
       "text": "90° V6 + MGU-K",
+      "max_cylinders": 6,
       "angle": {
         "value": 90.0,
         "unit": "deg"
