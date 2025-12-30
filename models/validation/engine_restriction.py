@@ -81,7 +81,8 @@ class EngineRestriction(ValidatedModel):
         )
         self.power_output = _normalize_range_value(self.power_output, "power_output")
 
-    def _normalize_fuel_limit(self, value: Dict[str, Any] | None) -> Dict[str, Any] | None:
+    @staticmethod
+    def _normalize_fuel_limit(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
@@ -97,7 +98,8 @@ class EngineRestriction(ValidatedModel):
             )
         return result
 
-    def _normalize_flow_rate(self, value: Dict[str, Any] | None) -> Dict[str, Any] | None:
+    @staticmethod
+    def _normalize_flow_rate(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
@@ -129,11 +131,7 @@ class EngineRestriction(ValidatedModel):
         if key in result:
             limit_value = result.get(key)
             if isinstance(limit_value, dict) and "min" in limit_value:
-                result[key] = _normalize_range_value(
-                    limit_value, f"{field_name}.{key}"
-                )
+                result[key] = _normalize_range_value(limit_value, f"{field_name}.{key}")
             else:
-                result[key] = _normalize_unit_value(
-                    limit_value, f"{field_name}.{key}"
-                )
+                result[key] = _normalize_unit_value(limit_value, f"{field_name}.{key}")
         return result

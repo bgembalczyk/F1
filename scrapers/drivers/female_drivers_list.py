@@ -1,9 +1,6 @@
 from pathlib import Path
-import re
-from typing import Optional, Tuple
 
 from scrapers.base.runner import RunConfig, run_and_export
-from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

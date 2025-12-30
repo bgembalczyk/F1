@@ -153,7 +153,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
         location = record.get("location")
         layout_text = location.get("layout") if isinstance(location, dict) else None
         circuit_text = (
-            self._get_text(location.get("circuit")) if isinstance(location, dict) else None
+            self._get_text(location.get("circuit"))
+            if isinstance(location, dict)
+            else None
         )
 
         driver_text = self._list_text(record.get("driver"))
@@ -163,9 +165,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if not all([driver_text, chassis_text, engine_text, circuit_text]):
             return False
 
-        if not (
-            driver_text == chassis_text == engine_text == circuit_text
-        ):
+        if not (driver_text == chassis_text == engine_text == circuit_text):
             return False
 
         if driver_text == "Not held":
@@ -177,7 +177,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
         return False
 
     @staticmethod
-    def _is_cancellation_context(report_text: str | None, layout_text: str | None) -> bool:
+    def _is_cancellation_context(
+        report_text: str | None, layout_text: str | None
+    ) -> bool:
         if report_text and report_text.lower().startswith("not held"):
             return True
         if not layout_text:
@@ -206,7 +208,6 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if all(self._get_text(item) == first_text for item in items):
             return first_text
         return None
-
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         if not is_grand_prix_article(soup):

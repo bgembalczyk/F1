@@ -57,7 +57,9 @@ class F1FatalitiesListScraper(F1TableScraper):
             "driver": UrlColumn(),
             "date": MultiColumn(
                 {
-                    "date": FuncColumn(lambda ctx: F1FatalitiesListScraper._parse_date(ctx)),
+                    "date": FuncColumn(
+                        lambda ctx: F1FatalitiesListScraper._parse_date(ctx)
+                    ),
                     "is_formula_two_car": BoolColumn(
                         lambda ctx: "#" in (ctx.raw_text or "")
                     ),
@@ -66,7 +68,9 @@ class F1FatalitiesListScraper(F1TableScraper):
             "age": IntColumn(),
             "event": MultiColumn(
                 {
-                    "event": FuncColumn(lambda ctx: F1FatalitiesListScraper._parse_event(ctx)),
+                    "event": FuncColumn(
+                        lambda ctx: F1FatalitiesListScraper._parse_event(ctx)
+                    ),
                     "event_is_non_championship": BoolColumn(
                         lambda ctx: "†" in (ctx.raw_text or "")
                     ),

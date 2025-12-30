@@ -110,7 +110,9 @@ class EngineRegulation(ValidatedModel):
             raise ValueError("Pole configuration.extras musi być listą")
         else:
             result["extras"] = [
-                item.strip() for item in extras if isinstance(item, str) and item.strip()
+                item.strip()
+                for item in extras
+                if isinstance(item, str) and item.strip()
             ]
         return result
 

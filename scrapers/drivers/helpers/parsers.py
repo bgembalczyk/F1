@@ -87,7 +87,9 @@ def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
     }
 
 
-def parse_unit_value(text: str, unit: str, *, output_unit: str | None = None) -> dict[str, Any] | None:
+def parse_unit_value(
+    text: str, unit: str, *, output_unit: str | None = None
+) -> dict[str, Any] | None:
     match = re.search(
         rf"([-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",
         text,
