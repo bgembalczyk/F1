@@ -151,14 +151,12 @@ def parse_fuel_flow_rate(ctx) -> dict[str, Any]:
     text = ctx.clean_text or ""
     lower_text = text.lower()
     has_limit = not lower_text.startswith("no limit")
-
-    rate = parse_unit_value(text, "kg/h", output_unit="kg/h") if has_limit else None
-    applies_above_rpm = parse_unit_value(text, "RPM", output_unit="RPM")
+    if not has_limit:
+        return None
 
     return {
-        "has_limit": has_limit,
-        "rate": rate,
-        "applies_above_rpm": applies_above_rpm,
+        "rate": parse_unit_value(text, "kg/h", output_unit="kg/h"),
+        "applies_above_rpm": parse_unit_value(text, "RPM", output_unit="RPM"),
     }
 
 
@@ -166,8 +164,9 @@ def parse_fuel_injection_pressure_limit(ctx) -> dict[str, Any]:
     text = ctx.clean_text or ""
     lower_text = text.lower()
     has_limit = not lower_text.startswith("no limit")
-    limit = parse_unit_value(text, "bar", output_unit="bar") if has_limit else None
-    return {"has_limit": has_limit, "limit": limit}
+    if not has_limit:
+        return None
+    return {"limit": parse_unit_value(text, "bar", output_unit="bar")}
 
 
 def parse_engine_rpm_limit(ctx) -> dict[str, Any]:
@@ -175,10 +174,10 @@ def parse_engine_rpm_limit(ctx) -> dict[str, Any]:
     lower_text = text.lower()
     has_limit = not lower_text.startswith("no limit")
     if not has_limit:
-        return {"has_limit": False, "limit": None}
+        return None
 
     limit_range = parse_numeric_range(text)
     if limit_range is None:
         value = parse_number(text)
         limit_range = {"min": value, "max": value}
-    return {"has_limit": True, "limit": limit_range}
+    return {"limit": limit_range}
