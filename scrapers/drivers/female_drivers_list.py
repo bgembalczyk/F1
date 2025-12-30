@@ -54,7 +54,6 @@ if __name__ == "__main__":
     run_and_export(
         FemaleDriversListScraper,
         "drivers/female_drivers.json",
-        "drivers/female_drivers.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,

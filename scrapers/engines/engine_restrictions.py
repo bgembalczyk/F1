@@ -107,7 +107,6 @@ if __name__ == "__main__":
     run_and_export(
         EngineRestrictionsScraper,
         "engines/f1_engine_restrictions.json",
-        "engines/f1_engine_restrictions.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,

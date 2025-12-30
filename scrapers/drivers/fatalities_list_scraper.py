@@ -116,7 +116,6 @@ if __name__ == "__main__":
     run_and_export(
         F1FatalitiesListScraper,
         "drivers/f1_driver_fatalities.json",
-        "drivers/f1_driver_fatalities.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
