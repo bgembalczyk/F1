@@ -18,7 +18,7 @@
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -39,7 +39,7 @@
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -60,7 +60,7 @@
         "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -85,7 +85,7 @@
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -106,7 +106,7 @@
         "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -127,7 +127,7 @@
         "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -148,7 +148,7 @@
         "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
       }
     ],
-    "1st": "8",
+    "1st": 8,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -169,28 +169,10 @@
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
       }
     ],
-    "1st": "9 ( D )",
-    "2nd": 6,
-    "3rd": 4,
-    "4th": 3,
-    "5th": 2,
-    "6th": 1,
-    "7th": null,
-    "8th": null,
-    "9th": null,
-    "10th": null,
-    "fastest_lap": null,
-    "drivers_championship": "5",
-    "constructors_championship": "5"
-  },
-  {
-    "seasons": [
-      {
-        "year": 1961,
-        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-      }
-    ],
-    "1st": "8 ( C )",
+    "1st": {
+      "driver": 9,
+      "constructor": 8
+    },
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -211,7 +193,7 @@
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -240,7 +222,7 @@
         "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -261,7 +243,7 @@
         "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -282,7 +264,7 @@
         "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -303,7 +285,7 @@
         "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -324,7 +306,7 @@
         "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -345,7 +327,7 @@
         "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -366,7 +348,7 @@
         "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -387,7 +369,7 @@
         "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -412,7 +394,7 @@
         "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -433,7 +415,7 @@
         "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -454,7 +436,7 @@
         "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -475,7 +457,7 @@
         "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -496,7 +478,7 @@
         "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -517,7 +499,7 @@
         "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -538,7 +520,7 @@
         "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -595,7 +577,7 @@
         "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
       }
     ],
-    "1st": "9",
+    "1st": 9,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -660,7 +642,7 @@
         "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
       }
     ],
-    "1st": "10",
+    "1st": 10,
     "2nd": 6,
     "3rd": 4,
     "4th": 3,
@@ -705,7 +687,7 @@
         "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
       }
     ],
-    "1st": "10",
+    "1st": 10,
     "2nd": 8,
     "3rd": 6,
     "4th": 5,
@@ -758,7 +740,7 @@
         "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
       }
     ],
-    "1st": "25",
+    "1st": 25,
     "2nd": 18,
     "3rd": 15,
     "4th": 12,
@@ -799,7 +781,7 @@
         "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
       }
     ],
-    "1st": "25",
+    "1st": 25,
     "2nd": 18,
     "3rd": 15,
     "4th": 12,
@@ -814,8 +796,13 @@
     "constructors_championship": "All"
   },
   {
-    "seasons": [],
-    "1st": "25",
+    "seasons": [
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "1st": 25,
     "2nd": 18,
     "3rd": 15,
     "4th": 12,

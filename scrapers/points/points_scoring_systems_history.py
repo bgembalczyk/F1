@@ -14,6 +14,9 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.points.constants import HISTORICAL_POSITIONS
+from scrapers.points.helpers.columns.first_place import FirstPlaceColumn
+from scrapers.points.helpers.parsers import extract_first_place_role
+from scrapers.points.helpers.parsers import seasons_key
 
 
 class PointsScoringSystemsHistoryScraper(F1TableScraper):
@@ -59,8 +62,8 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
 
         for record in records:
             first_place = record.get("1st")
-            role, value = _extract_first_place_role(first_place)
-            key = _seasons_key(record.get("seasons"))
+            role, value = extract_first_place_role(first_place)
+            key = seasons_key(record.get("seasons"))
 
             if role:
                 existing = merged_by_seasons.get(key)
@@ -83,34 +86,6 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
                 merged.append(record)
 
         return merged
-
-
-class FirstPlaceColumn(BaseColumn):
-    _ROLE_PATTERN = re.compile(r"\(\s*([dc])\s*\)", re.IGNORECASE)
-
-    def parse(self, ctx: ColumnContext) -> int | dict | None:
-        value = parse_int_from_text(ctx.clean_text)
-        if value is None:
-            return None
-
-        role_match = self._ROLE_PATTERN.search(ctx.clean_text)
-        if role_match:
-            role = "driver" if role_match.group(1).lower() == "d" else "constructor"
-            return {"value": value, "role": role}
-
-        return value
-
-
-def _seasons_key(seasons: list[dict] | None) -> tuple | None:
-    if not seasons:
-        return None
-    return tuple((season.get("year"), season.get("url")) for season in seasons)
-
-
-def _extract_first_place_role(first_place: object) -> tuple[str | None, int | None]:
-    if isinstance(first_place, dict) and "role" in first_place:
-        return first_place.get("role"), first_place.get("value")
-    return None, first_place if isinstance(first_place, int) else None
 
 
 if __name__ == "__main__":
