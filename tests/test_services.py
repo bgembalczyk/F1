@@ -17,6 +17,12 @@ def test_season_service_parses_years_and_ranges() -> None:
     assert seasons[0]["url"].endswith("1973_Formula_One_World_Championship")
 
 
+def test_season_service_parses_onwards_range() -> None:
+    seasons = SeasonService.parse_seasons("2025 onwards", current_year=2027)
+
+    assert [season["year"] for season in seasons] == [2025, 2026, 2027]
+
+
 def test_driver_service_parses_championships() -> None:
     result = DriverService.parse_championships("2\n2005–2006")
 

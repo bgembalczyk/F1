@@ -27,7 +27,13 @@ class SeasonService:
         if current_year is None:
             current_year = datetime.now().year
 
-        # Zamień 'present' na aktualny rok (case-insensitive)
+        # Zamień 'YYYY onwards/onward' na 'YYYY-present', potem 'present' na aktualny rok.
+        text = re.sub(
+            r"(\d{4})\s+onward(?:s)?\b",
+            r"\1-present",
+            text,
+            flags=re.IGNORECASE,
+        )
         text = re.sub(r"\bpresent\b", str(current_year), text, flags=re.IGNORECASE)
 
         parts = [p.strip() for p in text.split(",") if p.strip()]
