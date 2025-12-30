@@ -5,7 +5,7 @@ from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_text
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
-from models.validation.validators import normalize_season_list, validate_float
+from models.validation.validators import normalize_season_list, validate_float, validate_int
 from models.value_objects.season_ref import SeasonRef
 
 
@@ -42,15 +42,34 @@ class EngineRegulation(ValidatedModel):
             raise ValueError("Pole maximum_displacement musi być słownikiem")
         result: Dict[str, Any] = dict(value)
         if "naturally_aspirated" in result:
-            result["naturally_aspirated"] = normalize_unit_list(
-                result.get("naturally_aspirated"),
-                "maximum_displacement.naturally_aspirated",
-            )
+            naturally_aspirated = result.get("naturally_aspirated")
+            if isinstance(naturally_aspirated, dict) and (
+                "min" in naturally_aspirated or "max" in naturally_aspirated
+            ):
+                result["naturally_aspirated"] = {
+                    "min": normalize_unit_value(
+                        naturally_aspirated.get("min"),
+                        "maximum_displacement.naturally_aspirated.min",
+                    ),
+                    "max": normalize_unit_value(
+                        naturally_aspirated.get("max"),
+                        "maximum_displacement.naturally_aspirated.max",
+                    ),
+                }
+            else:
+                result["naturally_aspirated"] = normalize_unit_list(
+                    naturally_aspirated,
+                    "maximum_displacement.naturally_aspirated",
+                )
         if "forced_induction" in result:
-            result["forced_induction"] = normalize_unit_list(
-                result.get("forced_induction"),
-                "maximum_displacement.forced_induction",
-            )
+            forced_induction = result.get("forced_induction")
+            if isinstance(forced_induction, str):
+                result["forced_induction"] = normalize_text(forced_induction)
+            else:
+                result["forced_induction"] = normalize_unit_list(
+                    forced_induction,
+                    "maximum_displacement.forced_induction",
+                )
         return result
 
     def _normalize_configuration(
@@ -68,6 +87,10 @@ class EngineRegulation(ValidatedModel):
             )
         if "type" in result:
             result["type"] = normalize_text(result.get("type"))
+        if "max_cylinders" in result:
+            result["max_cylinders"] = validate_int(
+                result.get("max_cylinders"), "configuration.max_cylinders"
+            )
         extras = result.get("extras")
         if extras is None:
             result["extras"] = []
