@@ -46,7 +46,7 @@ class _RedFlaggedRacesBaseScraper(F1TableScraper):
 class RedFlaggedWorldChampionshipRacesScraper(_RedFlaggedRacesBaseScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_red-flagged_Formula_One_races",
-        section_id="Formula_One_World_Championship_races_that_have_been_red-flagged",
+        section_id="Red-flagged_races",
         expected_headers=[
             "Year",
             "Grand Prix",
