@@ -2,7 +2,7 @@ from pathlib import Path
 
 from scrapers.base.runner import RunConfig, run_and_export
 from scrapers.base.table.columns.types.func import FuncColumn
-from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -29,6 +29,7 @@ class FemaleDriversListScraper(F1TableScraper):
             "Points",
         ],
         column_map={
+            "#": "_skip",
             "Name": "driver",
             "Seasons": "seasons",
             "Teams": "teams",
@@ -36,6 +37,7 @@ class FemaleDriversListScraper(F1TableScraper):
             "Points": "points",
         },
         columns={
+            "_skip": FuncColumn(lambda ctx: ctx.skip_sentinel),
             "driver": UrlColumn(),
             "seasons": SeasonsColumn(),
             "teams": LinksListColumn(),
@@ -45,9 +47,21 @@ class FemaleDriversListScraper(F1TableScraper):
                     "starts": FuncColumn(lambda ctx: parse_entries_starts(ctx)[1]),
                 }
             ),
-            "points": IntColumn(),
+            "points": FloatColumn(),
         },
     )
+
+    def _parse_soup(self, soup):
+        records = super()._parse_soup(soup)
+        for record in records:
+            entries = record.get("entries")
+            starts = record.get("starts")
+            points = record.get("points")
+            if entries == 0 and starts is not None and starts > 0 and points is not None:
+                record["entries"] = starts
+                record["starts"] = None
+                record["points"] = None
+        return records
 
 
 if __name__ == "__main__":
