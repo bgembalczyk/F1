@@ -37,7 +37,7 @@ class EngineRegulationScraper(F1TableScraper):
             "Maximum displacement - Forced induction": "maximum_displacement",
             "Configuration": "configuration",
             "RPM limit": "rpm_limit",
-            "Fuel flow limit": "fuel_flow_limit",
+            "Fuel flow limit (Qmax)": "fuel_flow_limit",
             "Fuel composition - Alcohol": "fuel_composition",
             "Fuel composition - Petrol": "fuel_composition",
         },
