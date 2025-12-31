@@ -215,7 +215,6 @@ if __name__ == "__main__":
     run_and_export(
         F1SponsorshipLiveriesScraper,
         "sponsorship_liveries/f1_sponsorship_liveries.json",
-        "sponsorship_liveries/f1_sponsorship_liveries.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
