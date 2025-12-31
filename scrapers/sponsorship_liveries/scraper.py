@@ -10,6 +10,7 @@ from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.sponsor import SponsorColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
@@ -56,9 +57,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 "drivers": DriverListColumn(),
                 "Main colour(s)": ListColumn(),
                 "Additional colour(s)": ListColumn(),
-                "Additional major sponsor(s)": ListColumn(),
-                "Livery sponsor(s)": ListColumn(),
-                "Main sponsor(s)": ListColumn(),
+                "Additional major sponsor(s)": SponsorColumn(),
+                "Livery sponsor(s)": SponsorColumn(),
+                "Main sponsor(s)": SponsorColumn(),
                 "Notes": TextColumn(),
                 "Non-tobacco liveries": TextColumn(),
                 "Special liveries": TextColumn(),
