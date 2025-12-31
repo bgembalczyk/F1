@@ -3,8 +3,11 @@ from __future__ import annotations
 from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
+from pathlib import Path
 
 from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.runner import RunConfig
+from scrapers.base.runner import run_and_export
 from scrapers.base.scraper import F1Scraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
@@ -43,3 +46,14 @@ class CompleteSeasonScraper(F1Scraper):
             )
 
         return results
+
+
+if __name__ == "__main__":
+    run_and_export(
+        CompleteSeasonScraper,
+        "seasons/f1_complete_seasons.json",
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+        ),
+    )
