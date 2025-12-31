@@ -13,6 +13,7 @@ class SponsorColumn(BaseColumn):
             return []
 
         text = clean_wiki_text(ctx.clean_text or "")
+        text = self._normalize_text(text)
         links = normalize_links(ctx.links or [])
 
         if not text:
@@ -31,12 +32,24 @@ class SponsorColumn(BaseColumn):
         return results
 
     @staticmethod
+    def _normalize_text(text: str) -> str:
+        text = re.sub(r",\s*and\s+", ", ", text, flags=re.IGNORECASE)
+        text = re.sub(r"\s+and\s+", ", ", text, flags=re.IGNORECASE)
+        text = re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
+        return text
+
+    @staticmethod
     def _parse_part(part: str, links: list[dict[str, Any]]) -> Any | None:
         base_text, params = SponsorColumn._extract_params(part)
         base_text = clean_wiki_text(base_text)
         matched_link = SponsorColumn._find_matching_link(base_text, links)
 
         if matched_link:
+            if matched_link.get("url") is None:
+                text = matched_link.get("text") or base_text
+                if params:
+                    return {"text": text, "params": params}
+                return text
             if params:
                 return {**matched_link, "params": params}
             return matched_link
