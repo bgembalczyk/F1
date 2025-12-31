@@ -106,12 +106,106 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         return records
 
     @staticmethod
-    def _extract_year_params(params: list[str]) -> set[int]:
+    def _extract_year_params(params: list[Any]) -> set[int]:
         years: set[int] = set()
         for param in params:
-            for match in re.findall(r"\b\d{4}\b", str(param)):
+            text = None
+            if isinstance(param, dict):
+                text = param.get("text")
+            if text is None:
+                text = str(param)
+            for match in re.findall(r"\b\d{4}\b", text):
                 years.add(int(match))
         return years
+
+    @staticmethod
+    def _param_text(param: Any) -> str:
+        if isinstance(param, dict):
+            return str(param.get("text") or "")
+        return str(param or "")
+
+    @staticmethod
+    def _is_year_param(param: Any) -> bool:
+        text = F1SponsorshipLiveriesScraper._param_text(param)
+        if not text or not re.search(r"\b\d{4}\b", text):
+            return False
+        stripped = re.sub(r"[\d\s\-–]", "", text)
+        return not stripped
+
+    @staticmethod
+    def _clean_grand_prix_text(text: str) -> str:
+        text = re.sub(r"\b(only|onwards?)\b", "", text, flags=re.IGNORECASE)
+        text = re.sub(r"^\s*from\s+", "", text, flags=re.IGNORECASE)
+        return clean_wiki_text(text)
+
+    @staticmethod
+    def _params_contain_only_years_or_grand_prix(params: list[Any]) -> bool:
+        if not params:
+            return True
+        for param in params:
+            text = F1SponsorshipLiveriesScraper._param_text(param)
+            if F1SponsorshipLiveriesScraper._is_year_param(param):
+                continue
+            if re.search(r"grand prix", text, flags=re.IGNORECASE):
+                continue
+            return False
+        return True
+
+    def _parse_grand_prix_scope(self, params: list[Any]) -> dict[str, Any] | None:
+        if not params:
+            return None
+        if not self._params_contain_only_years_or_grand_prix(params):
+            return None
+        grand_prix_entries: list[dict[str, Any]] = []
+        has_only = False
+        has_onwards = False
+        range_scope: dict[str, Any] | None = None
+        for param in params:
+            if self._is_year_param(param):
+                continue
+            text = self._param_text(param)
+            if not re.search(r"grand prix", text, flags=re.IGNORECASE):
+                return None
+            if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
+                has_onwards = True
+            if re.search(r"\bonly\b", text, flags=re.IGNORECASE):
+                has_only = True
+            range_match = re.search(
+                r"(.+?grand prix)\s+to\s+(.+?grand prix)",
+                text,
+                flags=re.IGNORECASE,
+            )
+            if range_match:
+                start_text = self._clean_grand_prix_text(range_match.group(1))
+                end_text = self._clean_grand_prix_text(range_match.group(2))
+                range_scope = {
+                    "type": "range",
+                    "from": self._build_grand_prix_entry(param, start_text),
+                    "to": self._build_grand_prix_entry(param, end_text),
+                }
+                continue
+            cleaned = self._clean_grand_prix_text(text)
+            if not cleaned:
+                continue
+            grand_prix_entries.append(self._build_grand_prix_entry(param, cleaned))
+
+        if range_scope:
+            return range_scope
+        if has_onwards and grand_prix_entries:
+            return {
+                "type": "range",
+                "from": grand_prix_entries[0],
+                "to": None,
+            }
+        if grand_prix_entries:
+            return {"type": "only", "grand_prix": grand_prix_entries}
+        return None
+
+    @staticmethod
+    def _build_grand_prix_entry(param: Any, text: str) -> dict[str, Any]:
+        if isinstance(param, dict) and param.get("url"):
+            return {"text": text, "url": param["url"]}
+        return {"text": text}
 
     def _filter_sponsors_for_year(self, sponsors: Any, year: int) -> Any:
         if not isinstance(sponsors, list):
@@ -120,9 +214,20 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         for item in sponsors:
             if isinstance(item, dict):
                 params = item.get("params") or []
+                if not self._params_contain_only_years_or_grand_prix(params):
+                    cleaned_item = {k: v for k, v in item.items() if k != "params"}
+                    filtered.append(cleaned_item)
+                    continue
                 year_params = self._extract_year_params(params)
                 if not year_params or year in year_params:
-                    filtered.append(item)
+                    cleaned_params = [
+                        param for param in params if not self._is_year_param(param)
+                    ]
+                    if cleaned_params:
+                        filtered.append({**item, "params": cleaned_params})
+                    else:
+                        cleaned_item = {k: v for k, v in item.items() if k != "params"}
+                        filtered.append(cleaned_item)
                 continue
             filtered.append(item)
         return filtered
@@ -130,10 +235,10 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     def _split_record_by_season(self, record: Dict[str, Any]) -> List[Dict[str, Any]]:
         seasons = record.get("season")
         if not isinstance(seasons, list) or len(seasons) <= 1:
-            return [record]
+            return self._split_record_by_grand_prix(record)
 
         if not self._record_has_year_specific_sponsors(record):
-            return [record]
+            return self._split_record_by_grand_prix(record)
 
         season_entries = [
             season
@@ -152,8 +257,92 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                     new_record[key] = self._filter_sponsors_for_year(
                         record[key], year
                     )
-            split_records.append(new_record)
+            split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
+
+    def _split_record_by_grand_prix(
+        self, record: Dict[str, Any]
+    ) -> List[Dict[str, Any]]:
+        scoped_items: dict[str, list[tuple[dict[str, Any], Any]]] = {}
+        base_sponsors: dict[str, list[Any]] = {}
+
+        for key in self._sponsor_keys:
+            sponsors = record.get(key)
+            if not isinstance(sponsors, list):
+                continue
+            base_list: list[Any] = []
+            scoped_list: list[tuple[dict[str, Any], Any]] = []
+            for item in sponsors:
+                if isinstance(item, dict) and item.get("params"):
+                    params = item.get("params") or []
+                    scope = self._parse_grand_prix_scope(params)
+                    cleaned_item = {k: v for k, v in item.items() if k != "params"}
+                    if scope:
+                        scoped_list.append((scope, cleaned_item))
+                    else:
+                        base_list.append(cleaned_item)
+                elif isinstance(item, dict) and "params" in item:
+                    cleaned_item = {k: v for k, v in item.items() if k != "params"}
+                    base_list.append(cleaned_item)
+                else:
+                    base_list.append(item)
+            base_sponsors[key] = base_list
+            if scoped_list:
+                scoped_items[key] = scoped_list
+
+        if not scoped_items:
+            return [record]
+
+        scope_map: dict[tuple[Any, ...], dict[str, Any]] = {}
+        for key, scoped_list in scoped_items.items():
+            for scope, item in scoped_list:
+                scope_key = self._grand_prix_scope_key(scope)
+                scope_entry = scope_map.setdefault(
+                    scope_key, {"scope": scope, "items": {}}
+                )
+                scope_entry["items"].setdefault(key, []).append(item)
+
+        split_records: list[Dict[str, Any]] = []
+        for scope_entry in scope_map.values():
+            new_record = {**record, "grand_prix_scope": scope_entry["scope"]}
+            for key in self._sponsor_keys:
+                if key not in base_sponsors:
+                    continue
+                scoped_list = scope_entry["items"].get(key, [])
+                new_record[key] = base_sponsors[key] + scoped_list
+            split_records.append(new_record)
+
+        other_record = {**record, "grand_prix_scope": {"type": "other"}}
+        for key in self._sponsor_keys:
+            if key not in base_sponsors:
+                continue
+            other_record[key] = base_sponsors[key]
+        split_records.append(other_record)
+        return split_records
+
+    @staticmethod
+    def _grand_prix_scope_key(scope: dict[str, Any]) -> tuple[Any, ...]:
+        scope_type = scope.get("type")
+        if scope_type == "only":
+            entries = scope.get("grand_prix") or []
+            key_entries = []
+            for entry in entries:
+                if isinstance(entry, dict):
+                    key_entries.append((entry.get("text"), entry.get("url")))
+                else:
+                    key_entries.append((str(entry), None))
+            return ("only", tuple(key_entries))
+        if scope_type == "range":
+            start = scope.get("from") or {}
+            end = scope.get("to") or {}
+            return (
+                "range",
+                start.get("text"),
+                start.get("url"),
+                end.get("text"),
+                end.get("url"),
+            )
+        return ("other",)
 
     def _record_has_year_specific_sponsors(self, record: Dict[str, Any]) -> bool:
         for key in self._sponsor_keys:
@@ -164,6 +353,8 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 if not isinstance(item, dict):
                     continue
                 params = item.get("params") or []
+                if not self._params_contain_only_years_or_grand_prix(params):
+                    continue
                 if self._extract_year_params(params):
                     return True
         return False
