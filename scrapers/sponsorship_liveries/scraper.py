@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
@@ -34,6 +35,11 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         "years",
         "season",
         "seasons",
+    }
+    _sponsor_keys = {
+        "main_sponsors",
+        "additional_major_sponsors",
+        "livery_sponsors",
     }
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
@@ -96,8 +102,55 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 row_index=row_index,
             )
             if record:
-                records.append(record)
+                records.extend(self._split_record_by_season(record))
         return records
+
+    @staticmethod
+    def _extract_year_params(params: list[str]) -> set[int]:
+        years: set[int] = set()
+        for param in params:
+            for match in re.findall(r"\b\d{4}\b", str(param)):
+                years.add(int(match))
+        return years
+
+    def _filter_sponsors_for_year(self, sponsors: Any, year: int) -> Any:
+        if not isinstance(sponsors, list):
+            return sponsors
+        filtered: list[Any] = []
+        for item in sponsors:
+            if isinstance(item, dict):
+                params = item.get("params") or []
+                year_params = self._extract_year_params(params)
+                if not year_params or year in year_params:
+                    filtered.append(item)
+                continue
+            filtered.append(item)
+        return filtered
+
+    def _split_record_by_season(self, record: Dict[str, Any]) -> List[Dict[str, Any]]:
+        seasons = record.get("season")
+        if not isinstance(seasons, list) or len(seasons) <= 1:
+            return [record]
+
+        season_entries = [
+            season
+            for season in seasons
+            if isinstance(season, dict) and isinstance(season.get("year"), int)
+        ]
+        if len(season_entries) <= 1:
+            return [record]
+
+        split_records: list[Dict[str, Any]] = []
+        for season_entry in season_entries:
+            year = season_entry["year"]
+            new_record = {**record, "season": [season_entry]}
+            for key in self._sponsor_keys:
+                if key in record:
+                    new_record[key] = self._filter_sponsors_for_year(
+                        record[key], year
+                    )
+            split_records.append(new_record)
+        return split_records
 
     @staticmethod
     def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
