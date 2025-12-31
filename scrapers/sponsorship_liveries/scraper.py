@@ -132,6 +132,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return [record]
 
+        if not self._record_has_year_specific_sponsors(record):
+            return [record]
+
         season_entries = [
             season
             for season in seasons
@@ -151,6 +154,19 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                     )
             split_records.append(new_record)
         return split_records
+
+    def _record_has_year_specific_sponsors(self, record: Dict[str, Any]) -> bool:
+        for key in self._sponsor_keys:
+            sponsors = record.get(key)
+            if not isinstance(sponsors, list):
+                continue
+            for item in sponsors:
+                if not isinstance(item, dict):
+                    continue
+                params = item.get("params") or []
+                if self._extract_year_params(params):
+                    return True
+        return False
 
     @staticmethod
     def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
