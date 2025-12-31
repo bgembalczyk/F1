@@ -1,0 +1,6268 @@
+[
+  {
+    "season": {
+      "text": "1951",
+      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+    },
+    "tables": {
+      "entries": [
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Belge",
+              "url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Johnny Claes",
+            "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Philippe Étancelin",
+              "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Philippe Étancelin",
+            "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+          },
+          "rounds": "1, 3-4, 6, 8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Yves Giraud-Cabantous",
+              "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Yves Giraud-Cabantous",
+            "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
+          },
+          "rounds": "1, 3-4, 6-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Yves Giraud-Cabantous",
+              "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Guy Mairesse",
+            "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
+          },
+          "rounds": "1, 4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Rosier",
+              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Louis Rosier",
+            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Rosier",
+              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Henri Louveau",
+            "url": "https://en.wikipedia.org/wiki/Henri_Louveau"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Rosier",
+              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Louis Chiron",
+            "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+          },
+          "rounds": "3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "HW Motors",
+              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "HWM",
+              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+            },
+            "engine_constructor": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "51",
+              "url": "https://en.wikipedia.org/wiki/HWM_51"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            },
+            "type": "F2",
+            "layout": "F",
+            "cylinders": 2
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "George Abecassis",
+            "url": "https://en.wikipedia.org/wiki/George_Abecassis"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "HW Motors",
+              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "HWM",
+              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+            },
+            "engine_constructor": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "51",
+              "url": "https://en.wikipedia.org/wiki/HWM_51"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            },
+            "type": "F2",
+            "layout": "F",
+            "cylinders": 2
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Stirling Moss",
+            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Luigi Villoresi",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Piero Taruffi",
+            "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
+          },
+          "rounds": "1, 3, 6-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "rounds": "4-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "rounds": "1, 3-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Toulo de Graffenried",
+            "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+          },
+          "rounds": "1, 7-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Consalvo Sanesi",
+            "url": "https://en.wikipedia.org/wiki/Consalvo_Sanesi"
+          },
+          "rounds": "1, 3-5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Luigi Fagioli",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Felice Bonetto",
+            "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+          },
+          "rounds": "5-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Alfa Romeo SpA",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "159",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Paul Pietsch",
+            "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+          },
+          "rounds": "6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Enrico Platé",
+              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Louis Chiron",
+            "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Enrico Platé",
+              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Harry Schell",
+            "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+          },
+          "rounds": "1, 4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Enrico Platé",
+              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Toulo de Graffenried",
+            "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+          },
+          "rounds": "4, 6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Enrico Platé",
+              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Paul Pietsch",
+            "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+          },
+          "rounds": "6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Espadon",
+              "url": "https://en.wikipedia.org/wiki/Ecurie_Espadon"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "212",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_212_F1"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Rudi Fischer",
+            "url": "https://en.wikipedia.org/wiki/Rudi_Fischer"
+          },
+          "rounds": "1, 6-7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "José Froilán González",
+              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Peter Hirt",
+              "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Veritas",
+              "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
+            },
+            "engine_constructor": {
+              "text": "Veritas",
+              "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
+            }
+          },
+          "chassis": [
+            {
+              "text": "Meteor",
+              "url": "https://en.wikipedia.org/wiki/Veritas_Meteor"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Veritas",
+              "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Peter Hirt",
+            "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
+          },
+          "rounds": "1"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Belgique",
+              "url": null
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "André Pilette",
+            "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
+          },
+          "rounds": "3"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Ecurie Belgique",
+              "url": null
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Jacques Swaters",
+            "url": "https://en.wikipedia.org/wiki/Jacques_Swaters"
+          },
+          "rounds": "6-7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Pierre Levegh",
+              "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Pierre Levegh",
+            "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+          },
+          "rounds": "3, 6-7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Graham Whitehead",
+              "url": "https://en.wikipedia.org/wiki/Graham_Whitehead"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "125",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Peter Whitehead",
+            "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "GA Vandervell",
+              "url": "https://en.wikipedia.org/wiki/Tony_Vandervell"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375 tw",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Reg Parnell",
+            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "GA Vandervell",
+              "url": "https://en.wikipedia.org/wiki/Tony_Vandervell"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375 tw",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Peter Whitehead",
+            "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Equipe Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T15",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+            },
+            {
+              "text": "T11",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "tyre": "E",
+          "driver": {
+            "text": "Robert Manzon",
+            "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
+          },
+          "rounds": "4, 6-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Equipe Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T15",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+            },
+            {
+              "text": "T11",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "tyre": "E",
+          "driver": {
+            "text": "Maurice Trintignant",
+            "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+          },
+          "rounds": "4, 6-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Equipe Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T15",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+            },
+            {
+              "text": "T11",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "tyre": "E",
+          "driver": {
+            "text": "André Simon",
+            "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
+          },
+          "rounds": "4, 6-8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Equipe Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T15",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+            },
+            {
+              "text": "T11",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "tyre": "E",
+          "driver": {
+            "text": "Aldo Gordini",
+            "url": "https://en.wikipedia.org/wiki/Aldo_Gordini"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Equipe Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T15",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+            },
+            {
+              "text": "T11",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "tyre": "E",
+          "driver": {
+            "text": "Jean Behra",
+            "url": "https://en.wikipedia.org/wiki/Jean_Behra"
+          },
+          "rounds": "7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Eugène Chaboud",
+              "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Eugène Chaboud",
+            "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Milano",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Speluzzi",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/50",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/50"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "L4",
+              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Onofre Marimón",
+            "url": "https://en.wikipedia.org/wiki/Onofre_Marim%C3%B3n"
+          },
+          "rounds": "4"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Milano",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Speluzzi",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/50",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/50"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "L4",
+              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Paco Godia",
+            "url": "https://en.wikipedia.org/wiki/Paco_Godia"
+          },
+          "rounds": "8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Milano",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Speluzzi",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/50",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/50"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "L4",
+              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Juan Jover",
+            "url": "https://en.wikipedia.org/wiki/Juan_Jover"
+          },
+          "rounds": "8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Joe Kelly",
+              "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            },
+            "engine_constructor": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Alta_GP"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Joe Kelly",
+            "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "BRM Ltd",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "engine_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          },
+          "chassis": [
+            {
+              "text": "P15",
+              "url": "https://en.wikipedia.org/wiki/BRM_P15"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "type": "V16",
+            "layout": "V",
+            "cylinders": 16
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Reg Parnell",
+            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+          },
+          "rounds": "5, 7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "BRM Ltd",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "engine_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          },
+          "chassis": [
+            {
+              "text": "P15",
+              "url": "https://en.wikipedia.org/wiki/BRM_P15"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "type": "V16",
+            "layout": "V",
+            "cylinders": 16
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Peter Walker",
+            "url": "https://en.wikipedia.org/wiki/Peter_Walker_(driver)"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "BRM Ltd",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "engine_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          },
+          "chassis": [
+            {
+              "text": "P15",
+              "url": "https://en.wikipedia.org/wiki/BRM_P15"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "type": "V16",
+            "layout": "V",
+            "cylinders": 16
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Ken Richardson",
+            "url": "https://en.wikipedia.org/wiki/Ken_Richardson_(racing_driver)"
+          },
+          "rounds": "7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "BRM Ltd",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "engine_constructor": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            }
+          },
+          "chassis": [
+            {
+              "text": "P15",
+              "url": "https://en.wikipedia.org/wiki/BRM_P15"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "BRM",
+              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+            },
+            "type": "V16",
+            "layout": "V",
+            "cylinders": 16
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Hans Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans_Stuck"
+          },
+          "rounds": "7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Bob Gerard",
+              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            },
+            "engine_constructor": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            }
+          },
+          "chassis": [
+            {
+              "text": "B",
+              "url": "https://en.wikipedia.org/wiki/ERA_B-Type"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Bob Gerard",
+            "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Brian Shawe-Taylor",
+              "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            },
+            "engine_constructor": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            }
+          },
+          "chassis": [
+            {
+              "text": "B",
+              "url": "https://en.wikipedia.org/wiki/ERA_B-Type"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "ERA",
+              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Brian Shawe-Taylor",
+            "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ambrosiana",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "David Murray",
+            "url": "https://en.wikipedia.org/wiki/David_Murray_(driver)"
+          },
+          "rounds": "5-6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "John James",
+              "url": "https://en.wikipedia.org/wiki/John_James_(auto_racer)"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "John James",
+            "url": "https://en.wikipedia.org/wiki/John_James_(auto_racer)"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Philip Fotheringham-Parker",
+              "url": "https://en.wikipedia.org/wiki/Philip_Fotheringham-Parker"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CL",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CL"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Philip Fotheringham-Parker",
+            "url": "https://en.wikipedia.org/wiki/Philip_Fotheringham-Parker"
+          },
+          "rounds": "5"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Duncan Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Duncan_Hamilton_(racing_driver)"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Duncan Hamilton",
+            "url": "https://en.wikipedia.org/wiki/Duncan_Hamilton_(racing_driver)"
+          },
+          "rounds": "5-6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Antonio Branca",
+              "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Toni Branca",
+            "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+          },
+          "rounds": "6"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Francisco Landi",
+              "url": "https://en.wikipedia.org/wiki/Chico_Landi"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "375",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_375"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Chico Landi",
+            "url": "https://en.wikipedia.org/wiki/Chico_Landi"
+          },
+          "rounds": "7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Peter Whitehead",
+              "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "125",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Peter Whitehead",
+            "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+          },
+          "rounds": "1, 7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "OSCA Automobili",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            },
+            "engine_constructor": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            }
+          },
+          "chassis": [
+            {
+              "text": "4500G",
+              "url": null
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Franco Rol",
+            "url": "https://en.wikipedia.org/wiki/Franco_Rol"
+          },
+          "rounds": "7"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Birabongse Bhanudej",
+              "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            }
+          },
+          "chassis": [
+            {
+              "text": "4CLT/48",
+              "url": "https://en.wikipedia.org/wiki/Maserati_4CLT/48"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            },
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": "P",
+          "driver": {
+            "text": "Birabongse Bhanudej",
+            "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
+          },
+          "rounds": "8"
+        },
+        {
+          "entrant": [
+            {
+              "text": "Georges Grignard",
+              "url": "https://en.wikipedia.org/wiki/Georges_Grignard"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T26C",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Talbot",
+              "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+            }
+          },
+          "tyre": "D",
+          "driver": {
+            "text": "Georges Grignard",
+            "url": "https://en.wikipedia.org/wiki/Georges_Grignard"
+          },
+          "rounds": "8"
+        }
+      ],
+      "free_practice_drivers": [],
+      "calendar": [],
+      "results": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Swiss Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "fastest_lap": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Indianapolis 500",
+            "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+          },
+          "pole_position": {
+            "text": "Duke Nalon",
+            "url": "https://en.wikipedia.org/wiki/Duke_Nalon"
+          },
+          "fastest_lap": {
+            "text": "Lee Wallard",
+            "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
+          },
+          "winning_driver": {
+            "text": "Lee Wallard",
+            "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Kurtis Kraft",
+              "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+            },
+            "engine_constructor": {
+              "text": "Offenhauser",
+              "url": "https://en.wikipedia.org/wiki/Offenhauser"
+            }
+          },
+          "tyre": "F",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "fastest_lap": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "fastest_lap": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_driver": {
+            "text": "Luigi Fagioli",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "fastest_lap": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "winning_driver": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "fastest_lap": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_driver": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "fastest_lap": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "winning_driver": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "fastest_lap": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+            }
+          },
+          "tyre": "P",
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+          }
+        }
+      ],
+      "non_championship_races": [
+        {
+          "race_name": "I Gran Premio di Siracusa",
+          "circuit": {
+            "text": "Syracuse",
+            "url": "https://en.wikipedia.org/wiki/Syracuse,_Sicily"
+          },
+          "date": {
+            "text": "11 March 1951",
+            "iso": "1951-03-11"
+          },
+          "winning_driver": {
+            "text": "Luigi Villoresi",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Syracuse_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "XII Pau Grand Prix",
+          "circuit": {
+            "text": "Pau",
+            "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
+          },
+          "date": {
+            "text": "26 March 1951",
+            "iso": "1951-03-26"
+          },
+          "winning_driver": {
+            "text": "Luigi Villoresi",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Pau_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "III Richmond Trophy",
+          "circuit": {
+            "text": "Goodwood",
+            "url": "https://en.wikipedia.org/wiki/Goodwood_Circuit"
+          },
+          "date": {
+            "text": "26 March 1951",
+            "iso": "1951-03-26"
+          },
+          "winning_driver": {
+            "text": "Birabongse Bhanudej",
+            "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Richmond_Trophy"
+          }
+        },
+        {
+          "race_name": "VI Gran Premio di Sanremo",
+          "circuit": {
+            "text": "Ospedaletti",
+            "url": "https://en.wikipedia.org/wiki/Circuito_di_Ospedaletti"
+          },
+          "date": {
+            "text": "22 April 1951",
+            "iso": "1951-04-22"
+          },
+          "winning_driver": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_San_Remo_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "I Grand Prix de Bordeaux",
+          "circuit": {
+            "text": "Bordeaux",
+            "url": null
+          },
+          "date": {
+            "text": "29 April 1951",
+            "iso": "1951-04-29"
+          },
+          "winning_driver": {
+            "text": "Louis Rosier",
+            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Bordeaux_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "III BRDC International Trophy",
+          "circuit": {
+            "text": "Silverstone",
+            "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+          },
+          "date": {
+            "text": "5 May 1951",
+            "iso": "1951-05-05"
+          },
+          "winning_driver": {
+            "text": "Reg Parnell",
+            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_BRDC_International_Trophy"
+          }
+        },
+        {
+          "race_name": "V Grand Prix de Paris",
+          "circuit": {
+            "text": "Bois de Boulogne",
+            "url": "https://en.wikipedia.org/wiki/Bois_de_Boulogne"
+          },
+          "date": {
+            "text": "20 May 1951",
+            "iso": "1951-05-20"
+          },
+          "winning_driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Paris_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "V Ulster Trophy",
+          "circuit": {
+            "text": "Dundrod",
+            "url": "https://en.wikipedia.org/wiki/Dundrod_Circuit"
+          },
+          "date": {
+            "text": "2 June 1951",
+            "iso": "1951-06-02"
+          },
+          "winning_driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Ulster_Trophy"
+          }
+        },
+        {
+          "race_name": "I Scottish Grand Prix",
+          "circuit": {
+            "text": "Winfield",
+            "url": null
+          },
+          "date": {
+            "text": "21 July 1951",
+            "iso": "1951-07-21"
+          },
+          "winning_driver": {
+            "text": "Philip Fotheringham-Parker",
+            "url": "https://en.wikipedia.org/wiki/Philip_Fotheringham-Parker"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Scottish_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "II Grote Prijs van Nederland",
+          "circuit": {
+            "text": "Zandvoort",
+            "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+          },
+          "date": {
+            "text": "22 July 1951",
+            "iso": "1951-07-22"
+          },
+          "winning_driver": {
+            "text": "Louis Rosier",
+            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            },
+            "engine_constructor": {
+              "text": "Talbot-Lago",
+              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Dutch_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "XIII Grand Prix de l'Albigeois",
+          "circuit": {
+            "text": "Albi (Les Planques)",
+            "url": "https://en.wikipedia.org/wiki/Circuit_Les_Planques"
+          },
+          "date": {
+            "text": "5 August 1951",
+            "iso": "1951-08-05"
+          },
+          "winning_driver": {
+            "text": "Maurice Trintignant",
+            "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca",
+              "url": "https://en.wikipedia.org/wiki/Simca"
+            },
+            "engine_constructor": {
+              "text": "Gordini",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Albi_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "XX Circuito di Pescara",
+          "circuit": {
+            "text": "Pescara",
+            "url": "https://en.wikipedia.org/wiki/Pescara_Circuit"
+          },
+          "date": {
+            "text": "15 August 1951",
+            "iso": "1951-08-15"
+          },
+          "winning_driver": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Circuit_of_Pescara"
+          }
+        },
+        {
+          "race_name": "V Gran Premio di Bari",
+          "circuit": {
+            "text": "Bari",
+            "url": "https://en.wikipedia.org/wiki/Bari"
+          },
+          "date": {
+            "text": "2 September 1951",
+            "iso": "1951-09-02"
+          },
+          "winning_driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Bari_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "IV Goodwood Trophy",
+          "circuit": {
+            "text": "Goodwood",
+            "url": "https://en.wikipedia.org/wiki/Goodwood_Circuit"
+          },
+          "date": {
+            "text": "29 September 1951",
+            "iso": "1951-09-29"
+          },
+          "winning_driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Corse"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1951_Goodwood_Trophy"
+          }
+        }
+      ],
+      "scoring_system": [
+        {
+          "position": "Race",
+          "1st": 8,
+          "2nd": 6,
+          "3rd": 4,
+          "4th": 3,
+          "5th": 2,
+          "fl": 1
+        }
+      ],
+      "drivers_standings": [
+        {
+          "pos": 1,
+          "driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "1 P F",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "#ffffbf"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": "(9 P F )",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "#cfcfff"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": "(1 F )",
+                "marks": [
+                  "†"
+                ]
+              },
+              {
+                "value": "11 P",
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "#ffffbf"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "2 F",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": true,
+            "background": "#dfdfdf"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret P",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "1 F",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": true,
+            "background": "#ffffbf"
+          },
+          "points": {
+            "championship_points": 31.0,
+            "total_points": 37.0
+          }
+        },
+        {
+          "pos": 2,
+          "driver": {
+            "text": "Alberto Ascari",
+            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": 2,
+                "marks": [
+                  "†"
+                ]
+              },
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "1 P",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": false,
+            "background": "#ffffbf"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 1,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffbf"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "(4 P )",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "points": {
+            "championship_points": 25.0,
+            "total_points": 28.0
+          }
+        },
+        {
+          "pos": 3,
+          "driver": {
+            "text": "José Froilán González",
+            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "(2)",
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": "1 P",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": false,
+            "background": "#ffffbf"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "points": {
+            "championship_points": 24.0,
+            "total_points": 27.0
+          }
+        },
+        {
+          "pos": 4,
+          "driver": {
+            "text": "Giuseppe Farina",
+            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 1,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffbf"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": "(5)",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": "(Ret F )",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": true,
+            "background": "#efcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "3 F",
+                "marks": [
+                  "†"
+                ]
+              },
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": true,
+            "background": "#ffdf9f"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "points": {
+            "championship_points": 19.0,
+            "total_points": 22.0
+          }
+        },
+        {
+          "pos": 5,
+          "driver": {
+            "text": "Luigi Villoresi",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 3,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "(4)",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": {
+            "championship_points": 15.0,
+            "total_points": 18.0
+          }
+        },
+        {
+          "pos": 6,
+          "driver": {
+            "text": "Piero Taruffi",
+            "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 10.0
+        },
+        {
+          "pos": 7,
+          "driver": {
+            "text": "Lee Wallard",
+            "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "1 F",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": true,
+            "background": "#ffffbf"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 9.0
+        },
+        {
+          "pos": 8,
+          "driver": {
+            "text": "Felice Bonetto",
+            "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 3,
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "points": 7.0
+        },
+        {
+          "pos": 9,
+          "driver": {
+            "text": "Mike Nazaruk",
+            "url": "https://en.wikipedia.org/wiki/Mike_Nazaruk"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 2,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfdfdf"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 6.0
+        },
+        {
+          "pos": 10,
+          "driver": {
+            "text": "Reg Parnell",
+            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": "DNS",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffff"
+          },
+          "esp": null,
+          "points": 5.0
+        },
+        {
+          "pos": 11,
+          "driver": {
+            "text": "Luigi Fagioli",
+            "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": 1,
+                "marks": [
+                  "†"
+                ]
+              },
+              {
+                "value": 11,
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffbf"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 4.0
+        },
+        {
+          "pos": 12,
+          "driver": {
+            "text": "Consalvo Sanesi",
+            "url": "https://en.wikipedia.org/wiki/Consalvo_Sanesi"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": 10,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 3.0
+        },
+        {
+          "pos": 13,
+          "driver": {
+            "text": "Louis Rosier",
+            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 10,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "points": 3.0
+        },
+        {
+          "pos": 14,
+          "driver": {
+            "text": "Andy Linden",
+            "url": "https://en.wikipedia.org/wiki/Andy_Linden_(race_car_driver)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 4,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 3.0
+        },
+        {
+          "pos": 15,
+          "driver": {
+            "text": "Manny Ayulo",
+            "url": "https://en.wikipedia.org/wiki/Manny_Ayulo"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 3,
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 2.0
+        },
+        {
+          "pos": 16,
+          "driver": {
+            "text": "Jack McGrath",
+            "url": "https://en.wikipedia.org/wiki/Jack_McGrath_(racing_driver)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 3,
+                "marks": [
+                  "†"
+                ]
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffdf9f"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 2.0
+        },
+        {
+          "pos": 17,
+          "driver": {
+            "text": "Toulo de Graffenried",
+            "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "points": 2.0
+        },
+        {
+          "pos": 18,
+          "driver": {
+            "text": "Yves Giraud-Cabantous",
+            "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 2.0
+        },
+        {
+          "pos": 19,
+          "driver": {
+            "text": "Bobby Ball",
+            "url": "https://en.wikipedia.org/wiki/Bobby_Ball_(auto_racer)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 5,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#dfffdf"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 2.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Louis Chiron",
+            "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Rudi Fischer",
+            "url": "https://en.wikipedia.org/wiki/Rudi_Fischer"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 11,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "DNS",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "André Simon",
+            "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Henry Banks",
+            "url": "https://en.wikipedia.org/wiki/Henry_Banks"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "André Pilette",
+            "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
+          },
+          "sui": null,
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 6,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Robert Manzon",
+            "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Johnny Claes",
+            "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 13,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 13,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": 11,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Carl Forberg",
+            "url": "https://en.wikipedia.org/wiki/Carl_Forberg"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Peter Walker",
+            "url": "https://en.wikipedia.org/wiki/Peter_Walker_(driver)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": 7,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Pierre Levegh",
+            "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+          },
+          "sui": null,
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Philippe Étancelin",
+            "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 10,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": null,
+          "esp": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Stirling Moss",
+            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Duane Carter",
+            "url": "https://en.wikipedia.org/wiki/Duane_Carter"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Eugène Chaboud",
+            "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Brian Shawe-Taylor",
+            "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": 8,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Guy Mairesse",
+            "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 14,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Peter Whitehead",
+            "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Franco Rol",
+            "url": "https://en.wikipedia.org/wiki/Franco_Rol"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": 9,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Jacques Swaters",
+            "url": "https://en.wikipedia.org/wiki/Jacques_Swaters"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": 10,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Paco Godia",
+            "url": "https://en.wikipedia.org/wiki/Paco_Godia"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": {
+            "results": [
+              {
+                "value": 10,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Bob Gerard",
+            "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": 11,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Harry Schell",
+            "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": 12,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Duncan Hamilton",
+            "url": "https://en.wikipedia.org/wiki/Duncan_Hamilton_(racing_driver)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": 12,
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Joe Kelly",
+            "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(Formula_One)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": "NC",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#cfcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Maurice Trintignant",
+            "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": {
+            "results": [
+              {
+                "value": "DNS",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffff"
+          },
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Henri Louveau",
+            "url": "https://en.wikipedia.org/wiki/Henri_Louveau"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "George Abecassis",
+            "url": "https://en.wikipedia.org/wiki/George_Abecassis"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Peter Hirt",
+            "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
+          },
+          "sui": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Tony Bettenhausen",
+            "url": "https://en.wikipedia.org/wiki/Tony_Bettenhausen"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Duke Nalon",
+            "url": "https://en.wikipedia.org/wiki/Duke_Nalon"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret P",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": true,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Gene Force",
+            "url": "https://en.wikipedia.org/wiki/Gene_Force"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Sam Hanks",
+            "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Bill Schindler",
+            "url": "https://en.wikipedia.org/wiki/Bill_Schindler"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Mauri Rose",
+            "url": "https://en.wikipedia.org/wiki/Mauri_Rose"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Walt Faulkner",
+            "url": "https://en.wikipedia.org/wiki/Walt_Faulkner"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Jimmy Davies",
+            "url": "https://en.wikipedia.org/wiki/Jimmy_Davies_(racing_driver)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Fred Agabashian",
+            "url": "https://en.wikipedia.org/wiki/Fred_Agabashian"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Carl Scarborough",
+            "url": "https://en.wikipedia.org/wiki/Carl_Scarborough"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Bill Mackey",
+            "url": "https://en.wikipedia.org/wiki/Bill_Mackey"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Chuck Stevenson",
+            "url": "https://en.wikipedia.org/wiki/Chuck_Stevenson"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Johnnie Parsons",
+            "url": "https://en.wikipedia.org/wiki/Johnnie_Parsons"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Cecil Green",
+            "url": "https://en.wikipedia.org/wiki/Cecil_Green"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Troy Ruttman",
+            "url": "https://en.wikipedia.org/wiki/Troy_Ruttman"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Duke Dinsmore",
+            "url": "https://en.wikipedia.org/wiki/Duke_Dinsmore"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Chet Miller",
+            "url": "https://en.wikipedia.org/wiki/Chet_Miller"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Walt Brown",
+            "url": "https://en.wikipedia.org/wiki/Walt_Brown_(auto_racer)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Rodger Ward",
+            "url": "https://en.wikipedia.org/wiki/Rodger_Ward"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Cliff Griffith",
+            "url": "https://en.wikipedia.org/wiki/Cliff_Griffith"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Bill Vukovich",
+            "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "George Connor",
+            "url": "https://en.wikipedia.org/wiki/George_Connor_(driver)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Mack Hellings",
+            "url": "https://en.wikipedia.org/wiki/Mack_Hellings"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Joe James",
+            "url": "https://en.wikipedia.org/wiki/Joe_James_(racing_driver)"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Johnny McDowell",
+            "url": "https://en.wikipedia.org/wiki/Johnny_McDowell"
+          },
+          "sui": null,
+          "500": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Aldo Gordini",
+            "url": "https://en.wikipedia.org/wiki/Aldo_Gordini"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Onofre Marimón",
+            "url": "https://en.wikipedia.org/wiki/Onofre_Marim%C3%B3n"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Philip Fotheringham-Parker",
+            "url": "https://en.wikipedia.org/wiki/Philip_Fotheringham-Parker"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "David Murray",
+            "url": "https://en.wikipedia.org/wiki/David_Murray_(driver)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "John James",
+            "url": "https://en.wikipedia.org/wiki/John_James_(auto_racer)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ger": null,
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Paul Pietsch",
+            "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Toni Branca",
+            "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "ita": null,
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Jean Behra",
+            "url": "https://en.wikipedia.org/wiki/Jean_Behra"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Chico Landi",
+            "url": "https://en.wikipedia.org/wiki/Chico_Landi"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Georges Grignard",
+            "url": "https://en.wikipedia.org/wiki/Georges_Grignard"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Birabongse Bhanudej",
+            "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": {
+            "results": [
+              {
+                "value": "Ret",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#efcfff"
+          },
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Ken Richardson",
+            "url": "https://en.wikipedia.org/wiki/Ken_Richardson_(racing_driver)"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": {
+            "results": [
+              {
+                "value": "DNS",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffff"
+          },
+          "esp": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Juan Jover",
+            "url": "https://en.wikipedia.org/wiki/Juan_Jover"
+          },
+          "sui": null,
+          "500": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ger": null,
+          "ita": null,
+          "esp": {
+            "results": [
+              {
+                "value": "DNS",
+                "marks": null
+              }
+            ],
+            "sprint_position": null,
+            "pole_position": false,
+            "fastest_lap": false,
+            "background": "#ffffff"
+          },
+          "points": 0.0
+        }
+      ],
+      "constructors_standings": [],
+      "south_african_formula_one_championship": [],
+      "british_formula_one_championship": []
+    }
+  }
+]
