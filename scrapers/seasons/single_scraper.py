@@ -14,6 +14,9 @@ from scrapers.base.table.columns.types.driver_rounds import DriversWithRoundsCol
 from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.points import PointsColumn
+from scrapers.base.table.columns.types.position import PositionColumn
+from scrapers.base.table.columns.types.race_result import RaceResultColumn
 from scrapers.base.table.columns.types.season_date import SeasonDateColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
@@ -21,6 +24,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.seasons.standings_scraper import F1StandingsScraper
 
 
 class SingleSeasonScraper(F1Scraper):
@@ -37,6 +41,7 @@ class SingleSeasonScraper(F1Scraper):
         super().__init__(options=options)
         self.url: str = ""
         self.season_year = season_year
+        self._options = options
 
     def fetch_by_url(self, url: str, *, season_year: int | None = None) -> List[Dict[str, Any]]:
         self.url = url
@@ -54,6 +59,9 @@ class SingleSeasonScraper(F1Scraper):
                 "calendar": self._parse_calendar(soup),
                 "results": self._parse_results(soup),
                 "non_championship_races": self._parse_non_championship(soup),
+                "scoring_system": self._parse_scoring_system(soup),
+                "drivers_standings": self._parse_drivers_standings(soup),
+                "constructors_standings": self._parse_constructors_standings(soup),
                 "south_african_formula_one_championship": self._parse_regional_championship(
                     soup, ["South_African_Formula_One_Championship"]
                 ),
@@ -196,6 +204,44 @@ class SingleSeasonScraper(F1Scraper):
             },
         )
 
+    def _parse_scoring_system(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        return self._parse_table(
+            soup,
+            section_ids=["Scoring_system", "Points_scoring_system"],
+            expected_headers=["Position", "1st", "2nd", "3rd", "4th", "5th"],
+            column_map={
+                "Position": "position",
+            },
+            columns={
+                "position": TextColumn(),
+            },
+            default_column=IntColumn(),
+        )
+
+    def _parse_drivers_standings(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        return self._parse_standings_table(
+            soup,
+            section_ids=[
+                "World_Drivers'_Championship_standings",
+                "World_Championship_of_Drivers_standings",
+            ],
+            subject_header="Driver",
+            subject_key="driver",
+            subject_column=DriverColumn(),
+        )
+
+    def _parse_constructors_standings(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        return self._parse_standings_table(
+            soup,
+            section_ids=[
+                "World_Constructors'_Championship_standings",
+                "International_Cup_for_F1_Constructors_standings",
+            ],
+            subject_header="Constructor",
+            subject_key="constructor",
+            subject_column=ConstructorColumn(),
+        )
+
     def _parse_regional_championship(
         self, soup: BeautifulSoup, section_ids: list[str]
     ) -> List[Dict[str, Any]]:
@@ -228,6 +274,47 @@ class SingleSeasonScraper(F1Scraper):
             },
         )
 
+    def _parse_standings_table(
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        subject_header: str,
+        subject_key: str,
+        subject_column: Any,
+    ) -> List[Dict[str, Any]]:
+        for section_id in section_ids:
+            config = ScraperConfig(
+                url=self.url,
+                section_id=section_id,
+                expected_headers=[subject_header],
+                column_map={
+                    "Pos.": "pos",
+                    "Pos": "pos",
+                    subject_header: subject_key,
+                    "Points": "points",
+                    "Pts.": "points",
+                    "Pts": "points",
+                    "No.": "no",
+                    "No": "no",
+                },
+                columns={
+                    "pos": PositionColumn(),
+                    subject_key: subject_column,
+                    "points": PointsColumn(),
+                    "no": IntColumn(),
+                },
+                default_column=RaceResultColumn(),
+            )
+            scraper = F1StandingsScraper(options=self._options, config=config)
+            try:
+                records = scraper.parse(soup)
+                if records:
+                    return records
+            except RuntimeError:
+                continue
+        return []
+
     def _parse_table(
         self,
         soup: BeautifulSoup,
@@ -236,6 +323,7 @@ class SingleSeasonScraper(F1Scraper):
         expected_headers: list[str],
         column_map: dict[str, str],
         columns: dict[str, Any],
+        default_column: Any | None = None,
     ) -> List[Dict[str, Any]]:
         for section_id in section_ids:
             config = ScraperConfig(
@@ -244,6 +332,7 @@ class SingleSeasonScraper(F1Scraper):
                 expected_headers=expected_headers,
                 column_map=column_map,
                 columns=columns,
+                default_column=default_column,
             )
             pipeline = TablePipeline(
                 config=config,
