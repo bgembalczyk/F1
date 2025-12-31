@@ -95,7 +95,6 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 row_index=row_index,
             )
             if record:
-                record["team"] = team
                 records.append(record)
         return records
 
@@ -195,12 +194,15 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 continue
 
             try:
-                records.extend(
-                    self._parse_section_table(
-                        soup,
-                        section_id=section_id,
-                        team=team,
-                    )
+                records.append(
+                    {
+                        "team": team,
+                        "liveries": self._parse_section_table(
+                            soup,
+                            section_id=section_id,
+                            team=team,
+                        ),
+                    }
                 )
             except RuntimeError:
                 continue
