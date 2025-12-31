@@ -27,6 +27,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     """
 
     url = "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries"
+    _SKIP = object()
     _season_headers = {
         "year",
         "years",
@@ -73,6 +74,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         return TablePipeline(
             config=config,
             include_urls=self.include_urls,
+            skip_sentinel=self._SKIP,
         )
 
     def _parse_section_table(
