@@ -137,6 +137,7 @@ class SingleSeasonScraper(F1Scraper):
         for group in groups.values():
             item = {root_key: group["value"]}
             item.update(self._merge_entry_groups(group["records"], keys[1:]))
+            self._strip_empty_entry_fields(item)
             merged_records.append(item)
 
         return merged_records
@@ -173,7 +174,11 @@ class SingleSeasonScraper(F1Scraper):
 
         items: list[dict[str, Any]] = []
         for group in groups.values():
-            item = {key: group["value"]}
+            item: dict[str, Any] = {}
+            if key == "constructor" and isinstance(group["value"], dict):
+                item.update(group["value"])
+            else:
+                item[key] = group["value"]
             item.update(self._merge_entry_groups(group["records"], keys[1:]))
             items.append(item)
 
@@ -184,6 +189,12 @@ class SingleSeasonScraper(F1Scraper):
         for record in records:
             drivers.extend(self._extract_entry_drivers(record))
         return drivers
+
+    @staticmethod
+    def _strip_empty_entry_fields(record: Dict[str, Any]) -> None:
+        for key in ("chassis", "engine", "tyre"):
+            if record.get(key) is None:
+                record.pop(key, None)
 
     @staticmethod
     def _entry_group_keys(records: List[Dict[str, Any]]) -> List[str]:
