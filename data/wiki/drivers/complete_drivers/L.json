@@ -56076,8 +56076,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2019",
-              "url": "https://en.wikipedia.org/wiki/2019_Toyota_Racing_Series"
+              "text": "Toyota Racing Series",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Racing_Series"
             },
             "years": [
               {
@@ -56088,8 +56088,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "liamlawson30.com",
+              "url": "http://liamlawson30.com"
             },
             "years": []
           }
@@ -61945,14 +61945,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2017",
-              "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+              "text": "FIA Formula 2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2"
             },
             "years": [
               {
                 "text": "2017",
                 "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP3 Series",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            },
+            "years": [
               {
                 "text": "2016",
                 "url": "https://en.wikipedia.org/wiki/2016_GP3_Series"
@@ -61961,8 +61969,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "charlesleclerc.com",
+              "url": "http://charlesleclerc.com"
             },
             "years": []
           }
@@ -91097,8 +91105,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2004",
-              "url": "https://en.wikipedia.org/wiki/2004_International_Formula_3000_Championship"
+              "text": "International F3000",
+              "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
             },
             "years": [
               {
@@ -100775,14 +100783,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1999 1998",
-              "url": null
+              "text": "Formula BMW ADAC",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
             },
             "years": [
               {
                 "text": "1999",
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula BMW Junior",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "years": [
               {
                 "text": "1998",
                 "url": null

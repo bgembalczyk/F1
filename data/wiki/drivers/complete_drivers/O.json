@@ -214,14 +214,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2015",
-              "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
+              "text": "GP3 Series",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
             },
             "years": [
               {
                 "text": "2015",
                 "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA F3 European",
+              "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
+            },
+            "years": [
               {
                 "text": "2014",
                 "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
@@ -230,8 +238,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "www.esteban-ocon.com",
+              "url": "https://www.esteban-ocon.com/"
             },
             "years": []
           }

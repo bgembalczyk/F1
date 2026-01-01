@@ -13748,8 +13748,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1980",
-              "url": "https://en.wikipedia.org/wiki/1980_British_Formula_Three_season"
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_F3"
             },
             "years": [
               {
@@ -38390,8 +38390,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2025",
-              "url": "https://en.wikipedia.org/wiki/2025_TCR_Brazil_Touring_Car_Championship"
+              "text": "TCR Brazil",
+              "url": "https://en.wikipedia.org/wiki/TCR_Brazil_Touring_Car_Championship"
             },
             "years": [
               {
@@ -42692,14 +42692,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2014",
-              "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_3.5_Series"
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_3.5"
             },
             "years": [
               {
                 "text": "2014",
                 "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_3.5_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault NEC",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_NEC"
+            },
+            "years": [
               {
                 "text": "2011",
                 "url": "https://en.wikipedia.org/wiki/2011_Formula_Renault_2.0_Northern_European_Cup"
@@ -42708,8 +42716,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "www.carlossainz.es/en/",
+              "url": "https://www.carlossainz.es/en/"
             },
             "years": []
           }

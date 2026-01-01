@@ -10830,14 +10830,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2003",
-              "url": "https://en.wikipedia.org/wiki/2003_European_Touring_Car_Championship"
+              "text": "ETCC",
+              "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
             },
             "years": [
               {
                 "text": "2003",
                 "url": "https://en.wikipedia.org/wiki/2003_European_Touring_Car_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "BTCC",
+              "url": "https://en.wikipedia.org/wiki/British_Touring_Car_Championship"
+            },
+            "years": [
               {
                 "text": "1994",
                 "url": "https://en.wikipedia.org/wiki/1994_British_Touring_Car_Championship"
@@ -53918,8 +53926,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2018",
-              "url": "https://en.wikipedia.org/wiki/2018_F4_Japanese_Championship"
+              "text": "F4 Japanese Championship",
+              "url": "https://en.wikipedia.org/wiki/F4_Japanese_Championship"
             },
             "years": [
               {

@@ -2253,18 +2253,34 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2015",
-              "url": "https://en.wikipedia.org/wiki/2015_GP2_Series"
+              "text": "GP2 Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
             },
             "years": [
               {
                 "text": "2015",
                 "url": "https://en.wikipedia.org/wiki/2015_GP2_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
               {
                 "text": "2012",
                 "url": "https://en.wikipedia.org/wiki/2012_Eurocup_Formula_Renault_2.0"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "F4 Eurocup 1.6",
+              "url": "https://en.wikipedia.org/wiki/F4_Eurocup_1.6"
+            },
+            "years": [
               {
                 "text": "2010",
                 "url": "https://en.wikipedia.org/wiki/2010_F4_Eurocup_1.6"
@@ -2273,8 +2289,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "stoffelvandoorne.com",
+              "url": "https://stoffelvandoorne.com/"
             },
             "years": []
           }
@@ -10061,8 +10077,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2010",
-              "url": "https://en.wikipedia.org/wiki/2010_British_Formula_3_season"
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_Formula_3_Championship"
             },
             "years": [
               {
@@ -22907,8 +22923,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2014",
-              "url": "https://en.wikipedia.org/wiki/2014_Zandvoort_Masters"
+              "text": "Masters of F3",
+              "url": "https://en.wikipedia.org/wiki/Masters_of_F3"
             },
             "years": [
               {
@@ -22919,8 +22935,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "verstappen.com",
+              "url": "http://verstappen.com"
             },
             "years": []
           }
@@ -29678,8 +29694,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2004",
-              "url": "https://en.wikipedia.org/wiki/2004_Formula_BMW_ADAC_season"
+              "text": "Formula BMW ADAC",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW_ADAC"
             },
             "years": [
               {
@@ -48314,18 +48330,34 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2019",
-              "url": "https://en.wikipedia.org/wiki/2019_Formula_2_Championship"
+              "text": "FIA Formula 2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2"
             },
             "years": [
               {
                 "text": "2019",
                 "url": "https://en.wikipedia.org/wiki/2019_Formula_2_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
               {
                 "text": "2014",
                 "url": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 2.0 Alps",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Alps"
+            },
+            "years": [
               {
                 "text": "2014",
                 "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_Series"

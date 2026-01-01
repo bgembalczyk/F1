@@ -21862,8 +21862,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2003",
-              "url": "https://en.wikipedia.org/wiki/2003_Masters_of_Formula_3"
+              "text": "Masters of Formula 3",
+              "url": "https://en.wikipedia.org/wiki/Masters_of_Formula_3"
             },
             "years": [
               {
@@ -29595,8 +29595,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2008-09",
-              "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_GP2_Asia_Series"
+              "text": "GP2 Asia Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
             },
             "years": [
               {
@@ -58452,14 +58452,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2013",
-              "url": "https://en.wikipedia.org/wiki/2013_GP3_Series"
+              "text": "GP3 Series",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
             },
             "years": [
               {
                 "text": "2013",
                 "url": "https://en.wikipedia.org/wiki/2013_GP3_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 2.0 Alps",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Alps"
+            },
+            "years": [
               {
                 "text": "2012",
                 "url": "https://en.wikipedia.org/wiki/2012_Formula_Renault_2.0_Alps_Series"

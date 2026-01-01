@@ -1940,8 +1940,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1983",
-              "url": "https://en.wikipedia.org/wiki/1983_Pocono_500"
+              "text": "Pocono 500",
+              "url": "https://en.wikipedia.org/wiki/Pocono_500_(IndyCar)"
             },
             "years": [
               {
@@ -38374,16 +38374,12 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1991",
-              "url": "https://en.wikipedia.org/wiki/1991_Formula_3000_season"
+              "text": "Formula 3000",
+              "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
             },
             "years": [
               {
                 "text": "1991",
-                "url": null
-              },
-              {
-                "text": "3000",
                 "url": null
               }
             ]
@@ -48333,8 +48329,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2017",
-              "url": "https://en.wikipedia.org/wiki/2017_World_Series_Formula_V8_3.5"
+              "text": "Formula V8 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_V8_3.5"
             },
             "years": [
               {

@@ -53,18 +53,34 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2005 1997-98 1990",
-              "url": null
+              "text": "Italian Superturismo",
+              "url": "https://en.wikipedia.org/wiki/Italian_Superturismo"
             },
             "years": [
               {
                 "text": "2005",
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "CART FedEx Championship Series",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "years": [
               {
                 "text": "1997",
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "European F3 Cup",
+              "url": "https://en.wikipedia.org/wiki/FIA_European_Formula_Three_Cup"
+            },
+            "years": [
               {
                 "text": "1990",
                 "url": null

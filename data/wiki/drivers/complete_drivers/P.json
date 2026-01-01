@@ -4077,8 +4077,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2014",
-              "url": "https://en.wikipedia.org/wiki/2014_GP2_Series"
+              "text": "GP2 Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
             },
             "years": [
               {
@@ -36631,8 +36631,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2007",
-              "url": "https://en.wikipedia.org/wiki/2007_British_Formula_3_International_Series"
+              "text": "British F3-National",
+              "url": "https://en.wikipedia.org/wiki/British_Formula_3_International_Series"
             },
             "years": [
               {
@@ -45996,24 +45996,36 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1975 1979 1979",
-              "url": null
+              "text": "European Formula Three Championship",
+              "url": "https://en.wikipedia.org/wiki/FIA_European_Formula_3_Championship_(established_in_1975)"
             },
             "years": [
               {
                 "text": "1975",
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Australian Formula 5000 Championship",
+              "url": "https://en.wikipedia.org/wiki/Rothmans_International_Series"
+            },
+            "years": [
               {
                 "text": "1979",
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Australian Rallycross Championship",
+              "url": "https://en.wikipedia.org/wiki/1979_Australian_Rallycross_Championship"
+            },
+            "years": [
               {
                 "text": "1979",
-                "url": null
-              },
-              {
-                "text": "5000",
                 "url": null
               }
             ]
@@ -74865,18 +74877,34 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2021",
-              "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+              "text": "FIA Formula 2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2"
             },
             "years": [
               {
                 "text": "2021",
                 "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA Formula 3",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_3"
+            },
+            "years": [
               {
                 "text": "2020",
                 "url": "https://en.wikipedia.org/wiki/2020_FIA_Formula_3_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
               {
                 "text": "2019",
                 "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
@@ -74885,8 +74913,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "oscarpiastri.com",
+              "url": "https://oscarpiastri.com/"
             },
             "years": []
           }
@@ -98289,8 +98317,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2000",
-              "url": "https://en.wikipedia.org/wiki/2000_12_Hours_of_Sebring"
+              "text": "12 Hours of Sebring",
+              "url": "https://en.wikipedia.org/wiki/12_Hours_of_Sebring"
             },
             "years": [
               {

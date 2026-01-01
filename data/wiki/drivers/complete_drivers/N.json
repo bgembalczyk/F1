@@ -67,8 +67,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2003",
-              "url": null
+              "text": "Formula Toyota",
+              "url": "https://en.wikipedia.org/wiki/Formula_Toyota"
             },
             "years": [
               {
@@ -8294,8 +8294,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1981",
-              "url": null
+              "text": "Japanese Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula"
             },
             "years": [
               {
@@ -16979,8 +16979,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "1997",
-              "url": "https://en.wikipedia.org/wiki/1997_Italian_Superturismo_Championship"
+              "text": "Italian Superturismo",
+              "url": "https://en.wikipedia.org/wiki/Italian_Superturismo_Championship"
             },
             "years": [
               {
@@ -21490,8 +21490,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2018",
-              "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
+              "text": "IMSA SportsCar Championship",
+              "url": "https://en.wikipedia.org/wiki/IMSA_SportsCar_Championship"
             },
             "years": [
               {
@@ -43494,26 +43494,58 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2017",
-              "url": "https://en.wikipedia.org/wiki/2017_FIA_Formula_3_European_Championship"
+              "text": "FIA F3 European",
+              "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
             },
             "years": [
               {
                 "text": "2017",
                 "url": "https://en.wikipedia.org/wiki/2017_FIA_Formula_3_European_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
               {
                 "text": "2016",
                 "url": "https://en.wikipedia.org/wiki/2016_Eurocup_Formula_Renault_2.0"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault NEC",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_NEC"
+            },
+            "years": [
               {
                 "text": "2016",
                 "url": "https://en.wikipedia.org/wiki/2016_Formula_Renault_2.0_Northern_European_Cup"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Toyota Racing Series",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Racing_Series"
+            },
+            "years": [
               {
                 "text": "2016",
                 "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "MSA Formula",
+              "url": "https://en.wikipedia.org/wiki/MSA_Formula"
+            },
+            "years": [
               {
                 "text": "2015",
                 "url": "https://en.wikipedia.org/wiki/2015_MSA_Formula_Championship"
@@ -43522,8 +43554,8 @@
           },
           {
             "title": {
-              "text": "Website",
-              "url": null
+              "text": "landonorris.com",
+              "url": "https://landonorris.com/"
             },
             "years": []
           }

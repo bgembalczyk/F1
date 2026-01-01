@@ -14853,8 +14853,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2023",
-              "url": "https://en.wikipedia.org/wiki/2023_IMSA_SportsCar_Championship"
+              "text": "IMSA Endurance Cup",
+              "url": "https://en.wikipedia.org/wiki/List_of_IMSA_SportsCar_Championship_champions#Michelin_Endurance_Cup"
             },
             "years": [
               {
@@ -40846,14 +40846,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2008",
-              "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_F3"
             },
             "years": [
               {
                 "text": "2008",
                 "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian Formula Renault",
+              "url": "https://en.wikipedia.org/wiki/Italian_Formula_Renault"
+            },
+            "years": [
               {
                 "text": "2006",
                 "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_2.0_Italia#Winter_Series"
@@ -51088,14 +51096,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2019",
-              "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Daytona"
+              "text": "24 Hours of Daytona",
+              "url": "https://en.wikipedia.org/wiki/24_Hours_of_Daytona"
             },
             "years": [
               {
                 "text": "2019",
                 "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Daytona"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Euro Open by Nissan",
+              "url": "https://en.wikipedia.org/wiki/Euro_Open_by_Nissan"
+            },
+            "years": [
               {
                 "text": "1999",
                 "url": "https://en.wikipedia.org/wiki/1999_Euro_Open_by_Nissan"
@@ -91670,22 +91686,46 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2023",
-              "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_European_Championship"
+              "text": "FR European",
+              "url": "https://en.wikipedia.org/wiki/FR_European"
             },
             "years": [
               {
                 "text": "2023",
                 "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_European_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FR Middle East",
+              "url": "https://en.wikipedia.org/wiki/FR_Middle_East"
+            },
+            "years": [
               {
                 "text": "2023",
                 "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC F4",
+              "url": "https://en.wikipedia.org/wiki/ADAC_F4"
+            },
+            "years": [
               {
                 "text": "2022",
                 "url": "https://en.wikipedia.org/wiki/2022_ADAC_Formula_4_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian F4",
+              "url": "https://en.wikipedia.org/wiki/Italian_F4"
+            },
+            "years": [
               {
                 "text": "2022",
                 "url": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"

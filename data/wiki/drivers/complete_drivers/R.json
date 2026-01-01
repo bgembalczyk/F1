@@ -29603,14 +29603,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2006",
-              "url": "https://en.wikipedia.org/wiki/2006_Formula_3_Euro_Series"
+              "text": "F3 Euro Series",
+              "url": "https://en.wikipedia.org/wiki/F3_Euro_Series"
             },
             "years": [
               {
                 "text": "2006",
                 "url": "https://en.wikipedia.org/wiki/2006_Formula_3_Euro_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "years": [
               {
                 "text": "2010",
                 "url": "https://en.wikipedia.org/wiki/2010_Deutsche_Tourenwagen_Masters"
@@ -52683,14 +52691,22 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2009",
-              "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_Formula_3_Championship"
             },
             "years": [
               {
                 "text": "2009",
                 "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault WEC",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_West_European_Cup"
+            },
+            "years": [
               {
                 "text": "2008",
                 "url": "https://en.wikipedia.org/wiki/2008_Formula_Renault_2.0_West_European_Cup"
@@ -99270,8 +99286,8 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2008",
-              "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_World_Final"
+              "text": "Formula BMW World Final",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
             },
             "years": [
               {
@@ -112449,18 +112465,34 @@
         "championship_titles": [
           {
             "title": {
-              "text": "2018",
-              "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
+              "text": "FIA Formula 2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2"
             },
             "years": [
               {
                 "text": "2018",
                 "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP3 Series",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            },
+            "years": [
               {
                 "text": "2017",
                 "url": "https://en.wikipedia.org/wiki/2017_GP3_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "BRDC F4",
+              "url": "https://en.wikipedia.org/wiki/BRDC_F4"
+            },
+            "years": [
               {
                 "text": "2014",
                 "url": "https://en.wikipedia.org/wiki/2014_BRDC_Formula_4_Championship"
