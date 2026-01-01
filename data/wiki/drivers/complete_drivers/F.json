@@ -34,9 +34,12 @@
         "title": "Corrado Fabi",
         "general": {
           "born": {
-            "date": "12 April 1961",
+            "date": "1961-04-12",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan,_Italy"
+              },
               "Italy"
             ]
           }
@@ -8383,9 +8386,12 @@
         "title": "Pascal Fabre",
         "general": {
           "born": {
-            "date": "9 January 1960",
+            "date": "1960-01-09",
             "place": [
-              "Lyon",
+              {
+                "text": "Lyon",
+                "url": "https://en.wikipedia.org/wiki/Lyon"
+              },
               "France"
             ]
           }
@@ -9101,10 +9107,16 @@
         "title": "Carlo Facetti",
         "general": {
           "born": {
-            "date": "26 June 1935",
+            "date": "1935-06-26",
             "place": [
-              "Cormano",
-              "Lombardy",
+              {
+                "text": "Cormano",
+                "url": "https://en.wikipedia.org/wiki/Cormano"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           }
@@ -11947,9 +11959,12 @@
             "place": null
           },
           "died": {
-            "date": "20 June 1952",
+            "date": "1952-06-20",
             "place": [
-              "Monte Carlo",
+              {
+                "text": "Monte Carlo",
+                "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+              },
               "Monaco"
             ]
           },
@@ -13303,19 +13318,31 @@
         "title": "Jack Fairman",
         "general": {
           "born": {
-            "date": "15 March 1913",
+            "date": "1913-03-15",
             "place": [
-              "Horley",
-              "Surrey",
+              {
+                "text": "Horley",
+                "url": "https://en.wikipedia.org/wiki/Horley"
+              },
+              {
+                "text": "Surrey",
+                "url": "https://en.wikipedia.org/wiki/Surrey"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "7 February 2002",
+            "date": "2002-02-07",
             "place": [
-              "Rugby",
-              "Warwickshire",
+              {
+                "text": "Rugby",
+                "url": "https://en.wikipedia.org/wiki/Rugby,_Warwickshire"
+              },
+              {
+                "text": "Warwickshire",
+                "url": "https://en.wikipedia.org/wiki/Warwickshire"
+              },
               "England",
               "UK"
             ]
@@ -13543,7 +13570,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "24 June 1911",
+            "date": "1911-06-24",
             "place": [
               "Balcarce",
               "Buenos Aires",
@@ -13551,9 +13578,12 @@
             ]
           },
           "died": {
-            "date": "17 July 1995",
+            "date": "1995-07-17",
             "place": [
-              "Buenos Aires",
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+              },
               "Argentina"
             ]
           },
@@ -21850,10 +21880,16 @@
             "place": null
           },
           "died": {
-            "date": "30 June 1966",
+            "date": "1966-06-30",
             "place": [
-              "Aiguebelle",
-              "Savoie",
+              {
+                "text": "Aiguebelle",
+                "url": "https://en.wikipedia.org/wiki/Aiguebelle"
+              },
+              {
+                "text": "Savoie",
+                "url": "https://en.wikipedia.org/wiki/Savoie"
+              },
               "France"
             ]
           },
@@ -22070,10 +22106,16 @@
             "place": null
           },
           "died": {
-            "date": "April 22, 1956",
+            "date": "1956-04-22",
             "place": [
-              "Vallejo",
-              "California",
+              {
+                "text": "Vallejo",
+                "url": "https://en.wikipedia.org/wiki/Vallejo,_California"
+              },
+              {
+                "text": "California",
+                "url": "https://en.wikipedia.org/wiki/California"
+              },
               "U.S."
             ]
           }
@@ -24442,11 +24484,11 @@
         "title": "William \"Willie\" Ferguson",
         "general": {
           "born": {
-            "date": "6 March 1940",
+            "date": "1940-03-06",
             "place": null
           },
           "died": {
-            "date": "19 May 2007",
+            "date": "2007-05-19",
             "place": null
           }
         },
@@ -24591,17 +24633,23 @@
         "title": "Maria Teresa de Filippis",
         "general": {
           "born": {
-            "date": "11 November 1926",
+            "date": "1926-11-11",
             "place": [
-              "Naples",
+              {
+                "text": "Naples",
+                "url": "https://en.wikipedia.org/wiki/Naples"
+              },
               "Campania",
               "Italy"
             ]
           },
           "died": {
-            "date": "9 January 2016",
+            "date": "2016-01-09",
             "place": [
-              "Scanzorosciate",
+              {
+                "text": "Scanzorosciate",
+                "url": "https://en.wikipedia.org/wiki/Scanzorosciate"
+              },
               "Lombardy",
               "Italy"
             ]
@@ -25463,18 +25511,30 @@
         "title": "Ludwig Fischer",
         "general": {
           "born": {
-            "date": "17 December 1915",
+            "date": "1915-12-17",
             "place": [
-              "Straubing",
-              "Lower Bavaria",
+              {
+                "text": "Straubing",
+                "url": "https://en.wikipedia.org/wiki/Straubing"
+              },
+              {
+                "text": "Lower Bavaria",
+                "url": "https://en.wikipedia.org/wiki/Lower_Bavaria"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "8 March 1991",
+            "date": "1991-03-08",
             "place": [
-              "Bad Reichenhall",
-              "Upper Bavaria",
+              {
+                "text": "Bad Reichenhall",
+                "url": "https://en.wikipedia.org/wiki/Bad_Reichenhall"
+              },
+              {
+                "text": "Upper Bavaria",
+                "url": "https://en.wikipedia.org/wiki/Upper_Bavaria"
+              },
               "Germany"
             ]
           }
@@ -25624,9 +25684,12 @@
             "place": null
           },
           "died": {
-            "date": "30 December 1976",
+            "date": "1976-12-30",
             "place": [
-              "Lucerne",
+              {
+                "text": "Lucerne",
+                "url": "https://en.wikipedia.org/wiki/Lucerne"
+              },
               "Switzerland"
             ]
           }
@@ -26364,7 +26427,7 @@
         "title": "Mike Fisher",
         "general": {
           "born": {
-            "date": "March 13, 1943",
+            "date": "1943-03-13",
             "place": [
               "Hollywood",
               "California",
@@ -26568,9 +26631,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "14 January 1973",
+            "date": "1973-01-14",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           },
@@ -36371,7 +36437,7 @@
         "title": "John Fitch",
         "general": {
           "born": {
-            "date": "August 4, 1917",
+            "date": "1917-08-04",
             "place": [
               "Indianapolis",
               "Indiana",
@@ -36379,7 +36445,7 @@
             ]
           },
           "died": {
-            "date": "October 31, 2012",
+            "date": "2012-10-31",
             "place": [
               "near Lime Rock",
               "Connecticut",
@@ -38295,9 +38361,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "18 January 1971",
+            "date": "1971-01-18",
             "place": [
-              "São Paulo",
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
               "Brazil"
             ]
           }
@@ -39077,9 +39146,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "12 December 1946",
+            "date": "1946-12-12",
             "place": [
-              "São Paulo",
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
               "Brazil"
             ]
           },
@@ -56696,14 +56768,20 @@
         "title": null,
         "general": {
           "born": {
-            "date": "25 December 1943",
+            "date": "1943-12-25",
             "place": [
-              "São Paulo",
-              "Brazil"
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
+              {
+                "text": "Brazil",
+                "url": "https://en.wikipedia.org/wiki/Vargas_Era"
+              }
             ]
           },
           "died": {
-            "date": "23 February 2024",
+            "date": "2024-02-23",
             "place": [
               "São Paulo",
               "Brazil"
@@ -56908,17 +56986,26 @@
         "title": "Theo Fitzau",
         "general": {
           "born": {
-            "date": "10 February 1923",
+            "date": "1923-02-10",
             "place": [
-              "Köthen",
+              {
+                "text": "Köthen",
+                "url": "https://en.wikipedia.org/wiki/K%C3%B6then"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "18 March 1982",
+            "date": "1982-03-18",
             "place": [
-              "Groß-Gerau",
-              "West Germany"
+              {
+                "text": "Groß-Gerau",
+                "url": "https://en.wikipedia.org/wiki/Gro%C3%9F-Gerau"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -57083,7 +57170,7 @@
             "place": null
           },
           "died": {
-            "date": "April 9, 2002",
+            "date": "2002-04-09",
             "place": [
               "Oxnard",
               "California",
@@ -57457,16 +57544,25 @@
         "title": "Jan Flinterman",
         "general": {
           "born": {
-            "date": "2 October 1919",
+            "date": "1919-10-02",
             "place": [
-              "The Hague",
-              "Netherlands"
+              {
+                "text": "The Hague",
+                "url": "https://en.wikipedia.org/wiki/The_Hague"
+              },
+              {
+                "text": "Netherlands",
+                "url": "https://en.wikipedia.org/wiki/Netherlands"
+              }
             ]
           },
           "died": {
-            "date": "26 December 1992",
+            "date": "1992-12-26",
             "place": [
-              "Leiden",
+              {
+                "text": "Leiden",
+                "url": "https://en.wikipedia.org/wiki/Leiden"
+              },
               "Netherlands"
             ]
           }
@@ -57628,18 +57724,27 @@
         "title": "Ron Flockhart",
         "general": {
           "born": {
-            "date": "16 June 1923",
+            "date": "1923-06-16",
             "place": [
-              "Edinburgh",
+              {
+                "text": "Edinburgh",
+                "url": "https://en.wikipedia.org/wiki/Edinburgh"
+              },
               "Scotland",
               "UK"
             ]
           },
           "died": {
-            "date": "12 April 1962",
+            "date": "1962-04-12",
             "place": [
-              "Kallista",
-              "Victoria",
+              {
+                "text": "Kallista",
+                "url": "https://en.wikipedia.org/wiki/Kallista,_Victoria"
+              },
+              {
+                "text": "Victoria",
+                "url": "https://en.wikipedia.org/wiki/Victoria_(state)"
+              },
               "Australia"
             ]
           }
@@ -59163,7 +59268,7 @@
             "place": null
           },
           "died": {
-            "date": "January 14, 1994",
+            "date": "1994-01-14",
             "place": [
               "Milwaukee",
               "Wisconsin",
@@ -59443,9 +59548,12 @@
         "title": "Gregor Foitek",
         "general": {
           "born": {
-            "date": "27 March 1965",
+            "date": "1965-03-27",
             "place": [
-              "Zürich",
+              {
+                "text": "Zürich",
+                "url": "https://en.wikipedia.org/wiki/Z%C3%BCrich"
+              },
               "Switzerland"
             ]
           }
@@ -61325,7 +61433,7 @@
         "title": "George Fonder",
         "general": {
           "born": {
-            "date": "June 22, 1917",
+            "date": "1917-06-22",
             "place": [
               "Elmhurst",
               "Pennsylvania",
@@ -61333,7 +61441,7 @@
             ]
           },
           "died": {
-            "date": "June 14, 1958",
+            "date": "1958-06-14",
             "place": [
               "Hatfield",
               "Pennsylvania",
@@ -61510,10 +61618,16 @@
         "title": "Norberto Fontana",
         "general": {
           "born": {
-            "date": "20 January 1975",
+            "date": "1975-01-20",
             "place": [
-              "Arrecifes",
-              "Buenos Aires",
+              {
+                "text": "Arrecifes",
+                "url": "https://en.wikipedia.org/wiki/Arrecifes"
+              },
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires_Province"
+              },
               "Argentina"
             ]
           }
@@ -63996,7 +64110,7 @@
         "title": "Carl Forberg",
         "general": {
           "born": {
-            "date": "March 4, 1911",
+            "date": "1911-03-04",
             "place": [
               "Omaha",
               "Nebraska",
@@ -64004,7 +64118,7 @@
             ]
           },
           "died": {
-            "date": "January 17, 2000",
+            "date": "2000-01-17",
             "place": null
           }
         },
@@ -64173,11 +64287,11 @@
         "title": "Gene Force",
         "general": {
           "born": {
-            "date": "June 15, 1916",
+            "date": "1916-06-15",
             "place": null
           },
           "died": {
-            "date": "August 21, 1983",
+            "date": "1983-08-21",
             "place": null
           }
         },
@@ -64362,10 +64476,16 @@
         "title": "Franco Forini",
         "general": {
           "born": {
-            "date": "22 September 1958",
+            "date": "1958-09-22",
             "place": [
-              "Muralto",
-              "Ticino",
+              {
+                "text": "Muralto",
+                "url": "https://en.wikipedia.org/wiki/Muralto"
+              },
+              {
+                "text": "Ticino",
+                "url": "https://en.wikipedia.org/wiki/Ticino"
+              },
               "Switzerland"
             ]
           }
@@ -64519,14 +64639,14 @@
         "title": "Philip Fotheringham-Parker",
         "general": {
           "born": {
-            "date": "22 September 1907",
+            "date": "1907-09-22",
             "place": [
               "Beckenham",
               "Kent"
             ]
           },
           "died": {
-            "date": "15 October 1981",
+            "date": "1981-10-15",
             "place": [
               "Beckley",
               "East Sussex"
@@ -75763,9 +75883,12 @@
         "title": "Giorgio Francia",
         "general": {
           "born": {
-            "date": "8 November 1947",
+            "date": "1947-11-08",
             "place": [
-              "Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
               "Italy"
             ]
           }
@@ -75952,9 +76075,12 @@
             "place": null
           },
           "died": {
-            "date": "November 2, 2007",
+            "date": "2007-11-02",
             "place": [
-              "San Diego",
+              {
+                "text": "San Diego",
+                "url": "https://en.wikipedia.org/wiki/San_Diego"
+              },
               "California",
               "U.S."
             ]
@@ -76251,10 +76377,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "18 May 1967",
+            "date": "1967-05-18",
             "place": [
-              "Mönchengladbach",
-              "West Germany"
+              {
+                "text": "Mönchengladbach",
+                "url": "https://en.wikipedia.org/wiki/M%C3%B6nchengladbach"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "children": []
@@ -82264,16 +82396,22 @@
         "title": "Paul Frère",
         "general": {
           "born": {
-            "date": "30 January 1917",
+            "date": "1917-01-30",
             "place": [
-              "Le Havre",
+              {
+                "text": "Le Havre",
+                "url": "https://en.wikipedia.org/wiki/Le_Havre"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "23 February 2008",
+            "date": "2008-02-23",
             "place": [
-              "Saint-Paul-de-Vence",
+              {
+                "text": "Saint-Paul-de-Vence",
+                "url": "https://en.wikipedia.org/wiki/Saint-Paul-de-Vence"
+              },
               "France"
             ]
           }
@@ -83527,10 +83665,16 @@
         "title": "Patrick Friesacher",
         "general": {
           "born": {
-            "date": "26 September 1980",
+            "date": "1980-09-26",
             "place": [
-              "Wolfsberg",
-              "Carinthia",
+              {
+                "text": "Wolfsberg",
+                "url": "https://en.wikipedia.org/wiki/Wolfsberg,_Carinthia"
+              },
+              {
+                "text": "Carinthia",
+                "url": "https://en.wikipedia.org/wiki/Carinthia_(state)"
+              },
               "Austria"
             ]
           }
@@ -85296,20 +85440,35 @@
         "title": "Joe Fry",
         "general": {
           "born": {
-            "date": "26 October 1915",
+            "date": "1915-10-26",
             "place": [
               "Winterbourne",
               "Gloucestershire",
-              "England"
+              {
+                "text": "England",
+                "url": "https://en.wikipedia.org/wiki/England"
+              }
             ]
           },
           "died": {
-            "date": "29 July 1950",
+            "date": "1950-07-29",
             "place": [
-              "Blandford Motor Racing Circuit",
-              "Blandford Forum",
-              "Dorset",
-              "England"
+              {
+                "text": "Blandford Motor Racing Circuit",
+                "url": "https://en.wikipedia.org/wiki/Blandford_Camp#Blandford_Motor_Racing_Circuit"
+              },
+              {
+                "text": "Blandford Forum",
+                "url": "https://en.wikipedia.org/wiki/Blandford_Forum"
+              },
+              {
+                "text": "Dorset",
+                "url": "https://en.wikipedia.org/wiki/Dorset"
+              },
+              {
+                "text": "England",
+                "url": "https://en.wikipedia.org/wiki/England"
+              }
             ]
           }
         },
@@ -85450,10 +85609,16 @@
         "title": "Hiroshi Fushida",
         "general": {
           "born": {
-            "date": "10 March 1946",
+            "date": "1946-03-10",
             "place": [
-              "Kyoto",
-              "Japan"
+              {
+                "text": "Kyoto",
+                "url": "https://en.wikipedia.org/wiki/Kyoto"
+              },
+              {
+                "text": "Japan",
+                "url": "https://en.wikipedia.org/wiki/Japan"
+              }
             ]
           }
         },

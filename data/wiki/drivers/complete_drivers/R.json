@@ -38,16 +38,22 @@
         "title": "Ian Raby",
         "general": {
           "born": {
-            "date": "22 September 1921",
+            "date": "1921-09-22",
             "place": [
-              "London",
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "7 November 1967",
+            "date": "1967-11-07",
             "place": [
-              "London",
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "England"
             ]
           }
@@ -7937,9 +7943,12 @@
         "title": "Hermano da Silva Ramos",
         "general": {
           "born": {
-            "date": "7 December 1925",
+            "date": "1925-12-07",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           }
@@ -8101,10 +8110,16 @@
         "title": "Pierre-Henri Raphanel",
         "general": {
           "born": {
-            "date": "27 May 1961",
+            "date": "1961-05-27",
             "place": [
-              "Algiers",
-              "Algeria"
+              {
+                "text": "Algiers",
+                "url": "https://en.wikipedia.org/wiki/Algiers"
+              },
+              {
+                "text": "Algeria",
+                "url": "https://en.wikipedia.org/wiki/French_Algeria"
+              }
             ]
           }
         },
@@ -10554,7 +10569,7 @@
             "place": null
           },
           "died": {
-            "date": "February 1, 2000",
+            "date": "2000-02-01",
             "place": [
               "Melbourne",
               "Florida",
@@ -13824,7 +13839,7 @@
             "place": null
           },
           "died": {
-            "date": "November 23, 2011",
+            "date": "2011-11-23",
             "place": [
               "Melbourne",
               "Florida",
@@ -14238,9 +14253,12 @@
             "place": null
           },
           "died": {
-            "date": "30 April 1994",
+            "date": "1994-04-30",
             "place": [
-              "Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
               "Emilia-Romagna",
               "Italy"
             ]
@@ -19428,9 +19446,12 @@
         "title": "Brian Redman",
         "general": {
           "born": {
-            "date": "9 March 1937",
+            "date": "1937-03-09",
             "place": [
-              "Burnley",
+              {
+                "text": "Burnley",
+                "url": "https://en.wikipedia.org/wiki/Burnley"
+              },
               "Lancashire",
               "England"
             ]
@@ -23150,7 +23171,7 @@
             "place": null
           },
           "died": {
-            "date": "September 28, 1958",
+            "date": "1958-09-28",
             "place": [
               "Trenton",
               "New Jersey",
@@ -23421,16 +23442,25 @@
         "title": "Ray Reed",
         "general": {
           "born": {
-            "date": "30 April 1932",
+            "date": "1932-04-30",
             "place": [
-              "Gwelo",
-              "Southern Rhodesia"
+              {
+                "text": "Gwelo",
+                "url": "https://en.wikipedia.org/wiki/Gwelo"
+              },
+              {
+                "text": "Southern Rhodesia",
+                "url": "https://en.wikipedia.org/wiki/Southern_Rhodesia"
+              }
             ]
           },
           "died": {
-            "date": "8 May 1970",
+            "date": "1970-05-08",
             "place": [
-              "South Africa"
+              {
+                "text": "South Africa",
+                "url": "https://en.wikipedia.org/wiki/South_Africa"
+              }
             ]
           }
         },
@@ -23717,16 +23747,19 @@
         "title": "Alan Rees",
         "general": {
           "born": {
-            "date": "12 January 1938",
+            "date": "1938-01-12",
             "place": [
               "Langstone",
               "Newport",
-              "Monmouthshire",
+              {
+                "text": "Monmouthshire",
+                "url": "https://en.wikipedia.org/wiki/Monmouthshire"
+              },
               "Wales"
             ]
           },
           "died": {
-            "date": "6 September 2024",
+            "date": "2024-09-06",
             "place": [
               "Ascot",
               "Berkshire",
@@ -23923,10 +23956,16 @@
             "place": null
           },
           "died": {
-            "date": "15 December 2006",
+            "date": "2006-12-15",
             "place": [
-              "Fontevivo",
-              "Emilia-Romagna",
+              {
+                "text": "Fontevivo",
+                "url": "https://en.wikipedia.org/wiki/Fontevivo"
+              },
+              {
+                "text": "Emilia-Romagna",
+                "url": "https://en.wikipedia.org/wiki/Emilia-Romagna"
+              },
               "Italy"
             ]
           },
@@ -29519,9 +29558,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "16 April 1986",
+            "date": "1986-04-16",
             "place": [
-              "Uphall",
+              {
+                "text": "Uphall",
+                "url": "https://en.wikipedia.org/wiki/Uphall"
+              },
               "West Lothian",
               "Scotland"
             ]
@@ -43439,7 +43481,7 @@
             "place": null
           },
           "died": {
-            "date": "24 July 1972",
+            "date": "1972-07-24",
             "place": [
               "Aspen",
               "Colorado",
@@ -43545,10 +43587,16 @@
             "place": null
           },
           "died": {
-            "date": "March 22, 1974",
+            "date": "1974-03-22",
             "place": [
-              "Kyalami",
-              "Gauteng",
+              {
+                "text": "Kyalami",
+                "url": "https://en.wikipedia.org/wiki/Kyalami"
+              },
+              {
+                "text": "Gauteng",
+                "url": "https://en.wikipedia.org/wiki/Gauteng"
+              },
               "South Africa"
             ]
           },
@@ -48932,9 +48980,12 @@
         "title": "John Rhodes",
         "general": {
           "born": {
-            "date": "18 August 1927",
+            "date": "1927-08-18",
             "place": [
-              "Wolverhampton",
+              {
+                "text": "Wolverhampton",
+                "url": "https://en.wikipedia.org/wiki/Wolverhampton"
+              },
               "England"
             ]
           }
@@ -50853,9 +50904,12 @@
         "title": "Alex Ribeiro",
         "general": {
           "born": {
-            "date": "7 November 1948",
+            "date": "1948-11-07",
             "place": [
-              "Belo Horizonte",
+              {
+                "text": "Belo Horizonte",
+                "url": "https://en.wikipedia.org/wiki/Belo_Horizonte"
+              },
               "Brazil"
             ]
           }
@@ -60182,11 +60236,11 @@
         "title": "Ken Richardson",
         "general": {
           "born": {
-            "date": "21 August 1911",
+            "date": "1911-08-21",
             "place": null
           },
           "died": {
-            "date": "27 June 1997",
+            "date": "1997-06-27",
             "place": null
           }
         },
@@ -60327,17 +60381,29 @@
         "title": "Fritz Riess",
         "general": {
           "born": {
-            "date": "11 July 1922",
+            "date": "1922-07-11",
             "place": [
-              "Nuremberg",
-              "Germany"
+              {
+                "text": "Nuremberg",
+                "url": "https://en.wikipedia.org/wiki/Nuremberg"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Germany"
+              }
             ]
           },
           "died": {
-            "date": "15 May 1991",
+            "date": "1991-05-15",
             "place": [
-              "Samedan",
-              "Switzerland"
+              {
+                "text": "Samedan",
+                "url": "https://en.wikipedia.org/wiki/Samedan"
+              },
+              {
+                "text": "Switzerland",
+                "url": "https://en.wikipedia.org/wiki/Switzerland"
+              }
             ]
           }
         },
@@ -60721,7 +60787,7 @@
             "place": null
           },
           "died": {
-            "date": "August 31, 1952",
+            "date": "1952-08-31",
             "place": [
               "Dayton",
               "Ohio",
@@ -61013,9 +61079,12 @@
             "place": null
           },
           "died": {
-            "date": "5 September 1970",
+            "date": "1970-09-05",
             "place": [
-              "Monza Circuit",
+              {
+                "text": "Monza Circuit",
+                "url": "https://en.wikipedia.org/wiki/Monza_Circuit"
+              },
               "Lombardy",
               "Italy"
             ]
@@ -64807,17 +64876,23 @@
         "title": "John Riseley-Prichard",
         "general": {
           "born": {
-            "date": "17 January 1924",
+            "date": "1924-01-17",
             "place": [
-              "Hereford",
+              {
+                "text": "Hereford",
+                "url": "https://en.wikipedia.org/wiki/Hereford"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "8 July 1993",
+            "date": "1993-07-08",
             "place": [
-              "Baan Kai Thuan",
+              {
+                "text": "Baan Kai Thuan",
+                "url": null
+              },
               "Thailand"
             ]
           }
@@ -64959,17 +65034,29 @@
         "title": "Giovanni de Riu",
         "general": {
           "born": {
-            "date": "10 March 1925",
+            "date": "1925-03-10",
             "place": [
-              "Macomer",
-              "Sardinia"
+              {
+                "text": "Macomer",
+                "url": "https://en.wikipedia.org/wiki/Macomer"
+              },
+              {
+                "text": "Sardinia",
+                "url": "https://en.wikipedia.org/wiki/Sardinia"
+              }
             ]
           },
           "died": {
-            "date": "11 December 2008",
+            "date": "2008-12-11",
             "place": [
-              "Stresa",
-              "Piedmont"
+              {
+                "text": "Stresa",
+                "url": "https://en.wikipedia.org/wiki/Stresa"
+              },
+              {
+                "text": "Piedmont",
+                "url": "https://en.wikipedia.org/wiki/Piedmont"
+              }
             ]
           }
         },
@@ -65110,10 +65197,16 @@
         "title": "Richard Robarts",
         "general": {
           "born": {
-            "date": "22 September 1944",
+            "date": "1944-09-22",
             "place": [
-              "Bicknacre",
-              "Essex",
+              {
+                "text": "Bicknacre",
+                "url": "https://en.wikipedia.org/wiki/Bicknacre"
+              },
+              {
+                "text": "Essex",
+                "url": "https://en.wikipedia.org/wiki/Essex"
+              },
               "England"
             ]
           }
@@ -65307,11 +65400,20 @@
             "place": null
           },
           "died": {
-            "date": "11 July 1971",
+            "date": "1971-07-11",
             "place": [
-              "Norisring",
-              "Nuremberg",
-              "West Germany"
+              {
+                "text": "Norisring",
+                "url": "https://en.wikipedia.org/wiki/Norisring"
+              },
+              {
+                "text": "Nuremberg",
+                "url": "https://en.wikipedia.org/wiki/Nuremberg"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "relatives": [
@@ -71207,16 +71309,22 @@
         "title": "Ricardo Rodríguez",
         "general": {
           "born": {
-            "date": "14 February 1942",
+            "date": "1942-02-14",
             "place": [
-              "Mexico City",
+              {
+                "text": "Mexico City",
+                "url": "https://en.wikipedia.org/wiki/Mexico_City"
+              },
               "Mexico"
             ]
           },
           "died": {
-            "date": "1 November 1962",
+            "date": "1962-11-01",
             "place": [
-              "Mexico City",
+              {
+                "text": "Mexico City",
+                "url": "https://en.wikipedia.org/wiki/Mexico_City"
+              },
               "Mexico"
             ]
           }
@@ -72361,11 +72469,11 @@
         "title": "Franco Rol",
         "general": {
           "born": {
-            "date": "5 June 1908",
+            "date": "1908-06-05",
             "place": null
           },
           "died": {
-            "date": "18 June 1977",
+            "date": "1977-06-18",
             "place": null
           }
         },
@@ -72526,14 +72634,20 @@
         "title": "Alan Rollinson",
         "general": {
           "born": {
-            "date": "15 May 1943",
+            "date": "1943-05-15",
             "place": [
-              "Walsall",
-              "Staffordshire"
+              {
+                "text": "Walsall",
+                "url": "https://en.wikipedia.org/wiki/Walsall"
+              },
+              {
+                "text": "Staffordshire",
+                "url": "https://en.wikipedia.org/wiki/Staffordshire"
+              }
             ]
           },
           "died": {
-            "date": "2 June 2019",
+            "date": "2019-06-02",
             "place": null
           }
         },
@@ -72686,10 +72800,16 @@
             "place": null
           },
           "died": {
-            "date": "6 February 2008",
+            "date": "2008-02-06",
             "place": [
-              "Warwick",
-              "Warwickshire",
+              {
+                "text": "Warwick",
+                "url": "https://en.wikipedia.org/wiki/Warwick"
+              },
+              {
+                "text": "Warwickshire",
+                "url": "https://en.wikipedia.org/wiki/Warwickshire"
+              },
               "England",
               "UK"
             ]
@@ -74189,11 +74309,11 @@
         "title": "Bertil Roos",
         "general": {
           "born": {
-            "date": "12 October 1943",
+            "date": "1943-10-12",
             "place": null
           },
           "died": {
-            "date": "31 March 2016",
+            "date": "2016-03-31",
             "place": null
           }
         },
@@ -92233,7 +92353,7 @@
             "place": null
           },
           "died": {
-            "date": "January 1, 1981",
+            "date": "1981-01-01",
             "place": [
               "Royal Oak",
               "Michigan",
@@ -92541,10 +92661,16 @@
             "place": null
           },
           "died": {
-            "date": "29 October 1956",
+            "date": "1956-10-29",
             "place": [
-              "Neuilly-sur-Seine",
-              "Hauts-de-Seine",
+              {
+                "text": "Neuilly-sur-Seine",
+                "url": "https://en.wikipedia.org/wiki/Neuilly-sur-Seine"
+              },
+              {
+                "text": "Hauts-de-Seine",
+                "url": "https://en.wikipedia.org/wiki/Hauts-de-Seine"
+              },
               "France"
             ]
           },
@@ -96950,10 +97076,16 @@
         "title": "Ricardo Rosset",
         "general": {
           "born": {
-            "date": "27 July 1968",
+            "date": "1968-07-27",
             "place": [
-              "São Paulo",
-              "Brazil"
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
+              {
+                "text": "Brazil",
+                "url": "https://en.wikipedia.org/wiki/Brazil"
+              }
             ]
           }
         },
@@ -109204,9 +109336,12 @@
         "title": "Huub Rothengatter",
         "general": {
           "born": {
-            "date": "8 October 1954",
+            "date": "1954-10-08",
             "place": [
-              "Bussum",
+              {
+                "text": "Bussum",
+                "url": "https://en.wikipedia.org/wiki/Bussum"
+              },
               "Netherlands"
             ]
           }
@@ -111072,16 +111207,25 @@
         "title": "Basil van Rooyen",
         "general": {
           "born": {
-            "date": "19 April 1939",
+            "date": "1939-04-19",
             "place": [
-              "Johannesburg",
-              "South Africa"
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
+              {
+                "text": "South Africa",
+                "url": "https://en.wikipedia.org/wiki/Union_of_South_Africa"
+              }
             ]
           },
           "died": {
-            "date": "14 September 2023",
+            "date": "2023-09-14",
             "place": [
-              "New South Wales",
+              {
+                "text": "New South Wales",
+                "url": "https://en.wikipedia.org/wiki/New_South_Wales"
+              },
               "Australia"
             ]
           }
@@ -111824,7 +111968,7 @@
             "place": null
           },
           "died": {
-            "date": "March 23, 2009",
+            "date": "2009-03-23",
             "place": [
               "Wichita Falls",
               "Texas",
@@ -112123,10 +112267,16 @@
         "title": "Jean-Claude Rudaz",
         "general": {
           "born": {
-            "date": "23 July 1942",
+            "date": "1942-07-23",
             "place": [
-              "Sion",
-              "Valais",
+              {
+                "text": "Sion",
+                "url": "https://en.wikipedia.org/wiki/Sion,_Switzerland"
+              },
+              {
+                "text": "Valais",
+                "url": "https://en.wikipedia.org/wiki/Valais"
+              },
               "Switzerland"
             ]
           }
@@ -118808,7 +118958,7 @@
             "place": null
           },
           "died": {
-            "date": "October 14, 2012",
+            "date": "2012-10-14",
             "place": [
               "King",
               "Wisconsin",
@@ -119112,7 +119262,7 @@
             "place": null
           },
           "died": {
-            "date": "February 13, 1976",
+            "date": "1976-02-13",
             "place": [
               "Clearwater",
               "Florida",
@@ -119436,7 +119586,7 @@
             "place": null
           },
           "died": {
-            "date": "May 19, 1997",
+            "date": "1997-05-19",
             "place": [
               "Lake Havasu City",
               "Arizona",
@@ -119857,17 +120007,26 @@
         "title": "Peter Ryan",
         "general": {
           "born": {
-            "date": "10 June 1940",
+            "date": "1940-06-10",
             "place": [
-              "Philadelphia",
-              "Pennsylvania",
+              {
+                "text": "Philadelphia",
+                "url": "https://en.wikipedia.org/wiki/Philadelphia"
+              },
+              {
+                "text": "Pennsylvania",
+                "url": "https://en.wikipedia.org/wiki/Pennsylvania"
+              },
               "U.S."
             ]
           },
           "died": {
-            "date": "2 July 1962",
+            "date": "1962-07-02",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           }

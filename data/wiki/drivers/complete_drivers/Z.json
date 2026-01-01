@@ -6427,18 +6427,30 @@
         "title": "Emilio Zapico",
         "general": {
           "born": {
-            "date": "27 May 1944",
+            "date": "1944-05-27",
             "place": [
-              "León",
-              "Castile and León",
+              {
+                "text": "León",
+                "url": "https://en.wikipedia.org/wiki/Le%C3%B3n,_Spain"
+              },
+              {
+                "text": "Castile and León",
+                "url": "https://en.wikipedia.org/wiki/Castile_and_Le%C3%B3n"
+              },
               "Spain"
             ]
           },
           "died": {
-            "date": "6 August 1996",
+            "date": "1996-08-06",
             "place": [
-              "Huete",
-              "Castile-La Mancha",
+              {
+                "text": "Huete",
+                "url": "https://en.wikipedia.org/wiki/Huete,_Spain"
+              },
+              {
+                "text": "Castile-La Mancha",
+                "url": "https://en.wikipedia.org/wiki/Castile-La_Mancha"
+              },
               "Spain"
             ]
           }
@@ -7197,16 +7209,22 @@
         "title": "Renzo Zorzi",
         "general": {
           "born": {
-            "date": "12 December 1946",
+            "date": "1946-12-12",
             "place": [
-              "Ziano di Fiemme",
+              {
+                "text": "Ziano di Fiemme",
+                "url": "https://en.wikipedia.org/wiki/Ziano_di_Fiemme"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "15 May 2015",
+            "date": "2015-05-15",
             "place": [
-              "Magenta",
+              {
+                "text": "Magenta",
+                "url": "https://en.wikipedia.org/wiki/Magenta,_Lombardy"
+              },
               "Italy"
             ]
           }
@@ -8366,7 +8384,7 @@
         "title": "Ricardo Zunino",
         "general": {
           "born": {
-            "date": "13 April 1949",
+            "date": "1949-04-13",
             "place": [
               "San Juan",
               "Argentina"

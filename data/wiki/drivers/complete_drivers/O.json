@@ -30,11 +30,11 @@
         "title": "Robert O'Brien",
         "general": {
           "born": {
-            "date": "April 11, 1908",
+            "date": "1908-04-11",
             "place": null
           },
           "died": {
-            "date": "February 10, 1987",
+            "date": "1987-02-10",
             "place": null
           }
         },
@@ -6843,7 +6843,7 @@
             "place": null
           },
           "died": {
-            "date": "May 30, 1958",
+            "date": "1958-05-30",
             "place": [
               "Speedway",
               "Indiana",
@@ -7146,14 +7146,17 @@
         "title": "Casimiro de Oliveira",
         "general": {
           "born": {
-            "date": "8 September 1907",
+            "date": "1907-09-08",
             "place": [
-              "Porto",
+              {
+                "text": "Porto",
+                "url": "https://en.wikipedia.org/wiki/Porto"
+              },
               "Portugal"
             ]
           },
           "died": {
-            "date": "22 November 1970",
+            "date": "1970-11-22",
             "place": [
               "Porto",
               "Portugal"
@@ -11583,7 +11586,7 @@
             "place": null
           },
           "died": {
-            "date": "February 26, 2022",
+            "date": "2022-02-26",
             "place": [
               "Anaheim",
               "California",
@@ -16040,10 +16043,16 @@
         "title": "Karl Oppitzhauser",
         "general": {
           "born": {
-            "date": "4 October 1941",
+            "date": "1941-10-04",
             "place": [
-              "Bruck an der Leitha",
-              "Lower Austria",
+              {
+                "text": "Bruck an der Leitha",
+                "url": "https://en.wikipedia.org/wiki/Bruck_an_der_Leitha"
+              },
+              {
+                "text": "Lower Austria",
+                "url": "https://en.wikipedia.org/wiki/Lower_Austria"
+              },
               "Austria"
             ]
           }
@@ -16808,11 +16817,11 @@
         "title": "Arthur Owen",
         "general": {
           "born": {
-            "date": "23 March 1915",
+            "date": "1915-03-23",
             "place": null
           },
           "died": {
-            "date": "27 April 2002",
+            "date": "2002-04-27",
             "place": null
           }
         },

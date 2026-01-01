@@ -38,7 +38,7 @@
         "title": "George Eaton",
         "general": {
           "born": {
-            "date": "12 November 1945",
+            "date": "1945-11-12",
             "place": [
               "Toronto",
               "Ontario",
@@ -367,7 +367,7 @@
         "title": "Don Edmunds",
         "general": {
           "born": {
-            "date": "September 23, 1930",
+            "date": "1930-09-23",
             "place": [
               "Santa Ana",
               "California",
@@ -375,7 +375,7 @@
             ]
           },
           "died": {
-            "date": "August 11, 2020",
+            "date": "2020-08-11",
             "place": null
           }
         },
@@ -544,10 +544,16 @@
         "title": "Guy Edwards QGM",
         "general": {
           "born": {
-            "date": "30 December 1942",
+            "date": "1942-12-30",
             "place": [
-              "Macclesfield",
-              "Cheshire",
+              {
+                "text": "Macclesfield",
+                "url": "https://en.wikipedia.org/wiki/Macclesfield"
+              },
+              {
+                "text": "Cheshire",
+                "url": "https://en.wikipedia.org/wiki/Cheshire"
+              },
               "England"
             ]
           }
@@ -8958,15 +8964,21 @@
         "title": "Vic Elford",
         "general": {
           "born": {
-            "date": "10 June 1935",
+            "date": "1935-06-10",
             "place": [
-              "Peckham",
-              "London",
+              {
+                "text": "Peckham",
+                "url": "https://en.wikipedia.org/wiki/Peckham"
+              },
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "13 March 2022",
+            "date": "2022-03-13",
             "place": null
           }
         },
@@ -10482,7 +10494,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "December 9, 1926",
+            "date": "1926-12-09",
             "place": [
               "Oakland",
               "California",
@@ -10490,7 +10502,7 @@
             ]
           },
           "died": {
-            "date": "August 30, 1959",
+            "date": "1959-08-30",
             "place": [
               "West Allis",
               "Wisconsin",
@@ -10757,18 +10769,27 @@
         "title": "Paul Emery",
         "general": {
           "born": {
-            "date": "12 November 1916",
+            "date": "1916-11-12",
             "place": [
-              "Chiswick",
+              {
+                "text": "Chiswick",
+                "url": "https://en.wikipedia.org/wiki/Chiswick"
+              },
               "London",
               "England"
             ]
           },
           "died": {
-            "date": "3 February 1993",
+            "date": "1993-02-03",
             "place": [
-              "Epsom",
-              "Surrey",
+              {
+                "text": "Epsom",
+                "url": "https://en.wikipedia.org/wiki/Epsom"
+              },
+              {
+                "text": "Surrey",
+                "url": "https://en.wikipedia.org/wiki/Surrey"
+              },
               "England"
             ]
           }
@@ -10930,10 +10951,16 @@
         "title": "Tomáš Enge",
         "general": {
           "born": {
-            "date": "11 September 1976",
+            "date": "1976-09-11",
             "place": [
-              "Liberec",
-              "Czechoslovakia"
+              {
+                "text": "Liberec",
+                "url": "https://en.wikipedia.org/wiki/Liberec"
+              },
+              {
+                "text": "Czechoslovakia",
+                "url": "https://en.wikipedia.org/wiki/Czechoslovakia"
+              }
             ]
           }
         },
@@ -18999,14 +19026,17 @@
         "title": "Paul England",
         "general": {
           "born": {
-            "date": "28 March 1929",
+            "date": "1929-03-28",
             "place": [
-              "Melbourne",
+              {
+                "text": "Melbourne",
+                "url": "https://en.wikipedia.org/wiki/Melbourne"
+              },
               "Australia"
             ]
           },
           "died": {
-            "date": "17 June 2014",
+            "date": "2014-06-17",
             "place": null
           }
         },
@@ -27112,18 +27142,30 @@
         "title": "Harald Ertl",
         "general": {
           "born": {
-            "date": "31 August 1948",
+            "date": "1948-08-31",
             "place": [
-              "Zell am See",
-              "Salzburg",
+              {
+                "text": "Zell am See",
+                "url": "https://en.wikipedia.org/wiki/Zell_am_See"
+              },
+              {
+                "text": "Salzburg",
+                "url": "https://en.wikipedia.org/wiki/Salzburg_(state)"
+              },
               "Austria"
             ]
           },
           "died": {
-            "date": "7 April 1982",
+            "date": "1982-04-07",
             "place": [
-              "Hohenahr",
-              "Hesse",
+              {
+                "text": "Hohenahr",
+                "url": "https://en.wikipedia.org/wiki/Hohenahr"
+              },
+              {
+                "text": "Hesse",
+                "url": "https://en.wikipedia.org/wiki/Hesse"
+              },
               "West Germany"
             ]
           }
@@ -30186,7 +30228,7 @@
         "title": "Nasif Estéfano",
         "general": {
           "born": {
-            "date": "18 November 1932",
+            "date": "1932-11-18",
             "place": [
               "Concepción",
               "Tucumán",
@@ -30194,9 +30236,12 @@
             ]
           },
           "died": {
-            "date": "21 October 1973",
+            "date": "1973-10-21",
             "place": [
-              "Aimogasta",
+              {
+                "text": "Aimogasta",
+                "url": "https://en.wikipedia.org/wiki/Aimogasta"
+              },
               "La Rioja",
               "Argentina"
             ]
@@ -30363,10 +30408,16 @@
         "title": "Bob Evans",
         "general": {
           "born": {
-            "date": "11 June 1947",
+            "date": "1947-06-11",
             "place": [
-              "Waddington",
-              "Lincolnshire",
+              {
+                "text": "Waddington",
+                "url": "https://en.wikipedia.org/wiki/Waddington,_Lincolnshire"
+              },
+              {
+                "text": "Lincolnshire",
+                "url": "https://en.wikipedia.org/wiki/Lincolnshire"
+              },
               "England"
             ]
           }

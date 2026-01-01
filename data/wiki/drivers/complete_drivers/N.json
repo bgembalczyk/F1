@@ -38,7 +38,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "11 January 1985",
+            "date": "1985-01-11",
             "place": [
               "Okazaki",
               "Aichi",
@@ -8273,7 +8273,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "23 February 1953",
+            "date": "1953-02-23",
             "place": [
               "Okazaki",
               "Aichi",
@@ -12026,7 +12026,7 @@
         "title": "Shinji Nakano",
         "general": {
           "born": {
-            "date": "1 April 1971",
+            "date": "1971-04-01",
             "place": [
               "Takatsuki",
               "Osaka",
@@ -12289,7 +12289,7 @@
             "place": null
           },
           "died": {
-            "date": "February 26, 2001",
+            "date": "2001-02-26",
             "place": [
               "Indianapolis",
               "Indiana",
@@ -12549,9 +12549,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "7 July 1959",
+            "date": "1959-07-07",
             "place": [
-              "Siena",
+              {
+                "text": "Siena",
+                "url": "https://en.wikipedia.org/wiki/Siena"
+              },
               "Italy"
             ]
           },
@@ -16963,9 +16966,12 @@
         "title": "Emanuele Naspetti",
         "general": {
           "born": {
-            "date": "24 February 1968",
+            "date": "1968-02-24",
             "place": [
-              "Ancona",
+              {
+                "text": "Ancona",
+                "url": "https://en.wikipedia.org/wiki/Ancona"
+              },
               "Italy"
             ]
           }
@@ -28095,17 +28101,26 @@
         "title": "Massimo Natili",
         "general": {
           "born": {
-            "date": "28 July 1935",
+            "date": "1935-07-28",
             "place": [
-              "Ronciglione",
-              "Kingdom of Italy"
+              {
+                "text": "Ronciglione",
+                "url": "https://en.wikipedia.org/wiki/Ronciglione"
+              },
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
             ]
           },
           "died": {
-            "date": "19 September 2017",
+            "date": "2017-09-19",
             "place": [
               "Viterbo",
-              "Italy"
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           }
         },
@@ -28274,17 +28289,23 @@
         "title": "Brian Naylor",
         "general": {
           "born": {
-            "date": "24 March 1923",
+            "date": "1923-03-24",
             "place": [
-              "Salford",
+              {
+                "text": "Salford",
+                "url": "https://en.wikipedia.org/wiki/Salford"
+              },
               "Lancashire",
               "England"
             ]
           },
           "died": {
-            "date": "8 August 1989",
+            "date": "1989-08-08",
             "place": [
-              "Marbella",
+              {
+                "text": "Marbella",
+                "url": "https://en.wikipedia.org/wiki/Marbella"
+              },
               "Andalusia",
               "Spain"
             ]
@@ -28455,7 +28476,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "October 2, 1921",
+            "date": "1921-10-02",
             "place": [
               "Newark",
               "New Jersey",
@@ -28463,7 +28484,7 @@
             ]
           },
           "died": {
-            "date": "May 1, 1955",
+            "date": "1955-05-01",
             "place": [
               "Langhorne",
               "Pennsylvania",
@@ -32906,9 +32927,12 @@
         "title": "Jac Nellemann",
         "general": {
           "born": {
-            "date": "19 April 1944",
+            "date": "1944-04-19",
             "place": [
-              "Copenhagen",
+              {
+                "text": "Copenhagen",
+                "url": "https://en.wikipedia.org/wiki/Copenhagen"
+              },
               "Denmark"
             ]
           }
@@ -33058,16 +33082,22 @@
         "title": "Patrick Nève",
         "general": {
           "born": {
-            "date": "13 October 1949",
+            "date": "1949-10-13",
             "place": [
-              "Liège",
+              {
+                "text": "Liège",
+                "url": "https://en.wikipedia.org/wiki/Li%C3%A8ge"
+              },
               "Belgium"
             ]
           },
           "died": {
-            "date": "12 March 2017",
+            "date": "2017-03-12",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           }
@@ -36241,16 +36271,22 @@
         "title": "John Nicholson",
         "general": {
           "born": {
-            "date": "6 October 1941",
+            "date": "1941-10-06",
             "place": [
-              "Auckland",
+              {
+                "text": "Auckland",
+                "url": "https://en.wikipedia.org/wiki/Auckland"
+              },
               "New Zealand"
             ]
           },
           "died": {
-            "date": "19 September 2017",
+            "date": "2017-09-19",
             "place": [
-              "Clarks Beach",
+              {
+                "text": "Clarks Beach",
+                "url": "https://en.wikipedia.org/wiki/Clarks_Beach"
+              },
               "Auckland",
               "New Zealand"
             ]
@@ -36417,11 +36453,11 @@
         "title": "Cal Niday",
         "general": {
           "born": {
-            "date": "April 29, 1914",
+            "date": "1914-04-29",
             "place": null
           },
           "died": {
-            "date": "February 14, 1988",
+            "date": "1988-02-14",
             "place": null
           }
         },
@@ -36582,18 +36618,30 @@
         "title": "Helmut Niedermayr",
         "general": {
           "born": {
-            "date": "29 November 1915",
+            "date": "1915-11-29",
             "place": [
-              "Munich",
+              {
+                "text": "Munich",
+                "url": "https://en.wikipedia.org/wiki/Munich"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "3 April 1985",
+            "date": "1985-04-03",
             "place": [
-              "Christiansted",
-              "Saint Croix",
-              "United States Virgin Islands"
+              {
+                "text": "Christiansted",
+                "url": "https://en.wikipedia.org/wiki/Christiansted,_U.S._Virgin_Islands"
+              },
+              {
+                "text": "Saint Croix",
+                "url": "https://en.wikipedia.org/wiki/Saint_Croix"
+              },
+              {
+                "text": "United States Virgin Islands",
+                "url": "https://en.wikipedia.org/wiki/United_States_Virgin_Islands"
+              }
             ]
           }
         },
@@ -36738,9 +36786,12 @@
         "title": "Brausch Niemann",
         "general": {
           "born": {
-            "date": "7 January 1939",
+            "date": "1939-01-07",
             "place": [
-              "Durban",
+              {
+                "text": "Durban",
+                "url": "https://en.wikipedia.org/wiki/Durban"
+              },
               "South Africa"
             ]
           }
@@ -37400,9 +37451,12 @@
             "place": null
           },
           "died": {
-            "date": "20 October 1978",
+            "date": "1978-10-20",
             "place": [
-              "Hammersmith",
+              {
+                "text": "Hammersmith",
+                "url": "https://en.wikipedia.org/wiki/Hammersmith"
+              },
               "London",
               "England"
             ]
@@ -38907,9 +38961,12 @@
         "title": "Hideki Noda 野田 英樹",
         "general": {
           "born": {
-            "date": "7 March 1969",
+            "date": "1969-03-07",
             "place": [
-              "Osaka",
+              {
+                "text": "Osaka",
+                "url": "https://en.wikipedia.org/wiki/Osaka"
+              },
               "Japan"
             ]
           },
@@ -43424,9 +43481,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 November 1999",
+            "date": "1999-11-13",
             "place": [
-              "Bristol",
+              {
+                "text": "Bristol",
+                "url": "https://en.wikipedia.org/wiki/Bristol"
+              },
               "England"
             ]
           }
@@ -51935,15 +51995,18 @@
         "title": "Rodney Nuckey",
         "general": {
           "born": {
-            "date": "26 June 1929",
+            "date": "1929-06-26",
             "place": [
-              "Wood Green",
+              {
+                "text": "Wood Green",
+                "url": "https://en.wikipedia.org/wiki/Wood_Green"
+              },
               "London",
               "England"
             ]
           },
           "died": {
-            "date": "29 June 2000",
+            "date": "2000-06-29",
             "place": [
               "Manila",
               "Philippines"

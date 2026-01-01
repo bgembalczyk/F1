@@ -42,15 +42,24 @@
         "title": "Mário de Araújo Cabral",
         "general": {
           "born": {
-            "date": "15 January 1934",
+            "date": "1934-01-15",
             "place": [
-              "Cedofeita",
-              "Porto",
-              "Portugal"
+              {
+                "text": "Cedofeita",
+                "url": "https://en.wikipedia.org/wiki/Cedofeita"
+              },
+              {
+                "text": "Porto",
+                "url": "https://en.wikipedia.org/wiki/Porto"
+              },
+              {
+                "text": "Portugal",
+                "url": "https://en.wikipedia.org/wiki/New_State_(Portugal)"
+              }
             ]
           },
           "died": {
-            "date": "17 August 2020",
+            "date": "2020-08-17",
             "place": null
           }
         },
@@ -227,16 +236,22 @@
         "title": "Giulio Cabianca",
         "general": {
           "born": {
-            "date": "19 February 1923",
+            "date": "1923-02-19",
             "place": [
-              "Verona",
+              {
+                "text": "Verona",
+                "url": "https://en.wikipedia.org/wiki/Verona"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "15 June 1961",
+            "date": "1961-06-15",
             "place": [
-              "Modena Autodrome",
+              {
+                "text": "Modena Autodrome",
+                "url": "https://en.wikipedia.org/wiki/Modena_Autodrome"
+              },
               "Italy"
             ]
           }
@@ -402,14 +417,14 @@
         "title": "Phil Cade",
         "general": {
           "born": {
-            "date": "June 12, 1916",
+            "date": "1916-06-12",
             "place": [
               "Charles City",
               "Iowa"
             ]
           },
           "died": {
-            "date": "August 28, 2001",
+            "date": "2001-08-28",
             "place": [
               "Winchester",
               "Massachusetts"
@@ -2925,17 +2940,26 @@
         "title": "John Campbell-Jones",
         "general": {
           "born": {
-            "date": "21 January 1930",
+            "date": "1930-01-21",
             "place": [
-              "Leatherhead",
-              "Surrey",
+              {
+                "text": "Leatherhead",
+                "url": "https://en.wikipedia.org/wiki/Leatherhead"
+              },
+              {
+                "text": "Surrey",
+                "url": "https://en.wikipedia.org/wiki/Surrey"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "24 March 2020",
+            "date": "2020-03-24",
             "place": [
-              "Camden",
+              {
+                "text": "Camden",
+                "url": "https://en.wikipedia.org/wiki/London_Borough_of_Camden"
+              },
               "London",
               "England"
             ]
@@ -3110,9 +3134,12 @@
             "place": null
           },
           "died": {
-            "date": "27 January 2021",
+            "date": "2021-01-27",
             "place": [
-              "Valencia",
+              {
+                "text": "Valencia",
+                "url": "https://en.wikipedia.org/wiki/Valencia"
+              },
               "Spain"
             ]
           }
@@ -4234,14 +4261,20 @@
         "title": "John Cannon",
         "general": {
           "born": {
-            "date": "21 June 1933",
+            "date": "1933-06-21",
             "place": [
-              "London",
-              "United Kingdom"
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
+              {
+                "text": "United Kingdom",
+                "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+              }
             ]
           },
           "died": {
-            "date": "18 October 1999",
+            "date": "1999-10-18",
             "place": [
               "Quemado",
               "New Mexico",
@@ -4386,14 +4419,17 @@
         "title": "Eitel Cantoni",
         "general": {
           "born": {
-            "date": "4 October 1906",
+            "date": "1906-10-04",
             "place": [
-              "Montevideo",
+              {
+                "text": "Montevideo",
+                "url": "https://en.wikipedia.org/wiki/Montevideo"
+              },
               "Uruguay"
             ]
           },
           "died": {
-            "date": "6 June 1997",
+            "date": "1997-06-06",
             "place": [
               "Montevideo",
               "Uruguay"
@@ -4549,11 +4585,11 @@
         "title": "William Cantrell",
         "general": {
           "born": {
-            "date": "January 31, 1908",
+            "date": "1908-01-31",
             "place": null
           },
           "died": {
-            "date": "January 22, 1996",
+            "date": "1996-01-22",
             "place": null
           }
         },
@@ -9844,16 +9880,22 @@
         "title": "Piero Carini",
         "general": {
           "born": {
-            "date": "6 March 1921",
+            "date": "1921-03-06",
             "place": [
-              "Genoa",
+              {
+                "text": "Genoa",
+                "url": "https://en.wikipedia.org/wiki/Genoa"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "30 May 1957",
+            "date": "1957-05-30",
             "place": [
-              "Saint-Étienne",
+              {
+                "text": "Saint-Étienne",
+                "url": "https://en.wikipedia.org/wiki/Saint-%C3%89tienne"
+              },
               "France"
             ]
           }
@@ -10043,9 +10085,12 @@
             "place": null
           },
           "died": {
-            "date": "March 7, 1993",
+            "date": "1993-03-07",
             "place": [
-              "Indianapolis",
+              {
+                "text": "Indianapolis",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis"
+              },
               "Indiana",
               "U.S."
             ]
@@ -10330,7 +10375,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "10 October 1930",
+            "date": "1930-10-10",
             "place": [
               "Lodi",
               "Lombardy",
@@ -10338,9 +10383,12 @@
             ]
           },
           "died": {
-            "date": "14 March 1957",
+            "date": "1957-03-14",
             "place": [
-              "Aerautodromo di Modena",
+              {
+                "text": "Aerautodromo di Modena",
+                "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
+              },
               "Modena",
               "Italy"
             ]
@@ -11685,10 +11733,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "25 January 1956",
+            "date": "1956-01-25",
             "place": [
-              "Caracas",
-              "Venezuela"
+              {
+                "text": "Caracas",
+                "url": "https://en.wikipedia.org/wiki/Caracas"
+              },
+              {
+                "text": "Venezuela",
+                "url": "https://en.wikipedia.org/wiki/Republic_of_Venezuela"
+              }
             ]
           }
         },
@@ -19985,16 +20039,22 @@
         "title": null,
         "general": {
           "born": {
-            "date": "31 May 1959",
+            "date": "1959-05-31",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "5 October 2014",
+            "date": "2014-10-05",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           },
@@ -25194,10 +25254,16 @@
             "place": null
           },
           "died": {
-            "date": "6 October 1973",
+            "date": "1973-10-06",
             "place": [
-              "Watkins Glen",
-              "New York",
+              {
+                "text": "Watkins Glen",
+                "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+              },
+              {
+                "text": "New York",
+                "url": "https://en.wikipedia.org/wiki/New_York_(state)"
+              },
               "U.S."
             ]
           },
@@ -27356,16 +27422,22 @@
         "title": "Eugène Chaboud",
         "general": {
           "born": {
-            "date": "12 April 1907",
+            "date": "1907-04-12",
             "place": [
-              "Lyon",
+              {
+                "text": "Lyon",
+                "url": "https://en.wikipedia.org/wiki/Lyon"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "28 December 1983",
+            "date": "1983-12-28",
             "place": [
-              "Montfermeil",
+              {
+                "text": "Montfermeil",
+                "url": "https://en.wikipedia.org/wiki/Montfermeil"
+              },
               "France"
             ]
           }
@@ -28044,7 +28116,7 @@
         "title": "Jay Chamberlain",
         "general": {
           "born": {
-            "date": "December 29, 1925",
+            "date": "1925-12-29",
             "place": [
               "Los Angeles",
               "California",
@@ -28052,7 +28124,7 @@
             ]
           },
           "died": {
-            "date": "August 1, 2001",
+            "date": "2001-08-01",
             "place": [
               "Tucson",
               "Arizona",
@@ -28213,9 +28285,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "19 January 1984",
+            "date": "1984-01-19",
             "place": [
-              "Madras",
+              {
+                "text": "Madras",
+                "url": "https://en.wikipedia.org/wiki/Chennai"
+              },
               "Tamil Nadu",
               "India"
             ]
@@ -34157,16 +34232,22 @@
         "title": "Alain de Changy",
         "general": {
           "born": {
-            "date": "5 February 1922",
+            "date": "1922-02-05",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           },
           "died": {
-            "date": "5 August 1994",
+            "date": "1994-08-05",
             "place": [
-              "Etterbeek",
+              {
+                "text": "Etterbeek",
+                "url": "https://en.wikipedia.org/wiki/Etterbeek"
+              },
               "Belgium"
             ]
           }
@@ -34308,18 +34389,27 @@
         "title": null,
         "general": {
           "born": {
-            "date": "19 May 1928",
+            "date": "1928-05-19",
             "place": [
-              "Richmond",
+              {
+                "text": "Richmond",
+                "url": "https://en.wikipedia.org/wiki/Richmond,_London"
+              },
               "Surrey",
               "England"
             ]
           },
           "died": {
-            "date": "16 December 1982",
+            "date": "1982-12-16",
             "place": [
-              "Norwich",
-              "Norfolk",
+              {
+                "text": "Norwich",
+                "url": "https://en.wikipedia.org/wiki/Norwich"
+              },
+              {
+                "text": "Norfolk",
+                "url": "https://en.wikipedia.org/wiki/Norfolk"
+              },
               "England"
             ]
           }
@@ -34493,17 +34583,26 @@
         "title": "Dave Charlton",
         "general": {
           "born": {
-            "date": "27 October 1936",
+            "date": "1936-10-27",
             "place": [
-              "Brotton",
-              "Yorkshire",
+              {
+                "text": "Brotton",
+                "url": "https://en.wikipedia.org/wiki/Brotton"
+              },
+              {
+                "text": "Yorkshire",
+                "url": "https://en.wikipedia.org/wiki/Yorkshire"
+              },
               "UK"
             ]
           },
           "died": {
-            "date": "24 February 2013",
+            "date": "2013-02-24",
             "place": [
-              "Johannesburg",
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
               "South Africa"
             ]
           }
@@ -34681,9 +34780,12 @@
         "title": "Pedro Matos Chaves",
         "general": {
           "born": {
-            "date": "27 February 1965",
+            "date": "1965-02-27",
             "place": [
-              "Porto",
+              {
+                "text": "Porto",
+                "url": "https://en.wikipedia.org/wiki/Porto"
+              },
               "Portugal"
             ]
           }
@@ -37114,11 +37216,11 @@
         "title": "Bill Cheesbourg",
         "general": {
           "born": {
-            "date": "June 12, 1927",
+            "date": "1927-06-12",
             "place": null
           },
           "died": {
-            "date": "November 6, 1995",
+            "date": "1995-11-06",
             "place": null
           }
         },
@@ -46994,9 +47096,12 @@
         "title": "Andrea Chiesa",
         "general": {
           "born": {
-            "date": "6 May 1964",
+            "date": "1964-05-06",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Italy"
             ]
           }
@@ -55157,16 +55262,22 @@
         "title": "Ettore Chimeri",
         "general": {
           "born": {
-            "date": "4 June 1921",
+            "date": "1921-06-04",
             "place": [
-              "Lodi",
+              {
+                "text": "Lodi",
+                "url": "https://en.wikipedia.org/wiki/Lodi,_Lombardy"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "27 February 1960",
+            "date": "1960-02-27",
             "place": [
-              "Havana",
+              {
+                "text": "Havana",
+                "url": "https://en.wikipedia.org/wiki/Havana"
+              },
               "Cuba"
             ]
           }
@@ -55332,7 +55443,7 @@
             "place": null
           },
           "died": {
-            "date": "22 June 1979",
+            "date": "1979-06-22",
             "place": [
               "Monte Carlo",
               "Monaco"
@@ -55708,7 +55819,7 @@
             "place": null
           },
           "died": {
-            "date": "January 3, 1988",
+            "date": "1988-01-03",
             "place": [
               "Tampa",
               "Florida",
@@ -55984,11 +56095,11 @@
         "title": "Bob Christie",
         "general": {
           "born": {
-            "date": "April 4, 1924",
+            "date": "1924-04-04",
             "place": null
           },
           "died": {
-            "date": "June 1, 2009",
+            "date": "2009-06-01",
             "place": null
           }
         },
@@ -56169,17 +56280,26 @@
         "title": "Johnny Claes",
         "general": {
           "born": {
-            "date": "11 August 1916",
+            "date": "1916-08-11",
             "place": [
-              "Fulham",
-              "London",
+              {
+                "text": "Fulham",
+                "url": "https://en.wikipedia.org/wiki/Fulham"
+              },
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "3 February 1956",
+            "date": "1956-02-03",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           }
@@ -56353,20 +56473,29 @@
         "title": "Dave Clapham",
         "general": {
           "born": {
-            "date": "17 May 1931",
+            "date": "1931-05-17",
             "place": [
-              "Rawmarsh",
-              "Yorkshire",
+              {
+                "text": "Rawmarsh",
+                "url": "https://en.wikipedia.org/wiki/Rawmarsh"
+              },
+              {
+                "text": "Yorkshire",
+                "url": "https://en.wikipedia.org/wiki/Yorkshire"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "22 October 2005",
+            "date": "2005-10-22",
             "place": [
               "Sunninghill",
               "Gauteng",
-              "South Africa"
+              {
+                "text": "South Africa",
+                "url": "https://en.wikipedia.org/wiki/South_Africa"
+              }
             ]
           }
         },
@@ -56552,11 +56681,20 @@
             "place": null
           },
           "died": {
-            "date": "7 April 1968",
+            "date": "1968-04-07",
             "place": [
-              "Hockenheim",
-              "Baden-Württemberg",
-              "West Germany"
+              {
+                "text": "Hockenheim",
+                "url": "https://en.wikipedia.org/wiki/Hockenheim"
+              },
+              {
+                "text": "Baden-Württemberg",
+                "url": "https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "cause_of_death": "Injuries sustained at the 1968 Deutschland Trophäe"
@@ -73067,10 +73205,16 @@
             "place": null
           },
           "died": {
-            "date": "3 August 1958",
+            "date": "1958-08-03",
             "place": [
-              "Bonn",
-              "West Germany"
+              {
+                "text": "Bonn",
+                "url": "https://en.wikipedia.org/wiki/Bonn"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "cause_of_death": "Injuries sustained at the 1958 German Grand Prix"
@@ -78809,18 +78953,30 @@
         "title": "Bernard Collomb",
         "general": {
           "born": {
-            "date": "7 October 1930",
+            "date": "1930-10-07",
             "place": [
-              "Annecy",
-              "Haute-Savoie",
+              {
+                "text": "Annecy",
+                "url": "https://en.wikipedia.org/wiki/Annecy"
+              },
+              {
+                "text": "Haute-Savoie",
+                "url": "https://en.wikipedia.org/wiki/Haute-Savoie"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "19 September 2011",
+            "date": "2011-09-19",
             "place": [
-              "La Colle-sur-Loup",
-              "Alpes-Maritimes",
+              {
+                "text": "La Colle-sur-Loup",
+                "url": "https://en.wikipedia.org/wiki/La_Colle-sur-Loup"
+              },
+              {
+                "text": "Alpes-Maritimes",
+                "url": "https://en.wikipedia.org/wiki/Alpes-Maritimes"
+              },
               "France"
             ]
           }
@@ -78982,15 +79138,24 @@
         "title": "Alberto Colombo",
         "general": {
           "born": {
-            "date": "23 February 1946",
+            "date": "1946-02-23",
             "place": [
-              "Varedo",
-              "Lombardy",
-              "Italy"
+              {
+                "text": "Varedo",
+                "url": "https://en.wikipedia.org/wiki/Varedo"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
             ]
           },
           "died": {
-            "date": "7 January 2024",
+            "date": "2024-01-07",
             "place": null
           }
         },
@@ -86072,10 +86237,16 @@
             "place": null
           },
           "died": {
-            "date": "10 May 1963",
+            "date": "1963-05-10",
             "place": [
-              "Bergamo",
-              "Lombardy",
+              {
+                "text": "Bergamo",
+                "url": "https://en.wikipedia.org/wiki/Bergamo"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           }
@@ -86963,7 +87134,7 @@
             "place": null
           },
           "died": {
-            "date": "March 28, 2001",
+            "date": "2001-03-28",
             "place": [
               "Hesperia",
               "California",
@@ -87251,7 +87422,7 @@
             "place": null
           },
           "died": {
-            "date": "January 7, 1968",
+            "date": "1968-01-07",
             "place": [
               "New York",
               "New York",
@@ -87396,9 +87567,12 @@
         "title": "John Cordts",
         "general": {
           "born": {
-            "date": "23 July 1935",
+            "date": "1935-07-23",
             "place": [
-              "Hamburg",
+              {
+                "text": "Hamburg",
+                "url": "https://en.wikipedia.org/wiki/Hamburg"
+              },
               "Germany"
             ]
           }
@@ -94351,9 +94525,12 @@
             "place": null
           },
           "died": {
-            "date": "21 June 1970",
+            "date": "1970-06-21",
             "place": [
-              "Circuit Park Zandvoort",
+              {
+                "text": "Circuit Park Zandvoort",
+                "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+              },
               "North Holland",
               "Netherlands"
             ]
@@ -97097,18 +97274,27 @@
         "title": "Chris Craft",
         "general": {
           "born": {
-            "date": "17 November 1939",
+            "date": "1939-11-17",
             "place": [
-              "Porthleven",
-              "Cornwall",
+              {
+                "text": "Porthleven",
+                "url": "https://en.wikipedia.org/wiki/Porthleven"
+              },
+              {
+                "text": "Cornwall",
+                "url": "https://en.wikipedia.org/wiki/Cornwall"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "20 February 2021",
+            "date": "2021-02-20",
             "place": [
-              "Essex",
+              {
+                "text": "Essex",
+                "url": "https://en.wikipedia.org/wiki/Essex"
+              },
               "England",
               "UK"
             ]
@@ -99678,15 +99864,18 @@
         "title": "Jim Crawford",
         "general": {
           "born": {
-            "date": "13 February 1948",
+            "date": "1948-02-13",
             "place": [
-              "Dunfermline",
+              {
+                "text": "Dunfermline",
+                "url": "https://en.wikipedia.org/wiki/Dunfermline"
+              },
               "Fife",
               "Scotland"
             ]
           },
           "died": {
-            "date": "6 August 2002",
+            "date": "2002-08-06",
             "place": [
               "Tierra Verde",
               "Florida",
@@ -104822,7 +105011,7 @@
         "title": "Ray Crawford",
         "general": {
           "born": {
-            "date": "26 October 1915",
+            "date": "1915-10-26",
             "place": [
               "Roswell",
               "New Mexico",
@@ -104830,7 +105019,7 @@
             ]
           },
           "died": {
-            "date": "1 February 1996",
+            "date": "1996-02-01",
             "place": [
               "Los Angeles",
               "California",
@@ -104995,14 +105184,17 @@
         "title": "Alberto Crespo",
         "general": {
           "born": {
-            "date": "16 January 1920",
+            "date": "1920-01-16",
             "place": [
-              "Buenos Aires",
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+              },
               "Argentina"
             ]
           },
           "died": {
-            "date": "14 August 1991",
+            "date": "1991-08-14",
             "place": [
               "Buenos Aires",
               "Argentina"
@@ -105150,7 +105342,7 @@
             "place": null
           },
           "died": {
-            "date": "19 February 1996",
+            "date": "1996-02-19",
             "place": [
               "Madrid",
               "Spain"
@@ -105298,7 +105490,7 @@
             "place": null
           },
           "died": {
-            "date": "March 20, 1955",
+            "date": "1955-03-20",
             "place": [
               "Bristol",
               "Pennsylvania",
@@ -105541,14 +105733,17 @@
         "title": "Tony Crook",
         "general": {
           "born": {
-            "date": "16 February 1920",
+            "date": "1920-02-16",
             "place": [
-              "Manchester",
+              {
+                "text": "Manchester",
+                "url": "https://en.wikipedia.org/wiki/Manchester"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "21 January 2014",
+            "date": "2014-01-21",
             "place": null
           }
         },
@@ -106023,7 +106218,7 @@
             "place": null
           },
           "died": {
-            "date": "April 15, 2005",
+            "date": "2005-04-15",
             "place": [
               "LaPorte",
               "Indiana",
@@ -106184,19 +106379,34 @@
         "title": "Geoffrey Crossley",
         "general": {
           "born": {
-            "date": "11 May 1921",
+            "date": "1921-05-11",
             "place": [
-              "Baslow",
-              "Derbyshire",
+              {
+                "text": "Baslow",
+                "url": "https://en.wikipedia.org/wiki/Baslow"
+              },
+              {
+                "text": "Derbyshire",
+                "url": "https://en.wikipedia.org/wiki/Derbyshire"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "7 January 2002",
+            "date": "2002-01-07",
             "place": [
-              "Headington",
-              "Oxfordshire",
-              "England"
+              {
+                "text": "Headington",
+                "url": "https://en.wikipedia.org/wiki/Headington"
+              },
+              {
+                "text": "Oxfordshire",
+                "url": "https://en.wikipedia.org/wiki/Oxfordshire"
+              },
+              {
+                "text": "England",
+                "url": "https://en.wikipedia.org/wiki/England"
+              }
             ]
           }
         },
@@ -106349,16 +106559,22 @@
         "title": null,
         "general": {
           "born": {
-            "date": "26 February 1917",
+            "date": "1917-02-26",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "1 July 2015",
+            "date": "2015-07-01",
             "place": [
-              "Le Cannet",
+              {
+                "text": "Le Cannet",
+                "url": "https://en.wikipedia.org/wiki/Le_Cannet"
+              },
               "Alpes-Maritimes",
               "France"
             ]
@@ -106876,11 +107092,11 @@
         "title": "Adolfo Schwelm Cruz",
         "general": {
           "born": {
-            "date": "28 June 1923",
+            "date": "1923-06-28",
             "place": null
           },
           "died": {
-            "date": "February 10, 2012",
+            "date": "2012-02-10",
             "place": null
           }
         },

@@ -38,15 +38,21 @@
         "title": "Nino Vaccarella",
         "general": {
           "born": {
-            "date": "4 March 1933",
+            "date": "1933-03-04",
             "place": [
-              "Palermo",
-              "Sicily",
+              {
+                "text": "Palermo",
+                "url": "https://en.wikipedia.org/wiki/Palermo"
+              },
+              {
+                "text": "Sicily",
+                "url": "https://en.wikipedia.org/wiki/Sicily"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "23 September 2021",
+            "date": "2021-09-23",
             "place": [
               "Palermo",
               "Sicily",
@@ -9773,7 +9779,7 @@
             "place": null
           },
           "died": {
-            "date": "March 29, 2006",
+            "date": "2006-03-29",
             "place": [
               "Santa Rosa",
               "California",
@@ -29645,11 +29651,17 @@
         "title": null,
         "general": {
           "born": {
-            "date": "3 July 1987",
+            "date": "1987-07-03",
             "place": [
-              "Heppenheim",
+              {
+                "text": "Heppenheim",
+                "url": "https://en.wikipedia.org/wiki/Heppenheim"
+              },
               "Hesse",
-              "West Germany"
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "children": [],
@@ -37431,9 +37443,12 @@
             "place": null
           },
           "died": {
-            "date": "8 May 1982",
+            "date": "1982-05-08",
             "place": [
-              "Leuven",
+              {
+                "text": "Leuven",
+                "url": "https://en.wikipedia.org/wiki/Leuven"
+              },
               "Flanders",
               "Belgium"
             ]
@@ -41745,17 +41760,26 @@
         "title": null,
         "general": {
           "born": {
-            "date": "16 May 1909",
+            "date": "1909-05-16",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Lombardy",
-              "Kingdom of Italy"
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
             ]
           },
           "died": {
-            "date": "24 August 1997",
+            "date": "1997-08-24",
             "place": [
-              "Modena",
+              {
+                "text": "Modena",
+                "url": "https://en.wikipedia.org/wiki/Modena"
+              },
               "Emilia-Romagna",
               "Italy"
             ]
@@ -46677,16 +46701,22 @@
         "title": "Ottorino Volonterio",
         "general": {
           "born": {
-            "date": "7 December 1917",
+            "date": "1917-12-07",
             "place": [
-              "Orselina",
+              {
+                "text": "Orselina",
+                "url": "https://en.wikipedia.org/wiki/Orselina"
+              },
               "Switzerland"
             ]
           },
           "died": {
-            "date": "10 March 2003",
+            "date": "2003-03-10",
             "place": [
-              "Lugano",
+              {
+                "text": "Lugano",
+                "url": "https://en.wikipedia.org/wiki/Lugano"
+              },
               "Switzerland"
             ]
           }
@@ -46848,9 +46878,12 @@
         "title": "Jo Vonlanthen",
         "general": {
           "born": {
-            "date": "31 May 1942",
+            "date": "1942-05-31",
             "place": [
-              "St. Ursen",
+              {
+                "text": "St. Ursen",
+                "url": "https://en.wikipedia.org/wiki/St._Ursen"
+              },
               "Switzerland"
             ]
           }
@@ -48109,17 +48142,26 @@
         "title": "Ernie de Vos",
         "general": {
           "born": {
-            "date": "1 July 1941",
+            "date": "1941-07-01",
             "place": [
-              "The Hague",
+              {
+                "text": "The Hague",
+                "url": "https://en.wikipedia.org/wiki/The_Hague"
+              },
               "Netherlands"
             ]
           },
           "died": {
-            "date": "5 March 2005",
+            "date": "2005-03-05",
             "place": [
-              "St. Petersburg",
-              "Florida",
+              {
+                "text": "St. Petersburg",
+                "url": "https://en.wikipedia.org/wiki/St._Petersburg,_Florida"
+              },
+              {
+                "text": "Florida",
+                "url": "https://en.wikipedia.org/wiki/Florida"
+              },
               "U.S."
             ]
           }
@@ -56777,7 +56819,7 @@
             "place": null
           },
           "died": {
-            "date": "May 30, 1955",
+            "date": "1955-05-30",
             "place": [
               "Speedway",
               "Indiana",
@@ -57097,14 +57139,20 @@
         "title": "Syd van der Vyver",
         "general": {
           "born": {
-            "date": "1 June 1920",
+            "date": "1920-06-01",
             "place": null
           },
           "died": {
-            "date": "20 August 1989",
+            "date": "1989-08-20",
             "place": [
-              "Pennington",
-              "Natal",
+              {
+                "text": "Pennington",
+                "url": "https://en.wikipedia.org/wiki/Pennington,_KwaZulu-Natal"
+              },
+              {
+                "text": "Natal",
+                "url": "https://en.wikipedia.org/wiki/Natal_Province"
+              },
               "South Africa"
             ]
           }

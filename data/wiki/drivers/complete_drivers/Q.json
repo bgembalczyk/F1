@@ -34,9 +34,12 @@
         "title": "Dieter Quester",
         "general": {
           "born": {
-            "date": "30 May 1939",
+            "date": "1939-05-30",
             "place": [
-              "Vienna",
+              {
+                "text": "Vienna",
+                "url": "https://en.wikipedia.org/wiki/Vienna"
+              },
               "Austria"
             ]
           }

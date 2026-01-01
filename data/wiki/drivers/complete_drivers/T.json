@@ -42,10 +42,16 @@
             "place": null
           },
           "died": {
-            "date": "13 October 1981",
+            "date": "1981-10-13",
             "place": [
-              "Neuilly-sur-Seine",
-              "Hauts-de-Seine",
+              {
+                "text": "Neuilly-sur-Seine",
+                "url": "https://en.wikipedia.org/wiki/Neuilly-sur-Seine"
+              },
+              {
+                "text": "Hauts-de-Seine",
+                "url": "https://en.wikipedia.org/wiki/Hauts-de-Seine"
+              },
               "France"
             ]
           }
@@ -348,10 +354,16 @@
         "title": "Toranosuke Takagi",
         "general": {
           "born": {
-            "date": "12 February 1974",
+            "date": "1974-02-12",
             "place": [
-              "Shizuoka",
-              "Shizuoka Prefecture",
+              {
+                "text": "Shizuoka",
+                "url": "https://en.wikipedia.org/wiki/Shizuoka_City"
+              },
+              {
+                "text": "Shizuoka Prefecture",
+                "url": "https://en.wikipedia.org/wiki/Shizuoka_Prefecture"
+              },
               "Japan"
             ]
           }
@@ -3801,9 +3813,12 @@
         "title": "Noritake Takahara",
         "general": {
           "born": {
-            "date": "6 June 1951",
+            "date": "1951-06-06",
             "place": [
-              "Tokyo",
+              {
+                "text": "Tokyo",
+                "url": "https://en.wikipedia.org/wiki/Tokyo"
+              },
               "Japan"
             ]
           }
@@ -5072,14 +5087,20 @@
         "title": null,
         "general": {
           "born": {
-            "date": "29 January 1940",
+            "date": "1940-01-29",
             "place": [
-              "Tokyo",
-              "Japan"
+              {
+                "text": "Tokyo",
+                "url": "https://en.wikipedia.org/wiki/Tokyo"
+              },
+              {
+                "text": "Japan",
+                "url": "https://en.wikipedia.org/wiki/Empire_of_Japan"
+              }
             ]
           },
           "died": {
-            "date": "16 March 2022",
+            "date": "2022-03-16",
             "place": null
           }
         },
@@ -5314,9 +5335,12 @@
             "place": null
           },
           "died": {
-            "date": "4 December 2022",
+            "date": "2022-12-04",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           },
@@ -10605,17 +10629,29 @@
         "title": "Luigi Taramazzo",
         "general": {
           "born": {
-            "date": "5 May 1932",
+            "date": "1932-05-05",
             "place": [
-              "Ceva",
-              "Piedmont"
+              {
+                "text": "Ceva",
+                "url": "https://en.wikipedia.org/wiki/Ceva"
+              },
+              {
+                "text": "Piedmont",
+                "url": "https://en.wikipedia.org/wiki/Piedmont"
+              }
             ]
           },
           "died": {
-            "date": "15 February 2004",
+            "date": "2004-02-15",
             "place": [
-              "Vallecrosia",
-              "Liguria"
+              {
+                "text": "Vallecrosia",
+                "url": "https://en.wikipedia.org/wiki/Vallecrosia"
+              },
+              {
+                "text": "Liguria",
+                "url": "https://en.wikipedia.org/wiki/Liguria"
+              }
             ]
           }
         },
@@ -10780,9 +10816,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "2 March 1962",
+            "date": "1962-03-02",
             "place": [
-              "Giulianova",
+              {
+                "text": "Giulianova",
+                "url": "https://en.wikipedia.org/wiki/Giulianova"
+              },
               "Abruzzo",
               "Italy"
             ]
@@ -26075,9 +26114,12 @@
             "place": null
           },
           "died": {
-            "date": "12 January 1988",
+            "date": "1988-01-12",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           }
@@ -26276,11 +26318,11 @@
         "title": "Dennis Taylor",
         "general": {
           "born": {
-            "date": "12 June 1921",
+            "date": "1921-06-12",
             "place": null
           },
           "died": {
-            "date": "2 June 1962",
+            "date": "1962-06-02",
             "place": null
           }
         },
@@ -26754,7 +26796,7 @@
         "title": "Henry Taylor",
         "general": {
           "born": {
-            "date": "16 December 1932",
+            "date": "1932-12-16",
             "place": [
               "Shefford",
               "Bedfordshire",
@@ -26763,9 +26805,12 @@
             ]
           },
           "died": {
-            "date": "24 October 2013",
+            "date": "2013-10-24",
             "place": [
-              "Vallauris",
+              {
+                "text": "Vallauris",
+                "url": "https://en.wikipedia.org/wiki/Vallauris"
+              },
               "France"
             ]
           }
@@ -27631,7 +27676,7 @@
         "title": "John Taylor",
         "general": {
           "born": {
-            "date": "23 March 1933",
+            "date": "1933-03-23",
             "place": [
               "Anstey",
               "Leicestershire",
@@ -27639,11 +27684,20 @@
             ]
           },
           "died": {
-            "date": "8 September 1966",
+            "date": "1966-09-08",
             "place": [
-              "Koblenz",
-              "Rhineland-Palatinate",
-              "West Germany"
+              {
+                "text": "Koblenz",
+                "url": "https://en.wikipedia.org/wiki/Koblenz"
+              },
+              {
+                "text": "Rhineland-Palatinate",
+                "url": "https://en.wikipedia.org/wiki/Rhineland-Palatinate"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -28770,11 +28824,11 @@
         "title": "Michael Taylor",
         "general": {
           "born": {
-            "date": "24 April 1934",
+            "date": "1934-04-24",
             "place": null
           },
           "died": {
-            "date": "4 April 2017",
+            "date": "2017-04-04",
             "place": null
           }
         },
@@ -28955,17 +29009,23 @@
         "title": "Trevor Taylor",
         "general": {
           "born": {
-            "date": "26 December 1936",
+            "date": "1936-12-26",
             "place": [
-              "Gleadless",
+              {
+                "text": "Gleadless",
+                "url": "https://en.wikipedia.org/wiki/Gleadless"
+              },
               "Sheffield",
               "England"
             ]
           },
           "died": {
-            "date": "27 September 2010",
+            "date": "2010-09-27",
             "place": [
-              "Wickersley",
+              {
+                "text": "Wickersley",
+                "url": "https://en.wikipedia.org/wiki/Wickersley"
+              },
               "Rotherham",
               "England"
             ]
@@ -29156,7 +29216,7 @@
             "place": null
           },
           "died": {
-            "date": "February 11, 1959",
+            "date": "1959-02-11",
             "place": [
               "Daytona Beach",
               "Florida",
@@ -29578,7 +29638,7 @@
             "place": null
           },
           "died": {
-            "date": "August 24, 1962",
+            "date": "1962-08-24",
             "place": [
               "Marion",
               "Ohio",
@@ -29853,14 +29913,17 @@
         "title": "Max de Terra",
         "general": {
           "born": {
-            "date": "6 October 1918",
+            "date": "1918-10-06",
             "place": [
-              "Zürich",
+              {
+                "text": "Zürich",
+                "url": "https://en.wikipedia.org/wiki/Z%C3%BCrich"
+              },
               "Switzerland"
             ]
           },
           "died": {
-            "date": "29 December 1982",
+            "date": "1982-12-29",
             "place": [
               "Zürich",
               "Switzerland"
@@ -30028,11 +30091,11 @@
         "title": "André Testut",
         "general": {
           "born": {
-            "date": "13 April 1926",
+            "date": "1926-04-13",
             "place": null
           },
           "died": {
-            "date": "24 September 2005",
+            "date": "2005-09-24",
             "place": null
           }
         },
@@ -30198,10 +30261,16 @@
         "title": "Mike Thackwell",
         "general": {
           "born": {
-            "date": "30 March 1961",
+            "date": "1961-03-30",
             "place": [
-              "Papakura",
-              "Auckland",
+              {
+                "text": "Papakura",
+                "url": "https://en.wikipedia.org/wiki/Papakura"
+              },
+              {
+                "text": "Auckland",
+                "url": "https://en.wikipedia.org/wiki/Auckland"
+              },
               "New Zealand"
             ]
           }
@@ -33980,17 +34049,26 @@
         "title": "Alfonso Thiele",
         "general": {
           "born": {
-            "date": "5 April 1920",
+            "date": "1920-04-05",
             "place": [
-              "Istanbul",
+              {
+                "text": "Istanbul",
+                "url": "https://en.wikipedia.org/wiki/Istanbul"
+              },
               "Turkey"
             ]
           },
           "died": {
-            "date": "15 July 1986",
+            "date": "1986-07-15",
             "place": [
-              "Novara",
-              "Piedmont",
+              {
+                "text": "Novara",
+                "url": "https://en.wikipedia.org/wiki/Novara"
+              },
+              {
+                "text": "Piedmont",
+                "url": "https://en.wikipedia.org/wiki/Piedmont"
+              },
               "Italy"
             ]
           }
@@ -34137,7 +34215,7 @@
         "title": "Eric Thompson",
         "general": {
           "born": {
-            "date": "4 November 1919",
+            "date": "1919-11-04",
             "place": [
               "Ditton Hill",
               "Surbiton",
@@ -34147,9 +34225,12 @@
             ]
           },
           "died": {
-            "date": "22 August 2015",
+            "date": "2015-08-22",
             "place": [
-              "Guildford",
+              {
+                "text": "Guildford",
+                "url": "https://en.wikipedia.org/wiki/Guildford"
+              },
               "Surrey"
             ]
           }
@@ -34968,9 +35049,12 @@
             "place": null
           },
           "died": {
-            "date": "September 24, 1960",
+            "date": "1960-09-24",
             "place": [
-              "Allentown Fairgrounds",
+              {
+                "text": "Allentown Fairgrounds",
+                "url": "https://en.wikipedia.org/wiki/Allentown_Fairgrounds"
+              },
               "Allentown",
               "Pennsylvania",
               "U.S."
@@ -35260,11 +35344,11 @@
         "title": "Leslie Thorne",
         "general": {
           "born": {
-            "date": "23 June 1916",
+            "date": "1916-06-23",
             "place": null
           },
           "died": {
-            "date": "13 July 1993",
+            "date": "1993-07-13",
             "place": null
           }
         },
@@ -35409,7 +35493,7 @@
             "place": null
           },
           "died": {
-            "date": "July 30, 1981",
+            "date": "1981-07-30",
             "place": [
               "Indianapolis",
               "Indiana",
@@ -35684,17 +35768,23 @@
         "title": "Sam Tingle",
         "general": {
           "born": {
-            "date": "24 August 1921",
+            "date": "1921-08-24",
             "place": [
-              "Manchester",
+              {
+                "text": "Manchester",
+                "url": "https://en.wikipedia.org/wiki/Manchester"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "19 December 2008",
+            "date": "2008-12-19",
             "place": [
-              "Somerset West",
+              {
+                "text": "Somerset West",
+                "url": "https://en.wikipedia.org/wiki/Somerset_West"
+              },
               "South Africa"
             ]
           }
@@ -35885,17 +35975,23 @@
         "title": "Desmond Titterington",
         "general": {
           "born": {
-            "date": "1 May 1928",
+            "date": "1928-05-01",
             "place": [
-              "Cultra",
+              {
+                "text": "Cultra",
+                "url": "https://en.wikipedia.org/wiki/Cultra"
+              },
               "County Down",
               "Northern Ireland"
             ]
           },
           "died": {
-            "date": "13 April 2002",
+            "date": "2002-04-13",
             "place": [
-              "Dundee",
+              {
+                "text": "Dundee",
+                "url": "https://en.wikipedia.org/wiki/Dundee"
+              },
               "Scotland"
             ]
           }
@@ -36045,7 +36141,7 @@
         "title": "Johnnie Tolan",
         "general": {
           "born": {
-            "date": "October 22, 1917",
+            "date": "1917-10-22",
             "place": [
               "Victor",
               "Colorado",
@@ -36053,7 +36149,7 @@
             ]
           },
           "died": {
-            "date": "June 6, 1986",
+            "date": "1986-06-06",
             "place": [
               "Redondo Beach",
               "California",
@@ -36238,16 +36334,22 @@
         "title": "Alejandro de Tomaso",
         "general": {
           "born": {
-            "date": "10 July 1928",
+            "date": "1928-07-10",
             "place": [
-              "Buenos Aires",
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+              },
               "Argentina"
             ]
           },
           "died": {
-            "date": "21 May 2003",
+            "date": "2003-05-21",
             "place": [
-              "Modena",
+              {
+                "text": "Modena",
+                "url": "https://en.wikipedia.org/wiki/Modena"
+              },
               "Italy"
             ]
           }
@@ -36826,17 +36928,26 @@
         "title": "Charles de Tornaco",
         "general": {
           "born": {
-            "date": "7 June 1927",
+            "date": "1927-06-07",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           },
           "died": {
-            "date": "18 September 1953",
+            "date": "1953-09-18",
             "place": [
-              "Modena",
-              "Italy"
+              {
+                "text": "Modena",
+                "url": "https://en.wikipedia.org/wiki/Modena"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           }
         },
@@ -37005,10 +37116,16 @@
         "title": "Tony Trimmer",
         "general": {
           "born": {
-            "date": "24 January 1943",
+            "date": "1943-01-24",
             "place": [
-              "Maidenhead",
-              "Berkshire",
+              {
+                "text": "Maidenhead",
+                "url": "https://en.wikipedia.org/wiki/Maidenhead"
+              },
+              {
+                "text": "Berkshire",
+                "url": "https://en.wikipedia.org/wiki/Berkshire"
+              },
               "England",
               "UK"
             ]
@@ -41602,10 +41719,16 @@
             "place": null
           },
           "died": {
-            "date": "13 February 2005",
+            "date": "2005-02-13",
             "place": [
-              "Nîmes",
-              "Gard",
+              {
+                "text": "Nîmes",
+                "url": "https://en.wikipedia.org/wiki/N%C3%AEmes"
+              },
+              {
+                "text": "Gard",
+                "url": "https://en.wikipedia.org/wiki/Gard"
+              },
               "France"
             ]
           },
@@ -45505,9 +45628,12 @@
             "place": null
           },
           "died": {
-            "date": "10 September 1961",
+            "date": "1961-09-10",
             "place": [
-              "Monza",
+              {
+                "text": "Monza",
+                "url": "https://en.wikipedia.org/wiki/Monza"
+              },
               "Italy"
             ]
           },
@@ -47603,9 +47729,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 July 1974",
+            "date": "1974-07-13",
             "place": [
-              "Pescara",
+              {
+                "text": "Pescara",
+                "url": "https://en.wikipedia.org/wiki/Pescara"
+              },
               "Abruzzo",
               "Italy"
             ]
@@ -53775,9 +53904,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "11 May 2000",
+            "date": "2000-05-11",
             "place": [
-              "Sagamihara",
+              {
+                "text": "Sagamihara",
+                "url": "https://en.wikipedia.org/wiki/Sagamihara"
+              },
               "Kanagawa",
               "Japan"
             ]
@@ -58124,10 +58256,16 @@
         "title": "Esteban Tuero",
         "general": {
           "born": {
-            "date": "22 April 1978",
+            "date": "1978-04-22",
             "place": [
-              "Buenos Aires",
-              "Argentina"
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+              },
+              {
+                "text": "Argentina",
+                "url": "https://en.wikipedia.org/wiki/Argentina"
+              }
             ]
           }
         },
@@ -58878,16 +59016,22 @@
         "title": "Guy Tunmer",
         "general": {
           "born": {
-            "date": "1 December 1948",
+            "date": "1948-12-01",
             "place": [
-              "Ficksburg",
+              {
+                "text": "Ficksburg",
+                "url": "https://en.wikipedia.org/wiki/Ficksburg"
+              },
               "South Africa"
             ]
           },
           "died": {
-            "date": "22 June 1999",
+            "date": "1999-06-22",
             "place": [
-              "Sandton",
+              {
+                "text": "Sandton",
+                "url": "https://en.wikipedia.org/wiki/Sandton,_Gauteng"
+              },
               "South Africa"
             ]
           }
@@ -59041,7 +59185,7 @@
         "title": "Jack Turner",
         "general": {
           "born": {
-            "date": "February 12, 1920",
+            "date": "1920-02-12",
             "place": [
               "Seattle",
               "Washington",
@@ -59049,7 +59193,7 @@
             ]
           },
           "died": {
-            "date": "September 12, 2004",
+            "date": "2004-09-12",
             "place": [
               "Renton",
               "Washington",

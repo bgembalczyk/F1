@@ -34,10 +34,16 @@
             "place": null
           },
           "died": {
-            "date": "4 November 1976",
+            "date": "1976-11-04",
             "place": [
-              "Düsseldorf",
-              "Germany"
+              {
+                "text": "Düsseldorf",
+                "url": "https://en.wikipedia.org/wiki/D%C3%BCsseldorf"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Germany"
+              }
             ]
           }
         },
@@ -786,7 +792,7 @@
             "place": null
           },
           "died": {
-            "date": "May 2, 2021",
+            "date": "2021-05-02",
             "place": [
               "Albuquerque",
               "New Mexico",
@@ -7232,14 +7238,17 @@
         "title": "Alberto Uría",
         "general": {
           "born": {
-            "date": "11 July 1924",
+            "date": "1924-07-11",
             "place": [
-              "Montevideo",
+              {
+                "text": "Montevideo",
+                "url": "https://en.wikipedia.org/wiki/Montevideo"
+              },
               "Uruguay"
             ]
           },
           "died": {
-            "date": "4 December 1988",
+            "date": "1988-12-04",
             "place": [
               "Montevideo",
               "Uruguay"

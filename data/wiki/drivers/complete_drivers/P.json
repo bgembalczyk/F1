@@ -54,9 +54,12 @@
             "place": null
           },
           "died": {
-            "date": "18 March 1977",
+            "date": "1977-03-18",
             "place": [
-              "Mairiporã",
+              {
+                "text": "Mairiporã",
+                "url": "https://en.wikipedia.org/wiki/Mairipor%C3%A3"
+              },
               "São Paulo",
               "Brazil"
             ]
@@ -2847,17 +2850,26 @@
         "title": null,
         "general": {
           "born": {
-            "date": "11 October 1911",
+            "date": "1911-10-11",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "19 October 2003",
+            "date": "2003-10-19",
             "place": [
-              "Bresso",
-              "Lombardy",
+              {
+                "text": "Bresso",
+                "url": "https://en.wikipedia.org/wiki/Bresso"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           }
@@ -2901,14 +2913,17 @@
         "title": "Riccardo Paletti",
         "general": {
           "born": {
-            "date": "15 June 1958",
+            "date": "1958-06-15",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "13 June 1982",
+            "date": "1982-06-13",
             "place": [
               "Montreal",
               "Quebec",
@@ -3873,9 +3888,12 @@
         "title": "Torsten Palm",
         "general": {
           "born": {
-            "date": "23 July 1947",
+            "date": "1947-07-23",
             "place": [
-              "Kristinehamn",
+              {
+                "text": "Kristinehamn",
+                "url": "https://en.wikipedia.org/wiki/Kristinehamn"
+              },
               "Sweden"
             ]
           }
@@ -13149,10 +13167,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "2 September 1966",
+            "date": "1966-09-02",
             "place": [
-              "Oullins",
-              "Lyon",
+              {
+                "text": "Oullins",
+                "url": "https://en.wikipedia.org/wiki/Oullins"
+              },
+              {
+                "text": "Lyon",
+                "url": "https://en.wikipedia.org/wiki/Lyon"
+              },
               "France"
             ]
           },
@@ -18227,9 +18251,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "4 February 1979",
+            "date": "1979-02-04",
             "place": [
-              "Conselve",
+              {
+                "text": "Conselve",
+                "url": "https://en.wikipedia.org/wiki/Conselve"
+              },
               "Italy"
             ]
           }
@@ -24088,9 +24115,12 @@
             "place": null
           },
           "died": {
-            "date": "28 August 1977",
+            "date": "1977-08-28",
             "place": [
-              "Riva presso Chieri",
+              {
+                "text": "Riva presso Chieri",
+                "url": "https://en.wikipedia.org/wiki/Riva_presso_Chieri"
+              },
               "Turin",
               "Italy"
             ]
@@ -25675,15 +25705,21 @@
         "title": "Reg Parnell",
         "general": {
           "born": {
-            "date": "2 July 1911",
+            "date": "1911-07-02",
             "place": [
-              "Derby",
-              "Derbyshire",
+              {
+                "text": "Derby",
+                "url": "https://en.wikipedia.org/wiki/Derby"
+              },
+              {
+                "text": "Derbyshire",
+                "url": "https://en.wikipedia.org/wiki/Derbyshire"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "7 January 1964",
+            "date": "1964-01-07",
             "place": [
               "Derby",
               "Derbyshire",
@@ -28196,10 +28232,16 @@
             "place": null
           },
           "died": {
-            "date": "5 April 2017",
+            "date": "2017-04-05",
             "place": [
-              "Littleover",
-              "Derbyshire",
+              {
+                "text": "Littleover",
+                "url": "https://en.wikipedia.org/wiki/Littleover"
+              },
+              {
+                "text": "Derbyshire",
+                "url": "https://en.wikipedia.org/wiki/Derbyshire"
+              },
               "England",
               "UK"
             ]
@@ -28402,7 +28444,7 @@
             "place": null
           },
           "died": {
-            "date": "September 8, 1984",
+            "date": "1984-09-08",
             "place": [
               "Los Angeles",
               "California",
@@ -35971,10 +36013,16 @@
             "place": null
           },
           "died": {
-            "date": "4 May 2014",
+            "date": "2014-05-04",
             "place": [
-              "Sevierville",
-              "Tennessee",
+              {
+                "text": "Sevierville",
+                "url": "https://en.wikipedia.org/wiki/Sevierville"
+              },
+              {
+                "text": "Tennessee",
+                "url": "https://en.wikipedia.org/wiki/Tennessee"
+              },
               "United States"
             ]
           }
@@ -36321,17 +36369,23 @@
         "title": null,
         "general": {
           "born": {
-            "date": "21 October 1932",
+            "date": "1932-10-21",
             "place": [
-              "Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
               "Emilia-Romagna",
               "Italy"
             ]
           },
           "died": {
-            "date": "10 May 1998",
+            "date": "1998-05-10",
             "place": [
-              "Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
               "Emilia-Romagna",
               "Italy"
             ]
@@ -54691,14 +54745,17 @@
         "title": "Xavier Perrot",
         "general": {
           "born": {
-            "date": "1 February 1932",
+            "date": "1932-02-01",
             "place": [
-              "Zürich",
+              {
+                "text": "Zürich",
+                "url": "https://en.wikipedia.org/wiki/Z%C3%BCrich"
+              },
               "Switzerland"
             ]
           },
           "died": {
-            "date": "8 December 2008",
+            "date": "2008-12-08",
             "place": [
               "Zürich",
               "Switzerland"
@@ -61193,10 +61250,16 @@
         "title": "Alessandro Pesenti-Rossi",
         "general": {
           "born": {
-            "date": "31 August 1942",
+            "date": "1942-08-31",
             "place": [
-              "Bergamo",
-              "Lombardy",
+              {
+                "text": "Bergamo",
+                "url": "https://en.wikipedia.org/wiki/Bergamo"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           }
@@ -62690,17 +62753,29 @@
         "title": "Josef Peters",
         "general": {
           "born": {
-            "date": "16 September 1914",
+            "date": "1914-09-16",
             "place": [
-              "Düsseldorf",
-              "Germany"
+              {
+                "text": "Düsseldorf",
+                "url": "https://en.wikipedia.org/wiki/D%C3%BCsseldorf"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Germany"
+              }
             ]
           },
           "died": {
-            "date": "24 April 2001",
+            "date": "2001-04-24",
             "place": [
-              "Düsseldorf",
-              "Germany"
+              {
+                "text": "Düsseldorf",
+                "url": "https://en.wikipedia.org/wiki/D%C3%BCsseldorf"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Germany"
+              }
             ]
           }
         },
@@ -62877,9 +62952,12 @@
             "place": null
           },
           "died": {
-            "date": "11 September 1978",
+            "date": "1978-09-11",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Italy"
             ]
           },
@@ -74609,17 +74687,29 @@
         "title": "Alfredo Pián",
         "general": {
           "born": {
-            "date": "21 October 1912",
+            "date": "1912-10-21",
             "place": [
-              "Las Rosas",
-              "Santa Fe"
+              {
+                "text": "Las Rosas",
+                "url": "https://en.wikipedia.org/wiki/Las_Rosas,_Santa_Fe"
+              },
+              {
+                "text": "Santa Fe",
+                "url": "https://en.wikipedia.org/wiki/Santa_Fe_Province"
+              }
             ]
           },
           "died": {
-            "date": "25 July 1990",
+            "date": "1990-07-25",
             "place": [
-              "Las Rosas",
-              "Santa Fe"
+              {
+                "text": "Las Rosas",
+                "url": "https://en.wikipedia.org/wiki/Las_Rosas,_Santa_Fe"
+              },
+              {
+                "text": "Santa Fe",
+                "url": "https://en.wikipedia.org/wiki/Santa_Fe_Province"
+              }
             ]
           }
         },
@@ -82785,17 +82875,26 @@
         "title": "François Picard",
         "general": {
           "born": {
-            "date": "26 April 1921",
+            "date": "1921-04-26",
             "place": [
-              "Villefranche-sur-Saône",
-              "Rhône",
+              {
+                "text": "Villefranche-sur-Saône",
+                "url": "https://en.wikipedia.org/wiki/Villefranche-sur-Sa%C3%B4ne"
+              },
+              {
+                "text": "Rhône",
+                "url": "https://en.wikipedia.org/wiki/Rh%C3%B4ne_(department)"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "29 April 1996",
+            "date": "1996-04-29",
             "place": [
-              "Nice",
+              {
+                "text": "Nice",
+                "url": "https://en.wikipedia.org/wiki/Nice"
+              },
               "France"
             ]
           }
@@ -82945,17 +83044,26 @@
         "title": "Ernie Pieterse",
         "general": {
           "born": {
-            "date": "4 July 1938",
+            "date": "1938-07-04",
             "place": [
-              "Parow",
-              "Cape Town",
+              {
+                "text": "Parow",
+                "url": "https://en.wikipedia.org/wiki/Parow,_Cape_Town"
+              },
+              {
+                "text": "Cape Town",
+                "url": "https://en.wikipedia.org/wiki/Cape_Town"
+              },
               "South Africa"
             ]
           },
           "died": {
-            "date": "1 November 2017",
+            "date": "2017-11-01",
             "place": [
-              "Johannesburg",
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
               "South Africa"
             ]
           }
@@ -83125,16 +83233,25 @@
         "title": "Paul Pietsch",
         "general": {
           "born": {
-            "date": "20 June 1911",
+            "date": "1911-06-20",
             "place": [
-              "Freiburg im Breisgau",
-              "German Empire"
+              {
+                "text": "Freiburg im Breisgau",
+                "url": "https://en.wikipedia.org/wiki/Freiburg_im_Breisgau"
+              },
+              {
+                "text": "German Empire",
+                "url": "https://en.wikipedia.org/wiki/German_Empire"
+              }
             ]
           },
           "died": {
-            "date": "31 May 2012",
+            "date": "2012-05-31",
             "place": [
-              "Titisee-Neustadt",
+              {
+                "text": "Titisee-Neustadt",
+                "url": "https://en.wikipedia.org/wiki/Titisee-Neustadt"
+              },
               "Germany"
             ]
           }
@@ -84219,16 +84336,22 @@
         "title": "André Pilette",
         "general": {
           "born": {
-            "date": "6 October 1918",
+            "date": "1918-10-06",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "27 December 1993",
+            "date": "1993-12-27",
             "place": [
-              "Etterbeek",
+              {
+                "text": "Etterbeek",
+                "url": "https://en.wikipedia.org/wiki/Etterbeek"
+              },
               "Belgium"
             ]
           }
@@ -84418,9 +84541,12 @@
         "title": "Teddy Pilette",
         "general": {
           "born": {
-            "date": "26 July 1942",
+            "date": "1942-07-26",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           }
@@ -87410,17 +87536,23 @@
         "title": "Luigi Piotti",
         "general": {
           "born": {
-            "date": "27 October 1913",
+            "date": "1913-10-27",
             "place": [
               "Milan",
               "Italy"
             ]
           },
           "died": {
-            "date": "19 April 1971",
+            "date": "1971-04-19",
             "place": [
-              "Godiasco",
-              "Italy"
+              {
+                "text": "Godiasco",
+                "url": "https://en.wikipedia.org/wiki/Godiasco"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           }
         },
@@ -87585,7 +87717,7 @@
         "title": "David Piper",
         "general": {
           "born": {
-            "date": "2 December 1930",
+            "date": "1930-12-02",
             "place": null
           }
         },
@@ -95619,17 +95751,29 @@
         "title": "Renato Pirocchi",
         "general": {
           "born": {
-            "date": "26 March 1933",
+            "date": "1933-03-26",
             "place": [
-              "Notaresco",
-              "Italy"
+              {
+                "text": "Notaresco",
+                "url": "https://en.wikipedia.org/wiki/Notaresco"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           },
           "died": {
-            "date": "29 July 2002",
+            "date": "2002-07-29",
             "place": [
-              "Chieti",
-              "Italy"
+              {
+                "text": "Chieti",
+                "url": "https://en.wikipedia.org/wiki/Chieti"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           }
         },
@@ -95790,9 +95934,12 @@
             "place": null
           },
           "died": {
-            "date": "23 August 1987",
+            "date": "1987-08-23",
             "place": [
-              "English Channel",
+              {
+                "text": "English Channel",
+                "url": "https://en.wikipedia.org/wiki/English_Channel"
+              },
               "off the Isle of Wight",
               "England"
             ]
@@ -98128,9 +98275,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "12 January 1962",
+            "date": "1962-01-12",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           },
@@ -111009,16 +111159,22 @@
         "title": "Jacques Pollet",
         "general": {
           "born": {
-            "date": "2 July 1922",
+            "date": "1922-07-02",
             "place": [
-              "Roubaix",
+              {
+                "text": "Roubaix",
+                "url": "https://en.wikipedia.org/wiki/Roubaix"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "16 August 1997",
+            "date": "1997-08-16",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           }
@@ -111176,16 +111332,22 @@
         "title": "Ben Pon",
         "general": {
           "born": {
-            "date": "9 December 1936",
+            "date": "1936-12-09",
             "place": [
-              "Leiden",
+              {
+                "text": "Leiden",
+                "url": "https://en.wikipedia.org/wiki/Leiden"
+              },
               "Netherlands"
             ]
           },
           "died": {
-            "date": "30 September 2019",
+            "date": "2019-09-30",
             "place": [
-              "Nijkerk",
+              {
+                "text": "Nijkerk",
+                "url": "https://en.wikipedia.org/wiki/Nijkerk"
+              },
               "Netherlands"
             ]
           }
@@ -111691,7 +111853,7 @@
             "place": null
           },
           "died": {
-            "date": "12 February 1987",
+            "date": "1987-02-12",
             "place": [
               "London",
               "England"
@@ -111855,10 +112017,16 @@
             "place": null
           },
           "died": {
-            "date": "12 May 1957",
+            "date": "1957-05-12",
             "place": [
-              "Cavriana",
-              "Lombardy",
+              {
+                "text": "Cavriana",
+                "url": "https://en.wikipedia.org/wiki/Cavriana"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           }
@@ -112027,10 +112195,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "May 26, 1944",
+            "date": "1944-05-26",
             "place": [
-              "New York City",
-              "New York",
+              {
+                "text": "New York City",
+                "url": "https://en.wikipedia.org/wiki/New_York_City"
+              },
+              {
+                "text": "New York",
+                "url": "https://en.wikipedia.org/wiki/New_York_(state)"
+              },
               "U.S."
             ]
           }
@@ -112087,11 +112261,11 @@
         "title": "Charles Pozzi",
         "general": {
           "born": {
-            "date": "27 August 1909",
+            "date": "1909-08-27",
             "place": null
           },
           "died": {
-            "date": "28 February 2001",
+            "date": "2001-02-28",
             "place": null
           }
         },
@@ -112244,17 +112418,29 @@
         "title": "Jackie Pretorius",
         "general": {
           "born": {
-            "date": "22 November 1934",
+            "date": "1934-11-22",
             "place": [
-              "Potchefstroom",
-              "Union of South Africa"
+              {
+                "text": "Potchefstroom",
+                "url": "https://en.wikipedia.org/wiki/Potchefstroom"
+              },
+              {
+                "text": "Union of South Africa",
+                "url": "https://en.wikipedia.org/wiki/Union_of_South_Africa"
+              }
             ]
           },
           "died": {
-            "date": "30 March 2009",
+            "date": "2009-03-30",
             "place": [
-              "Johannesburg",
-              "South Africa"
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
+              {
+                "text": "South Africa",
+                "url": "https://en.wikipedia.org/wiki/South_Africa"
+              }
             ]
           }
         },
@@ -112427,18 +112613,30 @@
         "title": "Ernesto Prinoth",
         "general": {
           "born": {
-            "date": "15 April 1923",
+            "date": "1923-04-15",
             "place": [
-              "Urtijëi",
-              "South Tyrol",
+              {
+                "text": "Urtijëi",
+                "url": "https://en.wikipedia.org/wiki/Urtij%C3%ABi"
+              },
+              {
+                "text": "South Tyrol",
+                "url": "https://en.wikipedia.org/wiki/South_Tyrol"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "26 November 1981",
+            "date": "1981-11-26",
             "place": [
-              "Innsbruck",
-              "Tyrol",
+              {
+                "text": "Innsbruck",
+                "url": "https://en.wikipedia.org/wiki/Innsbruck"
+              },
+              {
+                "text": "Tyrol",
+                "url": "https://en.wikipedia.org/wiki/Tyrol_(state)"
+              },
               "Austria"
             ]
           }
@@ -113453,16 +113651,25 @@
         "title": "David Prophet",
         "general": {
           "born": {
-            "date": "9 October 1937",
+            "date": "1937-10-09",
             "place": [
-              "Hong Kong"
+              {
+                "text": "Hong Kong",
+                "url": "https://en.wikipedia.org/wiki/Hong_Kong"
+              }
             ]
           },
           "died": {
-            "date": "29 March 1981",
+            "date": "1981-03-29",
             "place": [
-              "Silverstone",
-              "Northamptonshire",
+              {
+                "text": "Silverstone",
+                "url": "https://en.wikipedia.org/wiki/Silverstone"
+              },
+              {
+                "text": "Northamptonshire",
+                "url": "https://en.wikipedia.org/wiki/Northamptonshire"
+              },
               "England"
             ]
           }
@@ -120316,11 +120523,20 @@
             "place": null
           },
           "died": {
-            "date": "5 March 1977",
+            "date": "1977-03-05",
             "place": [
-              "Midrand",
-              "Transvaal",
-              "Union of South Africa"
+              {
+                "text": "Midrand",
+                "url": "https://en.wikipedia.org/wiki/Midrand"
+              },
+              {
+                "text": "Transvaal",
+                "url": "https://en.wikipedia.org/wiki/Transvaal_(province)"
+              },
+              {
+                "text": "Union of South Africa",
+                "url": "https://en.wikipedia.org/wiki/Union_of_South_Africa"
+              }
             ]
           },
           "cause_of_death": "Injuries sustained at the 1977 South African Grand Prix"
@@ -120495,17 +120711,26 @@
         "title": "David Purley",
         "general": {
           "born": {
-            "date": "26 January 1945",
+            "date": "1945-01-26",
             "place": [
-              "Bognor Regis",
-              "Sussex",
+              {
+                "text": "Bognor Regis",
+                "url": "https://en.wikipedia.org/wiki/Bognor_Regis"
+              },
+              {
+                "text": "Sussex",
+                "url": "https://en.wikipedia.org/wiki/Sussex"
+              },
               "United Kingdom"
             ]
           },
           "died": {
-            "date": "2 July 1985",
+            "date": "1985-07-02",
             "place": [
-              "English Channel",
+              {
+                "text": "English Channel",
+                "url": "https://en.wikipedia.org/wiki/English_Channel"
+              },
               "close to Bognor Regis",
               "United Kingdom"
             ]
@@ -123125,10 +123350,16 @@
         "title": "Clive Puzey",
         "general": {
           "born": {
-            "date": "11 July 1941",
+            "date": "1941-07-11",
             "place": [
-              "Bulawayo",
-              "Southern Rhodesia"
+              {
+                "text": "Bulawayo",
+                "url": "https://en.wikipedia.org/wiki/Bulawayo"
+              },
+              {
+                "text": "Southern Rhodesia",
+                "url": "https://en.wikipedia.org/wiki/Southern_Rhodesia"
+              }
             ]
           }
         },

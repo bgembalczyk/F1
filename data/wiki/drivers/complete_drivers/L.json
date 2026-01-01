@@ -7360,9 +7360,12 @@
         "title": "Franck Lagorce",
         "general": {
           "born": {
-            "date": "1 September 1968",
+            "date": "1968-09-01",
             "place": [
-              "L'Haÿ-les-Roses",
+              {
+                "text": "L'Haÿ-les-Roses",
+                "url": "https://en.wikipedia.org/wiki/L%27Ha%C3%BF-les-Roses"
+              },
               "France"
             ]
           }
@@ -8454,9 +8457,12 @@
         "title": "Jan Lammers",
         "general": {
           "born": {
-            "date": "2 June 1956",
+            "date": "1956-06-02",
             "place": [
-              "Zandvoort",
+              {
+                "text": "Zandvoort",
+                "url": "https://en.wikipedia.org/wiki/Zandvoort"
+              },
               "Netherlands"
             ]
           }
@@ -23620,14 +23626,17 @@
         "title": "Chico Landi",
         "general": {
           "born": {
-            "date": "14 July 1907",
+            "date": "1907-07-14",
             "place": [
-              "São Paulo",
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
               "Brazil"
             ]
           },
           "died": {
-            "date": "7 June 1989",
+            "date": "1989-06-07",
             "place": [
               "São Paulo",
               "Brazil"
@@ -23799,19 +23808,34 @@
         "title": "Hermann Lang",
         "general": {
           "born": {
-            "date": "6 April 1909",
+            "date": "1909-04-06",
             "place": [
-              "Cannstatt",
-              "Kingdom of Württemberg",
-              "German Empire"
+              {
+                "text": "Cannstatt",
+                "url": "https://en.wikipedia.org/wiki/Cannstatt"
+              },
+              {
+                "text": "Kingdom of Württemberg",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_W%C3%BCrttemberg"
+              },
+              {
+                "text": "German Empire",
+                "url": "https://en.wikipedia.org/wiki/German_Empire"
+              }
             ]
           },
           "died": {
-            "date": "19 October 1987",
+            "date": "1987-10-19",
             "place": [
               "Bad Cannstatt",
-              "Baden-Württemberg",
-              "West Germany"
+              {
+                "text": "Baden-Württemberg",
+                "url": "https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -24913,9 +24937,12 @@
         "title": "Claudio Langes",
         "general": {
           "born": {
-            "date": "4 August 1961",
+            "date": "1961-08-04",
             "place": [
-              "Brescia",
+              {
+                "text": "Brescia",
+                "url": "https://en.wikipedia.org/wiki/Brescia"
+              },
               "Italy"
             ]
           }
@@ -26301,9 +26328,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "19 March 1964",
+            "date": "1964-03-19",
             "place": [
-              "Lido di Camaiore",
+              {
+                "text": "Lido di Camaiore",
+                "url": "https://en.wikipedia.org/wiki/Lido_di_Camaiore"
+              },
               "Tuscany",
               "Italy"
             ]
@@ -36466,10 +36496,16 @@
         "title": "Oscar Larrauri",
         "general": {
           "born": {
-            "date": "19 August 1954",
+            "date": "1954-08-19",
             "place": [
-              "Rosario",
-              "Santa Fe",
+              {
+                "text": "Rosario",
+                "url": "https://en.wikipedia.org/wiki/Rosario"
+              },
+              {
+                "text": "Santa Fe",
+                "url": "https://en.wikipedia.org/wiki/Santa_Fe_Province"
+              },
               "Argentina"
             ]
           }
@@ -39550,7 +39586,7 @@
         "title": "Gérard Larrousse",
         "general": {
           "born": {
-            "date": "23 May 1940",
+            "date": "1940-05-23",
             "place": null
           }
         },
@@ -40587,7 +40623,7 @@
             "place": null
           },
           "died": {
-            "date": "June 11, 1966",
+            "date": "1966-06-11",
             "place": [
               "Reading",
               "Pennsylvania",
@@ -47574,9 +47610,12 @@
             "place": null
           },
           "died": {
-            "date": "20 May 2019",
+            "date": "2019-05-20",
             "place": [
-              "Zürich",
+              {
+                "text": "Zürich",
+                "url": "https://en.wikipedia.org/wiki/Z%C3%BCrich"
+              },
               "Switzerland"
             ]
           },
@@ -53235,11 +53274,11 @@
         "title": "Roger Laurent",
         "general": {
           "born": {
-            "date": "21 February 1913",
+            "date": "1913-02-21",
             "place": null
           },
           "died": {
-            "date": "6 February 1997",
+            "date": "1997-02-06",
             "place": null
           }
         },
@@ -53400,9 +53439,12 @@
         "title": "Giovanni Lavaggi",
         "general": {
           "born": {
-            "date": "18 February 1958",
+            "date": "1958-02-18",
             "place": [
-              "Augusta",
+              {
+                "text": "Augusta",
+                "url": "https://en.wikipedia.org/wiki/Augusta,_Sicily"
+              },
               "Italy"
             ]
           }
@@ -55492,17 +55534,26 @@
         "title": null,
         "general": {
           "born": {
-            "date": "27 July 1933",
+            "date": "1933-07-27",
             "place": [
-              "Ealing",
+              {
+                "text": "Ealing",
+                "url": "https://en.wikipedia.org/wiki/Ealing"
+              },
               "London"
             ]
           },
           "died": {
-            "date": "13 August 2011",
+            "date": "2011-08-13",
             "place": [
-              "Burghill",
-              "Herefordshire"
+              {
+                "text": "Burghill",
+                "url": "https://en.wikipedia.org/wiki/Burghill"
+              },
+              {
+                "text": "Herefordshire",
+                "url": "https://en.wikipedia.org/wiki/Herefordshire"
+              }
             ]
           }
         },
@@ -68156,10 +68207,16 @@
         "title": "Michel Leclère",
         "general": {
           "born": {
-            "date": "18 March 1946",
+            "date": "1946-03-18",
             "place": [
-              "Mantes-la-Jolie",
-              "Yvelines",
+              {
+                "text": "Mantes-la-Jolie",
+                "url": "https://en.wikipedia.org/wiki/Mantes-la-Jolie"
+              },
+              {
+                "text": "Yvelines",
+                "url": "https://en.wikipedia.org/wiki/Yvelines"
+              },
               "France"
             ]
           }
@@ -70489,18 +70546,30 @@
         "title": "Neville Lederle",
         "general": {
           "born": {
-            "date": "25 September 1938",
+            "date": "1938-09-25",
             "place": [
-              "Theunissen",
-              "Winburg",
-              "Orange Free State",
+              {
+                "text": "Theunissen",
+                "url": "https://en.wikipedia.org/wiki/Theunissen"
+              },
+              {
+                "text": "Winburg",
+                "url": "https://en.wikipedia.org/wiki/Winburg"
+              },
+              {
+                "text": "Orange Free State",
+                "url": "https://en.wikipedia.org/wiki/Orange_Free_State_(province)"
+              },
               "South Africa"
             ]
           },
           "died": {
-            "date": "17 May 2019",
+            "date": "2019-05-17",
             "place": [
-              "Knysna",
+              {
+                "text": "Knysna",
+                "url": "https://en.wikipedia.org/wiki/Knysna"
+              },
               "Western Cape Province",
               "South Africa"
             ]
@@ -77099,15 +77168,21 @@
         "title": "Arthur Legat",
         "general": {
           "born": {
-            "date": "1 November 1898",
+            "date": "1898-11-01",
             "place": [
-              "Haine-Saint-Paul",
-              "Wallonia",
+              {
+                "text": "Haine-Saint-Paul",
+                "url": "https://en.wikipedia.org/wiki/La_Louvi%C3%A8re"
+              },
+              {
+                "text": "Wallonia",
+                "url": "https://en.wikipedia.org/wiki/Wallonia"
+              },
               "Belgium"
             ]
           },
           "died": {
-            "date": "23 February 1960",
+            "date": "1960-02-23",
             "place": [
               "Haine-Saint-Pierre",
               "Wallonia",
@@ -83864,7 +83939,7 @@
         "title": "Lamberto Leoni",
         "general": {
           "born": {
-            "date": "24 May 1953",
+            "date": "1953-05-24",
             "place": [
               "Argenta",
               "Italy"
@@ -86436,18 +86511,30 @@
         "title": "Les Leston",
         "general": {
           "born": {
-            "date": "16 December 1920",
+            "date": "1920-12-16",
             "place": [
-              "Bulwell",
-              "Nottinghamshire",
+              {
+                "text": "Bulwell",
+                "url": "https://en.wikipedia.org/wiki/Bulwell"
+              },
+              {
+                "text": "Nottinghamshire",
+                "url": "https://en.wikipedia.org/wiki/Nottinghamshire"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "13 May 2012",
+            "date": "2012-05-13",
             "place": [
-              "Bexhill-on-Sea",
-              "East Sussex",
+              {
+                "text": "Bexhill-on-Sea",
+                "url": "https://en.wikipedia.org/wiki/Bexhill-on-Sea"
+              },
+              {
+                "text": "East Sussex",
+                "url": "https://en.wikipedia.org/wiki/East_Sussex"
+              },
               "England"
             ]
           }
@@ -87653,16 +87740,22 @@
         "title": "Pierre Levegh",
         "general": {
           "born": {
-            "date": "22 December 1905",
+            "date": "1905-12-22",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "11 June 1955",
+            "date": "1955-06-11",
             "place": [
-              "Le Mans",
+              {
+                "text": "Le Mans",
+                "url": "https://en.wikipedia.org/wiki/Le_Mans"
+              },
               "France"
             ]
           }
@@ -87813,7 +87906,7 @@
         "title": "Bayliss Levrett",
         "general": {
           "born": {
-            "date": "February 14, 1914",
+            "date": "1914-02-14",
             "place": [
               "Jacksonville",
               "Florida",
@@ -87821,7 +87914,7 @@
             ]
           },
           "died": {
-            "date": "March 13, 2002",
+            "date": "2002-03-13",
             "place": [
               "Reno",
               "Nevada",
@@ -87994,7 +88087,7 @@
         "title": "Jackie Lewis",
         "general": {
           "born": {
-            "date": "1 November 1936",
+            "date": "1936-11-01",
             "place": null
           }
         },
@@ -88163,9 +88256,12 @@
             "place": null
           },
           "died": {
-            "date": "25 October 1958",
+            "date": "1958-10-25",
             "place": [
-              "East Grinstead",
+              {
+                "text": "East Grinstead",
+                "url": "https://en.wikipedia.org/wiki/East_Grinstead"
+              },
               "Sussex",
               "England"
             ]
@@ -89271,18 +89367,30 @@
         "title": "Guy Ligier",
         "general": {
           "born": {
-            "date": "12 July 1930",
+            "date": "1930-07-12",
             "place": [
-              "Vichy",
-              "Allier",
+              {
+                "text": "Vichy",
+                "url": "https://en.wikipedia.org/wiki/Vichy"
+              },
+              {
+                "text": "Allier",
+                "url": "https://en.wikipedia.org/wiki/Allier"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "23 August 2015",
+            "date": "2015-08-23",
             "place": [
-              "Nevers",
-              "Nièvre",
+              {
+                "text": "Nevers",
+                "url": "https://en.wikipedia.org/wiki/Nevers"
+              },
+              {
+                "text": "Nièvre",
+                "url": "https://en.wikipedia.org/wiki/Ni%C3%A8vre"
+              },
               "France"
             ]
           }
@@ -90489,7 +90597,7 @@
             "place": null
           },
           "died": {
-            "date": "February 11, 1987",
+            "date": "1987-02-11",
             "place": [
               "Los Angeles",
               "California",
@@ -90772,17 +90880,29 @@
         "title": "Roberto Lippi",
         "general": {
           "born": {
-            "date": "17 October 1926",
+            "date": "1926-10-17",
             "place": [
-              "Rome",
-              "Italy"
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           },
           "died": {
-            "date": "31 October 2011",
+            "date": "2011-10-31",
             "place": [
-              "Anzio",
-              "Italy"
+              {
+                "text": "Anzio",
+                "url": "https://en.wikipedia.org/wiki/Anzio"
+              },
+              {
+                "text": "Italy",
+                "url": "https://en.wikipedia.org/wiki/Italy"
+              }
             ]
           }
         },
@@ -90950,10 +91070,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "6 August 1980",
+            "date": "1980-08-06",
             "place": [
-              "Locorotondo",
-              "Bari",
+              {
+                "text": "Locorotondo",
+                "url": "https://en.wikipedia.org/wiki/Locorotondo"
+              },
+              {
+                "text": "Bari",
+                "url": "https://en.wikipedia.org/wiki/Province_of_Bari"
+              },
               "Italy"
             ]
           },
@@ -97801,16 +97927,25 @@
         "title": "Dries van der Lof",
         "general": {
           "born": {
-            "date": "23 August 1919",
+            "date": "1919-08-23",
             "place": [
-              "Emmen",
-              "Netherlands"
+              {
+                "text": "Emmen",
+                "url": "https://en.wikipedia.org/wiki/Emmen,_Netherlands"
+              },
+              {
+                "text": "Netherlands",
+                "url": "https://en.wikipedia.org/wiki/Netherlands"
+              }
             ]
           },
           "died": {
-            "date": "24 May 1990",
+            "date": "1990-05-24",
             "place": [
-              "Enschede",
+              {
+                "text": "Enschede",
+                "url": "https://en.wikipedia.org/wiki/Enschede"
+              },
               "Netherlands"
             ]
           }
@@ -97960,17 +98095,26 @@
         "title": "Lella Lombardi",
         "general": {
           "born": {
-            "date": "26 March 1941",
+            "date": "1941-03-26",
             "place": [
-              "Frugarolo",
-              "Piedmont",
+              {
+                "text": "Frugarolo",
+                "url": "https://en.wikipedia.org/wiki/Frugarolo"
+              },
+              {
+                "text": "Piedmont",
+                "url": "https://en.wikipedia.org/wiki/Piedmont"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "3 March 1992",
+            "date": "1992-03-03",
             "place": [
-              "Milan",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
               "Italy"
             ]
           }
@@ -100297,16 +100441,22 @@
         "title": "Ricardo Londoño Bridge",
         "general": {
           "born": {
-            "date": "8 August 1949",
+            "date": "1949-08-08",
             "place": [
-              "Medellín",
+              {
+                "text": "Medellín",
+                "url": "https://en.wikipedia.org/wiki/Medell%C3%ADn"
+              },
               "Colombia"
             ]
           },
           "died": {
-            "date": "18 July 2009",
+            "date": "2009-07-18",
             "place": [
-              "San Bernardo del Viento",
+              {
+                "text": "San Bernardo del Viento",
+                "url": "https://en.wikipedia.org/wiki/San_Bernardo_del_Viento"
+              },
               "Colombia"
             ]
           }
@@ -100448,17 +100598,26 @@
         "title": "Ernst Loof",
         "general": {
           "born": {
-            "date": "4 July 1907",
+            "date": "1907-07-04",
             "place": [
               "Neindorf",
-              "Germany"
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/German_Empire"
+              }
             ]
           },
           "died": {
-            "date": "3 March 1956",
+            "date": "1956-03-03",
             "place": [
-              "Bonn",
-              "West Germany"
+              {
+                "text": "Bonn",
+                "url": "https://en.wikipedia.org/wiki/Bonn"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -100599,11 +100758,17 @@
         "title": null,
         "general": {
           "born": {
-            "date": "19 November 1981",
+            "date": "1981-11-19",
             "place": [
-              "Duisburg",
+              {
+                "text": "Duisburg",
+                "url": "https://en.wikipedia.org/wiki/Duisburg"
+              },
               "North Rhine-Westphalia",
-              "West Germany"
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -110974,17 +111139,29 @@
         "title": "Henri Louveau",
         "general": {
           "born": {
-            "date": "25 January 1910",
+            "date": "1910-01-25",
             "place": [
-              "Suresnes",
-              "Hauts-de-Seine"
+              {
+                "text": "Suresnes",
+                "url": "https://en.wikipedia.org/wiki/Suresnes"
+              },
+              {
+                "text": "Hauts-de-Seine",
+                "url": "https://en.wikipedia.org/wiki/Hauts-de-Seine"
+              }
             ]
           },
           "died": {
-            "date": "7 January 1991",
+            "date": "1991-01-07",
             "place": [
-              "Orléans",
-              "Loiret"
+              {
+                "text": "Orléans",
+                "url": "https://en.wikipedia.org/wiki/Orl%C3%A9ans"
+              },
+              {
+                "text": "Loiret",
+                "url": "https://en.wikipedia.org/wiki/Loiret"
+              }
             ]
           }
         },
@@ -111177,17 +111354,26 @@
         "title": "John Love",
         "general": {
           "born": {
-            "date": "7 December 1924",
+            "date": "1924-12-07",
             "place": [
-              "Bulawayo",
-              "Southern Rhodesia"
+              {
+                "text": "Bulawayo",
+                "url": "https://en.wikipedia.org/wiki/Bulawayo"
+              },
+              {
+                "text": "Southern Rhodesia",
+                "url": "https://en.wikipedia.org/wiki/Southern_Rhodesia"
+              }
             ]
           },
           "died": {
-            "date": "25 April 2005",
+            "date": "2005-04-25",
             "place": [
               "Bulawayo",
-              "Zimbabwe"
+              {
+                "text": "Zimbabwe",
+                "url": "https://en.wikipedia.org/wiki/Zimbabwe"
+              }
             ]
           }
         },
@@ -114859,7 +115045,7 @@
         "title": "Pete Lovely",
         "general": {
           "born": {
-            "date": "April 11, 1926",
+            "date": "1926-04-11",
             "place": [
               "Livingston",
               "Montana",
@@ -114867,7 +115053,7 @@
             ]
           },
           "died": {
-            "date": "May 15, 2011",
+            "date": "2011-05-15",
             "place": [
               "Tacoma",
               "Washington",
@@ -116378,11 +116564,11 @@
         "title": "Roger Loyer",
         "general": {
           "born": {
-            "date": "5 August 1907",
+            "date": "1907-08-05",
             "place": null
           },
           "died": {
-            "date": "24 March 1988",
+            "date": "1988-03-24",
             "place": null
           }
         },
@@ -116523,17 +116709,29 @@
         "title": "Jean Lucas",
         "general": {
           "born": {
-            "date": "25 April 1917",
+            "date": "1917-04-25",
             "place": [
-              "Le Mans",
-              "Sarthe"
+              {
+                "text": "Le Mans",
+                "url": "https://en.wikipedia.org/wiki/Le_Mans"
+              },
+              {
+                "text": "Sarthe",
+                "url": "https://en.wikipedia.org/wiki/Sarthe"
+              }
             ]
           },
           "died": {
-            "date": "27 September 2003",
+            "date": "2003-09-27",
             "place": [
-              "Saint-Martin-de-Ré",
-              "Charente-Maritime"
+              {
+                "text": "Saint-Martin-de-Ré",
+                "url": "https://en.wikipedia.org/wiki/Saint-Martin-de-R%C3%A9"
+              },
+              {
+                "text": "Charente-Maritime",
+                "url": "https://en.wikipedia.org/wiki/Charente-Maritime"
+              }
             ]
           }
         },
@@ -116674,11 +116872,11 @@
         "title": "Jean Lucienbonnet",
         "general": {
           "born": {
-            "date": "7 January 1923",
+            "date": "1923-01-07",
             "place": null
           },
           "died": {
-            "date": "19 August 1962",
+            "date": "1962-08-19",
             "place": null
           }
         },
@@ -116862,7 +117060,7 @@
         "title": "Brett Lunger",
         "general": {
           "born": {
-            "date": "November 14, 1945",
+            "date": "1945-11-14",
             "place": [
               "Wilmington",
               "Delaware",
@@ -118927,11 +119125,11 @@
         "title": "Alberto Rodríguez Larreta",
         "general": {
           "born": {
-            "date": "14 January 1934",
+            "date": "1934-01-14",
             "place": null
           },
           "died": {
-            "date": "11 March 1977",
+            "date": "1977-03-11",
             "place": null
           }
         },

@@ -30,16 +30,22 @@
         "title": "Oswald Karch",
         "general": {
           "born": {
-            "date": "6 March 1917",
+            "date": "1917-03-06",
             "place": [
-              "Ludwigshafen",
+              {
+                "text": "Ludwigshafen",
+                "url": "https://en.wikipedia.org/wiki/Ludwigshafen"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "28 January 2009",
+            "date": "2009-01-28",
             "place": [
-              "Mannheim",
+              {
+                "text": "Mannheim",
+                "url": "https://en.wikipedia.org/wiki/Mannheim"
+              },
               "Germany"
             ]
           }
@@ -7171,9 +7177,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "29 May 1963",
+            "date": "1963-05-29",
             "place": [
-              "Tokyo",
+              {
+                "text": "Tokyo",
+                "url": "https://en.wikipedia.org/wiki/Tokyo"
+              },
               "Japan"
             ]
           }
@@ -11083,16 +11092,22 @@
         "title": null,
         "general": {
           "born": {
-            "date": "12 December 1923",
+            "date": "1923-12-12",
             "place": [
-              "Melbourne",
+              {
+                "text": "Melbourne",
+                "url": "https://en.wikipedia.org/wiki/Melbourne"
+              },
               "Australia"
             ]
           },
           "died": {
-            "date": "26 November 2019",
+            "date": "2019-11-26",
             "place": [
-              "Bergamo",
+              {
+                "text": "Bergamo",
+                "url": "https://en.wikipedia.org/wiki/Bergamo"
+              },
               "Italy"
             ]
           }
@@ -11258,19 +11273,34 @@
         "title": "Rupert Keegan",
         "general": {
           "born": {
-            "date": "26 February 1955",
+            "date": "1955-02-26",
             "place": [
-              "Westcliff-on-Sea",
-              "Essex",
+              {
+                "text": "Westcliff-on-Sea",
+                "url": "https://en.wikipedia.org/wiki/Westcliff-on-Sea"
+              },
+              {
+                "text": "Essex",
+                "url": "https://en.wikipedia.org/wiki/Essex"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "23 September 2024",
+            "date": "2024-09-23",
             "place": [
-              "Portoferraio",
-              "Elba",
-              "Tuscany",
+              {
+                "text": "Portoferraio",
+                "url": "https://en.wikipedia.org/wiki/Portoferraio"
+              },
+              {
+                "text": "Elba",
+                "url": "https://en.wikipedia.org/wiki/Elba"
+              },
+              {
+                "text": "Tuscany",
+                "url": "https://en.wikipedia.org/wiki/Tuscany"
+              },
               "Italy"
             ]
           }
@@ -13315,13 +13345,16 @@
         "title": "Eddie Keizan",
         "general": {
           "born": {
-            "date": "12 September 1944",
+            "date": "1944-09-12",
             "place": null
           },
           "died": {
-            "date": "21 May 2016",
+            "date": "2016-05-21",
             "place": [
-              "Johannesburg",
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
               "South Africa"
             ]
           }
@@ -13503,7 +13536,7 @@
             "place": null
           },
           "died": {
-            "date": "November 19, 1961",
+            "date": "1961-11-19",
             "place": [
               "Phoenix",
               "Arizona",
@@ -13892,9 +13925,12 @@
             "place": null
           },
           "died": {
-            "date": "28 November 1993",
+            "date": "1993-11-28",
             "place": [
-              "Neston",
+              {
+                "text": "Neston",
+                "url": "https://en.wikipedia.org/wiki/Neston"
+              },
               "Cheshire",
               "England"
             ]
@@ -14053,9 +14089,12 @@
         "title": "David Kennedy",
         "general": {
           "born": {
-            "date": "15 January 1953",
+            "date": "1953-01-15",
             "place": [
-              "Sligo",
+              {
+                "text": "Sligo",
+                "url": "https://en.wikipedia.org/wiki/Sligo"
+              },
               "Ireland"
             ]
           }
@@ -15308,17 +15347,26 @@
         "title": "Loris Kessel",
         "general": {
           "born": {
-            "date": "1 April 1950",
+            "date": "1950-04-01",
             "place": [
-              "Lugano",
-              "Ticino",
+              {
+                "text": "Lugano",
+                "url": "https://en.wikipedia.org/wiki/Lugano"
+              },
+              {
+                "text": "Ticino",
+                "url": "https://en.wikipedia.org/wiki/Ticino"
+              },
               "Switzerland"
             ]
           },
           "died": {
-            "date": "15 May 2010",
+            "date": "2010-05-15",
             "place": [
-              "Montagnola",
+              {
+                "text": "Montagnola",
+                "url": "https://en.wikipedia.org/wiki/Montagnola"
+              },
               "Ticino",
               "Switzerland"
             ]
@@ -16807,7 +16855,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "March 23, 1936",
+            "date": "1936-03-23",
             "place": [
               "Seattle",
               "Washington",
@@ -16815,7 +16863,7 @@
             ]
           },
           "died": {
-            "date": "April 4, 2024",
+            "date": "2024-04-04",
             "place": null
           }
         },
@@ -16949,9 +16997,12 @@
         "title": "Nicolas Kiesa",
         "general": {
           "born": {
-            "date": "3 March 1978",
+            "date": "1978-03-03",
             "place": [
-              "Copenhagen",
+              {
+                "text": "Copenhagen",
+                "url": "https://en.wikipedia.org/wiki/Copenhagen"
+              },
               "Denmark"
             ]
           }
@@ -19630,16 +19681,25 @@
         "title": "Leo Kinnunen",
         "general": {
           "born": {
-            "date": "5 August 1943",
+            "date": "1943-08-05",
             "place": [
-              "Tampere",
-              "Finland"
+              {
+                "text": "Tampere",
+                "url": "https://en.wikipedia.org/wiki/Tampere"
+              },
+              {
+                "text": "Finland",
+                "url": "https://en.wikipedia.org/wiki/Finland"
+              }
             ]
           },
           "died": {
-            "date": "26 July 2017",
+            "date": "2017-07-26",
             "place": [
-              "Turku",
+              {
+                "text": "Turku",
+                "url": "https://en.wikipedia.org/wiki/Turku"
+              },
               "Finland"
             ]
           }
@@ -21156,7 +21216,7 @@
             "place": null
           },
           "died": {
-            "date": "April 26, 2009",
+            "date": "2009-04-26",
             "place": [
               "Joliet",
               "Illinois",
@@ -21420,16 +21480,22 @@
         "title": "Hans Klenk",
         "general": {
           "born": {
-            "date": "28 October 1919",
+            "date": "1919-10-28",
             "place": [
-              "Künzelsau",
+              {
+                "text": "Künzelsau",
+                "url": "https://en.wikipedia.org/wiki/K%C3%BCnzelsau"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "24 March 2009",
+            "date": "2009-03-24",
             "place": [
-              "Vellberg",
+              {
+                "text": "Vellberg",
+                "url": "https://en.wikipedia.org/wiki/Vellberg"
+              },
               "Germany"
             ]
           }
@@ -21583,16 +21649,25 @@
         "title": "Peter de Klerk",
         "general": {
           "born": {
-            "date": "16 March 1935",
+            "date": "1935-03-16",
             "place": [
-              "Pilgrim's Rest",
-              "Transvaal"
+              {
+                "text": "Pilgrim's Rest",
+                "url": "https://en.wikipedia.org/wiki/Pilgrim%27s_Rest,_South_Africa"
+              },
+              {
+                "text": "Transvaal",
+                "url": "https://en.wikipedia.org/wiki/Transvaal_Province"
+              }
             ]
           },
           "died": {
-            "date": "11 July 2015",
+            "date": "2015-07-11",
             "place": [
-              "Johannesburg",
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
               "South Africa"
             ]
           }
@@ -21774,9 +21849,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "7 February 1983",
+            "date": "1983-02-07",
             "place": [
-              "Hohenems",
+              {
+                "text": "Hohenems",
+                "url": "https://en.wikipedia.org/wiki/Hohenems"
+              },
               "Austria"
             ]
           }
@@ -29122,17 +29200,29 @@
         "title": null,
         "general": {
           "born": {
-            "date": "16 September 1910",
+            "date": "1910-09-16",
             "place": [
-              "Giessen",
-              "Hesse",
-              "German Empire"
+              {
+                "text": "Giessen",
+                "url": "https://en.wikipedia.org/wiki/Giessen"
+              },
+              {
+                "text": "Hesse",
+                "url": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Hesse"
+              },
+              {
+                "text": "German Empire",
+                "url": "https://en.wikipedia.org/wiki/German_Empire"
+              }
             ]
           },
           "died": {
-            "date": "18 March 2003",
+            "date": "2003-03-18",
             "place": [
-              "Lake Constance",
+              {
+                "text": "Lake Constance",
+                "url": "https://en.wikipedia.org/wiki/Lake_Constance"
+              },
               "Germany"
             ]
           }
@@ -29299,16 +29389,22 @@
         "title": "Ernst Klodwig",
         "general": {
           "born": {
-            "date": "23 May 1903",
+            "date": "1903-05-23",
             "place": [
-              "Aschersleben",
+              {
+                "text": "Aschersleben",
+                "url": "https://en.wikipedia.org/wiki/Aschersleben"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "15 April 1973",
+            "date": "1973-04-15",
             "place": [
-              "Hamburg",
+              {
+                "text": "Hamburg",
+                "url": "https://en.wikipedia.org/wiki/Hamburg"
+              },
               "West Germany"
             ]
           }
@@ -29482,10 +29578,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 September 1986",
+            "date": "1986-09-13",
             "place": [
-              "Amagasaki",
-              "Hyōgo",
+              {
+                "text": "Amagasaki",
+                "url": "https://en.wikipedia.org/wiki/Amagasaki"
+              },
+              {
+                "text": "Hyōgo",
+                "url": "https://en.wikipedia.org/wiki/Hy%C5%8Dgo_Prefecture"
+              },
               "Japan"
             ]
           }
@@ -40966,14 +41068,17 @@
         "title": "Helmut Koinigg",
         "general": {
           "born": {
-            "date": "3 November 1948",
+            "date": "1948-11-03",
             "place": [
-              "Vienna",
+              {
+                "text": "Vienna",
+                "url": "https://en.wikipedia.org/wiki/Vienna"
+              },
               "Austria"
             ]
           },
           "died": {
-            "date": "6 October 1974",
+            "date": "1974-10-06",
             "place": [
               "Watkins Glen",
               "New York",
@@ -47927,9 +48032,12 @@
         "title": "Mikko Kozarowitzky",
         "general": {
           "born": {
-            "date": "17 May 1948",
+            "date": "1948-05-17",
             "place": [
-              "Helsinki",
+              {
+                "text": "Helsinki",
+                "url": "https://en.wikipedia.org/wiki/Helsinki"
+              },
               "Finland"
             ]
           }
@@ -48083,18 +48191,30 @@
         "title": "Willi Krakau",
         "general": {
           "born": {
-            "date": "4 December 1911",
+            "date": "1911-12-04",
             "place": [
-              "Felgeleben",
-              "Saxony",
+              {
+                "text": "Felgeleben",
+                "url": "https://en.wikipedia.org/wiki/Sch%C3%B6nebeck"
+              },
+              {
+                "text": "Saxony",
+                "url": "https://en.wikipedia.org/wiki/Province_of_Saxony"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "26 April 1995",
+            "date": "1995-04-26",
             "place": [
-              "Peine",
-              "Lower Saxony",
+              {
+                "text": "Peine",
+                "url": "https://en.wikipedia.org/wiki/Peine"
+              },
+              {
+                "text": "Lower Saxony",
+                "url": "https://en.wikipedia.org/wiki/Lower_Saxony"
+              },
               "Germany"
             ]
           }
@@ -48240,15 +48360,18 @@
         "title": "Rudolf Krause",
         "general": {
           "born": {
-            "date": "30 March 1907",
+            "date": "1907-03-30",
             "place": [
               "Oberreichenbach",
-              "Reichenbach im Vogtland",
+              {
+                "text": "Reichenbach im Vogtland",
+                "url": "https://en.wikipedia.org/wiki/Reichenbach_im_Vogtland"
+              },
               "German Empire"
             ]
           },
           "died": {
-            "date": "11 April 1987",
+            "date": "1987-04-11",
             "place": [
               "Reichenbach im Vogtland",
               "East Germany"
@@ -57985,18 +58108,30 @@
         "title": "Kurt Kuhnke",
         "general": {
           "born": {
-            "date": "30 April 1910",
+            "date": "1910-04-30",
             "place": [
-              "Stettin",
-              "Pomerania",
+              {
+                "text": "Stettin",
+                "url": "https://en.wikipedia.org/wiki/Szczecin"
+              },
+              {
+                "text": "Pomerania",
+                "url": "https://en.wikipedia.org/wiki/Province_of_Pomerania_(1815%E2%80%931945)"
+              },
               "Germany"
             ]
           },
           "died": {
-            "date": "8 February 1969",
+            "date": "1969-02-08",
             "place": [
-              "Braunschweig",
-              "Lower Saxony",
+              {
+                "text": "Braunschweig",
+                "url": "https://en.wikipedia.org/wiki/Braunschweig"
+              },
+              {
+                "text": "Lower Saxony",
+                "url": "https://en.wikipedia.org/wiki/Lower_Saxony"
+              },
               "West Germany"
             ]
           }
@@ -58138,10 +58273,16 @@
         "title": "Masami Kuwashima",
         "general": {
           "born": {
-            "date": "14 September 1950",
+            "date": "1950-09-14",
             "place": [
-              "Kumagaya",
-              "Saitama",
+              {
+                "text": "Kumagaya",
+                "url": "https://en.wikipedia.org/wiki/Kumagaya,_Saitama"
+              },
+              {
+                "text": "Saitama",
+                "url": "https://en.wikipedia.org/wiki/Saitama_Prefecture"
+              },
               "Japan"
             ]
           }

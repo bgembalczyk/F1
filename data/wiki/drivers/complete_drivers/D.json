@@ -34,9 +34,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "27 December 1985",
+            "date": "1985-12-27",
             "place": [
-              "Etterbeek",
+              {
+                "text": "Etterbeek",
+                "url": "https://en.wikipedia.org/wiki/Etterbeek"
+              },
               "Brussels",
               "Belgium"
             ]
@@ -5865,7 +5868,7 @@
         "title": "Chuck Daigh",
         "general": {
           "born": {
-            "date": "November 29, 1923",
+            "date": "1923-11-29",
             "place": [
               "Long Beach",
               "California",
@@ -5873,7 +5876,7 @@
             ]
           },
           "died": {
-            "date": "April 29, 2008",
+            "date": "2008-04-29",
             "place": [
               "Newport Beach",
               "California",
@@ -15256,10 +15259,16 @@
         "title": "Christian Danner",
         "general": {
           "born": {
-            "date": "4 April 1958",
+            "date": "1958-04-04",
             "place": [
-              "Munich",
-              "West Germany"
+              {
+                "text": "Munich",
+                "url": "https://en.wikipedia.org/wiki/Munich"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -15432,14 +15441,17 @@
         "title": "Jorge Daponte",
         "general": {
           "born": {
-            "date": "5 June 1923",
+            "date": "1923-06-05",
             "place": [
-              "Buenos Aires",
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+              },
               "Argentina"
             ]
           },
           "died": {
-            "date": "9 March 1963",
+            "date": "1963-03-09",
             "place": [
               "Buenos Aires",
               "Argentina"
@@ -21200,7 +21212,7 @@
             "place": null
           },
           "died": {
-            "date": "June 11, 1966",
+            "date": "1966-06-11",
             "place": [
               "Burr Ridge",
               "Illinois",
@@ -21515,17 +21527,26 @@
         "title": null,
         "general": {
           "born": {
-            "date": "29 July 1933",
+            "date": "1933-07-29",
             "place": [
-              "Marylebone",
-              "London",
+              {
+                "text": "Marylebone",
+                "url": "https://en.wikipedia.org/wiki/Marylebone"
+              },
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "19 December 2012",
+            "date": "2012-12-19",
             "place": [
-              "Cape Town",
+              {
+                "text": "Cape Town",
+                "url": "https://en.wikipedia.org/wiki/Cape_Town"
+              },
               "South Africa"
             ]
           },
@@ -22146,7 +22167,7 @@
             "place": null
           },
           "died": {
-            "date": "April 4, 1966",
+            "date": "1966-04-04",
             "place": [
               "Indianapolis",
               "Indiana",
@@ -22202,9 +22223,12 @@
         "title": "Jean-Denis Delétraz",
         "general": {
           "born": {
-            "date": "1 October 1963",
+            "date": "1963-10-01",
             "place": [
-              "Geneva",
+              {
+                "text": "Geneva",
+                "url": "https://en.wikipedia.org/wiki/Geneva"
+              },
               "Switzerland"
             ]
           }
@@ -25803,11 +25827,20 @@
             "place": null
           },
           "died": {
-            "date": "1 August 1980",
+            "date": "1980-08-01",
             "place": [
-              "Hockenheimring",
-              "Baden-Württemberg",
-              "West Germany"
+              {
+                "text": "Hockenheimring",
+                "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+              },
+              {
+                "text": "Baden-Württemberg",
+                "url": "https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "cause_of_death": "Single vehicle collision whilst testing the Alfa Romeo 179"
@@ -33200,7 +33233,7 @@
             "place": null
           },
           "died": {
-            "date": "October 12, 1985",
+            "date": "1985-10-12",
             "place": [
               "Port Orange",
               "Florida",
@@ -33472,11 +33505,11 @@
         "title": "Frank Dochnal",
         "general": {
           "born": {
-            "date": "October 8, 1920",
+            "date": "1920-10-08",
             "place": null
           },
           "died": {
-            "date": "July 7, 2010",
+            "date": "2010-07-07",
             "place": null
           }
         },
@@ -33617,17 +33650,26 @@
         "title": "José Dolhem",
         "general": {
           "born": {
-            "date": "26 April 1944",
+            "date": "1944-04-26",
             "place": [
-              "Paris",
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
               "France"
             ]
           },
           "died": {
-            "date": "16 April 1988",
+            "date": "1988-04-16",
             "place": [
-              "Saint-Just-Saint-Rambert",
-              "Loire",
+              {
+                "text": "Saint-Just-Saint-Rambert",
+                "url": "https://en.wikipedia.org/wiki/Saint-Just-Saint-Rambert"
+              },
+              {
+                "text": "Loire",
+                "url": "https://en.wikipedia.org/wiki/Loire_(department)"
+              },
               "France"
             ]
           }
@@ -37865,9 +37907,12 @@
             "place": null
           },
           "died": {
-            "date": "August 19, 1975",
+            "date": "1975-08-19",
             "place": [
-              "Graz",
+              {
+                "text": "Graz",
+                "url": "https://en.wikipedia.org/wiki/Graz"
+              },
               "Austria"
             ]
           }
@@ -38346,7 +38391,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "20 January 2003",
+            "date": "2003-01-20",
             "place": [
               "Gold Coast",
               "Queensland",
@@ -44471,9 +44516,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "23 September 1981",
+            "date": "1981-09-23",
             "place": [
-              "Rotterdam",
+              {
+                "text": "Rotterdam",
+                "url": "https://en.wikipedia.org/wiki/Rotterdam"
+              },
               "Netherlands"
             ]
           }
@@ -44889,7 +44937,7 @@
         "title": "Ken Downing",
         "general": {
           "born": {
-            "date": "5 December 1917",
+            "date": "1917-12-05",
             "place": [
               "Chesterton",
               "Staffordshire",
@@ -44897,9 +44945,12 @@
             ]
           },
           "died": {
-            "date": "3 May 2004",
+            "date": "2004-05-03",
             "place": [
-              "Monte Carlo",
+              {
+                "text": "Monte Carlo",
+                "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+              },
               "Monaco"
             ]
           }
@@ -45053,7 +45104,7 @@
         "title": "Bob Drake",
         "general": {
           "born": {
-            "date": "December 14, 1919",
+            "date": "1919-12-14",
             "place": [
               "San Francisco",
               "California",
@@ -45061,7 +45112,7 @@
             ]
           },
           "died": {
-            "date": "April 18, 1990",
+            "date": "1990-04-18",
             "place": [
               "Woodland Hills",
               "California",
@@ -45210,9 +45261,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 May 1934",
+            "date": "1934-05-13",
             "place": [
-              "Johannesburg",
+              {
+                "text": "Johannesburg",
+                "url": "https://en.wikipedia.org/wiki/Johannesburg"
+              },
               "South Africa"
             ]
           }
@@ -45256,17 +45310,26 @@
         "title": "Piero Drogo",
         "general": {
           "born": {
-            "date": "8 August 1926",
+            "date": "1926-08-08",
             "place": [
-              "Vignale Monferrato",
-              "Alessandria",
+              {
+                "text": "Vignale Monferrato",
+                "url": "https://en.wikipedia.org/wiki/Vignale_Monferrato"
+              },
+              {
+                "text": "Alessandria",
+                "url": "https://en.wikipedia.org/wiki/Alessandria"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "28 April 1973",
+            "date": "1973-04-28",
             "place": [
-              "Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
               "Italy"
             ]
           }
@@ -45412,9 +45475,12 @@
         "title": "Bernard de Dryver",
         "general": {
           "born": {
-            "date": "19 September 1952",
+            "date": "1952-09-19",
             "place": [
-              "Brussels",
+              {
+                "text": "Brussels",
+                "url": "https://en.wikipedia.org/wiki/Brussels"
+              },
               "Belgium"
             ]
           }
@@ -47606,7 +47672,7 @@
             "place": null
           },
           "died": {
-            "date": "22 March 2021",
+            "date": "2021-03-22",
             "place": null
           },
           "children": [
@@ -49367,7 +49433,7 @@
         "title": "Len Duncan",
         "general": {
           "born": {
-            "date": "July 25, 1911",
+            "date": "1911-07-25",
             "place": [
               "Brooklyn",
               "New York",
@@ -49375,7 +49441,7 @@
             ]
           },
           "died": {
-            "date": "August 1, 1998",
+            "date": "1998-08-01",
             "place": [
               "Lansdale",
               "Pennsylvania",
@@ -49540,18 +49606,30 @@
         "title": "Piero Dusio",
         "general": {
           "born": {
-            "date": "13 October 1899",
+            "date": "1899-10-13",
             "place": [
-              "Scurzolengo d'Asti",
-              "Piedmont",
+              {
+                "text": "Scurzolengo d'Asti",
+                "url": "https://en.wikipedia.org/wiki/Scurzolengo"
+              },
+              {
+                "text": "Piedmont",
+                "url": "https://en.wikipedia.org/wiki/Piedmont"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "7 November 1975",
+            "date": "1975-11-07",
             "place": [
-              "Victoria",
-              "Buenos Aires",
+              {
+                "text": "Victoria",
+                "url": "https://en.wikipedia.org/wiki/Victoria,_Buenos_Aires"
+              },
+              {
+                "text": "Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Greater_Buenos_Aires"
+              },
               "Argentina"
             ]
           }
@@ -50071,17 +50149,26 @@
         "title": "Fritz d'Orey",
         "general": {
           "born": {
-            "date": "March 25, 1938",
+            "date": "1938-03-25",
             "place": [
-              "São Paulo",
+              {
+                "text": "São Paulo",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+              },
               "Brazil"
             ]
           },
           "died": {
-            "date": "August 31, 2020",
+            "date": "2020-08-31",
             "place": [
-              "Cascais e Estoril",
-              "Cascais",
+              {
+                "text": "Cascais e Estoril",
+                "url": "https://en.wikipedia.org/wiki/Cascais_e_Estoril"
+              },
+              {
+                "text": "Cascais",
+                "url": "https://en.wikipedia.org/wiki/Cascais"
+              },
               "Portugal"
             ]
           }

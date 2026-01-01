@@ -34,16 +34,25 @@
         "title": "Carlo Maria Abate",
         "general": {
           "born": {
-            "date": "10 July 1932",
+            "date": "1932-07-10",
             "place": [
-              "Turin",
-              "Kingdom of Italy"
+              {
+                "text": "Turin",
+                "url": "https://en.wikipedia.org/wiki/Turin"
+              },
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
             ]
           },
           "died": {
-            "date": "29 April 2019",
+            "date": "2019-04-29",
             "place": [
-              "Turin",
+              {
+                "text": "Turin",
+                "url": "https://en.wikipedia.org/wiki/Turin"
+              },
               "Italy"
             ]
           }
@@ -630,9 +639,12 @@
             "place": null
           },
           "died": {
-            "date": "18 December 1991",
+            "date": "1991-12-18",
             "place": [
-              "Ibstone",
+              {
+                "text": "Ibstone",
+                "url": "https://en.wikipedia.org/wiki/Ibstone"
+              },
               "Buckinghamshire",
               "England"
             ]
@@ -2290,10 +2302,16 @@
         "title": "Kenny Acheson",
         "general": {
           "born": {
-            "date": "27 November 1957",
+            "date": "1957-11-27",
             "place": [
-              "Cookstown",
-              "Northern Ireland",
+              {
+                "text": "Cookstown",
+                "url": "https://en.wikipedia.org/wiki/Cookstown"
+              },
+              {
+                "text": "Northern Ireland",
+                "url": "https://en.wikipedia.org/wiki/Northern_Ireland"
+              },
               "United Kingdom"
             ]
           }
@@ -6601,14 +6619,17 @@
         "title": "Andrea de Adamich",
         "general": {
           "born": {
-            "date": "3 October 1941",
+            "date": "1941-10-03",
             "place": [
-              "Trieste",
+              {
+                "text": "Trieste",
+                "url": "https://en.wikipedia.org/wiki/Trieste"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "5 November 2025",
+            "date": "2025-11-05",
             "place": null
           }
         },
@@ -9686,9 +9707,12 @@
         "title": "Philippe Adams",
         "general": {
           "born": {
-            "date": "19 November 1969",
+            "date": "1969-11-19",
             "place": [
-              "Mouscron",
+              {
+                "text": "Mouscron",
+                "url": "https://en.wikipedia.org/wiki/Mouscron"
+              },
               "Belgium"
             ]
           }
@@ -10618,7 +10642,7 @@
             "place": null
           },
           "died": {
-            "date": "November 25, 1982",
+            "date": "1982-11-25",
             "place": [
               "Califon",
               "New Jersey",
@@ -10878,17 +10902,29 @@
         "title": "Kurt Adolff",
         "general": {
           "born": {
-            "date": "5 November 1921",
+            "date": "1921-11-05",
             "place": [
-              "Stuttgart",
-              "Weimar Republic"
+              {
+                "text": "Stuttgart",
+                "url": "https://en.wikipedia.org/wiki/Stuttgart"
+              },
+              {
+                "text": "Weimar Republic",
+                "url": "https://en.wikipedia.org/wiki/Weimar_Republic"
+              }
             ]
           },
           "died": {
-            "date": "24 January 2012",
+            "date": "2012-01-24",
             "place": [
-              "Kreuth",
-              "Germany"
+              {
+                "text": "Kreuth",
+                "url": "https://en.wikipedia.org/wiki/Kreuth"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Germany"
+              }
             ]
           }
         },
@@ -11061,7 +11097,7 @@
             "place": null
           },
           "died": {
-            "date": "October 13, 1989",
+            "date": "1989-10-13",
             "place": [
               "Alamo",
               "California",
@@ -23491,10 +23527,16 @@
         "title": "Christijan Albers",
         "general": {
           "born": {
-            "date": "16 April 1979",
+            "date": "1979-04-16",
             "place": [
-              "Eindhoven",
-              "North Brabant",
+              {
+                "text": "Eindhoven",
+                "url": "https://en.wikipedia.org/wiki/Eindhoven"
+              },
+              {
+                "text": "North Brabant",
+                "url": "https://en.wikipedia.org/wiki/North_Brabant"
+              },
               "Netherlands"
             ]
           }
@@ -33718,18 +33760,30 @@
         "title": null,
         "general": {
           "born": {
-            "date": "23 December 1956",
+            "date": "1956-12-23",
             "place": [
-              "Milan",
-              "Lombardy",
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "25 April 2001",
+            "date": "2001-04-25",
             "place": [
-              "Lausitzring",
-              "Brandenburg",
+              {
+                "text": "Lausitzring",
+                "url": "https://en.wikipedia.org/wiki/Lausitzring"
+              },
+              {
+                "text": "Brandenburg",
+                "url": "https://en.wikipedia.org/wiki/Brandenburg"
+              },
               "Germany"
             ]
           },
@@ -50747,15 +50801,21 @@
         "title": "Cliff Allison",
         "general": {
           "born": {
-            "date": "8 February 1932",
+            "date": "1932-02-08",
             "place": [
-              "Brough",
-              "Westmorland",
+              {
+                "text": "Brough",
+                "url": "https://en.wikipedia.org/wiki/Brough,_Cumbria"
+              },
+              {
+                "text": "Westmorland",
+                "url": "https://en.wikipedia.org/wiki/Westmorland"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "7 April 2005",
+            "date": "2005-04-07",
             "place": [
               "Brough",
               "Cumbria",
@@ -61167,9 +61227,12 @@
         "title": "Giovanna Amati",
         "general": {
           "born": {
-            "date": "20 July 1959",
+            "date": "1959-07-20",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           }
@@ -62360,9 +62423,12 @@
             "place": null
           },
           "died": {
-            "date": "April 4, 1959",
+            "date": "1959-04-04",
             "place": [
-              "Daytona Beach",
+              {
+                "text": "Daytona Beach",
+                "url": "https://en.wikipedia.org/wiki/Daytona_Beach,_Florida"
+              },
               "Florida",
               "U.S."
             ]
@@ -62663,7 +62729,7 @@
         "title": "Red Amick",
         "general": {
           "born": {
-            "date": "January 19, 1929",
+            "date": "1929-01-19",
             "place": [
               "Kansas City",
               "Missouri",
@@ -62671,7 +62737,7 @@
             ]
           },
           "died": {
-            "date": "May 16, 1995",
+            "date": "1995-05-16",
             "place": [
               "Crystal River",
               "Florida",
@@ -62892,9 +62958,12 @@
             "place": null
           },
           "died": {
-            "date": "3 August 2016",
+            "date": "2016-08-03",
             "place": [
-              "Rotorua",
+              {
+                "text": "Rotorua",
+                "url": "https://en.wikipedia.org/wiki/Rotorua"
+              },
               "Bay of Plenty",
               "New Zealand"
             ]
@@ -70797,17 +70866,23 @@
         "title": null,
         "general": {
           "born": {
-            "date": "19 May 1931",
+            "date": "1931-05-19",
             "place": [
-              "Hendon",
+              {
+                "text": "Hendon",
+                "url": "https://en.wikipedia.org/wiki/Hendon"
+              },
               "London",
               "UK"
             ]
           },
           "died": {
-            "date": "14 August 1967",
+            "date": "1967-08-14",
             "place": [
-              "Northampton",
+              {
+                "text": "Northampton",
+                "url": "https://en.wikipedia.org/wiki/Northampton"
+              },
               "UK"
             ]
           }
@@ -73154,9 +73229,12 @@
         "title": "Conny Andersson",
         "general": {
           "born": {
-            "date": "28 December 1939",
+            "date": "1939-12-28",
             "place": [
-              "Alingsås",
+              {
+                "text": "Alingsås",
+                "url": "https://en.wikipedia.org/wiki/Alings%C3%A5s"
+              },
               "Sweden"
             ]
           }
@@ -73322,7 +73400,7 @@
             "place": null
           },
           "died": {
-            "date": "July 20, 1999",
+            "date": "1999-07-20",
             "place": [
               "South Holland",
               "Illinois",
@@ -88476,7 +88554,7 @@
             "place": null
           },
           "died": {
-            "date": "May 15, 1957",
+            "date": "1957-05-15",
             "place": [
               "Speedway",
               "Indiana",
@@ -88783,16 +88861,22 @@
         "title": null,
         "general": {
           "born": {
-            "date": "26 March 1958",
+            "date": "1958-03-26",
             "place": [
-              "Rome",
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
               "Italy"
             ]
           },
           "died": {
-            "date": "15 May 1986",
+            "date": "1986-05-15",
             "place": [
-              "Marseille",
+              {
+                "text": "Marseille",
+                "url": "https://en.wikipedia.org/wiki/Marseille"
+              },
               "France"
             ]
           },
@@ -96736,7 +96820,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "7 October 1965",
+            "date": "1965-10-07",
             "place": [
               "near Bologna",
               "Italy"
@@ -100370,7 +100454,7 @@
         "title": "Frank Armi",
         "general": {
           "born": {
-            "date": "October 12, 1918",
+            "date": "1918-10-12",
             "place": [
               "Portland",
               "Oregon",
@@ -100378,7 +100462,7 @@
             ]
           },
           "died": {
-            "date": "November 28, 1992",
+            "date": "1992-11-28",
             "place": [
               "Watsonville",
               "California",
@@ -100547,11 +100631,11 @@
         "title": "Chuck Arnold",
         "general": {
           "born": {
-            "date": "May 30, 1926",
+            "date": "1926-05-30",
             "place": null
           },
           "died": {
-            "date": "September 4, 1997",
+            "date": "1997-09-04",
             "place": null
           }
         },
@@ -105923,9 +106007,12 @@
             "place": null
           },
           "died": {
-            "date": "16 June 2009",
+            "date": "2009-06-16",
             "place": [
-              "King's Lynn",
+              {
+                "text": "King's Lynn",
+                "url": "https://en.wikipedia.org/wiki/King%27s_Lynn"
+              },
               "Norfolk",
               "England"
             ]
@@ -108222,18 +108309,33 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 July 1918",
+            "date": "1918-07-13",
             "place": [
-              "Milan",
-              "Lombardy",
-              "Kingdom of Italy"
+              {
+                "text": "Milan",
+                "url": "https://en.wikipedia.org/wiki/Milan"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
             ]
           },
           "died": {
-            "date": "26 May 1955",
+            "date": "1955-05-26",
             "place": [
-              "Autodromo Nazionale di Monza",
-              "Lombardy",
+              {
+                "text": "Autodromo Nazionale di Monza",
+                "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+              },
+              {
+                "text": "Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lombardy"
+              },
               "Italy"
             ]
           },
@@ -113651,9 +113753,12 @@
         "title": "Peter Ashdown",
         "general": {
           "born": {
-            "date": "16 October 1934",
+            "date": "1934-10-16",
             "place": [
-              "Danbury",
+              {
+                "text": "Danbury",
+                "url": "https://en.wikipedia.org/wiki/Danbury,_Essex"
+              },
               "Essex",
               "England",
               "UK"
@@ -113809,10 +113914,16 @@
         "title": "Ian Ashley",
         "general": {
           "born": {
-            "date": "26 October 1947",
+            "date": "1947-10-26",
             "place": [
-              "Wuppertal",
-              "Germany"
+              {
+                "text": "Wuppertal",
+                "url": "https://en.wikipedia.org/wiki/Wuppertal"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Allied-occupied_Germany"
+              }
             ]
           }
         },
@@ -115922,16 +116033,19 @@
         "title": "Gerry Ashmore",
         "general": {
           "born": {
-            "date": "25 July 1936",
+            "date": "1936-07-25",
             "place": [
-              "West Bromwich",
+              {
+                "text": "West Bromwich",
+                "url": "https://en.wikipedia.org/wiki/West_Bromwich"
+              },
               "Staffordshire",
               "England",
               "U.K."
             ]
           },
           "died": {
-            "date": "25 August 2021",
+            "date": "2021-08-25",
             "place": null
           }
         },
@@ -116088,19 +116202,31 @@
         "title": "William \"Bill\" Aston",
         "general": {
           "born": {
-            "date": "29 March 1900",
+            "date": "1900-03-29",
             "place": [
-              "Hopton",
-              "Staffordshire",
+              {
+                "text": "Hopton",
+                "url": "https://en.wikipedia.org/wiki/Hopton,_Staffordshire"
+              },
+              {
+                "text": "Staffordshire",
+                "url": "https://en.wikipedia.org/wiki/Staffordshire"
+              },
               "England",
               "UK"
             ]
           },
           "died": {
-            "date": "4 March 1974",
+            "date": "1974-03-04",
             "place": [
-              "Lingfield",
-              "Surrey",
+              {
+                "text": "Lingfield",
+                "url": "https://en.wikipedia.org/wiki/Lingfield,_Surrey"
+              },
+              {
+                "text": "Surrey",
+                "url": "https://en.wikipedia.org/wiki/Surrey"
+              },
               "England",
               "UK"
             ]
@@ -116971,9 +117097,12 @@
         "title": "Richard Attwood",
         "general": {
           "born": {
-            "date": "4 April 1940",
+            "date": "1940-04-04",
             "place": [
-              "Wolverhampton",
+              {
+                "text": "Wolverhampton",
+                "url": "https://en.wikipedia.org/wiki/Wolverhampton"
+              },
               "Staffordshire",
               "England"
             ]
@@ -119076,9 +119205,12 @@
             "place": null
           },
           "died": {
-            "date": "May 17, 1955",
+            "date": "1955-05-17",
             "place": [
-              "Indianapolis",
+              {
+                "text": "Indianapolis",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis"
+              },
               "Indiana",
               "U.S."
             ]

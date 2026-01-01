@@ -12839,10 +12839,16 @@
         "title": "Yuji Ide",
         "general": {
           "born": {
-            "date": "21 January 1975",
+            "date": "1975-01-21",
             "place": [
-              "Saitama",
-              "Saitama",
+              {
+                "text": "Saitama",
+                "url": "https://en.wikipedia.org/wiki/Saitama,_Saitama"
+              },
+              {
+                "text": "Saitama",
+                "url": "https://en.wikipedia.org/wiki/Saitama,_Saitama"
+              },
               "Japan"
             ]
           }
@@ -18300,11 +18306,11 @@
         "title": "Jesús Iglesias",
         "general": {
           "born": {
-            "date": "22 February 1922",
+            "date": "1922-02-22",
             "place": null
           },
           "died": {
-            "date": "11 July 2005",
+            "date": "2005-07-11",
             "place": null
           }
         },
@@ -18449,10 +18455,16 @@
         "title": "Taki Inoue",
         "general": {
           "born": {
-            "date": "5 September 1963",
+            "date": "1963-09-05",
             "place": [
-              "Kobe",
-              "Hyōgo",
+              {
+                "text": "Kobe",
+                "url": "https://en.wikipedia.org/wiki/Kobe"
+              },
+              {
+                "text": "Hyōgo",
+                "url": "https://en.wikipedia.org/wiki/Hy%C5%8Dgo_Prefecture"
+              },
               "Japan"
             ]
           }
@@ -19678,7 +19690,7 @@
             "place": null
           },
           "died": {
-            "date": "22 October 1993",
+            "date": "1993-10-22",
             "place": [
               "Reading",
               "Berkshire",
@@ -28932,9 +28944,12 @@
         "title": "Chris Irwin",
         "general": {
           "born": {
-            "date": "27 June 1942",
+            "date": "1942-06-27",
             "place": [
-              "Wandsworth",
+              {
+                "text": "Wandsworth",
+                "url": "https://en.wikipedia.org/wiki/Wandsworth"
+              },
               "London"
             ]
           }

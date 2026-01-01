@@ -34,7 +34,7 @@
         "title": "Fred Wacker",
         "general": {
           "born": {
-            "date": "July 10, 1918",
+            "date": "1918-07-10",
             "place": [
               "Chicago",
               "Illinois",
@@ -42,7 +42,7 @@
             ]
           },
           "died": {
-            "date": "June 16, 1998",
+            "date": "1998-06-16",
             "place": [
               "Lake Bluff",
               "Illinois",
@@ -207,17 +207,26 @@
         "title": "Dave Walker",
         "general": {
           "born": {
-            "date": "10 June 1941",
+            "date": "1941-06-10",
             "place": [
-              "Sydney",
-              "New South Wales",
+              {
+                "text": "Sydney",
+                "url": "https://en.wikipedia.org/wiki/Sydney"
+              },
+              {
+                "text": "New South Wales",
+                "url": "https://en.wikipedia.org/wiki/New_South_Wales"
+              },
               "Australia"
             ]
           },
           "died": {
-            "date": "24 May 2024",
+            "date": "2024-05-24",
             "place": [
-              "Queensland",
+              {
+                "text": "Queensland",
+                "url": "https://en.wikipedia.org/wiki/Queensland"
+              },
               "Australia"
             ]
           }
@@ -387,10 +396,13 @@
             "place": null
           },
           "died": {
-            "date": "1 March 1984",
+            "date": "1984-03-01",
             "place": [
               "Newtown",
-              "Worcestershire",
+              {
+                "text": "Worcestershire",
+                "url": "https://en.wikipedia.org/wiki/Worcestershire"
+              },
               "England"
             ]
           }
@@ -1446,7 +1458,7 @@
             "place": null
           },
           "died": {
-            "date": "November 29, 1963",
+            "date": "1963-11-29",
             "place": [
               "St. Petersburg",
               "Florida",
@@ -1746,14 +1758,20 @@
         "title": "Heini Walter",
         "general": {
           "born": {
-            "date": "28 July 1927",
+            "date": "1927-07-28",
             "place": [
-              "Alpthal",
-              "Switzerland"
+              {
+                "text": "Alpthal",
+                "url": "https://en.wikipedia.org/wiki/Alpthal"
+              },
+              {
+                "text": "Switzerland",
+                "url": "https://en.wikipedia.org/wiki/Switzerland"
+              }
             ]
           },
           "died": {
-            "date": "12 May 2009",
+            "date": "2009-05-12",
             "place": [
               "Aesch",
               "Basel-Country",
@@ -1942,7 +1960,7 @@
             "place": null
           },
           "died": {
-            "date": "July 5, 2004",
+            "date": "2004-07-05",
             "place": [
               "Anaheim",
               "California",
@@ -16834,7 +16852,7 @@
             "place": null
           },
           "died": {
-            "date": "January 27, 1990",
+            "date": "1990-01-27",
             "place": [
               "McMinnville",
               "Oregon",
@@ -30002,11 +30020,20 @@
         "title": "Volker Weidler",
         "general": {
           "born": {
-            "date": "18 March 1962",
+            "date": "1962-03-18",
             "place": [
-              "Heidelberg",
-              "Baden-Württemberg",
-              "West Germany"
+              {
+                "text": "Heidelberg",
+                "url": "https://en.wikipedia.org/wiki/Heidelberg"
+              },
+              {
+                "text": "Baden-Württemberg",
+                "url": "https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -31453,7 +31480,7 @@
             "place": null
           },
           "died": {
-            "date": "October 13, 2005",
+            "date": "2005-10-13",
             "place": [
               "Phoenix",
               "Arizona",
@@ -31708,9 +31735,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "20 December 1968",
+            "date": "1968-12-20",
             "place": [
-              "Kufstein",
+              {
+                "text": "Kufstein",
+                "url": "https://en.wikipedia.org/wiki/Kufstein"
+              },
               "Austria"
             ]
           }
@@ -39184,15 +39214,21 @@
         "title": "Peter Westbury",
         "general": {
           "born": {
-            "date": "26 May 1938",
+            "date": "1938-05-26",
             "place": [
-              "Roehampton",
-              "London",
+              {
+                "text": "Roehampton",
+                "url": "https://en.wikipedia.org/wiki/Roehampton"
+              },
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
               "UK"
             ]
           },
           "died": {
-            "date": "7 December 2015",
+            "date": "2015-12-07",
             "place": [
               "Dorking",
               "United Kingdom"
@@ -39961,7 +39997,7 @@
         "title": "Chuck Weyant",
         "general": {
           "born": {
-            "date": "April 3, 1923",
+            "date": "1923-04-03",
             "place": [
               "St. Mary's",
               "Ohio",
@@ -39969,7 +40005,7 @@
             ]
           },
           "died": {
-            "date": "January 23, 2017",
+            "date": "2017-01-23",
             "place": null
           }
         },
@@ -40166,18 +40202,33 @@
         "title": "Ken Wharton",
         "general": {
           "born": {
-            "date": "21 March 1916",
+            "date": "1916-03-21",
             "place": [
-              "Smethwick",
-              "England"
+              {
+                "text": "Smethwick",
+                "url": "https://en.wikipedia.org/wiki/Smethwick"
+              },
+              {
+                "text": "England",
+                "url": "https://en.wikipedia.org/wiki/England"
+              }
             ]
           },
           "died": {
-            "date": "12 January 1957",
+            "date": "1957-01-12",
             "place": [
-              "Ardmore",
-              "Auckland",
-              "New Zealand"
+              {
+                "text": "Ardmore",
+                "url": "https://en.wikipedia.org/wiki/Ardmore,_New_Zealand"
+              },
+              {
+                "text": "Auckland",
+                "url": "https://en.wikipedia.org/wiki/Auckland"
+              },
+              {
+                "text": "New Zealand",
+                "url": "https://en.wikipedia.org/wiki/New_Zealand"
+              }
             ]
           }
         },
@@ -40346,14 +40397,17 @@
         "title": "Ted Whiteaway",
         "general": {
           "born": {
-            "date": "1 November 1928",
+            "date": "1928-11-01",
             "place": [
-              "Feltham",
+              {
+                "text": "Feltham",
+                "url": "https://en.wikipedia.org/wiki/Feltham"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "18 October 1995",
+            "date": "1995-10-18",
             "place": [
               "Perth",
               "Australia"
@@ -40497,11 +40551,11 @@
         "title": "Graham Whitehead",
         "general": {
           "born": {
-            "date": "15 April 1922",
+            "date": "1922-04-15",
             "place": null
           },
           "died": {
-            "date": "15 January 1981",
+            "date": "1981-01-15",
             "place": null
           }
         },
@@ -41475,9 +41529,12 @@
             "place": null
           },
           "died": {
-            "date": "21 September 1958",
+            "date": "1958-09-21",
             "place": [
-              "Lasalle",
+              {
+                "text": "Lasalle",
+                "url": "https://en.wikipedia.org/wiki/Lasalle,_Gard"
+              },
               "France"
             ]
           }
@@ -45886,17 +45943,23 @@
         "title": "Bill Whitehouse",
         "general": {
           "born": {
-            "date": "1 April 1909",
+            "date": "1909-04-01",
             "place": [
-              "Plumstead",
+              {
+                "text": "Plumstead",
+                "url": "https://en.wikipedia.org/wiki/Plumstead"
+              },
               "London",
               "England"
             ]
           },
           "died": {
-            "date": "14 July 1957",
+            "date": "1957-07-14",
             "place": [
-              "Reims",
+              {
+                "text": "Reims",
+                "url": "https://en.wikipedia.org/wiki/Reims"
+              },
               "France"
             ]
           }
@@ -46038,7 +46101,7 @@
         "title": "Robin Widdows",
         "general": {
           "born": {
-            "date": "27 May 1942",
+            "date": "1942-05-27",
             "place": null
           }
         },
@@ -46183,16 +46246,22 @@
         "title": "Eppie Wietzes",
         "general": {
           "born": {
-            "date": "28 May 1938",
+            "date": "1938-05-28",
             "place": [
-              "Assen",
+              {
+                "text": "Assen",
+                "url": "https://en.wikipedia.org/wiki/Assen"
+              },
               "Netherlands"
             ]
           },
           "died": {
-            "date": "10 June 2020",
+            "date": "2020-06-10",
             "place": [
-              "Ontario",
+              {
+                "text": "Ontario",
+                "url": "https://en.wikipedia.org/wiki/Ontario"
+              },
               "Canada"
             ]
           }
@@ -52212,16 +52281,22 @@
         "title": "Jonathan Williams",
         "general": {
           "born": {
-            "date": "26 October 1942",
+            "date": "1942-10-26",
             "place": [
-              "Cairo",
+              {
+                "text": "Cairo",
+                "url": "https://en.wikipedia.org/wiki/Cairo"
+              },
               "Egypt"
             ]
           },
           "died": {
-            "date": "31 August 2014",
+            "date": "2014-08-31",
             "place": [
-              "Arroyo de la Miel",
+              {
+                "text": "Arroyo de la Miel",
+                "url": "https://en.wikipedia.org/wiki/Arroyo_de_la_Miel"
+              },
               "Spain"
             ]
           }
@@ -52897,16 +52972,22 @@
         "title": "Roger Williamson",
         "general": {
           "born": {
-            "date": "2 February 1948",
+            "date": "1948-02-02",
             "place": [
-              "Ashby-de-la-Zouch",
+              {
+                "text": "Ashby-de-la-Zouch",
+                "url": "https://en.wikipedia.org/wiki/Ashby-de-la-Zouch"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "29 July 1973",
+            "date": "1973-07-29",
             "place": [
-              "Zandvoort",
+              {
+                "text": "Zandvoort",
+                "url": "https://en.wikipedia.org/wiki/Zandvoort"
+              },
               "Netherlands"
             ]
           }
@@ -53439,11 +53520,11 @@
         "title": "Dempsey Wilson",
         "general": {
           "born": {
-            "date": "March 11, 1927",
+            "date": "1927-03-11",
             "place": null
           },
           "died": {
-            "date": "April 23, 1971",
+            "date": "1971-04-23",
             "place": null
           }
         },
@@ -53608,11 +53689,20 @@
         "title": "Desiré Wilson",
         "general": {
           "born": {
-            "date": "26 November 1953",
+            "date": "1953-11-26",
             "place": [
-              "Brakpan",
-              "Transvaal",
-              "Union of South Africa"
+              {
+                "text": "Brakpan",
+                "url": "https://en.wikipedia.org/wiki/Brakpan"
+              },
+              {
+                "text": "Transvaal",
+                "url": "https://en.wikipedia.org/wiki/Transvaal_Province"
+              },
+              {
+                "text": "Union of South Africa",
+                "url": "https://en.wikipedia.org/wiki/Union_of_South_Africa"
+              }
             ]
           }
         },
@@ -57263,9 +57353,12 @@
             "place": null
           },
           "died": {
-            "date": "24 August 2015",
+            "date": "2015-08-24",
             "place": [
-              "Lehigh Valley Hospital-Cedar Crest",
+              {
+                "text": "Lehigh Valley Hospital-Cedar Crest",
+                "url": "https://en.wikipedia.org/wiki/Lehigh_Valley_Hospital%E2%80%93Cedar_Crest"
+              },
               "Allentown",
               "Pennsylvania",
               "U.S."
@@ -57513,18 +57606,30 @@
         "title": "Vic Wilson",
         "general": {
           "born": {
-            "date": "14 April 1931",
+            "date": "1931-04-14",
             "place": [
-              "Drypool",
-              "Hull",
+              {
+                "text": "Drypool",
+                "url": "https://en.wikipedia.org/wiki/Drypool"
+              },
+              {
+                "text": "Hull",
+                "url": "https://en.wikipedia.org/wiki/Kingston_upon_Hull"
+              },
               "England"
             ]
           },
           "died": {
-            "date": "14 January 2001",
+            "date": "2001-01-14",
             "place": [
-              "Gerrards Cross",
-              "Buckinghamshire",
+              {
+                "text": "Gerrards Cross",
+                "url": "https://en.wikipedia.org/wiki/Gerrards_Cross"
+              },
+              {
+                "text": "Buckinghamshire",
+                "url": "https://en.wikipedia.org/wiki/Buckinghamshire"
+              },
               "England"
             ]
           }
@@ -57686,10 +57791,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "24 October 1960",
+            "date": "1960-10-24",
             "place": [
-              "Waiblingen",
-              "West Germany"
+              {
+                "text": "Waiblingen",
+                "url": "https://en.wikipedia.org/wiki/Waiblingen"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "relatives": [
@@ -65450,15 +65561,24 @@
         "title": null,
         "general": {
           "born": {
-            "date": "6 October 1951",
+            "date": "1951-10-06",
             "place": [
-              "Waiblingen",
-              "Württemberg-Baden",
-              "West Germany"
+              {
+                "text": "Waiblingen",
+                "url": "https://en.wikipedia.org/wiki/Waiblingen"
+              },
+              {
+                "text": "Württemberg-Baden",
+                "url": "https://en.wikipedia.org/wiki/W%C3%BCrttemberg-Baden"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           },
           "died": {
-            "date": "12 August 1985",
+            "date": "1985-08-12",
             "place": [
               "Toronto",
               "Ontario",
@@ -67843,10 +67963,16 @@
         "title": null,
         "general": {
           "born": {
-            "date": "13 June 1980",
+            "date": "1980-06-13",
             "place": [
-              "Stuttgart",
-              "West Germany"
+              {
+                "text": "Stuttgart",
+                "url": "https://en.wikipedia.org/wiki/Stuttgart"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
             ]
           }
         },
@@ -76774,16 +76900,22 @@
         "title": "Reine Wisell",
         "general": {
           "born": {
-            "date": "30 September 1941",
+            "date": "1941-09-30",
             "place": [
-              "Motala",
+              {
+                "text": "Motala",
+                "url": "https://en.wikipedia.org/wiki/Motala"
+              },
               "Sweden"
             ]
           },
           "died": {
-            "date": "20 March 2022",
+            "date": "2022-03-20",
             "place": [
-              "Pattaya",
+              {
+                "text": "Pattaya",
+                "url": "https://en.wikipedia.org/wiki/Pattaya"
+              },
               "Thailand"
             ]
           }
@@ -78447,9 +78579,12 @@
         "title": "Roelof Wunderink",
         "general": {
           "born": {
-            "date": "12 December 1948",
+            "date": "1948-12-12",
             "place": [
-              "Eindhoven",
+              {
+                "text": "Eindhoven",
+                "url": "https://en.wikipedia.org/wiki/Eindhoven"
+              },
               "Netherlands"
             ]
           }

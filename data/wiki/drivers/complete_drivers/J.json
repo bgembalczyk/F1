@@ -42,7 +42,7 @@
         "title": "Kurt Ahrens Jr.",
         "general": {
           "born": {
-            "date": "19 April 1940",
+            "date": "1940-04-19",
             "place": [
               "Braunschweig Germany"
             ]
@@ -229,10 +229,16 @@
             "place": null
           },
           "died": {
-            "date": "2 February 2023",
+            "date": "2023-02-02",
             "place": [
-              "Saint-Cloud",
-              "Hauts-de-Seine",
+              {
+                "text": "Saint-Cloud",
+                "url": "https://en.wikipedia.org/wiki/Saint-Cloud"
+              },
+              {
+                "text": "Hauts-de-Seine",
+                "url": "https://en.wikipedia.org/wiki/Hauts-de-Seine"
+              },
               "France"
             ]
           },
@@ -5317,7 +5323,7 @@
             "place": null
           },
           "died": {
-            "date": "November 25, 1984",
+            "date": "1984-11-25",
             "place": [
               "Desert Hot Springs",
               "California",
@@ -5569,7 +5575,7 @@
         "title": "Joe James",
         "general": {
           "born": {
-            "date": "May 23, 1925",
+            "date": "1925-05-23",
             "place": [
               "Saucier",
               "Mississippi",
@@ -5577,7 +5583,7 @@
             ]
           },
           "died": {
-            "date": "November 5, 1952",
+            "date": "1952-11-05",
             "place": [
               "San Jose",
               "California",
@@ -5746,17 +5752,29 @@
         "title": "John James",
         "general": {
           "born": {
-            "date": "10 May 1914",
+            "date": "1914-05-10",
             "place": [
-              "Packwood",
-              "Warwickshire"
+              {
+                "text": "Packwood",
+                "url": "https://en.wikipedia.org/wiki/Packwood,_Warwickshire"
+              },
+              {
+                "text": "Warwickshire",
+                "url": "https://en.wikipedia.org/wiki/Warwickshire"
+              }
             ]
           },
           "died": {
-            "date": "27 January 2002",
+            "date": "2002-01-27",
             "place": [
-              "St. Julian's",
-              "Malta"
+              {
+                "text": "St. Julian's",
+                "url": "https://en.wikipedia.org/wiki/St._Julian%27s"
+              },
+              {
+                "text": "Malta",
+                "url": "https://en.wikipedia.org/wiki/Malta"
+              }
             ]
           }
         },
@@ -13540,9 +13558,12 @@
         "title": "Max Jean",
         "general": {
           "born": {
-            "date": "27 July 1943",
+            "date": "1943-07-27",
             "place": [
-              "Marseille",
+              {
+                "text": "Marseille",
+                "url": "https://en.wikipedia.org/wiki/Marseille"
+              },
               "France"
             ]
           }
@@ -23281,11 +23302,11 @@
         "title": "Eddie Johnson",
         "general": {
           "born": {
-            "date": "February 10, 1919",
+            "date": "1919-02-10",
             "place": null
           },
           "died": {
-            "date": "June 30, 1974",
+            "date": "1974-06-30",
             "place": null
           }
         },
@@ -23458,17 +23479,29 @@
         "title": "Leslie Johnson",
         "general": {
           "born": {
-            "date": "22 March 1912",
+            "date": "1912-03-22",
             "place": [
-              "Walthamstow",
-              "London"
+              {
+                "text": "Walthamstow",
+                "url": "https://en.wikipedia.org/wiki/Walthamstow"
+              },
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              }
             ]
           },
           "died": {
-            "date": "8 June 1959",
+            "date": "1959-06-08",
             "place": [
-              "Foxcote",
-              "Gloucestershire"
+              {
+                "text": "Foxcote",
+                "url": "https://en.wikipedia.org/wiki/Foxcote,_Gloucestershire"
+              },
+              {
+                "text": "Gloucestershire",
+                "url": "https://en.wikipedia.org/wiki/Gloucestershire"
+              }
             ]
           }
         },
@@ -23614,16 +23647,25 @@
         "title": "Bruce Johnstone",
         "general": {
           "born": {
-            "date": "30 January 1937",
+            "date": "1937-01-30",
             "place": [
-              "Durban",
-              "South Africa"
+              {
+                "text": "Durban",
+                "url": "https://en.wikipedia.org/wiki/Durban"
+              },
+              {
+                "text": "South Africa",
+                "url": "https://en.wikipedia.org/wiki/Union_of_South_Africa"
+              }
             ]
           },
           "died": {
-            "date": "3 March 2022",
+            "date": "2022-03-03",
             "place": [
-              "Cape Town",
+              {
+                "text": "Cape Town",
+                "url": "https://en.wikipedia.org/wiki/Cape_Town"
+              },
               "South Africa"
             ]
           }
@@ -38022,15 +38064,21 @@
         "title": "Tom Jones",
         "general": {
           "born": {
-            "date": "April 26, 1943",
+            "date": "1943-04-26",
             "place": [
-              "Dallas",
-              "Texas",
+              {
+                "text": "Dallas",
+                "url": "https://en.wikipedia.org/wiki/Dallas"
+              },
+              {
+                "text": "Texas",
+                "url": "https://en.wikipedia.org/wiki/Texas"
+              },
               "U.S."
             ]
           },
           "died": {
-            "date": "May 29, 2015",
+            "date": "2015-05-29",
             "place": [
               "Eastlake",
               "Ohio",
@@ -38175,11 +38223,11 @@
         "title": "Juan Jover",
         "general": {
           "born": {
-            "date": "23 November 1903",
+            "date": "1903-11-23",
             "place": null
           },
           "died": {
-            "date": "28 June 1960",
+            "date": "1960-06-28",
             "place": null
           }
         },
@@ -38329,9 +38377,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "July 25, 1985",
+            "date": "1985-07-25",
             "place": [
-              "Heidelberg",
+              {
+                "text": "Heidelberg",
+                "url": "https://en.wikipedia.org/wiki/Heidelberg"
+              },
               "West Germany"
             ]
           }
@@ -50370,7 +50421,7 @@
             "place": null
           },
           "died": {
-            "date": "May 17, 1959",
+            "date": "1959-05-17",
             "place": [
               "Indianapolis",
               "Indiana",
