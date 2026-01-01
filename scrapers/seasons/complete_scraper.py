@@ -87,6 +87,6 @@ def export_complete_seasons(
 
 if __name__ == "__main__":
     export_complete_seasons(
-        output_dir=Path("../../data/wiki/complete_seasons"),
+        output_dir=Path("../../data/wiki/seasons/complete_seasons"),
         include_urls=True,
     )
