@@ -33,7 +33,12 @@
             "text": "Mecachrome GC37-01",
             "url": "https://en.wikipedia.org/wiki/Mecachrome"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 1,
           "race_drivers": [
             {
@@ -71,7 +76,12 @@
             "text": "Mecachrome GC37-01",
             "url": "https://en.wikipedia.org/wiki/Mecachrome"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 2,
           "race_drivers": [
             {
@@ -109,7 +119,12 @@
             "text": "Ferrari 047",
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 3,
           "race_drivers": [
             {
@@ -147,7 +162,12 @@
             "text": "Ferrari 047",
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 4,
           "race_drivers": [
             {
@@ -185,7 +205,12 @@
             "text": "Playlife GC37-01",
             "url": "https://en.wikipedia.org/wiki/Mecachrome"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 5,
           "race_drivers": [
             {
@@ -223,7 +248,12 @@
             "text": "Playlife GC37-01",
             "url": "https://en.wikipedia.org/wiki/Mecachrome"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 6,
           "race_drivers": [
             {
@@ -261,7 +291,12 @@
             "text": "Mercedes FO110G",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 7,
           "race_drivers": [
             {
@@ -299,7 +334,12 @@
             "text": "Mercedes FO110G",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 8,
           "race_drivers": [
             {
@@ -337,7 +377,12 @@
             "text": "Mugen-Honda MF-301HC",
             "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 9,
           "race_drivers": [
             {
@@ -375,7 +420,12 @@
             "text": "Mugen-Honda MF-301HC",
             "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 10,
           "race_drivers": [
             {
@@ -413,7 +463,12 @@
             "text": "Peugeot A16",
             "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 11,
           "race_drivers": [
             {
@@ -451,7 +506,12 @@
             "text": "Peugeot A16",
             "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 12,
           "race_drivers": [
             {
@@ -493,7 +553,12 @@
             "text": "Petronas SPE-01D",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 14,
           "race_drivers": [
             {
@@ -535,7 +600,12 @@
             "text": "Petronas SPE-01D",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 15,
           "race_drivers": [
             {
@@ -573,7 +643,12 @@
             "text": "Arrows T2-F1",
             "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 16,
           "race_drivers": [
             {
@@ -611,7 +686,12 @@
             "text": "Arrows T2-F1",
             "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 17,
           "race_drivers": [
             {
@@ -649,7 +729,12 @@
             "text": "Ford VJ Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 18,
           "race_drivers": [
             {
@@ -687,7 +772,12 @@
             "text": "Ford VJ Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 19,
           "race_drivers": [
             {
@@ -751,7 +841,12 @@
             "text": "Ford JD Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 20,
           "race_drivers": [
             {
@@ -789,7 +884,12 @@
             "text": "Ford JD Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 21,
           "race_drivers": [
             {
@@ -827,7 +927,12 @@
             "text": "Ford JD Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 22,
           "race_drivers": [
             {
@@ -865,7 +970,12 @@
             "text": "Ford JD Zetec-R",
             "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 23,
           "race_drivers": [
             {

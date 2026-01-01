@@ -43,7 +43,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -149,7 +154,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -204,7 +214,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -270,7 +285,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -330,7 +350,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -384,7 +409,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -477,7 +507,12 @@
               "cylinders": 12
             }
           ],
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -569,7 +604,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -617,7 +657,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -676,7 +721,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -722,7 +772,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -763,7 +818,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -804,7 +864,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -850,7 +915,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -905,7 +975,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -951,7 +1026,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -997,7 +1077,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1046,7 +1131,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1102,7 +1192,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1149,7 +1244,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1190,7 +1290,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1245,7 +1350,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1309,7 +1419,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1355,7 +1470,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "A",
+          "tyre": [
+            {
+              "text": "Avon",
+              "url": "https://en.wikipedia.org/wiki/Avon_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1396,7 +1516,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1437,7 +1562,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1483,7 +1613,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1526,7 +1661,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1567,7 +1707,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1612,7 +1757,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
@@ -1646,7 +1796,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
@@ -1680,7 +1835,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
@@ -1714,7 +1874,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
@@ -1748,7 +1913,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
@@ -1782,7 +1952,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
@@ -1816,7 +1991,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
@@ -1850,7 +2030,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
@@ -1884,7 +2069,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
@@ -1918,7 +2108,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
@@ -1952,7 +2147,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"

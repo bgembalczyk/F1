@@ -40,7 +40,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 1,
           "race_drivers": [
             {
@@ -101,7 +106,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 2,
           "race_drivers": [
             {
@@ -163,7 +173,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 35,
           "race_drivers": [
             {
@@ -214,7 +229,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 3,
           "race_drivers": [
             {
@@ -262,7 +282,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 4,
           "race_drivers": [
             {
@@ -306,7 +331,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 5,
           "race_drivers": [
             {
@@ -383,7 +413,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 6,
           "race_drivers": [
             {
@@ -450,7 +485,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 7,
           "race_drivers": [
             {
@@ -525,7 +565,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 8,
           "race_drivers": [
             {
@@ -566,7 +611,12 @@
             },
             "displacement_l": 3.0
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 77,
           "race_drivers": [
             {
@@ -633,7 +683,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 9,
           "race_drivers": [
             {
@@ -697,7 +752,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 10,
           "race_drivers": [
             {
@@ -787,7 +847,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 34,
           "race_drivers": [
             {
@@ -851,7 +916,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 35,
           "race_drivers": [
             {
@@ -908,7 +978,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 11,
           "race_drivers": [
             {
@@ -956,7 +1031,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 12,
           "race_drivers": [
             {
@@ -995,7 +1075,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 13,
           "race_drivers": [
             {
@@ -1042,7 +1127,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 14,
           "race_drivers": [
             {
@@ -1084,7 +1174,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 15,
           "race_drivers": [
             {
@@ -1147,7 +1242,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 16,
           "race_drivers": [
             {
@@ -1207,7 +1307,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 17,
           "race_drivers": [
             {
@@ -1267,7 +1372,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 18,
           "race_drivers": [
             {
@@ -1359,7 +1469,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 19,
           "race_drivers": [
             {
@@ -1427,7 +1542,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 20,
           "race_drivers": [
             {
@@ -1504,7 +1624,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 21,
           "race_drivers": [
             {
@@ -1610,7 +1735,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 22,
           "race_drivers": [
             {
@@ -1698,7 +1828,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 24,
           "race_drivers": [
             {
@@ -1763,7 +1898,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 25,
           "race_drivers": [
             {
@@ -1828,7 +1968,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 25,
           "race_drivers": [
             {
@@ -1875,7 +2020,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 26,
           "race_drivers": [
             {
@@ -1919,7 +2069,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 27,
           "race_drivers": [
             {
@@ -1967,7 +2122,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 27,
           "race_drivers": [
             {
@@ -2014,7 +2174,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 37,
           "race_drivers": [
             {
@@ -2064,7 +2229,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 40,
           "race_drivers": [
             {
@@ -2115,7 +2285,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 28,
           "race_drivers": [
             {
@@ -2163,7 +2338,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 30,
           "race_drivers": [
             {
@@ -2211,7 +2391,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 31,
           "race_drivers": [
             {
@@ -2265,7 +2450,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 32,
           "race_drivers": [
             {
@@ -2329,7 +2519,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 33,
           "race_drivers": [
             {
@@ -2417,7 +2612,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 36,
           "race_drivers": [
             {
@@ -2468,7 +2668,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 37,
           "race_drivers": [
             {
@@ -2510,7 +2715,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 37,
           "race_drivers": [
             {
@@ -2552,7 +2762,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 39,
           "race_drivers": [
             {
@@ -2605,7 +2820,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 40,
           "race_drivers": [
             {
@@ -2653,7 +2873,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 38,
           "race_drivers": [
             {
@@ -2708,7 +2933,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 39,
           "race_drivers": [
             {
@@ -2750,7 +2980,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "no": 40,
           "race_drivers": [
             {
@@ -2797,7 +3032,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "no": 51,
           "race_drivers": [
             {
@@ -2844,7 +3084,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 52,
           "race_drivers": [
             {
@@ -2891,7 +3136,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "no": 54,
           "race_drivers": [
             {

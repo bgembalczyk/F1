@@ -36,7 +36,12 @@
             },
             "displacement_l": 1.5
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -83,7 +88,12 @@
             },
             "displacement_l": 1.5
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -130,7 +140,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -185,7 +200,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -231,7 +251,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -311,7 +336,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -402,7 +432,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -469,7 +504,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -525,7 +565,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -571,7 +616,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -621,7 +671,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -673,7 +728,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -719,7 +779,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -799,7 +864,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -870,7 +940,12 @@
               "cylinders": 6
             }
           ],
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -987,7 +1062,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1052,7 +1132,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "A",
+          "tyre": [
+            {
+              "text": "Avon",
+              "url": "https://en.wikipedia.org/wiki/Avon_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1110,7 +1195,12 @@
             },
             "displacement_l": 1.5
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1156,7 +1246,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1233,7 +1328,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1289,7 +1389,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1335,7 +1440,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1376,7 +1486,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1431,7 +1546,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1486,7 +1606,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1536,7 +1661,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1591,7 +1721,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1637,7 +1772,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1680,7 +1820,12 @@
             },
             "displacement_l": 1.5
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1726,7 +1871,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1767,7 +1917,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1813,7 +1968,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1859,7 +2019,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1905,7 +2070,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1948,7 +2118,12 @@
             },
             "displacement_l": 1.5
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1998,7 +2173,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2039,7 +2219,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2085,7 +2270,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2130,7 +2320,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_Monaco_Grand_Prix"
@@ -2164,7 +2359,12 @@
               "url": "https://en.wikipedia.org/wiki/Offenhauser"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
@@ -2198,7 +2398,12 @@
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_Dutch_Grand_Prix"
@@ -2232,7 +2437,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_French_Grand_Prix"
@@ -2266,7 +2476,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_British_Grand_Prix"
@@ -2300,7 +2515,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_German_Grand_Prix"
@@ -2334,7 +2554,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_Portuguese_Grand_Prix"
@@ -2368,7 +2593,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_Italian_Grand_Prix"
@@ -2402,7 +2632,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"

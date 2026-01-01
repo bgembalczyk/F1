@@ -47,7 +47,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -128,7 +133,12 @@
               "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -202,7 +212,12 @@
               "displacement_l": 3.0
             }
           ],
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -266,7 +281,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -365,7 +385,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -446,7 +471,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -508,7 +538,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -589,7 +624,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -649,7 +689,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -710,7 +755,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -761,7 +811,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -815,7 +870,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -928,7 +988,12 @@
             "layout": "V",
             "cylinders": 12
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1010,7 +1075,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1121,7 +1191,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1173,7 +1248,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1232,7 +1312,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1278,7 +1363,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1319,7 +1409,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1363,7 +1458,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1409,7 +1509,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1455,7 +1560,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1504,7 +1614,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1545,7 +1660,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1591,7 +1711,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1637,7 +1762,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
@@ -1671,7 +1801,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
@@ -1705,7 +1840,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
@@ -1739,7 +1879,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
@@ -1773,7 +1918,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
@@ -1807,7 +1957,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
@@ -1841,7 +1996,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
@@ -1875,7 +2035,12 @@
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
@@ -1909,7 +2074,12 @@
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
@@ -1943,7 +2113,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
@@ -1977,7 +2152,12 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "tyre": "G",
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"

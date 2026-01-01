@@ -2143,7 +2143,12 @@
               "url": "https://en.wikipedia.org/wiki/BRM"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
@@ -2177,7 +2182,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
@@ -2211,7 +2221,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
@@ -2245,7 +2260,12 @@
               "url": "https://en.wikipedia.org/wiki/Porsche_in_Formula_One"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
@@ -2279,7 +2299,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
@@ -2313,7 +2338,12 @@
               "url": "https://en.wikipedia.org/wiki/BRM"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
@@ -2347,7 +2377,12 @@
               "url": "https://en.wikipedia.org/wiki/BRM"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
@@ -2381,7 +2416,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
@@ -2415,7 +2455,12 @@
               "url": "https://en.wikipedia.org/wiki/BRM"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"

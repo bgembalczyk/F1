@@ -39,7 +39,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -195,7 +200,12 @@
               "cylinders": 4
             }
           ],
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -338,7 +348,12 @@
               "cylinders": 4
             }
           ],
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -429,7 +444,12 @@
               "cylinders": 4
             }
           ],
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -560,7 +580,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -611,7 +636,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -657,7 +687,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -703,7 +738,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -794,7 +834,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -852,7 +897,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -902,7 +952,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1021,7 +1076,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1072,7 +1132,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1118,7 +1183,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1164,7 +1234,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "E",
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1221,7 +1296,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1270,7 +1350,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1317,7 +1402,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1364,7 +1454,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1426,7 +1521,12 @@
               "cylinders": 6
             }
           ],
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1476,7 +1576,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1536,7 +1641,12 @@
             "layout": "L",
             "cylinders": 4
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1582,7 +1692,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1628,7 +1743,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1675,7 +1795,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1721,7 +1846,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1767,7 +1897,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1813,7 +1948,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1859,7 +1999,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1905,7 +2050,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1951,7 +2101,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -1997,7 +2152,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2059,7 +2219,12 @@
               "cylinders": 12
             }
           ],
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2123,7 +2288,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2164,7 +2334,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2210,7 +2385,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2256,7 +2436,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2302,7 +2487,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2348,7 +2538,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2394,7 +2589,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2440,7 +2640,12 @@
             "layout": "L",
             "cylinders": 6
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -2494,7 +2699,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
@@ -2528,7 +2738,12 @@
               "url": "https://en.wikipedia.org/wiki/Offenhauser"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
@@ -2562,7 +2777,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
@@ -2596,7 +2816,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
@@ -2630,7 +2855,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
@@ -2664,7 +2894,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
@@ -2698,7 +2933,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
@@ -2732,7 +2972,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
@@ -2766,7 +3011,12 @@
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             }
           },
-          "tyre": "P",
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"

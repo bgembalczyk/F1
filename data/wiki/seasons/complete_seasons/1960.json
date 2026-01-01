@@ -2157,7 +2157,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
@@ -2191,7 +2196,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Monaco_Grand_Prix"
@@ -2225,7 +2235,12 @@
               "url": "https://en.wikipedia.org/wiki/Offenhauser"
             }
           },
-          "tyre": "F",
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
@@ -2259,7 +2274,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Dutch_Grand_Prix"
@@ -2293,7 +2313,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
@@ -2327,7 +2352,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_French_Grand_Prix"
@@ -2361,7 +2391,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_British_Grand_Prix"
@@ -2395,7 +2430,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Portuguese_Grand_Prix"
@@ -2429,7 +2469,12 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_Italian_Grand_Prix"
@@ -2463,7 +2508,12 @@
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
             }
           },
-          "tyre": "D",
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"

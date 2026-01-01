@@ -34,7 +34,12 @@
             }
           ],
           "engine_†": "Ferrari Tipo 050 Ferrari Tipo 051",
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 1,
           "race_drivers": [
             {
@@ -73,7 +78,12 @@
             }
           ],
           "engine_†": "Ferrari Tipo 050 Ferrari Tipo 051",
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 2,
           "race_drivers": [
             {
@@ -111,7 +121,12 @@
             "text": "Mercedes FO110M",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 3,
           "race_drivers": [
             {
@@ -149,7 +164,12 @@
             "text": "Mercedes FO110M",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 4,
           "race_drivers": [
             {
@@ -182,7 +202,12 @@
             "text": "BMW P82",
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 5,
           "race_drivers": [
             {
@@ -215,7 +240,12 @@
             "text": "BMW P82",
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 6,
           "race_drivers": [
             {
@@ -253,7 +283,12 @@
             "text": "Petronas 02A",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 7,
           "race_drivers": [
             {
@@ -291,7 +326,12 @@
             "text": "Petronas 02A",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 8,
           "race_drivers": [
             {
@@ -356,7 +396,12 @@
             "text": "Honda RA002E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 9,
           "race_drivers": [
             {
@@ -394,7 +439,12 @@
             "text": "Honda RA002E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 10,
           "race_drivers": [
             {
@@ -432,7 +482,12 @@
             "text": "Honda RA002E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 11,
           "race_drivers": [
             {
@@ -470,7 +525,12 @@
             "text": "Honda RA002E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 12,
           "race_drivers": [
             {
@@ -508,7 +568,12 @@
             "text": "Renault RS22",
             "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 14,
           "race_drivers": [
             {
@@ -546,7 +611,12 @@
             "text": "Renault RS22",
             "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 15,
           "race_drivers": [
             {
@@ -580,7 +650,12 @@
             }
           ],
           "engine_†": "Cosworth CR-3 Cosworth CR-4",
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 16,
           "race_drivers": [
             {
@@ -614,7 +689,12 @@
             }
           ],
           "engine_†": "Cosworth CR-3 Cosworth CR-4",
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 17,
           "race_drivers": [
             {
@@ -652,7 +732,12 @@
             "text": "Cosworth CR-3",
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 20,
           "race_drivers": [
             {
@@ -704,7 +789,12 @@
             "text": "Cosworth CR-3",
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 21,
           "race_drivers": [
             {
@@ -756,7 +846,12 @@
             "text": "Asiatech AT02",
             "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 22,
           "race_drivers": [
             {
@@ -821,7 +916,12 @@
             "text": "Asiatech AT02",
             "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 23,
           "race_drivers": [
             {
@@ -859,7 +959,12 @@
             "text": "Toyota RVX-02",
             "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 24,
           "race_drivers": [
             {
@@ -897,7 +1002,12 @@
             "text": "Toyota RVX-02",
             "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 25,
           "race_drivers": [
             {

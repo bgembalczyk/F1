@@ -39,7 +39,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 1,
           "race_drivers": [
             {
@@ -83,7 +88,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 2,
           "race_drivers": [
             {
@@ -122,7 +132,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 3,
           "race_drivers": [
             {
@@ -161,7 +176,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 4,
           "race_drivers": [
             {
@@ -211,7 +231,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 5,
           "race_drivers": [
             {
@@ -255,7 +280,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 6,
           "race_drivers": [
             {
@@ -303,7 +333,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 7,
           "race_drivers": [
             {
@@ -351,7 +386,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 8,
           "race_drivers": [
             {
@@ -390,7 +430,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 9,
           "race_drivers": [
             {
@@ -429,7 +474,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 10,
           "race_drivers": [
             {
@@ -473,7 +523,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 11,
           "race_drivers": [
             {
@@ -517,7 +572,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 12,
           "race_drivers": [
             {
@@ -556,7 +616,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 14,
           "race_drivers": [
             {
@@ -595,7 +660,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 15,
           "race_drivers": [
             {
@@ -640,7 +710,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 16,
           "race_drivers": [
             {
@@ -679,7 +754,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 17,
           "race_drivers": [
             {
@@ -724,7 +804,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 18,
           "race_drivers": [
             {
@@ -763,7 +848,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 19,
           "race_drivers": [
             {
@@ -802,7 +892,12 @@
             "layout": "V",
             "cylinders": 10
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 20,
           "race_drivers": [
             {
@@ -841,7 +936,12 @@
             "layout": "V",
             "cylinders": 10
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 21,
           "race_drivers": [
             {
@@ -884,7 +984,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 22,
           "race_drivers": [
             {
@@ -927,7 +1032,12 @@
             "layout": "V",
             "cylinders": 8
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 23,
           "race_drivers": [
             {

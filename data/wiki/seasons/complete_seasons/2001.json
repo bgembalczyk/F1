@@ -33,7 +33,12 @@
             "text": "Ferrari Tipo 050",
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 1,
           "race_drivers": [
             {
@@ -71,7 +76,12 @@
             "text": "Ferrari Tipo 050",
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 2,
           "race_drivers": [
             {
@@ -109,7 +119,12 @@
             "text": "Mercedes FO110K",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 3,
           "race_drivers": [
             {
@@ -147,7 +162,12 @@
             "text": "Mercedes FO110K",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 4,
           "race_drivers": [
             {
@@ -180,7 +200,12 @@
             "text": "BMW P80",
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 5,
           "race_drivers": [
             {
@@ -213,7 +238,12 @@
             "text": "BMW P80",
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 6,
           "race_drivers": [
             {
@@ -251,7 +281,12 @@
             "text": "Renault RS21",
             "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 7,
           "race_drivers": [
             {
@@ -289,7 +324,12 @@
             "text": "Renault RS21",
             "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 8,
           "race_drivers": [
             {
@@ -327,7 +367,12 @@
             "text": "Honda RA001E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 9,
           "race_drivers": [
             {
@@ -365,7 +410,12 @@
             "text": "Honda RA001E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 10,
           "race_drivers": [
             {
@@ -403,7 +453,12 @@
             "text": "Honda RA001E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 11,
           "race_drivers": [
             {
@@ -477,7 +532,12 @@
             "text": "Honda RA001E",
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 12,
           "race_drivers": [
             {
@@ -542,7 +602,12 @@
             "text": "Asiatech 001",
             "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 14,
           "race_drivers": [
             {
@@ -580,7 +645,12 @@
             "text": "Asiatech 001",
             "url": "https://en.wikipedia.org/wiki/Asia_Motor_Technologies_France"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 15,
           "race_drivers": [
             {
@@ -618,7 +688,12 @@
             "text": "Petronas 01A",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 16,
           "race_drivers": [
             {
@@ -656,7 +731,12 @@
             "text": "Petronas 01A",
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
-          "tyre": "B",
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
           "no": 17,
           "race_drivers": [
             {
@@ -689,7 +769,12 @@
             "text": "Cosworth CR-3",
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 18,
           "race_drivers": [
             {
@@ -722,7 +807,12 @@
             "text": "Cosworth CR-3",
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 19,
           "race_drivers": [
             {
@@ -791,7 +881,12 @@
             "text": "European",
             "url": "https://en.wikipedia.org/wiki/European_(engine)"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 20,
           "race_drivers": [
             {
@@ -860,7 +955,12 @@
             "text": "European",
             "url": "https://en.wikipedia.org/wiki/European_(engine)"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 21,
           "race_drivers": [
             {
@@ -893,7 +993,12 @@
             "text": "Acer 01A",
             "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 22,
           "race_drivers": [
             {
@@ -953,7 +1058,12 @@
             "text": "Acer 01A",
             "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
           },
-          "tyre": "M",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
           "no": 23,
           "race_drivers": [
             {
