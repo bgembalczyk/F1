@@ -34,7 +34,7 @@ class EngineColumn(BaseColumn):
             return None
         if len(engines) == 1:
             return engines[0]
-    return engines
+        return engines
 
 
 def _extract_engine_class(cell: Tag) -> str | None:
