@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitCo
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_rounds import DriversWithRoundsColumn
+from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -95,7 +96,7 @@ class SingleSeasonScraper(F1Scraper):
                 "Tyre": "tyre",
             },
             columns={
-                "entrant": LinksListColumn(),
+                "entrant": EntrantColumn(),
                 "constructor": ConstructorColumn(),
                 "chassis": LinksListColumn(text_for_missing_url=True),
                 "power_unit": EngineColumn(),
