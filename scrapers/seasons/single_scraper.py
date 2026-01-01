@@ -25,6 +25,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.seasons.standings_scraper import F1StandingsScraper
+from models.services.rounds_service import RoundsService
 
 
 class SingleSeasonScraper(F1Scraper):
@@ -72,7 +73,7 @@ class SingleSeasonScraper(F1Scraper):
         ]
 
     def _parse_entries(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        return self._parse_table(
+        records = self._parse_table(
             soup,
             section_ids=[
                 "Entries",
@@ -103,6 +104,95 @@ class SingleSeasonScraper(F1Scraper):
                 "tyre": TyreColumn(),
             },
         )
+        return self._merge_entries_drivers(records)
+
+    def _merge_entries_drivers(
+        self, records: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        if not records:
+            return records
+
+        merged: list[dict[str, Any]] = []
+        index: dict[tuple[tuple[str, str], ...], dict[str, Any]] = {}
+
+        for record in records:
+            key = self._entry_merge_key(record)
+            existing = index.get(key)
+            if existing is None:
+                merged_record = self._strip_entry_driver_fields(record)
+                drivers = self._extract_entry_drivers(record)
+                if drivers:
+                    merged_record["race_drivers"] = drivers
+                index[key] = merged_record
+                merged.append(merged_record)
+                continue
+
+            new_drivers = self._extract_entry_drivers(record)
+            if not new_drivers:
+                continue
+
+            existing_drivers = existing.get("race_drivers")
+            if existing_drivers:
+                existing_drivers.extend(new_drivers)
+            else:
+                existing["race_drivers"] = list(new_drivers)
+
+        return merged
+
+    @staticmethod
+    def _entry_merge_key(record: Dict[str, Any]) -> tuple[tuple[str, str], ...]:
+        items: list[tuple[str, str]] = []
+        for key, value in record.items():
+            if key in {"race_drivers", "driver", "drivers", "rounds", "races"}:
+                continue
+            items.append((key, repr(value)))
+        return tuple(sorted(items))
+
+    @staticmethod
+    def _strip_entry_driver_fields(record: Dict[str, Any]) -> Dict[str, Any]:
+        cleaned = dict(record)
+        for key in ("race_drivers", "driver", "drivers", "rounds", "races"):
+            cleaned.pop(key, None)
+        return cleaned
+
+    def _extract_entry_drivers(self, record: Dict[str, Any]) -> list[dict[str, Any]]:
+        drivers: list[dict[str, Any]] = []
+
+        race_drivers = record.get("race_drivers")
+        if isinstance(race_drivers, list):
+            drivers.extend(race_drivers)
+
+        driver_value = record.get("driver")
+        if driver_value is None:
+            driver_value = record.get("drivers")
+
+        if driver_value is None:
+            return drivers
+
+        driver_items = (
+            driver_value if isinstance(driver_value, list) else [driver_value]
+        )
+        rounds = self._normalize_rounds(record.get("rounds") or record.get("races"))
+
+        for driver in driver_items:
+            entry: dict[str, Any] = {"driver": driver}
+            if rounds:
+                entry["rounds"] = rounds
+            drivers.append(entry)
+
+        return drivers
+
+    @staticmethod
+    def _normalize_rounds(value: Any) -> list[int]:
+        if value is None:
+            return []
+        if isinstance(value, list) and all(isinstance(v, int) for v in value):
+            return list(value)
+        if isinstance(value, int):
+            return [value]
+        if isinstance(value, str):
+            return RoundsService.parse_rounds(value)
+        return []
 
     def _parse_free_practice(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return self._parse_table(
