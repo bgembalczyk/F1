@@ -38,6 +38,10 @@ class CompleteSeasonScraper(F1Scraper):
             year_text = season_info.get("text")
             year = int(year_text) if isinstance(year_text, str) and year_text.isdigit() else None
             data = season_scraper.fetch_by_url(url, season_year=year)
+            if data and isinstance(data[0], dict):
+                entries = data[0].get("entries")
+                if isinstance(entries, list):
+                    data[0]["entries"] = season_scraper._merge_entries_drivers(entries)
             results.append(
                 {
                     "season": season_info,
