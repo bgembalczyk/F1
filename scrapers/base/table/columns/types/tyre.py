@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -20,16 +22,25 @@ _TYRE_NAME_BY_CODE = {
 class TyreColumn(BaseColumn):
     def parse(self, ctx: ColumnContext):
         text = (ctx.clean_text or "").strip()
-        if not text:
-            return None
-        code = text[0].upper()
-        full_name = _TYRE_NAME_BY_CODE.get(code)
-        if not full_name:
-            return code
-
         links = normalize_links(ctx.links or [], strip_marks=True, drop_empty=True)
         if links:
-            link = links[0]
-            return {**link, "text": full_name}
+            tyres = []
+            for link in links:
+                link_text = (link.get("text") or "").strip()
+                if not link_text:
+                    continue
+                code = link_text[0].upper()
+                full_name = _TYRE_NAME_BY_CODE.get(code)
+                tyres.append({**link, "text": full_name or link_text})
+            return tyres or None
 
-        return {"text": full_name, "url": None}
+        if not text:
+            return None
+
+        tokens = [token for token in re.split(r"[\s/,]+", text) if token]
+        tyres = []
+        for token in tokens:
+            code = token[0].upper()
+            full_name = _TYRE_NAME_BY_CODE.get(code)
+            tyres.append({"text": full_name or token, "url": None})
+        return tyres or None
