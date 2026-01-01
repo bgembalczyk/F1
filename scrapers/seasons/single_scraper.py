@@ -113,32 +113,94 @@ class SingleSeasonScraper(F1Scraper):
         if not records:
             return records
 
-        merged: list[dict[str, Any]] = []
-        index: dict[tuple[tuple[str, str], ...], dict[str, Any]] = {}
+        keys = self._entry_group_keys(records)
+        if not keys:
+            merged: Dict[str, Any] = {}
+            drivers = self._merge_entry_drivers(records)
+            if drivers:
+                merged["race_drivers"] = drivers
+            return [merged]
+
+        root_key = keys[0]
+        groups: dict[str, dict[str, Any]] = {}
 
         for record in records:
-            key = self._entry_merge_key(record)
-            existing = index.get(key)
-            if existing is None:
-                merged_record = self._strip_entry_driver_fields(record)
-                drivers = self._extract_entry_drivers(record)
-                if drivers:
-                    merged_record["race_drivers"] = drivers
-                index[key] = merged_record
-                merged.append(merged_record)
-                continue
+            value = record.get(root_key)
+            group_key = self._entry_group_key(value)
+            group = groups.get(group_key)
+            if group is None:
+                group = {"value": value, "records": []}
+                groups[group_key] = group
+            group["records"].append(record)
 
-            new_drivers = self._extract_entry_drivers(record)
-            if not new_drivers:
-                continue
+        merged_records: list[dict[str, Any]] = []
+        for group in groups.values():
+            item = {root_key: group["value"]}
+            item.update(self._merge_entry_groups(group["records"], keys[1:]))
+            merged_records.append(item)
 
-            existing_drivers = existing.get("race_drivers")
-            if existing_drivers:
-                existing_drivers.extend(new_drivers)
-            else:
-                existing["race_drivers"] = list(new_drivers)
+        return merged_records
 
-        return merged
+    def _merge_entry_groups(
+        self,
+        records: List[Dict[str, Any]],
+        keys: List[str],
+    ) -> Dict[str, Any]:
+        if not keys:
+            merged: Dict[str, Any] = {}
+            drivers = self._merge_entry_drivers(records)
+            if drivers:
+                merged["race_drivers"] = drivers
+            return merged
+
+        key = keys[0]
+        groups: dict[str, dict[str, Any]] = {}
+
+        for record in records:
+            value = record.get(key)
+            group_key = self._entry_group_key(value)
+            group = groups.get(group_key)
+            if group is None:
+                group = {"value": value, "records": []}
+                groups[group_key] = group
+            group["records"].append(record)
+
+        if len(groups) == 1:
+            group = next(iter(groups.values()))
+            merged = {key: group["value"]}
+            merged.update(self._merge_entry_groups(group["records"], keys[1:]))
+            return merged
+
+        items: list[dict[str, Any]] = []
+        for group in groups.values():
+            item = {key: group["value"]}
+            item.update(self._merge_entry_groups(group["records"], keys[1:]))
+            items.append(item)
+
+        return {key: items}
+
+    def _merge_entry_drivers(self, records: List[Dict[str, Any]]) -> list[dict[str, Any]]:
+        drivers: list[dict[str, Any]] = []
+        for record in records:
+            drivers.extend(self._extract_entry_drivers(record))
+        return drivers
+
+    @staticmethod
+    def _entry_group_keys(records: List[Dict[str, Any]]) -> List[str]:
+        driver_fields = {"race_drivers", "driver", "drivers", "rounds", "races"}
+        keys: list[str] = []
+        seen: set[str] = set()
+        for record in records:
+            for key in record.keys():
+                if key in driver_fields or key in seen:
+                    continue
+                seen.add(key)
+                keys.append(key)
+        return keys
+
+    @staticmethod
+    def _entry_group_key(value: Any) -> str:
+        return repr(value)
 
     @staticmethod
     def _entry_merge_key(record: Dict[str, Any]) -> tuple[tuple[str, str], ...]:
