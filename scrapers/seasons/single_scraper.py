@@ -81,6 +81,7 @@ class SingleSeasonScraper(F1Scraper):
                 "Entries",
                 "Teams_and_drivers",
                 "Drivers_and_constructors",
+                "Championship_teams_and_drivers"
             ],
             expected_headers=["Entrant", "Constructor", "Chassis"],
             column_map={
