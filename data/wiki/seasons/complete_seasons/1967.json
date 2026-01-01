@@ -834,7 +834,8 @@
                     "displacement_l": 1.6,
                     "type": "L4",
                     "layout": "L",
-                    "cylinders": 4
+                    "cylinders": 4,
+                    "class": "F2"
                   },
                   "tyre": [
                     {
@@ -2358,7 +2359,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2409,7 +2411,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2460,7 +2463,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2511,7 +2515,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2576,7 +2581,8 @@
             "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2627,7 +2633,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2683,7 +2690,8 @@
             "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {

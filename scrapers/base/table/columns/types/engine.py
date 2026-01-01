@@ -61,7 +61,7 @@ def _extract_background(cell: Tag) -> str | None:
 
 
 def _is_f2_background(background: str) -> bool:
-    match = re.search(r"#?([0-9a-f]{3}|[0-9a-f]{6})", background, re.I)
+    match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.I)
     if not match:
         return False
     value = match.group(1).lower()

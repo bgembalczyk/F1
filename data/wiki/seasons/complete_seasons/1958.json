@@ -469,7 +469,8 @@
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "class": "F2"
               },
               "tyre": [
                 {
@@ -645,7 +646,8 @@
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "class": "F2"
               },
               "tyre": [
                 {
@@ -987,7 +989,8 @@
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "class": "F2"
               },
               "tyre": [
                 {
@@ -1141,7 +1144,8 @@
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "class": "F2"
               },
               "tyre": [
                 {
@@ -1723,7 +1727,8 @@
                   "text": "Porsche 547/3 F4",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "class": "F2"
               },
               "tyre": [
                 {
@@ -1837,7 +1842,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -1890,7 +1896,8 @@
               "text": "Porsche 547/3 F4",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -1941,7 +1948,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -1992,7 +2000,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2043,7 +2052,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2099,7 +2109,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2155,7 +2166,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2278,7 +2290,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2334,7 +2347,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
@@ -2390,7 +2404,8 @@
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "class": "F2"
           },
           "tyre": [
             {
