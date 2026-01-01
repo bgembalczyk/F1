@@ -12,5 +12,13 @@ class LinksListColumn(BaseColumn):
     Wyrzuca linki, które mają pusty tekst.
     """
 
+    def __init__(self, *, text_for_missing_url: bool = False) -> None:
+        super().__init__()
+        self.text_for_missing_url = text_for_missing_url
+
     def parse(self, ctx: ColumnContext) -> Any:
-        return normalize_links(ctx.links or [])
+        links = normalize_links(ctx.links or [])
+        if not self.text_for_missing_url:
+            return links
+
+        return [link["text"] if link.get("url") is None else link for link in links]

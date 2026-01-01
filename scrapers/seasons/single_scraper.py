@@ -97,7 +97,7 @@ class SingleSeasonScraper(F1Scraper):
             columns={
                 "entrant": LinksListColumn(),
                 "constructor": ConstructorColumn(),
-                "chassis": LinksListColumn(),
+                "chassis": LinksListColumn(text_for_missing_url=True),
                 "power_unit": EngineColumn(),
                 "race_drivers": DriversWithRoundsColumn(),
                 "no": IntColumn(),
