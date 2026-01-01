@@ -31,7 +31,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Küchen",
+              "text": "Küchen 2.0",
               "url": null
             },
             "type": "V8",
@@ -76,9 +76,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -128,15 +131,21 @@
           "engine": [
             {
               "model": {
-                "text": "Gordini",
+                "text": "Gordini 20 2.0",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
-              }
+              },
+              "type": "L6",
+              "layout": "L",
+              "cylinders": 6
             },
             {
               "model": {
-                "text": "Gordini",
+                "text": "Gordini 1500 1.5",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             }
           ],
           "tyre": "E",
@@ -236,13 +245,16 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 500 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 166 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -304,7 +316,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta 2.0",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
             "type": "F2",
@@ -442,9 +454,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol",
+              "text": "Bristol BS1 2.0",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -482,9 +497,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol",
+              "text": "Bristol BS1 2.0",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -574,13 +592,16 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 500 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 375 4.5 *",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -681,9 +702,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Platé",
+              "text": "Platé 2.0",
               "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -751,13 +775,16 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 500 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 166 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -831,9 +858,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini",
+              "text": "Gordini 1500 1.5",
               "url": "https://en.wikipedia.org/wiki/Gordini"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "E",
           "race_drivers": [
@@ -873,9 +903,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol",
+              "text": "Bristol BS1 2.0",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -917,9 +950,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 500 2.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "E",
           "race_drivers": [
@@ -970,9 +1006,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "E",
           "race_drivers": [
@@ -1012,7 +1051,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth",
+              "text": "Butterworth 2.0",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
             "type": "F4",
@@ -1057,7 +1096,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta 2.0",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
             "type": "F2",
@@ -1105,9 +1144,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini",
+              "text": "Gordini 1500 1.5",
               "url": "https://en.wikipedia.org/wiki/Gordini"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "E",
           "race_drivers": [
@@ -1152,7 +1194,7 @@
           "engine": [
             {
               "model": {
-                "text": "Alta",
+                "text": "Alta 2.0",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
               },
               "type": "F2",
@@ -1161,7 +1203,7 @@
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 166 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -1218,9 +1260,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati A6 2.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -1302,9 +1347,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini",
+              "text": "Gordini 1500 1.5",
               "url": "https://en.wikipedia.org/wiki/Gordini"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "E",
           "race_drivers": [
@@ -1349,7 +1397,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 166 2.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V12",
@@ -1404,7 +1452,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth",
+              "text": "Butterworth 2.0",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
             "type": "F4",
@@ -1451,9 +1499,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea Francis",
+              "text": "Lea Francis 2.0",
               "url": "https://en.wikipedia.org/wiki/Lea_Francis"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1531,9 +1582,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol",
+              "text": "Bristol BS1 2.0",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1568,9 +1622,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 500 2.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1610,9 +1667,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1652,9 +1712,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "E",
           "race_drivers": [
@@ -1694,9 +1757,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1736,9 +1802,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1778,9 +1847,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1820,9 +1892,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1862,9 +1937,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1904,9 +1982,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1946,9 +2027,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -1988,9 +2072,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas",
+              "text": "Veritas 2.0",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2030,9 +2117,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2072,9 +2162,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2114,9 +2207,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2156,9 +2252,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2198,9 +2297,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2240,9 +2342,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW",
+              "text": "BMW 328 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "?",
           "race_drivers": [
@@ -2282,9 +2387,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea Francis",
+              "text": "Lea Francis 2.0",
               "url": "https://en.wikipedia.org/wiki/Lea_Francis"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -2324,9 +2432,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati A6 2.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -2385,9 +2496,12 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA",
+              "text": "OSCA 2000 2.0",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -2427,9 +2541,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BPM",
+              "text": "BPM 2.0",
               "url": null
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -2464,9 +2581,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini",
+              "text": "Gordini 1500 1.5",
               "url": "https://en.wikipedia.org/wiki/Gordini"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "E",
           "race_drivers": [

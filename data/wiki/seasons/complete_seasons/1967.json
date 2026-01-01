@@ -31,7 +31,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
             },
             "type": "V8",
@@ -87,7 +87,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
             },
             "type": "V8",
@@ -104,7 +104,43 @@
               "rounds": [
                 4
               ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Brabham Racing Organisation",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
+            "engine_constructor": {
+              "text": "Repco",
+              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+            }
+          },
+          "chassis": [
+            {
+              "text": "BT19",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT19"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Repco 740 3.0",
+              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+            },
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": "G",
+          "race_drivers": [
             {
               "driver": {
                 "text": "Jack Brabham",
@@ -142,7 +178,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco",
+              "text": "Repco 740 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
             },
             "type": "V8",
@@ -207,7 +243,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -278,7 +314,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -295,7 +331,43 @@
               "rounds": [
                 3
               ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Cooper Car Company",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
             },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T81B",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T81B"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Maserati 10/ 3.0",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "type": "F1",
+            "layout": "F",
+            "cylinders": 1
+          },
+          "tyre": "F",
+          "race_drivers": [
             {
               "driver": {
                 "text": "Jochen Rindt",
@@ -361,7 +433,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 10/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -417,7 +489,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P75",
+              "text": "BRM P75 3.0",
               "url": "https://en.wikipedia.org/wiki/BRM_P75"
             },
             "type": "H16",
@@ -471,7 +543,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P75",
+              "text": "BRM P75 3.0",
               "url": "https://en.wikipedia.org/wiki/BRM_P75"
             },
             "type": "H16",
@@ -520,7 +592,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -566,7 +638,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -611,7 +683,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P75",
+              "text": "BRM P75 3.0",
               "url": "https://en.wikipedia.org/wiki/BRM_P75"
             },
             "type": "H16",
@@ -665,7 +737,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 2.0 V8",
+              "text": "Climax FWMV 2.0",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
             "type": "V8",
@@ -710,7 +782,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -808,9 +880,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -850,9 +925,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "G",
           "race_drivers": [
@@ -892,7 +970,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Weslake",
+              "text": "Weslake 58 3.0",
               "url": "https://en.wikipedia.org/wiki/Weslake"
             },
             "type": "V12",
@@ -975,7 +1053,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA273E 3.0",
               "url": "https://en.wikipedia.org/wiki/Honda_F1"
             },
             "type": "V12",
@@ -1025,7 +1103,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA273E 3.0",
               "url": "https://en.wikipedia.org/wiki/Honda_F1"
             },
             "type": "V12",
@@ -1076,7 +1154,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -1113,9 +1191,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -1154,9 +1235,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1196,7 +1280,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -1248,7 +1332,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -1302,7 +1386,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -1347,7 +1431,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P66 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "H16",
@@ -1402,7 +1486,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P75",
+              "text": "BRM P75 3.0",
               "url": "https://en.wikipedia.org/wiki/BRM_P75"
             },
             "type": "H16",
@@ -1452,9 +1536,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1494,9 +1581,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1536,9 +1626,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -1578,9 +1671,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1620,9 +1716,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1671,9 +1770,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "G",
           "race_drivers": [
@@ -1714,7 +1816,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P111 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -1760,7 +1862,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -1808,7 +1910,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 242 3.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V12",
@@ -1890,7 +1992,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 242 3.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V12",
@@ -1936,7 +2038,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -1982,7 +2084,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0 V8",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
             "type": "V8",
@@ -2031,7 +2133,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -2072,7 +2174,7 @@
           ],
           "engine": {
             "model": {
-              "text": "ATS",
+              "text": "ATS 2.7",
               "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
             },
             "type": "V8",
@@ -2117,9 +2219,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M10",
+              "text": "BMW M10 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_M10"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -2159,9 +2264,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -2196,9 +2304,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -2233,9 +2344,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -2270,9 +2384,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -2321,9 +2438,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M10",
+              "text": "BMW M10 2.0",
               "url": "https://en.wikipedia.org/wiki/BMW_M10"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -2358,9 +2478,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -2400,9 +2523,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Ford_Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -2442,7 +2568,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P60 2.1",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V8",
@@ -2488,9 +2614,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "G",
           "race_drivers": [
@@ -2530,7 +2659,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 2.0 V8",
+              "text": "Climax FWMV 2.0",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
             "type": "V8",

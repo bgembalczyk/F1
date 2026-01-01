@@ -31,7 +31,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -76,7 +76,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -155,7 +155,7 @@
           "engine": [
             {
               "model": {
-                "text": "Repco 740 3.0 V8",
+                "text": "Repco 740 3.0",
                 "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
               },
               "type": "V8",
@@ -164,7 +164,7 @@
             },
             {
               "model": {
-                "text": "Repco 860 3.0 V8",
+                "text": "Repco 860 3.0",
                 "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB860"
               },
               "type": "V8",
@@ -230,7 +230,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -327,7 +327,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Weslake",
+              "text": "Weslake 58 3.0",
               "url": "https://en.wikipedia.org/wiki/Weslake"
             },
             "type": "V12",
@@ -376,7 +376,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -432,7 +432,7 @@
           "engine": [
             {
               "model": {
-                "text": "Honda",
+                "text": "Honda RA273E 3.0",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
               "type": "V12",
@@ -441,7 +441,7 @@
             },
             {
               "model": {
-                "text": "Honda",
+                "text": "Honda RA301E 3.0",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
               "type": "V12",
@@ -450,7 +450,7 @@
             },
             {
               "model": {
-                "text": "Honda",
+                "text": "Honda RA302E 3.0",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
               "type": "V8",
@@ -520,7 +520,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 242 3.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -529,7 +529,7 @@
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 242C 3.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V12",
@@ -635,7 +635,7 @@
           "engine": [
             {
               "model": {
-                "text": "BRM",
+                "text": "BRM P101 3.0",
                 "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
               },
               "type": "V12",
@@ -644,7 +644,7 @@
             },
             {
               "model": {
-                "text": "BRM P75",
+                "text": "BRM P75 3.0",
                 "url": "https://en.wikipedia.org/wiki/BRM_P75"
               },
               "type": "H16",
@@ -724,7 +724,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 10/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -778,7 +778,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -886,7 +886,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -961,9 +961,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA",
+              "text": "Ford Cosworth FVA 1.6",
               "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1003,7 +1006,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Matra",
+              "text": "Matra MS9 3.0",
               "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
             "type": "V12",
@@ -1068,7 +1071,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0 V8",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
             "type": "V8",
@@ -1113,7 +1116,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0 V8",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
             "type": "V8",
@@ -1158,7 +1161,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -1207,7 +1210,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1262,7 +1265,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 9/ 3.0",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "type": "F1",
@@ -1307,7 +1310,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -1358,7 +1361,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA301E 3.0",
               "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
             },
             "type": "V12",
@@ -1403,7 +1406,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0 V8",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
             "type": "V8",
@@ -1443,9 +1446,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "F",
           "race_drivers": [
@@ -1485,9 +1491,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1527,7 +1536,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -1577,7 +1586,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0 V8",
+              "text": "Repco 620 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
             "type": "V8",
@@ -1626,7 +1635,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 740 3.0 V8",
+              "text": "Repco 740 3.0",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
             },
             "type": "V8",
@@ -1671,9 +1680,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/1",
+              "text": "BMW M12/1 1.6",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1713,7 +1725,7 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P101 3.0",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
             "type": "V12",
@@ -1758,9 +1770,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8 L4",
+              "text": "Climax FPF 2.8",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "G",
           "race_drivers": [

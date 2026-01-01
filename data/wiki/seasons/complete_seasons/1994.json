@@ -43,7 +43,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6",
+              "text": "Renault RS6 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -97,7 +97,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6",
+              "text": "Renault RS6 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -172,7 +172,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX10B",
+              "text": "Yamaha OX10B 3.5",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V10",
@@ -214,7 +214,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX10B",
+              "text": "Yamaha OX10B 3.5",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V10",
@@ -256,7 +256,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford EC Zetec-R",
+              "text": "Ford EC Zetec-R 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
             "type": "V8",
@@ -324,7 +324,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford EC Zetec-R",
+              "text": "Ford EC Zetec-R 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
             "type": "V8",
@@ -408,7 +408,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A6",
+              "text": "Peugeot A6 3.5",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
             "type": "V10",
@@ -484,7 +484,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A6",
+              "text": "Peugeot A6 3.5",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
             "type": "V10",
@@ -530,7 +530,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBE7",
+              "text": "Ford HBE7 / Ford HBE8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -576,7 +576,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBE7",
+              "text": "Ford HBE7 / Ford HBE8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -623,7 +623,7 @@
           "engine": [
             {
               "model": {
-                "text": "Mugen Honda MF-351HC",
+                "text": "Mugen Honda MF-351HC 3.5",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
               "type": "V10",
@@ -632,7 +632,7 @@
             },
             {
               "model": {
-                "text": "Mugen Honda MF-351HD",
+                "text": "Mugen Honda MF-351HD 3.5",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
               "type": "V10",
@@ -730,7 +730,7 @@
           "engine": [
             {
               "model": {
-                "text": "Mugen Honda MF-351HC",
+                "text": "Mugen Honda MF-351HC 3.5",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
               "type": "V10",
@@ -739,7 +739,7 @@
             },
             {
               "model": {
-                "text": "Mugen Honda MF-351HD",
+                "text": "Mugen Honda MF-351HD 3.5",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
               "type": "V10",
@@ -812,7 +812,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 1035",
+              "text": "Hart 1035 3.5",
               "url": "https://en.wikipedia.org/wiki/Hart_1035_engine"
             },
             "type": "V10",
@@ -858,7 +858,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 1035",
+              "text": "Hart 1035 3.5",
               "url": "https://en.wikipedia.org/wiki/Hart_1035_engine"
             },
             "type": "V10",
@@ -938,7 +938,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBF7",
+              "text": "Ford HBF7 / Ford HBF8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1026,7 +1026,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBF7",
+              "text": "Ford HBF7 / Ford HBF8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1102,7 +1102,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBC7",
+              "text": "Ford HBC7 / Ford HBC8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1152,7 +1152,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBC7",
+              "text": "Ford HBC7 / Ford HBC8 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1198,7 +1198,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6",
+              "text": "Renault RS6 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -1278,7 +1278,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6",
+              "text": "Renault RS6 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -1325,7 +1325,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 041",
+                "text": "Ferrari Tipo 041 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -1334,7 +1334,7 @@
             },
             {
               "model": {
-                "text": "Ferrari Tipo 043",
+                "text": "Ferrari Tipo 043 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -1408,7 +1408,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 041",
+                "text": "Ferrari Tipo 041 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -1417,7 +1417,7 @@
             },
             {
               "model": {
-                "text": "Ferrari Tipo 043",
+                "text": "Ferrari Tipo 043 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -1472,7 +1472,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes-Benz 2175B",
+              "text": "Mercedes-Benz 2175B 3.5",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
             "type": "V10",
@@ -1559,7 +1559,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes-Benz 2175B",
+              "text": "Mercedes-Benz 2175B 3.5",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
             "type": "V10",
@@ -1609,7 +1609,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBD6",
+              "text": "Ford HBD6 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1659,7 +1659,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBD6",
+              "text": "Ford HBD6 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1749,7 +1749,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A",
+              "text": "Ilmor 2175A 3.5",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
             "type": "V10",
@@ -1791,7 +1791,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A",
+              "text": "Ilmor 2175A 3.5",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
             "type": "V10",

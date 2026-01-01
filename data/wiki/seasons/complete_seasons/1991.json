@@ -39,7 +39,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA121E",
+              "text": "Honda RA121E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V12_engine"
             },
             "type": "V12",
@@ -90,7 +90,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA121E",
+              "text": "Honda RA121E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V12_engine"
             },
             "type": "V12",
@@ -141,7 +141,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA101E",
+              "text": "Honda RA101E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
             "type": "V10",
@@ -192,7 +192,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA101E",
+              "text": "Honda RA101E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
             "type": "V10",
@@ -243,7 +243,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS3",
+              "text": "Renault RS3 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -294,7 +294,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS3",
+              "text": "Renault RS3 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -349,7 +349,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX99",
+              "text": "Yamaha OX99 3.5",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V12",
@@ -404,7 +404,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX99",
+              "text": "Yamaha OX99 3.5",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V12",
@@ -463,7 +463,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 3512",
+              "text": "Porsche 3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Porsche_3512"
             },
             "type": "V12",
@@ -530,7 +530,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 3512",
+              "text": "Porsche 3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Porsche_3512"
             },
             "type": "V12",
@@ -601,7 +601,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -668,7 +668,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -731,7 +731,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -774,7 +774,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -855,7 +855,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -924,7 +924,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A",
+              "text": "Ilmor 2175A 3.5",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
             "type": "V10",
@@ -967,7 +967,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A",
+              "text": "Ilmor 2175A 3.5",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
             "type": "V10",
@@ -1040,7 +1040,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1111,7 +1111,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1191,7 +1191,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford HBA4",
+                "text": "Ford HBA4 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
               "type": "V8",
@@ -1200,7 +1200,7 @@
             },
             {
               "model": {
-                "text": "Ford HBA5",
+                "text": "Ford HBA5 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
               "type": "V8",
@@ -1283,7 +1283,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford HBA4",
+                "text": "Ford HBA4 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
               "type": "V8",
@@ -1292,7 +1292,7 @@
             },
             {
               "model": {
-                "text": "Ford HBA5",
+                "text": "Ford HBA5 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
               "type": "V8",
@@ -1336,7 +1336,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd GV",
+              "text": "Judd GV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#GV"
             },
             "type": "V10",
@@ -1379,7 +1379,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd GV",
+              "text": "Judd GV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#GV"
             },
             "type": "V10",
@@ -1422,7 +1422,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037",
+              "text": "Ferrari Tipo 037 3.5",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
             "type": "V12",
@@ -1465,7 +1465,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037",
+              "text": "Ferrari Tipo 037 3.5",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
             "type": "V12",
@@ -1542,7 +1542,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -1593,7 +1593,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -1644,7 +1644,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037",
+              "text": "Ferrari Tipo 037 3.5",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
             "type": "V12",
@@ -1721,7 +1721,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037",
+              "text": "Ferrari Tipo 037 3.5",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
             "type": "V12",
@@ -1764,7 +1764,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1833,7 +1833,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1876,7 +1876,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1952,7 +1952,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4",
+              "text": "Ford HBA4 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -2045,7 +2045,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4",
+              "text": "Ford HBA4 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -2088,7 +2088,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -2131,7 +2131,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",

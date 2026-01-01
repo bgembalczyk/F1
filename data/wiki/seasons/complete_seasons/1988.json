@@ -39,7 +39,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA168E",
+              "text": "Honda RA168E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -89,7 +89,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA168E",
+              "text": "Honda RA168E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -131,7 +131,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -173,7 +173,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -219,7 +219,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -299,7 +299,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -345,9 +345,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 9,
           "race_drivers": [
@@ -388,9 +391,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 10,
           "race_drivers": [
@@ -435,7 +441,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA168E",
+              "text": "Honda RA168E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -485,7 +491,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA168E",
+              "text": "Honda RA168E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -527,7 +533,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -569,7 +575,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -611,7 +617,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -653,9 +659,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 17,
           "race_drivers": [
@@ -692,9 +701,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 18,
           "race_drivers": [
@@ -731,7 +743,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford DFR",
+              "text": "Ford DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFR"
             },
             "type": "V8",
@@ -773,7 +785,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford DFR",
+              "text": "Ford DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFR"
             },
             "type": "V8",
@@ -815,7 +827,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Osella 890T",
+              "text": "Osella 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "type": "V8",
@@ -857,7 +869,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -903,7 +915,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -975,7 +987,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1021,7 +1033,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -1067,7 +1079,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -1109,7 +1121,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 033E",
+              "text": "Ferrari Tipo 033E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1151,7 +1163,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 033E",
+              "text": "Ferrari Tipo 033E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1193,7 +1205,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1269,7 +1281,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1306,7 +1318,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1348,7 +1360,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1390,7 +1402,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1432,7 +1444,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1477,7 +1489,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",

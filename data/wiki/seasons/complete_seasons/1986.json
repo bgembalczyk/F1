@@ -39,7 +39,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG-Porsche TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -93,7 +93,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG-Porsche TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -147,7 +147,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B",
+              "text": "Renault EF4B 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "type": "V6",
@@ -201,7 +201,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B",
+              "text": "Renault EF4B 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "type": "V6",
@@ -259,7 +259,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA166E",
+              "text": "Honda RA166E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -317,7 +317,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA166E",
+              "text": "Honda RA166E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -371,9 +371,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13/1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -422,9 +425,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13/1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -494,7 +500,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF15B",
+              "text": "Renault EF15B 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "type": "V6",
@@ -544,7 +550,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF15B",
+              "text": "Renault EF15B 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "type": "V6",
@@ -594,9 +600,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -641,9 +650,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -700,9 +712,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T",
+              "text": "Hart 415T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -747,9 +762,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T",
+              "text": "Hart 415T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -795,7 +813,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford",
+              "text": "Ford-TEC 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
             "type": "V6",
@@ -857,7 +875,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford",
+              "text": "Ford-TEC 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
             "type": "V6",
@@ -938,9 +956,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -1018,9 +1039,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -1069,9 +1093,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -1120,9 +1147,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -1171,7 +1201,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "type": "V8",
@@ -1225,7 +1255,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "type": "V8",
@@ -1309,7 +1339,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni",
+              "text": "Motori Moderni Tipo 615-90 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "type": "V6",
@@ -1359,7 +1389,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni",
+              "text": "Motori Moderni Tipo 615-90 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "type": "V6",
@@ -1406,7 +1436,7 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B",
+                "text": "Renault EF4B 1.5 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
               "type": "V6",
@@ -1415,7 +1445,7 @@
             },
             {
               "model": {
-                "text": "Renault EF15B",
+                "text": "Renault EF15B 1.5 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
               "type": "V6",
@@ -1463,7 +1493,7 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B",
+                "text": "Renault EF4B 1.5 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
               "type": "V6",
@@ -1472,7 +1502,7 @@
             },
             {
               "model": {
-                "text": "Renault EF15B",
+                "text": "Renault EF15B 1.5 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
               "type": "V6",
@@ -1545,7 +1575,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 032",
+              "text": "Ferrari Tipo 032 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1591,7 +1621,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 032",
+              "text": "Ferrari Tipo 032 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1637,7 +1667,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni",
+              "text": "Motori Moderni Tipo 615-90 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "type": "V6",

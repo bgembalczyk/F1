@@ -31,9 +31,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -211,9 +214,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -253,9 +259,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P25 2.5",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -315,9 +324,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -371,7 +383,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari DS50 2.5",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "V8",
@@ -380,9 +392,12 @@
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 555 2.5",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             }
           ],
           "tyre": "E",
@@ -525,15 +540,21 @@
           "engine": [
             {
               "model": {
-                "text": "Gordini",
+                "text": "Gordini 23 2.5",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
-              }
+              },
+              "type": "L6",
+              "layout": "L",
+              "cylinders": 6
             },
             {
               "model": {
-                "text": "Gordini",
+                "text": "Gordini 25 2.5",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
-              }
+              },
+              "type": "L8",
+              "layout": "L",
+              "cylinders": 8
             }
           ],
           "tyre": "E",
@@ -628,9 +649,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -674,9 +698,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Vanwall",
+              "text": "Vanwall 254 2.5",
               "url": "https://en.wikipedia.org/wiki/Vanwall"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -772,9 +799,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -817,9 +847,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 500 2.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -859,9 +892,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -928,9 +964,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 500 2.0",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -970,9 +1009,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta GP 2.5",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -1012,9 +1054,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bugatti",
+              "text": "Bugatti 2.5",
               "url": "https://en.wikipedia.org/wiki/Bugatti"
-            }
+            },
+            "type": "L8",
+            "layout": "L",
+            "cylinders": 8
           },
           "tyre": "E",
           "race_drivers": [
@@ -1054,9 +1099,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -1108,9 +1156,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -1145,9 +1196,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -1196,9 +1250,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta GP 2.5",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "P",
           "race_drivers": [
@@ -1276,9 +1333,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol",
+              "text": "Bristol BS1 2.0",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1318,9 +1378,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1362,9 +1425,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1406,9 +1472,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1448,9 +1517,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta GP 2.5",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1490,9 +1562,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [

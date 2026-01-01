@@ -32,7 +32,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 036",
+                "text": "Ferrari Tipo 036 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -41,7 +41,7 @@
             },
             {
               "model": {
-                "text": "Ferrari Tipo 037",
+                "text": "Ferrari Tipo 037 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -86,7 +86,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 036",
+                "text": "Ferrari Tipo 036 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -95,7 +95,7 @@
             },
             {
               "model": {
-                "text": "Ferrari Tipo 037",
+                "text": "Ferrari Tipo 037 3.5",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
               "type": "V12",
@@ -143,7 +143,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -190,7 +190,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -237,7 +237,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS2",
+              "text": "Renault RS2 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -284,7 +284,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS2",
+              "text": "Renault RS2 3.5",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -331,7 +331,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -404,7 +404,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -459,7 +459,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -514,7 +514,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -587,7 +587,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -634,7 +634,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -702,7 +702,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -745,7 +745,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -788,7 +788,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV",
+              "text": "Judd EV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
             "type": "V8",
@@ -835,7 +835,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -882,7 +882,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -929,7 +929,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4",
+              "text": "Ford HBA4 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1002,7 +1002,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4",
+              "text": "Ford HBA4 3.5",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
             "type": "V8",
@@ -1045,7 +1045,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1114,7 +1114,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1161,7 +1161,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1208,7 +1208,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1281,7 +1281,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1328,7 +1328,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1379,7 +1379,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA100E",
+              "text": "Honda RA100E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
             "type": "V10",
@@ -1430,7 +1430,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA100E",
+              "text": "Honda RA100E 3.5",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
             "type": "V10",
@@ -1477,7 +1477,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -1524,7 +1524,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512",
+              "text": "Lamborghini LE3512 3.5",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
             "type": "V12",
@@ -1575,7 +1575,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Subaru 1235",
+              "text": "Subaru 1235 3.5",
               "url": "https://en.wikipedia.org/wiki/Subaru_1235"
             },
             "type": "F12",
@@ -1636,7 +1636,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1689,7 +1689,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -1748,7 +1748,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",
@@ -1802,7 +1802,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1860,7 +1860,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR",
+              "text": "Ford Cosworth DFR 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
             "type": "V8",
@@ -1910,7 +1910,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Life F35",
+              "text": "Life 3.5",
               "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
             },
             "type": "F35",
@@ -1970,7 +1970,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Judd CV",
+              "text": "Judd CV 3.5",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
             "type": "V8",

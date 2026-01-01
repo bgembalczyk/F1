@@ -31,7 +31,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche",
+              "text": "Porsche 547/3 1.5",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
             "type": "F4",
@@ -84,9 +84,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250S 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -198,9 +201,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -239,9 +245,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -280,9 +289,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -321,9 +333,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -366,9 +381,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -452,9 +470,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -556,7 +577,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 155 2.4",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V6",
@@ -662,7 +683,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 171 2.4",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V6",
@@ -678,7 +699,42 @@
               "rounds": [
                 2
               ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Scuderia Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "246 P",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_246_P"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari 1.5",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "type": "V6",
+            "layout": "V",
+            "cylinders": 6
+          },
+          "race_drivers": [
             {
               "driver": {
                 "text": "Wolfgang von Trips",
@@ -710,9 +766,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.2 L4",
+              "text": "Climax FPF 2.2",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -751,9 +810,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -796,9 +858,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -859,9 +924,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM",
+              "text": "BRM P25 2.5",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -938,9 +1006,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -974,9 +1045,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1044,9 +1118,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1145,9 +1222,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250S 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1189,9 +1269,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Castellotti",
+              "text": "Castellotti 2.5",
               "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1251,9 +1334,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Scarab",
+              "text": "Scarab 2.5",
               "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1320,9 +1406,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Aston Martin",
+              "text": "Aston Martin RB6 2.5",
               "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -1371,9 +1460,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5 L4",
+              "text": "Climax FPF 1.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1412,9 +1504,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1453,9 +1548,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1494,9 +1592,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Vanwall",
+              "text": "Vanwall 254 2.5",
               "url": "https://en.wikipedia.org/wiki/Vanwall"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1530,9 +1631,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1572,9 +1676,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250S 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1613,9 +1720,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.2 L4",
+              "text": "Climax FPF 2.2",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1654,9 +1764,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5 L4",
+              "text": "Climax FPF 1.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1695,9 +1808,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5 L4",
+              "text": "Climax FPF 1.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1736,9 +1852,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250F1 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "race_drivers": [
             {
@@ -1781,7 +1900,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche",
+              "text": "Porsche 547/3 1.5",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
             "type": "F4",
@@ -1834,9 +1953,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5 L4",
+              "text": "Climax FPF 1.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1870,9 +1992,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 250S 2.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1911,9 +2036,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.5 L4",
+              "text": "Climax FPF 2.5",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {
@@ -1947,9 +2075,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 107 2.5",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "race_drivers": [
             {

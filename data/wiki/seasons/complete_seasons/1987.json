@@ -39,7 +39,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG / Porsche TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -89,7 +89,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG / Porsche TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -135,7 +135,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -181,7 +181,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -235,7 +235,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA167E",
+              "text": "Honda RA167E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -315,7 +315,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA167E",
+              "text": "Honda RA167E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -357,9 +357,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 7,
           "race_drivers": [
@@ -422,9 +425,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 8,
           "race_drivers": [
@@ -469,9 +475,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 9,
           "race_drivers": [
@@ -516,9 +525,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4",
+              "text": "Zakspeed 1500/4 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 10,
           "race_drivers": [
@@ -563,7 +575,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA166E",
+              "text": "Honda RA166E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -613,7 +625,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA166E",
+              "text": "Honda RA166E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "type": "V6",
@@ -650,7 +662,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -726,7 +738,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -772,9 +784,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 17,
           "race_drivers": [
@@ -815,9 +830,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 18,
           "race_drivers": [
@@ -854,7 +872,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford TEC",
+              "text": "Ford TEC 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Cosworth_GBA"
             },
             "type": "V6",
@@ -896,7 +914,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford TEC",
+              "text": "Ford TEC 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Cosworth_GBA"
             },
             "type": "V6",
@@ -946,7 +964,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "type": "V8",
@@ -996,7 +1014,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "type": "V8",
@@ -1052,7 +1070,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni",
+              "text": "Motori Moderni Tipo 615-90 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "type": "V6",
@@ -1094,7 +1112,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni",
+              "text": "Motori Moderni Tipo 615-90 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "type": "V6",
@@ -1140,9 +1158,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 25,
           "race_drivers": [
@@ -1200,9 +1221,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13",
+              "text": "Megatron M12/13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "no": 26,
           "race_drivers": [
@@ -1256,7 +1280,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 033D",
+              "text": "Ferrari Tipo 033D 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1298,7 +1322,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 033D",
+              "text": "Ferrari Tipo 033D 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "type": "V6",
@@ -1340,7 +1364,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1387,7 +1411,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",
@@ -1446,7 +1470,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFZ",
+              "text": "Ford Cosworth DFZ 3.5",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
             },
             "type": "V8",

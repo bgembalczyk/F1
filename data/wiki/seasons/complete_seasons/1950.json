@@ -35,9 +35,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo",
+              "text": "Alfa Romeo 158 1.5",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
+            },
+            "type": "L8",
+            "layout": "L",
+            "cylinders": 8,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -137,9 +141,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CLT 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -199,9 +207,13 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA",
+              "text": "ERA 1.5",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -241,9 +253,13 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA",
+              "text": "ERA 1.5",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -292,9 +308,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CL 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -343,9 +363,13 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA",
+              "text": "ERA 1.5",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -391,9 +415,13 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA",
+              "text": "ERA 1.5",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -442,9 +470,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -528,9 +559,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -575,9 +609,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CLT 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -632,9 +670,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CLT 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -689,9 +731,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta 1.5",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -731,9 +777,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta 1.5",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -779,15 +829,23 @@
           "engine": [
             {
               "model": {
-                "text": "Maserati",
+                "text": "Maserati 4CLT 1.5",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4,
+              "supercharged": true
             },
             {
               "model": {
-                "text": "Maserati",
+                "text": "Maserati 4CL 1.5",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
+              },
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4,
+              "supercharged": true
             }
           ],
           "tyre": "P",
@@ -856,7 +914,7 @@
           ],
           "engine": {
             "model": {
-              "text": "JAP",
+              "text": "JAP 1.1",
               "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries_Ltd"
             },
             "type": "V2",
@@ -901,9 +959,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Simca-Gordini",
+              "text": "Simca-Gordini 15C 1.5",
               "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "E",
           "race_drivers": [
@@ -959,9 +1021,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1017,9 +1082,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1069,12 +1137,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 125 1.5",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "F1",
             "layout": "F",
-            "cylinders": 1
+            "cylinders": 1,
+            "supercharged": true
           },
           "tyre": "D",
           "race_drivers": [
@@ -1129,16 +1198,17 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 125 1.5",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "F1",
               "layout": "F",
-              "cylinders": 1
+              "cylinders": 1,
+              "supercharged": true
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 166 2.0",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "F2",
@@ -1147,7 +1217,7 @@
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 275 3.3",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "F1",
@@ -1156,7 +1226,7 @@
             },
             {
               "model": {
-                "text": "Ferrari",
+                "text": "Ferrari 375 4.5",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "type": "F1",
@@ -1237,9 +1307,13 @@
           ],
           "engine": {
             "model": {
-              "text": "L4",
+              "text": "Speluzzi 1.5",
               "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -1289,9 +1363,13 @@
           ],
           "engine": {
             "model": {
-              "text": "L4",
+              "text": "Speluzzi 1.5",
               "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -1331,9 +1409,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1373,9 +1454,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1417,9 +1501,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1460,9 +1547,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1503,9 +1593,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CL 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -1545,9 +1639,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [
@@ -1596,9 +1693,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Jaguar",
+              "text": "Jaguar XK 3.4",
               "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "P",
           "race_drivers": [
@@ -1638,9 +1738,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati",
+              "text": "Maserati 4CLT 1.5",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4,
+            "supercharged": true
           },
           "tyre": "P",
           "race_drivers": [
@@ -1680,9 +1784,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot",
+              "text": "Talbot 23CV 4.5",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
+            },
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
           },
           "tyre": "D",
           "race_drivers": [

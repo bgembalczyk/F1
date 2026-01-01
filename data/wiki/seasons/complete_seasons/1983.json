@@ -35,7 +35,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -101,7 +101,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -167,7 +167,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -220,7 +220,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA163-E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             },
             "type": "V6",
@@ -273,7 +273,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA163-E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             },
             "type": "V6",
@@ -331,7 +331,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -340,7 +340,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -396,7 +396,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -405,7 +405,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -452,9 +452,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "M",
@@ -495,9 +498,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "M",
@@ -543,7 +549,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -552,7 +558,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -618,7 +624,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -627,7 +633,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -691,7 +697,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -746,7 +752,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG",
+              "text": "TAG TTE PO1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "type": "V6",
@@ -798,9 +804,12 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12",
+              "text": "BMW M12 /13 1.5 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "G",
@@ -846,7 +855,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -855,7 +864,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -910,7 +919,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -919,7 +928,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -984,7 +993,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini",
+              "text": "Renault-Gordini EF1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "type": "V6",
@@ -1054,7 +1063,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini",
+              "text": "Renault-Gordini EF1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "type": "V6",
@@ -1117,7 +1126,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini",
+              "text": "Renault-Gordini EF1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "type": "V6",
@@ -1171,7 +1180,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini",
+              "text": "Renault-Gordini EF1 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "type": "V6",
@@ -1222,7 +1231,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -1231,7 +1240,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -1315,7 +1324,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -1324,7 +1333,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -1378,7 +1387,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
             "type": "V8",
@@ -1428,7 +1437,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo",
+              "text": "Alfa Romeo 890T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
             "type": "V8",
@@ -1479,7 +1488,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -1488,7 +1497,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -1540,7 +1549,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford Cosworth DFV",
+                "text": "Ford Cosworth DFV 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
               },
               "type": "V8",
@@ -1549,7 +1558,7 @@
             },
             {
               "model": {
-                "text": "Ford Cosworth DFY",
+                "text": "Ford Cosworth DFY 3.0",
                 "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFY"
               },
               "type": "V8",
@@ -1596,7 +1605,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 021 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V6",
@@ -1642,7 +1651,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari",
+              "text": "Ferrari 021 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "type": "V6",
@@ -1688,7 +1697,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1734,7 +1743,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1808,7 +1817,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1859,7 +1868,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -1905,7 +1914,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Alfa Romeo",
+              "text": "Alfa Romeo 1260 3.0",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
             "type": "V12",
@@ -1955,7 +1964,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Alfa Romeo",
+              "text": "Alfa Romeo 1260 3.0",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
             "type": "V12",
@@ -2010,7 +2019,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -2067,7 +2076,7 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV",
+              "text": "Ford Cosworth DFV 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
             "type": "V8",
@@ -2132,9 +2141,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart",
+              "text": "Hart 415T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -2179,9 +2191,12 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart",
+              "text": "Hart 415T 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
+            },
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyres": {
             "text": "P",
@@ -2222,7 +2237,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda",
+              "text": "Honda RA163-E 1.5 t",
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             },
             "type": "V6",

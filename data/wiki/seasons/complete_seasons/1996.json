@@ -26,7 +26,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 046",
+              "text": "Ferrari Tipo 046 3.0",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
             },
             "type": "V10",
@@ -63,7 +63,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 046",
+              "text": "Ferrari Tipo 046 3.0",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
             },
             "type": "V10",
@@ -105,7 +105,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8",
+              "text": "Renault RS8 3.0",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -147,7 +147,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8",
+              "text": "Renault RS8 3.0",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -189,7 +189,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8",
+              "text": "Renault RS8 3.0",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -231,7 +231,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8",
+              "text": "Renault RS8 3.0",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
             "type": "V10",
@@ -277,7 +277,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 110D",
+              "text": "Mercedes FO 110D 3.0",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
             "type": "V10",
@@ -323,7 +323,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 110D",
+              "text": "Mercedes FO 110D 3.0",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
             "type": "V10",
@@ -365,7 +365,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mugen-Honda MF-301HA",
+              "text": "Mugen-Honda MF-301HA 3.0",
               "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
             },
             "type": "V10",
@@ -407,7 +407,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Mugen-Honda MF-301HA",
+              "text": "Mugen-Honda MF-301HA 3.0",
               "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
             },
             "type": "V10",
@@ -453,7 +453,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A12",
+              "text": "Peugeot A12 3.0",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
             "type": "V10",
@@ -499,7 +499,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A12",
+              "text": "Peugeot A12 3.0",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
             "type": "V10",
@@ -541,7 +541,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford JD Zetec-R",
+              "text": "Ford JD Zetec-R 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
             },
             "type": "V10",
@@ -583,7 +583,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford JD Zetec-R",
+              "text": "Ford JD Zetec-R 3.0",
               "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
             },
             "type": "V10",
@@ -620,7 +620,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 830",
+              "text": "Hart 830 3.0",
               "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
             },
             "type": "V8",
@@ -657,7 +657,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 830",
+              "text": "Hart 830 3.0",
               "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
             },
             "type": "V8",
@@ -694,7 +694,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX11A",
+              "text": "Yamaha OX11A 3.0",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V10",
@@ -731,7 +731,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX11A",
+              "text": "Yamaha OX11A 3.0",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
             "type": "V10",
@@ -769,7 +769,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford-Cosworth EDM2",
+                "text": "Ford-Cosworth EDM2 3.0",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
               "type": "V8",
@@ -778,7 +778,7 @@
             },
             {
               "model": {
-                "text": "Ford-Cosworth EDM3",
+                "text": "Ford-Cosworth EDM3 3.0",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
               "type": "V8",
@@ -817,7 +817,7 @@
           "engine": [
             {
               "model": {
-                "text": "Ford-Cosworth EDM2",
+                "text": "Ford-Cosworth EDM2 3.0",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
               "type": "V8",
@@ -826,7 +826,7 @@
             },
             {
               "model": {
-                "text": "Ford-Cosworth EDM3",
+                "text": "Ford-Cosworth EDM3 3.0",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
               "type": "V8",
@@ -902,7 +902,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford ECA Zetec-R",
+              "text": "Ford ECA Zetec-R 3.0",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
             "type": "V8",
@@ -955,7 +955,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford ECA Zetec-R",
+              "text": "Ford ECA Zetec-R 3.0",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
             "type": "V8",
