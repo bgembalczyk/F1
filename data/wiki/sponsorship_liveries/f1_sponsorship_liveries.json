@@ -1394,6 +1394,41 @@
           "Gold"
         ],
         "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          {
+            "text": "Scicon Micro Systems ARCO Graphite"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": [],
         "main_sponsors": [
           {
             "text": "Warsteiner",
@@ -1417,41 +1452,6 @@
             "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
           },
           "to": null
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          {
-            "text": "Scicon Micro Systems ARCO Graphite"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Long Beach Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
-            }
-          ]
         }
       },
       {
@@ -7443,7 +7443,8 @@
           "Dark Blue"
         ],
         "additional_colours": [
-          "Red or White"
+          "Red",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -7522,7 +7523,8 @@
           "Dark Blue"
         ],
         "additional_colours": [
-          "Red or White"
+          "Red",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -8630,80 +8632,6 @@
         "main_colours": [
           "Black"
         ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
-          }
-        ],
-        "additional_major_sponsors": [
-          "Elan"
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "South African Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Swedish Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
-            },
-            {
-              "text": "German Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
-            },
-            {
-              "text": "British Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
         "main_sponsors": [],
         "additional_major_sponsors": [
           "Elan",
@@ -8763,6 +8691,80 @@
             {
               "text": "Austrian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
+          }
+        ],
+        "additional_major_sponsors": [
+          "Elan"
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
+            },
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
+            },
+            {
+              "text": "Swedish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
+            },
+            {
+              "text": "German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
+            },
+            {
+              "text": "British Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             }
           ]
         }
@@ -10059,7 +10061,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10110,7 +10113,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10157,7 +10161,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10205,7 +10210,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10253,7 +10259,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10305,7 +10312,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10357,7 +10365,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10405,7 +10414,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10453,7 +10463,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10505,7 +10516,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10553,7 +10565,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10601,7 +10614,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
+          "White",
+          "Black",
           "Green"
         ],
         "main_sponsors": [],
@@ -10649,7 +10663,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10700,7 +10715,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10747,7 +10763,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10794,7 +10811,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10841,7 +10859,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10892,7 +10911,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10939,7 +10959,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10990,7 +11011,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11037,7 +11059,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11088,7 +11111,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11139,7 +11163,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11186,7 +11211,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11233,7 +11259,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11284,7 +11311,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -11340,7 +11368,8 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black"
+          "White",
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -34715,7 +34744,8 @@
           }
         ],
         "main_colours": [
-          "Black or White"
+          "Black",
+          "White"
         ],
         "livery_sponsors": [
           "Ambrosio",
@@ -34758,7 +34788,8 @@
           }
         ],
         "main_colours": [
-          "Black or White"
+          "Black",
+          "White"
         ],
         "livery_sponsors": [
           "Ambrosio",
@@ -38076,7 +38107,8 @@
           }
         ],
         "main_colours": [
-          "White or Blue"
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -38113,7 +38145,8 @@
           }
         ],
         "main_colours": [
-          "White or Blue"
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [],
         "additional_major_sponsors": [
