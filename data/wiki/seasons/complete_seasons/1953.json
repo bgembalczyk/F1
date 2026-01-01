@@ -313,16 +313,28 @@
               ]
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+          "constructor": [
+            {
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              },
+              "engine_constructor": {
+                "text": "Bristol",
+                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+              }
             },
-            "engine_constructor": {
-              "text": "Bristol",
-              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            {
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              },
+              "engine_constructor": {
+                "text": "Alta",
+                "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+              }
             }
-          },
+          ],
           "chassis": [
             {
               "text": "T20",
@@ -419,16 +431,28 @@
               ]
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+          "constructor": [
+            {
+              "chassis_constructor": {
+                "text": "Gordini",
+                "url": "https://en.wikipedia.org/wiki/Gordini"
+              },
+              "engine_constructor": {
+                "text": "Gordini",
+                "url": "https://en.wikipedia.org/wiki/Gordini"
+              }
             },
-            "engine_constructor": {
-              "text": "Simca-Gordini",
-              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            {
+              "chassis_constructor": {
+                "text": "Simca-Gordini",
+                "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+              },
+              "engine_constructor": {
+                "text": "Simca-Gordini",
+                "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+              }
             }
-          },
+          ],
           "chassis": [
             {
               "text": "Type 16",
@@ -1528,16 +1552,28 @@
               ]
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Connaught",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+          "constructor": [
+            {
+              "chassis_constructor": {
+                "text": "Connaught",
+                "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              },
+              "engine_constructor": {
+                "text": "Lea-Francis",
+                "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+              }
             },
-            "engine_constructor": {
-              "text": "Lea-Francis",
-              "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+            {
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              },
+              "engine_constructor": {
+                "text": "Bristol",
+                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+              }
             }
-          },
+          ],
           "chassis": [
             {
               "text": "Type A",

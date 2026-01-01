@@ -1369,16 +1369,28 @@
               ]
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alta",
-              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+          "constructor": [
+            {
+              "chassis_constructor": {
+                "text": "Alta",
+                "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+              },
+              "engine_constructor": {
+                "text": "Alta",
+                "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+              }
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            {
+              "chassis_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              }
             }
-          },
+          ],
           "chassis": [
             {
               "text": "F2",

@@ -1565,16 +1565,28 @@
               ]
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+          "constructor": [
+            {
+              "chassis_constructor": {
+                "text": "March",
+                "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              }
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            {
+              "chassis_constructor": {
+                "text": "Hesketh",
+                "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              }
             }
-          },
+          ],
           "chassis": [
             {
               "text": "731",
