@@ -122,11 +122,15 @@ def _parse_engine_segment(
     displacement = _extract_displacement(clean_text)
     type_text = _extract_type_text(clean_text, displacement)
     supercharged = _extract_supercharged(clean_text)
+    turbocharged = _extract_turbocharged(clean_text)
+    gas_turbine = _extract_gas_turbine(clean_text)
     layout, cylinders = _parse_engine_type(type_text)
     model_text = _extract_model_text(
         clean_text,
         type_text=type_text,
         supercharged=supercharged,
+        turbocharged=turbocharged,
+        gas_turbine=gas_turbine,
         displacement=displacement,
     )
     if model and model_text:
@@ -145,6 +149,10 @@ def _parse_engine_segment(
         data["cylinders"] = cylinders
     if supercharged:
         data["supercharged"] = True
+    if turbocharged:
+        data["turbocharged"] = True
+    if gas_turbine:
+        data["gas_turbine"] = True
     return data or None
 
 
@@ -221,11 +229,35 @@ def _extract_supercharged(text: str) -> bool | None:
     return None
 
 
+def _extract_turbocharged(text: str) -> bool | None:
+    if not text:
+        return None
+    if re.search(r"\b(turbo|turbocharged)\b", text, re.I):
+        return True
+    stripped = text.strip()
+    if re.search(r"(?:^|\s)t$", stripped, re.I):
+        return True
+    return None
+
+
+def _extract_gas_turbine(text: str) -> bool | None:
+    if not text:
+        return None
+    if re.search(r"\b(gas\s*turbine|turbine)\b", text, re.I):
+        return True
+    stripped = text.strip()
+    if re.search(r"(?:^|\s)tbn$", stripped, re.I):
+        return True
+    return None
+
+
 def _extract_model_text(
     text: str,
     *,
     type_text: str | None,
     supercharged: bool | None,
+    turbocharged: bool | None,
+    gas_turbine: bool | None,
     displacement: float | None,
 ) -> str | None:
     if not text:
@@ -244,6 +276,12 @@ def _extract_model_text(
     if supercharged:
         cleaned = re.sub(r"\b(supercharger|supercharged)\b", "", cleaned, flags=re.I)
         cleaned = re.sub(r"(?:^|\s)s$", "", cleaned, flags=re.I)
+    if turbocharged:
+        cleaned = re.sub(r"\b(turbo|turbocharged)\b", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"(?:^|\s)t$", "", cleaned, flags=re.I)
+    if gas_turbine:
+        cleaned = re.sub(r"\b(gas\s*turbine|turbine)\b", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"(?:^|\s)tbn$", "", cleaned, flags=re.I)
     if displacement is not None:
         cleaned = re.sub(rf"\b{re.escape(str(displacement))}\b", "", cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
