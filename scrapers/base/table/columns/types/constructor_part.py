@@ -13,6 +13,18 @@ def _extract_constructor_part(ctx, index: int) -> LinkRecord | None:
     links = normalize_links(ctx.links, strip_marks=True, drop_empty=True)
     clean_text = clean_wiki_text(ctx.clean_text or "")
 
+    if "-" in clean_text:
+        parts = [part.strip() for part in clean_text.split("-", 1)]
+        if len(parts) == 2 and links and len(links) > 2:
+            left_part, right_part = parts
+            if index == 0:
+                return {"text": left_part, "url": None}
+            right_normalized = clean_wiki_text(right_part)
+            for link in links:
+                if clean_wiki_text(link.get("text", "")) == right_normalized:
+                    return link
+            return links[-1]
+
     if links:
         if len(links) >= 2:
             return links[index] if index < len(links) else None
