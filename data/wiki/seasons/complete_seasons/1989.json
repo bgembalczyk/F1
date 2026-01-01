@@ -781,12 +781,12 @@
           ],
           "constructor": {
             "chassis_constructor": {
-              "text": "BMS",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+              "text": "BMS Dallara",
+              "url": null
             },
             "engine_constructor": {
-              "text": "Dallara",
-              "url": "https://en.wikipedia.org/wiki/Dallara"
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
           "chassis": [
@@ -1488,12 +1488,12 @@
           ],
           "constructor": {
             "chassis_constructor": {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
+              "text": "Moneytron Onyx",
+              "url": null
             },
             "engine_constructor": {
-              "text": "Onyx",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
           "chassis": [],

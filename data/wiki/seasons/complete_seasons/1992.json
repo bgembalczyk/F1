@@ -807,12 +807,12 @@
           ],
           "constructor": {
             "chassis_constructor": {
-              "text": "BMS",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+              "text": "BMS Dallara",
+              "url": null
             },
             "engine_constructor": {
-              "text": "Dallara",
-              "url": "https://en.wikipedia.org/wiki/Dallara"
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
           "chassis": [

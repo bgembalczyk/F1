@@ -241,11 +241,11 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Racing Point",
-              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
+              "url": null
             },
             "engine_constructor": {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
           "chassis": [
@@ -9588,11 +9588,11 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Racing Point",
-              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
+              "url": null
             },
             "engine_constructor": {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
           "aus": {
@@ -9854,11 +9854,11 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Racing Point",
-              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
+              "url": null
             },
             "engine_constructor": {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
           "aus": {

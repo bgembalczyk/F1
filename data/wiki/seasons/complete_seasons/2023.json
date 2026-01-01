@@ -530,12 +530,12 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "Aston Martin",
-              "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+              "text": "Aston Martin Aramco",
+              "url": null
             },
             "engine_constructor": {
-              "text": "Aramco",
-              "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
           "practice_drivers": [

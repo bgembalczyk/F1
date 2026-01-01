@@ -87,12 +87,12 @@
           ],
           "constructor": {
             "chassis_constructor": {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+              "text": "Elf Tyrrell",
+              "url": null
             },
             "engine_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
           "chassis": [
@@ -703,12 +703,12 @@
           ],
           "constructor": {
             "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "text": "Surtees FINA",
+              "url": null
             },
             "engine_constructor": {
-              "text": "FINA",
-              "url": "https://en.wikipedia.org/wiki/Petrofina"
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
           "chassis": [
