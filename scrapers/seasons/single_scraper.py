@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from typing import Any, Dict, List
 
@@ -72,7 +73,7 @@ class SingleSeasonScraper(F1Scraper):
         ]
 
     def _parse_entries(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        return self._parse_table(
+        records = self._parse_table(
             soup,
             section_ids=[
                 "Entries",
@@ -103,6 +104,47 @@ class SingleSeasonScraper(F1Scraper):
                 "tyre": TyreColumn(),
             },
         )
+        return self._merge_entries_drivers(records)
+
+    def _merge_entries_drivers(
+        self, records: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        if not records:
+            return records
+
+        merged: list[dict[str, Any]] = []
+        index: dict[tuple[tuple[str, str], ...], dict[str, Any]] = {}
+
+        for record in records:
+            key = self._entry_merge_key(record)
+            existing = index.get(key)
+            if existing is None:
+                merged_record = dict(record)
+                index[key] = merged_record
+                merged.append(merged_record)
+                continue
+
+            new_drivers = record.get("race_drivers")
+            if not new_drivers:
+                continue
+
+            existing_drivers = existing.get("race_drivers")
+            if existing_drivers:
+                existing_drivers.extend(new_drivers)
+            else:
+                existing["race_drivers"] = list(new_drivers)
+
+        return merged
+
+    @staticmethod
+    def _entry_merge_key(record: Dict[str, Any]) -> tuple[tuple[str, str], ...]:
+        items: list[tuple[str, str]] = []
+        for key, value in record.items():
+            if key == "race_drivers":
+                continue
+            serialized = json.dumps(value, sort_keys=True, ensure_ascii=False, default=str)
+            items.append((key, serialized))
+        return tuple(sorted(items))
 
     def _parse_free_practice(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return self._parse_table(
