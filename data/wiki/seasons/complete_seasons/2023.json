@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "No.",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+              "name": "No.",
+              "title_sponsors": [
+                {
+                  "text": "No.",
+                  "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -29,8 +34,13 @@
         {
           "entrant": [
             {
-              "text": "Stake",
-              "url": "https://en.wikipedia.org/wiki/Stake.com"
+              "name": "Alfa Romeo F1 Team Stake",
+              "title_sponsors": [
+                {
+                  "text": "Stake",
+                  "url": "https://en.wikipedia.org/wiki/Stake.com"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -65,136 +75,53 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
-              "engine_constructor": {
-                "text": "Honda RBPT",
-                "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-              },
-              "chassis": [
-                {
-                  "text": "AT04",
-                  "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT04"
-                }
-              ],
-              "power_unit": {
-                "model": {
-                  "text": "Honda RBPTH001",
-                  "url": "https://en.wikipedia.org/wiki/Honda_V6_hybrid_Formula_One_power_unit"
-                }
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "21 3 40 22",
-                    "url": null
-                  }
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "engine_constructor": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "chassis": [
-                {
-                  "text": "SF-23",
-                  "url": "https://en.wikipedia.org/wiki/Ferrari_SF-23"
-                }
-              ],
-              "power_unit": {
-                "model": {
-                  "text": "Ferrari 066/10",
-                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-                }
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "16 55",
-                    "url": null
-                  }
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
-              "engine_constructor": {
-                "text": "Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-              },
-              "chassis": [
-                {
-                  "text": "MCL60",
-                  "url": "https://en.wikipedia.org/wiki/McLaren_MCL60"
-                }
-              ],
-              "power_unit": {
-                "model": {
-                  "text": "Mercedes-AMG F1 M14",
-                  "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
-                }
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "4 81",
-                    "url": null
-                  }
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-              },
-              "engine_constructor": {
-                "text": "Mercedes",
-                "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-              },
-              "chassis": [
-                {
-                  "text": "FW45",
-                  "url": "https://en.wikipedia.org/wiki/Williams_FW45"
-                }
-              ],
-              "power_unit": {
-                "model": {
-                  "text": "Mercedes-AMG F1 M14",
-                  "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
-                }
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "2 23",
-                    "url": null
-                  }
-                }
-              ]
+              "name": "Scuderia AlphaTauri",
+              "title_sponsors": []
             }
           ],
-          "power_unit": null
+          "constructor": {
+            "chassis_constructor": {
+              "text": "AlphaTauri",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
+            },
+            "engine_constructor": {
+              "text": "Honda RBPT",
+              "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
+            }
+          },
+          "chassis": [
+            {
+              "text": "AT04",
+              "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT04"
+            }
+          ],
+          "power_unit": {
+            "model": {
+              "text": "Honda RBPTH001",
+              "url": "https://en.wikipedia.org/wiki/Honda_V6_hybrid_Formula_One_power_unit"
+            }
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "21 3 40 22",
+                "url": null
+              }
+            }
+          ]
         },
         {
           "entrant": [
             {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "name": "BWT Alpine F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "BWT",
+                  "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -231,12 +158,17 @@
         {
           "entrant": [
             {
-              "text": "Aramco",
-              "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
-            },
-            {
-              "text": "Cognizant",
-              "url": "https://en.wikipedia.org/wiki/Cognizant"
+              "name": "Aston Martin Aramco Cognizant F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Aramco",
+                  "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+                },
+                {
+                  "text": "Cognizant",
+                  "url": "https://en.wikipedia.org/wiki/Cognizant"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -273,8 +205,51 @@
         {
           "entrant": [
             {
-              "text": "MoneyGram",
-              "url": "https://en.wikipedia.org/wiki/MoneyGram"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "SF-23",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_SF-23"
+            }
+          ],
+          "power_unit": {
+            "model": {
+              "text": "Ferrari 066/10",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+            }
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "16 55",
+                "url": null
+              }
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "MoneyGram Haas F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "MoneyGram",
+                  "url": "https://en.wikipedia.org/wiki/MoneyGram"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -311,8 +286,51 @@
         {
           "entrant": [
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "McLaren Formula 1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "chassis": [
+            {
+              "text": "MCL60",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MCL60"
+            }
+          ],
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M14",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "4 81",
+                "url": null
+              }
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Mercedes-AMG Petronas F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -349,8 +367,13 @@
         {
           "entrant": [
             {
-              "text": "Oracle",
-              "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+              "name": "Oracle Red Bull Racing",
+              "title_sponsors": [
+                {
+                  "text": "Oracle",
+                  "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -379,6 +402,44 @@
             {
               "driver": {
                 "text": "1 11",
+                "url": null
+              }
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Williams Racing",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "chassis": [
+            {
+              "text": "FW45",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW45"
+            }
+          ],
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M14",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "2 23",
                 "url": null
               }
             }

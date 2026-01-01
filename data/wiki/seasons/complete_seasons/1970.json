@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Tyrrell Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Tyrrell Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Tyrrell Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -144,8 +149,13 @@
         {
           "entrant": [
             {
-              "text": "Équipe Matra Elf",
-              "url": "https://en.wikipedia.org/wiki/Matra_Sports"
+              "name": "Équipe Matra Elf",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Matra Elf",
+                  "url": "https://en.wikipedia.org/wiki/Matra_Sports"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -198,8 +208,13 @@
         {
           "entrant": [
             {
-              "text": "Bruce McLaren Motor Racing",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Bruce McLaren Motor Racing",
+              "title_sponsors": [
+                {
+                  "text": "Bruce McLaren Motor Racing",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -363,8 +378,13 @@
         {
           "entrant": [
             {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "name": "Team Surtees",
+              "title_sponsors": [
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -477,8 +497,13 @@
         {
           "entrant": [
             {
-              "text": "STP Corporation",
-              "url": "https://en.wikipedia.org/wiki/Andy_Granatelli"
+              "name": "STP Corporation",
+              "title_sponsors": [
+                {
+                  "text": "STP Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Andy_Granatelli"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -532,16 +557,21 @@
         {
           "entrant": [
             {
-              "text": "Gold Leaf Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            {
-              "text": "Garvey Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            {
-              "text": "World Wide Racing",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Gold Leaf Team Lotus Garvey Team Lotus World Wide Racing",
+              "title_sponsors": [
+                {
+                  "text": "Gold Leaf Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                },
+                {
+                  "text": "Garvey Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                },
+                {
+                  "text": "World Wide Racing",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -661,12 +691,17 @@
         {
           "entrant": [
             {
-              "text": "Rob Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            },
-            {
-              "text": "Brooke Bond Oxo Racing with Rob Walker",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "Rob Walker Racing Team Brooke Bond Oxo Racing with Rob Walker",
+              "title_sponsors": [
+                {
+                  "text": "Rob Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                },
+                {
+                  "text": "Brooke Bond Oxo Racing with Rob Walker",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -731,12 +766,17 @@
         {
           "entrant": [
             {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            {
-              "text": "Auto Motor und Sport",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Motor Racing Developments Auto Motor und Sport",
+              "title_sponsors": [
+                {
+                  "text": "Motor Racing Developments",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                },
+                {
+                  "text": "Auto Motor und Sport",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -789,8 +829,13 @@
         {
           "entrant": [
             {
-              "text": "March Engineering",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              "name": "March Engineering",
+              "title_sponsors": [
+                {
+                  "text": "March Engineering",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -843,8 +888,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari SpA SEFAC",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari SpA SEFAC",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari SpA SEFAC",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -916,16 +966,21 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            {
-              "text": "Yardley",
-              "url": "https://en.wikipedia.org/wiki/Yardley_London"
-            },
-            {
-              "text": "Team BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation Yardley Team BRM",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                {
+                  "text": "Yardley",
+                  "url": "https://en.wikipedia.org/wiki/Yardley_London"
+                },
+                {
+                  "text": "Team BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1009,8 +1064,13 @@
         {
           "entrant": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "name": "Frank Williams Racing Cars",
+              "title_sponsors": [
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1086,8 +1146,13 @@
         {
           "entrant": [
             {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+              "name": "Team Gunston",
+              "title_sponsors": [
+                {
+                  "text": "Team Gunston",
+                  "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1182,8 +1247,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Scribante",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+              "name": "Scuderia Scribante",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Scribante",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1233,12 +1303,17 @@
         {
           "entrant": [
             {
-              "text": "Antique Automobiles Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
-            },
-            {
-              "text": "Colin Crabbe Racing",
-              "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
+              "name": "Antique Automobiles Racing Team Colin Crabbe Racing",
+              "title_sponsors": [
+                {
+                  "text": "Antique Automobiles Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
+                },
+                {
+                  "text": "Colin Crabbe Racing",
+                  "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1296,8 +1371,13 @@
         {
           "entrant": [
             {
-              "text": "Tom Wheatcroft Racing",
-              "url": "https://en.wikipedia.org/wiki/Tom_Wheatcroft"
+              "name": "Tom Wheatcroft Racing",
+              "title_sponsors": [
+                {
+                  "text": "Tom Wheatcroft Racing",
+                  "url": "https://en.wikipedia.org/wiki/Tom_Wheatcroft"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1347,8 +1427,13 @@
         {
           "entrant": [
             {
-              "text": "Silvio Moser Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
+              "name": "Silvio Moser Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Silvio Moser Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1397,8 +1482,13 @@
         {
           "entrant": [
             {
-              "text": "Pete Lovely Volkswagen Inc.",
-              "url": "https://en.wikipedia.org/wiki/Pete_Lovely"
+              "name": "Pete Lovely Volkswagen Inc.",
+              "title_sponsors": [
+                {
+                  "text": "Pete Lovely Volkswagen Inc.",
+                  "url": "https://en.wikipedia.org/wiki/Pete_Lovely"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1451,8 +1541,13 @@
         {
           "entrant": [
             {
-              "text": "Hubert Hahne",
-              "url": "https://en.wikipedia.org/wiki/Hubert_Hahne"
+              "name": "Hubert Hahne",
+              "title_sponsors": [
+                {
+                  "text": "Hubert Hahne",
+                  "url": "https://en.wikipedia.org/wiki/Hubert_Hahne"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1502,8 +1597,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Bonnier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier"
+              "name": "Ecurie Bonnier",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Bonnier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1554,8 +1654,13 @@
         {
           "entrant": [
             {
-              "text": "Gus Hutchison",
-              "url": "https://en.wikipedia.org/wiki/Gus_Hutchison"
+              "name": "Gus Hutchison",
+              "title_sponsors": [
+                {
+                  "text": "Gus Hutchison",
+                  "url": "https://en.wikipedia.org/wiki/Gus_Hutchison"
+                }
+              ]
             }
           ],
           "constructor": {

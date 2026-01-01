@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+              "name": "Scuderia Ferrari Marlboro",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -66,7 +71,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "BMW WilliamsF1 Team",
+              "title_sponsors": []
+            }
+          ],
           "constructor": {
             "chassis_constructor": {
               "text": "Williams",
@@ -130,8 +140,13 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+              "name": "West McLaren Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -185,8 +200,13 @@
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "Mild Seven Renault F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -247,8 +267,13 @@
         {
           "entrant": [
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Sauber Petronas",
+              "title_sponsors": [
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -305,8 +330,13 @@
         {
           "entrant": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+              "name": "Benson & Hedges Jordan Ford",
+              "title_sponsors": [
+                {
+                  "text": "Benson & Hedges",
+                  "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -390,8 +420,13 @@
         {
           "entrant": [
             {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
+              "name": "HSBC Jaguar Racing",
+              "title_sponsors": [
+                {
+                  "text": "HSBC",
+                  "url": "https://en.wikipedia.org/wiki/HSBC"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -474,8 +509,13 @@
         {
           "entrant": [
             {
-              "text": "Lucky Strike",
-              "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+              "name": "Lucky Strike BAR Honda",
+              "title_sponsors": [
+                {
+                  "text": "Lucky Strike",
+                  "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -558,8 +598,13 @@
         {
           "entrant": [
             {
-              "text": "Trust",
-              "url": "https://en.wikipedia.org/wiki/Trust_(electronics_company)"
+              "name": "Trust Minardi Cosworth",
+              "title_sponsors": [
+                {
+                  "text": "Trust",
+                  "url": "https://en.wikipedia.org/wiki/Trust_(electronics_company)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -642,8 +687,13 @@
         {
           "entrant": [
             {
-              "text": "Panasonic",
-              "url": "https://en.wikipedia.org/wiki/Panasonic"
+              "name": "Panasonic Toyota Racing",
+              "title_sponsors": [
+                {
+                  "text": "Panasonic",
+                  "url": "https://en.wikipedia.org/wiki/Panasonic"
+                }
+              ]
             }
           ],
           "constructor": {

@@ -9,12 +9,17 @@
         {
           "entrant": [
             {
-              "text": "Parmalat",
-              "url": "https://en.wikipedia.org/wiki/Parmalat"
-            },
-            {
-              "text": "Racing",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Parmalat Racing",
+              "title_sponsors": [
+                {
+                  "text": "Parmalat",
+                  "url": "https://en.wikipedia.org/wiki/Parmalat"
+                },
+                {
+                  "text": "Racing",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -98,16 +103,21 @@
         {
           "entrant": [
             {
-              "text": "First National City Travelers Checks",
-              "url": "https://en.wikipedia.org/wiki/Citigroup"
-            },
-            {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
-            },
-            {
-              "text": "Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "First National City Travelers Checks Elf Team Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "First National City Travelers Checks",
+                  "url": "https://en.wikipedia.org/wiki/Citigroup"
+                },
+                {
+                  "text": "Elf",
+                  "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+                },
+                {
+                  "text": "Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -168,12 +178,17 @@
         {
           "entrant": [
             {
-              "text": "John Player",
-              "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "John Player",
+                  "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -269,20 +284,25 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro"
-            },
-            {
-              "text": "Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "Löwenbräu",
-              "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
-            },
-            {
-              "text": "Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Marlboro Team McLaren Löwenbräu Team McLaren",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro"
+                },
+                {
+                  "text": "Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "Löwenbräu",
+                  "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
+                },
+                {
+                  "text": "Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -378,12 +398,17 @@
         {
           "entrant": [
             {
-              "text": "ATS Racing Team",
-              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
-            },
-            {
-              "text": "ATS Racing Team",
-              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+              "name": "ATS Racing Team F&S Properties ATS Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "ATS Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+                },
+                {
+                  "text": "ATS Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -532,8 +557,13 @@
         {
           "entrant": [
             {
-              "text": "SEFAC Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "SEFAC Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "SEFAC Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -595,8 +625,13 @@
         {
           "entrant": [
             {
-              "text": "Fittipaldi Automotive",
-              "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+              "name": "Fittipaldi Automotive",
+              "title_sponsors": [
+                {
+                  "text": "Fittipaldi Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -642,12 +677,17 @@
         {
           "entrant": [
             {
-              "text": "Équipe Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+              "name": "Équipe Renault Elf",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Renault",
+                  "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+                },
+                {
+                  "text": "Elf",
+                  "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -709,12 +749,17 @@
         {
           "entrant": [
             {
-              "text": "Villiger",
-              "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
-            },
-            {
-              "text": "Shadow",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+              "name": "Villiger Shadow",
+              "title_sponsors": [
+                {
+                  "text": "Villiger",
+                  "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
+                },
+                {
+                  "text": "Shadow",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -779,16 +824,21 @@
         {
           "entrant": [
             {
-              "text": "Durex",
-              "url": "https://en.wikipedia.org/wiki/Durex"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "name": "Durex Team Surtees Beta Team Surtees",
+              "title_sponsors": [
+                {
+                  "text": "Durex",
+                  "url": "https://en.wikipedia.org/wiki/Durex"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -910,8 +960,13 @@
         {
           "entrant": [
             {
-              "text": "Walter Wolf Racing",
-              "url": "https://en.wikipedia.org/wiki/Walter_Wolf_Racing"
+              "name": "Walter Wolf Racing",
+              "title_sponsors": [
+                {
+                  "text": "Walter Wolf Racing",
+                  "url": "https://en.wikipedia.org/wiki/Walter_Wolf_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -988,16 +1043,21 @@
         {
           "entrant": [
             {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            },
-            {
-              "text": "Tissot",
-              "url": "https://en.wikipedia.org/wiki/Tissot"
-            },
-            {
-              "text": "Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "name": "Team Tissot Ensign",
+              "title_sponsors": [
+                {
+                  "text": "Team",
+                  "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+                },
+                {
+                  "text": "Tissot",
+                  "url": "https://en.wikipedia.org/wiki/Tissot"
+                },
+                {
+                  "text": "Ensign",
+                  "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1128,227 +1188,122 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Ensign",
-                "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-              },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-              },
-              "chassis": [
-                {
-                  "chassis": [
-                    {
-                      "text": "N177",
-                      "url": "https://en.wikipedia.org/wiki/Ensign_N177"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ford Cosworth DFV",
-                      "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                    },
-                    "displacement_l": 3.0,
-                    "type": "V8",
-                    "layout": "V",
-                    "cylinders": 8
-                  },
-                  "tyres": {
-                    "text": "G",
-                    "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-                  },
-                  "no": 23,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Harald Ertl",
-                        "url": "https://en.wikipedia.org/wiki/Harald_Ertl"
-                      },
-                      "rounds": [
-                        11,
-                        12,
-                        13,
-                        14
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "chassis": [
-                    {
-                      "text": "N175",
-                      "url": "https://en.wikipedia.org/wiki/Ensign_N175"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ford Cosworth DFV",
-                      "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                    },
-                    "displacement_l": 3.0,
-                    "type": "V8",
-                    "layout": "V",
-                    "cylinders": 8
-                  },
-                  "tyres": {
-                    "text": "G",
-                    "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-                  },
-                  "no": 23,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Geoff Lees",
-                        "url": "https://en.wikipedia.org/wiki/Geoff_Lees_(racing_driver)"
-                      },
-                      "rounds": [
-                        10
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-              },
-              "chassis": [
-                {
-                  "chassis": [
-                    {
-                      "text": "M25",
-                      "url": "https://en.wikipedia.org/wiki/McLaren_M25"
-                    },
-                    {
-                      "text": "M23",
-                      "url": "https://en.wikipedia.org/wiki/McLaren_M23"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ford Cosworth DFV",
-                      "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                    },
-                    "displacement_l": 3.0,
-                    "type": "V8",
-                    "layout": "V",
-                    "cylinders": 8
-                  },
-                  "tyres": {
-                    "text": "G",
-                    "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-                  },
-                  "no": 28,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Emilio de Villota",
-                        "url": "https://en.wikipedia.org/wiki/Emilio_de_Villota"
-                      },
-                      "rounds": [
-                        7
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "chassis": [
-                    {
-                      "text": "M23",
-                      "url": "https://en.wikipedia.org/wiki/McLaren_M23"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ford Cosworth DFV",
-                      "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                    },
-                    "displacement_l": 3.0,
-                    "type": "V8",
-                    "layout": "V",
-                    "cylinders": 8
-                  },
-                  "tyres": {
-                    "text": "G",
-                    "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-                  },
-                  "no": 40,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Tony Trimmer",
-                        "url": "https://en.wikipedia.org/wiki/Tony_Trimmer"
-                      },
-                      "rounds": [
-                        10
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "March",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-              },
-              "chassis": [
-                "781S"
-              ],
-              "engine": {
-                "model": {
-                  "text": "Ford Cosworth DFV",
-                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                },
-                "displacement_l": 3.0,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "no": 29,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Patrick Nève",
-                    "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-                  },
-                  "rounds": [
-                    6
-                  ]
-                }
-              ]
+              "name": "Sachs Racing",
+              "title_sponsors": []
             }
           ],
-          "tyres": null,
-          "no": null
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ensign",
+              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "N177",
+              "url": "https://en.wikipedia.org/wiki/Ensign_N177"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyres": {
+            "text": "G",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          "no": 23,
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Harald Ertl",
+                "url": "https://en.wikipedia.org/wiki/Harald_Ertl"
+              },
+              "rounds": [
+                11,
+                12,
+                13,
+                14
+              ]
+            }
+          ]
         },
         {
           "entrant": [
             {
-              "text": "Olympus Cameras",
-              "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
+              "name": "Mario Deliotti Racing",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ensign",
+              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
             },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
             {
-              "text": "Hesketh Racing",
-              "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+              "text": "N175",
+              "url": "https://en.wikipedia.org/wiki/Ensign_N175"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyres": {
+            "text": "G",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          "no": 23,
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Geoff Lees",
+                "url": "https://en.wikipedia.org/wiki/Geoff_Lees_(racing_driver)"
+              },
+              "rounds": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Olympus Cameras with Hesketh Racing",
+              "title_sponsors": [
+                {
+                  "text": "Olympus Cameras",
+                  "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
+                },
+                {
+                  "text": "Hesketh Racing",
+                  "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1418,8 +1373,13 @@
         {
           "entrant": [
             {
-              "text": "Team Rebaque",
-              "url": "https://en.wikipedia.org/wiki/Rebaque"
+              "name": "Team Rebaque",
+              "title_sponsors": [
+                {
+                  "text": "Team Rebaque",
+                  "url": "https://en.wikipedia.org/wiki/Rebaque"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1465,12 +1425,17 @@
         {
           "entrant": [
             {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-            },
-            {
-              "text": "Gitanes",
-              "url": "https://en.wikipedia.org/wiki/Gitanes"
+              "name": "Ligier Gitanes",
+              "title_sponsors": [
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                },
+                {
+                  "text": "Gitanes",
+                  "url": "https://en.wikipedia.org/wiki/Gitanes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1536,8 +1501,13 @@
         {
           "entrant": [
             {
-              "text": "Williams Grand Prix Engineering",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+              "name": "Williams Grand Prix Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Williams Grand Prix Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1583,16 +1553,122 @@
         {
           "entrant": [
             {
-              "text": "BS Fabrications",
-              "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+              "name": "Centro Asegurador F1",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "M25",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M25"
             },
             {
-              "text": "Liggett Group",
-              "url": "https://en.wikipedia.org/wiki/Liggett_Group"
+              "text": "M23",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M23"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyres": {
+            "text": "G",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          "no": 28,
+          "race_drivers": [
             {
-              "text": "BS Fabrications",
-              "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+              "driver": {
+                "text": "Emilio de Villota",
+                "url": "https://en.wikipedia.org/wiki/Emilio_de_Villota"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Patrick Nève",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "March",
+              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            "781S"
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyres": {
+            "text": "G",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          "no": 29,
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Patrick Nève",
+                "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+              },
+              "rounds": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "BS Fabrications Liggett Group with BS Fabrications",
+              "title_sponsors": [
+                {
+                  "text": "BS Fabrications",
+                  "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+                },
+                {
+                  "text": "Liggett Group",
+                  "url": "https://en.wikipedia.org/wiki/Liggett_Group"
+                },
+                {
+                  "text": "BS Fabrications",
+                  "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1678,8 +1754,13 @@
         {
           "entrant": [
             {
-              "text": "Automobiles Martini",
-              "url": "https://en.wikipedia.org/wiki/Automobiles_Martini"
+              "name": "Automobiles Martini",
+              "title_sponsors": [
+                {
+                  "text": "Automobiles Martini",
+                  "url": "https://en.wikipedia.org/wiki/Automobiles_Martini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1735,8 +1816,13 @@
         {
           "entrant": [
             {
-              "text": "Theodore Racing Hong Kong",
-              "url": "https://en.wikipedia.org/wiki/Theodore_Racing"
+              "name": "Theodore Racing Hong Kong",
+              "title_sponsors": [
+                {
+                  "text": "Theodore Racing Hong Kong",
+                  "url": "https://en.wikipedia.org/wiki/Theodore_Racing"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1852,8 +1938,13 @@
         {
           "entrant": [
             {
-              "text": "Team Merzario",
-              "url": "https://en.wikipedia.org/wiki/Merzario"
+              "name": "Team Merzario",
+              "title_sponsors": [
+                {
+                  "text": "Team Merzario",
+                  "url": "https://en.wikipedia.org/wiki/Merzario"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1917,16 +2008,21 @@
         {
           "entrant": [
             {
-              "text": "Arrows Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            {
-              "text": "Warsteiner",
-              "url": "https://en.wikipedia.org/wiki/Warsteiner"
-            },
-            {
-              "text": "Arrows Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+              "name": "Arrows Racing Team Warsteiner Arrows Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Arrows Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                },
+                {
+                  "text": "Warsteiner",
+                  "url": "https://en.wikipedia.org/wiki/Warsteiner"
+                },
+                {
+                  "text": "Arrows Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2031,8 +2127,13 @@
         {
           "entrant": [
             {
-              "text": "Interscope Racing",
-              "url": "https://en.wikipedia.org/wiki/Ted_Field"
+              "name": "Interscope Racing",
+              "title_sponsors": [
+                {
+                  "text": "Interscope Racing",
+                  "url": "https://en.wikipedia.org/wiki/Ted_Field"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2075,6 +2176,56 @@
               "rounds": [
                 4,
                 13
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Melchester Racing",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "M23",
+              "url": "https://en.wikipedia.org/wiki/McLaren_M23"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyres": {
+            "text": "G",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          "no": 40,
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tony Trimmer",
+                "url": "https://en.wikipedia.org/wiki/Tony_Trimmer"
+              },
+              "rounds": [
+                10
               ]
             }
           ]

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -198,8 +203,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -322,8 +332,13 @@
         {
           "entrant": [
             {
-              "text": "Alberto Uría",
-              "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
+              "name": "Alberto Uría",
+              "title_sponsors": [
+                {
+                  "text": "Alberto Uría",
+                  "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -382,8 +397,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -550,8 +570,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+              "name": "Equipe Gordini",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Gordini",
+                  "url": "https://en.wikipedia.org/wiki/Gordini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -671,8 +696,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+              "name": "Ecurie Rosier",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Rosier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -726,8 +756,13 @@
         {
           "entrant": [
             {
-              "text": "Vandervell Products",
-              "url": "https://en.wikipedia.org/wiki/Vanwall"
+              "name": "Vandervell Products",
+              "title_sponsors": [
+                {
+                  "text": "Vandervell Products",
+                  "url": "https://en.wikipedia.org/wiki/Vanwall"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -829,12 +864,17 @@
         {
           "entrant": [
             {
-              "text": "Gould's Garage (Bristol)",
-              "url": "https://en.wikipedia.org/wiki/Horace_Gould"
-            },
-            {
-              "text": "H.H. Gould",
-              "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+              "name": "Gould's Garage (Bristol) H.H. Gould",
+              "title_sponsors": [
+                {
+                  "text": "Gould's Garage (Bristol)",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+                },
+                {
+                  "text": "H.H. Gould",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -887,8 +927,13 @@
         {
           "entrant": [
             {
-              "text": "Giorgio Scarlatti",
-              "url": "https://en.wikipedia.org/wiki/Giorgio_Scarlatti"
+              "name": "Giorgio Scarlatti",
+              "title_sponsors": [
+                {
+                  "text": "Giorgio Scarlatti",
+                  "url": "https://en.wikipedia.org/wiki/Giorgio_Scarlatti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -938,8 +983,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Centro Sud",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+              "name": "Scuderia Centro Sud",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Centro Sud",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1061,8 +1111,13 @@
         {
           "entrant": [
             {
-              "text": "Piero Scotti",
-              "url": "https://en.wikipedia.org/wiki/Piero_Scotti"
+              "name": "Piero Scotti",
+              "title_sponsors": [
+                {
+                  "text": "Piero Scotti",
+                  "url": "https://en.wikipedia.org/wiki/Piero_Scotti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1112,8 +1167,13 @@
         {
           "entrant": [
             {
-              "text": "Automobiles Bugatti",
-              "url": "https://en.wikipedia.org/wiki/Bugatti"
+              "name": "Automobiles Bugatti",
+              "title_sponsors": [
+                {
+                  "text": "Automobiles Bugatti",
+                  "url": "https://en.wikipedia.org/wiki/Bugatti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1163,8 +1223,13 @@
         {
           "entrant": [
             {
-              "text": "Luigi Piotti",
-              "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
+              "name": "Luigi Piotti",
+              "title_sponsors": [
+                {
+                  "text": "Luigi Piotti",
+                  "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1226,8 +1291,13 @@
         {
           "entrant": [
             {
-              "text": "André Simon",
-              "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
+              "name": "André Simon",
+              "title_sponsors": [
+                {
+                  "text": "André Simon",
+                  "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1275,7 +1345,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "Scuderia Guastalla",
+              "title_sponsors": []
+            }
+          ],
           "constructor": {
             "chassis_constructor": {
               "text": "Maserati",
@@ -1332,8 +1407,13 @@
         {
           "entrant": [
             {
-              "text": "Connaught Engineering",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              "name": "Connaught Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Connaught Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1425,8 +1505,13 @@
         {
           "entrant": [
             {
-              "text": "Bob Gerard",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              "name": "Bob Gerard",
+              "title_sponsors": [
+                {
+                  "text": "Bob Gerard",
+                  "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1476,8 +1561,13 @@
         {
           "entrant": [
             {
-              "text": "Gilby Engineering",
-              "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+              "name": "Gilby Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Gilby Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1529,8 +1619,13 @@
         {
           "entrant": [
             {
-              "text": "Bruce Halford",
-              "url": "https://en.wikipedia.org/wiki/Bruce_Halford"
+              "name": "Bruce Halford",
+              "title_sponsors": [
+                {
+                  "text": "Bruce Halford",
+                  "url": "https://en.wikipedia.org/wiki/Bruce_Halford"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1582,8 +1677,13 @@
         {
           "entrant": [
             {
-              "text": "Jack Brabham",
-              "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+              "name": "Jack Brabham",
+              "title_sponsors": [
+                {
+                  "text": "Jack Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1633,8 +1733,13 @@
         {
           "entrant": [
             {
-              "text": "Emeryson Cars",
-              "url": "https://en.wikipedia.org/wiki/Emeryson"
+              "name": "Emeryson Cars",
+              "title_sponsors": [
+                {
+                  "text": "Emeryson Cars",
+                  "url": "https://en.wikipedia.org/wiki/Emeryson"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1681,8 +1786,13 @@
         {
           "entrant": [
             {
-              "text": "Ottorino Volonterio",
-              "url": "https://en.wikipedia.org/wiki/Ottorino_Volonterio"
+              "name": "Ottorino Volonterio",
+              "title_sponsors": [
+                {
+                  "text": "Ottorino Volonterio",
+                  "url": "https://en.wikipedia.org/wiki/Ottorino_Volonterio"
+                }
+              ]
             }
           ],
           "constructor": {

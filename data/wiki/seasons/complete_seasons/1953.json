@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -154,8 +159,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -294,8 +304,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -395,8 +410,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+              "name": "Equipe Gordini",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Gordini",
+                  "url": "https://en.wikipedia.org/wiki/Gordini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -544,8 +564,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+              "name": "Ecurie Rosier",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Rosier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -623,8 +648,13 @@
         {
           "entrant": [
             {
-              "text": "Enrico Platé",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+              "name": "Enrico Platé",
+              "title_sponsors": [
+                {
+                  "text": "Enrico Platé",
+                  "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -674,8 +704,13 @@
         {
           "entrant": [
             {
-              "text": "Connaught Engineering",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              "name": "Connaught Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Connaught Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -770,8 +805,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Belge",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
+              "name": "Ecurie Belge",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Belge",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -833,8 +873,13 @@
         {
           "entrant": [
             {
-              "text": "Ken Wharton",
-              "url": "https://en.wikipedia.org/wiki/Ken_Wharton"
+              "name": "Ken Wharton",
+              "title_sponsors": [
+                {
+                  "text": "Ken Wharton",
+                  "url": "https://en.wikipedia.org/wiki/Ken_Wharton"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -888,8 +933,13 @@
         {
           "entrant": [
             {
-              "text": "HW Motors",
-              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+              "name": "HW Motors",
+              "title_sponsors": [
+                {
+                  "text": "HW Motors",
+                  "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1009,8 +1059,13 @@
         {
           "entrant": [
             {
-              "text": "Emmanuel de Graffenried",
-              "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+              "name": "Emmanuel de Graffenried",
+              "title_sponsors": [
+                {
+                  "text": "Emmanuel de Graffenried",
+                  "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1065,8 +1120,13 @@
         {
           "entrant": [
             {
-              "text": "Georges Berger",
-              "url": "https://en.wikipedia.org/wiki/Georges_Berger"
+              "name": "Georges Berger",
+              "title_sponsors": [
+                {
+                  "text": "Georges Berger",
+                  "url": "https://en.wikipedia.org/wiki/Georges_Berger"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1113,8 +1173,13 @@
         {
           "entrant": [
             {
-              "text": "Arthur Legat",
-              "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
+              "name": "Arthur Legat",
+              "title_sponsors": [
+                {
+                  "text": "Arthur Legat",
+                  "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1164,8 +1229,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Francorchamps",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Francorchamps"
+              "name": "Ecurie Francorchamps",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Francorchamps",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Francorchamps"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1226,8 +1296,13 @@
         {
           "entrant": [
             {
-              "text": "Louis Chiron",
-              "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+              "name": "Louis Chiron",
+              "title_sponsors": [
+                {
+                  "text": "Louis Chiron",
+                  "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1277,8 +1352,13 @@
         {
           "entrant": [
             {
-              "text": "Élie Bayol",
-              "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
+              "name": "Élie Bayol",
+              "title_sponsors": [
+                {
+                  "text": "Élie Bayol",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1326,8 +1406,13 @@
         {
           "entrant": [
             {
-              "text": "Bob Gerard",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              "name": "Bob Gerard",
+              "title_sponsors": [
+                {
+                  "text": "Bob Gerard",
+                  "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1378,8 +1463,13 @@
         {
           "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "R.R.C. Walker Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "R.R.C. Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1429,8 +1519,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Ecosse",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Ecosse"
+              "name": "Ecurie Ecosse",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Ecosse",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Ecosse"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1503,154 +1598,52 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Cooper",
-                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-              },
-              "engine_constructor": {
-                "text": "Bristol",
-                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-              },
-              "chassis": [
-                {
-                  "text": "T23",
-                  "url": "https://en.wikipedia.org/wiki/Cooper_T23"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Bristol BS1",
-                  "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-                },
-                "displacement_l": 2.0,
-                "type": "L6",
-                "layout": "L",
-                "cylinders": 6
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Alan Brown",
-                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
-                  },
-                  "rounds": [
-                    6
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Alan Brown",
-                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
-                  },
-                  "rounds": [
-                    7,
-                    9
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Helmut Glöckler",
-                    "url": "https://en.wikipedia.org/wiki/Helm_Gl%C3%B6ckler"
-                  },
-                  "rounds": [
-                    7
-                  ]
-                }
-              ]
+              "name": "R.J. Chase",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
             },
+            "engine_constructor": {
+              "text": "Bristol",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            }
+          },
+          "chassis": [
             {
-              "chassis_constructor": {
-                "text": "Cooper",
-                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-              },
-              "engine_constructor": {
-                "text": "Alta",
-                "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-              },
-              "chassis": [
-                {
-                  "text": "T24",
-                  "url": "https://en.wikipedia.org/wiki/Cooper_T24"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Alta GP",
-                  "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-                },
-                "displacement_l": 2.5,
-                "type": "L4",
-                "layout": "L",
-                "cylinders": 4
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Peter Whitehead",
-                    "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
-                  },
-                  "rounds": [
-                    6
-                  ]
-                }
-              ]
+              "text": "T23",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T23"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Bristol BS1",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
             {
-              "chassis_constructor": {
-                "text": "Greifzu",
-                "url": "https://en.wikipedia.org/wiki/Greifzu"
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alan Brown",
+                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
               },
-              "engine_constructor": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-              },
-              "chassis": [
-                {
-                  "text": "Eigenbau",
-                  "url": "https://en.wikipedia.org/wiki/Greifzu"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "BMW 328",
-                  "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-                },
-                "displacement_l": 2.0,
-                "type": "L6",
-                "layout": "L",
-                "cylinders": 6
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Rudolf Krause",
-                    "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
-                  },
-                  "rounds": [
-                    7
-                  ]
-                }
+              "rounds": [
+                6
               ]
             }
           ]
@@ -1658,8 +1651,64 @@
         {
           "entrant": [
             {
-              "text": "Tony Crook",
-              "url": "https://en.wikipedia.org/wiki/Tony_Crook_(racing_driver)"
+              "name": "Atlantic Stable",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Alta",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T24",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T24"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Alta GP",
+              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+            },
+            "displacement_l": 2.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Peter Whitehead",
+                "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+              },
+              "rounds": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Tony Crook",
+              "title_sponsors": [
+                {
+                  "text": "Tony Crook",
+                  "url": "https://en.wikipedia.org/wiki/Tony_Crook_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1709,8 +1758,13 @@
         {
           "entrant": [
             {
-              "text": "Hans Stuck",
-              "url": "https://en.wikipedia.org/wiki/Hans_Stuck"
+              "name": "Hans Stuck",
+              "title_sponsors": [
+                {
+                  "text": "Hans Stuck",
+                  "url": "https://en.wikipedia.org/wiki/Hans_Stuck"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1758,8 +1812,13 @@
         {
           "entrant": [
             {
-              "text": "Wolfgang Seidel",
-              "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
+              "name": "Wolfgang Seidel",
+              "title_sponsors": [
+                {
+                  "text": "Wolfgang Seidel",
+                  "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1809,8 +1868,13 @@
         {
           "entrant": [
             {
-              "text": "Willi Heeks",
-              "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
+              "name": "Willi Heeks",
+              "title_sponsors": [
+                {
+                  "text": "Willi Heeks",
+                  "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1860,8 +1924,13 @@
         {
           "entrant": [
             {
-              "text": "Theo Helfrich",
-              "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
+              "name": "Theo Helfrich",
+              "title_sponsors": [
+                {
+                  "text": "Theo Helfrich",
+                  "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1911,8 +1980,13 @@
         {
           "entrant": [
             {
-              "text": "Oswald Karch",
-              "url": "https://en.wikipedia.org/wiki/Oswald_Karch"
+              "name": "Oswald Karch",
+              "title_sponsors": [
+                {
+                  "text": "Oswald Karch",
+                  "url": "https://en.wikipedia.org/wiki/Oswald_Karch"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1962,8 +2036,13 @@
         {
           "entrant": [
             {
-              "text": "Helmut Niedermayr",
-              "url": "https://en.wikipedia.org/wiki/Helmut_Niedermayr"
+              "name": "Helmut Niedermayr",
+              "title_sponsors": [
+                {
+                  "text": "Helmut Niedermayr",
+                  "url": "https://en.wikipedia.org/wiki/Helmut_Niedermayr"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2010,8 +2089,13 @@
         {
           "entrant": [
             {
-              "text": "Ernst Loof",
-              "url": "https://en.wikipedia.org/wiki/Ernst_Loof"
+              "name": "Ernst Loof",
+              "title_sponsors": [
+                {
+                  "text": "Ernst Loof",
+                  "url": "https://en.wikipedia.org/wiki/Ernst_Loof"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2061,8 +2145,13 @@
         {
           "entrant": [
             {
-              "text": "Hans Herrmann",
-              "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
+              "name": "Hans Herrmann",
+              "title_sponsors": [
+                {
+                  "text": "Hans Herrmann",
+                  "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2112,8 +2201,13 @@
         {
           "entrant": [
             {
-              "text": "Erwin Bauer",
-              "url": "https://en.wikipedia.org/wiki/Erwin_Bauer"
+              "name": "Erwin Bauer",
+              "title_sponsors": [
+                {
+                  "text": "Erwin Bauer",
+                  "url": "https://en.wikipedia.org/wiki/Erwin_Bauer"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2163,8 +2257,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Espadon",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Espadon"
+              "name": "Ecurie Espadon",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Espadon",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Espadon"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2248,8 +2347,13 @@
         {
           "entrant": [
             {
-              "text": "Rennkollektiv EMW",
-              "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
+              "name": "Rennkollektiv EMW",
+              "title_sponsors": [
+                {
+                  "text": "Rennkollektiv EMW",
+                  "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2296,8 +2400,64 @@
         {
           "entrant": [
             {
-              "text": "Ernst Klodwig",
-              "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
+              "name": "Dora Greifzu",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Greifzu",
+              "url": "https://en.wikipedia.org/wiki/Greifzu"
+            },
+            "engine_constructor": {
+              "text": "BMW",
+              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "Eigenbau",
+              "url": "https://en.wikipedia.org/wiki/Greifzu"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "BMW 328",
+              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+            },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rudolf Krause",
+                "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Ernst Klodwig",
+              "title_sponsors": [
+                {
+                  "text": "Ernst Klodwig",
+                  "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2347,8 +2507,74 @@
         {
           "entrant": [
             {
-              "text": "Rodney Nuckey",
-              "url": "https://en.wikipedia.org/wiki/Rodney_Nuckey"
+              "name": "Equipe Anglaise",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Bristol",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T23",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T23"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Bristol BS1",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alan Brown",
+                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+              },
+              "rounds": [
+                7,
+                9
+              ]
+            },
+            {
+              "driver": {
+                "text": "Helmut Glöckler",
+                "url": "https://en.wikipedia.org/wiki/Helm_Gl%C3%B6ckler"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Rodney Nuckey",
+              "title_sponsors": [
+                {
+                  "text": "Rodney Nuckey",
+                  "url": "https://en.wikipedia.org/wiki/Rodney_Nuckey"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2398,8 +2624,13 @@
         {
           "entrant": [
             {
-              "text": "Günther Bechem",
-              "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
+              "name": "Günther Bechem",
+              "title_sponsors": [
+                {
+                  "text": "Günther Bechem",
+                  "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2446,8 +2677,13 @@
         {
           "entrant": [
             {
-              "text": "Escuderia Bandeirantes",
-              "url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes"
+              "name": "Escuderia Bandeirantes",
+              "title_sponsors": [
+                {
+                  "text": "Escuderia Bandeirantes",
+                  "url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2497,8 +2733,13 @@
         {
           "entrant": [
             {
-              "text": "OSCA Automobili",
-              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+              "name": "OSCA Automobili",
+              "title_sponsors": [
+                {
+                  "text": "OSCA Automobili",
+                  "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2545,8 +2786,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Milano",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+              "name": "Scuderia Milano",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Milano",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+                }
+              ]
             }
           ],
           "constructor": {

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari SpA SEFAC",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -106,8 +111,13 @@
         {
           "entrant": [
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -158,8 +168,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -235,8 +250,13 @@
         {
           "entrant": [
             {
-              "text": "Brabham Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Brabham Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Brabham Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -325,8 +345,13 @@
         {
           "entrant": [
             {
-              "text": "UDT Laystall Racing Team",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
+              "name": "UDT Laystall Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "UDT Laystall Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -446,8 +471,13 @@
         {
           "entrant": [
             {
-              "text": "Porsche System Engineering",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
+              "name": "Porsche System Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Porsche System Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Porsche"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -531,8 +561,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Maarsbergen",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+              "name": "Ecurie Maarsbergen",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Maarsbergen",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -617,8 +652,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -678,8 +718,13 @@
         {
           "entrant": [
             {
-              "text": "Bowmaker-Yeoman Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Yeoman_Credit_Racing"
+              "name": "Bowmaker-Yeoman Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Bowmaker-Yeoman Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Yeoman_Credit_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -734,7 +779,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "Ecurie Galloise",
+              "title_sponsors": []
+            }
+          ],
           "constructor": [
             {
               "chassis_constructor": {
@@ -747,66 +797,31 @@
               },
               "chassis": [
                 {
-                  "chassis": [
-                    {
-                      "text": "T53",
-                      "url": "https://en.wikipedia.org/wiki/Cooper_T53"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Climax FPF",
-                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Jackie Lewis",
-                        "url": "https://en.wikipedia.org/wiki/Jackie_Lewis"
-                      },
-                      "rounds": [
-                        1,
-                        4,
-                        5,
-                        6
-                      ]
-                    }
-                  ]
+                  "text": "T53",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T53"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
                 },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "race_drivers": [
                 {
-                  "chassis": [
-                    {
-                      "text": "T59",
-                      "url": "https://en.wikipedia.org/wiki/Cooper_T59"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Climax FPF",
-                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
+                  "driver": {
+                    "text": "Jackie Lewis",
+                    "url": "https://en.wikipedia.org/wiki/Jackie_Lewis"
                   },
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Ian Burgess",
-                        "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
-                      },
-                      "rounds": [
-                        5,
-                        6,
-                        7
-                      ]
-                    }
+                  "rounds": [
+                    1,
+                    4,
+                    5,
+                    6
                   ]
                 }
               ]
@@ -847,165 +862,19 @@
                   ]
                 }
               ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
-              "engine_constructor": {
-                "text": "Climax",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-              },
-              "chassis": [
-                {
-                  "chassis": [
-                    {
-                      "text": "18",
-                      "url": "https://en.wikipedia.org/wiki/Lotus_18"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Climax FPF",
-                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Jay Chamberlain",
-                        "url": "https://en.wikipedia.org/wiki/Jay_Chamberlain"
-                      },
-                      "rounds": [
-                        5,
-                        6,
-                        7
-                      ]
-                    },
-                    {
-                      "driver": {
-                        "text": "Ernesto Prinoth",
-                        "url": "https://en.wikipedia.org/wiki/Ernesto_Prinoth"
-                      },
-                      "rounds": [
-                        7
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "chassis": [
-                    {
-                      "text": "18/21",
-                      "url": "https://en.wikipedia.org/wiki/Lotus_18/21"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Climax FPF",
-                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Tony Shelly",
-                        "url": "https://en.wikipedia.org/wiki/Tony_Shelly"
-                      },
-                      "rounds": [
-                        5,
-                        6
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "De Tomaso",
-                "url": "https://en.wikipedia.org/wiki/De_Tomaso"
-              },
-              "engine_constructor": {
-                "text": "OSCA",
-                "url": "https://en.wikipedia.org/wiki/O.S.C.A."
-              },
-              "chassis": [
-                {
-                  "text": "F1",
-                  "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "OSCA 372",
-                  "url": "https://en.wikipedia.org/wiki/O.S.C.A."
-                },
-                "displacement_l": 1.5,
-                "type": "L4",
-                "layout": "L",
-                "cylinders": 4
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Roberto Lippi",
-                    "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
-                  },
-                  "rounds": [
-                    7
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "LDS",
-                "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
-              },
-              "engine_constructor": {
-                "text": "Alfa Romeo",
-                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-              },
-              "chassis": [],
-              "engine": {
-                "model": {
-                  "text": "Alfa Romeo Giulietta",
-                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-                },
-                "displacement_l": 1.5,
-                "type": "L4",
-                "layout": "L",
-                "cylinders": 4
-              },
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Doug Serrurier",
-                    "url": "https://en.wikipedia.org/wiki/Doug_Serrurier"
-                  },
-                  "rounds": [
-                    9
-                  ]
-                }
-              ]
             }
           ]
         },
         {
           "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "R.R.C. Walker Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "R.R.C. Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1054,8 +923,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Filipinetti",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Filipinetti"
+              "name": "Ecurie Nationale Suisse Ecurie Filipinetti",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Filipinetti",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Filipinetti"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1184,8 +1058,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia SSS Republica di Venezia",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+              "name": "Scuderia SSS Republica di Venezia",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia SSS Republica di Venezia",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1270,8 +1149,13 @@
         {
           "entrant": [
             {
-              "text": "Emeryson Cars",
-              "url": "https://en.wikipedia.org/wiki/Emeryson"
+              "name": "Emeryson Cars",
+              "title_sponsors": [
+                {
+                  "text": "Emeryson Cars",
+                  "url": "https://en.wikipedia.org/wiki/Emeryson"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1350,8 +1234,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Nationale Belge",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Nationale_Belge"
+              "name": "Equipe Nationale Belge",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Nationale Belge",
+                  "url": "https://en.wikipedia.org/wiki/Equipe_Nationale_Belge"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1434,8 +1323,13 @@
         {
           "entrant": [
             {
-              "text": "Autosport Team Wolfgang Seidel",
-              "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
+              "name": "Autosport Team Wolfgang Seidel",
+              "title_sponsors": [
+                {
+                  "text": "Autosport Team Wolfgang Seidel",
+                  "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1507,8 +1401,153 @@
         {
           "entrant": [
             {
-              "text": "Gilby Engineering",
-              "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+              "name": "Anglo-American Equipe",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T59",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T59"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FPF",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Burgess",
+                "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
+              },
+              "rounds": [
+                5,
+                6,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Ecurie Excelsior",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
+            {
+              "text": "18",
+              "url": "https://en.wikipedia.org/wiki/Lotus_18"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FPF",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jay Chamberlain",
+                "url": "https://en.wikipedia.org/wiki/Jay_Chamberlain"
+              },
+              "rounds": [
+                5,
+                6,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "John Dalton",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
+            {
+              "text": "18/21",
+              "url": "https://en.wikipedia.org/wiki/Lotus_18/21"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FPF",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tony Shelly",
+                "url": "https://en.wikipedia.org/wiki/Tony_Shelly"
+              },
+              "rounds": [
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Gilby Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Gilby Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1548,8 +1587,13 @@
         {
           "entrant": [
             {
-              "text": "Bernard Collomb",
-              "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
+              "name": "Bernard Collomb",
+              "title_sponsors": [
+                {
+                  "text": "Bernard Collomb",
+                  "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1593,8 +1637,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia de Tomaso",
-              "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+              "name": "Scuderia de Tomaso",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia de Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1635,8 +1684,58 @@
         {
           "entrant": [
             {
-              "text": "Gerry Ashmore",
-              "url": "https://en.wikipedia.org/wiki/Gerry_Ashmore"
+              "name": "Scuderia Settecolli",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "De Tomaso",
+              "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+            },
+            "engine_constructor": {
+              "text": "OSCA",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            }
+          },
+          "chassis": [
+            {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "OSCA 372",
+              "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Roberto Lippi",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Gerry Ashmore",
+              "title_sponsors": [
+                {
+                  "text": "Gerry Ashmore",
+                  "url": "https://en.wikipedia.org/wiki/Gerry_Ashmore"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1680,8 +1779,58 @@
         {
           "entrant": [
             {
-              "text": "Dupont Team Zerex",
-              "url": "https://en.wikipedia.org/wiki/Penske_Racing"
+              "name": "Scuderia Jolly Club",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
+            {
+              "text": "18",
+              "url": "https://en.wikipedia.org/wiki/Lotus_18"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FPF",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ernesto Prinoth",
+                "url": "https://en.wikipedia.org/wiki/Ernesto_Prinoth"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Dupont Team Zerex",
+              "title_sponsors": [
+                {
+                  "text": "Dupont Team Zerex",
+                  "url": "https://en.wikipedia.org/wiki/Penske_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1725,8 +1874,13 @@
         {
           "entrant": [
             {
-              "text": "Hap Sharp",
-              "url": "https://en.wikipedia.org/wiki/Hap_Sharp"
+              "name": "Hap Sharp",
+              "title_sponsors": [
+                {
+                  "text": "Hap Sharp",
+                  "url": "https://en.wikipedia.org/wiki/Hap_Sharp"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1770,8 +1924,13 @@
         {
           "entrant": [
             {
-              "text": "Jim Hall",
-              "url": "https://en.wikipedia.org/wiki/Jim_Hall_(racing_driver)"
+              "name": "Jim Hall",
+              "title_sponsors": [
+                {
+                  "text": "Jim Hall",
+                  "url": "https://en.wikipedia.org/wiki/Jim_Hall_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1815,8 +1974,13 @@
         {
           "entrant": [
             {
-              "text": "John Mecom",
-              "url": "https://en.wikipedia.org/wiki/Mecom_Racing_Team"
+              "name": "John Mecom",
+              "title_sponsors": [
+                {
+                  "text": "John Mecom",
+                  "url": "https://en.wikipedia.org/wiki/Mecom_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1860,8 +2024,13 @@
         {
           "entrant": [
             {
-              "text": "Ernie Pieterse",
-              "url": "https://en.wikipedia.org/wiki/Ernie_Pieterse"
+              "name": "Ernie Pieterse",
+              "title_sponsors": [
+                {
+                  "text": "Ernie Pieterse",
+                  "url": "https://en.wikipedia.org/wiki/Ernie_Pieterse"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1905,8 +2074,13 @@
         {
           "entrant": [
             {
-              "text": "John Love",
-              "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+              "name": "John Love",
+              "title_sponsors": [
+                {
+                  "text": "John Love",
+                  "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1950,8 +2124,13 @@
         {
           "entrant": [
             {
-              "text": "Neville Lederle",
-              "url": "https://en.wikipedia.org/wiki/Neville_Lederle"
+              "name": "Neville Lederle",
+              "title_sponsors": [
+                {
+                  "text": "Neville Lederle",
+                  "url": "https://en.wikipedia.org/wiki/Neville_Lederle"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1995,8 +2174,53 @@
         {
           "entrant": [
             {
-              "text": "Mike Harris",
-              "url": "https://en.wikipedia.org/wiki/Mike_Harris_(racing_driver)"
+              "name": "Otelle Nucci",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "LDS",
+              "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
+            },
+            "engine_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            }
+          },
+          "chassis": [],
+          "engine": {
+            "model": {
+              "text": "Alfa Romeo Giulietta",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Doug Serrurier",
+                "url": "https://en.wikipedia.org/wiki/Doug_Serrurier"
+              },
+              "rounds": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Mike Harris",
+              "title_sponsors": [
+                {
+                  "text": "Mike Harris",
+                  "url": "https://en.wikipedia.org/wiki/Mike_Harris_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Revson Racing",
-              "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+              "name": "Revson Racing",
+              "title_sponsors": [
+                {
+                  "text": "Revson Racing",
+                  "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -62,8 +67,13 @@
         {
           "entrant": [
             {
-              "text": "Bernard Collomb",
-              "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
+              "name": "Bernard Collomb",
+              "title_sponsors": [
+                {
+                  "text": "Bernard Collomb",
+                  "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -113,8 +123,13 @@
         {
           "entrant": [
             {
-              "text": "Maurice Trintignant",
-              "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+              "name": "Maurice Trintignant",
+              "title_sponsors": [
+                {
+                  "text": "Maurice Trintignant",
+                  "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -168,8 +183,13 @@
         {
           "entrant": [
             {
-              "text": "Brabham Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Brabham Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Brabham Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -226,8 +246,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -293,8 +318,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -371,8 +401,13 @@
         {
           "entrant": [
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -476,8 +511,13 @@
         {
           "entrant": [
             {
-              "text": "British Racing Partnership",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
+              "name": "British Racing Partnership",
+              "title_sponsors": [
+                {
+                  "text": "British Racing Partnership",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -598,142 +638,59 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "engine_constructor": {
-                "text": "Climax",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-              },
-              "chassis": [
-                {
-                  "text": "BT11",
-                  "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Climax FWMV",
-                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-                },
-                "displacement_l": 1.5,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Bob Anderson",
-                    "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8
-                  ]
-                }
-              ]
+              "name": "DW Racing Enterprises",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
             {
-              "chassis_constructor": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-              },
-              "chassis": [
-                {
-                  "text": "BT10",
-                  "url": "https://en.wikipedia.org/wiki/Brabham_BT10"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Ford 109E",
-                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-                },
-                "displacement_l": 1.5,
-                "type": "L4",
-                "layout": "L",
-                "cylinders": 4
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Frank Gardner",
-                    "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
-                  },
-                  "rounds": [
-                    5
-                  ]
-                }
-              ]
+              "text": "BT11",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FWMV",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
             {
-              "chassis_constructor": {
-                "text": "Cooper",
-                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Bob Anderson",
+                "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
               },
-              "engine_constructor": {
-                "text": "Climax",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-              },
-              "chassis": [
-                {
-                  "text": "T60",
-                  "url": "https://en.wikipedia.org/wiki/Cooper_T60"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Climax FWMV",
-                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-                },
-                "displacement_l": 1.5,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jean-Claude Rudaz",
-                    "url": "https://en.wikipedia.org/wiki/Jean-Claude_Rudaz"
-                  },
-                  "rounds": [
-                    8
-                  ]
-                }
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
               ]
             }
           ]
@@ -741,8 +698,13 @@
         {
           "entrant": [
             {
-              "text": "Reg Parnell Racing",
-              "url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing"
+              "name": "Reg Parnell Racing",
+              "title_sponsors": [
+                {
+                  "text": "Reg Parnell Racing",
+                  "url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -876,8 +838,13 @@
         {
           "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "R.R.C. Walker Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "R.R.C. Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1068,12 +1035,17 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            {
-              "text": "North American Racing Team",
-              "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
+              "name": "Scuderia Ferrari SpA SEFAC North American Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                {
+                  "text": "North American Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1171,8 +1143,13 @@
         {
           "entrant": [
             {
-              "text": "Siffert Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+              "name": "Siffert Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Siffert Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1273,8 +1250,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Maarsbergen",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+              "name": "Ecurie Maarsbergen",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Maarsbergen",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1322,8 +1304,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Centro Sud",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+              "name": "Scuderia Centro Sud",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Centro Sud",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1391,8 +1378,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Scirocco Belge",
-              "url": "https://en.wikipedia.org/wiki/Scirocco-Powell"
+              "name": "Equipe Scirocco Belge",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Scirocco Belge",
+                  "url": "https://en.wikipedia.org/wiki/Scirocco-Powell"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1440,8 +1432,13 @@
         {
           "entrant": [
             {
-              "text": "Bob Gerard Racing",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              "name": "Bob Gerard Racing",
+              "title_sponsors": [
+                {
+                  "text": "Bob Gerard Racing",
+                  "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1488,8 +1485,13 @@
         {
           "entrant": [
             {
-              "text": "Ian Raby Racing",
-              "url": "https://en.wikipedia.org/wiki/Ian_Raby"
+              "name": "Ian Raby Racing",
+              "title_sponsors": [
+                {
+                  "text": "Ian Raby Racing",
+                  "url": "https://en.wikipedia.org/wiki/Ian_Raby"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1540,8 +1542,64 @@
         {
           "entrant": [
             {
-              "text": "Honda R & D Company",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+              "name": "John Willment Automobiles",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "BT10",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT10"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford 109E",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Frank Gardner",
+                "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Honda R & D Company",
+              "title_sponsors": [
+                {
+                  "text": "Honda R & D Company",
+                  "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1593,8 +1651,13 @@
         {
           "entrant": [
             {
-              "text": "Derrington-Francis Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Derrington-Francis"
+              "name": "Derrington-Francis Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Derrington-Francis Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Derrington-Francis"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1634,6 +1697,57 @@
               "driver": {
                 "text": "Mário de Araújo Cabral",
                 "url": "https://en.wikipedia.org/wiki/M%C3%A1rio_de_Ara%C3%BAjo_Cabral"
+              },
+              "rounds": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Fabre Urbain",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T60",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T60"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FWMV",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
+            },
+            "displacement_l": 1.5,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean-Claude Rudaz",
+                "url": "https://en.wikipedia.org/wiki/Jean-Claude_Rudaz"
               },
               "rounds": [
                 8

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Daimler Benz AG",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+              "name": "Daimler Benz AG",
+              "title_sponsors": [
+                {
+                  "text": "Daimler Benz AG",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -121,8 +126,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -308,8 +318,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -466,8 +481,13 @@
         {
           "entrant": [
             {
-              "text": "Alberto Uría",
-              "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
+              "name": "Alberto Uría",
+              "title_sponsors": [
+                {
+                  "text": "Alberto Uría",
+                  "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -517,8 +537,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Lancia",
-              "url": "https://en.wikipedia.org/wiki/Lancia"
+              "name": "Scuderia Lancia",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Lancia",
+                  "url": "https://en.wikipedia.org/wiki/Lancia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -600,8 +625,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+              "name": "Equipe Gordini",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Gordini",
+                  "url": "https://en.wikipedia.org/wiki/Gordini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -721,8 +751,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+              "name": "Ecurie Rosier",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Rosier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -774,8 +809,13 @@
         {
           "entrant": [
             {
-              "text": "Vandervell Products",
-              "url": "https://en.wikipedia.org/wiki/Vanwall"
+              "name": "Vandervell Products",
+              "title_sponsors": [
+                {
+                  "text": "Vandervell Products",
+                  "url": "https://en.wikipedia.org/wiki/Vanwall"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -846,8 +886,13 @@
         {
           "entrant": [
             {
-              "text": "Stirling Moss Ltd",
-              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+              "name": "Stirling Moss Ltd",
+              "title_sponsors": [
+                {
+                  "text": "Stirling Moss Ltd",
+                  "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -925,8 +970,13 @@
         {
           "entrant": [
             {
-              "text": "E.N. Whiteaway",
-              "url": "https://en.wikipedia.org/wiki/Ted_Whiteaway"
+              "name": "E.N. Whiteaway",
+              "title_sponsors": [
+                {
+                  "text": "E.N. Whiteaway",
+                  "url": "https://en.wikipedia.org/wiki/Ted_Whiteaway"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -973,8 +1023,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Nationale Belge",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Nationale_Belge"
+              "name": "Equipe Nationale Belge",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Nationale Belge",
+                  "url": "https://en.wikipedia.org/wiki/Equipe_Nationale_Belge"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1024,8 +1079,13 @@
         {
           "entrant": [
             {
-              "text": "Gould's Garage (Bristol)",
-              "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+              "name": "Gould's Garage (Bristol)",
+              "title_sponsors": [
+                {
+                  "text": "Gould's Garage (Bristol)",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1076,8 +1136,13 @@
         {
           "entrant": [
             {
-              "text": "Connaught Engineering",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              "name": "Connaught Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Connaught Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1136,8 +1201,13 @@
         {
           "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "R.R.C. Walker Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "R.R.C. Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1196,8 +1266,13 @@
         {
           "entrant": [
             {
-              "text": "Leslie Marr",
-              "url": "https://en.wikipedia.org/wiki/Leslie_Marr"
+              "name": "Leslie Marr",
+              "title_sponsors": [
+                {
+                  "text": "Leslie Marr",
+                  "url": "https://en.wikipedia.org/wiki/Leslie_Marr"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1247,8 +1322,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1298,8 +1378,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Owen_Racing_Organisation"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Owen_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1349,8 +1434,13 @@
         {
           "entrant": [
             {
-              "text": "Gilby Engineering",
-              "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+              "name": "Gilby Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Gilby Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1400,8 +1490,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Volpini",
-              "url": "https://en.wikipedia.org/wiki/Arzani-Volpini"
+              "name": "Scuderia Volpini",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Volpini",
+                  "url": "https://en.wikipedia.org/wiki/Arzani-Volpini"
+                }
+              ]
             }
           ],
           "constructor": {

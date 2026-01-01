@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "MRD International",
-              "url": "https://en.wikipedia.org/wiki/Motor_Racing_Developments"
+              "name": "MRD International",
+              "title_sponsors": [
+                {
+                  "text": "MRD International",
+                  "url": "https://en.wikipedia.org/wiki/Motor_Racing_Developments"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -105,8 +110,13 @@
         {
           "entrant": [
             {
-              "text": "Tyrrell Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Tyrrell Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Tyrrell Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -213,8 +223,13 @@
         {
           "entrant": [
             {
-              "text": "Williams Grand Prix Engineering",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+              "name": "Williams Grand Prix Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Williams Grand Prix Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -291,16 +306,21 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "TAG Turbo",
-              "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+              "name": "Marlboro McLaren TAG Turbo",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                },
+                {
+                  "text": "McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "TAG Turbo",
+                  "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -361,12 +381,17 @@
         {
           "entrant": [
             {
-              "text": "Skoal Bandit",
-              "url": "https://en.wikipedia.org/wiki/U.S._Smokeless_Tobacco_Company"
-            },
-            {
-              "text": "Formula 1 Team",
-              "url": "https://en.wikipedia.org/wiki/RAM_Racing"
+              "name": "Skoal Bandit Formula 1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Skoal Bandit",
+                  "url": "https://en.wikipedia.org/wiki/U.S._Smokeless_Tobacco_Company"
+                },
+                {
+                  "text": "Formula 1 Team",
+                  "url": "https://en.wikipedia.org/wiki/RAM_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -457,12 +482,17 @@
         {
           "entrant": [
             {
-              "text": "John Player Special",
-              "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Special Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "John Player Special",
+                  "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -523,8 +553,13 @@
         {
           "entrant": [
             {
-              "text": "Team ATS",
-              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+              "name": "Team ATS",
+              "title_sponsors": [
+                {
+                  "text": "Team ATS",
+                  "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -615,12 +650,17 @@
         {
           "entrant": [
             {
-              "text": "Équipe Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+              "name": "Équipe Renault Elf",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Renault",
+                  "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+                },
+                {
+                  "text": "Elf",
+                  "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -695,16 +735,21 @@
         {
           "entrant": [
             {
-              "text": "Barclay",
-              "url": "https://en.wikipedia.org/wiki/Barclay_(cigarette)"
-            },
-            {
-              "text": "Nordica",
-              "url": "https://en.wikipedia.org/wiki/Nordica_(company)"
-            },
-            {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+              "name": "Barclay Nordica Arrows",
+              "title_sponsors": [
+                {
+                  "text": "Barclay",
+                  "url": "https://en.wikipedia.org/wiki/Barclay_(cigarette)"
+                },
+                {
+                  "text": "Nordica",
+                  "url": "https://en.wikipedia.org/wiki/Nordica_(company)"
+                },
+                {
+                  "text": "Arrows",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -863,8 +908,13 @@
         {
           "entrant": [
             {
-              "text": "Toleman Group Motorsport",
-              "url": "https://en.wikipedia.org/wiki/Toleman"
+              "name": "Toleman Group Motorsport",
+              "title_sponsors": [
+                {
+                  "text": "Toleman Group Motorsport",
+                  "url": "https://en.wikipedia.org/wiki/Toleman"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -983,8 +1033,13 @@
         {
           "entrant": [
             {
-              "text": "Spirit Racing",
-              "url": "https://en.wikipedia.org/wiki/Spirit_Racing"
+              "name": "Spirit Racing",
+              "title_sponsors": [
+                {
+                  "text": "Spirit Racing",
+                  "url": "https://en.wikipedia.org/wiki/Spirit_Racing"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1101,12 +1156,17 @@
         {
           "entrant": [
             {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Group"
-            },
-            {
-              "text": "Team Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+              "name": "Benetton Team Alfa Romeo",
+              "title_sponsors": [
+                {
+                  "text": "Benetton",
+                  "url": "https://en.wikipedia.org/wiki/Benetton_Group"
+                },
+                {
+                  "text": "Team Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1167,8 +1227,13 @@
         {
           "entrant": [
             {
-              "text": "Osella Squadra Corse",
-              "url": "https://en.wikipedia.org/wiki/Osella"
+              "name": "Osella Squadra Corse",
+              "title_sponsors": [
+                {
+                  "text": "Osella Squadra Corse",
+                  "url": "https://en.wikipedia.org/wiki/Osella"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1272,12 +1337,17 @@
         {
           "entrant": [
             {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-            },
-            {
-              "text": "Loto",
-              "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+              "name": "Ligier Loto",
+              "title_sponsors": [
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                },
+                {
+                  "text": "Loto",
+                  "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1342,8 +1412,13 @@
         {
           "entrant": [
             {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {

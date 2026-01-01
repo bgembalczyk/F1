@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+              "name": "West McLaren Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -61,8 +66,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+              "name": "Scuderia Ferrari Marlboro",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -113,8 +123,13 @@
         {
           "entrant": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+              "name": "Benson & Hedges Jordan",
+              "title_sponsors": [
+                {
+                  "text": "Benson & Hedges",
+                  "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -167,158 +182,128 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Jaguar",
-                "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
-              },
-              "engine_constructor": {
-                "text": "Cosworth",
-                "url": "https://en.wikipedia.org/wiki/Cosworth"
-              },
-              "chassis": [
+              "name": "HSBC Jaguar Racing F1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Jaguar",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
+            },
+            "engine_constructor": {
+              "text": "Cosworth",
+              "url": "https://en.wikipedia.org/wiki/Cosworth"
+            }
+          },
+          "chassis": [
+            {
+              "text": "R1",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_R1"
+            }
+          ],
+          "engine_†": {
+            "text": "Cosworth CR-2",
+            "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
+          },
+          "no": [
+            {
+              "no": 7,
+              "race_drivers": [
                 {
-                  "text": "R1",
-                  "url": "https://en.wikipedia.org/wiki/Jaguar_R1"
-                }
-              ],
-              "engine_†": {
-                "text": "Cosworth CR-2",
-                "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
-              },
-              "no": [
-                {
-                  "no": 7,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Eddie Irvine",
-                        "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-                      }
-                    },
-                    {
-                      "driver": {
-                        "text": "Luciano Burti",
-                        "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
-                      },
-                      "rounds": [
-                        10
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Eddie Irvine",
+                    "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+                  }
                 },
                 {
-                  "no": 8,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Johnny Herbert",
-                        "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-                      }
-                    }
+                  "driver": {
+                    "text": "Luciano Burti",
+                    "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
+                  },
+                  "rounds": [
+                    10
                   ]
                 }
               ]
             },
             {
-              "chassis_constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_F1"
-              },
-              "engine_constructor": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-              },
-              "chassis": [
+              "no": 8,
+              "race_drivers": [
                 {
-                  "text": "FW22",
-                  "url": "https://en.wikipedia.org/wiki/Williams_FW22"
-                }
-              ],
-              "engine_†": {
-                "text": "BMW E41/4",
-                "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
-              },
-              "no": [
-                {
-                  "no": 9,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Ralf Schumacher",
-                        "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 10,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Jenson Button",
-                        "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "engine_constructor": {
-                "text": "Supertec",
-                "url": "https://en.wikipedia.org/wiki/Supertec"
-              },
-              "chassis": [
-                {
-                  "text": "A21",
-                  "url": "https://en.wikipedia.org/wiki/Arrows_A21"
-                }
-              ],
-              "engine_†": {
-                "text": "Supertec FB02",
-                "url": "https://en.wikipedia.org/wiki/Supertec"
-              },
-              "no": [
-                {
-                  "no": 18,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Pedro de la Rosa",
-                        "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 19,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Jos Verstappen",
-                        "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-                      }
-                    }
-                  ]
+                  "driver": {
+                    "text": "Johnny Herbert",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+                  }
                 }
               ]
             }
-          ],
-          "engine_†": null,
-          "no": null
+          ]
         },
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "BMW WilliamsF1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_F1"
+            },
+            "engine_constructor": {
+              "text": "BMW",
+              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "FW22",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW22"
+            }
+          ],
+          "engine_†": {
+            "text": "BMW E41/4",
+            "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
+          },
+          "no": [
+            {
+              "no": 9,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ralf Schumacher",
+                    "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 10,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jenson Button",
+                    "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Mild Seven Benetton Playlife",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -369,8 +354,13 @@
         {
           "entrant": [
             {
-              "text": "Gauloises",
-              "url": "https://en.wikipedia.org/wiki/Gauloises"
+              "name": "Gauloises Prost Peugeot",
+              "title_sponsors": [
+                {
+                  "text": "Gauloises",
+                  "url": "https://en.wikipedia.org/wiki/Gauloises"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -421,12 +411,17 @@
         {
           "entrant": [
             {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
-            },
-            {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Red Bull Sauber Petronas",
+              "title_sponsors": [
+                {
+                  "text": "Red Bull",
+                  "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
+                },
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -477,8 +472,65 @@
         {
           "entrant": [
             {
-              "text": "Telefónica",
-              "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
+              "name": "Arrows F1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Arrows",
+              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+            },
+            "engine_constructor": {
+              "text": "Supertec",
+              "url": "https://en.wikipedia.org/wiki/Supertec"
+            }
+          },
+          "chassis": [
+            {
+              "text": "A21",
+              "url": "https://en.wikipedia.org/wiki/Arrows_A21"
+            }
+          ],
+          "engine_†": {
+            "text": "Supertec FB02",
+            "url": "https://en.wikipedia.org/wiki/Supertec"
+          },
+          "no": [
+            {
+              "no": 18,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Pedro de la Rosa",
+                    "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 19,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jos Verstappen",
+                    "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Telefónica Minardi Fondmetal",
+              "title_sponsors": [
+                {
+                  "text": "Telefónica",
+                  "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -529,8 +581,13 @@
         {
           "entrant": [
             {
-              "text": "Lucky Strike",
-              "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+              "name": "Lucky Strike Reynard BAR Honda",
+              "title_sponsors": [
+                {
+                  "text": "Lucky Strike",
+                  "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+                }
+              ]
             }
           ],
           "constructor": {

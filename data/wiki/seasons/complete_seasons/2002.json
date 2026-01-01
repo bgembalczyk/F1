@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+              "name": "Scuderia Ferrari Marlboro",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -68,8 +73,13 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+              "name": "West McLaren Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -124,118 +134,73 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_F1"
-              },
-              "engine_constructor": {
-                "text": "BMW",
-                "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-              },
-              "chassis": [
+              "name": "BMW WilliamsF1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_F1"
+            },
+            "engine_constructor": {
+              "text": "BMW",
+              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+            }
+          },
+          "chassis": [
+            {
+              "text": "FW24",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW24"
+            }
+          ],
+          "engine_†": {
+            "text": "BMW P82",
+            "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
+          },
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
+          "no": [
+            {
+              "no": 5,
+              "race_drivers": [
                 {
-                  "text": "FW24",
-                  "url": "https://en.wikipedia.org/wiki/Williams_FW24"
-                }
-              ],
-              "engine_†": {
-                "text": "BMW P82",
-                "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
-              },
-              "tyre": [
-                {
-                  "text": "Michelin",
-                  "url": "https://en.wikipedia.org/wiki/Michelin"
-                }
-              ],
-              "no": [
-                {
-                  "no": 5,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Ralf Schumacher",
-                        "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 6,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Juan Pablo Montoya",
-                        "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
-                      }
-                    }
-                  ]
+                  "driver": {
+                    "text": "Ralf Schumacher",
+                    "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+                  }
                 }
               ]
             },
             {
-              "chassis_constructor": {
-                "text": "Jaguar",
-                "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
-              },
-              "engine_constructor": {
-                "text": "Cosworth",
-                "url": "https://en.wikipedia.org/wiki/Cosworth"
-              },
-              "chassis": [
+              "no": 6,
+              "race_drivers": [
                 {
-                  "text": "R3",
-                  "url": "https://en.wikipedia.org/wiki/Jaguar_R3"
-                },
-                {
-                  "text": "R3B",
-                  "url": "https://en.wikipedia.org/wiki/Jaguar_R3"
-                }
-              ],
-              "engine_†": "Cosworth CR-3 Cosworth CR-4",
-              "tyre": [
-                {
-                  "text": "Michelin",
-                  "url": "https://en.wikipedia.org/wiki/Michelin"
-                }
-              ],
-              "no": [
-                {
-                  "no": 16,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Eddie Irvine",
-                        "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 17,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Pedro de la Rosa",
-                        "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-                      }
-                    }
-                  ]
+                  "driver": {
+                    "text": "Juan Pablo Montoya",
+                    "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+                  }
                 }
               ]
             }
-          ],
-          "engine_†": null,
-          "no": null
+          ]
         },
         {
           "entrant": [
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Sauber Petronas",
+              "title_sponsors": [
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -319,8 +284,13 @@
         {
           "entrant": [
             {
-              "text": "DHL",
-              "url": "https://en.wikipedia.org/wiki/DHL"
+              "name": "DHL Jordan Honda",
+              "title_sponsors": [
+                {
+                  "text": "DHL",
+                  "url": "https://en.wikipedia.org/wiki/DHL"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -377,8 +347,13 @@
         {
           "entrant": [
             {
-              "text": "Lucky Strike",
-              "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+              "name": "Lucky Strike BAR Honda",
+              "title_sponsors": [
+                {
+                  "text": "Lucky Strike",
+                  "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -435,8 +410,13 @@
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "Mild Seven Renault F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -493,8 +473,72 @@
         {
           "entrant": [
             {
-              "text": "Orange",
-              "url": "https://en.wikipedia.org/wiki/Orange_S.A."
+              "name": "Jaguar Racing F1 Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Jaguar",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
+            },
+            "engine_constructor": {
+              "text": "Cosworth",
+              "url": "https://en.wikipedia.org/wiki/Cosworth"
+            }
+          },
+          "chassis": [
+            {
+              "text": "R3",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_R3"
+            },
+            {
+              "text": "R3B",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_R3"
+            }
+          ],
+          "engine_†": "Cosworth CR-3 Cosworth CR-4",
+          "tyre": [
+            {
+              "text": "Michelin",
+              "url": "https://en.wikipedia.org/wiki/Michelin"
+            }
+          ],
+          "no": [
+            {
+              "no": 16,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Eddie Irvine",
+                    "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 17,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Pedro de la Rosa",
+                    "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Orange Arrows",
+              "title_sponsors": [
+                {
+                  "text": "Orange",
+                  "url": "https://en.wikipedia.org/wiki/Orange_S.A."
+                }
+              ]
             }
           ],
           "constructor": {
@@ -579,8 +623,13 @@
         {
           "entrant": [
             {
-              "text": "KL",
-              "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+              "name": "KL Minardi Asiatech",
+              "title_sponsors": [
+                {
+                  "text": "KL",
+                  "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -664,8 +713,13 @@
         {
           "entrant": [
             {
-              "text": "Panasonic",
-              "url": "https://en.wikipedia.org/wiki/Panasonic"
+              "name": "Panasonic Toyota Racing",
+              "title_sponsors": [
+                {
+                  "text": "Panasonic",
+                  "url": "https://en.wikipedia.org/wiki/Panasonic"
+                }
+              ]
             }
           ],
           "constructor": {

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -148,8 +153,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -294,8 +304,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Centro Sud",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+              "name": "Scuderia Centro Sud",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Centro Sud",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -431,8 +446,13 @@
         {
           "entrant": [
             {
-              "text": "Luigi Piotti",
-              "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
+              "name": "Luigi Piotti",
+              "title_sponsors": [
+                {
+                  "text": "Luigi Piotti",
+                  "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -485,8 +505,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -573,8 +598,13 @@
         {
           "entrant": [
             {
-              "text": "Connaught Engineering",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              "name": "Connaught Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Connaught Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -633,8 +663,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -751,8 +786,13 @@
         {
           "entrant": [
             {
-              "text": "Vandervell Products",
-              "url": "https://en.wikipedia.org/wiki/Vanwall"
+              "name": "Vandervell Products",
+              "title_sponsors": [
+                {
+                  "text": "Vandervell Products",
+                  "url": "https://en.wikipedia.org/wiki/Vanwall"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -841,8 +881,13 @@
         {
           "entrant": [
             {
-              "text": "H.H. Gould",
-              "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+              "name": "H.H. Gould",
+              "title_sponsors": [
+                {
+                  "text": "H.H. Gould",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Gould"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -897,8 +942,13 @@
         {
           "entrant": [
             {
-              "text": "Jo Bonnier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier"
+              "name": "Jo Bonnier",
+              "title_sponsors": [
+                {
+                  "text": "Jo Bonnier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -948,8 +998,13 @@
         {
           "entrant": [
             {
-              "text": "Gilby Engineering",
-              "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+              "name": "Gilby Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Gilby Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -999,8 +1054,13 @@
         {
           "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "R.R.C. Walker Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "R.R.C. Walker Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1083,8 +1143,13 @@
         {
           "entrant": [
             {
-              "text": "Bob Gerard",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              "name": "Bob Gerard",
+              "title_sponsors": [
+                {
+                  "text": "Bob Gerard",
+                  "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1134,8 +1199,13 @@
         {
           "entrant": [
             {
-              "text": "Bruce Halford",
-              "url": "https://en.wikipedia.org/wiki/Bruce_Halford"
+              "name": "Bruce Halford",
+              "title_sponsors": [
+                {
+                  "text": "Bruce Halford",
+                  "url": "https://en.wikipedia.org/wiki/Bruce_Halford"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1187,8 +1257,13 @@
         {
           "entrant": [
             {
-              "text": "Dr Ing F. Porsche KG",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
+              "name": "Dr Ing F. Porsche KG",
+              "title_sponsors": [
+                {
+                  "text": "Dr Ing F. Porsche KG",
+                  "url": "https://en.wikipedia.org/wiki/Porsche"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1242,7 +1317,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "Ridgeway Management",
+              "title_sponsors": []
+            }
+          ],
           "constructor": {
             "chassis_constructor": {
               "text": "Cooper",
@@ -1315,8 +1395,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Maarsbergen",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+              "name": "Ecurie Maarsbergen",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Maarsbergen",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1363,8 +1448,13 @@
         {
           "entrant": [
             {
-              "text": "J.B. Naylor",
-              "url": "https://en.wikipedia.org/wiki/Brian_Naylor_(racing_driver)"
+              "name": "J.B. Naylor",
+              "title_sponsors": [
+                {
+                  "text": "J.B. Naylor",
+                  "url": "https://en.wikipedia.org/wiki/Brian_Naylor_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1414,8 +1504,13 @@
         {
           "entrant": [
             {
-              "text": "Dick Gibson",
-              "url": "https://en.wikipedia.org/wiki/Dick_Gibson_(racing_driver)"
+              "name": "Dick Gibson",
+              "title_sponsors": [
+                {
+                  "text": "Dick Gibson",
+                  "url": "https://en.wikipedia.org/wiki/Dick_Gibson_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1465,8 +1560,13 @@
         {
           "entrant": [
             {
-              "text": "Francisco Godia Sales",
-              "url": "https://en.wikipedia.org/wiki/Paco_Godia"
+              "name": "Francisco Godia Sales",
+              "title_sponsors": [
+                {
+                  "text": "Francisco Godia Sales",
+                  "url": "https://en.wikipedia.org/wiki/Paco_Godia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1518,8 +1618,13 @@
         {
           "entrant": [
             {
-              "text": "Ottorino Volonterio",
-              "url": "https://en.wikipedia.org/wiki/Ottorino_Volonterio"
+              "name": "Ottorino Volonterio",
+              "title_sponsors": [
+                {
+                  "text": "Ottorino Volonterio",
+                  "url": "https://en.wikipedia.org/wiki/Ottorino_Volonterio"
+                }
+              ]
             }
           ],
           "constructor": {

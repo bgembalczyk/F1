@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Winfield",
-              "url": "https://en.wikipedia.org/wiki/Winfield_(cigarette)"
+              "name": "Winfield Williams",
+              "title_sponsors": [
+                {
+                  "text": "Winfield",
+                  "url": "https://en.wikipedia.org/wiki/Winfield_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -67,8 +72,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+              "name": "Scuderia Ferrari Marlboro",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -125,8 +135,13 @@
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "Mild Seven Benetton Playlife",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -183,8 +198,13 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+              "name": "West McLaren Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -241,8 +261,13 @@
         {
           "entrant": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+              "name": "Benson & Hedges Jordan",
+              "title_sponsors": [
+                {
+                  "text": "Benson & Hedges",
+                  "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -299,8 +324,13 @@
         {
           "entrant": [
             {
-              "text": "Gauloises",
-              "url": "https://en.wikipedia.org/wiki/Gauloises"
+              "name": "Gauloises Prost Peugeot",
+              "title_sponsors": [
+                {
+                  "text": "Gauloises",
+                  "url": "https://en.wikipedia.org/wiki/Gauloises"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -357,12 +387,17 @@
         {
           "entrant": [
             {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
-            },
-            {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Red Bull Sauber Petronas",
+              "title_sponsors": [
+                {
+                  "text": "Red Bull",
+                  "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
+                },
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -419,8 +454,13 @@
         {
           "entrant": [
             {
-              "text": "Zepter",
-              "url": "https://en.wikipedia.org/wiki/Zepter_International"
+              "name": "Danka Zepter Arrows",
+              "title_sponsors": [
+                {
+                  "text": "Zepter",
+                  "url": "https://en.wikipedia.org/wiki/Zepter_International"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -477,8 +517,13 @@
         {
           "entrant": [
             {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
+              "name": "HSBC Stewart Ford",
+              "title_sponsors": [
+                {
+                  "text": "HSBC",
+                  "url": "https://en.wikipedia.org/wiki/HSBC"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -561,8 +606,13 @@
         {
           "entrant": [
             {
-              "text": "PIAA",
-              "url": "https://en.wikipedia.org/wiki/PIAA_Corporation"
+              "name": "PIAA Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "PIAA",
+                  "url": "https://en.wikipedia.org/wiki/PIAA_Corporation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -619,8 +669,13 @@
         {
           "entrant": [
             {
-              "text": "Fondmetal",
-              "url": "https://en.wikipedia.org/wiki/Fondmetal"
+              "name": "Fondmetal Minardi Team",
+              "title_sponsors": [
+                {
+                  "text": "Fondmetal",
+                  "url": "https://en.wikipedia.org/wiki/Fondmetal"
+                }
+              ]
             }
           ],
           "constructor": {

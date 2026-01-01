@@ -7,155 +7,79 @@
     "tables": {
       "entries": [
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "engine_constructor": {
-                "text": "Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Corporation"
-              },
-              "chassis": [
+              "name": "Danka Arrows Yamaha",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Arrows",
+              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+            },
+            "engine_constructor": {
+              "text": "Yamaha",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Corporation"
+            }
+          },
+          "chassis": [
+            {
+              "text": "A18",
+              "url": "https://en.wikipedia.org/wiki/Arrows_A18"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Yamaha OX11C/D",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
+            },
+            "displacement_l": 3.0,
+            "type": "V10",
+            "layout": "V",
+            "cylinders": 10
+          },
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
+          "no": [
+            {
+              "no": 1,
+              "race_drivers": [
                 {
-                  "text": "A18",
-                  "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Yamaha OX11C/D",
-                  "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
-                },
-                "displacement_l": 3.0,
-                "type": "V10",
-                "layout": "V",
-                "cylinders": 10
-              },
-              "tyre": [
-                {
-                  "text": "Bridgestone",
-                  "url": "https://en.wikipedia.org/wiki/Bridgestone"
-                }
-              ],
-              "no": [
-                {
-                  "no": 1,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Damon Hill",
-                        "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 2,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Pedro Diniz",
-                        "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-                      }
-                    }
-                  ]
+                  "driver": {
+                    "text": "Damon Hill",
+                    "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+                  }
                 }
               ]
             },
             {
-              "chassis_constructor": {
-                "text": "Minardi",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "engine_constructor": {
-                "text": "Hart",
-                "url": "https://en.wikipedia.org/wiki/Brian_Hart_Ltd."
-              },
-              "chassis": [
+              "no": 2,
+              "race_drivers": [
                 {
-                  "text": "M197",
-                  "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Hart 830",
-                  "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
-                },
-                "displacement_l": 3.0,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Bridgestone",
-                  "url": "https://en.wikipedia.org/wiki/Bridgestone"
-                }
-              ],
-              "no": [
-                {
-                  "no": 20,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Ukyo Katayama",
-                        "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "no": 21,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Jarno Trulli",
-                        "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-                      },
-                      "rounds": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7
-                      ]
-                    },
-                    {
-                      "driver": {
-                        "text": "Tarso Marques",
-                        "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-                      },
-                      "rounds": [
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16,
-                        17
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Pedro Diniz",
+                    "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+                  }
                 }
               ]
             }
-          ],
-          "no": null
+          ]
         },
         {
           "entrant": [
             {
-              "text": "Rothmans",
-              "url": "https://en.wikipedia.org/wiki/Rothmans_International"
+              "name": "Rothmans Williams Renault",
+              "title_sponsors": [
+                {
+                  "text": "Rothmans",
+                  "url": "https://en.wikipedia.org/wiki/Rothmans_International"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -230,8 +154,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+              "name": "Scuderia Ferrari Marlboro",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -294,8 +223,13 @@
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "Mild Seven Benetton Renault",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -397,8 +331,13 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+              "name": "West McLaren Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -473,8 +412,13 @@
         {
           "entrant": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+              "name": "Benson & Hedges Jordan Peugeot",
+              "title_sponsors": [
+                {
+                  "text": "Benson & Hedges",
+                  "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -537,8 +481,13 @@
         {
           "entrant": [
             {
-              "text": "Gauloises Blondes",
-              "url": "https://en.wikipedia.org/wiki/Gauloises"
+              "name": "Prost Gauloises Blondes",
+              "title_sponsors": [
+                {
+                  "text": "Gauloises Blondes",
+                  "url": "https://en.wikipedia.org/wiki/Gauloises"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -628,12 +577,17 @@
         {
           "entrant": [
             {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
-            },
-            {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Red Bull Sauber Petronas",
+              "title_sponsors": [
+                {
+                  "text": "Red Bull",
+                  "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
+                },
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -731,8 +685,13 @@
         {
           "entrant": [
             {
-              "text": "PIAA",
-              "url": "https://en.wikipedia.org/wiki/PIAA_Corporation"
+              "name": "PIAA Tyrrell Ford",
+              "title_sponsors": [
+                {
+                  "text": "PIAA",
+                  "url": "https://en.wikipedia.org/wiki/PIAA_Corporation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -807,12 +766,108 @@
         {
           "entrant": [
             {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
+              "name": "Minardi Team",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Minardi",
+              "url": "https://en.wikipedia.org/wiki/Minardi"
+            },
+            "engine_constructor": {
+              "text": "Hart",
+              "url": "https://en.wikipedia.org/wiki/Brian_Hart_Ltd."
+            }
+          },
+          "chassis": [
+            {
+              "text": "M197",
+              "url": "https://en.wikipedia.org/wiki/Minardi_M197"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Hart 830",
+              "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
+          "no": [
+            {
+              "no": 20,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ukyo Katayama",
+                    "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
+                  }
+                }
+              ]
             },
             {
-              "text": "Malaysia",
-              "url": "https://en.wikipedia.org/wiki/Malaysia"
+              "no": 21,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jarno Trulli",
+                    "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Tarso Marques",
+                    "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
+                  },
+                  "rounds": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "HSBC Malaysia Stewart Ford",
+              "title_sponsors": [
+                {
+                  "text": "HSBC",
+                  "url": "https://en.wikipedia.org/wiki/HSBC"
+                },
+                {
+                  "text": "Malaysia",
+                  "url": "https://en.wikipedia.org/wiki/Malaysia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -875,8 +930,13 @@
         {
           "entrant": [
             {
-              "text": "MasterCard",
-              "url": "https://en.wikipedia.org/wiki/Mastercard"
+              "name": "MasterCard Lola Formula One Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "MasterCard",
+                  "url": "https://en.wikipedia.org/wiki/Mastercard"
+                }
+              ]
             }
           ],
           "constructor": {

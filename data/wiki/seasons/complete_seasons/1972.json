@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Motor Racing Developments",
+              "title_sponsors": [
+                {
+                  "text": "Motor Racing Developments",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -101,16 +106,21 @@
         {
           "entrant": [
             {
-              "text": "Marlboro BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            {
-              "text": "España Marlboro BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            {
-              "text": "Austria Marlboro BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Marlboro BRM España Marlboro BRM Austria Marlboro BRM",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                {
+                  "text": "España Marlboro BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                {
+                  "text": "Austria Marlboro BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -293,8 +303,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari SpA SEFAC",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari SpA SEFAC",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari SpA SEFAC",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -388,12 +403,17 @@
         {
           "entrant": [
             {
-              "text": "John Player Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            {
-              "text": "World Wide Racing",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Team Lotus World Wide Racing",
+              "title_sponsors": [
+                {
+                  "text": "John Player Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                },
+                {
+                  "text": "World Wide Racing",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -468,8 +488,13 @@
         {
           "entrant": [
             {
-              "text": "STP March Racing Team",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              "name": "STP March Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "STP March Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -530,8 +555,13 @@
         {
           "entrant": [
             {
-              "text": "Équipe Matra Sports",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
+              "name": "Équipe Matra Sports",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Matra Sports",
+                  "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -582,8 +612,13 @@
         {
           "entrant": [
             {
-              "text": "Yardley Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Yardley Team McLaren",
+              "title_sponsors": [
+                {
+                  "text": "Yardley Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -671,20 +706,25 @@
         {
           "entrant": [
             {
-              "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Ceramica Pagnossin Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Flame Out Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "name": "Brooke Bond Oxo-Rob Walker Team Surtees Ceramica Pagnossin Team Surtees Flame Out Team Surtees Team Surtees",
+              "title_sponsors": [
+                {
+                  "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Ceramica Pagnossin Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Flame Out Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -769,8 +809,13 @@
         {
           "entrant": [
             {
-              "text": "Elf Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Elf Team Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "Elf Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -862,8 +907,13 @@
         {
           "entrant": [
             {
-              "text": "Team Williams Motul",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "name": "Team Williams Motul",
+              "title_sponsors": [
+                {
+                  "text": "Team Williams Motul",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -937,8 +987,13 @@
         {
           "entrant": [
             {
-              "text": "Team Eifelland Caravans",
-              "url": "https://en.wikipedia.org/wiki/Eifelland"
+              "name": "Team Eifelland Caravans",
+              "title_sponsors": [
+                {
+                  "text": "Team Eifelland Caravans",
+                  "url": "https://en.wikipedia.org/wiki/Eifelland"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -995,8 +1050,13 @@
         {
           "entrant": [
             {
-              "text": "Lucky Strike Racing",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+              "name": "Lucky Strike Racing",
+              "title_sponsors": [
+                {
+                  "text": "Lucky Strike Racing",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1049,8 +1109,13 @@
         {
           "entrant": [
             {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+              "name": "Team Gunston",
+              "title_sponsors": [
+                {
+                  "text": "Team Gunston",
+                  "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1145,8 +1210,13 @@
         {
           "entrant": [
             {
-              "text": "Clarke-Mordaunt-Guthrie Racing",
-              "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+              "name": "Clarke-Mordaunt-Guthrie Racing",
+              "title_sponsors": [
+                {
+                  "text": "Clarke-Mordaunt-Guthrie Racing",
+                  "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1205,8 +1275,13 @@
         {
           "entrant": [
             {
-              "text": "Martini Racing",
-              "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
+              "name": "Martini Racing",
+              "title_sponsors": [
+                {
+                  "text": "Martini Racing",
+                  "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1264,8 +1339,13 @@
         {
           "entrant": [
             {
-              "text": "Darnval Connew Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Connew"
+              "name": "Darnval Connew Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Darnval Connew Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Connew"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1314,93 +1394,104 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "March",
-                "url": "https://en.wikipedia.org/wiki/March_Engineering"
-              },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-              },
-              "chassis": [
-                {
-                  "text": "711",
-                  "url": "https://en.wikipedia.org/wiki/March_711"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Ford Cosworth DFV",
-                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                },
-                "displacement_l": 3.0,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Firestone",
-                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Skip Barber",
-                    "url": "https://en.wikipedia.org/wiki/Skip_Barber"
-                  },
-                  "rounds": [
-                    11,
-                    12
-                  ]
-                }
-              ]
+              "name": "Gene Mason Racing",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "March",
+              "url": "https://en.wikipedia.org/wiki/March_Engineering"
             },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
             {
-              "chassis_constructor": {
-                "text": "Surtees",
-                "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "text": "711",
+              "url": "https://en.wikipedia.org/wiki/March_711"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Skip Barber",
+                "url": "https://en.wikipedia.org/wiki/Skip_Barber"
               },
-              "engine_constructor": {
-                "text": "Ford",
-                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              "rounds": [
+                11,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Champcarr Inc.",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Surtees",
+              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "TS9B",
+              "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFV",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Sam Posey",
+                "url": "https://en.wikipedia.org/wiki/Sam_Posey"
               },
-              "chassis": [
-                {
-                  "text": "TS9B",
-                  "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Ford Cosworth DFV",
-                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-                },
-                "displacement_l": 3.0,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Firestone",
-                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Sam Posey",
-                    "url": "https://en.wikipedia.org/wiki/Sam_Posey"
-                  },
-                  "rounds": [
-                    12
-                  ]
-                }
+              "rounds": [
+                12
               ]
             }
           ]

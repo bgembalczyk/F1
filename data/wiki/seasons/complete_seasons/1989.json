@@ -9,16 +9,21 @@
         {
           "entrant": [
             {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda"
-            },
-            {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Honda Marlboro McLaren",
+              "title_sponsors": [
+                {
+                  "text": "Honda",
+                  "url": "https://en.wikipedia.org/wiki/Honda"
+                },
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                },
+                {
+                  "text": "McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -80,8 +85,13 @@
         {
           "entrant": [
             {
-              "text": "Tyrrell Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Tyrrell Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Tyrrell Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -181,12 +191,17 @@
         {
           "entrant": [
             {
-              "text": "Canon",
-              "url": "https://en.wikipedia.org/wiki/Canon_Inc."
-            },
-            {
-              "text": "Williams Team",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+              "name": "Canon Williams Team",
+              "title_sponsors": [
+                {
+                  "text": "Canon",
+                  "url": "https://en.wikipedia.org/wiki/Canon_Inc."
+                },
+                {
+                  "text": "Williams Team",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -252,8 +267,13 @@
         {
           "entrant": [
             {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Motor Racing Developments",
+              "title_sponsors": [
+                {
+                  "text": "Motor Racing Developments",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -315,16 +335,21 @@
         {
           "entrant": [
             {
-              "text": "USF&G",
-              "url": "https://en.wikipedia.org/wiki/USF%26G"
-            },
-            {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              "name": "USF&G Arrows Ford",
+              "title_sponsors": [
+                {
+                  "text": "USF&G",
+                  "url": "https://en.wikipedia.org/wiki/USF%26G"
+                },
+                {
+                  "text": "Arrows",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -412,12 +437,17 @@
         {
           "entrant": [
             {
-              "text": "Camel",
-              "url": "https://en.wikipedia.org/wiki/Camel_(cigarette)"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Camel Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Camel",
+                  "url": "https://en.wikipedia.org/wiki/Camel_(cigarette)"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -479,8 +509,13 @@
         {
           "entrant": [
             {
-              "text": "Leyton House Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
+              "name": "Leyton House Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Leyton House Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -557,12 +592,17 @@
         {
           "entrant": [
             {
-              "text": "Fondmetal",
-              "url": "https://en.wikipedia.org/wiki/Fondmetal"
-            },
-            {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
+              "name": "Fondmetal Osella",
+              "title_sponsors": [
+                {
+                  "text": "Fondmetal",
+                  "url": "https://en.wikipedia.org/wiki/Fondmetal"
+                },
+                {
+                  "text": "Osella",
+                  "url": "https://en.wikipedia.org/wiki/Osella"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -621,8 +661,13 @@
         {
           "entrant": [
             {
-              "text": "Benetton Formula",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+              "name": "Benetton Formula",
+              "title_sponsors": [
+                {
+                  "text": "Benetton Formula",
+                  "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -725,8 +770,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Italia",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+              "name": "Scuderia Italia",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Italia",
+                  "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -788,12 +838,17 @@
         {
           "entrant": [
             {
-              "text": "Lois",
-              "url": "https://es.wikipedia.org/wiki/Lois_(marca)"
-            },
-            {
-              "text": "Minardi Team",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
+              "name": "Lois Minardi Team",
+              "title_sponsors": [
+                {
+                  "text": "Lois",
+                  "url": "https://es.wikipedia.org/wiki/Lois_(marca)"
+                },
+                {
+                  "text": "Minardi Team",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -885,12 +940,17 @@
         {
           "entrant": [
             {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-            },
-            {
-              "text": "Loto",
-              "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+              "name": "Ligier Loto",
+              "title_sponsors": [
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                },
+                {
+                  "text": "Loto",
+                  "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -952,8 +1012,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1049,8 +1114,13 @@
         {
           "entrant": [
             {
-              "text": "Team Larrousse",
-              "url": "https://en.wikipedia.org/wiki/Larrousse"
+              "name": "Team Larrousse",
+              "title_sponsors": [
+                {
+                  "text": "Team Larrousse",
+                  "url": "https://en.wikipedia.org/wiki/Larrousse"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1150,8 +1220,13 @@
         {
           "entrant": [
             {
-              "text": "Coloni",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
+              "name": "Coloni",
+              "title_sponsors": [
+                {
+                  "text": "Coloni",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1239,8 +1314,13 @@
         {
           "entrant": [
             {
-              "text": "EuroBrun Racing",
-              "url": "https://en.wikipedia.org/wiki/EuroBrun"
+              "name": "EuroBrun Racing",
+              "title_sponsors": [
+                {
+                  "text": "EuroBrun Racing",
+                  "url": "https://en.wikipedia.org/wiki/EuroBrun"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1317,16 +1397,21 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
-            },
-            {
-              "text": "Zakspeed",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
-            },
-            {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
+              "name": "West Zakspeed Yamaha",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                },
+                {
+                  "text": "Zakspeed",
+                  "url": "https://en.wikipedia.org/wiki/Zakspeed"
+                },
+                {
+                  "text": "Yamaha",
+                  "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1388,12 +1473,17 @@
         {
           "entrant": [
             {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
-            },
-            {
-              "text": "Onyx Formula One",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+              "name": "Moneytron Onyx Formula One",
+              "title_sponsors": [
+                {
+                  "text": "Moneytron",
+                  "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
+                },
+                {
+                  "text": "Onyx Formula One",
+                  "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1476,8 +1566,13 @@
         {
           "entrant": [
             {
-              "text": "Rial Racing",
-              "url": "https://en.wikipedia.org/wiki/Rial_Racing"
+              "name": "Rial Racing",
+              "title_sponsors": [
+                {
+                  "text": "Rial Racing",
+                  "url": "https://en.wikipedia.org/wiki/Rial_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1607,8 +1702,13 @@
         {
           "entrant": [
             {
-              "text": "AGS",
-              "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
+              "name": "AGS",
+              "title_sponsors": [
+                {
+                  "text": "AGS",
+                  "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1717,8 +1817,13 @@
         {
           "entrant": [
             {
-              "text": "FIRST Racing",
-              "url": "https://en.wikipedia.org/wiki/First_Racing"
+              "name": "FIRST Racing",
+              "title_sponsors": [
+                {
+                  "text": "FIRST Racing",
+                  "url": "https://en.wikipedia.org/wiki/First_Racing"
+                }
+              ]
             }
           ],
           "constructor": {

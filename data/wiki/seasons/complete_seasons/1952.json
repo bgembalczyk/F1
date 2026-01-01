@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "AFM",
-              "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
+              "name": "AFM",
+              "title_sponsors": [
+                {
+                  "text": "AFM",
+                  "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -60,8 +65,13 @@
         {
           "entrant": [
             {
-              "text": "Toni Ulmen",
-              "url": "https://en.wikipedia.org/wiki/Toni_Ulmen"
+              "name": "Toni Ulmen",
+              "title_sponsors": [
+                {
+                  "text": "Toni Ulmen",
+                  "url": "https://en.wikipedia.org/wiki/Toni_Ulmen"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -112,8 +122,13 @@
         {
           "entrant": [
             {
-              "text": "Équipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+              "name": "Équipe Gordini",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Gordini",
+                  "url": "https://en.wikipedia.org/wiki/Gordini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -234,8 +249,13 @@
         {
           "entrant": [
             {
-              "text": "Écurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89curie_Rosier"
+              "name": "Écurie Rosier",
+              "title_sponsors": [
+                {
+                  "text": "Écurie Rosier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89curie_Rosier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -314,8 +334,13 @@
         {
           "entrant": [
             {
-              "text": "HW Motors",
-              "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+              "name": "HW Motors",
+              "title_sponsors": [
+                {
+                  "text": "HW Motors",
+                  "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -456,8 +481,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Franera",
-              "url": null
+              "name": "Scuderia Franera",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Franera",
+                  "url": null
+                }
+              ]
             }
           ],
           "constructor": {
@@ -505,259 +535,67 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Cooper",
-                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Écurie Richmond",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Bristol",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T20",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T20"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Bristol BS1",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eric Brandon",
+                "url": "https://en.wikipedia.org/wiki/Eric_Brandon"
               },
-              "engine_constructor": {
-                "text": "Bristol",
-                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-              },
-              "chassis": [
-                {
-                  "text": "T20",
-                  "url": "https://en.wikipedia.org/wiki/Cooper_T20"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Bristol BS1",
-                  "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-                },
-                "displacement_l": 2.0,
-                "type": "L6",
-                "layout": "L",
-                "cylinders": 6
-              },
-              "tyre": [
-                {
-                  "text": "Dunlop",
-                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Eric Brandon",
-                    "url": "https://en.wikipedia.org/wiki/Eric_Brandon"
-                  },
-                  "rounds": [
-                    1,
-                    3,
-                    5,
-                    8
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Alan Brown",
-                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
-                  },
-                  "rounds": [
-                    1,
-                    3,
-                    5,
-                    8
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Mike Hawthorn",
-                    "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-                  },
-                  "rounds": [
-                    3,
-                    5,
-                    7,
-                    8
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Mike Hawthorn",
-                    "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-                  },
-                  "rounds": [
-                    4
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Reg Parnell",
-                    "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
-                  },
-                  "rounds": [
-                    5
-                  ]
-                }
+              "rounds": [
+                1,
+                3,
+                5,
+                8
               ]
             },
             {
-              "chassis_constructor": {
-                "text": "Simca-Gordini",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+              "driver": {
+                "text": "Alan Brown",
+                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
               },
-              "engine_constructor": {
-                "text": "Simca-Gordini",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
-              },
-              "chassis": [
-                {
-                  "chassis": [
-                    "11"
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Gordini 1500",
-                      "url": "https://en.wikipedia.org/wiki/Gordini"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "tyre": [
-                    {
-                      "text": "Englebert",
-                      "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-                    }
-                  ],
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Max de Terra",
-                        "url": "https://en.wikipedia.org/wiki/Max_de_Terra"
-                      },
-                      "rounds": [
-                        1
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "chassis": [
-                    "15"
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Gordini 1500",
-                      "url": "https://en.wikipedia.org/wiki/Gordini"
-                    },
-                    "displacement_l": 1.5,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "tyre": [
-                    {
-                      "text": "Englebert",
-                      "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-                    }
-                  ],
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Johnny Claes",
-                        "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
-                      },
-                      "rounds": [
-                        8
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "chassis_constructor": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "engine_constructor": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "chassis": [
-                {
-                  "chassis": [
-                    "166/F2"
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ferrari 166",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    },
-                    "displacement_l": 2.0,
-                    "type": "V12",
-                    "layout": "V",
-                    "cylinders": 12
-                  },
-                  "tyre": [
-                    {
-                      "text": "Pirelli",
-                      "url": "https://en.wikipedia.org/wiki/Pirelli"
-                    }
-                  ],
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Franco Comotti",
-                        "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
-                      },
-                      "rounds": [
-                        4
-                      ]
-                    },
-                    {
-                      "driver": {
-                        "text": "Piero Carini",
-                        "url": "https://en.wikipedia.org/wiki/Piero_Carini"
-                      },
-                      "rounds": [
-                        4,
-                        6
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "chassis": [
-                    {
-                      "text": "500",
-                      "url": "https://en.wikipedia.org/wiki/Ferrari_500"
-                    }
-                  ],
-                  "engine": {
-                    "model": {
-                      "text": "Ferrari 500",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    },
-                    "displacement_l": 2.0,
-                    "type": "L4",
-                    "layout": "L",
-                    "cylinders": 4
-                  },
-                  "tyre": [
-                    {
-                      "text": "Dunlop",
-                      "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-                    }
-                  ],
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Roy Salvadori",
-                        "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
-                      },
-                      "rounds": [
-                        5
-                      ]
-                    }
-                  ]
-                }
+              "rounds": [
+                1,
+                3,
+                5,
+                8
               ]
             }
           ]
@@ -765,8 +603,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -891,8 +734,13 @@
         {
           "entrant": [
             {
-              "text": "Enrico Platé",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+              "name": "Enrico Platé",
+              "title_sponsors": [
+                {
+                  "text": "Enrico Platé",
+                  "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -965,8 +813,13 @@
         {
           "entrant": [
             {
-              "text": "Écurie Espadon",
-              "url": "https://en.wikipedia.org/wiki/%C3%89curie_Espadon"
+              "name": "Écurie Espadon",
+              "title_sponsors": [
+                {
+                  "text": "Écurie Espadon",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89curie_Espadon"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1065,8 +918,115 @@
         {
           "entrant": [
             {
-              "text": "English Racing Automobiles Ltd",
-              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+              "name": "Alfred Dattner",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            "11"
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini 1500",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Max de Terra",
+                "url": "https://en.wikipedia.org/wiki/Max_de_Terra"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Leslie D. Hawthorn",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Bristol",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T20",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T20"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Bristol BS1",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mike Hawthorn",
+                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+              },
+              "rounds": [
+                3,
+                5,
+                7,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "English Racing Automobiles Ltd",
+              "title_sponsors": [
+                {
+                  "text": "English Racing Automobiles Ltd",
+                  "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1118,8 +1078,13 @@
         {
           "entrant": [
             {
-              "text": "Écurie Francorchamps",
-              "url": "https://en.wikipedia.org/wiki/%C3%89curie_Francorchamps"
+              "name": "Écurie Francorchamps",
+              "title_sponsors": [
+                {
+                  "text": "Écurie Francorchamps",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89curie_Francorchamps"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1180,8 +1145,13 @@
         {
           "entrant": [
             {
-              "text": "Arthur Legat",
-              "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
+              "name": "Arthur Legat",
+              "title_sponsors": [
+                {
+                  "text": "Arthur Legat",
+                  "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1231,8 +1201,13 @@
         {
           "entrant": [
             {
-              "text": "Robin Montgomerie-Charrington",
-              "url": "https://en.wikipedia.org/wiki/Robin_Montgomerie-Charrington"
+              "name": "Robin Montgomerie-Charrington",
+              "title_sponsors": [
+                {
+                  "text": "Robin Montgomerie-Charrington",
+                  "url": "https://en.wikipedia.org/wiki/Robin_Montgomerie-Charrington"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1276,8 +1251,13 @@
         {
           "entrant": [
             {
-              "text": "Tony Gaze",
-              "url": "https://en.wikipedia.org/wiki/Tony_Gaze"
+              "name": "Tony Gaze",
+              "title_sponsors": [
+                {
+                  "text": "Tony Gaze",
+                  "url": "https://en.wikipedia.org/wiki/Tony_Gaze"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1327,8 +1307,13 @@
         {
           "entrant": [
             {
-              "text": "Robert O'Brien",
-              "url": "https://en.wikipedia.org/wiki/Robert_O%27Brien_(auto_racer)"
+              "name": "Robert O'Brien",
+              "title_sponsors": [
+                {
+                  "text": "Robert O'Brien",
+                  "url": "https://en.wikipedia.org/wiki/Robert_O%27Brien_(auto_racer)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1375,8 +1360,13 @@
         {
           "entrant": [
             {
-              "text": "Peter Whitehead",
-              "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+              "name": "Peter Whitehead",
+              "title_sponsors": [
+                {
+                  "text": "Peter Whitehead",
+                  "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1450,8 +1440,13 @@
         {
           "entrant": [
             {
-              "text": "Escuderia Bandeirantes",
-              "url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes"
+              "name": "Escuderia Bandeirantes",
+              "title_sponsors": [
+                {
+                  "text": "Escuderia Bandeirantes",
+                  "url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1543,8 +1538,13 @@
         {
           "entrant": [
             {
-              "text": "Écurie Belge",
-              "url": "https://en.wikipedia.org/wiki/%C3%89curie_Belge"
+              "name": "Écurie Belge",
+              "title_sponsors": [
+                {
+                  "text": "Écurie Belge",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89curie_Belge"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1601,8 +1601,131 @@
         {
           "entrant": [
             {
-              "text": "W. S. Aston",
-              "url": "https://en.wikipedia.org/wiki/Bill_Aston"
+              "name": "Scuderia Marzotto",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            "166/F2"
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari 166",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "displacement_l": 2.0,
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
+          },
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Franco Comotti",
+                "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
+              },
+              "rounds": [
+                4
+              ]
+            },
+            {
+              "driver": {
+                "text": "Piero Carini",
+                "url": "https://en.wikipedia.org/wiki/Piero_Carini"
+              },
+              "rounds": [
+                4,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Archie Bryde AHM Bryde",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Cooper",
+              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+            },
+            "engine_constructor": {
+              "text": "Bristol",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            }
+          },
+          "chassis": [
+            {
+              "text": "T20",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T20"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Bristol BS1",
+              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+            },
+            "displacement_l": 2.0,
+            "type": "L6",
+            "layout": "L",
+            "cylinders": 6
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mike Hawthorn",
+                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+              },
+              "rounds": [
+                4
+              ]
+            },
+            {
+              "driver": {
+                "text": "Reg Parnell",
+                "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "W. S. Aston",
+              "title_sponsors": [
+                {
+                  "text": "W. S. Aston",
+                  "url": "https://en.wikipedia.org/wiki/Bill_Aston"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1648,8 +1771,13 @@
         {
           "entrant": [
             {
-              "text": "Connaught Engineering",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+              "name": "Connaught Engineering",
+              "title_sponsors": [
+                {
+                  "text": "Connaught Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1737,8 +1865,13 @@
         {
           "entrant": [
             {
-              "text": "Écurie Écosse",
-              "url": "https://en.wikipedia.org/wiki/%C3%89curie_%C3%89cosse"
+              "name": "Écurie Écosse",
+              "title_sponsors": [
+                {
+                  "text": "Écurie Écosse",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89curie_%C3%89cosse"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1788,8 +1921,64 @@
         {
           "entrant": [
             {
-              "text": "Tony Crook",
-              "url": "https://en.wikipedia.org/wiki/Tony_Crook_(racing_driver)"
+              "name": "G. Caprara",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "chassis": [
+            {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_500"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ferrari 500",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "displacement_l": 2.0,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Roy Salvadori",
+                "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Tony Crook",
+              "title_sponsors": [
+                {
+                  "text": "Tony Crook",
+                  "url": "https://en.wikipedia.org/wiki/Tony_Crook_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1836,8 +2025,13 @@
         {
           "entrant": [
             {
-              "text": "Marcel Balsa",
-              "url": "https://en.wikipedia.org/wiki/Marcel_Balsa"
+              "name": "Marcel Balsa",
+              "title_sponsors": [
+                {
+                  "text": "Marcel Balsa",
+                  "url": "https://en.wikipedia.org/wiki/Marcel_Balsa"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1887,8 +2081,13 @@
         {
           "entrant": [
             {
-              "text": "Fritz Riess",
-              "url": "https://en.wikipedia.org/wiki/Fritz_Riess"
+              "name": "Fritz Riess",
+              "title_sponsors": [
+                {
+                  "text": "Fritz Riess",
+                  "url": "https://en.wikipedia.org/wiki/Fritz_Riess"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1938,8 +2137,13 @@
         {
           "entrant": [
             {
-              "text": "Theo Helfrich",
-              "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
+              "name": "Theo Helfrich",
+              "title_sponsors": [
+                {
+                  "text": "Theo Helfrich",
+                  "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1989,8 +2193,13 @@
         {
           "entrant": [
             {
-              "text": "Willi Heeks",
-              "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
+              "name": "Willi Heeks",
+              "title_sponsors": [
+                {
+                  "text": "Willi Heeks",
+                  "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2040,8 +2249,13 @@
         {
           "entrant": [
             {
-              "text": "Helmut Niedermayr",
-              "url": "https://en.wikipedia.org/wiki/Helmut_Niedermayr"
+              "name": "Helmut Niedermayr",
+              "title_sponsors": [
+                {
+                  "text": "Helmut Niedermayr",
+                  "url": "https://en.wikipedia.org/wiki/Helmut_Niedermayr"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2091,8 +2305,13 @@
         {
           "entrant": [
             {
-              "text": "Adolf Brudes",
-              "url": "https://en.wikipedia.org/wiki/Adolf_Brudes"
+              "name": "Adolf Brudes",
+              "title_sponsors": [
+                {
+                  "text": "Adolf Brudes",
+                  "url": "https://en.wikipedia.org/wiki/Adolf_Brudes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2142,8 +2361,13 @@
         {
           "entrant": [
             {
-              "text": "Motor Presse Verlag",
-              "url": "https://en.wikipedia.org/wiki/Motor-Presse-Verlag"
+              "name": "Motor Presse Verlag",
+              "title_sponsors": [
+                {
+                  "text": "Motor Presse Verlag",
+                  "url": "https://en.wikipedia.org/wiki/Motor-Presse-Verlag"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2193,8 +2417,13 @@
         {
           "entrant": [
             {
-              "text": "Hans Klenk",
-              "url": "https://en.wikipedia.org/wiki/Hans_Klenk"
+              "name": "Hans Klenk",
+              "title_sponsors": [
+                {
+                  "text": "Hans Klenk",
+                  "url": "https://en.wikipedia.org/wiki/Hans_Klenk"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2244,8 +2473,13 @@
         {
           "entrant": [
             {
-              "text": "Josef Peters",
-              "url": "https://en.wikipedia.org/wiki/Josef_Peters_(driver)"
+              "name": "Josef Peters",
+              "title_sponsors": [
+                {
+                  "text": "Josef Peters",
+                  "url": "https://en.wikipedia.org/wiki/Josef_Peters_(driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2295,8 +2529,13 @@
         {
           "entrant": [
             {
-              "text": "\"Bernhard Nacke\"",
-              "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
+              "name": "\"Bernhard Nacke\"",
+              "title_sponsors": [
+                {
+                  "text": "\"Bernhard Nacke\"",
+                  "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2346,8 +2585,13 @@
         {
           "entrant": [
             {
-              "text": "Ludwig Fischer",
-              "url": "https://en.wikipedia.org/wiki/Ludwig_Fischer_(racing_driver)"
+              "name": "Ludwig Fischer",
+              "title_sponsors": [
+                {
+                  "text": "Ludwig Fischer",
+                  "url": "https://en.wikipedia.org/wiki/Ludwig_Fischer_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2397,8 +2641,13 @@
         {
           "entrant": [
             {
-              "text": "Willi Krakau",
-              "url": "https://en.wikipedia.org/wiki/Willi_Krakau"
+              "name": "Willi Krakau",
+              "title_sponsors": [
+                {
+                  "text": "Willi Krakau",
+                  "url": "https://en.wikipedia.org/wiki/Willi_Krakau"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -2493,8 +2742,13 @@
         {
           "entrant": [
             {
-              "text": "Ernst Klodwig",
-              "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
+              "name": "Ernst Klodwig",
+              "title_sponsors": [
+                {
+                  "text": "Ernst Klodwig",
+                  "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2544,8 +2798,13 @@
         {
           "entrant": [
             {
-              "text": "Rudolf Krause",
-              "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
+              "name": "Rudolf Krause",
+              "title_sponsors": [
+                {
+                  "text": "Rudolf Krause",
+                  "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2595,8 +2854,13 @@
         {
           "entrant": [
             {
-              "text": "Ken Downing",
-              "url": "https://en.wikipedia.org/wiki/Ken_Downing"
+              "name": "Ken Downing",
+              "title_sponsors": [
+                {
+                  "text": "Ken Downing",
+                  "url": "https://en.wikipedia.org/wiki/Ken_Downing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2646,8 +2910,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2716,8 +2985,13 @@
         {
           "entrant": [
             {
-              "text": "Élie Bayol",
-              "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
+              "name": "Élie Bayol",
+              "title_sponsors": [
+                {
+                  "text": "Élie Bayol",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2764,8 +3038,13 @@
         {
           "entrant": [
             {
-              "text": "Piero Dusio",
-              "url": "https://en.wikipedia.org/wiki/Piero_Dusio"
+              "name": "Piero Dusio",
+              "title_sponsors": [
+                {
+                  "text": "Piero Dusio",
+                  "url": "https://en.wikipedia.org/wiki/Piero_Dusio"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2805,6 +3084,54 @@
               "driver": {
                 "text": "Piero Dusio",
                 "url": "https://en.wikipedia.org/wiki/Piero_Dusio"
+              },
+              "rounds": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Vicomtesse de Walckiers",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            },
+            "engine_constructor": {
+              "text": "Simca-Gordini",
+              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+            }
+          },
+          "chassis": [
+            "15"
+          ],
+          "engine": {
+            "model": {
+              "text": "Gordini 1500",
+              "url": "https://en.wikipedia.org/wiki/Gordini"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Englebert",
+              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Claes",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
               },
               "rounds": [
                 8

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+              "name": "Alfa Romeo SpA",
+              "title_sponsors": [
+                {
+                  "text": "Alfa Romeo SpA",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -125,8 +130,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ambrosiana",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
+              "name": "Scuderia Ambrosiana",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ambrosiana",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -197,8 +207,13 @@
         {
           "entrant": [
             {
-              "text": "T.A.S.O. Mathieson",
-              "url": "https://en.wikipedia.org/wiki/Taso_Mathieson"
+              "name": "T.A.S.O. Mathieson",
+              "title_sponsors": [
+                {
+                  "text": "T.A.S.O. Mathieson",
+                  "url": "https://en.wikipedia.org/wiki/Taso_Mathieson"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -249,8 +264,13 @@
         {
           "entrant": [
             {
-              "text": "Peter Walker",
-              "url": "https://en.wikipedia.org/wiki/Peter_Walker_(racing_driver)"
+              "name": "Peter Walker",
+              "title_sponsors": [
+                {
+                  "text": "Peter Walker",
+                  "url": "https://en.wikipedia.org/wiki/Peter_Walker_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -310,8 +330,13 @@
         {
           "entrant": [
             {
-              "text": "Joe Fry",
-              "url": "https://en.wikipedia.org/wiki/Joe_Fry"
+              "name": "Joe Fry",
+              "title_sponsors": [
+                {
+                  "text": "Joe Fry",
+                  "url": "https://en.wikipedia.org/wiki/Joe_Fry"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -371,8 +396,13 @@
         {
           "entrant": [
             {
-              "text": "Cuth Harrison",
-              "url": "https://en.wikipedia.org/wiki/Cuth_Harrison"
+              "name": "Cuth Harrison",
+              "title_sponsors": [
+                {
+                  "text": "Cuth Harrison",
+                  "url": "https://en.wikipedia.org/wiki/Cuth_Harrison"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -425,8 +455,13 @@
         {
           "entrant": [
             {
-              "text": "Bob Gerard",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              "name": "Bob Gerard",
+              "title_sponsors": [
+                {
+                  "text": "Bob Gerard",
+                  "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -482,8 +517,13 @@
         {
           "entrant": [
             {
-              "text": "Automobiles Talbot-Darracq",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+              "name": "Automobiles Talbot-Darracq",
+              "title_sponsors": [
+                {
+                  "text": "Automobiles Talbot-Darracq",
+                  "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -585,8 +625,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Belge",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
+              "name": "Ecurie Belge",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Belge",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Belge"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -641,8 +686,13 @@
         {
           "entrant": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "name": "Officine Alfieri Maserati",
+              "title_sponsors": [
+                {
+                  "text": "Officine Alfieri Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -708,8 +758,13 @@
         {
           "entrant": [
             {
-              "text": "Enrico Platé",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+              "name": "Enrico Platé",
+              "title_sponsors": [
+                {
+                  "text": "Enrico Platé",
+                  "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -775,8 +830,13 @@
         {
           "entrant": [
             {
-              "text": "Joe Kelly",
-              "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
+              "name": "Joe Kelly",
+              "title_sponsors": [
+                {
+                  "text": "Joe Kelly",
+                  "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -827,8 +887,13 @@
         {
           "entrant": [
             {
-              "text": "Geoffrey Crossley",
-              "url": "https://en.wikipedia.org/wiki/Geoffrey_Crossley"
+              "name": "Geoffrey Crossley",
+              "title_sponsors": [
+                {
+                  "text": "Geoffrey Crossley",
+                  "url": "https://en.wikipedia.org/wiki/Geoffrey_Crossley"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -880,8 +945,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Achille Varzi",
-              "url": "https://en.wikipedia.org/wiki/Autom%C3%B3vil_Club_Argentino"
+              "name": "Scuderia Achille Varzi",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Achille Varzi",
+                  "url": "https://en.wikipedia.org/wiki/Autom%C3%B3vil_Club_Argentino"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -977,8 +1047,13 @@
         {
           "entrant": [
             {
-              "text": "Horschell Racing Corporation",
-              "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+              "name": "Horschell Racing Corporation",
+              "title_sponsors": [
+                {
+                  "text": "Horschell Racing Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1028,8 +1103,13 @@
         {
           "entrant": [
             {
-              "text": "Equipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
+              "name": "Equipe Gordini",
+              "title_sponsors": [
+                {
+                  "text": "Equipe Gordini",
+                  "url": "https://en.wikipedia.org/wiki/Gordini"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1092,8 +1172,13 @@
         {
           "entrant": [
             {
-              "text": "Philippe Étancelin",
-              "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+              "name": "Philippe Étancelin",
+              "title_sponsors": [
+                {
+                  "text": "Philippe Étancelin",
+                  "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1159,8 +1244,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+              "name": "Ecurie Rosier",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Rosier",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1224,8 +1314,13 @@
         {
           "entrant": [
             {
-              "text": "Peter Whitehead",
-              "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+              "name": "Peter Whitehead",
+              "title_sponsors": [
+                {
+                  "text": "Peter Whitehead",
+                  "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1282,8 +1377,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1410,8 +1510,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Milano",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+              "name": "Scuderia Milano",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Milano",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1515,8 +1620,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Bleue",
-              "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+              "name": "Ecurie Bleue",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Bleue",
+                  "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1566,8 +1676,13 @@
         {
           "entrant": [
             {
-              "text": "Pierre Levegh",
-              "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+              "name": "Pierre Levegh",
+              "title_sponsors": [
+                {
+                  "text": "Pierre Levegh",
+                  "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1619,8 +1734,13 @@
         {
           "entrant": [
             {
-              "text": "Raymond Sommer",
-              "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
+              "name": "Raymond Sommer",
+              "title_sponsors": [
+                {
+                  "text": "Raymond Sommer",
+                  "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1671,8 +1791,13 @@
         {
           "entrant": [
             {
-              "text": "Ecurie Lutetia",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Lutetia"
+              "name": "Ecurie Lutetia",
+              "title_sponsors": [
+                {
+                  "text": "Ecurie Lutetia",
+                  "url": "https://en.wikipedia.org/wiki/Ecurie_Lutetia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1723,8 +1848,13 @@
         {
           "entrant": [
             {
-              "text": "Antonio Branca",
-              "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+              "name": "Antonio Branca",
+              "title_sponsors": [
+                {
+                  "text": "Antonio Branca",
+                  "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1775,8 +1905,13 @@
         {
           "entrant": [
             {
-              "text": "Charles Pozzi",
-              "url": "https://en.wikipedia.org/wiki/Charles_Pozzi"
+              "name": "Charles Pozzi",
+              "title_sponsors": [
+                {
+                  "text": "Charles Pozzi",
+                  "url": "https://en.wikipedia.org/wiki/Charles_Pozzi"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1835,8 +1970,13 @@
         {
           "entrant": [
             {
-              "text": "Clemente Biondetti",
-              "url": "https://en.wikipedia.org/wiki/Clemente_Biondetti"
+              "name": "Clemente Biondetti",
+              "title_sponsors": [
+                {
+                  "text": "Clemente Biondetti",
+                  "url": "https://en.wikipedia.org/wiki/Clemente_Biondetti"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1886,8 +2026,13 @@
         {
           "entrant": [
             {
-              "text": "Paul Pietsch",
-              "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+              "name": "Paul Pietsch",
+              "title_sponsors": [
+                {
+                  "text": "Paul Pietsch",
+                  "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1938,8 +2083,13 @@
         {
           "entrant": [
             {
-              "text": "Guy Mairesse",
-              "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
+              "name": "Guy Mairesse",
+              "title_sponsors": [
+                {
+                  "text": "Guy Mairesse",
+                  "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
+                }
+              ]
             }
           ],
           "constructor": {

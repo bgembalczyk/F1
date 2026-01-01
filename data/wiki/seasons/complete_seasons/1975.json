@@ -9,16 +9,21 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "Texaco",
-              "url": "https://en.wikipedia.org/wiki/Texaco"
+              "name": "Marlboro Team Texaco",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                },
+                {
+                  "text": "Team",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "Texaco",
+                  "url": "https://en.wikipedia.org/wiki/Texaco"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -81,12 +86,17 @@
         {
           "entrant": [
             {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
-            },
-            {
-              "text": "Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Elf Team Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "Elf",
+                  "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+                },
+                {
+                  "text": "Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -172,12 +182,17 @@
         {
           "entrant": [
             {
-              "text": "John Player",
-              "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "John Player",
+                  "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -294,8 +309,13 @@
         {
           "entrant": [
             {
-              "text": "Martini Racing",
-              "url": "https://en.wikipedia.org/wiki/Martini_Racing"
+              "name": "Martini Racing",
+              "title_sponsors": [
+                {
+                  "text": "Martini Racing",
+                  "url": "https://en.wikipedia.org/wiki/Martini_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -358,16 +378,21 @@
         {
           "entrant": [
             {
-              "text": "Team March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            {
-              "text": "Lavazza",
-              "url": "https://en.wikipedia.org/wiki/Lavazza"
-            },
-            {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              "name": "Beta Team March Lavazza March",
+              "title_sponsors": [
+                {
+                  "text": "Team March",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                },
+                {
+                  "text": "Lavazza",
+                  "url": "https://en.wikipedia.org/wiki/Lavazza"
+                },
+                {
+                  "text": "March",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -473,8 +498,13 @@
         {
           "entrant": [
             {
-              "text": "SEFAC Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "SEFAC Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "SEFAC Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -547,8 +577,13 @@
         {
           "entrant": [
             {
-              "text": "Stanley-BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Stanley-BRM",
+              "title_sponsors": [
+                {
+                  "text": "Stanley-BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -617,12 +652,17 @@
         {
           "entrant": [
             {
-              "text": "UOP",
-              "url": "https://en.wikipedia.org/wiki/Honeywell_UOP"
-            },
-            {
-              "text": "Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+              "name": "UOP Shadow Racing",
+              "title_sponsors": [
+                {
+                  "text": "UOP",
+                  "url": "https://en.wikipedia.org/wiki/Honeywell_UOP"
+                },
+                {
+                  "text": "Shadow Racing",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -751,16 +791,21 @@
         {
           "entrant": [
             {
-              "text": "Matchbox",
-              "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "name": "Matchbox Team Surtees National Organs Team Surtees",
+              "title_sponsors": [
+                {
+                  "text": "Matchbox",
+                  "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -839,8 +884,13 @@
         {
           "entrant": [
             {
-              "text": "HB Bewaking Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "name": "HB Bewaking Team Ensign",
+              "title_sponsors": [
+                {
+                  "text": "HB Bewaking Team Ensign",
+                  "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -964,12 +1014,17 @@
         {
           "entrant": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            },
-            {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "name": "Frank Williams Racing Cars Williams Ambrozium H7 Racing",
+              "title_sponsors": [
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                },
+                {
+                  "text": "Williams",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1139,8 +1194,13 @@
         {
           "entrant": [
             {
-              "text": "Embassy Racing with Graham Hill",
-              "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
+              "name": "Embassy Racing with Graham Hill",
+              "title_sponsors": [
+                {
+                  "text": "Embassy Racing with Graham Hill",
+                  "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1340,16 +1400,21 @@
         {
           "entrant": [
             {
-              "text": "Hesketh Racing",
-              "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
-            },
-            {
-              "text": "Warsteiner Brewery",
-              "url": "https://en.wikipedia.org/wiki/Warsteiner"
-            },
-            {
-              "text": "Polar Caravans",
-              "url": "https://en.wikipedia.org/wiki/Polar_Caravans"
+              "name": "Hesketh Racing Warsteiner Brewery Polar Caravans",
+              "title_sponsors": [
+                {
+                  "text": "Hesketh Racing",
+                  "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+                },
+                {
+                  "text": "Warsteiner Brewery",
+                  "url": "https://en.wikipedia.org/wiki/Warsteiner"
+                },
+                {
+                  "text": "Polar Caravans",
+                  "url": "https://en.wikipedia.org/wiki/Polar_Caravans"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1480,20 +1545,25 @@
         {
           "entrant": [
             {
-              "text": "Harry Stiller",
-              "url": "https://en.wikipedia.org/wiki/Harry_Stiller"
-            },
-            {
-              "text": "Racing",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            },
-            {
-              "text": "Rob Walkers",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            },
-            {
-              "text": "Custom Made Racing",
-              "url": "https://en.wikipedia.org/wiki/Harry_Stiller"
+              "name": "Custom Made Harry Stiller Racing Rob Walkers Custom Made Racing",
+              "title_sponsors": [
+                {
+                  "text": "Harry Stiller",
+                  "url": "https://en.wikipedia.org/wiki/Harry_Stiller"
+                },
+                {
+                  "text": "Racing",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                },
+                {
+                  "text": "Rob Walkers",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                },
+                {
+                  "text": "Custom Made Racing",
+                  "url": "https://en.wikipedia.org/wiki/Harry_Stiller"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1564,8 +1634,13 @@
         {
           "entrant": [
             {
-              "text": "Vel's Parnelli Jones Racing",
-              "url": "https://en.wikipedia.org/wiki/Vel%27s_Parnelli_Jones_Racing"
+              "name": "Vel's Parnelli Jones Racing",
+              "title_sponsors": [
+                {
+                  "text": "Vel's Parnelli Jones Racing",
+                  "url": "https://en.wikipedia.org/wiki/Vel%27s_Parnelli_Jones_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1631,12 +1706,17 @@
         {
           "entrant": [
             {
-              "text": "First National City Bank",
-              "url": "https://en.wikipedia.org/wiki/Citibank"
-            },
-            {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/Team_Penske"
+              "name": "First National City Bank Team",
+              "title_sponsors": [
+                {
+                  "text": "First National City Bank",
+                  "url": "https://en.wikipedia.org/wiki/Citibank"
+                },
+                {
+                  "text": "Team",
+                  "url": "https://en.wikipedia.org/wiki/Team_Penske"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1753,8 +1833,13 @@
         {
           "entrant": [
             {
-              "text": "Copersucar Fittipaldi",
-              "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+              "name": "Copersucar Fittipaldi",
+              "title_sponsors": [
+                {
+                  "text": "Copersucar Fittipaldi",
+                  "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1834,12 +1919,17 @@
         {
           "entrant": [
             {
-              "text": "Lucky Strike",
-              "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
-            },
-            {
-              "text": "Racing",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+              "name": "Lucky Strike Racing",
+              "title_sponsors": [
+                {
+                  "text": "Lucky Strike",
+                  "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+                },
+                {
+                  "text": "Racing",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1890,8 +1980,13 @@
         {
           "entrant": [
             {
-              "text": "Lexington Racing",
-              "url": "https://en.wikipedia.org/wiki/Alex_Blignaut"
+              "name": "Lexington Racing",
+              "title_sponsors": [
+                {
+                  "text": "Lexington Racing",
+                  "url": "https://en.wikipedia.org/wiki/Alex_Blignaut"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1942,8 +2037,13 @@
         {
           "entrant": [
             {
-              "text": "Pinch Plant (Ltd)",
-              "url": "https://en.wikipedia.org/wiki/Lyncar"
+              "name": "Pinch Plant (Ltd)",
+              "title_sponsors": [
+                {
+                  "text": "Pinch Plant (Ltd)",
+                  "url": "https://en.wikipedia.org/wiki/Lyncar"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1991,8 +2091,13 @@
         {
           "entrant": [
             {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+              "name": "Team Gunston",
+              "title_sponsors": [
+                {
+                  "text": "Team Gunston",
+                  "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -2061,28 +2166,33 @@
         {
           "entrant": [
             {
-              "text": "Citizen",
-              "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
-            },
-            {
-              "text": "Maki F1",
-              "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
-            },
-            {
-              "text": "Citizen",
-              "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
-            },
-            {
-              "text": "Maki Engineering",
-              "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
-            },
-            {
-              "text": "Citizen",
-              "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
-            },
-            {
-              "text": "Maki F1-Team",
-              "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
+              "name": "Citizen Maki F1 Citizen Maki Engineering Citizen Maki F1-Team",
+              "title_sponsors": [
+                {
+                  "text": "Citizen",
+                  "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
+                },
+                {
+                  "text": "Maki F1",
+                  "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
+                },
+                {
+                  "text": "Citizen",
+                  "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
+                },
+                {
+                  "text": "Maki Engineering",
+                  "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
+                },
+                {
+                  "text": "Citizen",
+                  "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
+                },
+                {
+                  "text": "Maki F1-Team",
+                  "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {

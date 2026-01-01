@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "No.",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+              "name": "No.",
+              "title_sponsors": [
+                {
+                  "text": "No.",
+                  "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -28,8 +33,13 @@
         {
           "entrant": [
             {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "name": "BWT Alpine Formula One Team",
+              "title_sponsors": [
+                {
+                  "text": "BWT",
+                  "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -56,8 +66,13 @@
         {
           "entrant": [
             {
-              "text": "Aramco",
-              "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+              "name": "Aston Martin Aramco Formula One Team",
+              "title_sponsors": [
+                {
+                  "text": "Aramco",
+                  "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -84,8 +99,13 @@
         {
           "entrant": [
             {
-              "text": "Atlassian",
-              "url": "https://en.wikipedia.org/wiki/Atlassian"
+              "name": "Atlassian Williams F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Atlassian",
+                  "url": "https://en.wikipedia.org/wiki/Atlassian"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -112,8 +132,13 @@
         {
           "entrant": [
             {
-              "text": "Revolut",
-              "url": "https://en.wikipedia.org/wiki/Revolut"
+              "name": "Audi Revolut F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Revolut",
+                  "url": "https://en.wikipedia.org/wiki/Revolut"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -138,7 +163,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "Cadillac Formula 1 Team",
+              "title_sponsors": []
+            }
+          ],
           "constructor": {
             "chassis_constructor": {
               "text": "Cadillac",
@@ -163,8 +193,13 @@
         {
           "entrant": [
             {
-              "text": "HP",
-              "url": "https://en.wikipedia.org/wiki/HP_Inc."
+              "name": "Scuderia Ferrari HP",
+              "title_sponsors": [
+                {
+                  "text": "HP",
+                  "url": "https://en.wikipedia.org/wiki/HP_Inc."
+                }
+              ]
             }
           ],
           "constructor": {
@@ -191,8 +226,13 @@
         {
           "entrant": [
             {
-              "text": "TGR",
-              "url": "https://en.wikipedia.org/wiki/Toyota_Gazoo_Racing"
+              "name": "TGR Haas F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "TGR",
+                  "url": "https://en.wikipedia.org/wiki/Toyota_Gazoo_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -219,8 +259,13 @@
         {
           "entrant": [
             {
-              "text": "Mastercard",
-              "url": "https://en.wikipedia.org/wiki/Mastercard"
+              "name": "McLaren Mastercard F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Mastercard",
+                  "url": "https://en.wikipedia.org/wiki/Mastercard"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -247,8 +292,13 @@
         {
           "entrant": [
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Mercedes-AMG Petronas Formula One Team",
+              "title_sponsors": [
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -275,12 +325,17 @@
         {
           "entrant": [
             {
-              "text": "Visa",
-              "url": "https://en.wikipedia.org/wiki/Visa_Inc."
-            },
-            {
-              "text": "Cash App",
-              "url": "https://en.wikipedia.org/wiki/Cash_App"
+              "name": "Visa Cash App Racing Bulls Formula One Team",
+              "title_sponsors": [
+                {
+                  "text": "Visa",
+                  "url": "https://en.wikipedia.org/wiki/Visa_Inc."
+                },
+                {
+                  "text": "Cash App",
+                  "url": "https://en.wikipedia.org/wiki/Cash_App"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -307,8 +362,13 @@
         {
           "entrant": [
             {
-              "text": "Oracle",
-              "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+              "name": "Oracle Red Bull Racing",
+              "title_sponsors": [
+                {
+                  "text": "Oracle",
+                  "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+                }
+              ]
             }
           ],
           "constructor": {

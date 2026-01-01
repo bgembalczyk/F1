@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "No.",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+              "name": "No.",
+              "title_sponsors": [
+                {
+                  "text": "No.",
+                  "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -29,8 +34,13 @@
         {
           "entrant": [
             {
-              "text": "BWT",
-              "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+              "name": "BWT Alpine F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "BWT",
+                  "url": "https://en.wikipedia.org/wiki/BWT_(company)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -67,8 +77,13 @@
         {
           "entrant": [
             {
-              "text": "Aramco",
-              "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+              "name": "Aston Martin Aramco F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Aramco",
+                  "url": "https://en.wikipedia.org/wiki/Saudi_Aramco"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -105,8 +120,13 @@
         {
           "entrant": [
             {
-              "text": "HP",
-              "url": "https://en.wikipedia.org/wiki/HP_Inc."
+              "name": "Scuderia Ferrari HP",
+              "title_sponsors": [
+                {
+                  "text": "HP",
+                  "url": "https://en.wikipedia.org/wiki/HP_Inc."
+                }
+              ]
             }
           ],
           "constructor": {
@@ -143,8 +163,13 @@
         {
           "entrant": [
             {
-              "text": "MoneyGram",
-              "url": "https://en.wikipedia.org/wiki/MoneyGram"
+              "name": "MoneyGram Haas F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "MoneyGram",
+                  "url": "https://en.wikipedia.org/wiki/MoneyGram"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -181,12 +206,17 @@
         {
           "entrant": [
             {
-              "text": "Stake",
-              "url": "https://en.wikipedia.org/wiki/Stake_(online_casino)"
-            },
-            {
-              "text": "Kick",
-              "url": "https://en.wikipedia.org/wiki/Kick_(service)"
+              "name": "Stake F1 Team Kick Sauber",
+              "title_sponsors": [
+                {
+                  "text": "Stake",
+                  "url": "https://en.wikipedia.org/wiki/Stake_(online_casino)"
+                },
+                {
+                  "text": "Kick",
+                  "url": "https://en.wikipedia.org/wiki/Kick_(service)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -221,7 +251,12 @@
           ]
         },
         {
-          "entrant": [],
+          "entrant": [
+            {
+              "name": "McLaren Formula 1 Team",
+              "title_sponsors": []
+            }
+          ],
           "constructor": {
             "chassis_constructor": {
               "text": "McLaren",
@@ -256,8 +291,13 @@
         {
           "entrant": [
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "name": "Mercedes-AMG Petronas F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Petronas",
+                  "url": "https://en.wikipedia.org/wiki/Petronas"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -294,12 +334,17 @@
         {
           "entrant": [
             {
-              "text": "Visa",
-              "url": "https://en.wikipedia.org/wiki/Visa_Inc."
-            },
-            {
-              "text": "Cash App",
-              "url": "https://en.wikipedia.org/wiki/Cash_App"
+              "name": "Visa Cash App Racing Bulls F1 Team",
+              "title_sponsors": [
+                {
+                  "text": "Visa",
+                  "url": "https://en.wikipedia.org/wiki/Visa_Inc."
+                },
+                {
+                  "text": "Cash App",
+                  "url": "https://en.wikipedia.org/wiki/Cash_App"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -336,8 +381,13 @@
         {
           "entrant": [
             {
-              "text": "Oracle",
-              "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+              "name": "Oracle Red Bull Racing",
+              "title_sponsors": [
+                {
+                  "text": "Oracle",
+                  "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -374,8 +424,13 @@
         {
           "entrant": [
             {
-              "text": "Atlassian",
-              "url": "https://en.wikipedia.org/wiki/Atlassian"
+              "name": "Atlassian Williams Racing",
+              "title_sponsors": [
+                {
+                  "text": "Atlassian",
+                  "url": "https://en.wikipedia.org/wiki/Atlassian"
+                }
+              ]
             }
           ],
           "constructor": {

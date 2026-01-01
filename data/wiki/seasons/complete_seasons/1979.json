@@ -9,12 +9,17 @@
         {
           "entrant": [
             {
-              "text": "Martini Racing",
-              "url": "https://en.wikipedia.org/wiki/Martini_Racing"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Martini Racing Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Martini Racing",
+                  "url": "https://en.wikipedia.org/wiki/Martini_Racing"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -79,16 +84,21 @@
         {
           "entrant": [
             {
-              "text": "Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            {
-              "text": "Candy",
-              "url": "https://en.wikipedia.org/wiki/Candy_(company)"
-            },
-            {
-              "text": "Tyrrell Team",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Team Tyrrell Candy Tyrrell Team",
+              "title_sponsors": [
+                {
+                  "text": "Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                },
+                {
+                  "text": "Candy",
+                  "url": "https://en.wikipedia.org/wiki/Candy_(company)"
+                },
+                {
+                  "text": "Tyrrell Team",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -197,12 +207,17 @@
         {
           "entrant": [
             {
-              "text": "Parmalat",
-              "url": "https://en.wikipedia.org/wiki/Parmalat"
-            },
-            {
-              "text": "Racing",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Parmalat Racing",
+              "title_sponsors": [
+                {
+                  "text": "Parmalat",
+                  "url": "https://en.wikipedia.org/wiki/Parmalat"
+                },
+                {
+                  "text": "Racing",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -372,20 +387,25 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro"
-            },
-            {
-              "text": "Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "Löwenbräu",
-              "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
-            },
-            {
-              "text": "Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Marlboro Team McLaren Löwenbräu Team McLaren",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro"
+                },
+                {
+                  "text": "Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "Löwenbräu",
+                  "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
+                },
+                {
+                  "text": "Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -462,8 +482,13 @@
         {
           "entrant": [
             {
-              "text": "ATS Wheels",
-              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+              "name": "ATS Wheels",
+              "title_sponsors": [
+                {
+                  "text": "ATS Wheels",
+                  "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -510,8 +535,13 @@
         {
           "entrant": [
             {
-              "text": "SEFAC Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "SEFAC Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "SEFAC Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -577,8 +607,13 @@
         {
           "entrant": [
             {
-              "text": "Fittipaldi Automotive",
-              "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+              "name": "Fittipaldi Automotive",
+              "title_sponsors": [
+                {
+                  "text": "Fittipaldi Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -651,12 +686,17 @@
         {
           "entrant": [
             {
-              "text": "Équipe Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            {
-              "text": "Elf",
-              "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+              "name": "Équipe Renault Elf",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Renault",
+                  "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+                },
+                {
+                  "text": "Elf",
+                  "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -721,24 +761,29 @@
         {
           "entrant": [
             {
-              "text": "Samson",
-              "url": "https://en.wikipedia.org/wiki/Niemeyer_(tobacco)"
-            },
-            {
-              "text": "Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            {
-              "text": "Interscope",
-              "url": "https://en.wikipedia.org/wiki/Ted_Field"
-            },
-            {
-              "text": "Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            {
-              "text": "Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+              "name": "Samson Shadow Racing Interscope Shadow Racing Shadow Racing",
+              "title_sponsors": [
+                {
+                  "text": "Samson",
+                  "url": "https://en.wikipedia.org/wiki/Niemeyer_(tobacco)"
+                },
+                {
+                  "text": "Shadow Racing",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                },
+                {
+                  "text": "Interscope",
+                  "url": "https://en.wikipedia.org/wiki/Ted_Field"
+                },
+                {
+                  "text": "Shadow Racing",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                },
+                {
+                  "text": "Shadow Racing",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -799,20 +844,25 @@
         {
           "entrant": [
             {
-              "text": "Olympus Cameras",
-              "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
-            },
-            {
-              "text": "Wolf Racing",
-              "url": "https://en.wikipedia.org/wiki/Wolf_Racing_Cars"
-            },
-            {
-              "text": "Michelob",
-              "url": "https://en.wikipedia.org/wiki/Michelob"
-            },
-            {
-              "text": "Wolf Racing",
-              "url": "https://en.wikipedia.org/wiki/Wolf_Racing_Cars"
+              "name": "Olympus Cameras Wolf Racing Michelob Wolf Racing",
+              "title_sponsors": [
+                {
+                  "text": "Olympus Cameras",
+                  "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
+                },
+                {
+                  "text": "Wolf Racing",
+                  "url": "https://en.wikipedia.org/wiki/Wolf_Racing_Cars"
+                },
+                {
+                  "text": "Michelob",
+                  "url": "https://en.wikipedia.org/wiki/Michelob"
+                },
+                {
+                  "text": "Wolf Racing",
+                  "url": "https://en.wikipedia.org/wiki/Wolf_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -891,8 +941,13 @@
         {
           "entrant": [
             {
-              "text": "Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "name": "Team Ensign",
+              "title_sponsors": [
+                {
+                  "text": "Team Ensign",
+                  "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -975,8 +1030,13 @@
         {
           "entrant": [
             {
-              "text": "Team Merzario",
-              "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
+              "name": "Team Merzario",
+              "title_sponsors": [
+                {
+                  "text": "Team Merzario",
+                  "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1055,12 +1115,17 @@
         {
           "entrant": [
             {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-            },
-            {
-              "text": "Gitanes",
-              "url": "https://en.wikipedia.org/wiki/Gitanes"
+              "name": "Ligier Gitanes",
+              "title_sponsors": [
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                },
+                {
+                  "text": "Gitanes",
+                  "url": "https://en.wikipedia.org/wiki/Gitanes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1146,16 +1211,21 @@
         {
           "entrant": [
             {
-              "text": "Albilad",
-              "url": "https://en.wikipedia.org/wiki/Bank_Albilad"
-            },
-            {
-              "text": "Saudia",
-              "url": "https://en.wikipedia.org/wiki/Saudia"
-            },
-            {
-              "text": "Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+              "name": "Albilad-Saudia Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Albilad",
+                  "url": "https://en.wikipedia.org/wiki/Bank_Albilad"
+                },
+                {
+                  "text": "Saudia",
+                  "url": "https://en.wikipedia.org/wiki/Saudia"
+                },
+                {
+                  "text": "Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1220,12 +1290,17 @@
         {
           "entrant": [
             {
-              "text": "Warsteiner",
-              "url": "https://en.wikipedia.org/wiki/Warsteiner"
-            },
-            {
-              "text": "Arrows Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+              "name": "Warsteiner Arrows Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Warsteiner",
+                  "url": "https://en.wikipedia.org/wiki/Warsteiner"
+                },
+                {
+                  "text": "Arrows Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1290,8 +1365,13 @@
         {
           "entrant": [
             {
-              "text": "Team Rebaque",
-              "url": "https://en.wikipedia.org/wiki/Rebaque"
+              "name": "Team Rebaque",
+              "title_sponsors": [
+                {
+                  "text": "Team Rebaque",
+                  "url": "https://en.wikipedia.org/wiki/Rebaque"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1398,8 +1478,13 @@
         {
           "entrant": [
             {
-              "text": "Autodelta",
-              "url": "https://en.wikipedia.org/wiki/Autodelta"
+              "name": "Autodelta",
+              "title_sponsors": [
+                {
+                  "text": "Autodelta",
+                  "url": "https://en.wikipedia.org/wiki/Autodelta"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1484,8 +1569,13 @@
         {
           "entrant": [
             {
-              "text": "Willi Kauhsen Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Kauhsen"
+              "name": "Willi Kauhsen Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Willi Kauhsen Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Kauhsen"
+                }
+              ]
             }
           ],
           "constructor": {

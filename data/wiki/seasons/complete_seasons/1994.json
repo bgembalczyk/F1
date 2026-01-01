@@ -9,16 +9,21 @@
         {
           "entrant": [
             {
-              "text": "Rothmans",
-              "url": "https://en.wikipedia.org/wiki/Rothmans_International"
-            },
-            {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-            },
-            {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault"
+              "name": "Rothmans Williams Renault",
+              "title_sponsors": [
+                {
+                  "text": "Rothmans",
+                  "url": "https://en.wikipedia.org/wiki/Rothmans_International"
+                },
+                {
+                  "text": "Williams",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                },
+                {
+                  "text": "Renault",
+                  "url": "https://en.wikipedia.org/wiki/Renault"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -112,8 +117,13 @@
         {
           "entrant": [
             {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -170,8 +180,13 @@
         {
           "entrant": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+              "name": "Mild Seven Benetton Ford",
+              "title_sponsors": [
+                {
+                  "text": "Mild Seven",
+                  "url": "https://en.wikipedia.org/wiki/Mild_Seven"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -288,16 +303,21 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "Peugeot",
-              "url": "https://en.wikipedia.org/wiki/Peugeot"
+              "name": "Marlboro McLaren Peugeot",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                },
+                {
+                  "text": "McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "Peugeot",
+                  "url": "https://en.wikipedia.org/wiki/Peugeot"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -380,12 +400,17 @@
         {
           "entrant": [
             {
-              "text": "Footwork",
-              "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-            },
-            {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              "name": "Footwork Ford",
+              "title_sponsors": [
+                {
+                  "text": "Footwork",
+                  "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -442,8 +467,13 @@
         {
           "entrant": [
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -592,12 +622,17 @@
         {
           "entrant": [
             {
-              "text": "Sasol",
-              "url": "https://en.wikipedia.org/wiki/Sasol"
-            },
-            {
-              "text": "Jordan",
-              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+              "name": "Sasol Jordan",
+              "title_sponsors": [
+                {
+                  "text": "Sasol",
+                  "url": "https://en.wikipedia.org/wiki/Sasol"
+                },
+                {
+                  "text": "Jordan",
+                  "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -688,12 +723,17 @@
         {
           "entrant": [
             {
-              "text": "Tourtel",
-              "url": "https://fr.wikipedia.org/wiki/Tourtel"
-            },
-            {
-              "text": "Larrousse F1",
-              "url": "https://en.wikipedia.org/wiki/Larrousse"
+              "name": "Tourtel Larrousse F1",
+              "title_sponsors": [
+                {
+                  "text": "Tourtel",
+                  "url": "https://fr.wikipedia.org/wiki/Tourtel"
+                },
+                {
+                  "text": "Larrousse F1",
+                  "url": "https://en.wikipedia.org/wiki/Larrousse"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -818,12 +858,17 @@
         {
           "entrant": [
             {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            {
-              "text": "Scuderia Italia",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+              "name": "Minardi Scuderia Italia",
+              "title_sponsors": [
+                {
+                  "text": "Minardi",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                },
+                {
+                  "text": "Scuderia Italia",
+                  "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -884,12 +929,17 @@
         {
           "entrant": [
             {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-            },
-            {
-              "text": "Gitanes Blondes",
-              "url": "https://en.wikipedia.org/wiki/Gitanes"
+              "name": "Ligier Gitanes Blondes",
+              "title_sponsors": [
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                },
+                {
+                  "text": "Gitanes Blondes",
+                  "url": "https://en.wikipedia.org/wiki/Gitanes"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -980,8 +1030,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1080,20 +1135,25 @@
         {
           "entrant": [
             {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-            },
-            {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
-            },
-            {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-            },
-            {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
+              "name": "Broker Sauber Mercedes Sauber Mercedes",
+              "title_sponsors": [
+                {
+                  "text": "Sauber",
+                  "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+                },
+                {
+                  "text": "Mercedes",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
+                },
+                {
+                  "text": "Sauber",
+                  "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+                },
+                {
+                  "text": "Mercedes",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1183,16 +1243,21 @@
         {
           "entrant": [
             {
-              "text": "MTV",
-              "url": "https://en.wikipedia.org/wiki/MTV"
-            },
-            {
-              "text": "Simtek",
-              "url": "https://en.wikipedia.org/wiki/Simtek"
-            },
-            {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              "name": "MTV Simtek Ford",
+              "title_sponsors": [
+                {
+                  "text": "MTV",
+                  "url": "https://en.wikipedia.org/wiki/MTV"
+                },
+                {
+                  "text": "Simtek",
+                  "url": "https://en.wikipedia.org/wiki/Simtek"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1297,8 +1362,13 @@
         {
           "entrant": [
             {
-              "text": "Pacific Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/Pacific_Racing"
+              "name": "Pacific Grand Prix",
+              "title_sponsors": [
+                {
+                  "text": "Pacific Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/Pacific_Racing"
+                }
+              ]
             }
           ],
           "constructor": {

@@ -9,8 +9,13 @@
         {
           "entrant": [
             {
-              "text": "Bruce McLaren Motor Racing",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Bruce McLaren Motor Racing",
+              "title_sponsors": [
+                {
+                  "text": "Bruce McLaren Motor Racing",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -134,8 +139,13 @@
         {
           "entrant": [
             {
-              "text": "Brabham Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Brabham Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Brabham Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -213,12 +223,17 @@
         {
           "entrant": [
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            {
-              "text": "Gold Leaf Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "Team Lotus Gold Leaf Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                },
+                {
+                  "text": "Gold Leaf Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -324,8 +339,13 @@
         {
           "entrant": [
             {
-              "text": "Anglo American Racers",
-              "url": "https://en.wikipedia.org/wiki/Anglo_American_Racers"
+              "name": "Anglo American Racers",
+              "title_sponsors": [
+                {
+                  "text": "Anglo American Racers",
+                  "url": "https://en.wikipedia.org/wiki/Anglo_American_Racers"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -426,8 +446,13 @@
         {
           "entrant": [
             {
-              "text": "Honda Racing",
-              "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
+              "name": "Honda Racing",
+              "title_sponsors": [
+                {
+                  "text": "Honda Racing",
+                  "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -522,8 +547,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari SpA SEFAC",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari SpA SEFAC",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari SpA SEFAC",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -640,8 +670,13 @@
         {
           "entrant": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "name": "Owen Racing Organisation",
+              "title_sponsors": [
+                {
+                  "text": "Owen Racing Organisation",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -745,8 +780,13 @@
         {
           "entrant": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "name": "Cooper Car Company",
+              "title_sponsors": [
+                {
+                  "text": "Cooper Car Company",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -913,8 +953,13 @@
         {
           "entrant": [
             {
-              "text": "Matra International",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Matra International",
+              "title_sponsors": [
+                {
+                  "text": "Matra International",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -998,8 +1043,13 @@
         {
           "entrant": [
             {
-              "text": "Matra Sports",
-              "url": "https://en.wikipedia.org/wiki/Matra_Sports"
+              "name": "Matra Sports",
+              "title_sponsors": [
+                {
+                  "text": "Matra Sports",
+                  "url": "https://en.wikipedia.org/wiki/Matra_Sports"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1114,8 +1164,13 @@
         {
           "entrant": [
             {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+              "name": "Team Gunston",
+              "title_sponsors": [
+                {
+                  "text": "Team Gunston",
+                  "url": "https://en.wikipedia.org/wiki/Team_Gunston"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1207,8 +1262,13 @@
         {
           "entrant": [
             {
-              "text": "Rob Walker/Jack Durlacher Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "name": "Rob Walker/Jack Durlacher Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Rob Walker/Jack Durlacher Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1317,8 +1377,13 @@
         {
           "entrant": [
             {
-              "text": "Joakim Bonnier Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier_Racing_Team"
+              "name": "Joakim Bonnier Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Joakim Bonnier Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier_Racing_Team"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -1474,8 +1539,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Scribante",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+              "name": "Scuderia Scribante",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Scribante",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1523,96 +1593,52 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": [
+          "entrant": [
             {
-              "chassis_constructor": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "engine_constructor": {
-                "text": "Climax",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-              },
-              "chassis": [
-                {
-                  "text": "BT11",
-                  "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Climax FPF",
-                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-                },
-                "displacement_l": 2.8,
-                "type": "L4",
-                "layout": "L",
-                "cylinders": 4
-              },
-              "tyre": [
-                {
-                  "text": "Firestone",
-                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jackie Pretorius",
-                    "url": "https://en.wikipedia.org/wiki/Jackie_Pretorius"
-                  },
-                  "rounds": [
-                    1
-                  ]
-                }
-              ]
+              "name": "Team Pretoria",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "chassis": [
             {
-              "chassis_constructor": {
-                "text": "Brabham",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
+              "text": "BT11",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Climax FPF",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+            },
+            "displacement_l": 2.8,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Firestone",
+              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jackie Pretorius",
+                "url": "https://en.wikipedia.org/wiki/Jackie_Pretorius"
               },
-              "engine_constructor": {
-                "text": "Repco",
-                "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
-              },
-              "chassis": [
-                {
-                  "text": "BT20",
-                  "url": "https://en.wikipedia.org/wiki/Brabham_BT20"
-                }
-              ],
-              "engine": {
-                "model": {
-                  "text": "Repco 620",
-                  "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
-                },
-                "displacement_l": 3.0,
-                "type": "V8",
-                "layout": "V",
-                "cylinders": 8
-              },
-              "tyre": [
-                {
-                  "text": "Goodyear",
-                  "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-                }
-              ],
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Silvio Moser",
-                    "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
-                  },
-                  "rounds": [
-                    3,
-                    5,
-                    7,
-                    8,
-                    9
-                  ]
-                }
+              "rounds": [
+                1
               ]
             }
           ]
@@ -1620,8 +1646,13 @@
         {
           "entrant": [
             {
-              "text": "John Love",
-              "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+              "name": "John Love",
+              "title_sponsors": [
+                {
+                  "text": "John Love",
+                  "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1671,8 +1702,13 @@
         {
           "entrant": [
             {
-              "text": "Reg Parnell Racing",
-              "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+              "name": "Reg Parnell Racing",
+              "title_sponsors": [
+                {
+                  "text": "Reg Parnell Racing",
+                  "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1732,8 +1768,68 @@
         {
           "entrant": [
             {
-              "text": "Caltex Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Kurt_Ahrens_Jr."
+              "name": "Charles Vögele Racing",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            },
+            "engine_constructor": {
+              "text": "Repco",
+              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+            }
+          },
+          "chassis": [
+            {
+              "text": "BT20",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT20"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Repco 620",
+              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
+            },
+            "displacement_l": 3.0,
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Silvio Moser",
+                "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
+              },
+              "rounds": [
+                3,
+                5,
+                7,
+                8,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "name": "Caltex Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Caltex Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Kurt_Ahrens_Jr."
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1783,8 +1879,13 @@
         {
           "entrant": [
             {
-              "text": "Bayerische Motoren Werke AG",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+              "name": "Bayerische Motoren Werke AG",
+              "title_sponsors": [
+                {
+                  "text": "Bayerische Motoren Werke AG",
+                  "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1834,8 +1935,13 @@
         {
           "entrant": [
             {
-              "text": "Bernard White Racing",
-              "url": "https://en.wikipedia.org/wiki/Bernard_White_Racing"
+              "name": "Bernard White Racing",
+              "title_sponsors": [
+                {
+                  "text": "Bernard White Racing",
+                  "url": "https://en.wikipedia.org/wiki/Bernard_White_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1885,8 +1991,13 @@
         {
           "entrant": [
             {
-              "text": "Castrol Oils Ltd",
-              "url": "https://en.wikipedia.org/wiki/Castrol"
+              "name": "Castrol Oils Ltd",
+              "title_sponsors": [
+                {
+                  "text": "Castrol Oils Ltd",
+                  "url": "https://en.wikipedia.org/wiki/Castrol"
+                }
+              ]
             }
           ],
           "constructor": {

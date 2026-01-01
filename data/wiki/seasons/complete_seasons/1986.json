@@ -9,16 +9,21 @@
         {
           "entrant": [
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            {
-              "text": "TAG Turbo",
-              "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+              "name": "Marlboro McLaren TAG Turbo",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro",
+                  "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+                },
+                {
+                  "text": "McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                },
+                {
+                  "text": "TAG Turbo",
+                  "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -79,12 +84,17 @@
         {
           "entrant": [
             {
-              "text": "Data General",
-              "url": "https://en.wikipedia.org/wiki/Data_General"
-            },
-            {
-              "text": "Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Data General Team Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "Data General",
+                  "url": "https://en.wikipedia.org/wiki/Data_General"
+                },
+                {
+                  "text": "Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -149,20 +159,25 @@
         {
           "entrant": [
             {
-              "text": "Canon",
-              "url": "https://en.wikipedia.org/wiki/Canon_Inc."
-            },
-            {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-            },
-            {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda"
-            },
-            {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+              "name": "Canon Williams Honda Team",
+              "title_sponsors": [
+                {
+                  "text": "Canon",
+                  "url": "https://en.wikipedia.org/wiki/Canon_Inc."
+                },
+                {
+                  "text": "Williams",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                },
+                {
+                  "text": "Honda",
+                  "url": "https://en.wikipedia.org/wiki/Honda"
+                },
+                {
+                  "text": "Team",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -223,12 +238,17 @@
         {
           "entrant": [
             {
-              "text": "Olivetti",
-              "url": "https://en.wikipedia.org/wiki/Olivetti"
-            },
-            {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "name": "Olivetti Brabham",
+              "title_sponsors": [
+                {
+                  "text": "Olivetti",
+                  "url": "https://en.wikipedia.org/wiki/Olivetti"
+                },
+                {
+                  "text": "Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -318,12 +338,17 @@
         {
           "entrant": [
             {
-              "text": "John Player Special",
-              "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Special Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "John Player Special",
+                  "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -384,12 +409,17 @@
         {
           "entrant": [
             {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
-            },
-            {
-              "text": "Zakspeed Racing",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
+              "name": "West Zakspeed Racing",
+              "title_sponsors": [
+                {
+                  "text": "West",
+                  "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
+                },
+                {
+                  "text": "Zakspeed Racing",
+                  "url": "https://en.wikipedia.org/wiki/Zakspeed"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -466,8 +496,13 @@
         {
           "entrant": [
             {
-              "text": "Team Haas (USA) Ltd.",
-              "url": "https://en.wikipedia.org/wiki/Haas_Lola"
+              "name": "Team Haas (USA) Ltd.",
+              "title_sponsors": [
+                {
+                  "text": "Team Haas (USA) Ltd.",
+                  "url": "https://en.wikipedia.org/wiki/Haas_Lola"
+                }
+              ]
             }
           ],
           "constructor": [
@@ -634,16 +669,21 @@
         {
           "entrant": [
             {
-              "text": "Barclay",
-              "url": "https://en.wikipedia.org/wiki/R._J._Reynolds_Tobacco_Company"
-            },
-            {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW"
+              "name": "Barclay Arrows BMW",
+              "title_sponsors": [
+                {
+                  "text": "Barclay",
+                  "url": "https://en.wikipedia.org/wiki/R._J._Reynolds_Tobacco_Company"
+                },
+                {
+                  "text": "Arrows",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                },
+                {
+                  "text": "BMW",
+                  "url": "https://en.wikipedia.org/wiki/BMW"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -733,16 +773,21 @@
         {
           "entrant": [
             {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-            },
-            {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW"
-            },
-            {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+              "name": "Benetton BMW Team",
+              "title_sponsors": [
+                {
+                  "text": "Benetton",
+                  "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+                },
+                {
+                  "text": "BMW",
+                  "url": "https://en.wikipedia.org/wiki/BMW"
+                },
+                {
+                  "text": "Team",
+                  "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -803,8 +848,13 @@
         {
           "entrant": [
             {
-              "text": "Osella Squadra Corse",
-              "url": "https://en.wikipedia.org/wiki/Osella"
+              "name": "Osella Squadra Corse",
+              "title_sponsors": [
+                {
+                  "text": "Osella Squadra Corse",
+                  "url": "https://en.wikipedia.org/wiki/Osella"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -898,8 +948,13 @@
         {
           "entrant": [
             {
-              "text": "Minardi Team",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
+              "name": "Minardi Team",
+              "title_sponsors": [
+                {
+                  "text": "Minardi Team",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -964,8 +1019,13 @@
         {
           "entrant": [
             {
-              "text": "Équipe Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+              "name": "Équipe Ligier",
+              "title_sponsors": [
+                {
+                  "text": "Équipe Ligier",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1064,8 +1124,13 @@
         {
           "entrant": [
             {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Ferrari",
+              "title_sponsors": [
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1126,8 +1191,13 @@
         {
           "entrant": [
             {
-              "text": "Jolly Club",
-              "url": "https://en.wikipedia.org/wiki/Jolly_Club"
+              "name": "Jolly Club SpA",
+              "title_sponsors": [
+                {
+                  "text": "Jolly Club",
+                  "url": "https://en.wikipedia.org/wiki/Jolly_Club"
+                }
+              ]
             }
           ],
           "constructor": {

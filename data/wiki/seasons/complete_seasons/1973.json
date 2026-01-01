@@ -9,12 +9,17 @@
         {
           "entrant": [
             {
-              "text": "John Player",
-              "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
-            },
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "name": "John Player Team Lotus",
+              "title_sponsors": [
+                {
+                  "text": "John Player",
+                  "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
+                },
+                {
+                  "text": "Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -71,8 +76,13 @@
         {
           "entrant": [
             {
-              "text": "Elf Team Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "name": "Elf Team Tyrrell",
+              "title_sponsors": [
+                {
+                  "text": "Elf Team Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -139,16 +149,21 @@
         {
           "entrant": [
             {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            {
-              "text": "Ceramica Pagnossin Team MRD",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            {
-              "text": "Hexagon of Highgate",
-              "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
+              "name": "Motor Racing Developments Ceramica Pagnossin Team MRD Hexagon of Highgate",
+              "title_sponsors": [
+                {
+                  "text": "Motor Racing Developments",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                },
+                {
+                  "text": "Ceramica Pagnossin Team MRD",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                },
+                {
+                  "text": "Hexagon of Highgate",
+                  "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -236,8 +251,13 @@
         {
           "entrant": [
             {
-              "text": "Yardley Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "name": "Yardley Team McLaren",
+              "title_sponsors": [
+                {
+                  "text": "Yardley Team McLaren",
+                  "url": "https://en.wikipedia.org/wiki/McLaren"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -336,8 +356,13 @@
         {
           "entrant": [
             {
-              "text": "Scuderia Ferrari SpA SEFAC",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "name": "Scuderia Ferrari SpA SEFAC",
+              "title_sponsors": [
+                {
+                  "text": "Scuderia Ferrari SpA SEFAC",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -423,8 +448,13 @@
         {
           "entrant": [
             {
-              "text": "Clarke-Mordaunt-Guthrie Racing",
-              "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+              "name": "Clarke-Mordaunt-Guthrie Racing Team Pierre Robert",
+              "title_sponsors": [
+                {
+                  "text": "Clarke-Mordaunt-Guthrie Racing",
+                  "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -505,20 +535,25 @@
         {
           "entrant": [
             {
-              "text": "STP March Racing Team",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            {
-              "text": "STP March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            {
-              "text": "Wheatcroft Racing",
-              "url": "https://en.wikipedia.org/wiki/Wheatcroft_Racing"
-            },
-            {
-              "text": "March Racing Team",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              "name": "STP March Racing Team STP March / Wheatcroft Racing March Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "STP March Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                },
+                {
+                  "text": "STP March",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                },
+                {
+                  "text": "Wheatcroft Racing",
+                  "url": "https://en.wikipedia.org/wiki/Wheatcroft_Racing"
+                },
+                {
+                  "text": "March Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/March_Engineering"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -600,20 +635,25 @@
         {
           "entrant": [
             {
-              "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Brooke Bond Oxo Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Ceramica Pagnossin Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "name": "Brooke Bond Oxo-Rob Walker Team Surtees Brooke Bond Oxo Team Surtees Ceramica Pagnossin Team Surtees Team Surtees",
+              "title_sponsors": [
+                {
+                  "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Brooke Bond Oxo Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Ceramica Pagnossin Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                },
+                {
+                  "text": "Team Surtees",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -703,8 +743,13 @@
         {
           "entrant": [
             {
-              "text": "Marlboro BRM",
-              "url": "https://en.wikipedia.org/wiki/BRM"
+              "name": "Marlboro BRM",
+              "title_sponsors": [
+                {
+                  "text": "Marlboro BRM",
+                  "url": "https://en.wikipedia.org/wiki/BRM"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -792,8 +837,13 @@
         {
           "entrant": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "name": "Frank Williams Racing Cars",
+              "title_sponsors": [
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -923,8 +973,13 @@
         {
           "entrant": [
             {
-              "text": "UOP Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+              "name": "UOP Shadow Racing",
+              "title_sponsors": [
+                {
+                  "text": "UOP Shadow Racing",
+                  "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1016,12 +1071,17 @@
         {
           "entrant": [
             {
-              "text": "Scribante",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
-            },
-            {
-              "text": "Lucky Strike Racing",
-              "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+              "name": "Scribante Lucky Strike Racing",
+              "title_sponsors": [
+                {
+                  "text": "Scribante",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
+                },
+                {
+                  "text": "Lucky Strike Racing",
+                  "url": "https://en.wikipedia.org/wiki/Lucky_Strike"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1071,8 +1131,13 @@
         {
           "entrant": [
             {
-              "text": "Blignaut Lucky Strike Racing",
-              "url": "https://en.wikipedia.org/wiki/Alex_Blignaut"
+              "name": "Blignaut Lucky Strike Racing",
+              "title_sponsors": [
+                {
+                  "text": "Blignaut Lucky Strike Racing",
+                  "url": "https://en.wikipedia.org/wiki/Alex_Blignaut"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1122,8 +1187,13 @@
         {
           "entrant": [
             {
-              "text": "Embassy Racing",
-              "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
+              "name": "Embassy Racing",
+              "title_sponsors": [
+                {
+                  "text": "Embassy Racing",
+                  "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1184,8 +1254,13 @@
         {
           "entrant": [
             {
-              "text": "Martini Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
+              "name": "Martini Racing Team",
+              "title_sponsors": [
+                {
+                  "text": "Martini Racing Team",
+                  "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1231,8 +1306,13 @@
         {
           "entrant": [
             {
-              "text": "LEC Refrigeration Racing",
-              "url": "https://en.wikipedia.org/wiki/LEC_Refrigeration_Racing"
+              "name": "LEC Refrigeration Racing",
+              "title_sponsors": [
+                {
+                  "text": "LEC Refrigeration Racing",
+                  "url": "https://en.wikipedia.org/wiki/LEC_Refrigeration_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1286,8 +1366,13 @@
         {
           "entrant": [
             {
-              "text": "Hesketh Racing",
-              "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+              "name": "Hesketh Racing",
+              "title_sponsors": [
+                {
+                  "text": "Hesketh Racing",
+                  "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
@@ -1344,8 +1429,13 @@
         {
           "entrant": [
             {
-              "text": "Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "name": "Team Ensign",
+              "title_sponsors": [
+                {
+                  "text": "Team Ensign",
+                  "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+                }
+              ]
             }
           ],
           "constructor": {
