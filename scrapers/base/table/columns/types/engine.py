@@ -85,7 +85,15 @@ def _parse_engine_segment(
 
     displacement = _extract_displacement(clean_text)
     type_text = _extract_type_text(clean_text, displacement)
+    supercharged = _extract_supercharged(clean_text)
     layout, cylinders = _parse_engine_type(type_text)
+    model_text = _extract_model_text(
+        clean_text,
+        type_text=type_text,
+        supercharged=supercharged,
+    )
+    if model and model_text:
+        model = {**model, "text": model_text}
 
     data: dict[str, Any] = {}
     if model:
@@ -98,6 +106,8 @@ def _parse_engine_segment(
         data["layout"] = layout
     if cylinders is not None:
         data["cylinders"] = cylinders
+    if supercharged:
+        data["supercharged"] = True
     return data or None
 
 
@@ -119,12 +129,19 @@ def _extract_type_text(text: str, displacement: float | None) -> str | None:
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
 
     match = re.search(
-        r"\b(?:V\d{1,2}|W\d{1,2}|I\d{1,2}|H\d{1,2}|F\d{1,2}|Flat[-\s]?\d{1,2}|Straight[-\s]?\d{1,2})\b",
+        r"\b(?:V\d{1,2}|W\d{1,2}|I\d{1,2}|L\d{1,2}|H\d{1,2}|F\d{1,2}|Flat[-\s]?\d{1,2}|Straight[-\s]?\d{1,2}|Inline[-\s]?\d{1,2})\b",
         cleaned,
         re.I,
     )
     if match:
-        return match.group(0).replace(" ", "").replace("-", "")
+        raw = match.group(0)
+        normalized = raw.replace(" ", "").replace("-", "")
+        lowered = normalized.lower()
+        if lowered.startswith(("straight", "inline")):
+            digits = re.search(r"\d{1,2}", normalized)
+            if digits:
+                return f"L{digits.group(0)}"
+        return normalized
 
     if displacement is None:
         match = re.search(r"\bV\d{1,2}\b", text, re.I)
@@ -142,8 +159,47 @@ def _parse_engine_type(type_text: str | None) -> tuple[str | None, int | None]:
     if not match:
         return None, None
     layout = match.group(1).upper()
+    if layout in {"STRAIGHT", "INLINE", "I", "L"}:
+        layout = "L"
     try:
         cylinders = int(match.group(2))
     except ValueError:
         cylinders = None
     return layout, cylinders
+
+
+def _extract_supercharged(text: str) -> bool | None:
+    if not text:
+        return None
+    if re.search(r"\b(supercharger|supercharged)\b", text, re.I):
+        return True
+    stripped = text.strip()
+    if re.search(r"(?:^|\s)s$", stripped, re.I):
+        return True
+    return None
+
+
+def _extract_model_text(
+    text: str,
+    *,
+    type_text: str | None,
+    supercharged: bool | None,
+) -> str | None:
+    if not text:
+        return None
+    cleaned = text
+    cleaned = re.sub(r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", "", cleaned, flags=re.I)
+    cleaned = re.sub(
+        r"\b(?:V\d{1,2}|W\d{1,2}|I\d{1,2}|L\d{1,2}|H\d{1,2}|F\d{1,2}|Flat[-\s]?\d{1,2}|Straight[-\s]?\d{1,2}|Inline[-\s]?\d{1,2})\b",
+        "",
+        cleaned,
+        flags=re.I,
+    )
+    if type_text:
+        normalized_type = re.escape(type_text)
+        cleaned = re.sub(normalized_type, "", cleaned, flags=re.I)
+    if supercharged:
+        cleaned = re.sub(r"\b(supercharger|supercharged)\b", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"(?:^|\s)s$", "", cleaned, flags=re.I)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned or None
