@@ -39,8 +39,23 @@ class EntrantColumn(BaseColumn):
 
 
 def _split_cell_on_br(cell: Tag) -> list[Tag]:
-    html = cell.decode_contents()
-    parts = re.split(r"<br\\s*/?>", html, flags=re.IGNORECASE)
+    parts: list[str] = []
+    current: list[str] = []
+
+    for child in list(cell.contents):
+        if isinstance(child, Tag) and child.name and child.name.lower() == "br":
+            if current:
+                parts.append("".join(current))
+                current = []
+            continue
+        current.append(str(child))
+
+    if current:
+        parts.append("".join(current))
+
+    if not parts:
+        html = cell.decode_contents()
+        parts = re.split(r"<br\\s*/?>", html, flags=re.IGNORECASE)
     segments: list[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
 
