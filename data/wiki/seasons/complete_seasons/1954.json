@@ -1240,10 +1240,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "53",
-              "url": null
-            }
+            "53"
           ],
           "engine": {
             "model": {
@@ -1703,46 +1700,109 @@
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Connaught",
-              "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Lea-Francis",
-              "url": "https://en.wikipedia.org/wiki/Lea-Francis"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "A",
-              "url": "https://en.wikipedia.org/wiki/Connaught_A"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Lea-Francis",
-              "url": "https://en.wikipedia.org/wiki/Lea-Francis"
-            },
-            "displacement_l": 2.0,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Don Beauman",
-                "url": "https://en.wikipedia.org/wiki/Don_Beauman"
+              "chassis_constructor": {
+                "text": "Connaught",
+                "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
               },
-              "rounds": [
-                5
+              "engine_constructor": {
+                "text": "Lea-Francis",
+                "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+              },
+              "chassis": [
+                {
+                  "text": "A",
+                  "url": "https://en.wikipedia.org/wiki/Connaught_A"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Lea-Francis",
+                  "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+                },
+                "displacement_l": 2.0,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Don Beauman",
+                    "url": "https://en.wikipedia.org/wiki/Don_Beauman"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              },
+              "engine_constructor": {
+                "text": "Bristol",
+                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+              },
+              "chassis": [
+                {
+                  "text": "T23",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T23"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Bristol BS1",
+                  "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+                },
+                "displacement_l": 2.0,
+                "type": "L6",
+                "layout": "L",
+                "cylinders": 6
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alan Brown",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Eric Brandon",
+                    "url": "https://en.wikipedia.org/wiki/Eric_Brandon"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Rodney Nuckey",
+                    "url": "https://en.wikipedia.org/wiki/Rodney_Nuckey"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                }
               ]
             }
           ]
@@ -1791,70 +1851,6 @@
               "driver": {
                 "text": "Leslie Thorne",
                 "url": "https://en.wikipedia.org/wiki/Leslie_Thorne"
-              },
-              "rounds": [
-                5
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Bristol",
-              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T23",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Bristol BS1",
-              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            },
-            "displacement_l": 2.0,
-            "type": "L6",
-            "layout": "L",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Alan Brown",
-                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
-              },
-              "rounds": [
-                5
-              ]
-            },
-            {
-              "driver": {
-                "text": "Eric Brandon",
-                "url": "https://en.wikipedia.org/wiki/Eric_Brandon"
-              },
-              "rounds": [
-                5
-              ]
-            },
-            {
-              "driver": {
-                "text": "Rodney Nuckey",
-                "url": "https://en.wikipedia.org/wiki/Rodney_Nuckey"
               },
               "rounds": [
                 5
@@ -1982,10 +1978,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "Meteor",
-              "url": null
-            }
+            "Meteor"
           ],
           "engine": {
             "model": {

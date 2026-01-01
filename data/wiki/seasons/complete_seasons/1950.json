@@ -1301,10 +1301,7 @@
               "text": "125",
               "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
             },
-            {
-              "text": "166F2-50",
-              "url": null
-            },
+            "166F2-50",
             {
               "text": "275",
               "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
@@ -1417,109 +1414,100 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "engine_constructor": {
-              "text": "Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "4CLT/50",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4,
-            "supercharged": true
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Felice Bonetto",
-                "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+              "chassis_constructor": {
+                "text": "Maserati",
+                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
-              "rounds": [
-                4,
-                6
+              "engine_constructor": {
+                "text": "Speluzzi",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
+              },
+              "chassis": [
+                {
+                  "text": "4CLT/50",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Speluzzi",
+                  "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4,
+                "supercharged": true
+              },
+              "tyre": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Felice Bonetto",
+                    "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+                  },
+                  "rounds": [
+                    4,
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Franco Comotti",
+                    "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Franco Comotti",
-                "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
+              "chassis_constructor": {
+                "text": "Milano-Speluzzi",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
               },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Milano",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Milano-Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            },
-            "engine_constructor": {
-              "text": "Milano-Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            }
-          },
-          "chassis": [
-            {
-              "text": "1",
-              "url": null
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4,
-            "supercharged": true
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Felice Bonetto",
-                "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+              "engine_constructor": {
+                "text": "Milano-Speluzzi",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
               },
-              "rounds": [
-                7
+              "chassis": [
+                "1"
+              ],
+              "engine": {
+                "model": {
+                  "text": "Speluzzi",
+                  "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4,
+                "supercharged": true
+              },
+              "tyre": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Felice Bonetto",
+                    "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             }
           ]

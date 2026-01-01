@@ -125,188 +125,182 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "625",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_625_F1"
-            },
-            {
-              "text": "555",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_555"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 555",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "displacement_l": 2.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Englebert",
-              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Umberto Maglioli",
-                "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
+              "chassis_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "rounds": [
-                1,
-                7
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "625",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_625_F1"
+                },
+                {
+                  "text": "555",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_555"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ferrari 555",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                "displacement_l": 2.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Englebert",
+                  "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Umberto Maglioli",
+                    "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
+                  },
+                  "rounds": [
+                    1,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "José Froilán González",
+                    "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Maurice Trintignant",
+                    "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Harry Schell",
+                    "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+                  },
+                  "rounds": [
+                    2,
+                    4
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Piero Taruffi",
+                    "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
+                  },
+                  "rounds": [
+                    2,
+                    4
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Paul Frère",
+                    "url": "https://en.wikipedia.org/wiki/Paul_Fr%C3%A8re"
+                  },
+                  "rounds": [
+                    2,
+                    4
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Mike Hawthorn",
+                    "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+                  },
+                  "rounds": [
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Eugenio Castellotti",
+                    "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
+                  },
+                  "rounds": [
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Giuseppe Farina",
+                    "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    4
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "José Froilán González",
-                "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+              "chassis_constructor": {
+                "text": "Lancia",
+                "url": "https://en.wikipedia.org/wiki/Lancia"
               },
-              "rounds": [
-                1
-              ]
-            },
-            {
-              "driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+              "engine_constructor": {
+                "text": "Lancia",
+                "url": "https://en.wikipedia.org/wiki/Lancia"
               },
-              "rounds": [
-                1,
-                2,
-                4,
-                5,
-                6,
-                7
-              ]
-            },
-            {
-              "driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+              "chassis": [
+                {
+                  "text": "D50",
+                  "url": "https://en.wikipedia.org/wiki/Lancia_D50"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Lancia DS50",
+                  "url": "https://en.wikipedia.org/wiki/Lancia"
+                },
+                "displacement_l": 2.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
               },
-              "rounds": [
-                2,
-                4
-              ]
-            },
-            {
-              "driver": {
-                "text": "Piero Taruffi",
-                "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
-              },
-              "rounds": [
-                2,
-                4
-              ]
-            },
-            {
-              "driver": {
-                "text": "Paul Frère",
-                "url": "https://en.wikipedia.org/wiki/Paul_Fr%C3%A8re"
-              },
-              "rounds": [
-                2,
-                4
-              ]
-            },
-            {
-              "driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "rounds": [
-                5,
-                6,
-                7
-              ]
-            },
-            {
-              "driver": {
-                "text": "Eugenio Castellotti",
-                "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
-              },
-              "rounds": [
-                5,
-                6,
-                7
-              ]
-            },
-            {
-              "driver": {
-                "text": "Giuseppe Farina",
-                "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-              },
-              "rounds": [
-                1,
-                2,
-                4
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lancia",
-              "url": "https://en.wikipedia.org/wiki/Lancia"
-            },
-            "engine_constructor": {
-              "text": "Lancia",
-              "url": "https://en.wikipedia.org/wiki/Lancia"
-            }
-          },
-          "chassis": [
-            {
-              "text": "D50",
-              "url": "https://en.wikipedia.org/wiki/Lancia_D50"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Lancia DS50",
-              "url": "https://en.wikipedia.org/wiki/Lancia"
-            },
-            "displacement_l": 2.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Englebert",
-              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Giuseppe Farina",
-                "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-              },
-              "rounds": [
-                7
+              "tyre": [
+                {
+                  "text": "Englebert",
+                  "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Giuseppe Farina",
+                    "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             }
           ]
@@ -946,10 +940,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "53",
-              "url": null
-            }
+            "53"
           ],
           "engine": {
             "model": {

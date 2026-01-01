@@ -39,56 +39,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 1,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Jacques Villeneuve",
-                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Winfield",
-              "url": "https://en.wikipedia.org/wiki/Winfield_(cigarette)"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_F1"
+              "no": 1,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jacques Villeneuve",
+                    "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Mecachrome",
-              "url": "https://en.wikipedia.org/wiki/Mecachrome"
-            }
-          },
-          "chassis": [
             {
-              "text": "FW20",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW20"
-            }
-          ],
-          "engine_†": {
-            "text": "Mecachrome GC37-01",
-            "url": "https://en.wikipedia.org/wiki/Mecachrome"
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 2,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Heinz-Harald Frentzen",
-                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-              }
+              "no": 2,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Heinz-Harald Frentzen",
+                    "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -125,56 +97,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 3,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Michael Schumacher",
-                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "no": 3,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Michael Schumacher",
+                    "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
             {
-              "text": "F300",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_F300"
-            }
-          ],
-          "engine_†": {
-            "text": "Ferrari 047",
-            "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 4,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Eddie Irvine",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-              }
+              "no": 4,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Eddie Irvine",
+                    "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -211,56 +155,28 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": 5,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Giancarlo Fisichella",
-                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+              "no": 5,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Giancarlo Fisichella",
+                    "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Playlife",
-              "url": "https://en.wikipedia.org/wiki/Playlife"
-            }
-          },
-          "chassis": [
             {
-              "text": "B198",
-              "url": "https://en.wikipedia.org/wiki/Benetton_B198"
-            }
-          ],
-          "engine_†": {
-            "text": "Playlife GC37-01",
-            "url": "https://en.wikipedia.org/wiki/Mecachrome"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 6,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Alexander Wurz",
-                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-              }
+              "no": 6,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alexander Wurz",
+                    "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -297,56 +213,28 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": 7,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "David Coulthard",
-                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "no": 7,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "David Coulthard",
+                    "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
-            }
-          },
-          "chassis": [
             {
-              "text": "MP4/13",
-              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/13"
-            }
-          ],
-          "engine_†": {
-            "text": "Mercedes FO110G",
-            "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 8,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Mika Häkkinen",
-                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-              }
+              "no": 8,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Mika Häkkinen",
+                    "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -383,56 +271,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 9,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Damon Hill",
-                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jordan",
-              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+              "no": 9,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Damon Hill",
+                    "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Mugen-Honda",
-              "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
-            }
-          },
-          "chassis": [
             {
-              "text": "198",
-              "url": "https://en.wikipedia.org/wiki/Jordan_198"
-            }
-          ],
-          "engine_†": {
-            "text": "Mugen-Honda MF-301HC",
-            "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 10,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Ralf Schumacher",
-                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-              }
+              "no": 10,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ralf Schumacher",
+                    "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -469,56 +329,28 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": 11,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Olivier Panis",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Gauloises",
-              "url": "https://en.wikipedia.org/wiki/Gauloises"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Prost",
-              "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
+              "no": 11,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Olivier Panis",
+                    "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Peugeot",
-              "url": "https://en.wikipedia.org/wiki/Peugeot"
-            }
-          },
-          "chassis": [
             {
-              "text": "AP01",
-              "url": "https://en.wikipedia.org/wiki/Prost_AP01"
-            }
-          ],
-          "engine_†": {
-            "text": "Peugeot A16",
-            "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 12,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jarno Trulli",
-                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-              }
+              "no": 12,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jarno Trulli",
+                    "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -559,257 +391,169 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 14,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Jean Alesi",
-                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
-            },
-            {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C17",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C17"
-            }
-          ],
-          "engine_†": {
-            "text": "Petronas SPE-01D",
-            "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 15,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Johnny Herbert",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Zepter",
-              "url": "https://en.wikipedia.org/wiki/Zepter_International"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            }
-          },
-          "chassis": [
-            {
-              "text": "A19",
-              "url": "https://en.wikipedia.org/wiki/Arrows_A19"
-            }
-          ],
-          "engine_†": {
-            "text": "Arrows T2-F1",
-            "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 16,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Pedro Diniz",
-                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Zepter",
-              "url": "https://en.wikipedia.org/wiki/Zepter_International"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            }
-          },
-          "chassis": [
-            {
-              "text": "A19",
-              "url": "https://en.wikipedia.org/wiki/Arrows_A19"
-            }
-          ],
-          "engine_†": {
-            "text": "Arrows T2-F1",
-            "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 17,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Stewart",
-              "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "SF02",
-              "url": "https://en.wikipedia.org/wiki/Stewart_SF02"
-            }
-          ],
-          "engine_†": {
-            "text": "Ford VJ Zetec-R",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 18,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Rubens Barrichello",
-                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Stewart",
-              "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "SF02",
-              "url": "https://en.wikipedia.org/wiki/Stewart_SF02"
-            }
-          ],
-          "engine_†": {
-            "text": "Ford VJ Zetec-R",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 19,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jan Magnussen",
-                "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+              "no": 14,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jean Alesi",
+                    "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Jos Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-              },
-              "rounds": [
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 15,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Johnny Herbert",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Zepter",
+              "url": "https://en.wikipedia.org/wiki/Zepter_International"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Arrows",
+              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+            },
+            "engine_constructor": {
+              "text": "Arrows",
+              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+            }
+          },
+          "chassis": [
+            {
+              "text": "A19",
+              "url": "https://en.wikipedia.org/wiki/Arrows_A19"
+            }
+          ],
+          "engine_†": {
+            "text": "Arrows T2-F1",
+            "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+          },
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
+          "no": [
+            {
+              "no": 16,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Pedro Diniz",
+                    "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 17,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Mika Salo",
+                    "url": "https://en.wikipedia.org/wiki/Mika_Salo"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "HSBC",
+              "url": "https://en.wikipedia.org/wiki/HSBC"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Stewart",
+              "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "SF02",
+              "url": "https://en.wikipedia.org/wiki/Stewart_SF02"
+            }
+          ],
+          "engine_†": {
+            "text": "Ford VJ Zetec-R",
+            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
+          },
+          "tyre": [
+            {
+              "text": "Bridgestone",
+              "url": "https://en.wikipedia.org/wiki/Bridgestone"
+            }
+          ],
+          "no": [
+            {
+              "no": 18,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Rubens Barrichello",
+                    "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 19,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jan Magnussen",
+                    "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Jos Verstappen",
+                    "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+                  },
+                  "rounds": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -847,56 +591,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 20,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Ricardo Rosset",
-                "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "PIAA",
-              "url": "https://en.wikipedia.org/wiki/PIAA_Corporation"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+              "no": 20,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ricardo Rosset",
+                    "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "026",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_026"
-            }
-          ],
-          "engine_†": {
-            "text": "Ford JD Zetec-R",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 21,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Toranosuke Takagi",
-                "url": "https://en.wikipedia.org/wiki/Toranosuke_Takagi"
-              }
+              "no": 21,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Toranosuke Takagi",
+                    "url": "https://en.wikipedia.org/wiki/Toranosuke_Takagi"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -933,56 +649,28 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": 22,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Shinji Nakano",
-                "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Fondmetal",
-              "url": "https://en.wikipedia.org/wiki/Fondmetal"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
+              "no": 22,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Shinji Nakano",
+                    "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
+                  }
+                }
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "M198",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M198"
-            }
-          ],
-          "engine_†": {
-            "text": "Ford JD Zetec-R",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
-          },
-          "tyre": [
-            {
-              "text": "Bridgestone",
-              "url": "https://en.wikipedia.org/wiki/Bridgestone"
-            }
-          ],
-          "no": 23,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Esteban Tuero",
-                "url": "https://en.wikipedia.org/wiki/Esteban_Tuero"
-              }
+              "no": 23,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Esteban Tuero",
+                    "url": "https://en.wikipedia.org/wiki/Esteban_Tuero"
+                  }
+                }
+              ]
             }
           ]
         }

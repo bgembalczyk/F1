@@ -8,55 +8,152 @@
       "entries": [
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "250F",
-              "url": "https://en.wikipedia.org/wiki/Maserati_250F"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati 250F1",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "displacement_l": 2.5,
-            "type": "L6",
-            "layout": "L",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Juan Manuel Fangio",
-                "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+              "chassis_constructor": {
+                "text": "Maserati",
+                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Maserati",
+                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              },
+              "chassis": [
+                {
+                  "text": "250F",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_250F"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Maserati 250F1",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                },
+                "displacement_l": 2.5,
+                "type": "L6",
+                "layout": "L",
+                "cylinders": 6
+              },
+              "tyre": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Juan Manuel Fangio",
+                    "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Carlos Menditeguy",
+                    "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Carlos Menditeguy",
-                "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "T43",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T43"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ian Burgess",
+                    "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Christian Goethals",
+                    "url": "https://en.wikipedia.org/wiki/Christian_Goethals"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              },
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "12",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_12"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ivor Bueb",
+                    "url": "https://en.wikipedia.org/wiki/Ivor_Bueb"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
               ]
             }
           ]
@@ -358,126 +455,114 @@
           },
           "chassis": [
             {
-              "text": "T43",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T43"
-            },
-            {
-              "text": "T45",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T45"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 2.0,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Continental",
-              "url": "https://en.wikipedia.org/wiki/Continental_AG"
-            },
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+              "chassis": [
+                {
+                  "text": "T43",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T43"
+                },
+                {
+                  "text": "T45",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T45"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 2.0,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                1
+              "tyre": [
+                {
+                  "text": "Continental",
+                  "url": "https://en.wikipedia.org/wiki/Continental_AG"
+                },
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Stirling Moss",
+                    "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Maurice Trintignant",
+                    "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Ron Flockhart",
+                    "url": "https://en.wikipedia.org/wiki/Ron_Flockhart_(racing_driver)"
+                  },
+                  "rounds": [
+                    2
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+              "chassis": [
+                {
+                  "text": "T43",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T43"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                2,
-                3,
-                7,
-                8,
-                9,
-                10,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Ron Flockhart",
-                "url": "https://en.wikipedia.org/wiki/Ron_Flockhart_(racing_driver)"
-              },
-              "rounds": [
-                2
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T43",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T43"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Wolfgang Seidel",
-                "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
-              },
-              "rounds": [
-                8
-              ]
-            },
-            {
-              "driver": {
-                "text": "François Picard",
-                "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Picard_(racing_driver)"
-              },
-              "rounds": [
-                11
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Wolfgang Seidel",
+                    "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "François Picard",
+                    "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Picard_(racing_driver)"
+                  },
+                  "rounds": [
+                    11
+                  ]
+                }
               ]
             }
           ]
@@ -501,157 +586,145 @@
           },
           "chassis": [
             {
-              "text": "246",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 143",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "displacement_l": 2.4,
-            "type": "V6",
-            "layout": "V",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Englebert",
-              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Luigi Musso",
-                "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
+              "chassis": [
+                {
+                  "text": "246",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ferrari 143",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                "displacement_l": 2.4,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6
               },
-              "rounds": [
-                1,
-                2,
-                3,
-                5,
-                6
+              "tyre": [
+                {
+                  "text": "Englebert",
+                  "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Luigi Musso",
+                    "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    5,
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Peter Collins",
+                    "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Mike Hawthorn",
+                    "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Wolfgang von Trips",
+                    "url": "https://en.wikipedia.org/wiki/Wolfgang_von_Trips"
+                  },
+                  "rounds": [
+                    2,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Olivier Gendebien",
+                    "url": "https://en.wikipedia.org/wiki/Olivier_Gendebien"
+                  },
+                  "rounds": [
+                    5,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Phil Hill",
+                    "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+                  },
+                  "rounds": [
+                    10,
+                    11
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Peter Collins",
-                "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
+              "chassis": [
+                {
+                  "text": "156",
+                  "url": "https://en.wikipedia.org/wiki/Dino_156_F2"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ferrari D156",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                "displacement_l": 1.5,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6
               },
-              "rounds": [
-                1,
-                2,
-                3,
-                5,
-                6,
-                7,
-                8
-              ]
-            },
-            {
-              "driver": {
-                "text": "Mike Hawthorn",
-                "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Wolfgang von Trips",
-                "url": "https://en.wikipedia.org/wiki/Wolfgang_von_Trips"
-              },
-              "rounds": [
-                2,
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "driver": {
-                "text": "Olivier Gendebien",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Gendebien"
-              },
-              "rounds": [
-                5,
-                10,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Phil Hill",
-                "url": "https://en.wikipedia.org/wiki/Phil_Hill"
-              },
-              "rounds": [
-                10,
-                11
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "156",
-              "url": "https://en.wikipedia.org/wiki/Dino_156_F2"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari D156",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "displacement_l": 1.5,
-            "type": "V6",
-            "layout": "V",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Englebert",
-              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Phil Hill",
-                "url": "https://en.wikipedia.org/wiki/Phil_Hill"
-              },
-              "rounds": [
-                8
+              "tyre": [
+                {
+                  "text": "Englebert",
+                  "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Phil Hill",
+                    "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
               ]
             }
           ]
@@ -867,141 +940,129 @@
           },
           "chassis": [
             {
-              "text": "T45",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T45"
-            },
-            {
-              "text": "T44",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T44"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 2.0,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+              "chassis": [
+                {
+                  "text": "T45",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T45"
+                },
+                {
+                  "text": "T44",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T44"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 2.0,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                2,
-                3,
-                5,
-                6,
-                7,
-                9,
-                10
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jack Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    9,
+                    10
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Roy Salvadori",
+                    "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Ian Burgess",
+                    "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Jack Fairman",
+                    "url": "https://en.wikipedia.org/wiki/Jack_Fairman"
+                  },
+                  "rounds": [
+                    11
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Roy Salvadori",
-                "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
+              "chassis": [
+                {
+                  "text": "T45",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T45"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                2,
-                3,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Ian Burgess",
-                "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
-              },
-              "rounds": [
-                7
-              ]
-            },
-            {
-              "driver": {
-                "text": "Jack Fairman",
-                "url": "https://en.wikipedia.org/wiki/Jack_Fairman"
-              },
-              "rounds": [
-                11
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T45",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T45"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Bruce McLaren",
-                "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
-              },
-              "rounds": [
-                8,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
-              "rounds": [
-                8,
-                11
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Bruce McLaren",
+                    "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
+                  },
+                  "rounds": [
+                    8,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Jack Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+                  },
+                  "rounds": [
+                    8,
+                    11
+                  ]
+                }
               ]
             }
           ]
@@ -1025,133 +1086,121 @@
           },
           "chassis": [
             {
-              "text": "12",
-              "url": "https://en.wikipedia.org/wiki/Lotus_12"
-            },
-            {
-              "text": "16",
-              "url": "https://en.wikipedia.org/wiki/Lotus_16"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Climax FPF",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-              },
-              "displacement_l": 2.0,
-              "type": "L4",
-              "layout": "L",
-              "cylinders": 4
-            },
-            {
-              "model": {
-                "text": "Climax FPF",
-                "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-              },
-              "displacement_l": 2.2,
-              "type": "L4",
-              "layout": "L",
-              "cylinders": 4
-            }
-          ],
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Cliff Allison",
-                "url": "https://en.wikipedia.org/wiki/Cliff_Allison"
-              },
-              "rounds": [
-                2,
-                3,
-                5,
-                6,
-                7,
-                8,
-                10,
-                11
+              "chassis": [
+                {
+                  "text": "12",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_12"
+                },
+                {
+                  "text": "16",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_16"
+                }
+              ],
+              "engine": [
+                {
+                  "model": {
+                    "text": "Climax FPF",
+                    "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                  },
+                  "displacement_l": 2.0,
+                  "type": "L4",
+                  "layout": "L",
+                  "cylinders": 4
+                },
+                {
+                  "model": {
+                    "text": "Climax FPF",
+                    "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                  },
+                  "displacement_l": 2.2,
+                  "type": "L4",
+                  "layout": "L",
+                  "cylinders": 4
+                }
+              ],
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Cliff Allison",
+                    "url": "https://en.wikipedia.org/wiki/Cliff_Allison"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Graham Hill",
+                    "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    9,
+                    10,
+                    11
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Alan Stacey",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Stacey"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Graham Hill",
-                "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+              "chassis": [
+                {
+                  "text": "16",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_16"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                2,
-                3,
-                5,
-                6,
-                7,
-                9,
-                10,
-                11
-              ]
-            },
-            {
-              "driver": {
-                "text": "Alan Stacey",
-                "url": "https://en.wikipedia.org/wiki/Alan_Stacey"
-              },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "16",
-              "url": "https://en.wikipedia.org/wiki/Lotus_16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Graham Hill",
-                "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-              },
-              "rounds": [
-                8
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Graham Hill",
+                    "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
               ]
             }
           ]
@@ -1520,10 +1569,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "F2",
-              "url": null
-            }
+            "F2"
           ],
           "engine": {
             "model": {
@@ -1641,79 +1687,67 @@
           },
           "chassis": [
             {
-              "text": "RSK",
-              "url": "https://en.wikipedia.org/wiki/Porsche_RSK"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Porsche 547/3 F4",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
-            },
-            "displacement_l": 1.5
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Carel Godin de Beaufort",
-                "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
+              "chassis": [
+                {
+                  "text": "RSK",
+                  "url": "https://en.wikipedia.org/wiki/Porsche_RSK"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Porsche 547/3 F4",
+                  "url": "https://en.wikipedia.org/wiki/Porsche"
+                },
+                "displacement_l": 1.5
               },
-              "rounds": [
-                3
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Carel Godin de Beaufort",
+                    "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
+                  },
+                  "rounds": [
+                    3
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Ecurie Maarsbergen",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Porsche",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
             },
-            "engine_constructor": {
-              "text": "Porsche",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
-            }
-          },
-          "chassis": [
             {
-              "text": "RS550",
-              "url": "https://en.wikipedia.org/wiki/Porsche_550"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Porsche 547/3 F4",
-              "url": "https://en.wikipedia.org/wiki/Porsche"
-            },
-            "displacement_l": 1.5
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Carel Godin de Beaufort",
-                "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
+              "chassis": [
+                {
+                  "text": "RS550",
+                  "url": "https://en.wikipedia.org/wiki/Porsche_550"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Porsche 547/3 F4",
+                  "url": "https://en.wikipedia.org/wiki/Porsche"
+                },
+                "displacement_l": 1.5
               },
-              "rounds": [
-                8
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Carel Godin de Beaufort",
+                    "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
               ]
             }
           ]
@@ -1861,107 +1895,6 @@
               "driver": {
                 "text": "Edgar Barth",
                 "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
-              },
-              "rounds": [
-                8
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T43",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T43"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Ian Burgess",
-                "url": "https://en.wikipedia.org/wiki/Ian_Burgess"
-              },
-              "rounds": [
-                8
-              ]
-            },
-            {
-              "driver": {
-                "text": "Christian Goethals",
-                "url": "https://en.wikipedia.org/wiki/Christian_Goethals"
-              },
-              "rounds": [
-                8
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "12",
-              "url": "https://en.wikipedia.org/wiki/Lotus_12"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Ivor Bueb",
-                "url": "https://en.wikipedia.org/wiki/Ivor_Bueb"
               },
               "rounds": [
                 8

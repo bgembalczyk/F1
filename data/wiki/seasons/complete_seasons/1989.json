@@ -52,69 +52,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 1,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Ayrton Senna",
-                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda"
+              "no": 1,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ayrton Senna",
+                    "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+                  }
+                }
+              ]
             },
             {
-              "text": "Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
-            },
-            {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "MP4/5",
-              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/5"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Honda RA109E",
-              "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
-            },
-            "type": "V10",
-            "layout": "V",
-            "cylinders": 10
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 2,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Alain Prost",
-                "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-              }
+              "no": 2,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alain Prost",
+                    "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -160,98 +119,61 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 3,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Jonathan Palmer",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Tyrrell Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "017B",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_017"
-            },
-            {
-              "text": "018",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_018"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 4,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Michele Alboreto",
-                "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
+              "no": 3,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jonathan Palmer",
+                    "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Jean Alesi",
-                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-              },
-              "rounds": [
-                7,
-                8,
-                9,
-                10,
-                12,
-                14,
-                15,
-                16
-              ]
-            },
-            {
-              "driver": {
-                "text": "Johnny Herbert",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-              },
-              "rounds": [
-                11,
-                13
+              "no": 4,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Michele Alboreto",
+                    "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Jean Alesi",
+                    "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+                  },
+                  "rounds": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    12,
+                    14,
+                    15,
+                    16
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Johnny Herbert",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+                  },
+                  "rounds": [
+                    11,
+                    13
+                  ]
+                }
               ]
             }
           ]
@@ -302,246 +224,90 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 5,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Thierry Boutsen",
-                "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Canon",
-              "url": "https://en.wikipedia.org/wiki/Canon_Inc."
-            },
-            {
-              "text": "Williams Team",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FW12C",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW12"
-            },
-            {
-              "text": "FW13",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW13"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Renault RS1",
-              "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
-            },
-            "type": "V10",
-            "layout": "V",
-            "cylinders": 10
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 6,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Riccardo Patrese",
-                "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Judd",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT58",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Judd EV",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 7,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Martin Brundle",
-                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Judd",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT58",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Judd EV",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 8,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Stefano Modena",
-                "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "USF&G",
-              "url": "https://en.wikipedia.org/wiki/USF%26G"
-            },
-            {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "A11",
-              "url": "https://en.wikipedia.org/wiki/Arrows_A11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 9,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Derek Warwick",
-                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 5,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Thierry Boutsen",
+                    "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Martin Donnelly",
-                "url": "https://en.wikipedia.org/wiki/Martin_Donnelly_(racing_driver)"
-              },
-              "rounds": [
-                7
+              "no": 6,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Riccardo Patrese",
+                    "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Motor Racing Developments",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            },
+            "engine_constructor": {
+              "text": "Judd",
+              "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
+            }
+          },
+          "chassis": [
+            {
+              "text": "BT58",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Judd EV",
+              "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
+            },
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Pirelli",
+              "url": "https://en.wikipedia.org/wiki/Pirelli"
+            }
+          ],
+          "no": [
+            {
+              "no": 7,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Martin Brundle",
+                    "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 8,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Stefano Modena",
+                    "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
+                  }
+                }
               ]
             }
           ]
@@ -592,13 +358,54 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 10,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Eddie Cheever",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
-              }
+              "no": 9,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Derek Warwick",
+                    "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Martin Donnelly",
+                    "url": "https://en.wikipedia.org/wiki/Martin_Donnelly_(racing_driver)"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
+              ]
+            },
+            {
+              "no": 10,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Eddie Cheever",
+                    "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -644,65 +451,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 11,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Nelson Piquet",
-                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Camel",
-              "url": "https://en.wikipedia.org/wiki/Camel_(cigarette)"
+              "no": 11,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Nelson Piquet",
+                    "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+                  }
+                }
+              ]
             },
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Judd",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "101",
-              "url": "https://en.wikipedia.org/wiki/Lotus_101"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Judd CV",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 12,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Satoru Nakajima",
-                "url": "https://en.wikipedia.org/wiki/Satoru_Nakajima"
-              }
+              "no": 12,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Satoru Nakajima",
+                    "url": "https://en.wikipedia.org/wiki/Satoru_Nakajima"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -759,76 +529,28 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 15,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Leyton House Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Judd",
-              "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "881",
-              "url": "https://en.wikipedia.org/wiki/March_881"
+              "no": 15,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Maurício Gugelmin",
+                    "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
+                  }
+                }
+              ]
             },
             {
-              "text": "CG891",
-              "url": "https://en.wikipedia.org/wiki/March_CG891"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Judd CV",
-                "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            },
-            {
-              "model": {
-                "text": "Judd EV",
-                "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            }
-          ],
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 16,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              }
+              "no": 16,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Ivan Capelli",
+                    "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -854,10 +576,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "FA1M",
-              "url": null
-            }
+            "FA1M"
           ],
           "engine": {
             "model": {
@@ -874,65 +593,28 @@
               "url": "https://en.wikipedia.org/wiki/Pirelli"
             }
           ],
-          "no": 17,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Nicola Larini",
-                "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Fondmetal",
-              "url": "https://en.wikipedia.org/wiki/Fondmetal"
+              "no": 17,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Nicola Larini",
+                    "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
+                  }
+                }
+              ]
             },
             {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FA1M",
-              "url": null
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 18,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              }
+              "no": 18,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Piercarlo Ghinzani",
+                    "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -989,101 +671,53 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 19,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Alessandro Nannini",
-                "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Benetton Formula",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "B188",
-              "url": "https://en.wikipedia.org/wiki/Benetton_B188"
-            },
-            {
-              "text": "B189",
-              "url": "https://en.wikipedia.org/wiki/Benetton_B189"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ford Cosworth DFR",
-                "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            },
-            {
-              "model": {
-                "text": "Ford HBA1/4",
-                "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            }
-          ],
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 20,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Johnny Herbert",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
+              "no": 19,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alessandro Nannini",
+                    "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Emanuele Pirro",
-                "url": "https://en.wikipedia.org/wiki/Emanuele_Pirro"
-              },
-              "rounds": [
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 20,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Johnny Herbert",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Emanuele Pirro",
+                    "url": "https://en.wikipedia.org/wiki/Emanuele_Pirro"
+                  },
+                  "rounds": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -1126,142 +760,27 @@
               "url": "https://en.wikipedia.org/wiki/Pirelli"
             }
           ],
-          "no": 21,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Alex Caffi",
-                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Italia",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BMS",
-              "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-            },
-            "engine_constructor": {
-              "text": "Dallara",
-              "url": "https://en.wikipedia.org/wiki/Dallara"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F189",
-              "url": "https://en.wikipedia.org/wiki/Dallara_F189"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 22,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Lois",
-              "url": "https://es.wikipedia.org/wiki/Lois_(marca)"
-            },
-            {
-              "text": "Minardi Team",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "M188B",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M188"
-            },
-            {
-              "text": "M189",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M189"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFZ",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFZ"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 23,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Pierluigi Martini",
-                "url": "https://en.wikipedia.org/wiki/Pierluigi_Martini"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                16
+              "no": 21,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alex Caffi",
+                    "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Paolo Barilla",
-                "url": "https://en.wikipedia.org/wiki/Paolo_Barilla"
-              },
-              "rounds": [
-                15
+              "no": 22,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Andrea de Cesaris",
+                    "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
+                  }
+                }
               ]
             }
           ]
@@ -1312,13 +831,54 @@
               "url": "https://en.wikipedia.org/wiki/Pirelli"
             }
           ],
-          "no": 24,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Luis Pérez-Sala",
-                "url": "https://en.wikipedia.org/wiki/Luis_P%C3%A9rez-Sala"
-              }
+              "no": 23,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Pierluigi Martini",
+                    "url": "https://en.wikipedia.org/wiki/Pierluigi_Martini"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    16
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Paolo Barilla",
+                    "url": "https://en.wikipedia.org/wiki/Paolo_Barilla"
+                  },
+                  "rounds": [
+                    15
+                  ]
+                }
+              ]
+            },
+            {
+              "no": 24,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Luis Pérez-Sala",
+                    "url": "https://en.wikipedia.org/wiki/Luis_P%C3%A9rez-Sala"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -1364,129 +924,27 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 25,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "René Arnoux",
-                "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
+              "no": 25,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "René Arnoux",
+                    "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+                  }
+                }
+              ]
             },
             {
-              "text": "Loto",
-              "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "JS33",
-              "url": "https://en.wikipedia.org/wiki/Ligier_JS33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 26,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Olivier Grouillard",
-                "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "640",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_640"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari Tipo 035/5",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
-            },
-            "type": "V12",
-            "layout": "V",
-            "cylinders": 12
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 27,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Nigel Mansell",
-                "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                15,
-                16
+              "no": 26,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Olivier Grouillard",
+                    "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
+                  }
+                }
               ]
             }
           ]
@@ -1529,29 +987,61 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 28,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Gerhard Berger",
-                "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-              },
-              "rounds": [
-                1,
-                2,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 27,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Nigel Mansell",
+                    "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    15,
+                    16
+                  ]
+                }
+              ]
+            },
+            {
+              "no": 28,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Gerhard Berger",
+                    "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -1598,99 +1088,62 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 29,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Yannick Dalmas",
-                "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
+              "no": 29,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Yannick Dalmas",
+                    "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Éric Bernard",
+                    "url": "https://en.wikipedia.org/wiki/%C3%89ric_Bernard"
+                  },
+                  "rounds": [
+                    7,
+                    8
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Michele Alboreto",
+                    "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+                  },
+                  "rounds": [
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Éric Bernard",
-                "url": "https://en.wikipedia.org/wiki/%C3%89ric_Bernard"
-              },
-              "rounds": [
-                7,
-                8
+              "no": 30,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Philippe Alliot",
+                    "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
+                  }
+                }
               ]
-            },
-            {
-              "driver": {
-                "text": "Michele Alboreto",
-                "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-              },
-              "rounds": [
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Larrousse",
-              "url": "https://en.wikipedia.org/wiki/Larrousse"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lola",
-              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
-            },
-            "engine_constructor": {
-              "text": "Lamborghini",
-              "url": "https://en.wikipedia.org/wiki/Lamborghini"
-            }
-          },
-          "chassis": [
-            {
-              "text": "LC88B",
-              "url": "https://en.wikipedia.org/wiki/Lola_LC88"
-            },
-            {
-              "text": "LC89",
-              "url": "https://en.wikipedia.org/wiki/Lola_LC89"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Lamborghini LE3512",
-              "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
-            },
-            "type": "V12",
-            "layout": "V",
-            "cylinders": 12
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 30,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Philippe Alliot",
-                "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
-              }
             }
           ]
         },
@@ -1732,86 +1185,53 @@
               "url": "https://en.wikipedia.org/wiki/Pirelli"
             }
           ],
-          "no": 31,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Roberto Moreno",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Coloni",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Coloni",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C3",
-              "url": "https://en.wikipedia.org/wiki/Coloni_C3"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 32,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Pierre-Henri Raphanel",
-                "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
+              "no": 31,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Roberto Moreno",
+                    "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Enrico Bertaggia",
-                "url": "https://en.wikipedia.org/wiki/Enrico_Bertaggia"
-              },
-              "rounds": [
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 32,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Pierre-Henri Raphanel",
+                    "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Enrico Bertaggia",
+                    "url": "https://en.wikipedia.org/wiki/Enrico_Bertaggia"
+                  },
+                  "rounds": [
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -1940,188 +1360,115 @@
               "url": "https://en.wikipedia.org/wiki/Pirelli"
             }
           ],
-          "no": 34,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Bernd Schneider",
-                "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "West",
-              "url": "https://en.wikipedia.org/wiki/West_(cigarette)"
-            },
-            {
-              "text": "Zakspeed",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
-            },
-            {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Zakspeed",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
-            },
-            "engine_constructor": {
-              "text": "Yamaha",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "891",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed_891"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Yamaha OX88",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Pirelli",
-              "url": "https://en.wikipedia.org/wiki/Pirelli"
-            }
-          ],
-          "no": 35,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Aguri Suzuki",
-                "url": "https://en.wikipedia.org/wiki/Aguri_Suzuki"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
-            },
-            {
-              "text": "Onyx Formula One",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
-            },
-            "engine_constructor": {
-              "text": "Onyx",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
-            }
-          },
-          "chassis": [],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 36,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Stefan Johansson",
-                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
-            },
-            {
-              "text": "Onyx Formula One",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Moneytron",
-              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
-            },
-            "engine_constructor": {
-              "text": "Onyx",
-              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
-            }
-          },
-          "chassis": [],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 37,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Bertrand Gachot",
-                "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12
+              "no": 34,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Bernd Schneider",
+                    "url": "https://en.wikipedia.org/wiki/Bernd_Schneider_(racing_driver)"
+                  }
+                }
               ]
             },
             {
-              "driver": {
-                "text": "JJ Lehto",
-                "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
-              },
-              "rounds": [
-                13,
-                14,
-                15,
-                16
+              "no": 35,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Aguri Suzuki",
+                    "url": "https://en.wikipedia.org/wiki/Aguri_Suzuki"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
+              "text": "Moneytron",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
+            },
+            {
+              "text": "Onyx Formula One",
+              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Moneytron",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
+            },
+            "engine_constructor": {
+              "text": "Onyx",
+              "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+            }
+          },
+          "chassis": [],
+          "engine": {
+            "model": {
+              "text": "Ford Cosworth DFR",
+              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
+            },
+            "type": "V8",
+            "layout": "V",
+            "cylinders": 8
+          },
+          "tyre": [
+            {
+              "text": "Goodyear",
+              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+            }
+          ],
+          "no": [
+            {
+              "no": 36,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Stefan Johansson",
+                    "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
+                  }
+                }
+              ]
+            },
+            {
+              "no": 37,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Bertrand Gachot",
+                    "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "JJ Lehto",
+                    "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
+                  },
+                  "rounds": [
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -2164,128 +1511,95 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 38,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Christian Danner",
-                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13
+              "no": 38,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Christian Danner",
+                    "url": "https://en.wikipedia.org/wiki/Christian_Danner"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Gregor Foitek",
+                    "url": "https://en.wikipedia.org/wiki/Gregor_Foitek"
+                  },
+                  "rounds": [
+                    14
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Pierre-Henri Raphanel",
+                    "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
+                  },
+                  "rounds": [
+                    15,
+                    16
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Gregor Foitek",
-                "url": "https://en.wikipedia.org/wiki/Gregor_Foitek"
-              },
-              "rounds": [
-                14
-              ]
-            },
-            {
-              "driver": {
-                "text": "Pierre-Henri Raphanel",
-                "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
-              },
-              "rounds": [
-                15,
-                16
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Rial Racing",
-              "url": "https://en.wikipedia.org/wiki/Rial_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Rial",
-              "url": "https://en.wikipedia.org/wiki/Rial_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "ARC2",
-              "url": "https://en.wikipedia.org/wiki/Rial_ARC2"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 39,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Volker Weidler",
-                "url": "https://en.wikipedia.org/wiki/Volker_Weidler"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "driver": {
-                "text": "Pierre-Henri Raphanel",
-                "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
-              },
-              "rounds": [
-                11,
-                12,
-                13,
-                14
-              ]
-            },
-            {
-              "driver": {
-                "text": "Bertrand Gachot",
-                "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
-              },
-              "rounds": [
-                15,
-                16
+              "no": 39,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Volker Weidler",
+                    "url": "https://en.wikipedia.org/wiki/Volker_Weidler"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Pierre-Henri Raphanel",
+                    "url": "https://en.wikipedia.org/wiki/Pierre-Henri_Raphanel"
+                  },
+                  "rounds": [
+                    11,
+                    12,
+                    13,
+                    14
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Bertrand Gachot",
+                    "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
+                  },
+                  "rounds": [
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]
@@ -2332,107 +1646,70 @@
               "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
             }
           ],
-          "no": 40,
-          "race_drivers": [
+          "no": [
             {
-              "driver": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
-              "rounds": [
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "AGS",
-              "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "AGS",
-              "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "JH23B",
-              "url": "https://en.wikipedia.org/wiki/AGS_JH23"
-            },
-            {
-              "text": "JH24",
-              "url": "https://en.wikipedia.org/wiki/AGS_JH24"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFR",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "no": 41,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Joachim Winkelhock",
-                "url": "https://en.wikipedia.org/wiki/Joachim_Winkelhock"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+              "no": 40,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Gabriele Tarquini",
+                    "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Yannick Dalmas",
-                "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
-              },
-              "rounds": [
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
+              "no": 41,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Joachim Winkelhock",
+                    "url": "https://en.wikipedia.org/wiki/Joachim_Winkelhock"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Yannick Dalmas",
+                    "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
+                  },
+                  "rounds": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ]
+                }
               ]
             }
           ]

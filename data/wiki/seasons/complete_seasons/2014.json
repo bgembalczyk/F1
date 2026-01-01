@@ -8,71 +8,227 @@
       "entries": [
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Caterham",
-              "url": "https://en.wikipedia.org/wiki/Caterham_F1"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "CT05",
-              "url": "https://en.wikipedia.org/wiki/Caterham_CT05"
+              "chassis_constructor": {
+                "text": "Caterham",
+                "url": "https://en.wikipedia.org/wiki/Caterham_F1"
+              },
+              "engine_constructor": {
+                "text": "Renault",
+                "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "CT05",
+                  "url": "https://en.wikipedia.org/wiki/Caterham_CT05"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Renault Energy",
+                  "url": null
+                }
+              },
+              "no": 9,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Marcus Ericsson",
+                    "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "F14 T",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_F14_T"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 059/3",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "no": 7,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Kimi Räikkönen",
+                    "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Lotus_F1"
+              },
+              "engine_constructor": {
+                "text": "Renault",
+                "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "E22",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_E22"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Renault Energy",
+                  "url": null
+                }
+              },
+              "no": 8,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Romain Grosjean",
+                    "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Marussia",
+                "url": "https://en.wikipedia.org/wiki/Marussia_F1"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "MR03",
+                  "url": "https://en.wikipedia.org/wiki/Marussia_MR03"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 059/3",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "no": 4,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Max Chilton",
+                    "url": "https://en.wikipedia.org/wiki/Max_Chilton"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "McLaren",
+                "url": "https://en.wikipedia.org/wiki/McLaren"
+              },
+              "engine_constructor": {
+                "text": "Mercedes",
+                "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+              },
+              "chassis": [
+                {
+                  "text": "MP4-29",
+                  "url": "https://en.wikipedia.org/wiki/McLaren_MP4-29"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Mercedes PU106A Hybrid",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "no": 20,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Kevin Magnussen",
+                    "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Sauber",
+                "url": "https://en.wikipedia.org/wiki/Sauber"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "C33",
+                  "url": "https://en.wikipedia.org/wiki/Sauber_C33"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 059/3",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "no": 21,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Esteban Gutiérrez",
+                    "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Toro Rosso",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+              },
+              "engine_constructor": {
+                "text": "Renault",
+                "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "STR9",
+                  "url": "https://en.wikipedia.org/wiki/Toro_Rosso_STR9"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Renault Energy",
+                  "url": null
+                }
+              },
+              "no": 25,
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jean-Éric Vergne",
+                    "url": "https://en.wikipedia.org/wiki/Jean-%C3%89ric_Vergne"
+                  }
+                }
+              ]
             }
           ],
-          "power_unit": {
-            "model": {
-              "text": "Renault Energy",
-              "url": null
-            }
-          },
-          "no": 9,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Marcus Ericsson",
-                "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F14 T",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_F14_T"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 059/3",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "no": 7,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Kimi Räikkönen",
-                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-              }
-            }
-          ]
+          "power_unit": null,
+          "no": null
         },
         {
           "entrant": [
@@ -109,108 +265,6 @@
               "driver": {
                 "text": "Sergio Pérez",
                 "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Lotus_F1"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "E22",
-              "url": "https://en.wikipedia.org/wiki/Lotus_E22"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Renault Energy",
-              "url": null
-            }
-          },
-          "no": 8,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Romain Grosjean",
-                "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Marussia",
-              "url": "https://en.wikipedia.org/wiki/Marussia_F1"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "MR03",
-              "url": "https://en.wikipedia.org/wiki/Marussia_MR03"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 059/3",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "no": 4,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Max Chilton",
-                "url": "https://en.wikipedia.org/wiki/Max_Chilton"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "chassis": [
-            {
-              "text": "MP4-29",
-              "url": "https://en.wikipedia.org/wiki/McLaren_MP4-29"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Mercedes PU106A Hybrid",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "no": 20,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Kevin Magnussen",
-                "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
               }
             }
           ]
@@ -289,74 +343,6 @@
               "driver": {
                 "text": "Sebastian Vettel",
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C33",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C33"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 059/3",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "no": 21,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Esteban Gutiérrez",
-                "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "STR9",
-              "url": "https://en.wikipedia.org/wiki/Toro_Rosso_STR9"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Renault Energy",
-              "url": null
-            }
-          },
-          "no": 25,
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jean-Éric Vergne",
-                "url": "https://en.wikipedia.org/wiki/Jean-%C3%89ric_Vergne"
               }
             }
           ]

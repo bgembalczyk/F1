@@ -263,107 +263,95 @@
           },
           "chassis": [
             {
-              "text": "MS10",
-              "url": "https://en.wikipedia.org/wiki/Matra_MS10"
-            },
-            {
-              "text": "MS80",
-              "url": "https://en.wikipedia.org/wiki/Matra_MS80"
-            },
-            {
-              "text": "MS84",
-              "url": "https://en.wikipedia.org/wiki/Matra_MS84"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jackie Stewart",
-                "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-              }
-            },
-            {
-              "driver": {
-                "text": "Jean-Pierre Beltoise",
-                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-              }
-            },
-            {
-              "driver": {
-                "text": "Johnny Servoz-Gavin",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Servoz-Gavin"
+              "chassis": [
+                {
+                  "text": "MS10",
+                  "url": "https://en.wikipedia.org/wiki/Matra_MS10"
+                },
+                {
+                  "text": "MS80",
+                  "url": "https://en.wikipedia.org/wiki/Matra_MS80"
+                },
+                {
+                  "text": "MS84",
+                  "url": "https://en.wikipedia.org/wiki/Matra_MS84"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
               },
-              "rounds": [
-                9,
-                10,
-                11
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jackie Stewart",
+                    "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+                  }
+                },
+                {
+                  "driver": {
+                    "text": "Jean-Pierre Beltoise",
+                    "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+                  }
+                },
+                {
+                  "driver": {
+                    "text": "Johnny Servoz-Gavin",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Servoz-Gavin"
+                  },
+                  "rounds": [
+                    9,
+                    10,
+                    11
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Matra International",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Matra",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "MS7",
-              "url": "https://en.wikipedia.org/wiki/Matra_MS7"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth FVA",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            },
-            "displacement_l": 1.6,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Johnny Servoz-Gavin",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Servoz-Gavin"
+              "chassis": [
+                {
+                  "text": "MS7",
+                  "url": "https://en.wikipedia.org/wiki/Matra_MS7"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth FVA",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
+                },
+                "displacement_l": 1.6,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                7
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Johnny Servoz-Gavin",
+                    "url": "https://en.wikipedia.org/wiki/Johnny_Servoz-Gavin"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             }
           ]
@@ -695,189 +683,402 @@
               "url": "https://en.wikipedia.org/wiki/Team_Gunston"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "49",
-              "url": "https://en.wikipedia.org/wiki/Lotus_49"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "John Love",
-                "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "49",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_49"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "John Love",
+                    "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
-            "engine_constructor": {
-              "text": "Repco",
-              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT24",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT24"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Repco 740",
-              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Sam Tingle",
-                "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Repco",
+                "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+              },
+              "chassis": [
+                {
+                  "text": "BT24",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT24"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Repco 740",
+                  "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Sam Tingle",
+                    "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
               ]
             }
           ]
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "M7A",
-              "url": "https://en.wikipedia.org/wiki/McLaren_M7A"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Basil van Rooyen",
-                "url": "https://en.wikipedia.org/wiki/Basil_van_Rooyen"
+              "chassis_constructor": {
+                "text": "McLaren",
+                "url": "https://en.wikipedia.org/wiki/McLaren"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "M7A",
+                  "url": "https://en.wikipedia.org/wiki/McLaren_M7A"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Basil van Rooyen",
+                    "url": "https://en.wikipedia.org/wiki/Basil_van_Rooyen"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
-            "engine_constructor": {
-              "text": "Repco",
-              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT20",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT20"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Repco 620",
-              "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Peter de Klerk",
-                "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
               },
-              "rounds": [
-                1
+              "engine_constructor": {
+                "text": "Repco",
+                "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8"
+              },
+              "chassis": [
+                {
+                  "text": "BT20",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT20"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Repco 620",
+                  "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Goodyear",
+                  "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Peter de Klerk",
+                    "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "59B",
+                  "url": "https://en.wikipedia.org/wiki/Lotus_59B"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth FVA",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
+                },
+                "displacement_l": 1.6,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Hans Herrmann",
+                    "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Rolf Stommelen",
+                    "url": "https://en.wikipedia.org/wiki/Rolf_Stommelen"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "chassis": [
+                    {
+                      "text": "BT23C",
+                      "url": "https://en.wikipedia.org/wiki/Brabham_BT23"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Ford Cosworth FVA",
+                      "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
+                    },
+                    "displacement_l": 1.6,
+                    "type": "L4",
+                    "layout": "L",
+                    "cylinders": 4
+                  },
+                  "tyre": [
+                    {
+                      "text": "Firestone",
+                      "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Xavier Perrot",
+                        "url": "https://en.wikipedia.org/wiki/Xavier_Perrot"
+                      },
+                      "rounds": [
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "chassis": [
+                    {
+                      "text": "BT30",
+                      "url": "https://en.wikipedia.org/wiki/Brabham_BT30"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Ford Cosworth FVA",
+                      "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
+                    },
+                    "displacement_l": 1.6,
+                    "type": "L4",
+                    "layout": "L",
+                    "cylinders": 4
+                  },
+                  "tyre": [
+                    {
+                      "text": "Firestone",
+                      "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Peter Westbury",
+                        "url": "https://en.wikipedia.org/wiki/Peter_Westbury"
+                      },
+                      "rounds": [
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
+              },
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "BT23B",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT23"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 2.8,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "John Cordts",
+                    "url": "https://en.wikipedia.org/wiki/John_Cordts"
+                  },
+                  "rounds": [
+                    9
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Eagle",
+                "url": "https://en.wikipedia.org/wiki/Anglo_American_Racers"
+              },
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "T1F",
+                  "url": "https://en.wikipedia.org/wiki/Eagle_Mk1"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 2.8,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Al Pease",
+                    "url": "https://en.wikipedia.org/wiki/Al_Pease"
+                  },
+                  "rounds": [
+                    9
+                  ]
+                }
               ]
             }
           ]
@@ -901,94 +1102,82 @@
           },
           "chassis": [
             {
-              "text": "BT26A",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT26A"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Piers Courage",
-                "url": "https://en.wikipedia.org/wiki/Piers_Courage"
+              "chassis": [
+                {
+                  "text": "BT26A",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT26A"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
               },
-              "rounds": [
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Piers Courage",
+                    "url": "https://en.wikipedia.org/wiki/Piers_Courage"
+                  },
+                  "rounds": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT30",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT30"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth FVA",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            },
-            "displacement_l": 1.6,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Richard Attwood",
-                "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
+              "chassis": [
+                {
+                  "text": "BT30",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT30"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth FVA",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
+                },
+                "displacement_l": 1.6,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
               },
-              "rounds": [
-                7
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Richard Attwood",
+                    "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             }
           ]
@@ -1000,100 +1189,94 @@
               "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "T86",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T86"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati 10/F1",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "displacement_l": 3.0,
-            "type": "V12",
-            "layout": "V",
-            "cylinders": 12
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Vic Elford",
-                "url": "https://en.wikipedia.org/wiki/Vic_Elford"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                3
+              "engine_constructor": {
+                "text": "Maserati",
+                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              },
+              "chassis": [
+                {
+                  "text": "T86",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T86"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Maserati 10/F1",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                },
+                "displacement_l": 3.0,
+                "type": "V12",
+                "layout": "V",
+                "cylinders": 12
+              },
+              "tyre": [
+                {
+                  "text": "Goodyear",
+                  "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Vic Elford",
+                    "url": "https://en.wikipedia.org/wiki/Vic_Elford"
+                  },
+                  "rounds": [
+                    3
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Antique Automobiles",
-              "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "M7B",
-              "url": "https://en.wikipedia.org/wiki/McLaren_M7A"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Goodyear",
-              "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Vic Elford",
-                "url": "https://en.wikipedia.org/wiki/Vic_Elford"
+              "chassis_constructor": {
+                "text": "McLaren",
+                "url": "https://en.wikipedia.org/wiki/McLaren"
               },
-              "rounds": [
-                4,
-                5,
-                6,
-                7
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "M7B",
+                  "url": "https://en.wikipedia.org/wiki/McLaren_M7A"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Goodyear",
+                  "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Vic Elford",
+                    "url": "https://en.wikipedia.org/wiki/Vic_Elford"
+                  },
+                  "rounds": [
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                }
               ]
             }
           ]
@@ -1263,61 +1446,6 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "59B",
-              "url": "https://en.wikipedia.org/wiki/Lotus_59B"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth FVA",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            },
-            "displacement_l": 1.6,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Hans Herrmann",
-                "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
-              },
-              "rounds": [
-                7
-              ]
-            },
-            {
-              "driver": {
-                "text": "Rolf Stommelen",
-                "url": "https://en.wikipedia.org/wiki/Rolf_Stommelen"
-              },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
           "entrant": [
             {
               "text": "Bayerische Motoren Werke AG",
@@ -1455,10 +1583,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "TF69",
-              "url": null
-            }
+            "TF69"
           ],
           "engine": {
             "model": {
@@ -1481,98 +1606,6 @@
               "driver": {
                 "text": "François Cevert",
                 "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Cevert"
-              },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT23C",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth FVA",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            },
-            "displacement_l": 1.6,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Xavier Perrot",
-                "url": "https://en.wikipedia.org/wiki/Xavier_Perrot"
-              },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT30",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT30"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth FVA",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
-            },
-            "displacement_l": 1.6,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Peter Westbury",
-                "url": "https://en.wikipedia.org/wiki/Peter_Westbury"
               },
               "rounds": [
                 7
@@ -1629,98 +1662,6 @@
                 9,
                 10,
                 11
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT23B",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 2.8,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "John Cordts",
-                "url": "https://en.wikipedia.org/wiki/John_Cordts"
-              },
-              "rounds": [
-                9
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Eagle",
-              "url": "https://en.wikipedia.org/wiki/Anglo_American_Racers"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T1F",
-              "url": "https://en.wikipedia.org/wiki/Eagle_Mk1"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 2.8,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Al Pease",
-                "url": "https://en.wikipedia.org/wiki/Al_Pease"
-              },
-              "rounds": [
-                9
               ]
             }
           ]

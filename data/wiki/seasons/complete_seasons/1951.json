@@ -1854,10 +1854,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "4500G",
-              "url": null
-            }
+            "4500G"
           ],
           "engine": {
             "model": {

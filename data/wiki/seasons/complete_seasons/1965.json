@@ -452,190 +452,479 @@
               "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "BT7",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT7"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jo Bonnier",
-                "url": "https://en.wikipedia.org/wiki/Jo_Bonnier"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM P56",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Jo Siffert",
-                "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Bob Anderson",
-                "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
               },
-              "rounds": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "BT7",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT7"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FWMV",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
+                },
+                "displacement_l": 1.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jo Bonnier",
+                    "url": "https://en.wikipedia.org/wiki/Jo_Bonnier"
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
+              },
+              "engine_constructor": {
+                "text": "BRM",
+                "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              },
+              "chassis": [
+                {
+                  "text": "BT11",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "BRM P56",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                "displacement_l": 1.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Jo Siffert",
+                    "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+                  }
+                }
               ]
             }
           ]
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Paul Hawkins",
-                "url": "https://en.wikipedia.org/wiki/Paul_Hawkins_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
               },
-              "rounds": [
-                2,
-                7
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "BT11",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FWMV",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
+                },
+                "displacement_l": 1.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Bob Anderson",
+                    "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              },
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "chassis": [
+                    {
+                      "text": "33",
+                      "url": "https://en.wikipedia.org/wiki/Lotus_33"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Climax FWMV",
+                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
+                    },
+                    "displacement_l": 1.5,
+                    "type": "V8",
+                    "layout": "V",
+                    "cylinders": 8
+                  },
+                  "tyre": [
+                    {
+                      "text": "Dunlop",
+                      "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Paul Hawkins",
+                        "url": "https://en.wikipedia.org/wiki/Paul_Hawkins_(racing_driver)"
+                      },
+                      "rounds": [
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "chassis": [
+                    {
+                      "text": "21",
+                      "url": "https://en.wikipedia.org/wiki/Lotus_21"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Climax FPF",
+                      "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                    },
+                    "displacement_l": 1.5,
+                    "type": "L4",
+                    "layout": "L",
+                    "cylinders": 4
+                  },
+                  "tyre": [
+                    {
+                      "text": "Dunlop",
+                      "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Ernie Pieterse",
+                        "url": "https://en.wikipedia.org/wiki/Ernie_Pieterse"
+                      },
+                      "rounds": [
+                        1
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
+              },
+              "engine_constructor": {
+                "text": "BRM",
+                "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              },
+              "chassis": [
+                {
+                  "text": "BT11",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "BRM P56",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                "displacement_l": 1.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Frank Gardner",
+                    "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "BT10",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT10"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford 109E",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Paul Hawkins",
+                    "url": "https://en.wikipedia.org/wiki/Paul_Hawkins_(racing_driver)"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Alfa Special",
+                "url": "https://en.wikipedia.org/wiki/Alfa_Special"
+              },
+              "engine_constructor": {
+                "text": "Alfa Romeo",
+                "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "Special",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Special"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Alfa Romeo Giulietta",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Peter de Klerk",
+                    "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "LDS",
+                "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
+              },
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                "Mk2"
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FPF",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Doug Serrurier",
+                    "url": "https://en.wikipedia.org/wiki/Doug_Serrurier"
+                  },
+                  "rounds": [
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Lotus",
+                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              },
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "chassis": [
+                    {
+                      "text": "22",
+                      "url": "https://en.wikipedia.org/wiki/Lotus_22"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Ford 109E",
+                      "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                    },
+                    "displacement_l": 1.5,
+                    "type": "L4",
+                    "layout": "L",
+                    "cylinders": 4
+                  },
+                  "tyre": [
+                    {
+                      "text": "Dunlop",
+                      "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Brausch Niemann",
+                        "url": "https://en.wikipedia.org/wiki/Brausch_Niemann"
+                      },
+                      "rounds": [
+                        1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "chassis": [
+                    {
+                      "text": "20",
+                      "url": "https://en.wikipedia.org/wiki/Lotus_20"
+                    }
+                  ],
+                  "engine": {
+                    "model": {
+                      "text": "Ford 109E",
+                      "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                    },
+                    "displacement_l": 1.5,
+                    "type": "L4",
+                    "layout": "L",
+                    "cylinders": 4
+                  },
+                  "tyre": [
+                    {
+                      "text": "Dunlop",
+                      "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                    }
+                  ],
+                  "race_drivers": [
+                    {
+                      "driver": {
+                        "text": "Dave Charlton",
+                        "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
+                      },
+                      "rounds": [
+                        1
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -755,104 +1044,6 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM P56",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Frank Gardner",
-                "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
-              },
-              "rounds": [
-                1,
-                2,
-                3,
-                5,
-                6,
-                7,
-                8
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT10",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT10"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford 109E",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Paul Hawkins",
-                "url": "https://en.wikipedia.org/wiki/Paul_Hawkins_(racing_driver)"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
           "entrant": [
             {
               "text": "John Love",
@@ -947,144 +1138,6 @@
               "driver": {
                 "text": "David Prophet",
                 "url": "https://en.wikipedia.org/wiki/David_Prophet"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Special",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Special"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "Special",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Special"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo Giulietta",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Peter de Klerk",
-                "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "LDS",
-              "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "Mk2",
-              "url": null
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Doug Serrurier",
-                "url": "https://en.wikipedia.org/wiki/Doug_Serrurier"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "21",
-              "url": "https://en.wikipedia.org/wiki/Lotus_21"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FPF",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Ernie Pieterse",
-                "url": "https://en.wikipedia.org/wiki/Ernie_Pieterse"
               },
               "rounds": [
                 1
@@ -1212,10 +1265,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "Mk2",
-              "url": null
-            }
+            "Mk2"
           ],
           "engine": {
             "model": {
@@ -1238,52 +1288,6 @@
               "driver": {
                 "text": "Sam Tingle",
                 "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "22",
-              "url": "https://en.wikipedia.org/wiki/Lotus_22"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford 109E",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Brausch Niemann",
-                "url": "https://en.wikipedia.org/wiki/Brausch_Niemann"
               },
               "rounds": [
                 1
@@ -1360,10 +1364,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "Mk1",
-              "url": null
-            }
+            "Mk1"
           ],
           "engine": {
             "model": {
@@ -1386,52 +1387,6 @@
               "driver": {
                 "text": "Jackie Pretorius",
                 "url": "https://en.wikipedia.org/wiki/Jackie_Pretorius"
-              },
-              "rounds": [
-                1
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "20",
-              "url": "https://en.wikipedia.org/wiki/Lotus_20"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford 109E",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Dave Charlton",
-                "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
               },
               "rounds": [
                 1
@@ -1609,97 +1564,88 @@
               "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "T60",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T60"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "displacement_l": 1.5,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "John Rhodes",
-                "url": "https://en.wikipedia.org/wiki/John_Rhodes_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                5
+              "engine_constructor": {
+                "text": "Climax",
+                "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+              },
+              "chassis": [
+                {
+                  "text": "T60",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T60"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Climax FWMV",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
+                },
+                "displacement_l": 1.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "John Rhodes",
+                    "url": "https://en.wikipedia.org/wiki/John_Rhodes_(racing_driver)"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Bob Gerard Racing",
-              "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "T71/73",
-              "url": null
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford 109E",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            },
-            "displacement_l": 1.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Alan Rollinson",
-                "url": "https://en.wikipedia.org/wiki/Alan_Rollinson"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                5
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                "T71/73"
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford 109E",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                },
+                "displacement_l": 1.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alan Rollinson",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Rollinson"
+                  },
+                  "rounds": [
+                    5
+                  ]
+                }
               ]
             }
           ]

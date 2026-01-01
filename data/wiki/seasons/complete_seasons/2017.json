@@ -23,40 +23,224 @@
               "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
             }
           },
-          "chassis": []
+          "chassis": [],
+          "power_unit": null
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "SF70H",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_SF70H"
+              "chassis_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "SF70H",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_SF70H"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 062",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "5 7",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Haas",
+                "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "VF-17",
+                  "url": "https://en.wikipedia.org/wiki/Haas_VF-17"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 062",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "8 20",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "McLaren",
+                "url": "https://en.wikipedia.org/wiki/McLaren"
+              },
+              "engine_constructor": {
+                "text": "Honda",
+                "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "MCL32",
+                  "url": "https://en.wikipedia.org/wiki/McLaren_MCL32"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Honda RA617H",
+                  "url": "https://en.wikipedia.org/wiki/Honda_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "2 14 22",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Red Bull Racing",
+                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+              },
+              "engine_constructor": {
+                "text": "TAG Heuer",
+                "url": "https://en.wikipedia.org/wiki/TAG_Heuer#Motorsport"
+              },
+              "chassis": [
+                {
+                  "text": "RB13",
+                  "url": "https://en.wikipedia.org/wiki/Red_Bull_RB13"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "TAG Heuer F1-2017",
+                  "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "3 33",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Renault",
+                "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+              },
+              "engine_constructor": {
+                "text": "Renault",
+                "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+              },
+              "chassis": [
+                {
+                  "text": "R.S.17",
+                  "url": "https://en.wikipedia.org/wiki/Renault_R.S.17"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Renault R.E.17",
+                  "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "27 30 55",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Sauber",
+                "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+              },
+              "engine_constructor": {
+                "text": "Ferrari",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              },
+              "chassis": [
+                {
+                  "text": "C36",
+                  "url": "https://en.wikipedia.org/wiki/Sauber_C36"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Ferrari 061",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "9 94 36",
+                    "url": null
+                  }
+                }
+              ]
+            },
+            {
+              "chassis_constructor": {
+                "text": "Toro Rosso",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+              },
+              "engine_constructor": {
+                "text": "Toro Rosso",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+              },
+              "chassis": [
+                {
+                  "text": "STR12",
+                  "url": "https://en.wikipedia.org/wiki/Toro_Rosso_STR12"
+                }
+              ],
+              "power_unit": {
+                "model": {
+                  "text": "Toro Rosso",
+                  "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
+                }
+              },
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "26 10 28 55",
+                    "url": null
+                  }
+                }
+              ]
             }
           ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 062",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "5 7",
-                "url": null
-              }
-            }
-          ]
+          "power_unit": null
         },
         {
           "entrant": [
@@ -97,72 +281,6 @@
           ]
         },
         {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "VF-17",
-              "url": "https://en.wikipedia.org/wiki/Haas_VF-17"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 062",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "8 20",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "MCL32",
-              "url": "https://en.wikipedia.org/wiki/McLaren_MCL32"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Honda RA617H",
-              "url": "https://en.wikipedia.org/wiki/Honda_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "2 14 22",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
           "entrant": [
             {
               "text": "Petronas",
@@ -195,138 +313,6 @@
             {
               "driver": {
                 "text": "44 77",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "TAG Heuer",
-              "url": "https://en.wikipedia.org/wiki/TAG_Heuer#Motorsport"
-            }
-          },
-          "chassis": [
-            {
-              "text": "RB13",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_RB13"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "TAG Heuer F1-2017",
-              "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "3 33",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "R.S.17",
-              "url": "https://en.wikipedia.org/wiki/Renault_R.S.17"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Renault R.E.17",
-              "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "27 30 55",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C36",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C36"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Ferrari 061",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "9 94 36",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            },
-            "engine_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            }
-          },
-          "chassis": [
-            {
-              "text": "STR12",
-              "url": "https://en.wikipedia.org/wiki/Toro_Rosso_STR12"
-            }
-          ],
-          "power_unit": {
-            "model": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            }
-          },
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "26 10 28 55",
                 "url": null
               }
             }

@@ -317,10 +317,7 @@
               "text": "T23",
               "url": "https://en.wikipedia.org/wiki/Cooper_T23"
             },
-            {
-              "text": "Special",
-              "url": null
-            },
+            "Special",
             {
               "text": "T24",
               "url": "https://en.wikipedia.org/wiki/Cooper_T24"
@@ -417,10 +414,7 @@
               "text": "Type 16",
               "url": "https://en.wikipedia.org/wiki/Gordini_Type_16"
             },
-            {
-              "text": "Type 15",
-              "url": null
-            }
+            "Type 15"
           ],
           "engine": [
             {
@@ -582,74 +576,46 @@
           },
           "tyre": [
             {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Louis Rosier",
-                "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
-              },
-              "rounds": [
-                3,
-                4,
-                5,
-                6,
-                7,
-                9
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Louis Rosier",
+                    "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+                  },
+                  "rounds": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    9
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
             {
-              "text": "500",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_Tipo_500"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 500",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "displacement_l": 2.0,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Englebert",
-              "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Louis Rosier",
-                "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
-              },
-              "rounds": [
-                8
+              "tyre": [
+                {
+                  "text": "Englebert",
+                  "url": "https://en.wikipedia.org/wiki/Englebert_(tyre_manufacturer)"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Louis Rosier",
+                    "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+                  },
+                  "rounds": [
+                    8
+                  ]
+                }
               ]
             }
           ]
@@ -937,10 +903,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "53",
-              "url": null
-            }
+            "53"
           ],
           "engine": {
             "model": {
@@ -1117,10 +1080,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "Type 15",
-              "url": null
-            }
+            "Type 15"
           ],
           "engine": {
             "model": {
@@ -1281,10 +1241,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "20",
-              "url": null
-            }
+            "20"
           ],
           "engine": {
             "model": {
@@ -1335,10 +1292,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "20",
-              "url": null
-            }
+            "20"
           ],
           "engine": {
             "model": {
@@ -1550,111 +1504,153 @@
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Bristol",
-              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "T23",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Bristol BS1",
-              "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
-            },
-            "displacement_l": 2.0,
-            "type": "L6",
-            "layout": "L",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Alan Brown",
-                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                6
+              "engine_constructor": {
+                "text": "Bristol",
+                "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+              },
+              "chassis": [
+                {
+                  "text": "T23",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T23"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Bristol BS1",
+                  "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
+                },
+                "displacement_l": 2.0,
+                "type": "L6",
+                "layout": "L",
+                "cylinders": 6
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Alan Brown",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+                  },
+                  "rounds": [
+                    6
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Alan Brown",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+                  },
+                  "rounds": [
+                    7,
+                    9
+                  ]
+                },
+                {
+                  "driver": {
+                    "text": "Helmut Glöckler",
+                    "url": "https://en.wikipedia.org/wiki/Helm_Gl%C3%B6ckler"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Alan Brown",
-                "url": "https://en.wikipedia.org/wiki/Alan_Brown_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Cooper",
+                "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
               },
-              "rounds": [
-                7,
-                9
+              "engine_constructor": {
+                "text": "Alta",
+                "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+              },
+              "chassis": [
+                {
+                  "text": "T24",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_T24"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Alta GP",
+                  "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
+                },
+                "displacement_l": 2.5,
+                "type": "L4",
+                "layout": "L",
+                "cylinders": 4
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Peter Whitehead",
+                    "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+                  },
+                  "rounds": [
+                    6
+                  ]
+                }
               ]
             },
             {
-              "driver": {
-                "text": "Helmut Glöckler",
-                "url": "https://en.wikipedia.org/wiki/Helm_Gl%C3%B6ckler"
+              "chassis_constructor": {
+                "text": "Greifzu",
+                "url": "https://en.wikipedia.org/wiki/Greifzu"
               },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Alta",
-              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T24",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T24"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alta GP",
-              "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
-            },
-            "displacement_l": 2.5,
-            "type": "L4",
-            "layout": "L",
-            "cylinders": 4
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Peter Whitehead",
-                "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+              "engine_constructor": {
+                "text": "BMW",
+                "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
               },
-              "rounds": [
-                6
+              "chassis": [
+                {
+                  "text": "Eigenbau",
+                  "url": "https://en.wikipedia.org/wiki/Greifzu"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "BMW 328",
+                  "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+                },
+                "displacement_l": 2.0,
+                "type": "L6",
+                "layout": "L",
+                "cylinders": 6
+              },
+              "tyre": [
+                {
+                  "text": "Dunlop",
+                  "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Rudolf Krause",
+                    "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
+                  },
+                  "rounds": [
+                    7
+                  ]
+                }
               ]
             }
           ]
@@ -1728,10 +1724,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "6",
-              "url": null
-            }
+            "6"
           ],
           "engine": {
             "model": {
@@ -1984,10 +1977,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "U8",
-              "url": null
-            }
+            "U8"
           ],
           "engine": {
             "model": {
@@ -2273,10 +2263,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "R2",
-              "url": null
-            }
+            "R2"
           ],
           "engine": {
             "model": {
@@ -2299,52 +2286,6 @@
               "driver": {
                 "text": "Edgar Barth",
                 "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
-              },
-              "rounds": [
-                7
-              ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Greifzu",
-              "url": "https://en.wikipedia.org/wiki/Greifzu"
-            },
-            "engine_constructor": {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "Eigenbau",
-              "url": "https://en.wikipedia.org/wiki/Greifzu"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BMW 328",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            },
-            "displacement_l": 2.0,
-            "type": "L6",
-            "layout": "L",
-            "cylinders": 6
-          },
-          "tyre": [
-            {
-              "text": "Dunlop",
-              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Rudolf Krause",
-                "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
               },
               "rounds": [
                 7
@@ -2472,10 +2413,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "50-5",
-              "url": null
-            }
+            "50-5"
           ],
           "engine": {
             "model": {
@@ -2574,10 +2512,7 @@
             }
           },
           "chassis": [
-            {
-              "text": "20",
-              "url": null
-            }
+            "20"
           ],
           "engine": {
             "model": {

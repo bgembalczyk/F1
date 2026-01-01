@@ -1053,97 +1053,91 @@
               "url": "https://en.wikipedia.org/wiki/Team_Gunston"
             }
           ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "TS9",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "John Love",
-                "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Surtees",
+                "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
               },
-              "rounds": [
-                2
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "TS9",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "John Love",
+                    "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+                  },
+                  "rounds": [
+                    2
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Gunston",
-              "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT33",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "William Ferguson",
-                "url": "https://en.wikipedia.org/wiki/William_Ferguson_(racing_driver)"
+              "chassis_constructor": {
+                "text": "Brabham",
+                "url": "https://en.wikipedia.org/wiki/Brabham"
               },
-              "rounds": [
-                2
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "BT33",
+                  "url": "https://en.wikipedia.org/wiki/Brabham_BT33"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "William Ferguson",
+                    "url": "https://en.wikipedia.org/wiki/William_Ferguson_(racing_driver)"
+                  },
+                  "rounds": [
+                    2
+                  ]
+                }
               ]
             }
           ]
@@ -1321,93 +1315,92 @@
         },
         {
           "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "constructor": [
             {
-              "text": "711",
-              "url": "https://en.wikipedia.org/wiki/March_711"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Skip Barber",
-                "url": "https://en.wikipedia.org/wiki/Skip_Barber"
+              "chassis_constructor": {
+                "text": "March",
+                "url": "https://en.wikipedia.org/wiki/March_Engineering"
               },
-              "rounds": [
-                11,
-                12
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "711",
+                  "url": "https://en.wikipedia.org/wiki/March_711"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Skip Barber",
+                    "url": "https://en.wikipedia.org/wiki/Skip_Barber"
+                  },
+                  "rounds": [
+                    11,
+                    12
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "TS9B",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "displacement_l": 3.0,
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": [
-            {
-              "text": "Firestone",
-              "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-            }
-          ],
-          "race_drivers": [
-            {
-              "driver": {
-                "text": "Sam Posey",
-                "url": "https://en.wikipedia.org/wiki/Sam_Posey"
+              "chassis_constructor": {
+                "text": "Surtees",
+                "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
               },
-              "rounds": [
-                12
+              "engine_constructor": {
+                "text": "Ford",
+                "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+              },
+              "chassis": [
+                {
+                  "text": "TS9B",
+                  "url": "https://en.wikipedia.org/wiki/Surtees_TS9"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Ford Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                },
+                "displacement_l": 3.0,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "tyre": [
+                {
+                  "text": "Firestone",
+                  "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
+                }
+              ],
+              "race_drivers": [
+                {
+                  "driver": {
+                    "text": "Sam Posey",
+                    "url": "https://en.wikipedia.org/wiki/Sam_Posey"
+                  },
+                  "rounds": [
+                    12
+                  ]
+                }
               ]
             }
           ]
