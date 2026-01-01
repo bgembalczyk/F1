@@ -14,8 +14,6 @@ def _extract_constructor_part(ctx, index: int) -> LinkRecord | None:
     clean_text = clean_wiki_text(ctx.clean_text or "")
 
     if links:
-        if "-" in clean_text and len(links) >= 2:
-            return links[index] if index < len(links) else None
         if len(links) >= 2:
             return links[index] if index < len(links) else None
         return links[0]
