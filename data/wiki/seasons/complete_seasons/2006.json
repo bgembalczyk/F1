@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS26 2.4",
+              "text": "Renault RS26",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -74,9 +75,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS26 2.4",
+              "text": "Renault RS26",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -112,9 +114,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 108S 2.4",
+              "text": "Mercedes FO 108S",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -150,9 +153,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 108S 2.4",
+              "text": "Mercedes FO 108S",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -199,9 +203,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 056 2.4",
+              "text": "Ferrari 056",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -242,9 +247,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 056 2.4",
+              "text": "Ferrari 056",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -289,9 +295,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Toyota RVX-06 2.4",
+              "text": "Toyota RVX-06",
               "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -336,9 +343,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Toyota RVX-06 2.4",
+              "text": "Toyota RVX-06",
               "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -374,9 +382,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Cosworth CA2006 2.4",
+              "text": "Cosworth CA2006",
               "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -412,9 +421,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Cosworth CA2006 2.4",
+              "text": "Cosworth CA2006",
               "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -455,9 +465,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA806E 2.4",
+              "text": "Honda RA806E",
               "url": "https://en.wikipedia.org/wiki/Honda_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -498,9 +509,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA806E 2.4",
+              "text": "Honda RA806E",
               "url": "https://en.wikipedia.org/wiki/Honda_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -536,9 +548,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 056 2.4",
+              "text": "Ferrari 056",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -574,9 +587,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 056 2.4",
+              "text": "Ferrari 056",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -618,9 +632,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW P86 2.4",
+              "text": "BMW P86",
               "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -656,9 +671,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW P86 2.4",
+              "text": "BMW P86",
               "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -700,9 +716,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Toyota RVX-06 2.4",
+              "text": "Toyota RVX-06",
               "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -738,9 +755,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Toyota RVX-06 2.4",
+              "text": "Toyota RVX-06",
               "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -776,9 +794,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Cosworth TJ2005 3.0",
+              "text": "Cosworth TJ2005",
               "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -814,9 +833,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Cosworth TJ2005 3.0",
+              "text": "Cosworth TJ2005",
               "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -856,9 +876,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA806E 2.4",
+              "text": "Honda RA806E",
               "url": "https://en.wikipedia.org/wiki/Honda_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -898,9 +919,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA806E 2.4",
+              "text": "Honda RA806E",
               "url": "https://en.wikipedia.org/wiki/Honda_V8_F1_engine"
             },
+            "displacement_l": 2.4,
             "type": "V8",
             "layout": "V",
             "cylinders": 8

@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -78,9 +79,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -160,9 +162,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Matra MS12 3.0",
+              "text": "Matra MS12",
               "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -208,9 +211,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -304,9 +308,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo T33 3.0",
+              "text": "Alfa Romeo T33",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -367,9 +372,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -415,9 +421,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -475,9 +482,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -540,9 +548,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -655,9 +664,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -715,9 +725,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -763,9 +774,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -811,9 +823,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 001 3.0",
+              "text": "Ferrari 001",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 3.0,
             "type": "F12",
             "layout": "F",
             "cylinders": 12
@@ -893,9 +906,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P142 3.0",
+              "text": "BRM P142",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -968,9 +982,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1039,9 +1054,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1084,9 +1100,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1129,9 +1146,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1178,9 +1196,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1231,9 +1250,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1271,9 +1291,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1320,9 +1341,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1368,9 +1390,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1413,9 +1436,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1459,9 +1483,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8

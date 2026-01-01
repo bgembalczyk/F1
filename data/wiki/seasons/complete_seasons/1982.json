@@ -35,9 +35,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12 /13 1.5 L4t",
+              "text": "BMW M12 /13 L4t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "G",
@@ -97,9 +98,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12 /13 1.5 L4t",
+              "text": "BMW M12 /13 L4t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "G",
@@ -160,9 +162,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -218,9 +221,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -271,9 +275,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -317,9 +322,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -397,9 +403,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -484,9 +491,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -551,9 +559,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -618,9 +627,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -681,9 +691,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -724,9 +735,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -771,9 +783,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -838,9 +851,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -921,9 +935,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -981,9 +996,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini EF1 1.5 V6t",
+              "text": "Renault-Gordini EF1 V6t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "M",
@@ -1024,9 +1040,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini EF1 1.5 V6t",
+              "text": "Renault-Gordini EF1 V6t",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "M",
@@ -1075,9 +1092,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1151,9 +1169,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1219,9 +1238,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1273,9 +1293,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1344,9 +1365,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 1260 3.0",
+              "text": "Alfa Romeo 1260",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1398,9 +1420,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 1260 3.0",
+              "text": "Alfa Romeo 1260",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1448,9 +1471,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Matra MS81 3.0",
+              "text": "Matra MS81",
               "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1515,9 +1539,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Matra MS81 3.0",
+              "text": "Matra MS81",
               "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1578,9 +1603,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 021 1.5 V6t",
+              "text": "Ferrari 021 V6t",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "G",
@@ -1644,9 +1670,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 021 1.5 V6t",
+              "text": "Ferrari 021 V6t",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "G",
@@ -1715,9 +1742,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1790,9 +1818,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1857,9 +1886,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1907,9 +1937,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1967,9 +1998,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -2063,9 +2095,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 L4t",
+              "text": "Hart 415T L4t",
               "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "P",
@@ -2134,9 +2167,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 L4t",
+              "text": "Hart 415T L4t",
               "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
+            },
+            "displacement_l": 1.5
           },
           "tyres": {
             "text": "P",

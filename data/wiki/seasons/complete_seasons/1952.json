@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Küchen 2.0",
+              "text": "Küchen",
               "url": null
             },
+            "displacement_l": 2.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -76,9 +77,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -131,18 +133,20 @@
           "engine": [
             {
               "model": {
-                "text": "Gordini 20 2.0",
+                "text": "Gordini 20",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
               },
+              "displacement_l": 2.0,
               "type": "L6",
               "layout": "L",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Gordini 1500 1.5",
+                "text": "Gordini 1500",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -245,18 +249,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 500 2.0",
+                "text": "Ferrari 500",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari 166 2.0",
+                "text": "Ferrari 166",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -316,9 +322,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 2.0",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.0,
             "type": "F2",
             "layout": "F",
             "cylinders": 2
@@ -454,9 +461,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -497,9 +505,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -592,18 +601,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 500 2.0",
+                "text": "Ferrari 500",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari 375 4.5 *",
+                "text": "Ferrari 375 *",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 4.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -702,9 +713,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Platé 2.0",
+              "text": "Platé",
               "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -775,18 +787,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 500 2.0",
+                "text": "Ferrari 500",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari 166 2.0",
+                "text": "Ferrari 166",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -858,9 +872,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 1500 1.5",
+              "text": "Gordini 1500",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -903,9 +918,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -950,9 +966,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 500 2.0",
+              "text": "Ferrari 500",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1006,9 +1023,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1051,9 +1069,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth 2.0",
+              "text": "Butterworth",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
+            "displacement_l": 2.0,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1096,9 +1115,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 2.0",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.0,
             "type": "F2",
             "layout": "F",
             "cylinders": 2
@@ -1144,9 +1164,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 1500 1.5",
+              "text": "Gordini 1500",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1194,18 +1215,20 @@
           "engine": [
             {
               "model": {
-                "text": "Alta 2.0",
+                "text": "Alta",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
               },
+              "displacement_l": 2.0,
               "type": "F2",
               "layout": "F",
               "cylinders": 2
             },
             {
               "model": {
-                "text": "Ferrari 166 2.0",
+                "text": "Ferrari 166",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -1260,9 +1283,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1347,9 +1371,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 1500 1.5",
+              "text": "Gordini 1500",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1397,9 +1422,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 166 2.0",
+              "text": "Ferrari 166",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1452,9 +1478,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth 2.0",
+              "text": "Butterworth",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
+            "displacement_l": 2.0,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1499,9 +1526,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea Francis 2.0",
+              "text": "Lea Francis",
               "url": "https://en.wikipedia.org/wiki/Lea_Francis"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1582,9 +1610,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1622,9 +1651,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 500 2.0",
+              "text": "Ferrari 500",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1667,9 +1697,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1712,9 +1743,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1757,9 +1789,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1802,9 +1835,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1847,9 +1881,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1892,9 +1927,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1937,9 +1973,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1982,9 +2019,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2027,9 +2065,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2072,9 +2111,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2117,9 +2157,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2162,9 +2203,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2207,9 +2249,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2252,9 +2295,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2297,9 +2341,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2342,9 +2387,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2387,9 +2433,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea Francis 2.0",
+              "text": "Lea Francis",
               "url": "https://en.wikipedia.org/wiki/Lea_Francis"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -2432,9 +2479,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2496,9 +2544,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 2000 2.0",
+              "text": "OSCA 2000",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2541,9 +2590,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BPM 2.0",
+              "text": "BPM",
               "url": null
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -2581,9 +2631,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 1500 1.5",
+              "text": "Gordini 1500",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4

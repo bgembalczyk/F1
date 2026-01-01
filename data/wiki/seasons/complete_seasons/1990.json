@@ -32,18 +32,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 036 3.5",
+                "text": "Ferrari Tipo 036",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari Tipo 037 3.5",
+                "text": "Ferrari Tipo 037",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -86,18 +88,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 036 3.5",
+                "text": "Ferrari Tipo 036",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari Tipo 037 3.5",
+                "text": "Ferrari Tipo 037",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -143,9 +147,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -190,9 +195,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -237,9 +243,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS2 3.5",
+              "text": "Renault RS2",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -284,9 +291,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS2 3.5",
+              "text": "Renault RS2",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -331,9 +339,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -404,9 +413,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -459,9 +469,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -514,9 +525,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -587,9 +599,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -634,9 +647,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -702,9 +716,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -745,9 +760,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -788,9 +804,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -835,9 +852,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -882,9 +900,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -929,9 +948,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4 3.5",
+              "text": "Ford HBA4",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1002,9 +1022,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4 3.5",
+              "text": "Ford HBA4",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1045,9 +1066,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1114,9 +1136,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1161,9 +1184,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1208,9 +1232,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1281,9 +1306,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1328,9 +1354,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1379,9 +1406,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA100E 3.5",
+              "text": "Honda RA100E",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1430,9 +1458,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA100E 3.5",
+              "text": "Honda RA100E",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1477,9 +1506,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1524,9 +1554,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1575,9 +1606,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Subaru 1235 3.5",
+              "text": "Subaru 1235",
               "url": "https://en.wikipedia.org/wiki/Subaru_1235"
             },
+            "displacement_l": 3.5,
             "type": "F12",
             "layout": "F",
             "cylinders": 12
@@ -1636,9 +1668,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1689,9 +1722,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV 3.5",
+              "text": "Judd CV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1748,9 +1782,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd CV 3.5",
+              "text": "Judd CV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1802,9 +1837,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1860,9 +1896,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1910,9 +1947,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Life 3.5",
+              "text": "Life",
               "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
             },
+            "displacement_l": 3.5,
             "type": "F35",
             "layout": "F",
             "cylinders": 35
@@ -1970,9 +2008,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Judd CV 3.5",
+              "text": "Judd CV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#CV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8

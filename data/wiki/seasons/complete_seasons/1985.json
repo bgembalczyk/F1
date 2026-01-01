@@ -39,9 +39,10 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG-Porsche TTE PO1 1.5 t",
+              "text": "TAG-Porsche TTE PO1 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -119,9 +120,10 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG-Porsche TTE PO1 1.5 t",
+              "text": "TAG-Porsche TTE PO1 t",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -165,9 +167,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford-Cosworth DFY 3.0",
+              "text": "Ford-Cosworth DFY",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -219,9 +222,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford-Cosworth DFY 3.0",
+              "text": "Ford-Cosworth DFY",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -293,9 +297,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B 1.5 t",
+              "text": "Renault EF4B t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -359,9 +364,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B 1.5 t",
+              "text": "Renault EF4B t",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -444,18 +450,20 @@
           "engine": [
             {
               "model": {
-                "text": "Honda RA164E 1.5 t",
+                "text": "Honda RA164E t",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Honda RA165E 1.5 t",
+                "text": "Honda RA165E t",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -517,18 +525,20 @@
           "engine": [
             {
               "model": {
-                "text": "Honda RA164E 1.5 t",
+                "text": "Honda RA164E t",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Honda RA165E 1.5 t",
+                "text": "Honda RA165E t",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -577,9 +587,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/13 1.5 t",
+              "text": "BMW M12/13 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -627,9 +638,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/13 1.5 t",
+              "text": "BMW M12/13 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -703,9 +715,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 t",
+              "text": "Hart 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -777,9 +790,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 t",
+              "text": "Hart 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -850,18 +864,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -911,18 +927,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -972,18 +990,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -1036,18 +1056,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -1114,18 +1136,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -1195,9 +1219,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/13 1.5 t",
+              "text": "BMW M12/13 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1249,9 +1274,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/13 1.5 t",
+              "text": "BMW M12/13 t",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1299,9 +1325,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 t",
+              "text": "Hart 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1364,9 +1391,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 t",
+              "text": "Hart 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1419,9 +1447,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 415T 1.5 t",
+              "text": "Hart 415T 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1478,9 +1507,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T 1.5 t",
+              "text": "Alfa Romeo 890T t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1532,9 +1562,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T 1.5 t",
+              "text": "Alfa Romeo 890T t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1573,9 +1604,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T 1.5 t",
+              "text": "Alfa Romeo 890T t",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1654,18 +1686,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -1744,18 +1778,20 @@
           "engine": [
             {
               "model": {
-                "text": "Renault EF4B 1.5 t",
+                "text": "Renault EF4B t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Renault EF15 1.5 t",
+                "text": "Renault EF15 t",
                 "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
               },
+              "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
               "cylinders": 6
@@ -1817,9 +1853,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 031 1.5 t",
+              "text": "Ferrari Tipo 031 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -1863,9 +1900,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 031 1.5 t",
+              "text": "Ferrari Tipo 031 t",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -1935,9 +1973,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford-Cosworth DFY 3.0",
+              "text": "Ford-Cosworth DFY",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1985,9 +2024,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni Tipo 615-90 1.5 t",
+              "text": "Motori Moderni Tipo 615-90 t",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -2051,9 +2091,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4 1.5 t",
+              "text": "Zakspeed 1500/4 t",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -2117,9 +2158,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T 1.5 t",
+              "text": "Hart 415T t",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4

@@ -26,9 +26,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 046 3.0",
+              "text": "Ferrari Tipo 046",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -63,9 +64,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 046 3.0",
+              "text": "Ferrari Tipo 046",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -105,9 +107,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8 3.0",
+              "text": "Renault RS8",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -147,9 +150,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8 3.0",
+              "text": "Renault RS8",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -189,9 +193,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8 3.0",
+              "text": "Renault RS8",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -231,9 +236,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS8 3.0",
+              "text": "Renault RS8",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -277,9 +283,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 110D 3.0",
+              "text": "Mercedes FO 110D",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -323,9 +330,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes FO 110D 3.0",
+              "text": "Mercedes FO 110D",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -365,9 +373,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mugen-Honda MF-301HA 3.0",
+              "text": "Mugen-Honda MF-301HA",
               "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -407,9 +416,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mugen-Honda MF-301HA 3.0",
+              "text": "Mugen-Honda MF-301HA",
               "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -453,9 +463,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A12 3.0",
+              "text": "Peugeot A12",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -499,9 +510,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A12 3.0",
+              "text": "Peugeot A12",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -541,9 +553,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford JD Zetec-R 3.0",
+              "text": "Ford JD Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -583,9 +596,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford JD Zetec-R 3.0",
+              "text": "Ford JD Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -620,9 +634,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 830 3.0",
+              "text": "Hart 830",
               "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -657,9 +672,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 830 3.0",
+              "text": "Hart 830",
               "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -694,9 +710,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX11A 3.0",
+              "text": "Yamaha OX11A",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -731,9 +748,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX11A 3.0",
+              "text": "Yamaha OX11A",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.0,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -769,18 +787,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ford-Cosworth EDM2 3.0",
+                "text": "Ford-Cosworth EDM2",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Ford-Cosworth EDM3 3.0",
+                "text": "Ford-Cosworth EDM3",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -817,18 +837,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ford-Cosworth EDM2 3.0",
+                "text": "Ford-Cosworth EDM2",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Ford-Cosworth EDM3 3.0",
+                "text": "Ford-Cosworth EDM3",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -902,9 +924,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford ECA Zetec-R 3.0",
+              "text": "Ford ECA Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -955,9 +978,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford ECA Zetec-R 3.0",
+              "text": "Ford ECA Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8

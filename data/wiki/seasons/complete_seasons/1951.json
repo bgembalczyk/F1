@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -82,9 +83,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -131,9 +133,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -191,9 +194,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -265,9 +269,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 2.0",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.0,
             "type": "F2",
             "layout": "F",
             "cylinders": 2
@@ -319,9 +324,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 375 4.5",
+              "text": "Ferrari 375",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 4.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -411,9 +417,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 158 1.5",
+              "text": "Alfa Romeo 158",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L8",
             "layout": "L",
             "cylinders": 8,
@@ -531,9 +538,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -606,9 +614,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 212 2.5",
+              "text": "Ferrari 212",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -653,9 +662,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -698,9 +708,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -743,9 +754,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -798,9 +810,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -845,9 +858,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 125 1.5",
+              "text": "Ferrari 125",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 1.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12,
@@ -891,9 +905,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 375 4.5",
+              "text": "Ferrari 375",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 4.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -949,9 +964,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 15C 1.5",
+              "text": "Gordini 15C",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1040,9 +1056,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1085,9 +1102,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Speluzzi 1.5",
+              "text": "Speluzzi",
               "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1148,9 +1166,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 1.5",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1194,9 +1213,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P15 1.5",
+              "text": "BRM P15",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V16",
             "layout": "V",
             "cylinders": 16,
@@ -1268,9 +1288,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -1314,9 +1335,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -1360,9 +1382,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1407,9 +1430,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1453,9 +1477,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1499,9 +1524,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1545,9 +1571,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1591,9 +1618,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 375 4.5",
+              "text": "Ferrari 375",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 4.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1636,9 +1664,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 125 1.5",
+              "text": "Ferrari 125",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 1.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12,
@@ -1683,9 +1712,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 4500 4.5",
+              "text": "OSCA 4500",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 4.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1728,9 +1758,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 4500 4.5",
+              "text": "OSCA 4500",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 4.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1773,9 +1804,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6

@@ -39,9 +39,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA121E 3.5",
+              "text": "Honda RA121E",
               "url": "https://en.wikipedia.org/wiki/Honda_V12_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -90,9 +91,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA121E 3.5",
+              "text": "Honda RA121E",
               "url": "https://en.wikipedia.org/wiki/Honda_V12_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -141,9 +143,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA101E 3.5",
+              "text": "Honda RA101E",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -192,9 +195,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA101E 3.5",
+              "text": "Honda RA101E",
               "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -243,9 +247,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS3 3.5",
+              "text": "Renault RS3",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -294,9 +299,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS3 3.5",
+              "text": "Renault RS3",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -349,9 +355,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX99 3.5",
+              "text": "Yamaha OX99",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -404,9 +411,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX99 3.5",
+              "text": "Yamaha OX99",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -463,9 +471,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 3512 3.5",
+              "text": "Porsche 3512",
               "url": "https://en.wikipedia.org/wiki/Porsche_3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -530,9 +539,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 3512 3.5",
+              "text": "Porsche 3512",
               "url": "https://en.wikipedia.org/wiki/Porsche_3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -601,9 +611,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -668,9 +679,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -731,9 +743,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -774,9 +787,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd EV 3.5",
+              "text": "Judd EV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#EV"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -855,9 +869,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -924,9 +939,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A 3.5",
+              "text": "Ilmor 2175A",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -967,9 +983,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A 3.5",
+              "text": "Ilmor 2175A",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1040,9 +1057,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1111,9 +1129,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1191,18 +1210,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ford HBA4 3.5",
+                "text": "Ford HBA4",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
+              "displacement_l": 3.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Ford HBA5 3.5",
+                "text": "Ford HBA5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
+              "displacement_l": 3.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -1283,18 +1304,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ford HBA4 3.5",
+                "text": "Ford HBA4",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
+              "displacement_l": 3.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Ford HBA5 3.5",
+                "text": "Ford HBA5",
                 "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
               },
+              "displacement_l": 3.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -1336,9 +1359,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd GV 3.5",
+              "text": "Judd GV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#GV"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1379,9 +1403,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Judd GV 3.5",
+              "text": "Judd GV",
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)#GV"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1422,9 +1447,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037 3.5",
+              "text": "Ferrari Tipo 037",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1465,9 +1491,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037 3.5",
+              "text": "Ferrari Tipo 037",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1542,9 +1569,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1593,9 +1621,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1644,9 +1673,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037 3.5",
+              "text": "Ferrari Tipo 037",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1721,9 +1751,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 037 3.5",
+              "text": "Ferrari Tipo 037",
               "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1764,9 +1795,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1833,9 +1865,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1876,9 +1909,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFR 3.5",
+              "text": "Ford Cosworth DFR",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV#DFR"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1952,9 +1986,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4 3.5",
+              "text": "Ford HBA4",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -2045,9 +2080,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBA4 3.5",
+              "text": "Ford HBA4",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -2088,9 +2124,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -2131,9 +2168,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lamborghini LE3512 3.5",
+              "text": "Lamborghini LE3512",
               "url": "https://en.wikipedia.org/wiki/Lamborghini_LE3512"
             },
+            "displacement_l": 3.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12

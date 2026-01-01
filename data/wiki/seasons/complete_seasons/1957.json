@@ -32,18 +32,20 @@
           "engine": [
             {
               "model": {
-                "text": "Maserati 250F1 2.5",
+                "text": "Maserati 250F1",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
+              "displacement_l": 2.5,
               "type": "L6",
               "layout": "L",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Maserati 250F1 2.5",
+                "text": "Maserati 250F1",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
+              "displacement_l": 2.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -163,9 +165,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari DS50 2.5",
+              "text": "Ferrari DS50",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -299,9 +302,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -385,9 +389,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 625 2.5",
+              "text": "Ferrari 625",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -430,9 +435,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -478,9 +484,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P25 2.5",
+              "text": "BRM P25",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -560,9 +567,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -614,9 +622,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.0",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -689,9 +698,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -734,9 +744,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Vanwall 254 2.5",
+              "text": "Vanwall 254",
               "url": "https://en.wikipedia.org/wiki/Vanwall"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -818,9 +829,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -868,9 +880,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -913,9 +926,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -958,9 +972,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.0",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1003,9 +1018,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1048,9 +1064,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS2 2.2",
+              "text": "Bristol BS2",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.2,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1093,9 +1110,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1140,9 +1158,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 1.5",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
+            "displacement_l": 1.5,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1194,18 +1213,20 @@
           "engine": [
             {
               "model": {
-                "text": "Climax FPF 1.5",
+                "text": "Climax FPF",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Climax FWB 1.5",
+                "text": "Climax FWB",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FW"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -1258,9 +1279,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 1.5",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
+            "displacement_l": 1.5,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1303,9 +1325,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1348,9 +1371,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1393,9 +1417,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1440,9 +1465,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6

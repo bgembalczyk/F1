@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P101 3.0",
+              "text": "BRM P101",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -76,9 +77,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -155,18 +157,20 @@
           "engine": [
             {
               "model": {
-                "text": "Repco 740 3.0",
+                "text": "Repco 740",
                 "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Repco 860 3.0",
+                "text": "Repco 860",
                 "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB860"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -230,9 +234,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -327,9 +332,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Weslake 58 3.0",
+              "text": "Weslake 58",
               "url": "https://en.wikipedia.org/wiki/Weslake"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -376,9 +382,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -432,27 +439,30 @@
           "engine": [
             {
               "model": {
-                "text": "Honda RA273E 3.0",
+                "text": "Honda RA273E",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
+              "displacement_l": 3.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Honda RA301E 3.0",
+                "text": "Honda RA301E",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
+              "displacement_l": 3.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Honda RA302E 3.0",
+                "text": "Honda RA302E",
                 "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
               },
+              "displacement_l": 3.0,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
@@ -520,18 +530,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 242 3.0",
+                "text": "Ferrari 242",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 3.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari 242C 3.0",
+                "text": "Ferrari 242C",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 3.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -635,18 +647,20 @@
           "engine": [
             {
               "model": {
-                "text": "BRM P101 3.0",
+                "text": "BRM P101",
                 "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
               },
+              "displacement_l": 3.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "BRM P75 3.0",
+                "text": "BRM P75",
                 "url": "https://en.wikipedia.org/wiki/BRM_P75"
               },
+              "displacement_l": 3.0,
               "type": "H16",
               "layout": "H",
               "cylinders": 16
@@ -724,9 +738,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 10/ 3.0",
+              "text": "Maserati 10/",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 3.0,
             "type": "F1",
             "layout": "F",
             "cylinders": 1
@@ -778,9 +793,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P101 3.0",
+              "text": "BRM P101",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -886,9 +902,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -961,9 +978,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth FVA 1.6",
+              "text": "Ford Cosworth FVA",
               "url": "https://en.wikipedia.org/wiki/Cosworth_FVA"
             },
+            "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1006,9 +1024,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Matra MS9 3.0",
+              "text": "Matra MS9",
               "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1071,9 +1090,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0",
+              "text": "Repco 620",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1116,9 +1136,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0",
+              "text": "Repco 620",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1161,9 +1182,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 9/ 3.0",
+              "text": "Maserati 9/",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 3.0,
             "type": "F1",
             "layout": "F",
             "cylinders": 1
@@ -1210,9 +1232,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford Cosworth DFV 3.0",
+              "text": "Ford Cosworth DFV",
               "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1265,9 +1288,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 9/ 3.0",
+              "text": "Maserati 9/",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 3.0,
             "type": "F1",
             "layout": "F",
             "cylinders": 1
@@ -1310,9 +1334,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P101 3.0",
+              "text": "BRM P101",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1361,9 +1386,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA301E 3.0",
+              "text": "Honda RA301E",
               "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1406,9 +1432,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0",
+              "text": "Repco 620",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1446,9 +1473,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 2.8,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1491,9 +1519,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 2.8,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1536,9 +1565,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P101 3.0",
+              "text": "BRM P101",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1586,9 +1616,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 620 3.0",
+              "text": "Repco 620",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB620"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1635,9 +1666,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Repco 740 3.0",
+              "text": "Repco 740",
               "url": "https://en.wikipedia.org/wiki/Repco-Brabham_V8#RB740"
             },
+            "displacement_l": 3.0,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1680,9 +1712,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12/1 1.6",
+              "text": "BMW M12/1",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
+            "displacement_l": 1.6,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1725,9 +1758,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P101 3.0",
+              "text": "BRM P101",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 3.0,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1770,9 +1804,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 2.8",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 2.8,
             "type": "L4",
             "layout": "L",
             "cylinders": 4

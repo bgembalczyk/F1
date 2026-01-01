@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 178 1.5",
+              "text": "Ferrari 178",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
             "cylinders": 6
@@ -131,9 +132,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -187,18 +189,20 @@
           "engine": [
             {
               "model": {
-                "text": "Climax FWMV 1.5",
+                "text": "Climax FWMV",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
               },
+              "displacement_l": 1.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Climax FPF 1.5",
+                "text": "Climax FPF",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -253,9 +257,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -301,9 +306,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -352,18 +358,20 @@
           "engine": [
             {
               "model": {
-                "text": "Climax FWMV 1.5",
+                "text": "Climax FWMV",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
               },
+              "displacement_l": 1.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Climax FPF 1.5",
+                "text": "Climax FPF",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -423,9 +431,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -476,18 +485,20 @@
           "engine": [
             {
               "model": {
-                "text": "Porsche 753 1.5",
+                "text": "Porsche 753",
                 "url": "https://en.wikipedia.org/wiki/Porsche"
               },
+              "displacement_l": 1.5,
               "type": "F8",
               "layout": "F",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Porsche 547/3 1.5",
+                "text": "Porsche 547/3",
                 "url": "https://en.wikipedia.org/wiki/Porsche"
               },
+              "displacement_l": 1.5,
               "type": "F4",
               "layout": "F",
               "cylinders": 4
@@ -564,9 +575,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 1.5",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
+            "displacement_l": 1.5,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -609,9 +621,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -657,9 +670,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -713,9 +727,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -765,9 +780,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -807,9 +823,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -851,9 +868,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -900,9 +918,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -946,9 +965,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1000,9 +1020,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 1.5",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
+            "displacement_l": 1.5,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1048,9 +1069,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1093,9 +1115,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 1.5",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
+            "displacement_l": 1.5,
             "type": "F4",
             "layout": "F",
             "cylinders": 4
@@ -1137,9 +1160,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1176,9 +1200,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1221,9 +1246,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1265,9 +1291,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati Tipo 6 1.5",
+              "text": "Maserati Tipo 6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1309,9 +1336,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1376,9 +1404,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1417,9 +1446,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1467,9 +1497,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1507,9 +1538,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1552,9 +1584,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1596,9 +1629,10 @@
           ],
           "engine": {
             "model": {
-              "text": "De Tomaso 1.5",
+              "text": "De Tomaso",
               "url": "https://en.wikipedia.org/wiki/De_Tomaso"
             },
+            "displacement_l": 1.5,
             "type": "F8",
             "layout": "F",
             "cylinders": 8
@@ -1635,9 +1669,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 372 1.5",
+              "text": "OSCA 372",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1679,9 +1714,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1723,9 +1759,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1767,9 +1804,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1811,9 +1849,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1855,9 +1894,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1899,9 +1939,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1943,9 +1984,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1987,9 +2029,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -2021,9 +2064,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Alfa Romeo Giulietta 1.5",
+              "text": "Alfa Romeo Giulietta",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -2065,9 +2109,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo Giulietta 1.5",
+              "text": "Alfa Romeo Giulietta",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4

@@ -35,9 +35,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 158 1.5",
+              "text": "Alfa Romeo 158",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L8",
             "layout": "L",
             "cylinders": 8,
@@ -141,9 +142,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -207,9 +209,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -253,9 +256,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -308,9 +312,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CL 1.5",
+              "text": "Maserati 4CL",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -363,9 +368,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -415,9 +421,10 @@
           ],
           "engine": {
             "model": {
-              "text": "ERA 1.5",
+              "text": "ERA",
               "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
             },
+            "displacement_l": 1.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6,
@@ -470,9 +477,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -559,9 +567,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -609,9 +618,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -670,9 +680,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -731,9 +742,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 1.5",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -777,9 +789,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta 1.5",
+              "text": "Alta",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -829,9 +842,10 @@
           "engine": [
             {
               "model": {
-                "text": "Maserati 4CLT 1.5",
+                "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4,
@@ -839,9 +853,10 @@
             },
             {
               "model": {
-                "text": "Maserati 4CL 1.5",
+                "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4,
@@ -914,9 +929,10 @@
           ],
           "engine": {
             "model": {
-              "text": "JAP 1.1",
+              "text": "JAP",
               "url": "https://en.wikipedia.org/wiki/JA_Prestwich_Industries_Ltd"
             },
+            "displacement_l": 1.1,
             "type": "V2",
             "layout": "V",
             "cylinders": 2
@@ -959,9 +975,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Simca-Gordini 15C 1.5",
+              "text": "Simca-Gordini 15C",
               "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1021,9 +1038,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1082,9 +1100,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1137,9 +1156,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 125 1.5",
+              "text": "Ferrari 125",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 1.5,
             "type": "F1",
             "layout": "F",
             "cylinders": 1,
@@ -1198,9 +1218,10 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 125 1.5",
+                "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 1.5,
               "type": "F1",
               "layout": "F",
               "cylinders": 1,
@@ -1208,27 +1229,30 @@
             },
             {
               "model": {
-                "text": "Ferrari 166 2.0",
+                "text": "Ferrari 166",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "F2",
               "layout": "F",
               "cylinders": 2
             },
             {
               "model": {
-                "text": "Ferrari 275 3.3",
+                "text": "Ferrari 275",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 3.3,
               "type": "F1",
               "layout": "F",
               "cylinders": 1
             },
             {
               "model": {
-                "text": "Ferrari 375 4.5",
+                "text": "Ferrari 375",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 4.5,
               "type": "F1",
               "layout": "F",
               "cylinders": 1
@@ -1307,9 +1331,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Speluzzi 1.5",
+              "text": "Speluzzi",
               "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1363,9 +1388,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Speluzzi 1.5",
+              "text": "Speluzzi",
               "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1409,9 +1435,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1454,9 +1481,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1501,9 +1529,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1547,9 +1576,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1593,9 +1623,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CL 1.5",
+              "text": "Maserati 4CL",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1639,9 +1670,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1693,9 +1725,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Jaguar XK 3.4",
+              "text": "Jaguar XK",
               "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
             },
+            "displacement_l": 3.4,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1738,9 +1771,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 1.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4,
@@ -1784,9 +1818,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Talbot 23CV 4.5",
+              "text": "Talbot 23CV",
               "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
             },
+            "displacement_l": 4.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6

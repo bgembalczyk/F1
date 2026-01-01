@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -175,18 +176,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 500 2.0",
+                "text": "Ferrari 500",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari 553 2.0",
+                "text": "Ferrari 553",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -316,18 +319,20 @@
           "engine": [
             {
               "model": {
-                "text": "Bristol BS1 2.0",
+                "text": "Bristol BS1",
                 "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
               },
+              "displacement_l": 2.0,
               "type": "L6",
               "layout": "L",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Alta GP 2.5",
+                "text": "Alta GP",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
               },
+              "displacement_l": 2.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -405,18 +410,20 @@
           "engine": [
             {
               "model": {
-                "text": "Gordini 20 2.0",
+                "text": "Gordini 20",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
               },
+              "displacement_l": 2.0,
               "type": "L6",
               "layout": "L",
               "cylinders": 6
             },
             {
               "model": {
-                "text": "Gordini 1500 1.5",
+                "text": "Gordini 1500",
                 "url": "https://en.wikipedia.org/wiki/Gordini"
               },
+              "displacement_l": 1.5,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
@@ -545,9 +552,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 500 2.0",
+              "text": "Ferrari 500",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -595,9 +603,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 500 2.0",
+              "text": "Ferrari 500",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -640,9 +649,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -685,9 +695,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea-Francis 2.0",
+              "text": "Lea-Francis",
               "url": "https://en.wikipedia.org/wiki/Lea-Francis"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -775,9 +786,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea-Francis 2.0",
+              "text": "Lea-Francis",
               "url": "https://en.wikipedia.org/wiki/Lea-Francis"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -832,9 +844,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -881,9 +894,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -999,9 +1013,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1049,9 +1064,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 1500 1.5",
+              "text": "Gordini 1500",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1094,9 +1110,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1139,9 +1156,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 500 2.0",
+              "text": "Ferrari 500",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1195,9 +1213,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 2000 2.0",
+              "text": "OSCA 2000",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1243,9 +1262,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 2000 2.0",
+              "text": "OSCA 2000",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1289,9 +1309,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1335,9 +1356,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lea-Francis 2.0",
+              "text": "Lea-Francis",
               "url": "https://en.wikipedia.org/wiki/Lea-Francis"
             },
+            "displacement_l": 2.0,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1385,18 +1407,20 @@
           "engine": [
             {
               "model": {
-                "text": "Lea-Francis 2.0",
+                "text": "Lea-Francis",
                 "url": "https://en.wikipedia.org/wiki/Lea-Francis"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Bristol BS1 2.0",
+                "text": "Bristol BS1",
                 "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
               },
+              "displacement_l": 2.0,
               "type": "L6",
               "layout": "L",
               "cylinders": 6
@@ -1444,9 +1468,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1503,9 +1528,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1548,9 +1574,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1593,9 +1620,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1639,9 +1667,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1684,9 +1713,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1729,9 +1759,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1774,9 +1805,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1819,9 +1851,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1864,9 +1897,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1909,9 +1943,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1954,9 +1989,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Veritas 2.0",
+              "text": "Veritas",
               "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2004,18 +2040,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 500 2.0",
+                "text": "Ferrari 500",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "L4",
               "layout": "L",
               "cylinders": 4
             },
             {
               "model": {
-                "text": "Ferrari 166 2.0",
+                "text": "Ferrari 166",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 2.0,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -2077,9 +2115,10 @@
           ],
           "engine": {
             "model": {
-              "text": "EMW 6 2.0",
+              "text": "EMW 6",
               "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2117,9 +2156,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2162,9 +2202,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2207,9 +2248,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2252,9 +2294,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW 328 2.0",
+              "text": "BMW 328",
               "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2297,9 +2340,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2342,9 +2386,10 @@
           ],
           "engine": {
             "model": {
-              "text": "OSCA 2000 2.0",
+              "text": "OSCA 2000",
               "url": "https://en.wikipedia.org/wiki/O.S.C.A."
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -2387,9 +2432,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati A6 2.0",
+              "text": "Maserati A6",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6

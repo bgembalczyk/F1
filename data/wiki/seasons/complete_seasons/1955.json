@@ -31,9 +31,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes M196 2.5",
+              "text": "Mercedes M196",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
             },
+            "displacement_l": 2.5,
             "type": "L8",
             "layout": "L",
             "cylinders": 8
@@ -141,9 +142,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 555 2.5",
+              "text": "Ferrari 555",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -273,9 +275,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lancia DS50 2.5",
+              "text": "Lancia DS50",
               "url": "https://en.wikipedia.org/wiki/Lancia"
             },
+            "displacement_l": 2.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -318,9 +321,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -470,9 +474,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -515,9 +520,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Lancia DS50 2.5",
+              "text": "Lancia DS50",
               "url": "https://en.wikipedia.org/wiki/Lancia"
             },
+            "displacement_l": 2.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -592,9 +598,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Gordini 23 2.5",
+              "text": "Gordini 23",
               "url": "https://en.wikipedia.org/wiki/Gordini"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -707,9 +714,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -754,9 +762,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Vanwall 254 2.5",
+              "text": "Vanwall 254",
               "url": "https://en.wikipedia.org/wiki/Vanwall"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -820,9 +829,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -893,9 +903,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -938,9 +949,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 625 2.5",
+              "text": "Ferrari 625",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -983,9 +995,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1029,9 +1042,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1083,9 +1097,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1137,9 +1152,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta GP 2.5",
+              "text": "Alta GP",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1182,9 +1198,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Bristol BS1 2.0",
+              "text": "Bristol BS1",
               "url": "https://en.wikipedia.org/wiki/Bristol_Cars"
             },
+            "displacement_l": 2.0,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1227,9 +1244,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1272,9 +1290,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 250F1 2.5",
+              "text": "Maserati 250F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L6",
             "layout": "L",
             "cylinders": 6
@@ -1317,9 +1336,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 4CLT 2.5",
+              "text": "Maserati 4CLT",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
+            "displacement_l": 2.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4

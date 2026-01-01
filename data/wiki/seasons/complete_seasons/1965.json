@@ -40,18 +40,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 205B 1.5",
+                "text": "Ferrari 205B",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 1.5,
               "type": "V8",
               "layout": "V",
               "cylinders": 8
             },
             {
               "model": {
-                "text": "Ferrari 207 1.5",
+                "text": "Ferrari 207",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
+              "displacement_l": 1.5,
               "type": "F12",
               "layout": "F",
               "cylinders": 12
@@ -145,9 +147,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -197,9 +200,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -299,9 +303,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -394,9 +399,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -442,9 +448,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -484,9 +491,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -521,9 +529,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -567,9 +576,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -617,9 +627,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -716,9 +727,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -762,9 +774,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -807,9 +820,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -852,9 +866,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -892,9 +907,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo Giulietta 1.5",
+              "text": "Alfa Romeo Giulietta",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -932,9 +948,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -972,9 +989,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1017,9 +1035,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1062,9 +1081,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FPF 1.5",
+              "text": "Climax FPF",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FPF"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1107,9 +1127,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo Giulietta 1.5",
+              "text": "Alfa Romeo Giulietta",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1147,9 +1168,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1192,9 +1214,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1237,9 +1260,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo Giulietta 1.5",
+              "text": "Alfa Romeo Giulietta",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1277,9 +1301,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1322,9 +1347,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA272E 1.5",
+              "text": "Honda RA272E",
               "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
             },
+            "displacement_l": 1.5,
             "type": "V12",
             "layout": "V",
             "cylinders": 12
@@ -1388,9 +1414,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1473,9 +1500,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1518,9 +1546,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford 109E 1.5",
+              "text": "Ford 109E",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
+            "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
             "cylinders": 4
@@ -1563,9 +1592,10 @@
           ],
           "engine": {
             "model": {
-              "text": "BRM P56 1.5",
+              "text": "BRM P56",
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1618,9 +1648,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Climax FWMV 1.5",
+              "text": "Climax FWMV",
               "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
             },
+            "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8

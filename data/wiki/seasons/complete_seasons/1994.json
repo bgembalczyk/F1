@@ -43,9 +43,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6 3.5",
+              "text": "Renault RS6",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -97,9 +98,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6 3.5",
+              "text": "Renault RS6",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -172,9 +174,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX10B 3.5",
+              "text": "Yamaha OX10B",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -214,9 +217,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Yamaha OX10B 3.5",
+              "text": "Yamaha OX10B",
               "url": "https://en.wikipedia.org/wiki/Yamaha_F1_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -256,9 +260,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford EC Zetec-R 3.5",
+              "text": "Ford EC Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -324,9 +329,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford EC Zetec-R 3.5",
+              "text": "Ford EC Zetec-R",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -408,9 +414,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A6 3.5",
+              "text": "Peugeot A6",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -484,9 +491,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Peugeot A6 3.5",
+              "text": "Peugeot A6",
               "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -530,9 +538,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBE7 / Ford HBE8 3.5",
+              "text": "Ford HBE7 / Ford HBE8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -576,9 +585,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBE7 / Ford HBE8 3.5",
+              "text": "Ford HBE7 / Ford HBE8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -623,18 +633,20 @@
           "engine": [
             {
               "model": {
-                "text": "Mugen Honda MF-351HC 3.5",
+                "text": "Mugen Honda MF-351HC",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
+              "displacement_l": 3.5,
               "type": "V10",
               "layout": "V",
               "cylinders": 10
             },
             {
               "model": {
-                "text": "Mugen Honda MF-351HD 3.5",
+                "text": "Mugen Honda MF-351HD",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
+              "displacement_l": 3.5,
               "type": "V10",
               "layout": "V",
               "cylinders": 10
@@ -730,18 +742,20 @@
           "engine": [
             {
               "model": {
-                "text": "Mugen Honda MF-351HC 3.5",
+                "text": "Mugen Honda MF-351HC",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
+              "displacement_l": 3.5,
               "type": "V10",
               "layout": "V",
               "cylinders": 10
             },
             {
               "model": {
-                "text": "Mugen Honda MF-351HD 3.5",
+                "text": "Mugen Honda MF-351HD",
                 "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
               },
+              "displacement_l": 3.5,
               "type": "V10",
               "layout": "V",
               "cylinders": 10
@@ -812,9 +826,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 1035 3.5",
+              "text": "Hart 1035",
               "url": "https://en.wikipedia.org/wiki/Hart_1035_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -858,9 +873,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 1035 3.5",
+              "text": "Hart 1035",
               "url": "https://en.wikipedia.org/wiki/Hart_1035_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -938,9 +954,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBF7 / Ford HBF8 3.5",
+              "text": "Ford HBF7 / Ford HBF8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1026,9 +1043,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBF7 / Ford HBF8 3.5",
+              "text": "Ford HBF7 / Ford HBF8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1102,9 +1120,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBC7 / Ford HBC8 3.5",
+              "text": "Ford HBC7 / Ford HBC8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1152,9 +1171,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBC7 / Ford HBC8 3.5",
+              "text": "Ford HBC7 / Ford HBC8",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1198,9 +1218,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6 3.5",
+              "text": "Renault RS6",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1278,9 +1299,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault RS6 3.5",
+              "text": "Renault RS6",
               "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1325,18 +1347,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 041 3.5",
+                "text": "Ferrari Tipo 041",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari Tipo 043 3.5",
+                "text": "Ferrari Tipo 043",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -1408,18 +1432,20 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari Tipo 041 3.5",
+                "text": "Ferrari Tipo 041",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari Tipo 043 3.5",
+                "text": "Ferrari Tipo 043",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_V12_F1_engine"
               },
+              "displacement_l": 3.5,
               "type": "V12",
               "layout": "V",
               "cylinders": 12
@@ -1472,9 +1498,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes-Benz 2175B 3.5",
+              "text": "Mercedes-Benz 2175B",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1559,9 +1586,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Mercedes-Benz 2175B 3.5",
+              "text": "Mercedes-Benz 2175B",
               "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1609,9 +1637,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBD6 3.5",
+              "text": "Ford HBD6",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1659,9 +1688,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford HBD6 3.5",
+              "text": "Ford HBD6",
               "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
             },
+            "displacement_l": 3.5,
             "type": "V8",
             "layout": "V",
             "cylinders": 8
@@ -1749,9 +1779,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A 3.5",
+              "text": "Ilmor 2175A",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
@@ -1791,9 +1822,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ilmor 2175A 3.5",
+              "text": "Ilmor 2175A",
               "url": "https://en.wikipedia.org/wiki/Ilmor"
             },
+            "displacement_l": 3.5,
             "type": "V10",
             "layout": "V",
             "cylinders": 10
