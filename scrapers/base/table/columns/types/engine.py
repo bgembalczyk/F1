@@ -21,17 +21,53 @@ class EngineColumn(BaseColumn):
         segments = _split_cell_on_br(cell)
         link_lookup = _build_link_lookup(ctx.links or [])
         engines: list[dict[str, Any]] = []
+        class_value = _extract_engine_class(cell)
 
         for segment in segments:
             engine = _parse_engine_segment(segment, link_lookup)
             if engine:
+                if class_value:
+                    engine["class"] = class_value
                 engines.append(engine)
 
         if not engines:
             return None
         if len(engines) == 1:
             return engines[0]
-        return engines
+    return engines
+
+
+def _extract_engine_class(cell: Tag) -> str | None:
+    background = _extract_background(cell)
+    if not background:
+        return None
+    if _is_f2_background(background):
+        return "F2"
+    return None
+
+
+def _extract_background(cell: Tag) -> str | None:
+    style = cell.get("style") or ""
+    if style:
+        match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.I)
+        if match:
+            return match.group(1).strip()
+
+    bgcolor = cell.get("bgcolor")
+    if bgcolor:
+        return str(bgcolor).strip()
+
+    return None
+
+
+def _is_f2_background(background: str) -> bool:
+    match = re.search(r"#?([0-9a-f]{3}|[0-9a-f]{6})", background, re.I)
+    if not match:
+        return False
+    value = match.group(1).lower()
+    if len(value) == 3:
+        value = "".join(char * 2 for char in value)
+    return value == "ffcccc"
 
 
 def _split_cell_on_br(cell: Tag) -> list[Tag]:
