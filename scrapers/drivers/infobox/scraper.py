@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup, Tag
 from models.records.link import LinkRecord
 from scrapers.base.helpers.html_utils import extract_links_from_cell
 from scrapers.base.helpers.text_normalization import clean_infobox_text, clean_wiki_text
+from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
@@ -150,9 +151,23 @@ class DriverInfoboxScraper:
                 place_text = match.group(2).strip()
 
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
+        place: List[str | LinkRecord] = place_parts
+        if self.include_urls and place_parts:
+            links = self._extract_links(cell)
+            place = [
+                self._find_link_by_text(part, links) or part for part in place_parts
+            ]
+        parsed_date = parse_date_text(date_text or "")
+        iso = parsed_date.get("iso")
+        if isinstance(iso, list):
+            date_value = iso[0] if iso else None
+        elif isinstance(iso, str):
+            date_value = iso
+        else:
+            date_value = date_text or None
         return {
-            "date": date_text or None,
-            "place": place_parts or None,
+            "date": date_value,
+            "place": place or None,
         }
 
     def _parse_relations(self, cell: Tag) -> List[Dict[str, Any]]:
@@ -283,3 +298,12 @@ class DriverInfoboxScraper:
         if "season" in url or "_season" in url:
             return False
         return True
+
+    @staticmethod
+    def _find_link_by_text(text: str, links: List[LinkRecord]) -> LinkRecord | None:
+        wanted = text.strip().lower()
+        for link in links:
+            link_text = (link.get("text") or "").strip().lower()
+            if link_text == wanted:
+                return link
+        return None
