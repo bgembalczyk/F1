@@ -166,6 +166,13 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         cleaned = re.sub(r"\s*\b(\d{4}|\d{3}0s)\b\s*$", "", text).strip()
         return cleaned or text
 
+    @staticmethod
+    def _strip_years_keep_context(text: str) -> str:
+        cleaned = re.sub(r"\b\d{4}\b", "", text)
+        cleaned = re.sub(r"\b\d{3}0s\b", "", cleaned)
+        cleaned = re.sub(r"\(\s*\)", "", cleaned)
+        return clean_wiki_text(cleaned)
+
     def _filter_colours_for_years(self, colours: Any, years: set[int]) -> Any:
         if not isinstance(colours, list):
             return colours
@@ -179,7 +186,10 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 filtered.append(item)
                 continue
             if year_params & years:
-                filtered.append(self._strip_year_suffix(item))
+                if re.search(r"grand prix", item, flags=re.IGNORECASE):
+                    filtered.append(self._strip_years_keep_context(item))
+                else:
+                    filtered.append(self._strip_year_suffix(item))
         return filtered
 
     def _remove_year_specific_colours(self, colours: Any) -> Any:
@@ -298,13 +308,19 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 continue
             year_params = self._extract_years_from_text(item)
             if not year_params or year in year_params:
-                if year_params:
-                    filtered.append(self._strip_year_suffix(item))
-                else:
+                if not year_params:
                     filtered.append(item)
+                    continue
+                if re.search(r"grand prix", item, flags=re.IGNORECASE):
+                    filtered.append(self._strip_years_keep_context(item))
+                else:
+                    filtered.append(self._strip_year_suffix(item))
         return filtered
 
     def _split_record_by_season(self, record: Dict[str, Any]) -> List[Dict[str, Any]]:
+        for key in self._colour_keys:
+            if key in record:
+                record = {**record, key: self._split_or_colours(record[key])}
         seasons = record.get("season")
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return self._split_record_by_grand_prix(record)
@@ -336,6 +352,25 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                     new_record[key] = self._filter_colours_for_year(record[key], year)
             split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
+
+    @staticmethod
+    def _split_or_colours(colours: Any) -> Any:
+        if not isinstance(colours, list):
+            return colours
+        expanded: list[Any] = []
+        for item in colours:
+            if not isinstance(item, str):
+                expanded.append(item)
+                continue
+            if re.search(r"\s+or\s+", item, flags=re.IGNORECASE):
+                parts = [
+                    clean_wiki_text(part)
+                    for part in re.split(r"\s+or\s+", item, flags=re.IGNORECASE)
+                ]
+                expanded.extend([part for part in parts if part])
+                continue
+            expanded.append(item)
+        return expanded
 
     def _split_record_by_colour_scopes(
         self, record: Dict[str, Any], seasons: list[Any]
