@@ -191,15 +191,25 @@ class DriverInfoboxScraper:
             if not isinstance(label_cell, Tag) or not isinstance(value_cell, Tag):
                 continue
 
-            title_link = self._first_link(label_cell)
-            if title_link is None:
-                title_text = clean_infobox_text(label_cell.get_text(" ", strip=True))
-                title_link = {"text": title_text or "", "url": None}
+            title_links = self._extract_title_links(value_cell)
+            year_links = self._extract_year_links(label_cell)
 
-            years = self._extract_year_links(label_cell) + self._extract_year_links(
-                value_cell
-            )
-            titles.append({"title": title_link, "years": years})
+            if title_links and year_links and len(title_links) == len(year_links) and len(title_links) > 1:
+                for title_link, year_link in zip(title_links, year_links):
+                    titles.append({"title": title_link, "years": [year_link]})
+                continue
+
+            if title_links and year_links:
+                titles.append({"title": title_links[0], "years": year_links})
+                continue
+
+            if title_links:
+                for title_link in title_links:
+                    titles.append({"title": title_link, "years": []})
+                continue
+
+            title_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
+            titles.append({"title": {"text": title_text or "", "url": None}, "years": year_links})
 
         return titles
 
@@ -279,6 +289,14 @@ class DriverInfoboxScraper:
     def _first_link(self, cell: Tag) -> LinkRecord | None:
         links = self._extract_links(cell)
         return links[0] if links else None
+
+    def _extract_title_links(self, cell: Tag) -> List[LinkRecord]:
+        links = self._extract_links(cell)
+        if links:
+            return links
+        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+        parts = [part.strip() for part in text.split("\n") if part.strip()]
+        return [{"text": part, "url": None} for part in parts]
 
     def _extract_year_links(self, cell: Tag) -> List[LinkRecord]:
         links = [link for link in self._extract_links(cell) if self._is_year_link(link)]
