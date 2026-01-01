@@ -399,8 +399,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 129,
-    "race_starts": 127,
+    "race_entries": 130,
+    "race_starts": 128,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 2,
@@ -800,13 +800,13 @@
         }
       ]
     },
-    "race_entries": 427,
-    "race_starts": 424,
+    "race_entries": 428,
+    "race_starts": 425,
     "pole_positions": 22,
     "race_wins": 32,
     "podiums": 106,
     "fastest_laps": 26,
-    "points": "2385"
+    "points": "2393"
   },
   {
     "driver": {
@@ -1277,8 +1277,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 23,
-    "race_starts": 23,
+    "race_entries": 24,
+    "race_starts": 24,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 3,
@@ -2492,8 +2492,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 26,
-    "race_starts": 26,
+    "race_entries": 27,
+    "race_starts": 27,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -3878,8 +3878,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 23,
-    "race_starts": 23,
+    "race_entries": 24,
+    "race_starts": 24,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -6623,8 +6623,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 26,
-    "race_starts": 25,
+    "race_entries": 27,
+    "race_starts": 26,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -10608,8 +10608,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 177,
-    "race_starts": 176,
+    "race_entries": 178,
+    "race_starts": 177,
     "pole_positions": 0,
     "race_wins": 1,
     "podiums": 5,
@@ -12320,8 +12320,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 23,
-    "race_starts": 22,
+    "race_entries": 24,
+    "race_starts": 23,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 1,
@@ -12682,13 +12682,13 @@
         }
       ]
     },
-    "race_entries": 379,
-    "race_starts": 379,
+    "race_entries": 380,
+    "race_starts": 380,
     "pole_positions": 104,
     "race_wins": 105,
     "podiums": 202,
     "fastest_laps": 68,
-    "points": "5014.5"
+    "points": "5018.5"
   },
   {
     "driver": {
@@ -14164,13 +14164,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 253,
-    "race_starts": 249,
+    "race_entries": 254,
+    "race_starts": 250,
     "pole_positions": 1,
     "race_wins": 0,
     "podiums": 1,
     "fastest_laps": 2,
-    "points": "620"
+    "points": "622"
   },
   {
     "driver": {
@@ -16786,8 +16786,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 34,
-    "race_starts": 34,
+    "race_entries": 35,
+    "race_starts": 35,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -16840,13 +16840,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 172,
-    "race_starts": 170,
+    "race_entries": 173,
+    "race_starts": 171,
     "pole_positions": 27,
     "race_wins": 8,
     "podiums": 50,
-    "fastest_laps": 10,
-    "points": "1660"
+    "fastest_laps": 11,
+    "points": "1672"
   },
   {
     "driver": {
@@ -19780,7 +19780,7 @@
   {
     "driver": {
       "text": "Thomas Monarch",
-      "url": "https://en.wikipedia.org/w/index.php?title=Thomas_Monarch&action=edit&redlink=1"
+      "url": null
     },
     "is_active": false,
     "is_world_champion": false,
@@ -20965,7 +20965,7 @@
       "url": "https://en.wikipedia.org/wiki/Lando_Norris"
     },
     "is_active": true,
-    "is_world_champion": false,
+    "is_world_champion": true,
     "nationality": "United Kingdom",
     "seasons_competed": [
       {
@@ -20998,16 +20998,21 @@
       }
     ],
     "drivers_championships": {
-      "count": 0,
-      "seasons": []
+      "count": 1,
+      "seasons": [
+        {
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+        }
+      ]
     },
-    "race_entries": 151,
-    "race_starts": 151,
+    "race_entries": 152,
+    "race_starts": 152,
     "pole_positions": 16,
     "race_wins": 11,
-    "podiums": 43,
+    "podiums": 44,
     "fastest_laps": 18,
-    "points": "1415"
+    "points": "1430"
   },
   {
     "driver": {
@@ -21111,13 +21116,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 179,
-    "race_starts": 179,
+    "race_entries": 180,
+    "race_starts": 180,
     "pole_positions": 0,
     "race_wins": 1,
     "podiums": 4,
     "fastest_laps": 1,
-    "points": "477"
+    "points": "483"
   },
   {
     "driver": {
@@ -22459,13 +22464,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 69,
-    "race_starts": 69,
+    "race_entries": 70,
+    "race_starts": 70,
     "pole_positions": 6,
     "race_wins": 9,
-    "podiums": 25,
+    "podiums": 26,
     "fastest_laps": 9,
-    "points": "781"
+    "points": "799"
   },
   {
     "driver": {
@@ -25361,13 +25366,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 151,
-    "race_starts": 151,
+    "race_entries": 152,
+    "race_starts": 152,
     "pole_positions": 7,
     "race_wins": 5,
     "podiums": 24,
     "fastest_laps": 11,
-    "points": "1023"
+    "points": "1033"
   },
   {
     "driver": {
@@ -25683,8 +25688,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 232,
-    "race_starts": 228,
+    "race_entries": 233,
+    "race_starts": 229,
     "pole_positions": 6,
     "race_wins": 4,
     "podiums": 29,
@@ -28253,13 +28258,13 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 192,
-    "race_starts": 188,
+    "race_entries": 193,
+    "race_starts": 189,
     "pole_positions": 1,
     "race_wins": 0,
     "podiums": 3,
     "fastest_laps": 0,
-    "points": "324"
+    "points": "325"
   },
   {
     "driver": {
@@ -29984,8 +29989,8 @@
       "count": 0,
       "seasons": []
     },
-    "race_entries": 113,
-    "race_starts": 110,
+    "race_entries": 114,
+    "race_starts": 111,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -30463,13 +30468,13 @@
         }
       ]
     },
-    "race_entries": 232,
-    "race_starts": 232,
-    "pole_positions": 47,
-    "race_wins": 70,
-    "podiums": 126,
+    "race_entries": 233,
+    "race_starts": 233,
+    "pole_positions": 48,
+    "race_wins": 71,
+    "podiums": 127,
     "fastest_laps": 36,
-    "points": "3419.5"
+    "points": "3444.5"
   },
   {
     "driver": {
@@ -32540,26 +32545,5 @@
     "podiums": 0,
     "fastest_laps": 0,
     "points": "0"
-  },
-  {
-    "driver": {
-      "text": "Driver name",
-      "url": null
-    },
-    "is_active": false,
-    "is_world_champion": false,
-    "nationality": "Nationality",
-    "seasons_competed": [],
-    "drivers_championships": {
-      "count": 0,
-      "seasons": []
-    },
-    "race_entries": null,
-    "race_starts": null,
-    "pole_positions": null,
-    "race_wins": null,
-    "podiums": null,
-    "fastest_laps": null,
-    "points": "Points"
   }
 ]
