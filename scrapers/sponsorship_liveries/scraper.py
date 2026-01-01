@@ -145,18 +145,54 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
     @staticmethod
     def _extract_years_from_text(text: str) -> set[int]:
-        return {
+        years = {
             int(match)
             for match in F1SponsorshipLiveriesScraper._year_re.findall(text)
         }
+        for decade in re.findall(r"\b(\d{3})0s\b", text):
+            start = int(decade) * 10
+            years.update(range(start, start + 10))
+        return years
 
     @staticmethod
     def _strip_year_suffix(text: str) -> str:
-        cleaned = re.sub(r"\s*\([^)]*\b\d{4}\b[^)]*\)\s*$", "", text).strip()
+        cleaned = re.sub(
+            r"\s*\([^)]*\b(\d{4}|\d{3}0s)\b[^)]*\)\s*$",
+            "",
+            text,
+        ).strip()
         if cleaned and cleaned != text:
             return cleaned
-        cleaned = re.sub(r"\s*\b\d{4}\b\s*$", "", text).strip()
+        cleaned = re.sub(r"\s*\b(\d{4}|\d{3}0s)\b\s*$", "", text).strip()
         return cleaned or text
+
+    def _filter_colours_for_years(self, colours: Any, years: set[int]) -> Any:
+        if not isinstance(colours, list):
+            return colours
+        filtered: list[Any] = []
+        for item in colours:
+            if not isinstance(item, str):
+                filtered.append(item)
+                continue
+            year_params = self._extract_years_from_text(item)
+            if not year_params:
+                filtered.append(item)
+                continue
+            if year_params & years:
+                filtered.append(self._strip_year_suffix(item))
+        return filtered
+
+    def _remove_year_specific_colours(self, colours: Any) -> Any:
+        if not isinstance(colours, list):
+            return colours
+        filtered: list[Any] = []
+        for item in colours:
+            if not isinstance(item, str):
+                filtered.append(item)
+                continue
+            if not self._extract_years_from_text(item):
+                filtered.append(item)
+        return filtered
 
     @staticmethod
     def _params_contain_only_years_or_grand_prix(params: list[Any]) -> bool:
@@ -273,10 +309,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return self._split_record_by_grand_prix(record)
 
-        if not (
-            self._record_has_year_specific_sponsors(record)
-            or self._record_has_year_specific_colours(record)
-        ):
+        if not self._record_has_year_specific_sponsors(record):
+            if self._record_has_year_specific_colours(record):
+                return self._split_record_by_colour_scopes(record, seasons)
             return self._split_record_by_grand_prix(record)
 
         season_entries = [
@@ -299,14 +334,124 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             for key in self._colour_keys:
                 if key in record:
                     new_record[key] = self._filter_colours_for_year(record[key], year)
-            split_records.extend(self._split_record_by_grand_prix(new_record))
+        split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
+
+    def _split_record_by_colour_scopes(
+        self, record: Dict[str, Any], seasons: list[Any]
+    ) -> List[Dict[str, Any]]:
+        season_entries = [
+            season
+            for season in seasons
+            if isinstance(season, dict) and isinstance(season.get("year"), int)
+        ]
+        if len(season_entries) <= 1:
+            return [record]
+
+        colour_year_sets: list[set[int]] = []
+        for key in self._colour_keys:
+            colours = record.get(key)
+            if not isinstance(colours, list):
+                continue
+            for item in colours:
+                if not isinstance(item, str):
+                    continue
+                years = self._extract_years_from_text(item)
+                if years:
+                    colour_year_sets.append(years)
+
+        if not colour_year_sets:
+            return self._split_record_by_grand_prix(record)
+
+        all_years = set().union(*colour_year_sets)
+        split_records: list[Dict[str, Any]] = []
+
+        base_seasons = [
+            season for season in season_entries if season["year"] not in all_years
+        ]
+        if base_seasons:
+            base_record = {**record, "season": base_seasons}
+            for key in self._colour_keys:
+                if key in record:
+                    base_record[key] = self._remove_year_specific_colours(record[key])
+            split_records.extend(self._split_record_by_grand_prix(base_record))
+
+        unique_year_sets: list[set[int]] = []
+        for years in colour_year_sets:
+            if not any(years == existing for existing in unique_year_sets):
+                unique_year_sets.append(years)
+
+        for years in unique_year_sets:
+            scoped_seasons = [
+                season for season in season_entries if season["year"] in years
+            ]
+            if not scoped_seasons:
+                continue
+            scoped_record = {**record, "season": scoped_seasons}
+            for key in self._colour_keys:
+                if key in record:
+                    scoped_record[key] = self._filter_colours_for_years(
+                        record[key], years
+                    )
+            split_records.extend(self._split_record_by_grand_prix(scoped_record))
+
+        return split_records
+
+    @staticmethod
+    def _parse_grand_prix_names(text: str) -> list[str]:
+        text = re.sub(r"\bGrands Prix\b", "Grand Prix", text, flags=re.IGNORECASE)
+        text = re.sub(r"\bGrand Prix\b", "", text, flags=re.IGNORECASE).strip()
+        if text:
+            parts = re.split(r"\s*(?:,| and )\s*", text)
+            return [f"{part.strip()} Grand Prix" for part in parts if part.strip()]
+        matches = re.findall(r"[^,;]+?Grand Prix", text, flags=re.IGNORECASE)
+        return [clean_wiki_text(match) for match in matches if match.strip()] or [
+            clean_wiki_text(text)
+        ]
+
+    def _colour_grand_prix_scope(
+        self, colour: str
+    ) -> tuple[dict[str, Any] | None, str]:
+        match = re.search(r"\(([^)]*grand prix[^)]*)\)", colour, flags=re.IGNORECASE)
+        cleaned_colour = self._strip_year_suffix(colour)
+        if not match:
+            return None, cleaned_colour
+        scope_text = match.group(1)
+        scope_text = re.sub(r"\b\d{4}\b", "", scope_text)
+        scope_text = re.sub(r"\b\d{3}0s\b", "", scope_text)
+        scope_text = clean_wiki_text(scope_text)
+        if not scope_text or not re.search(
+            r"grand prix", scope_text, flags=re.IGNORECASE
+        ):
+            return None, cleaned_colour
+        names = self._parse_grand_prix_names(scope_text)
+        scope = {
+            "type": "only",
+            "grand_prix": [{"text": name} for name in names],
+        }
+        return scope, cleaned_colour
+
+    @staticmethod
+    def _colour_is_replacement(record: Dict[str, Any], colour: str) -> bool:
+        colour_lower = colour.lower()
+        pattern = re.compile(
+            rf"livery\s+is\s+colou?red\s+{re.escape(colour_lower)}",
+            flags=re.IGNORECASE,
+        )
+        for key, value in record.items():
+            if not isinstance(value, str):
+                continue
+            if pattern.search(value):
+                return True
+        return False
 
     def _split_record_by_grand_prix(
         self, record: Dict[str, Any]
     ) -> List[Dict[str, Any]]:
         scoped_items: dict[str, list[tuple[dict[str, Any], Any]]] = {}
         base_sponsors: dict[str, list[Any]] = {}
+        scoped_colours: dict[str, list[tuple[dict[str, Any], str, bool]]] = {}
+        base_colours: dict[str, list[Any]] = {}
 
         for key in self._sponsor_keys:
             sponsors = record.get(key)
@@ -332,7 +477,28 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             if scoped_list:
                 scoped_items[key] = scoped_list
 
-        if not scoped_items:
+        for key in self._colour_keys:
+            colours = record.get(key)
+            if not isinstance(colours, list):
+                continue
+            base_list: list[Any] = []
+            scoped_list: list[tuple[dict[str, Any], str, bool]] = []
+            for item in colours:
+                if not isinstance(item, str):
+                    base_list.append(item)
+                    continue
+                scope, cleaned = self._colour_grand_prix_scope(item)
+                if scope:
+                    scoped_list.append(
+                        (scope, cleaned, self._colour_is_replacement(record, cleaned))
+                    )
+                else:
+                    base_list.append(item)
+            base_colours[key] = base_list
+            if scoped_list:
+                scoped_colours[key] = scoped_list
+
+        if not scoped_items and not scoped_colours:
             return [record]
 
         scope_map: dict[tuple[Any, ...], dict[str, Any]] = {}
@@ -344,6 +510,16 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 )
                 scope_entry["items"].setdefault(key, []).append(item)
 
+        for key, scoped_list in scoped_colours.items():
+            for scope, colour, replace in scoped_list:
+                scope_key = self._grand_prix_scope_key(scope)
+                scope_entry = scope_map.setdefault(
+                    scope_key, {"scope": scope, "items": {}}
+                )
+                scope_entry["items"].setdefault(key, []).append(
+                    {"colour": colour, "replace": replace}
+                )
+
         split_records: list[Dict[str, Any]] = []
         for scope_entry in scope_map.values():
             new_record = {**record, "grand_prix_scope": scope_entry["scope"]}
@@ -352,6 +528,19 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                     continue
                 scoped_list = scope_entry["items"].get(key, [])
                 new_record[key] = base_sponsors[key] + scoped_list
+            for key in self._colour_keys:
+                if key not in base_colours:
+                    continue
+                scoped_list = scope_entry["items"].get(key, [])
+                scoped_colours_list = [item["colour"] for item in scoped_list]
+                has_replacement = any(item.get("replace") for item in scoped_list)
+                if scoped_colours_list:
+                    if has_replacement:
+                        new_record[key] = scoped_colours_list
+                    else:
+                        new_record[key] = base_colours[key] + scoped_colours_list
+                else:
+                    new_record[key] = base_colours[key]
             split_records.append(new_record)
 
         other_record = {**record, "grand_prix_scope": {"type": "other"}}
@@ -359,6 +548,10 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             if key not in base_sponsors:
                 continue
             other_record[key] = base_sponsors[key]
+        for key in self._colour_keys:
+            if key not in base_colours:
+                continue
+            other_record[key] = base_colours[key]
         split_records.append(other_record)
         return split_records
 
