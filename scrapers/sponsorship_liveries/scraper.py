@@ -334,7 +334,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             for key in self._colour_keys:
                 if key in record:
                     new_record[key] = self._filter_colours_for_year(record[key], year)
-        split_records.extend(self._split_record_by_grand_prix(new_record))
+            split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
 
     def _split_record_by_colour_scopes(

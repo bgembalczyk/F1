@@ -1394,41 +1394,6 @@
           "Gold"
         ],
         "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          {
-            "text": "Scicon Micro Systems ARCO Graphite"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Long Beach Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": [],
         "main_sponsors": [
           {
             "text": "Warsteiner",
@@ -1452,6 +1417,41 @@
             "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
           },
           "to": null
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          {
+            "text": "Scicon Micro Systems ARCO Graphite"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
+            }
+          ]
         }
       },
       {
@@ -8630,6 +8630,80 @@
         "main_colours": [
           "Black"
         ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
+          }
+        ],
+        "additional_major_sponsors": [
+          "Elan"
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
+            },
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
+            },
+            {
+              "text": "Swedish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
+            },
+            {
+              "text": "German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
+            },
+            {
+              "text": "British Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
         "main_sponsors": [],
         "additional_major_sponsors": [
           "Elan",
@@ -8689,80 +8763,6 @@
             {
               "text": "Austrian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
-          }
-        ],
-        "additional_major_sponsors": [
-          "Elan"
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "South African Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Swedish Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
-            },
-            {
-              "text": "German Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
-            },
-            {
-              "text": "British Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             }
           ]
         }
@@ -9958,201 +9958,70 @@
           {
             "year": 1950,
             "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1951,
             "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1952,
             "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1953,
             "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1954,
             "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1955,
             "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1956,
             "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1957,
             "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1958,
             "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1959,
             "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1961,
             "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1962,
             "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
+          },
           {
             "year": 1963,
             "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+          },
+          {
+            "year": 1965,
+            "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+          },
+          {
+            "year": 1966,
+            "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+          },
+          {
+            "year": 1967,
+            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
           }
         ],
         "main_colours": [
@@ -10182,51 +10051,6 @@
       {
         "season": [
           {
-            "year": 1965,
-            "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
-          {
-            "year": 1966,
-            "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
-          {
-            "year": 1967,
-            "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Red"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
-        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
-      },
-      {
-        "season": [
-          {
             "year": 1968,
             "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
           }
@@ -10235,8 +10059,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10287,8 +10110,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10336,7 +10158,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10384,7 +10206,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10432,7 +10254,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10484,7 +10306,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10536,7 +10358,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10584,7 +10406,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10632,7 +10454,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10684,7 +10506,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10732,7 +10554,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10780,7 +10602,7 @@
         ],
         "additional_colours": [
           "White or Black",
-          "Green (1970s)"
+          "Green"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10827,8 +10649,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10879,8 +10700,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10927,8 +10747,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -10975,8 +10794,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11023,8 +10841,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11075,8 +10892,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11123,8 +10939,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11175,8 +10990,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11223,8 +11037,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11275,8 +11088,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11327,8 +11139,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11375,8 +11186,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11423,8 +11233,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
@@ -11475,8 +11284,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [
           {
@@ -11532,8 +11340,7 @@
           "Red"
         ],
         "additional_colours": [
-          "White or Black",
-          "Green (1970s)"
+          "White or Black"
         ],
         "main_sponsors": [
           {
