@@ -41,6 +41,11 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         "additional_major_sponsors",
         "livery_sponsors",
     }
+    _colour_keys = {
+        "main_colours",
+        "additional_colours",
+    }
+    _year_re = re.compile(r"\b\d{4}\b")
 
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
@@ -114,7 +119,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 text = param.get("text")
             if text is None:
                 text = str(param)
-            for match in re.findall(r"\b\d{4}\b", text):
+            for match in F1SponsorshipLiveriesScraper._year_re.findall(text):
                 years.add(int(match))
         return years
 
@@ -137,6 +142,21 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         text = re.sub(r"\b(only|onwards?)\b", "", text, flags=re.IGNORECASE)
         text = re.sub(r"^\s*from\s+", "", text, flags=re.IGNORECASE)
         return clean_wiki_text(text)
+
+    @staticmethod
+    def _extract_years_from_text(text: str) -> set[int]:
+        return {
+            int(match)
+            for match in F1SponsorshipLiveriesScraper._year_re.findall(text)
+        }
+
+    @staticmethod
+    def _strip_year_suffix(text: str) -> str:
+        cleaned = re.sub(r"\s*\([^)]*\b\d{4}\b[^)]*\)\s*$", "", text).strip()
+        if cleaned and cleaned != text:
+            return cleaned
+        cleaned = re.sub(r"\s*\b\d{4}\b\s*$", "", text).strip()
+        return cleaned or text
 
     @staticmethod
     def _params_contain_only_years_or_grand_prix(params: list[Any]) -> bool:
@@ -232,12 +252,31 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             filtered.append(item)
         return filtered
 
+    def _filter_colours_for_year(self, colours: Any, year: int) -> Any:
+        if not isinstance(colours, list):
+            return colours
+        filtered: list[Any] = []
+        for item in colours:
+            if not isinstance(item, str):
+                filtered.append(item)
+                continue
+            year_params = self._extract_years_from_text(item)
+            if not year_params or year in year_params:
+                if year_params:
+                    filtered.append(self._strip_year_suffix(item))
+                else:
+                    filtered.append(item)
+        return filtered
+
     def _split_record_by_season(self, record: Dict[str, Any]) -> List[Dict[str, Any]]:
         seasons = record.get("season")
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return self._split_record_by_grand_prix(record)
 
-        if not self._record_has_year_specific_sponsors(record):
+        if not (
+            self._record_has_year_specific_sponsors(record)
+            or self._record_has_year_specific_colours(record)
+        ):
             return self._split_record_by_grand_prix(record)
 
         season_entries = [
@@ -257,6 +296,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                     new_record[key] = self._filter_sponsors_for_year(
                         record[key], year
                     )
+            for key in self._colour_keys:
+                if key in record:
+                    new_record[key] = self._filter_colours_for_year(record[key], year)
             split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
 
@@ -356,6 +398,16 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 if not self._params_contain_only_years_or_grand_prix(params):
                     continue
                 if self._extract_year_params(params):
+                    return True
+        return False
+
+    def _record_has_year_specific_colours(self, record: Dict[str, Any]) -> bool:
+        for key in self._colour_keys:
+            colours = record.get(key)
+            if not isinstance(colours, list):
+                continue
+            for item in colours:
+                if isinstance(item, str) and self._extract_years_from_text(item):
                     return True
         return False
 
