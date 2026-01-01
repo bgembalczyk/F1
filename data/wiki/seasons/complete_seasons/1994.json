@@ -1135,7 +1135,7 @@
         {
           "entrant": [
             {
-              "name": "Broker Sauber Mercedes Sauber Mercedes",
+              "name": "Broker Sauber Mercedes",
               "title_sponsors": [
                 {
                   "text": "Sauber",
@@ -1144,7 +1144,12 @@
                 {
                   "text": "Mercedes",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Sauber Mercedes",
+              "title_sponsors": [
                 {
                   "text": "Sauber",
                   "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"

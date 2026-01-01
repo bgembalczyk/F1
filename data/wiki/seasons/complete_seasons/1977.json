@@ -359,16 +359,26 @@
         {
           "entrant": [
             {
-              "name": "Hollywood March Racing Rothmans International Racing Lexington Racing",
+              "name": "Hollywood March Racing",
               "title_sponsors": [
                 {
                   "text": "Hollywood March Racing",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Rothmans International Racing",
+              "title_sponsors": [
                 {
                   "text": "Rothmans International Racing",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Lexington Racing",
+              "title_sponsors": [
                 {
                   "text": "Lexington Racing",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
@@ -573,12 +583,17 @@
         {
           "entrant": [
             {
-              "name": "Rotary Watches Stanley-BRM Stanley-BRM",
+              "name": "Rotary Watches Stanley-BRM",
               "title_sponsors": [
                 {
                   "text": "Rotary Watches Stanley-BRM",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Stanley-BRM",
+              "title_sponsors": [
                 {
                   "text": "Stanley-BRM",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
@@ -831,16 +846,26 @@
         {
           "entrant": [
             {
-              "name": "Ambrosio Shadow Racing Ambrosio Tabatip Shadow Racing Ambrosio Villiger Shadow Racing",
+              "name": "Ambrosio Shadow Racing",
               "title_sponsors": [
                 {
                   "text": "Ambrosio Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Ambrosio Tabatip Shadow Racing",
+              "title_sponsors": [
                 {
                   "text": "Ambrosio Tabatip Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Ambrosio Villiger Shadow Racing",
+              "title_sponsors": [
                 {
                   "text": "Ambrosio Villiger Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
@@ -996,12 +1021,17 @@
         {
           "entrant": [
             {
-              "name": "Durex Team Surtees Beta Team Surtees",
+              "name": "Durex Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Durex Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Beta Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Beta Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
@@ -1179,12 +1209,17 @@
         {
           "entrant": [
             {
-              "name": "Team Tissot Ensign with Castrol Theodore Racing Hong Kong",
+              "name": "Team Tissot Ensign with Castrol",
               "title_sponsors": [
                 {
                   "text": "Team Tissot Ensign with Castrol",
                   "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Theodore Racing Hong Kong",
+              "title_sponsors": [
                 {
                   "text": "Theodore Racing Hong Kong",
                   "url": "https://en.wikipedia.org/wiki/Theodore_Racing"
@@ -1269,7 +1304,7 @@
         {
           "entrant": [
             {
-              "name": "Penthouse Rizla+ . Racing Hesketh Racing",
+              "name": "Penthouse Rizla+ . Racing",
               "title_sponsors": [
                 {
                   "text": "Penthouse",
@@ -1282,7 +1317,12 @@
                 {
                   "text": "Racing",
                   "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Hesketh Racing",
+              "title_sponsors": [
                 {
                   "text": "Hesketh Racing",
                   "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
@@ -1645,12 +1685,17 @@
         {
           "entrant": [
             {
-              "name": "Chesterfield Racing Liggett Group with BS Fabrications",
+              "name": "Chesterfield Racing",
               "title_sponsors": [
                 {
                   "text": "Chesterfield Racing",
                   "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Liggett Group with BS Fabrications",
+              "title_sponsors": [
                 {
                   "text": "Liggett Group with BS Fabrications",
                   "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
@@ -1820,16 +1865,26 @@
         {
           "entrant": [
             {
-              "name": "F&S Properties Racing F&S Properties Racing with Marlboro RAM Racing",
+              "name": "F&S Properties Racing",
               "title_sponsors": [
                 {
                   "text": "F&S Properties Racing",
                   "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "F&S Properties Racing with Marlboro",
+              "title_sponsors": [
                 {
                   "text": "F&S Properties Racing with Marlboro",
                   "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "RAM Racing",
+              "title_sponsors": [
                 {
                   "text": "RAM Racing",
                   "url": "https://en.wikipedia.org/wiki/RAM_Racing"

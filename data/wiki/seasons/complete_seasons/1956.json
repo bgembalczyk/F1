@@ -864,12 +864,17 @@
         {
           "entrant": [
             {
-              "name": "Gould's Garage (Bristol) H.H. Gould",
+              "name": "Gould's Garage (Bristol)",
               "title_sponsors": [
                 {
                   "text": "Gould's Garage (Bristol)",
                   "url": "https://en.wikipedia.org/wiki/Horace_Gould"
-                },
+                }
+              ]
+            },
+            {
+              "name": "H.H. Gould",
+              "title_sponsors": [
                 {
                   "text": "H.H. Gould",
                   "url": "https://en.wikipedia.org/wiki/Horace_Gould"

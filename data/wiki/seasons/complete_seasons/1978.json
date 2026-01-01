@@ -284,7 +284,7 @@
         {
           "entrant": [
             {
-              "name": "Marlboro Team McLaren Löwenbräu Team McLaren",
+              "name": "Marlboro Team McLaren",
               "title_sponsors": [
                 {
                   "text": "Marlboro",
@@ -293,7 +293,12 @@
                 {
                   "text": "Team McLaren",
                   "url": "https://en.wikipedia.org/wiki/McLaren"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Löwenbräu Team McLaren",
+              "title_sponsors": [
                 {
                   "text": "Löwenbräu",
                   "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
@@ -398,12 +403,17 @@
         {
           "entrant": [
             {
-              "name": "ATS Racing Team F&S Properties ATS Racing Team",
+              "name": "ATS Racing Team",
               "title_sponsors": [
                 {
                   "text": "ATS Racing Team",
                   "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
-                },
+                }
+              ]
+            },
+            {
+              "name": "F&S Properties ATS Racing Team",
+              "title_sponsors": [
                 {
                   "text": "ATS Racing Team",
                   "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
@@ -824,7 +834,7 @@
         {
           "entrant": [
             {
-              "name": "Durex Team Surtees Beta Team Surtees",
+              "name": "Durex Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Durex",
@@ -833,7 +843,12 @@
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Beta Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
@@ -1654,12 +1669,17 @@
         {
           "entrant": [
             {
-              "name": "BS Fabrications Liggett Group with BS Fabrications",
+              "name": "BS Fabrications",
               "title_sponsors": [
                 {
                   "text": "BS Fabrications",
                   "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Liggett Group with BS Fabrications",
+              "title_sponsors": [
                 {
                   "text": "Liggett Group",
                   "url": "https://en.wikipedia.org/wiki/Liggett_Group"
@@ -2008,12 +2028,17 @@
         {
           "entrant": [
             {
-              "name": "Arrows Racing Team Warsteiner Arrows Racing Team",
+              "name": "Arrows Racing Team",
               "title_sponsors": [
                 {
                   "text": "Arrows Racing Team",
                   "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Warsteiner Arrows Racing Team",
+              "title_sponsors": [
                 {
                   "text": "Warsteiner",
                   "url": "https://en.wikipedia.org/wiki/Warsteiner"

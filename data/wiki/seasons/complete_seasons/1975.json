@@ -378,12 +378,17 @@
         {
           "entrant": [
             {
-              "name": "Beta Team March Lavazza March",
+              "name": "Beta Team March",
               "title_sponsors": [
                 {
                   "text": "Team March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Lavazza March",
+              "title_sponsors": [
                 {
                   "text": "Lavazza",
                   "url": "https://en.wikipedia.org/wiki/Lavazza"
@@ -791,7 +796,7 @@
         {
           "entrant": [
             {
-              "name": "Matchbox Team Surtees National Organs Team Surtees",
+              "name": "Matchbox Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Matchbox",
@@ -800,7 +805,12 @@
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "National Organs Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
@@ -1014,12 +1024,17 @@
         {
           "entrant": [
             {
-              "name": "Frank Williams Racing Cars Williams Ambrozium H7 Racing",
+              "name": "Frank Williams Racing Cars",
               "title_sponsors": [
                 {
                   "text": "Frank Williams Racing Cars",
                   "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Williams Ambrozium H7 Racing",
+              "title_sponsors": [
                 {
                   "text": "Williams",
                   "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
@@ -1400,16 +1415,26 @@
         {
           "entrant": [
             {
-              "name": "Hesketh Racing Warsteiner Brewery Polar Caravans",
+              "name": "Hesketh Racing",
               "title_sponsors": [
                 {
                   "text": "Hesketh Racing",
                   "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Warsteiner Brewery",
+              "title_sponsors": [
                 {
                   "text": "Warsteiner Brewery",
                   "url": "https://en.wikipedia.org/wiki/Warsteiner"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Polar Caravans",
+              "title_sponsors": [
                 {
                   "text": "Polar Caravans",
                   "url": "https://en.wikipedia.org/wiki/Polar_Caravans"
@@ -2166,7 +2191,7 @@
         {
           "entrant": [
             {
-              "name": "Citizen Maki F1 Citizen Maki Engineering Citizen Maki F1-Team",
+              "name": "Citizen Maki F1",
               "title_sponsors": [
                 {
                   "text": "Citizen",
@@ -2175,7 +2200,12 @@
                 {
                   "text": "Maki F1",
                   "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Citizen Maki Engineering",
+              "title_sponsors": [
                 {
                   "text": "Citizen",
                   "url": "https://en.wikipedia.org/wiki/Citizen_Watch"
@@ -2183,7 +2213,12 @@
                 {
                   "text": "Maki Engineering",
                   "url": "https://en.wikipedia.org/wiki/Maki_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Citizen Maki F1-Team",
+              "title_sponsors": [
                 {
                   "text": "Citizen",
                   "url": "https://en.wikipedia.org/wiki/Citizen_Watch"

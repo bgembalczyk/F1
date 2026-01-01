@@ -106,16 +106,26 @@
         {
           "entrant": [
             {
-              "name": "Marlboro BRM España Marlboro BRM Austria Marlboro BRM",
+              "name": "Marlboro BRM",
               "title_sponsors": [
                 {
                   "text": "Marlboro BRM",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-                },
+                }
+              ]
+            },
+            {
+              "name": "España Marlboro BRM",
+              "title_sponsors": [
                 {
                   "text": "España Marlboro BRM",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Austria Marlboro BRM",
+              "title_sponsors": [
                 {
                   "text": "Austria Marlboro BRM",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
@@ -403,12 +413,17 @@
         {
           "entrant": [
             {
-              "name": "John Player Team Lotus World Wide Racing",
+              "name": "John Player Team Lotus",
               "title_sponsors": [
                 {
                   "text": "John Player Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "World Wide Racing",
+              "title_sponsors": [
                 {
                   "text": "World Wide Racing",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
@@ -706,20 +721,35 @@
         {
           "entrant": [
             {
-              "name": "Brooke Bond Oxo-Rob Walker Team Surtees Ceramica Pagnossin Team Surtees Flame Out Team Surtees Team Surtees",
+              "name": "Brooke Bond Oxo-Rob Walker Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Ceramica Pagnossin Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Ceramica Pagnossin Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Flame Out Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Flame Out Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"

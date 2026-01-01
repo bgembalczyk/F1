@@ -9,12 +9,17 @@
         {
           "entrant": [
             {
-              "name": "Gold Leaf Team Lotus World Wide Racing",
+              "name": "Gold Leaf Team Lotus",
               "title_sponsors": [
                 {
                   "text": "Gold Leaf Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "World Wide Racing",
+              "title_sponsors": [
                 {
                   "text": "World Wide Racing",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
@@ -1072,16 +1077,26 @@
         {
           "entrant": [
             {
-              "name": "Brooke Bond Oxo-Rob Walker Auto Motor und Sport Eifelland Team Surtees Team Surtees",
+              "name": "Brooke Bond Oxo-Rob Walker",
               "title_sponsors": [
                 {
                   "text": "Brooke Bond Oxo-Rob Walker",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Auto Motor und Sport Eifelland Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Auto Motor und Sport Eifelland Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"

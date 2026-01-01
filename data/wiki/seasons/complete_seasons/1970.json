@@ -557,16 +557,26 @@
         {
           "entrant": [
             {
-              "name": "Gold Leaf Team Lotus Garvey Team Lotus World Wide Racing",
+              "name": "Gold Leaf Team Lotus",
               "title_sponsors": [
                 {
                   "text": "Gold Leaf Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Garvey Team Lotus",
+              "title_sponsors": [
                 {
                   "text": "Garvey Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "World Wide Racing",
+              "title_sponsors": [
                 {
                   "text": "World Wide Racing",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
@@ -691,12 +701,17 @@
         {
           "entrant": [
             {
-              "name": "Rob Walker Racing Team Brooke Bond Oxo Racing with Rob Walker",
+              "name": "Rob Walker Racing Team",
               "title_sponsors": [
                 {
                   "text": "Rob Walker Racing Team",
                   "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Brooke Bond Oxo Racing with Rob Walker",
+              "title_sponsors": [
                 {
                   "text": "Brooke Bond Oxo Racing with Rob Walker",
                   "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
@@ -766,12 +781,17 @@
         {
           "entrant": [
             {
-              "name": "Motor Racing Developments Auto Motor und Sport",
+              "name": "Motor Racing Developments",
               "title_sponsors": [
                 {
                   "text": "Motor Racing Developments",
                   "url": "https://en.wikipedia.org/wiki/Brabham"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Auto Motor und Sport",
+              "title_sponsors": [
                 {
                   "text": "Auto Motor und Sport",
                   "url": "https://en.wikipedia.org/wiki/Brabham"
@@ -966,12 +986,17 @@
         {
           "entrant": [
             {
-              "name": "Owen Racing Organisation Yardley Team BRM",
+              "name": "Owen Racing Organisation",
               "title_sponsors": [
                 {
                   "text": "Owen Racing Organisation",
                   "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Yardley Team BRM",
+              "title_sponsors": [
                 {
                   "text": "Yardley",
                   "url": "https://en.wikipedia.org/wiki/Yardley_London"
@@ -1303,12 +1328,17 @@
         {
           "entrant": [
             {
-              "name": "Antique Automobiles Racing Team Colin Crabbe Racing",
+              "name": "Antique Automobiles Racing Team",
               "title_sponsors": [
                 {
                   "text": "Antique Automobiles Racing Team",
                   "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Colin Crabbe Racing",
+              "title_sponsors": [
                 {
                   "text": "Colin Crabbe Racing",
                   "url": "https://en.wikipedia.org/wiki/Colin_Crabbe_Racing"

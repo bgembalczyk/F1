@@ -149,16 +149,26 @@
         {
           "entrant": [
             {
-              "name": "Motor Racing Developments Ceramica Pagnossin Team MRD Hexagon of Highgate",
+              "name": "Motor Racing Developments",
               "title_sponsors": [
                 {
                   "text": "Motor Racing Developments",
                   "url": "https://en.wikipedia.org/wiki/Brabham"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Ceramica Pagnossin Team MRD",
+              "title_sponsors": [
                 {
                   "text": "Ceramica Pagnossin Team MRD",
                   "url": "https://en.wikipedia.org/wiki/Brabham"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Hexagon of Highgate",
+              "title_sponsors": [
                 {
                   "text": "Hexagon of Highgate",
                   "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
@@ -448,13 +458,17 @@
         {
           "entrant": [
             {
-              "name": "Clarke-Mordaunt-Guthrie Racing Team Pierre Robert",
+              "name": "Clarke-Mordaunt-Guthrie Racing",
               "title_sponsors": [
                 {
                   "text": "Clarke-Mordaunt-Guthrie Racing",
                   "url": "https://en.wikipedia.org/wiki/BS_Fabrications"
                 }
               ]
+            },
+            {
+              "name": "Team Pierre Robert",
+              "title_sponsors": []
             }
           ],
           "constructor": {
@@ -535,12 +549,17 @@
         {
           "entrant": [
             {
-              "name": "STP March Racing Team STP March / Wheatcroft Racing March Racing Team",
+              "name": "STP March Racing Team",
               "title_sponsors": [
                 {
                   "text": "STP March Racing Team",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "STP March / Wheatcroft Racing",
+              "title_sponsors": [
                 {
                   "text": "STP March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
@@ -548,7 +567,12 @@
                 {
                   "text": "Wheatcroft Racing",
                   "url": "https://en.wikipedia.org/wiki/Wheatcroft_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "March Racing Team",
+              "title_sponsors": [
                 {
                   "text": "March Racing Team",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
@@ -635,20 +659,35 @@
         {
           "entrant": [
             {
-              "name": "Brooke Bond Oxo-Rob Walker Team Surtees Brooke Bond Oxo Team Surtees Ceramica Pagnossin Team Surtees Team Surtees",
+              "name": "Brooke Bond Oxo-Rob Walker Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Brooke Bond Oxo-Rob Walker Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Brooke Bond Oxo Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Brooke Bond Oxo Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Ceramica Pagnossin Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Ceramica Pagnossin Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"

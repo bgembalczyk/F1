@@ -84,12 +84,17 @@
         {
           "entrant": [
             {
-              "name": "Team Tyrrell Candy Tyrrell Team",
+              "name": "Team Tyrrell",
               "title_sponsors": [
                 {
                   "text": "Team Tyrrell",
                   "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Candy Tyrrell Team",
+              "title_sponsors": [
                 {
                   "text": "Candy",
                   "url": "https://en.wikipedia.org/wiki/Candy_(company)"
@@ -387,7 +392,7 @@
         {
           "entrant": [
             {
-              "name": "Marlboro Team McLaren Löwenbräu Team McLaren",
+              "name": "Marlboro Team McLaren",
               "title_sponsors": [
                 {
                   "text": "Marlboro",
@@ -396,7 +401,12 @@
                 {
                   "text": "Team McLaren",
                   "url": "https://en.wikipedia.org/wiki/McLaren"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Löwenbräu Team McLaren",
+              "title_sponsors": [
                 {
                   "text": "Löwenbräu",
                   "url": "https://en.wikipedia.org/wiki/L%C3%B6wenbr%C3%A4u_Brewery"
@@ -761,7 +771,7 @@
         {
           "entrant": [
             {
-              "name": "Samson Shadow Racing Interscope Shadow Racing Shadow Racing",
+              "name": "Samson Shadow Racing",
               "title_sponsors": [
                 {
                   "text": "Samson",
@@ -770,7 +780,12 @@
                 {
                   "text": "Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Interscope Shadow Racing",
+              "title_sponsors": [
                 {
                   "text": "Interscope",
                   "url": "https://en.wikipedia.org/wiki/Ted_Field"
@@ -778,7 +793,12 @@
                 {
                   "text": "Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Shadow Racing",
+              "title_sponsors": [
                 {
                   "text": "Shadow Racing",
                   "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
@@ -844,7 +864,7 @@
         {
           "entrant": [
             {
-              "name": "Olympus Cameras Wolf Racing Michelob Wolf Racing",
+              "name": "Olympus Cameras Wolf Racing",
               "title_sponsors": [
                 {
                   "text": "Olympus Cameras",
@@ -853,7 +873,12 @@
                 {
                   "text": "Wolf Racing",
                   "url": "https://en.wikipedia.org/wiki/Wolf_Racing_Cars"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Michelob Wolf Racing",
+              "title_sponsors": [
                 {
                   "text": "Michelob",
                   "url": "https://en.wikipedia.org/wiki/Michelob"

@@ -223,12 +223,17 @@
         {
           "entrant": [
             {
-              "name": "Team Lotus Gold Leaf Team Lotus",
+              "name": "Team Lotus",
               "title_sponsors": [
                 {
                   "text": "Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Gold Leaf Team Lotus",
+              "title_sponsors": [
                 {
                   "text": "Gold Leaf Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"

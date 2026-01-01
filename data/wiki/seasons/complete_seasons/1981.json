@@ -9,7 +9,7 @@
         {
           "entrant": [
             {
-              "name": "Albilad Williams Racing Team TAG Williams Team",
+              "name": "Albilad Williams Racing Team",
               "title_sponsors": [
                 {
                   "text": "Albilad",
@@ -18,7 +18,12 @@
                 {
                   "text": "Williams Racing Team",
                   "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "TAG Williams Team",
+              "title_sponsors": [
                 {
                   "text": "TAG",
                   "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
@@ -425,7 +430,7 @@
         {
           "entrant": [
             {
-              "name": "Team Essex Lotus John Player Team Lotus",
+              "name": "Team Essex Lotus",
               "title_sponsors": [
                 {
                   "text": "Essex",
@@ -434,7 +439,12 @@
                 {
                   "text": "Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "John Player Team Lotus",
+              "title_sponsors": [
                 {
                   "text": "John Player",
                   "url": "https://en.wikipedia.org/wiki/John_Player_%26_Sons"
@@ -703,12 +713,17 @@
         {
           "entrant": [
             {
-              "name": "March Grand Prix Team Guinness RIzla+. March",
+              "name": "March Grand Prix Team",
               "title_sponsors": [
                 {
                   "text": "March Grand Prix Team",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Guinness RIzla+. March",
+              "title_sponsors": [
                 {
                   "text": "Guinness",
                   "url": "https://en.wikipedia.org/wiki/Guinness"

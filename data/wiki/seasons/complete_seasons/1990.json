@@ -1249,7 +1249,7 @@
         {
           "entrant": [
             {
-              "name": "Subaru Coloni Racing Coloni Racing",
+              "name": "Subaru Coloni Racing",
               "title_sponsors": [
                 {
                   "text": "Subaru",
@@ -1258,7 +1258,12 @@
                 {
                   "text": "Coloni Racing",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Coloni Racing",
+              "title_sponsors": [
                 {
                   "text": "Coloni Racing",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Coloni"
@@ -1473,13 +1478,17 @@
         {
           "entrant": [
             {
-              "name": "Onyx Grand Prix Monteverdi Formula One",
+              "name": "Onyx Grand Prix",
               "title_sponsors": [
                 {
                   "text": "Onyx Grand Prix",
                   "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
                 }
               ]
+            },
+            {
+              "name": "Monteverdi Formula One",
+              "title_sponsors": []
             }
           ],
           "constructor": {

@@ -819,16 +819,26 @@
         {
           "entrant": [
             {
-              "name": "March Grand Prix Team Rothmans Racing with March Grand Prix LBT Team March",
+              "name": "March Grand Prix Team",
               "title_sponsors": [
                 {
                   "text": "March Grand Prix Team",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Rothmans Racing with March Grand Prix",
+              "title_sponsors": [
                 {
                   "text": "Rothmans Racing with March Grand Prix",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                },
+                }
+              ]
+            },
+            {
+              "name": "LBT Team March",
+              "title_sponsors": [
                 {
                   "text": "LBT Team March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
@@ -1591,12 +1601,17 @@
         {
           "entrant": [
             {
-              "name": "Candy Toleman Motorsport Toleman Group Motorsport",
+              "name": "Candy Toleman Motorsport",
               "title_sponsors": [
                 {
                   "text": "Candy Toleman Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Toleman"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Toleman Group Motorsport",
+              "title_sponsors": [
                 {
                   "text": "Toleman",
                   "url": "https://en.wikipedia.org/wiki/Toleman"

@@ -1125,7 +1125,11 @@
         {
           "entrant": [
             {
-              "name": "High Efficiency Motors C.T. Atkins",
+              "name": "High Efficiency Motors",
+              "title_sponsors": []
+            },
+            {
+              "name": "C.T. Atkins",
               "title_sponsors": []
             }
           ],
@@ -2045,12 +2049,17 @@
         {
           "entrant": [
             {
-              "name": "Dr Ing F. Porsche KG Porsche System Engineering",
+              "name": "Dr Ing F. Porsche KG",
               "title_sponsors": [
                 {
                   "text": "Dr Ing F. Porsche KG",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Porsche System Engineering",
+              "title_sponsors": [
                 {
                   "text": "Porsche System Engineering",
                   "url": "https://en.wikipedia.org/wiki/Porsche"

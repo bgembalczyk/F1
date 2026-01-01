@@ -405,12 +405,17 @@
         {
           "entrant": [
             {
-              "name": "Team Lotus Team Castrol Lotus",
+              "name": "Team Lotus",
               "title_sponsors": [
                 {
                   "text": "Team Lotus",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Team Castrol Lotus",
+              "title_sponsors": [
                 {
                   "text": "Team",
                   "url": "https://en.wikipedia.org/wiki/Team_Lotus"

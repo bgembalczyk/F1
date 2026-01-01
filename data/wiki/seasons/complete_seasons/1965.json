@@ -9,12 +9,17 @@
         {
           "entrant": [
             {
-              "name": "Scuderia Ferrari SpA SEFAC North American Racing Team",
+              "name": "Scuderia Ferrari SpA SEFAC",
               "title_sponsors": [
                 {
                   "text": "Scuderia Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                },
+                }
+              ]
+            },
+            {
+              "name": "North American Racing Team",
+              "title_sponsors": [
                 {
                   "text": "North American Racing Team",
                   "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"

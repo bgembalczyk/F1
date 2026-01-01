@@ -1080,12 +1080,17 @@
         {
           "entrant": [
             {
-              "name": "Equipe Moss A.E. Moss",
+              "name": "Equipe Moss",
               "title_sponsors": [
                 {
                   "text": "Equipe Moss",
                   "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-                },
+                }
+              ]
+            },
+            {
+              "name": "A.E. Moss",
+              "title_sponsors": [
                 {
                   "text": "A.E. Moss",
                   "url": "https://en.wikipedia.org/wiki/Alfred_Moss"
@@ -1530,12 +1535,17 @@
         {
           "entrant": [
             {
-              "name": "G.A. Vandervell Vandervell Products",
+              "name": "G.A. Vandervell",
               "title_sponsors": [
                 {
                   "text": "G.A. Vandervell",
                   "url": "https://en.wikipedia.org/wiki/Vanwall"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Vandervell Products",
+              "title_sponsors": [
                 {
                   "text": "Vandervell Products",
                   "url": "https://en.wikipedia.org/wiki/Vanwall"

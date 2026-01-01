@@ -173,12 +173,17 @@
         {
           "entrant": [
             {
-              "name": "Marlboro Team Texaco Yardley Team McLaren",
+              "name": "Marlboro Team Texaco",
               "title_sponsors": [
                 {
                   "text": "Marlboro Team Texaco",
                   "url": "https://en.wikipedia.org/wiki/McLaren"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Yardley Team McLaren",
+              "title_sponsors": [
                 {
                   "text": "Yardley Team McLaren",
                   "url": "https://en.wikipedia.org/wiki/McLaren"
@@ -320,12 +325,17 @@
         {
           "entrant": [
             {
-              "name": "Motor Racing Developments Hitachi Team Brabham",
+              "name": "Motor Racing Developments",
               "title_sponsors": [
                 {
                   "text": "Motor Racing Developments",
                   "url": "https://en.wikipedia.org/wiki/Motor_Racing_Developments"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Hitachi Team Brabham",
+              "title_sponsors": [
                 {
                   "text": "Hitachi",
                   "url": "https://en.wikipedia.org/wiki/Hitachi"
@@ -444,13 +454,17 @@
         {
           "entrant": [
             {
-              "name": "March Engineering Beta Utensili",
+              "name": "March Engineering",
               "title_sponsors": [
                 {
                   "text": "March Engineering",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
                 }
               ]
+            },
+            {
+              "name": "Beta Utensili",
+              "title_sponsors": []
             }
           ],
           "constructor": {
@@ -891,16 +905,26 @@
         {
           "entrant": [
             {
-              "name": "Team Surtees Bang & Olufsen Team Surtees Memphis International Team Surtees",
+              "name": "Team Surtees",
               "title_sponsors": [
                 {
                   "text": "Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Bang & Olufsen Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Bang & Olufsen Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Memphis International Team Surtees",
+              "title_sponsors": [
                 {
                   "text": "Memphis International Team Surtees",
                   "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
@@ -1171,16 +1195,26 @@
         {
           "entrant": [
             {
-              "name": "Team Ensign Team Ensign with Theodore Racing Dempster International Team Ensign",
+              "name": "Team Ensign",
               "title_sponsors": [
                 {
                   "text": "Team Ensign",
                   "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Team Ensign with Theodore Racing",
+              "title_sponsors": [
                 {
                   "text": "Team Ensign with Theodore Racing",
                   "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Dempster International Team Ensign",
+              "title_sponsors": [
                 {
                   "text": "Dempster International Team Ensign",
                   "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
@@ -1757,16 +1791,26 @@
         {
           "entrant": [
             {
-              "name": "John Goldie Racing with Hexagon John Goldie Racing with Radio Luxembourg Allied Polymer Group",
+              "name": "John Goldie Racing with Hexagon",
               "title_sponsors": [
                 {
                   "text": "John Goldie Racing with Hexagon",
                   "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "John Goldie Racing with Radio Luxembourg",
+              "title_sponsors": [
                 {
                   "text": "John Goldie Racing with Radio Luxembourg",
                   "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Allied Polymer Group",
+              "title_sponsors": [
                 {
                   "text": "Allied Polymer Group",
                   "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing"
