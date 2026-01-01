@@ -127,9 +127,10 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Pratt & Whitney STN76 tbn",
+                  "text": "Pratt & Whitney STN76",
                   "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney"
-                }
+                },
+                "gas_turbine": true
               },
               "tyre": [
                 {

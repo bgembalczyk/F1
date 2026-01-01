@@ -673,13 +673,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini EF1 t",
+              "text": "Renault-Gordini EF1",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -1146,13 +1147,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 021 t",
+              "text": "Ferrari 021",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -1518,13 +1520,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T t",
+              "text": "Hart 415T",
               "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "tyres": {
             "text": "P",

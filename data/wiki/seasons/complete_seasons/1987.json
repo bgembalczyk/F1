@@ -44,13 +44,14 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG / Porsche TTE PO1 t",
+              "text": "TAG / Porsche TTE PO1",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {
@@ -186,13 +187,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA167E t",
+              "text": "Honda RA167E",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {
@@ -275,13 +277,14 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12 /13 t",
+              "text": "BMW M12 /13",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "no": [
             {
@@ -372,13 +375,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Zakspeed 1500/4 t",
+              "text": "Zakspeed 1500/4",
               "url": "https://en.wikipedia.org/wiki/Zakspeed_1500/4_engine"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "no": [
             {
@@ -443,13 +447,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Honda RA166E t",
+              "text": "Honda RA166E",
               "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {
@@ -635,13 +640,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13 t",
+              "text": "Megatron M12/13",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "no": [
             {
@@ -698,13 +704,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford TEC t",
+              "text": "Ford TEC",
               "url": "https://en.wikipedia.org/wiki/Cosworth_GBA"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {
@@ -763,13 +770,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T t",
+              "text": "Alfa Romeo 890T",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
-            "cylinders": 8
+            "cylinders": 8,
+            "turbocharged": true
           },
           "no": [
             {
@@ -840,13 +848,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Motori Moderni Tipo 615-90 t",
+              "text": "Motori Moderni Tipo 615-90",
               "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {
@@ -907,13 +916,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Megatron M12/13 t",
+              "text": "Megatron M12/13",
               "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "no": [
             {
@@ -1004,13 +1014,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari Tipo 033D t",
+              "text": "Ferrari Tipo 033D",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "no": [
             {

@@ -737,13 +737,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini EF1 t",
+              "text": "Renault-Gordini EF1",
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",

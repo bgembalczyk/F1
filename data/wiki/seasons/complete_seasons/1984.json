@@ -36,13 +36,14 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12 /13 t",
+              "text": "BMW M12 /13",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -255,23 +256,25 @@
           "engine": [
             {
               "model": {
-                "text": "Honda RA163E t",
+                "text": "Honda RA163E",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
               "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
-              "cylinders": 6
+              "cylinders": 6,
+              "turbocharged": true
             },
             {
               "model": {
-                "text": "Honda RA164E t",
+                "text": "Honda RA164E",
                 "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
               },
               "displacement_l": 1.5,
               "type": "V6",
               "layout": "V",
-              "cylinders": 6
+              "cylinders": 6,
+              "turbocharged": true
             }
           ],
           "tyres": {
@@ -341,13 +344,14 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG-Porsche TTE PO1 t",
+              "text": "TAG-Porsche TTE PO1",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -416,13 +420,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T t",
+              "text": "Hart 415T",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "tyres": {
             "text": "P",
@@ -513,13 +518,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B t",
+              "text": "Renault EF4B",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "G",
@@ -580,13 +586,14 @@
           ],
           "engine": {
             "model": {
-              "text": "BMW M12 /13 t",
+              "text": "BMW M12 /13",
               "url": "https://en.wikipedia.org/wiki/BMW_M12"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "tyres": {
             "text": "P",
@@ -681,13 +688,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4B t",
+              "text": "Renault EF4B",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -837,13 +845,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "BMW M12 /13 t",
+                  "text": "BMW M12 /13",
                   "url": "https://en.wikipedia.org/wiki/BMW_M12"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "tyres": {
                 "text": "G",
@@ -939,13 +948,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Hart 415T t",
+              "text": "Hart 415T",
               "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
             },
             "displacement_l": 1.5,
             "type": "L4",
             "layout": "L",
-            "cylinders": 4
+            "cylinders": 4,
+            "turbocharged": true
           },
           "tyres": "P M",
           "no": [
@@ -1060,13 +1070,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Hart 415T t",
+                  "text": "Hart 415T",
                   "url": "https://en.wikipedia.org/wiki/Hart_415T_engine"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "tyres": {
                 "text": "P",
@@ -1187,13 +1198,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Alfa Romeo 890T t",
+              "text": "Alfa Romeo 890T",
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
             },
             "displacement_l": 1.5,
             "type": "V8",
             "layout": "V",
-            "cylinders": 8
+            "cylinders": 8,
+            "turbocharged": true
           },
           "tyres": {
             "text": "G",
@@ -1253,13 +1265,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Alfa Romeo 890T t",
+                  "text": "Alfa Romeo 890T",
                   "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
                 },
                 "displacement_l": 1.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "tyres": {
                 "text": "P",
@@ -1372,13 +1385,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault EF4 t",
+              "text": "Renault EF4",
               "url": "https://en.wikipedia.org/wiki/Renault_EF-Type_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "M",
@@ -1439,13 +1453,14 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 031 t",
+              "text": "Ferrari 031",
               "url": "https://en.wikipedia.org/wiki/Ferrari_turbocharged_V6_F1_engine"
             },
             "displacement_l": 1.5,
             "type": "V6",
             "layout": "V",
-            "cylinders": 6
+            "cylinders": 6,
+            "turbocharged": true
           },
           "tyres": {
             "text": "G",
