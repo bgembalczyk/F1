@@ -39,11 +39,19 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Peter Revson",
-            "url": "https://en.wikipedia.org/wiki/Peter_Revson"
-          },
-          "rounds": "1, 6, 8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Peter Revson",
+                "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+              },
+              "rounds": [
+                1,
+                6,
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -78,11 +86,17 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Bernard Collomb",
-            "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Bernard Collomb",
+                "url": "https://en.wikipedia.org/wiki/Bernard_Collomb"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -117,11 +131,21 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Maurice Trintignant",
-            "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-          },
-          "rounds": "1, 4-6, 8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Maurice Trintignant",
+                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+              },
+              "rounds": [
+                1,
+                4,
+                5,
+                6,
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -160,54 +184,20 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jack Brabham",
-            "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Brabham Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT7",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT7"
+              "driver": {
+                "text": "Jack Brabham",
+                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+              }
             },
             {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+              "driver": {
+                "text": "Dan Gurney",
+                "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
+              }
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Dan Gurney",
-            "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
-          },
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -246,97 +236,29 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Richie Ginther",
-            "url": "https://en.wikipedia.org/wiki/Richie_Ginther"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "P261",
-              "url": "https://en.wikipedia.org/wiki/BRM_P261"
+              "driver": {
+                "text": "Richie Ginther",
+                "url": "https://en.wikipedia.org/wiki/Richie_Ginther"
+              }
             },
             {
-              "text": "P67",
-              "url": "https://en.wikipedia.org/wiki/BRM_P67"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Graham Hill",
-            "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Owen Racing Organisation",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "P261",
-              "url": "https://en.wikipedia.org/wiki/BRM_P261"
+              "driver": {
+                "text": "Graham Hill",
+                "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+              }
             },
             {
-              "text": "P67",
-              "url": "https://en.wikipedia.org/wiki/BRM_P67"
+              "driver": {
+                "text": "Richard Attwood",
+                "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
+              },
+              "rounds": [
+                5
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Richard Attwood",
-            "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
-          },
-          "rounds": "5"
+          ]
         },
         {
           "entrant": [
@@ -375,97 +297,40 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Phil Hill",
-            "url": "https://en.wikipedia.org/wiki/Phil_Hill"
-          },
-          "rounds": "1-7, 9-10"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T73",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T73"
+              "driver": {
+                "text": "Phil Hill",
+                "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                9,
+                10
+              ]
             },
             {
-              "text": "T66",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T66"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Bruce McLaren",
-            "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Cooper Car Company",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T73",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T73"
+              "driver": {
+                "text": "Bruce McLaren",
+                "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
+              }
             },
             {
-              "text": "T66",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T66"
+              "driver": {
+                "text": "John Love",
+                "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+              },
+              "rounds": [
+                8
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "John Love",
-            "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
-          },
-          "rounds": "8"
+          ]
         },
         {
           "entrant": [
@@ -504,226 +369,67 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Peter Arundell",
-            "url": "https://en.wikipedia.org/wiki/Peter_Arundell"
-          },
-          "rounds": "1-4"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Peter Arundell",
+                "url": "https://en.wikipedia.org/wiki/Peter_Arundell"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4
+              ]
             },
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Jim Clark",
+                "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+              }
             },
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Mike Spence",
-            "url": "https://en.wikipedia.org/wiki/Mike_Spence"
-          },
-          "rounds": "5-10"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Mike Spence",
+                "url": "https://en.wikipedia.org/wiki/Mike_Spence"
+              },
+              "rounds": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Gerhard Mitter",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Mitter"
-          },
-          "rounds": "6"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Gerhard Mitter",
+                "url": "https://en.wikipedia.org/wiki/Gerhard_Mitter"
+              },
+              "rounds": [
+                6
+              ]
             },
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Walt Hansgen",
-            "url": "https://en.wikipedia.org/wiki/Walt_Hansgen"
-          },
-          "rounds": "9"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Walt Hansgen",
+                "url": "https://en.wikipedia.org/wiki/Walt_Hansgen"
+              },
+              "rounds": [
+                9
+              ]
             },
             {
-              "text": "33",
-              "url": "https://en.wikipedia.org/wiki/Lotus_33"
+              "driver": {
+                "text": "Moisés Solana",
+                "url": "https://en.wikipedia.org/wiki/Mois%C3%A9s_Solana"
+              },
+              "rounds": [
+                10
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Moisés Solana",
-            "url": "https://en.wikipedia.org/wiki/Mois%C3%A9s_Solana"
-          },
-          "rounds": "10"
+          ]
         },
         {
           "entrant": [
@@ -758,50 +464,26 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Innes Ireland",
-            "url": "https://en.wikipedia.org/wiki/Innes_Ireland"
-          },
-          "rounds": "1"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "British Racing Partnership",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+              "driver": {
+                "text": "Innes Ireland",
+                "url": "https://en.wikipedia.org/wiki/Innes_Ireland"
+              },
+              "rounds": [
+                1
+              ]
             },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
             {
-              "text": "24",
-              "url": "https://en.wikipedia.org/wiki/Lotus_24"
+              "driver": {
+                "text": "Trevor Taylor",
+                "url": "https://en.wikipedia.org/wiki/Trevor_Taylor_(racing_driver)"
+              },
+              "rounds": [
+                5
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Trevor Taylor",
-            "url": "https://en.wikipedia.org/wiki/Trevor_Taylor_(racing_driver)"
-          },
-          "rounds": "5"
+          ]
         },
         {
           "entrant": [
@@ -840,54 +522,38 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Innes Ireland",
-            "url": "https://en.wikipedia.org/wiki/Innes_Ireland"
-          },
-          "rounds": "3-5, 7-10"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "British Racing Partnership",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BRP",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "Mk 1",
-              "url": null
+              "driver": {
+                "text": "Innes Ireland",
+                "url": "https://en.wikipedia.org/wiki/Innes_Ireland"
+              },
+              "rounds": [
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
-              "text": "Mk 2",
-              "url": null
+              "driver": {
+                "text": "Trevor Taylor",
+                "url": "https://en.wikipedia.org/wiki/Trevor_Taylor_(racing_driver)"
+              },
+              "rounds": [
+                1,
+                3,
+                4,
+                7,
+                8,
+                9,
+                10
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Trevor Taylor",
-            "url": "https://en.wikipedia.org/wiki/Trevor_Taylor_(racing_driver)"
-          },
-          "rounds": "1, 3-4, 7-10"
+          ]
         },
         {
           "entrant": [],
@@ -917,11 +583,24 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Bob Anderson",
-            "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
-          },
-          "rounds": "1-8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Bob Anderson",
+                "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -956,11 +635,17 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          "rounds": "7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Chris Amon",
+                "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -999,97 +684,52 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          "rounds": "1-6, 9-10"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Reg Parnell Racing",
-              "url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Chris Amon",
+                "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                9,
+                10
+              ]
             },
             {
-              "text": "24",
-              "url": "https://en.wikipedia.org/wiki/Lotus_24"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Mike Hailwood",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
-          },
-          "rounds": "1-2, 4-10"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Reg Parnell Racing",
-              "url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "25",
-              "url": "https://en.wikipedia.org/wiki/Lotus_25"
+              "driver": {
+                "text": "Mike Hailwood",
+                "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
-              "text": "24",
-              "url": "https://en.wikipedia.org/wiki/Lotus_24"
+              "driver": {
+                "text": "Peter Revson",
+                "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+              },
+              "rounds": [
+                3,
+                4,
+                5
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Peter Revson",
-            "url": "https://en.wikipedia.org/wiki/Peter_Revson"
-          },
-          "rounds": "3-5"
+          ]
         },
         {
           "entrant": [
@@ -1124,50 +764,26 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Edgar Barth",
-            "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
-          },
-          "rounds": "6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Cooper",
-              "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+              "driver": {
+                "text": "Edgar Barth",
+                "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
+              },
+              "rounds": [
+                6
+              ]
             },
-            "engine_constructor": {
-              "text": "Climax",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
-            }
-          },
-          "chassis": [
             {
-              "text": "T66",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T66"
+              "driver": {
+                "text": "Jo Bonnier",
+                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
+              },
+              "rounds": [
+                1
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Climax FWMV 1.5 V8",
-              "url": "https://en.wikipedia.org/wiki/Coventry_Climax#FWMV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Jo Bonnier",
-            "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-          },
-          "rounds": "1"
+          ]
         },
         {
           "entrant": [
@@ -1202,11 +818,20 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jo Bonnier",
-            "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-          },
-          "rounds": "7-10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jo Bonnier",
+                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
+              },
+              "rounds": [
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1241,167 +866,58 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jo Bonnier",
-            "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-          },
-          "rounds": "2-3, 5-6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "driver": {
+                "text": "Jo Bonnier",
+                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
+              },
+              "rounds": [
+                2,
+                3,
+                5,
+                6
+              ]
             },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "driver": {
+                "text": "Jochen Rindt",
+                "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+              },
+              "rounds": [
+                7
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Jochen Rindt",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
-          },
-          "rounds": "7"
-        },
-        {
-          "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "driver": {
+                "text": "Geki",
+                "url": "https://en.wikipedia.org/wiki/Geki_(racing_driver)"
+              },
+              "rounds": [
+                8
+              ]
             },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "driver": {
+                "text": "Jo Siffert",
+                "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+              },
+              "rounds": [
+                9,
+                10
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Geki",
-            "url": "https://en.wikipedia.org/wiki/Geki_(racing_driver)"
-          },
-          "rounds": "8"
-        },
-        {
-          "entrant": [
             {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
+              "driver": {
+                "text": "Hap Sharp",
+                "url": "https://en.wikipedia.org/wiki/Hap_Sharp"
+              },
+              "rounds": [
+                9,
+                10
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
-          "rounds": "9-10"
-        },
-        {
-          "entrant": [
-            {
-              "text": "R.R.C. Walker Racing Team",
-              "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT11",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Hap Sharp",
-            "url": "https://en.wikipedia.org/wiki/Hap_Sharp"
-          },
-          "rounds": "9-10"
+          ]
         },
         {
           "entrant": [
@@ -1468,224 +984,38 @@
             }
           ],
           "tyre": "D",
-          "driver": {
-            "text": "Lorenzo Bandini",
-            "url": "https://en.wikipedia.org/wiki/Lorenzo_Bandini"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Lorenzo Bandini",
+                "url": "https://en.wikipedia.org/wiki/Lorenzo_Bandini"
+              }
             },
             {
-              "text": "North American Racing Team",
-              "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "156",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_156_F1"
+              "driver": {
+                "text": "John Surtees",
+                "url": "https://en.wikipedia.org/wiki/John_Surtees"
+              }
             },
             {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158"
-            },
-            {
-              "text": "1512",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158#Ferrari_1512"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Ludovico Scarfiotti",
+                "url": "https://en.wikipedia.org/wiki/Ludovico_Scarfiotti"
               },
-              "type": "V6",
-              "layout": "V",
-              "cylinders": 6
+              "rounds": [
+                8
+              ]
             },
             {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Pedro Rodríguez",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
               },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "rounds": [
+                10
+              ]
             }
-          ],
-          "tyre": "D",
-          "driver": {
-            "text": "John Surtees",
-            "url": "https://en.wikipedia.org/wiki/John_Surtees"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            {
-              "text": "North American Racing Team",
-              "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "156",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_156_F1"
-            },
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158"
-            },
-            {
-              "text": "1512",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158#Ferrari_1512"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "V6",
-              "layout": "V",
-              "cylinders": 6
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
-            }
-          ],
-          "tyre": "D",
-          "driver": {
-            "text": "Ludovico Scarfiotti",
-            "url": "https://en.wikipedia.org/wiki/Ludovico_Scarfiotti"
-          },
-          "rounds": "8"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            {
-              "text": "North American Racing Team",
-              "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "156",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_156_F1"
-            },
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158"
-            },
-            {
-              "text": "1512",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_158#Ferrari_1512"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "V6",
-              "layout": "V",
-              "cylinders": 6
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
-            }
-          ],
-          "tyre": "D",
-          "driver": {
-            "text": "Pedro Rodríguez",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
-          },
-          "rounds": "10"
+          ]
         },
         {
           "entrant": [
@@ -1720,11 +1050,17 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jo Siffert",
+                "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1759,11 +1095,23 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
-          "rounds": "2-8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jo Siffert",
+                "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+              },
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1798,11 +1146,18 @@
             "cylinders": 4
           },
           "tyre": "D",
-          "driver": {
-            "text": "Carel Godin de Beaufort",
-            "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
-          },
-          "rounds": "2, 6"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Carel Godin de Beaufort",
+                "url": "https://en.wikipedia.org/wiki/Carel_Godin_de_Beaufort"
+              },
+              "rounds": [
+                2,
+                6
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1837,50 +1192,35 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Tony Maggs",
-            "url": "https://en.wikipedia.org/wiki/Tony_Maggs"
-          },
-          "rounds": "2-3, 5-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Centro Sud",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+              "driver": {
+                "text": "Tony Maggs",
+                "url": "https://en.wikipedia.org/wiki/Tony_Maggs"
+              },
+              "rounds": [
+                2,
+                3,
+                5,
+                6,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            }
-          },
-          "chassis": [
             {
-              "text": "P57",
-              "url": "https://en.wikipedia.org/wiki/BRM_P57"
+              "driver": {
+                "text": "Giancarlo Baghetti",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Baghetti"
+              },
+              "rounds": [
+                2,
+                3,
+                5,
+                6,
+                7,
+                8
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Giancarlo Baghetti",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Baghetti"
-          },
-          "rounds": "2-3, 5-8"
+          ]
         },
         {
           "entrant": [
@@ -1915,11 +1255,18 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "André Pilette",
-            "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
-          },
-          "rounds": "3, 6"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "André Pilette",
+                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
+              },
+              "rounds": [
+                3,
+                6
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1951,11 +1298,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "John Taylor",
-            "url": "https://en.wikipedia.org/wiki/John_Taylor_(racing_driver)"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "John Taylor",
+                "url": "https://en.wikipedia.org/wiki/John_Taylor_(racing_driver)"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1990,11 +1343,18 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Ian Raby",
-            "url": "https://en.wikipedia.org/wiki/Ian_Raby"
-          },
-          "rounds": "5, 8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Raby",
+                "url": "https://en.wikipedia.org/wiki/Ian_Raby"
+              },
+              "rounds": [
+                5,
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [],
@@ -2021,11 +1381,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Frank Gardner",
-            "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Frank Gardner",
+                "url": "https://en.wikipedia.org/wiki/Frank_Gardner_(racing_driver)"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2060,11 +1426,19 @@
             "cylinders": 12
           },
           "tyre": "D",
-          "driver": {
-            "text": "Ronnie Bucknum",
-            "url": "https://en.wikipedia.org/wiki/Ronnie_Bucknum"
-          },
-          "rounds": "6, 8-9"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ronnie Bucknum",
+                "url": "https://en.wikipedia.org/wiki/Ronnie_Bucknum"
+              },
+              "rounds": [
+                6,
+                8,
+                9
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2099,11 +1473,17 @@
             "cylinders": 8
           },
           "tyre": "G",
-          "driver": {
-            "text": "Mário de Araújo Cabral",
-            "url": "https://en.wikipedia.org/wiki/M%C3%A1rio_de_Ara%C3%BAjo_Cabral"
-          },
-          "rounds": "8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mário de Araújo Cabral",
+                "url": "https://en.wikipedia.org/wiki/M%C3%A1rio_de_Ara%C3%BAjo_Cabral"
+              },
+              "rounds": [
+                8
+              ]
+            }
+          ]
         },
         {
           "entrant": [],
@@ -2133,11 +1513,17 @@
             "cylinders": 8
           },
           "tyre": "D",
-          "driver": {
-            "text": "Jean-Claude Rudaz",
-            "url": "https://en.wikipedia.org/wiki/Jean-Claude_Rudaz"
-          },
-          "rounds": "8"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean-Claude Rudaz",
+                "url": "https://en.wikipedia.org/wiki/Jean-Claude_Rudaz"
+              },
+              "rounds": [
+                8
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

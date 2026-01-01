@@ -38,8 +38,7 @@
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -73,8 +72,7 @@
                 "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -103,8 +101,7 @@
                 "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -133,8 +130,7 @@
                 "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -168,8 +164,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jenson_Button"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -203,8 +198,7 @@
                 "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -232,39 +226,14 @@
                 "text": "Kimi Räikkönen",
                 "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
               }
-            }
-          ],
-          "rounds": "1-17"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Lotus_F1"
             },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "E21",
-              "url": "https://en.wikipedia.org/wiki/Lotus_E21"
-            }
-          ],
-          "engine": null,
-          "no": 7,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Heikki Kovalainen",
                 "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
               }
             }
-          ],
-          "rounds": "18-19"
+          ]
         },
         {
           "entrant": [],
@@ -293,8 +262,7 @@
                 "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -328,8 +296,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -363,8 +330,7 @@
                 "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -393,8 +359,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -423,8 +388,7 @@
                 "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -458,8 +422,7 @@
                 "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -493,8 +456,7 @@
                 "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -523,8 +485,7 @@
                 "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -553,8 +514,7 @@
                 "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -583,8 +543,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jean-%C3%89ric_Vergne"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -613,8 +572,7 @@
                 "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -643,8 +601,7 @@
                 "url": "https://en.wikipedia.org/wiki/Charles_Pic"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -673,8 +630,7 @@
                 "url": "https://en.wikipedia.org/wiki/Giedo_van_der_Garde"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -703,8 +659,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jules_Bianchi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -733,8 +688,7 @@
                 "url": "https://en.wikipedia.org/wiki/Max_Chilton"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         }
       ],
       "free_practice_drivers": [

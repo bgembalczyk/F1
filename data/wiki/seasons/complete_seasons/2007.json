@@ -43,8 +43,7 @@
                 "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -83,8 +82,7 @@
                 "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -123,8 +121,7 @@
                 "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -163,8 +160,7 @@
                 "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -203,8 +199,7 @@
                 "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -243,8 +238,7 @@
                 "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -278,8 +272,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jenson_Button"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -313,8 +306,7 @@
                 "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -348,8 +340,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -382,44 +373,14 @@
                 "text": "Robert Kubica",
                 "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
               }
-            }
-          ],
-          "rounds": "1-6, 8-17"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BMW Sauber",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
             },
-            "engine_constructor": {
-              "text": "BMW Sauber",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F1.07",
-              "url": "https://en.wikipedia.org/wiki/BMW_Sauber_F1.07"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "BMW P86/7",
-              "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
-            }
-          },
-          "no": 10,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Sebastian Vettel",
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               }
             }
-          ],
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [
@@ -458,8 +419,7 @@
                 "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -498,8 +458,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -533,8 +492,7 @@
                 "url": "https://en.wikipedia.org/wiki/David_Coulthard"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -568,8 +526,7 @@
                 "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -608,8 +565,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -647,49 +603,14 @@
                 "text": "Alexander Wurz",
                 "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
               }
-            }
-          ],
-          "rounds": "1-16"
-        },
-        {
-          "entrant": [
-            {
-              "text": "AT&T",
-              "url": "https://en.wikipedia.org/wiki/AT%26T"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
             },
-            "engine_constructor": {
-              "text": "Toyota",
-              "url": "https://en.wikipedia.org/wiki/Toyota_Racing_(Formula_One_team)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FW29",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW29"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Toyota RVX-07",
-              "url": "https://en.wikipedia.org/wiki/Toyota_RVX_engine"
-            }
-          },
-          "no": 17,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Kazuki Nakajima",
                 "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
               }
             }
-          ],
-          "rounds": "17"
+          ]
         },
         {
           "entrant": [],
@@ -723,8 +644,7 @@
                 "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -757,44 +677,14 @@
                 "text": "Scott Speed",
                 "url": "https://en.wikipedia.org/wiki/Scott_Speed"
               }
-            }
-          ],
-          "rounds": "1-10"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "STR2",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso_STR2"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 056 2006",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
-            }
-          },
-          "no": 19,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Sebastian Vettel",
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               }
             }
-          ],
-          "rounds": "11-17"
+          ]
         },
         {
           "entrant": [
@@ -841,8 +731,7 @@
                 "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -888,105 +777,20 @@
                 "text": "Christijan Albers",
                 "url": "https://en.wikipedia.org/wiki/Christijan_Albers"
               }
-            }
-          ],
-          "rounds": "1-9"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Etihad",
-              "url": "https://en.wikipedia.org/wiki/Etihad_Airways"
             },
-            {
-              "text": "Aldar",
-              "url": "https://en.wikipedia.org/wiki/Aldar_Properties"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Spyker",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F1"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F8-VII",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F8-VII"
-            },
-            {
-              "text": "F8-VIIB",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F8-VII"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 056 2006",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
-            }
-          },
-          "no": 21,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Markus Winkelhock",
                 "url": "https://en.wikipedia.org/wiki/Markus_Winkelhock"
               }
-            }
-          ],
-          "rounds": "10"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Etihad",
-              "url": "https://en.wikipedia.org/wiki/Etihad_Airways"
             },
-            {
-              "text": "Aldar",
-              "url": "https://en.wikipedia.org/wiki/Aldar_Properties"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Spyker",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F1"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F8-VII",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F8-VII"
-            },
-            {
-              "text": "F8-VIIB",
-              "url": "https://en.wikipedia.org/wiki/Spyker_F8-VII"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ferrari 056 2006",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_V8_F1_engine"
-            }
-          },
-          "no": 21,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Sakon Yamamoto",
                 "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
               }
             }
-          ],
-          "rounds": "11-17"
+          ]
         },
         {
           "entrant": [],
@@ -1020,8 +824,7 @@
                 "url": "https://en.wikipedia.org/wiki/Takuma_Sato"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -1055,8 +858,7 @@
                 "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         }
       ],
       "free_practice_drivers": [

@@ -44,11 +44,14 @@
           },
           "tyre": "G",
           "no": 1,
-          "driver": {
-            "text": "Ronnie Peterson",
-            "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ronnie Peterson",
+                "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -88,11 +91,14 @@
           },
           "tyre": "G",
           "no": 2,
-          "driver": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacky Ickx",
+                "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -132,11 +138,17 @@
           },
           "tyre": "G",
           "no": 31,
-          "driver": {
-            "text": "Tim Schenken",
-            "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
-          },
-          "rounds": "15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tim Schenken",
+                "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
+              },
+              "rounds": [
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -180,11 +192,14 @@
           },
           "tyre": "G",
           "no": 3,
-          "driver": {
-            "text": "Jody Scheckter",
-            "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jody Scheckter",
+                "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -228,11 +243,14 @@
           },
           "tyre": "G",
           "no": 4,
-          "driver": {
-            "text": "Patrick Depailler",
-            "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Patrick Depailler",
+                "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -272,11 +290,14 @@
           },
           "tyre": "G",
           "no": 5,
-          "driver": {
-            "text": "Emerson Fittipaldi",
-            "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Emerson Fittipaldi",
+                "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -316,11 +337,30 @@
           },
           "tyre": "G",
           "no": 6,
-          "driver": {
-            "text": "Denny Hulme",
-            "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-          },
-          "rounds": "1-3, 5-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Denny Hulme",
+                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -360,99 +400,47 @@
           },
           "tyre": "G",
           "no": 33,
-          "driver": {
-            "text": "Mike Hailwood",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
-          },
-          "rounds": "1-11"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Marlboro Team Texaco",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "driver": {
+                "text": "Mike Hailwood",
+                "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
             {
-              "text": "Yardley Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "M23",
-              "url": "https://en.wikipedia.org/wiki/McLaren_M23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 33,
-          "driver": {
-            "text": "David Hobbs",
-            "url": "https://en.wikipedia.org/wiki/David_Hobbs_(racing_driver)"
-          },
-          "rounds": "12-13"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Marlboro Team Texaco",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "driver": {
+                "text": "David Hobbs",
+                "url": "https://en.wikipedia.org/wiki/David_Hobbs_(racing_driver)"
+              },
+              "rounds": [
+                12,
+                13
+              ]
             },
             {
-              "text": "Yardley Team McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
+              "driver": {
+                "text": "Jochen Mass",
+                "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+              },
+              "rounds": [
+                14,
+                15
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "M23",
-              "url": "https://en.wikipedia.org/wiki/McLaren_M23"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 33,
-          "driver": {
-            "text": "Jochen Mass",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
-          },
-          "rounds": "14-15"
+          ]
         },
         {
           "entrant": [
@@ -492,11 +480,17 @@
           },
           "tyre": "G",
           "no": 56,
-          "driver": {
-            "text": "Denny Hulme",
-            "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-          },
-          "rounds": "4"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Denny Hulme",
+                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+              },
+              "rounds": [
+                4
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -540,11 +534,14 @@
           },
           "tyre": "G",
           "no": 7,
-          "driver": {
-            "text": "Carlos Reutemann",
-            "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Carlos Reutemann",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -588,107 +585,47 @@
           },
           "tyre": "G",
           "no": 8,
-          "driver": {
-            "text": "Richard Robarts",
-            "url": "https://en.wikipedia.org/wiki/Richard_Robarts"
-          },
-          "rounds": "1-3"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Motor_Racing_Developments"
+              "driver": {
+                "text": "Richard Robarts",
+                "url": "https://en.wikipedia.org/wiki/Richard_Robarts"
+              },
+              "rounds": [
+                1,
+                2,
+                3
+              ]
             },
             {
-              "text": "Hitachi",
-              "url": "https://en.wikipedia.org/wiki/Hitachi"
+              "driver": {
+                "text": "Rikky von Opel",
+                "url": "https://en.wikipedia.org/wiki/Rikky_von_Opel"
+              },
+              "rounds": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             },
             {
-              "text": "Team Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "driver": {
+                "text": "Carlos Pace",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+              },
+              "rounds": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT44",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT44"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 8,
-          "driver": {
-            "text": "Rikky von Opel",
-            "url": "https://en.wikipedia.org/wiki/Rikky_von_Opel"
-          },
-          "rounds": "4-9"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Motor Racing Developments",
-              "url": "https://en.wikipedia.org/wiki/Motor_Racing_Developments"
-            },
-            {
-              "text": "Hitachi",
-              "url": "https://en.wikipedia.org/wiki/Hitachi"
-            },
-            {
-              "text": "Team Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "BT44",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT44"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 8,
-          "driver": {
-            "text": "Carlos Pace",
-            "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
-          },
-          "rounds": "10-15"
+          ]
         },
         {
           "entrant": [
@@ -732,11 +669,17 @@
           },
           "tyre": "G",
           "no": 34,
-          "driver": {
-            "text": "Teddy Pilette",
-            "url": "https://en.wikipedia.org/wiki/Teddy_Pilette"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Teddy Pilette",
+                "url": "https://en.wikipedia.org/wiki/Teddy_Pilette"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -772,91 +715,39 @@
           },
           "tyre": "G",
           "no": 9,
-          "driver": {
-            "text": "Hans-Joachim Stuck",
-            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
-          },
-          "rounds": "1-6, 8-15"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "March Engineering",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
+              "driver": {
+                "text": "Hans-Joachim Stuck",
+                "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "741",
-              "url": "https://en.wikipedia.org/wiki/March_741"
+              "driver": {
+                "text": "Reine Wisell",
+                "url": "https://en.wikipedia.org/wiki/Reine_Wisell"
+              },
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 9,
-          "driver": {
-            "text": "Reine Wisell",
-            "url": "https://en.wikipedia.org/wiki/Reine_Wisell"
-          },
-          "rounds": "7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "March Engineering",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "741",
-              "url": "https://en.wikipedia.org/wiki/March_741"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 10,
-          "driver": {
-            "text": "Howden Ganley",
-            "url": "https://en.wikipedia.org/wiki/Howden_Ganley"
-          },
-          "rounds": "1-2"
+          ]
         },
         {
           "entrant": [
@@ -892,11 +783,39 @@
           },
           "tyre": "G",
           "no": 10,
-          "driver": {
-            "text": "Vittorio Brambilla",
-            "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
-          },
-          "rounds": "3-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Howden Ganley",
+                "url": "https://en.wikipedia.org/wiki/Howden_Ganley"
+              },
+              "rounds": [
+                1,
+                2
+              ]
+            },
+            {
+              "driver": {
+                "text": "Vittorio Brambilla",
+                "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
+              },
+              "rounds": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -932,11 +851,14 @@
           },
           "tyre": "G",
           "no": 11,
-          "driver": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Clay Regazzoni",
+                "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -972,11 +894,14 @@
           },
           "tyre": "G",
           "no": 12,
-          "driver": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Niki Lauda",
+                "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1027,11 +952,14 @@
           ],
           "tyre": "F",
           "no": 14,
-          "driver": {
-            "text": "Jean-Pierre Beltoise",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean-Pierre Beltoise",
+                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1082,66 +1010,38 @@
           ],
           "tyre": "F",
           "no": 15,
-          "driver": {
-            "text": "Henri Pescarolo",
-            "url": "https://en.wikipedia.org/wiki/Henri_Pescarolo"
-          },
-          "rounds": "1-11, 13"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Team BRM",
-              "url": "https://en.wikipedia.org/wiki/BRM"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/BRM"
-            },
-            "engine_constructor": {
-              "text": "BRM",
-              "url": "https://en.wikipedia.org/wiki/BRM"
-            }
-          },
-          "chassis": [
-            {
-              "text": "P160E",
-              "url": "https://en.wikipedia.org/wiki/BRM_P160"
-            },
-            {
-              "text": "P201",
-              "url": "https://en.wikipedia.org/wiki/BRM_P201"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "BRM",
-                "url": "https://en.wikipedia.org/wiki/BRM"
+              "driver": {
+                "text": "Henri Pescarolo",
+                "url": "https://en.wikipedia.org/wiki/Henri_Pescarolo"
               },
-              "type": "V12",
-              "layout": "V",
-              "cylinders": 12
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                13
+              ]
             },
             {
-              "model": {
-                "text": "BRM",
-                "url": "https://en.wikipedia.org/wiki/BRM"
+              "driver": {
+                "text": "Chris Amon",
+                "url": "https://en.wikipedia.org/wiki/Chris_Amon"
               },
-              "type": "V12",
-              "layout": "V",
-              "cylinders": 12
+              "rounds": [
+                14,
+                15
+              ]
             }
-          ],
-          "tyre": "F",
-          "no": 15,
-          "driver": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          "rounds": "14-15"
+          ]
         },
         {
           "entrant": [
@@ -1192,11 +1092,27 @@
           ],
           "tyre": "F",
           "no": 37,
-          "driver": {
-            "text": "François Migault",
-            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Migault"
-          },
-          "rounds": "1-6, 8-11, 13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "François Migault",
+                "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Migault"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                8,
+                9,
+                10,
+                11,
+                13
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1236,143 +1152,54 @@
           },
           "tyre": "G",
           "no": 16,
-          "driver": {
-            "text": "Peter Revson",
-            "url": "https://en.wikipedia.org/wiki/Peter_Revson"
-          },
-          "rounds": "1-2"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "UOP Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Shadow",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "DN1",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN1"
+              "driver": {
+                "text": "Peter Revson",
+                "url": "https://en.wikipedia.org/wiki/Peter_Revson"
+              },
+              "rounds": [
+                1,
+                2
+              ]
             },
             {
-              "text": "DN3",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN3"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 16,
-          "driver": {
-            "text": "Brian Redman",
-            "url": "https://en.wikipedia.org/wiki/Brian_Redman"
-          },
-          "rounds": "4-6"
-        },
-        {
-          "entrant": [
-            {
-              "text": "UOP Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Shadow",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "DN1",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN1"
+              "driver": {
+                "text": "Brian Redman",
+                "url": "https://en.wikipedia.org/wiki/Brian_Redman"
+              },
+              "rounds": [
+                4,
+                5,
+                6
+              ]
             },
             {
-              "text": "DN3",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN3"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 16,
-          "driver": {
-            "text": "Bertil Roos",
-            "url": "https://en.wikipedia.org/wiki/Bertil_Roos"
-          },
-          "rounds": "7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "UOP Shadow Racing",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Shadow",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "DN1",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN1"
+              "driver": {
+                "text": "Bertil Roos",
+                "url": "https://en.wikipedia.org/wiki/Bertil_Roos"
+              },
+              "rounds": [
+                7
+              ]
             },
             {
-              "text": "DN3",
-              "url": "https://en.wikipedia.org/wiki/Shadow_DN3"
+              "driver": {
+                "text": "Tom Pryce",
+                "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
+              },
+              "rounds": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "G",
-          "no": 16,
-          "driver": {
-            "text": "Tom Pryce",
-            "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
-          },
-          "rounds": "8-15"
+          ]
         },
         {
           "entrant": [
@@ -1412,11 +1239,30 @@
           },
           "tyre": "G",
           "no": 17,
-          "driver": {
-            "text": "Jean-Pierre Jarier",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
-          },
-          "rounds": "1-2, 4-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean-Pierre Jarier",
+                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1460,107 +1306,46 @@
           },
           "tyre": "F",
           "no": 18,
-          "driver": {
-            "text": "Carlos Pace",
-            "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
-          },
-          "rounds": "1-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "Carlos Pace",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ]
             },
             {
-              "text": "Bang & Olufsen Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "José Dolhem",
+                "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Dolhem"
+              },
+              "rounds": [
+                9,
+                15
+              ]
             },
             {
-              "text": "Memphis International Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "Derek Bell",
+                "url": "https://en.wikipedia.org/wiki/Derek_Bell_(auto_racer)"
+              },
+              "rounds": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "TS16",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 18,
-          "driver": {
-            "text": "José Dolhem",
-            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Dolhem"
-          },
-          "rounds": "9, 15"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Bang & Olufsen Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Memphis International Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "TS16",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 18,
-          "driver": {
-            "text": "Derek Bell",
-            "url": "https://en.wikipedia.org/wiki/Derek_Bell_(auto_racer)"
-          },
-          "rounds": "10-14"
+          ]
         },
         {
           "entrant": [
@@ -1604,155 +1389,55 @@
           },
           "tyre": "F",
           "no": 19,
-          "driver": {
-            "text": "Jochen Mass",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
-          },
-          "rounds": "1-11"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "Jochen Mass",
+                "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
             {
-              "text": "Bang & Olufsen Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "Jean-Pierre Jabouille",
+                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
+              },
+              "rounds": [
+                12
+              ]
             },
             {
-              "text": "Memphis International Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+              "driver": {
+                "text": "José Dolhem",
+                "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Dolhem"
+              },
+              "rounds": [
+                13
+              ]
+            },
+            {
+              "driver": {
+                "text": "Helmut Koinigg",
+                "url": "https://en.wikipedia.org/wiki/Helmut_Koinigg"
+              },
+              "rounds": [
+                14,
+                15
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "TS16",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 19,
-          "driver": {
-            "text": "Jean-Pierre Jabouille",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
-          },
-          "rounds": "12"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Bang & Olufsen Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Memphis International Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "TS16",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 19,
-          "driver": {
-            "text": "José Dolhem",
-            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Dolhem"
-          },
-          "rounds": "13"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Bang & Olufsen Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            {
-              "text": "Memphis International Team Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Surtees",
-              "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "TS16",
-              "url": "https://en.wikipedia.org/wiki/Surtees_TS16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 19,
-          "driver": {
-            "text": "Helmut Koinigg",
-            "url": "https://en.wikipedia.org/wiki/Helmut_Koinigg"
-          },
-          "rounds": "14-15"
+          ]
         },
         {
           "entrant": [
@@ -1796,11 +1481,17 @@
           },
           "tyre": "F",
           "no": 30,
-          "driver": {
-            "text": "Dieter Quester",
-            "url": "https://en.wikipedia.org/wiki/Dieter_Quester"
-          },
-          "rounds": "12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Dieter Quester",
+                "url": "https://en.wikipedia.org/wiki/Dieter_Quester"
+              },
+              "rounds": [
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1836,91 +1527,23 @@
           },
           "tyre": "F",
           "no": 20,
-          "driver": {
-            "text": "Arturo Merzario",
-            "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Iso-Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "driver": {
+                "text": "Arturo Merzario",
+                "url": "https://en.wikipedia.org/wiki/Arturo_Merzario"
+              }
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "FW",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW"
+              "driver": {
+                "text": "Richard Robarts",
+                "url": "https://en.wikipedia.org/wiki/Richard_Robarts"
+              },
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 20,
-          "driver": {
-            "text": "Richard Robarts",
-            "url": "https://en.wikipedia.org/wiki/Richard_Robarts"
-          },
-          "rounds": "7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Iso-Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FW",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 21,
-          "driver": {
-            "text": "Tom Belsø",
-            "url": "https://en.wikipedia.org/wiki/Tom_Bels%C3%B8"
-          },
-          "rounds": "3-4, 7, 10"
+          ]
         },
         {
           "entrant": [
@@ -1956,91 +1579,52 @@
           },
           "tyre": "F",
           "no": 21,
-          "driver": {
-            "text": "Gijs van Lennep",
-            "url": "https://en.wikipedia.org/wiki/Gijs_van_Lennep"
-          },
-          "rounds": "5, 8"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Iso-Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "driver": {
+                "text": "Tom Belsø",
+                "url": "https://en.wikipedia.org/wiki/Tom_Bels%C3%B8"
+              },
+              "rounds": [
+                3,
+                4,
+                7,
+                10
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "FW",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+              "driver": {
+                "text": "Gijs van Lennep",
+                "url": "https://en.wikipedia.org/wiki/Gijs_van_Lennep"
+              },
+              "rounds": [
+                5,
+                8
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 21,
-          "driver": {
-            "text": "Jean-Pierre Jabouille",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
-          },
-          "rounds": "9"
-        },
-        {
-          "entrant": [
             {
-              "text": "Frank Williams Racing Cars",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Iso-Marlboro",
-              "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              "driver": {
+                "text": "Jean-Pierre Jabouille",
+                "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
+              },
+              "rounds": [
+                9
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "FW",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW"
+              "driver": {
+                "text": "Jacques Laffite",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
+              },
+              "rounds": [
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 21,
-          "driver": {
-            "text": "Jacques Laffite",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
-          },
-          "rounds": "11-15"
+          ]
         },
         {
           "entrant": [
@@ -2084,107 +1668,43 @@
           },
           "tyre": "F",
           "no": 22,
-          "driver": {
-            "text": "Rikky von Opel",
-            "url": "https://en.wikipedia.org/wiki/Rikky_von_Opel"
-          },
-          "rounds": "1"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "driver": {
+                "text": "Rikky von Opel",
+                "url": "https://en.wikipedia.org/wiki/Rikky_von_Opel"
+              },
+              "rounds": [
+                1
+              ]
             },
             {
-              "text": "Team Ensign with Theodore Racing",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "driver": {
+                "text": "Vern Schuppan",
+                "url": "https://en.wikipedia.org/wiki/Vern_Schuppan"
+              },
+              "rounds": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
             {
-              "text": "Dempster International Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
+              "driver": {
+                "text": "Mike Wilds",
+                "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
+              },
+              "rounds": [
+                12,
+                14,
+                15
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "N174",
-              "url": "https://en.wikipedia.org/wiki/Ensign_N174"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 22,
-          "driver": {
-            "text": "Vern Schuppan",
-            "url": "https://en.wikipedia.org/wiki/Vern_Schuppan"
-          },
-          "rounds": "5-11"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            },
-            {
-              "text": "Team Ensign with Theodore Racing",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            },
-            {
-              "text": "Dempster International Team Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ensign",
-              "url": "https://en.wikipedia.org/wiki/Ensign_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "N174",
-              "url": "https://en.wikipedia.org/wiki/Ensign_N174"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 22,
-          "driver": {
-            "text": "Mike Wilds",
-            "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
-          },
-          "rounds": "12, 14-15"
+          ]
         },
         {
           "entrant": [
@@ -2228,11 +1748,17 @@
           },
           "tyre": "F",
           "no": 25,
-          "driver": {
-            "text": "Mike Wilds",
-            "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
-          },
-          "rounds": "13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mike Wilds",
+                "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
+              },
+              "rounds": [
+                13
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2272,11 +1798,17 @@
           },
           "tyre": "G",
           "no": 23,
-          "driver": {
-            "text": "Dave Charlton",
-            "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
-          },
-          "rounds": "3"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Dave Charlton",
+                "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
+              },
+              "rounds": [
+                3
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2307,11 +1839,22 @@
           },
           "tyre": "F",
           "no": 23,
-          "driver": {
-            "text": "Tim Schenken",
-            "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
-          },
-          "rounds": "4, 6, 8, 10-12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tim Schenken",
+                "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
+              },
+              "rounds": [
+                4,
+                6,
+                8,
+                10,
+                11,
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2342,11 +1885,17 @@
           },
           "tyre": "F",
           "no": 29,
-          "driver": {
-            "text": "Tim Schenken",
-            "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
-          },
-          "rounds": "13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tim Schenken",
+                "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
+              },
+              "rounds": [
+                13
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2377,11 +1926,17 @@
           },
           "tyre": "F",
           "no": 41,
-          "driver": {
-            "text": "Tim Schenken",
-            "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Tim Schenken",
+                "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2417,11 +1972,19 @@
           },
           "tyre": "F",
           "no": 23,
-          "driver": {
-            "text": "Leo Kinnunen",
-            "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
-          },
-          "rounds": "7, 9, 13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Leo Kinnunen",
+                "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
+              },
+              "rounds": [
+                7,
+                9,
+                13
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2457,11 +2020,18 @@
           },
           "tyre": "F",
           "no": 43,
-          "driver": {
-            "text": "Leo Kinnunen",
-            "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
-          },
-          "rounds": "10, 12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Leo Kinnunen",
+                "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
+              },
+              "rounds": [
+                10,
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2497,11 +2067,17 @@
           },
           "tyre": "F",
           "no": 44,
-          "driver": {
-            "text": "Leo Kinnunen",
-            "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Leo Kinnunen",
+                "url": "https://en.wikipedia.org/wiki/Leo_Kinnunen"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2541,11 +2117,14 @@
           },
           "tyre": "F",
           "no": 24,
-          "driver": {
-            "text": "James Hunt",
-            "url": "https://en.wikipedia.org/wiki/James_Hunt"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "James Hunt",
+                "url": "https://en.wikipedia.org/wiki/James_Hunt"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -2585,11 +2164,17 @@
           },
           "tyre": "F",
           "no": 31,
-          "driver": {
-            "text": "Ian Scheckter",
-            "url": "https://en.wikipedia.org/wiki/Ian_Scheckter"
-          },
-          "rounds": "12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Scheckter",
+                "url": "https://en.wikipedia.org/wiki/Ian_Scheckter"
+              },
+              "rounds": [
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2620,11 +2205,18 @@
           },
           "tyre": "F",
           "no": 25,
-          "driver": {
-            "text": "Howden Ganley",
-            "url": "https://en.wikipedia.org/wiki/Howden_Ganley"
-          },
-          "rounds": "10-11"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Howden Ganley",
+                "url": "https://en.wikipedia.org/wiki/Howden_Ganley"
+              },
+              "rounds": [
+                10,
+                11
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2660,11 +2252,14 @@
           },
           "tyre": "F",
           "no": 26,
-          "driver": {
-            "text": "Graham Hill",
-            "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Graham Hill",
+                "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -2700,91 +2295,47 @@
           },
           "tyre": "F",
           "no": 27,
-          "driver": {
-            "text": "Guy Edwards",
-            "url": "https://en.wikipedia.org/wiki/Guy_Edwards"
-          },
-          "rounds": "1-2, 4-11"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Embassy Racing with Graham Hill",
-              "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lola",
-              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+              "driver": {
+                "text": "Guy Edwards",
+                "url": "https://en.wikipedia.org/wiki/Guy_Edwards"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "T370",
-              "url": "https://en.wikipedia.org/wiki/Lola_T370"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+              "driver": {
+                "text": "Peter Gethin",
+                "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
+              },
+              "rounds": [
+                10
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 27,
-          "driver": {
-            "text": "Peter Gethin",
-            "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
-          },
-          "rounds": "10"
-        },
-        {
-          "entrant": [
             {
-              "text": "Embassy Racing with Graham Hill",
-              "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
+              "driver": {
+                "text": "Rolf Stommelen",
+                "url": "https://en.wikipedia.org/wiki/Rolf_Stommelen"
+              },
+              "rounds": [
+                12,
+                13,
+                14,
+                15
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lola",
-              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T370",
-              "url": "https://en.wikipedia.org/wiki/Lola_T370"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 27,
-          "driver": {
-            "text": "Rolf Stommelen",
-            "url": "https://en.wikipedia.org/wiki/Rolf_Stommelen"
-          },
-          "rounds": "12-15"
+          ]
         },
         {
           "entrant": [
@@ -2828,11 +2379,14 @@
           },
           "tyre": "F",
           "no": 28,
-          "driver": {
-            "text": "John Watson",
-            "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "John Watson",
+                "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -2876,11 +2430,17 @@
           },
           "tyre": "F",
           "no": 34,
-          "driver": {
-            "text": "Carlos Pace",
-            "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
-          },
-          "rounds": "9"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Carlos Pace",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+              },
+              "rounds": [
+                9
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2924,11 +2484,17 @@
           },
           "tyre": "G",
           "no": 208,
-          "driver": {
-            "text": "Lella Lombardi",
-            "url": "https://en.wikipedia.org/wiki/Lella_Lombardi"
-          },
-          "rounds": "10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Lella Lombardi",
+                "url": "https://en.wikipedia.org/wiki/Lella_Lombardi"
+              },
+              "rounds": [
+                10
+              ]
+            }
+          ]
         },
         {
           "entrant": [],
@@ -2954,11 +2520,17 @@
           },
           "tyre": "F",
           "no": 29,
-          "driver": {
-            "text": "John Nicholson",
-            "url": "https://en.wikipedia.org/wiki/John_Nicholson_(racing_driver)"
-          },
-          "rounds": "10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "John Nicholson",
+                "url": "https://en.wikipedia.org/wiki/John_Nicholson_(racing_driver)"
+              },
+              "rounds": [
+                10
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2994,11 +2566,17 @@
           },
           "tyre": "G",
           "no": 29,
-          "driver": {
-            "text": "Ian Scheckter",
-            "url": "https://en.wikipedia.org/wiki/Ian_Scheckter"
-          },
-          "rounds": "3"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Scheckter",
+                "url": "https://en.wikipedia.org/wiki/Ian_Scheckter"
+              },
+              "rounds": [
+                3
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3034,11 +2612,17 @@
           },
           "tyre": "G",
           "no": 30,
-          "driver": {
-            "text": "Paddy Driver",
-            "url": "https://en.wikipedia.org/wiki/Paddy_Driver"
-          },
-          "rounds": "3"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Paddy Driver",
+                "url": "https://en.wikipedia.org/wiki/Paddy_Driver"
+              },
+              "rounds": [
+                3
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3074,11 +2658,28 @@
           },
           "tyre": "F",
           "no": 30,
-          "driver": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          "rounds": "4, 6, 11"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Chris Amon",
+                "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+              },
+              "rounds": [
+                4,
+                6,
+                11
+              ]
+            },
+            {
+              "driver": {
+                "text": "Larry Perkins",
+                "url": "https://en.wikipedia.org/wiki/Larry_Perkins"
+              },
+              "rounds": [
+                11
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3114,51 +2715,17 @@
           },
           "tyre": "F",
           "no": 22,
-          "driver": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          "rounds": "13"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Dalton-Amon International",
-              "url": "https://en.wikipedia.org/wiki/Chris_Amon_Racing"
+              "driver": {
+                "text": "Chris Amon",
+                "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+              },
+              "rounds": [
+                13
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Amon",
-              "url": "https://en.wikipedia.org/wiki/Chris_Amon_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "AF101",
-              "url": "https://en.wikipedia.org/wiki/Chris_Amon_Racing#Amon_AF101"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 30,
-          "driver": {
-            "text": "Larry Perkins",
-            "url": "https://en.wikipedia.org/wiki/Larry_Perkins"
-          },
-          "rounds": "11"
+          ]
         },
         {
           "entrant": [],
@@ -3189,11 +2756,17 @@
           },
           "tyre": "F",
           "no": 35,
-          "driver": {
-            "text": "Mike Wilds",
-            "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
-          },
-          "rounds": "10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mike Wilds",
+                "url": "https://en.wikipedia.org/wiki/Mike_Wilds"
+              },
+              "rounds": [
+                10
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3224,11 +2797,17 @@
           },
           "tyre": "F",
           "no": 31,
-          "driver": {
-            "text": "Carlo Facetti",
-            "url": "https://en.wikipedia.org/wiki/Carlo_Facetti"
-          },
-          "rounds": "13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Carlo Facetti",
+                "url": "https://en.wikipedia.org/wiki/Carlo_Facetti"
+              },
+              "rounds": [
+                13
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3259,11 +2838,17 @@
           },
           "tyre": "F",
           "no": 32,
-          "driver": {
-            "text": "Helmut Koinigg",
-            "url": "https://en.wikipedia.org/wiki/Helmut_Koinigg"
-          },
-          "rounds": "12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Helmut Koinigg",
+                "url": "https://en.wikipedia.org/wiki/Helmut_Koinigg"
+              },
+              "rounds": [
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3294,11 +2879,18 @@
           },
           "tyre": "F",
           "no": 43,
-          "driver": {
-            "text": "Gérard Larrousse",
-            "url": "https://en.wikipedia.org/wiki/G%C3%A9rard_Larrousse"
-          },
-          "rounds": "5, 9"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Gérard Larrousse",
+                "url": "https://en.wikipedia.org/wiki/G%C3%A9rard_Larrousse"
+              },
+              "rounds": [
+                5,
+                9
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3334,11 +2926,17 @@
           },
           "tyre": "F",
           "no": 32,
-          "driver": {
-            "text": "Eddie Keizan",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Keizan"
-          },
-          "rounds": "3"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Keizan",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Keizan"
+              },
+              "rounds": [
+                3
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3374,11 +2972,17 @@
           },
           "tyre": "F",
           "no": 32,
-          "driver": {
-            "text": "Ian Ashley",
-            "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
-          },
-          "rounds": "11"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Ashley",
+                "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
+              },
+              "rounds": [
+                11
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3414,11 +3018,17 @@
           },
           "tyre": "F",
           "no": 35,
-          "driver": {
-            "text": "Ian Ashley",
-            "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
-          },
-          "rounds": "12"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Ashley",
+                "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
+              },
+              "rounds": [
+                12
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3454,51 +3064,26 @@
           },
           "tyre": "F",
           "no": 42,
-          "driver": {
-            "text": "Tom Pryce",
-            "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
-          },
-          "rounds": "5"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Token Racing",
-              "url": "https://en.wikipedia.org/wiki/Token_Racing"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Token",
-              "url": "https://en.wikipedia.org/wiki/Token_Racing"
+              "driver": {
+                "text": "Tom Pryce",
+                "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
+              },
+              "rounds": [
+                5
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "RJ02",
-              "url": "https://en.wikipedia.org/wiki/Token_RJ02"
+              "driver": {
+                "text": "David Purley",
+                "url": "https://en.wikipedia.org/wiki/David_Purley"
+              },
+              "rounds": [
+                10
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFV",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "F",
-          "no": 42,
-          "driver": {
-            "text": "David Purley",
-            "url": "https://en.wikipedia.org/wiki/David_Purley"
-          },
-          "rounds": "10"
+          ]
         },
         {
           "entrant": [],
@@ -3524,11 +3109,18 @@
           },
           "tyre": "G",
           "no": 42,
-          "driver": {
-            "text": "Ian Ashley",
-            "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
-          },
-          "rounds": "14-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ian Ashley",
+                "url": "https://en.wikipedia.org/wiki/Ian_Ashley"
+              },
+              "rounds": [
+                14,
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [],
@@ -3554,11 +3146,17 @@
           },
           "tyre": "G",
           "no": 50,
-          "driver": {
-            "text": "Eppie Wietzes",
-            "url": "https://en.wikipedia.org/wiki/Eppie_Wietzes"
-          },
-          "rounds": "14"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eppie Wietzes",
+                "url": "https://en.wikipedia.org/wiki/Eppie_Wietzes"
+              },
+              "rounds": [
+                14
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3594,11 +3192,18 @@
           },
           "tyre": "F",
           "no": 55,
-          "driver": {
-            "text": "Mario Andretti",
-            "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
-          },
-          "rounds": "14-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mario Andretti",
+                "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+              },
+              "rounds": [
+                14,
+                15
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -3634,11 +3239,18 @@
           },
           "tyre": "G",
           "no": 66,
-          "driver": {
-            "text": "Mark Donohue",
-            "url": "https://en.wikipedia.org/wiki/Mark_Donohue"
-          },
-          "rounds": "14-15"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mark Donohue",
+                "url": "https://en.wikipedia.org/wiki/Mark_Donohue"
+              },
+              "rounds": [
+                14,
+                15
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

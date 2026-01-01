@@ -47,11 +47,14 @@
             "cylinders": 6
           },
           "no": 1,
-          "driver": {
-            "text": "Alain Prost",
-            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alain Prost",
+                "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -94,11 +97,14 @@
             "cylinders": 6
           },
           "no": 2,
-          "driver": {
-            "text": "Stefan Johansson",
-            "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Stefan Johansson",
+                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -137,11 +143,14 @@
             "cylinders": 8
           },
           "no": 3,
-          "driver": {
-            "text": "Jonathan Palmer",
-            "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jonathan Palmer",
+                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -180,11 +189,14 @@
             "cylinders": 8
           },
           "no": 4,
-          "driver": {
-            "text": "Philippe Streiff",
-            "url": "https://en.wikipedia.org/wiki/Philippe_Streiff"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Philippe Streiff",
+                "url": "https://en.wikipedia.org/wiki/Philippe_Streiff"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -231,62 +243,40 @@
             "cylinders": 6
           },
           "no": 5,
-          "driver": {
-            "text": "Nigel Mansell",
-            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-          },
-          "rounds": "1-15"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Canon",
-              "url": "https://en.wikipedia.org/wiki/Canon_Inc."
+              "driver": {
+                "text": "Nigel Mansell",
+                "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             },
             {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-            },
-            {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda"
-            },
-            {
-              "text": "Team",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+              "driver": {
+                "text": "Riccardo Patrese",
+                "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+              },
+              "rounds": [
+                16
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FW11B",
-              "url": "https://en.wikipedia.org/wiki/Williams_FW11"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Honda RA167E",
-              "url": "https://en.wikipedia.org/wiki/Honda_RA16_engine"
-            },
-            "type": "V6",
-            "layout": "V",
-            "cylinders": 6
-          },
-          "no": 5,
-          "driver": {
-            "text": "Riccardo Patrese",
-            "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
-          },
-          "rounds": "16"
+          ]
         },
         {
           "entrant": [
@@ -333,11 +323,14 @@
             "cylinders": 6
           },
           "no": 6,
-          "driver": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Nelson Piquet",
+                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -369,47 +362,40 @@
             }
           },
           "no": 7,
-          "driver": {
-            "text": "Riccardo Patrese",
-            "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
-          },
-          "rounds": "1-15"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
+              "driver": {
+                "text": "Riccardo Patrese",
+                "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
             },
-            "engine_constructor": {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
-          },
-          "chassis": [
             {
-              "text": "BT56",
-              "url": "https://en.wikipedia.org/wiki/Brabham_BT56"
+              "driver": {
+                "text": "Stefano Modena",
+                "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
+              },
+              "rounds": [
+                16
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "BMW M12",
-              "url": "https://en.wikipedia.org/wiki/BMW_M12"
-            }
-          },
-          "no": 7,
-          "driver": {
-            "text": "Stefano Modena",
-            "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
-          },
-          "rounds": "16"
+          ]
         },
         {
           "entrant": [
@@ -441,11 +427,14 @@
             }
           },
           "no": 8,
-          "driver": {
-            "text": "Andrea de Cesaris",
-            "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Andrea de Cesaris",
+                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -485,11 +474,14 @@
             }
           },
           "no": 9,
-          "driver": {
-            "text": "Martin Brundle",
-            "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Martin Brundle",
+                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -529,11 +521,14 @@
             }
           },
           "no": 10,
-          "driver": {
-            "text": "Christian Danner",
-            "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Christian Danner",
+                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -576,11 +571,14 @@
             "cylinders": 6
           },
           "no": 11,
-          "driver": {
-            "text": "Satoru Nakajima",
-            "url": "https://en.wikipedia.org/wiki/Satoru_Nakajima"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Satoru Nakajima",
+                "url": "https://en.wikipedia.org/wiki/Satoru_Nakajima"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -623,11 +621,14 @@
             "cylinders": 6
           },
           "no": 12,
-          "driver": {
-            "text": "Ayrton Senna",
-            "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ayrton Senna",
+                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -657,45 +658,40 @@
             "cylinders": 8
           },
           "no": 14,
-          "driver": {
-            "text": "Pascal Fabre",
-            "url": "https://en.wikipedia.org/wiki/Pascal_Fabre"
-          },
-          "rounds": "1-14"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "AGS",
-              "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "JH22",
-              "url": "https://en.wikipedia.org/wiki/AGS_JH22"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Ford Cosworth DFZ",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_DFZ"
+              "driver": {
+                "text": "Pascal Fabre",
+                "url": "https://en.wikipedia.org/wiki/Pascal_Fabre"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "no": 14,
-          "driver": {
-            "text": "Roberto Moreno",
-            "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
-          },
-          "rounds": "15-16"
+            {
+              "driver": {
+                "text": "Roberto Moreno",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
+              },
+              "rounds": [
+                15,
+                16
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -738,11 +734,14 @@
             "cylinders": 8
           },
           "no": 16,
-          "driver": {
-            "text": "Ivan Capelli",
-            "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ivan Capelli",
+                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -778,11 +777,14 @@
             }
           },
           "no": 17,
-          "driver": {
-            "text": "Derek Warwick",
-            "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Derek Warwick",
+                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -818,11 +820,14 @@
             }
           },
           "no": 18,
-          "driver": {
-            "text": "Eddie Cheever",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Cheever",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -857,11 +862,14 @@
             "cylinders": 6
           },
           "no": 19,
-          "driver": {
-            "text": "Teo Fabi",
-            "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Teo Fabi",
+                "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -896,11 +904,14 @@
             "cylinders": 6
           },
           "no": 20,
-          "driver": {
-            "text": "Thierry Boutsen",
-            "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Thierry Boutsen",
+                "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -943,11 +954,14 @@
             "cylinders": 8
           },
           "no": 21,
-          "driver": {
-            "text": "Alex Caffi",
-            "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alex Caffi",
+                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -990,58 +1004,28 @@
             "cylinders": 8
           },
           "no": 22,
-          "driver": {
-            "text": "Gabriele Tarquini",
-            "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-          },
-          "rounds": "2"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Landis & Gyr",
-              "url": "https://en.wikipedia.org/wiki/Landis%2BGyr"
+              "driver": {
+                "text": "Gabriele Tarquini",
+                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
+              },
+              "rounds": [
+                2
+              ]
             },
             {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
+              "driver": {
+                "text": "Franco Forini",
+                "url": "https://en.wikipedia.org/wiki/Franco_Forini"
+              },
+              "rounds": [
+                11,
+                12,
+                13
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "FA1I",
-              "url": null
-            },
-            {
-              "text": "FA1G",
-              "url": null
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo 890T",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8-cylinder_F1_engine"
-            },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "no": 22,
-          "driver": {
-            "text": "Franco Forini",
-            "url": "https://en.wikipedia.org/wiki/Franco_Forini"
-          },
-          "rounds": "11-13"
+          ]
         },
         {
           "entrant": [
@@ -1076,11 +1060,14 @@
             "cylinders": 6
           },
           "no": 23,
-          "driver": {
-            "text": "Adrián Campos",
-            "url": "https://en.wikipedia.org/wiki/Adri%C3%A1n_Campos"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Adrián Campos",
+                "url": "https://en.wikipedia.org/wiki/Adri%C3%A1n_Campos"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1115,11 +1102,14 @@
             "cylinders": 6
           },
           "no": 24,
-          "driver": {
-            "text": "Alessandro Nannini",
-            "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alessandro Nannini",
+                "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1155,11 +1145,31 @@
             }
           },
           "no": 25,
-          "driver": {
-            "text": "René Arnoux",
-            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
-          },
-          "rounds": "2-16"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "René Arnoux",
+                "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+              },
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1195,11 +1205,31 @@
             }
           },
           "no": 26,
-          "driver": {
-            "text": "Piercarlo Ghinzani",
-            "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-          },
-          "rounds": "2-16"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Piercarlo Ghinzani",
+                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
+              },
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1234,11 +1264,14 @@
             "cylinders": 6
           },
           "no": 27,
-          "driver": {
-            "text": "Michele Alboreto",
-            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michele Alboreto",
+                "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1273,11 +1306,14 @@
             "cylinders": 6
           },
           "no": 28,
-          "driver": {
-            "text": "Gerhard Berger",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Gerhard Berger",
+                "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1312,11 +1348,19 @@
             "cylinders": 8
           },
           "no": 29,
-          "driver": {
-            "text": "Yannick Dalmas",
-            "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
-          },
-          "rounds": "14-16"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Yannick Dalmas",
+                "url": "https://en.wikipedia.org/wiki/Yannick_Dalmas"
+              },
+              "rounds": [
+                14,
+                15,
+                16
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1351,11 +1395,31 @@
             "cylinders": 8
           },
           "no": 30,
-          "driver": {
-            "text": "Philippe Alliot",
-            "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
-          },
-          "rounds": "2-16"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Philippe Alliot",
+                "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
+              },
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1390,11 +1454,18 @@
             "cylinders": 8
           },
           "no": 32,
-          "driver": {
-            "text": "Nicola Larini",
-            "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
-          },
-          "rounds": "11, 13"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Nicola Larini",
+                "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
+              },
+              "rounds": [
+                11,
+                13
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

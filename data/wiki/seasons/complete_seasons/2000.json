@@ -34,11 +34,14 @@
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
           "no": 1,
-          "driver": {
-            "text": "Mika Häkkinen",
-            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Häkkinen",
+                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -68,11 +71,14 @@
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"
           },
           "no": 2,
-          "driver": {
-            "text": "David Coulthard",
-            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -102,11 +108,14 @@
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
           "no": 3,
-          "driver": {
-            "text": "Michael Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -136,11 +145,14 @@
             "url": "https://en.wikipedia.org/wiki/Ferrari_V10_engine"
           },
           "no": 4,
-          "driver": {
-            "text": "Rubens Barrichello",
-            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -174,11 +186,14 @@
             "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
           },
           "no": 5,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -212,11 +227,14 @@
             "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
           },
           "no": 6,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -241,40 +259,23 @@
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
           "no": 7,
-          "driver": {
-            "text": "Eddie Irvine",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-          },
-          "rounds": "All"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jaguar",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
-            },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "R1",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_R1"
+              "driver": {
+                "text": "Eddie Irvine",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+              }
+            },
+            {
+              "driver": {
+                "text": "Luciano Burti",
+                "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
+              },
+              "rounds": [
+                10
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Cosworth CR-2",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
-          },
-          "no": 7,
-          "driver": {
-            "text": "Luciano Burti",
-            "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
-          },
-          "rounds": "10"
+          ]
         },
         {
           "entrant": [],
@@ -299,11 +300,14 @@
             "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
           },
           "no": 8,
-          "driver": {
-            "text": "Johnny Herbert",
-            "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Herbert",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -328,11 +332,14 @@
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
           "no": 9,
-          "driver": {
-            "text": "Ralf Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ralf Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -357,11 +364,14 @@
             "url": "https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"
           },
           "no": 10,
-          "driver": {
-            "text": "Jenson Button",
-            "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jenson Button",
+                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -391,11 +401,14 @@
             "url": "https://en.wikipedia.org/wiki/Supertec"
           },
           "no": 11,
-          "driver": {
-            "text": "Giancarlo Fisichella",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -425,11 +438,14 @@
             "url": "https://en.wikipedia.org/wiki/Supertec"
           },
           "no": 12,
-          "driver": {
-            "text": "Alexander Wurz",
-            "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alexander Wurz",
+                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -459,11 +475,14 @@
             "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
           },
           "no": 14,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -493,11 +512,14 @@
             "url": "https://en.wikipedia.org/wiki/Peugeot_V10"
           },
           "no": 15,
-          "driver": {
-            "text": "Nick Heidfeld",
-            "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Nick Heidfeld",
+                "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -531,11 +553,14 @@
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
           "no": 16,
-          "driver": {
-            "text": "Pedro Diniz",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro Diniz",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -569,11 +594,14 @@
             "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
           },
           "no": 17,
-          "driver": {
-            "text": "Mika Salo",
-            "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Salo",
+                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -598,11 +626,14 @@
             "url": "https://en.wikipedia.org/wiki/Supertec"
           },
           "no": 18,
-          "driver": {
-            "text": "Pedro de la Rosa",
-            "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro de la Rosa",
+                "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -627,11 +658,14 @@
             "url": "https://en.wikipedia.org/wiki/Supertec"
           },
           "no": 19,
-          "driver": {
-            "text": "Jos Verstappen",
-            "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -661,11 +695,14 @@
             "url": "https://en.wikipedia.org/wiki/Fondmetal"
           },
           "no": 20,
-          "driver": {
-            "text": "Marc Gené",
-            "url": "https://en.wikipedia.org/wiki/Marc_Gen%C3%A9"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Marc Gené",
+                "url": "https://en.wikipedia.org/wiki/Marc_Gen%C3%A9"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -695,11 +732,14 @@
             "url": "https://en.wikipedia.org/wiki/Fondmetal"
           },
           "no": 21,
-          "driver": {
-            "text": "Gastón Mazzacane",
-            "url": "https://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Gastón Mazzacane",
+                "url": "https://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -729,11 +769,14 @@
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
           "no": 22,
-          "driver": {
-            "text": "Jacques Villeneuve",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -763,11 +806,14 @@
             "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
           },
           "no": 23,
-          "driver": {
-            "text": "Ricardo Zonta",
-            "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ricardo Zonta",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
+              }
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

@@ -38,8 +38,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jenson_Button"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -73,8 +72,7 @@
                 "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -108,8 +106,7 @@
                 "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -143,8 +140,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -173,8 +169,7 @@
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -203,8 +198,7 @@
                 "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -238,8 +232,7 @@
                 "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -273,8 +266,7 @@
                 "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -308,8 +300,7 @@
                 "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -343,8 +334,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -373,8 +363,7 @@
                 "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -403,8 +392,7 @@
                 "url": "https://en.wikipedia.org/wiki/Vitaly_Petrov"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -433,8 +421,7 @@
                 "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -463,8 +450,7 @@
                 "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -493,8 +479,7 @@
                 "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -523,8 +508,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jaime_Alguersuari"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -553,8 +537,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -583,8 +566,7 @@
                 "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -612,69 +594,20 @@
                 "text": "Karun Chandhok",
                 "url": "https://en.wikipedia.org/wiki/Karun_Chandhok"
               }
-            }
-          ],
-          "rounds": "1-10"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "HRT",
-              "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
             },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F110",
-              "url": "https://en.wikipedia.org/wiki/Hispania_F110"
-            }
-          ],
-          "engine": null,
-          "no": 20,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Christian Klien",
                 "url": "https://en.wikipedia.org/wiki/Christian_Klien"
               }
-            }
-          ],
-          "rounds": "15, 18-19"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "HRT",
-              "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
             },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F110",
-              "url": "https://en.wikipedia.org/wiki/Hispania_F110"
-            }
-          ],
-          "engine": null,
-          "no": 20,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Sakon Yamamoto",
                 "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
               }
             }
-          ],
-          "rounds": "11-14, 16-17"
+          ]
         },
         {
           "entrant": [],
@@ -702,39 +635,14 @@
                 "text": "Sakon Yamamoto",
                 "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
               }
-            }
-          ],
-          "rounds": "10"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "HRT",
-              "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
             },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F110",
-              "url": "https://en.wikipedia.org/wiki/Hispania_F110"
-            }
-          ],
-          "engine": null,
-          "no": 21,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Bruno Senna",
                 "url": "https://en.wikipedia.org/wiki/Bruno_Senna"
               }
             }
-          ],
-          "rounds": "1-9, 11-19"
+          ]
         },
         {
           "entrant": [],
@@ -762,39 +670,14 @@
                 "text": "Pedro de la Rosa",
                 "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
               }
-            }
-          ],
-          "rounds": "1-14"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "BMW Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C29",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C29"
-            }
-          ],
-          "engine": null,
-          "no": 22,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Nick Heidfeld",
                 "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
               }
             }
-          ],
-          "rounds": "15-19"
+          ]
         },
         {
           "entrant": [],
@@ -823,8 +706,7 @@
                 "url": "https://en.wikipedia.org/wiki/Kamui_Kobayashi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -853,8 +735,7 @@
                 "url": "https://en.wikipedia.org/wiki/Timo_Glock"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -883,8 +764,7 @@
                 "url": "https://en.wikipedia.org/wiki/Lucas_di_Grassi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         }
       ],
       "free_practice_drivers": [

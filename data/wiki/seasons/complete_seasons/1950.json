@@ -40,211 +40,77 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
-          "rounds": "1-2, 4-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Juan Manuel Fangio",
+                "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ]
             },
             {
-              "text": "159",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Giuseppe Farina",
-            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-          },
-          "rounds": "1-2, 4-7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Giuseppe Farina",
+                "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ]
             },
             {
-              "text": "159",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Luigi Fagioli",
-            "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
-          },
-          "rounds": "1-2, 4-7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Luigi Fagioli",
+                "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ]
             },
             {
-              "text": "159",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Reg Parnell",
-            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
-          },
-          "rounds": "1"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Reg Parnell",
+                "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+              },
+              "rounds": [
+                1
+              ]
             },
             {
-              "text": "159",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Consalvo Sanesi",
-            "url": "https://en.wikipedia.org/wiki/Consalvo_Sanesi"
-          },
-          "rounds": "7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Alfa Romeo SpA",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "158",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Consalvo Sanesi",
+                "url": "https://en.wikipedia.org/wiki/Consalvo_Sanesi"
+              },
+              "rounds": [
+                7
+              ]
             },
             {
-              "text": "159",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+              "driver": {
+                "text": "Piero Taruffi",
+                "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
+              },
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Piero Taruffi",
-            "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
-          },
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [
@@ -276,83 +142,37 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "David Murray",
-            "url": "https://en.wikipedia.org/wiki/David_Murray_(driver)"
-          },
-          "rounds": "1, 7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Ambrosiana",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "David Murray",
+                "url": "https://en.wikipedia.org/wiki/David_Murray_(driver)"
+              },
+              "rounds": [
+                1,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "David Hampshire",
-            "url": "https://en.wikipedia.org/wiki/David_Hampshire"
-          },
-          "rounds": "1, 6"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ambrosiana",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "David Hampshire",
+                "url": "https://en.wikipedia.org/wiki/David_Hampshire"
+              },
+              "rounds": [
+                1,
+                6
+              ]
             },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Reg Parnell",
+                "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
+              },
+              "rounds": [
+                6
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Reg Parnell",
-            "url": "https://en.wikipedia.org/wiki/Reg_Parnell"
-          },
-          "rounds": "6"
+          ]
         },
         {
           "entrant": [
@@ -384,11 +204,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Leslie Johnson",
-            "url": "https://en.wikipedia.org/wiki/Leslie_Johnson_(racing_driver)"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Leslie Johnson",
+                "url": "https://en.wikipedia.org/wiki/Leslie_Johnson_(racing_driver)"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -420,47 +246,26 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Peter Walker",
-            "url": "https://en.wikipedia.org/wiki/Peter_Walker_(driver)"
-          },
-          "rounds": "1"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Peter Walker",
-              "url": "https://en.wikipedia.org/wiki/Peter_Walker_(racing_driver)"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "ERA",
-              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+              "driver": {
+                "text": "Peter Walker",
+                "url": "https://en.wikipedia.org/wiki/Peter_Walker_(driver)"
+              },
+              "rounds": [
+                1
+              ]
             },
-            "engine_constructor": {
-              "text": "ERA",
-              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
-          },
-          "chassis": [
             {
-              "text": "E",
-              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#E-Type"
+              "driver": {
+                "text": "Tony Rolt",
+                "url": "https://en.wikipedia.org/wiki/Tony_Rolt"
+              },
+              "rounds": [
+                1
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "ERA",
-              "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Tony Rolt",
-            "url": "https://en.wikipedia.org/wiki/Tony_Rolt"
-          },
-          "rounds": "1"
+          ]
         },
         {
           "entrant": [
@@ -492,47 +297,26 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Joe Fry",
-            "url": "https://en.wikipedia.org/wiki/Joe_Fry"
-          },
-          "rounds": "1"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Joe Fry",
-              "url": "https://en.wikipedia.org/wiki/Joe_Fry"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "Joe Fry",
+                "url": "https://en.wikipedia.org/wiki/Joe_Fry"
+              },
+              "rounds": [
+                1
+              ]
             },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CL",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Brian Shawe-Taylor",
+                "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
+              },
+              "rounds": [
+                1
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Brian Shawe-Taylor",
-            "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
-          },
-          "rounds": "1"
+          ]
         },
         {
           "entrant": [
@@ -564,11 +348,19 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Cuth Harrison",
-            "url": "https://en.wikipedia.org/wiki/Cuth_Harrison"
-          },
-          "rounds": "1-2, 7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Cuth Harrison",
+                "url": "https://en.wikipedia.org/wiki/Cuth_Harrison"
+              },
+              "rounds": [
+                1,
+                2,
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -604,11 +396,18 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Bob Gerard",
-            "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
-          },
-          "rounds": "1-2"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Bob Gerard",
+                "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
+              },
+              "rounds": [
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -648,187 +447,61 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Yves Giraud-Cabantous",
-            "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
-          },
-          "rounds": "1, 4-6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Automobiles Talbot-Darracq",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C-DA",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Yves Giraud-Cabantous",
+                "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
+              },
+              "rounds": [
+                1,
+                4,
+                5,
+                6
+              ]
             },
             {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Louis Rosier",
+                "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+              },
+              "rounds": [
+                1,
+                4,
+                5,
+                6
+              ]
             },
             {
-              "text": "T26C-GS",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Louis Rosier",
-            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
-          },
-          "rounds": "1, 4-6"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Automobiles Talbot-Darracq",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C-DA",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Philippe Étancelin",
+                "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+              },
+              "rounds": [
+                1,
+                5
+              ]
             },
             {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Eugène Martin",
+                "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Martin"
+              },
+              "rounds": [
+                1,
+                4
+              ]
             },
             {
-              "text": "T26C-GS",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Raymond Sommer",
+                "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
+              },
+              "rounds": [
+                6
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Philippe Étancelin",
-            "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
-          },
-          "rounds": "1, 5"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Automobiles Talbot-Darracq",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C-DA",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            },
-            {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            },
-            {
-              "text": "T26C-GS",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Eugène Martin",
-            "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Martin"
-          },
-          "rounds": "1, 4"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Automobiles Talbot-Darracq",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C-DA",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            },
-            {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            },
-            {
-              "text": "T26C-GS",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Raymond Sommer",
-            "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
-          },
-          "rounds": "6"
+          ]
         },
         {
           "entrant": [
@@ -860,11 +533,22 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Johnny Claes",
-            "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
-          },
-          "rounds": "1-2, 4-7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Claes",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -896,47 +580,32 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Louis Chiron",
-            "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
-          },
-          "rounds": "1-2, 4, 6-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Officine Alfieri Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "Louis Chiron",
+                "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                6,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Franco Rol",
+                "url": "https://en.wikipedia.org/wiki/Franco_Rol"
+              },
+              "rounds": [
+                2,
+                6,
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Franco Rol",
-            "url": "https://en.wikipedia.org/wiki/Franco_Rol"
-          },
-          "rounds": "2, 6-7"
+          ]
         },
         {
           "entrant": [
@@ -968,47 +637,32 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Toulo de Graffenried",
-            "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
-          },
-          "rounds": "1-2, 4, 7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Enrico Platé",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "Toulo de Graffenried",
+                "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Birabongse Bhanudej",
+                "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
+              },
+              "rounds": [
+                1,
+                2,
+                4,
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Birabongse Bhanudej",
-            "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
-          },
-          "rounds": "1-2, 4, 7"
+          ]
         },
         {
           "entrant": [
@@ -1040,11 +694,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Joe Kelly",
-            "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Joe Kelly",
+                "url": "https://en.wikipedia.org/wiki/Joe_Kelly_(racing_driver)"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1076,11 +736,18 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Geoffrey Crossley",
-            "url": "https://en.wikipedia.org/wiki/Geoffrey_Crossley"
-          },
-          "rounds": "1, 5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Geoffrey Crossley",
+                "url": "https://en.wikipedia.org/wiki/Geoffrey_Crossley"
+              },
+              "rounds": [
+                1,
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1124,155 +791,45 @@
             }
           ],
           "tyre": "P",
-          "driver": {
-            "text": "José Froilán González",
-            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
-          },
-          "rounds": "2, 6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Achille Varzi",
-              "url": "https://en.wikipedia.org/wiki/Autom%C3%B3vil_Club_Argentino"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
-            {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "José Froilán González",
+                "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+              },
+              "rounds": [
+                2,
+                6
+              ]
             },
             {
-              "text": "4CL",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
+              "driver": {
+                "text": "Alfredo Pián",
+                "url": "https://en.wikipedia.org/wiki/Alfredo_Pi%C3%A1n"
+              },
+              "rounds": [
+                2
+              ]
             },
             {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
-            }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Alfredo Pián",
-            "url": "https://en.wikipedia.org/wiki/Alfredo_Pi%C3%A1n"
-          },
-          "rounds": "2"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Achille Varzi",
-              "url": "https://en.wikipedia.org/wiki/Autom%C3%B3vil_Club_Argentino"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
-            {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Nello Pagani",
+                "url": "https://en.wikipedia.org/wiki/Nello_Pagani"
+              },
+              "rounds": [
+                4
+              ]
             },
             {
-              "text": "4CL",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Toni Branca",
+                "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+              },
+              "rounds": [
+                4
+              ]
             }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
-            },
-            {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
-            }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Nello Pagani",
-            "url": "https://en.wikipedia.org/wiki/Nello_Pagani"
-          },
-          "rounds": "4"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Achille Varzi",
-              "url": "https://en.wikipedia.org/wiki/Autom%C3%B3vil_Club_Argentino"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            },
-            "engine_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-            }
-          },
-          "chassis": [
-            {
-              "text": "4CLT/48",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            },
-            {
-              "text": "4CL",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
-            },
-            {
-              "model": {
-                "text": "Maserati",
-                "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-              }
-            }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Toni Branca",
-            "url": "https://en.wikipedia.org/wiki/Toni_Branca"
-          },
-          "rounds": "4"
+          ]
         },
         {
           "entrant": [
@@ -1307,11 +864,17 @@
             "cylinders": 2
           },
           "tyre": "D",
-          "driver": {
-            "text": "Harry Schell",
-            "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-          },
-          "rounds": "2"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Harry Schell",
+                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+              },
+              "rounds": [
+                2
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1343,47 +906,29 @@
             }
           },
           "tyre": "E",
-          "driver": {
-            "text": "Robert Manzon",
-            "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-          },
-          "rounds": "2, 6-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Equipe Gordini",
-              "url": "https://en.wikipedia.org/wiki/Gordini"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Simca-Gordini",
-              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
+              "driver": {
+                "text": "Robert Manzon",
+                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
+              },
+              "rounds": [
+                2,
+                6,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "Simca-Gordini",
-              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
-            }
-          },
-          "chassis": [
             {
-              "text": "T15",
-              "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
+              "driver": {
+                "text": "Maurice Trintignant",
+                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+              },
+              "rounds": [
+                2,
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Simca-Gordini",
-              "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
-            }
-          },
-          "tyre": "E",
-          "driver": {
-            "text": "Maurice Trintignant",
-            "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-          },
-          "rounds": "2, 7"
+          ]
         },
         {
           "entrant": [
@@ -1419,51 +964,29 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Philippe Étancelin",
-            "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
-          },
-          "rounds": "2, 4, 6-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Philippe Étancelin",
-              "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Philippe Étancelin",
+                "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
+              },
+              "rounds": [
+                2,
+                4,
+                6,
+                7
+              ]
             },
             {
-              "text": "T26C-DA",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Eugène Chaboud",
+                "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
+              },
+              "rounds": [
+                6
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Eugène Chaboud",
-            "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
-          },
-          "rounds": "6"
+          ]
         },
         {
           "entrant": [
@@ -1499,51 +1022,27 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Louis Rosier",
-            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
-          },
-          "rounds": "2, 7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Ecurie Rosier",
-              "url": "https://en.wikipedia.org/wiki/Ecurie_Rosier"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Louis Rosier",
+                "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+              },
+              "rounds": [
+                2,
+                7
+              ]
             },
             {
-              "text": "T26C-GS",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Henri Louveau",
+                "url": "https://en.wikipedia.org/wiki/Henri_Louveau"
+              },
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Henri Louveau",
-            "url": "https://en.wikipedia.org/wiki/Henri_Louveau"
-          },
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [
@@ -1578,11 +1077,19 @@
             "cylinders": 1
           },
           "tyre": "D",
-          "driver": {
-            "text": "Peter Whitehead",
-            "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
-          },
-          "rounds": "2, 6-7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Peter Whitehead",
+                "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
+              },
+              "rounds": [
+                2,
+                6,
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1658,251 +1165,52 @@
             }
           ],
           "tyre": "P",
-          "driver": {
-            "text": "Luigi Villoresi",
-            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
-          },
-          "rounds": "2, 4-6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "125",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
-            },
-            {
-              "text": "166F2-50",
-              "url": null
-            },
-            {
-              "text": "275",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            },
-            {
-              "text": "375",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Luigi Villoresi",
+                "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
               },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+              "rounds": [
+                2,
+                4,
+                5,
+                6
+              ]
             },
             {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Alberto Ascari",
+                "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
               },
-              "type": "F2",
-              "layout": "F",
-              "cylinders": 2
+              "rounds": [
+                2,
+                4,
+                5,
+                6,
+                7
+              ]
             },
             {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Raymond Sommer",
+                "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
               },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+              "rounds": [
+                2,
+                4
+              ]
             },
             {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+              "driver": {
+                "text": "Dorino Serafini",
+                "url": "https://en.wikipedia.org/wiki/Dorino_Serafini"
               },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Alberto Ascari",
-            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-          },
-          "rounds": "2, 4-7"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "125",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
-            },
-            {
-              "text": "166F2-50",
-              "url": null
-            },
-            {
-              "text": "275",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            },
-            {
-              "text": "375",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F2",
-              "layout": "F",
-              "cylinders": 2
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Raymond Sommer",
-            "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
-          },
-          "rounds": "2, 4"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Scuderia Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "125",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
-            },
-            {
-              "text": "166F2-50",
-              "url": null
-            },
-            {
-              "text": "275",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            },
-            {
-              "text": "375",
-              "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F2",
-              "layout": "F",
-              "cylinders": 2
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            },
-            {
-              "model": {
-                "text": "Ferrari",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-              },
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
-            }
-          ],
-          "tyre": "P",
-          "driver": {
-            "text": "Dorino Serafini",
-            "url": "https://en.wikipedia.org/wiki/Dorino_Serafini"
-          },
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [
@@ -1934,47 +1242,27 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Felice Bonetto",
-            "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
-          },
-          "rounds": "4, 6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Scuderia Milano",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Maserati",
-              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+              "driver": {
+                "text": "Felice Bonetto",
+                "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+              },
+              "rounds": [
+                4,
+                6
+              ]
             },
-            "engine_constructor": {
-              "text": "Speluzzi",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Milano"
-            }
-          },
-          "chassis": [
             {
-              "text": "4CLT/50",
-              "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
+              "driver": {
+                "text": "Franco Comotti",
+                "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
+              },
+              "rounds": [
+                7
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "L4",
-              "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
-            }
-          },
-          "tyre": "P",
-          "driver": {
-            "text": "Franco Comotti",
-            "url": "https://en.wikipedia.org/wiki/Franco_Comotti"
-          },
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [
@@ -2006,11 +1294,17 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Felice Bonetto",
-            "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
-          },
-          "rounds": "7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Felice Bonetto",
+                "url": "https://en.wikipedia.org/wiki/Felice_Bonetto"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2042,11 +1336,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Harry Schell",
-            "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-          },
-          "rounds": "4"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Harry Schell",
+                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
+              },
+              "rounds": [
+                4
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2078,11 +1378,19 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Pierre Levegh",
-            "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
-          },
-          "rounds": "5-7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pierre Levegh",
+                "url": "https://en.wikipedia.org/wiki/Pierre_Levegh"
+              },
+              "rounds": [
+                5,
+                6,
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2114,11 +1422,18 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Raymond Sommer",
-            "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
-          },
-          "rounds": "5, 7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Raymond Sommer",
+                "url": "https://en.wikipedia.org/wiki/Raymond_Sommer"
+              },
+              "rounds": [
+                5,
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2150,11 +1465,18 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Eugène Chaboud",
-            "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
-          },
-          "rounds": "5-6"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eugène Chaboud",
+                "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Chaboud"
+              },
+              "rounds": [
+                5,
+                6
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2186,11 +1508,17 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Toni Branca",
-            "url": "https://en.wikipedia.org/wiki/Toni_Branca"
-          },
-          "rounds": "5"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Toni Branca",
+                "url": "https://en.wikipedia.org/wiki/Toni_Branca"
+              },
+              "rounds": [
+                5
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2222,47 +1550,26 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Charles Pozzi",
-            "url": "https://en.wikipedia.org/wiki/Charles_Pozzi"
-          },
-          "rounds": "6"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Charles Pozzi",
-              "url": "https://en.wikipedia.org/wiki/Charles_Pozzi"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
+              "driver": {
+                "text": "Charles Pozzi",
+                "url": "https://en.wikipedia.org/wiki/Charles_Pozzi"
+              },
+              "rounds": [
+                6
+              ]
             },
-            "engine_constructor": {
-              "text": "Talbot-Lago",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "chassis": [
             {
-              "text": "T26C",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago_T26C"
+              "driver": {
+                "text": "Louis Rosier",
+                "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
+              },
+              "rounds": [
+                6
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Talbot",
-              "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-            }
-          },
-          "tyre": "D",
-          "driver": {
-            "text": "Louis Rosier",
-            "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
-          },
-          "rounds": "6"
+          ]
         },
         {
           "entrant": [
@@ -2294,11 +1601,17 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Clemente Biondetti",
-            "url": "https://en.wikipedia.org/wiki/Clemente_Biondetti"
-          },
-          "rounds": "7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Clemente Biondetti",
+                "url": "https://en.wikipedia.org/wiki/Clemente_Biondetti"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2330,11 +1643,17 @@
             }
           },
           "tyre": "P",
-          "driver": {
-            "text": "Paul Pietsch",
-            "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
-          },
-          "rounds": "7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Paul Pietsch",
+                "url": "https://en.wikipedia.org/wiki/Paul_Pietsch"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -2366,11 +1685,17 @@
             }
           },
           "tyre": "D",
-          "driver": {
-            "text": "Guy Mairesse",
-            "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
-          },
-          "rounds": "7"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Guy Mairesse",
+                "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

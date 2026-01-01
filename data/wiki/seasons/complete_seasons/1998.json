@@ -35,11 +35,14 @@
           },
           "tyre": "G",
           "no": 1,
-          "driver": {
-            "text": "Jacques Villeneuve",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -70,11 +73,14 @@
           },
           "tyre": "G",
           "no": 2,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -105,11 +111,14 @@
           },
           "tyre": "G",
           "no": 3,
-          "driver": {
-            "text": "Michael Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -140,11 +149,14 @@
           },
           "tyre": "G",
           "no": 4,
-          "driver": {
-            "text": "Eddie Irvine",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Irvine",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -175,11 +187,14 @@
           },
           "tyre": "B",
           "no": 5,
-          "driver": {
-            "text": "Giancarlo Fisichella",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -210,11 +225,14 @@
           },
           "tyre": "B",
           "no": 6,
-          "driver": {
-            "text": "Alexander Wurz",
-            "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Alexander Wurz",
+                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -245,11 +263,14 @@
           },
           "tyre": "B",
           "no": 7,
-          "driver": {
-            "text": "David Coulthard",
-            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -280,11 +301,14 @@
           },
           "tyre": "B",
           "no": 8,
-          "driver": {
-            "text": "Mika Häkkinen",
-            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Häkkinen",
+                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -315,11 +339,14 @@
           },
           "tyre": "G",
           "no": 9,
-          "driver": {
-            "text": "Damon Hill",
-            "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Damon Hill",
+                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -350,11 +377,14 @@
           },
           "tyre": "G",
           "no": 10,
-          "driver": {
-            "text": "Ralf Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ralf Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -385,11 +415,14 @@
           },
           "tyre": "B",
           "no": 11,
-          "driver": {
-            "text": "Olivier Panis",
-            "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Olivier Panis",
+                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -420,11 +453,14 @@
           },
           "tyre": "B",
           "no": 12,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -459,11 +495,14 @@
           },
           "tyre": "G",
           "no": 14,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -498,11 +537,14 @@
           },
           "tyre": "G",
           "no": 15,
-          "driver": {
-            "text": "Johnny Herbert",
-            "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Herbert",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -533,11 +575,14 @@
           },
           "tyre": "B",
           "no": 16,
-          "driver": {
-            "text": "Pedro Diniz",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro Diniz",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -568,11 +613,14 @@
           },
           "tyre": "B",
           "no": 17,
-          "driver": {
-            "text": "Mika Salo",
-            "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Salo",
+                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -603,11 +651,14 @@
           },
           "tyre": "B",
           "no": 18,
-          "driver": {
-            "text": "Rubens Barrichello",
-            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -638,46 +689,40 @@
           },
           "tyre": "B",
           "no": 19,
-          "driver": {
-            "text": "Jan Magnussen",
-            "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
-          },
-          "rounds": "1-7"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "HSBC",
-              "url": "https://en.wikipedia.org/wiki/HSBC"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Stewart",
-              "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
+              "driver": {
+                "text": "Jan Magnussen",
+                "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ]
             },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
             {
-              "text": "SF02",
-              "url": "https://en.wikipedia.org/wiki/Stewart_SF02"
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              },
+              "rounds": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Ford VJ Zetec-R",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_JD_/_VJ_engine"
-          },
-          "tyre": "B",
-          "no": 19,
-          "driver": {
-            "text": "Jos Verstappen",
-            "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-          },
-          "rounds": "8-16"
+          ]
         },
         {
           "entrant": [
@@ -708,11 +753,14 @@
           },
           "tyre": "G",
           "no": 20,
-          "driver": {
-            "text": "Ricardo Rosset",
-            "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ricardo Rosset",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -743,11 +791,14 @@
           },
           "tyre": "G",
           "no": 21,
-          "driver": {
-            "text": "Toranosuke Takagi",
-            "url": "https://en.wikipedia.org/wiki/Toranosuke_Takagi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Toranosuke Takagi",
+                "url": "https://en.wikipedia.org/wiki/Toranosuke_Takagi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -778,11 +829,14 @@
           },
           "tyre": "B",
           "no": 22,
-          "driver": {
-            "text": "Shinji Nakano",
-            "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Shinji Nakano",
+                "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -813,11 +867,14 @@
           },
           "tyre": "B",
           "no": 23,
-          "driver": {
-            "text": "Esteban Tuero",
-            "url": "https://en.wikipedia.org/wiki/Esteban_Tuero"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Esteban Tuero",
+                "url": "https://en.wikipedia.org/wiki/Esteban_Tuero"
+              }
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

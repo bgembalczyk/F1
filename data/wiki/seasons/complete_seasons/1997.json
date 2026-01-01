@@ -35,11 +35,14 @@
           },
           "tyre": "B",
           "no": 1,
-          "driver": {
-            "text": "Damon Hill",
-            "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Damon Hill",
+                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -70,11 +73,14 @@
           },
           "tyre": "B",
           "no": 2,
-          "driver": {
-            "text": "Pedro Diniz",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro Diniz",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -121,11 +127,14 @@
           ],
           "tyre": "G",
           "no": 3,
-          "driver": {
-            "text": "Jacques Villeneuve",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -172,11 +181,14 @@
           ],
           "tyre": "G",
           "no": 4,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -212,11 +224,14 @@
           },
           "tyre": "G",
           "no": 5,
-          "driver": {
-            "text": "Michael Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -252,11 +267,14 @@
           },
           "tyre": "G",
           "no": 6,
-          "driver": {
-            "text": "Eddie Irvine",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Irvine",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -303,11 +321,14 @@
           ],
           "tyre": "G",
           "no": 7,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -354,62 +375,41 @@
           ],
           "tyre": "G",
           "no": 8,
-          "driver": {
-            "text": "Gerhard Berger",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-          },
-          "rounds": "1-6, 10-17"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Mild Seven",
-              "url": "https://en.wikipedia.org/wiki/Mild_Seven"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "B197",
-              "url": "https://en.wikipedia.org/wiki/Benetton_B197"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Renault RS9",
-                "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
+              "driver": {
+                "text": "Gerhard Berger",
+                "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
               },
-              "type": "V10",
-              "layout": "V",
-              "cylinders": 10
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
-              "model": {
-                "text": "Renault RS9B",
-                "url": "https://en.wikipedia.org/wiki/Renault_RS_engine"
+              "driver": {
+                "text": "Alexander Wurz",
+                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
               },
-              "type": "V10",
-              "layout": "V",
-              "cylinders": 10
+              "rounds": [
+                7,
+                8,
+                9
+              ]
             }
-          ],
-          "tyre": "G",
-          "no": 8,
-          "driver": {
-            "text": "Alexander Wurz",
-            "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-          },
-          "rounds": "7-9"
+          ]
         },
         {
           "entrant": [
@@ -456,11 +456,14 @@
           ],
           "tyre": "G",
           "no": 9,
-          "driver": {
-            "text": "Mika Häkkinen",
-            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Häkkinen",
+                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -507,11 +510,14 @@
           ],
           "tyre": "G",
           "no": 10,
-          "driver": {
-            "text": "David Coulthard",
-            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -547,11 +553,14 @@
           },
           "tyre": "G",
           "no": 11,
-          "driver": {
-            "text": "Ralf Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ralf Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -587,11 +596,14 @@
           },
           "tyre": "G",
           "no": 12,
-          "driver": {
-            "text": "Giancarlo Fisichella",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -627,51 +639,41 @@
           },
           "tyre": "B",
           "no": 14,
-          "driver": {
-            "text": "Olivier Panis",
-            "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-          },
-          "rounds": "1-7, 15-17"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Gauloises Blondes",
-              "url": "https://en.wikipedia.org/wiki/Gauloises"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Prost",
-              "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
+              "driver": {
+                "text": "Olivier Panis",
+                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                15,
+                16,
+                17
+              ]
             },
-            "engine_constructor": {
-              "text": "Mugen-Honda",
-              "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
-            }
-          },
-          "chassis": [
             {
-              "text": "JS45",
-              "url": "https://en.wikipedia.org/wiki/Prost_JS45"
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              },
+              "rounds": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             }
-          ],
-          "engine": {
-            "model": {
-              "text": "Mugen-Honda MF-301HB",
-              "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
-            },
-            "type": "V10",
-            "layout": "V",
-            "cylinders": 10
-          },
-          "tyre": "B",
-          "no": 14,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "8-14"
+          ]
         },
         {
           "entrant": [
@@ -707,11 +709,14 @@
           },
           "tyre": "B",
           "no": 15,
-          "driver": {
-            "text": "Shinji Nakano",
-            "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Shinji Nakano",
+                "url": "https://en.wikipedia.org/wiki/Shinji_Nakano"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -751,11 +756,14 @@
           },
           "tyre": "G",
           "no": 16,
-          "driver": {
-            "text": "Johnny Herbert",
-            "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Herbert",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -795,99 +803,49 @@
           },
           "tyre": "G",
           "no": 17,
-          "driver": {
-            "text": "Nicola Larini",
-            "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
-          },
-          "rounds": "1-5"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
+              "driver": {
+                "text": "Nicola Larini",
+                "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
             },
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C16",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Petronas SPE-01",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-            },
-            "type": "V10",
-            "layout": "V",
-            "cylinders": 10
-          },
-          "tyre": "G",
-          "no": 17,
-          "driver": {
-            "text": "Gianni Morbidelli",
-            "url": "https://en.wikipedia.org/wiki/Gianni_Morbidelli"
-          },
-          "rounds": "6-7, 11-16"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH"
+              "driver": {
+                "text": "Gianni Morbidelli",
+                "url": "https://en.wikipedia.org/wiki/Gianni_Morbidelli"
+              },
+              "rounds": [
+                6,
+                7,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
             },
             {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Petronas"
+              "driver": {
+                "text": "Norberto Fontana",
+                "url": "https://en.wikipedia.org/wiki/Norberto_Fontana"
+              },
+              "rounds": [
+                8,
+                9,
+                10,
+                17
+              ]
             }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Petronas",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C16",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C16"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Petronas SPE-01",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Petronas_Engineering"
-            },
-            "type": "V10",
-            "layout": "V",
-            "cylinders": 10
-          },
-          "tyre": "G",
-          "no": 17,
-          "driver": {
-            "text": "Norberto Fontana",
-            "url": "https://en.wikipedia.org/wiki/Norberto_Fontana"
-          },
-          "rounds": "8-10, 17"
+          ]
         },
         {
           "entrant": [
@@ -934,11 +892,14 @@
           ],
           "tyre": "G",
           "no": 18,
-          "driver": {
-            "text": "Jos Verstappen",
-            "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -985,11 +946,14 @@
           ],
           "tyre": "G",
           "no": 19,
-          "driver": {
-            "text": "Mika Salo",
-            "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Salo",
+                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -1020,11 +984,14 @@
           },
           "tyre": "B",
           "no": 20,
-          "driver": {
-            "text": "Ukyo Katayama",
-            "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ukyo Katayama",
+                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -1055,46 +1022,41 @@
           },
           "tyre": "B",
           "no": 21,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "1-7"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "Hart",
-              "url": "https://en.wikipedia.org/wiki/Brian_Hart_Ltd."
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "M197",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-            }
-          ],
-          "engine": {
-            "model": {
-              "text": "Hart 830",
-              "url": "https://en.wikipedia.org/wiki/Hart_830_engine"
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ]
             },
-            "type": "V8",
-            "layout": "V",
-            "cylinders": 8
-          },
-          "tyre": "B",
-          "no": 21,
-          "driver": {
-            "text": "Tarso Marques",
-            "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-          },
-          "rounds": "8-17"
+            {
+              "driver": {
+                "text": "Tarso Marques",
+                "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
+              },
+              "rounds": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1134,11 +1096,14 @@
           },
           "tyre": "B",
           "no": 22,
-          "driver": {
-            "text": "Rubens Barrichello",
-            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1178,11 +1143,14 @@
           },
           "tyre": "B",
           "no": 23,
-          "driver": {
-            "text": "Jan Magnussen",
-            "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jan Magnussen",
+                "url": "https://en.wikipedia.org/wiki/Jan_Magnussen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -1218,11 +1186,17 @@
           },
           "tyre": "B",
           "no": 24,
-          "driver": {
-            "text": "Vincenzo Sospiri",
-            "url": "https://en.wikipedia.org/wiki/Vincenzo_Sospiri"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Vincenzo Sospiri",
+                "url": "https://en.wikipedia.org/wiki/Vincenzo_Sospiri"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         },
         {
           "entrant": [
@@ -1258,11 +1232,17 @@
           },
           "tyre": "B",
           "no": 25,
-          "driver": {
-            "text": "Ricardo Rosset",
-            "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
-          },
-          "rounds": "1"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ricardo Rosset",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],

@@ -35,11 +35,14 @@
           },
           "tyre": "B",
           "no": 1,
-          "driver": {
-            "text": "Michael Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -70,11 +73,14 @@
           },
           "tyre": "B",
           "no": 2,
-          "driver": {
-            "text": "Rubens Barrichello",
-            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -105,11 +111,14 @@
           },
           "tyre": "B",
           "no": 3,
-          "driver": {
-            "text": "Mika Häkkinen",
-            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Häkkinen",
+                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -140,11 +149,14 @@
           },
           "tyre": "B",
           "no": 4,
-          "driver": {
-            "text": "David Coulthard",
-            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -170,11 +182,14 @@
           },
           "tyre": "M",
           "no": 5,
-          "driver": {
-            "text": "Ralf Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ralf Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -200,11 +215,14 @@
           },
           "tyre": "M",
           "no": 6,
-          "driver": {
-            "text": "Juan Pablo Montoya",
-            "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Juan Pablo Montoya",
+                "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -235,11 +253,14 @@
           },
           "tyre": "M",
           "no": 7,
-          "driver": {
-            "text": "Giancarlo Fisichella",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -270,11 +291,14 @@
           },
           "tyre": "M",
           "no": 8,
-          "driver": {
-            "text": "Jenson Button",
-            "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jenson Button",
+                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -305,11 +329,14 @@
           },
           "tyre": "B",
           "no": 9,
-          "driver": {
-            "text": "Olivier Panis",
-            "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Olivier Panis",
+                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -340,11 +367,14 @@
           },
           "tyre": "B",
           "no": 10,
-          "driver": {
-            "text": "Jacques Villeneuve",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -375,81 +405,50 @@
           },
           "tyre": "B",
           "no": 11,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "1-11"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jordan",
-              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
             {
-              "text": "EJ11",
-              "url": "https://en.wikipedia.org/wiki/Jordan_EJ11"
-            }
-          ],
-          "engine_†": {
-            "text": "Honda RA001E",
-            "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
-          },
-          "tyre": "B",
-          "no": 11,
-          "driver": {
-            "text": "Ricardo Zonta",
-            "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
-          },
-          "rounds": "8, 12"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jordan",
-              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+              "driver": {
+                "text": "Ricardo Zonta",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
+              },
+              "rounds": [
+                8,
+                12
+              ]
             },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
             {
-              "text": "EJ11",
-              "url": "https://en.wikipedia.org/wiki/Jordan_EJ11"
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              },
+              "rounds": [
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Honda RA001E",
-            "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
-          },
-          "tyre": "B",
-          "no": 11,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "13-17"
+          ]
         },
         {
           "entrant": [
@@ -480,46 +479,41 @@
           },
           "tyre": "B",
           "no": 12,
-          "driver": {
-            "text": "Jarno Trulli",
-            "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-          },
-          "rounds": "1-12"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "Benson & Hedges",
-              "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jordan",
-              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
             },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "chassis": [
             {
-              "text": "EJ11",
-              "url": "https://en.wikipedia.org/wiki/Jordan_EJ11"
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              },
+              "rounds": [
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Honda RA001E",
-            "url": "https://en.wikipedia.org/wiki/Honda_V10_engine"
-          },
-          "tyre": "B",
-          "no": 12,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "13-17"
+          ]
         },
         {
           "entrant": [
@@ -550,11 +544,14 @@
           },
           "tyre": "B",
           "no": 14,
-          "driver": {
-            "text": "Jos Verstappen",
-            "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -585,11 +582,14 @@
           },
           "tyre": "B",
           "no": 15,
-          "driver": {
-            "text": "Enrique Bernoldi",
-            "url": "https://en.wikipedia.org/wiki/Enrique_Bernoldi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Enrique Bernoldi",
+                "url": "https://en.wikipedia.org/wiki/Enrique_Bernoldi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -620,11 +620,14 @@
           },
           "tyre": "B",
           "no": 16,
-          "driver": {
-            "text": "Nick Heidfeld",
-            "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Nick Heidfeld",
+                "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -655,11 +658,14 @@
           },
           "tyre": "B",
           "no": 17,
-          "driver": {
-            "text": "Kimi Räikkönen",
-            "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Kimi Räikkönen",
+                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -685,11 +691,14 @@
           },
           "tyre": "M",
           "no": 18,
-          "driver": {
-            "text": "Eddie Irvine",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Irvine",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -715,41 +724,41 @@
           },
           "tyre": "M",
           "no": 19,
-          "driver": {
-            "text": "Luciano Burti",
-            "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
-          },
-          "rounds": "1-4"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Jaguar",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
-            },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "R2",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_R2"
+              "driver": {
+                "text": "Luciano Burti",
+                "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "driver": {
+                "text": "Pedro de la Rosa",
+                "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
+              },
+              "rounds": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Cosworth CR-3",
-            "url": "https://en.wikipedia.org/wiki/Cosworth_CR"
-          },
-          "tyre": "M",
-          "no": 19,
-          "driver": {
-            "text": "Pedro de la Rosa",
-            "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-          },
-          "rounds": "5-17"
+          ]
         },
         {
           "entrant": [
@@ -784,50 +793,41 @@
           },
           "tyre": "M",
           "no": 20,
-          "driver": {
-            "text": "Tarso Marques",
-            "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-          },
-          "rounds": "1-14"
-        },
-        {
-          "entrant": [
+          "race_drivers": [
             {
-              "text": "European",
-              "url": "https://en.wikipedia.org/wiki/European_Aviation_Air_Charter"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "European",
-              "url": "https://en.wikipedia.org/wiki/European_(engine)"
-            }
-          },
-          "chassis": [
-            {
-              "text": "PS01",
-              "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
+              "driver": {
+                "text": "Tarso Marques",
+                "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
-              "text": "PS01B",
-              "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
+              "driver": {
+                "text": "Alex Yoong",
+                "url": "https://en.wikipedia.org/wiki/Alex_Yoong"
+              },
+              "rounds": [
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "European",
-            "url": "https://en.wikipedia.org/wiki/European_(engine)"
-          },
-          "tyre": "M",
-          "no": 20,
-          "driver": {
-            "text": "Alex Yoong",
-            "url": "https://en.wikipedia.org/wiki/Alex_Yoong"
-          },
-          "rounds": "15-17"
+          ]
         },
         {
           "entrant": [
@@ -862,11 +862,14 @@
           },
           "tyre": "M",
           "no": 21,
-          "driver": {
-            "text": "Fernando Alonso",
-            "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Fernando Alonso",
+                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -892,71 +895,41 @@
           },
           "tyre": "M",
           "no": 22,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "1-12"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Prost",
-              "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
-            },
-            "engine_constructor": {
-              "text": "Acer",
-              "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "AP04",
-              "url": "https://en.wikipedia.org/wiki/Prost_AP04"
-            }
-          ],
-          "engine_†": {
-            "text": "Acer 01A",
-            "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-          },
-          "tyre": "M",
-          "no": 22,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "13-17"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Prost",
-              "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
             },
-            "engine_constructor": {
-              "text": "Acer",
-              "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-            }
-          },
-          "chassis": [
             {
-              "text": "AP04",
-              "url": "https://en.wikipedia.org/wiki/Prost_AP04"
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              },
+              "rounds": [
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Acer 01A",
-            "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-          },
-          "tyre": "M",
-          "no": 23,
-          "driver": {
-            "text": "Gastón Mazzacane",
-            "url": "https://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane"
-          },
-          "rounds": "1-4"
+          ]
         },
         {
           "entrant": [],
@@ -982,41 +955,49 @@
           },
           "tyre": "M",
           "no": 23,
-          "driver": {
-            "text": "Luciano Burti",
-            "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
-          },
-          "rounds": "5-14"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Prost",
-              "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
-            },
-            "engine_constructor": {
-              "text": "Acer",
-              "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "AP04",
-              "url": "https://en.wikipedia.org/wiki/Prost_AP04"
+              "driver": {
+                "text": "Gastón Mazzacane",
+                "url": "https://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "driver": {
+                "text": "Luciano Burti",
+                "url": "https://en.wikipedia.org/wiki/Luciano_Burti"
+              },
+              "rounds": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            {
+              "driver": {
+                "text": "Tomáš Enge",
+                "url": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Enge"
+              },
+              "rounds": [
+                15,
+                16,
+                17
+              ]
             }
-          ],
-          "engine_†": {
-            "text": "Acer 01A",
-            "url": "https://en.wikipedia.org/wiki/Acer_(engine)"
-          },
-          "tyre": "M",
-          "no": 23,
-          "driver": {
-            "text": "Tomáš Enge",
-            "url": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Enge"
-          },
-          "rounds": "15-17"
+          ]
         }
       ],
       "free_practice_drivers": [],

@@ -33,8 +33,7 @@
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -63,8 +62,7 @@
                 "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -98,8 +96,7 @@
                 "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -133,8 +130,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jenson_Button"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -163,8 +159,7 @@
                 "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -193,8 +188,7 @@
                 "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -228,8 +222,7 @@
                 "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -263,8 +256,7 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -297,44 +289,14 @@
                 "text": "Nick Heidfeld",
                 "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
               }
-            }
-          ],
-          "rounds": "1-11"
-        },
-        {
-          "entrant": [
-            {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Lotus_Cars"
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "R31",
-              "url": "https://en.wikipedia.org/wiki/Renault_R31"
-            }
-          ],
-          "engine": null,
-          "no": 9,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Bruno Senna",
                 "url": "https://en.wikipedia.org/wiki/Bruno_Senna"
               }
             }
-          ],
-          "rounds": "12-19"
+          ]
         },
         {
           "entrant": [
@@ -368,8 +330,7 @@
                 "url": "https://en.wikipedia.org/wiki/Vitaly_Petrov"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -403,8 +364,7 @@
                 "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -438,8 +398,7 @@
                 "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -468,8 +427,7 @@
                 "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -498,8 +456,7 @@
                 "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -528,8 +485,7 @@
                 "url": "https://en.wikipedia.org/wiki/Kamui_Kobayashi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -557,39 +513,14 @@
                 "text": "Sergio Pérez",
                 "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
               }
-            }
-          ],
-          "rounds": "All"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
             },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "chassis": [
-            {
-              "text": "C30",
-              "url": "https://en.wikipedia.org/wiki/Sauber_C30"
-            }
-          ],
-          "engine": null,
-          "no": 17,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Pedro de la Rosa",
                 "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
               }
             }
-          ],
-          "rounds": "7"
+          ]
         },
         {
           "entrant": [],
@@ -618,8 +549,7 @@
                 "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -648,8 +578,7 @@
                 "url": "https://en.wikipedia.org/wiki/Jaime_Alguersuari"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -678,8 +607,7 @@
                 "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [],
@@ -707,39 +635,14 @@
                 "text": "Jarno Trulli",
                 "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
               }
-            }
-          ],
-          "rounds": "1-9, 11-19"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus_(2010%E2%80%932011)"
             },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "chassis": [
-            {
-              "text": "T128",
-              "url": "https://en.wikipedia.org/wiki/Lotus_T128_(Formula_One_car)"
-            }
-          ],
-          "engine": null,
-          "no": 21,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Karun Chandhok",
                 "url": "https://en.wikipedia.org/wiki/Karun_Chandhok"
               }
             }
-          ],
-          "rounds": "10"
+          ]
         },
         {
           "entrant": [],
@@ -767,39 +670,14 @@
                 "text": "Narain Karthikeyan",
                 "url": "https://en.wikipedia.org/wiki/Narain_Karthikeyan"
               }
-            }
-          ],
-          "rounds": "1-8, 17"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "HRT",
-              "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
             },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F111",
-              "url": "https://en.wikipedia.org/wiki/Hispania_F111"
-            }
-          ],
-          "engine": null,
-          "no": 22,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Daniel Ricciardo",
                 "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
               }
             }
-          ],
-          "rounds": "9-16, 18-19"
+          ]
         },
         {
           "entrant": [],
@@ -827,39 +705,14 @@
                 "text": "Daniel Ricciardo",
                 "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
               }
-            }
-          ],
-          "rounds": "17"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "HRT",
-              "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
             },
-            "engine_constructor": {
-              "text": "Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Cosworth"
-            }
-          },
-          "chassis": [
-            {
-              "text": "F111",
-              "url": "https://en.wikipedia.org/wiki/Hispania_F111"
-            }
-          ],
-          "engine": null,
-          "no": 23,
-          "race_drivers": [
             {
               "driver": {
                 "text": "Vitantonio Liuzzi",
                 "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi"
               }
             }
-          ],
-          "rounds": "1-16, 18-19"
+          ]
         },
         {
           "entrant": [
@@ -893,8 +746,7 @@
                 "url": "https://en.wikipedia.org/wiki/Timo_Glock"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         },
         {
           "entrant": [
@@ -928,8 +780,7 @@
                 "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
               }
             }
-          ],
-          "rounds": "All"
+          ]
         }
       ],
       "free_practice_drivers": [

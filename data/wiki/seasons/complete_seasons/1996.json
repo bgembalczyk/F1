@@ -34,11 +34,14 @@
             "cylinders": 10
           },
           "no": 1,
-          "driver": {
-            "text": "Michael Schumacher",
-            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -68,11 +71,14 @@
             "cylinders": 10
           },
           "no": 2,
-          "driver": {
-            "text": "Eddie Irvine",
-            "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Eddie Irvine",
+                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -107,11 +113,14 @@
             "cylinders": 10
           },
           "no": 3,
-          "driver": {
-            "text": "Jean Alesi",
-            "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jean Alesi",
+                "url": "https://en.wikipedia.org/wiki/Jean_Alesi"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -146,11 +155,14 @@
             "cylinders": 10
           },
           "no": 4,
-          "driver": {
-            "text": "Gerhard Berger",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Gerhard Berger",
+                "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -185,11 +197,14 @@
             "cylinders": 10
           },
           "no": 5,
-          "driver": {
-            "text": "Damon Hill",
-            "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Damon Hill",
+                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -224,11 +239,14 @@
             "cylinders": 10
           },
           "no": 6,
-          "driver": {
-            "text": "Jacques Villeneuve",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -267,11 +285,14 @@
             "cylinders": 10
           },
           "no": 7,
-          "driver": {
-            "text": "Mika Häkkinen",
-            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Häkkinen",
+                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -310,11 +331,14 @@
             "cylinders": 10
           },
           "no": 8,
-          "driver": {
-            "text": "David Coulthard",
-            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -349,11 +373,14 @@
             "cylinders": 10
           },
           "no": 9,
-          "driver": {
-            "text": "Olivier Panis",
-            "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Olivier Panis",
+                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -388,11 +415,14 @@
             "cylinders": 10
           },
           "no": 10,
-          "driver": {
-            "text": "Pedro Diniz",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro Diniz",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -431,11 +461,14 @@
             "cylinders": 10
           },
           "no": 11,
-          "driver": {
-            "text": "Rubens Barrichello",
-            "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -474,11 +507,14 @@
             "cylinders": 10
           },
           "no": 12,
-          "driver": {
-            "text": "Martin Brundle",
-            "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Martin Brundle",
+                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -513,11 +549,14 @@
             "cylinders": 10
           },
           "no": 14,
-          "driver": {
-            "text": "Johnny Herbert",
-            "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Johnny Herbert",
+                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
+              }
+            }
+          ]
         },
         {
           "entrant": [
@@ -552,11 +591,14 @@
             "cylinders": 10
           },
           "no": 15,
-          "driver": {
-            "text": "Heinz-Harald Frentzen",
-            "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -586,11 +628,14 @@
             "cylinders": 8
           },
           "no": 16,
-          "driver": {
-            "text": "Ricardo Rosset",
-            "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ricardo Rosset",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -620,11 +665,14 @@
             "cylinders": 8
           },
           "no": 17,
-          "driver": {
-            "text": "Jos Verstappen",
-            "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -654,11 +702,14 @@
             "cylinders": 10
           },
           "no": 18,
-          "driver": {
-            "text": "Ukyo Katayama",
-            "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Ukyo Katayama",
+                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -688,11 +739,14 @@
             "cylinders": 10
           },
           "no": 19,
-          "driver": {
-            "text": "Mika Salo",
-            "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Mika Salo",
+                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -733,11 +787,14 @@
             }
           ],
           "no": 20,
-          "driver": {
-            "text": "Pedro Lamy",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Lamy"
-          },
-          "rounds": "All"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Pedro Lamy",
+                "url": "https://en.wikipedia.org/wiki/Pedro_Lamy"
+              }
+            }
+          ]
         },
         {
           "entrant": [],
@@ -778,101 +835,48 @@
             }
           ],
           "no": 21,
-          "driver": {
-            "text": "Giancarlo Fisichella",
-            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-          },
-          "rounds": "1, 4-10"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
+          "race_drivers": [
             {
-              "text": "M195B",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M195B"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ford-Cosworth EDM2",
-                "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
               },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
+              "rounds": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
-              "model": {
-                "text": "Ford-Cosworth EDM3",
-                "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
+              "driver": {
+                "text": "Tarso Marques",
+                "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
               },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
-            }
-          ],
-          "no": 21,
-          "driver": {
-            "text": "Tarso Marques",
-            "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-          },
-          "rounds": "2-3"
-        },
-        {
-          "entrant": [],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "chassis": [
-            {
-              "text": "M195B",
-              "url": "https://en.wikipedia.org/wiki/Minardi_M195B"
-            }
-          ],
-          "engine": [
-            {
-              "model": {
-                "text": "Ford-Cosworth EDM2",
-                "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
-              },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
+              "rounds": [
+                2,
+                3
+              ]
             },
             {
-              "model": {
-                "text": "Ford-Cosworth EDM3",
-                "url": "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"
+              "driver": {
+                "text": "Giovanni Lavaggi",
+                "url": "https://en.wikipedia.org/wiki/Giovanni_Lavaggi"
               },
-              "type": "V8",
-              "layout": "V",
-              "cylinders": 8
+              "rounds": [
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
             }
-          ],
-          "no": 21,
-          "driver": {
-            "text": "Giovanni Lavaggi",
-            "url": "https://en.wikipedia.org/wiki/Giovanni_Lavaggi"
-          },
-          "rounds": "11-16"
+          ]
         },
         {
           "entrant": [],
@@ -906,11 +910,26 @@
             "cylinders": 8
           },
           "no": 22,
-          "driver": {
-            "text": "Luca Badoer",
-            "url": "https://en.wikipedia.org/wiki/Luca_Badoer"
-          },
-          "rounds": "1-10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Luca Badoer",
+                "url": "https://en.wikipedia.org/wiki/Luca_Badoer"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ]
         },
         {
           "entrant": [],
@@ -944,11 +963,26 @@
             "cylinders": 8
           },
           "no": 23,
-          "driver": {
-            "text": "Andrea Montermini",
-            "url": "https://en.wikipedia.org/wiki/Andrea_Montermini"
-          },
-          "rounds": "1-10"
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Andrea Montermini",
+                "url": "https://en.wikipedia.org/wiki/Andrea_Montermini"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ]
         }
       ],
       "free_practice_drivers": [],
