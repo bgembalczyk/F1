@@ -738,13 +738,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 10/",
+              "text": "Maserati 10/F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "displacement_l": 3.0,
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
           },
           "tyre": "F",
           "race_drivers": [
@@ -1182,13 +1182,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 9/",
+              "text": "Maserati 9/F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "displacement_l": 3.0,
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
           },
           "tyre": "F",
           "race_drivers": [
@@ -1288,13 +1288,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Maserati 9/",
+              "text": "Maserati 9/F1",
               "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
             },
             "displacement_l": 3.0,
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12
           },
           "tyre": "F",
           "race_drivers": [

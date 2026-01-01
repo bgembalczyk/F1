@@ -24,19 +24,12 @@
               "url": "https://en.wikipedia.org/wiki/Caterham_CT05"
             }
           ],
-          "power_unit": [
-            {
-              "model": {
-                "text": "Renault Energy",
-                "url": null
-              }
-            },
-            {
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+          "power_unit": {
+            "model": {
+              "text": "Renault Energy",
+              "url": null
             }
-          ],
+          },
           "no": 9,
           "race_drivers": [
             {
@@ -138,19 +131,12 @@
               "url": "https://en.wikipedia.org/wiki/Lotus_E22"
             }
           ],
-          "power_unit": [
-            {
-              "model": {
-                "text": "Renault Energy",
-                "url": null
-              }
-            },
-            {
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+          "power_unit": {
+            "model": {
+              "text": "Renault Energy",
+              "url": null
             }
-          ],
+          },
           "no": 8,
           "race_drivers": [
             {
@@ -291,19 +277,12 @@
               "url": "https://en.wikipedia.org/wiki/Red_Bull_RB10"
             }
           ],
-          "power_unit": [
-            {
-              "model": {
-                "text": "Renault Energy",
-                "url": null
-              }
-            },
-            {
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+          "power_unit": {
+            "model": {
+              "text": "Renault Energy",
+              "url": null
             }
-          ],
+          },
           "no": 1,
           "race_drivers": [
             {
@@ -366,19 +345,12 @@
               "url": "https://en.wikipedia.org/wiki/Toro_Rosso_STR9"
             }
           ],
-          "power_unit": [
-            {
-              "model": {
-                "text": "Renault Energy",
-                "url": null
-              }
-            },
-            {
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+          "power_unit": {
+            "model": {
+              "text": "Renault Energy",
+              "url": null
             }
-          ],
+          },
           "no": 25,
           "race_drivers": [
             {

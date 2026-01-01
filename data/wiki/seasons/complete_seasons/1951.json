@@ -269,13 +269,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta F2",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
             "displacement_l": 2.0,
-            "type": "F2",
-            "layout": "F",
-            "cylinders": 2
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [

@@ -1606,13 +1606,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Subaru 1235",
+              "text": "Subaru 1235 F12",
               "url": "https://en.wikipedia.org/wiki/Subaru_1235"
             },
-            "displacement_l": 3.5,
-            "type": "F12",
-            "layout": "F",
-            "cylinders": 12
+            "displacement_l": 3.5
           },
           "tyre": "G",
           "no": 31,
@@ -1947,13 +1944,13 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Life",
+              "text": "Life F35",
               "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
             },
             "displacement_l": 3.5,
-            "type": "F35",
-            "layout": "F",
-            "cylinders": 35
+            "type": "W12",
+            "layout": "W",
+            "cylinders": 12
           },
           "tyre": "G",
           "no": 39,

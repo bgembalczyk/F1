@@ -322,13 +322,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta F2",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
             "displacement_l": 2.0,
-            "type": "F2",
-            "layout": "F",
-            "cylinders": 2
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1069,13 +1069,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth",
+              "text": "Butterworth F4",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
-            "displacement_l": 2.0,
-            "type": "F4",
-            "layout": "F",
-            "cylinders": 4
+            "displacement_l": 2.0
           },
           "tyre": "D",
           "race_drivers": [
@@ -1115,13 +1112,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Alta",
+              "text": "Alta F2",
               "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
             },
             "displacement_l": 2.0,
-            "type": "F2",
-            "layout": "F",
-            "cylinders": 2
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
           },
           "tyre": "D",
           "race_drivers": [
@@ -1215,13 +1212,13 @@
           "engine": [
             {
               "model": {
-                "text": "Alta",
+                "text": "Alta F2",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
               },
               "displacement_l": 2.0,
-              "type": "F2",
-              "layout": "F",
-              "cylinders": 2
+              "type": "L4",
+              "layout": "L",
+              "cylinders": 4
             },
             {
               "model": {
@@ -1478,13 +1475,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth",
+              "text": "Butterworth F4",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
-            "displacement_l": 2.0,
-            "type": "F4",
-            "layout": "F",
-            "cylinders": 4
+            "displacement_l": 2.0
           },
           "tyre": "D",
           "race_drivers": [

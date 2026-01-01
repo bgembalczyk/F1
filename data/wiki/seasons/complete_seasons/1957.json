@@ -1158,13 +1158,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3",
+              "text": "Porsche 547/3 F4",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
-            "displacement_l": 1.5,
-            "type": "F4",
-            "layout": "F",
-            "cylinders": 4
+            "displacement_l": 1.5
           },
           "tyre": "?",
           "race_drivers": [
@@ -1279,13 +1276,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3",
+              "text": "Porsche 547/3 F4",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
-            "displacement_l": 1.5,
-            "type": "F4",
-            "layout": "F",
-            "cylinders": 4
+            "displacement_l": 1.5
           },
           "tyre": "D",
           "race_drivers": [

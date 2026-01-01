@@ -767,23 +767,17 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 001/11",
+                "text": "Ferrari 001/11 F12",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {
-                "text": "Ferrari 015",
+                "text": "Ferrari 015 F12",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             }
           ],
           "tyre": "G",
@@ -827,23 +821,17 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 001/11",
+                "text": "Ferrari 001/11 F12",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {
-                "text": "Ferrari 015",
+                "text": "Ferrari 015 F12",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             }
           ],
           "tyre": "G",

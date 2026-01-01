@@ -352,13 +352,10 @@
           "engine": [
             {
               "model": {
-                "text": "Alfa Romeo 115-12",
+                "text": "Alfa Romeo 115-12 F12",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {
@@ -434,13 +431,10 @@
           "engine": [
             {
               "model": {
-                "text": "Alfa Romeo 115-12",
+                "text": "Alfa Romeo 115-12 F12",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {
@@ -826,13 +820,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 015",
+              "text": "Ferrari 015 F12",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
-            "displacement_l": 3.0,
-            "type": "F12",
-            "layout": "F",
-            "cylinders": 12
+            "displacement_l": 3.0
           },
           "tyres": {
             "text": "M",
@@ -881,13 +872,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 015",
+              "text": "Ferrari 015 F12",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
-            "displacement_l": 3.0,
-            "type": "F12",
-            "layout": "F",
-            "cylinders": 12
+            "displacement_l": 3.0
           },
           "tyres": {
             "text": "M",
@@ -2006,13 +1994,10 @@
           "engine": [
             {
               "model": {
-                "text": "Alfa Romeo 115-12",
+                "text": "Alfa Romeo 115-12 F12",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {
@@ -2075,13 +2060,10 @@
           "engine": [
             {
               "model": {
-                "text": "Alfa Romeo 115-12",
+                "text": "Alfa Romeo 115-12 F12",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
               },
-              "displacement_l": 3.0,
-              "type": "F12",
-              "layout": "F",
-              "cylinders": 12
+              "displacement_l": 3.0
             },
             {
               "model": {

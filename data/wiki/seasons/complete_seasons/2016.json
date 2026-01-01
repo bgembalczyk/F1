@@ -253,12 +253,9 @@
           ],
           "power_unit": {
             "model": {
-              "text": "TAG Heuer -2016",
+              "text": "TAG Heuer F1-2016",
               "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            },
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            }
           },
           "race_drivers": [
             {

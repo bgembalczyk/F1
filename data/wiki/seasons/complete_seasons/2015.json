@@ -249,12 +249,9 @@
           ],
           "power_unit": {
             "model": {
-              "text": "Renault Energy -2015",
+              "text": "Renault Energy F1-2015",
               "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            },
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            }
           },
           "no": 3,
           "race_drivers": [
@@ -320,12 +317,9 @@
           ],
           "power_unit": {
             "model": {
-              "text": "Renault Energy -2015",
+              "text": "Renault Energy F1-2015",
               "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
-            },
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1
+            }
           },
           "no": 33,
           "race_drivers": [

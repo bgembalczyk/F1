@@ -305,13 +305,10 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 001/1",
+              "text": "Ferrari 001/1 F12",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
-            "displacement_l": 3.0,
-            "type": "F12",
-            "layout": "F",
-            "cylinders": 12
+            "displacement_l": 3.0
           },
           "tyre": "F",
           "race_drivers": [
@@ -1156,13 +1153,10 @@
           "chassis": [],
           "engine": {
             "model": {
-              "text": "Tecno Series-P",
+              "text": "Tecno Series-P F12",
               "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
             },
-            "displacement_l": 3.0,
-            "type": "F12",
-            "layout": "F",
-            "cylinders": 12
+            "displacement_l": 3.0
           },
           "tyre": "F",
           "race_drivers": [

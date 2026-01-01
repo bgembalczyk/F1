@@ -1156,13 +1156,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Ferrari 125",
+              "text": "Ferrari 125 F1",
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             },
             "displacement_l": 1.5,
-            "type": "F1",
-            "layout": "F",
-            "cylinders": 1,
+            "type": "V12",
+            "layout": "V",
+            "cylinders": 12,
             "supercharged": true
           },
           "tyre": "D",
@@ -1218,44 +1218,44 @@
           "engine": [
             {
               "model": {
-                "text": "Ferrari 125",
+                "text": "Ferrari 125 F1",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "displacement_l": 1.5,
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1,
+              "type": "V12",
+              "layout": "V",
+              "cylinders": 12,
               "supercharged": true
             },
             {
               "model": {
-                "text": "Ferrari 166",
+                "text": "Ferrari 166 F2",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "displacement_l": 2.0,
-              "type": "F2",
-              "layout": "F",
-              "cylinders": 2
+              "type": "V12",
+              "layout": "V",
+              "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari 275",
+                "text": "Ferrari 275 F1",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "displacement_l": 3.3,
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+              "type": "V12",
+              "layout": "V",
+              "cylinders": 12
             },
             {
               "model": {
-                "text": "Ferrari 375",
+                "text": "Ferrari 375 F1",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
               "displacement_l": 4.5,
-              "type": "F1",
-              "layout": "F",
-              "cylinders": 1
+              "type": "V12",
+              "layout": "V",
+              "cylinders": 12
             }
           ],
           "tyre": "P",
