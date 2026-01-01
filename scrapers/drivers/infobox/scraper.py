@@ -300,12 +300,21 @@ class DriverInfoboxScraper:
 
     def _extract_year_links(self, cell: Tag) -> List[LinkRecord]:
         links = [link for link in self._extract_links(cell) if self._is_year_link(link)]
-        if links:
-            return links
-
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         years = re.findall(r"\b\d{4}(?:[-–]\d{4})?\b", text)
-        return [{"text": year, "url": None} for year in years]
+
+        if not years:
+            return links
+
+        link_lookup = {link.get("text"): link for link in links if link.get("text")}
+        results: List[LinkRecord] = []
+        for year in years:
+            link = link_lookup.get(year)
+            if link:
+                results.append(link)
+            else:
+                results.append({"text": year, "url": None})
+        return results
 
     @staticmethod
     def _is_year_link(link: LinkRecord) -> bool:
