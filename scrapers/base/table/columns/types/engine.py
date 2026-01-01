@@ -91,6 +91,7 @@ def _parse_engine_segment(
         clean_text,
         type_text=type_text,
         supercharged=supercharged,
+        displacement=displacement,
     )
     if model and model_text:
         model = {**model, "text": model_text}
@@ -114,9 +115,14 @@ def _parse_engine_segment(
 def _extract_displacement(text: str) -> float | None:
     match = re.search(r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", text, re.I)
     if not match:
-        return None
+        match = re.search(r"\b(\d+(?:\.\d+))\b", text)
+        if not match:
+            return None
     try:
-        return float(match.group(1))
+        value = float(match.group(1))
+        if value <= 0 or value > 10:
+            return None
+        return value
     except ValueError:
         return None
 
@@ -184,6 +190,7 @@ def _extract_model_text(
     *,
     type_text: str | None,
     supercharged: bool | None,
+    displacement: float | None,
 ) -> str | None:
     if not text:
         return None
@@ -201,5 +208,7 @@ def _extract_model_text(
     if supercharged:
         cleaned = re.sub(r"\b(supercharger|supercharged)\b", "", cleaned, flags=re.I)
         cleaned = re.sub(r"(?:^|\s)s$", "", cleaned, flags=re.I)
+    if displacement is not None:
+        cleaned = re.sub(rf"\b{re.escape(str(displacement))}\b", "", cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
     return cleaned or None
