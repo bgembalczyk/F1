@@ -1225,10 +1225,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth F4",
+              "text": "Butterworth",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
-            "displacement_l": 2.0
+            "displacement_l": 2.0,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {
@@ -1759,10 +1762,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Butterworth F4",
+              "text": "Butterworth",
               "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
             },
-            "displacement_l": 2.0
+            "displacement_l": 2.0,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {

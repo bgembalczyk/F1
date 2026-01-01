@@ -503,17 +503,23 @@
           "engine": [
             {
               "model": {
-                "text": "Porsche 753 F8",
+                "text": "Porsche 753",
                 "url": "https://en.wikipedia.org/wiki/Porsche"
               },
-              "displacement_l": 1.5
+              "displacement_l": 1.5,
+              "type": "F8",
+              "layout": "F",
+              "cylinders": 8
             },
             {
               "model": {
-                "text": "Porsche 547/3 F4",
+                "text": "Porsche 547/3",
                 "url": "https://en.wikipedia.org/wiki/Porsche"
               },
-              "displacement_l": 1.5
+              "displacement_l": 1.5,
+              "type": "F4",
+              "layout": "F",
+              "cylinders": 4
             }
           ],
           "race_drivers": [
@@ -592,10 +598,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 547/3 F4",
+                  "text": "Porsche 547/3",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "type": "F4",
+                "layout": "F",
+                "cylinders": 4
               },
               "race_drivers": [
                 {
@@ -1036,10 +1045,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 547/3 F4",
+                  "text": "Porsche 547/3",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "type": "F4",
+                "layout": "F",
+                "cylinders": 4
               },
               "race_drivers": [
                 {
@@ -1127,10 +1139,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 547/3 F4",
+                  "text": "Porsche 547/3",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "type": "F4",
+                "layout": "F",
+                "cylinders": 4
               },
               "race_drivers": [
                 {
@@ -1664,10 +1679,13 @@
           ],
           "engine": {
             "model": {
-              "text": "De Tomaso F8",
+              "text": "De Tomaso",
               "url": "https://en.wikipedia.org/wiki/De_Tomaso"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "type": "F8",
+            "layout": "F",
+            "cylinders": 8
           },
           "race_drivers": [
             {

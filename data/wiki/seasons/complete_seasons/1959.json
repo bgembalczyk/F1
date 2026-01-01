@@ -36,10 +36,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 547/3 F4",
+                  "text": "Porsche 547/3",
                   "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "type": "F4",
+                "layout": "F",
+                "cylinders": 4
               },
               "tyre": [
                 {
@@ -80,10 +83,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 547/3 F4",
+                  "text": "Porsche 547/3",
                   "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
                 },
-                "displacement_l": 1.5
+                "displacement_l": 1.5,
+                "type": "F4",
+                "layout": "F",
+                "cylinders": 4
               },
               "tyre": [
                 {
@@ -1272,10 +1278,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 F4",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {
@@ -2031,10 +2040,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 F4",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {
@@ -2353,10 +2365,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 F4",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {

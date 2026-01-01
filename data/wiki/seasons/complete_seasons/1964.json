@@ -1100,10 +1100,13 @@
             },
             {
               "model": {
-                "text": "Ferrari 207 F12",
+                "text": "Ferrari 207",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 1.5
+              "displacement_l": 1.5,
+              "type": "F12",
+              "layout": "F",
+              "cylinders": 12
             }
           ],
           "tyre": [
@@ -1282,10 +1285,13 @@
           ],
           "engine": {
             "model": {
-              "text": "Porsche 547/3 F4",
+              "text": "Porsche 547/3",
               "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport#Formula_One"
             },
-            "displacement_l": 1.5
+            "displacement_l": 1.5,
+            "type": "F4",
+            "layout": "F",
+            "cylinders": 4
           },
           "tyre": [
             {

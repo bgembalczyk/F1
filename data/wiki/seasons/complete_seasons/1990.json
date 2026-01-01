@@ -1289,10 +1289,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Subaru 1235 F12",
+                  "text": "Subaru 1235",
                   "url": "https://en.wikipedia.org/wiki/Subaru_1235"
                 },
-                "displacement_l": 3.5
+                "displacement_l": 3.5,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "tyre": [
                 {

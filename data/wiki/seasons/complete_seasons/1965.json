@@ -60,10 +60,13 @@
             },
             {
               "model": {
-                "text": "Ferrari 207 F12",
+                "text": "Ferrari 207",
                 "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
               },
-              "displacement_l": 1.5
+              "displacement_l": 1.5,
+              "type": "F12",
+              "layout": "F",
+              "cylinders": 12
             }
           ],
           "tyre": [
