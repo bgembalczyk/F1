@@ -1394,6 +1394,41 @@
           "Gold"
         ],
         "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          {
+            "text": "Scicon Micro Systems ARCO Graphite"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": [],
         "main_sponsors": [
           {
             "text": "Warsteiner",
@@ -1417,41 +1452,6 @@
             "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
           },
           "to": null
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          {
-            "text": "Scicon Micro Systems ARCO Graphite"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Long Beach Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
-            }
-          ]
         }
       },
       {
@@ -3040,8 +3040,7 @@
         ],
         "additional_colours": [
           "Lime green",
-          "Black",
-          "White (2025)"
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -3129,8 +3128,7 @@
         ],
         "additional_colours": [
           "Lime green",
-          "Black",
-          "White (2025)"
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -3242,8 +3240,7 @@
         ],
         "additional_colours": [
           "Lime green",
-          "Black",
-          "White (2025)"
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -3342,7 +3339,7 @@
         "additional_colours": [
           "Lime green",
           "Black",
-          "White (2025)"
+          "White"
         ],
         "main_sponsors": [
           {
@@ -8633,80 +8630,6 @@
         "main_colours": [
           "Black"
         ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
-          }
-        ],
-        "additional_major_sponsors": [
-          "Elan"
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "South African Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Swedish Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
-            },
-            {
-              "text": "German Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
-            },
-            {
-              "text": "British Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
         "main_sponsors": [],
         "additional_major_sponsors": [
           "Elan",
@@ -8766,6 +8689,80 @@
             {
               "text": "Austrian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
+          }
+        ],
+        "additional_major_sponsors": [
+          "Elan"
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
+            },
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
+            },
+            {
+              "text": "Swedish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
+            },
+            {
+              "text": "German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
+            },
+            {
+              "text": "British Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             }
           ]
         }
@@ -9961,79 +9958,266 @@
           {
             "year": 1950,
             "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1951,
             "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1952,
             "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1953,
             "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1954,
             "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1955,
             "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1956,
             "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1957,
             "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1958,
             "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1959,
             "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1960,
             "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1961,
             "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1962,
             "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1963,
             "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1964,
             "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red",
+          "Blue"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1965,
             "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1966,
             "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
-          },
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [],
+        "main_sponsors": [],
+        "additional_major_sponsors": [],
+        "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
+      },
+      {
+        "season": [
           {
             "year": 1967,
             "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
           }
         ],
         "main_colours": [
-          "Red",
-          "Blue (1964 United States and Mexican Grands Prix)"
+          "Red"
         ],
         "additional_colours": [],
         "main_sponsors": [],
@@ -18403,9 +18587,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18436,9 +18618,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18477,9 +18657,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18510,9 +18688,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18547,9 +18723,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18584,9 +18758,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18618,8 +18790,7 @@
         ],
         "additional_colours": [
           "White",
-          "Red (1982",
-          "1984)"
+          "Red ("
         ],
         "livery_sponsors": [
           {
@@ -18654,9 +18825,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18691,7 +18860,6 @@
         ],
         "additional_colours": [
           "White",
-          "Red (1982",
           "1984)"
         ],
         "livery_sponsors": [
@@ -18735,9 +18903,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18776,9 +18942,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18821,9 +18985,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18858,9 +19020,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18891,9 +19051,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18928,9 +19086,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18977,9 +19133,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Red (1982",
-          "1984)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -19007,16 +19161,11 @@
           }
         ],
         "main_colours": [
-          "Blue",
-          "White(1993)"
+          "Blue"
         ],
         "additional_colours": [
           "White",
-          "Blue (1993)",
-          "Black (1991",
-          "1993)",
-          "Red (1992",
-          "1994)"
+          "Black ("
         ],
         "livery_sponsors": [
           {
@@ -19056,16 +19205,11 @@
           }
         ],
         "main_colours": [
-          "Blue",
-          "White(1993)"
+          "Blue"
         ],
         "additional_colours": [
           "White",
-          "Blue (1993)",
-          "Black (1991",
-          "1993)",
-          "Red (1992",
-          "1994)"
+          "Red ("
         ],
         "livery_sponsors": [
           {
@@ -19109,15 +19253,12 @@
         ],
         "main_colours": [
           "Blue",
-          "White(1993)"
+          "White"
         ],
         "additional_colours": [
           "White",
-          "Blue (1993)",
-          "Black (1991",
-          "1993)",
-          "Red (1992",
-          "1994)"
+          "Blue",
+          "1993)"
         ],
         "livery_sponsors": [
           {
@@ -19159,15 +19300,10 @@
           }
         ],
         "main_colours": [
-          "Blue",
-          "White(1993)"
+          "Blue"
         ],
         "additional_colours": [
           "White",
-          "Blue (1993)",
-          "Black (1991",
-          "1993)",
-          "Red (1992",
           "1994)"
         ],
         "livery_sponsors": [
@@ -19211,16 +19347,10 @@
           }
         ],
         "main_colours": [
-          "Blue",
-          "White(1993)"
+          "Blue"
         ],
         "additional_colours": [
-          "White",
-          "Blue (1993)",
-          "Black (1991",
-          "1993)",
-          "Red (1992",
-          "1994)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -20126,7 +20256,94 @@
           {
             "year": 1991,
             "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Green"
+        ],
+        "additional_colours": [
+          "White"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "BP",
+            "url": "https://en.wikipedia.org/wiki/BP"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Hitachi",
+            "url": "https://en.wikipedia.org/wiki/Hitachi,_Ltd."
           },
+          {
+            "text": "Tamiya",
+            "url": "https://en.wikipedia.org/wiki/Tamiya_Corporation"
+          },
+          {
+            "text": "Tommy Hilfiger",
+            "url": "https://en.wikipedia.org/wiki/Tommy_Hilfiger_Corporation"
+          },
+          {
+            "text": "Komatsu",
+            "url": "https://en.wikipedia.org/wiki/Komatsu_Limited"
+          },
+          {
+            "text": "Nichibutsu",
+            "url": "https://en.wikipedia.org/wiki/Nichibutsu"
+          },
+          {
+            "text": "Shionogi",
+            "url": "https://en.wikipedia.org/wiki/Shionogi"
+          },
+          {
+            "text": "Castrol",
+            "url": "https://en.wikipedia.org/wiki/Castrol"
+          },
+          "Yellow Hat",
+          {
+            "text": "Dirt Devil",
+            "url": "https://en.wikipedia.org/wiki/Dirt_Devil"
+          },
+          {
+            "text": "Frazer-Nash",
+            "url": "https://en.wikipedia.org/wiki/Kamkorp"
+          },
+          "Secol",
+          {
+            "text": "Neste",
+            "url": "https://en.wikipedia.org/wiki/Neste"
+          },
+          {
+            "text": "NGK",
+            "url": "https://en.wikipedia.org/wiki/Niterra"
+          },
+          "Eurojersey",
+          "GWS",
+          {
+            "text": "Eibach",
+            "url": "https://en.wikipedia.org/wiki/Eibach_(company)"
+          },
+          "Sematic",
+          "Momo",
+          {
+            "text": "Raychem",
+            "url": "https://en.wikipedia.org/wiki/Raychem"
+          },
+          "Lobo",
+          "David Charles",
+          {
+            "text": "Iltalehti",
+            "url": "https://en.wikipedia.org/wiki/Iltalehti"
+          },
+          {
+            "text": "Sukhoi",
+            "url": "https://en.wikipedia.org/wiki/Sukhoi"
+          }
+        ],
+        "non-tobacco_alcohol_livery_changes": null
+      },
+      {
+        "season": [
           {
             "year": 1992,
             "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
@@ -20136,8 +20353,7 @@
           "Green"
         ],
         "additional_colours": [
-          "White (1991)",
-          "Yellow (1992)"
+          "Yellow"
         ],
         "livery_sponsors": [
           {
@@ -22200,48 +22416,6 @@
         "main_colours": [
           "White"
         ],
-        "livery_sponsors": [
-          {
-            "text": "Theodore Racing Hong Kong",
-            "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Champion",
-            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
-          },
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Hans-Joachim Stuck",
-            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
-          }
-        ],
-        "main_colours": [
-          "White"
-        ],
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -22266,6 +22440,48 @@
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Theodore Racing Hong Kong",
+            "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             }
           ]
         }
@@ -23775,9 +23991,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -23803,9 +24017,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [],
@@ -23822,9 +24034,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [],
@@ -23841,9 +24051,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [],
@@ -23861,8 +24069,8 @@
         ],
         "additional_colours": [
           "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Blue",
+          "Gold"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -23885,8 +24093,8 @@
         ],
         "additional_colours": [
           "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Blue",
+          "Gold"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -23912,9 +24120,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -23940,9 +24146,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -23976,9 +24180,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [],
@@ -23995,9 +24197,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24023,9 +24223,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24058,9 +24256,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24082,9 +24278,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24105,9 +24299,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24129,9 +24321,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24157,9 +24347,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24181,9 +24369,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [],
@@ -24200,9 +24386,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24227,9 +24411,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24251,9 +24433,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24279,9 +24459,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24307,9 +24485,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -24346,9 +24522,7 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue (1978-1979)",
-          "Gold (1978-1979)"
+          "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
@@ -34380,6 +34554,37 @@
         "main_colours": [
           "Black"
         ],
+        "livery_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline F&S Properties"
+          }
+        ],
+        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
         "livery_sponsors": [
           {
             "text": "BiC",
@@ -34418,20 +34623,11 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-            }
-          ]
+          "type": "other"
         }
       },
       {
@@ -34449,11 +34645,20 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "other"
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
         }
       },
       {
@@ -34504,20 +34709,11 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-            }
-          ]
+          "type": "other"
         }
       },
       {
@@ -34535,11 +34731,20 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "other"
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
         }
       },
       {
@@ -34602,20 +34807,11 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-            }
-          ]
+          "type": "other"
         }
       },
       {
@@ -34633,11 +34829,20 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "other"
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
         }
       },
       {
@@ -34669,37 +34874,6 @@
             {
               "text": "Japanese Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline F&S Properties"
-          }
-        ],
-        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             }
           ]
         }
@@ -38304,69 +38478,6 @@
           "White",
           "Blue"
         ],
-        "livery_sponsors": [
-          {
-            "text": "Candy Denim Musk"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "notes": null,
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "San Marino Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            {
-              "text": "Belgian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Italian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            {
-              "text": "Caesars Palace Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1982,
-            "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Michele Alboreto",
-            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-          },
-          {
-            "text": "Slim Borgudd",
-            "url": "https://en.wikipedia.org/wiki/Slim_Borgudd"
-          },
-          {
-            "text": "Brian Henton",
-            "url": "https://en.wikipedia.org/wiki/Brian_Henton"
-          }
-        ],
-        "main_colours": [
-          "White",
-          "Blue"
-        ],
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -38485,6 +38596,69 @@
             {
               "text": "Italian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1982,
+            "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Michele Alboreto",
+            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+          },
+          {
+            "text": "Slim Borgudd",
+            "url": "https://en.wikipedia.org/wiki/Slim_Borgudd"
+          },
+          {
+            "text": "Brian Henton",
+            "url": "https://en.wikipedia.org/wiki/Brian_Henton"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Blue"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Candy Denim Musk"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "notes": null,
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "San Marino Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
+            },
+            {
+              "text": "Belgian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
+            },
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
+            },
+            {
+              "text": "Italian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
+            },
+            {
+              "text": "Caesars Palace Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
             }
           ]
         }
