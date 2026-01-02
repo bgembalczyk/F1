@@ -9,8 +9,10 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
+from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.driver_rounds import DriversWithRoundsColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
@@ -93,6 +95,9 @@ class SingleSeasonScraper(F1Scraper):
                 "Race drivers": "race_drivers",
                 "Race driver(s)": "race_drivers",
                 "No.": "no",
+                "Driver name": "drivers",
+                "Driver": "drivers",
+                "Rounds": "rounds",
                 "Engine": "engine",
                 "Tyre": "tyre",
             },
@@ -103,6 +108,8 @@ class SingleSeasonScraper(F1Scraper):
                 "power_unit": EngineColumn(),
                 "race_drivers": DriversWithRoundsColumn(),
                 "no": IntColumn(),
+                "drivers": DriverListColumn(),
+                "rounds": BrListColumn(),
                 "engine": EngineColumn(),
                 "tyre": TyreColumn(),
             },
@@ -248,10 +255,20 @@ class SingleSeasonScraper(F1Scraper):
         driver_items = (
             driver_value if isinstance(driver_value, list) else [driver_value]
         )
-        rounds = self._normalize_rounds(record.get("rounds") or record.get("races"))
+        rounds_value = record.get("rounds") or record.get("races")
 
+        if isinstance(rounds_value, list) and len(rounds_value) == len(driver_items):
+            for driver, rounds_item in zip(driver_items, rounds_value):
+                entry: dict[str, Any] = {"driver": driver}
+                rounds = self._normalize_rounds(rounds_item)
+                if rounds:
+                    entry["rounds"] = rounds
+                drivers.append(entry)
+            return drivers
+
+        rounds = self._normalize_rounds(rounds_value)
         for driver in driver_items:
-            entry: dict[str, Any] = {"driver": driver}
+            entry = {"driver": driver}
             if rounds:
                 entry["rounds"] = rounds
             drivers.append(entry)
