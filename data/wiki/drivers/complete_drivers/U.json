@@ -815,17 +815,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st ( 1968 , 1974 )",
-                  "links": [
-                    {
-                      "text": "1968",
-                      "url": "https://en.wikipedia.org/wiki/1968_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "1974",
-                      "url": "https://en.wikipedia.org/wiki/1974_USAC_Championship_Car_season"
-                    }
-                  ]
+                  "result": "1st ( 1968 , 1974 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -1065,38 +1059,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -7323,38 +7302,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",

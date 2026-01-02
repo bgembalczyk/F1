@@ -97,7 +97,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1991,
-                  "end": 1999
+                  "end": 1994
                 }
               },
               {
@@ -137,38 +137,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -208,21 +193,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "1996-1998 , 2001",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_CART_season"
-                    },
-                    {
-                      "text": "1998",
-                      "url": "https://en.wikipedia.org/wiki/1998_CART_FedEx_Championship_Series"
-                    },
-                    {
-                      "text": "2001",
-                      "url": "https://en.wikipedia.org/wiki/2001_CART_season"
-                    }
-                  ]
+                  "start": 1996,
+                  "end": 1998
                 }
               },
               {
@@ -244,17 +216,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st ( 1997 ), ( 1998 )",
-                  "links": [
-                    {
-                      "text": "1997",
-                      "url": "https://en.wikipedia.org/wiki/1997_CART_season"
-                    },
-                    {
-                      "text": "1998",
-                      "url": "https://en.wikipedia.org/wiki/1998_CART_season"
-                    }
-                  ]
+                  "result": "1st ( 1997 ), ( 1998 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -367,35 +333,46 @@
         ],
         "previous_series": [
           {
-            "years": [],
-            "series": [
+            "title": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "years": [
               {
-                "text": "DTM",
-                "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+                "text": "2018",
+                "url": null
               },
               {
-                "text": "Italian Superturismo",
-                "url": "https://en.wikipedia.org/wiki/Italian_Superturismo"
+                "text": "1992",
+                "url": null
               },
               {
-                "text": "ETCC",
-                "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
+                "text": "2005",
+                "url": null
               },
               {
-                "text": "CART FedEx Championship Series",
-                "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+                "text": "2003",
+                "url": null
               },
               {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
+                "text": "1996",
+                "url": null
               },
               {
-                "text": "F3000 International",
-                "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
+                "text": "2001",
+                "url": null
               },
               {
-                "text": "Italian F3",
-                "url": "https://en.wikipedia.org/wiki/Italian_F3"
+                "text": "1991",
+                "url": null
+              },
+              {
+                "text": "1989",
+                "url": null
+              },
+              {
+                "text": "1988",
+                "url": null
               }
             ]
           }
@@ -6507,38 +6484,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -7044,7 +7006,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1999,
-                  "end": 2005
+                  "end": 2001
                 }
               },
               {
@@ -7080,38 +7042,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": 3.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -7261,38 +7208,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -8407,38 +8339,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",

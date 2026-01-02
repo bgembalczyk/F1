@@ -95,38 +95,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -264,38 +249,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -1457,13 +1427,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "6th ( 1948 )",
-                  "links": [
-                    {
-                      "text": "1948",
-                      "url": "https://en.wikipedia.org/wiki/1948_AAA_Championship_Car_season"
-                    }
-                  ]
+                  "result": "6th ( 1948 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -1578,7 +1546,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1950,
-                  "end": 1954
+                  "end": 1951
                 }
               },
               {
@@ -1610,38 +1578,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "9",
-                  "links": []
-                }
+                "value": 9.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "First entry",
@@ -1784,38 +1737,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -1935,17 +1873,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st ( 1959 , 1962 )",
-                  "links": [
-                    {
-                      "text": "1959",
-                      "url": "https://en.wikipedia.org/wiki/1959_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "1962",
-                      "url": "https://en.wikipedia.org/wiki/1962_USAC_Championship_Car_season"
-                    }
-                  ]
+                  "result": "1st ( 1959 , 1962 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -2157,7 +2089,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1951,
-                  "end": 1963
+                  "end": 1960
                 }
               },
               {
@@ -2209,38 +2141,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "14",
-                  "links": []
-                }
+                "value": 14.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -2392,7 +2309,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1981,
-                  "end": 1993
+                  "end": 1990
                 }
               },
               {
@@ -2440,38 +2357,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "4",
-                  "links": []
-                }
+                "value": 4
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "71",
-                  "links": []
-                }
+                "value": 71.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "label": "First entry",
@@ -2511,25 +2413,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "1983 , 1986 , 1991-1992",
-                  "links": [
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_World_Sportscar_Championship"
-                    },
-                    {
-                      "text": "1986",
-                      "url": "https://en.wikipedia.org/wiki/1986_World_Sportscar_Championship"
-                    },
-                    {
-                      "text": "1991",
-                      "url": "https://en.wikipedia.org/wiki/1991_World_Sportscar_Championship"
-                    },
-                    {
-                      "text": "1992",
-                      "url": "https://en.wikipedia.org/wiki/1992_World_Sportscar_Championship"
-                    }
-                  ]
+                  "start": 1991,
+                  "end": 1992
                 }
               },
               {
@@ -2551,10 +2436,7 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "25",
-                  "links": []
-                }
+                "value": 25
               },
               {
                 "label": "Championships",
@@ -2570,17 +2452,11 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "7",
-                  "links": []
-                }
+                "value": 7
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "14",
-                  "links": []
-                }
+                "value": 14
               },
               {
                 "label": "Poles",
@@ -2591,10 +2467,7 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "full_data": {
@@ -2659,13 +2532,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st ( 1992 )",
-                  "links": [
-                    {
-                      "text": "1992",
-                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "1st ( 1992 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -9647,7 +9518,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1973,
-                  "end": 1985
+                  "end": 1983
                 }
               },
               {
@@ -9695,38 +9566,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "5",
-                  "links": []
-                }
+                "value": 5
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "20",
-                  "links": []
-                }
+                "value": 20
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "169",
-                  "links": []
-                }
+                "value": 169.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "5",
-                  "links": []
-                }
+                "value": 5
               },
               {
                 "label": "First entry",
@@ -9843,13 +9699,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "11th ( 1990 )",
-                  "links": [
-                    {
-                      "text": "1990",
-                      "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "11th ( 1990 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -16812,13 +16666,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "17th (tie) ( 1949 )",
-                  "links": [
-                    {
-                      "text": "1949",
-                      "url": "https://en.wikipedia.org/wiki/1949_AAA_Championship_Car_season"
-                    }
-                  ]
+                  "result": "17th (tie) ( 1949 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -16900,7 +16752,7 @@
               {
                 "label": "Active years",
                 "value": {
-                  "start": 1950,
+                  "start": 1952,
                   "end": 1955
                 }
               },
@@ -16937,38 +16789,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -17143,38 +16980,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "9",
-                  "links": []
-                }
+                "value": 9
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "42",
-                  "links": []
-                }
+                "value": 42
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "1047.5",
-                  "links": []
-                }
+                "value": 1047.5
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "13",
-                  "links": []
-                }
+                "value": 13
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "19",
-                  "links": []
-                }
+                "value": 19
               },
               {
                 "label": "First entry",
@@ -17238,17 +17060,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "2014-2016",
-                  "links": [
-                    {
-                      "text": "2014",
-                      "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
-                    },
-                    {
-                      "text": "2016",
-                      "url": "https://en.wikipedia.org/wiki/2016_FIA_World_Endurance_Championship"
-                    }
-                  ]
+                  "start": 2014,
+                  "end": 2016
                 }
               },
               {
@@ -17262,10 +17075,7 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "25",
-                  "links": []
-                }
+                "value": 25
               },
               {
                 "label": "Championships",
@@ -17281,17 +17091,11 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "8",
-                  "links": []
-                }
+                "value": 8
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "15",
-                  "links": []
-                }
+                "value": 15
               },
               {
                 "label": "Poles",
@@ -17302,25 +17106,16 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st in 2015 ( LMP1 )",
-                  "links": [
-                    {
-                      "text": "2015",
-                      "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
-                    },
-                    {
-                      "text": "LMP1",
-                      "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                    }
-                  ]
+                  "result": "1st",
+                  "season": {
+                    "start": 2015,
+                    "end": 2015
+                  }
                 }
               },
               {
@@ -17374,13 +17169,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "2nd ( 2015 )",
-                  "links": [
-                    {
-                      "text": "2015",
-                      "url": "https://en.wikipedia.org/wiki/2015_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "2nd ( 2015 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -23108,15 +22901,7 @@
               },
               {
                 "label": "Car number",
-                "value": {
-                  "text": "94 1 ( 2024-present)",
-                  "links": [
-                    {
-                      "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Formula_E_World_Championship"
-                    }
-                  ]
-                }
+                "value": []
               },
               {
                 "label": "Former teams",
@@ -23132,10 +22917,7 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "97",
-                  "links": []
-                }
+                "value": 97
               },
               {
                 "label": "Championships",
@@ -23151,17 +22933,11 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "8",
-                  "links": []
-                }
+                "value": 8
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "18",
-                  "links": []
-                }
+                "value": 18
               },
               {
                 "label": "Poles",
@@ -23172,10 +22948,7 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "6",
-                  "links": []
-                }
+                "value": 6
               },
               {
                 "label": "Finished last season",
@@ -23229,10 +23002,15 @@
               },
               {
                 "label": "Car number",
-                "value": {
-                  "text": "94",
-                  "links": []
-                }
+                "value": [
+                  {
+                    "number": 94,
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Entries",
@@ -23250,38 +23028,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "6",
-                  "links": []
-                }
+                "value": 6.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -23321,21 +23084,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "2013-2015 , 2018",
-                  "links": [
-                    {
-                      "text": "2013",
-                      "url": "https://en.wikipedia.org/wiki/2013_Deutsche_Tourenwagen_Masters"
-                    },
-                    {
-                      "text": "2015",
-                      "url": "https://en.wikipedia.org/wiki/2015_Deutsche_Tourenwagen_Masters"
-                    },
-                    {
-                      "text": "2018",
-                      "url": "https://en.wikipedia.org/wiki/2018_Deutsche_Tourenwagen_Masters"
-                    }
-                  ]
+                  "start": 2013,
+                  "end": 2015
                 }
               },
               {
@@ -23357,10 +23107,7 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "58",
-                  "links": []
-                }
+                "value": 58
               },
               {
                 "label": "Championships",
@@ -23376,17 +23123,11 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": 3
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "7",
-                  "links": []
-                }
+                "value": 7
               },
               {
                 "label": "Poles",
@@ -23397,50 +23138,45 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               }
             ]
           }
         ],
         "previous_series": [
           {
+            "title": {
+              "text": "FIA F3 European",
+              "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
+            },
+            "years": [
+              {
+                "text": "2012-2013",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "F3 Euro Series",
+              "url": "https://en.wikipedia.org/wiki/F3_Euro_Series"
+            },
             "years": [
               {
                 "text": "2012",
-                "url": "https://en.wikipedia.org/wiki/2012_FIA_Formula_3_European_Championship"
-              },
-              {
-                "text": "2013",
-                "url": "https://en.wikipedia.org/wiki/2013_FIA_Formula_3_European_Championship"
-              },
-              {
-                "text": "2012",
                 "url": "https://en.wikipedia.org/wiki/2012_Formula_3_Euro_Series"
-              },
-              {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_ADAC_Formel_Masters"
-              },
-              {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_ADAC_Formel_Masters"
               }
-            ],
-            "series": [
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC Formel Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+            },
+            "years": [
               {
-                "text": "FIA F3 European",
-                "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
-              },
-              {
-                "text": "F3 Euro Series",
-                "url": "https://en.wikipedia.org/wiki/F3_Euro_Series"
-              },
-              {
-                "text": "ADAC Formel Masters",
-                "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+                "text": "2010-2011",
+                "url": null
               }
             ]
           }
@@ -29977,38 +29713,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -31390,20 +31111,18 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "1958-1961",
-                  "links": []
+                  "start": 1958,
+                  "end": 1961
                 }
               },
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "13th-1960",
-                  "links": [
-                    {
-                      "text": "1960",
-                      "url": "https://en.wikipedia.org/wiki/1960_USAC_Championship_Car_season"
-                    }
-                  ]
+                  "result": "13th-1960",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -31514,38 +31233,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -31693,24 +31397,23 @@
               },
               {
                 "label": "Car number",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": [
+                  {
+                    "number": 3,
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "20",
-                  "links": []
-                }
+                "value": 20
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Poles",
@@ -31721,21 +31424,16 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "43rd in 2010",
-                  "links": [
-                    {
-                      "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_FIA_GT1_World_Championship_season"
-                    }
-                  ]
+                  "result": "43rd",
+                  "season": {
+                    "start": 2010,
+                    "end": 2010
+                  }
                 }
               }
             ]
@@ -31751,64 +31449,158 @@
         ],
         "previous_series": [
           {
+            "title": {
+              "text": "FIA GT Championship",
+              "url": "https://en.wikipedia.org/wiki/FIA_GT_Championship"
+            },
             "years": [
               {
-                "text": "89",
-                "url": "https://en.wikipedia.org/wiki/1989_German_Formula_Three_Championship"
+                "text": "2004",
+                "url": null
               }
-            ],
-            "series": [
+            ]
+          },
+          {
+            "title": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "years": [
               {
-                "text": "FIA GT Championship",
-                "url": "https://en.wikipedia.org/wiki/FIA_GT_Championship"
-              },
+                "text": "2002",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "V8Star Series",
+              "url": "https://en.wikipedia.org/wiki/V8Star_Series"
+            },
+            "years": [
               {
-                "text": "DTM",
-                "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
-              },
+                "text": "2001",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "American Le Mans Series",
+              "url": "https://en.wikipedia.org/wiki/American_Le_Mans_Series"
+            },
+            "years": [
               {
-                "text": "V8Star Series",
-                "url": "https://en.wikipedia.org/wiki/V8Star_Series"
-              },
+                "text": "1999",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA GT Championship",
+              "url": "https://en.wikipedia.org/wiki/FIA_GT_Championship"
+            },
+            "years": [
               {
-                "text": "American Le Mans Series",
-                "url": "https://en.wikipedia.org/wiki/American_Le_Mans_Series"
-              },
+                "text": "1998",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian Superturismo",
+              "url": "https://en.wikipedia.org/wiki/Italian_Superturismo_Championship"
+            },
+            "years": [
               {
-                "text": "FIA GT Championship",
-                "url": "https://en.wikipedia.org/wiki/FIA_GT_Championship"
-              },
+                "text": "1997",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Super Tourenwagen Cup",
+              "url": "https://en.wikipedia.org/wiki/Super_Tourenwagen_Cup"
+            },
+            "years": [
               {
-                "text": "Italian Superturismo",
-                "url": "https://en.wikipedia.org/wiki/Italian_Superturismo_Championship"
-              },
+                "text": "1996",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "years": [
               {
-                "text": "Super Tourenwagen Cup",
-                "url": "https://en.wikipedia.org/wiki/Super_Tourenwagen_Cup"
-              },
+                "text": "1991",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "International Formula 3000",
+              "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
+            },
+            "years": [
               {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
-              },
+                "text": "1990",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "World Sportscars",
+              "url": "https://en.wikipedia.org/wiki/World_Sportscar_Championship"
+            },
+            "years": [
               {
-                "text": "International Formula 3000",
-                "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
-              },
+                "text": "1990",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Meisterschaft"
+            },
+            "years": [
               {
-                "text": "World Sportscars",
-                "url": "https://en.wikipedia.org/wiki/World_Sportscar_Championship"
-              },
+                "text": "1989",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "German F3",
+              "url": "https://en.wikipedia.org/wiki/German_F3"
+            },
+            "years": [
               {
-                "text": "DTM",
-                "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Meisterschaft"
-              },
+                "text": "1988",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Austrian F3",
+              "url": "https://en.wikipedia.org/wiki/Austria_Formula_3_Cup"
+            },
+            "years": [
               {
-                "text": "German F3",
-                "url": "https://en.wikipedia.org/wiki/German_F3"
-              },
-              {
-                "text": "Austrian F3",
-                "url": "https://en.wikipedia.org/wiki/Austria_Formula_3_Cup"
+                "text": "1988",
+                "url": null
               }
             ]
           }
@@ -39187,38 +38979,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -39917,8 +39694,8 @@
               {
                 "label": "Active years",
                 "value": {
-                  "start": 1952,
-                  "end": 1959
+                  "start": 1954,
+                  "end": 1955
                 }
               },
               {
@@ -39962,38 +39739,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -40157,38 +39919,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": 3.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -40315,38 +40062,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -40452,38 +40184,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -45849,38 +45566,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -45982,38 +45684,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -46139,38 +45826,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -46304,38 +45976,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -52160,38 +51817,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -52843,38 +52485,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -53380,38 +53007,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -53543,38 +53155,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -57159,17 +56756,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "2008-2015",
-                  "links": [
-                    {
-                      "text": "2008",
-                      "url": "https://en.wikipedia.org/wiki/2008_IndyCar_Series"
-                    },
-                    {
-                      "text": "2015",
-                      "url": "https://en.wikipedia.org/wiki/2015_IndyCar_Series"
-                    }
-                  ]
+                  "start": 2008,
+                  "end": 2015
                 }
               },
               {
@@ -57198,17 +56786,11 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "120",
-                  "links": []
-                }
+                "value": 120
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": 3
               },
               {
                 "label": "Poles",
@@ -57219,21 +56801,16 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "6th in 2013",
-                  "links": [
-                    {
-                      "text": "2013",
-                      "url": "https://en.wikipedia.org/wiki/2013_IndyCar_Series"
-                    }
-                  ]
+                  "result": "6th",
+                  "season": {
+                    "start": 2013,
+                    "end": 2013
+                  }
                 }
               },
               {
@@ -57283,38 +56860,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -57460,38 +57022,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -57630,38 +57177,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -65387,7 +64919,7 @@
               {
                 "label": "Active years",
                 "value": {
-                  "start": 1980,
+                  "start": 1982,
                   "end": 1985
                 }
               },
@@ -65428,38 +64960,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -65528,13 +65045,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "6th ( 1979 )",
-                  "links": [
-                    {
-                      "text": "1979",
-                      "url": "https://en.wikipedia.org/wiki/1979_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "6th ( 1979 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
@@ -67799,10 +67314,15 @@
               },
               {
                 "label": "Car number",
-                "value": {
-                  "text": "46",
-                  "links": []
-                }
+                "value": [
+                  {
+                    "number": 46,
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Former teams",
@@ -67818,17 +67338,11 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "18",
-                  "links": []
-                }
+                "value": 18
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Poles",
@@ -67839,21 +67353,16 @@
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "9th in 2024",
-                  "links": [
-                    {
-                      "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_GT_World_Challenge_Asia"
-                    }
-                  ]
+                  "result": "9th",
+                  "season": {
+                    "start": 2024,
+                    "end": 2024
+                  }
                 }
               },
               {
@@ -67899,38 +67408,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -67949,42 +67443,38 @@
         ],
         "previous_series": [
           {
+            "title": {
+              "text": "FIA GT1 World Championship",
+              "url": "https://en.wikipedia.org/wiki/FIA_GT1_World_Championship"
+            },
             "years": [
               {
                 "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_FIA_GT1_World_Championship_season"
-              },
-              {
-                "text": "12",
-                "url": "https://en.wikipedia.org/wiki/2012_FIA_GT1_World_Championship_season"
+                "url": null
               },
               {
                 "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_season"
+                "url": null
               },
               {
                 "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Porsche_Supercup_season"
+                "url": null
               },
               {
                 "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Formula_Renault_3.5_Series_season"
+                "url": null
               },
               {
                 "text": "2004",
-                "url": "https://en.wikipedia.org/wiki/2004_Deutsche_Tourenwagen_Masters_season"
+                "url": null
               },
               {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Deutsche_Tourenwagen_Masters_season"
-              },
-              {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Deutsche_Tourenwagen_Masters_season"
+                "text": "2007-2010",
+                "url": null
               },
               {
                 "text": "2003",
-                "url": "https://en.wikipedia.org/wiki/2003_Formula_3_Euro_Series_season"
+                "url": "https://en.wikipedia.org/wiki/2003_Masters_of_Formula_3"
               },
               {
                 "text": "2001",
@@ -67993,56 +67483,26 @@
               {
                 "text": "2003",
                 "url": "https://en.wikipedia.org/wiki/2003_Masters_of_Formula_3"
-              }
-            ],
-            "series": [
-              {
-                "text": "FIA GT1 World Championship",
-                "url": "https://en.wikipedia.org/wiki/FIA_GT1_World_Championship"
               },
               {
-                "text": "Formula One",
-                "url": "https://en.wikipedia.org/wiki/Formula_One"
+                "text": "2001-2002",
+                "url": null
               },
               {
-                "text": "Porsche Supercup",
-                "url": "https://en.wikipedia.org/wiki/Porsche_Supercup"
+                "text": "2000",
+                "url": null
               },
               {
-                "text": "Formula Renault 3.5 Series",
-                "url": "https://en.wikipedia.org/wiki/Formula_Renault_3.5_Series"
+                "text": "2000",
+                "url": null
               },
               {
-                "text": "DTM",
-                "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+                "text": "1999",
+                "url": null
               },
               {
-                "text": "Formula 3 Euro Series",
-                "url": "https://en.wikipedia.org/wiki/Formula_3_Euro_Series"
-              },
-              {
-                "text": "Masters of Formula 3",
-                "url": "https://en.wikipedia.org/wiki/Masters_of_Formula_3"
-              },
-              {
-                "text": "German F3 Championship",
-                "url": "https://en.wikipedia.org/wiki/German_Formula_Three_Championship"
-              },
-              {
-                "text": "Formula Renault 2000 Italy",
-                "url": "https://en.wikipedia.org/wiki/Italian_Formula_Renault_Championship"
-              },
-              {
-                "text": "Formula Renault 2000 Eurocup",
-                "url": "https://en.wikipedia.org/wiki/Eurocup_Formula_Renault_2.0"
-              },
-              {
-                "text": "Formula Renault Germany",
-                "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Northern_European_Cup"
-              },
-              {
-                "text": "Formula König",
-                "url": "https://en.wikipedia.org/wiki/Formula_K%C3%B6nig"
+                "text": "1998",
+                "url": null
               }
             ]
           }
@@ -76728,38 +76188,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "13",
-                  "links": []
-                }
+                "value": 13.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -78378,38 +77823,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -79340,7 +78770,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 1997,
-                  "end": 2007
+                  "end": 2000
                 }
               },
               {
@@ -79376,38 +78806,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "3",
-                  "links": []
-                }
+                "value": 3
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "45",
-                  "links": []
-                }
+                "value": 45.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "1",
-                  "links": []
-                }
+                "value": 1
               },
               {
                 "label": "First entry",
@@ -79447,17 +78862,8 @@
               {
                 "label": "Years active",
                 "value": {
-                  "text": "2012-2015",
-                  "links": [
-                    {
-                      "text": "2012",
-                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
-                    },
-                    {
-                      "text": "2015",
-                      "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
-                    }
-                  ]
+                  "start": 2012,
+                  "end": 2015
                 }
               },
               {
@@ -79471,10 +78877,7 @@
               },
               {
                 "label": "Starts",
-                "value": {
-                  "text": "28",
-                  "links": []
-                }
+                "value": 28
               },
               {
                 "label": "Championships",
@@ -79485,17 +78888,11 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "5",
-                  "links": []
-                }
+                "value": 5
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "12",
-                  "links": []
-                }
+                "value": 12
               },
               {
                 "label": "Poles",
@@ -79507,17 +78904,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "3rd in 2012 ( LMP1 )",
-                  "links": [
-                    {
-                      "text": "2012",
-                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
-                    },
-                    {
-                      "text": "LMP1",
-                      "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                    }
-                  ]
+                  "result": "3rd",
+                  "season": {
+                    "start": 2012,
+                    "end": 2012
+                  }
                 }
               },
               {
@@ -79571,17 +78962,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "1st ( 1996 , 2009 )",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2009",
-                      "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "1st ( 1996 , 2009 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {

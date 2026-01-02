@@ -59,7 +59,7 @@
                 "label": "Active years",
                 "value": {
                   "start": 2006,
-                  "end": 2010
+                  "end": 2007
                 }
               },
               {
@@ -95,38 +95,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -163,6 +148,10 @@
         ],
         "previous_series": [
           {
+            "title": {
+              "text": "Super Formula Lights",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Lights"
+            },
             "years": [
               {
                 "text": "2020",
@@ -174,35 +163,23 @@
               },
               {
                 "text": "2009",
-                "url": "https://en.wikipedia.org/wiki/2009_ADAC_GT_Masters_season"
+                "url": null
               },
               {
                 "text": "2008-2009",
                 "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_GP2_Asia_Series"
               },
               {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_GP2_Series_season"
+                "text": "2007-2008",
+                "url": null
               },
               {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_GP2_Series_season"
+                "text": "2005-2006",
+                "url": null
               },
               {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Formula_Nippon_Championship"
-              },
-              {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_Nippon_Championship"
-              },
-              {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Super_GT_Series"
-              },
-              {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
+                "text": "2005-2006",
+                "url": null
               },
               {
                 "text": "2001",
@@ -222,53 +199,7 @@
               },
               {
                 "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_British_Formula_Three_season"
-              }
-            ],
-            "series": [
-              {
-                "text": "Super Formula Lights",
-                "url": "https://en.wikipedia.org/wiki/Super_Formula_Lights"
-              },
-              {
-                "text": "Formula E",
-                "url": "https://en.wikipedia.org/wiki/Formula_E"
-              },
-              {
-                "text": "ADAC GT Masters",
-                "url": "https://en.wikipedia.org/wiki/ADAC_GT_Masters"
-              },
-              {
-                "text": "GP2 Asia Series",
-                "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
-              },
-              {
-                "text": "GP2 Series",
-                "url": "https://en.wikipedia.org/wiki/GP2_Series"
-              },
-              {
-                "text": "Formula Nippon",
-                "url": "https://en.wikipedia.org/wiki/Formula_Nippon"
-              },
-              {
-                "text": "Super GT",
-                "url": "https://en.wikipedia.org/wiki/Super_GT"
-              },
-              {
-                "text": "Japanese F3",
-                "url": "https://en.wikipedia.org/wiki/All-Japan_Formula_Three"
-              },
-              {
-                "text": "F3 Euro Series",
-                "url": "https://en.wikipedia.org/wiki/Formula_Three_Euroseries"
-              },
-              {
-                "text": "German F3",
-                "url": "https://en.wikipedia.org/wiki/German_Formula_Three_Championship"
-              },
-              {
-                "text": "British F3",
-                "url": "https://en.wikipedia.org/wiki/British_Formula_3_Championship"
+                "url": "https://en.wikipedia.org/wiki/2001_Japanese_Formula_3_Championship"
               }
             ]
           }
@@ -5830,38 +5761,23 @@
               },
               {
                 "label": "Wins",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Podiums",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Career points",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0.0
               },
               {
                 "label": "Pole positions",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "First entry",
@@ -5930,13 +5846,11 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "text": "8th ( 2006 )",
-                  "links": [
-                    {
-                      "text": "2006",
-                      "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
-                    }
-                  ]
+                  "result": "8th ( 2006 )",
+                  "season": {
+                    "start": null,
+                    "end": null
+                  }
                 }
               },
               {
