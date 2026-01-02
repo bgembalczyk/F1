@@ -1,5 +1,6 @@
 from models.validation.circuit import Circuit
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

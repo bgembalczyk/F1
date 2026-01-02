@@ -6,8 +6,9 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.parsing import parse_int_from_text
-from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
 from scrapers.base.table.columns.types.br_list import BrListColumn

@@ -6,8 +6,9 @@ from bs4 import Tag
 
 from models.services.season_service import SeasonService
 from scrapers.base.helpers.html_utils import clean_wiki_text
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.run_config import RunConfig
 
 
 class PrivateerTeamsListScraper(F1ListScraper):

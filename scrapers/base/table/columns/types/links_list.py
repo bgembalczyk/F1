@@ -21,6 +21,7 @@ class LinksListColumn(BaseColumn):
         self.text_for_missing_url = text_for_missing_url
         self._separator_token = object()
 
+    @staticmethod
     def _clean_text_item(self, text: str) -> str | None:
         cleaned = clean_wiki_text(text)
         cleaned = strip_marks(cleaned or "") or ""

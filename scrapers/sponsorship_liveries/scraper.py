@@ -4,9 +4,11 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text_normalization import clean_wiki_text
-from scrapers.base.options import ScraperOptions, init_scraper_options
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.options import ScraperOptions
+from scrapers.base.run_config import RunConfig
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.list import ListColumn

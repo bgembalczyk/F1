@@ -8,7 +8,7 @@ from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.drivers.helpers.parsers import normalize_unit
 from scrapers.drivers.helpers.parsers import parse_number
 from scrapers.drivers.helpers.parsers import parse_unit_list
-from scrapers.drivers.helpers.regex import UNIT_RE
+from scrapers.drivers.helpers.constants import UNIT_RE
 
 
 class NestedUnitListColumn(BaseColumn):

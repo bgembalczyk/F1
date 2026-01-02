@@ -9,7 +9,48 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 class CircuitSpecsParser(InfoboxTextUtils):
     """Parsowanie parametrów technicznych toru (surface, cost, capacity, banking)."""
 
-    def parse_surface(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    @staticmethod
+    def _norm_surface_part(surface_part: str) -> List[str]:
+        """Normalizuje część powierzchni, identyfikując materiały."""
+        surface_lower = surface_part.lower()
+        detected_materials: List[str] = []
+
+        if (
+            "tarmac" in surface_lower
+            or "asphalt" in surface_lower
+            or "asphalt concrete" in surface_lower
+        ):
+            detected_materials.append("Asphalt")
+        if "concrete" in surface_lower and "asphalt" not in surface_lower:
+            detected_materials.append("Concrete")
+        if (
+            "cobblestone" in surface_lower
+            or "cobbles" in surface_lower
+            or "cobbl" in surface_lower
+        ):
+            detected_materials.append("Cobblestones")
+        if "brick" in surface_lower:
+            detected_materials.append("Brick")
+        if "wood" in surface_lower:
+            detected_materials.append("Wood")
+        if "dirt" in surface_lower:
+            detected_materials.append("Dirt")
+        if "steel" in surface_lower:
+            detected_materials.append("Steel")
+        if "graywacke" in surface_lower:
+            detected_materials.append("Graywacke")
+
+        if not detected_materials:
+            detected_materials.append(surface_part.strip().strip(". "))
+
+        unique_materials: List[str] = []
+        for material in detected_materials:
+            if material and material not in unique_materials:
+                unique_materials.append(material)
+        return unique_materials
+
+    @staticmethod
+    def parse_surface(row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
             return None
 
@@ -30,47 +71,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
         tmp = tmp.replace("&", ",").replace("/", ",")
         parts = [p.strip(" .") for p in tmp.split(",") if p.strip(" .")]
 
-        def _norm_surface_part(surface_part: str) -> List[str]:
-            surface_lower = surface_part.lower()
-            detected_materials: List[str] = []
-
-            if (
-                "tarmac" in surface_lower
-                or "asphalt" in surface_lower
-                or "asphalt concrete" in surface_lower
-            ):
-                detected_materials.append("Asphalt")
-            if "concrete" in surface_lower and "asphalt" not in surface_lower:
-                detected_materials.append("Concrete")
-            if (
-                "cobblestone" in surface_lower
-                or "cobbles" in surface_lower
-                or "cobbl" in surface_lower
-            ):
-                detected_materials.append("Cobblestones")
-            if "brick" in surface_lower:
-                detected_materials.append("Brick")
-            if "wood" in surface_lower:
-                detected_materials.append("Wood")
-            if "dirt" in surface_lower:
-                detected_materials.append("Dirt")
-            if "steel" in surface_lower:
-                detected_materials.append("Steel")
-            if "graywacke" in surface_lower:
-                detected_materials.append("Graywacke")
-
-            if not detected_materials:
-                detected_materials.append(surface_part.strip().strip(". "))
-
-            unique_materials: List[str] = []
-            for material in detected_materials:
-                if material and material not in unique_materials:
-                    unique_materials.append(material)
-            return unique_materials
-
         materials: List[str] = []
         for part in parts:
-            for m_ in _norm_surface_part(part):
+            for m_ in CircuitSpecsParser._norm_surface_part(part):
                 if m_ not in materials:
                     materials.append(m_)
 
@@ -82,8 +85,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
             result["note"] = note
         return result
 
+    @staticmethod
     def _parse_capacity(
-        self, row: Optional[Dict[str, Any]]
+        row: Optional[Dict[str, Any]]
     ) -> Optional[Dict[str, int]]:
         """Capacity: '~125,000 (44,000 seating)' -> total / seating."""
         if not row:
@@ -156,7 +160,8 @@ class CircuitSpecsParser(InfoboxTextUtils):
         result["text"] = text_clean.strip() or None
         return self.prune_nulls(result)
 
-    def parse_banking(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    @staticmethod
+    def parse_banking(row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         """Banking: liczba + jednostka + opcjonalna notka."""
         if not row:
             return None

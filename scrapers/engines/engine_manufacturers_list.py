@@ -1,7 +1,8 @@
 from pathlib import Path
 
 from models.validation.engine_manufacturer import EngineManufacturer
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

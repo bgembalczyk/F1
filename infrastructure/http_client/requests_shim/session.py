@@ -5,7 +5,7 @@ from typing import Optional
 
 from infrastructure.http_client.requests_shim.request_exception import RequestException
 from infrastructure.http_client.requests_shim.response import Response
-from infrastructure.http_client.requests_shim.ssl_context import SSL_CONTEXT
+from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.timeout import Timeout
 
 

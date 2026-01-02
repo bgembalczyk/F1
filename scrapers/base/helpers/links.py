@@ -3,18 +3,18 @@
 from typing import Iterable
 
 from models.records.link import LinkRecord
-from models.validation.validators import normalize_link_record
+from models.validation.validators import normalize_and_validate_link_dict
 from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
 from scrapers.base.helpers.wiki import is_wikipedia_redlink, strip_marks
 
 
-def _empty_link_record(*, drop_empty: bool) -> LinkRecord | None:
+def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:
     if drop_empty:
         return None
     return {"text": "", "url": None}
 
 
-def _normalize_single_link(
+def normalize_single_link(
     link: LinkRecord | None,
     *,
     strip_marks_text: bool = True,
@@ -22,7 +22,7 @@ def _normalize_single_link(
     strip_lang_suffix: bool = True,
 ) -> LinkRecord | None:
     if not link:
-        return _empty_link_record(drop_empty=drop_empty)
+        return empty_link_record(drop_empty=drop_empty)
 
     text = link.get("text") or ""
     url = link.get("url")
@@ -33,14 +33,14 @@ def _normalize_single_link(
     text = clean_wiki_text(text, strip_lang_suffix=strip_lang_suffix)
 
     if strip_lang_suffix and is_language_link(text, url):
-        return _empty_link_record(drop_empty=drop_empty)
+        return empty_link_record(drop_empty=drop_empty)
 
     if is_wikipedia_redlink(url):
         url = None
 
-    normalized = normalize_link_record({"text": text, "url": url})
+    normalized = normalize_and_validate_link_dict({"text": text, "url": url}, field_name="link")
     if normalized is None:
-        return _empty_link_record(drop_empty=drop_empty)
+        return empty_link_record(drop_empty=drop_empty)
     return normalized
 
 
@@ -58,7 +58,7 @@ def normalize_links(
 
     normalized_links: list[LinkRecord] = []
     for link in links_iterable:
-        normalized = _normalize_single_link(
+        normalized = normalize_single_link(
             link,
             strip_marks_text=strip_marks,
             drop_empty=drop_empty,

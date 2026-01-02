@@ -7,7 +7,7 @@ GRAND_PRIX_KEYWORD = "grand prix"
 GRAND_PRIX_NAVBOX_TEMPLATE = "Template:Formula_One_Grands_Prix"
 
 
-def _has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
+def has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
     navboxes = soup.find_all("table", class_="navbox-inner")
     for navbox in navboxes:
         if navbox.find(
@@ -17,7 +17,7 @@ def _has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
     return False
 
 
-def _has_grand_prix_category(soup: BeautifulSoup) -> bool:
+def has_grand_prix_category(soup: BeautifulSoup) -> bool:
     cat_div = soup.find("div", id="mw-normal-catlinks")
     if not cat_div:
         return False
@@ -31,6 +31,6 @@ def _has_grand_prix_category(soup: BeautifulSoup) -> bool:
 
 def is_grand_prix_article(soup: BeautifulSoup) -> bool:
     """Sprawdza, czy artykuł wygląda na Grand Prix (navbox lub kategorie)."""
-    if _has_grand_prix_navbox(soup):
+    if has_grand_prix_navbox(soup):
         return True
-    return _has_grand_prix_category(soup)
+    return has_grand_prix_category(soup)

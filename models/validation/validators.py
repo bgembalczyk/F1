@@ -16,7 +16,7 @@ def validate_float(value: Any, field_name: str) -> Optional[float]:
     return coerce_number(value, float, field_name, allow_none=True)
 
 
-def _normalize_and_validate_link_dict(
+def normalize_and_validate_link_dict(
     link: Dict[str, Any] | None, *, field_name: str
 ) -> LinkRecord | None:
     data: Dict[str, Any] = dict(link or {})
@@ -46,7 +46,7 @@ def validate_link(
     if isinstance(link, Link):
         return link.to_dict()
 
-    normalized = _normalize_and_validate_link_dict(link, field_name=field_name)
+    normalized = normalize_and_validate_link_dict(link, field_name=field_name)
     if normalized is None:
         return {"text": "", "url": None}
 
@@ -57,7 +57,58 @@ def validate_links(
     links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str
 ) -> list[Dict[str, Any]]:
     validated = (validate_link(link, field_name=field_name) for link in links or [])
-    return filter_nonempty(validated, key=_is_empty_link)
+    return filter_nonempty(validated, key=is_empty_link)
+
+
+def normalize_season_item(
+    item: Dict[str, Any] | SeasonRef | None,
+) -> Dict[str, Any] | None:
+    """
+    Normalizuje jeden element sezonu.
+
+    Akceptuje:
+    - None -> None,
+    - SeasonRef -> to_dict(),
+    - dict -> próbuje SeasonRef.from_dict(item),
+             a jeśli to się nie uda, fallback na prostą walidację {year,url}.
+    """
+    if item is None:
+        return None
+
+    # 1) VO
+    if isinstance(item, SeasonRef):
+        return item.to_dict()
+
+    # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
+    try:
+        season = SeasonRef.from_dict(item)
+    except (ValueError, TypeError):
+        season = None
+
+    if season is not None:
+        return season.to_dict()
+
+    # 3) fallback: minimalny schemat {year,url}
+    if not isinstance(item, dict):
+        return None
+
+    year = item.get("year")
+    if year is None:
+        return None
+
+    year_int = validate_int(year, "year")
+    if year_int is None:
+        return None
+
+    validated: Dict[str, Any] = {"year": year_int}
+
+    url = item.get("url")
+    if url:
+        if not isinstance(url, str) or not is_valid_url(url):
+            raise ValueError("Pole seasons zawiera nieprawidłowy URL")
+        validated["url"] = url
+
+    return validated
 
 
 def validate_seasons(
@@ -71,48 +122,6 @@ def validate_seasons(
     - dict -> próbuje SeasonRef.from_dict(item) (jak plik 1),
              a jeśli to się nie uda, fallback na prostą walidację {year,url} (jak plik 2).
     """
-
-    def normalize_season_item(
-        item: Dict[str, Any] | SeasonRef | None,
-    ) -> Dict[str, Any] | None:
-        if item is None:
-            return None
-
-        # 1) VO
-        if isinstance(item, SeasonRef):
-            return item.to_dict()
-
-        # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
-        try:
-            season = SeasonRef.from_dict(item)
-        except (ValueError, TypeError):
-            season = None
-
-        if season is not None:
-            return season.to_dict()
-
-        # 3) fallback: minimalny schemat {year,url}
-        if not isinstance(item, dict):
-            return None
-
-        year = item.get("year")
-        if year is None:
-            return None
-
-        year_int = validate_int(year, "year")
-        if year_int is None:
-            return None
-
-        validated: Dict[str, Any] = {"year": year_int}
-
-        url = item.get("url")
-        if url:
-            if not isinstance(url, str) or not is_valid_url(url):
-                raise ValueError("Pole seasons zawiera nieprawidłowy URL")
-            validated["url"] = url
-
-        return validated
-
     normalized = (normalize_season_item(item) for item in seasons or [])
     return filter_nonempty(normalized)
 
@@ -159,7 +168,7 @@ def normalize_link_list(
     normalized = (
         item if isinstance(item, Link) else Link.from_dict(item) for item in items
     )
-    return filter_nonempty(normalized, key=_is_empty_link)
+    return filter_nonempty(normalized, key=is_empty_link)
 
 
 def normalize_season_list(
@@ -180,7 +189,7 @@ def normalize_season_list(
     return filter_nonempty(normalized)
 
 
-def _is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
+def is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
     if value is None:
         return True
     if isinstance(value, Link):
@@ -193,9 +202,6 @@ def _is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
             url = None
     return text == "" and url is None
 
-
-def normalize_link_record(link: LinkRecord) -> LinkRecord | None:
-    return _normalize_and_validate_link_dict(link, field_name="link")
 
 
 def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:

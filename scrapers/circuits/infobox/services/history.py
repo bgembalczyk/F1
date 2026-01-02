@@ -2,7 +2,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
-from scrapers.base.infobox.circuits.services.constants import _MONTHS
+from scrapers.base.infobox.circuits.services.constants import MONTHS
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
@@ -120,7 +120,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
         if m:
             month_name = m.group(1)
             year = int(m.group(2))
-            month = _MONTHS[month_name]
+            month = MONTHS[month_name]
             return f"{year:04d}-{month:02d}"
 
         m = re.search(r"(\d{4})s\b", lower)

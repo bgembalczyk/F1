@@ -2,12 +2,13 @@ from typing import Any, Dict, Optional
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.scraper import (
     WikipediaInfoboxScraper,
     parse_infobox_from_soup,
 )
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.types import ExportableRecord
 from scrapers.base.errors import ScraperParseError

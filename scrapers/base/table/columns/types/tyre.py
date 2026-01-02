@@ -3,20 +3,9 @@ from __future__ import annotations
 import re
 
 from scrapers.base.helpers.links import normalize_links
+from scrapers.base.table.columns.constants import TYRE_NAME_BY_CODE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-
-_TYRE_NAME_BY_CODE = {
-    "A": "Avon",
-    "B": "Bridgestone",
-    "C": "Continental",
-    "D": "Dunlop",
-    "E": "Englebert",
-    "F": "Firestone",
-    "G": "Goodyear",
-    "M": "Michelin",
-    "P": "Pirelli",
-}
 
 
 class TyreColumn(BaseColumn):
@@ -30,7 +19,7 @@ class TyreColumn(BaseColumn):
                 if not link_text:
                     continue
                 code = link_text[0].upper()
-                full_name = _TYRE_NAME_BY_CODE.get(code)
+                full_name = TYRE_NAME_BY_CODE.get(code)
                 tyres.append({**link, "text": full_name or link_text})
             return tyres or None
 
@@ -41,6 +30,6 @@ class TyreColumn(BaseColumn):
         tyres = []
         for token in tokens:
             code = token[0].upper()
-            full_name = _TYRE_NAME_BY_CODE.get(code)
+            full_name = TYRE_NAME_BY_CODE.get(code)
             tyres.append({"text": full_name or token, "url": None})
         return tyres or None

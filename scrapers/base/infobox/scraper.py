@@ -6,6 +6,7 @@ import logging
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.infobox.helpers import parse_infobox_from_soup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
@@ -80,10 +81,3 @@ class WikipediaInfoboxScraper:
     def _fetch(self, url: str) -> str:
         return self.fetcher.get_text(url, timeout=self.timeout)
 
-
-def parse_infobox_from_soup(
-    infobox_scraper: WikipediaInfoboxScraper,
-    soup: BeautifulSoup,
-) -> Dict[str, Any]:
-    raw = infobox_scraper.parser.parse(soup)
-    return infobox_scraper.mapper.map(raw)

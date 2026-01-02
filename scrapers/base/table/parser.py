@@ -39,12 +39,9 @@ class HtmlTableParser:
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
         table = self._find_table(soup)
-        return self._parse_table(table)
+        return self.parse_table(table)
 
     def parse_table(self, table: Tag) -> list[TableRow]:
-        return self._parse_table(table)
-
-    def _parse_table(self, table: Tag) -> list[TableRow]:
         headers, header_rows = self._extract_headers(table)
 
         records: list[TableRow] = []
@@ -141,25 +138,8 @@ class HtmlTableParser:
         expanded: list[Tag] = []
         col_index = 0
 
-        def consume_pending() -> None:
-            nonlocal col_index
-            while col_index < len(headers) and col_index in pending_rowspans:
-                pending = pending_rowspans[col_index]
-                cell = pending["cell"]
-                remaining = int(pending["remaining"])
-                expanded.append(cell)
-                remaining -= 1
-                if remaining <= 0:
-                    pending_rowspans.pop(col_index, None)
-                else:
-                    pending_rowspans[col_index] = {
-                        "cell": cell,
-                        "remaining": remaining,
-                    }
-                col_index += 1
-
         for cell in cells:
-            consume_pending()
+            col_index = HtmlTableParser._consume_pending(expanded, col_index, headers, pending_rowspans)
             if col_index >= len(headers):
                 break
 
@@ -185,9 +165,33 @@ class HtmlTableParser:
                     }
                 col_index += 1
 
-        consume_pending()
+        HtmlTableParser._consume_pending(expanded, col_index, headers, pending_rowspans)
 
         return expanded
+
+    @staticmethod
+    def _consume_pending(
+        expanded: list[Tag],
+        col_index: int,
+        headers: Sequence[str],
+        pending_rowspans: dict[int, dict[str, object]],
+    ) -> int:
+        """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
+        while col_index < len(headers) and col_index in pending_rowspans:
+            pending = pending_rowspans[col_index]
+            cell = pending["cell"]
+            remaining = int(pending["remaining"])
+            expanded.append(cell)
+            remaining -= 1
+            if remaining <= 0:
+                pending_rowspans.pop(col_index, None)
+            else:
+                pending_rowspans[col_index] = {
+                    "cell": cell,
+                    "remaining": remaining,
+                }
+            col_index += 1
+        return col_index
 
     def _extract_headers(self, table: Tag) -> tuple[list[str], int]:
         rows = table.find_all("tr")

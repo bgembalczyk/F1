@@ -1,7 +1,8 @@
 from pathlib import Path
 
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.run_config import RunConfig
 
 
 class IndianapolisOnlyConstructorsListScraper(F1ListScraper):

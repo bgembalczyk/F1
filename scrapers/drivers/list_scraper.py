@@ -4,7 +4,8 @@ from typing import Any, List
 from models.scrape_types.driver_championships_payload import DriverChampionshipsPayload
 from models.scrape_types.driver_row import DriverRow
 from models.services.driver_service import DriverService
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.multi import MultiColumn

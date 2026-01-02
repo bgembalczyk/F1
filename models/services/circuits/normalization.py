@@ -45,6 +45,47 @@ def extract_circuit_url(
     return circuit.get("url")
 
 
+def add_place(
+    text: str | None,
+    url: str | None,
+    places: list[dict[str, Any]],
+    seen_places: set[str],
+) -> None:
+    """
+    Dodaje miejsce do listy, jeśli nie jest duplikatem.
+
+    Args:
+        text: Tekst nazwy miejsca
+        url: Opcjonalny URL
+        places: Lista miejsc do modyfikacji in-place
+        seen_places: Zbiór już widzianych miejsc (case-insensitive) do modyfikacji in-place
+    """
+    if not text:
+        return
+    key = text.strip().lower()
+    if not key or key in seen_places:
+        return
+    seen_places.add(key)
+    entry: dict[str, Any] = {"text": text.strip()}
+    if url:
+        entry["url"] = url
+    places.append(entry)
+
+
+def loc_sort_key(item: tuple[str, Any]) -> int:
+    """
+    Funkcja sortowania dla elementów lokalizacji (używana do sortowania po liczbach w kluczach).
+
+    Args:
+        item: Krotka (klucz, wartość) ze słownika
+
+    Returns:
+        Liczba z końca klucza lub 0 jeśli brak
+    """
+    match = re.search(r"(\d+)$", item[0])
+    return int(match.group(1)) if match else 0
+
+
 def extract_circuit_location(
     raw: dict[str, Any], normalized: dict[str, Any]
 ) -> dict[str, Any]:
@@ -58,38 +99,26 @@ def extract_circuit_location(
     places: list[dict[str, Any]] = []
     seen_places: set[str] = set()
 
-    def add_place(text: str | None, url: str | None = None) -> None:
-        if not text:
-            return
-        key = text.strip().lower()
-        if not key or key in seen_places:
-            return
-        seen_places.add(key)
-        entry: dict[str, Any] = {"text": text.strip()}
-        if url:
-            entry["url"] = url
-        places.append(entry)
-
     if isinstance(location_raw, dict):
         raw_places = location_raw.get("places")
         if isinstance(raw_places, list):
             for place in raw_places:
                 if isinstance(place, dict):
-                    add_place(place.get("text"), place.get("url"))
+                    add_place(place.get("text"), place.get("url"), places, seen_places)
                 elif isinstance(place, str):
-                    add_place(place)
+                    add_place(place, None, places, seen_places)
         elif "text" in location_raw:
-            add_place(location_raw.get("text"), location_raw.get("url"))
+            add_place(location_raw.get("text"), location_raw.get("url"), places, seen_places)
         elif "name" in location_raw:
-            add_place(location_raw.get("name"))
+            add_place(location_raw.get("name"), None, places, seen_places)
     elif isinstance(location_raw, list):
         for place in location_raw:
             if isinstance(place, dict):
-                add_place(place.get("text"), place.get("url"))
+                add_place(place.get("text"), place.get("url"), places, seen_places)
             elif isinstance(place, str):
-                add_place(place)
+                add_place(place, None, places, seen_places)
     elif isinstance(location_raw, str):
-        add_place(location_raw)
+        add_place(location_raw, None, places, seen_places)
 
     coordinates = None
     loc_norm = None
@@ -100,28 +129,25 @@ def extract_circuit_location(
             coordinates = loc_norm.get("coordinates")
 
     if isinstance(loc_norm, dict):
-
-        def _loc_sort_key(item: tuple[str, Any]) -> int:
-            match = re.search(r"(\d+)$", item[0])
-            return int(match.group(1)) if match else 0
-
-        for _, comp in sorted(loc_norm.items(), key=_loc_sort_key):
+        for _, comp in sorted(loc_norm.items(), key=loc_sort_key):
             if isinstance(comp, dict):
                 link = comp.get("link") or {}
                 add_place(
                     comp.get("text") or link.get("text"),
                     link.get("url"),
+                    places,
+                    seen_places,
                 )
             else:
-                add_place(str(comp))
+                add_place(str(comp), None, places, seen_places)
 
-    # Dodaj country z raw, jeśli jeszcze go nie ma
+    # Dodaj country z raw, jeśli jeszcze go tam nie ma
     country = raw.get("country")
     if country:
         if isinstance(country, dict):
-            add_place(country.get("text"), country.get("url"))
+            add_place(country.get("text"), country.get("url"), places, seen_places)
         elif isinstance(country, str):
-            add_place(country)
+            add_place(country, None, places, seen_places)
 
     return {
         "places": places,

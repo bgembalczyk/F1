@@ -75,6 +75,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         parts = self._split_entity_parts(text)
         return self._build_entity_from_links(parts, links)
 
+    @staticmethod
     def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
         if not row:
             return None

@@ -10,14 +10,14 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.drivers.helpers.regex import ANGLE_RE
-from scrapers.drivers.helpers.regex import CONFIG_TYPE_RE
-from scrapers.drivers.helpers.regex import MAX_CYLINDERS_RE
-from scrapers.drivers.helpers.regex import RANGE_RE
-from scrapers.drivers.helpers.regex import UNIT_RE
+from scrapers.drivers.helpers.constants import ANGLE_RE
+from scrapers.drivers.helpers.constants import CONFIG_TYPE_RE
+from scrapers.drivers.helpers.constants import MAX_CYLINDERS_RE
+from scrapers.drivers.helpers.constants import RANGE_RE
+from scrapers.drivers.helpers.constants import UNIT_RE
 
 
-def _extract_visible_text(ctx: ColumnContext) -> str:
+def extract_visible_text(ctx: ColumnContext) -> str:
     if ctx.cell is None:
         return clean_wiki_text((ctx.clean_text or ctx.raw_text or "").strip())
 
@@ -28,7 +28,7 @@ def _extract_visible_text(ctx: ColumnContext) -> str:
 
 
 def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[int]]:
-    text = _extract_visible_text(ctx)
+    text = extract_visible_text(ctx)
     if not text:
         return None, None
 
@@ -42,7 +42,7 @@ def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[in
 
 
 def parse_points_from_cell(ctx: ColumnContext) -> float | None:
-    text = _extract_visible_text(ctx)
+    text = extract_visible_text(ctx)
     return parse_float_from_text(text)
 
 
@@ -211,3 +211,12 @@ def parse_engine_rpm_limit(ctx) -> dict[str, Any]:
         value = parse_number(text)
         limit_range = {"min": value, "max": value}
     return {"limit": limit_range}
+
+
+def extract_driver_text(record: Dict[str, Any]) -> Optional[str]:
+    driver = record.get("driver")
+    if isinstance(driver, dict):
+        text = driver.get("text")
+        if isinstance(text, str):
+            return text.strip()
+    return None

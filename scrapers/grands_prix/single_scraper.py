@@ -5,7 +5,8 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.circuit_location import LocationColumn

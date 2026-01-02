@@ -4,129 +4,18 @@ from typing import Any, Dict, List, Optional
 from bs4 import BeautifulSoup, Tag
 
 from models.services.circuits.lap_record_merging import normalize_lap_record
+from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
+from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.helpers.lap_record import collect_lap_records
+from scrapers.circuits.helpers.lap_record import is_lap_record_table
+from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
-
-logger = logging.getLogger(__name__)
-
-
-def _layout_from_spanning_header(
-    cells: list[Tag],
-    headers: list[str],
-) -> Optional[str]:
-    if len(cells) != 1 or cells[0].name != "th":
-        return None
-
-    th = cells[0]
-    try:
-        colspan = int(th.get("colspan", "1"))
-    except ValueError:
-        colspan = 1
-
-    text = clean_wiki_text(th.get_text(strip=True))
-    if not text:
-        return None
-
-    keywords = (
-        "circuit",
-        "layout",
-        "course",
-        "km",
-        "mi",
-        "present",
-        "configuration",
-    )
-
-    if colspan >= len(headers) or any(kw in text.lower() for kw in keywords):
-        return text
-
-    return None
-
-
-def is_lap_record_table(
-    headers: list[str],
-    lap_scraper: LapRecordsTableScraper,
-) -> bool:
-    if lap_scraper.headers_match(headers):
-        return True
-
-    header_set = set(headers)
-    return "Time" in header_set and (
-        "Driver" in header_set or "Driver/Rider" in header_set
-    )
-
-
-def detect_layout_name(table: Tag, headers: list[str]) -> Optional[str]:
-    caption = table.find("caption")
-    if caption:
-        txt = clean_wiki_text(caption.get_text(strip=True))
-        if txt:
-            return txt
-
-    prev = table
-    while prev:
-        prev = prev.previous_sibling
-        if not isinstance(prev, Tag):
-            continue
-        if prev.name in {"h2", "h3", "h4"}:
-            txt = clean_wiki_text(prev.get_text(strip=True))
-            if txt:
-                return txt
-
-    for tr in table.find_all("tr"):
-        cells = tr.find_all(["th", "td"])
-        if not cells:
-            continue
-        layout = _layout_from_spanning_header(cells, headers)
-        if layout:
-            return layout
-
-    return None
-
-
-def collect_lap_records(
-    table: Tag,
-    headers: list[str],
-    base_layout: Optional[str],
-    lap_scraper: LapRecordsTableScraper,
-) -> list[dict[str, Any]]:
-    all_records: list[dict[str, Any]] = []
-    current_layout = base_layout
-
-    for tr in table.find_all("tr")[1:]:
-        cells = tr.find_all(["th", "td"])
-        if not cells or all(not c.get_text(strip=True) for c in cells):
-            continue
-
-        layout = _layout_from_spanning_header(cells, headers)
-        if layout:
-            current_layout = layout
-            continue
-
-        cleaned_cells = [clean_wiki_text(c.get_text(strip=True)) for c in cells]
-        if is_repeated_header_row(cleaned_cells, headers):
-            logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli rekordów.")
-            continue
-
-        row_records = lap_scraper.parse_multi_row(tr, cells, headers)
-        if not row_records:
-            continue
-
-        layout_name = current_layout or base_layout
-        for record in row_records:
-            if not record:
-                continue
-            normalize_lap_record(record)
-            if layout_name:
-                record.setdefault("layout", layout_name)
-            all_records.append(record)
-
-    return all_records
 
 
 class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
@@ -180,7 +69,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         }
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        if not self._is_circuit_like_article(soup):
+        if not is_circuit_like_article(soup):
             return []
 
         working_soup = self._select_section(soup, self._section_fragment)

@@ -23,6 +23,21 @@ class InfoboxHtmlParser:
         return self._parse_infobox(infobox)
 
     @staticmethod
+    def _has_infobox_class(c) -> bool:
+        """Sprawdza czy element zawiera klasę 'infobox'."""
+        if not c:
+            return False
+        if isinstance(c, str):
+            classes = c.split()
+        else:
+            # BeautifulSoup zwykle daje listę
+            try:
+                classes = list(c)
+            except TypeError:
+                return False
+        return "infobox" in classes
+
+    @staticmethod
     def find_infobox(soup: BeautifulSoup):
         """
         Znajduje <table> z klasą zawierającą 'infobox' w ramach przekazanego `soup`.
@@ -31,21 +46,7 @@ class InfoboxHtmlParser:
         - class="infobox vcard"
         - class=["infobox", "vcard"]
         """
-
-        def _has_infobox_class(c) -> bool:
-            if not c:
-                return False
-            if isinstance(c, str):
-                classes = c.split()
-            else:
-                # BeautifulSoup zwykle daje listę
-                try:
-                    classes = list(c)
-                except TypeError:
-                    return False
-            return "infobox" in classes
-
-        return soup.find("table", class_=_has_infobox_class)
+        return soup.find("table", class_=InfoboxHtmlParser._has_infobox_class)
 
     def _parse_infobox(self, table) -> Dict[str, Any]:
         data: Dict[str, Any] = {"title": None, "rows": {}}

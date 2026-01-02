@@ -14,67 +14,9 @@ from models.services.circuits.lap_record_merging import (
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from scrapers.circuits.helpers.lap_record import extract_time
+from scrapers.circuits.helpers.lap_record import select_details_paren
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
-
-
-def extract_time(text: str) -> Optional[float]:
-    if not text:
-        return None
-
-    head = text.split("(", 1)[0].strip()
-    time_match = re.match(r"^\s*(\d+:\d{2}(?:\.\d+)?)\b", head)
-    time_str = time_match.group(1) if time_match else None
-
-    sec = parse_time_seconds_from_text(time_str) if time_str else None
-
-    if sec is None:
-        m = re.search(r"\b(\d+:\d{2}(?:\.\d+)?)\b", text)
-        if m:
-            sec = parse_time_seconds_from_text(m.group(1))
-
-    return sec
-
-
-def select_details_paren(text: str) -> list[str]:
-    parens = re.findall(r"\(([^)]*)\)", text or "")
-    if not parens:
-        return []
-
-    def _is_speed_paren(s: str) -> bool:
-        s_low = s.lower()
-        return ("km/h" in s_low) or ("mph" in s_low)
-
-    def _score_details_candidate(s: str) -> int:
-        if not s:
-            return -10
-        if _is_speed_paren(s):
-            return -100
-
-        parts = [p.strip() for p in s.split(",") if p.strip()]
-        score = 0
-
-        if len(parts) >= 4:
-            score += 5
-        elif len(parts) == 3:
-            score += 2
-        elif len(parts) == 2:
-            score += 1
-        else:
-            score -= 2
-
-        if any(re.fullmatch(r"\d{4}", p) for p in parts):
-            score += 5
-
-        if "," not in s and score < 3:
-            score -= 3
-
-        return score
-
-    best = max(parens, key=_score_details_candidate)
-    if _score_details_candidate(best) <= 0:
-        return []
-
-    return [p.strip() for p in best.split(",") if p.strip()]
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):

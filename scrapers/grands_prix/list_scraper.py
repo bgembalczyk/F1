@@ -1,6 +1,7 @@
 from pathlib import Path
 
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

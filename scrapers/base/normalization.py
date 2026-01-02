@@ -2,6 +2,8 @@ import re
 from typing import Any, Callable, Sequence
 
 from scrapers.base.helpers.prune import prune_empty
+from scrapers.base.helpers.text_normalization import drop_empty_fields
+from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.records import ExportRecord
 
 NormalizationRule = Callable[[ExportRecord], ExportRecord]
@@ -48,38 +50,10 @@ class RecordNormalizer:
     ) -> list[NormalizationRule]:
         rules: list[NormalizationRule] = []
         if normalize_keys:
-            rules.append(_normalize_record_keys)
-            rules.append(_drop_empty_fields)
+            rules.append(normalize_record_keys)
+            rules.append(drop_empty_fields)
         if normalization_rules:
             rules.extend(normalization_rules)
         return rules
 
 
-def _normalize_record_keys(record: ExportRecord) -> ExportRecord:
-    normalized: ExportRecord = {}
-    for key, value in record.items():
-        normalized_key = _to_snake_case(str(key))
-        if not normalized_key:
-            continue
-        normalized[normalized_key] = value
-    return normalized
-
-
-def _drop_empty_fields(record: ExportRecord) -> ExportRecord:
-    pruned = prune_empty(
-        record,
-        drop_empty_lists=True,
-        drop_none=True,
-        drop_empty_dicts=True,
-    )
-    return {
-        key: value
-        for key, value in pruned.items()
-        if not (isinstance(value, str) and value.strip() == "")
-    }
-
-
-def _to_snake_case(value: str) -> str:
-    cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
-    cleaned = re.sub(r"_+", "_", cleaned).strip("_")
-    return cleaned.lower()

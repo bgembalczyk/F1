@@ -5,6 +5,7 @@ from typing import Optional
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.table.columns.helpers import extract_layout_text
 from scrapers.base.table.columns.types.func import FuncColumn
 
 
@@ -24,7 +25,7 @@ class LocationColumn(FuncColumn):
 
         if links:
             circuit = links[0]
-            layout = _extract_layout_text(clean_text, circuit.get("text") or "")
+            layout = extract_layout_text(clean_text, circuit.get("text") or "")
         else:
             circuit = {"text": clean_text, "url": None}
 
@@ -33,22 +34,3 @@ class LocationColumn(FuncColumn):
         return {"circuit": circuit}
 
 
-def _extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
-    if not clean_text:
-        return None
-
-    if link_text:
-        lower_clean = clean_text.lower()
-        lower_link = link_text.lower()
-        idx = lower_clean.find(lower_link)
-        if idx != -1:
-            clean_text = (clean_text[:idx] + clean_text[idx + len(link_text) :]).strip()
-
-    clean_text = clean_text.strip(" -–—()")
-    if not clean_text:
-        return None
-
-    if link_text and clean_text.lower() == link_text.lower():
-        return None
-
-    return clean_text

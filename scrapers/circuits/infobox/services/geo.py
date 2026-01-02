@@ -2,13 +2,26 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
-from scrapers.base.infobox.circuits.services.constants import _LOCATION_STOPWORDS
+from scrapers.base.infobox.circuits.services.constants import LOCATION_STOPWORDS
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitGeoParser(InfoboxTextUtils):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
+
+    @staticmethod
+    def _split_plain_segment(segment: str) -> List[str]:
+        """Dzieli segment tekstu na części rozdzielone przecinkami, ukośnikami itp."""
+        segment_parts: List[str] = []
+        for raw_part in re.split(r"[,·/;]", segment):
+            cleaned_part = raw_part.strip(" ,")
+            if not cleaned_part:
+                continue
+            if cleaned_part.lower() in LOCATION_STOPWORDS:
+                continue
+            segment_parts.append(cleaned_part)
+        return segment_parts
 
     def parse_location(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not row:
@@ -20,17 +33,6 @@ class CircuitGeoParser(InfoboxTextUtils):
         components: List[Dict[str, Any]] = []
         cursor = 0
 
-        def _split_plain_segment(segment: str) -> List[str]:
-            segment_parts: List[str] = []
-            for raw_part in re.split(r"[,·/;]", segment):
-                cleaned_part = raw_part.strip(" ,")
-                if not cleaned_part:
-                    continue
-                if cleaned_part.lower() in _LOCATION_STOPWORDS:
-                    continue
-                segment_parts.append(cleaned_part)
-            return segment_parts
-
         for link in links:
             link_text = (link.get("text") or "").strip()
             if not link_text:
@@ -41,7 +43,7 @@ class CircuitGeoParser(InfoboxTextUtils):
                 continue
 
             before = text[cursor:idx]
-            for part in _split_plain_segment(before):
+            for part in self._split_plain_segment(before):
                 components.append({"text": part})
 
             components.append(
@@ -56,7 +58,7 @@ class CircuitGeoParser(InfoboxTextUtils):
             cursor = idx + len(link_text)
 
         tail = text[cursor:]
-        for part in _split_plain_segment(tail):
+        for part in self._split_plain_segment(tail):
             components.append({"text": part})
 
         if not components:
@@ -65,7 +67,7 @@ class CircuitGeoParser(InfoboxTextUtils):
         filtered_components: List[Dict[str, Any]] = []
         for comp in components:
             txt = (comp.get("text") or "").strip()
-            if not txt or txt.lower() in _LOCATION_STOPWORDS:
+            if not txt or txt.lower() in LOCATION_STOPWORDS:
                 continue
             filtered_components.append(comp)
 
@@ -113,6 +115,7 @@ class CircuitGeoParser(InfoboxTextUtils):
 
         return None
 
+    @staticmethod
     def _parse_area(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, float]]:
         """Area: np. '277 acres (112 ha)' -> acres + hectares."""
         if not row:

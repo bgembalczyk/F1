@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
+from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.single_scraper import (
     F1SingleCircuitScraper,
     detect_layout_name,
@@ -9,7 +10,6 @@ from scrapers.circuits.single_scraper import (
 
 
 def test_is_circuit_like_article_true_when_category_matches() -> None:
-    scraper = F1SingleCircuitScraper()
     soup = BeautifulSoup(
         """
         <div id="mw-normal-catlinks">
@@ -19,14 +19,13 @@ def test_is_circuit_like_article_true_when_category_matches() -> None:
         "html.parser",
     )
 
-    assert scraper._is_circuit_like_article(soup) is True
+    assert is_circuit_like_article(soup) is True
 
 
 def test_is_circuit_like_article_false_without_categories() -> None:
-    scraper = F1SingleCircuitScraper()
     soup = BeautifulSoup("<div>No categories here</div>", "html.parser")
 
-    assert scraper._is_circuit_like_article(soup) is False
+    assert is_circuit_like_article(soup) is False
 
 
 def test_select_section_returns_fragment_section_only() -> None:

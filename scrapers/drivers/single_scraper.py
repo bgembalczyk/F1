@@ -4,9 +4,10 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions, init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -22,12 +23,10 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
-from scrapers.drivers.helpers.columns import (
-    PointsOrTextColumn,
-    RoundColumn,
-    SeriesColumn,
-    UnknownValueColumn,
-)
+from scrapers.drivers.helpers.columns.points_or_text import PointsOrTextColumn
+from scrapers.drivers.helpers.columns.round import RoundColumn
+from scrapers.drivers.helpers.columns.series import SeriesColumn
+from scrapers.drivers.helpers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 

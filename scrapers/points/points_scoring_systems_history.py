@@ -1,8 +1,7 @@
 from pathlib import Path
 
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.runner import RunConfig
-from scrapers.base.runner import run_and_export
-
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn

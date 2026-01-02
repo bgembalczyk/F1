@@ -3,52 +3,17 @@
 import re
 from typing import Any
 
+from scrapers.base.helpers.constants import LANG_CODES
+from scrapers.base.helpers.constants import REF_RE
+from scrapers.base.helpers.prune import prune_empty
+from scrapers.base.records import ExportRecord
+
+
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
-_REF_RE = re.compile(r"\[\s*[^]]+\s*]")
-
-_LANG_CODES = {
-    "en",
-    "es",
-    "fr",
-    "de",
-    "it",
-    "pt",
-    "pl",
-    "ru",
-    "cs",
-    "sk",
-    "hu",
-    "ro",
-    "bg",
-    "sr",
-    "hr",
-    "sl",
-    "nl",
-    "sv",
-    "no",
-    "da",
-    "fi",
-    "el",
-    "tr",
-    "ar",
-    "he",
-    "id",
-    "ms",
-    "th",
-    "vi",
-    "ja",
-    "ko",
-    "zh",
-    "uk",
-    "ca",
-    "eu",
-    "gl",
-}
-
 
 def _strip_wiki_refs(text: str) -> str:
     """Usuń przypisy w formacie [1], [note 3], ..."""
-    return _REF_RE.sub("", text)
+    return REF_RE.sub("", text)
 
 
 def _normalize_dashes(text: str) -> str:
@@ -59,7 +24,7 @@ def _normalize_dashes(text: str) -> str:
 
 def _strip_lang_suffix(text: str) -> str:
     """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
-    lang_alt = "|".join(sorted(_LANG_CODES, key=len, reverse=True))
+    lang_alt = "|".join(sorted(LANG_CODES, key=len, reverse=True))
     t = text
 
     while True:
@@ -113,7 +78,7 @@ def is_language_link(text: str | None, url: str | None) -> bool:
     if not txt or not url_l:
         return False
 
-    if txt not in _LANG_CODES:
+    if txt not in LANG_CODES:
         return False
 
     if f"://{txt}.wikipedia.org/" in url_l:
@@ -216,3 +181,33 @@ def split_delimited_text(
 
     parts = [p.strip() for p in re.split(separators, text) if p.strip()]
     return parts if len(parts) >= min_parts else []
+
+
+def normalize_record_keys(record: ExportRecord) -> ExportRecord:
+    normalized: ExportRecord = {}
+    for key, value in record.items():
+        normalized_key = to_snake_case(str(key))
+        if not normalized_key:
+            continue
+        normalized[normalized_key] = value
+    return normalized
+
+
+def drop_empty_fields(record: ExportRecord) -> ExportRecord:
+    pruned = prune_empty(
+        record,
+        drop_empty_lists=True,
+        drop_none=True,
+        drop_empty_dicts=True,
+    )
+    return {
+        key: value
+        for key, value in pruned.items()
+        if not (isinstance(value, str) and value.strip() == "")
+    }
+
+
+def to_snake_case(value: str) -> str:
+    cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
+    cleaned = re.sub(r"_+", "_", cleaned).strip("_")
+    return cleaned.lower()

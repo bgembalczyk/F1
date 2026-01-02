@@ -1,10 +1,10 @@
 # scrapers/base/table/columns/types/date.py
 from typing import Any
 
+from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.helpers.value_objects import NormalizedDate
 
 
 class DateColumn(BaseColumn):

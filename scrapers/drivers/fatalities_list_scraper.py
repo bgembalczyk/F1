@@ -3,9 +3,10 @@ from typing import Any, List
 
 from models.scrape_types.fatality_row import FatalityRow
 from scrapers.base.helpers.links import normalize_links
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import strip_marks
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.func import FuncColumn

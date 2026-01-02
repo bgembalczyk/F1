@@ -1,4 +1,4 @@
-_MONTHS = {
+MONTHS = {
     "january": 1,
     "february": 2,
     "march": 3,
@@ -13,7 +13,7 @@ _MONTHS = {
     "december": 12,
 }
 
-_LOCATION_STOPWORDS = {"and", "&"}
+LOCATION_STOPWORDS = {"and", "&"}
 
 symbol_map = {
     "€": "EUR",

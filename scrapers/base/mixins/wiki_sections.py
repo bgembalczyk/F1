@@ -3,8 +3,6 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from bs4 import BeautifulSoup, Tag
 
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-
 
 class WikipediaSectionByIdMixin:
     """
@@ -39,9 +37,6 @@ class WikipediaSectionByIdMixin:
         self._section_fragment = fragment
         return super().fetch()  # type: ignore[misc]
 
-    @staticmethod
-    def _is_circuit_like_article(soup: BeautifulSoup) -> bool:
-        return is_circuit_like_article(soup)
 
     @staticmethod
     def _extract_section_by_id(

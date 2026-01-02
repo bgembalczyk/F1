@@ -7,6 +7,7 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.drivers.helpers.columns.helpers import split_series
 
 
 class SeriesColumn(BaseColumn):
@@ -15,7 +16,7 @@ class SeriesColumn(BaseColumn):
         if not text:
             return None
 
-        series_text, class_text = _split_series(text)
+        series_text, class_text = split_series(text)
         links = normalize_links(ctx.links or [])
         series_link = links[0] if links else None
 
@@ -30,8 +31,3 @@ class SeriesColumn(BaseColumn):
         return {"series": series_value}
 
 
-def _split_series(text: str) -> tuple[str, str | None]:
-    parts = [p.strip() for p in re.split(r"\s*-\s*", text, maxsplit=1)]
-    if len(parts) == 1:
-        return text, None
-    return parts[0], parts[1] or None
