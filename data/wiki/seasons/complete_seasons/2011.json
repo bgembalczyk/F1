@@ -642,26 +642,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            },
-            "engine_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Rounds",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "Force India",
               "url": "https://en.wikipedia.org/wiki/Force_India"
             },
@@ -670,14 +650,11 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Nico Hülkenberg",
-                "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Nico Hülkenberg",
+            "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
+          },
+          "rounds": "1-5, 7-13, 15, 19"
         },
         {
           "constructor": {
@@ -690,14 +667,8 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Narain Karthikeyan",
-                "url": "https://en.wikipedia.org/wiki/Narain_Karthikeyan"
-              }
-            }
-          ]
+          "driver_name": "Narain Karthikeyan Jan Charouz",
+          "rounds": "10, 14-16 19"
         },
         {
           "constructor": {
@@ -710,14 +681,8 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Karun Chandhok",
-                "url": "https://en.wikipedia.org/wiki/Karun_Chandhok"
-              }
-            }
-          ]
+          "driver_name": "Karun Chandhok Davide Valsecchi Luiz Razia",
+          "rounds": "1, 4, 8-9, 12-13, 15-17 2 3, 19"
         },
         {
           "constructor": {
@@ -730,14 +695,8 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Bruno Senna",
-                "url": "https://en.wikipedia.org/wiki/Bruno_Senna"
-              }
-            }
-          ]
+          "driver_name": "Bruno Senna Romain Grosjean",
+          "rounds": "11 18-19"
         },
         {
           "constructor": {
@@ -750,14 +709,8 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Daniel Ricciardo",
-                "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
-              }
-            }
-          ]
+          "driver_name": "Daniel Ricciardo Jean-Éric Vergne",
+          "rounds": "1-8 16, 18-19"
         },
         {
           "constructor": {
@@ -770,14 +723,25 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Robert Wickens",
-                "url": "https://en.wikipedia.org/wiki/Robert_Wickens"
-              }
+          "driver_name": {
+            "text": "Robert Wickens",
+            "url": "https://en.wikipedia.org/wiki/Robert_Wickens"
+          },
+          "rounds": "18"
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Sources:",
+              "url": null
+            },
+            "engine_constructor": {
+              "text": "Sources:",
+              "url": null
             }
-          ]
+          },
+          "driver_name": "Sources:",
+          "rounds": "Sources:"
         }
       ],
       "calendar": [],

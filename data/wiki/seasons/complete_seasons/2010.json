@@ -631,26 +631,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            },
-            "engine_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Rounds",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "Force India",
               "url": "https://en.wikipedia.org/wiki/Force_India"
             },
@@ -659,14 +639,11 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Paul di Resta",
-                "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Paul di Resta",
+            "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
+          },
+          "rounds": "2-5, 9-10, 12, 14"
         },
         {
           "constructor": {
@@ -679,14 +656,8 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Christian Klien",
-                "url": "https://en.wikipedia.org/wiki/Christian_Klien"
-              }
-            }
-          ]
+          "driver_name": "Christian Klien Sakon Yamamoto",
+          "rounds": "5, 9 7"
         },
         {
           "constructor": {
@@ -699,14 +670,11 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Fairuz Fauzy",
-                "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Fairuz Fauzy",
+            "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
+          },
+          "rounds": "3, 10-11, 15, 19"
         },
         {
           "constructor": {
@@ -719,14 +687,25 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Jérôme d'Ambrosio",
-                "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
-              }
+          "driver_name": {
+            "text": "Jérôme d'Ambrosio",
+            "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
+          },
+          "rounds": "15-18"
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Sources:",
+              "url": null
+            },
+            "engine_constructor": {
+              "text": "Sources:",
+              "url": null
             }
-          ]
+          },
+          "driver_name": "Sources:",
+          "rounds": "Sources:"
         }
       ],
       "calendar": [],

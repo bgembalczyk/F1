@@ -565,26 +565,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            },
-            "engine_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Rounds",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "Caterham",
               "url": "https://en.wikipedia.org/wiki/Caterham_F1"
             },
@@ -593,14 +573,8 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Ma Qinghua",
-                "url": "https://en.wikipedia.org/wiki/Ma_Qinghua"
-              }
-            }
-          ]
+          "driver_name": "Ma Qinghua Heikki Kovalainen Alexander Rossi",
+          "rounds": "3 4-5, 11-12, 15, 17 7, 18"
         },
         {
           "constructor": {
@@ -613,14 +587,11 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "James Calado",
-                "url": "https://en.wikipedia.org/wiki/James_Calado"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "James Calado",
+            "url": "https://en.wikipedia.org/wiki/James_Calado"
+          },
+          "rounds": "12, 14, 16-17, 19"
         },
         {
           "constructor": {
@@ -633,14 +604,11 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Rodolfo González",
-                "url": "https://en.wikipedia.org/wiki/Rodolfo_Gonz%C3%A1lez_(racing_driver)"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Rodolfo González",
+            "url": "https://en.wikipedia.org/wiki/Rodolfo_Gonz%C3%A1lez_(racing_driver)"
+          },
+          "rounds": "4-5, 9-10, 12, 14, 17-19"
         },
         {
           "constructor": {
@@ -653,14 +621,25 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Daniil Kvyat",
-                "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
-              }
+          "driver_name": {
+            "text": "Daniil Kvyat",
+            "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
+          },
+          "rounds": "18-19"
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Source:",
+              "url": null
+            },
+            "engine_constructor": {
+              "text": "Source:",
+              "url": null
             }
-          ]
+          },
+          "driver_name": "Source:",
+          "rounds": "Source:"
         }
       ],
       "calendar": [],

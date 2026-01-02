@@ -923,7 +923,10 @@
                   ]
                 },
                 {
-                  "driver": "\" Gimax \"",
+                  "driver": {
+                    "text": "Gimax",
+                    "url": "https://en.wikipedia.org/wiki/Gimax"
+                  },
                   "rounds": [
                     14
                   ]

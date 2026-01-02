@@ -794,26 +794,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "No.",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "No.",
-              "url": null
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Driver name",
-                "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "BAR",
               "url": "https://en.wikipedia.org/wiki/British_American_Racing"
             },
@@ -822,14 +802,12 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "35",
-                "url": null
-              }
-            }
-          ]
+          "no.": "35",
+          "driver_name": {
+            "text": "Anthony Davidson",
+            "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
+          },
+          "rounds": "All"
         },
         {
           "constructor": {
@@ -842,14 +820,12 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "37",
-                "url": null
-              }
-            }
-          ]
+          "no.": "37",
+          "driver_name": {
+            "text": "Björn Wirdheim",
+            "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Wirdheim"
+          },
+          "rounds": "All"
         },
         {
           "constructor": {
@@ -862,14 +838,9 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "38",
-                "url": null
-              }
-            }
-          ]
+          "no.": "38",
+          "driver_name": "Ricardo Zonta Ryan Briscoe",
+          "rounds": "1-12 13-18"
         },
         {
           "constructor": {
@@ -882,14 +853,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "39",
-                "url": null
-              }
-            }
-          ]
+          "no.": "39",
+          "driver_name": "Timo Glock Robert Doornbos",
+          "rounds": "1-15 16-18"
         },
         {
           "constructor": {
@@ -902,14 +868,12 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "40",
-                "url": null
-              }
-            }
-          ]
+          "no.": "40",
+          "driver_name": {
+            "text": "Bas Leinders",
+            "url": "https://en.wikipedia.org/wiki/Bas_Leinders"
+          },
+          "rounds": "All 1"
         }
       ],
       "calendar": [],

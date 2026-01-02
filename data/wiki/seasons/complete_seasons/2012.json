@@ -608,26 +608,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            },
-            "engine_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Rounds",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "Caterham",
               "url": "https://en.wikipedia.org/wiki/Caterham_F1"
             },
@@ -636,14 +616,8 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Giedo van der Garde",
-                "url": "https://en.wikipedia.org/wiki/Giedo_van_der_Garde"
-              }
-            }
-          ]
+          "driver_name": "Giedo van der Garde Alexander Rossi",
+          "rounds": "3, 15-18, 20 5"
         },
         {
           "constructor": {
@@ -656,14 +630,11 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Jules Bianchi",
-                "url": "https://en.wikipedia.org/wiki/Jules_Bianchi"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Jules Bianchi",
+            "url": "https://en.wikipedia.org/wiki/Jules_Bianchi"
+          },
+          "rounds": "3, 5, 8-11, 13, 16, 18"
         },
         {
           "constructor": {
@@ -676,14 +647,8 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Dani Clos",
-                "url": "https://en.wikipedia.org/wiki/Dani_Clos"
-              }
-            }
-          ]
+          "driver_name": "Dani Clos Ma Qinghua",
+          "rounds": "5, 9-12, 16 13-14, 18-19"
         },
         {
           "constructor": {
@@ -696,14 +661,11 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Max Chilton",
-                "url": "https://en.wikipedia.org/wiki/Max_Chilton"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Max Chilton",
+            "url": "https://en.wikipedia.org/wiki/Max_Chilton"
+          },
+          "rounds": "18"
         },
         {
           "constructor": {
@@ -716,14 +678,11 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Esteban Gutiérrez",
-                "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
-              }
-            }
-          ]
+          "driver_name": {
+            "text": "Esteban Gutiérrez",
+            "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
+          },
+          "rounds": "17"
         },
         {
           "constructor": {
@@ -736,14 +695,25 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Valtteri Bottas",
-                "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
-              }
+          "driver_name": {
+            "text": "Valtteri Bottas",
+            "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
+          },
+          "rounds": "2-5, 8-13, 15-18, 20"
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Sources:",
+              "url": null
+            },
+            "engine_constructor": {
+              "text": "Sources:",
+              "url": null
             }
-          ]
+          },
+          "driver_name": "Sources:",
+          "rounds": "Sources:"
         }
       ],
       "calendar": [],

@@ -673,26 +673,6 @@
         {
           "constructor": {
             "chassis_constructor": {
-              "text": "No.",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "No.",
-              "url": null
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Driver name",
-                "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
               "text": "Honda",
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             },
@@ -701,14 +681,12 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "34",
-                "url": null
-              }
-            }
-          ]
+          "no.": "34",
+          "driver_name": {
+            "text": "Christian Klien",
+            "url": "https://en.wikipedia.org/wiki/Christian_Klien"
+          },
+          "rounds": "9"
         },
         {
           "constructor": {
@@ -721,14 +699,12 @@
               "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "35",
-                "url": null
-              }
-            }
-          ]
+          "no.": "35",
+          "driver_name": {
+            "text": "Sebastian Vettel",
+            "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+          },
+          "rounds": "1-2"
         },
         {
           "constructor": {
@@ -741,14 +717,12 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_in_Formula_One"
             }
           },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "38",
-                "url": null
-              }
-            }
-          ]
+          "no.": "38",
+          "driver_name": {
+            "text": "Kazuki Nakajima",
+            "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
+          },
+          "rounds": "1-2, 6-7, 16"
         }
       ],
       "calendar": [],

@@ -9,33 +9,6 @@
         {
           "entrant": [
             {
-              "name": "No.",
-              "title_sponsors": [
-                {
-                  "text": "No.",
-                  "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers"
-                }
-              ]
-            }
-          ],
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            },
-            "engine_constructor": {
-              "text": "Driver name",
-              "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-            }
-          },
-          "chassis": [
-            "Rounds"
-          ],
-          "power_unit": null
-        },
-        {
-          "entrant": [
-            {
               "name": "Scuderia Ferrari",
               "title_sponsors": []
             }
@@ -62,11 +35,18 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 5,
           "race_drivers": [
             {
               "driver": {
-                "text": "5 7",
-                "url": null
+                "text": "Sebastian Vettel",
+                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+              }
+            },
+            {
+              "driver": {
+                "text": "Kimi Räikkönen",
+                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
               }
             }
           ]
@@ -105,11 +85,18 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 11,
           "race_drivers": [
             {
               "driver": {
-                "text": "11 27",
-                "url": null
+                "text": "Sergio Pérez",
+                "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
+              }
+            },
+            {
+              "driver": {
+                "text": "Nico Hülkenberg",
+                "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
               }
             }
           ]
@@ -143,11 +130,18 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 8,
           "race_drivers": [
             {
               "driver": {
-                "text": "8 21",
-                "url": null
+                "text": "Romain Grosjean",
+                "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
+              }
+            },
+            {
+              "driver": {
+                "text": "Esteban Gutiérrez",
+                "url": "https://en.wikipedia.org/wiki/Esteban_Guti%C3%A9rrez"
               }
             }
           ]
@@ -181,11 +175,24 @@
               "url": "https://en.wikipedia.org/wiki/Honda_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 14,
           "race_drivers": [
             {
               "driver": {
-                "text": "14 47 22",
-                "url": null
+                "text": "Fernando Alonso",
+                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+              }
+            },
+            {
+              "driver": {
+                "text": "Stoffel Vandoorne",
+                "url": "https://en.wikipedia.org/wiki/Stoffel_Vandoorne"
+              }
+            },
+            {
+              "driver": {
+                "text": "Jenson Button",
+                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
               }
             }
           ]
@@ -224,11 +231,18 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 6,
           "race_drivers": [
             {
               "driver": {
-                "text": "6 44",
-                "url": null
+                "text": "Nico Rosberg",
+                "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
+              }
+            },
+            {
+              "driver": {
+                "text": "Lewis Hamilton",
+                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
               }
             }
           ]
@@ -262,11 +276,24 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 88,
           "race_drivers": [
             {
               "driver": {
-                "text": "88 31 94",
-                "url": null
+                "text": "Rio Haryanto",
+                "url": "https://en.wikipedia.org/wiki/Rio_Haryanto"
+              }
+            },
+            {
+              "driver": {
+                "text": "Esteban Ocon",
+                "url": "https://en.wikipedia.org/wiki/Esteban_Ocon"
+              }
+            },
+            {
+              "driver": {
+                "text": "Pascal Wehrlein",
+                "url": "https://en.wikipedia.org/wiki/Pascal_Wehrlein"
               }
             }
           ]
@@ -300,11 +327,24 @@
               "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 3,
           "race_drivers": [
             {
               "driver": {
-                "text": "3 26 33",
-                "url": null
+                "text": "Daniel Ricciardo",
+                "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
+              }
+            },
+            {
+              "driver": {
+                "text": "Daniil Kvyat",
+                "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
+              }
+            },
+            {
+              "driver": {
+                "text": "Max Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
               }
             }
           ]
@@ -338,11 +378,18 @@
               "url": "https://en.wikipedia.org/wiki/Renault_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 20,
           "race_drivers": [
             {
               "driver": {
-                "text": "20 30",
-                "url": null
+                "text": "Kevin Magnussen",
+                "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
+              }
+            },
+            {
+              "driver": {
+                "text": "Jolyon Palmer",
+                "url": "https://en.wikipedia.org/wiki/Jolyon_Palmer"
               }
             }
           ]
@@ -376,11 +423,18 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 9,
           "race_drivers": [
             {
               "driver": {
-                "text": "9 12",
-                "url": null
+                "text": "Marcus Ericsson",
+                "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
+              }
+            },
+            {
+              "driver": {
+                "text": "Felipe Nasr",
+                "url": "https://en.wikipedia.org/wiki/Felipe_Nasr"
               }
             }
           ]
@@ -414,11 +468,24 @@
               "url": "https://en.wikipedia.org/wiki/Ferrari_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 33,
           "race_drivers": [
             {
               "driver": {
-                "text": "33 26 55",
-                "url": null
+                "text": "Max Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+              }
+            },
+            {
+              "driver": {
+                "text": "Daniil Kvyat",
+                "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
+              }
+            },
+            {
+              "driver": {
+                "text": "Carlos Sainz Jr.",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Sainz_Jr."
               }
             }
           ]
@@ -457,118 +524,24 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
             }
           },
+          "no": 19,
           "race_drivers": [
             {
               "driver": {
-                "text": "19 77",
-                "url": null
+                "text": "Felipe Massa",
+                "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
+              }
+            },
+            {
+              "driver": {
+                "text": "Valtteri Bottas",
+                "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
               }
             }
           ]
         }
       ],
-      "free_practice_drivers": [
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "No.",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "No.",
-              "url": null
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Driver name",
-                "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers"
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Force India",
-              "url": "https://en.wikipedia.org/wiki/Force_India"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "34",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "50",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Manor",
-              "url": "https://en.wikipedia.org/wiki/Manor_Racing"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "42",
-                "url": null
-              }
-            }
-          ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "46 45",
-                "url": null
-              }
-            }
-          ]
-        }
-      ],
+      "free_practice_drivers": [],
       "calendar": [],
       "results": [
         {
