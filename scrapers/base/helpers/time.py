@@ -9,7 +9,8 @@ from scrapers.base.helpers.constants import DATE_FORMATS
 from scrapers.base.helpers.constants import DATE_RANGE_SPLIT
 from scrapers.base.helpers.constants import TIME_KEY_RE
 from scrapers.base.helpers.constants import TIME_SECONDS_RE
-from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
+from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
+from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 
 def extract_time_value(value: Any) -> tuple[str | None, float | None]:

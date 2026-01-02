@@ -10,11 +10,10 @@ from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
-
-# PR wnosił ustandaryzowane wyjątki – używamy ich jeśli istnieją w projekcie.
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
 from scrapers.base.logging import get_logger
+
 
 T = TypeVar("T")
 

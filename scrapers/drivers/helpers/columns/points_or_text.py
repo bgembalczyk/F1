@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.points import PointsColumn

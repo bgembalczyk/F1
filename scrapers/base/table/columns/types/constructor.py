@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_wiki_text

@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import re
 
 from scrapers.base.helpers.links import normalize_links

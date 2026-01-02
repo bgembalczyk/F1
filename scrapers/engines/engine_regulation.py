@@ -4,20 +4,20 @@ from typing import Any, List
 from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.helpers.parsing import parse_configuration
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.func import FuncColumn
+from scrapers.base.table.columns.types.nested_text import NestedTextColumn
+from scrapers.base.table.columns.types.nested_unit_list import NestedUnitListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.helpers.columns.nested_text import NestedTextColumn
-from scrapers.drivers.helpers.columns.nested_unit_list import NestedUnitListColumn
-from scrapers.drivers.helpers.parsers import parse_configuration
 
 
 class EngineRegulationScraper(F1TableScraper):

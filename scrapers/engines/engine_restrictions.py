@@ -4,6 +4,10 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_restriction import EngineRestriction
+from scrapers.base.helpers.parsing import parse_engine_rpm_limit
+from scrapers.base.helpers.parsing import parse_fuel_flow_rate
+from scrapers.base.helpers.parsing import parse_fuel_injection_pressure_limit
+from scrapers.base.helpers.parsing import parse_fuel_limit_per_race
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.run_config import RunConfig
@@ -15,10 +19,6 @@ from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.helpers.parsers import parse_engine_rpm_limit
-from scrapers.drivers.helpers.parsers import parse_fuel_flow_rate
-from scrapers.drivers.helpers.parsers import parse_fuel_injection_pressure_limit
-from scrapers.drivers.helpers.parsers import parse_fuel_limit_per_race
 
 
 class EngineRestrictionsScraper(F1TableScraper):

@@ -11,7 +11,6 @@ from scrapers.base.helpers.time import (
     parse_time_key,
     parse_time_seconds_from_text,
 )
-from scrapers.base.helpers.value_objects import NormalizedDate
 
 from models.services.circuits.lap_record_utils import (
     build_lap_record_key,
@@ -21,6 +20,7 @@ from models.services.circuits.lap_record_utils import (
     select_best_field_with_url,
     normalize_lap_record_entity,
 )
+from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 
 
 def _normalize_entity_value(value: Any) -> dict[str, Any] | None:

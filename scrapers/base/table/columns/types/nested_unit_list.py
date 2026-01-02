@@ -3,12 +3,12 @@ import re
 from typing import Dict
 from typing import List
 
+from scrapers.base.constants import UNIT_RE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.drivers.helpers.parsers import normalize_unit
 from scrapers.drivers.helpers.parsers import parse_number
 from scrapers.drivers.helpers.parsers import parse_unit_list
-from scrapers.drivers.helpers.constants import UNIT_RE
 
 
 class NestedUnitListColumn(BaseColumn):

@@ -5,6 +5,7 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup, Tag
 
+from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
@@ -13,8 +14,6 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
-
-from scrapers.base.helpers.value_objects import LapRecord
 
 
 class LapRecordsTableScraper(F1TableScraper):

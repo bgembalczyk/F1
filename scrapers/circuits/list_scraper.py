@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from models.validation.circuit import Circuit
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
@@ -11,7 +13,6 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from pathlib import Path
 
 
 class CircuitsListScraper(F1TableScraper):
