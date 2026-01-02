@@ -42,6 +42,13 @@
                 "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
               },
               "no": 5
+            },
+            {
+              "driver": {
+                "text": "Kimi Räikkönen",
+                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+              },
+              "no": 7
             }
           ]
         },
@@ -90,6 +97,13 @@
                 "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
               },
               "no": 11
+            },
+            {
+              "driver": {
+                "text": "Nico Hülkenberg",
+                "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
+              },
+              "no": 27
             }
           ]
         },
@@ -129,6 +143,13 @@
                 "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
               },
               "no": 8
+            },
+            {
+              "driver": {
+                "text": "Pastor Maldonado",
+                "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado"
+              },
+              "no": 13
             }
           ]
         },
@@ -168,6 +189,43 @@
                 "url": "https://en.wikipedia.org/wiki/Will_Stevens"
               },
               "no": 28
+            },
+            {
+              "driver": {
+                "text": "Roberto Merhi",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Merhi"
+              },
+              "no": 98,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                15,
+                19
+              ]
+            },
+            {
+              "driver": {
+                "text": "Alexander Rossi",
+                "url": "https://en.wikipedia.org/wiki/Alexander_Rossi"
+              },
+              "no": 53,
+              "rounds": [
+                13,
+                14,
+                16,
+                17,
+                18
+              ]
             }
           ]
         },
@@ -206,7 +264,44 @@
                 "text": "Kevin Magnussen",
                 "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
               },
-              "no": 20
+              "no": 20,
+              "rounds": [
+                1
+              ]
+            },
+            {
+              "driver": {
+                "text": "Fernando Alonso",
+                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+              },
+              "no": 14,
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            },
+            {
+              "driver": {
+                "text": "Jenson Button",
+                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+              },
+              "no": 22
             }
           ]
         },
@@ -251,6 +346,13 @@
                 "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
               },
               "no": 6
+            },
+            {
+              "driver": {
+                "text": "Lewis Hamilton",
+                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+              },
+              "no": 44
             }
           ]
         },
@@ -295,6 +397,13 @@
                 "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
               },
               "no": 3
+            },
+            {
+              "driver": {
+                "text": "Daniil Kvyat",
+                "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
+              },
+              "no": 26
             }
           ]
         },
@@ -334,6 +443,13 @@
                 "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
               },
               "no": 9
+            },
+            {
+              "driver": {
+                "text": "Felipe Nasr",
+                "url": "https://en.wikipedia.org/wiki/Felipe_Nasr"
+              },
+              "no": 12
             }
           ]
         },
@@ -373,6 +489,13 @@
                 "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
               },
               "no": 33
+            },
+            {
+              "driver": {
+                "text": "Carlos Sainz Jr.",
+                "url": "https://en.wikipedia.org/wiki/Carlos_Sainz_Jr."
+              },
+              "no": 55
             }
           ]
         },
@@ -417,6 +540,13 @@
                 "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
               },
               "no": 19
+            },
+            {
+              "driver": {
+                "text": "Valtteri Bottas",
+                "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
+              },
+              "no": 77
             }
           ]
         }
