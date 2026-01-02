@@ -1036,32 +1036,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1968",
-                  "links": [
-                    {
-                      "text": "1968",
-                      "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-                    }
-                  ]
+                  "start": 1968,
+                  "end": 1968
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "BRM",
-                  "links": [
-                    {
-                      "text": "BRM",
-                      "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "BRM",
+                    "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (1 start)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 1
                 }
               },
               {
@@ -7302,36 +7294,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1955-1956",
-                  "links": [
-                    {
-                      "text": "1955",
-                      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-                    },
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-                    }
-                  ]
+                  "start": 1955,
+                  "end": 1956
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "privateer Maserati",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2",
-                  "links": []
+                  "entries": 2,
+                  "starts": null
                 }
               },
               {

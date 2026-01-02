@@ -96,52 +96,36 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1991-1994 , 1999",
-                  "links": [
-                    {
-                      "text": "1991",
-                      "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1994",
-                      "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1999",
-                      "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1991,
+                  "end": 1999
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Jordan , Minardi , Lotus , Williams",
-                  "links": [
-                    {
-                      "text": "Jordan",
-                      "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-                    },
-                    {
-                      "text": "Minardi",
-                      "url": "https://en.wikipedia.org/wiki/Minardi"
-                    },
-                    {
-                      "text": "Lotus",
-                      "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                    },
-                    {
-                      "text": "Williams",
-                      "url": "https://en.wikipedia.org/wiki/WilliamsF1"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Jordan",
+                    "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                  },
+                  {
+                    "text": "Minardi",
+                    "url": "https://en.wikipedia.org/wiki/Minardi"
+                  },
+                  {
+                    "text": "Lotus",
+                    "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                  },
+                  {
+                    "text": "Williams",
+                    "url": "https://en.wikipedia.org/wiki/WilliamsF1"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "44 (41 starts)",
-                  "links": []
+                  "entries": 44,
+                  "starts": 41
                 }
               },
               {
@@ -6494,32 +6478,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1976",
-                  "links": [
-                    {
-                      "text": "1976",
-                      "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
-                    }
-                  ]
+                  "start": 1976,
+                  "end": 1976
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "private Williams",
-                  "links": [
-                    {
-                      "text": "Williams",
-                      "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Williams",
+                    "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1 (0 starts)",
-                  "links": []
+                  "entries": 1,
+                  "starts": 0
                 }
               },
               {
@@ -7067,52 +7043,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1999-2001 , 2004-2005",
-                  "links": [
-                    {
-                      "text": "1999",
-                      "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2001",
-                      "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2004",
-                      "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2005",
-                      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1999,
+                  "end": 2005
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "BAR , Jordan , Toyota",
-                  "links": [
-                    {
-                      "text": "BAR",
-                      "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-                    },
-                    {
-                      "text": "Jordan",
-                      "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-                    },
-                    {
-                      "text": "Toyota",
-                      "url": "https://en.wikipedia.org/wiki/Toyota_F1"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "BAR",
+                    "url": "https://en.wikipedia.org/wiki/British_American_Racing"
+                  },
+                  {
+                    "text": "Jordan",
+                    "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                  },
+                  {
+                    "text": "Toyota",
+                    "url": "https://en.wikipedia.org/wiki/Toyota_F1"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "38 (36 starts)",
-                  "links": []
+                  "entries": 38,
+                  "starts": 36
                 }
               },
               {
@@ -7268,44 +7224,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1975-1977",
-                  "links": [
-                    {
-                      "text": "1975",
-                      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
-                    },
-                    {
-                      "text": "1977",
-                      "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
-                    }
-                  ]
+                  "start": 1975,
+                  "end": 1977
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Williams , Wolf-Williams , Shadow",
-                  "links": [
-                    {
-                      "text": "Williams",
-                      "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
-                    },
-                    {
-                      "text": "Wolf-Williams",
-                      "url": "https://en.wikipedia.org/wiki/Wolf%E2%80%93Williams_Racing"
-                    },
-                    {
-                      "text": "Shadow",
-                      "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Williams",
+                    "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                  },
+                  {
+                    "text": "Wolf-Williams",
+                    "url": "https://en.wikipedia.org/wiki/Wolf%E2%80%93Williams_Racing"
+                  },
+                  {
+                    "text": "Shadow",
+                    "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "7",
-                  "links": []
+                  "entries": 7,
+                  "starts": null
                 }
               },
               {
@@ -8430,40 +8374,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1979-1981",
-                  "links": [
-                    {
-                      "text": "1979",
-                      "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
-                    },
-                    {
-                      "text": "1981",
-                      "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1979,
+                  "end": 1981
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Brabham , Tyrrell",
-                  "links": [
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    },
-                    {
-                      "text": "Tyrrell",
-                      "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  },
+                  {
+                    "text": "Tyrrell",
+                    "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "11 (10 starts)",
-                  "links": []
+                  "entries": 11,
+                  "starts": 10
                 }
               },
               {

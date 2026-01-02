@@ -58,48 +58,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "2006-2007 , 2010",
-                  "links": [
-                    {
-                      "text": "2006",
-                      "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2007",
-                      "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 2006,
+                  "end": 2010
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Super Aguri , Spyker , HRT",
-                  "links": [
-                    {
-                      "text": "Super Aguri",
-                      "url": "https://en.wikipedia.org/wiki/Super_Aguri"
-                    },
-                    {
-                      "text": "Spyker",
-                      "url": "https://en.wikipedia.org/wiki/Spyker_F1"
-                    },
-                    {
-                      "text": "HRT",
-                      "url": "https://en.wikipedia.org/wiki/Hispania_Racing"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Super Aguri",
+                    "url": "https://en.wikipedia.org/wiki/Super_Aguri"
+                  },
+                  {
+                    "text": "Spyker",
+                    "url": "https://en.wikipedia.org/wiki/Spyker_F1"
+                  },
+                  {
+                    "text": "HRT",
+                    "url": "https://en.wikipedia.org/wiki/Hispania_Racing"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "21 (21 starts)",
-                  "links": []
+                  "entries": 21,
+                  "starts": 21
                 }
               },
               {
@@ -5817,36 +5801,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "2001-2002",
-                  "links": [
-                    {
-                      "text": "2001",
-                      "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2002",
-                      "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 2001,
+                  "end": 2002
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Minardi",
-                  "links": [
-                    {
-                      "text": "Minardi",
-                      "url": "https://en.wikipedia.org/wiki/Minardi"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Minardi",
+                    "url": "https://en.wikipedia.org/wiki/Minardi"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "18 (14 starts)",
-                  "links": []
+                  "entries": 18,
+                  "starts": 14
                 }
               },
               {
@@ -5944,19 +5916,16 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "RfH , Charouz",
-                  "links": [
-                    {
-                      "text": "RfH",
-                      "url": "https://en.wikipedia.org/wiki/Racing_for_Holland"
-                    },
-                    {
-                      "text": "Charouz",
-                      "url": "https://en.wikipedia.org/wiki/Charouz_Racing_System"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "RfH",
+                    "url": "https://en.wikipedia.org/wiki/Racing_for_Holland"
+                  },
+                  {
+                    "text": "Charouz",
+                    "url": "https://en.wikipedia.org/wiki/Charouz_Racing_System"
+                  }
+                ]
               },
               {
                 "label": "Best finish",

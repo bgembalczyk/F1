@@ -60,40 +60,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1969 , 1974",
-                  "links": [
-                    {
-                      "text": "1969",
-                      "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-                    },
-                    {
-                      "text": "1974",
-                      "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
-                    }
-                  ]
+                  "start": 1969,
+                  "end": 1974
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "BMW , Surtees",
-                  "links": [
-                    {
-                      "text": "BMW",
-                      "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-                    },
-                    {
-                      "text": "Surtees",
-                      "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "BMW",
+                    "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+                  },
+                  {
+                    "text": "Surtees",
+                    "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (1 start)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 1
                 }
               },
               {

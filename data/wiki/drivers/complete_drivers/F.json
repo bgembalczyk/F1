@@ -60,40 +60,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1983-1984",
-                  "links": [
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1984",
-                      "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1983,
+                  "end": 1984
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Osella , Brabham",
-                  "links": [
-                    {
-                      "text": "Osella",
-                      "url": "https://en.wikipedia.org/wiki/Osella"
-                    },
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Osella",
+                    "url": "https://en.wikipedia.org/wiki/Osella"
+                  },
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "18 (12 starts)",
-                  "links": []
+                  "entries": 18,
+                  "starts": 12
                 }
               },
               {
@@ -1986,48 +1974,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1982 , 1984-1987",
-                  "links": [
-                    {
-                      "text": "1982",
-                      "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1984",
-                      "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1987",
-                      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1982,
+                  "end": 1987
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Toleman , Brabham , Benetton",
-                  "links": [
-                    {
-                      "text": "Toleman",
-                      "url": "https://en.wikipedia.org/wiki/Toleman"
-                    },
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    },
-                    {
-                      "text": "Benetton",
-                      "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Toleman",
+                    "url": "https://en.wikipedia.org/wiki/Toleman"
+                  },
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  },
+                  {
+                    "text": "Benetton",
+                    "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "71 (64 starts)",
-                  "links": []
+                  "entries": 71,
+                  "starts": 64
                 }
               },
               {
@@ -2129,27 +2101,24 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "BMW , Lancia , Martini , Jaguar",
-                  "links": [
-                    {
-                      "text": "BMW",
-                      "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
-                    },
-                    {
-                      "text": "Lancia",
-                      "url": "https://en.wikipedia.org/wiki/Lancia"
-                    },
-                    {
-                      "text": "Martini",
-                      "url": "https://en.wikipedia.org/wiki/Martini_Racing"
-                    },
-                    {
-                      "text": "Jaguar",
-                      "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "BMW",
+                    "url": "https://en.wikipedia.org/wiki/BMW_in_motorsport"
+                  },
+                  {
+                    "text": "Lancia",
+                    "url": "https://en.wikipedia.org/wiki/Lancia"
+                  },
+                  {
+                    "text": "Martini",
+                    "url": "https://en.wikipedia.org/wiki/Martini_Racing"
+                  },
+                  {
+                    "text": "Jaguar",
+                    "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -2373,31 +2342,28 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Lancia , Martini , Jaguar , Toyota , Peugeot",
-                  "links": [
-                    {
-                      "text": "Lancia",
-                      "url": "https://en.wikipedia.org/wiki/Lancia"
-                    },
-                    {
-                      "text": "Martini",
-                      "url": "https://en.wikipedia.org/wiki/Martini_Racing"
-                    },
-                    {
-                      "text": "Jaguar",
-                      "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
-                    },
-                    {
-                      "text": "Toyota",
-                      "url": "https://en.wikipedia.org/wiki/Toyota_in_motorsport"
-                    },
-                    {
-                      "text": "Peugeot",
-                      "url": "https://en.wikipedia.org/wiki/Peugeot_Talbot_Sport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Lancia",
+                    "url": "https://en.wikipedia.org/wiki/Lancia"
+                  },
+                  {
+                    "text": "Martini",
+                    "url": "https://en.wikipedia.org/wiki/Martini_Racing"
+                  },
+                  {
+                    "text": "Jaguar",
+                    "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
+                  },
+                  {
+                    "text": "Toyota",
+                    "url": "https://en.wikipedia.org/wiki/Toyota_in_motorsport"
+                  },
+                  {
+                    "text": "Peugeot",
+                    "url": "https://en.wikipedia.org/wiki/Peugeot_Talbot_Sport"
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -8434,32 +8400,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1987",
-                  "links": [
-                    {
-                      "text": "1987",
-                      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1987,
+                  "end": 1987
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "AGS",
-                  "links": [
-                    {
-                      "text": "AGS",
-                      "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AGS",
+                    "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "14 (11 starts)",
-                  "links": []
+                  "entries": 14,
+                  "starts": 11
                 }
               },
               {
@@ -9159,32 +9117,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1974",
-                  "links": [
-                    {
-                      "text": "1974",
-                      "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
-                    }
-                  ]
+                  "start": 1974,
+                  "end": 1974
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Scuderia Finotto",
-                  "links": [
-                    {
-                      "text": "Scuderia Finotto",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Finotto"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Scuderia Finotto",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Finotto"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1 (0 starts)",
-                  "links": []
+                  "entries": 1,
+                  "starts": 0
                 }
               },
               {
@@ -12013,36 +11963,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1951",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1951
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Alfa Romeo",
-                  "links": [
-                    {
-                      "text": "Alfa Romeo",
-                      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Alfa Romeo",
+                    "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_(Formula_One)"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "7",
-                  "links": []
+                  "entries": 7,
+                  "starts": null
                 }
               },
               {
@@ -13388,56 +13326,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1953 , 1955-1961",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    },
-                    {
-                      "text": "1955",
-                      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-                    },
-                    {
-                      "text": "1961",
-                      "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
-                    }
-                  ]
+                  "start": 1953,
+                  "end": 1961
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "HWM , Connaught , BRM , Cooper , Ferguson",
-                  "links": [
-                    {
-                      "text": "HWM",
-                      "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
-                    },
-                    {
-                      "text": "Connaught",
-                      "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
-                    },
-                    {
-                      "text": "BRM",
-                      "url": "https://en.wikipedia.org/wiki/BRM"
-                    },
-                    {
-                      "text": "Cooper",
-                      "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-                    },
-                    {
-                      "text": "Ferguson",
-                      "url": "https://en.wikipedia.org/wiki/Ferguson_Research_Ltd."
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "HWM",
+                    "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+                  },
+                  {
+                    "text": "Connaught",
+                    "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                  },
+                  {
+                    "text": "BRM",
+                    "url": "https://en.wikipedia.org/wiki/BRM"
+                  },
+                  {
+                    "text": "Cooper",
+                    "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                  },
+                  {
+                    "text": "Ferguson",
+                    "url": "https://en.wikipedia.org/wiki/Ferguson_Research_Ltd."
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "13 (12 starts)",
-                  "links": []
+                  "entries": 13,
+                  "starts": 12
                 }
               },
               {
@@ -13643,56 +13565,36 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1951 , 1953-1958",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-                    },
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    },
-                    {
-                      "text": "1958",
-                      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1958
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Alfa Romeo , Maserati , Mercedes , Ferrari",
-                  "links": [
-                    {
-                      "text": "Alfa Romeo",
-                      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-                    },
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    },
-                    {
-                      "text": "Mercedes",
-                      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Alfa Romeo",
+                    "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                  },
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  },
+                  {
+                    "text": "Mercedes",
+                    "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "52 (51 starts)",
-                  "links": []
+                  "entries": 52,
+                  "starts": 51
                 }
               },
               {
@@ -21942,40 +21844,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1956",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1956
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Alfa Romeo , Ferrari",
-                  "links": [
-                    {
-                      "text": "Alfa Romeo",
-                      "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Alfa Romeo",
+                    "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "35 (33 starts)",
-                  "links": []
+                  "entries": 35,
+                  "starts": 33
                 }
               },
               {
@@ -22296,52 +22186,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1955",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1955",
-                      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1955
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Kurtis Kraft , Kuzma , Pankratz , Lesovsky , Ferrari",
-                  "links": [
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    },
-                    {
-                      "text": "Kuzma",
-                      "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                    },
-                    {
-                      "text": "Pankratz",
-                      "url": "https://en.wikipedia.org/wiki/Pankratz"
-                    },
-                    {
-                      "text": "Lesovsky",
-                      "url": "https://en.wikipedia.org/wiki/Lesovsky"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  },
+                  {
+                    "text": "Kuzma",
+                    "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
+                  },
+                  {
+                    "text": "Pankratz",
+                    "url": "https://en.wikipedia.org/wiki/Pankratz"
+                  },
+                  {
+                    "text": "Lesovsky",
+                    "url": "https://en.wikipedia.org/wiki/Lesovsky"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "6 (5 starts)",
-                  "links": []
+                  "entries": 6,
+                  "starts": 5
                 }
               },
               {
@@ -24539,32 +24417,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1972",
-                  "links": [
-                    {
-                      "text": "1972",
-                      "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
-                    }
-                  ]
+                  "start": 1972,
+                  "end": 1972
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works Brabham",
-                  "links": [
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1 (0 starts)",
-                  "links": []
+                  "entries": 1,
+                  "starts": 0
                 }
               },
               {
@@ -24702,40 +24572,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1958-1959",
-                  "links": [
-                    {
-                      "text": "1958",
-                      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-                    },
-                    {
-                      "text": "1959",
-                      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-                    }
-                  ]
+                  "start": 1958,
+                  "end": 1959
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Behra-Porsche Non-works Maserati",
-                  "links": [
-                    {
-                      "text": "Behra-Porsche",
-                      "url": "https://en.wikipedia.org/wiki/Behra-Porsche"
-                    },
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Behra-Porsche",
+                    "url": "https://en.wikipedia.org/wiki/Behra-Porsche"
+                  },
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "5 (3 starts)",
-                  "links": []
+                  "entries": 5,
+                  "starts": 3
                 }
               },
               {
@@ -25587,32 +25445,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1952",
-                  "links": [
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    }
-                  ]
+                  "start": 1952,
+                  "end": 1952
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works AFM",
-                  "links": [
-                    {
-                      "text": "AFM",
-                      "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AFM",
+                    "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1 (0 starts)",
-                  "links": []
+                  "entries": 1,
+                  "starts": 0
                 }
               },
               {
@@ -25747,40 +25597,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1952",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1952
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Privateer SVA , privateer Ferrari",
-                  "links": [
-                    {
-                      "text": "SVA",
-                      "url": "https://en.wikipedia.org/wiki/Societa_Valdostana_Automobili"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "SVA",
+                    "url": "https://en.wikipedia.org/wiki/Societa_Valdostana_Automobili"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "8 (7 starts)",
-                  "links": []
+                  "entries": 8,
+                  "starts": 7
                 }
               },
               {
@@ -26483,27 +26321,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1967",
-                  "links": []
+                  "start": 1967,
+                  "end": 1967
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works Lotus",
-                  "links": [
-                    {
-                      "text": "Lotus",
-                      "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Lotus",
+                    "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (1 start)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 1
                 }
               },
               {
@@ -26695,60 +26530,48 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1996-2009",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2009",
-                      "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1996,
+                  "end": 2009
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Minardi , Jordan , Benetton , Sauber , Renault , Force India , Ferrari",
-                  "links": [
-                    {
-                      "text": "Minardi",
-                      "url": "https://en.wikipedia.org/wiki/Minardi"
-                    },
-                    {
-                      "text": "Jordan",
-                      "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-                    },
-                    {
-                      "text": "Benetton",
-                      "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-                    },
-                    {
-                      "text": "Sauber",
-                      "url": "https://en.wikipedia.org/wiki/Sauber"
-                    },
-                    {
-                      "text": "Renault",
-                      "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-                    },
-                    {
-                      "text": "Force India",
-                      "url": "https://en.wikipedia.org/wiki/Force_India"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Minardi",
+                    "url": "https://en.wikipedia.org/wiki/Minardi"
+                  },
+                  {
+                    "text": "Jordan",
+                    "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                  },
+                  {
+                    "text": "Benetton",
+                    "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
+                  },
+                  {
+                    "text": "Sauber",
+                    "url": "https://en.wikipedia.org/wiki/Sauber"
+                  },
+                  {
+                    "text": "Renault",
+                    "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+                  },
+                  {
+                    "text": "Force India",
+                    "url": "https://en.wikipedia.org/wiki/Force_India"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "231 (229 starts)",
-                  "links": []
+                  "entries": 231,
+                  "starts": 229
                 }
               },
               {
@@ -26882,19 +26705,16 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "AF Corse , Iron Lynx",
-                  "links": [
-                    {
-                      "text": "AF Corse",
-                      "url": "https://en.wikipedia.org/wiki/AF_Corse"
-                    },
-                    {
-                      "text": "Iron Lynx",
-                      "url": "https://en.wikipedia.org/wiki/Iron_Lynx"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AF Corse",
+                    "url": "https://en.wikipedia.org/wiki/AF_Corse"
+                  },
+                  {
+                    "text": "Iron Lynx",
+                    "url": "https://en.wikipedia.org/wiki/Iron_Lynx"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -26983,23 +26803,20 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "AF Corse , Risi , Iron Lynx",
-                  "links": [
-                    {
-                      "text": "AF Corse",
-                      "url": "https://en.wikipedia.org/wiki/AF_Corse"
-                    },
-                    {
-                      "text": "Risi",
-                      "url": "https://en.wikipedia.org/wiki/Risi_Competizione"
-                    },
-                    {
-                      "text": "Iron Lynx",
-                      "url": "https://en.wikipedia.org/wiki/Iron_Lynx"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AF Corse",
+                    "url": "https://en.wikipedia.org/wiki/AF_Corse"
+                  },
+                  {
+                    "text": "Risi",
+                    "url": "https://en.wikipedia.org/wiki/Risi_Competizione"
+                  },
+                  {
+                    "text": "Iron Lynx",
+                    "url": "https://en.wikipedia.org/wiki/Iron_Lynx"
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -36507,40 +36324,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1953 , 1955",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    },
-                    {
-                      "text": "1955",
-                      "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-                    }
-                  ]
+                  "start": 1953,
+                  "end": 1955
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "HWM-Alta , Stirling Moss Ltd.",
-                  "links": [
-                    {
-                      "text": "HWM-Alta",
-                      "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
-                    },
-                    {
-                      "text": "Stirling Moss Ltd.",
-                      "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "HWM-Alta",
+                    "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+                  },
+                  {
+                    "text": "Stirling Moss Ltd.",
+                    "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2",
-                  "links": []
+                  "entries": 2,
+                  "starts": null
                 }
               },
               {
@@ -38570,25 +38375,22 @@
             "rows": [
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Minardi , Footwork",
-                  "links": [
-                    {
-                      "text": "Minardi",
-                      "url": "https://en.wikipedia.org/wiki/Minardi"
-                    },
-                    {
-                      "text": "Footwork",
-                      "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Minardi",
+                    "url": "https://en.wikipedia.org/wiki/Minardi"
+                  },
+                  {
+                    "text": "Footwork",
+                    "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "43 (40 starts)",
-                  "links": []
+                  "entries": 43,
+                  "starts": 40
                 }
               },
               {
@@ -39254,44 +39056,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1970-1980",
-                  "links": [
-                    {
-                      "text": "1970",
-                      "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
-                    },
-                    {
-                      "text": "1980",
-                      "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
-                    }
-                  ]
+                  "start": 1970,
+                  "end": 1980
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Lotus , McLaren , Fittipaldi",
-                  "links": [
-                    {
-                      "text": "Lotus",
-                      "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                    },
-                    {
-                      "text": "McLaren",
-                      "url": "https://en.wikipedia.org/wiki/McLaren"
-                    },
-                    {
-                      "text": "Fittipaldi",
-                      "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Lotus",
+                    "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                  },
+                  {
+                    "text": "McLaren",
+                    "url": "https://en.wikipedia.org/wiki/McLaren"
+                  },
+                  {
+                    "text": "Fittipaldi",
+                    "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "149 (144 starts)",
-                  "links": []
+                  "entries": 149,
+                  "starts": 144
                 }
               },
               {
@@ -48697,32 +48487,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "2020",
-                  "links": [
-                    {
-                      "text": "2020",
-                      "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 2020,
+                  "end": 2020
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Haas",
-                  "links": [
-                    {
-                      "text": "Haas",
-                      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Haas",
+                    "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (2 starts)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 2
                 }
               },
               {
@@ -48820,19 +48602,16 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Inter Europol Competition , Jota",
-                  "links": [
-                    {
-                      "text": "Inter Europol Competition",
-                      "url": "https://en.wikipedia.org/wiki/Inter_Europol_Competition"
-                    },
-                    {
-                      "text": "Jota",
-                      "url": "https://en.wikipedia.org/wiki/Jota_Sport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Inter Europol Competition",
+                    "url": "https://en.wikipedia.org/wiki/Inter_Europol_Competition"
+                  },
+                  {
+                    "text": "Jota",
+                    "url": "https://en.wikipedia.org/wiki/Jota_Sport"
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -56936,44 +56715,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1972-1973 , 1975",
-                  "links": [
-                    {
-                      "text": "1972",
-                      "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
-                    },
-                    {
-                      "text": "1973",
-                      "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
-                    },
-                    {
-                      "text": "1975",
-                      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
-                    }
-                  ]
+                  "start": 1972,
+                  "end": 1975
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Brabham , Copersucar-Fittipaldi",
-                  "links": [
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    },
-                    {
-                      "text": "Copersucar-Fittipaldi",
-                      "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  },
+                  {
+                    "text": "Copersucar-Fittipaldi",
+                    "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "38 (35 starts)",
-                  "links": []
+                  "entries": 38,
+                  "starts": 35
                 }
               },
               {
@@ -57120,32 +56883,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1953",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    }
-                  ]
+                  "start": 1953,
+                  "end": 1953
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works AFM",
-                  "links": [
-                    {
-                      "text": "AFM",
-                      "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AFM",
+                    "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1",
-                  "links": []
+                  "entries": 1,
+                  "starts": null
                 }
               },
               {
@@ -57478,48 +57233,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950 , 1953-1956 , 1959",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    },
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-                    },
-                    {
-                      "text": "1959",
-                      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1959
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Kurtis Kraft , Watson",
-                  "links": [
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    },
-                    {
-                      "text": "Watson",
-                      "url": "https://en.wikipedia.org/wiki/A._J._Watson"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  },
+                  {
+                    "text": "Watson",
+                    "url": "https://en.wikipedia.org/wiki/A._J._Watson"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "7 (5 starts)",
-                  "links": []
+                  "entries": 7,
+                  "starts": 5
                 }
               },
               {
@@ -57678,32 +57413,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1952",
-                  "links": [
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    }
-                  ]
+                  "start": 1952,
+                  "end": 1952
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works Maserati",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1",
-                  "links": []
+                  "entries": 1,
+                  "starts": null
                 }
               },
               {
@@ -57860,56 +57587,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1954 , 1956-1960",
-                  "links": [
-                    {
-                      "text": "1954",
-                      "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-                    },
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-                    },
-                    {
-                      "text": "1960",
-                      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-                    }
-                  ]
+                  "start": 1954,
+                  "end": 1960
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Maserati , BRM , Connaught , Cooper , Lotus",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    },
-                    {
-                      "text": "BRM",
-                      "url": "https://en.wikipedia.org/wiki/BRM"
-                    },
-                    {
-                      "text": "Connaught",
-                      "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
-                    },
-                    {
-                      "text": "Cooper",
-                      "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
-                    },
-                    {
-                      "text": "Lotus",
-                      "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  },
+                  {
+                    "text": "BRM",
+                    "url": "https://en.wikipedia.org/wiki/BRM"
+                  },
+                  {
+                    "text": "Connaught",
+                    "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+                  },
+                  {
+                    "text": "Cooper",
+                    "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                  },
+                  {
+                    "text": "Lotus",
+                    "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "14 (13 starts)",
-                  "links": []
+                  "entries": 14,
+                  "starts": 13
                 }
               },
               {
@@ -59518,32 +59229,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1950
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Marchese",
-                  "links": [
-                    {
-                      "text": "Marchese",
-                      "url": "https://en.wikipedia.org/wiki/Carl_Marchese"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Marchese",
+                    "url": "https://en.wikipedia.org/wiki/Carl_Marchese"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1",
-                  "links": []
+                  "entries": 1,
+                  "starts": null
                 }
               },
               {
@@ -59669,48 +59372,36 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1989-1990",
-                  "links": [
-                    {
-                      "text": "1989",
-                      "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "1990",
-                      "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1989,
+                  "end": 1990
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "EuroBrun , Rial , Brabham , Onyx",
-                  "links": [
-                    {
-                      "text": "EuroBrun",
-                      "url": "https://en.wikipedia.org/wiki/EuroBrun"
-                    },
-                    {
-                      "text": "Rial",
-                      "url": "https://en.wikipedia.org/wiki/Rial_Racing"
-                    },
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    },
-                    {
-                      "text": "Onyx",
-                      "url": "https://en.wikipedia.org/wiki/Onyx_(racing_team)"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "EuroBrun",
+                    "url": "https://en.wikipedia.org/wiki/EuroBrun"
+                  },
+                  {
+                    "text": "Rial",
+                    "url": "https://en.wikipedia.org/wiki/Rial_Racing"
+                  },
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  },
+                  {
+                    "text": "Onyx",
+                    "url": "https://en.wikipedia.org/wiki/Onyx_(racing_team)"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "22 (7 starts)",
-                  "links": []
+                  "entries": 22,
+                  "starts": 7
                 }
               },
               {
@@ -61391,32 +61082,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1973",
-                  "links": [
-                    {
-                      "text": "1973",
-                      "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
-                    }
-                  ]
+                  "start": 1973,
+                  "end": 1973
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Shadow",
-                  "links": [
-                    {
-                      "text": "Shadow",
-                      "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Team"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Shadow",
+                    "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Team"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "13 (12 starts)",
-                  "links": []
+                  "entries": 13,
+                  "starts": 12
                 }
               },
               {
@@ -61560,52 +61243,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1954",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1954",
-                      "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1954
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Sherman , Kurtis Kraft , Schroeder , Silnes , Diedt",
-                  "links": [
-                    {
-                      "text": "Sherman",
-                      "url": "https://en.wikipedia.org/wiki/Sherman_(constructor)"
-                    },
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    },
-                    {
-                      "text": "Schroeder",
-                      "url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
-                    },
-                    {
-                      "text": "Silnes",
-                      "url": null
-                    },
-                    {
-                      "text": "Diedt",
-                      "url": "https://en.wikipedia.org/wiki/Emil_Diedt"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Sherman",
+                    "url": "https://en.wikipedia.org/wiki/Sherman_(constructor)"
+                  },
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  },
+                  {
+                    "text": "Schroeder",
+                    "url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
+                  },
+                  {
+                    "text": "Silnes",
+                    "url": null
+                  },
+                  {
+                    "text": "Diedt",
+                    "url": "https://en.wikipedia.org/wiki/Emil_Diedt"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "5 (2 starts)",
-                  "links": []
+                  "entries": 5,
+                  "starts": 2
                 }
               },
               {
@@ -61743,32 +61414,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1997",
-                  "links": [
-                    {
-                      "text": "1997",
-                      "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1997,
+                  "end": 1997
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Sauber",
-                  "links": [
-                    {
-                      "text": "Sauber",
-                      "url": "https://en.wikipedia.org/wiki/Sauber"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Sauber",
+                    "url": "https://en.wikipedia.org/wiki/Sauber"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "4",
-                  "links": []
+                  "entries": 4,
+                  "starts": null
                 }
               },
               {
@@ -64233,44 +63896,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950-1952",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    },
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1952
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Maserati , Miller , Kurtis Kraft",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    },
-                    {
-                      "text": "Miller",
-                      "url": null
-                    },
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  },
+                  {
+                    "text": "Miller",
+                    "url": null
+                  },
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "3 (1 start)",
-                  "links": []
+                  "entries": 3,
+                  "starts": 1
                 }
               },
               {
@@ -64406,64 +64057,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1951-1952 , 1957 , 1959-1960",
-                  "links": [
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-                    },
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    },
-                    {
-                      "text": "1957",
-                      "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
-                    },
-                    {
-                      "text": "1959",
-                      "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
-                    },
-                    {
-                      "text": "1960",
-                      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-                    }
-                  ]
+                  "start": 1951,
+                  "end": 1960
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Kurtis Kraft , Schroeder , Watts , Kuzma , Watson",
-                  "links": [
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    },
-                    {
-                      "text": "Schroeder",
-                      "url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
-                    },
-                    {
-                      "text": "Watts",
-                      "url": null
-                    },
-                    {
-                      "text": "Kuzma",
-                      "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                    },
-                    {
-                      "text": "Watson",
-                      "url": "https://en.wikipedia.org/wiki/A._J._Watson"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  },
+                  {
+                    "text": "Schroeder",
+                    "url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
+                  },
+                  {
+                    "text": "Watts",
+                    "url": null
+                  },
+                  {
+                    "text": "Kuzma",
+                    "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
+                  },
+                  {
+                    "text": "Watson",
+                    "url": "https://en.wikipedia.org/wiki/A._J._Watson"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "5 (2 starts)",
-                  "links": []
+                  "entries": 5,
+                  "starts": 2
                 }
               },
               {
@@ -64601,32 +64228,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1987",
-                  "links": [
-                    {
-                      "text": "1987",
-                      "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1987,
+                  "end": 1987
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Osella",
-                  "links": [
-                    {
-                      "text": "Osella",
-                      "url": "https://en.wikipedia.org/wiki/Osella"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Osella",
+                    "url": "https://en.wikipedia.org/wiki/Osella"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "3 (2 starts)",
-                  "links": []
+                  "entries": 3,
+                  "starts": 2
                 }
               },
               {
@@ -64764,32 +64383,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1951",
-                  "links": [
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-                    }
-                  ]
+                  "start": 1951,
+                  "end": 1951
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works Maserati",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1",
-                  "links": []
+                  "entries": 1,
+                  "starts": null
                 }
               },
               {
@@ -65198,40 +64809,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1958-1960",
-                  "links": [
-                    {
-                      "text": "1958",
-                      "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
-                    },
-                    {
-                      "text": "1960",
-                      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-                    }
-                  ]
+                  "start": 1958,
+                  "end": 1960
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Kuzma , Kurtis Kraft",
-                  "links": [
-                    {
-                      "text": "Kuzma",
-                      "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                    },
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Kuzma",
+                    "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
+                  },
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "3",
-                  "links": []
+                  "entries": 3,
+                  "starts": null
                 }
               },
               {
@@ -65320,19 +64919,16 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Shelby-Ford",
-                  "links": [
-                    {
-                      "text": "Shelby",
-                      "url": "https://en.wikipedia.org/wiki/Carroll_Shelby_International"
-                    },
-                    {
-                      "text": "Ford",
-                      "url": "https://en.wikipedia.org/wiki/Ford_Performance"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Shelby",
+                    "url": "https://en.wikipedia.org/wiki/Carroll_Shelby_International"
+                  },
+                  {
+                    "text": "Ford",
+                    "url": "https://en.wikipedia.org/wiki/Ford_Performance"
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -75997,40 +75593,28 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1977 , 1981",
-                  "links": [
-                    {
-                      "text": "1977",
-                      "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
-                    },
-                    {
-                      "text": "1981",
-                      "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1977,
+                  "end": 1981
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Brabham , Osella",
-                  "links": [
-                    {
-                      "text": "Brabham",
-                      "url": "https://en.wikipedia.org/wiki/Brabham"
-                    },
-                    {
-                      "text": "Osella",
-                      "url": "https://en.wikipedia.org/wiki/Osella"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Brabham",
+                    "url": "https://en.wikipedia.org/wiki/Brabham"
+                  },
+                  {
+                    "text": "Osella",
+                    "url": "https://en.wikipedia.org/wiki/Osella"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (0 starts)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 0
                 }
               },
               {
@@ -76291,44 +75875,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1953-1960",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-                    },
-                    {
-                      "text": "1960",
-                      "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
-                    }
-                  ]
+                  "start": 1953,
+                  "end": 1960
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Phillips , Kurtis Kraft , Watson",
-                  "links": [
-                    {
-                      "text": "Phillips",
-                      "url": "https://en.wikipedia.org/wiki/Phillips_(constructor)"
-                    },
-                    {
-                      "text": "Kurtis Kraft",
-                      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                    },
-                    {
-                      "text": "Watson",
-                      "url": "https://en.wikipedia.org/wiki/A._J._Watson"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Phillips",
+                    "url": "https://en.wikipedia.org/wiki/Phillips_(constructor)"
+                  },
+                  {
+                    "text": "Kurtis Kraft",
+                    "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                  },
+                  {
+                    "text": "Watson",
+                    "url": "https://en.wikipedia.org/wiki/A._J._Watson"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "8",
-                  "links": []
+                  "entries": 8,
+                  "starts": null
                 }
               },
               {
@@ -76507,52 +76079,40 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1994-2003",
-                  "links": [
-                    {
-                      "text": "1994",
-                      "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-                    },
-                    {
-                      "text": "2003",
-                      "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 1994,
+                  "end": 2003
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Sauber , Williams , Jordan , Prost , Arrows",
-                  "links": [
-                    {
-                      "text": "Sauber",
-                      "url": "https://en.wikipedia.org/wiki/Sauber"
-                    },
-                    {
-                      "text": "Williams",
-                      "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-                    },
-                    {
-                      "text": "Jordan",
-                      "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-                    },
-                    {
-                      "text": "Prost",
-                      "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
-                    },
-                    {
-                      "text": "Arrows",
-                      "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Sauber",
+                    "url": "https://en.wikipedia.org/wiki/Sauber"
+                  },
+                  {
+                    "text": "Williams",
+                    "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                  },
+                  {
+                    "text": "Jordan",
+                    "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                  },
+                  {
+                    "text": "Prost",
+                    "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
+                  },
+                  {
+                    "text": "Arrows",
+                    "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "160 (156 starts)",
-                  "links": []
+                  "entries": 160,
+                  "starts": 156
                 }
               },
               {
@@ -76674,19 +76234,16 @@
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Lola , Aston Martin",
-                  "links": [
-                    {
-                      "text": "Lola",
-                      "url": "https://en.wikipedia.org/wiki/Lola_Cars"
-                    },
-                    {
-                      "text": "Aston Martin",
-                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_Racing"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Lola",
+                    "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+                  },
+                  {
+                    "text": "Aston Martin",
+                    "url": "https://en.wikipedia.org/wiki/Aston_Martin_Racing"
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -82527,44 +82084,32 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1952-1956",
-                  "links": [
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-                    },
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-                    }
-                  ]
+                  "start": 1952,
+                  "end": 1956
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "HWM , Gordini , Ferrari",
-                  "links": [
-                    {
-                      "text": "HWM",
-                      "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
-                    },
-                    {
-                      "text": "Gordini",
-                      "url": "https://en.wikipedia.org/wiki/Gordini"
-                    },
-                    {
-                      "text": "Ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "HWM",
+                    "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
+                  },
+                  {
+                    "text": "Gordini",
+                    "url": "https://en.wikipedia.org/wiki/Gordini"
+                  },
+                  {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "11",
-                  "links": []
+                  "entries": 11,
+                  "starts": null
                 }
               },
               {
@@ -83791,32 +83336,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "2005",
-                  "links": [
-                    {
-                      "text": "2005",
-                      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-                    }
-                  ]
+                  "start": 2005,
+                  "end": 2005
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Minardi",
-                  "links": [
-                    {
-                      "text": "Minardi",
-                      "url": "https://en.wikipedia.org/wiki/Minardi"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Minardi",
+                    "url": "https://en.wikipedia.org/wiki/Minardi"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "11",
-                  "links": []
+                  "entries": 11,
+                  "starts": null
                 }
               },
               {
@@ -85584,32 +85121,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1950",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-                    }
-                  ]
+                  "start": 1950,
+                  "end": 1950
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "non-works Maserati",
-                  "links": [
-                    {
-                      "text": "Maserati",
-                      "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maserati",
+                    "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "1",
-                  "links": []
+                  "entries": 1,
+                  "starts": null
                 }
               },
               {
@@ -85734,32 +85263,24 @@
               {
                 "label": "Active years",
                 "value": {
-                  "text": "1975",
-                  "links": [
-                    {
-                      "text": "1975",
-                      "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
-                    }
-                  ]
+                  "start": 1975,
+                  "end": 1975
                 }
               },
               {
                 "label": "Teams",
-                "value": {
-                  "text": "Maki",
-                  "links": [
-                    {
-                      "text": "Maki",
-                      "url": "https://en.wikipedia.org/wiki/Maki_(constructor)"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Maki",
+                    "url": "https://en.wikipedia.org/wiki/Maki_(constructor)"
+                  }
+                ]
               },
               {
                 "label": "Entries",
                 "value": {
-                  "text": "2 (0 starts)",
-                  "links": []
+                  "entries": 2,
+                  "starts": 0
                 }
               },
               {
