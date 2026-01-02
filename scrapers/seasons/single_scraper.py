@@ -22,7 +22,8 @@ from scrapers.base.table.columns.types.season_date import SeasonDateColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.seasons.single_parsers import EntryMerger, SeasonTableParser
+from scrapers.seasons.parsers.entry_merger import EntryMerger
+from scrapers.seasons.parsers.season_table_parser import SeasonTableParser
 
 
 class SingleSeasonScraper(F1Scraper):
