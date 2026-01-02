@@ -6,6 +6,7 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.options import ScraperOptions, init_scraper_options
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
@@ -107,7 +108,7 @@ class SingleSeasonScraper(F1Scraper):
                 "chassis": LinksListColumn(text_for_missing_url=True),
                 "power_unit": EngineColumn(),
                 "race_drivers": DriversWithRoundsColumn(),
-                "no": IntColumn(),
+                "no": BrListColumn(),
                 "drivers": DriverListColumn(),
                 "rounds": BrListColumn(),
                 "engine": EngineColumn(),
@@ -207,7 +208,7 @@ class SingleSeasonScraper(F1Scraper):
 
     @staticmethod
     def _entry_group_keys(records: List[Dict[str, Any]]) -> List[str]:
-        driver_fields = {"race_drivers", "driver", "drivers", "rounds", "races"}
+        driver_fields = {"race_drivers", "driver", "drivers", "rounds", "races", "no"}
         keys: list[str] = []
         seen: set[str] = set()
         for record in records:
@@ -226,7 +227,7 @@ class SingleSeasonScraper(F1Scraper):
     def _entry_merge_key(record: Dict[str, Any]) -> tuple[tuple[str, str], ...]:
         items: list[tuple[str, str]] = []
         for key, value in record.items():
-            if key in {"race_drivers", "driver", "drivers", "rounds", "races"}:
+            if key in {"race_drivers", "driver", "drivers", "rounds", "races", "no"}:
                 continue
             items.append((key, repr(value)))
         return tuple(sorted(items))
@@ -234,7 +235,7 @@ class SingleSeasonScraper(F1Scraper):
     @staticmethod
     def _strip_entry_driver_fields(record: Dict[str, Any]) -> Dict[str, Any]:
         cleaned = dict(record)
-        for key in ("race_drivers", "driver", "drivers", "rounds", "races"):
+        for key in ("race_drivers", "driver", "drivers", "rounds", "races", "no"):
             cleaned.pop(key, None)
         return cleaned
 
@@ -243,7 +244,34 @@ class SingleSeasonScraper(F1Scraper):
 
         race_drivers = record.get("race_drivers")
         if isinstance(race_drivers, list):
-            drivers.extend(race_drivers)
+            numbers = self._normalize_entry_numbers(record.get("no"))
+            rounds_value = record.get("rounds") or record.get("races")
+            rounds_by_index = (
+                rounds_value
+                if isinstance(rounds_value, list) and len(rounds_value) == len(race_drivers)
+                else None
+            )
+            rounds_all = (
+                self._normalize_rounds(rounds_value) if rounds_by_index is None else []
+            )
+            numbers_by_index = (
+                numbers if len(numbers) == len(race_drivers) else []
+            )
+            enriched: list[dict[str, Any]] = []
+            for index, item in enumerate(race_drivers):
+                entry = dict(item)
+                if numbers_by_index:
+                    entry.setdefault("no", numbers_by_index[index])
+                elif numbers and len(numbers) == 1 and len(race_drivers) == 1:
+                    entry.setdefault("no", numbers[0])
+                if rounds_by_index is not None:
+                    rounds = self._normalize_rounds(rounds_by_index[index])
+                    if rounds:
+                        entry["rounds"] = rounds
+                elif rounds_all:
+                    entry["rounds"] = rounds_all
+                enriched.append(entry)
+            drivers.extend(enriched)
 
         driver_value = record.get("driver")
         if driver_value is None:
@@ -256,6 +284,10 @@ class SingleSeasonScraper(F1Scraper):
             driver_value if isinstance(driver_value, list) else [driver_value]
         )
         rounds_value = record.get("rounds") or record.get("races")
+        numbers = self._normalize_entry_numbers(record.get("no"))
+        numbers_by_index = (
+            numbers if len(numbers) == len(driver_items) else []
+        )
 
         if isinstance(rounds_value, list) and len(rounds_value) == len(driver_items):
             for driver, rounds_item in zip(driver_items, rounds_value):
@@ -263,17 +295,44 @@ class SingleSeasonScraper(F1Scraper):
                 rounds = self._normalize_rounds(rounds_item)
                 if rounds:
                     entry["rounds"] = rounds
+                if numbers_by_index:
+                    entry["no"] = numbers_by_index.pop(0)
                 drivers.append(entry)
             return drivers
 
         rounds = self._normalize_rounds(rounds_value)
-        for driver in driver_items:
+        for index, driver in enumerate(driver_items):
             entry = {"driver": driver}
             if rounds:
                 entry["rounds"] = rounds
+            if numbers_by_index:
+                entry["no"] = numbers_by_index[index]
+            elif numbers and len(numbers) == 1 and len(driver_items) == 1:
+                entry["no"] = numbers[0]
             drivers.append(entry)
 
         return drivers
+
+    @staticmethod
+    def _normalize_entry_numbers(value: Any) -> list[int]:
+        if value is None:
+            return []
+        if isinstance(value, list):
+            numbers: list[int] = []
+            for item in value:
+                if isinstance(item, int):
+                    numbers.append(item)
+                elif isinstance(item, str):
+                    parsed = parse_int_from_text(item)
+                    if parsed is not None:
+                        numbers.append(parsed)
+            return numbers
+        if isinstance(value, int):
+            return [value]
+        if isinstance(value, str):
+            parsed = parse_int_from_text(value)
+            return [parsed] if parsed is not None else []
+        return []
 
     @staticmethod
     def _normalize_rounds(value: Any) -> list[int]:
