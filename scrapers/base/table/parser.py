@@ -45,24 +45,11 @@ class HtmlTableParser:
         return self._parse_table(table)
 
     def _parse_table(self, table: Tag) -> list[TableRow]:
-        header_row = table.find("tr")
-        if not header_row:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
-
-        header_cells = header_row.find_all(["th", "td"])
-        headers = [
-            clean_wiki_text(
-                c.get_text(" ", strip=True),
-                strip_lang_suffix=self.strip_lang_suffix,
-                strip_refs=self.strip_refs,
-                normalize_dashes=self.normalize_dashes,
-            )
-            for c in header_cells
-        ]
+        headers, header_rows = self._extract_headers(table)
 
         records: list[TableRow] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
-        for tr in table.find_all("tr")[1:]:
+        for tr in table.find_all("tr")[header_rows:]:
             cells = tr.find_all(["td", "th"])
 
             if not cells or all(not c.get_text(strip=True) for c in cells):
@@ -100,19 +87,10 @@ class HtmlTableParser:
         )
 
         for table in candidate_tables:
-            header_row = table.find("tr")
-            if not header_row:
+            try:
+                headers, _ = self._extract_headers(table)
+            except RuntimeError:
                 continue
-            header_cells = header_row.find_all(["th", "td"])
-            headers = [
-                clean_wiki_text(
-                    c.get_text(" ", strip=True),
-                    strip_lang_suffix=self.strip_lang_suffix,
-                    strip_refs=self.strip_refs,
-                    normalize_dashes=self.normalize_dashes,
-                )
-                for c in header_cells
-            ]
 
             if self._headers_match(headers):
                 return table
@@ -210,3 +188,71 @@ class HtmlTableParser:
         consume_pending()
 
         return expanded
+
+    def _extract_headers(self, table: Tag) -> tuple[list[str], int]:
+        rows = table.find_all("tr")
+        if not rows:
+            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+
+        first_row = rows[0]
+        first_cells = first_row.find_all(["th", "td"])
+        if not first_cells:
+            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+
+        first_headers = [
+            clean_wiki_text(
+                c.get_text(" ", strip=True),
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+            for c in first_cells
+        ]
+
+        if len(rows) < 2:
+            return first_headers, 1
+
+        second_row = rows[1]
+        second_cells = second_row.find_all(["th", "td"])
+        if not second_cells or not all(cell.name == "th" for cell in second_cells):
+            return first_headers, 1
+
+        if not any(
+            int(cell.get("colspan") or 1) > 1 for cell in first_cells
+        ):
+            return first_headers, 1
+
+        second_headers = [
+            clean_wiki_text(
+                c.get_text(" ", strip=True),
+                strip_lang_suffix=self.strip_lang_suffix,
+                strip_refs=self.strip_refs,
+                normalize_dashes=self.normalize_dashes,
+            )
+            for c in second_cells
+        ]
+
+        combined: list[str] = []
+        second_index = 0
+        for cell, header in zip(first_cells, first_headers):
+            try:
+                colspan_value = int(cell.get("colspan") or 1)
+            except ValueError:
+                colspan_value = 1
+            try:
+                rowspan_value = int(cell.get("rowspan") or 1)
+            except ValueError:
+                rowspan_value = 1
+
+            if rowspan_value > 1 or colspan_value == 1:
+                combined.extend([header] * colspan_value)
+                continue
+
+            for _ in range(colspan_value):
+                if second_index < len(second_headers):
+                    combined.append(second_headers[second_index])
+                else:
+                    combined.append(header)
+                second_index += 1
+
+        return combined, 2
