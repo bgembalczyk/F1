@@ -2820,7 +2820,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -6708,13 +6709,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4B t",
+                  "text": "Renault EF4B",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6939,13 +6941,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -22005,13 +22008,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Alfa Romeo 890T t",
+                  "text": "Alfa Romeo 890T",
                   "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -22229,13 +22233,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4 t",
+                  "text": "Renault EF4",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -22442,13 +22447,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4 t",
+                  "text": "Renault EF4",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -22523,13 +22529,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4B t",
+                  "text": "Renault EF4B",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -22754,13 +22761,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -22930,13 +22938,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -23040,13 +23049,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "BMW M12/13 t",
+                  "text": "BMW M12/13",
                   "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -25078,7 +25088,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -25122,7 +25133,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -46894,7 +46906,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -46938,7 +46951,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -46993,7 +47007,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -52871,13 +52886,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 059/3 t",
+                  "text": "Ferrari 059/3",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -55038,13 +55054,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Nissan VRX30A Turbo",
+                  "text": "Nissan VRX30A",
                   "url": "https://en.wikipedia.org/wiki/Nissan"
                 },
                 "displacement_l": 3.0,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -72513,13 +72530,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M15 E Performance t",
+                  "text": "Mercedes-AMG M15 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -72840,13 +72858,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech R.E.25 t",
+                  "text": "Renault E-Tech R.E.25",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -75416,6 +75435,7 @@
                   "text": "Lancia",
                   "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
                 },
+                "-",
                 {
                   "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
@@ -75547,6 +75567,7 @@
                   "text": "Lancia",
                   "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
                 },
+                "-",
                 {
                   "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
@@ -77699,6 +77720,7 @@
                   "text": "Lancia",
                   "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
                 },
+                "-",
                 {
                   "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
@@ -77863,6 +77885,7 @@
                   "text": "Lancia",
                   "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
                 },
+                "-",
                 {
                   "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
@@ -86497,7 +86520,8 @@
                 {
                   "text": "Delahaye",
                   "url": "https://en.wikipedia.org/wiki/Delahaye"
-                }
+                },
+                "145"
               ],
               "engine": {
                 "model": {
@@ -86601,7 +86625,8 @@
                 {
                   "text": "Talbot",
                   "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-                }
+                },
+                "Spéciale"
               ],
               "engine": {
                 "model": {
@@ -89395,7 +89420,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "/92D"
               ],
               "engine": {
                 "model": {
@@ -89546,7 +89572,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "/93D"
               ],
               "engine": {
                 "model": {
@@ -89681,7 +89708,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "/94D"
               ],
               "engine": {
                 "model": {
@@ -94718,7 +94746,8 @@
                 {
                   "text": "44",
                   "url": "https://en.wikipedia.org/wiki/Lotus_44"
-                }
+                },
+                "F2"
               ],
               "engine": {
                 "model": {
@@ -94870,6 +94899,7 @@
                   "text": "25",
                   "url": "https://en.wikipedia.org/wiki/Lotus_25"
                 },
+                "/",
                 {
                   "text": "33",
                   "url": "https://en.wikipedia.org/wiki/Lotus_33"
@@ -95828,6 +95858,7 @@
                   "text": "25",
                   "url": "https://en.wikipedia.org/wiki/Lotus_25"
                 },
+                "/",
                 {
                   "text": "33",
                   "url": "https://en.wikipedia.org/wiki/Lotus_33"
@@ -101573,13 +101604,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Lancia t",
+                  "text": "Lancia",
                   "url": "https://en.wikipedia.org/wiki/Lancia"
                 },
                 "displacement_l": 1.4,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -101740,12 +101772,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -101940,12 +101973,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -102008,12 +102042,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -102169,12 +102204,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -102248,12 +102284,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -102321,12 +102358,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -102559,12 +102597,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -102775,12 +102814,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -102991,12 +103031,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103207,12 +103248,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103434,12 +103476,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103672,12 +103715,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103899,12 +103943,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Chevrolet 265C t",
+                  "text": "Chevrolet 265C",
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104126,12 +104171,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104353,12 +104399,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Buick 3300 t",
+                  "text": "Buick 3300",
                   "url": "https://en.wikipedia.org/wiki/Buick"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -106799,7 +106846,8 @@
                 {
                   "text": "T45",
                   "url": "https://en.wikipedia.org/wiki/Cooper_T45"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {

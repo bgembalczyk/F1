@@ -4237,16 +4237,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "74"
               ],
               "engine": {
                 "model": {
-                  "text": "Offy 159 t",
+                  "text": "Offy 159",
                   "url": "https://en.wikipedia.org/wiki/Offenhauser"
                 },
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4409,16 +4411,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "74"
               ],
               "engine": {
                 "model": {
-                  "text": "Offy Drake t",
+                  "text": "Offy Drake",
                   "url": "https://en.wikipedia.org/wiki/Offenhauser"
                 },
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -4504,16 +4508,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "74"
               ],
               "engine": {
                 "model": {
-                  "text": "Offy Drake t",
+                  "text": "Offy Drake",
                   "url": "https://en.wikipedia.org/wiki/Offenhauser"
                 },
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4705,15 +4711,18 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Lightning Mk1"
+              ],
               "engine": {
                 "model": {
-                  "text": "Offy Drake t",
+                  "text": "Offy Drake",
                   "url": "https://en.wikipedia.org/wiki/Offenhauser"
                 },
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4887,16 +4896,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "74"
               ],
               "engine": {
                 "model": {
-                  "text": "Offy Drake t",
+                  "text": "Offy Drake",
                   "url": "https://en.wikipedia.org/wiki/Offenhauser"
                 },
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": null,
               "2": {
@@ -4967,15 +4978,18 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Lightning Mk1"
+              ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -5035,15 +5049,18 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Lightning Mk1"
+              ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5140,16 +5157,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "78"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -5323,16 +5342,18 @@
                 {
                   "text": "Eagle",
                   "url": "https://en.wikipedia.org/wiki/All_American_Racers"
-                }
+                },
+                "78 MkII"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -5762,16 +5783,18 @@
                 {
                   "text": "Penske",
                   "url": "https://en.wikipedia.org/wiki/Team_Penske"
-                }
+                },
+                "PC-7"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5937,16 +5960,18 @@
                 {
                   "text": "Penske",
                   "url": "https://en.wikipedia.org/wiki/Team_Penske"
-                }
+                },
+                "PC-9"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -6090,16 +6115,18 @@
                 {
                   "text": "Penske",
                   "url": "https://en.wikipedia.org/wiki/Team_Penske"
-                }
+                },
+                "PC-9B"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -6285,7 +6312,9 @@
                 "text": "1966",
                 "url": "https://en.wikipedia.org/wiki/1966_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Huffaker 66"
+              ],
               "engine": {
                 "model": {
                   "text": "Offy",
@@ -6500,7 +6529,9 @@
                 "text": "1977",
                 "url": "https://en.wikipedia.org/wiki/1977_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Lightning Mk1/77"
+              ],
               "engine": {
                 "model": {
                   "text": "Offy",

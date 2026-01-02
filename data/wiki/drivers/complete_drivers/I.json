@@ -2695,7 +2695,8 @@
                 {
                   "text": "MS5",
                   "url": "https://en.wikipedia.org/wiki/Matra_MS5"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -2850,7 +2851,8 @@
                 {
                   "text": "MS5",
                   "url": "https://en.wikipedia.org/wiki/Matra_MS5"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -3620,10 +3622,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -3816,10 +3821,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -3913,10 +3921,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -4043,10 +4054,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -4228,10 +4242,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -4314,10 +4331,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/11 F12",
+                  "text": "Ferrari 001/11",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -6188,7 +6208,8 @@
                 {
                   "text": "MS5",
                   "url": "https://en.wikipedia.org/wiki/Matra_MS5"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -6277,7 +6298,8 @@
                 {
                   "text": "MS5",
                   "url": "https://en.wikipedia.org/wiki/Matra_MS5"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -6560,10 +6582,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -8321,7 +8346,8 @@
                 {
                   "text": "Ford GT40",
                   "url": "https://en.wikipedia.org/wiki/Ford_GT40"
-                }
+                },
+                "Mk.I (Mirage)"
               ],
               "engine": {
                 "model": {
@@ -8505,7 +8531,8 @@
                 {
                   "text": "Ford GT40",
                   "url": "https://en.wikipedia.org/wiki/Ford_GT40"
-                }
+                },
+                "Mk.I (Mirage)"
               ],
               "engine": {
                 "model": {
@@ -8663,7 +8690,8 @@
                 {
                   "text": "Ford GT40",
                   "url": "https://en.wikipedia.org/wiki/Ford_GT40"
-                }
+                },
+                "Mk.I (Mirage)"
               ],
               "engine": {
                 "model": {
@@ -21539,7 +21567,8 @@
                 {
                   "text": "T43",
                   "url": "https://en.wikipedia.org/wiki/Cooper_T43"
-                }
+                },
+                "F2"
               ],
               "engine": {
                 "model": {
@@ -21693,7 +21722,8 @@
                 {
                   "text": "16",
                   "url": "https://en.wikipedia.org/wiki/Lotus_16"
-                }
+                },
+                "F2"
               ],
               "engine": {
                 "model": {
@@ -23333,6 +23363,7 @@
                   "text": "25",
                   "url": "https://en.wikipedia.org/wiki/Lotus_25"
                 },
+                "/",
                 {
                   "text": "33",
                   "url": "https://en.wikipedia.org/wiki/Lotus_33"
@@ -23407,6 +23438,7 @@
                   "text": "25",
                   "url": "https://en.wikipedia.org/wiki/Lotus_25"
                 },
+                "/",
                 {
                   "text": "33",
                   "url": "https://en.wikipedia.org/wiki/Lotus_33"

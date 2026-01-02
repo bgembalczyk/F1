@@ -1193,7 +1193,9 @@
                 }
               ],
               "class": "P 2.0",
-              "chassis": [],
+              "chassis": [
+                "Astra RNR2"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford Cosworth FVC",
@@ -1348,7 +1350,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T212"
               ],
               "engine": {
                 "model": {
@@ -1509,7 +1512,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T212"
               ],
               "engine": {
                 "model": {
@@ -1571,7 +1575,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T290"
               ],
               "engine": {
                 "model": {
@@ -1699,7 +1704,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T290"
               ],
               "engine": {
                 "model": {
@@ -1783,7 +1789,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T292"
               ],
               "engine": {
                 "model": {
@@ -1935,7 +1942,9 @@
                 }
               ],
               "class": "S 2.0",
-              "chassis": [],
+              "chassis": [
+                "Cheetah G501"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford Cosworth BDG",
@@ -2299,7 +2308,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T294S"
               ],
               "engine": {
                 "model": {
@@ -2411,7 +2421,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T296"
               ],
               "engine": {
                 "model": {
@@ -2642,10 +2653,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 930/80 F6 t",
+                  "text": "Porsche 930/80",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 3.2
+                "displacement_l": 3.2,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -2751,10 +2766,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche F6 t",
+                  "text": "Porsche",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -2850,7 +2869,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T600"
               ],
               "engine": {
                 "model": {
@@ -2967,7 +2987,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T600"
               ],
               "engine": {
                 "model": {
@@ -3029,7 +3050,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T600"
               ],
               "engine": {
                 "model": {
@@ -3113,7 +3135,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T600"
               ],
               "engine": {
                 "model": {
@@ -3219,7 +3242,8 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T610"
               ],
               "engine": {
                 "model": {
@@ -3362,10 +3386,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/76 F6 t",
+                  "text": "Porsche Type 935/76",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -3443,10 +3471,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/76 F6 t",
+                  "text": "Porsche Type 935/76",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -3539,10 +3571,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/76 F6 t",
+                  "text": "Porsche Type 935/76",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -3613,10 +3649,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/76 F6 t",
+                  "text": "Porsche Type 935/76",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -3760,10 +3800,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/76 F6 t",
+                  "text": "Porsche Type 935/76",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -3841,10 +3885,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/79 F6 t",
+                  "text": "Porsche Type 935/79",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -6274,7 +6322,8 @@
                 {
                   "text": "M10B",
                   "url": "https://en.wikipedia.org/wiki/McLaren_M10B"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -6402,7 +6451,8 @@
                 {
                   "text": "M10B",
                   "url": "https://en.wikipedia.org/wiki/McLaren_M10B"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -6508,7 +6558,8 @@
                 {
                   "text": "T330",
                   "url": "https://en.wikipedia.org/wiki/Lola_T330"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -6575,7 +6626,8 @@
                 {
                   "text": "T332",
                   "url": "https://en.wikipedia.org/wiki/Lola_T332"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -6693,7 +6745,8 @@
                 {
                   "text": "T332",
                   "url": "https://en.wikipedia.org/wiki/Lola_T332"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -15289,7 +15342,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-04"
               ],
               "no": 20,
               "engine": {
@@ -15472,7 +15526,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-05"
               ],
               "no": 2,
               "engine": {
@@ -15663,7 +15718,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-05"
               ],
               "no": 51,
               "engine": {
@@ -19207,10 +19263,30 @@
               {
                 "text": "2022",
                 "url": "https://en.wikipedia.org/wiki/2022_Indianapolis_500"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Japanese F3",
+              "url": "https://en.wikipedia.org/wiki/Japanese_F3"
+            },
+            "years": [
               {
                 "text": "2009",
                 "url": "https://en.wikipedia.org/wiki/2009_All-Japan_Formula_Three_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            },
+            "years": [
+              {
+                "text": "2007",
+                "url": null
               }
             ]
           }
@@ -23187,13 +23263,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1‑2014 t",
+                  "text": "Renault Energy F1‑2014",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -23456,13 +23533,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 060 t",
+                  "text": "Ferrari 060",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -23725,13 +23803,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 061 t",
+                  "text": "Ferrari 061",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -24016,13 +24095,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 061 t",
+                  "text": "Ferrari 061",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -24296,13 +24376,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 062 EVO t",
+                  "text": "Ferrari 062 EVO",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -26953,13 +27034,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Acura AR24e Turbo",
+                  "text": "Acura AR24e",
                   "url": "https://en.wikipedia.org/wiki/Acura"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -31619,7 +31701,8 @@
                 {
                   "text": "Dome",
                   "url": "https://en.wikipedia.org/wiki/Dome_(constructor)"
-                }
+                },
+                "RL80"
               ],
               "engine": {
                 "model": {
@@ -31791,7 +31874,8 @@
                 {
                   "text": "Dome",
                   "url": "https://en.wikipedia.org/wiki/Dome_(constructor)"
-                }
+                },
+                "RL81"
               ],
               "engine": {
                 "model": {
@@ -32137,7 +32221,9 @@
                 }
               ],
               "class": "C2",
-              "chassis": [],
+              "chassis": [
+                "Gebhardt JC842"
+              ],
               "engine": {
                 "model": {
                   "text": "BMW M12",
@@ -33018,7 +33104,8 @@
                 {
                   "text": "T101",
                   "url": "https://en.wikipedia.org/wiki/Trojan_T101"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -33075,7 +33162,8 @@
                 {
                   "text": "T332",
                   "url": "https://en.wikipedia.org/wiki/Lola_T332"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {

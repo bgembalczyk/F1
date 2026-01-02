@@ -58,6 +58,18 @@
                 "url": "https://en.wikipedia.org/wiki/2007_International_Formula_Master"
               }
             ]
+          },
+          {
+            "title": {
+              "text": "Belgian Formula Renault",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_1.6L"
+            },
+            "years": [
+              {
+                "text": "2003",
+                "url": null
+              }
+            ]
           }
         ],
         "major_victories": [],
@@ -6045,7 +6057,8 @@
                 {
                   "text": "Kuzma",
                   "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                }
+                },
+                "Indy Roadster"
               ],
               "engine": {
                 "model": {
@@ -23133,10 +23146,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935/79 F6 t",
+                  "text": "Porsche Type 935/79",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.8
+                "displacement_l": 2.8,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -27132,7 +27149,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Pygmée MDB15"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -43238,13 +43257,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech RE22 t",
+                  "text": "Renault E-Tech RE22",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -43543,13 +43563,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech RE23 t",
+                  "text": "Renault E-Tech RE23",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -43848,13 +43869,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech RE24 t",
+                  "text": "Renault E-Tech RE24",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -44175,13 +44197,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech RE25 t",
+                  "text": "Renault E-Tech RE25",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -48577,12 +48600,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault t",
+                  "text": "Renault",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -49771,7 +49795,8 @@
                 {
                   "text": "Maserati",
                   "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                }
+                },
+                "8CM"
               ],
               "engine": {
                 "model": {
@@ -49885,7 +49910,8 @@
                 {
                   "text": "Maserati",
                   "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                }
+                },
+                "6C-34"
               ],
               "engine": {
                 "model": {

@@ -4183,13 +4183,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Hart 415T t",
+                  "text": "Hart 415T",
                   "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4444,12 +4445,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4578,12 +4580,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -4695,12 +4698,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -4800,10 +4804,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935 F6 t",
+                  "text": "Porsche Type 935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4875,10 +4883,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935 F6 t",
+                  "text": "Porsche Type 935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -4969,10 +4981,14 @@
               "car": "Porsche 956 Gti",
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935 F6 t",
+                  "text": "Porsche Type 935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -5025,13 +5041,14 @@
               "car": "Tom's 86C",
               "engine": {
                 "model": {
-                  "text": "Toyota 4T-GT t",
+                  "text": "Toyota 4T-GT",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.1,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5164,10 +5181,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Porsche Type 935 F6 t",
+                  "text": "Porsche Type 935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5316,13 +5337,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Mercedes-Benz M117 t",
+                  "text": "Mercedes-Benz M117",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
                 },
                 "displacement_l": 5.0,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5482,13 +5504,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Mercedes-Benz M117 t",
+                  "text": "Mercedes-Benz M117",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
                 },
                 "displacement_l": 5.0,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5618,13 +5641,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Nissan VRH35Z t",
+                  "text": "Nissan VRH35Z",
                   "url": "https://en.wikipedia.org/wiki/Nissan_VRH35Z"
                 },
                 "displacement_l": 3.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5674,13 +5698,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Nissan VRH35Z t",
+                  "text": "Nissan VRH35Z",
                   "url": "https://en.wikipedia.org/wiki/Nissan_VRH35Z"
                 },
                 "displacement_l": 3.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": {
@@ -13607,7 +13632,8 @@
                 {
                   "text": "Maserati",
                   "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
-                }
+                },
+                "8CL"
               ],
               "engine": {
                 "model": {
@@ -13731,7 +13757,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "3000"
               ],
               "engine": {
                 "model": {
@@ -13995,7 +14022,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500B"
               ],
               "engine": {
                 "model": {
@@ -14140,7 +14168,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500C"
               ],
               "engine": {
                 "model": {
@@ -14280,7 +14309,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500C"
               ],
               "engine": {
                 "model": {
@@ -14398,7 +14428,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500C"
               ],
               "engine": {
                 "model": {
@@ -14527,7 +14558,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500G"
               ],
               "engine": {
                 "model": {
@@ -14656,7 +14688,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500G"
               ],
               "engine": {
                 "model": {
@@ -14860,11 +14893,39 @@
               {
                 "text": "2023",
                 "url": "https://en.wikipedia.org/wiki/2023_IMSA_SportsCar_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
               {
                 "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Eurocup_Formula_Renault_2.0"
-              },
+                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 2.0 Alps",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Alps"
+            },
+            "years": [
+              {
+                "text": "2015",
+                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Pro Mazda Winterfest",
+              "url": "https://en.wikipedia.org/wiki/Pro_Mazda_Championship"
+            },
+            "years": [
               {
                 "text": "2015",
                 "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
@@ -20728,13 +20789,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M11 EQ Performance t",
+                  "text": "Mercedes F1 M11 EQ Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -20976,13 +21038,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M12 E Performance t",
+                  "text": "Mercedes M12 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -27004,13 +27067,14 @@
               "engine": [
                 {
                   "model": {
-                    "text": "Audi Turbo",
+                    "text": "Audi",
                     "url": "https://en.wikipedia.org/wiki/Audi"
                   },
                   "displacement_l": 5.5,
                   "type": "V12",
                   "layout": "V",
-                  "cylinders": 12
+                  "cylinders": 12,
+                  "turbocharged": true
                 },
                 {
                   "model": {
@@ -27304,13 +27368,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Audi TDI Turbo ( Diesel )",
+                  "text": "Audi TDI ( Diesel )",
                   "url": "https://en.wikipedia.org/wiki/Audi"
                 },
                 "displacement_l": 5.5,
                 "type": "V12",
                 "layout": "V",
-                "cylinders": 12
+                "cylinders": 12,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -31582,13 +31647,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA619H t",
+                  "text": "Honda RA619H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -31777,13 +31843,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA619H t",
+                  "text": "Honda RA619H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -31939,13 +32006,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA620H t",
+                  "text": "Honda RA620H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_F1"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -32189,12 +32257,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG F1 M13 t",
+                  "text": "Mercedes-AMG F1 M13",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -32493,12 +32562,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG F1 M14 t",
+                  "text": "Mercedes-AMG F1 M14",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -32797,12 +32867,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG F1 M15 t",
+                  "text": "Mercedes-AMG F1 M15",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -33123,12 +33194,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG F1 M16 t",
+                  "text": "Mercedes-AMG F1 M16",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -56651,13 +56723,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 059/3 t",
+                  "text": "Ferrari 059/3",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -56923,13 +56996,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA615H t",
+                  "text": "Honda RA615H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57195,13 +57269,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA616H t",
+                  "text": "Honda RA616H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57489,13 +57564,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA617H t",
+                  "text": "Honda RA617H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57772,13 +57848,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault R.E.18 t",
+                  "text": "Renault R.E.18",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58066,13 +58143,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 20B t",
+                  "text": "Renault E-Tech 20B",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58371,13 +58449,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 22 t",
+                  "text": "Renault E-Tech 22",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58676,13 +58755,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M14 E Performance t",
+                  "text": "Mercedes F1 M14 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58981,13 +59061,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M15 E Performance t",
+                  "text": "Mercedes F1 M15 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -59308,13 +59389,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG F1 M16 E Performance t",
+                  "text": "Mercedes-AMG F1 M16 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -60945,13 +61027,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -66933,10 +67016,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Tecno Series-P F12",
+                  "text": "Tecno Series-P",
                   "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -76455,7 +76541,9 @@
                 "text": "1965",
                 "url": "https://en.wikipedia.org/wiki/1965_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Hawk"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -76476,7 +76564,9 @@
                 "text": "1966",
                 "url": "https://en.wikipedia.org/wiki/1966_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Hawk"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -76497,7 +76587,9 @@
                 "text": "1967",
                 "url": "https://en.wikipedia.org/wiki/1967_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Hawk"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -76518,7 +76610,9 @@
                 "text": "1968",
                 "url": "https://en.wikipedia.org/wiki/1968_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Hawk"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -76539,7 +76633,9 @@
                 "text": "1969",
                 "url": "https://en.wikipedia.org/wiki/1969_Indianapolis_500"
               },
-              "chassis": [],
+              "chassis": [
+                "Hawk"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford",
@@ -78423,10 +78519,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -78542,10 +78641,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -78650,10 +78752,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -81155,13 +81260,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 021 t",
+                  "text": "Ferrari 021",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -81263,10 +81369,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -82993,16 +83102,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "83C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -83157,16 +83268,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "84C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -83378,16 +83491,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "85C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -83549,16 +83664,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "86C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -83736,16 +83853,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "87C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -83907,16 +84026,18 @@
                 {
                   "text": "March",
                   "url": "https://en.wikipedia.org/wiki/March_Engineering"
-                }
+                },
+                "88C"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -84022,16 +84143,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T88/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -84134,16 +84257,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T89/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Chevrolet 265A t",
+                  "text": "Chevrolet 265A",
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -84305,16 +84430,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T90/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Chevrolet 265A t",
+                  "text": "Chevrolet 265A",
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -84484,16 +84611,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T91/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Chevrolet 265A t",
+                  "text": "Chevrolet 265A",
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -84674,16 +84803,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T91/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XB t",
+                  "text": "Ford XB",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -84749,16 +84880,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T92/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XB t",
+                  "text": "Ford XB",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -84912,16 +85045,18 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "94i"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XB t",
+                  "text": "Ford XB",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -85133,16 +85268,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T95/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XB t",
+                  "text": "Ford XB",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -85326,16 +85463,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "T96/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XD t",
+                  "text": "Ford XD",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -85523,16 +85662,18 @@
                 {
                   "text": "Swift",
                   "url": "https://en.wikipedia.org/wiki/Swift_Engineering"
-                }
+                },
+                "007.i"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XD t",
+                  "text": "Ford XD",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -85716,16 +85857,18 @@
                 {
                   "text": "Swift",
                   "url": "https://en.wikipedia.org/wiki/Swift_Engineering"
-                }
+                },
+                "009.c"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XD t",
+                  "text": "Ford XD",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -85970,16 +86113,18 @@
                 {
                   "text": "Swift",
                   "url": "https://en.wikipedia.org/wiki/Swift_Engineering"
-                }
+                },
+                "010.c"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XD t",
+                  "text": "Ford XD",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -86226,16 +86371,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "B2K/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XF t",
+                  "text": "Ford XF",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": null,
@@ -86446,16 +86593,18 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "01i"
               ],
               "engine": {
                 "model": {
-                  "text": "Honda HR-1 t",
+                  "text": "Honda HR-1",
                   "url": "https://en.wikipedia.org/wiki/Honda"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -86722,16 +86871,18 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "02i"
               ],
               "engine": {
                 "model": {
-                  "text": "Honda HR-2 t",
+                  "text": "Honda HR-2",
                   "url": "https://en.wikipedia.org/wiki/Honda"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -86800,16 +86951,18 @@
                 {
                   "text": "Lola",
                   "url": "https://en.wikipedia.org/wiki/Lola_Racing_Cars"
-                }
+                },
+                "B02/00"
               ],
               "engine": {
                 "model": {
-                  "text": "Honda HR-2 t",
+                  "text": "Honda HR-2",
                   "url": "https://en.wikipedia.org/wiki/Honda"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -87077,7 +87230,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-01"
               ],
               "no": 39,
               "engine": {
@@ -87236,7 +87390,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-02"
               ],
               "no": 39,
               "engine": {
@@ -87411,7 +87566,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-03"
               ],
               "no": 7,
               "engine": {
@@ -87594,7 +87750,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-05"
               ],
               "no": 1,
               "engine": {
@@ -87767,7 +87924,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "IR-05"
               ],
               "no": 39,
               "engine": {
@@ -90687,13 +90845,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 turbo",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": {
@@ -90823,13 +90982,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 turbo",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -90959,13 +91119,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4 turbo",
+                  "text": "Renault EF4",
                   "url": "https://en.wikipedia.org/wiki/Renault_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -91194,13 +91355,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4B / EF15 turbo",
+                  "text": "Renault EF4B / EF15",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -91425,13 +91587,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "BMW M12/13 turbo",
+                  "text": "BMW M12/13",
                   "url": "https://en.wikipedia.org/wiki/BMW_M12"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -91692,7 +91855,7 @@
             "years": [
               {
                 "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_European_Championship"
+                "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
               }
             ]
           },
@@ -91716,7 +91879,7 @@
             "years": [
               {
                 "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_ADAC_Formula_4_Championship"
+                "url": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"
               }
             ]
           },
@@ -96196,13 +96359,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M15 E Performance t",
+                  "text": "Mercedes-AMG M15 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -96523,13 +96687,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M16 E Performance t",
+                  "text": "Mercedes-AMG M16 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -102901,13 +103066,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103026,13 +103192,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -103184,13 +103351,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103397,13 +103565,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103511,13 +103680,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -103680,13 +103850,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault-Gordini EF1 t",
+                  "text": "Renault-Gordini EF1",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -103911,13 +104082,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 021 t",
+                  "text": "Ferrari 021",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104065,13 +104237,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 021 t",
+                  "text": "Ferrari 021",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -104186,13 +104359,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 031 t",
+                  "text": "Ferrari 031",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104417,13 +104591,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 031 t",
+                  "text": "Ferrari 031",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104648,13 +104823,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault EF4B t",
+                  "text": "Renault EF4B",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104879,13 +105055,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Megatron M12/13 t",
+                  "text": "Megatron M12/13",
                   "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -104989,13 +105166,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Megatron M12/13 t",
+                  "text": "Megatron M12/13",
                   "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -105696,13 +105874,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 021 t",
+                  "text": "Ferrari 021",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105871,7 +106050,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -105915,7 +106095,8 @@
                 {
                   "text": "Delta Motorsport",
                   "url": "https://en.wikipedia.org/wiki/Delta_Motorsport"
-                }
+                },
+                "GPM"
               ],
               "engine": {
                 "model": {
@@ -118128,7 +118309,8 @@
                 {
                   "text": "BT30",
                   "url": "https://en.wikipedia.org/wiki/Brabham_BT30"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -121112,7 +121294,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "3000"
               ],
               "engine": {
                 "model": {
@@ -121366,7 +121549,8 @@
                 {
                   "text": "Kuzma",
                   "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                }
+                },
+                "Indy Roadster"
               ],
               "engine": {
                 "model": {
@@ -121504,7 +121688,8 @@
                 {
                   "text": "Kuzma",
                   "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)"
-                }
+                },
+                "Indy Roadster"
               ],
               "engine": {
                 "model": {
@@ -121642,7 +121827,8 @@
                 {
                   "text": "Kurtis Kraft",
                   "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
-                }
+                },
+                "500C"
               ],
               "engine": {
                 "model": {

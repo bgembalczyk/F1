@@ -3737,13 +3737,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1‑2014 t",
+                  "text": "Renault Energy F1‑2014",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4009,13 +4010,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault R.E.16 t",
+                  "text": "Renault R.E.16",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4204,13 +4206,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes PU106C Hybrid t",
+                  "text": "Mercedes PU106C Hybrid",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -4366,13 +4369,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M08 EQ Power+ t",
+                  "text": "Mercedes M08 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4649,13 +4653,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M09 EQ Power+ t",
+                  "text": "Mercedes M09 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -4844,13 +4849,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M09 EQ Power+ t",
+                  "text": "Mercedes M09 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -5006,13 +5012,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 20 t",
+                  "text": "Renault E-Tech 20",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5252,13 +5259,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 20B t",
+                  "text": "Renault E-Tech 20B",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5557,13 +5565,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 22 t",
+                  "text": "Renault E-Tech 22",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5862,13 +5871,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 23 t",
+                  "text": "Renault E-Tech 23",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6167,13 +6177,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 23 t",
+                  "text": "Renault E-Tech 23",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6494,13 +6505,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 066/10 t",
+                  "text": "Ferrari 066/10",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -7998,7 +8010,8 @@
                 {
                   "text": "48",
                   "url": "https://en.wikipedia.org/wiki/Lotus_48"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -9945,7 +9958,8 @@
                 {
                   "text": "41B",
                   "url": "https://en.wikipedia.org/wiki/Lotus_41"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -10211,7 +10225,8 @@
                 {
                   "text": "T142",
                   "url": "https://en.wikipedia.org/wiki/Lola_T142"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -16208,10 +16223,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche 930/71 F6 t",
+                  "text": "Porsche 930/71",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {

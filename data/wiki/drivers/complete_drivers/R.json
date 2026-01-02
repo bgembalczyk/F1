@@ -5117,13 +5117,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 059/3 t",
+                  "text": "Ferrari 059/3",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5387,13 +5388,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 060 t",
+                  "text": "Ferrari 060",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5657,13 +5659,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 061 t",
+                  "text": "Ferrari 061",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -5949,13 +5952,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 062 t",
+                  "text": "Ferrari 062",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6230,13 +6234,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 062 EVO t",
+                  "text": "Ferrari 062 EVO",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6522,13 +6527,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 064 t",
+                  "text": "Ferrari 064",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -6814,13 +6820,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 065 t",
+                  "text": "Ferrari 065",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -7062,13 +7069,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 065/6 t",
+                  "text": "Ferrari 065/6",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -19183,12 +19191,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Cosworth DFX t",
+                  "text": "Cosworth DFX",
                   "url": "https://en.wikipedia.org/wiki/Cosworth"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -20441,7 +20450,8 @@
                 {
                   "text": "T100",
                   "url": "https://en.wikipedia.org/wiki/Lola_T100"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -21935,7 +21945,8 @@
                 {
                   "text": "T100",
                   "url": "https://en.wikipedia.org/wiki/Lola_T100"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -22119,7 +22130,8 @@
                 {
                   "text": "M18",
                   "url": "https://en.wikipedia.org/wiki/McLaren_M18"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -22247,7 +22259,8 @@
                 {
                   "text": "M10B",
                   "url": "https://en.wikipedia.org/wiki/McLaren_M10B"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -22320,7 +22333,8 @@
                 {
                   "text": "B24",
                   "url": "https://en.wikipedia.org/wiki/Chevron_B24"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -22438,7 +22452,8 @@
                 {
                   "text": "T332",
                   "url": "https://en.wikipedia.org/wiki/Lola_T332"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -22562,10 +22577,12 @@
                   "text": "B24",
                   "url": "https://en.wikipedia.org/wiki/Chevron_B24"
                 },
+                "/",
                 {
                   "text": "B28",
                   "url": "https://en.wikipedia.org/wiki/Chevron_B28"
-                }
+                },
+                "(F5000)"
               ],
               "engine": {
                 "model": {
@@ -26224,10 +26241,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -26420,10 +26440,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -26495,10 +26518,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -26647,10 +26673,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -27117,10 +27146,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/11 F12",
+                  "text": "Ferrari 001/11",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -27335,10 +27367,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/11 F12",
+                  "text": "Ferrari 001/11",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -27410,10 +27445,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -27595,10 +27633,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -27681,10 +27722,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -28968,10 +29012,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/1 F12",
+                  "text": "Ferrari 001/1",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -29063,10 +29110,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001 F12",
+                  "text": "Ferrari 001",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -29209,10 +29259,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 001/11 F12",
+                  "text": "Ferrari 001/11",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -29284,10 +29337,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -36062,13 +36118,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M08 EQ Power+ t",
+                  "text": "Mercedes M08 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -37909,13 +37966,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Peugeot X6H Turbo",
+                  "text": "Peugeot X6H",
                   "url": "https://en.wikipedia.org/wiki/Peugeot"
                 },
                 "displacement_l": 2.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -37984,13 +38042,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Peugeot X6H Turbo",
+                  "text": "Peugeot X6H",
                   "url": "https://en.wikipedia.org/wiki/Peugeot"
                 },
                 "displacement_l": 2.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -38103,13 +38162,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Peugeot X6H Turbo",
+                  "text": "Peugeot X6H",
                   "url": "https://en.wikipedia.org/wiki/Peugeot"
                 },
                 "displacement_l": 2.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -38233,13 +38293,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Peugeot X6H Turbo",
+                  "text": "Peugeot X6H",
                   "url": "https://en.wikipedia.org/wiki/Peugeot"
                 },
                 "displacement_l": 2.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -40562,10 +40623,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Alfa Romeo 115-12 F12",
+                  "text": "Alfa Romeo 115-12",
                   "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -40747,10 +40811,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -40844,10 +40911,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -41084,10 +41154,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": {
                 "round": {
@@ -41159,10 +41232,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 015 F12",
+                  "text": "Ferrari 015",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
-                "displacement_l": 3.0
+                "displacement_l": 3.0,
+                "type": "F12",
+                "layout": "F",
+                "cylinders": 12
               },
               "1": null,
               "2": null,
@@ -57030,13 +57106,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1-2014 t",
+                  "text": "Renault Energy F1-2014",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57302,13 +57379,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1-2015 t",
+                  "text": "Renault Energy F1-2015",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57574,13 +57652,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "TAG Heuer t",
+                  "text": "TAG Heuer",
                   "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57868,13 +57947,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "TAG Heuer t",
+                  "text": "TAG Heuer",
                   "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58151,13 +58231,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "TAG Heuer t",
+                  "text": "TAG Heuer",
                   "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58445,13 +58526,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 19 t",
+                  "text": "Renault E-Tech 19",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58739,13 +58821,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 20 t",
+                  "text": "Renault E-Tech 20",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -58989,13 +59072,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M12 E Performance t",
+                  "text": "Mercedes M12 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -59294,13 +59378,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M13 E Performance t",
+                  "text": "Mercedes F1 M13 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -59599,13 +59684,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RBPTH001 t",
+                  "text": "Honda RBPTH001",
                   "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -59904,13 +59990,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RBPTH002 t",
+                  "text": "Honda RBPTH002",
                   "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -63767,7 +63854,8 @@
                 {
                   "text": "BT16",
                   "url": "https://en.wikipedia.org/wiki/Brabham_BT16"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -64025,7 +64113,8 @@
                 {
                   "text": "BT23",
                   "url": "https://en.wikipedia.org/wiki/Brabham_BT23"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -66401,7 +66490,8 @@
                 {
                   "text": "44",
                   "url": "https://en.wikipedia.org/wiki/Lotus_44"
-                }
+                },
+                "(F2)"
               ],
               "engine": {
                 "model": {
@@ -68452,7 +68542,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "500"
+              ],
               "position": "Ret",
               "co-driver": "Solo"
             },
@@ -68470,7 +68562,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "500"
+              ],
               "position": "9",
               "co-driver": "Solo"
             },
@@ -68491,7 +68585,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "500"
+              ],
               "position": "5",
               "co-driver": {
                 "text": "José Behra",
@@ -68512,7 +68608,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR 58"
+              ],
               "position": "4",
               "co-driver": "Solo"
             },
@@ -68530,7 +68628,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR58"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -68548,7 +68648,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR 58"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -68566,7 +68668,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR 58"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -68587,7 +68691,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR58"
+              ],
               "position": "Ret.",
               "co-driver": "Paul O'Shea"
             },
@@ -68605,7 +68711,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR58"
+              ],
               "position": "DNS",
               "co-driver": null
             },
@@ -68623,7 +68731,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "58TR"
+              ],
               "position": "8",
               "co-driver": "Solo"
             },
@@ -68641,7 +68751,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250"
+              ],
               "position": "Ret",
               "co-driver": "Solo"
             },
@@ -68659,7 +68771,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59"
+              ],
               "position": "3rd",
               "co-driver": "Solo"
             },
@@ -68677,7 +68791,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59"
+              ],
               "position": "13",
               "co-driver": "Solo"
             },
@@ -68698,7 +68814,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -68748,7 +68866,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 196 S"
+              ],
               "position": "7/3 Sport-2",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68769,7 +68889,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 196 S"
+              ],
               "position": "Ret",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68790,7 +68912,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI60"
+              ],
               "position": "Ret",
               "co-driver": {
                 "text": "Ludovico Scarfiotti",
@@ -68811,7 +68935,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59/60"
+              ],
               "position": "Ret",
               "co-driver": "Solo"
             },
@@ -68829,7 +68955,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59/60"
+              ],
               "position": "2nd",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68850,7 +68978,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TR59/60"
+              ],
               "position": "3rd",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68871,7 +69001,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI/60"
+              ],
               "position": "2nd",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68892,7 +69024,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI/61"
+              ],
               "position": "Ret",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68900,7 +69034,9 @@
               "year": "1961",
               "race": "I GP Independencia",
               "team": [],
-              "chassis": [],
+              "chassis": [
+                "250 GT Cal"
+              ],
               "position": "1st",
               "co-driver": "Solo"
             },
@@ -68913,7 +69049,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI/61"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -68926,7 +69064,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GT SWB"
+              ],
               "position": "1st",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -68939,7 +69079,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI/61"
+              ],
               "position": "1st",
               "co-driver": "Solo"
             },
@@ -68952,7 +69094,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "TRI/61"
+              ],
               "position": "3rd",
               "co-driver": "Solo"
             },
@@ -68968,7 +69112,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "246 SP"
+              ],
               "position": "Ret",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -69005,7 +69151,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "268 SP"
+              ],
               "position": "2nd",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -69026,7 +69174,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "246 SP"
+              ],
               "position": "Ret",
               "co-driver": "Ricardo Rodríguez"
             },
@@ -69060,7 +69210,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 TRI/LM"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -69112,7 +69264,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 TRI/LM"
+              ],
               "position": "3rd",
               "co-driver": {
                 "text": "Graham Hill",
@@ -69131,7 +69285,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 TRI/LM"
+              ],
               "position": "Ret",
               "co-driver": {
                 "text": "Roger Penske",
@@ -69165,7 +69321,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 P"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -69196,7 +69354,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "1st",
               "co-driver": {
                 "text": "Phil Hill",
@@ -69234,7 +69394,9 @@
                 "url": "https://en.wikipedia.org/wiki/12_Hours_of_Sebring"
               },
               "team": [],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "7",
               "co-driver": "David Piper / Mike Gammino"
             },
@@ -69250,7 +69412,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P"
+              ],
               "position": "Ret",
               "co-driver": "S. Hudson"
             },
@@ -69266,7 +69430,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "11",
               "co-driver": {
                 "text": "Nino Vaccarella",
@@ -69303,7 +69469,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "275 P"
+              ],
               "position": "2nd",
               "co-driver": "Solo"
             },
@@ -69316,7 +69484,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P"
+              ],
               "position": "1st",
               "co-driver": "Solo"
             },
@@ -69329,7 +69499,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "2nd",
               "co-driver": {
                 "text": "Jo Schlesser",
@@ -69345,7 +69517,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "7/1 class",
               "co-driver": "Solo"
             },
@@ -69358,7 +69532,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "6/1 class",
               "co-driver": "Solo"
             },
@@ -69371,7 +69547,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P"
+              ],
               "position": "4/1 class",
               "co-driver": "Solo"
             },
@@ -69384,7 +69562,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 GTO"
+              ],
               "position": "3/2 class",
               "co-driver": "Solo"
             },
@@ -69418,7 +69598,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "275 P"
+              ],
               "position": "Ret",
               "co-driver": "Hansgen"
             },
@@ -69434,7 +69616,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P"
+              ],
               "position": "Ret",
               "co-driver": "Graham Hill"
             },
@@ -69450,7 +69634,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "365 P2"
+              ],
               "position": "7/1 class",
               "co-driver": {
                 "text": "Nino Vacarella",
@@ -69469,7 +69655,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "365 P2"
+              ],
               "position": "1st",
               "co-driver": {
                 "text": "Jean Guichet",
@@ -69488,7 +69676,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "250 GTO"
+              ],
               "position": "2/1 class",
               "co-driver": "Solo"
             },
@@ -69501,7 +69691,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "365 P2"
+              ],
               "position": "3rd",
               "co-driver": "Solo"
             },
@@ -69517,7 +69709,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "365 P2"
+              ],
               "position": "4",
               "co-driver": {
                 "text": "Mario Andretti",
@@ -69536,7 +69730,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "365 P2"
+              ],
               "position": "Ret",
               "co-driver": "Mario Andretti"
             },
@@ -69576,7 +69772,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P3"
+              ],
               "position": "Ret",
               "co-driver": "Richie Ginther"
             },
@@ -69592,7 +69790,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 206 S"
+              ],
               "position": "Ret",
               "co-driver": "Solo"
             },
@@ -69605,7 +69805,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 206 S"
+              ],
               "position": "18",
               "co-driver": "Solo"
             },
@@ -69618,7 +69820,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "275 GTB/C"
+              ],
               "position": "7/1 class",
               "co-driver": "Solo"
             },
@@ -69631,7 +69835,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 206 S"
+              ],
               "position": "7/1 class",
               "co-driver": "Solo"
             },
@@ -69647,7 +69853,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "412 P"
+              ],
               "position": "3rd",
               "co-driver": "Jean Guichet"
             },
@@ -69663,7 +69871,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "206 S"
+              ],
               "position": "Ret",
               "co-driver": "Jean Guichet"
             },
@@ -69679,7 +69889,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "412 P"
+              ],
               "position": "Ret",
               "co-driver": "Jean Guichet"
             },
@@ -69719,7 +69931,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 206 S"
+              ],
               "position": "Ret",
               "co-driver": "Jean Guichet"
             },
@@ -69735,7 +69949,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dino 206 S"
+              ],
               "position": "Ret",
               "co-driver": "Kold"
             },
@@ -69748,7 +69964,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "275 ML"
+              ],
               "position": "5",
               "co-driver": "Pierpoint"
             },
@@ -69764,7 +69982,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "330 P3"
+              ],
               "position": "Ret",
               "co-driver": "Parsons"
             },
@@ -69777,7 +69997,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "4",
               "co-driver": {
                 "text": "Chris Amon",
@@ -69796,7 +70018,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "Ret",
               "co-driver": "Schetty"
             },
@@ -69812,7 +70036,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "2nd",
               "co-driver": {
                 "text": "David Piper",
@@ -69831,7 +70057,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "5",
               "co-driver": "Chris Amon"
             },
@@ -69847,7 +70075,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "Ret",
               "co-driver": "David Piper"
             },
@@ -69863,7 +70093,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "312 P"
+              ],
               "position": "5",
               "co-driver": "Solo"
             },
@@ -69879,7 +70111,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "512 S"
+              ],
               "position": "11",
               "co-driver": "Solo"
             },
@@ -69892,7 +70126,9 @@
                   "title_sponsors": []
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "512 P"
+              ],
               "position": "7",
               "co-driver": "Solo"
             },
@@ -69987,7 +70223,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "4",
               "co-driver": "Kinnunen/ Siffert"
             },
@@ -70011,7 +70249,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": {
                 "text": "Leo Kinnunen",
@@ -70038,7 +70278,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": "Leo Kinnunen"
             },
@@ -70091,7 +70333,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "Ret",
               "co-driver": "Leo Kinnunen"
             },
@@ -70115,7 +70359,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "908-3"
+              ],
               "position": "Ret",
               "co-driver": "Leo Kinnunen"
             },
@@ -70139,7 +70385,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "Ret",
               "co-driver": "Leo Kinnunen"
             },
@@ -70163,7 +70411,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": "Leo Kinnunen"
             },
@@ -70187,7 +70437,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "Ret",
               "co-driver": "Leo Kinnunen"
             },
@@ -70211,7 +70463,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "Ret",
               "co-driver": {
                 "text": "Jackie Oliver",
@@ -70238,7 +70492,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": "Jackie Oliver"
             },
@@ -70262,7 +70518,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "4",
               "co-driver": "Jackie Oliver"
             },
@@ -70286,7 +70544,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "Ret",
               "co-driver": "Jackie Oliver"
             },
@@ -70310,7 +70570,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": "Jackie Oliver"
             },
@@ -70334,7 +70596,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": "Jackie Oliver"
             },
@@ -70358,7 +70622,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "908-3"
+              ],
               "position": "Ret",
               "co-driver": {
                 "text": "Herbert Müller",
@@ -70385,7 +70651,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "908-3"
+              ],
               "position": "2nd",
               "co-driver": "Oliver/Siffert"
             },
@@ -70409,7 +70677,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917LH"
+              ],
               "position": "18",
               "co-driver": "Jackie Oliver"
             },
@@ -70433,7 +70703,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "917K"
+              ],
               "position": "1st",
               "co-driver": {
                 "text": "Richard Attwood",
@@ -74463,7 +74735,9 @@
                 "url": "https://en.wikipedia.org/wiki/1973_SCCA_Formula_Super_Vee_season"
               },
               "team": [],
-              "chassis": [],
+              "chassis": [
+                "TUI BH3"
+              ],
               "engine": {
                 "model": {
                   "text": "VW Brabham",
@@ -84018,13 +84292,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA163E t",
+                  "text": "Honda RA163E",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -84084,13 +84359,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA163E t",
+                  "text": "Honda RA163E",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -84238,13 +84514,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA164E t",
+                  "text": "Honda RA164E",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -84382,13 +84659,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA164E t",
+                  "text": "Honda RA164E",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -84504,13 +84782,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA165E t",
+                  "text": "Honda RA165E",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -84688,13 +84967,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "TAG TTE PO1 t",
+                  "text": "TAG TTE PO1",
                   "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -85253,10 +85533,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type-935 F6 t",
+                  "text": "Porsche Type-935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -88490,7 +88774,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F303/005"
               ],
               "engine": {
                 "model": {
@@ -88761,7 +89046,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F303/006"
               ],
               "engine": {
                 "model": {
@@ -91515,13 +91801,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes PU106A Hybrid t",
+                  "text": "Mercedes PU106A Hybrid",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -91784,13 +92071,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes PU106B Hybrid t",
+                  "text": "Mercedes PU106B Hybrid",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -92053,13 +92341,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes PU106C Hybrid t",
+                  "text": "Mercedes PU106C Hybrid",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -92939,7 +93228,8 @@
                 {
                   "text": "Talbot",
                   "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
-                }
+                },
+                "Spéciale"
               ],
               "engine": {
                 "model": {
@@ -99295,6 +99585,30 @@
                 "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_World_Final"
               }
             ]
+          },
+          {
+            "title": {
+              "text": "Formula BMW Americas",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW#United_States_&_Americas"
+            },
+            "years": [
+              {
+                "text": "2008",
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_World_Final"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Skip Barber Western",
+              "url": "https://en.wikipedia.org/wiki/Skip_Barber_Racing_School"
+            },
+            "years": [
+              {
+                "text": "2006",
+                "url": null
+              }
+            ]
           }
         ],
         "major_victories": [],
@@ -104154,6 +104468,7 @@
                   "text": "Renault",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
+                "RS27-2013 2.4",
                 {
                   "text": "V8",
                   "url": "https://en.wikipedia.org/wiki/V8_engine"
@@ -104418,6 +104733,7 @@
                   "text": "Renault",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
+                "Energy F1-2014 1.6",
                 {
                   "text": "V6",
                   "url": "https://en.wikipedia.org/wiki/V6_engine"
@@ -104601,13 +104917,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 059/3 t",
+                  "text": "Ferrari 059/3",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -104756,13 +105073,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 059/3 t",
+                  "text": "Ferrari 059/3",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105297,13 +105615,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Élan ( Mazda ) Turbo",
+                  "text": "Élan ( Mazda )",
                   "url": "https://en.wikipedia.org/wiki/%C3%89lan_Motorsport_Technologies"
                 },
                 "displacement_l": 1.9,
                 "type": "I4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105470,13 +105789,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Acura AR35TT Turbo",
+                  "text": "Acura AR35TT",
                   "url": "https://en.wikipedia.org/wiki/Acura"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105632,13 +105952,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Acura AR35TT Turbo",
+                  "text": "Acura AR35TT",
                   "url": "https://en.wikipedia.org/wiki/Acura"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105783,13 +106104,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Acura AR35TT Turbo",
+                  "text": "Acura AR35TT",
                   "url": "https://en.wikipedia.org/wiki/Acura"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -105945,13 +106267,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Acura AR35TT Turbo",
+                  "text": "Acura AR35TT",
                   "url": "https://en.wikipedia.org/wiki/Acura"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -106107,13 +106430,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "McLaren M840T Turbo",
+                  "text": "McLaren M840T",
                   "url": "https://en.wikipedia.org/wiki/McLaren"
                 },
                 "displacement_l": 4.0,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -110088,10 +110412,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type-935 F6 t",
+                  "text": "Porsche Type-935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.8
+                "displacement_l": 2.8,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -110204,10 +110532,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Porsche Type-935 F6 t",
+                  "text": "Porsche Type-935",
                   "url": "https://en.wikipedia.org/wiki/Porsche"
                 },
-                "displacement_l": 2.6
+                "displacement_l": 2.6,
+                "type": "F6",
+                "layout": "F",
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -110407,13 +110739,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Hart 415T t",
+                  "text": "Hart 415T",
                   "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -110690,13 +111023,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Alfa Romeo 890T t",
+                  "text": "Alfa Romeo 890T",
                   "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -110907,13 +111241,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Alfa Romeo 890T t",
+                  "text": "Alfa Romeo 890T",
                   "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
                 },
                 "displacement_l": 1.5,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -110973,13 +111308,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Zakspeed 1500/4 t",
+                  "text": "Zakspeed 1500/4",
                   "url": "https://en.wikipedia.org/wiki/Zakspeed"
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
                 "layout": "L",
-                "cylinders": 4
+                "cylinders": 4,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -116505,13 +116841,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M08 EQ Power+ t",
+                  "text": "Mercedes F1 M08 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -116788,13 +117125,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M10 EQ Power+ t",
+                  "text": "Mercedes F1 M10 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -117082,13 +117420,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M11 EQ Performance t",
+                  "text": "Mercedes F1 M11 EQ Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -117321,13 +117660,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M11 EQ Performance t",
+                  "text": "Mercedes F1 M11 EQ Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -117395,13 +117735,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M12 E Performance t",
+                  "text": "Mercedes F1 M12 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -117700,13 +118041,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes F1 M13 E Performance t",
+                  "text": "Mercedes F1 M13 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -118005,13 +118347,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M14 E Performance t",
+                  "text": "Mercedes-AMG M14 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -118310,13 +118653,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M15 E Performance t",
+                  "text": "Mercedes-AMG M15 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -118637,13 +118981,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M16 E Performance t",
+                  "text": "Mercedes-AMG M16 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {

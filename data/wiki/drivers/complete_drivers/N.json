@@ -2858,7 +2858,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F305/062"
               ],
               "engine": {
                 "model": {
@@ -7567,13 +7568,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -7711,13 +7713,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -7855,13 +7858,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -7988,13 +7992,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -8121,13 +8126,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -8299,20 +8305,12 @@
             },
             "years": [
               {
-                "text": "1981",
+                "text": "1981-1982",
                 "url": null
               },
               {
-                "text": "1982",
+                "text": "1984-1986",
                 "url": null
-              },
-              {
-                "text": "1984",
-                "url": null
-              },
-              {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Japanese_Formula_Two_Championship"
               }
             ]
           }
@@ -10570,7 +10568,8 @@
                 {
                   "text": "Ralt",
                   "url": "https://en.wikipedia.org/wiki/Ralt"
-                }
+                },
+                "RT20"
               ],
               "engine": {
                 "model": {
@@ -10784,13 +10783,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA166E t",
+                  "text": "Honda RA166E",
                   "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -11019,13 +11019,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA168E t",
+                  "text": "Honda RA168E",
                   "url": "https://en.wikipedia.org/wiki/Honda_Racing_F1"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -14030,13 +14031,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -14250,13 +14252,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -14316,13 +14319,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Motori Moderni Tipo 615-90 t",
+                  "text": "Motori Moderni Tipo 615-90",
                   "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
                 },
                 "displacement_l": 1.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -21495,12 +21499,8 @@
             },
             "years": [
               {
-                "text": "2018",
-                "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
-              },
-              {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_IMSA_SportsCar_Championship"
+                "text": "2018-2019",
+                "url": null
               },
               {
                 "text": "2024",
@@ -21513,6 +21513,14 @@
               {
                 "text": "2024",
                 "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
+              },
+              {
+                "text": "2011",
+                "url": null
+              },
+              {
+                "text": "2009",
+                "url": null
               }
             ]
           }
@@ -24931,13 +24939,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes PU106A Hybrid t",
+                  "text": "Mercedes PU106A Hybrid",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -25200,13 +25209,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 060 t",
+                  "text": "Ferrari 060",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -25469,13 +25479,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 061 t",
+                  "text": "Ferrari 061",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -43512,7 +43523,7 @@
             "years": [
               {
                 "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Eurocup_Formula_Renault_2.0"
+                "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
           },
@@ -43524,7 +43535,7 @@
             "years": [
               {
                 "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_Renault_2.0_Northern_European_Cup"
+                "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
           },
@@ -49610,13 +49621,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault R.E.18 t",
+                  "text": "Renault R.E.18",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -49904,13 +49916,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 19 t",
+                  "text": "Renault E-Tech 19",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -50198,13 +50211,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault E-Tech 20 t",
+                  "text": "Renault E-Tech 20",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -50448,13 +50462,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M12 E Performance t",
+                  "text": "Mercedes-AMG M12 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -50753,13 +50768,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M13 E Performance t",
+                  "text": "Mercedes-AMG M13 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -51058,13 +51074,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M14 E Performance t",
+                  "text": "Mercedes-AMG M14 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -51363,13 +51380,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M15 E Performance t",
+                  "text": "Mercedes-AMG M15 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -51690,13 +51708,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes-AMG M16 E Performance t",
+                  "text": "Mercedes-AMG M16 E Performance",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {

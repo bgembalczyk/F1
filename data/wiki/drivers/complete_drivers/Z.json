@@ -3069,7 +3069,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "96i"
               ],
               "engine": {
                 "model": {
@@ -3297,7 +3298,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "97i"
               ],
               "engine": {
                 "model": {
@@ -3494,7 +3496,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "98i"
               ],
               "engine": {
                 "model": {
@@ -3719,7 +3722,8 @@
                 {
                   "text": "Reynard",
                   "url": "https://en.wikipedia.org/wiki/Reynard_Motorsport"
-                }
+                },
+                "01i"
               ],
               "engine": {
                 "model": {
@@ -3979,7 +3983,9 @@
                 }
               ],
               "no": null,
-              "chassis": [],
+              "chassis": [
+                "Source:"
+              ],
               "engine": null,
               "1": {
                 "round": null,
@@ -6251,13 +6257,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "BMW S63 Turbo",
+                  "text": "BMW S63",
                   "url": "https://en.wikipedia.org/wiki/BMW_N63"
                 },
                 "displacement_l": 4.0,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {

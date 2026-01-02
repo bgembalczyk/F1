@@ -5843,7 +5843,8 @@
                 "displacement_l": 5.5,
                 "type": "V12",
                 "layout": "V",
-                "cylinders": 12
+                "cylinders": 12,
+                "turbocharged": true
               },
               "class": "LMP1",
               "1": {
@@ -21871,6 +21872,18 @@
                 "url": "https://en.wikipedia.org/wiki/2003_Masters_of_Formula_3"
               }
             ]
+          },
+          {
+            "title": {
+              "text": "German Formula Renault",
+              "url": "https://en.wikipedia.org/wiki/German_Formula_Renault"
+            },
+            "years": [
+              {
+                "text": "2002",
+                "url": null
+              }
+            ]
           }
         ],
         "major_victories": [],
@@ -23889,7 +23902,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F303/008"
               ],
               "engine": {
                 "model": {
@@ -25940,13 +25954,14 @@
               "engine": [
                 {
                   "model": {
-                    "text": "Peugeot HDI Turbo",
+                    "text": "Peugeot HDI",
                     "url": "https://en.wikipedia.org/wiki/Peugeot"
                   },
                   "displacement_l": 5.5,
                   "type": "V12",
                   "layout": "V",
-                  "cylinders": 12
+                  "cylinders": 12,
+                  "turbocharged": true
                 },
                 {
                   "model": {
@@ -26136,13 +26151,14 @@
               "engine": [
                 {
                   "model": {
-                    "text": "Peugeot HDI Turbo",
+                    "text": "Peugeot HDI",
                     "url": "https://en.wikipedia.org/wiki/Peugeot"
                   },
                   "displacement_l": 5.5,
                   "type": "V12",
                   "layout": "V",
-                  "cylinders": 12
+                  "cylinders": 12,
+                  "turbocharged": true
                 },
                 {
                   "model": {
@@ -28152,12 +28168,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "AER P60 Turbo",
+                  "text": "AER P60",
                   "url": "https://en.wikipedia.org/wiki/Advanced_Engine_Research"
                 },
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -29600,9 +29617,29 @@
             },
             "years": [
               {
+                "text": "2008",
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
+              {
                 "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Eurocup_Formula_Renault_2.0"
-              },
+                "url": "https://en.wikipedia.org/wiki/2005_Formula_Renault_2.0_Italia"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian Formula Renault",
+              "url": "https://en.wikipedia.org/wiki/Italian_Formula_Renault"
+            },
+            "years": [
               {
                 "text": "2005",
                 "url": "https://en.wikipedia.org/wiki/2005_Formula_Renault_2.0_Italia"
@@ -33125,7 +33162,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F305/012"
               ],
               "engine": {
                 "model": {
@@ -33396,7 +33434,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F305/012"
               ],
               "engine": {
                 "model": {
@@ -35748,13 +35787,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1‑2014 t",
+                  "text": "Renault Energy F1‑2014",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36181,13 +36221,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36325,13 +36366,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36469,13 +36511,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36602,13 +36645,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 2.4,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36735,13 +36779,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36846,13 +36891,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -36957,13 +37003,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -37079,13 +37126,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -37212,13 +37260,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toyota Turbo (Hybrid)",
+                  "text": "Toyota (Hybrid)",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -51404,7 +51453,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F303/022"
               ],
               "engine": {
                 "model": {
@@ -51671,7 +51721,9 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": [
+                "Dallara F302/032"
+              ],
               "engine": {
                 "model": {
                   "text": "HWA-Mercedes",
@@ -53536,13 +53588,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M09 EQ Power+ t",
+                  "text": "Mercedes M09 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -53828,13 +53881,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Mercedes M10 EQ Power+ t",
+                  "text": "Mercedes M10 EQ Power+",
                   "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -54120,13 +54174,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 065 t",
+                  "text": "Ferrari 065",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -54368,13 +54423,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 065/6 t",
+                  "text": "Ferrari 065/6",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -54671,13 +54727,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 066/7 t",
+                  "text": "Ferrari 066/7",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57280,13 +57337,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Nismo VRX30A Turbo",
+                  "text": "Nismo VRX30A",
                   "url": "https://en.wikipedia.org/wiki/Nismo"
                 },
                 "displacement_l": 3.0,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57813,13 +57871,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari Turbo",
+                  "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Ferrari"
                 },
                 "displacement_l": 3.0,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -57946,13 +58005,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari Turbo",
+                  "text": "Ferrari",
                   "url": "https://en.wikipedia.org/wiki/Ferrari"
                 },
                 "displacement_l": 3.0,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -62712,13 +62772,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1‑2014 t",
+                  "text": "Renault Energy F1‑2014",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -62981,13 +63042,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Renault Energy F1-2015 t",
+                  "text": "Renault Energy F1-2015",
                   "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -63250,13 +63312,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "TAG Heuer t",
+                  "text": "TAG Heuer",
                   "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -63354,13 +63417,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ferrari 060 t",
+                  "text": "Ferrari 060",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": null,
               "2": null,
@@ -63601,13 +63665,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Toro Rosso t",
+                  "text": "Toro Rosso",
                   "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -63881,13 +63946,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA619H t",
+                  "text": "Honda RA619H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -64172,13 +64238,14 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Honda RA620H t",
+                  "text": "Honda RA620H",
                   "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
                 },
                 "displacement_l": 1.6,
                 "type": "V6",
                 "layout": "V",
-                "cylinders": 6
+                "cylinders": 6,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -64572,13 +64639,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Lamborghini Turbo",
+                  "text": "Lamborghini",
                   "url": "https://en.wikipedia.org/wiki/Lamborghini"
                 },
                 "displacement_l": 3.8,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
@@ -64852,13 +64920,14 @@
               },
               "engine": {
                 "model": {
-                  "text": "Lamborghini Turbo",
+                  "text": "Lamborghini",
                   "url": "https://en.wikipedia.org/wiki/Lamborghini"
                 },
                 "displacement_l": 3.8,
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {

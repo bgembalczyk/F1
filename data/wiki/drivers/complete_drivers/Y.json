@@ -2237,7 +2237,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F303/001"
               ],
               "engine": {
                 "model": {
@@ -6524,7 +6525,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F399"
               ],
               "engine": {
                 "model": {
@@ -6659,7 +6661,8 @@
                 {
                   "text": "Dallara",
                   "url": "https://en.wikipedia.org/wiki/Dallara"
-                }
+                },
+                "F399"
               ],
               "engine": {
                 "model": {
@@ -7865,12 +7868,13 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ford XFE t",
+                  "text": "Ford XFE",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "type": "V8",
                 "layout": "V",
-                "cylinders": 8
+                "cylinders": 8,
+                "turbocharged": true
               },
               "1": {
                 "round": {
