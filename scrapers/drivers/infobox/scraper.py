@@ -219,12 +219,19 @@ class DriverInfoboxScraper:
             if "label_cell" in row and "value_cell" in row:
                 label_cell = row["label_cell"]
                 value_cell = row["value_cell"]
+                label = clean_infobox_text(label_cell.get_text(" ", strip=True))
+                if label == "Active years":
+                    value = self._parse_active_years(value_cell)
+                elif label == "Teams":
+                    value = self._parse_teams(value_cell)
+                elif label == "Entries":
+                    value = self._parse_entries(value_cell)
+                else:
+                    value = self._parse_cell(value_cell)
                 rows.append(
                     {
-                        "label": clean_infobox_text(
-                            label_cell.get_text(" ", strip=True)
-                        ),
-                        "value": self._parse_cell(value_cell),
+                        "label": label,
+                        "value": value,
                     }
                 )
             elif "full_data_cell" in row:
@@ -252,6 +259,35 @@ class DriverInfoboxScraper:
         if self.include_urls:
             payload["links"] = self._extract_links(cell)
         return payload
+
+    def _parse_active_years(self, cell: Tag) -> Dict[str, int | None]:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        years = [int(value) for value in re.findall(r"\d{4}", text)]
+        if not years:
+            return {"start": None, "end": None}
+        start = years[0]
+        if "present" in text.lower() and len(years) == 1:
+            end = None
+        elif len(years) > 1:
+            end = years[-1]
+        else:
+            end = start
+        return {"start": start, "end": end}
+
+    def _parse_teams(self, cell: Tag) -> List[Any]:
+        if self.include_urls:
+            return self._extract_links(cell)
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        if not text:
+            return []
+        return [part for part in (p.strip() for p in text.split(",")) if part]
+
+    def _parse_entries(self, cell: Tag) -> Dict[str, int | None]:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        values = [int(value) for value in re.findall(r"\d+", text)]
+        entries = values[0] if values else None
+        starts = values[1] if len(values) > 1 else None
+        return {"entries": entries, "starts": starts}
 
     def _parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))
