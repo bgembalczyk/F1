@@ -11,7 +11,9 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.grands_prix.helpers.restart_status import restart_status
-from scrapers.grands_prix.red_flagged_races_scraper.base import RedFlaggedRacesBaseScraper
+from scrapers.grands_prix.red_flagged_races_scraper.base import (
+    RedFlaggedRacesBaseScraper,
+)
 
 
 class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):

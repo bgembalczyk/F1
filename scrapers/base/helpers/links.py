@@ -38,7 +38,9 @@ def normalize_single_link(
     if is_wikipedia_redlink(url):
         url = None
 
-    normalized = normalize_and_validate_link_dict({"text": text, "url": url}, field_name="link")
+    normalized = normalize_and_validate_link_dict(
+        {"text": text, "url": url}, field_name="link"
+    )
     if normalized is None:
         return empty_link_record(drop_empty=drop_empty)
     return normalized

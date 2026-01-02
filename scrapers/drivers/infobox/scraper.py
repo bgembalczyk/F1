@@ -192,7 +192,12 @@ class DriverInfoboxScraper:
             title_links = self._extract_title_links(value_cell)
             year_links = self._extract_year_links(label_cell)
 
-            if title_links and year_links and len(title_links) == len(year_links) and len(title_links) > 1:
+            if (
+                title_links
+                and year_links
+                and len(title_links) == len(year_links)
+                and len(title_links) > 1
+            ):
                 for title_link, year_link in zip(title_links, year_links):
                     titles.append({"title": title_link, "years": [year_link]})
                 continue
@@ -207,11 +212,15 @@ class DriverInfoboxScraper:
                 continue
 
             title_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
-            titles.append({"title": {"text": title_text or "", "url": None}, "years": year_links})
+            titles.append(
+                {"title": {"text": title_text or "", "url": None}, "years": year_links}
+            )
 
         return titles
 
-    def _parse_career_section(self, title: str, section: Dict[str, Any]) -> Dict[str, Any]:
+    def _parse_career_section(
+        self, title: str, section: Dict[str, Any]
+    ) -> Dict[str, Any]:
         rows: List[Dict[str, Any]] = []
         for row in section.get("rows", []):
             if "label_cell" in row and "value_cell" in row:
@@ -226,7 +235,13 @@ class DriverInfoboxScraper:
                     value = self._parse_teams(value_cell)
                 elif label == "Entries":
                     value = self._parse_entries(value_cell)
-                elif label in {"Wins", "Podiums", "Pole positions", "Fastest laps", "Starts"}:
+                elif label in {
+                    "Wins",
+                    "Podiums",
+                    "Pole positions",
+                    "Fastest laps",
+                    "Starts",
+                }:
                     value = self._parse_int_cell(value_cell)
                 elif label == "Career points":
                     value = self._parse_float_cell(value_cell)
@@ -244,7 +259,9 @@ class DriverInfoboxScraper:
                 rows.append({"full_data": self._parse_full_data(row["full_data_cell"])})
         return {"title": title, "rows": rows}
 
-    def _parse_previous_series(self, rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def _parse_previous_series(
+        self, rows: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
         items: List[Dict[str, Any]] = []
         for row in rows:
             label_cell = row.get("label_cell")
@@ -253,7 +270,12 @@ class DriverInfoboxScraper:
                 continue
             series_links = self._extract_title_links(value_cell)
             year_links = self._extract_year_links(label_cell)
-            if series_links and year_links and len(series_links) == len(year_links) and len(series_links) > 1:
+            if (
+                series_links
+                and year_links
+                and len(series_links) == len(year_links)
+                and len(series_links) > 1
+            ):
                 for series_link, year_link in zip(series_links, year_links):
                     items.append({"title": series_link, "years": [year_link]})
                 continue
@@ -265,7 +287,9 @@ class DriverInfoboxScraper:
                     items.append({"title": series_link, "years": []})
                 continue
             series_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
-            items.append({"title": {"text": series_text or "", "url": None}, "years": year_links})
+            items.append(
+                {"title": {"text": series_text or "", "url": None}, "years": year_links}
+            )
         return items
 
     def _parse_cell(self, cell: Tag) -> Dict[str, Any]:
@@ -337,7 +361,11 @@ class DriverInfoboxScraper:
                 continue
             number = int(match.group("number"))
             years_text = match.group("years") or ""
-            years = self._parse_year_range(years_text) if years_text else {"start": None, "end": None}
+            years = (
+                self._parse_year_range(years_text)
+                if years_text
+                else {"start": None, "end": None}
+            )
             entries.append({"number": number, "years": years})
         return entries
 
@@ -370,7 +398,10 @@ class DriverInfoboxScraper:
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
         data_rows: List[List[str]] = []
         for row in rows[1:]:
-            cells = [clean_wiki_text(c.get_text(" ", strip=True)) for c in row.find_all(["th", "td"])]
+            cells = [
+                clean_wiki_text(c.get_text(" ", strip=True))
+                for c in row.find_all(["th", "td"])
+            ]
             if cells:
                 data_rows.append(cells)
         return {"headers": headers, "rows": data_rows}

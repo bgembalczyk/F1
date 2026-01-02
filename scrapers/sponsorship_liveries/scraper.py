@@ -148,8 +148,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     @staticmethod
     def _extract_years_from_text(text: str) -> set[int]:
         years = {
-            int(match)
-            for match in F1SponsorshipLiveriesScraper._year_re.findall(text)
+            int(match) for match in F1SponsorshipLiveriesScraper._year_re.findall(text)
         }
         for decade in re.findall(r"\b(\d{3})0s\b", text):
             start = int(decade) * 10
@@ -225,7 +224,6 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         if not self._params_contain_only_years_or_grand_prix(params):
             return None
         grand_prix_entries: list[dict[str, Any]] = []
-        has_only = False
         has_onwards = False
         range_scope: dict[str, Any] | None = None
         for param in params:
@@ -236,8 +234,6 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
                 return None
             if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
                 has_onwards = True
-            if re.search(r"\bonly\b", text, flags=re.IGNORECASE):
-                has_only = True
             range_match = re.search(
                 r"(.+?grand prix)\s+to\s+(.+?grand prix)",
                 text,
@@ -346,9 +342,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             new_record = {**record, "season": [season_entry]}
             for key in self._sponsor_keys:
                 if key in record:
-                    new_record[key] = self._filter_sponsors_for_year(
-                        record[key], year
-                    )
+                    new_record[key] = self._filter_sponsors_for_year(record[key], year)
             for key in self._colour_keys:
                 if key in record:
                     new_record[key] = self._filter_colours_for_year(record[key], year)
@@ -651,7 +645,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         return heading.get_text(" ", strip=True)
 
     @staticmethod
-    def _is_section_start(element: Tag, *, current_heading: Tag, current_headline: Tag) -> bool:
+    def _is_section_start(
+        element: Tag, *, current_heading: Tag, current_headline: Tag
+    ) -> bool:
         if element is current_heading or element is current_headline:
             return False
         if "mw-headline" in (element.get("class") or []):
@@ -693,7 +689,9 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             raise RuntimeError(f"Nie znaleziono nagłówka sekcji {section_id!r}")
 
         for element in self._iter_section_elements(heading, headline):
-            if element.name != "table" or "wikitable" not in (element.get("class") or []):
+            if element.name != "table" or "wikitable" not in (
+                element.get("class") or []
+            ):
                 continue
             header_row = element.find("tr")
             if not header_row:

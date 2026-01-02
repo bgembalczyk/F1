@@ -1,6 +1,5 @@
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext

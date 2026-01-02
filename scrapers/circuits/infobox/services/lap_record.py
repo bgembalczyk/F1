@@ -1,4 +1,3 @@
-import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from models.records.link import LinkRecord
@@ -12,7 +11,6 @@ from models.services.circuits.lap_record_merging import (
     normalize_lap_record,
 )
 from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.helpers.lap_record import extract_time
 from scrapers.circuits.helpers.lap_record import select_details_paren

@@ -50,5 +50,3 @@ def export_complete_drivers(
             source_url=getattr(scraper, "url", None),
         )
         result.to_json(json_path, exporter=scraper.exporter)
-
-

@@ -1,16 +1,11 @@
-import re
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import build_driver_link_lookup
 from scrapers.base.table.columns.helpers import parse_driver_segment
 from scrapers.base.table.columns.helpers import split_cell_on_br
 from scrapers.base.table.columns.types.base import BaseColumn
-from models.services.rounds_service import RoundsService
 
 
 class DriversWithRoundsColumn(BaseColumn):
@@ -34,4 +29,3 @@ class DriversWithRoundsColumn(BaseColumn):
                 drivers.append(parsed)
 
         return drivers
-

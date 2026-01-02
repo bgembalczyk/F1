@@ -86,9 +86,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         return result
 
     @staticmethod
-    def _parse_capacity(
-        row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, int]]:
+    def _parse_capacity(row: Optional[Dict[str, Any]]) -> Optional[Dict[str, int]]:
         """Capacity: '~125,000 (44,000 seating)' -> total / seating."""
         if not row:
             return None

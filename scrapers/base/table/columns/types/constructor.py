@@ -1,6 +1,3 @@
-from bs4 import Tag
-
-from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import split_constructor_lines
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -33,5 +30,3 @@ class ConstructorColumn(BaseColumn):
         if engine is not None:
             data["engine_constructor"] = engine
         return data or None
-
-

@@ -440,7 +440,9 @@ def extract_type_text(text: str, displacement: float | None) -> str | None:
     if not text:
         return None
     cleaned = text
-    cleaned = re.sub(r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", "", cleaned, flags=re.I)
+    cleaned = re.sub(
+        r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", "", cleaned, flags=re.I
+    )
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
 
     match = re.search(
@@ -528,7 +530,9 @@ def extract_model_text(
     if not text:
         return None
     cleaned = text
-    cleaned = re.sub(r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", "", cleaned, flags=re.I)
+    cleaned = re.sub(
+        r"(\d+(?:\.\d+)?)\s*(?:L|litre|liter)s?\b", "", cleaned, flags=re.I
+    )
     cleaned = re.sub(
         r"\b(?:V\d{1,2}|W\d{1,2}|I\d{1,2}|L\d{1,2}|H\d{1,2}|F(?:4|6|8|10|12)|Flat[-\s]?\d{1,2}|Straight[-\s]?\d{1,2}|Inline[-\s]?\d{1,2})\b",
         "",
@@ -633,6 +637,7 @@ def parse_points_value(text: str):
         return whole + numerator / denominator
 
     return parse_float_from_text(text)
+
 
 def parse_results(text: str) -> list[dict[str, Any]]:
     parts = SPLIT_RESULTS_RE.split(text)

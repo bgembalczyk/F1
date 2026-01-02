@@ -217,9 +217,7 @@ def series_candidate(record: dict[str, Any]) -> dict[str, Any] | None:
         return None
     if isinstance(field_value, dict):
         return {
-            "text": (
-                field_value.get("text") or field_value.get("name") or ""
-            ).strip(),
+            "text": (field_value.get("text") or field_value.get("name") or "").strip(),
             "url": field_value.get("url"),
         }
     return {"text": str(field_value).strip(), "url": None}

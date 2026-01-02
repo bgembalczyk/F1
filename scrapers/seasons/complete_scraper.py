@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
@@ -8,7 +7,6 @@ from pathlib import Path
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.seasons.list_scraper import SeasonsListScraper
@@ -38,7 +36,11 @@ class CompleteSeasonScraper(F1Scraper):
             if not isinstance(url, str) or not url:
                 continue
             year_text = season_info.get("text")
-            year = int(year_text) if isinstance(year_text, str) and year_text.isdigit() else None
+            year = (
+                int(year_text)
+                if isinstance(year_text, str) and year_text.isdigit()
+                else None
+            )
             data = season_scraper.fetch_by_url(url, season_year=year)
             if data and isinstance(data[0], dict):
                 entries = data[0].get("entries")

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import re
 from typing import Any, Dict, List
 
@@ -50,7 +49,9 @@ class SingleSeasonScraper(F1Scraper):
         self.season_year = season_year
         self._options = options
 
-    def fetch_by_url(self, url: str, *, season_year: int | None = None) -> List[Dict[str, Any]]:
+    def fetch_by_url(
+        self, url: str, *, season_year: int | None = None
+    ) -> List[Dict[str, Any]]:
         self.url = url
         if season_year is not None:
             self.season_year = season_year
@@ -85,7 +86,7 @@ class SingleSeasonScraper(F1Scraper):
                 "Entries",
                 "Teams_and_drivers",
                 "Drivers_and_constructors",
-                "Championship_teams_and_drivers"
+                "Championship_teams_and_drivers",
             ],
             expected_headers=["Entrant", "Constructor", "Chassis"],
             column_map={
@@ -195,7 +196,9 @@ class SingleSeasonScraper(F1Scraper):
 
         return {key: items}
 
-    def _merge_entry_drivers(self, records: List[Dict[str, Any]]) -> list[dict[str, Any]]:
+    def _merge_entry_drivers(
+        self, records: List[Dict[str, Any]]
+    ) -> list[dict[str, Any]]:
         drivers: list[dict[str, Any]] = []
         for record in records:
             drivers.extend(self._extract_entry_drivers(record))
@@ -249,15 +252,14 @@ class SingleSeasonScraper(F1Scraper):
             rounds_value = record.get("rounds") or record.get("races")
             rounds_by_index = (
                 rounds_value
-                if isinstance(rounds_value, list) and len(rounds_value) == len(race_drivers)
+                if isinstance(rounds_value, list)
+                and len(rounds_value) == len(race_drivers)
                 else None
             )
             rounds_all = (
                 self._normalize_rounds(rounds_value) if rounds_by_index is None else []
             )
-            numbers_by_index = (
-                numbers if len(numbers) == len(race_drivers) else []
-            )
+            numbers_by_index = numbers if len(numbers) == len(race_drivers) else []
             enriched: list[dict[str, Any]] = []
             for index, item in enumerate(race_drivers):
                 entry = dict(item)
@@ -286,9 +288,7 @@ class SingleSeasonScraper(F1Scraper):
         )
         rounds_value = record.get("rounds") or record.get("races")
         numbers = self._normalize_entry_numbers(record.get("no"))
-        numbers_by_index = (
-            numbers if len(numbers) == len(driver_items) else []
-        )
+        numbers_by_index = numbers if len(numbers) == len(driver_items) else []
 
         if isinstance(rounds_value, list) and len(rounds_value) == len(driver_items):
             for driver, rounds_item in zip(driver_items, rounds_value):
@@ -473,7 +473,9 @@ class SingleSeasonScraper(F1Scraper):
             subject_column=DriverColumn(),
         )
 
-    def _parse_constructors_standings(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_constructors_standings(
+        self, soup: BeautifulSoup
+    ) -> List[Dict[str, Any]]:
         return self._parse_standings_table(
             soup,
             section_ids=[

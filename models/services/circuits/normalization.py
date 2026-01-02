@@ -108,7 +108,9 @@ def extract_circuit_location(
                 elif isinstance(place, str):
                     add_place(place, None, places, seen_places)
         elif "text" in location_raw:
-            add_place(location_raw.get("text"), location_raw.get("url"), places, seen_places)
+            add_place(
+                location_raw.get("text"), location_raw.get("url"), places, seen_places
+            )
         elif "name" in location_raw:
             add_place(location_raw.get("name"), None, places, seen_places)
     elif isinstance(location_raw, list):

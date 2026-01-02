@@ -1,11 +1,6 @@
-import re
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
-from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import build_driver_link_lookup
 from scrapers.base.table.columns.helpers import parse_entrant_segment
@@ -37,7 +32,3 @@ class EntrantColumn(BaseColumn):
                 entrants.append(parsed)
 
         return entrants
-
-
-
-

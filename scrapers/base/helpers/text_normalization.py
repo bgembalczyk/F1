@@ -11,6 +11,7 @@ from scrapers.base.records import ExportRecord
 
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 
+
 def _strip_wiki_refs(text: str) -> str:
     """Usuń przypisy w formacie [1], [note 3], ..."""
     return REF_RE.sub("", text)

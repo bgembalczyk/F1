@@ -1,7 +1,5 @@
-import inspect
-from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Type
+from typing import Type
 
 from scrapers.base.helpers.runner import ensure_parent
 from scrapers.base.helpers.runner import supports_param
@@ -67,5 +65,3 @@ class ScraperRunner:
             kwargs.setdefault("include_urls", self._run_config.include_urls)
 
         return scraper_cls(**kwargs)
-
-

@@ -139,7 +139,9 @@ class HtmlTableParser:
         col_index = 0
 
         for cell in cells:
-            col_index = HtmlTableParser._consume_pending(expanded, col_index, headers, pending_rowspans)
+            col_index = HtmlTableParser._consume_pending(
+                expanded, col_index, headers, pending_rowspans
+            )
             if col_index >= len(headers):
                 break
 
@@ -221,9 +223,7 @@ class HtmlTableParser:
         if not second_cells or not all(cell.name == "th" for cell in second_cells):
             return first_headers, 1
 
-        if not any(
-            int(cell.get("colspan") or 1) > 1 for cell in first_cells
-        ):
+        if not any(int(cell.get("colspan") or 1) > 1 for cell in first_cells):
             return first_headers, 1
 
         second_headers = [

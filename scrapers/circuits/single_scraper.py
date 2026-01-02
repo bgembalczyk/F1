@@ -1,11 +1,8 @@
-import logging
 from typing import Any, Dict, List, Optional
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
-from models.services.circuits.lap_record_merging import normalize_lap_record
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.html_utils import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin

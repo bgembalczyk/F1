@@ -32,5 +32,3 @@ class LocationColumn(FuncColumn):
         if layout:
             return {"circuit": circuit, "layout": layout}
         return {"circuit": circuit}
-
-

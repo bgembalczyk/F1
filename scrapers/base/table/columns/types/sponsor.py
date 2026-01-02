@@ -68,7 +68,9 @@ class SponsorColumn(BaseColumn):
         base_text = clean_wiki_text(base_text)
         matched_link = SponsorColumn._find_matching_link(base_text, links)
         link_pool = [
-            link for link in links if not matched_link or link.get("url") != matched_link.get("url")
+            link
+            for link in links
+            if not matched_link or link.get("url") != matched_link.get("url")
         ]
         parsed_params = SponsorColumn._parse_params(params, link_pool)
 
@@ -142,7 +144,9 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            if target.startswith(link_lower) and target[len(link_lower) :].strip(" -–—"):
+            if target.startswith(link_lower) and target[len(link_lower) :].strip(
+                " -–—"
+            ):
                 continue
             if target.startswith(link_lower):
                 if len(link_text) > best_len:

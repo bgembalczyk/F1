@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import re
 
-from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.table.columns.constants import POINTS_WITH_TOTAL_RE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import parse_points_value

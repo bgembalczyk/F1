@@ -1,7 +1,5 @@
-import re
 from typing import Any, Callable, Sequence
 
-from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.text_normalization import drop_empty_fields
 from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.records import ExportRecord
@@ -55,5 +53,3 @@ class RecordNormalizer:
         if normalization_rules:
             rules.extend(normalization_rules)
         return rules
-
-

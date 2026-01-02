@@ -1,5 +1,3 @@
-import re
-
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 from scrapers.base.table.columns.context import ColumnContext
@@ -21,5 +19,3 @@ class SeasonDateColumn(BaseColumn):
 
         parsed = parse_date_text(text)
         return NormalizedDate(text=parsed.get("text"), iso=parsed.get("iso"))
-
-

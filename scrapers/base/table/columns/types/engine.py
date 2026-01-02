@@ -1,16 +1,10 @@
-import re
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
 
-from models.records.link import LinkRecord
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import build_engine_link_lookup
 from scrapers.base.table.columns.helpers import extract_engine_class
 from scrapers.base.table.columns.helpers import parse_engine_segment
-from scrapers.base.table.columns.helpers import replace_link_breaks
 from scrapers.base.table.columns.helpers import split_engine_cell_on_br
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -38,7 +32,3 @@ class EngineColumn(BaseColumn):
         if len(engines) == 1:
             return engines[0]
         return engines
-
-
-
-

@@ -204,4 +204,3 @@ def parse_fuel_limit_per_race(ctx) -> dict[str, Any]:
         "range_kg": range_kg,
         "range_l": range_l,
     }
-

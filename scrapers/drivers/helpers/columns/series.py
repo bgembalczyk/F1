@@ -1,8 +1,6 @@
-import re
 from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.drivers.helpers.columns.helpers import split_series
@@ -27,5 +25,3 @@ class SeriesColumn(BaseColumn):
         if class_text:
             return {"series": series_value, "class": class_text}
         return {"series": series_value}
-
-

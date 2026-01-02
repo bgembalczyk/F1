@@ -203,7 +203,6 @@ def is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
     return text == "" and url is None
 
 
-
 def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:
     result: list[Any] = []
     for item in items or []:

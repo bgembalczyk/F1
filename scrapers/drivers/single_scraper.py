@@ -110,9 +110,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             if node.name in {"h2", "h3", "h4", "h5"}:
                 heading_tag = node
             elif "mw-heading" in (node.get("class") or []):
-                heading_tag = node.find(
-                    ["h2", "h3", "h4", "h5"], recursive=False
-                )
+                heading_tag = node.find(["h2", "h3", "h4", "h5"], recursive=False)
 
             if heading_tag is None:
                 continue

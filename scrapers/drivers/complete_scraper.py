@@ -1,5 +1,3 @@
-import re
-from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -7,7 +5,6 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.results import ScrapeResult
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.helpers.export import export_complete_drivers
