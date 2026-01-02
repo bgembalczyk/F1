@@ -71,7 +71,7 @@ def _is_f2_background(background: str) -> bool:
 
 
 def _split_cell_on_br(cell: Tag) -> list[Tag]:
-    html = cell.decode_contents()
+    html = _replace_link_breaks(cell)
     parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
     segments: list[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
@@ -86,6 +86,14 @@ def _split_cell_on_br(cell: Tag) -> list[Tag]:
         segments.append(span)
 
     return segments or [cell]
+
+
+def _replace_link_breaks(cell: Tag) -> str:
+    fragment = BeautifulSoup(cell.decode_contents(), "html.parser")
+    for br in fragment.find_all("br"):
+        if br.find_parent("a"):
+            br.replace_with(" ")
+    return str(fragment)
 
 
 def _build_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
