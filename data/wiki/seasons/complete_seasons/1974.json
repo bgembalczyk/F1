@@ -358,6 +358,7 @@
             }
           },
           "chassis": [
+            "BT42",
             {
               "text": "BT44",
               "url": "https://en.wikipedia.org/wiki/Brabham_BT44"
@@ -1397,7 +1398,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "T103"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -1670,7 +1673,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "F101"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -1844,6 +1849,7 @@
             }
           },
           "chassis": [
+            "BT42",
             {
               "text": "BT44",
               "url": "https://en.wikipedia.org/wiki/Brabham_BT44"
@@ -1935,7 +1941,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "006"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -2200,7 +2208,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "BT42"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -2435,7 +2445,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "BT42"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -2483,7 +2495,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "BT42"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",

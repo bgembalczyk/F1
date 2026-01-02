@@ -1339,7 +1339,9 @@
               "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "PA123/3"
+          ],
           "engine": {
             "model": {
               "text": "Tecno Series-P",

@@ -643,6 +643,7 @@
             }
           },
           "chassis": [
+            "FA1I",
             {
               "text": "FA1L",
               "url": "https://en.wikipedia.org/wiki/Osella_FA1L"
@@ -1060,7 +1061,10 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "FC188",
+            "FC188B"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFZ",

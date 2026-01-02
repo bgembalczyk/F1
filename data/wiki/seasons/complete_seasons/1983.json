@@ -301,7 +301,8 @@
             {
               "text": "BT52",
               "url": "https://en.wikipedia.org/wiki/Brabham_BT52"
-            }
+            },
+            "BT52B"
           ],
           "engine": {
             "model": {
@@ -1135,7 +1136,8 @@
             {
               "text": "126C2B",
               "url": "https://en.wikipedia.org/wiki/Ferrari_126C"
-            }
+            },
+            "126C3"
           ],
           "engine": {
             "model": {
@@ -1299,7 +1301,9 @@
                 "text": "Ford",
                 "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
               },
-              "chassis": [],
+              "chassis": [
+                "FA1D"
+              ],
               "engine": {
                 "model": {
                   "text": "Ford Cosworth DFV",
@@ -1363,7 +1367,9 @@
                 "text": "Alfa Romeo",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
               },
-              "chassis": [],
+              "chassis": [
+                "FA1E"
+              ],
               "engine": {
                 "model": {
                   "text": "Alfa Romeo 1260",
@@ -1452,7 +1458,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "N183"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",
@@ -1621,7 +1629,8 @@
             {
               "text": "201",
               "url": "https://en.wikipedia.org/wiki/Spirit_201"
-            }
+            },
+            "201C"
           ],
           "engine": {
             "model": {

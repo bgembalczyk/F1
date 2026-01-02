@@ -1240,6 +1240,7 @@
             }
           },
           "chassis": [
+            "FC188B",
             {
               "text": "C3",
               "url": "https://en.wikipedia.org/wiki/Coloni_C3"
@@ -1496,7 +1497,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "ORE-1"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFR",
@@ -1836,7 +1839,9 @@
               "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "F189"
+          ],
           "engine": {
             "model": {
               "text": "Judd CV",

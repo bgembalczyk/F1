@@ -633,7 +633,9 @@
                 "text": "Climax",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
               },
-              "chassis": [],
+              "chassis": [
+                "61"
+              ],
               "engine": {
                 "model": {
                   "text": "Climax FPF",
@@ -1220,7 +1222,9 @@
                 "text": "Climax",
                 "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
               },
-              "chassis": [],
+              "chassis": [
+                "61"
+              ],
               "engine": {
                 "model": {
                   "text": "Climax FPF",
@@ -1575,7 +1579,9 @@
               "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "62"
+          ],
           "engine": {
             "model": {
               "text": "BRM P56",
@@ -2206,7 +2212,9 @@
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "Mk 1"
+          ],
           "engine": {
             "model": {
               "text": "Alfa Romeo Giulietta",

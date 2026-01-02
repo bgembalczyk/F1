@@ -53,7 +53,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "A526"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -86,7 +88,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "AMR26"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -119,7 +123,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "FW48"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -152,7 +158,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "R26"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -180,7 +188,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "TBA"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -213,7 +223,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "TBA"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -246,7 +258,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "VF-26"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -279,7 +293,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "MCL40A"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -312,7 +328,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "TBA"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -349,7 +367,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "TBA"
+          ],
           "race_drivers": [
             {
               "driver": {
@@ -382,7 +402,9 @@
             }
           },
           "power_unit": null,
-          "chassis": [],
+          "chassis": [
+            "RB22"
+          ],
           "race_drivers": [
             {
               "driver": {

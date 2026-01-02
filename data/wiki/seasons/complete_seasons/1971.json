@@ -1754,7 +1754,9 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "F1 70"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFV",

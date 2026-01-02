@@ -190,7 +190,8 @@
             {
               "text": "BT37",
               "url": "https://en.wikipedia.org/wiki/Brabham_BT37"
-            }
+            },
+            "BT42"
           ],
           "engine": {
             "model": {
@@ -1318,7 +1319,9 @@
               "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "PA123/6"
+          ],
           "engine": {
             "model": {
               "text": "Tecno Series-P",

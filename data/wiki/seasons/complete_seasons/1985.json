@@ -740,7 +740,8 @@
             {
               "text": "RE60",
               "url": "https://en.wikipedia.org/wiki/Renault_RE60"
-            }
+            },
+            "RE60B"
           ],
           "engine": [
             {
@@ -1171,7 +1172,10 @@
               "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "FA1F",
+            "FA1G"
+          ],
           "engine": {
             "model": {
               "text": "Alfa Romeo 890T",

@@ -564,7 +564,10 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "FA1M",
+            "FA1ME"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFR",
@@ -1504,7 +1507,10 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "chassis": [],
+          "chassis": [
+            "ORE-1",
+            "ORE-1B"
+          ],
           "engine": {
             "model": {
               "text": "Ford Cosworth DFR",
@@ -1600,7 +1606,9 @@
                 "text": "Life",
                 "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
               },
-              "chassis": [],
+              "chassis": [
+                "L190"
+              ],
               "engine": {
                 "model": {
                   "text": "Life F35",
@@ -1658,7 +1666,9 @@
                 "text": "Judd",
                 "url": "https://en.wikipedia.org/wiki/Judd_(engine)"
               },
-              "chassis": [],
+              "chassis": [
+                "L190"
+              ],
               "engine": {
                 "model": {
                   "text": "Judd CV",
