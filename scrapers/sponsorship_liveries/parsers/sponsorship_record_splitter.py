@@ -30,7 +30,10 @@ class SponsorshipRecordSplitter:
     def split_record_by_season(self, record: Dict[str, Any]) -> List[Dict[str, Any]]:
         for key in self._colour_keys:
             if key in record:
-                record = {**record, key: ColourScopeHandler.split_or_colours(record[key])}
+                record = {
+                    **record,
+                    key: ColourScopeHandler.split_or_colours(record[key]),
+                }
         seasons = record.get("season")
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return self._split_record_by_grand_prix(record)

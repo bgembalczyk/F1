@@ -46,7 +46,9 @@ class ColourScopeHandler:
                 continue
             if year_params & years:
                 if re.search(r"grand prix", item, flags=re.IGNORECASE):
-                    filtered.append(SponsorshipRecordText.strip_years_keep_context(item))
+                    filtered.append(
+                        SponsorshipRecordText.strip_years_keep_context(item)
+                    )
                 else:
                     filtered.append(SponsorshipRecordText.strip_year_suffix(item))
         return filtered
@@ -79,7 +81,9 @@ class ColourScopeHandler:
                     filtered.append(item)
                     continue
                 if re.search(r"grand prix", item, flags=re.IGNORECASE):
-                    filtered.append(SponsorshipRecordText.strip_years_keep_context(item))
+                    filtered.append(
+                        SponsorshipRecordText.strip_years_keep_context(item)
+                    )
                 else:
                     filtered.append(SponsorshipRecordText.strip_year_suffix(item))
         return filtered
@@ -130,9 +134,8 @@ class ColourScopeHandler:
             if not isinstance(colours, list):
                 continue
             for item in colours:
-                if (
-                    isinstance(item, str)
-                    and SponsorshipRecordText.extract_years_from_text(item)
-                ):
+                if isinstance(
+                    item, str
+                ) and SponsorshipRecordText.extract_years_from_text(item):
                     return True
         return False
