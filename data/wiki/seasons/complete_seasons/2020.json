@@ -363,11 +363,11 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Racing Point",
-              "url": null
+              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
             },
             "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+              "text": "BWT Mercedes",
+              "url": null
             }
           },
           "chassis": [
@@ -1134,11 +1134,11 @@
           "winning_constructor": {
             "chassis_constructor": {
               "text": "Racing Point",
-              "url": null
+              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
             },
             "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+              "text": "BWT Mercedes",
+              "url": null
             }
           },
           "report": {
