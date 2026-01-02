@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from typing import Any
 
 from bs4 import BeautifulSoup, Tag
@@ -29,17 +28,23 @@ class BrListColumn(BaseColumn):
 
 def _split_cell_on_br(cell: Tag) -> list[Tag]:
     html = cell.decode_contents()
-    parts = re.split(r"<br\\s*/?>", html, flags=re.IGNORECASE)
-    segments: list[Tag] = []
-    soup = cell.soup or BeautifulSoup("", "html.parser")
+    frag_soup = BeautifulSoup(html, "html.parser")
+    segments: list[list[Tag]] = [[]]
 
-    for part in parts:
-        if not part.strip():
+    for node in list(frag_soup.contents):
+        if isinstance(node, Tag) and node.name == "br":
+            if segments[-1]:
+                segments.append([])
             continue
-        frag_soup = BeautifulSoup(part, "html.parser")
-        span = soup.new_tag("span")
-        for el in list(frag_soup.contents):
-            span.append(el)
-        segments.append(span)
+        segments[-1].append(node)
 
-    return segments or [cell]
+    wrapped: list[Tag] = []
+    for segment in segments:
+        if not segment:
+            continue
+        span = frag_soup.new_tag("span")
+        for el in segment:
+            span.append(el)
+        wrapped.append(span)
+
+    return wrapped or [cell]
