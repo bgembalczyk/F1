@@ -220,12 +220,20 @@ class DriverInfoboxScraper:
                 label_cell = row["label_cell"]
                 value_cell = row["value_cell"]
                 label = clean_infobox_text(label_cell.get_text(" ", strip=True))
-                if label == "Active years":
+                if label in {"Active years", "Years active"}:
                     value = self._parse_active_years(value_cell)
+                elif label == "Car number":
+                    value = self._parse_car_numbers(value_cell)
                 elif label == "Teams":
                     value = self._parse_teams(value_cell)
                 elif label == "Entries":
                     value = self._parse_entries(value_cell)
+                elif label in {"Wins", "Podiums", "Pole positions", "Fastest laps", "Starts"}:
+                    value = self._parse_int_cell(value_cell)
+                elif label == "Career points":
+                    value = self._parse_float_cell(value_cell)
+                elif label == "Best finish":
+                    value = self._parse_best_finish(value_cell)
                 else:
                     value = self._parse_cell(value_cell)
                 rows.append(
@@ -245,12 +253,21 @@ class DriverInfoboxScraper:
             value_cell = row.get("value_cell")
             if not isinstance(label_cell, Tag) or not isinstance(value_cell, Tag):
                 continue
-            items.append(
-                {
-                    "years": self._extract_links(label_cell),
-                    "series": self._extract_links(value_cell),
-                }
-            )
+            series_links = self._extract_title_links(value_cell)
+            year_links = self._extract_year_links(label_cell)
+            if series_links and year_links and len(series_links) == len(year_links) and len(series_links) > 1:
+                for series_link, year_link in zip(series_links, year_links):
+                    items.append({"title": series_link, "years": [year_link]})
+                continue
+            if series_links and year_links:
+                items.append({"title": series_links[0], "years": year_links})
+                continue
+            if series_links:
+                for series_link in series_links:
+                    items.append({"title": series_link, "years": []})
+                continue
+            series_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
+            items.append({"title": {"text": series_text or "", "url": None}, "years": year_links})
         return items
 
     def _parse_cell(self, cell: Tag) -> Dict[str, Any]:
@@ -262,11 +279,25 @@ class DriverInfoboxScraper:
 
     def _parse_active_years(self, cell: Tag) -> Dict[str, int | None]:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        years = [int(value) for value in re.findall(r"\d{4}", text)]
+        return self._parse_year_range(text)
+
+    def _parse_year_range(self, text: str) -> Dict[str, int | None]:
+        normalized = clean_infobox_text(text) or ""
+        range_match = re.search(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", normalized)
+        if range_match:
+            start = int(range_match.group(1))
+            end_text = range_match.group(2)
+            if len(end_text) == 2:
+                end = (start // 100) * 100 + int(end_text)
+            else:
+                end = int(end_text)
+            return {"start": start, "end": end}
+
+        years = [int(value) for value in re.findall(r"\d{4}", normalized)]
         if not years:
             return {"start": None, "end": None}
         start = years[0]
-        if "present" in text.lower() and len(years) == 1:
+        if "present" in normalized.lower() and len(years) == 1:
             end = None
         elif len(years) > 1:
             end = years[-1]
@@ -288,6 +319,39 @@ class DriverInfoboxScraper:
         entries = values[0] if values else None
         starts = values[1] if len(values) > 1 else None
         return {"entries": entries, "starts": starts}
+
+    def _parse_int_cell(self, cell: Tag) -> int | None:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        match = re.search(r"-?\d+", text.replace(",", ""))
+        return int(match.group(0)) if match else None
+
+    def _parse_float_cell(self, cell: Tag) -> float | None:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        match = re.search(r"-?\d+(?:\.\d+)?", text.replace(",", ""))
+        return float(match.group(0)) if match else None
+
+    def _parse_car_numbers(self, cell: Tag) -> List[Dict[str, Any]]:
+        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+        entries: List[Dict[str, Any]] = []
+        for part in (line.strip() for line in text.splitlines() if line.strip()):
+            match = re.match(r"^(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?$", part)
+            if not match:
+                continue
+            number = int(match.group("number"))
+            years_text = match.group("years") or ""
+            years = self._parse_year_range(years_text) if years_text else {"start": None, "end": None}
+            entries.append({"number": number, "years": years})
+        return entries
+
+    def _parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        if " in " in text:
+            result_text, season_text = text.split(" in ", 1)
+            season = self._parse_year_range(season_text)
+        else:
+            result_text = text
+            season = {"start": None, "end": None}
+        return {"result": result_text.strip() or None, "season": season}
 
     def _parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))
