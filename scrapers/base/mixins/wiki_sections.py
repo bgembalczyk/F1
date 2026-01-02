@@ -39,6 +39,93 @@ class WikipediaSectionByIdMixin:
 
 
     @staticmethod
+    def _find_node_by_id(soup: BeautifulSoup, fragment: str) -> Optional[Tag]:
+        """Znajduje element po ID, próbując różnych wariantów (z _, spacjami)."""
+        candidates = {fragment}
+        candidates.add(fragment.replace(" ", "_"))
+        candidates.add(fragment.replace("_", " "))
+
+        for cand in candidates:
+            node = soup.find(id=cand)
+            if node:
+                return node
+        return None
+
+    @staticmethod
+    def _find_header_by_text(soup: BeautifulSoup, fragment: str) -> Optional[Tag]:
+        """Znajduje nagłówek po tekście (fallback gdy nie ma ID)."""
+        target_text = fragment.replace("_", " ").strip().lower()
+
+        for h in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+            full_text = (h.get_text(strip=True) or "").lower()
+            if full_text == target_text:
+                return h
+
+            span = h.find("span", class_="mw-headline")
+            if span:
+                span_text = (span.get_text(strip=True) or "").lower()
+                if span_text == target_text:
+                    return h
+        return None
+
+    @staticmethod
+    def _extract_header_from_node(node: Tag) -> Optional[Tag]:
+        """Wyciąga nagłówek z elementu (może być sam nagłówkiem lub zawierać go)."""
+        if node.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
+            return node
+        return node.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"])
+
+    @staticmethod
+    def _get_header_level(header: Tag) -> Optional[int]:
+        """Zwraca poziom nagłówka (1-6) lub None jeśli nie można określić."""
+        try:
+            return int(header.name[1])
+        except (TypeError, ValueError, IndexError):
+            return None
+
+    @staticmethod
+    def _get_heading_block(header: Tag) -> Tag:
+        """Zwraca blok nagłówka (może być opakowany w mw-heading)."""
+        parent = header.parent
+        if isinstance(parent, Tag):
+            classes = parent.get("class") or []
+            if (
+                "mw-heading" in classes
+                and parent.find(header.name, recursive=False) is header
+            ):
+                return parent
+        return header
+
+    @staticmethod
+    def _extract_same_level_header(sibling: Tag) -> Optional[Tag]:
+        """Wyciąga nagłówek z elementu rodzeństwa (może być bezpośredni lub w mw-heading)."""
+        if sibling.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
+            return sibling
+        elif "mw-heading" in (sibling.get("class") or []):
+            return sibling.find(["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False)
+        return None
+
+    @staticmethod
+    def _collect_section_siblings(
+        heading_block: Tag, header_level: Optional[int]
+    ) -> List[Any]:
+        """Zbiera wszystkie elementy rodzeństwa do następnego nagłówka tego samego poziomu."""
+        collected: List[Any] = [heading_block]
+
+        for sib in heading_block.next_siblings:
+            if isinstance(sib, Tag):
+                same_level_header_tag = WikipediaSectionByIdMixin._extract_same_level_header(sib)
+
+                if same_level_header_tag is not None and header_level is not None:
+                    sib_level = WikipediaSectionByIdMixin._get_header_level(same_level_header_tag)
+                    if sib_level == header_level:
+                        break
+
+            collected.append(sib)
+
+        return collected
+
+    @staticmethod
     def _extract_section_by_id(
         soup: BeautifulSoup,
         fragment: str,
@@ -52,84 +139,27 @@ class WikipediaSectionByIdMixin:
            [blok nagłówka] + wszystkie rodzeństwa aż do kolejnego nagłówka
            TEGO SAMEGO poziomu (hN).
         """
-        candidates = {fragment}
-        candidates.add(fragment.replace(" ", "_"))
-        candidates.add(fragment.replace("_", " "))
-
-        node: Optional[Tag] = None
-        for cand in candidates:
-            node = soup.find(id=cand)
-            if node:
-                break
+        # Znajdź nagłówek sekcji
+        node = WikipediaSectionByIdMixin._find_node_by_id(soup, fragment)
 
         header: Optional[Tag] = None
-
         if node:
-            if node.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
-                header = node
-            else:
-                header = node.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"])
+            header = WikipediaSectionByIdMixin._extract_header_from_node(node)
 
         if header is None:
-            target_text = fragment.replace("_", " ").strip().lower()
-
-            for h in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
-                full_text = (h.get_text(strip=True) or "").lower()
-                if full_text == target_text:
-                    header = h
-                    break
-
-                span = h.find("span", class_="mw-headline")
-                if span:
-                    span_text = (span.get_text(strip=True) or "").lower()
-                    if span_text == target_text:
-                        header = h
-                        break
+            header = WikipediaSectionByIdMixin._find_header_by_text(soup, fragment)
 
         if header is None:
             return None
 
-        try:
-            header_level = int(header.name[1])
-        except (TypeError, ValueError, IndexError):
-            header_level = None
+        # Określ poziom nagłówka i blok
+        header_level = WikipediaSectionByIdMixin._get_header_level(header)
+        heading_block = WikipediaSectionByIdMixin._get_heading_block(header)
 
-        heading_block: Tag = header
-        parent = header.parent
-        if isinstance(parent, Tag):
-            classes = parent.get("class") or []
-            if (
-                "mw-heading" in classes
-                and parent.find(header.name, recursive=False) is header
-            ):
-                heading_block = parent
+        # Zbierz wszystkie elementy sekcji
+        collected = WikipediaSectionByIdMixin._collect_section_siblings(heading_block, header_level)
 
-        collected: List[Any] = [heading_block]
-
-        for sib in heading_block.next_siblings:
-            if isinstance(sib, Tag):
-                same_level_header_tag: Optional[Tag] = None
-
-                if sib.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
-                    same_level_header_tag = sib
-                elif "mw-heading" in (sib.get("class") or []):
-                    h_child = sib.find(
-                        ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False
-                    )
-                    if h_child is not None:
-                        same_level_header_tag = h_child
-
-                if same_level_header_tag is not None and header_level is not None:
-                    try:
-                        sib_level = int(same_level_header_tag.name[1])
-                    except (TypeError, ValueError, IndexError):
-                        sib_level = None
-
-                    if sib_level == header_level:
-                        break
-
-            collected.append(sib)
-
+        # Zbuduj HTML sekcji
         html = "".join(str(node) for node in collected)
         if not html.strip():
             return None

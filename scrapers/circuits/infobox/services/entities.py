@@ -41,13 +41,10 @@ class CircuitEntitiesParser:
         self.entity_parser = entity_parser
         self.additional_info_parser = additional_info_parser
 
-    def with_normalized(
-        self,
-        raw: Dict[str, Any],
-        layout_records: Optional[List[Dict[str, Any]]],
+    def _build_normalized_data(
+        self, raw: Dict[str, Any], rows: Dict[str, Dict[str, Any]]
     ) -> Dict[str, Any]:
-        rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
-
+        """Buduje znormalizowane dane z surowych wierszy."""
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),
             "location": self.geo_parser.parse_location(rows.get("Location")),
@@ -72,29 +69,81 @@ class CircuitEntitiesParser:
         if extra_fields:
             normalized["additional_info"] = extra_fields
 
-        normalized = self.text_utils.prune_nulls(normalized)
+        return self.text_utils.prune_nulls(normalized)
 
-        result: Dict[str, Any] = dict(raw or {})
-        result.pop("rows", None)
-        for key in IGNORED_TOP_LEVEL_KEYS:
-            result.pop(key, None)
+    def _create_default_layout(
+        self, normalized: Dict[str, Any], rows: Dict[str, Dict[str, Any]]
+    ) -> Optional[Dict[str, Any]]:
+        """Tworzy domyślny layout jeśli nie ma layoutów z tabeli."""
+        default_layout: Dict[str, Any] = {
+            "layout": None,
+            "years": None,
+            "length_km": normalized.get("specs", {}).get("length_km"),
+            "length_mi": normalized.get("specs", {}).get("length_mi"),
+            "turns": normalized.get("specs", {}).get("turns"),
+            "race_lap_record": self.lap_record_parser.parse_lap_record(
+                rows.get("Race lap record")
+            ),
+            "surface": self.specs_parser.parse_surface(rows.get("Surface")),
+            "banking": self.specs_parser.parse_banking(rows.get("Banking")),
+        }
+        return self.text_utils.prune_nulls(default_layout)
 
+    def _merge_base_lap_record_into_layout(
+        self, lay: Dict[str, Any], base_record: Dict[str, Any]
+    ) -> bool:
+        """
+        Próbuje scalić base_record do layoutu jeśli są kompatybilne.
+        Zwraca True jeśli udało się scalić.
+        """
+        existing = lay.get("race_lap_record")
+        if not existing:
+            return False
+
+        if self.lap_record_parser.same_lap_record(base_record, existing):
+            normalize_lap_record(existing)
+            normalize_lap_record(base_record)
+            merged = merge_two_records(existing, base_record)
+            lay["race_lap_record"] = self.text_utils.prune_nulls(merged)
+            return True
+        return False
+
+    def _process_base_lap_record(
+        self, layouts: List[Dict[str, Any]], base_record: Dict[str, Any]
+    ) -> None:
+        """Przetwarza base lap record - próbuje scalić z istniejącym layoutem lub dodaje nowy."""
+        matched = False
+
+        for lay in layouts:
+            if self._merge_base_lap_record_into_layout(lay, base_record):
+                matched = True
+                break
+
+        if not matched:
+            if len(layouts) == 1 and not layouts[0].get("race_lap_record"):
+                layouts[0]["race_lap_record"] = base_record
+            else:
+                layouts.append(
+                    self.text_utils.prune_nulls(
+                        {
+                            "layout": None,
+                            "years": None,
+                            "race_lap_record": base_record,
+                        }
+                    )
+                )
+
+    def _prepare_layouts(
+        self,
+        layout_records: Optional[List[Dict[str, Any]]],
+        normalized: Dict[str, Any],
+        rows: Dict[str, Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        """Przygotowuje listę layoutów, dodając domyślny jeśli brak."""
         layouts = layout_records or []
 
         if not layouts:
-            default_layout: Dict[str, Any] = {
-                "layout": None,
-                "years": None,
-                "length_km": normalized.get("specs", {}).get("length_km"),
-                "length_mi": normalized.get("specs", {}).get("length_mi"),
-                "turns": normalized.get("specs", {}).get("turns"),
-                "race_lap_record": self.lap_record_parser.parse_lap_record(
-                    rows.get("Race lap record")
-                ),
-                "surface": self.specs_parser.parse_surface(rows.get("Surface")),
-                "banking": self.specs_parser.parse_banking(rows.get("Banking")),
-            }
-            default_layout = self.text_utils.prune_nulls(default_layout)
+            default_layout = self._create_default_layout(normalized, rows)
             if default_layout:
                 layouts = [default_layout]
 
@@ -103,42 +152,44 @@ class CircuitEntitiesParser:
                 rows.get("Race lap record")
             )
             if base_record:
-                matched = False
+                self._process_base_lap_record(layouts, base_record)
 
-                for lay in layouts:
-                    existing = lay.get("race_lap_record")
-                    if not existing:
-                        continue
+        return layouts
 
-                    if self.lap_record_parser.same_lap_record(base_record, existing):
-                        normalize_lap_record(existing)
-                        normalize_lap_record(base_record)
-                        merged = merge_two_records(existing, base_record)
-                        lay["race_lap_record"] = self.text_utils.prune_nulls(merged)
-                        matched = True
-                        break
+    def _prepare_result_dict(self, raw: Dict[str, Any]) -> Dict[str, Any]:
+        """Przygotowuje słownik wynikowy, usuwając zbędne klucze."""
+        result: Dict[str, Any] = dict(raw or {})
+        result.pop("rows", None)
+        for key in IGNORED_TOP_LEVEL_KEYS:
+            result.pop(key, None)
+        return result
 
-                if not matched:
-                    if len(layouts) == 1 and not layouts[0].get("race_lap_record"):
-                        layouts[0]["race_lap_record"] = base_record
-                    else:
-                        layouts.append(
-                            self.text_utils.prune_nulls(
-                                {
-                                    "layout": None,
-                                    "years": None,
-                                    "race_lap_record": base_record,
-                                }
-                            )
-                        )
-
-            result["layouts"] = self.text_utils.prune_nulls(layouts)
-
+    def _merge_normalized_into_result(
+        self, result: Dict[str, Any], normalized: Dict[str, Any]
+    ) -> None:
+        """Scala znormalizowane dane do wyniku."""
         existing_norm = result.get("normalized")
         if isinstance(existing_norm, dict):
             existing_norm.update(normalized)
             result["normalized"] = existing_norm
         else:
             result["normalized"] = normalized
+
+    def with_normalized(
+        self,
+        raw: Dict[str, Any],
+        layout_records: Optional[List[Dict[str, Any]]],
+    ) -> Dict[str, Any]:
+        """Buduje kompletny wynik z znormalizowanymi danymi i layoutami."""
+        rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}
+
+        normalized = self._build_normalized_data(raw, rows)
+        result = self._prepare_result_dict(raw)
+        layouts = self._prepare_layouts(layout_records, normalized, rows)
+
+        if layouts:
+            result["layouts"] = self.text_utils.prune_nulls(layouts)
+
+        self._merge_normalized_into_result(result, normalized)
 
         return self.text_utils.prune_nulls(result)
