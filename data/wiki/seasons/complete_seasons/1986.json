@@ -57,28 +57,20 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 1,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Alain Prost",
-                    "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Alain Prost",
+                "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+              },
+              "no": 1
             },
             {
-              "no": 2,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Keke Rosberg",
-                    "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Keke Rosberg",
+                "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
+              },
+              "no": 2
             }
           ]
         },
@@ -133,28 +125,20 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 3,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Martin Brundle",
-                    "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Martin Brundle",
+                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
+              },
+              "no": 3
             },
             {
-              "no": 4,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Philippe Streiff",
-                    "url": "https://en.wikipedia.org/wiki/Philippe_Streiff"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Philippe Streiff",
+                "url": "https://en.wikipedia.org/wiki/Philippe_Streiff"
+              },
+              "no": 4
             }
           ]
         },
@@ -213,28 +197,20 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 5,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Nigel Mansell",
-                    "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Nigel Mansell",
+                "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+              },
+              "no": 5
             },
             {
-              "no": 6,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Nelson Piquet",
-                    "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Nelson Piquet",
+                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+              },
+              "no": 6
             }
           ]
         },
@@ -289,53 +265,46 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 7,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Riccardo Patrese",
-                    "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Riccardo Patrese",
+                "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+              },
+              "no": 7
             },
             {
-              "no": 8,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Elio de Angelis",
-                    "url": "https://en.wikipedia.org/wiki/Elio_de_Angelis"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Derek Warwick",
-                    "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-                  },
-                  "rounds": [
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Elio de Angelis",
+                "url": "https://en.wikipedia.org/wiki/Elio_de_Angelis"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "no": 8
+            },
+            {
+              "driver": {
+                "text": "Derek Warwick",
+                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
+              },
+              "rounds": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 8
             }
           ]
         },
@@ -386,28 +355,20 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 11,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Johnny Dumfries",
-                    "url": "https://en.wikipedia.org/wiki/John_Crichton-Stuart,_7th_Marquess_of_Bute"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Johnny Dumfries",
+                "url": "https://en.wikipedia.org/wiki/John_Crichton-Stuart,_7th_Marquess_of_Bute"
+              },
+              "no": 11
             },
             {
-              "no": 12,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Ayrton Senna",
-                    "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Ayrton Senna",
+                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+              },
+              "no": 12
             }
           ]
         },
@@ -458,44 +419,36 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 14,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jonathan Palmer",
-                    "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Jonathan Palmer",
+                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
+              },
+              "no": 14
             },
             {
-              "no": 29,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Huub Rothengatter",
-                    "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
-                  },
-                  "rounds": [
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Huub Rothengatter",
+                "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
+              },
+              "rounds": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 29
             }
           ]
         },
@@ -542,37 +495,29 @@
                 "text": "G",
                 "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
               },
-              "no": [
+              "race_drivers": [
                 {
-                  "no": 15,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Alan Jones",
-                        "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
-                      },
-                      "rounds": [
-                        1,
-                        2
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Alan Jones",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+                  },
+                  "rounds": [
+                    1,
+                    2
+                  ],
+                  "no": 15
                 },
                 {
-                  "no": 16,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Patrick Tambay",
-                        "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
-                      },
-                      "rounds": [
-                        1,
-                        2,
-                        3
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Patrick Tambay",
+                    "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
+                  },
+                  "rounds": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "no": 16
                 }
               ]
             },
@@ -606,73 +551,65 @@
                 "text": "G",
                 "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
               },
-              "no": [
+              "race_drivers": [
                 {
-                  "no": 15,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Alan Jones",
-                        "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
-                      },
-                      "rounds": [
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Alan Jones",
+                    "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
+                  },
+                  "rounds": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ],
+                  "no": 15
                 },
                 {
-                  "no": 16,
-                  "race_drivers": [
-                    {
-                      "driver": {
-                        "text": "Patrick Tambay",
-                        "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
-                      },
-                      "rounds": [
-                        4,
-                        5,
-                        6,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16
-                      ]
-                    },
-                    {
-                      "driver": {
-                        "text": "Eddie Cheever",
-                        "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
-                      },
-                      "rounds": [
-                        7
-                      ]
-                    }
-                  ]
+                  "driver": {
+                    "text": "Patrick Tambay",
+                    "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
+                  },
+                  "rounds": [
+                    4,
+                    5,
+                    6,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                  ],
+                  "no": 16
+                },
+                {
+                  "driver": {
+                    "text": "Eddie Cheever",
+                    "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+                  },
+                  "rounds": [
+                    7
+                  ],
+                  "no": 16
                 }
               ]
             }
           ],
-          "tyres": null,
-          "no": null
+          "tyres": null
         },
         {
           "entrant": [
@@ -729,53 +666,46 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 17,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Marc Surer",
-                    "url": "https://en.wikipedia.org/wiki/Marc_Surer"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Christian Danner",
-                    "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-                  },
-                  "rounds": [
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Marc Surer",
+                "url": "https://en.wikipedia.org/wiki/Marc_Surer"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "no": 17
             },
             {
-              "no": 18,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Thierry Boutsen",
-                    "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Christian Danner",
+                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
+              },
+              "rounds": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 17
+            },
+            {
+              "driver": {
+                "text": "Thierry Boutsen",
+                "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
+              },
+              "no": 18
             }
           ]
         },
@@ -830,28 +760,20 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 19,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Teo Fabi",
-                    "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Teo Fabi",
+                "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+              },
+              "no": 19
             },
             {
-              "no": 20,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Gerhard Berger",
-                    "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Gerhard Berger",
+                "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+              },
+              "no": 20
             }
           ]
         },
@@ -897,62 +819,56 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 21,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Piercarlo Ghinzani",
-                    "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Piercarlo Ghinzani",
+                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
+              },
+              "no": 21
             },
             {
-              "no": 22,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Christian Danner",
-                    "url": "https://en.wikipedia.org/wiki/Christian_Danner"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Allen Berg",
-                    "url": "https://en.wikipedia.org/wiki/Allen_Berg"
-                  },
-                  "rounds": [
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    14,
-                    15,
-                    16
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Alex Caffi",
-                    "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-                  },
-                  "rounds": [
-                    13
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Christian Danner",
+                "url": "https://en.wikipedia.org/wiki/Christian_Danner"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "no": 22
+            },
+            {
+              "driver": {
+                "text": "Allen Berg",
+                "url": "https://en.wikipedia.org/wiki/Allen_Berg"
+              },
+              "rounds": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                14,
+                15,
+                16
+              ],
+              "no": 22
+            },
+            {
+              "driver": {
+                "text": "Alex Caffi",
+                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
+              },
+              "rounds": [
+                13
+              ],
+              "no": 22
             }
           ]
         },
@@ -1003,28 +919,20 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 23,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Andrea de Cesaris",
-                    "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Andrea de Cesaris",
+                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
+              },
+              "no": 23
             },
             {
-              "no": 24,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Alessandro Nannini",
-                    "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Alessandro Nannini",
+                "url": "https://en.wikipedia.org/wiki/Alessandro_Nannini"
+              },
+              "no": 24
             }
           ]
         },
@@ -1084,54 +992,47 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 25,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "René Arnoux",
-                    "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "René Arnoux",
+                "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+              },
+              "no": 25
             },
             {
-              "no": 26,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jacques Laffite",
-                    "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Philippe Alliot",
-                    "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
-                  },
-                  "rounds": [
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Jacques Laffite",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "no": 26
+            },
+            {
+              "driver": {
+                "text": "Philippe Alliot",
+                "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
+              },
+              "rounds": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 26
             }
           ]
         },
@@ -1178,28 +1079,20 @@
             "text": "G",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
-          "no": [
+          "race_drivers": [
             {
-              "no": 27,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Michele Alboreto",
-                    "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Michele Alboreto",
+                "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+              },
+              "no": 27
             },
             {
-              "no": 28,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Stefan Johansson",
-                    "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Stefan Johansson",
+                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
+              },
+              "no": 28
             }
           ]
         },
@@ -1246,7 +1139,6 @@
             "text": "P",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
-          "no": 31,
           "race_drivers": [
             {
               "driver": {
@@ -1256,7 +1148,8 @@
               "rounds": [
                 13,
                 14
-              ]
+              ],
+              "no": 31
             }
           ]
         }

@@ -45,28 +45,20 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 1,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Michael Schumacher",
-                    "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Michael Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+              },
+              "no": 1
             },
             {
-              "no": 2,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Rubens Barrichello",
-                    "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Rubens Barrichello",
+                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+              },
+              "no": 2
             }
           ]
         },
@@ -103,37 +95,30 @@
               "url": "https://en.wikipedia.org/wiki/Michelin"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 3,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Juan Pablo Montoya",
-                    "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Juan Pablo Montoya",
+                "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+              },
+              "no": 3
             },
             {
-              "no": 4,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Ralf Schumacher",
-                    "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-                  }
-                },
-                {
-                  "driver": {
-                    "text": "Marc Gené",
-                    "url": "https://en.wikipedia.org/wiki/Marc_Gen%C3%A9"
-                  },
-                  "rounds": [
-                    14
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Ralf Schumacher",
+                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+              },
+              "no": 4
+            },
+            {
+              "driver": {
+                "text": "Marc Gené",
+                "url": "https://en.wikipedia.org/wiki/Marc_Gen%C3%A9"
+              },
+              "rounds": [
+                14
+              ],
+              "no": 4
             }
           ]
         },
@@ -172,28 +157,20 @@
               "url": "https://en.wikipedia.org/wiki/Michelin"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 5,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "David Coulthard",
-                    "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "David Coulthard",
+                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+              },
+              "no": 5
             },
             {
-              "no": 6,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Kimi Räikkönen",
-                    "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Kimi Räikkönen",
+                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
+              },
+              "no": 6
             }
           ]
         },
@@ -239,28 +216,20 @@
               "url": "https://en.wikipedia.org/wiki/Michelin"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 7,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jarno Trulli",
-                    "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Jarno Trulli",
+                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
+              },
+              "no": 7
             },
             {
-              "no": 8,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Fernando Alonso",
-                    "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Fernando Alonso",
+                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+              },
+              "no": 8
             }
           ]
         },
@@ -302,28 +271,20 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 9,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Nick Heidfeld",
-                    "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Nick Heidfeld",
+                "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
+              },
+              "no": 9
             },
             {
-              "no": 10,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Heinz-Harald Frentzen",
-                    "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Heinz-Harald Frentzen",
+                "url": "https://en.wikipedia.org/wiki/Heinz-Harald_Frentzen"
+              },
+              "no": 10
             }
           ]
         },
@@ -365,55 +326,48 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 11,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Giancarlo Fisichella",
-                    "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Giancarlo Fisichella",
+                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+              },
+              "no": 11
             },
             {
-              "no": 12,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Ralph Firman",
-                    "url": "https://en.wikipedia.org/wiki/Ralph_Firman"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    15,
-                    16
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Zsolt Baumgartner",
-                    "url": "https://en.wikipedia.org/wiki/Zsolt_Baumgartner"
-                  },
-                  "rounds": [
-                    13,
-                    14
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Ralph Firman",
+                "url": "https://en.wikipedia.org/wiki/Ralph_Firman"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                15,
+                16
+              ],
+              "no": 12
+            },
+            {
+              "driver": {
+                "text": "Zsolt Baumgartner",
+                "url": "https://en.wikipedia.org/wiki/Zsolt_Baumgartner"
+              },
+              "rounds": [
+                13,
+                14
+              ],
+              "no": 12
             }
           ]
         },
@@ -455,54 +409,47 @@
               "url": "https://en.wikipedia.org/wiki/Michelin"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 14,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Mark Webber",
-                    "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Mark Webber",
+                "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
+              },
+              "no": 14
             },
             {
-              "no": 15,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Antônio Pizzonia",
-                    "url": "https://en.wikipedia.org/wiki/Ant%C3%B4nio_Pizzonia"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Justin Wilson",
-                    "url": "https://en.wikipedia.org/wiki/Justin_Wilson_(racing_driver)"
-                  },
-                  "rounds": [
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Antônio Pizzonia",
+                "url": "https://en.wikipedia.org/wiki/Ant%C3%B4nio_Pizzonia"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "no": 15
+            },
+            {
+              "driver": {
+                "text": "Justin Wilson",
+                "url": "https://en.wikipedia.org/wiki/Justin_Wilson_(racing_driver)"
+              },
+              "rounds": [
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 15
             }
           ]
         },
@@ -544,54 +491,47 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 16,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jacques Villeneuve",
-                    "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12,
-                    13,
-                    14,
-                    15
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Takuma Sato",
-                    "url": "https://en.wikipedia.org/wiki/Takuma_Sato"
-                  },
-                  "rounds": [
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Jacques Villeneuve",
+                "url": "https://en.wikipedia.org/wiki/Jacques_Villeneuve"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "no": 16
             },
             {
-              "no": 17,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jenson Button",
-                    "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Takuma Sato",
+                "url": "https://en.wikipedia.org/wiki/Takuma_Sato"
+              },
+              "rounds": [
+                16
+              ],
+              "no": 16
+            },
+            {
+              "driver": {
+                "text": "Jenson Button",
+                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+              },
+              "no": 17
             }
           ]
         },
@@ -633,54 +573,47 @@
               "url": "https://en.wikipedia.org/wiki/Bridgestone"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 18,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Justin Wilson",
-                    "url": "https://en.wikipedia.org/wiki/Justin_Wilson_(racing_driver)"
-                  },
-                  "rounds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11
-                  ]
-                },
-                {
-                  "driver": {
-                    "text": "Nicolas Kiesa",
-                    "url": "https://en.wikipedia.org/wiki/Nicolas_Kiesa"
-                  },
-                  "rounds": [
-                    12,
-                    13,
-                    14,
-                    15,
-                    16
-                  ]
-                }
-              ]
+              "driver": {
+                "text": "Justin Wilson",
+                "url": "https://en.wikipedia.org/wiki/Justin_Wilson_(racing_driver)"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "no": 18
             },
             {
-              "no": 19,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Jos Verstappen",
-                    "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Nicolas Kiesa",
+                "url": "https://en.wikipedia.org/wiki/Nicolas_Kiesa"
+              },
+              "rounds": [
+                12,
+                13,
+                14,
+                15,
+                16
+              ],
+              "no": 18
+            },
+            {
+              "driver": {
+                "text": "Jos Verstappen",
+                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
+              },
+              "no": 19
             }
           ]
         },
@@ -722,28 +655,20 @@
               "url": "https://en.wikipedia.org/wiki/Michelin"
             }
           ],
-          "no": [
+          "race_drivers": [
             {
-              "no": 20,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Olivier Panis",
-                    "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Olivier Panis",
+                "url": "https://en.wikipedia.org/wiki/Olivier_Panis"
+              },
+              "no": 20
             },
             {
-              "no": 21,
-              "race_drivers": [
-                {
-                  "driver": {
-                    "text": "Cristiano da Matta",
-                    "url": "https://en.wikipedia.org/wiki/Cristiano_da_Matta"
-                  }
-                }
-              ]
+              "driver": {
+                "text": "Cristiano da Matta",
+                "url": "https://en.wikipedia.org/wiki/Cristiano_da_Matta"
+              },
+              "no": 21
             }
           ]
         }
