@@ -15,15 +15,19 @@ def _extract_constructor_part(ctx, index: int) -> LinkRecord | None:
 
     if "-" in clean_text:
         parts = [part.strip() for part in clean_text.split("-", 1)]
-        if len(parts) == 2 and links and len(links) > 2:
+        if len(parts) == 2 and links:
             left_part, right_part = parts
             if index == 0:
+                left_normalized = clean_wiki_text(left_part)
+                for link in links:
+                    if clean_wiki_text(link.get("text", "")) == left_normalized:
+                        return link
                 return {"text": left_part, "url": None}
             right_normalized = clean_wiki_text(right_part)
             for link in links:
                 if clean_wiki_text(link.get("text", "")) == right_normalized:
                     return link
-            return links[-1]
+            return {"text": right_part, "url": None}
 
     if links:
         if len(links) >= 2:
