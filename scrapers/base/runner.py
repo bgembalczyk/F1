@@ -1,6 +1,7 @@
 from pathlib import Path
 import inspect
 from typing import Type
+from uuid import uuid4
 
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
@@ -39,11 +40,14 @@ class ScraperRunner:
         json_rel: str | Path,
         csv_rel: str | Path | None = None,
     ) -> None:
-        scraper = self._make_scraper(scraper_cls)
+        run_id = uuid4().hex
+        run_logger = get_logger(scraper_cls.__name__)
+        run_logger.info("Scrape run %s started", run_id)
+        scraper = self._make_scraper(scraper_cls, run_id=run_id)
         data = scraper.fetch()
 
-        scraper_logger = getattr(scraper, "logger", get_logger(scraper_cls.__name__))
-        scraper_logger.info("Pobrano rekordów: %s", len(data))
+        scraper_logger = getattr(scraper, "logger", run_logger)
+        scraper_logger.info("Pobrano rekordów: %s (run_id=%s)", len(data), run_id)
 
         result = ScrapeResult(
             data=data,
@@ -59,8 +63,9 @@ class ScraperRunner:
             csv_path = output_dir / Path(csv_rel)
             ensure_parent(csv_path)
             result.to_csv(csv_path, exporter=scraper.exporter)
+        run_logger.info("Scrape run %s finished", run_id)
 
-    def _make_scraper(self, scraper_cls: Type[F1Scraper]) -> F1Scraper:
+    def _make_scraper(self, scraper_cls: Type[F1Scraper], *, run_id: str) -> F1Scraper:
         """
         Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
 
@@ -70,6 +75,7 @@ class ScraperRunner:
         """
         kwargs = dict(self._run_config.scraper_kwargs)
         options = self._run_config.options or ScraperOptions()
+        options.run_id = run_id
         if self._run_config.debug_dir is not None:
             options.debug_dir = self._run_config.debug_dir
 
@@ -77,7 +83,12 @@ class ScraperRunner:
             if self._supports_urls and hasattr(options, "include_urls"):
                 options.include_urls = self._run_config.include_urls
             kwargs.setdefault("options", options)
+            if supports_param(scraper_cls, "run_id"):
+                kwargs.setdefault("run_id", run_id)
             return scraper_cls(**kwargs)
+
+        if supports_param(scraper_cls, "run_id"):
+            kwargs.setdefault("run_id", run_id)
 
         if self._supports_urls and supports_param(scraper_cls, "include_urls"):
             kwargs.setdefault("include_urls", self._run_config.include_urls)
