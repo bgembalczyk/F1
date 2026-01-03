@@ -17,6 +17,22 @@ class TablePipelineDebugContext:
     run_id: str | None = None
 
 
+def write_infobox_dump(
+    debug_dir: Path,
+    *,
+    html: str,
+    url: str | None,
+    run_id: str | None = None,
+) -> Path:
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    safe_run_id = run_id or "unknown"
+    filename = f"infobox_{safe_run_id}_{timestamp}.html"
+    dump_path = debug_dir / filename
+    dump_path.write_text(html, encoding="utf-8")
+    return dump_path
+
+
 def write_table_pipeline_dump(
     debug_dir: Path,
     *,

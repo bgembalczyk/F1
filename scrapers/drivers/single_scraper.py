@@ -71,6 +71,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
                 debug_dir=self.debug_dir,
             ),
             run_id=getattr(self, "_run_id", None),
+            url=self.url,
         )
         records = infobox_scraper.parse(soup)
         return records[0] if records else {}
