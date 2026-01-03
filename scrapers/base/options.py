@@ -12,6 +12,7 @@ from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.parsers import SoupParser
 from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.validation import RecordValidator
 
 
 @dataclass(slots=True)
@@ -27,6 +28,8 @@ class ScraperOptions:
     parser: SoupParser | None = None
     policy: HttpPolicy | None = None
     http_client: Optional[HttpClientProtocol] = None
+    validator: RecordValidator | None = None
+    validation_mode: str = "soft"
 
     def __post_init__(self) -> None:
         if self.policy is None:

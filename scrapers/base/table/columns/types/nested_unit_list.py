@@ -6,9 +6,10 @@ from typing import List
 from scrapers.base.constants import UNIT_RE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.drivers.helpers.parsers import normalize_unit
-from scrapers.drivers.helpers.parsers import parse_number
-from scrapers.drivers.helpers.parsers import parse_unit_list
+from scrapers.base.parsers.drivers import UnitValue
+from scrapers.base.parsers.drivers import normalize_unit
+from scrapers.base.parsers.drivers import parse_number
+from scrapers.base.parsers.drivers import parse_unit_list
 
 
 class NestedUnitListColumn(BaseColumn):
@@ -17,7 +18,7 @@ class NestedUnitListColumn(BaseColumn):
 
     def _parse_min_max(
         self, text: str
-    ) -> Dict[str, Dict[str, Any]] | List[Dict[str, Any]]:
+    ) -> Dict[str, UnitValue] | List[UnitValue]:
         values = parse_unit_list(text)
         if not values:
             return []
