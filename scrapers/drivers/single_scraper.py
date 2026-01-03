@@ -6,6 +6,7 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
+from scrapers.base.records import record_from_mapping
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -319,6 +320,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             column_map=column_map,
             columns=columns,
             default_column=AutoColumn(),
+            record_factory=record_from_mapping,
         )
         return TablePipeline(
             config=config,

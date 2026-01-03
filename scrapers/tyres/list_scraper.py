@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.append_links import AppendLinksColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -38,6 +39,7 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
             "manufacturers": AppendLinksColumn(),
             "wins": SkipColumn(),
         },
+        record_factory=record_from_mapping,
     )
 
 

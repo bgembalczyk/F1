@@ -5,6 +5,7 @@ from typing import List
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
+from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
@@ -62,6 +63,7 @@ class SeasonTableParser:
                     "no": IntColumn(),
                 },
                 default_column=RaceResultColumn(),
+                record_factory=record_from_mapping,
             )
             scraper = F1StandingsScraper(options=self._options, config=config)
             try:
@@ -90,6 +92,7 @@ class SeasonTableParser:
                 column_map=column_map,
                 columns=columns,
                 default_column=default_column,
+                record_factory=record_from_mapping,
             )
             pipeline = TablePipeline(
                 config=config,

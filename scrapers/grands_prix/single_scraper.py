@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup, Tag
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
+from scrapers.base.records import record_from_mapping
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.circuit_location import LocationColumn
@@ -78,6 +79,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
                 "report": AutoColumn(),
                 "location": LocationColumn(),
             },
+            record_factory=record_from_mapping,
         )
         return TablePipeline(
             config=config,

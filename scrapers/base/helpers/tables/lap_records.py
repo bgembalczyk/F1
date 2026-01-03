@@ -6,6 +6,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
+from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
@@ -48,6 +49,7 @@ class LapRecordsTableScraper(F1TableScraper):
             "time": TimeColumn(),
             "date": DateColumn(),
         },
+        record_factory=record_from_mapping,
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:

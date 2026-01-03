@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -62,6 +63,7 @@ class SponsorshipSectionParser:
                 "Location-specific livery changes (2011–present)": TextColumn(),
                 "Other Changes": TextColumn(),
             },
+            record_factory=record_from_mapping,
         )
         return TablePipeline(
             config=config,

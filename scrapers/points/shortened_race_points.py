@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -66,6 +67,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
             "fastest_lap": AutoColumn(),
             "notes": SkipColumn(),
         },
+        record_factory=record_from_mapping,
     )
 
     def __init__(self, *args, **kwargs) -> None:
