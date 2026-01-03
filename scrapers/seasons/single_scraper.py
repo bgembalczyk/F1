@@ -5,7 +5,9 @@ from typing import Any, Dict, List
 
 from bs4 import BeautifulSoup
 
+from models.services.rounds_service import RoundsService
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
@@ -119,6 +121,28 @@ class SingleSeasonScraper(F1Scraper):
         return self._entry_merger.merge_entries(records)
 
     def _parse_free_practice(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        records = self._parse_table(
+            soup,
+            section_ids=["Free_practice_drivers"],
+            expected_headers=["Constructor", "No.", "Driver name", "Rounds"],
+            column_map={
+                "Constructor": "constructor",
+                "No.": "numbers",
+                "No": "numbers",
+                "Driver name": "drivers",
+                "Driver": "drivers",
+                "Rounds": "rounds",
+            },
+            columns={
+                "constructor": ConstructorColumn(),
+                "numbers": BrListColumn(),
+                "drivers": DriverListColumn(),
+                "rounds": BrListColumn(),
+            },
+        )
+        if records:
+            return self._normalize_free_practice_records(records)
+
         return self._parse_table(
             soup,
             section_ids=["Free_practice_drivers"],
@@ -133,6 +157,40 @@ class SingleSeasonScraper(F1Scraper):
                 "practice_drivers": DriversWithRoundsColumn(),
             },
         )
+
+    @staticmethod
+    def _normalize_free_practice_records(
+        records: List[Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        normalized: List[Dict[str, Any]] = []
+        for record in records:
+            drivers = record.pop("drivers", []) or []
+            numbers = record.pop("numbers", []) or []
+            rounds_list = record.pop("rounds", []) or []
+
+            practice_drivers: List[Dict[str, Any]] = []
+            for index, driver in enumerate(drivers):
+                if not driver:
+                    continue
+                entry: Dict[str, Any] = {"driver": driver}
+
+                if index < len(numbers):
+                    number = parse_int_from_text(numbers[index])
+                    if number is not None:
+                        entry["no"] = number
+
+                if index < len(rounds_list):
+                    rounds_text = rounds_list[index]
+                    rounds = RoundsService.parse_rounds(rounds_text)
+                    if rounds_text or rounds:
+                        entry["rounds"] = rounds
+
+                practice_drivers.append(entry)
+
+            record["practice_drivers"] = practice_drivers
+            normalized.append(record)
+
+        return normalized
 
     def _parse_calendar(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return self._parse_table(
