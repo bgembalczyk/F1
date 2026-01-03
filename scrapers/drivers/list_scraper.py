@@ -14,6 +14,13 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.validation import RecordValidator
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+from scrapers.drivers.constants import (
+    DRIVER_NAME_HEADER,
+    DRIVERS_CHAMPIONSHIPS_HEADER,
+    DRIVERS_LIST_HEADERS,
+    NATIONALITY_HEADER,
+    SEASONS_COMPETED_HEADER,
+)
 
 
 class DriversListValidator(RecordValidator):
@@ -73,19 +80,14 @@ class F1DriversListScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
-        expected_headers=[
-            "Driver name",
-            "Nationality",
-            "Seasons competed",
-            "Drivers' Championships",
-        ],
+        expected_headers=DRIVERS_LIST_HEADERS,
         schema=(
             TableSchemaBuilder()
-            .map("Driver name", "driver", DriverNameStatusColumn())
-            .map("Nationality", "nationality", TextColumn())
-            .map("Seasons competed", "seasons_competed", SeasonsColumn())
+            .map(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn())
+            .map(NATIONALITY_HEADER, "nationality", TextColumn())
+            .map(SEASONS_COMPETED_HEADER, "seasons_competed", SeasonsColumn())
             .map(
-                "Drivers' Championships",
+                DRIVERS_CHAMPIONSHIPS_HEADER,
                 "drivers_championships",
                 TextColumn(),  # zparsujemy ręcznie w fetch()
             )
