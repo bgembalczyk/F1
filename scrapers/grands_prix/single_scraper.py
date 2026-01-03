@@ -85,6 +85,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             config=config,
             include_urls=self.include_urls,
             skip_sentinel=self._SKIP,
+            normalize_empty_values=self.normalize_empty_values,
         )
 
     def _parse_section_table(

@@ -46,6 +46,7 @@ class F1Scraper(ABC):
 
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
+        self.normalize_empty_values = options.normalize_empty_values
 
         self.http_policy = self.get_http_policy(options)
         if self.http_policy is not None:
@@ -59,7 +60,9 @@ class F1Scraper(ABC):
         # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
-        self._record_normalizer = RecordNormalizer()
+        self._record_normalizer = RecordNormalizer(
+            normalize_empty_values=self.normalize_empty_values,
+        )
         self.transformers: List[RecordTransformer] = []
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)

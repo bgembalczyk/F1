@@ -38,6 +38,7 @@ class TablePipeline:
         config: ScraperConfig,
         include_urls: bool,
         skip_sentinel: object,
+        normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,
         run_id: str | None = None,
         debug_dir: str | Path | None = None,
@@ -48,6 +49,7 @@ class TablePipeline:
         self.skip_sentinel = skip_sentinel
         self.model_fields = model_fields
         self.run_id = run_id
+        self.normalize_empty_values = normalize_empty_values
 
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
@@ -189,14 +191,25 @@ class TablePipeline:
         )
         self.logger.warning("Saved table pipeline debug dump: %s", dump_path)
 
-    def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str | None]:
+    def _normalize_cell(
+        self, header: str, cell: Tag
+    ) -> tuple[str, str | None, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
+        normalized_raw_text = (
+            normalize_empty(raw_text) if self.normalize_empty_values else raw_text
+        )
         clean_text = clean_wiki_text(raw_text)
-        normalized = normalize_empty(clean_text)
-        if normalized is None and clean_text == "":
+        normalized_clean = (
+            normalize_empty(clean_text) if self.normalize_empty_values else clean_text
+        )
+        if (
+            self.normalize_empty_values
+            and normalized_clean is None
+            and clean_text == ""
+        ):
             self._normalized_empty_cells += 1
-        return key, raw_text, normalized
+        return key, normalized_raw_text, normalized_clean
 
     def _extract_links(self, cell: Tag) -> list[LinkRecord]:
         if not self.include_urls:

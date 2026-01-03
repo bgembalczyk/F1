@@ -32,6 +32,7 @@ class ScraperOptions:
     validator: RecordValidator | None = None
     validation_mode: str = "soft"
     debug_dir: Path | None = None
+    normalize_empty_values: bool = True
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
 
     def __post_init__(self) -> None:

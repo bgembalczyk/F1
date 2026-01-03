@@ -74,6 +74,7 @@ class CircuitsListScraper(F1TableScraper):
     ) -> None:
         options = options or ScraperOptions()
         options.validation_mode = "soft"
+        options.normalize_empty_values = False
         super().__init__(options=options, config=config)
 
 

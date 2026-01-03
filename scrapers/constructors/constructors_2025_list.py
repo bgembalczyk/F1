@@ -2,6 +2,7 @@ from pathlib import Path
 
 from models.records.factories import build_constructor_record
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -58,6 +59,16 @@ class Constructors2025ListScraper(F1TableScraper):
         record_factory=build_constructor_record,
     )
     # pozostałe kolumny ("licensed_in", "based_in", "drivers") obsłuży domyślny AutoColumn
+
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.normalize_empty_values = False
+        super().__init__(options=options, config=config)
 
 
 if __name__ == "__main__":
