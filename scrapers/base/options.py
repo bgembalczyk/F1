@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional, cast
 
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
@@ -30,6 +31,7 @@ class ScraperOptions:
     http_client: Optional[HttpClientProtocol] = None
     validator: RecordValidator | None = None
     validation_mode: str = "soft"
+    debug_dir: Path | None = None
 
     def __post_init__(self) -> None:
         if self.policy is None:

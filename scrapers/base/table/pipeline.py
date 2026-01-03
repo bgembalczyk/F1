@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any, Mapping, Sequence
 from urllib.parse import urlsplit
 
@@ -11,6 +12,10 @@ from scrapers.base.helpers.html_utils import (
 )
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError
+from scrapers.base.debug_dumps import (
+    TablePipelineDebugContext,
+    write_table_pipeline_dump,
+)
 from scrapers.base.logging import get_logger
 from scrapers.base.null_policy import normalize_empty
 from scrapers.base.table.columns.context import ColumnContext
@@ -38,6 +43,7 @@ class TablePipeline:
         skip_sentinel: object,
         model_fields: set[str] | None = None,
         run_id: str | None = None,
+        debug_dir: str | Path | None = None,
     ) -> None:
         self.config = config
         self.include_urls = include_urls
@@ -56,6 +62,7 @@ class TablePipeline:
         self.fragment: str | None = None
         self.logger = get_logger(self.__class__.__name__)
         self._normalized_empty_cells = 0
+        self.debug_dir = Path(debug_dir) if debug_dir else None
         if not self.section_id:
             fragment = urlsplit(config.url).fragment
             if fragment:
@@ -143,8 +150,72 @@ class TablePipeline:
         if not record or self.record_factory is None:
             return record
         if isinstance(self.record_factory, type):
-            return self.record_factory(**record)
+            payload = record
+            if self.model_fields:
+                payload = {
+                    key: value
+                    for key, value in record.items()
+                    if key in self.model_fields
+                }
+            elif "__raw_html__" in record:
+                payload = {
+                    key: value
+                    for key, value in record.items()
+                    if key != "__raw_html__"
+                }
+            instance = self.record_factory(**payload)
+            if "__raw_html__" in record:
+                try:
+                    setattr(instance, "__raw_html__", record["__raw_html__"])
+                except AttributeError:
+                    pass
+            return instance
         return self.record_factory(record)
+
+    @staticmethod
+    def _cell_html(cell: Tag | None) -> str | None:
+        if cell is None:
+            return None
+        return cell.decode_contents()
+
+    def _record_raw_html(
+        self,
+        record: dict[str, Any],
+        header: str,
+        cell: Tag,
+    ) -> str | None:
+        raw_html = self._cell_html(cell)
+        if raw_html is None:
+            return None
+        raw_html_map = record.setdefault("__raw_html__", {})
+        if isinstance(raw_html_map, dict):
+            raw_html_map[header] = raw_html
+        return raw_html
+
+    def _dump_parse_context(
+        self,
+        *,
+        header: str,
+        row_index: int | None,
+        cell_html: str | None,
+        error: Exception,
+    ) -> None:
+        if self.debug_dir is None:
+            return
+        context = TablePipelineDebugContext(
+            url=self.base_url,
+            section_id=self.section_id,
+            header=header,
+            row_index=row_index,
+            run_id=self.run_id,
+        )
+        dump_path = write_table_pipeline_dump(
+            self.debug_dir,
+            context=context,
+            cell_html=cell_html,
+            error=error,
+        )
+        self.logger.warning("Saved table pipeline debug dump: %s", dump_path)
 
     def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str | None]:
         key = self.column_map.get(header, normalize_header(header))
@@ -174,6 +245,7 @@ class TablePipeline:
         *,
         row_index: int | None = None,
     ) -> None:
+        cell_html = self._record_raw_html(record, header, cell)
         key, raw_text, clean_text = self._normalize_cell(header, cell)
         links = self._extract_links(cell)
 
@@ -192,6 +264,12 @@ class TablePipeline:
         try:
             col.apply(ctx, record)
         except Exception as exc:
+            self._dump_parse_context(
+                header=header,
+                row_index=row_index,
+                cell_html=cell_html,
+                error=exc,
+            )
             self.logger.exception(
                 "Failed parsing column (header=%s key=%s row_index=%s base_url=%s raw_text=%s)",
                 header,
