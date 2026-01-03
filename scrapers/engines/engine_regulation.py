@@ -9,8 +9,6 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.nested_text import NestedTextColumn
-from scrapers.base.table.columns.types.nested_unit_list import NestedUnitListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
@@ -18,6 +16,8 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
+from scrapers.engines.columns.nested_text import NestedTextColumn
+from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
 
 
 class EngineRegulationScraper(F1TableScraper):

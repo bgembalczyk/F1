@@ -4,10 +4,10 @@ from typing import List
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
 from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.season_date import SeasonDateColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
+from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 

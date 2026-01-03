@@ -10,12 +10,12 @@ from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.sponsor import SponsorColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )

@@ -9,10 +9,10 @@ from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.columns.types.race_result import RaceResultColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.seasons.columns.race_result import RaceResultColumn
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
 

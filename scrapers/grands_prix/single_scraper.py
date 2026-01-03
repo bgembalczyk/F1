@@ -11,12 +11,12 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.circuit_location import LocationColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 

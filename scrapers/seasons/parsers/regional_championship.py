@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.season_date import SeasonDateColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 

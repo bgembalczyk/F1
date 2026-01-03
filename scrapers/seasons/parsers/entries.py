@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.driver_rounds import DriversWithRoundsColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
+from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.table import SeasonTableParser
 
