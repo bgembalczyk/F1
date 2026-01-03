@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from models.scrape_types.factories import build_constructor_row
+from models.records.factories import build_constructor_record
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -64,7 +64,7 @@ class FormerConstructorsListScraper(F1TableScraper):
             "wcc_titles": IntColumn(),
             "wdc_titles": IntColumn(),
         },
-        record_factory=build_constructor_row,
+        record_factory=build_constructor_record,
     )
     # "licensed_in" i "drivers" obsłuży domyślny AutoColumn z F1TableScraper
 

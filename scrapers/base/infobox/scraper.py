@@ -10,6 +10,7 @@ from scrapers.base.infobox.helpers import parse_infobox_from_soup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
+from scrapers.base.logging import get_logger
 
 
 class WikipediaInfoboxScraper:
@@ -37,6 +38,8 @@ class WikipediaInfoboxScraper:
         self.timeout = options.to_http_policy().timeout
         self.parser = parser or InfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper()
+        self.record_factory = options.record_factory
+        self.logger = get_logger(self.__class__.__name__)
 
     # ------------------------------
     # Public API
@@ -73,6 +76,21 @@ class WikipediaInfoboxScraper:
             if error is exc:
                 raise
             raise error from exc
+
+    def apply_record_factory(self, record: Dict[str, Any]) -> Any:
+        if self.record_factory is None:
+            return record
+        try:
+            if isinstance(self.record_factory, type):
+                return self.record_factory(**record)
+            return self.record_factory(record)
+        except Exception:
+            self.logger.warning(
+                "Infobox record_factory failed. Falling back to raw record: %s",
+                record,
+                exc_info=True,
+            )
+            return record
 
     # ------------------------------
     # Internal helpers

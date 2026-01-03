@@ -6,7 +6,7 @@ from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
 from models.services.season_service import SeasonService
-from scrapers.base.helpers.html_utils import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.list.scraper import F1ListScraper

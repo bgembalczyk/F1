@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import ExportRecord
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper

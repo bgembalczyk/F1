@@ -2,7 +2,7 @@ from typing import Optional
 
 from bs4 import Tag
 
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 
 
 def layout_from_spanning_header(

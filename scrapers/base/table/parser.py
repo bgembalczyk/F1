@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
 

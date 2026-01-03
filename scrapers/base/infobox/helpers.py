@@ -11,4 +11,5 @@ def parse_infobox_from_soup(
     soup: BeautifulSoup,
 ) -> Dict[str, Any]:
     raw = infobox_scraper.parser.parse(soup)
-    return infobox_scraper.mapper.map(raw)
+    mapped = infobox_scraper.mapper.map(raw)
+    return infobox_scraper.apply_record_factory(mapped)
