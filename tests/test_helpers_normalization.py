@@ -155,6 +155,22 @@ def test_normalize_auto_value_handles_none():
     assert normalize_auto_value(None) is None
 
 
+def test_normalize_auto_value_drops_empty_dict_text():
+    value = {"text": "†", "url": "https://example.com/marked"}
+
+    assert normalize_auto_value(value, strip_marks=True, drop_empty=True) is None
+
+
+def test_normalize_auto_value_drops_empty_list():
+    value = [{"text": "", "url": None}]
+
+    assert normalize_auto_value(value, drop_empty=True) is None
+
+
+def test_normalize_auto_value_drops_empty_str():
+    assert normalize_auto_value("   ", drop_empty=True) is None
+
+
 def test_parse_time_seconds_from_text_handles_various_inputs():
     assert parse_time_seconds_from_text(12.5) == 12.5
     assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
