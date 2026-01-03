@@ -175,7 +175,7 @@ def test_circuit_entities_parser_default_layout() -> None:
     raw = {
         "title": "Test Circuit",
         "rows": {
-            "Location": {
+            "location": {
                 "text": "Test City, Testland",
                 "links": [
                     {
@@ -188,10 +188,10 @@ def test_circuit_entities_parser_default_layout() -> None:
                     },
                 ],
             },
-            "Coordinates": {"text": "12.34; 56.78"},
-            "Length": {"text": "5.0 km (3.1 mi)"},
-            "Turns": {"text": "10"},
-            "Race lap record": {
+            "coordinates": {"text": "12.34; 56.78"},
+            "length": {"text": "5.0 km (3.1 mi)"},
+            "turns": {"text": "10"},
+            "race_lap_record": {
                 "text": "1:10.000 (Jane Roe, Speedster, 2022)",
                 "links": [
                     {
@@ -204,10 +204,10 @@ def test_circuit_entities_parser_default_layout() -> None:
                     },
                 ],
             },
-            "Surface": {"text": "Asphalt"},
-            "Banking": {"text": "18°"},
-            "Opened": {"text": "1950"},
-            "Architect": {
+            "surface": {"text": "Asphalt"},
+            "banking": {"text": "18°"},
+            "opened": {"text": "1950"},
+            "architect": {
                 "text": "Jane Designer",
                 "links": [
                     {
@@ -216,7 +216,7 @@ def test_circuit_entities_parser_default_layout() -> None:
                     }
                 ],
             },
-            "Nickname": {"text": "The Test"},
+            "nickname": {"text": "The Test"},
         },
     }
 
@@ -229,7 +229,7 @@ def test_circuit_entities_parser_default_layout() -> None:
         "url": "https://en.wikipedia.org/wiki/Jane_Designer",
     }
     assert result["layouts"][0]["surface"]["values"] == ["Asphalt"]
-    assert result["normalized"]["additional_info"]["Nickname"]["text"] == "The Test"
+    assert result["normalized"]["additional_info"]["nickname"]["text"] == "The Test"
 
 
 def test_entity_parser_multiple_links_language_marker() -> None:

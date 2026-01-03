@@ -9,6 +9,7 @@ from models.records.link import LinkRecord
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
+from scrapers.base.infobox.schema import InfoboxSchema
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
@@ -18,34 +19,40 @@ class InfoboxGeneralParser:
         *,
         include_urls: bool,
         link_extractor: InfoboxLinkExtractor,
-        general_keys: dict[str, str],
+        schema: InfoboxSchema,
+        logger=None,
     ) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
-        self._general_keys = general_keys
+        self._schema = schema
+        self._logger = logger
 
     def parse(self, rows: List[Dict[str, Any]]) -> Dict[str, Any]:
         data: Dict[str, Any] = {}
+        present_keys: set[str] = set()
         for row in rows:
             label = row.get("label")
             if not label:
                 continue
-            key = self._general_keys.get(label)
-            if not key:
+            field = self._schema.field_for_label(label)
+            if not field:
                 continue
+            key = field.key
             cell = row.get("value_cell")
             if not isinstance(cell, Tag):
                 continue
 
-            if key in {"born", "died"}:
+            present_keys.add(key)
+            if field.parser == "date_place":
                 data[key] = self._parse_date_place(cell)
-            elif key in {"parents", "relatives"}:
+            elif field.parser == "relations":
                 data[key] = self._parse_relations(cell)
-            elif key == "children":
+            elif field.parser == "links":
                 data[key] = self._link_extractor.extract_links(cell)
-            elif key == "cause_of_death":
+            elif field.parser == "text":
                 data[key] = clean_infobox_text(cell.get_text(" ", strip=True))
 
+        self._schema.log_missing(present_keys, logger=self._logger)
         return data
 
     def _parse_date_place(self, cell: Tag) -> Dict[str, Any]:

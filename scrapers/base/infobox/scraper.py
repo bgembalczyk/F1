@@ -37,13 +37,13 @@ class WikipediaInfoboxScraper:
 
         self.fetcher = options.with_fetcher()
         self.timeout = options.to_http_policy().timeout
+        self.logger = get_logger(self.__class__.__name__)
         self.parser = parser or InfoboxHtmlParser()
-        self.mapper = mapper or InfoboxFieldMapper()
+        self.mapper = mapper or InfoboxFieldMapper(logger=self.logger)
         self.record_factory = options.record_factory
         self.debug_dir = options.debug_dir
         self.run_id = run_id
         self.url: str | None = None
-        self.logger = get_logger(self.__class__.__name__)
 
     # ------------------------------
     # Public API

@@ -154,7 +154,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 return []
             return d.get("iso_dates") or d.get("years") or []
 
-        opened_dates = self._parse_dates(rows.get("Opened")) or {}
+        opened_dates = self._parse_dates(rows.get("opened")) or {}
         for idx, date in enumerate(_dates_to_list(opened_dates)):
             events.append(
                 {
@@ -163,15 +163,15 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 }
             )
 
-        closed_dates = self._parse_dates(rows.get("Closed")) or {}
+        closed_dates = self._parse_dates(rows.get("closed")) or {}
         for date in _dates_to_list(closed_dates):
             events.append({"event": "closed", "date": date})
 
-        broke_ground_dates = self._parse_dates(rows.get("Broke ground")) or {}
+        broke_ground_dates = self._parse_dates(rows.get("broke_ground")) or {}
         for date in _dates_to_list(broke_ground_dates):
             events.append({"event": "broke_ground", "date": date})
 
-        built_dates = self._parse_dates(rows.get("Built")) or {}
+        built_dates = self._parse_dates(rows.get("built")) or {}
         for date in _dates_to_list(built_dates):
             events.append({"event": "built", "date": date})
 
@@ -179,7 +179,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
         history: Dict[str, Any] = {
             "events": events or None,
-            "former_names": self._parse_former_names(rows.get("Former names")),
+            "former_names": self._parse_former_names(rows.get("former_names")),
         }
 
         return history
