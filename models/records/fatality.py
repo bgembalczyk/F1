@@ -12,7 +12,7 @@ class EventRecord(TypedDict, total=False):
     championship: bool
 
 
-class FatalityRow(TypedDict, total=False):
+class FatalityRecord(TypedDict, total=False):
     driver: LinkRecord
     date: Optional[str]
     age: Optional[int]
