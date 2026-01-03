@@ -7,11 +7,31 @@ from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.records import ExportRecord
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.transformers import RecordTransformer
+
+
+class FailedToMakeRestartTransformer(RecordTransformer):
+    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        for row in records:
+            drivers = row.pop("failed_to_make_restart_drivers", None)
+            reason = row.pop("failed_to_make_restart_reason", None)
+            if drivers is None and reason is None:
+                continue
+            row["failed_to_make_restart"] = {
+                "drivers": drivers or [],
+                "reason": reason,
+            }
+        return records
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
+    def __init__(self, *, options=None, config=None) -> None:
+        super().__init__(options=options, config=config)
+        self.transformers = [FailedToMakeRestartTransformer()]
+
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         parser = HtmlTableParser(
             section_id=self.section_id,
@@ -103,16 +123,3 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 headers.append(text)
 
         return headers, len(header_rows)
-
-    def fetch(self) -> List[Dict[str, Any]]:
-        rows = super().fetch()
-        for row in rows:
-            drivers = row.pop("failed_to_make_restart_drivers", None)
-            reason = row.pop("failed_to_make_restart_reason", None)
-            if drivers is None and reason is None:
-                continue
-            row["failed_to_make_restart"] = {
-                "drivers": drivers or [],
-                "reason": reason,
-            }
-        return rows
