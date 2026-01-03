@@ -11,7 +11,49 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.validation import RecordValidator
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+
+
+class DriversListValidator(RecordValidator):
+    def validate(self, record: ExportRecord) -> list[str]:
+        errors: list[str] = []
+        errors.extend(
+            self.require_keys(
+                record,
+                [
+                    "driver",
+                    "nationality",
+                    "seasons_competed",
+                    "drivers_championships",
+                    "is_active",
+                    "is_world_champion",
+                ],
+            )
+        )
+        errors.extend(self.require_type(record, "driver", dict))
+        errors.extend(self.require_type(record, "nationality", str))
+        errors.extend(self.require_type(record, "seasons_competed", list))
+        errors.extend(self.require_type(record, "drivers_championships", dict))
+        errors.extend(self.require_type(record, "is_active", bool))
+        errors.extend(self.require_type(record, "is_world_champion", bool))
+
+        driver = record.get("driver")
+        if isinstance(driver, dict):
+            errors.extend(self.require_link_dict(driver, "driver"))
+
+        championships = record.get("drivers_championships")
+        if isinstance(championships, dict):
+            if "count" not in championships:
+                errors.append("drivers_championships.count is missing")
+            elif not isinstance(championships.get("count"), int):
+                errors.append("drivers_championships.count must be int")
+            if "seasons" not in championships:
+                errors.append("drivers_championships.seasons is missing")
+            elif not isinstance(championships.get("seasons"), list):
+                errors.append("drivers_championships.seasons must be list")
+
+        return errors
 
 
 class F1DriversListScraper(F1TableScraper):
@@ -24,6 +66,8 @@ class F1DriversListScraper(F1TableScraper):
     - is_world_champion: (~ lub ^ na końcu raw_text w kolumnie "Driver name")
     - drivers_championships: parsowane do dict {count, seasons}
     """
+
+    default_validator = DriversListValidator()
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
