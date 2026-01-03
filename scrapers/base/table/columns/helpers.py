@@ -265,16 +265,34 @@ def extract_driver(
     link_lookup: dict[str, list[dict[str, str | None]]],
     clean_text: str,
 ) -> dict[str, str | None] | None:
+    cleaned = strip_rounds_and_number(clean_text)
+    candidates: list[tuple[str, dict[str, str | None]]] = []
     for a in segment.find_all("a", href=True):
+        if is_reference_link(a, allow_local_anchors=True):
+            continue
+        if a.find_parent(class_="flagicon") is not None:
+            continue
         text = clean_wiki_text(a.get_text(strip=True))
         if not text:
             continue
-        candidates = link_lookup.get(text)
-        if candidates:
-            return candidates[0]
-        return {"text": text, "url": None}
+        matched = link_lookup.get(text)
+        if matched:
+            candidates.append((text, matched[0]))
+        else:
+            candidates.append((text, {"text": text, "url": None}))
 
-    cleaned = strip_rounds_and_number(clean_text)
+    if cleaned and candidates:
+        best_match: tuple[str, dict[str, str | None]] | None = None
+        for text, link in candidates:
+            if text in cleaned:
+                if best_match is None or len(text) > len(best_match[0]):
+                    best_match = (text, link)
+        if best_match:
+            return best_match[1]
+
+    if candidates:
+        return candidates[-1][1]
+
     if cleaned:
         return {"text": cleaned, "url": None}
     return None
