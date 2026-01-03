@@ -6,8 +6,10 @@ import re
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.helpers import extract_race_result_background
 from scrapers.base.table.columns.helpers import parse_superscripts
+from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -23,6 +25,17 @@ class RaceResultColumn(BaseColumn):
         "000000": "Disqualified",
         "ffffff": "Did not start",
     }
+    _CLASSIFIED_DNF_MARK = "†"
+    _CLASSIFIED_DNF_NOTE = (
+        "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance."
+    )
+    _CLASSIFIED_DNF_BACKGROUNDS = {
+        "Winner",
+        "Second place",
+        "Third place",
+        "Other points position",
+        "Other classified position",
+    }
 
     def parse(self, ctx: ColumnContext) -> Any:
         text = self._extract_result_text(ctx)
@@ -31,14 +44,25 @@ class RaceResultColumn(BaseColumn):
 
         sprint_position, pole_position, fastest_lap = parse_superscripts(ctx)
         background = self._map_background(extract_race_result_background(ctx))
+        marks = MARKS_RE.findall(text)
+        has_classified_dnf_mark = self._CLASSIFIED_DNF_MARK in marks
 
         position: int | str | None
-        if text == "-" or text == "–":
-            position = None
-        elif text.isdigit():
-            position = int(text)
+        note: str | None = None
+        if (
+            has_classified_dnf_mark
+            and background in self._CLASSIFIED_DNF_BACKGROUNDS
+            and (strip_marks(text) or "").isdigit()
+        ):
+            position = int(strip_marks(text) or "")
+            note = self._CLASSIFIED_DNF_NOTE
         else:
-            position = text
+            if text == "-" or text == "–":
+                position = None
+            elif text.isdigit():
+                position = int(text)
+            else:
+                position = text
 
         if position is None and background is None:
             return None
@@ -51,6 +75,8 @@ class RaceResultColumn(BaseColumn):
             payload["round"] = round_link
         if position is not None:
             payload["position"] = position
+        if note:
+            payload["position_note"] = note
         if sprint_position is not None:
             payload["sprint_position"] = sprint_position
         if pole_position:
