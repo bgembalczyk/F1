@@ -2,7 +2,7 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-from scrapers.base.records import record_from_mapping
+from models.records.factories import build_season_record
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
@@ -51,7 +51,7 @@ class SeasonsListScraper(F1TableScraper):
             "constructors_champion": LinksListColumn(),
             "winners": IntColumn(),
         },
-        record_factory=record_from_mapping,
+        record_factory=build_season_record,
     )
 
 
