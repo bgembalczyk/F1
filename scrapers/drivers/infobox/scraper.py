@@ -4,8 +4,8 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.html_utils import extract_links_from_cell
-from scrapers.base.helpers.text_normalization import clean_infobox_text, clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser

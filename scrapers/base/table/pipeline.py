@@ -5,11 +5,8 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.html_utils import (
-    clean_wiki_text,
-    extract_links_from_cell,
-    find_section_elements,
-)
+from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.text import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.debug_dumps import (

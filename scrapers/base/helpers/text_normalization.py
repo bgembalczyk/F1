@@ -4,64 +4,9 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.constants import LANG_CODES
-from scrapers.base.helpers.constants import REF_RE
 from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.records import ExportRecord
-
-
-# Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
-
-
-def _strip_wiki_refs(text: str) -> str:
-    """Usuń przypisy w formacie [1], [note 3], ..."""
-    return REF_RE.sub("", text)
-
-
-def _normalize_dashes(text: str) -> str:
-    """Ujednolić warianty myślników i usuń spacje wokół '-'."""
-    t = text.replace("–", "-").replace("—", "-").replace("−", "-")
-    return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
-
-
-def _strip_lang_suffix(text: str) -> str:
-    """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
-    lang_alt = "|".join(sorted(LANG_CODES, key=len, reverse=True))
-    t = text
-
-    while True:
-        before = t
-
-        # Usuń tokeny w nawiasach: (es), (fr), etc.
-        t = re.sub(rf"\s*\(\s*({lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE)
-        t = t.strip()
-
-        # Usuń tokeny bez nawiasów: " es", " fr", etc.
-        t = re.sub(rf"\s+({lang_alt})\s*$", "", t, flags=re.IGNORECASE)
-        t = t.strip()
-
-        if t == before:
-            break
-
-    return t
-
-
-def clean_wiki_text(
-    text: str,
-    *,
-    strip_lang_suffix: bool = True,
-    strip_refs: bool = True,
-    normalize_dashes: bool = True,
-) -> str:
-    """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
-    t = (text or "").replace("\xa0", " ").replace("&nbsp;", " ")
-    if strip_refs:
-        t = _strip_wiki_refs(t)
-    t = re.sub(r"\s+", " ", t).strip()
-    if normalize_dashes:
-        t = _normalize_dashes(t)
-    if strip_lang_suffix:
-        t = _strip_lang_suffix(t)
-    return t
+from scrapers.base.helpers.text import clean_wiki_text
 
 
 def clean_infobox_text(text: Any) -> str | None:

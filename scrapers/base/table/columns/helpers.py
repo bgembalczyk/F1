@@ -9,9 +9,9 @@ from models.records.link import LinkRecord
 from models.services.rounds_service import RoundsService
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.parsing import parse_float_from_text
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.wiki import is_reference_link
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.constants import FRACTION_RE
 from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE

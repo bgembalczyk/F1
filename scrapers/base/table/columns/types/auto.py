@@ -3,7 +3,7 @@ from typing import Any
 import re
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 

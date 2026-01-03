@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup, Tag
 from models.validation.engine_regulation import EngineRegulation
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.nested_text import NestedTextColumn

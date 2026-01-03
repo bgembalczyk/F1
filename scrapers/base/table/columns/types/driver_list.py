@@ -1,7 +1,7 @@
 from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 

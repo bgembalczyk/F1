@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping

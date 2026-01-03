@@ -3,8 +3,8 @@ from typing import Any, Iterable, Iterator
 from bs4 import NavigableString, Tag
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text_normalization import clean_wiki_text
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 

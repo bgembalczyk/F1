@@ -4,8 +4,10 @@ from typing import Iterable
 
 from models.records.link import LinkRecord
 from models.validation.validators import normalize_and_validate_link_dict
-from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
-from scrapers.base.helpers.wiki import is_wikipedia_redlink, strip_marks
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text_normalization import is_language_link
+from scrapers.base.helpers.text import strip_marks
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 
 def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:

@@ -1,12 +1,10 @@
 """HTML helper utilities used by scrapers."""
 
-from typing import Any, Callable, Iterable
+from typing import Any, Iterable
 
 from bs4 import BeautifulSoup, Tag
 
-from models.records.link import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_wiki_text
-from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
+from scrapers.base.helpers.text import clean_wiki_text
 
 
 def find_section_elements(
@@ -48,31 +46,3 @@ def find_heading_by_text(soup: BeautifulSoup, section_id: str) -> Tag | None:
 
 def normalize_heading_text(text: str) -> str:
     return clean_wiki_text(text.replace("_", " ")).lower().strip()
-
-
-def extract_links_from_cell(
-    cell: Tag,
-    *,
-    full_url: Callable[[str], str] | None = None,
-    allow_local_anchors: bool = True,
-) -> list[LinkRecord]:
-    """
-    Zwraca listę linków {text, url} z komórki,
-    ignorując przypisy (cite_note / reference).
-    """
-    links: list[LinkRecord] = []
-
-    for a in cell.find_all("a", href=True):
-        href = str(a.get("href") or "")
-        text = clean_wiki_text(a.get_text(strip=True))
-
-        if is_reference_link(a, allow_local_anchors=allow_local_anchors):
-            continue
-
-        url: str | None = full_url(href) if full_url else href
-        link: LinkRecord = {"text": text, "url": url}
-        cleaned = clean_link_record(link)
-        if cleaned:
-            links.append(cleaned)
-
-    return links

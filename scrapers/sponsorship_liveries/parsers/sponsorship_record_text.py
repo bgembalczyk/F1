@@ -1,7 +1,7 @@
 import re
 from typing import Any
 
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 
 
 class SponsorshipRecordText:
