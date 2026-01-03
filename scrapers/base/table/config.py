@@ -3,6 +3,7 @@ from typing import Mapping, Optional, Sequence
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.schema import TableSchema, TableSchemaBuilder
 
 
 @dataclass(frozen=True)
@@ -12,11 +13,22 @@ class ScraperConfig:
     expected_headers: Sequence[str] | None = None
     column_map: Mapping[str, str] = field(default_factory=dict)
     columns: Mapping[str, BaseColumn] = field(default_factory=dict)
+    schema: TableSchema | TableSchemaBuilder | None = None
     table_css_class: str = "wikitable"
     model_class: type | None = None
     default_column: BaseColumn = field(default_factory=AutoColumn)
 
     def __post_init__(self) -> None:
+        if self.schema is not None:
+            schema = (
+                self.schema.build()
+                if isinstance(self.schema, TableSchemaBuilder)
+                else self.schema
+            )
+            merged_column_map = {**schema.column_map, **self.column_map}
+            merged_columns = {**schema.columns, **self.columns}
+            object.__setattr__(self, "column_map", merged_column_map)
+            object.__setattr__(self, "columns", merged_columns)
         self.validate()
 
     def validate(self) -> None:

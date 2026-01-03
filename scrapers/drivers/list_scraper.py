@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.validation import RecordValidator
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 
@@ -78,32 +79,24 @@ class F1DriversListScraper(F1TableScraper):
             "Seasons competed",
             "Drivers' Championships",
         ],
-        column_map={
-            "Driver name": "driver",
-            "Nationality": "nationality",
-            "Seasons competed": "seasons_competed",
-            "Drivers' Championships": "drivers_championships",
-            "Race entries": "race_entries",
-            "Race starts": "race_starts",
-            "Pole positions": "pole_positions",
-            "Race wins": "race_wins",
-            "Podiums": "podiums",
-            "Fastest laps": "fastest_laps",
-            "Points": "points",
-        },
-        columns={
-            "driver": DriverNameStatusColumn(),
-            "nationality": TextColumn(),
-            "seasons_competed": SeasonsColumn(),
-            "drivers_championships": TextColumn(),  # zparsujemy ręcznie w fetch()
-            "race_entries": IntColumn(),
-            "race_starts": IntColumn(),
-            "pole_positions": IntColumn(),
-            "race_wins": IntColumn(),
-            "podiums": IntColumn(),
-            "fastest_laps": IntColumn(),
-            "points": TextColumn(),
-        },
+        schema=(
+            TableSchemaBuilder()
+            .map("Driver name", "driver", DriverNameStatusColumn())
+            .map("Nationality", "nationality", TextColumn())
+            .map("Seasons competed", "seasons_competed", SeasonsColumn())
+            .map(
+                "Drivers' Championships",
+                "drivers_championships",
+                TextColumn(),  # zparsujemy ręcznie w fetch()
+            )
+            .map("Race entries", "race_entries", IntColumn())
+            .map("Race starts", "race_starts", IntColumn())
+            .map("Pole positions", "pole_positions", IntColumn())
+            .map("Race wins", "race_wins", IntColumn())
+            .map("Podiums", "podiums", IntColumn())
+            .map("Fastest laps", "fastest_laps", IntColumn())
+            .map("Points", "points", TextColumn())
+        ),
     )
 
     @staticmethod
