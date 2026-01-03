@@ -2367,10 +2367,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "John Surtees",
-            "url": "https://en.wikipedia.org/wiki/John_Surtees"
-          },
+          "fastest_lap": [
+            {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2406,10 +2408,12 @@
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2445,10 +2449,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2484,10 +2490,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2523,10 +2531,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "John Surtees",
-            "url": "https://en.wikipedia.org/wiki/John_Surtees"
-          },
+          "fastest_lap": [
+            {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2562,10 +2572,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "John Surtees",
-            "url": "https://en.wikipedia.org/wiki/John_Surtees"
-          },
+          "fastest_lap": [
+            {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            }
+          ],
           "winning_driver": {
             "text": "John Surtees",
             "url": "https://en.wikipedia.org/wiki/John_Surtees"
@@ -2601,10 +2613,12 @@
             "text": "John Surtees",
             "url": "https://en.wikipedia.org/wiki/John_Surtees"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2640,10 +2654,12 @@
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2679,10 +2695,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2718,10 +2736,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Dan Gurney",
-            "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
-          },
+          "fastest_lap": [
+            {
+              "text": "Dan Gurney",
+              "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -3179,7 +3199,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true,
             "background": "Other classified position"
           },
@@ -3188,7 +3212,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3197,7 +3225,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3207,7 +3239,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3217,7 +3253,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3226,7 +3266,12 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "(2 )",
+            "results": [
+              {
+                "position": 2,
+                "points_counted": false
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -3235,7 +3280,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3244,7 +3293,12 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "(3 )",
+            "results": [
+              {
+                "position": 3,
+                "points_counted": false
+              }
+            ],
             "fastest_lap": true,
             "background": "Third place"
           },
@@ -3253,7 +3307,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3263,7 +3321,12 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "(1 )",
+            "results": [
+              {
+                "position": 1,
+                "points_counted": false
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3283,7 +3346,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "bel": {
@@ -3291,7 +3358,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3300,7 +3371,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3308,7 +3383,15 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "3‡",
+            "results": [
+              {
+                "position": 3,
+                "points_eligible": false,
+                "notes": [
+                  "no_points_awarded"
+                ]
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -3316,7 +3399,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3324,7 +3411,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3332,7 +3423,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3340,7 +3435,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3349,7 +3448,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3357,7 +3460,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 29.0
@@ -3373,7 +3480,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -3381,7 +3492,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3389,7 +3504,12 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3397,7 +3517,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3405,7 +3529,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3413,7 +3542,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -3421,7 +3554,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -3429,7 +3566,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mex": {
@@ -3437,7 +3578,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "rsa": {
@@ -3445,7 +3590,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": {
@@ -3464,7 +3613,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -3473,7 +3626,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3481,7 +3638,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3489,7 +3650,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3497,7 +3662,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3506,7 +3675,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3515,7 +3688,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3524,7 +3701,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3532,7 +3713,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "rsa": {
@@ -3540,7 +3725,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 22.0
@@ -3556,7 +3745,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3564,7 +3757,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3572,7 +3769,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3580,7 +3781,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3588,7 +3793,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3596,7 +3805,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3604,7 +3817,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3612,7 +3829,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3620,7 +3841,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3628,7 +3853,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3645,7 +3874,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -3653,7 +3886,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": {
@@ -3661,7 +3898,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3669,7 +3910,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3677,7 +3922,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3685,7 +3934,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3693,7 +3946,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -3701,7 +3958,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3709,7 +3970,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3717,7 +3982,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 17.0
@@ -3733,7 +4002,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3741,7 +4014,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3749,7 +4026,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3757,7 +4038,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3765,7 +4050,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3773,7 +4062,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3781,7 +4074,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3789,7 +4086,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -3797,7 +4098,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "rsa": {
@@ -3805,7 +4110,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 14.0
@@ -3821,7 +4130,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3829,7 +4142,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3837,7 +4154,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3845,7 +4166,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3853,7 +4178,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3861,7 +4190,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3869,7 +4202,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3877,7 +4214,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3885,7 +4226,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3893,7 +4238,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 9.0
@@ -3909,7 +4258,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3917,7 +4270,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3925,7 +4282,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3933,7 +4294,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3941,7 +4306,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3949,7 +4318,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3957,7 +4330,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": null,
@@ -3979,7 +4356,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3987,7 +4368,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3995,7 +4380,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4003,7 +4392,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4011,7 +4404,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -4019,7 +4416,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4027,7 +4428,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 6.0
@@ -4043,7 +4448,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4051,7 +4460,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4059,7 +4472,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4067,7 +4484,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4075,7 +4496,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4083,7 +4508,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4091,7 +4520,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4099,7 +4532,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4107,7 +4544,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -4115,7 +4556,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "points": 6.0
@@ -4133,7 +4578,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4143,7 +4592,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": null,
@@ -4163,7 +4616,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4171,7 +4628,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4179,7 +4640,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4187,7 +4652,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4195,7 +4664,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4203,7 +4676,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4211,7 +4688,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4219,7 +4700,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4227,7 +4712,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4245,7 +4734,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4253,7 +4746,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4262,7 +4759,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4270,7 +4771,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4278,7 +4783,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": {
@@ -4286,7 +4795,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -4294,7 +4807,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4302,7 +4819,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -4318,7 +4839,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4326,7 +4851,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4334,7 +4863,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4342,7 +4875,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4350,7 +4887,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4358,7 +4899,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4366,7 +4911,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4374,7 +4923,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4382,7 +4935,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4399,7 +4956,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -4407,7 +4968,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4415,7 +4980,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4423,7 +4992,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4431,7 +5004,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4439,7 +5016,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4448,7 +5029,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4456,7 +5041,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4464,7 +5053,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 1.0
@@ -4482,7 +5075,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4490,7 +5087,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "gbr": null,
@@ -4512,7 +5113,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "bel": {
@@ -4520,7 +5125,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4528,7 +5137,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4536,7 +5149,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4544,7 +5161,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4552,7 +5173,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4560,7 +5185,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": null,
@@ -4569,7 +5198,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -4593,7 +5226,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4601,7 +5238,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4625,7 +5266,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": null,
@@ -4643,7 +5288,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4653,7 +5302,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4663,7 +5316,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -4686,7 +5343,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4695,7 +5356,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -4715,7 +5380,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -4724,7 +5393,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4732,7 +5405,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4740,7 +5417,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4748,7 +5429,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -4776,7 +5461,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4792,7 +5481,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -4804,7 +5497,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4825,7 +5522,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4833,7 +5534,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4841,7 +5546,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4851,7 +5560,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4859,7 +5572,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4867,7 +5584,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -4887,7 +5608,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4895,7 +5620,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4904,7 +5633,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4912,7 +5645,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4920,7 +5657,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -4945,7 +5686,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4971,7 +5716,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4991,7 +5740,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5000,7 +5753,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -5028,7 +5785,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5048,7 +5809,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5075,7 +5840,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -5103,7 +5872,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5120,7 +5893,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5128,7 +5905,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -5139,7 +5920,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5147,7 +5932,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5155,7 +5944,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -5172,7 +5965,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5180,7 +5977,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -5191,7 +5992,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5215,7 +6020,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5223,7 +6032,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5250,7 +6063,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5258,7 +6075,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -5279,7 +6100,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5287,7 +6112,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -5295,7 +6124,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5315,7 +6148,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -5344,7 +6181,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5352,7 +6193,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": null,
@@ -5378,7 +6223,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": null,
@@ -5405,7 +6254,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5430,7 +6283,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5455,7 +6312,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5480,7 +6341,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5501,7 +6366,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -5509,7 +6378,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5533,7 +6406,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -5558,7 +6435,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -5584,7 +6465,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5609,7 +6494,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5636,7 +6525,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "rsa": null,
@@ -5656,7 +6549,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "gbr": null,
@@ -5687,7 +6584,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "points": 0.0

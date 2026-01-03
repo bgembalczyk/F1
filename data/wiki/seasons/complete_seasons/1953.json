@@ -3088,10 +3088,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Alberto Ascari",
-            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alberto Ascari",
+              "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -3127,10 +3129,12 @@
             "text": "Bill Vukovich",
             "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
           },
-          "fastest_lap": {
-            "text": "Bill Vukovich",
-            "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
-          },
+          "fastest_lap": [
+            {
+              "text": "Bill Vukovich",
+              "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
+            }
+          ],
           "winning_driver": {
             "text": "Bill Vukovich",
             "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
@@ -3166,10 +3170,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Luigi Villoresi",
-            "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
-          },
+          "fastest_lap": [
+            {
+              "text": "Luigi Villoresi",
+              "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -3205,10 +3211,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "José Froilán González",
-            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
-          },
+          "fastest_lap": [
+            {
+              "text": "José Froilán González",
+              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -3244,10 +3252,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
@@ -3283,10 +3293,16 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "José Froilán González",
-            "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alberto Ascari",
+              "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+            },
+            {
+              "text": "José Froilán González",
+              "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -3322,10 +3338,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Alberto Ascari",
-            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alberto Ascari",
+              "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+            }
+          ],
           "winning_driver": {
             "text": "Giuseppe Farina",
             "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
@@ -3361,10 +3379,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Alberto Ascari",
-            "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alberto Ascari",
+              "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -3400,10 +3420,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -4535,18 +4557,26 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -4555,7 +4585,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "(1)",
+            "results": [
+              {
+                "position": 1,
+                "points_counted": false
+              }
+            ],
             "background": "Winner"
           },
           "fra": {
@@ -4563,7 +4598,12 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -4572,19 +4612,41 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "1 *",
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
-            "background": "Winner"
+            "background": "Winner",
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "8 †/ (Ret )†",
+            "results": [
+              {
+                "position": 8,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "points_counted": false,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2,
             "background": "Other classified position"
           },
           "sui": {
@@ -4592,7 +4654,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -4601,7 +4667,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4621,16 +4691,24 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4638,7 +4716,17 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret / Ret†",
+            "results": [
+              {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4647,7 +4735,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -4656,7 +4748,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -4664,7 +4760,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "sui": {
@@ -4672,7 +4772,21 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "(4 †) / Ret†",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -4681,7 +4795,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -4701,16 +4819,24 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -4718,7 +4844,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4726,7 +4856,12 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4734,7 +4869,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "(3)",
+            "results": [
+              {
+                "position": 3,
+                "points_counted": false
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -4742,7 +4882,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "sui": {
@@ -4750,7 +4894,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -4758,7 +4906,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "points": {
@@ -4777,16 +4929,25 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -4794,7 +4955,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4802,7 +4967,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "gbr": {
@@ -4810,7 +4979,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4818,7 +4992,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "sui": {
@@ -4826,7 +5004,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -4834,7 +5016,12 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "points": {
@@ -4853,16 +5040,24 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4871,7 +5066,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -4879,7 +5078,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4887,7 +5090,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4895,7 +5102,20 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "8† / Ret†",
+            "results": [
+              {
+                "position": 8,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": {
@@ -4903,7 +5123,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4911,7 +5135,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 17.0
@@ -4927,16 +5155,30 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "3† / Ret",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -4944,7 +5186,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "(Ret )",
+            "results": [
+              {
+                "position": "Ret",
+                "points_counted": false
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4953,7 +5200,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -4961,9 +5212,15 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "4 *",
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Other points position",
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2
           },
           "ger": null,
           "sui": null,
@@ -4980,12 +5237,16 @@
             "url": "https://en.wikipedia.org/wiki/Bill_Vukovich"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -5006,13 +5267,17 @@
             "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -5020,7 +5285,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -5028,7 +5297,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5036,7 +5309,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5044,7 +5321,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "sui": {
@@ -5052,7 +5333,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5060,7 +5345,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 7.0
@@ -5076,17 +5365,26 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "bel": null,
@@ -5095,7 +5393,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5103,7 +5405,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5111,7 +5417,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "sui": {
@@ -5119,7 +5429,20 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "4† / Ret†",
+            "results": [
+              {
+                "position": 4,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -5127,7 +5450,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 6.5
@@ -5139,12 +5466,16 @@
             "url": "https://en.wikipedia.org/wiki/Art_Cross"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": null,
@@ -5163,14 +5494,18 @@
             "url": "https://en.wikipedia.org/wiki/Onofre_Marim%C3%B3n"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -5178,7 +5513,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5186,7 +5525,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5194,7 +5537,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": {
@@ -5202,7 +5549,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5210,7 +5561,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 4.0
@@ -5226,17 +5581,26 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 7,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5244,7 +5608,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -5252,7 +5620,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5260,7 +5632,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5268,7 +5644,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": {
@@ -5276,7 +5656,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5284,7 +5668,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 4.0
@@ -5296,13 +5684,18 @@
             "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "ned": null,
@@ -5321,13 +5714,18 @@
             "url": "https://en.wikipedia.org/wiki/Duane_Carter"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "ned": null,
@@ -5350,10 +5748,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -5370,12 +5772,16 @@
             "url": "https://en.wikipedia.org/wiki/Jack_McGrath_(racing_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": null,
@@ -5394,7 +5800,7 @@
             "url": "https://en.wikipedia.org/wiki/Hermann_Lang"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -5405,7 +5811,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": null,
@@ -5418,13 +5828,18 @@
             "url": "https://en.wikipedia.org/wiki/Fred_Agabashian"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 4,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 4,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "ned": null,
@@ -5443,13 +5858,18 @@
             "url": "https://en.wikipedia.org/wiki/Paul_Russo"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 4,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 4,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "ned": null,
@@ -5468,13 +5888,17 @@
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5483,7 +5907,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5492,7 +5920,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -5501,7 +5933,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5517,17 +5953,25 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5535,7 +5979,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5543,7 +5991,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5551,7 +6003,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": {
@@ -5559,7 +6015,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5572,13 +6032,17 @@
             "url": "https://en.wikipedia.org/wiki/Roberto_Mieres"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5587,7 +6051,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5598,7 +6066,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5610,12 +6082,16 @@
             "url": "https://en.wikipedia.org/wiki/Jimmy_Daywalt"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -5638,17 +6114,26 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 7,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5656,7 +6141,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5664,7 +6153,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5672,7 +6165,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5680,7 +6177,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -5689,7 +6190,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5701,13 +6206,17 @@
             "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5715,7 +6224,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5723,7 +6236,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5731,7 +6248,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5739,7 +6260,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": {
@@ -5747,7 +6272,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5755,7 +6284,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5767,13 +6300,17 @@
             "url": "https://en.wikipedia.org/wiki/Ken_Wharton"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5782,7 +6319,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5790,7 +6331,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5799,7 +6344,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5807,7 +6356,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5819,7 +6372,7 @@
             "url": "https://en.wikipedia.org/wiki/Birabongse_Bhanudej"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": {
@@ -5827,7 +6380,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5835,7 +6392,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5843,7 +6404,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -5852,7 +6417,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5864,14 +6433,18 @@
             "url": "https://en.wikipedia.org/wiki/Jacques_Swaters"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": null,
@@ -5881,7 +6454,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": {
@@ -5889,7 +6466,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5902,12 +6483,16 @@
             "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -5926,7 +6511,7 @@
             "url": "https://en.wikipedia.org/wiki/Sergio_Mantovani"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -5938,8 +6523,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 7,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5951,7 +6541,7 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -5963,8 +6553,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 7,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5976,13 +6571,17 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5990,7 +6589,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5998,7 +6601,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -6006,7 +6613,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -6025,10 +6636,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6045,12 +6660,16 @@
             "url": "https://en.wikipedia.org/wiki/Ernie_McCoy_(racing_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6069,7 +6688,7 @@
             "url": "https://en.wikipedia.org/wiki/Max_de_Terra"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6080,7 +6699,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6093,7 +6716,7 @@
             "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6105,7 +6728,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6121,10 +6748,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6133,7 +6764,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -6141,7 +6776,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -6150,7 +6789,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6162,13 +6805,17 @@
             "url": "https://en.wikipedia.org/wiki/Fred_Wacker"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "bel": {
@@ -6176,7 +6823,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -6187,7 +6838,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -6200,12 +6855,16 @@
             "url": "https://en.wikipedia.org/wiki/Tony_Bettenhausen"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6224,7 +6883,7 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6233,7 +6892,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -6248,7 +6911,7 @@
             "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6258,7 +6921,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6272,7 +6939,7 @@
             "url": "https://en.wikipedia.org/wiki/Albert_Scherrer"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6283,7 +6950,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6296,7 +6967,7 @@
             "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": {
@@ -6304,7 +6975,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -6312,7 +6987,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": null,
@@ -6321,7 +7000,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -6329,7 +7012,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6341,14 +7028,18 @@
             "url": "https://en.wikipedia.org/wiki/Paul_Fr%C3%A8re"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -6359,7 +7050,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -6372,12 +7067,16 @@
             "url": "https://en.wikipedia.org/wiki/Jimmy_Davies_(racing_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6396,12 +7095,16 @@
             "url": "https://en.wikipedia.org/wiki/Duke_Nalon"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6420,14 +7123,18 @@
             "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -6444,7 +7151,7 @@
             "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": {
@@ -6452,7 +7159,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -6460,7 +7171,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -6475,7 +7190,7 @@
             "url": "https://en.wikipedia.org/wiki/Rodney_Nuckey"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6485,7 +7200,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6499,13 +7218,17 @@
             "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -6513,7 +7236,13 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret†",
+            "results": [
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -6521,7 +7250,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -6530,7 +7263,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -6539,7 +7276,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -6551,12 +7292,16 @@
             "url": "https://en.wikipedia.org/wiki/Carl_Scarborough"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6575,7 +7320,7 @@
             "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6585,7 +7330,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6599,13 +7348,17 @@
             "url": "https://en.wikipedia.org/wiki/Kenneth_McAlpine"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6615,7 +7368,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -6623,7 +7380,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6632,7 +7393,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6644,12 +7409,16 @@
             "url": "https://en.wikipedia.org/wiki/Manny_Ayulo"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6668,7 +7437,7 @@
             "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": {
@@ -6676,7 +7445,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -6687,7 +7460,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6699,7 +7476,7 @@
             "url": "https://en.wikipedia.org/wiki/Hans_Stuck"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6709,7 +7486,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -6718,7 +7499,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6730,12 +7515,16 @@
             "url": "https://en.wikipedia.org/wiki/Jimmy_Bryan"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6754,7 +7543,7 @@
             "url": "https://en.wikipedia.org/wiki/Rudolf_Krause"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6764,7 +7553,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6778,12 +7571,16 @@
             "url": "https://en.wikipedia.org/wiki/Bill_Holland"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6802,7 +7599,7 @@
             "url": "https://en.wikipedia.org/wiki/Ernst_Klodwig"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6812,7 +7609,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6826,12 +7627,16 @@
             "url": "https://en.wikipedia.org/wiki/Rodger_Ward"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6850,7 +7655,7 @@
             "url": "https://en.wikipedia.org/wiki/Wolfgang_Seidel"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6860,7 +7665,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "sui": null,
@@ -6874,12 +7683,16 @@
             "url": "https://en.wikipedia.org/wiki/Walt_Faulkner"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
@@ -6898,7 +7711,7 @@
             "url": "https://en.wikipedia.org/wiki/Jack_Fairman"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -6907,7 +7720,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -6917,7 +7734,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -6929,13 +7750,17 @@
             "url": "https://en.wikipedia.org/wiki/Lance_Macklin"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -6943,7 +7768,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -6951,7 +7780,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -6959,7 +7792,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -6968,7 +7805,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -6976,7 +7817,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -6988,13 +7833,17 @@
             "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -7003,7 +7852,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -7011,7 +7864,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -7019,7 +7876,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7028,7 +7889,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -7040,7 +7905,7 @@
             "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": {
@@ -7048,7 +7913,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -7058,7 +7927,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -7066,7 +7939,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -7078,7 +7955,7 @@
             "url": "https://en.wikipedia.org/wiki/Chico_Landi"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7089,7 +7966,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -7097,7 +7978,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -7113,10 +7998,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7137,10 +8026,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7161,10 +8054,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7185,10 +8082,14 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7205,12 +8106,16 @@
             "url": "https://en.wikipedia.org/wiki/Marshall_Teague_(racing_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7229,12 +8134,16 @@
             "url": "https://en.wikipedia.org/wiki/Travis_Webb"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7253,12 +8162,16 @@
             "url": "https://en.wikipedia.org/wiki/Bob_Sweikert"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7277,12 +8190,16 @@
             "url": "https://en.wikipedia.org/wiki/Mike_Nazaruk"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7301,12 +8218,16 @@
             "url": "https://en.wikipedia.org/wiki/Pat_Flaherty_(racing_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7325,12 +8246,16 @@
             "url": "https://en.wikipedia.org/wiki/Jerry_Hoyt"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7349,12 +8274,16 @@
             "url": "https://en.wikipedia.org/wiki/Johnnie_Parsons"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7373,12 +8302,16 @@
             "url": "https://en.wikipedia.org/wiki/Don_Freeland"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7397,12 +8330,16 @@
             "url": "https://en.wikipedia.org/wiki/Gene_Hartley"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7421,12 +8358,16 @@
             "url": "https://en.wikipedia.org/wiki/Chuck_Stevenson"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7445,12 +8386,16 @@
             "url": "https://en.wikipedia.org/wiki/Cal_Niday"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7469,12 +8414,16 @@
             "url": "https://en.wikipedia.org/wiki/Bob_Scott_(auto_racer)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7493,12 +8442,16 @@
             "url": "https://en.wikipedia.org/wiki/Andy_Linden_(race_car_driver)"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7517,12 +8470,16 @@
             "url": "https://en.wikipedia.org/wiki/Johnny_Thomson"
           },
           "arg": null,
-          "500_‡": {
+          "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7541,14 +8498,18 @@
             "url": "https://en.wikipedia.org/wiki/Georges_Berger"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -7565,14 +8526,18 @@
             "url": "https://en.wikipedia.org/wiki/Arthur_Legat"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -7589,7 +8554,7 @@
             "url": "https://en.wikipedia.org/wiki/Jimmy_Stewart_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7598,7 +8563,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -7613,7 +8582,7 @@
             "url": "https://en.wikipedia.org/wiki/Tony_Rolt"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7622,7 +8591,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -7637,7 +8610,7 @@
             "url": "https://en.wikipedia.org/wiki/Ian_Stewart_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7646,7 +8619,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -7661,7 +8638,7 @@
             "url": "https://en.wikipedia.org/wiki/Duncan_Hamilton_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7670,7 +8647,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -7685,7 +8666,7 @@
             "url": "https://en.wikipedia.org/wiki/Tony_Crook_(racing_driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7694,7 +8675,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -7709,7 +8694,7 @@
             "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7719,7 +8704,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7733,7 +8722,7 @@
             "url": "https://en.wikipedia.org/wiki/Oswald_Karch"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7743,7 +8732,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7757,7 +8750,7 @@
             "url": "https://en.wikipedia.org/wiki/Willi_Heeks"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7767,7 +8760,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7781,7 +8778,7 @@
             "url": "https://en.wikipedia.org/wiki/Theo_Fitzau"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7791,7 +8788,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7805,7 +8806,7 @@
             "url": "https://en.wikipedia.org/wiki/Kurt_Adolff"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7815,7 +8816,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7829,7 +8834,7 @@
             "url": "https://en.wikipedia.org/wiki/G%C3%BCnther_Bechem"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7839,7 +8844,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7853,7 +8862,7 @@
             "url": "https://en.wikipedia.org/wiki/Ernst_Loof"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7863,7 +8872,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7877,7 +8890,7 @@
             "url": "https://en.wikipedia.org/wiki/Erwin_Bauer"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7887,7 +8900,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "sui": null,
@@ -7901,7 +8918,7 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7912,7 +8929,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -7925,7 +8946,7 @@
             "url": "https://en.wikipedia.org/wiki/Piero_Carini"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7937,7 +8958,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -7949,7 +8974,7 @@
             "url": "https://en.wikipedia.org/wiki/John_Fitch_(driver)"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -7961,7 +8986,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -7973,14 +9002,18 @@
             "url": "https://en.wikipedia.org/wiki/Charles_de_Tornaco"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": null,
@@ -7997,7 +9030,7 @@
             "url": "https://en.wikipedia.org/wiki/Helm_Gl%C3%B6ckler"
           },
           "arg": null,
-          "500_‡": null,
+          "500": null,
           "ned": null,
           "bel": null,
           "fra": null,
@@ -8007,7 +9040,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "sui": null,

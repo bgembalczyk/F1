@@ -2329,10 +2329,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -2368,10 +2370,12 @@
             "text": "Duke Nalon",
             "url": "https://en.wikipedia.org/wiki/Duke_Nalon"
           },
-          "fastest_lap": {
-            "text": "Lee Wallard",
-            "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
-          },
+          "fastest_lap": [
+            {
+              "text": "Lee Wallard",
+              "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
+            }
+          ],
           "winning_driver": {
             "text": "Lee Wallard",
             "url": "https://en.wikipedia.org/wiki/Lee_Wallard"
@@ -2407,10 +2411,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Giuseppe Farina",
             "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
@@ -2446,10 +2452,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Luigi Fagioli",
             "url": "https://en.wikipedia.org/wiki/Luigi_Fagioli"
@@ -2485,10 +2493,12 @@
             "text": "José Froilán González",
             "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
           },
-          "fastest_lap": {
-            "text": "Giuseppe Farina",
-            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-          },
+          "fastest_lap": [
+            {
+              "text": "Giuseppe Farina",
+              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+            }
+          ],
           "winning_driver": {
             "text": "José Froilán González",
             "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
@@ -2524,10 +2534,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -2563,10 +2575,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Giuseppe Farina",
-            "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
-          },
+          "fastest_lap": [
+            {
+              "text": "Giuseppe Farina",
+              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+            }
+          ],
           "winning_driver": {
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
@@ -2602,10 +2616,12 @@
             "text": "Alberto Ascari",
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -3063,7 +3079,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3074,7 +3094,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": "(9 )",
+            "results": [
+              {
+                "position": 9,
+                "points_counted": false
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other classified position"
@@ -3084,9 +3109,25 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "(1 )†/11 †",
+            "results": [
+              {
+                "position": 1,
+                "points_counted": false,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": 11,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2,
             "background": "Winner"
           },
           "gbr": {
@@ -3094,7 +3135,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -3102,7 +3147,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3111,7 +3160,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3120,7 +3173,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3140,7 +3197,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3149,7 +3210,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3157,7 +3222,17 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "2†/ Ret",
+            "results": [
+              {
+                "position": 2,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3165,7 +3240,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3173,7 +3252,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3182,7 +3265,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "esp": {
@@ -3190,7 +3277,12 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "(4 )",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -3210,7 +3302,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3220,7 +3316,14 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "(2)†",
+            "results": [
+              {
+                "position": 2,
+                "points_counted": false,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3228,7 +3331,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3237,7 +3344,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -3245,7 +3356,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "esp": {
@@ -3253,7 +3368,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "points": {
@@ -3272,7 +3391,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "500": null,
@@ -3281,7 +3404,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "fra": {
@@ -3289,7 +3416,12 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3297,7 +3429,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "(Ret )",
+            "results": [
+              {
+                "position": "Ret",
+                "points_counted": false
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3306,7 +3443,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3314,8 +3455,20 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "3 †/ Ret",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2,
             "background": "Third place"
           },
           "esp": {
@@ -3323,7 +3476,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": {
@@ -3342,7 +3499,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3351,7 +3512,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3359,7 +3524,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -3367,7 +3536,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3375,7 +3548,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3383,7 +3560,12 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3391,7 +3573,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": {
@@ -3410,7 +3596,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "500": null,
@@ -3419,7 +3609,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -3429,7 +3623,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3437,7 +3635,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3445,7 +3647,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 10.0
@@ -3462,7 +3668,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3489,7 +3699,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3497,7 +3711,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3505,8 +3723,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3514,7 +3737,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 7.0
@@ -3531,7 +3758,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": null,
@@ -3556,7 +3787,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3564,7 +3799,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
@@ -3573,7 +3812,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "esp": null,
@@ -3593,7 +3836,20 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "1† / 11†",
+            "results": [
+              {
+                "position": 1,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": 11,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "background": "Winner"
           },
           "gbr": null,
@@ -3613,7 +3869,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3622,7 +3882,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3630,7 +3894,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3638,7 +3906,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -3657,7 +3929,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3666,7 +3942,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3674,7 +3954,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3682,7 +3966,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3690,7 +3978,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3698,7 +3990,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3706,7 +4002,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 3.0
@@ -3723,7 +4023,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -3746,8 +4050,13 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "bel": null,
@@ -3770,8 +4079,13 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 3,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 3,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Third place"
           },
           "bel": null,
@@ -3793,7 +4107,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3803,7 +4121,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -3812,7 +4134,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3820,7 +4146,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3828,7 +4158,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -3844,7 +4178,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3853,7 +4191,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3861,7 +4203,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -3870,7 +4216,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3878,7 +4228,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3886,7 +4240,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 2.0
@@ -3903,7 +4261,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -3925,7 +4287,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3934,7 +4300,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3942,7 +4312,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3950,7 +4324,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3958,7 +4336,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3966,7 +4348,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3974,7 +4360,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -3990,7 +4380,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4002,7 +4396,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4010,7 +4408,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "esp": null,
@@ -4030,7 +4432,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4039,7 +4445,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4047,7 +4457,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4055,7 +4469,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4072,7 +4490,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -4096,7 +4518,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4120,7 +4546,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4129,7 +4559,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4137,7 +4571,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4145,7 +4583,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4161,7 +4603,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4170,7 +4616,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4178,7 +4628,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4186,7 +4640,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4194,7 +4652,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4202,7 +4664,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4210,7 +4676,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4227,7 +4697,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -4253,7 +4727,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4274,7 +4752,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4284,7 +4766,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4292,7 +4778,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4309,7 +4799,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4318,7 +4812,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4326,7 +4824,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4335,7 +4837,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -4344,7 +4850,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4360,7 +4870,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4384,7 +4898,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -4409,7 +4927,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4433,7 +4955,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4452,7 +4978,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4462,7 +4992,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4482,7 +5016,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4492,7 +5030,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4500,7 +5042,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4509,7 +5055,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4532,7 +5082,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -4554,7 +5108,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4562,7 +5120,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4586,7 +5148,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4606,7 +5172,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4625,7 +5195,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4635,7 +5209,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4659,7 +5237,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4667,7 +5249,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -4689,7 +5275,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4711,7 +5301,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4720,7 +5314,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4728,7 +5326,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "esp": {
@@ -4736,7 +5338,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4752,7 +5358,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4775,7 +5385,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4798,7 +5412,11 @@
               "text": "SUI",
               "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4822,7 +5440,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4845,7 +5467,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4869,7 +5495,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4892,7 +5522,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4915,7 +5549,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4938,7 +5576,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4961,7 +5603,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4984,7 +5630,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5007,7 +5657,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5030,7 +5684,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5053,7 +5711,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5076,7 +5738,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5099,7 +5765,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5122,7 +5792,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5145,7 +5819,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5168,7 +5846,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5191,7 +5873,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5214,7 +5900,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5237,7 +5927,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5260,7 +5954,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5283,7 +5981,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5306,7 +6008,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5329,7 +6035,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5352,7 +6062,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5375,7 +6089,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5400,7 +6118,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5423,7 +6145,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5447,7 +6173,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5470,7 +6200,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5493,7 +6227,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5517,7 +6255,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5540,7 +6282,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5564,7 +6310,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5587,7 +6337,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5611,7 +6365,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5634,7 +6392,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5656,7 +6418,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "esp": null,
@@ -5680,7 +6446,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "points": 0.0

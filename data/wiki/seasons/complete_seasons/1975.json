@@ -2480,10 +2480,12 @@
             "text": "Jean-Pierre Jarier",
             "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
           },
-          "fastest_lap": {
-            "text": "James Hunt",
-            "url": "https://en.wikipedia.org/wiki/James_Hunt"
-          },
+          "fastest_lap": [
+            {
+              "text": "James Hunt",
+              "url": "https://en.wikipedia.org/wiki/James_Hunt"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2513,10 +2515,12 @@
             "text": "Jean-Pierre Jarier",
             "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Jarier",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Jarier",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
+            }
+          ],
           "winning_driver": {
             "text": "Carlos Pace",
             "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
@@ -2546,10 +2550,12 @@
             "text": "Carlos Pace",
             "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
           },
-          "fastest_lap": {
-            "text": "Carlos Pace",
-            "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
-          },
+          "fastest_lap": [
+            {
+              "text": "Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+            }
+          ],
           "winning_driver": {
             "text": "Jody Scheckter",
             "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
@@ -2579,10 +2585,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Mario Andretti",
-            "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            }
+          ],
           "winning_driver": {
             "text": "Jochen Mass",
             "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
@@ -2612,10 +2620,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Patrick Depailler",
-            "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
-          },
+          "fastest_lap": [
+            {
+              "text": "Patrick Depailler",
+              "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2645,10 +2655,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2678,10 +2690,12 @@
             "text": "Vittorio Brambilla",
             "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2711,10 +2725,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -2744,10 +2760,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Jochen Mass",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2777,10 +2795,12 @@
             "text": "Tom Pryce",
             "url": "https://en.wikipedia.org/wiki/Tom_Pryce"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2810,10 +2830,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Carlos Reutemann",
             "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
@@ -2843,10 +2865,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Vittorio Brambilla",
-            "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
-          },
+          "fastest_lap": [
+            {
+              "text": "Vittorio Brambilla",
+              "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
+            }
+          ],
           "winning_driver": {
             "text": "Vittorio Brambilla",
             "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
@@ -2876,10 +2900,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Clay Regazzoni",
             "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
@@ -2909,10 +2935,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Emerson Fittipaldi",
-            "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
-          },
+          "fastest_lap": [
+            {
+              "text": "Emerson Fittipaldi",
+              "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -3045,7 +3073,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bra": {
@@ -3053,7 +3085,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3061,15 +3097,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3078,7 +3124,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3087,7 +3137,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3096,12 +3150,20 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
           "": {
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Second place"
@@ -3111,7 +3173,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3120,7 +3186,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3128,7 +3198,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -3137,16 +3211,26 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -3155,7 +3239,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3164,7 +3252,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": "64.5",
+            "results": [
+              {
+                "position": "64.5"
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3179,7 +3271,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "bra": {
@@ -3187,7 +3283,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "rsa": {
@@ -3195,15 +3295,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "mon": {
@@ -3211,7 +3321,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -3219,7 +3333,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -3227,11 +3345,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3239,7 +3365,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3247,7 +3377,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "gbr": {
@@ -3255,7 +3389,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3263,15 +3401,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -3279,7 +3427,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3288,7 +3440,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 45,
+            "results": [
+              {
+                "position": 45
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3303,7 +3459,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bra": {
@@ -3311,7 +3471,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -3319,15 +3483,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3335,7 +3509,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3343,7 +3521,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "swe": {
@@ -3351,11 +3533,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "": {
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3363,7 +3553,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3371,7 +3565,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3379,7 +3577,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ger": {
@@ -3387,15 +3589,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3403,7 +3615,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3411,7 +3627,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 37,
+            "results": [
+              {
+                "position": 37
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3426,7 +3646,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3435,7 +3659,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3443,15 +3671,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3459,7 +3697,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3467,7 +3709,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -3475,11 +3721,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ned": {
@@ -3487,7 +3741,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3495,7 +3753,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3503,7 +3765,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3511,15 +3777,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3527,7 +3803,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3535,7 +3815,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 33,
+            "results": [
+              {
+                "position": 33
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3550,7 +3834,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bra": {
@@ -3558,7 +3846,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3566,15 +3858,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3582,7 +3884,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3590,7 +3896,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -3599,11 +3909,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "": {
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3611,7 +3929,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3619,7 +3941,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -3628,7 +3954,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3637,15 +3967,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3654,7 +3994,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3662,7 +4006,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 25,
+            "results": [
+              {
+                "position": 25
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3677,7 +4025,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -3685,7 +4037,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "rsa": {
@@ -3693,17 +4049,27 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other points position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3711,7 +4077,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -3719,7 +4089,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -3727,11 +4101,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3739,7 +4121,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3747,7 +4133,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3755,7 +4145,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3763,15 +4157,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3779,7 +4183,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3787,7 +4195,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 24,
+            "results": [
+              {
+                "position": 24
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3802,7 +4214,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -3810,7 +4226,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3818,15 +4238,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3834,7 +4264,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3842,7 +4276,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "swe": {
@@ -3850,11 +4288,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3862,7 +4308,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3870,7 +4320,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -3878,7 +4332,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3886,15 +4344,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3902,7 +4370,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3910,7 +4382,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3925,7 +4401,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -3933,7 +4413,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "rsa": {
@@ -3941,15 +4425,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -3957,7 +4451,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3965,7 +4463,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -3973,11 +4475,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3985,7 +4495,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "fastest_lap": true,
             "background": "Third place"
           },
@@ -3994,7 +4508,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4002,7 +4520,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4010,15 +4532,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4026,7 +4558,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -4034,7 +4570,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4049,7 +4589,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bra": {
@@ -4057,7 +4601,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4065,15 +4613,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4081,7 +4639,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -4090,7 +4652,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "swe": {
@@ -4098,11 +4664,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4110,7 +4684,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4118,7 +4696,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4126,7 +4708,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4134,15 +4720,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4150,7 +4746,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4158,7 +4758,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4173,7 +4777,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -4181,7 +4789,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4189,15 +4801,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4205,7 +4827,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4213,7 +4839,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "swe": {
@@ -4221,11 +4851,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4233,7 +4871,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4241,7 +4883,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4250,7 +4896,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4258,15 +4908,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4274,7 +4934,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4282,7 +4946,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4297,7 +4965,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -4305,7 +4977,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4313,15 +4989,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4329,7 +5015,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4337,7 +5027,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4345,12 +5039,20 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4358,7 +5060,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4366,7 +5072,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4374,7 +5084,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4382,16 +5096,26 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4399,7 +5123,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4407,7 +5135,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": "6.5",
+            "results": [
+              {
+                "position": "6.5"
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4422,7 +5154,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -4430,7 +5166,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4438,16 +5178,24 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4455,12 +5203,20 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4468,7 +5224,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4476,7 +5236,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4484,7 +5248,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -4492,15 +5260,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4508,7 +5286,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": {
@@ -4516,7 +5298,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4531,7 +5317,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -4539,7 +5329,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4547,15 +5341,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4563,7 +5367,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -4571,7 +5379,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4579,11 +5391,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4591,7 +5411,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4599,7 +5423,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4607,7 +5435,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4615,15 +5447,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4631,7 +5473,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -4639,7 +5485,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4654,7 +5504,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -4662,7 +5516,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4670,15 +5528,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4687,7 +5555,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4696,7 +5568,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "": null,
@@ -4705,7 +5581,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4713,7 +5593,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4721,7 +5605,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4729,15 +5617,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4745,7 +5643,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4753,7 +5655,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4768,7 +5674,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -4776,7 +5686,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4784,15 +5698,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4800,7 +5724,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4808,7 +5736,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -4816,11 +5748,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4828,7 +5768,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4836,7 +5780,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4844,7 +5792,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4852,17 +5804,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4877,7 +5837,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -4885,7 +5849,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4893,15 +5861,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -4909,7 +5887,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4917,7 +5899,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4925,11 +5911,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4937,20 +5931,28 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4963,12 +5965,18 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4976,7 +5984,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4984,7 +5996,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4992,11 +6008,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5004,7 +6028,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5012,7 +6040,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5020,18 +6052,26 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5046,7 +6086,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "pole_position": true,
             "background": "Did not start"
           },
@@ -5055,7 +6099,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -5065,15 +6113,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -5081,7 +6139,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5089,7 +6151,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5097,11 +6163,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5109,7 +6183,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5117,7 +6195,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5125,7 +6207,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5133,15 +6219,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5149,7 +6245,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5157,7 +6257,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": "1.5",
+            "results": [
+              {
+                "position": "1.5"
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5170,12 +6274,18 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -5184,7 +6294,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5192,11 +6306,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5204,7 +6326,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5212,7 +6338,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5220,7 +6350,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5228,15 +6362,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5244,7 +6388,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5252,7 +6400,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5265,12 +6417,16 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
           "": {
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5278,7 +6434,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -5287,18 +6447,26 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5315,15 +6483,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -5331,7 +6509,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5339,7 +6521,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5347,11 +6533,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5359,7 +6553,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5367,7 +6565,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5375,7 +6577,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5383,15 +6589,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5399,7 +6615,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": {
@@ -5407,7 +6627,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": "0.5",
+            "results": [
+              {
+                "position": "0.5"
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5422,7 +6646,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -5430,7 +6658,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5438,15 +6670,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -5461,15 +6703,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5478,7 +6730,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5493,7 +6749,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "bra": {
@@ -5501,7 +6761,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5509,15 +6773,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -5525,7 +6799,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5533,7 +6811,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -5541,11 +6823,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5553,7 +6843,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5561,7 +6855,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5569,7 +6867,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5577,16 +6879,24 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": null,
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5594,7 +6904,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5607,7 +6921,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -5619,7 +6933,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5627,15 +6945,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -5644,7 +6972,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5657,7 +6989,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -5668,7 +7000,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5676,7 +7012,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5684,15 +7024,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5700,7 +7050,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5708,7 +7062,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5725,15 +7083,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5741,7 +7109,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5749,7 +7121,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -5757,11 +7133,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5769,7 +7153,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -5779,15 +7167,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5796,7 +7194,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5811,7 +7213,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -5819,7 +7225,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5827,15 +7237,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5843,7 +7263,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5851,7 +7275,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -5859,11 +7287,19 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5871,7 +7307,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5879,7 +7319,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5887,7 +7331,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5895,16 +7343,24 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
-          "aut_‡": null,
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5912,7 +7368,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5927,7 +7387,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -5935,7 +7399,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5943,16 +7411,24 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -5962,14 +7438,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5982,7 +7462,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -5995,15 +7475,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6011,7 +7501,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -6019,7 +7513,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6032,13 +7530,17 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -6047,7 +7549,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -6055,14 +7561,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6077,7 +7587,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "bra": {
@@ -6085,7 +7599,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -6093,15 +7611,25 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -6109,7 +7637,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -6117,7 +7649,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": null,
@@ -6126,12 +7662,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6140,7 +7682,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6157,10 +7703,14 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6169,14 +7719,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6189,7 +7743,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6202,15 +7756,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6219,7 +7783,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6236,10 +7804,14 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": {
@@ -6247,25 +7819,37 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6278,7 +7862,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6288,20 +7872,28 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6314,7 +7906,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6325,17 +7917,27 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6344,7 +7946,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6361,10 +7967,14 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6373,14 +7983,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6397,10 +8011,14 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6409,14 +8027,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6429,7 +8051,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": {
@@ -6437,7 +8059,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -6445,14 +8071,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6465,7 +8095,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6474,12 +8104,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -6488,7 +8124,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6501,7 +8141,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6512,7 +8152,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -6521,16 +8165,24 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
-          "aut_‡": null,
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -6538,7 +8190,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6551,7 +8207,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6562,19 +8218,27 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6587,7 +8251,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6598,19 +8262,27 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6623,12 +8295,18 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -6636,7 +8314,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -6648,7 +8330,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": null,
@@ -6657,15 +8343,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -6673,7 +8369,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -6681,7 +8381,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6694,12 +8398,18 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -6708,7 +8418,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": null,
@@ -6718,20 +8432,28 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6746,7 +8468,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bra": {
@@ -6754,11 +8480,15 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6767,14 +8497,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6787,7 +8521,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": {
@@ -6795,7 +8529,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -6803,14 +8541,18 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6823,7 +8565,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6835,18 +8577,26 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6859,7 +8609,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6872,17 +8622,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6895,7 +8653,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6904,13 +8662,17 @@
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -6918,7 +8680,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6931,12 +8697,16 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
           "": {
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ned": null,
@@ -6945,19 +8715,27 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": null,
           "ger": null,
-          "aut_‡": null,
+          "aut": null,
           "ita": null,
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6970,7 +8748,7 @@
           "arg": null,
           "bra": null,
           "rsa": null,
-          "esp_‡": null,
+          "esp": null,
           "mon": null,
           "bel": null,
           "swe": null,
@@ -6982,7 +8760,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ger": {
@@ -6990,15 +8772,25 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -7007,7 +8799,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7022,101 +8818,165 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
             },
-            "position": "ARG"
+            "results": [
+              {
+                "position": "ARG"
+              }
+            ]
           },
           "bra": {
             "round": {
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
             },
-            "position": "BRA"
+            "results": [
+              {
+                "position": "BRA"
+              }
+            ]
           },
           "rsa": {
             "round": {
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
             },
-            "position": "RSA"
+            "results": [
+              {
+                "position": "RSA"
+              }
+            ]
           },
-          "esp_‡": {
+          "esp": {
             "round": {
               "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "ESP"
+            "results": [
+              {
+                "position": "ESP"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
             },
-            "position": "MON"
+            "results": [
+              {
+                "position": "MON"
+              }
+            ]
           },
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
             },
-            "position": "BEL"
+            "results": [
+              {
+                "position": "BEL"
+              }
+            ]
           },
           "swe": {
             "round": {
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
             },
-            "position": "SWE"
+            "results": [
+              {
+                "position": "SWE"
+              }
+            ]
           },
           "": {
-            "position": "NED"
+            "results": [
+              {
+                "position": "NED"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
             },
-            "position": "FRA"
+            "results": [
+              {
+                "position": "FRA"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
-            "position": "GBR"
+            "results": [
+              {
+                "position": "GBR"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
-            "position": "GER"
+            "results": [
+              {
+                "position": "GER"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
-            "position": "AUT"
+            "results": [
+              {
+                "position": "AUT"
+              }
+            ]
           },
-          "aut_‡": {
+          "aut": {
             "round": {
               "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
-            "position": "ITA"
+            "results": [
+              {
+                "position": "ITA"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
-            "position": "USA"
+            "results": [
+              {
+                "position": "USA"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
-            "position": "Pts"
+            "results": [
+              {
+                "position": "Pts"
+              }
+            ]
           }
         }
       ],

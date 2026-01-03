@@ -1503,10 +1503,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
@@ -1536,10 +1538,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nigel Mansell",
-            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            }
+          ],
           "winning_driver": {
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
@@ -1569,10 +1573,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Alain Prost",
             "url": "https://en.wikipedia.org/wiki/Alain_Prost"
@@ -1602,10 +1608,12 @@
             "text": "Alain Prost",
             "url": "https://en.wikipedia.org/wiki/Alain_Prost"
           },
-          "fastest_lap": {
-            "text": "Alain Prost",
-            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alain Prost",
+              "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+            }
+          ],
           "winning_driver": {
             "text": "Alain Prost",
             "url": "https://en.wikipedia.org/wiki/Alain_Prost"
@@ -1635,10 +1643,12 @@
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
           },
-          "fastest_lap": {
-            "text": "Alain Prost",
-            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-          },
+          "fastest_lap": [
+            {
+              "text": "Alain Prost",
+              "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+            }
+          ],
           "winning_driver": {
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
@@ -1668,10 +1678,12 @@
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
@@ -1701,10 +1713,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
@@ -1734,10 +1748,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nigel Mansell",
-            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            }
+          ],
           "winning_driver": {
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
@@ -1767,10 +1783,12 @@
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
           },
-          "fastest_lap": {
-            "text": "Nigel Mansell",
-            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            }
+          ],
           "winning_driver": {
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
@@ -1800,10 +1818,12 @@
             "text": "Keke Rosberg",
             "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
           },
-          "fastest_lap": {
-            "text": "Gerhard Berger",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-          },
+          "fastest_lap": [
+            {
+              "text": "Gerhard Berger",
+              "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+            }
+          ],
           "winning_driver": {
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
@@ -1833,10 +1853,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
@@ -1866,10 +1888,12 @@
             "text": "Teo Fabi",
             "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
           },
-          "fastest_lap": {
-            "text": "Gerhard Berger",
-            "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
-          },
+          "fastest_lap": [
+            {
+              "text": "Gerhard Berger",
+              "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+            }
+          ],
           "winning_driver": {
             "text": "Alain Prost",
             "url": "https://en.wikipedia.org/wiki/Alain_Prost"
@@ -1899,10 +1923,12 @@
             "text": "Teo Fabi",
             "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
           },
-          "fastest_lap": {
-            "text": "Teo Fabi",
-            "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
-          },
+          "fastest_lap": [
+            {
+              "text": "Teo Fabi",
+              "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
+            }
+          ],
           "winning_driver": {
             "text": "Nelson Piquet",
             "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
@@ -1932,10 +1958,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nigel Mansell",
-            "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            }
+          ],
           "winning_driver": {
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
@@ -1965,10 +1993,12 @@
             "text": "Ayrton Senna",
             "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Gerhard Berger",
             "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
@@ -1998,10 +2028,12 @@
             "text": "Nigel Mansell",
             "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
           },
-          "fastest_lap": {
-            "text": "Nelson Piquet",
-            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-          },
+          "fastest_lap": [
+            {
+              "text": "Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+            }
+          ],
           "winning_driver": {
             "text": "Alain Prost",
             "url": "https://en.wikipedia.org/wiki/Alain_Prost"
@@ -2046,7 +2078,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2054,7 +2090,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "smr": {
@@ -2062,7 +2102,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2070,7 +2114,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2080,7 +2128,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "(6)",
+            "results": [
+              {
+                "position": 6,
+                "points_counted": false
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -2089,7 +2142,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "det": {
@@ -2097,7 +2154,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -2105,7 +2166,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -2113,7 +2178,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -2121,7 +2190,12 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "(6)",
+            "results": [
+              {
+                "position": 6,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "hun": {
@@ -2129,7 +2203,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -2137,7 +2215,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ita": {
@@ -2145,7 +2227,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "por": {
@@ -2153,7 +2239,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mex": {
@@ -2161,7 +2251,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "aus": {
@@ -2169,7 +2263,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "points": {
@@ -2188,7 +2286,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2196,7 +2298,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2205,7 +2311,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -2213,7 +2323,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -2221,7 +2335,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "can": {
@@ -2229,7 +2347,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2238,7 +2360,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -2246,7 +2372,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2255,7 +2385,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2264,7 +2398,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "hun": {
@@ -2272,7 +2410,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "aut": {
@@ -2280,7 +2422,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2288,7 +2434,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "por": {
@@ -2296,7 +2446,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2305,7 +2459,12 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "aus": {
@@ -2313,7 +2472,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2333,7 +2496,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2342,7 +2509,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -2350,7 +2521,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2359,7 +2534,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -2367,7 +2546,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2376,7 +2559,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "fastest_lap": true,
             "background": "Third place"
           },
@@ -2385,7 +2572,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -2394,7 +2585,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -2402,7 +2597,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2411,7 +2610,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "hun": {
@@ -2419,7 +2622,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2428,7 +2635,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2436,7 +2647,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "por": {
@@ -2444,7 +2659,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mex": {
@@ -2452,7 +2671,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -2461,7 +2684,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2478,7 +2705,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2487,7 +2718,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2496,7 +2731,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2505,7 +2744,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -2513,7 +2756,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "can": {
@@ -2521,7 +2768,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "det": {
@@ -2529,7 +2780,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2538,7 +2793,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2547,7 +2806,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2555,7 +2818,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "hun": {
@@ -2563,7 +2830,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2572,7 +2843,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2580,7 +2855,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -2588,7 +2867,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -2597,7 +2880,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -2606,7 +2893,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 55.0
@@ -2622,7 +2913,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2630,7 +2925,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -2638,7 +2937,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -2646,7 +2949,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -2654,7 +2961,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -2662,7 +2973,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -2670,7 +2985,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2678,7 +2997,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -2686,7 +3009,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2694,7 +3021,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "hun": {
@@ -2702,7 +3033,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -2710,7 +3045,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -2718,7 +3057,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "por": {
@@ -2726,7 +3069,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -2734,7 +3081,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -2742,7 +3093,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 23.0
@@ -2758,7 +3113,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2766,7 +3125,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "smr": {
@@ -2774,7 +3137,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -2782,7 +3149,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -2790,7 +3161,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -2798,7 +3173,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "det": {
@@ -2806,7 +3185,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2814,7 +3197,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -2822,7 +3209,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2830,7 +3221,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -2839,7 +3234,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -2847,7 +3246,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -2855,7 +3258,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "por": {
@@ -2863,7 +3270,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -2871,7 +3282,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -2879,7 +3294,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 22.0
@@ -2895,7 +3314,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -2903,7 +3326,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "smr": {
@@ -2911,7 +3338,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -2919,7 +3350,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -2927,7 +3362,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -2935,7 +3374,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -2943,7 +3386,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2951,7 +3398,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -2959,7 +3410,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2967,7 +3422,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -2976,7 +3435,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -2984,7 +3447,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -2993,7 +3460,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "por": {
@@ -3001,7 +3472,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3009,7 +3484,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "aus": {
@@ -3017,7 +3496,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 17.0
@@ -3033,7 +3516,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3041,7 +3528,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3049,7 +3540,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3057,7 +3552,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3065,7 +3564,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3073,7 +3576,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -3081,7 +3588,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3089,7 +3600,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3097,7 +3612,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -3120,7 +3639,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3128,7 +3651,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3136,7 +3663,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3144,7 +3675,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3152,7 +3687,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3160,7 +3699,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -3168,7 +3711,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3176,7 +3723,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3184,7 +3735,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3192,7 +3747,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -3200,7 +3759,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3208,7 +3771,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -3216,7 +3783,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -3224,7 +3795,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -3232,7 +3807,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -3240,7 +3819,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 14.0
@@ -3256,7 +3839,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3264,7 +3851,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3272,7 +3863,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3280,7 +3875,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3288,7 +3887,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3296,7 +3899,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "det": {
@@ -3304,7 +3911,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3312,7 +3923,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3320,7 +3935,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3328,7 +3947,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "hun": {
@@ -3336,7 +3959,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3344,7 +3971,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3352,7 +3983,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -3360,7 +3995,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3368,7 +4007,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -3376,7 +4019,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 14.0
@@ -3392,7 +4039,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3400,7 +4051,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3408,7 +4063,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3416,7 +4075,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3424,7 +4087,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3432,7 +4099,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -3440,7 +4111,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3448,7 +4123,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3456,7 +4135,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3464,7 +4147,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -3472,7 +4159,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3480,7 +4171,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3488,7 +4183,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "por": {
@@ -3496,7 +4195,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3504,7 +4207,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -3512,7 +4219,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 8.0
@@ -3528,7 +4239,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3536,7 +4251,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3544,7 +4263,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3552,7 +4275,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3560,7 +4287,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3568,7 +4299,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -3576,7 +4311,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3584,7 +4323,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3592,7 +4335,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3600,7 +4347,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "hun": {
@@ -3608,7 +4359,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3616,7 +4371,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3624,7 +4383,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "por": {
@@ -3632,7 +4395,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3640,7 +4407,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -3648,7 +4419,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 4.0
@@ -3664,7 +4439,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3672,7 +4451,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3680,7 +4463,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3688,7 +4475,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -3696,7 +4487,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3704,7 +4499,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -3712,7 +4511,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3720,7 +4523,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3728,7 +4535,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3736,7 +4547,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -3744,7 +4559,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3752,7 +4571,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3760,7 +4583,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -3768,7 +4595,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3776,7 +4607,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -3784,7 +4619,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "points": 3.0
@@ -3800,7 +4639,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3808,7 +4651,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -3816,7 +4663,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3824,7 +4675,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3832,7 +4687,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3840,7 +4699,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -3848,7 +4711,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3856,7 +4723,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3864,7 +4735,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3872,7 +4747,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -3880,7 +4759,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -3888,7 +4771,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3896,7 +4783,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "por": {
@@ -3904,7 +4795,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3912,7 +4807,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -3920,7 +4819,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 3.0
@@ -3936,7 +4839,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3944,7 +4851,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "smr": {
@@ -3952,7 +4863,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3960,7 +4875,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3968,7 +4887,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3976,7 +4899,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "det": null,
@@ -3985,7 +4912,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3993,7 +4924,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4001,7 +4936,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "hun": {
@@ -4009,7 +4948,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4017,7 +4960,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4025,7 +4972,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4033,7 +4984,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4041,7 +4996,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -4049,7 +5008,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -4065,7 +5028,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4073,7 +5040,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "smr": {
@@ -4081,7 +5052,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4089,7 +5064,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4097,7 +5076,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4105,7 +5088,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4113,7 +5100,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4121,7 +5112,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4129,7 +5124,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4137,7 +5136,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4145,7 +5148,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4153,7 +5160,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4162,7 +5173,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -4172,7 +5187,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4180,7 +5199,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -4188,7 +5211,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -4204,7 +5231,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4212,7 +5243,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -4220,7 +5255,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4228,7 +5267,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4236,7 +5279,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4244,7 +5291,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4252,7 +5303,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4260,7 +5315,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4268,7 +5327,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4276,7 +5339,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4284,7 +5351,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4292,7 +5363,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4300,7 +5375,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4308,7 +5387,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4316,7 +5399,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -4324,7 +5411,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 2.0
@@ -4340,7 +5431,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4348,7 +5443,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -4356,7 +5455,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4364,7 +5467,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4372,7 +5479,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4380,7 +5491,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4388,7 +5503,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4396,7 +5515,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4404,7 +5527,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4412,7 +5539,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4420,7 +5551,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4428,7 +5563,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4436,7 +5575,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "por": {
@@ -4444,7 +5587,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4452,7 +5599,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -4460,7 +5611,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 1.0
@@ -4485,7 +5640,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4493,7 +5652,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4501,7 +5664,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4509,7 +5676,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4517,7 +5688,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4525,7 +5700,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "aus": {
@@ -4533,7 +5712,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 1.0
@@ -4549,7 +5732,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4557,7 +5744,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "smr": {
@@ -4565,7 +5756,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4573,7 +5768,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4581,7 +5780,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4589,7 +5792,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4597,7 +5804,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4605,7 +5816,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4613,7 +5828,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4621,7 +5840,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4629,7 +5852,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4637,7 +5864,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4645,7 +5876,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "por": {
@@ -4653,7 +5888,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4661,7 +5900,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -4669,7 +5912,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4690,7 +5937,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4698,7 +5949,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4706,7 +5961,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4714,7 +5973,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4722,7 +5985,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "hun": {
@@ -4730,7 +5997,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4738,7 +6009,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -4746,7 +6021,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4754,7 +6033,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4762,7 +6045,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -4770,7 +6057,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4786,7 +6077,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4794,7 +6089,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -4802,7 +6101,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4810,7 +6113,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4818,7 +6125,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4826,7 +6137,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -4834,7 +6149,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4842,7 +6161,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4850,7 +6173,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4858,7 +6185,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4866,7 +6197,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4874,7 +6209,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4882,7 +6221,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4890,7 +6233,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4898,7 +6245,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -4906,7 +6257,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4924,7 +6279,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4932,7 +6291,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4940,7 +6303,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4948,7 +6315,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "det": {
@@ -4956,7 +6327,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": {
@@ -4964,7 +6339,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4972,7 +6351,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4980,7 +6363,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -4988,7 +6375,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4996,7 +6387,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5004,7 +6399,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -5012,7 +6411,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5020,7 +6423,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "aus": {
@@ -5028,7 +6435,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5044,7 +6455,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5052,7 +6467,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -5060,7 +6479,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5068,7 +6491,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5076,7 +6503,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5084,7 +6515,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -5092,7 +6527,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5100,7 +6539,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5108,7 +6551,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5116,7 +6563,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -5124,7 +6575,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5132,7 +6587,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5140,7 +6599,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -5148,7 +6611,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5156,7 +6623,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -5164,7 +6635,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5180,7 +6655,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5188,7 +6667,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -5196,7 +6679,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5204,7 +6691,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5232,7 +6723,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5240,7 +6735,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -5248,7 +6747,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -5256,7 +6759,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5264,7 +6771,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -5291,7 +6802,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5299,7 +6814,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "smr": {
@@ -5307,7 +6826,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5315,7 +6838,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5323,7 +6850,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5331,7 +6862,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -5339,7 +6874,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5347,7 +6886,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5355,7 +6898,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5363,7 +6910,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -5371,7 +6922,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5379,7 +6934,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5387,7 +6946,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -5395,7 +6958,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5403,7 +6970,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aus": {
@@ -5411,7 +6982,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5433,7 +7008,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5441,7 +7020,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5449,7 +7032,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5457,7 +7044,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "hun": {
@@ -5465,7 +7056,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5473,7 +7068,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5482,7 +7081,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -5490,7 +7093,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -5498,7 +7105,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5514,7 +7125,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5522,7 +7137,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "smr": {
@@ -5530,7 +7149,11 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5538,7 +7161,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5546,7 +7173,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5554,7 +7185,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "det": {
@@ -5562,7 +7197,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5570,7 +7209,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5578,7 +7221,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5586,7 +7233,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "hun": {
@@ -5594,7 +7245,11 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5602,7 +7257,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5610,7 +7269,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -5618,7 +7281,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5626,7 +7293,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "aus": {
@@ -5634,7 +7305,11 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5662,7 +7337,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -5693,7 +7372,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -5701,7 +7384,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": null,
@@ -5725,7 +7412,11 @@
               "text": "DET",
               "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,

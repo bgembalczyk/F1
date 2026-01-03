@@ -2491,10 +2491,12 @@
             "text": "John Surtees",
             "url": "https://en.wikipedia.org/wiki/John_Surtees"
           },
-          "fastest_lap": {
-            "text": "Bruce McLaren",
-            "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
-          },
+          "fastest_lap": [
+            {
+              "text": "Bruce McLaren",
+              "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2530,10 +2532,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Bruce McLaren",
             "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
@@ -2569,10 +2573,12 @@
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2608,10 +2614,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Graham Hill",
-            "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-          },
+          "fastest_lap": [
+            {
+              "text": "Graham Hill",
+              "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+            }
+          ],
           "winning_driver": {
             "text": "Dan Gurney",
             "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
@@ -2647,10 +2655,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2686,10 +2696,12 @@
             "text": "Dan Gurney",
             "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
           },
-          "fastest_lap": {
-            "text": "Graham Hill",
-            "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-          },
+          "fastest_lap": [
+            {
+              "text": "Graham Hill",
+              "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2725,10 +2737,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Graham Hill",
-            "url": "https://en.wikipedia.org/wiki/Graham_Hill"
-          },
+          "fastest_lap": [
+            {
+              "text": "Graham Hill",
+              "url": "https://en.wikipedia.org/wiki/Graham_Hill"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2764,10 +2778,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2803,10 +2819,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -3438,7 +3456,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -3446,7 +3468,12 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "(6)",
+            "results": [
+              {
+                "position": 6,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3454,7 +3481,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -3463,7 +3494,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -3472,7 +3507,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3480,7 +3520,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3489,7 +3533,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3498,7 +3546,12 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "(2)",
+            "results": [
+              {
+                "position": 2,
+                "points_counted": false
+              }
+            ],
             "background": "Second place"
           },
           "rsa": {
@@ -3506,7 +3559,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "points": {
@@ -3525,7 +3582,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3533,7 +3594,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -3543,7 +3608,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3552,7 +3621,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3561,7 +3634,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3571,7 +3648,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3579,7 +3660,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3588,7 +3673,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3598,7 +3687,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -3616,7 +3709,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3625,7 +3722,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "bel": {
@@ -3633,7 +3734,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3641,7 +3746,12 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "(4)",
+            "results": [
+              {
+                "position": 4,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3649,7 +3759,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3657,7 +3771,12 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3665,7 +3784,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -3673,7 +3796,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "rsa": {
@@ -3681,7 +3808,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "points": {
@@ -3700,7 +3831,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3709,7 +3844,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3717,7 +3856,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3725,7 +3868,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3733,7 +3880,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -3741,7 +3892,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -3749,7 +3904,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3757,7 +3916,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3765,7 +3928,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 19.0
@@ -3781,7 +3948,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3789,7 +3960,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3797,7 +3972,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": {
@@ -3805,7 +3984,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "gbr": {
@@ -3813,7 +3996,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3821,7 +4008,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -3830,7 +4021,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3838,7 +4033,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": null,
@@ -3855,7 +4054,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3863,7 +4066,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -3871,7 +4078,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": null,
@@ -3880,7 +4091,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3888,7 +4103,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3896,7 +4115,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3904,7 +4127,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "rsa": null,
@@ -3921,7 +4148,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3929,7 +4160,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3937,7 +4172,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3945,7 +4184,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3953,7 +4196,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3961,7 +4208,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3969,7 +4220,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3977,7 +4232,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -3985,7 +4244,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 13.0
@@ -4001,7 +4264,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4009,7 +4276,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4017,7 +4288,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4025,7 +4300,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -4033,7 +4312,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4041,7 +4324,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4049,7 +4336,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -4057,7 +4348,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4065,7 +4360,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 10.0
@@ -4081,7 +4380,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4089,7 +4392,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4097,7 +4404,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4105,7 +4416,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4113,7 +4428,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4121,7 +4440,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -4130,7 +4453,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -4138,7 +4465,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 9.0
@@ -4154,7 +4485,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -4162,7 +4497,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4170,7 +4509,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4178,7 +4521,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4186,7 +4533,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4194,7 +4545,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4202,7 +4557,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4210,7 +4569,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4218,7 +4581,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 6.0
@@ -4234,7 +4601,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": null,
@@ -4243,7 +4614,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4253,7 +4628,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4261,7 +4640,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": null,
@@ -4280,7 +4663,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": null,
@@ -4291,7 +4678,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4299,7 +4690,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -4317,7 +4712,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4325,7 +4724,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "bel": {
@@ -4333,7 +4736,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": null,
@@ -4343,7 +4750,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4351,7 +4762,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -4370,7 +4785,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4378,7 +4797,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4389,7 +4812,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": null,
@@ -4407,7 +4834,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4415,7 +4846,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -4424,7 +4859,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4432,7 +4871,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4440,7 +4883,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4448,7 +4895,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -4456,7 +4907,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4473,7 +4928,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4481,7 +4940,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4489,7 +4952,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4497,7 +4964,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4505,7 +4976,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4514,7 +4989,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4522,7 +5001,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4530,7 +5013,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 2.0
@@ -4546,7 +5033,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4554,7 +5045,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4562,7 +5057,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4570,7 +5069,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4578,7 +5081,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4586,7 +5093,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4594,7 +5105,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4602,7 +5117,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4610,7 +5129,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -4626,7 +5149,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4634,7 +5161,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4642,7 +5173,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4650,7 +5185,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4658,7 +5197,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4667,7 +5210,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4675,7 +5222,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": null,
@@ -4700,7 +5251,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "points": 1.0
@@ -4717,7 +5272,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4725,7 +5284,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4733,7 +5296,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4742,7 +5309,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4750,7 +5321,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4758,7 +5333,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -4775,7 +5354,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4783,7 +5366,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -4792,7 +5379,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4800,7 +5391,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4808,7 +5403,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -4835,7 +5434,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4852,7 +5455,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -4863,7 +5470,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4871,7 +5482,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -4891,7 +5506,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4901,7 +5520,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4927,7 +5550,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -4952,7 +5579,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4969,7 +5600,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4977,7 +5612,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4985,7 +5624,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4994,7 +5637,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5002,7 +5649,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5027,7 +5678,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -5052,7 +5707,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5072,7 +5731,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5080,7 +5743,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5088,7 +5755,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5110,7 +5781,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5119,7 +5794,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -5139,7 +5818,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -5168,7 +5851,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -5190,7 +5877,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -5213,7 +5904,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5221,7 +5916,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -5229,7 +5928,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5247,7 +5950,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -5258,7 +5965,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5266,7 +5977,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -5285,7 +6000,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5293,7 +6012,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5302,7 +6025,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5310,7 +6037,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5318,7 +6049,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5326,7 +6061,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5334,7 +6073,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "rsa": {
@@ -5342,7 +6085,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5362,7 +6109,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5370,7 +6121,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -5378,7 +6133,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5400,7 +6159,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": {
@@ -5408,7 +6171,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5416,7 +6183,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5434,7 +6205,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -5463,7 +6238,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5487,7 +6266,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5513,7 +6296,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -5538,7 +6325,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5562,7 +6353,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5583,7 +6378,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -5608,7 +6407,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5632,7 +6435,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5656,7 +6463,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5680,7 +6491,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -5705,7 +6520,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "rsa": null,

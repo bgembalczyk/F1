@@ -2753,10 +2753,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Jarier",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Jarier",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2786,10 +2788,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2819,10 +2823,12 @@
             "text": "Clay Regazzoni",
             "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Clay Regazzoni",
             "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
@@ -2852,10 +2858,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Jochen Mass",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -2885,10 +2893,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2918,10 +2928,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -2951,10 +2963,12 @@
             "text": "Jody Scheckter",
             "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
           },
-          "fastest_lap": {
-            "text": "Mario Andretti",
-            "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            }
+          ],
           "winning_driver": {
             "text": "Jody Scheckter",
             "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
@@ -2984,10 +2998,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -3017,10 +3033,12 @@
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
           },
-          "fastest_lap": {
-            "text": "Niki Lauda",
-            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-          },
+          "fastest_lap": [
+            {
+              "text": "Niki Lauda",
+              "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+            }
+          ],
           "winning_driver": {
             "text": "Niki Lauda",
             "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
@@ -3050,10 +3068,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Jody Scheckter",
-            "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jody Scheckter",
+              "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -3083,10 +3103,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "James Hunt",
-            "url": "https://en.wikipedia.org/wiki/James_Hunt"
-          },
+          "fastest_lap": [
+            {
+              "text": "James Hunt",
+              "url": "https://en.wikipedia.org/wiki/James_Hunt"
+            }
+          ],
           "winning_driver": {
             "text": "John Watson",
             "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
@@ -3116,10 +3138,12 @@
             "text": "Ronnie Peterson",
             "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
           },
-          "fastest_lap": {
-            "text": "Clay Regazzoni",
-            "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
-          },
+          "fastest_lap": [
+            {
+              "text": "Clay Regazzoni",
+              "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -3149,10 +3173,12 @@
             "text": "Jacques Laffite",
             "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
           },
-          "fastest_lap": {
-            "text": "Ronnie Peterson",
-            "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
-          },
+          "fastest_lap": [
+            {
+              "text": "Ronnie Peterson",
+              "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
+            }
+          ],
           "winning_driver": {
             "text": "Ronnie Peterson",
             "url": "https://en.wikipedia.org/wiki/Ronnie_Peterson"
@@ -3182,10 +3208,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "Patrick Depailler",
-            "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
-          },
+          "fastest_lap": [
+            {
+              "text": "Patrick Depailler",
+              "url": "https://en.wikipedia.org/wiki/Patrick_Depailler"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -3215,10 +3243,12 @@
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
           },
-          "fastest_lap": {
-            "text": "James Hunt",
-            "url": "https://en.wikipedia.org/wiki/James_Hunt"
-          },
+          "fastest_lap": [
+            {
+              "text": "James Hunt",
+              "url": "https://en.wikipedia.org/wiki/James_Hunt"
+            }
+          ],
           "winning_driver": {
             "text": "James Hunt",
             "url": "https://en.wikipedia.org/wiki/James_Hunt"
@@ -3248,10 +3278,12 @@
             "text": "Mario Andretti",
             "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
           },
-          "fastest_lap": {
-            "text": "Jacques Laffite",
-            "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacques Laffite",
+              "url": "https://en.wikipedia.org/wiki/Jacques_Laffite"
+            }
+          ],
           "winning_driver": {
             "text": "Mario Andretti",
             "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
@@ -3355,7 +3387,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3364,7 +3400,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -3373,7 +3413,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3381,7 +3425,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3390,7 +3438,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3398,7 +3450,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -3406,7 +3462,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3414,12 +3474,20 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
           "": {
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "gbr": {
@@ -3427,7 +3495,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3436,7 +3508,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other points position"
@@ -3446,7 +3522,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ned": {
@@ -3454,7 +3534,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3462,7 +3546,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3471,7 +3559,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3481,7 +3573,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "jpn": {
@@ -3489,7 +3585,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 69,
+            "results": [
+              {
+                "position": 69
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3504,7 +3604,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "rsa": {
@@ -3512,7 +3616,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3521,7 +3629,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "esp": {
@@ -3529,7 +3641,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -3537,7 +3653,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3547,7 +3667,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3556,7 +3680,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3564,12 +3692,20 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
           "": {
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3579,7 +3715,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -3589,7 +3729,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3597,7 +3741,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3605,7 +3753,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -3613,7 +3765,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -3621,7 +3777,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 68,
+            "results": [
+              {
+                "position": 68
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3636,7 +3796,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3644,7 +3808,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usw": {
@@ -3652,7 +3820,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3660,7 +3832,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3668,7 +3844,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3676,7 +3856,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "swe": {
@@ -3684,7 +3868,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3693,11 +3881,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3705,7 +3901,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3714,7 +3914,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3722,7 +3926,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3730,7 +3938,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3738,7 +3950,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3746,7 +3962,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -3754,7 +3974,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -3762,7 +3986,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 49,
+            "results": [
+              {
+                "position": 49
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3777,7 +4005,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "rsa": {
@@ -3785,7 +4017,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -3793,7 +4029,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3801,7 +4041,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3809,7 +4053,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3817,7 +4065,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "swe": {
@@ -3825,7 +4077,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3833,11 +4089,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3845,7 +4109,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3853,7 +4121,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3861,7 +4133,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3869,7 +4145,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3877,7 +4157,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3886,7 +4170,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3894,7 +4182,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "jpn": {
@@ -3902,7 +4194,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 39,
+            "results": [
+              {
+                "position": 39
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3917,7 +4213,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -3925,7 +4225,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -3933,7 +4237,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3943,7 +4251,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3951,7 +4263,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -3959,7 +4275,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -3968,7 +4288,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3976,11 +4300,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "gbr": {
@@ -3988,7 +4320,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -3997,7 +4333,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -4006,7 +4346,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -4014,7 +4358,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4022,7 +4370,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4030,7 +4382,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "jpn": {
@@ -4038,7 +4394,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 31,
+            "results": [
+              {
+                "position": 31
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4053,7 +4413,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4061,7 +4425,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usw": {
@@ -4069,7 +4437,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4077,7 +4449,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4085,7 +4461,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -4094,7 +4474,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4103,11 +4487,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4115,7 +4507,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4123,7 +4519,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -4131,7 +4531,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -4139,7 +4543,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4147,7 +4555,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -4155,7 +4567,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4163,7 +4579,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -4172,7 +4592,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 22,
+            "results": [
+              {
+                "position": 22
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4187,7 +4611,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4195,7 +4623,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usw": {
@@ -4203,7 +4635,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4211,7 +4647,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4219,7 +4659,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4227,7 +4671,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -4235,7 +4683,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4243,11 +4695,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "": {
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -4255,7 +4715,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4263,7 +4727,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "aut": {
@@ -4271,7 +4739,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4279,7 +4751,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4287,7 +4763,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4295,7 +4775,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -4303,7 +4787,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -4311,7 +4799,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4326,7 +4818,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4334,7 +4830,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -4342,7 +4842,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -4350,7 +4854,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4358,7 +4866,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -4366,7 +4878,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -4374,7 +4890,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4382,11 +4902,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "gbr": {
@@ -4394,7 +4922,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4402,7 +4934,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "aut": {
@@ -4410,7 +4946,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4418,7 +4958,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -4427,7 +4971,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4435,7 +4983,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4443,7 +4995,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -4452,7 +5008,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4467,7 +5027,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -4475,7 +5039,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usw": {
@@ -4483,7 +5051,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -4491,7 +5063,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4500,7 +5076,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4508,7 +5088,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "swe": {
@@ -4516,7 +5100,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4524,11 +5112,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4536,7 +5132,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -4544,7 +5144,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4552,7 +5156,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4560,7 +5168,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4568,7 +5180,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4576,7 +5192,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -4584,7 +5204,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -4592,7 +5216,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4608,7 +5236,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -4616,7 +5248,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4624,7 +5260,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -4632,7 +5272,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4640,7 +5284,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4648,7 +5296,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4656,11 +5308,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4668,7 +5328,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4676,7 +5340,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "aut": {
@@ -4684,7 +5352,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4692,7 +5364,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4700,7 +5376,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4708,7 +5388,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4716,7 +5400,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "jpn": {
@@ -4724,7 +5412,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4739,7 +5431,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4747,7 +5443,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -4755,7 +5455,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4763,7 +5467,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4771,7 +5479,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4779,7 +5491,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -4787,7 +5503,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4795,11 +5515,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4807,7 +5535,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4815,7 +5547,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -4823,7 +5559,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4832,7 +5572,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -4841,7 +5585,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4849,7 +5597,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4857,7 +5609,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -4865,7 +5621,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4880,7 +5640,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "rsa": {
@@ -4888,7 +5652,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -4896,7 +5664,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4904,7 +5676,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4912,7 +5688,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4920,7 +5700,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -4928,7 +5712,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4936,11 +5724,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4948,7 +5744,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4956,7 +5756,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4964,7 +5768,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4972,7 +5780,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4980,7 +5792,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4988,7 +5804,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4996,7 +5816,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -5004,7 +5828,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5019,7 +5847,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -5027,7 +5859,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -5035,7 +5871,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5043,7 +5883,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5051,7 +5895,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5059,7 +5907,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "swe": {
@@ -5067,7 +5919,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5075,11 +5931,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5087,7 +5951,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5095,7 +5963,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5103,7 +5975,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5111,7 +5987,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5119,7 +5999,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5127,7 +6011,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -5135,7 +6023,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -5143,7 +6035,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5158,7 +6054,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5166,7 +6066,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -5174,7 +6078,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5182,7 +6090,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -5190,7 +6102,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5198,7 +6114,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -5206,7 +6126,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5214,11 +6138,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5226,7 +6158,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -5234,7 +6170,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5242,7 +6182,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5250,7 +6194,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5258,7 +6206,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -5266,7 +6218,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5274,7 +6230,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -5282,7 +6242,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5299,7 +6263,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5307,7 +6275,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5315,7 +6287,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -5323,7 +6299,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5331,7 +6311,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5339,11 +6323,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -5351,7 +6343,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5359,7 +6355,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5367,7 +6367,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5375,7 +6379,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5383,7 +6391,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -5391,7 +6403,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5399,7 +6415,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "jpn": {
@@ -5407,7 +6427,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5422,7 +6446,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5430,7 +6458,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -5438,7 +6470,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5446,7 +6482,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -5454,7 +6494,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5462,7 +6506,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5470,7 +6518,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5478,11 +6530,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5490,7 +6550,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5498,7 +6562,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5506,7 +6574,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5514,7 +6586,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -5525,7 +6601,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5540,7 +6620,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -5548,7 +6632,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -5556,7 +6644,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -5564,7 +6656,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5572,7 +6668,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "mon": {
@@ -5580,7 +6680,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "swe": {
@@ -5588,7 +6692,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5596,11 +6704,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -5608,7 +6724,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -5616,7 +6736,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5624,7 +6748,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5632,7 +6760,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5640,7 +6772,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5648,7 +6784,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5656,7 +6796,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -5664,7 +6808,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5680,7 +6828,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -5688,7 +6840,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5696,7 +6852,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -5704,7 +6864,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5712,7 +6876,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -5720,12 +6888,20 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5733,7 +6909,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5744,7 +6924,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "can": null,
@@ -5754,7 +6938,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5769,7 +6957,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -5777,7 +6969,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -5785,7 +6981,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5793,7 +6993,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -5801,7 +7005,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5809,7 +7017,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "swe": {
@@ -5817,7 +7029,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5825,11 +7041,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5837,7 +7061,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5845,7 +7073,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -5853,7 +7085,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -5861,7 +7097,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5869,7 +7109,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -5877,7 +7121,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5885,7 +7133,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -5893,7 +7145,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5917,7 +7173,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
@@ -5926,7 +7186,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -5934,7 +7198,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5945,7 +7213,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5961,7 +7233,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -5969,7 +7245,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -5977,7 +7257,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -5985,7 +7269,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5993,7 +7281,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "swe": {
@@ -6001,7 +7293,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -6009,11 +7305,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -6021,7 +7325,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -6029,7 +7337,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -6037,7 +7349,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -6045,7 +7361,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6053,7 +7373,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "can": {
@@ -6061,7 +7385,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -6069,7 +7397,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "jpn": {
@@ -6077,7 +7409,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6092,7 +7428,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -6101,7 +7441,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": {
@@ -6109,7 +7453,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -6117,7 +7465,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -6125,7 +7477,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -6133,7 +7489,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -6141,7 +7501,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -6149,11 +7513,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -6161,7 +7533,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -6169,7 +7545,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -6177,7 +7557,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -6185,7 +7569,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6193,7 +7581,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -6201,7 +7593,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -6209,7 +7605,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "jpn": {
@@ -6217,7 +7617,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6232,7 +7636,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -6240,7 +7648,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -6248,7 +7660,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -6256,7 +7672,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -6264,7 +7684,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "mon": {
@@ -6272,7 +7696,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "swe": null,
@@ -6281,11 +7709,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": null,
@@ -6295,7 +7731,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -6303,7 +7743,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6311,7 +7755,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -6319,7 +7767,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -6328,7 +7780,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6346,7 +7802,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -6354,7 +7814,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -6362,7 +7826,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "swe": {
@@ -6370,7 +7838,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -6382,7 +7854,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -6390,7 +7866,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -6398,7 +7878,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -6406,7 +7890,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -6414,7 +7902,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -6422,7 +7914,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6442,7 +7938,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "swe": null,
@@ -6451,11 +7951,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -6463,7 +7971,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ger": {
@@ -6471,7 +7983,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -6479,7 +7995,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -6487,7 +8007,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6495,7 +8019,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -6503,7 +8031,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -6512,7 +8044,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6529,7 +8065,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -6537,7 +8077,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -6545,7 +8089,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -6553,7 +8101,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "swe": {
@@ -6561,7 +8113,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -6569,11 +8125,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -6581,7 +8145,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -6589,7 +8157,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -6597,7 +8169,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -6605,7 +8181,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -6613,7 +8193,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -6621,7 +8205,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -6629,7 +8217,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -6637,7 +8229,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6652,7 +8248,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -6675,7 +8275,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6705,7 +8309,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "jpn": {
@@ -6713,7 +8321,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6729,7 +8341,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -6737,7 +8353,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -6745,7 +8365,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -6753,7 +8377,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -6761,7 +8389,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "swe": {
@@ -6769,7 +8401,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -6777,7 +8413,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -6793,7 +8433,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6809,7 +8453,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -6817,7 +8465,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -6825,7 +8477,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -6833,7 +8489,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -6842,7 +8502,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -6850,11 +8514,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -6862,7 +8534,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -6870,7 +8546,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": null,
@@ -6879,7 +8559,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -6887,7 +8571,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -6895,7 +8583,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -6904,7 +8596,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6920,7 +8616,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usw": {
@@ -6928,7 +8628,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": null,
@@ -6937,7 +8641,11 @@
           "swe": null,
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -6952,7 +8660,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -6976,7 +8688,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -6984,7 +8700,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -6992,7 +8712,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -7000,7 +8724,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -7011,7 +8739,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7026,7 +8758,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -7035,7 +8771,11 @@
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "esp": {
@@ -7043,7 +8783,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -7054,7 +8798,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "": null,
@@ -7070,7 +8818,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7100,7 +8852,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "jpn": {
@@ -7108,7 +8864,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7126,7 +8886,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -7134,7 +8898,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -7143,7 +8911,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -7151,7 +8923,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "": null,
@@ -7161,7 +8937,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": null,
@@ -7174,7 +8954,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7189,7 +8973,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": null,
@@ -7200,7 +8988,11 @@
           "swe": null,
           "fra": null,
           "": {
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": {
@@ -7208,7 +9000,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ger": {
@@ -7216,7 +9012,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": null,
@@ -7229,7 +9029,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7258,7 +9062,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -7267,7 +9075,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7296,7 +9108,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -7305,7 +9121,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7324,7 +9144,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "mon": null,
@@ -7334,11 +9158,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -7346,7 +9178,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -7356,7 +9192,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -7364,7 +9204,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -7374,7 +9218,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7393,7 +9241,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -7403,7 +9255,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -7419,7 +9275,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7444,7 +9304,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": null,
@@ -7456,7 +9320,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -7464,7 +9332,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7479,7 +9351,11 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -7502,7 +9378,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7518,7 +9398,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usw": null,
@@ -7540,7 +9424,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7566,7 +9454,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7578,7 +9470,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7604,7 +9500,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -7616,7 +9516,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7646,7 +9550,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "jpn": {
@@ -7654,7 +9562,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7681,7 +9593,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": {
@@ -7689,7 +9605,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "can": {
@@ -7697,7 +9617,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": null,
@@ -7706,7 +9630,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7736,7 +9664,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "jpn": {
@@ -7744,7 +9676,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7762,7 +9698,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -7782,7 +9722,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7800,7 +9744,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -7820,7 +9768,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7841,7 +9793,11 @@
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "fra": null,
@@ -7858,7 +9814,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7880,7 +9840,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "": null,
@@ -7896,7 +9860,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7915,7 +9883,11 @@
           "swe": null,
           "fra": null,
           "": {
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": null,
@@ -7930,7 +9902,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7949,7 +9925,11 @@
           "swe": null,
           "fra": null,
           "": {
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "gbr": null,
@@ -7964,7 +9944,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -7994,7 +9978,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "jpn": {
@@ -8002,7 +9990,11 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -8017,115 +10009,183 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1976_Brazilian_Grand_Prix"
             },
-            "position": "BRA"
+            "results": [
+              {
+                "position": "BRA"
+              }
+            ]
           },
           "rsa": {
             "round": {
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
             },
-            "position": "RSA"
+            "results": [
+              {
+                "position": "RSA"
+              }
+            ]
           },
           "usw": {
             "round": {
               "text": "USW",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             },
-            "position": "USW"
+            "results": [
+              {
+                "position": "USW"
+              }
+            ]
           },
           "esp": {
             "round": {
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
             },
-            "position": "ESP"
+            "results": [
+              {
+                "position": "ESP"
+              }
+            ]
           },
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1976_Belgian_Grand_Prix"
             },
-            "position": "BEL"
+            "results": [
+              {
+                "position": "BEL"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
             },
-            "position": "MON"
+            "results": [
+              {
+                "position": "MON"
+              }
+            ]
           },
           "swe": {
             "round": {
               "text": "SWE",
               "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
             },
-            "position": "SWE"
+            "results": [
+              {
+                "position": "SWE"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
             },
-            "position": "FRA"
+            "results": [
+              {
+                "position": "FRA"
+              }
+            ]
           },
           "": {
-            "position": "GBR"
+            "results": [
+              {
+                "position": "GBR"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             },
-            "position": "GER"
+            "results": [
+              {
+                "position": "GER"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
             },
-            "position": "AUT"
+            "results": [
+              {
+                "position": "AUT"
+              }
+            ]
           },
           "aut": {
             "round": {
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             },
-            "position": "NED"
+            "results": [
+              {
+                "position": "NED"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             },
-            "position": "ITA"
+            "results": [
+              {
+                "position": "ITA"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1976_Italian_Grand_Prix"
             },
-            "position": "CAN"
+            "results": [
+              {
+                "position": "CAN"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1976_Canadian_Grand_Prix"
             },
-            "position": "USA"
+            "results": [
+              {
+                "position": "USA"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
             },
-            "position": "JPN"
+            "results": [
+              {
+                "position": "JPN"
+              }
+            ]
           },
           "jpn": {
             "round": {
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
             },
-            "position": "Pts"
+            "results": [
+              {
+                "position": "Pts"
+              }
+            ]
           }
         }
       ],

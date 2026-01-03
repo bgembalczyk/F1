@@ -2088,10 +2088,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Mario Andretti",
-            "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            }
+          ],
           "winning_driver": {
             "text": "Mario Andretti",
             "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
@@ -2127,10 +2129,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2166,10 +2170,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2205,10 +2211,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
@@ -2244,10 +2252,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2283,10 +2293,12 @@
             "text": "Clay Regazzoni",
             "url": "https://en.wikipedia.org/wiki/Clay_Regazzoni"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2322,10 +2334,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "François Cevert",
-            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Cevert"
-          },
+          "fastest_lap": [
+            {
+              "text": "François Cevert",
+              "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Cevert"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2361,10 +2375,12 @@
             "text": "Jo Siffert",
             "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
           },
-          "fastest_lap": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jo Siffert",
+              "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+            }
+          ],
           "winning_driver": {
             "text": "Jo Siffert",
             "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
@@ -2400,10 +2416,12 @@
             "text": "Chris Amon",
             "url": "https://en.wikipedia.org/wiki/Chris_Amon"
           },
-          "fastest_lap": {
-            "text": "Henri Pescarolo",
-            "url": "https://en.wikipedia.org/wiki/Henri_Pescarolo"
-          },
+          "fastest_lap": [
+            {
+              "text": "Henri Pescarolo",
+              "url": "https://en.wikipedia.org/wiki/Henri_Pescarolo"
+            }
+          ],
           "winning_driver": {
             "text": "Peter Gethin",
             "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
@@ -2439,10 +2457,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Denny Hulme",
-            "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-          },
+          "fastest_lap": [
+            {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2478,10 +2498,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "François Cevert",
             "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Cevert"
@@ -2765,7 +2787,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2774,7 +2800,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2782,7 +2812,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2792,7 +2826,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -2800,7 +2838,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2810,7 +2852,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2819,7 +2865,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2828,7 +2878,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2836,7 +2890,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -2844,7 +2902,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2853,7 +2915,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -2870,7 +2936,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -2878,7 +2948,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -2886,7 +2960,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": {
@@ -2894,7 +2972,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -2902,7 +2984,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -2910,7 +2996,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -2918,7 +3008,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -2926,7 +3020,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -2934,7 +3032,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "can": {
@@ -2942,7 +3044,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -2950,7 +3056,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 33.0
@@ -2966,7 +3076,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2974,7 +3088,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -2982,7 +3100,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -2990,7 +3112,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2998,7 +3124,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3006,7 +3136,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3014,7 +3148,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3023,7 +3161,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3031,7 +3173,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -3039,7 +3185,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3047,7 +3197,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "points": 26.0
@@ -3063,7 +3217,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3071,7 +3229,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Second place"
@@ -3081,7 +3243,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3089,7 +3255,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3099,7 +3269,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3107,7 +3281,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3115,7 +3293,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3123,7 +3305,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3131,7 +3317,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3139,7 +3329,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3147,7 +3341,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3164,7 +3362,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3172,7 +3374,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3180,7 +3386,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3188,7 +3398,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3196,7 +3410,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3204,7 +3422,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3212,7 +3434,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "aut": {
@@ -3220,7 +3446,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3230,7 +3460,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3238,7 +3472,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3246,7 +3484,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "points": 19.0
@@ -3262,7 +3504,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3270,7 +3516,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3278,7 +3528,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": null,
@@ -3287,7 +3541,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -3295,7 +3553,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3303,7 +3565,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3311,7 +3577,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -3319,7 +3589,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3327,7 +3601,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3335,7 +3613,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 16.0
@@ -3351,7 +3633,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3359,7 +3645,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3367,7 +3657,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3375,7 +3669,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3383,7 +3681,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3391,7 +3693,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3400,7 +3706,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "aut": {
@@ -3408,7 +3718,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3416,7 +3730,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3424,7 +3742,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3432,7 +3754,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "points": 13.0
@@ -3448,7 +3774,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3457,7 +3787,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3465,7 +3799,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -3473,7 +3811,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -3483,7 +3825,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "aut": null,
@@ -3493,7 +3839,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3501,7 +3851,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "points": 12.0
         },
@@ -3516,7 +3870,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3524,7 +3882,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3532,7 +3894,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3540,7 +3906,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3548,7 +3918,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3556,7 +3930,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3564,7 +3942,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3572,7 +3954,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3580,7 +3966,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "can": {
@@ -3588,7 +3978,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3596,7 +3990,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 9.0
@@ -3612,7 +4010,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3620,7 +4022,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3628,7 +4034,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3636,7 +4046,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3644,7 +4058,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -3666,7 +4084,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3674,7 +4096,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3682,7 +4108,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3690,7 +4120,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3698,7 +4132,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3706,7 +4144,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3714,7 +4156,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": null,
@@ -3723,7 +4169,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -3732,7 +4182,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3740,7 +4194,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 9.0
@@ -3756,7 +4214,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3764,7 +4226,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3772,7 +4238,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3780,7 +4250,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "fra": {
@@ -3788,7 +4262,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3796,7 +4274,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3804,7 +4286,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -3812,7 +4298,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": null,
@@ -3821,7 +4311,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3829,7 +4323,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 9.0
@@ -3845,7 +4343,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3853,7 +4355,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3861,7 +4367,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3869,7 +4379,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3877,7 +4391,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3885,7 +4403,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3893,7 +4415,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3901,7 +4427,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -3910,7 +4440,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -3919,7 +4453,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 9.0
@@ -3936,7 +4474,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3944,7 +4486,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3952,7 +4498,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3960,7 +4510,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3968,7 +4522,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3976,7 +4534,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3984,7 +4546,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -3992,7 +4558,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4000,7 +4570,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4008,7 +4582,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 5.0
@@ -4024,7 +4602,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4032,7 +4614,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4040,7 +4626,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -4048,7 +4638,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4056,7 +4650,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4064,7 +4662,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4072,7 +4674,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4080,7 +4686,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4088,7 +4698,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4096,14 +4710,22 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 5.0
@@ -4128,7 +4750,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -4136,7 +4762,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "points": 4.0
         },
@@ -4151,7 +4781,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4159,7 +4793,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4167,7 +4805,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4175,7 +4817,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4183,7 +4829,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4191,7 +4841,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4199,7 +4853,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4207,7 +4865,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4215,7 +4877,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4224,14 +4890,22 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 4.0
@@ -4255,7 +4929,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": null,
@@ -4264,7 +4942,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 3.0
@@ -4280,7 +4962,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4288,7 +4974,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4296,7 +4986,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4304,7 +4998,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4312,7 +5010,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4320,7 +5022,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4328,7 +5034,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4336,7 +5046,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4344,7 +5058,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4352,7 +5070,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4360,7 +5082,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 3.0
@@ -4376,7 +5102,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4384,7 +5114,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4392,7 +5126,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4400,7 +5138,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "fra": {
@@ -4408,7 +5150,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4416,7 +5162,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4424,7 +5174,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4432,7 +5186,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4440,14 +5198,22 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -4464,7 +5230,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4472,7 +5242,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4480,7 +5254,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4488,7 +5266,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4496,7 +5278,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4504,7 +5290,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4512,7 +5302,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4520,7 +5314,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4528,7 +5326,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4536,7 +5338,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4544,7 +5350,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 2.0
@@ -4561,7 +5371,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4569,7 +5383,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4577,7 +5395,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4585,7 +5407,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4593,7 +5419,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4604,7 +5434,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4612,7 +5446,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 1.0
@@ -4633,7 +5471,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4642,7 +5484,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4650,7 +5496,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -4668,7 +5518,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -4697,7 +5551,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4711,7 +5569,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "points": 0.0
         },
@@ -4726,7 +5588,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4739,7 +5605,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "aut": {
@@ -4747,14 +5617,22 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -4763,7 +5641,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4789,7 +5671,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4807,7 +5693,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -4815,7 +5705,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4823,14 +5717,22 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4838,7 +5740,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4846,7 +5752,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4854,7 +5764,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4862,7 +5776,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4870,7 +5788,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4892,14 +5814,22 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "aut": {
             "round": {
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4907,7 +5837,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4915,7 +5849,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4923,7 +5861,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4939,7 +5881,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4947,7 +5893,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -4957,7 +5907,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4965,7 +5919,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4973,7 +5931,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": null,
@@ -4982,7 +5944,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -4991,7 +5957,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5013,7 +5983,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": null,
@@ -5037,7 +6011,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -5069,7 +6047,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5094,7 +6076,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -5116,7 +6102,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5124,7 +6114,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1971_German_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "aut": {
@@ -5132,7 +6126,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5140,7 +6138,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5148,7 +6150,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": null,
@@ -5167,7 +6173,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -5175,7 +6185,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -5188,7 +6202,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5196,7 +6214,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5221,7 +6243,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5229,7 +6255,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5249,7 +6279,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -5279,7 +6313,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -5297,7 +6335,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -5305,7 +6347,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1971_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5313,7 +6359,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1971_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -5321,7 +6371,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5329,7 +6383,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1971_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5351,7 +6409,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5361,7 +6423,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "fra": null,
           "gbr": {
@@ -5369,7 +6435,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5399,7 +6469,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1971_Canadian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "usa": {
@@ -5407,7 +6481,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5423,7 +6501,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5449,7 +6531,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5478,7 +6564,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1971_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -5506,7 +6596,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1971_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5534,7 +6628,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1971_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5561,7 +6659,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1971_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -5589,7 +6691,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5615,7 +6721,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1971_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0

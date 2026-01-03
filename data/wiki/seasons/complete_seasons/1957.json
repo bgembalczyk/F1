@@ -1877,10 +1877,12 @@
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -1910,10 +1912,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -1943,10 +1947,12 @@
             "text": "Pat O'Connor",
             "url": "https://en.wikipedia.org/wiki/Pat_O%27Connor_(racing_driver)"
           },
-          "fastest_lap": {
-            "text": "Jim Rathmann",
-            "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Rathmann",
+              "url": "https://en.wikipedia.org/wiki/Jim_Rathmann_(race_car_driver)"
+            }
+          ],
           "winning_driver": {
             "text": "Sam Hanks",
             "url": "https://en.wikipedia.org/wiki/Sam_Hanks"
@@ -1976,10 +1982,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Luigi Musso",
-            "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
-          },
+          "fastest_lap": [
+            {
+              "text": "Luigi Musso",
+              "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -2009,10 +2017,12 @@
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -2042,10 +2052,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
@@ -2075,10 +2087,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -2108,10 +2122,12 @@
             "text": "Stuart Lewis-Evans",
             "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
           },
-          "fastest_lap": {
-            "text": "Tony Brooks",
-            "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
-          },
+          "fastest_lap": [
+            {
+              "text": "Tony Brooks",
+              "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -2418,7 +2434,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2426,7 +2446,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2437,7 +2461,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2446,7 +2474,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2454,7 +2486,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2464,7 +2500,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2473,7 +2513,12 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "(2)",
+            "results": [
+              {
+                "position": 2,
+                "points_counted": false
+              }
+            ],
             "background": "Second place"
           },
           "points": {
@@ -2492,7 +2537,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other classified position"
@@ -2502,7 +2551,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -2512,9 +2565,24 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "1† / Ret†",
+            "results": [
+              {
+                "position": 1,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2,
             "background": "Winner"
           },
           "ger": {
@@ -2522,7 +2590,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "pes": {
@@ -2530,7 +2602,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2539,7 +2615,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "points": 25.0
@@ -2555,7 +2635,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -2565,7 +2649,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2574,7 +2662,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -2582,7 +2674,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "pes": {
@@ -2590,7 +2686,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2598,7 +2698,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 16.0
@@ -2614,7 +2718,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -2622,7 +2730,17 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret† / Ret",
+            "results": [
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -2631,7 +2749,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -2639,7 +2761,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -2647,7 +2773,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "pes": null,
@@ -2656,7 +2786,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 13.0
@@ -2673,7 +2807,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "500": null,
@@ -2683,7 +2821,20 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "1† / Ret†",
+            "results": [
+              {
+                "position": 1,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "background": "Winner"
           },
           "ger": {
@@ -2691,7 +2842,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -2699,7 +2854,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2707,7 +2866,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -2725,7 +2888,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "500": null,
@@ -2736,7 +2903,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -2744,7 +2915,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -2752,7 +2927,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 10.0
@@ -2768,7 +2947,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -2776,7 +2959,17 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret† / Ret",
+            "results": [
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -2785,7 +2978,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -2793,7 +2990,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2801,7 +3002,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -2809,7 +3014,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -2817,7 +3026,17 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "5† / Ret",
+            "results": [
+              {
+                "position": 5,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Other points position"
           },
           "points": 10.0
@@ -2835,7 +3054,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "fra": null,
@@ -2856,7 +3079,17 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "6† / Ret",
+            "results": [
+              {
+                "position": 6,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -2864,7 +3097,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -2873,7 +3110,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -2881,7 +3122,21 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret / 4†‡",
+            "results": [
+              {
+                "position": "Ret"
+              },
+              {
+                "position": 4,
+                "points_eligible": false,
+                "notes": [
+                  "no_points_awarded"
+                ],
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2889,7 +3144,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "pes": null,
@@ -2898,7 +3157,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 8.0
@@ -2916,7 +3179,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2938,7 +3205,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": null,
@@ -2948,7 +3219,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -2956,7 +3231,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2964,7 +3243,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -2972,7 +3255,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2980,7 +3267,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 6.0
@@ -2997,7 +3288,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3006,7 +3301,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3014,7 +3313,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3022,7 +3325,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": {
@@ -3030,7 +3337,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3038,7 +3349,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3056,7 +3371,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3065,7 +3384,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3073,8 +3396,13 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 4,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 4,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
@@ -3093,8 +3421,13 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 6,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 6,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3102,7 +3435,13 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret†",
+            "results": [
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3115,7 +3454,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 4.0
@@ -3131,7 +3474,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3139,7 +3486,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3148,7 +3499,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3156,7 +3511,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -3177,7 +3536,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": null,
@@ -3200,7 +3563,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": null,
@@ -3222,7 +3589,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "500": null,
@@ -3231,7 +3602,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3239,7 +3614,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3247,8 +3626,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "pes": {
@@ -3256,7 +3648,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -3275,7 +3671,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": null,
@@ -3297,7 +3697,13 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret†",
+            "results": [
+              {
+                "position": "Ret",
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3308,7 +3714,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -3316,7 +3726,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3324,8 +3738,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 5,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 5,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "points": 1.0
@@ -3341,8 +3760,13 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 5,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 5,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "mon": null,
@@ -3365,8 +3789,13 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 5,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 5,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other points position"
           },
           "mon": null,
@@ -3390,7 +3819,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3399,7 +3832,17 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "7† / Ret",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true,
+                "points_share_count": 2
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3407,7 +3850,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3415,8 +3862,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "pes": {
@@ -3424,7 +3884,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -3443,7 +3907,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3468,7 +3936,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -3487,8 +3959,13 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 6,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 6,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -3511,7 +3988,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -3522,7 +4003,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -3531,7 +4016,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3539,7 +4028,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -3557,7 +4050,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3581,8 +4078,13 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": 7,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 7,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -3603,7 +4105,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3613,7 +4119,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -3634,7 +4144,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true,
             "background": "Other classified position"
           },
@@ -3661,7 +4175,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": {
@@ -3669,7 +4187,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3677,7 +4199,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -3693,7 +4219,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -3718,7 +4248,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3739,7 +4273,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3747,7 +4285,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "500": null,
@@ -3759,7 +4301,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3767,7 +4313,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -3784,7 +4334,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3793,7 +4347,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3801,7 +4359,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": {
@@ -3809,7 +4371,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": {
@@ -3817,7 +4383,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3825,7 +4395,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -3843,7 +4417,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3869,7 +4447,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": {
@@ -3877,7 +4459,11 @@
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3885,7 +4471,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -3903,7 +4493,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3931,8 +4525,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 11,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 11,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -3949,7 +4548,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "500": null,
@@ -3962,8 +4565,13 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": 11,
-            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
+            "results": [
+              {
+                "position": 11,
+                "shared_drive": true,
+                "points_shared": true
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -3981,7 +4589,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4004,7 +4616,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4027,7 +4643,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4050,7 +4670,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4073,7 +4697,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4096,7 +4724,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4118,7 +4750,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4127,7 +4763,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4148,7 +4788,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "500": null,
@@ -4159,7 +4803,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": null,
@@ -4178,7 +4826,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "500": null,
@@ -4188,7 +4840,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4207,7 +4863,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -4232,7 +4892,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4255,7 +4919,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4278,7 +4946,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4301,7 +4973,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4324,7 +5000,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4347,7 +5027,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4370,7 +5054,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4393,7 +5081,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4416,7 +5108,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4439,7 +5135,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4462,7 +5162,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4485,7 +5189,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4508,7 +5216,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4531,7 +5243,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4554,7 +5270,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4577,7 +5297,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4601,7 +5325,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4625,7 +5353,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4644,56 +5376,88 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1957_Monaco_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "pes": {
             "round": {
               "text": "PES",
               "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "points": null
         },
@@ -4713,7 +5477,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": null,
@@ -4736,7 +5504,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": null,
@@ -4759,7 +5531,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": null,
@@ -4782,7 +5558,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "pes": null,
@@ -4805,7 +5585,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": null,
@@ -4828,7 +5612,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": null,
@@ -4851,7 +5639,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1957_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "pes": null,

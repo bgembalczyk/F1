@@ -2680,10 +2680,12 @@
             "text": "Juan Manuel Fangio",
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
-          "fastest_lap": {
-            "text": "Juan Manuel Fangio",
-            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
-          },
+          "fastest_lap": [
+            {
+              "text": "Juan Manuel Fangio",
+              "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -2719,10 +2721,12 @@
             "text": "Tony Brooks",
             "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
           },
-          "fastest_lap": {
-            "text": "Mike Hawthorn",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hawthorn",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+            }
+          ],
           "winning_driver": {
             "text": "Maurice Trintignant",
             "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
@@ -2758,10 +2762,12 @@
             "text": "Stuart Lewis-Evans",
             "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -2797,10 +2803,12 @@
             "text": "Dick Rathmann",
             "url": "https://en.wikipedia.org/wiki/Dick_Rathmann"
           },
-          "fastest_lap": {
-            "text": "Tony Bettenhausen",
-            "url": "https://en.wikipedia.org/wiki/Tony_Bettenhausen"
-          },
+          "fastest_lap": [
+            {
+              "text": "Tony Bettenhausen",
+              "url": "https://en.wikipedia.org/wiki/Tony_Bettenhausen"
+            }
+          ],
           "winning_driver": {
             "text": "Jimmy Bryan",
             "url": "https://en.wikipedia.org/wiki/Jimmy_Bryan"
@@ -2836,10 +2844,12 @@
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
-          "fastest_lap": {
-            "text": "Mike Hawthorn",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hawthorn",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+            }
+          ],
           "winning_driver": {
             "text": "Tony Brooks",
             "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
@@ -2875,10 +2885,12 @@
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
-          "fastest_lap": {
-            "text": "Mike Hawthorn",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hawthorn",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+            }
+          ],
           "winning_driver": {
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
@@ -2914,10 +2926,12 @@
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
-          "fastest_lap": {
-            "text": "Mike Hawthorn",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hawthorn",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+            }
+          ],
           "winning_driver": {
             "text": "Peter Collins",
             "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
@@ -2953,10 +2967,12 @@
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Tony Brooks",
             "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
@@ -2992,10 +3008,12 @@
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
-          "fastest_lap": {
-            "text": "Mike Hawthorn",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hawthorn",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -3031,10 +3049,12 @@
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
-          "fastest_lap": {
-            "text": "Phil Hill",
-            "url": "https://en.wikipedia.org/wiki/Phil_Hill"
-          },
+          "fastest_lap": [
+            {
+              "text": "Phil Hill",
+              "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+            }
+          ],
           "winning_driver": {
             "text": "Tony Brooks",
             "url": "https://en.wikipedia.org/wiki/Tony_Brooks_(racing_driver)"
@@ -3070,10 +3090,12 @@
             "text": "Mike Hawthorn",
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
-          "fastest_lap": {
-            "text": "Stirling Moss",
-            "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-          },
+          "fastest_lap": [
+            {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            }
+          ],
           "winning_driver": {
             "text": "Stirling Moss",
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
@@ -3270,7 +3292,12 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": "(3)",
+            "results": [
+              {
+                "position": 3,
+                "points_counted": false
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3278,7 +3305,12 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "(Ret )",
+            "results": [
+              {
+                "position": "Ret",
+                "points_counted": false
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3287,7 +3319,12 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "(5)",
+            "results": [
+              {
+                "position": 5,
+                "points_counted": false
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3296,7 +3333,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Second place"
@@ -3306,7 +3347,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3316,7 +3361,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3325,7 +3374,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3334,7 +3387,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3343,7 +3400,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mor": {
@@ -3351,7 +3412,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -3371,7 +3436,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -3379,7 +3448,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3387,7 +3460,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3397,7 +3474,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3405,7 +3486,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3413,7 +3498,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3422,7 +3511,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3431,7 +3524,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -3440,7 +3537,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3449,7 +3550,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3467,7 +3572,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3476,7 +3585,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3485,7 +3598,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "fra": {
@@ -3493,7 +3610,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3501,7 +3622,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3509,7 +3634,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "por": {
@@ -3517,7 +3646,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3525,7 +3658,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mor": {
@@ -3533,7 +3670,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 24.0
@@ -3550,7 +3691,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3558,7 +3703,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "500": null,
@@ -3567,7 +3716,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3575,7 +3728,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3583,7 +3740,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3591,7 +3752,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "por": {
@@ -3599,7 +3764,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3607,7 +3776,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mor": {
@@ -3615,7 +3788,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 15.0
@@ -3631,7 +3808,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3639,7 +3820,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3647,7 +3832,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -3656,7 +3845,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3664,7 +3857,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3672,7 +3869,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ger": {
@@ -3680,7 +3881,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -3699,7 +3904,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3707,7 +3916,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3715,7 +3928,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "500": null,
@@ -3724,7 +3941,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3732,7 +3953,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3740,7 +3965,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3748,7 +3977,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -3756,7 +3989,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3764,7 +4001,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -3772,7 +4013,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "points": 14.0
@@ -3789,7 +4034,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ned": {
@@ -3797,7 +4046,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3806,7 +4059,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3814,7 +4071,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3822,7 +4083,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3830,7 +4095,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "por": {
@@ -3838,7 +4107,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3846,7 +4119,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -3854,7 +4131,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 12.0
@@ -3870,7 +4151,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -3878,7 +4163,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": {
@@ -3886,7 +4175,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -3895,7 +4188,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3903,7 +4200,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -3925,7 +4226,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3933,7 +4238,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3943,7 +4252,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3951,7 +4264,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3959,7 +4276,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
@@ -3968,7 +4289,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -3976,7 +4301,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -3984,7 +4313,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 11.0
@@ -4005,7 +4338,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -4014,8 +4351,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 9,
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": 9,
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -4024,7 +4374,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "fastest_lap": true,
             "background": "Third place"
           },
@@ -4033,7 +4387,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "points": 9.0
@@ -4049,7 +4407,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4057,7 +4419,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4065,7 +4431,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "500": null,
@@ -4074,7 +4444,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4082,7 +4456,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4090,7 +4468,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4098,7 +4480,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4106,7 +4492,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4114,7 +4504,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -4122,7 +4516,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 9.0
@@ -4139,7 +4537,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -4150,7 +4552,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -4158,7 +4564,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4166,7 +4576,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "por": {
@@ -4174,7 +4588,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4182,7 +4600,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": null,
@@ -4202,7 +4624,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "bel": null,
@@ -4225,7 +4651,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other points position"
@@ -4237,7 +4667,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -4246,7 +4680,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": null,
@@ -4270,7 +4708,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": null,
@@ -4296,7 +4738,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": null,
@@ -4322,7 +4768,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -4347,7 +4797,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4355,7 +4809,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4364,7 +4822,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4372,7 +4834,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4380,7 +4846,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4388,8 +4858,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4397,7 +4880,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4405,7 +4892,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -4413,8 +4904,21 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 11,
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": 11,
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Other classified position"
           },
           "points": 3.0
@@ -4431,7 +4935,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -4439,7 +4947,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4448,7 +4960,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4456,7 +4972,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4464,7 +4984,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4472,7 +4996,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "por": {
@@ -4480,7 +5008,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4488,7 +5020,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mor": {
@@ -4496,7 +5032,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 3.0
@@ -4513,7 +5053,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4521,7 +5065,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -4530,7 +5078,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4538,7 +5090,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4546,7 +5102,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4554,7 +5114,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4562,7 +5126,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4570,7 +5138,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -4578,7 +5150,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "points": 3.0
@@ -4597,7 +5173,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -4622,7 +5202,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4631,7 +5215,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4643,7 +5231,15 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "4~",
+            "results": [
+              {
+                "position": 4,
+                "points_eligible": false,
+                "notes": [
+                  "shared_drive_no_points"
+                ]
+              }
+            ],
             "background": "Other classified position"
           },
           "mor": {
@@ -4651,7 +5247,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4672,7 +5272,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4680,7 +5284,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4689,7 +5297,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4697,7 +5309,18 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "4~ / Ret",
+            "results": [
+              {
+                "position": 4,
+                "points_eligible": false,
+                "notes": [
+                  "shared_drive_no_points"
+                ]
+              },
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Other classified position"
           },
           "mor": null,
@@ -4715,7 +5338,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4723,7 +5350,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -4732,7 +5363,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4740,7 +5375,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4748,7 +5387,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4756,8 +5399,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "por": {
@@ -4765,7 +5421,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4773,7 +5433,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "mor": {
@@ -4781,7 +5445,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4801,7 +5469,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -4813,7 +5485,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -4821,7 +5497,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -4840,7 +5520,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -4863,7 +5547,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": null,
@@ -4892,7 +5580,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -4915,7 +5607,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4923,7 +5619,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -4933,7 +5633,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4941,7 +5645,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4968,7 +5676,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4979,7 +5691,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -4998,7 +5714,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5022,7 +5742,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -5033,7 +5757,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5041,7 +5769,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5051,7 +5783,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -5059,7 +5795,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5082,7 +5822,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -5091,7 +5835,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": {
@@ -5099,7 +5847,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "points": 0.0
@@ -5115,7 +5867,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -5123,7 +5879,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": {
@@ -5131,7 +5891,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "500": null,
@@ -5158,7 +5922,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5182,7 +5950,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -5192,7 +5964,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -5203,7 +5979,11 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -5211,7 +5991,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": null,
@@ -5231,7 +6015,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -5240,7 +6028,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -5249,7 +6041,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "por": null,
@@ -5271,7 +6067,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5296,7 +6096,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "500": null,
@@ -5308,8 +6112,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -5331,7 +6148,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5357,7 +6178,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5383,7 +6208,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": null,
@@ -5412,7 +6241,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5420,8 +6253,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 7,
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": 7,
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -5446,7 +6292,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5454,8 +6304,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 11,
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": 11,
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -5478,7 +6341,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -5488,8 +6355,21 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -5499,7 +6379,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5516,7 +6400,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -5524,7 +6412,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "500": null,
@@ -5549,7 +6441,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -5564,7 +6460,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mor": null,
@@ -5582,7 +6482,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -5598,7 +6502,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -5617,7 +6525,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5643,7 +6555,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5669,7 +6585,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5695,7 +6615,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5721,7 +6645,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5747,7 +6675,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5773,7 +6705,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5799,7 +6735,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5825,7 +6765,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5851,7 +6795,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5877,7 +6825,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5903,7 +6855,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5929,7 +6885,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -5956,7 +6916,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5982,7 +6946,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6008,7 +6976,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6034,7 +7006,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6060,7 +7036,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6086,7 +7066,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -6115,7 +7099,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -6138,7 +7126,11 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "bel": null,
@@ -6162,7 +7154,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6172,7 +7168,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": null,
@@ -6195,7 +7195,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6221,7 +7225,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6247,7 +7255,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6273,7 +7285,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6299,7 +7315,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6311,7 +7331,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "DNP"
+            "results": [
+              {
+                "position": "DNP"
+              }
+            ]
           },
           "ger": null,
           "por": null,
@@ -6331,7 +7355,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6357,7 +7385,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ned": null,
@@ -6382,77 +7414,121 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "500": {
             "round": {
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "por": {
             "round": {
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "mor": {
             "round": {
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
+              }
+            ]
           },
           "points": null
         },
@@ -6474,7 +7550,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -6484,7 +7564,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "points": null
@@ -6507,7 +7591,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -6533,7 +7621,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "por": null,
@@ -6562,7 +7654,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "points": null
@@ -6588,7 +7684,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "points": null
@@ -6611,7 +7711,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -6637,7 +7741,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -6663,7 +7771,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "por": null,
@@ -6692,7 +7804,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": null
@@ -6718,7 +7834,11 @@
               "text": "MOR",
               "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "points": null

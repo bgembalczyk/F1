@@ -1813,10 +1813,12 @@
             "text": "Carlos Reutemann",
             "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -1852,10 +1854,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Mike Hailwood",
-            "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
-          },
+          "fastest_lap": [
+            {
+              "text": "Mike Hailwood",
+              "url": "https://en.wikipedia.org/wiki/Mike_Hailwood"
+            }
+          ],
           "winning_driver": {
             "text": "Denny Hulme",
             "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
@@ -1891,10 +1895,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -1930,10 +1936,12 @@
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Beltoise",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Beltoise",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+            }
+          ],
           "winning_driver": {
             "text": "Jean-Pierre Beltoise",
             "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
@@ -1969,10 +1977,12 @@
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
           },
-          "fastest_lap": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
+          "fastest_lap": [
+            {
+              "text": "Chris Amon",
+              "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2008,10 +2018,12 @@
             "text": "Chris Amon",
             "url": "https://en.wikipedia.org/wiki/Chris_Amon"
           },
-          "fastest_lap": {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
+          "fastest_lap": [
+            {
+              "text": "Chris Amon",
+              "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2047,10 +2059,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2086,10 +2100,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
@@ -2125,10 +2141,12 @@
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
           },
-          "fastest_lap": {
-            "text": "Denny Hulme",
-            "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-          },
+          "fastest_lap": [
+            {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2164,10 +2182,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Emerson Fittipaldi",
             "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
@@ -2203,10 +2223,12 @@
             "text": "Peter Revson",
             "url": "https://en.wikipedia.org/wiki/Peter_Revson"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2242,10 +2264,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2471,7 +2495,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -2479,7 +2507,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "esp": {
@@ -2487,7 +2519,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2495,7 +2531,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -2504,7 +2544,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2513,11 +2557,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "": {
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "gbr": {
@@ -2525,7 +2577,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2533,7 +2589,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2542,7 +2602,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ita": {
@@ -2550,7 +2614,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -2558,7 +2626,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -2566,7 +2638,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 61,
+            "results": [
+              {
+                "position": 61
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2581,7 +2657,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2590,7 +2670,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2599,7 +2683,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -2607,7 +2695,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -2616,11 +2708,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "": {
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2629,7 +2729,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -2637,7 +2741,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -2645,7 +2753,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2653,7 +2765,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2662,7 +2778,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2672,7 +2792,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 45,
+            "results": [
+              {
+                "position": 45
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2687,7 +2811,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "rsa": {
@@ -2695,7 +2823,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "esp": {
@@ -2703,7 +2835,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -2711,7 +2847,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -2719,7 +2859,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -2727,11 +2871,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -2739,7 +2891,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2747,7 +2903,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2756,7 +2916,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -2764,7 +2928,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -2772,7 +2940,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -2780,7 +2952,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 39,
+            "results": [
+              {
+                "position": 39
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2795,7 +2971,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "rsa": {
@@ -2803,7 +2983,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -2811,7 +2995,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Second place"
@@ -2821,7 +3009,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "bel": {
@@ -2829,7 +3021,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2837,11 +3033,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2850,7 +3054,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2860,7 +3068,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -2868,7 +3080,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -2878,7 +3094,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -2886,7 +3106,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -2894,7 +3118,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 27,
+            "results": [
+              {
+                "position": 27
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2909,7 +3137,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -2917,7 +3149,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -2925,7 +3161,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": null,
@@ -2934,12 +3174,20 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
           "": {
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": null,
@@ -2948,7 +3196,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "aut": {
@@ -2956,7 +3208,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -2964,7 +3220,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2973,7 +3233,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -2981,7 +3245,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 23,
+            "results": [
+              {
+                "position": 23
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2996,7 +3264,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3004,7 +3276,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3012,7 +3288,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3020,7 +3300,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3028,7 +3312,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3036,11 +3324,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3048,7 +3344,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3056,7 +3356,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -3064,7 +3368,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3072,7 +3380,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3080,7 +3392,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -3088,7 +3404,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3103,7 +3423,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3111,7 +3435,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3119,7 +3447,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3127,7 +3459,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3135,7 +3471,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -3145,7 +3485,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -3153,7 +3497,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3161,7 +3509,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3169,7 +3521,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3177,7 +3533,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3185,7 +3545,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3201,7 +3565,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3210,7 +3578,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3218,7 +3590,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3226,7 +3602,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3234,11 +3614,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3246,7 +3634,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3254,7 +3646,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3262,7 +3658,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": null,
@@ -3271,7 +3671,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3279,7 +3683,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3294,7 +3702,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -3302,7 +3714,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3310,7 +3726,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3318,7 +3738,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3326,7 +3750,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3334,11 +3762,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3346,7 +3782,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -3354,7 +3794,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -3362,7 +3806,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3370,7 +3818,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "can": {
@@ -3378,7 +3830,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3386,7 +3842,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3401,7 +3861,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "rsa": {
@@ -3409,7 +3873,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3417,7 +3885,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3425,7 +3897,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3433,7 +3909,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -3442,13 +3922,21 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Third place"
           },
           "": {
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3456,7 +3944,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3464,7 +3956,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3472,7 +3968,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3480,7 +3980,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3488,7 +3992,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3496,7 +4004,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3512,7 +4024,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3520,7 +4036,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3528,7 +4048,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3537,7 +4061,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3545,11 +4073,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3557,7 +4093,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3565,7 +4105,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -3573,7 +4117,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3581,7 +4129,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3589,7 +4141,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3597,7 +4153,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3612,7 +4172,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3620,7 +4184,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3628,7 +4196,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -3642,7 +4214,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -3651,7 +4227,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3659,7 +4239,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3674,7 +4258,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -3682,7 +4270,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3690,7 +4282,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3698,7 +4294,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3706,7 +4306,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3714,7 +4318,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "": null,
@@ -3723,7 +4331,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3731,7 +4343,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "aut": {
@@ -3739,7 +4355,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3747,7 +4367,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3755,7 +4379,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3763,7 +4391,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3781,7 +4413,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -3790,7 +4426,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -3799,7 +4439,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": null,
@@ -3810,7 +4454,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3818,7 +4466,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3833,7 +4485,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -3841,7 +4497,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3849,7 +4509,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -3857,7 +4521,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -3865,7 +4533,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3873,11 +4545,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3885,7 +4565,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3893,7 +4577,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3901,7 +4589,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3909,7 +4601,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -3917,7 +4613,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -3925,7 +4625,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3940,7 +4644,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "pole_position": true,
             "background": "Other classified position"
           },
@@ -3949,7 +4657,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -3959,7 +4671,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3967,11 +4683,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3979,7 +4703,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3987,7 +4715,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -3995,7 +4727,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4003,7 +4739,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4011,7 +4751,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4019,7 +4763,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4034,7 +4782,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4042,7 +4794,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4050,7 +4806,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4058,7 +4818,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4066,7 +4830,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4074,11 +4842,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4086,7 +4862,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4094,7 +4874,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4102,7 +4886,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4110,7 +4898,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4118,7 +4910,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4126,7 +4922,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4142,7 +4942,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4150,7 +4954,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4158,7 +4966,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4166,7 +4978,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -4174,11 +4990,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4186,7 +5010,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4194,7 +5022,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4202,7 +5034,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4210,7 +5046,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4218,7 +5058,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4226,7 +5070,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4241,7 +5089,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "rsa": {
@@ -4249,7 +5101,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4257,7 +5113,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4265,7 +5125,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4273,7 +5137,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4281,11 +5149,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 17,
+            "results": [
+              {
+                "position": 17
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4293,7 +5169,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4301,7 +5181,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4309,7 +5193,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4317,7 +5205,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4325,7 +5217,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4333,7 +5229,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4350,7 +5250,11 @@
           "bel": null,
           "fra": null,
           "": {
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -4358,7 +5262,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4370,7 +5278,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4385,7 +5297,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": {
@@ -4393,7 +5309,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4401,7 +5321,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4409,7 +5333,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4417,7 +5345,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4425,11 +5357,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4438,7 +5378,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4446,7 +5390,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4454,7 +5402,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4462,7 +5414,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4470,7 +5426,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4487,7 +5447,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4495,7 +5459,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4503,7 +5471,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4511,11 +5483,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4523,7 +5503,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4531,7 +5515,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4539,7 +5527,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4547,7 +5539,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4555,7 +5551,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4563,7 +5563,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4578,7 +5582,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4586,7 +5594,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4594,7 +5606,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4602,7 +5618,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4610,7 +5630,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4618,11 +5642,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4630,7 +5662,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4638,7 +5674,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -4646,7 +5686,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4654,7 +5698,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "can": {
@@ -4662,7 +5710,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4670,7 +5722,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4690,7 +5746,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -4703,7 +5763,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4711,7 +5775,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4726,7 +5794,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4734,7 +5806,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -4743,7 +5819,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4751,7 +5831,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4759,7 +5843,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -4773,7 +5861,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4790,7 +5882,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "mon": {
@@ -4798,7 +5894,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -4806,7 +5906,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4814,11 +5918,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4826,7 +5938,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4834,7 +5950,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": {
@@ -4842,7 +5962,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -4850,7 +5974,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4858,7 +5986,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4866,7 +5998,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4881,7 +6017,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "rsa": {
@@ -4889,7 +6029,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4897,7 +6041,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -4905,7 +6053,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4913,7 +6065,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4921,11 +6077,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4933,7 +6097,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4941,7 +6109,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "aut": {
@@ -4949,7 +6121,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -4957,7 +6133,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4965,7 +6145,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4973,7 +6157,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4988,7 +6176,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "rsa": {
@@ -4996,7 +6188,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5004,7 +6200,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mon": {
@@ -5012,7 +6212,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5020,7 +6224,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5028,11 +6236,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5040,7 +6256,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5048,7 +6268,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": null,
@@ -5058,7 +6282,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5066,7 +6294,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5092,7 +6324,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5100,7 +6336,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5116,7 +6356,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -5124,7 +6368,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5132,7 +6380,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "bel": {
@@ -5140,7 +6392,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -5148,11 +6404,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -5160,7 +6424,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -5168,7 +6436,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": null,
@@ -5179,7 +6451,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5194,7 +6470,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -5203,7 +6483,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -5211,7 +6495,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -5220,7 +6508,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -5229,7 +6521,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5238,7 +6534,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -5246,7 +6546,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -5254,7 +6558,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5262,7 +6570,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5288,7 +6600,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5296,7 +6612,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5315,7 +6635,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -5323,11 +6647,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5336,7 +6668,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "aut": {
@@ -5344,7 +6680,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5354,7 +6694,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5379,7 +6723,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -5387,7 +6735,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -5395,7 +6747,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5411,7 +6767,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -5429,7 +6789,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5445,7 +6809,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5456,11 +6824,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -5468,7 +6844,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5480,7 +6860,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5500,7 +6884,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "": null,
@@ -5509,7 +6897,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -5518,7 +6910,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": {
@@ -5526,7 +6922,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "can": {
@@ -5534,7 +6934,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -5542,7 +6946,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5557,7 +6965,11 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "rsa": null,
@@ -5566,7 +6978,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -5583,7 +6999,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5600,7 +7020,11 @@
           "bel": null,
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5613,7 +7037,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5630,7 +7058,11 @@
           "bel": null,
           "fra": null,
           "": {
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "gbr": null,
@@ -5639,7 +7071,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "aut": null,
@@ -5650,7 +7086,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5674,7 +7114,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5683,7 +7127,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": {
@@ -5691,7 +7139,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5716,7 +7168,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -5725,7 +7181,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5741,7 +7201,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "esp": null,
@@ -5759,7 +7223,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5778,7 +7246,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "fra": null,
@@ -5793,7 +7265,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5808,87 +7284,139 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1972_Argentine_Grand_Prix"
             },
-            "position": "ARG"
+            "results": [
+              {
+                "position": "ARG"
+              }
+            ]
           },
           "rsa": {
             "round": {
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1972_South_African_Grand_Prix"
             },
-            "position": "RSA"
+            "results": [
+              {
+                "position": "RSA"
+              }
+            ]
           },
           "esp": {
             "round": {
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1972_Spanish_Grand_Prix"
             },
-            "position": "ESP"
+            "results": [
+              {
+                "position": "ESP"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1972_Monaco_Grand_Prix"
             },
-            "position": "MON"
+            "results": [
+              {
+                "position": "MON"
+              }
+            ]
           },
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1972_Belgian_Grand_Prix"
             },
-            "position": "BEL"
+            "results": [
+              {
+                "position": "BEL"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1972_French_Grand_Prix"
             },
-            "position": "FRA"
+            "results": [
+              {
+                "position": "FRA"
+              }
+            ]
           },
           "": {
-            "position": "GBR"
+            "results": [
+              {
+                "position": "GBR"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
             },
-            "position": "GER"
+            "results": [
+              {
+                "position": "GER"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1972_German_Grand_Prix"
             },
-            "position": "AUT"
+            "results": [
+              {
+                "position": "AUT"
+              }
+            ]
           },
           "aut": {
             "round": {
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
             },
-            "position": "ITA"
+            "results": [
+              {
+                "position": "ITA"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1972_Italian_Grand_Prix"
             },
-            "position": "CAN"
+            "results": [
+              {
+                "position": "CAN"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1972_Canadian_Grand_Prix"
             },
-            "position": "USA"
+            "results": [
+              {
+                "position": "USA"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1972_United_States_Grand_Prix"
             },
-            "position": "Points"
+            "results": [
+              {
+                "position": "Points"
+              }
+            ]
           }
         }
       ],

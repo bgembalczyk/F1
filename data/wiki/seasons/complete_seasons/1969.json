@@ -2071,10 +2071,12 @@
             "text": "Jack Brabham",
             "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2110,10 +2112,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jochen Rindt",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jochen Rindt",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2149,10 +2153,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2188,10 +2194,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2227,10 +2235,12 @@
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2266,10 +2276,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2305,10 +2317,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
@@ -2344,10 +2358,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Beltoise",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Beltoise",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2383,10 +2399,16 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jack Brabham",
-            "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            },
+            {
+              "text": "Jack Brabham",
+              "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+            }
+          ],
           "winning_driver": {
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
@@ -2422,10 +2444,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jochen Rindt",
-            "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jochen Rindt",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+            }
+          ],
           "winning_driver": {
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
@@ -2461,10 +2485,12 @@
             "text": "Jack Brabham",
             "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
           },
-          "fastest_lap": {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jacky Ickx",
+              "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+            }
+          ],
           "winning_driver": {
             "text": "Denny Hulme",
             "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
@@ -2632,7 +2658,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2641,7 +2671,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2649,7 +2683,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -2659,7 +2697,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -2668,7 +2710,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2678,12 +2724,20 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
           "": {
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -2691,7 +2745,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ita": {
@@ -2699,7 +2757,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -2707,7 +2769,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -2715,7 +2781,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -2723,7 +2793,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 63,
+            "results": [
+              {
+                "position": 63
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2738,7 +2812,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2746,7 +2824,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -2754,7 +2836,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -2762,7 +2848,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -2770,7 +2860,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -2778,11 +2872,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "": {
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -2792,7 +2894,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -2800,17 +2906,27 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
-            "background": "Winner"
+            "background": "Winner",
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -2818,7 +2934,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -2827,7 +2947,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 37,
+            "results": [
+              {
+                "position": 37
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2842,7 +2966,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -2850,7 +2978,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -2858,7 +2990,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -2866,7 +3002,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -2874,7 +3014,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -2882,11 +3026,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "": {
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -2894,7 +3046,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -2902,7 +3058,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -2910,21 +3070,33 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "DNS"
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ]
           },
           "mex": {
             "round": {
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 26,
+            "results": [
+              {
+                "position": 26
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2939,7 +3111,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -2947,7 +3123,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Not classified, retired"
@@ -2958,7 +3138,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2967,7 +3151,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -2975,12 +3163,20 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -2988,7 +3184,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true,
             "background": "Second place"
           },
@@ -2997,7 +3197,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -3005,7 +3209,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3015,7 +3223,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3023,7 +3235,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 22,
+            "results": [
+              {
+                "position": 22
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3038,7 +3254,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3046,7 +3266,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": {
@@ -3054,7 +3278,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3062,7 +3290,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3070,7 +3302,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3078,11 +3314,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3090,7 +3334,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "fastest_lap": true,
             "background": "Third place"
           },
@@ -3099,7 +3347,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3107,7 +3359,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3115,7 +3371,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -3123,7 +3383,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 21,
+            "results": [
+              {
+                "position": 21
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3138,7 +3402,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3146,7 +3414,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3154,7 +3426,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3162,7 +3438,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3170,7 +3450,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3178,11 +3462,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3190,7 +3482,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3198,7 +3494,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3206,7 +3506,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3214,7 +3518,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mex": {
@@ -3222,7 +3530,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 20,
+            "results": [
+              {
+                "position": 20
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3237,7 +3549,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "esp": {
@@ -3245,7 +3561,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3253,7 +3573,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ned": {
@@ -3261,7 +3585,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3269,7 +3597,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3277,11 +3609,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3289,7 +3629,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3297,7 +3641,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3305,7 +3653,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -3314,7 +3666,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 19,
+            "results": [
+              {
+                "position": 19
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3330,7 +3686,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3338,7 +3698,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": {
@@ -3346,7 +3710,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3354,7 +3722,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3362,11 +3734,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3374,7 +3754,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3382,7 +3766,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3390,7 +3778,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -3398,7 +3790,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3406,7 +3802,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 16,
+            "results": [
+              {
+                "position": 16
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3421,7 +3821,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3429,7 +3833,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3437,7 +3845,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3445,7 +3857,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "fra": {
@@ -3453,7 +3869,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3461,11 +3881,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3473,7 +3901,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3481,7 +3913,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3489,7 +3925,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3497,7 +3937,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3505,7 +3949,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 15,
+            "results": [
+              {
+                "position": 15
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3520,7 +3968,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3529,7 +3981,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3537,7 +3993,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3545,7 +4005,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "fra": null,
@@ -3556,7 +4020,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3564,16 +4032,26 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
-            "background": "Second place"
+            "background": "Second place",
+            "fastest_lap_shared": true,
+            "fastest_lap_share_count": 2
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3581,7 +4059,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true,
             "background": "Third place"
           },
@@ -3590,7 +4072,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3605,7 +4091,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3613,7 +4103,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -3621,7 +4115,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3629,7 +4127,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
@@ -3638,11 +4140,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": {
@@ -3650,7 +4160,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": {
@@ -3658,7 +4172,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3666,7 +4184,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -3674,7 +4196,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3682,7 +4208,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3697,7 +4227,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3705,7 +4239,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3713,7 +4251,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3721,7 +4263,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3729,7 +4275,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3737,7 +4287,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -3750,7 +4304,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3767,15 +4325,32 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": null,
           "fra": null,
           "gbr": null,
           "": {
-            "position": 6,
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": 6,
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -3787,7 +4362,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3804,7 +4383,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3812,7 +4395,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -3820,7 +4407,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3828,11 +4419,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -3844,7 +4443,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3859,7 +4462,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3867,7 +4474,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3875,7 +4486,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -3885,7 +4500,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -3894,7 +4513,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3902,7 +4525,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3910,7 +4537,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3918,7 +4549,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3926,7 +4561,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3943,7 +4582,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3951,7 +4594,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3959,7 +4606,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": null,
@@ -3969,7 +4620,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3977,7 +4632,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3985,7 +4644,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3993,7 +4656,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4001,7 +4668,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4016,7 +4687,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -4024,7 +4699,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4032,7 +4711,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4040,7 +4723,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4049,11 +4736,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4061,7 +4756,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4069,7 +4768,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4077,7 +4780,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4085,7 +4792,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -4093,7 +4804,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4110,8 +4825,21 @@
           "fra": null,
           "gbr": null,
           "": {
-            "position": "Ret",
-            "sprint_position": 1,
+            "results": [
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ],
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_f2"
+                ]
+              }
+            ],
+            "footnotes": [
+              "1"
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4120,7 +4848,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4128,7 +4860,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4136,7 +4872,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4144,7 +4884,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4159,7 +4903,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -4177,7 +4925,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4200,7 +4952,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4208,7 +4964,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4216,7 +4976,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4224,7 +4988,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4243,7 +5011,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4251,7 +5023,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "": null,
@@ -4260,7 +5036,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4268,7 +5048,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -4277,7 +5061,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4285,7 +5073,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4308,7 +5100,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "can": null,
@@ -4318,7 +5114,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4333,7 +5133,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4342,7 +5146,11 @@
           "fra": null,
           "gbr": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4352,7 +5160,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -4361,7 +5173,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4381,11 +5197,19 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4397,7 +5221,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4421,7 +5249,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4429,7 +5261,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4437,7 +5273,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4452,7 +5292,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -4470,7 +5314,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4485,7 +5333,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4503,7 +5355,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4518,7 +5374,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4536,7 +5396,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4556,7 +5420,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -4569,7 +5437,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4592,7 +5464,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -4602,7 +5478,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4625,7 +5505,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "DSQ",
+            "results": [
+              {
+                "position": "DSQ"
+              }
+            ],
             "background": "Disqualified"
           },
           "can": null,
@@ -4635,7 +5519,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4657,7 +5545,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -4668,7 +5560,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4683,80 +5579,128 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "esp": {
             "round": {
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "": {
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "mex": {
             "round": {
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+            "results": [
+              {
+                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
+              }
+            ]
           },
           "points": null
         },
@@ -4778,7 +5722,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4805,7 +5753,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4832,7 +5784,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4859,7 +5815,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4886,7 +5846,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ita": null,
@@ -4913,7 +5877,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -4940,7 +5908,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -4967,7 +5939,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -4994,7 +5970,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -5021,7 +6001,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -5041,42 +6025,66 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
             },
-            "position": "RSA"
+            "results": [
+              {
+                "position": "RSA"
+              }
+            ]
           },
           "esp": {
             "round": {
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
             },
-            "position": "ESP"
+            "results": [
+              {
+                "position": "ESP"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
             },
-            "position": "MON"
+            "results": [
+              {
+                "position": "MON"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
             },
-            "position": "NED"
+            "results": [
+              {
+                "position": "NED"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
             },
-            "position": "FRA"
+            "results": [
+              {
+                "position": "FRA"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "position": "GBR"
+            "results": [
+              {
+                "position": "GBR"
+              }
+            ]
           },
           "": null,
           "ger": {
@@ -5084,35 +6092,55 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
             },
-            "position": "GER"
+            "results": [
+              {
+                "position": "GER"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
-            "position": "ITA"
+            "results": [
+              {
+                "position": "ITA"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
-            "position": "CAN"
+            "results": [
+              {
+                "position": "CAN"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
-            "position": "USA"
+            "results": [
+              {
+                "position": "USA"
+              }
+            ]
           },
           "mex": {
             "round": {
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
             },
-            "position": "MEX"
+            "results": [
+              {
+                "position": "MEX"
+              }
+            ]
           },
           "points": null
         }

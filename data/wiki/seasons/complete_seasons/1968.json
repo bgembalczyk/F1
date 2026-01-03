@@ -2316,10 +2316,12 @@
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
-          "fastest_lap": {
-            "text": "Jim Clark",
-            "url": "https://en.wikipedia.org/wiki/Jim_Clark"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jim Clark",
+              "url": "https://en.wikipedia.org/wiki/Jim_Clark"
+            }
+          ],
           "winning_driver": {
             "text": "Jim Clark",
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
@@ -2355,10 +2357,12 @@
             "text": "Chris Amon",
             "url": "https://en.wikipedia.org/wiki/Chris_Amon"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Beltoise",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Beltoise",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2394,10 +2398,12 @@
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
-          "fastest_lap": {
-            "text": "Richard Attwood",
-            "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
-          },
+          "fastest_lap": [
+            {
+              "text": "Richard Attwood",
+              "url": "https://en.wikipedia.org/wiki/Richard_Attwood"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2433,10 +2439,12 @@
             "text": "Chris Amon",
             "url": "https://en.wikipedia.org/wiki/Chris_Amon"
           },
-          "fastest_lap": {
-            "text": "John Surtees",
-            "url": "https://en.wikipedia.org/wiki/John_Surtees"
-          },
+          "fastest_lap": [
+            {
+              "text": "John Surtees",
+              "url": "https://en.wikipedia.org/wiki/John_Surtees"
+            }
+          ],
           "winning_driver": {
             "text": "Bruce McLaren",
             "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
@@ -2472,10 +2480,12 @@
             "text": "Chris Amon",
             "url": "https://en.wikipedia.org/wiki/Chris_Amon"
           },
-          "fastest_lap": {
-            "text": "Jean-Pierre Beltoise",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jean-Pierre Beltoise",
+              "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Beltoise"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2511,10 +2521,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Pedro Rodríguez",
-            "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
-          },
+          "fastest_lap": [
+            {
+              "text": "Pedro Rodríguez",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
+            }
+          ],
           "winning_driver": {
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
@@ -2550,10 +2562,12 @@
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
-          "fastest_lap": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jo Siffert",
+              "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+            }
+          ],
           "winning_driver": {
             "text": "Jo Siffert",
             "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
@@ -2589,10 +2603,12 @@
             "text": "Jacky Ickx",
             "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2628,10 +2644,12 @@
             "text": "John Surtees",
             "url": "https://en.wikipedia.org/wiki/John_Surtees"
           },
-          "fastest_lap": {
-            "text": "Jackie Oliver",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Oliver"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Oliver",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Oliver"
+            }
+          ],
           "winning_driver": {
             "text": "Denny Hulme",
             "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
@@ -2667,10 +2685,12 @@
             "text": "Jochen Rindt",
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
-          "fastest_lap": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jo Siffert",
+              "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+            }
+          ],
           "winning_driver": {
             "text": "Denny Hulme",
             "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
@@ -2706,10 +2726,12 @@
             "text": "Mario Andretti",
             "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
           },
-          "fastest_lap": {
-            "text": "Jackie Stewart",
-            "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jackie Stewart",
+              "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
+            }
+          ],
           "winning_driver": {
             "text": "Jackie Stewart",
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
@@ -2745,10 +2767,12 @@
             "text": "Jo Siffert",
             "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
           },
-          "fastest_lap": {
-            "text": "Jo Siffert",
-            "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
-          },
+          "fastest_lap": [
+            {
+              "text": "Jo Siffert",
+              "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
+            }
+          ],
           "winning_driver": {
             "text": "Graham Hill",
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
@@ -2887,7 +2911,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "esp": {
@@ -2895,7 +2923,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mon": {
@@ -2903,7 +2935,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "background": "Winner"
           },
@@ -2912,7 +2948,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -2920,7 +2960,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -2928,11 +2972,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -2941,7 +2993,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ger": {
@@ -2949,7 +3005,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -2957,7 +3017,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -2965,7 +3029,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "usa": {
@@ -2973,7 +3041,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "mex": {
@@ -2981,7 +3053,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 48,
+            "results": [
+              {
+                "position": 48
+              }
+            ],
             "pole_position": true
           }
         },
@@ -2996,7 +3072,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -3006,7 +3086,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -3014,7 +3098,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "fra": {
@@ -3022,11 +3110,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "": {
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3034,7 +3130,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3043,7 +3143,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3051,7 +3155,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -3059,7 +3167,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3068,7 +3180,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -3076,7 +3192,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 36,
+            "results": [
+              {
+                "position": 36
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3091,7 +3211,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3099,7 +3223,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mon": {
@@ -3107,7 +3235,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "bel": {
@@ -3115,7 +3247,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -3123,7 +3259,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3131,11 +3271,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3143,7 +3291,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3151,7 +3303,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ita": {
@@ -3159,7 +3315,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "can": {
@@ -3167,7 +3327,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3175,7 +3339,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3183,7 +3351,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 33,
+            "results": [
+              {
+                "position": 33
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3198,7 +3370,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3206,7 +3382,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": null,
@@ -3215,7 +3395,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ned": {
@@ -3223,7 +3407,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "fra": {
@@ -3231,11 +3419,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "": {
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "gbr": {
@@ -3243,7 +3439,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -3252,7 +3452,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ita": {
@@ -3260,7 +3464,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "can": null,
@@ -3269,7 +3477,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3277,7 +3489,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 27,
+            "results": [
+              {
+                "position": 27
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3293,7 +3509,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3301,7 +3521,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3309,7 +3533,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "background": "Winner"
           },
           "ned": {
@@ -3317,7 +3545,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3325,11 +3557,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -3337,7 +3577,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 13,
+            "results": [
+              {
+                "position": 13
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -3345,7 +3589,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3353,7 +3601,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "can": {
@@ -3361,7 +3613,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3369,7 +3625,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "mex": {
@@ -3377,7 +3637,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 22,
+            "results": [
+              {
+                "position": 22
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3392,7 +3656,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -3400,7 +3668,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3408,7 +3680,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3416,7 +3692,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ned": {
@@ -3424,7 +3704,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "fra": {
@@ -3432,12 +3716,20 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "fastest_lap": true,
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3445,7 +3737,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -3453,7 +3749,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3461,7 +3761,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "can": {
@@ -3469,7 +3773,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3477,7 +3785,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -3485,7 +3797,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 18,
+            "results": [
+              {
+                "position": 18
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3500,7 +3816,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3508,7 +3828,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3516,7 +3840,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3524,7 +3852,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3532,7 +3864,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3540,11 +3876,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "fastest_lap": true,
             "background": "Winner"
           },
@@ -3553,7 +3897,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3561,7 +3909,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3569,7 +3921,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3578,7 +3934,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -3586,7 +3946,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Other points position"
@@ -3596,7 +3960,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3611,7 +3979,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": {
@@ -3619,7 +3991,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3627,7 +4003,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3635,7 +4015,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -3644,7 +4028,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -3652,11 +4040,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "": {
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "gbr": {
@@ -3664,7 +4060,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3672,7 +4072,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3681,7 +4085,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3689,7 +4097,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "usa": {
@@ -3697,7 +4109,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3705,7 +4121,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3720,7 +4140,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3728,7 +4152,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "fastest_lap": true,
             "background": "Other points position"
           },
@@ -3737,7 +4165,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3745,7 +4177,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ned": {
@@ -3753,7 +4189,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -3762,11 +4202,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -3774,7 +4222,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3782,7 +4234,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -3790,7 +4246,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3798,7 +4258,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3806,7 +4270,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3814,7 +4282,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3829,7 +4301,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "esp": {
@@ -3837,7 +4313,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3847,7 +4327,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -3856,7 +4340,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true,
             "background": "Other points position"
           },
@@ -3865,11 +4353,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "gbr": {
@@ -3877,7 +4373,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -3885,7 +4385,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -3893,7 +4397,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -3901,7 +4409,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -3909,7 +4421,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -3917,7 +4433,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3932,7 +4452,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 1,
+            "results": [
+              {
+                "position": 1
+              }
+            ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
@@ -3953,7 +4477,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "pole_position": true
           }
         },
@@ -3968,7 +4496,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "esp": {
@@ -3976,7 +4508,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -3984,7 +4520,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -3992,7 +4532,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4000,7 +4544,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4008,12 +4556,20 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4021,7 +4577,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "ger": {
@@ -4029,7 +4589,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4037,7 +4601,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -4046,7 +4614,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4054,7 +4626,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4062,7 +4638,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4079,7 +4659,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "fastest_lap": true,
             "background": "Second place"
           },
@@ -4088,7 +4672,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4096,7 +4684,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4104,11 +4696,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 7,
+            "results": [
+              {
+                "position": 7
+              }
+            ],
             "background": "Other classified position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4116,7 +4716,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 14,
+            "results": [
+              {
+                "position": 14
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -4128,7 +4732,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4145,7 +4753,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4155,7 +4767,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -4165,7 +4781,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "background": "Second place"
           },
           "ita": {
@@ -4173,7 +4793,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -4182,7 +4806,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4190,7 +4818,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4207,7 +4839,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4215,7 +4851,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4223,7 +4863,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": {
@@ -4231,11 +4875,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4243,7 +4895,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 11,
+            "results": [
+              {
+                "position": 11
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4251,7 +4907,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "fastest_lap": true,
             "background": "Not classified, retired"
           },
@@ -4260,7 +4920,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4268,7 +4932,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": {
@@ -4276,7 +4944,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mex": {
@@ -4284,7 +4956,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4299,7 +4975,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4307,7 +4987,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "mon": {
@@ -4315,7 +4999,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "bel": null,
@@ -4332,7 +5020,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4349,7 +5041,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "bel": {
@@ -4357,7 +5053,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ned": {
@@ -4365,7 +5065,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
@@ -4375,7 +5079,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": null,
@@ -4384,7 +5092,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "can": {
@@ -4392,7 +5104,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4400,7 +5116,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4408,7 +5128,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4428,11 +5152,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4440,7 +5172,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ger": {
@@ -4448,7 +5184,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4456,7 +5196,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "can": {
@@ -4464,7 +5208,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4472,7 +5220,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4480,7 +5232,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4495,7 +5251,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4503,7 +5263,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "background": "Third place"
           },
           "mon": null,
@@ -4512,7 +5276,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": null,
@@ -4528,7 +5296,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4544,7 +5316,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mon": {
@@ -4552,7 +5328,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4560,7 +5340,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4568,7 +5352,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4576,11 +5364,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "": {
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4588,7 +5384,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4596,7 +5396,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4604,7 +5408,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4612,7 +5420,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4620,7 +5432,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4628,7 +5444,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4643,7 +5463,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4652,7 +5476,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": null,
@@ -4661,12 +5489,20 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4674,7 +5510,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": {
@@ -4682,7 +5522,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4690,7 +5534,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4698,7 +5546,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": 4,
+            "results": [
+              {
+                "position": 4
+              }
+            ],
             "background": "Other points position"
           },
           "usa": {
@@ -4706,7 +5558,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -4714,7 +5570,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4729,7 +5589,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -4738,7 +5602,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": {
@@ -4746,7 +5614,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4754,12 +5626,20 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 8,
+            "results": [
+              {
+                "position": 8
+              }
+            ],
             "background": "Other classified position"
           },
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -4768,7 +5648,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": 6,
+            "results": [
+              {
+                "position": 6
+              }
+            ],
             "background": "Other points position"
           },
           "ita": {
@@ -4776,7 +5660,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4784,7 +5672,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "usa": {
@@ -4792,7 +5684,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "mex": {
@@ -4800,7 +5696,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 3,
+            "results": [
+              {
+                "position": 3
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4815,7 +5715,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": {
@@ -4823,7 +5727,11 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "mon": {
@@ -4831,7 +5739,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "bel": {
@@ -4839,7 +5751,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ned": {
@@ -4847,7 +5763,11 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "fra": {
@@ -4855,11 +5775,19 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": {
@@ -4867,7 +5795,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "ger": {
@@ -4875,7 +5807,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": {
@@ -4883,7 +5819,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4891,7 +5831,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": {
@@ -4899,7 +5843,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -4907,7 +5855,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4924,7 +5876,11 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "bel": null,
@@ -4933,12 +5889,20 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": 5,
+            "results": [
+              {
+                "position": 5
+              }
+            ],
             "background": "Other points position"
           },
           "fra": null,
           "": {
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "gbr": {
@@ -4946,7 +5910,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ger": {
@@ -4954,7 +5922,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -4965,7 +5937,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 2,
+            "results": [
+              {
+                "position": 2
+              }
+            ],
             "pole_position": true
           }
         },
@@ -4989,7 +5965,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": {
@@ -4997,7 +5977,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "usa": {
@@ -5005,7 +5989,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "mex": {
@@ -5013,7 +6001,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5028,7 +6020,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": 9,
+            "results": [
+              {
+                "position": 9
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -5047,7 +6043,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5069,7 +6069,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 10,
+            "results": [
+              {
+                "position": 10
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5081,7 +6085,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5103,7 +6111,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": 12,
+            "results": [
+              {
+                "position": 12
+              }
+            ],
             "background": "Other classified position"
           },
           "ger": null,
@@ -5115,7 +6127,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5130,7 +6146,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "NC",
+            "results": [
+              {
+                "position": "NC"
+              }
+            ],
             "background": "Other classified position"
           },
           "esp": null,
@@ -5149,7 +6169,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5172,7 +6196,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5181,7 +6209,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -5190,7 +6222,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5213,7 +6249,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -5222,7 +6262,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "pole_position": true,
             "background": "Not classified, retired"
           },
@@ -5232,7 +6276,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5255,7 +6303,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "ita": null,
@@ -5264,7 +6316,11 @@
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "usa": null,
@@ -5273,7 +6329,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5288,7 +6348,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5307,7 +6371,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5322,7 +6390,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5341,7 +6413,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5356,7 +6432,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5375,7 +6455,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5390,7 +6474,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5409,7 +6497,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5424,7 +6516,11 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "esp": null,
@@ -5443,7 +6539,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5463,7 +6563,11 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "": null,
@@ -5477,7 +6581,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5494,7 +6602,11 @@
           "ned": null,
           "fra": null,
           "": {
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "gbr": null,
@@ -5507,7 +6619,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5530,7 +6646,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "ita": null,
@@ -5541,7 +6661,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5565,7 +6689,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "can": null,
@@ -5575,7 +6703,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5601,7 +6733,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "Ret",
+            "results": [
+              {
+                "position": "Ret"
+              }
+            ],
             "background": "Not classified, retired"
           },
           "mex": {
@@ -5609,7 +6745,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5633,7 +6773,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "DNS",
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
           "can": null,
@@ -5643,7 +6787,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5666,7 +6814,11 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "DNQ",
+            "results": [
+              {
+                "position": "DNQ"
+              }
+            ],
             "background": "Did not qualify"
           },
           "ita": null,
@@ -5677,7 +6829,11 @@
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": 0,
+            "results": [
+              {
+                "position": 0
+              }
+            ],
             "pole_position": true
           }
         },
@@ -5692,87 +6848,139 @@
               "text": "RSA",
               "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
             },
-            "position": "RSA"
+            "results": [
+              {
+                "position": "RSA"
+              }
+            ]
           },
           "esp": {
             "round": {
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
             },
-            "position": "ESP"
+            "results": [
+              {
+                "position": "ESP"
+              }
+            ]
           },
           "mon": {
             "round": {
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
             },
-            "position": "MON"
+            "results": [
+              {
+                "position": "MON"
+              }
+            ]
           },
           "bel": {
             "round": {
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
             },
-            "position": "BEL"
+            "results": [
+              {
+                "position": "BEL"
+              }
+            ]
           },
           "ned": {
             "round": {
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
             },
-            "position": "NED"
+            "results": [
+              {
+                "position": "NED"
+              }
+            ]
           },
           "fra": {
             "round": {
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
             },
-            "position": "FRA"
+            "results": [
+              {
+                "position": "FRA"
+              }
+            ]
           },
           "": {
-            "position": "GBR"
+            "results": [
+              {
+                "position": "GBR"
+              }
+            ]
           },
           "gbr": {
             "round": {
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
             },
-            "position": "GER"
+            "results": [
+              {
+                "position": "GER"
+              }
+            ]
           },
           "ger": {
             "round": {
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
-            "position": "ITA"
+            "results": [
+              {
+                "position": "ITA"
+              }
+            ]
           },
           "ita": {
             "round": {
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
-            "position": "CAN"
+            "results": [
+              {
+                "position": "CAN"
+              }
+            ]
           },
           "can": {
             "round": {
               "text": "CAN",
               "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
-            "position": "USA"
+            "results": [
+              {
+                "position": "USA"
+              }
+            ]
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
-            "position": "MEX"
+            "results": [
+              {
+                "position": "MEX"
+              }
+            ]
           },
           "mex": {
             "round": {
               "text": "MEX",
               "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
-            "position": "Pts."
+            "results": [
+              {
+                "position": "Pts."
+              }
+            ]
           }
         }
       ],

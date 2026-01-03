@@ -5,13 +5,13 @@ from infrastructure.http_client.caching.file import FileCache
 from scrapers.base.source_adapter import SourceAdapter
 
 
-class CacheAdapter(SourceAdapter[str]):
+class CacheAdapter(SourceAdapter):
     """Cache'ujący adapter źródła oparty o pliki."""
 
     def __init__(
         self,
         *,
-        source_adapter: SourceAdapter[str],
+        source_adapter: SourceAdapter,
         cache_dir: Path | str,
         ttl_seconds: int = 0,
     ) -> None:
