@@ -37,12 +37,14 @@ class TablePipeline:
         include_urls: bool,
         skip_sentinel: object,
         model_fields: set[str] | None = None,
+        run_id: str | None = None,
     ) -> None:
         self.config = config
         self.include_urls = include_urls
         self.base_url = config.url
         self.skip_sentinel = skip_sentinel
         self.model_fields = model_fields
+        self.run_id = run_id
 
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
@@ -59,6 +61,9 @@ class TablePipeline:
             if fragment:
                 self.fragment = fragment
 
+    def set_run_id(self, run_id: str | None) -> None:
+        self.run_id = run_id
+
     def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         self._normalized_empty_cells = 0
         section_hint = self.section_id or self.fragment
@@ -69,10 +74,11 @@ class TablePipeline:
             class_=self.table_css_class,
         )
         self.logger.debug(
-            "TablePipeline detected %d tables (section_id=%s fragment=%s)",
+            "TablePipeline detected %d tables (section_id=%s fragment=%s run_id=%s)",
             len(candidate_tables),
             self.section_id,
             self.fragment,
+            self.run_id,
         )
         parser = HtmlTableParser(
             section_id=self.section_id,
@@ -87,10 +93,19 @@ class TablePipeline:
             if record:
                 records.append(record)
 
+        self.logger.debug(
+            "TablePipeline parsed %d row(s) from %d table(s) (section_id=%s run_id=%s)",
+            len(records),
+            len(candidate_tables),
+            section_hint,
+            self.run_id,
+        )
+
         if self._normalized_empty_cells:
             self.logger.debug(
-                "TablePipeline normalized %d empty cell(s)",
+                "TablePipeline normalized %d empty cell(s) (run_id=%s)",
                 self._normalized_empty_cells,
+                self.run_id,
             )
 
         return records

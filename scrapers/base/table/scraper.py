@@ -69,6 +69,7 @@ class F1TableScraper(F1Scraper, ABC):
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
         """
+        self.pipeline.set_run_id(getattr(self, "_run_id", None))
         return self.pipeline.parse_soup(soup)
 
     def parse_row(self, row: TableRow) -> Optional[Any]:
