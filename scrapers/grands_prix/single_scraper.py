@@ -6,6 +6,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -187,21 +188,32 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
     @staticmethod
     def _get_text(value: Any) -> str | None:
-        if isinstance(value, dict):
-            text = value.get("text")
-            if isinstance(text, str):
+        normalized = normalize_auto_value(
+            value,
+            strip_marks=True,
+            drop_empty=True,
+        )
+        if isinstance(normalized, dict):
+            text = normalized.get("text")
+            if isinstance(text, str) and text:
                 return text
-        if isinstance(value, str):
-            return value
+            return None
+        if isinstance(normalized, str):
+            return normalized or None
         return None
 
     def _list_text(self, items: Any) -> str | None:
-        if not isinstance(items, list) or not items:
+        normalized = normalize_auto_value(
+            items,
+            strip_marks=True,
+            drop_empty=True,
+        )
+        if not isinstance(normalized, list) or not normalized:
             return None
-        first_text = self._get_text(items[0])
+        first_text = self._get_text(normalized[0])
         if not first_text:
             return None
-        if all(self._get_text(item) == first_text for item in items):
+        if all(self._get_text(item) == first_text for item in normalized):
             return first_text
         return None
 

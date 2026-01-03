@@ -4,6 +4,7 @@ from typing import Any, List
 from models.scrape_types.driver_championships_payload import DriverChampionshipsPayload
 from models.services.driver_service import DriverService
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord
 from scrapers.base.transformers import RecordTransformer
 from scrapers.base.run_config import RunConfig
@@ -13,7 +14,6 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchemaBuilder
-from scrapers.base.validation import RecordValidator
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.constants import (
     DRIVER_NAME_HEADER,
@@ -22,47 +22,7 @@ from scrapers.drivers.constants import (
     NATIONALITY_HEADER,
     SEASONS_COMPETED_HEADER,
 )
-
-
-class DriversListValidator(RecordValidator):
-    def validate(self, record: ExportRecord) -> list[str]:
-        errors: list[str] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                [
-                    "driver",
-                    "nationality",
-                    "seasons_competed",
-                    "drivers_championships",
-                    "is_active",
-                    "is_world_champion",
-                ],
-            )
-        )
-        errors.extend(self.require_type(record, "driver", dict))
-        errors.extend(self.require_type(record, "nationality", str))
-        errors.extend(self.require_type(record, "seasons_competed", list))
-        errors.extend(self.require_type(record, "drivers_championships", dict))
-        errors.extend(self.require_type(record, "is_active", bool))
-        errors.extend(self.require_type(record, "is_world_champion", bool))
-
-        driver = record.get("driver")
-        if isinstance(driver, dict):
-            errors.extend(self.require_link_dict(driver, "driver"))
-
-        championships = record.get("drivers_championships")
-        if isinstance(championships, dict):
-            if "count" not in championships:
-                errors.append("drivers_championships.count is missing")
-            elif not isinstance(championships.get("count"), int):
-                errors.append("drivers_championships.count must be int")
-            if "seasons" not in championships:
-                errors.append("drivers_championships.seasons is missing")
-            elif not isinstance(championships.get("seasons"), list):
-                errors.append("drivers_championships.seasons must be list")
-
-        return errors
+from scrapers.drivers.validation import DriversRecordValidator
 
 
 class DriversChampionshipsTransformer(RecordTransformer):
@@ -96,7 +56,7 @@ class F1DriversListScraper(F1TableScraper):
     - drivers_championships: parsowane do dict {count, seasons}
     """
 
-    default_validator = DriversListValidator()
+    default_validator = DriversRecordValidator()
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
@@ -122,8 +82,15 @@ class F1DriversListScraper(F1TableScraper):
         ),
     )
 
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.validation_mode = "hard"
+        super().__init__(options=options, config=config)
         self.transformers = [DriversChampionshipsTransformer()]
 
 
