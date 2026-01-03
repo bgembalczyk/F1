@@ -18,4 +18,4 @@ class SeasonDateColumn(BaseColumn):
             text = f"{text} {self.year}"
 
         parsed = parse_date_text(text)
-        return NormalizedDate(text=parsed.get("text"), iso=parsed.get("iso"))
+        return NormalizedDate(text=parsed.raw, iso=parsed.iso)
