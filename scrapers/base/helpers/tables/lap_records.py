@@ -118,14 +118,6 @@ class LapRecordsTableScraper(F1TableScraper):
             ]
             record = self.pipeline.parse_cells(headers, seg_cells)
 
-            # Mapowanie do modelu (jeśli ktoś kiedyś doda model_class)
-            if self.model_class:
-                model = self.model_class(**record)
-                if hasattr(model, "model_dump"):
-                    record = model.model_dump()
-                elif hasattr(model, "dict"):
-                    record = model.dict()
-
             if as_value_objects:
                 if LapRecord is None:
                     raise RuntimeError(

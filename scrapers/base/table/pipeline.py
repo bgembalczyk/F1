@@ -49,6 +49,7 @@ class TablePipeline:
         self.columns = config.columns
         self.table_css_class = config.table_css_class
         self.default_column: BaseColumn = config.default_column or AutoColumn()
+        self.record_factory = config.record_factory
         self.fragment: str | None = None
         self.logger = get_logger(self.__class__.__name__)
         if not self.section_id:
@@ -56,7 +57,7 @@ class TablePipeline:
             if fragment:
                 self.fragment = fragment
 
-    def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         section_hint = self.section_id or self.fragment
         candidate_tables = find_section_elements(
             soup,
@@ -90,7 +91,7 @@ class TablePipeline:
         row: Mapping[str, Tag],
         *,
         row_index: int | None = None,
-    ) -> dict[str, Any]:
+    ) -> Any:
         record: dict[str, Any] = {}
 
         for header, cell in row.items():
@@ -100,7 +101,7 @@ class TablePipeline:
                 continue
             self._apply_cell(record, header, cell, row_index=row_index)
 
-        return record
+        return self._finalize_record(record)
 
     def parse_cells(
         self,
@@ -108,11 +109,18 @@ class TablePipeline:
         cells: Sequence[Tag],
         *,
         row_index: int | None = None,
-    ) -> dict[str, Any]:
+    ) -> Any:
         record: dict[str, Any] = {}
         for header, cell in zip(headers, cells):
             self._apply_cell(record, header, cell, row_index=row_index)
-        return record
+        return self._finalize_record(record)
+
+    def _finalize_record(self, record: dict[str, Any]) -> Any:
+        if not record or self.record_factory is None:
+            return record
+        if isinstance(self.record_factory, type):
+            return self.record_factory(**record)
+        return self.record_factory(record)
 
     def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str]:
         key = self.column_map.get(header, normalize_header(header))

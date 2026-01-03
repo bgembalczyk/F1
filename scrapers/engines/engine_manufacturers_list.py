@@ -33,7 +33,7 @@ class EngineManufacturersListScraper(F1TableScraper):
             "Wins",
             "Points",
         ],
-        model_class=EngineManufacturer,
+        record_factory=EngineManufacturer,
         column_map={
             "Manufacturer": "manufacturer",
             "Engines built in": "engines_built_in",

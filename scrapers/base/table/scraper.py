@@ -1,6 +1,6 @@
 from abc import ABC
 from dataclasses import fields, is_dataclass
-from typing import Any, Dict, List, Optional
+from typing import Any, List, Optional
 
 from bs4 import BeautifulSoup
 
@@ -55,6 +55,7 @@ class F1TableScraper(F1Scraper, ABC):
         self.column_map = resolved_config.column_map
         self.columns = resolved_config.columns
         self.table_css_class = resolved_config.table_css_class
+        self.record_factory = resolved_config.record_factory
         self.model_class = resolved_config.model_class
         self.default_column = resolved_config.default_column or AutoColumn()
         self.pipeline = TablePipeline(
@@ -64,13 +65,13 @@ class F1TableScraper(F1Scraper, ABC):
             model_fields=self._model_fields(),
         )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> List[Any]:
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
         """
         return self.pipeline.parse_soup(soup)
 
-    def parse_row(self, row: TableRow) -> Optional[Dict[str, Any]]:
+    def parse_row(self, row: TableRow) -> Optional[Any]:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
@@ -82,6 +83,9 @@ class F1TableScraper(F1Scraper, ABC):
 
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
+        record_factory = getattr(self, "record_factory", None)
+        if model_class is None and isinstance(record_factory, type):
+            model_class = record_factory
         if not model_class:
             return None
 
