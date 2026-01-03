@@ -12,6 +12,11 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers.constants import (
+    FEMALE_DRIVER_ENTRIES_STARTS_HEADER,
+    FEMALE_DRIVER_NAME_HEADER,
+    FEMALE_DRIVER_POINTS_HEADER,
+    FEMALE_DRIVER_SEASONS_HEADER,
+    FEMALE_DRIVER_TEAMS_HEADER,
     FEMALE_DRIVERS_HEADERS,
     FEMALE_DRIVERS_SECTION_ID,
     INDEX_HEADER,
@@ -30,11 +35,11 @@ class FemaleDriversListScraper(F1TableScraper):
         expected_headers=FEMALE_DRIVERS_HEADERS,
         column_map={
             INDEX_HEADER: "_skip",
-            "Name": "driver",
-            "Seasons": "seasons",
-            "Teams": "teams",
-            "Entries (starts)": "entries_starts",
-            "Points": "points",
+            FEMALE_DRIVER_NAME_HEADER: "driver",
+            FEMALE_DRIVER_SEASONS_HEADER: "seasons",
+            FEMALE_DRIVER_TEAMS_HEADER: "teams",
+            FEMALE_DRIVER_ENTRIES_STARTS_HEADER: "entries_starts",
+            FEMALE_DRIVER_POINTS_HEADER: "points",
         },
         columns={
             "_skip": SkipColumn(),

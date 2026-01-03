@@ -10,7 +10,15 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers import RecordTransformer
-from scrapers.points.constants import HISTORICAL_POSITIONS
+from scrapers.points.constants import (
+    CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+    DRIVERS_CHAMPIONSHIP_HEADER,
+    FASTEST_LAP_HEADER,
+    HISTORICAL_POSITIONS,
+    NOTES_HEADER,
+    POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
+    SEASONS_HEADER,
+)
 from scrapers.points.helpers.columns.first_place import FirstPlaceColumn
 from scrapers.points.helpers.parsers import extract_first_place_role
 from scrapers.points.helpers.parsers import seasons_key
@@ -58,21 +66,14 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
         section_id="Points_scoring_systems",
-        expected_headers=[
-            "Seasons",
-            *HISTORICAL_POSITIONS,
-            "Fastest lap",
-            "Drivers' Championship",
-            "Constructors' Championship",
-            "Notes",
-        ],
+        expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         column_map={
-            "Seasons": "seasons",
+            SEASONS_HEADER: "seasons",
             **{position: position.lower() for position in HISTORICAL_POSITIONS},
-            "Fastest lap": "fastest_lap",
-            "Drivers' Championship": "drivers_championship",
-            "Constructors' Championship": "constructors_championship",
-            "Notes": "notes",
+            FASTEST_LAP_HEADER: "fastest_lap",
+            DRIVERS_CHAMPIONSHIP_HEADER: "drivers_championship",
+            CONSTRUCTORS_CHAMPIONSHIP_HEADER: "constructors_championship",
+            NOTES_HEADER: "notes",
         },
         columns={
             "seasons": SeasonsColumn(),

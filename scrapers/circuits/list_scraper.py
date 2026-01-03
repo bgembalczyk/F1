@@ -15,23 +15,37 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
+from scrapers.circuits.constants import (
+    CIRCUIT_HEADER,
+    CIRCUITS_EXPECTED_HEADERS,
+    COUNTRY_HEADER,
+    DIRECTION_HEADER,
+    GRANDS_PRIX_HEADER,
+    GRANDS_PRIX_HELD_HEADER,
+    LAST_LENGTH_USED_HEADER,
+    LOCATION_HEADER,
+    MAP_HEADER,
+    SEASONS_HEADER,
+    TURNS_HEADER,
+    TYPE_HEADER,
+)
 from scrapers.circuits.validation import CircuitsRecordValidator
 
 
 def _build_circuits_schema() -> TableSchemaBuilder:
     return (
         TableSchemaBuilder()
-        .map("Circuit", "circuit", CircuitNameStatusColumn())
-        .map("Map", "map", SkipColumn())
-        .map("Type", "type", AutoColumn())
-        .map("Direction", "direction", AutoColumn())
-        .map("Location", "location", AutoColumn())
-        .map("Country", "country", AutoColumn())
-        .map("Last length used", "last_length_used", LastLengthUsedColumn())
-        .map("Turns", "turns", IntColumn())
-        .map("Grands Prix", "grands_prix", LinksListColumn())
-        .map("Season(s)", "seasons", SeasonsColumn())
-        .map("Grands Prix held", "grands_prix_held", IntColumn())
+        .map(CIRCUIT_HEADER, "circuit", CircuitNameStatusColumn())
+        .map(MAP_HEADER, "map", SkipColumn())
+        .map(TYPE_HEADER, "type", AutoColumn())
+        .map(DIRECTION_HEADER, "direction", AutoColumn())
+        .map(LOCATION_HEADER, "location", AutoColumn())
+        .map(COUNTRY_HEADER, "country", AutoColumn())
+        .map(LAST_LENGTH_USED_HEADER, "last_length_used", LastLengthUsedColumn())
+        .map(TURNS_HEADER, "turns", IntColumn())
+        .map(GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn())
+        .map(SEASONS_HEADER, "seasons", SeasonsColumn())
+        .map(GRANDS_PRIX_HELD_HEADER, "grands_prix_held", IntColumn())
     )
 
 
@@ -47,12 +61,7 @@ class CircuitsListScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
         section_id="Circuits",
-        expected_headers=[
-            "Circuit",
-            "Type",
-            "Location",
-            "Country",
-        ],
+        expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
         schema=_build_circuits_schema(),
         record_factory=build_circuit_record,
