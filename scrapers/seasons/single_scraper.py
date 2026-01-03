@@ -118,7 +118,36 @@ class SingleSeasonScraper(F1Scraper):
                 "tyre": TyreColumn(),
             },
         )
+        if self.season_year is not None and self.season_year < 2007:
+            records = self._normalize_pre_2007_entry_numbers(records)
         return self._entry_merger.merge_entries(records)
+
+    @staticmethod
+    def _normalize_pre_2007_entry_numbers(
+        records: List[Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        for record in records:
+            numbers = record.get("no")
+            if numbers is None:
+                continue
+
+            if isinstance(numbers, list):
+                numbers_list = numbers
+            else:
+                numbers_list = [numbers]
+
+            if len(numbers_list) != 1:
+                continue
+
+            drivers = record.get("race_drivers")
+            if drivers is None:
+                drivers = record.get("drivers") or record.get("driver")
+            if not isinstance(drivers, list) or len(drivers) <= 1:
+                continue
+
+            record["no"] = [numbers_list[0] for _ in range(len(drivers))]
+
+        return records
 
     def _parse_free_practice(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         records = self._parse_table(
