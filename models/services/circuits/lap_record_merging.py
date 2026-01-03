@@ -23,7 +23,7 @@ from models.services.circuits.lap_record_utils import (
 from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 
 
-def _normalize_entity_value(value: Any) -> dict[str, Any] | None:
+def normalize_entity_value(value: Any) -> dict[str, Any] | None:
     if value is None:
         return None
     if isinstance(value, dict):
@@ -48,14 +48,14 @@ def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
     if record.get("driver") is None and record.get("driver_rider") is not None:
         record["driver"] = record.get("driver_rider")
 
-    driver = _normalize_entity_value(record.get("driver"))
+    driver = normalize_entity_value(record.get("driver"))
     if driver is not None:
         record["driver"] = driver
     else:
         record.pop("driver", None)
 
     vehicle_value = record.get("vehicle") or record.get("car")
-    vehicle = _normalize_entity_value(vehicle_value)
+    vehicle = normalize_entity_value(vehicle_value)
     if vehicle is not None:
         record["vehicle"] = vehicle
     else:
@@ -68,7 +68,7 @@ def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
         or record.get("class")
         or record.get("class_")
     )
-    series = _normalize_entity_value(series_value)
+    series = normalize_entity_value(series_value)
     if series is not None:
         record["series"] = series
     else:
