@@ -200,7 +200,22 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 7,
+                    "years": {
+                      "start": 2014,
+                      "end": 2018
+                    }
+                  },
+                  {
+                    "number": 64,
+                    "years": {
+                      "start": 2018,
+                      "end": 2020
+                    }
+                  }
+                ]
               },
               {
                 "label": "Starts",

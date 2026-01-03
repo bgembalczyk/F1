@@ -2286,7 +2286,29 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 5,
+                    "years": {
+                      "start": 2018,
+                      "end": 2019
+                    }
+                  },
+                  {
+                    "number": 1,
+                    "years": {
+                      "start": 2022,
+                      "end": 2023
+                    }
+                  },
+                  {
+                    "number": 2,
+                    "years": {
+                      "start": 2024,
+                      "end": 2024
+                    }
+                  }
+                ]
               },
               {
                 "label": "Former teams",
@@ -10036,7 +10058,22 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 27,
+                    "years": {
+                      "start": 2014,
+                      "end": 2015
+                    }
+                  },
+                  {
+                    "number": 25,
+                    "years": {
+                      "start": 2015,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Former teams",
@@ -22784,7 +22821,29 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 33,
+                    "years": {
+                      "start": 2015,
+                      "end": 2021
+                    }
+                  },
+                  {
+                    "number": 1,
+                    "years": {
+                      "start": 2022,
+                      "end": 2025
+                    }
+                  },
+                  {
+                    "number": 3,
+                    "years": {
+                      "start": 2026,
+                      "end": 2026
+                    }
+                  }
+                ]
               },
               {
                 "label": "Entries",
@@ -29542,6 +29601,13 @@
                     "years": {
                       "start": null,
                       "end": null
+                    }
+                  },
+                  {
+                    "number": 1,
+                    "years": {
+                      "start": 2014,
+                      "end": 2014
                     }
                   }
                 ]
@@ -47921,7 +47987,22 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 17,
+                    "years": {
+                      "start": 2019,
+                      "end": 2022
+                    }
+                  },
+                  {
+                    "number": 21,
+                    "years": {
+                      "start": 2023,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Former teams",
