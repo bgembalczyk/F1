@@ -5,15 +5,34 @@ from models.validation.circuit import Circuit
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
+from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 from scrapers.circuits.validation import CircuitsRecordValidator
+
+
+def _build_circuits_schema() -> TableSchemaBuilder:
+    return (
+        TableSchemaBuilder()
+        .map("Circuit", "circuit", CircuitNameStatusColumn())
+        .map("Map", "map", SkipColumn())
+        .map("Type", "type", AutoColumn())
+        .map("Direction", "direction", AutoColumn())
+        .map("Location", "location", AutoColumn())
+        .map("Country", "country", AutoColumn())
+        .map("Last length used", "last_length_used", LastLengthUsedColumn())
+        .map("Turns", "turns", IntColumn())
+        .map("Grands Prix", "grands_prix", LinksListColumn())
+        .map("Season(s)", "seasons", SeasonsColumn())
+        .map("Grands Prix held", "grands_prix_held", IntColumn())
+    )
 
 
 class CircuitsListScraper(F1TableScraper):
@@ -35,34 +54,7 @@ class CircuitsListScraper(F1TableScraper):
             "Country",
         ],
         model_class=Circuit,
-        column_map={
-            "Circuit": "circuit",
-            "Map": "map",
-            "Type": "type",
-            "Direction": "direction",
-            "Location": "location",
-            "Country": "country",
-            "Last length used": "last_length_used",
-            "Turns": "turns",
-            "Grands Prix": "grands_prix",
-            "Season(s)": "seasons",
-            "Grands Prix held": "grands_prix_held",
-        },
-        columns={
-            # proste kolumny
-            "map": SkipColumn(),
-            "seasons": SeasonsColumn(),
-            "turns": IntColumn(),
-            "grands_prix_held": IntColumn(),
-            # Circuit → MultiColumn: circuit (url) + circuit_status (enum z raw_text)
-            "circuit": CircuitNameStatusColumn(),
-            # Last length used → MultiColumn: km + mi z jednego raw_text
-            # Last length used → MultiColumn: km + mi z tego samego tekstu
-            "last_length_used": LastLengthUsedColumn(),
-            # Grands Prix → lista linków bez znaczników
-            "grands_prix": LinksListColumn(),
-            # alternatywnie: LinksListColumn() + mała modyfikacja tekstu w osobnej kolumnie
-        },
+        schema=_build_circuits_schema(),
         record_factory=build_circuit_record,
     )
 

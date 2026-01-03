@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.transformers import RecordTransformer
 from scrapers.points.constants import HISTORICAL_POSITIONS
 
@@ -37,6 +38,23 @@ class ShortenedRacePointsTransformer(RecordTransformer):
         return grouped
 
 
+def _build_shortened_race_points_schema() -> TableSchemaBuilder:
+    builder = (
+        TableSchemaBuilder()
+        .map("Seasons", "seasons", SeasonsColumn())
+        .map("Race length completed", "race_length_completed", TextColumn())
+    )
+    for position in HISTORICAL_POSITIONS:
+        builder.map(position, position.lower(), AutoColumn())
+    return (
+        builder.map("Fastest lap", "fastest_lap", AutoColumn()).map(
+            "Notes",
+            "notes",
+            SkipColumn(),
+        )
+    )
+
+
 class ShortenedRacePointsScraper(F1TableScraper):
     """
     Tabela: Shortened race points criteria
@@ -53,20 +71,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
             "Fastest lap",
             "Notes",
         ],
-        column_map={
-            "Seasons": "seasons",
-            "Race length completed": "race_length_completed",
-            **{position: position.lower() for position in HISTORICAL_POSITIONS},
-            "Fastest lap": "fastest_lap",
-            "Notes": "notes",
-        },
-        columns={
-            "seasons": SeasonsColumn(),
-            "race_length_completed": TextColumn(),
-            **{position.lower(): AutoColumn() for position in HISTORICAL_POSITIONS},
-            "fastest_lap": AutoColumn(),
-            "notes": SkipColumn(),
-        },
+        schema=_build_shortened_race_points_schema(),
         record_factory=record_from_mapping,
     )
 
