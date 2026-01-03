@@ -26,3 +26,4 @@ class ColumnContext:
     cell: Optional[Tag]
     skip_sentinel: object
     model_fields: Optional[Set[str]] = None
+    header_link: LinkRecord | None = None

@@ -49,6 +49,7 @@ class RangeColumn(BaseColumn):
             cell=ctx.cell,
             skip_sentinel=ctx.skip_sentinel,
             model_fields=ctx.model_fields,
+            header_link=ctx.header_link,
         )
         upper_ctx = ColumnContext(
             header=ctx.header,
@@ -59,6 +60,7 @@ class RangeColumn(BaseColumn):
             cell=ctx.cell,
             skip_sentinel=ctx.skip_sentinel,
             model_fields=ctx.model_fields,
+            header_link=ctx.header_link,
         )
 
         return {

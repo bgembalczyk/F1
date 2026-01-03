@@ -95,7 +95,12 @@ class TablePipeline:
 
         records: list[dict[str, Any]] = []
         for row_index, row in enumerate(parser.parse(soup)):
-            record = self.parse_cells(row.headers, row.cells, row_index=row_index)
+            record = self.parse_cells(
+                row.headers,
+                row.cells,
+                row_index=row_index,
+                header_cells=row.header_cells,
+            )
             if record:
                 records.append(record)
 
@@ -139,10 +144,20 @@ class TablePipeline:
         cells: Sequence[Tag],
         *,
         row_index: int | None = None,
+        header_cells: Sequence[Tag] | None = None,
     ) -> Any:
         record: dict[str, Any] = {}
-        for header, cell in zip(headers, cells):
-            self._apply_cell(record, header, cell, row_index=row_index)
+        for index, (header, cell) in enumerate(zip(headers, cells)):
+            header_cell = None
+            if header_cells and index < len(header_cells):
+                header_cell = header_cells[index]
+            self._apply_cell(
+                record,
+                header,
+                cell,
+                row_index=row_index,
+                header_cell=header_cell,
+            )
         return self._finalize_record(record)
 
     def _finalize_record(self, record: dict[str, Any]) -> Any:
@@ -229,10 +244,26 @@ class TablePipeline:
         cell: Tag,
         *,
         row_index: int | None = None,
+        header_cell: Tag | None = None,
     ) -> None:
         cell_html = self._cell_html(cell)
         key, raw_text, clean_text = self._normalize_cell(header, cell)
         links = self._extract_links(cell)
+        header_link = None
+        if self.include_urls and header_cell is not None:
+            header_links = extract_links_from_cell(
+                header_cell,
+                full_url=lambda href: build_full_url(self.base_url, href),
+            )
+            header_text = clean_wiki_text(header)
+            header_link = next(
+                (
+                    link
+                    for link in header_links
+                    if clean_wiki_text(link.get("text") or "") == header_text
+                ),
+                header_links[0] if header_links else None,
+            )
 
         ctx = ColumnContext(
             header=header,
@@ -243,6 +274,7 @@ class TablePipeline:
             cell=cell,
             skip_sentinel=self.skip_sentinel,
             model_fields=self.model_fields,
+            header_link=header_link,
         )
 
         col = self._select_column(key, header)
