@@ -1,12 +1,12 @@
-from typing import TypedDict
+from typing import Literal, TypedDict
 
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 
 
-class CircuitRecord(TypedDict):
+class CircuitRecord(TypedDict, total=False):
     circuit: LinkRecord
-    circuit_status: str
+    circuit_status: Literal["current", "future", "former"]
     type: str | None
     direction: str | None
     location: str | None

@@ -6,6 +6,7 @@ from models.records.circuit_details import CircuitDetailsRecord
 from models.records.constructor import ConstructorRecord
 from models.records.driver import DriverRecord
 from models.records.driver_championships import DriversChampionshipsRecord
+from models.records.fatality import FatalityRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 
@@ -60,3 +61,7 @@ def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteR
 
 def build_circuit_details_record(record: Mapping[str, Any]) -> CircuitDetailsRecord:
     return cast(CircuitDetailsRecord, _from_mapping(record))
+
+
+def build_fatality_record(record: Mapping[str, Any]) -> FatalityRecord:
+    return cast(FatalityRecord, _from_mapping(record))

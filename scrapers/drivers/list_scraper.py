@@ -1,8 +1,8 @@
 from pathlib import Path
 from typing import Any, List
 
+from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.factories import build_driver_record
-from models.scrape_types.driver_championships_payload import DriverChampionshipsPayload
 from models.services.driver_service import DriverService
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
@@ -28,7 +28,7 @@ from scrapers.drivers.validation import DriversRecordValidator
 
 class DriversChampionshipsTransformer(RecordTransformer):
     @staticmethod
-    def _parse_drivers_championships(raw: Any) -> DriverChampionshipsPayload:
+    def _parse_drivers_championships(raw: Any) -> DriversChampionshipsRecord:
         """
         Deleguje parsowanie do DriverService.parse_championships.
 
