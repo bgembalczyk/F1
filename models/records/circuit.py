@@ -20,29 +20,29 @@ class CircuitRecord(TypedDict, total=False):
     seasons: list[SeasonRecord]
     grands_prix_held: int | None
 
-    @classmethod
-    def validate_record(cls, record: dict[str, Any]) -> list[str]:
-        errors: list[str] = []
-        errors.extend(
-            RecordValidator.require_keys(
-                record,
-                ["circuit", "circuit_status", "country", "seasons"],
-            )
+
+def validate_circuit_record(record: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    errors.extend(
+        RecordValidator.require_keys(
+            record,
+            ["circuit", "circuit_status", "country", "seasons"],
         )
-        errors.extend(RecordValidator.require_type(record, "circuit", dict))
-        errors.extend(RecordValidator.require_type(record, "circuit_status", str))
-        errors.extend(RecordValidator.require_type(record, "country", (str, dict)))
-        errors.extend(RecordValidator.require_type(record, "seasons", list))
-        errors.extend(
-            RecordValidator.require_type(record, "grands_prix", list, allow_none=True)
-        )
+    )
+    errors.extend(RecordValidator.require_type(record, "circuit", dict))
+    errors.extend(RecordValidator.require_type(record, "circuit_status", str))
+    errors.extend(RecordValidator.require_type(record, "country", (str, dict)))
+    errors.extend(RecordValidator.require_type(record, "seasons", list))
+    errors.extend(
+        RecordValidator.require_type(record, "grands_prix", list, allow_none=True)
+    )
 
-        circuit = record.get("circuit")
-        if isinstance(circuit, dict):
-            errors.extend(RecordValidator.require_link_dict(circuit, "circuit"))
+    circuit = record.get("circuit")
+    if isinstance(circuit, dict):
+        errors.extend(RecordValidator.require_link_dict(circuit, "circuit"))
 
-        grands_prix = record.get("grands_prix")
-        if isinstance(grands_prix, list):
-            errors.extend(RecordValidator.require_link_list(grands_prix, "grands_prix"))
+    grands_prix = record.get("grands_prix")
+    if isinstance(grands_prix, list):
+        errors.extend(RecordValidator.require_link_list(grands_prix, "grands_prix"))
 
-        return errors
+    return errors

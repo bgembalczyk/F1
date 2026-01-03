@@ -7,6 +7,6 @@ class LinkRecord(TypedDict):
     text: str
     url: str | None
 
-    @classmethod
-    def validate_record(cls, record: dict[str, Any]) -> list[str]:
-        return RecordValidator.require_link_dict(record, "link")
+
+def validate_link_record(record: dict[str, Any]) -> list[str]:
+    return RecordValidator.require_link_dict(record, "link")
