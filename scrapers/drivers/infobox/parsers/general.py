@@ -6,6 +6,7 @@ from typing import List
 from bs4 import Tag
 
 from models.records.link import LinkRecord
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
@@ -71,7 +72,13 @@ class InfoboxGeneralParser:
                 self._link_extractor.find_link_by_text(part, links) or part
                 for part in place_parts
             ]
-        parsed_date = parse_date_text(date_text or "")
+        try:
+            parsed_date = parse_date_text(date_text or "")
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować daty miejsca: {date_text!r}.",
+                cause=exc,
+            ) from exc
         iso = parsed_date.iso
         if isinstance(iso, list):
             date_value = iso[0] if iso else None

@@ -3,6 +3,7 @@ from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
 from models.services.helpers import prune_empty
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text_normalization import (
@@ -34,7 +35,13 @@ class InfoboxTextUtils:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
-        return parse_int_from_text(text)
+        try:
+            return parse_int_from_text(text)
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować liczby całkowitej: {text!r}.",
+                cause=exc,
+            ) from exc
 
     def parse_length(
         self, row: Optional[Dict[str, Any]], *, unit: str
@@ -42,7 +49,13 @@ class InfoboxTextUtils:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
-        return parse_number_with_unit(text, unit=unit)
+        try:
+            return parse_number_with_unit(text, unit=unit)
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować długości ({unit}): {text!r}.",
+                cause=exc,
+            ) from exc
 
     def _parse_dates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         """Parsyje daty typu YYYY-MM-DD, YYYY-MM, YYYY i zwraca też listę lat."""
@@ -51,7 +64,13 @@ class InfoboxTextUtils:
         text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
-        parsed = parse_date_text(text)
+        try:
+            parsed = parse_date_text(text)
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować daty: {text!r}.",
+                cause=exc,
+            ) from exc
         iso = parsed.iso
         if isinstance(iso, list):
             iso_dates = iso or None

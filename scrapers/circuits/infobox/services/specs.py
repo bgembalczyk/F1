@@ -1,6 +1,7 @@
 import re
 from typing import Optional, Dict, Any, List
 
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import symbol_map
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -102,7 +103,13 @@ class CircuitSpecsParser(InfoboxTextUtils):
         def _to_int(s: str) -> int:
             return int(s.replace(",", "").replace(" ", ""))
 
-        vals = [_to_int(n) for n in numbers]
+        try:
+            vals = [_to_int(n) for n in numbers]
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować pojemności: {text!r}.",
+                cause=exc,
+            ) from exc
         result: Dict[str, int] = {}
         if len(vals) >= 1:
             result["total"] = vals[0]
@@ -141,8 +148,11 @@ class CircuitSpecsParser(InfoboxTextUtils):
         if amount_match:
             try:
                 amount = float(amount_match.group(1).replace(",", ""))
-            except ValueError:
-                amount = None
+            except (TypeError, ValueError) as exc:
+                raise DomainParseError(
+                    f"Nie udało się sparsować kosztu budowy: {text_clean!r}.",
+                    cause=exc,
+                ) from exc
 
         scale_match = re.search(
             r"\b(million|billion|thousand|mln|bn|k)\b", text_clean, flags=re.IGNORECASE
@@ -174,10 +184,22 @@ class CircuitSpecsParser(InfoboxTextUtils):
         unit: Optional[str] = None
 
         if angle_match:
-            value = float(angle_match.group(1).replace(",", "."))
+            try:
+                value = float(angle_match.group(1).replace(",", "."))
+            except (TypeError, ValueError) as exc:
+                raise DomainParseError(
+                    f"Nie udało się sparsować nachylenia toru: {text!r}.",
+                    cause=exc,
+                ) from exc
             unit = "deg"
         elif percent_match:
-            value = float(percent_match.group(1).replace(",", "."))
+            try:
+                value = float(percent_match.group(1).replace(",", "."))
+            except (TypeError, ValueError) as exc:
+                raise DomainParseError(
+                    f"Nie udało się sparsować nachylenia toru: {text!r}.",
+                    cause=exc,
+                ) from exc
             unit = "percent"
 
         result: Dict[str, Any] = {}
