@@ -143,6 +143,25 @@ class SingleSeasonScraper(F1Scraper):
         if records:
             return self._normalize_free_practice_records(records)
 
+        records = self._parse_table(
+            soup,
+            section_ids=["Free_practice_drivers"],
+            expected_headers=["Constructor", "Driver name", "Rounds"],
+            column_map={
+                "Constructor": "constructor",
+                "Driver name": "drivers",
+                "Driver": "drivers",
+                "Rounds": "rounds",
+            },
+            columns={
+                "constructor": ConstructorColumn(),
+                "drivers": DriverListColumn(),
+                "rounds": BrListColumn(),
+            },
+        )
+        if records:
+            return self._normalize_free_practice_records(records)
+
         return self._parse_table(
             soup,
             section_ids=["Free_practice_drivers"],
