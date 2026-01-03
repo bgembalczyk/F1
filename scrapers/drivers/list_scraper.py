@@ -2,9 +2,9 @@ from pathlib import Path
 from typing import Any, List
 
 from models.scrape_types.driver_championships_payload import DriverChampionshipsPayload
-from models.scrape_types.driver_row import DriverRow
 from models.services.driver_service import DriverService
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.records import ExportRecord
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -86,15 +86,21 @@ class F1DriversListScraper(F1TableScraper):
         """
         return DriverService.parse_championships(raw)  # type: ignore[return-value]
 
-    def fetch(self) -> List[DriverRow]:
-        rows = super().fetch()
+    def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        before_count = len(records)
+        self.logger.debug("Post-processing driver records: %d", before_count)
 
-        for row in rows:
+        for row in records:
             champs_raw = row.get("drivers_championships")
             row["drivers_championships"] = self._parse_drivers_championships(champs_raw)
 
+        self.logger.debug(
+            "Post-processing driver records complete: %d -> %d",
+            before_count,
+            len(records),
+        )
         # runtime: nadal zwracamy list[dict], typy są dla Ciebie
-        return rows  # type: ignore[return-value]
+        return records  # type: ignore[return-value]
 
 
 if __name__ == "__main__":
