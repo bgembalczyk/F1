@@ -1,15 +1,52 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Any, Mapping, Sequence
+from typing import Any, Callable, Mapping, Sequence
 
 from scrapers.base.records import ExportRecord
 
 
 class RecordValidator(ABC):
+    def __init__(self, record_factory: Callable[..., Any] | type | None = None) -> None:
+        self.record_factory = record_factory
+
     @abstractmethod
     def validate(self, record: ExportRecord) -> list[str]:
         raise NotImplementedError
+
+    def set_record_factory(self, record_factory: Callable[..., Any] | type | None) -> None:
+        self.record_factory = record_factory
+
+    def validate_record_factory(self, record: ExportRecord) -> list[str]:
+        record_factory = self.record_factory
+        if record_factory is None:
+            return []
+
+        model_validate = getattr(record_factory, "model_validate", None)
+        if callable(model_validate):
+            try:
+                model_validate(record)
+            except Exception as exc:
+                return [f"model_validate failed: {exc}"]
+            return []
+
+        validate_record = getattr(record_factory, "validate_record", None)
+        if callable(validate_record):
+            try:
+                errors = validate_record(record)
+            except Exception as exc:
+                return [f"validate_record failed: {exc}"]
+            if not errors:
+                return []
+            return [str(error) for error in errors]
+
+        validate = getattr(record_factory, "validate", None)
+        if callable(validate) and not isinstance(record_factory, type):
+            try:
+                validate()
+            except Exception as exc:
+                return [f"validate failed: {exc}"]
+        return []
 
     @staticmethod
     def require_keys(record: Mapping[str, Any], keys: Sequence[str]) -> list[str]:

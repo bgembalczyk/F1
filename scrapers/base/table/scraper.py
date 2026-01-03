@@ -66,6 +66,8 @@ class F1TableScraper(F1Scraper, ABC):
             model_fields=self._model_fields(),
             debug_dir=options.debug_dir,
         )
+        if self.validator is not None and self.validator.record_factory is None:
+            self.validator.set_record_factory(self.record_factory)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Any]:
         """

@@ -71,6 +71,8 @@ class F1Scraper(ABC):
         self.validator: RecordValidator | None = options.validator or getattr(
             self, "default_validator", None
         )
+        if self.validator is not None:
+            self.validator.set_record_factory(options.record_factory)
         self.validation_mode = options.validation_mode
         if self.validation_mode not in {"soft", "hard"}:
             raise ValueError(
@@ -234,12 +236,30 @@ class F1Scraper(ABC):
         valid_records: List[ExportRecord] = []
         for index, record in enumerate(records):
             errors = self.validator.validate(record)
+            record_factory_errors = self.validator.validate_record_factory(record)
+            if record_factory_errors:
+                record_factory_label = (
+                    getattr(self.validator.record_factory, "__name__", None)
+                    if self.validator.record_factory is not None
+                    else None
+                )
+                label = record_factory_label or "record_factory"
+                errors.extend(
+                    [f"{label}: {error}" for error in record_factory_errors]
+                )
             if not errors:
                 valid_records.append(record)
                 continue
 
+            model_label = None
+            if self.validator.record_factory is not None:
+                model_label = getattr(self.validator.record_factory, "__name__", None)
+                if model_label is None:
+                    model_label = self.validator.record_factory.__class__.__name__
+
             message = (
-                f"Validation failed for record #{index} "
+                f"Validation failed for record #{index}"
+                f"{f' ({model_label})' if model_label else ''} "
                 f"with {len(errors)} error(s): {', '.join(errors)}"
             )
             if self.validation_mode == "soft":
