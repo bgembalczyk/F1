@@ -29,4 +29,4 @@ class DateColumn(BaseColumn):
             return NormalizedDate(text=None, iso=None)
 
         parsed = parse_date_text(text)
-        return NormalizedDate(text=parsed.get("text"), iso=parsed.get("iso"))
+        return NormalizedDate(text=parsed.raw, iso=parsed.iso)

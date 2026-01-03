@@ -1,10 +1,10 @@
 from typing import Any
 
-from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
 
 
 class FatalityEventColumn(BaseColumn):
@@ -12,17 +12,7 @@ class FatalityEventColumn(BaseColumn):
         self.auto_column = auto_column or AutoColumn()
 
     def parse(self, ctx: ColumnContext) -> Any:
-        championship = "†" not in (ctx.raw_text or "")
+        championship = MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
         auto_value = self.auto_column.parse(ctx)
-        if isinstance(auto_value, dict):
-            cleaned = dict(auto_value)
-            cleaned["text"] = strip_marks(cleaned.get("text")) or ""
-            return {"event": cleaned, "championship": championship}
-        if isinstance(auto_value, list):
-            return {
-                "event": normalize_links(auto_value, strip_marks=True, drop_empty=True),
-                "championship": championship,
-            }
-        if isinstance(auto_value, str):
-            return {"event": strip_marks(auto_value), "championship": championship}
-        return {"event": auto_value, "championship": championship}
+        normalized = normalize_auto_value(auto_value, strip_marks=True)
+        return {"event": normalized, "championship": championship}
