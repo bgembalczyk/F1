@@ -75,7 +75,9 @@ class SingleSeasonScraper(F1Scraper):
                     soup, self.season_year
                 ),
                 "scoring_system": self._scoring_system_parser.parse(soup),
-                "drivers_standings": self._standings_parser.parse_drivers(soup),
+                "drivers_standings": self._standings_parser.parse_drivers(
+                    soup, self.season_year
+                ),
                 "constructors_standings": self._standings_parser.parse_constructors(
                     soup
                 ),

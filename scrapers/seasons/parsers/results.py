@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
@@ -43,7 +44,7 @@ class SeasonResultsParser:
                 "round": IntColumn(),
                 "grand_prix": UrlColumn(),
                 "pole_position": DriverColumn(),
-                "fastest_lap": DriverColumn(),
+                "fastest_lap": DriverListColumn(),
                 "winning_driver": DriverColumn(),
                 "winning_constructor": ConstructorColumn(),
                 "report": UrlColumn(),
