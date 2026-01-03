@@ -8,7 +8,32 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.transformers import RecordTransformer
 from scrapers.points.constants import HISTORICAL_POSITIONS
+
+
+class ShortenedRacePointsTransformer(RecordTransformer):
+    def transform(self, records: list[dict]) -> list[dict]:
+        grouped: list[dict] = []
+        index: dict[tuple, int] = {}
+
+        for record in records:
+            seasons = record.get("seasons", [])
+            key = tuple((season.get("year"), season.get("url")) for season in seasons)
+            if key not in index:
+                grouped.append(
+                    {
+                        "seasons": seasons,
+                        "race_length_points": [],
+                    }
+                )
+                index[key] = len(grouped) - 1
+
+            grouped[index[key]]["race_length_points"].append(
+                {key: value for key, value in record.items() if key != "seasons"}
+            )
+
+        return grouped
 
 
 class ShortenedRacePointsScraper(F1TableScraper):
@@ -43,28 +68,9 @@ class ShortenedRacePointsScraper(F1TableScraper):
         },
     )
 
-    @staticmethod
-    def to_export_records(records):
-        grouped: list[dict] = []
-        index: dict[tuple, int] = {}
-
-        for record in records:
-            seasons = record.get("seasons", [])
-            key = tuple((season.get("year"), season.get("url")) for season in seasons)
-            if key not in index:
-                grouped.append(
-                    {
-                        "seasons": seasons,
-                        "race_length_points": [],
-                    }
-                )
-                index[key] = len(grouped) - 1
-
-            grouped[index[key]]["race_length_points"].append(
-                {key: value for key, value in record.items() if key != "seasons"}
-            )
-
-        return grouped
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.transformers = [ShortenedRacePointsTransformer()]
 
 
 if __name__ == "__main__":
