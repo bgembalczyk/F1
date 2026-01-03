@@ -64,7 +64,8 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
         infobox_scraper = DriverInfoboxScraper(
-            options=ScraperOptions(include_urls=self.include_urls)
+            options=ScraperOptions(include_urls=self.include_urls),
+            run_id=getattr(self, "_run_id", None),
         )
         records = infobox_scraper.parse(soup)
         return records[0] if records else {}

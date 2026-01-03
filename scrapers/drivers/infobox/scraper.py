@@ -9,6 +9,7 @@ from scrapers.base.helpers.text_normalization import clean_infobox_text, clean_w
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
+from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 
 
@@ -25,19 +26,45 @@ class DriverInfoboxScraper:
         "Cause of death": "cause_of_death",
     }
 
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        run_id: str | None = None,
+    ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
         self.wikipedia_base = InfoboxHtmlParser.WIKIPEDIA_BASE
+        self.run_id = run_id
+        self.logger = get_logger(self.__class__.__name__)
 
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
         table = InfoboxHtmlParser.find_infobox(soup)
         if table is None:
+            self.logger.debug("Infobox not found (run_id=%s)", self.run_id)
             return []
-        return [self._parse_infobox(table)]
-
-    def _parse_infobox(self, table: Tag) -> Dict[str, Any]:
+        rows_count = len(table.find_all("tr"))
         sections = self._collect_sections(table)
+        total_rows = sum(len(section.get("rows", [])) for section in sections)
+        self.logger.debug(
+            "Infobox detected %d row(s) and %d section(s) (run_id=%s)",
+            rows_count,
+            len(sections),
+            self.run_id,
+        )
+        parsed = self._parse_infobox_with_sections(table, sections)
+        self.logger.debug(
+            "Infobox parsed %d row(s) across %d section(s) (run_id=%s)",
+            total_rows,
+            len(sections),
+            self.run_id,
+        )
+        return [parsed]
+
+    def _parse_infobox_with_sections(
+        self, table: Tag, sections: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         general_section = sections[0] if sections else {"rows": []}
 
         parsed = {

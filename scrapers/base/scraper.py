@@ -63,6 +63,7 @@ class F1Scraper(ABC):
         self.transformers: List[RecordTransformer] = []
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
+        self._run_id: str | None = None
 
         self.validator: RecordValidator | None = options.validator or getattr(
             self, "default_validator", None
@@ -97,6 +98,7 @@ class F1Scraper(ABC):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")
 
         run_id = uuid4().hex
+        self._run_id = run_id
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
 
         try:
