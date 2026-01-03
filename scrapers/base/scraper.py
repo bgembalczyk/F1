@@ -11,8 +11,14 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
+from scrapers.base.errors import (
+    ScraperError,
+    ScraperNetworkError,
+    ScraperParseError,
+    ScraperValidationError,
+)
 from scrapers.base.logging import get_logger
+from scrapers.base.validation import RecordValidator
 
 
 T = TypeVar("T")
@@ -49,6 +55,15 @@ class F1Scraper(ABC):
         self._record_normalizer = RecordNormalizer()
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
+
+        self.validator: RecordValidator | None = options.validator or getattr(
+            self, "default_validator", None
+        )
+        self.validation_mode = options.validation_mode
+        if self.validation_mode not in {"soft", "hard"}:
+            raise ValueError(
+                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+            )
 
         self._data: Optional[List[ExportRecord]] = None
 
@@ -95,7 +110,8 @@ class F1Scraper(ABC):
 
             normalized_records = self._record_normalizer.normalize(list(raw_records))
             export_records = self.to_export_records(normalized_records)
-            self._data = self.post_process_records(export_records)
+            processed_records = self.post_process_records(export_records)
+            self._data = self.validate_records(processed_records)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -187,6 +203,38 @@ class F1Scraper(ABC):
     def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
         self.logger.debug("Post-process records: %d -> %d", len(records), len(records))
         return records
+
+    def validate_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        if self.validator is None:
+            return records
+
+        valid_records: List[ExportRecord] = []
+        for index, record in enumerate(records):
+            errors = self.validator.validate(record)
+            if not errors:
+                valid_records.append(record)
+                continue
+
+            message = (
+                f"Validation failed for record #{index} "
+                f"with {len(errors)} error(s): {', '.join(errors)}"
+            )
+            if self.validation_mode == "soft":
+                self.logger.warning(message)
+                continue
+            raise ScraperValidationError(
+                message=message,
+                url=getattr(self, "url", None),
+            )
+
+        if len(valid_records) != len(records):
+            self.logger.info(
+                "Validation filtered records: %d -> %d",
+                len(records),
+                len(valid_records),
+            )
+
+        return valid_records
 
     # ---------- Pomocnicze ----------
 
