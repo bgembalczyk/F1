@@ -1,9 +1,13 @@
 from pathlib import Path
 from typing import Any, List
 
+from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.records import ExportRecord
 from scrapers.base.run_config import RunConfig
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
@@ -85,18 +89,8 @@ class F1FatalitiesListScraper(F1TableScraper):
     def _parse_event(ctx: ColumnContext) -> Any:
         championship = MARK_NON_CHAMPIONSHIP_EVENT not in (ctx.raw_text or "")
         auto_value = AutoColumn().parse(ctx)
-        if isinstance(auto_value, dict):
-            cleaned = dict(auto_value)
-            cleaned["text"] = strip_marks(cleaned.get("text")) or ""
-            return {"event": cleaned, "championship": championship}
-        if isinstance(auto_value, list):
-            return {
-                "event": normalize_links(auto_value, strip_marks=True, drop_empty=True),
-                "championship": championship,
-            }
-        if isinstance(auto_value, str):
-            return {"event": strip_marks(auto_value), "championship": championship}
-        return {"event": auto_value, "championship": championship}
+        normalized = normalize_auto_value(auto_value, strip_marks=True)
+        return {"event": normalized, "championship": championship}
 
     def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
         before_count = len(records)

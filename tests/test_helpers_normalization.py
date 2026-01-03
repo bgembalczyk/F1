@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.html_utils import extract_links_from_cell
 from scrapers.base.helpers.links import normalize_links
+from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.text_normalization import (
     clean_wiki_text,
     is_language_link,
@@ -127,6 +128,31 @@ def test_normalize_links_handles_none_and_single_link():
     assert normalize_links({"text": "Solo", "url": "https://example.com/solo"}) == [
         {"text": "Solo", "url": "https://example.com/solo"},
     ]
+
+
+def test_normalize_auto_value_handles_dict():
+    value = {"text": "Marked†", "url": "https://example.com/marked"}
+
+    assert normalize_auto_value(value, strip_marks=True) == {
+        "text": "Marked",
+        "url": "https://example.com/marked",
+    }
+
+
+def test_normalize_auto_value_handles_list():
+    value = [{"text": "Marked*", "url": "https://example.com/marked"}]
+
+    assert normalize_auto_value(value, strip_marks=True) == [
+        {"text": "Marked", "url": "https://example.com/marked"},
+    ]
+
+
+def test_normalize_auto_value_handles_str():
+    assert normalize_auto_value("Marked~", strip_marks=True) == "Marked"
+
+
+def test_normalize_auto_value_handles_none():
+    assert normalize_auto_value(None) is None
 
 
 def test_parse_time_seconds_from_text_handles_various_inputs():
