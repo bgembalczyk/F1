@@ -160,7 +160,7 @@ class SingleSeasonScraper(F1Scraper):
     def _parse_free_practice(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         records = self._parse_table(
             soup,
-            section_ids=["Free_practice_drivers"],
+            section_ids=["Free_practice_drivers", "Friday_drivers"],
             expected_headers=["Constructor", "No.", "Driver name", "Rounds"],
             column_map={
                 "Constructor": "constructor",

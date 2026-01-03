@@ -673,7 +673,153 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": [
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Allan McNish",
+                "url": "https://en.wikipedia.org/wiki/Allan_McNish"
+              },
+              "no": 34,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Franck Montagny",
+                "url": "https://en.wikipedia.org/wiki/Franck_Montagny"
+              },
+              "no": 44,
+              "rounds": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Jordan",
+              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Zsolt Baumgartner",
+                "url": "https://en.wikipedia.org/wiki/Zsolt_Baumgartner"
+              },
+              "no": 36,
+              "rounds": [
+                12,
+                13
+              ]
+            },
+            {
+              "driver": {
+                "text": "Björn Wirdheim",
+                "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Wirdheim"
+              },
+              "no": 36,
+              "rounds": [
+                15
+              ]
+            },
+            {
+              "driver": {
+                "text": "Satoshi Motoyama",
+                "url": "https://en.wikipedia.org/wiki/Satoshi_Motoyama"
+              },
+              "no": 36,
+              "rounds": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Minardi",
+              "url": "https://en.wikipedia.org/wiki/Minardi"
+            },
+            "engine_constructor": {
+              "text": "Cosworth",
+              "url": "https://en.wikipedia.org/wiki/Cosworth"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Matteo Bobbi",
+                "url": "https://en.wikipedia.org/wiki/Matteo_Bobbi"
+              },
+              "no": 39,
+              "rounds": [
+                4
+              ]
+            },
+            {
+              "driver": {
+                "text": "Gianmaria Bruni",
+                "url": "https://en.wikipedia.org/wiki/Gianmaria_Bruni"
+              },
+              "no": 39,
+              "rounds": [
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ]
+        }
+      ],
       "calendar": [],
       "results": [
         {
