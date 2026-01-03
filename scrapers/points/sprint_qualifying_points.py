@@ -7,7 +7,15 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.points.constants import SPRINT_POSITIONS
+
+
+def _build_sprint_qualifying_schema() -> TableSchemaBuilder:
+    builder = TableSchemaBuilder().map("Seasons", "seasons", SeasonsColumn())
+    for position in SPRINT_POSITIONS:
+        builder.map(position, position.lower(), IntColumn())
+    return builder
 
 
 class SprintQualifyingPointsScraper(F1TableScraper):
@@ -23,14 +31,7 @@ class SprintQualifyingPointsScraper(F1TableScraper):
             "Seasons",
             *SPRINT_POSITIONS,
         ],
-        column_map={
-            "Seasons": "seasons",
-            **{position: position.lower() for position in SPRINT_POSITIONS},
-        },
-        columns={
-            "seasons": SeasonsColumn(),
-            **{position.lower(): IntColumn() for position in SPRINT_POSITIONS},
-        },
+        schema=_build_sprint_qualifying_schema(),
         record_factory=record_from_mapping,
     )
 
