@@ -34,11 +34,12 @@ class DriverInfoboxScraper:
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
+        self.record_factory = options.record_factory
         self.wikipedia_base = InfoboxHtmlParser.WIKIPEDIA_BASE
         self.run_id = run_id
         self.logger = get_logger(self.__class__.__name__)
 
-    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> List[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
         table = InfoboxHtmlParser.find_infobox(soup)
         if table is None:
@@ -60,7 +61,24 @@ class DriverInfoboxScraper:
             len(sections),
             self.run_id,
         )
-        return [parsed]
+        return [self._apply_record_factory(parsed)]
+
+    def _apply_record_factory(self, record: Dict[str, Any]) -> Any:
+        if self.record_factory is None:
+            return record
+        try:
+            if isinstance(self.record_factory, type):
+                return self.record_factory(**record)
+            return self.record_factory(record)
+        except Exception:
+            self.logger.warning(
+                "Infobox record_factory failed (run_id=%s). "
+                "Falling back to raw record: %s",
+                self.run_id,
+                record,
+                exc_info=True,
+            )
+            return record
 
     def _parse_infobox_with_sections(
         self, table: Tag, sections: List[Dict[str, Any]]
