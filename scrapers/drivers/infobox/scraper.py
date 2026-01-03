@@ -8,6 +8,7 @@ from scrapers.base.helpers.text import clean_wiki_text, extract_links_from_cell
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import build_full_url
+from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
@@ -31,12 +32,15 @@ class DriverInfoboxScraper:
         *,
         options: ScraperOptions | None = None,
         run_id: str | None = None,
+        url: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
         self.record_factory = options.record_factory
+        self.debug_dir = options.debug_dir
         self.wikipedia_base = InfoboxHtmlParser.WIKIPEDIA_BASE
         self.run_id = run_id
+        self.url = url
         self.logger = get_logger(self.__class__.__name__)
 
     def parse(self, soup: BeautifulSoup) -> List[Any]:
@@ -54,7 +58,22 @@ class DriverInfoboxScraper:
             len(sections),
             self.run_id,
         )
-        parsed = self._parse_infobox_with_sections(table, sections)
+        try:
+            parsed = self._parse_infobox_with_sections(table, sections)
+        except Exception:
+            if self.debug_dir is not None:
+                dump_path = write_infobox_dump(
+                    self.debug_dir,
+                    html=str(table),
+                    url=self.url,
+                    run_id=self.run_id,
+                )
+                self.logger.warning(
+                    "Saved infobox HTML dump: %s (url=%s)",
+                    dump_path,
+                    self.url,
+                )
+            raise
         self.logger.debug(
             "Infobox parsed %d row(s) across %d section(s) (run_id=%s)",
             total_rows,

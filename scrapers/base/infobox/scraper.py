@@ -29,6 +29,7 @@ class WikipediaInfoboxScraper:
         fetcher: HtmlFetcher | None = None,
         parser: InfoboxHtmlParser | None = None,
         mapper: InfoboxFieldMapper | None = None,
+        run_id: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         if fetcher is not None:
@@ -39,6 +40,9 @@ class WikipediaInfoboxScraper:
         self.parser = parser or InfoboxHtmlParser()
         self.mapper = mapper or InfoboxFieldMapper()
         self.record_factory = options.record_factory
+        self.debug_dir = options.debug_dir
+        self.run_id = run_id
+        self.url: str | None = None
         self.logger = get_logger(self.__class__.__name__)
 
     # ------------------------------
@@ -48,7 +52,9 @@ class WikipediaInfoboxScraper:
     def scrape(self, url: str) -> Dict[str, Any]:
         """Pobiera i parsuje infobox z dowolnego artykułu Wikipedii."""
         handler = ErrorHandler(logger=logging.getLogger(__name__))
+        html: str | None = None
         try:
+            self.url = url
             html = self._fetch(url)
         except Exception as exc:
             error = (

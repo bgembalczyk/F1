@@ -52,6 +52,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
             options=ScraperOptions(
                 fetcher=self.fetcher,
                 policy=self.policy,
+                debug_dir=options.debug_dir,
             ),
         )
 
@@ -148,6 +149,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
             soup
         )  # TODO: co to robi?
 
+        self.infobox_scraper.run_id = getattr(self, "_run_id", None)
+        self.infobox_scraper.url = self.url
         raw = parse_infobox_from_soup(self.infobox_scraper, truncated_soup)
 
         # layouty parsujemy z pełnej sekcji artykułu
