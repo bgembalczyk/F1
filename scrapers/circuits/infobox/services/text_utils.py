@@ -1,3 +1,4 @@
+import re
 from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
@@ -51,7 +52,7 @@ class InfoboxTextUtils:
         if not text:
             return None
         parsed = parse_date_text(text)
-        iso = parsed.get("iso")
+        iso = parsed.iso
         if isinstance(iso, list):
             iso_dates = iso or None
         elif isinstance(iso, str):
@@ -59,10 +60,16 @@ class InfoboxTextUtils:
         else:
             iso_dates = None
 
+        years = (
+            re.findall(r"\b(1[89]\d{2}|20\d{2})\b", parsed.raw or "")
+            if parsed.raw
+            else None
+        )
+
         return {
-            "text": parsed.get("text"),
+            "text": parsed.raw,
             "iso_dates": iso_dates,
-            "years": parsed.get("years"),
+            "years": years or None,
         }
 
     # ------------------------------

@@ -156,13 +156,13 @@ class DriverInfoboxScraper:
                 self._find_link_by_text(part, links) or part for part in place_parts
             ]
         parsed_date = parse_date_text(date_text or "")
-        iso = parsed_date.get("iso")
+        iso = parsed_date.iso
         if isinstance(iso, list):
             date_value = iso[0] if iso else None
         elif isinstance(iso, str):
             date_value = iso
         else:
-            date_value = date_text or None
+            date_value = parsed_date.raw or date_text or None
         return {
             "date": date_value,
             "place": place or None,

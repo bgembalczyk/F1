@@ -77,7 +77,10 @@ class F1FatalitiesListScraper(F1TableScraper):
         if not text:
             return None
         parsed = parse_date_text(text)
-        return parsed.get("iso")
+        iso = parsed.iso
+        if isinstance(iso, list):
+            return iso[0] if iso else None
+        return iso
 
     @staticmethod
     def _parse_formula_category(ctx: ColumnContext) -> str | None:
