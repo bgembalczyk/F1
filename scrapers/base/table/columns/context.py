@@ -21,7 +21,7 @@ class ColumnContext:
     header: str
     key: str
     raw_text: str
-    clean_text: str
+    clean_text: str | None
     links: list[LinkRecord]
     cell: Optional[Tag]
     skip_sentinel: object

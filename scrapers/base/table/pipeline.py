@@ -12,6 +12,7 @@ from scrapers.base.helpers.html_utils import (
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.logging import get_logger
+from scrapers.base.null_policy import normalize_empty
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -51,12 +52,14 @@ class TablePipeline:
         self.default_column: BaseColumn = config.default_column or AutoColumn()
         self.fragment: str | None = None
         self.logger = get_logger(self.__class__.__name__)
+        self._normalized_empty_cells = 0
         if not self.section_id:
             fragment = urlsplit(config.url).fragment
             if fragment:
                 self.fragment = fragment
 
     def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        self._normalized_empty_cells = 0
         section_hint = self.section_id or self.fragment
         candidate_tables = find_section_elements(
             soup,
@@ -82,6 +85,12 @@ class TablePipeline:
             record = self.parse_cells(row.headers, row.cells, row_index=row_index)
             if record:
                 records.append(record)
+
+        if self._normalized_empty_cells:
+            self.logger.debug(
+                "TablePipeline normalized %d empty cell(s)",
+                self._normalized_empty_cells,
+            )
 
         return records
 
@@ -114,11 +123,14 @@ class TablePipeline:
             self._apply_cell(record, header, cell, row_index=row_index)
         return record
 
-    def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str]:
+    def _normalize_cell(self, header: str, cell: Tag) -> tuple[str, str, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
         clean_text = clean_wiki_text(raw_text)
-        return key, raw_text, clean_text
+        normalized = normalize_empty(clean_text)
+        if normalized is None and clean_text == "":
+            self._normalized_empty_cells += 1
+        return key, raw_text, normalized
 
     def _extract_links(self, cell: Tag) -> list[LinkRecord]:
         if not self.include_urls:
