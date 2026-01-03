@@ -656,7 +656,127 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": [
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Force India",
+              "url": "https://en.wikipedia.org/wiki/Force_India"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Alfonso Celis Jr.",
+                "url": "https://en.wikipedia.org/wiki/Alfonso_Celis_Jr."
+              },
+              "no": 34,
+              "rounds": [
+                2,
+                4,
+                9,
+                14,
+                18,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Haas",
+              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Charles Leclerc",
+                "url": "https://en.wikipedia.org/wiki/Charles_Leclerc"
+              },
+              "no": 50,
+              "rounds": [
+                10,
+                11,
+                12,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Manor",
+              "url": "https://en.wikipedia.org/wiki/Manor_Racing"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Jordan King",
+                "url": "https://en.wikipedia.org/wiki/Jordan_King"
+              },
+              "no": 42,
+              "rounds": [
+                18,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Sergey Sirotkin",
+                "url": "https://en.wikipedia.org/wiki/Sergey_Sirotkin"
+              },
+              "no": 46,
+              "rounds": [
+                4,
+                20
+              ]
+            },
+            {
+              "driver": {
+                "text": "Esteban Ocon",
+                "url": "https://en.wikipedia.org/wiki/Esteban_Ocon"
+              },
+              "no": 45,
+              "rounds": [
+                5,
+                10,
+                11,
+                12
+              ]
+            }
+          ]
+        }
+      ],
       "calendar": [],
       "results": [
         {

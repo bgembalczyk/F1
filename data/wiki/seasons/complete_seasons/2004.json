@@ -729,12 +729,16 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "no.": "35",
-          "driver_name": {
-            "text": "Anthony Davidson",
-            "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-          },
-          "rounds": "All"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Anthony Davidson",
+                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
+              },
+              "no": 35,
+              "rounds": []
+            }
+          ]
         },
         {
           "constructor": {
@@ -747,12 +751,16 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "no.": "37",
-          "driver_name": {
-            "text": "Björn Wirdheim",
-            "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Wirdheim"
-          },
-          "rounds": "All"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Björn Wirdheim",
+                "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Wirdheim"
+              },
+              "no": 37,
+              "rounds": []
+            }
+          ]
         },
         {
           "constructor": {
@@ -765,9 +773,43 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_in_Formula_One"
             }
           },
-          "no.": "38",
-          "driver_name": "Ricardo Zonta Ryan Briscoe",
-          "rounds": "1-12 13-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Ricardo Zonta",
+                "url": "https://en.wikipedia.org/wiki/Ricardo_Zonta"
+              },
+              "no": 38,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "driver": {
+                "text": "Ryan Briscoe",
+                "url": "https://en.wikipedia.org/wiki/Ryan_Briscoe"
+              },
+              "rounds": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -780,9 +822,43 @@
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             }
           },
-          "no.": "39",
-          "driver_name": "Timo Glock Robert Doornbos",
-          "rounds": "1-15 16-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Timo Glock",
+                "url": "https://en.wikipedia.org/wiki/Timo_Glock"
+              },
+              "no": 39,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            {
+              "driver": {
+                "text": "Robert Doornbos",
+                "url": "https://en.wikipedia.org/wiki/Robert_Doornbos"
+              },
+              "rounds": [
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -795,12 +871,16 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "no.": "40",
-          "driver_name": {
-            "text": "Bas Leinders",
-            "url": "https://en.wikipedia.org/wiki/Bas_Leinders"
-          },
-          "rounds": "All 1"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Bas Leinders",
+                "url": "https://en.wikipedia.org/wiki/Bas_Leinders"
+              },
+              "no": 40,
+              "rounds": []
+            }
+          ]
         }
       ],
       "calendar": [],

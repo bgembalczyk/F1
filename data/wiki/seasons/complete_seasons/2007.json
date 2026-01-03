@@ -684,12 +684,18 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "no.": "34",
-          "driver_name": {
-            "text": "Christian Klien",
-            "url": "https://en.wikipedia.org/wiki/Christian_Klien"
-          },
-          "rounds": "9"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Christian Klien",
+                "url": "https://en.wikipedia.org/wiki/Christian_Klien"
+              },
+              "no": 34,
+              "rounds": [
+                9
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -702,12 +708,19 @@
               "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
             }
           },
-          "no.": "35",
-          "driver_name": {
-            "text": "Sebastian Vettel",
-            "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-          },
-          "rounds": "1-2"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Sebastian Vettel",
+                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+              },
+              "no": 35,
+              "rounds": [
+                1,
+                2
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -720,12 +733,22 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_in_Formula_One"
             }
           },
-          "no.": "38",
-          "driver_name": {
-            "text": "Kazuki Nakajima",
-            "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
-          },
-          "rounds": "1-2, 6-7, 16"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Kazuki Nakajima",
+                "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
+              },
+              "no": 38,
+              "rounds": [
+                1,
+                2,
+                6,
+                7,
+                16
+              ]
+            }
+          ]
         }
       ],
       "calendar": [],

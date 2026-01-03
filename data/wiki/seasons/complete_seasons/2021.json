@@ -526,7 +526,105 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": [
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Callum Ilott",
+                "url": "https://en.wikipedia.org/wiki/Callum_Ilott"
+              },
+              "no": 98,
+              "rounds": [
+                3,
+                9
+              ]
+            },
+            {
+              "driver": {
+                "text": "Robert Kubica",
+                "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
+              },
+              "no": 88,
+              "rounds": [
+                4,
+                8,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alpine",
+              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Zhou Guanyu",
+                "url": "https://en.wikipedia.org/wiki/Zhou_Guanyu"
+              },
+              "no": 37,
+              "rounds": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Roy Nissany",
+                "url": "https://en.wikipedia.org/wiki/Roy_Nissany"
+              },
+              "no": 45,
+              "rounds": [
+                4,
+                7,
+                9
+              ]
+            },
+            {
+              "driver": {
+                "text": "Jack Aitken",
+                "url": "https://en.wikipedia.org/wiki/Jack_Aitken"
+              },
+              "no": 89,
+              "rounds": [
+                22
+              ]
+            }
+          ]
+        }
+      ],
       "calendar": [
         {
           "round": 1,

@@ -788,12 +788,16 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "no.": "35",
-          "driver_name": {
-            "text": "Alexander Wurz",
-            "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-          },
-          "rounds": "All"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Alexander Wurz",
+                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
+              },
+              "no": 35,
+              "rounds": []
+            }
+          ]
         },
         {
           "constructor": {
@@ -806,12 +810,16 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "no.": "36",
-          "driver_name": {
-            "text": "Anthony Davidson",
-            "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-          },
-          "rounds": "All"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Anthony Davidson",
+                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
+              },
+              "no": 36,
+              "rounds": []
+            }
+          ]
         },
         {
           "constructor": {
@@ -824,9 +832,43 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "no.": "37",
-          "driver_name": "Robert Doornbos Michael Ammermüller",
-          "rounds": "1-15 16-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Robert Doornbos",
+                "url": "https://en.wikipedia.org/wiki/Robert_Doornbos"
+              },
+              "no": 37,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            {
+              "driver": {
+                "text": "Michael Ammermüller",
+                "url": "https://en.wikipedia.org/wiki/Michael_Ammerm%C3%BCller"
+              },
+              "rounds": [
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -839,9 +881,42 @@
               "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
             }
           },
-          "no.": "38",
-          "driver_name": "Robert Kubica Sebastian Vettel",
-          "rounds": "1-12 14-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Robert Kubica",
+                "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
+              },
+              "no": 38,
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "driver": {
+                "text": "Sebastian Vettel",
+                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+              },
+              "rounds": [
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -854,9 +929,67 @@
               "url": "https://en.wikipedia.org/wiki/Toyota_in_Formula_One"
             }
           },
-          "no.": "39",
-          "driver_name": "Markus Winkelhock Giorgio Mondini Adrian Sutil Alexandre Prémat Ernesto Viso",
-          "rounds": "1, 3, 12-13 2, 4, 6-10, 14-15 5, 11, 17 16 18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Markus Winkelhock",
+                "url": "https://en.wikipedia.org/wiki/Markus_Winkelhock"
+              },
+              "no": 39,
+              "rounds": [
+                1,
+                3,
+                12,
+                13
+              ]
+            },
+            {
+              "driver": {
+                "text": "Giorgio Mondini",
+                "url": "https://en.wikipedia.org/wiki/Giorgio_Mondini"
+              },
+              "rounds": [
+                2,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                14,
+                15
+              ]
+            },
+            {
+              "driver": {
+                "text": "Adrian Sutil",
+                "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
+              },
+              "rounds": [
+                5,
+                11,
+                17
+              ]
+            },
+            {
+              "driver": {
+                "text": "Alexandre Prémat",
+                "url": "https://en.wikipedia.org/wiki/Alexandre_Pr%C3%A9mat"
+              },
+              "rounds": [
+                16
+              ]
+            },
+            {
+              "driver": {
+                "text": "Ernesto Viso",
+                "url": "https://en.wikipedia.org/wiki/E._J._Viso"
+              },
+              "rounds": [
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -869,12 +1002,16 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "no.": "40",
-          "driver_name": {
-            "text": "Neel Jani",
-            "url": "https://en.wikipedia.org/wiki/Neel_Jani"
-          },
-          "rounds": "All"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Neel Jani",
+                "url": "https://en.wikipedia.org/wiki/Neel_Jani"
+              },
+              "no": 40,
+              "rounds": []
+            }
+          ]
         },
         {
           "constructor": {
@@ -887,9 +1024,34 @@
               "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
             }
           },
-          "no.": "41",
-          "driver_name": "Sakon Yamamoto Franck Montagny",
-          "rounds": "8-11 14-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Sakon Yamamoto",
+                "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
+              },
+              "no": 41,
+              "rounds": [
+                8,
+                9,
+                10,
+                11
+              ]
+            },
+            {
+              "driver": {
+                "text": "Franck Montagny",
+                "url": "https://en.wikipedia.org/wiki/Franck_Montagny"
+              },
+              "rounds": [
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         }
       ],
       "calendar": [],

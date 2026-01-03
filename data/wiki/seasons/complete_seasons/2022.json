@@ -539,7 +539,316 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": [
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alfa Romeo",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Robert Kubica",
+                "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
+              },
+              "no": 88,
+              "rounds": [
+                6,
+                12,
+                13,
+                22
+              ]
+            },
+            {
+              "driver": {
+                "text": "Théo Pourchaire",
+                "url": "https://en.wikipedia.org/wiki/Th%C3%A9o_Pourchaire"
+              },
+              "no": 98,
+              "rounds": [
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "AlphaTauri",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
+            },
+            "engine_constructor": {
+              "text": "RBPT",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Liam Lawson",
+                "url": "https://en.wikipedia.org/wiki/Liam_Lawson"
+              },
+              "no": 40,
+              "rounds": [
+                14,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Alpine",
+              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Jack Doohan",
+                "url": "https://en.wikipedia.org/wiki/Jack_Doohan_(racing_driver)"
+              },
+              "no": 82,
+              "rounds": [
+                20,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Aston Martin Aramco",
+              "url": null
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Nyck de Vries",
+                "url": "https://en.wikipedia.org/wiki/Nyck_de_Vries"
+              },
+              "no": 34,
+              "rounds": [
+                16
+              ]
+            },
+            {
+              "driver": {
+                "text": "Felipe Drugovich",
+                "url": "https://en.wikipedia.org/wiki/Felipe_Drugovich"
+              },
+              "rounds": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Robert Shwartzman",
+                "url": "https://en.wikipedia.org/wiki/Robert_Shwartzman"
+              },
+              "no": 39,
+              "rounds": [
+                19,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Haas",
+              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Antonio Giovinazzi",
+                "url": "https://en.wikipedia.org/wiki/Antonio_Giovinazzi"
+              },
+              "no": 99,
+              "rounds": [
+                16,
+                19
+              ]
+            },
+            {
+              "driver": {
+                "text": "Pietro Fittipaldi",
+                "url": "https://en.wikipedia.org/wiki/Pietro_Fittipaldi"
+              },
+              "no": 51,
+              "rounds": [
+                20,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Álex Palou",
+                "url": "https://en.wikipedia.org/wiki/%C3%81lex_Palou"
+              },
+              "no": 28,
+              "rounds": [
+                19
+              ]
+            },
+            {
+              "driver": {
+                "text": "Patricio O'Ward",
+                "url": "https://en.wikipedia.org/wiki/Patricio_O%27Ward"
+              },
+              "rounds": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Nyck de Vries",
+                "url": "https://en.wikipedia.org/wiki/Nyck_de_Vries"
+              },
+              "no": 19,
+              "rounds": [
+                12,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Red Bull Racing",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+            },
+            "engine_constructor": {
+              "text": "RBPT",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Jüri Vips",
+                "url": "https://en.wikipedia.org/wiki/J%C3%BCri_Vips"
+              },
+              "no": 36,
+              "rounds": [
+                6
+              ]
+            },
+            {
+              "driver": {
+                "text": "Liam Lawson",
+                "url": "https://en.wikipedia.org/wiki/Liam_Lawson"
+              },
+              "rounds": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Nyck de Vries",
+                "url": "https://en.wikipedia.org/wiki/Nyck_de_Vries"
+              },
+              "no": 45,
+              "rounds": [
+                6
+              ]
+            },
+            {
+              "driver": {
+                "text": "Logan Sargeant",
+                "url": "https://en.wikipedia.org/wiki/Logan_Sargeant"
+              },
+              "rounds": [
+                19,
+                20,
+                21,
+                22
+              ]
+            }
+          ]
+        }
+      ],
       "calendar": [
         {
           "round": 1,

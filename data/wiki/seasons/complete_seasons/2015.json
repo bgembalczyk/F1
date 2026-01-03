@@ -551,7 +551,121 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": [
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Lotus_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Jolyon Palmer",
+                "url": "https://en.wikipedia.org/wiki/Jolyon_Palmer"
+              },
+              "no": 30,
+              "rounds": [
+                3,
+                4,
+                5,
+                8,
+                9,
+                10,
+                11,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Marussia",
+              "url": "https://en.wikipedia.org/wiki/Marussia_F1_Team"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Fabio Leimer",
+                "url": "https://en.wikipedia.org/wiki/Fabio_Leimer"
+              },
+              "no": 42,
+              "rounds": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Sauber",
+              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Raffaele Marciello",
+                "url": "https://en.wikipedia.org/wiki/Raffaele_Marciello"
+              },
+              "no": 36,
+              "rounds": [
+                2,
+                5,
+                9,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Susie Wolff",
+                "url": "https://en.wikipedia.org/wiki/Susie_Wolff"
+              },
+              "no": 41,
+              "rounds": [
+                5,
+                9
+              ]
+            }
+          ]
+        }
+      ],
       "calendar": [],
       "results": [
         {
