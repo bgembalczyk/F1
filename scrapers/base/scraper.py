@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.normalization import RecordNormalizer
+from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
@@ -38,9 +39,13 @@ class F1Scraper(ABC):
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
 
+        self.http_policy = self.get_http_policy(options)
+        if self.http_policy is not None:
+            options.policy = self.http_policy
+
         # Preferuj gotowy source_adapter w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
-        self.source_adapter = options.with_source_adapter()
+        self.source_adapter = options.with_source_adapter(policy=self.http_policy)
         self.fetcher = options.fetcher
 
         # Parser może być zewnętrzny (np. mixin/adapter).
@@ -72,6 +77,8 @@ class F1Scraper(ABC):
         """
         if not getattr(self, "url", None):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")
+
+        self.logger.info("HTTP policy: %s", self.http_policy)
 
         try:
             html = self._download()
@@ -192,6 +199,12 @@ class F1Scraper(ABC):
 
     def _full_url(self, href: str) -> str:
         return urljoin(self.url, href)
+
+    def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
+        policy = options.policy
+        if policy is None:
+            policy = options.to_http_policy()
+        return policy
 
     # ---------- Error handling ----------
 

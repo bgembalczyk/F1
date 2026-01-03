@@ -36,8 +36,8 @@ class F1CompleteCircuitScraper(F1Scraper):
         options.include_urls = True
 
         # Zapewniamy adapter źródła (spójnie z resztą repo)
-        html_adapter = options.with_source_adapter()
-        policy = options.to_http_policy()
+        policy = self.get_http_policy(options)
+        html_adapter = options.with_source_adapter(policy=policy)
 
         super().__init__(options=options)
 

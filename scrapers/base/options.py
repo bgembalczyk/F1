@@ -53,30 +53,46 @@ class ScraperOptions:
             )
         return self.http_client
 
-    def with_fetcher(self) -> HtmlFetcher:
+    def with_fetcher(self, *, policy: HttpPolicy | None = None) -> HtmlFetcher:
         from scrapers.base.html_fetcher import HtmlFetcher
+
+        if policy is not None:
+            self.policy = policy
 
         if self.fetcher is None:
             if isinstance(self.source_adapter, HtmlFetcher):
                 self.fetcher = self.source_adapter
             else:
-                policy = self.to_http_policy()
-                http_client = self._ensure_http_client(policy)
-                self.fetcher = HtmlFetcher(policy=policy, http_client=http_client)
+                resolved_policy = self.to_http_policy()
+                http_client = self._ensure_http_client(resolved_policy)
+                self.fetcher = HtmlFetcher(
+                    policy=resolved_policy,
+                    http_client=http_client,
+                )
                 if self.source_adapter is None:
                     self.source_adapter = self.fetcher
         return self.fetcher
 
-    def with_source_adapter(self) -> SourceAdapter:
+    def with_source_adapter(
+        self,
+        *,
+        policy: HttpPolicy | None = None,
+    ) -> SourceAdapter:
         from scrapers.base.html_fetcher import HtmlFetcher
+
+        if policy is not None:
+            self.policy = policy
 
         if self.source_adapter is None:
             if self.fetcher is not None:
                 self.source_adapter = self.fetcher
             else:
-                policy = self.to_http_policy()
-                http_client = self._ensure_http_client(policy)
-                self.fetcher = HtmlFetcher(policy=policy, http_client=http_client)
+                resolved_policy = self.to_http_policy()
+                http_client = self._ensure_http_client(resolved_policy)
+                self.fetcher = HtmlFetcher(
+                    policy=resolved_policy,
+                    http_client=http_client,
+                )
                 self.source_adapter = self.fetcher
         elif isinstance(self.source_adapter, HtmlFetcher):
             self.fetcher = self.source_adapter

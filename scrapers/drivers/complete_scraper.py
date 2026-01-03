@@ -21,8 +21,8 @@ class CompleteDriverScraper(F1Scraper):
         options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
-        html_adapter = options.with_source_adapter()
-        policy = options.to_http_policy()
+        policy = self.get_http_policy(options)
+        html_adapter = options.with_source_adapter(policy=policy)
         super().__init__(options=options)
 
         self.list_scraper = F1DriversListScraper(
