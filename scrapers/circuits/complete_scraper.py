@@ -35,10 +35,6 @@ class F1CompleteCircuitScraper(F1Scraper):
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
 
-        # Zapewniamy adapter źródła (spójnie z resztą repo)
-        policy = self.get_http_policy(options)
-        html_adapter = options.with_source_adapter(policy=policy)
-
         super().__init__(options=options)
         self.debug_dir = options.debug_dir
 
@@ -46,15 +42,15 @@ class F1CompleteCircuitScraper(F1Scraper):
         self.list_scraper = CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
-                policy=policy,
-                source_adapter=html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
                 debug_dir=self.debug_dir,
             ),
         )
         self.single_scraper = F1SingleCircuitScraper(
             options=ScraperOptions(
-                policy=policy,
-                source_adapter=html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
                 debug_dir=self.debug_dir,
             ),
         )

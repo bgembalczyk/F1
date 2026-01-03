@@ -5,7 +5,7 @@ from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.options import HttpPolicy
 
 
-class HtmlFetcher(SourceAdapter[str]):
+class HtmlFetcher(SourceAdapter):
     """Warstwa pobierania HTML z opcjonalnym cache."""
 
     def __init__(
@@ -17,14 +17,19 @@ class HtmlFetcher(SourceAdapter[str]):
         self.policy = policy
         self.http_client = http_client
         self.timeout = policy.timeout
+        self._metadata = {
+            "policy": policy,
+            "cache": policy.cache,
+            "retries": policy.retries,
+            "timeout": policy.timeout,
+        }
+
+    @property
+    def metadata(self) -> dict[str, object]:
+        return dict(self._metadata)
 
     def get_text(self, url: str, *, timeout: int | None = None) -> str:
         return self.http_client.get_text(url, timeout=timeout or self.timeout)
 
-    def get(self, source: str | None = None, **kwargs: object) -> str:
-        if source is None:
-            raise ValueError("HtmlFetcher wymaga URL-a jako źródła.")
-        timeout = kwargs.get("timeout")
-        return self.get_text(
-            source, timeout=timeout if isinstance(timeout, int) else None
-        )
+    def get(self, url: str) -> str:
+        return self.get_text(url)
