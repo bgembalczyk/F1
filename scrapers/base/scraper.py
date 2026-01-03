@@ -13,6 +13,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.transformers import RecordTransformer
 from scrapers.base.errors import (
     ScraperError,
     ScraperNetworkError,
@@ -59,6 +60,7 @@ class F1Scraper(ABC):
         self.parser = options.parser
         self.exporter = options.exporter or DataExporter()
         self._record_normalizer = RecordNormalizer()
+        self.transformers: List[RecordTransformer] = []
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
 
@@ -83,7 +85,7 @@ class F1Scraper(ABC):
         - download
         - parse -> RawRecord[]
         - RecordNormalizer.normalize -> NormalizedRecord[]
-        - to_export_records -> ExportRecord[]
+        - transformers -> ExportRecord[]
 
         Error handling:
         - ScraperError z critical=True -> propagujemy
@@ -124,10 +126,9 @@ class F1Scraper(ABC):
             self.logger.debug("Scrape run %s: start normalize", run_id)
             normalized_records = self._record_normalizer.normalize(list(raw_records))
             self.logger.debug("Scrape run %s: finish normalize", run_id)
-            export_records = self.to_export_records(normalized_records)
-            self.logger.debug("Scrape run %s: start post-process", run_id)
-            self._data = self.post_process_records(export_records)
-            self.logger.debug("Scrape run %s: finish post-process", run_id)
+            self.logger.debug("Scrape run %s: start transform", run_id)
+            self._data = self._apply_transformers(normalized_records)
+            self.logger.debug("Scrape run %s: finish transform", run_id)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -252,6 +253,19 @@ class F1Scraper(ABC):
             )
 
         return valid_records
+
+    def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        transformed = records
+        for transformer in self.transformers:
+            before_count = len(transformed)
+            transformed = transformer.transform(transformed)
+            self.logger.debug(
+                "Transformer %s: %d -> %d",
+                transformer.__class__.__name__,
+                before_count,
+                len(transformed),
+            )
+        return transformed
 
     # ---------- Pomocnicze ----------
 
