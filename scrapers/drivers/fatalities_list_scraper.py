@@ -4,7 +4,7 @@ from typing import Any, List
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.records import ExportRecord
+from validation.records import ExportRecord
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -32,24 +32,7 @@ from scrapers.drivers.constants import (
     MARK_F2_CATEGORY,
     MARK_NON_CHAMPIONSHIP_EVENT,
 )
-
-
-class FatalitiesCarTransformer(RecordTransformer):
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        for row in records:
-            formula_category = row.pop("formula_category", None)
-            if not formula_category:
-                continue
-            car = row.get("car")
-            if isinstance(car, dict):
-                car["formula_category"] = formula_category
-            else:
-                row["car"] = {
-                    "text": car or "",
-                    "url": None,
-                    "formula_category": formula_category,
-                }
-        return records  # type: ignore[return-value]
+from scrapers.drivers.transformers.fatalities_car import FatalitiesCarTransformer
 
 
 class F1FatalitiesListScraper(F1TableScraper):
@@ -79,6 +62,10 @@ class F1FatalitiesListScraper(F1TableScraper):
         ),
         record_factory=lambda record: dict(record),
     )
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.transformers = [FatalitiesCarTransformer()]
 
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:
@@ -128,9 +115,6 @@ class F1FatalitiesListScraper(F1TableScraper):
             len(records),
         )
         return records  # type: ignore[return-value]
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-        self.transformers = [FatalitiesCarTransformer()]
 
 
 if __name__ == "__main__":

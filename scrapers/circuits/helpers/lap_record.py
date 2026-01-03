@@ -4,13 +4,13 @@ from typing import Optional
 
 from bs4 import Tag
 
-from models.services.circuits.lap_record_merging import normalize_lap_record
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.helpers.layout import layout_from_spanning_header
+from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
 
 def extract_time(text: str) -> Optional[float]:

@@ -9,7 +9,7 @@ from scrapers.base.infobox.scraper import (
 )
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.types import ExportableRecord
 from scrapers.base.errors import ScraperParseError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article

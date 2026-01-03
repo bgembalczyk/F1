@@ -4,7 +4,7 @@ from typing import Any
 from typing import Iterable
 from typing import Mapping
 
-from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
+from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 

@@ -5,12 +5,11 @@ from datetime import datetime
 from decimal import Decimal, ROUND_HALF_UP
 from typing import Any
 
+from models.value_objects.time_types import DateValue
 from scrapers.base.helpers.constants import DATE_FORMATS
 from scrapers.base.helpers.constants import DATE_RANGE_SPLIT
 from scrapers.base.helpers.constants import TIME_KEY_RE
 from scrapers.base.helpers.constants import TIME_SECONDS_RE
-from scrapers.base.helpers.time_types import DateValue
-from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 
@@ -125,7 +124,7 @@ def parse_date_iso(base: str) -> str | None:
     return None
 
 
-def _parse_date_parts(value: str) -> tuple[int | None, int | None, int | None]:
+def parse_date_parts(value: str) -> tuple[int | None, int | None, int | None]:
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
         year, month, day = value.split("-")
         return int(year), int(month), int(day)
@@ -159,9 +158,9 @@ def parse_date_text(text: str) -> DateValue:
     year = month = day = None
     if isinstance(iso, list):
         if iso:
-            year, month, day = _parse_date_parts(iso[0])
+            year, month, day = parse_date_parts(iso[0])
     elif isinstance(iso, str):
-        year, month, day = _parse_date_parts(iso)
+        year, month, day = parse_date_parts(iso)
 
     if year is None and years:
         year = int(years[0])
@@ -247,25 +246,3 @@ def normalize_time_value(rec: dict[str, Any]) -> None:
     rec["time"] = txt
 
 
-def normalize_date_value(rec: dict[str, Any]) -> None:
-    """Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY"."""
-    d = rec.get("date")
-    if not isinstance(d, dict) and not isinstance(d, (DateValue, NormalizedDate)):
-        return
-    if isinstance(d, DateValue):
-        iso = d.iso
-        text = d.raw
-    elif isinstance(d, NormalizedDate):
-        iso = d.iso
-        text = d.text
-    else:
-        iso = d.get("iso")
-        text = d.get("text") or d.get("raw")
-    if isinstance(iso, list):
-        rec["date"] = iso[0] if iso else None
-        return
-    if iso:
-        rec["date"] = iso
-        return
-
-    rec["date"] = text.strip() if isinstance(text, str) and text.strip() else None

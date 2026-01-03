@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from scrapers.base.records import ExportRecord
+from validation.records import ExportRecord
 
 
 class RecordTransformer(ABC):

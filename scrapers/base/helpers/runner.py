@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Type
 
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.runner import ScraperRunner
 
 

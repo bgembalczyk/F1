@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 
 

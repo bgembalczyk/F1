@@ -1,16 +1,12 @@
 from typing import Any, Optional, TypedDict
 
-from scrapers.base.validation import RecordValidator
-
+from models.records.car import CarRecord
+from models.records.car import validate_car_record
+from models.records.event import EventRecord
+from models.records.event import validate_event_record
 from models.records.link import LinkRecord
+from validation.records import RecordValidator
 
-
-class CarRecord(LinkRecord, total=False):
-    formula_category: str
-
-class EventRecord(TypedDict, total=False):
-    event: Optional[str | LinkRecord | list[LinkRecord]]
-    championship: bool
 
 class FatalityRecord(TypedDict, total=False):
     driver: LinkRecord
@@ -20,26 +16,6 @@ class FatalityRecord(TypedDict, total=False):
     circuit: Optional[LinkRecord]
     car: Optional[CarRecord]
     session: Optional[str]
-
-
-
-def validate_car_record(record: dict[str, Any]) -> list[str]:
-    errors = RecordValidator.require_link_dict(record, "car")
-    errors.extend(RecordValidator.require_type(record, "formula_category", str))
-    return errors
-
-
-def validate_event_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    event = record.get("event")
-    if isinstance(event, dict):
-        errors.extend(RecordValidator.require_link_dict(event, "event"))
-    elif isinstance(event, list):
-        errors.extend(RecordValidator.require_link_list(event, "event"))
-    elif event is not None and not isinstance(event, str):
-        errors.append("event must be a string, link, or list of links")
-    errors.extend(RecordValidator.require_type(record, "championship", bool))
-    return errors
 
 
 def validate_fatality_record(record: dict[str, Any]) -> list[str]:

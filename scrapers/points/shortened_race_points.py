@@ -19,47 +19,8 @@ from scrapers.points.constants import (
     SEASONS_HEADER,
     SHORTENED_RACE_EXPECTED_HEADERS,
 )
-
-
-class ShortenedRacePointsTransformer(RecordTransformer):
-    def transform(self, records: list[dict]) -> list[dict]:
-        grouped: list[dict] = []
-        index: dict[tuple, int] = {}
-
-        for record in records:
-            seasons = record.get("seasons", [])
-            key = tuple((season.get("year"), season.get("url")) for season in seasons)
-            if key not in index:
-                grouped.append(
-                    {
-                        "seasons": seasons,
-                        "race_length_points": [],
-                    }
-                )
-                index[key] = len(grouped) - 1
-
-            grouped[index[key]]["race_length_points"].append(
-                {key: value for key, value in record.items() if key != "seasons"}
-            )
-
-        return grouped
-
-
-def _build_shortened_race_points_schema() -> TableSchemaBuilder:
-    builder = (
-        TableSchemaBuilder()
-        .map(SEASONS_HEADER, "seasons", SeasonsColumn())
-        .map(RACE_LENGTH_COMPLETED_HEADER, "race_length_completed", TextColumn())
-    )
-    for position in HISTORICAL_POSITIONS:
-        builder.map(position, position.lower(), AutoColumn())
-    return (
-        builder.map(FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()).map(
-            NOTES_HEADER,
-            "notes",
-            SkipColumn(),
-        )
-    )
+from scrapers.points.schemas import build_shortened_race_points_schema
+from scrapers.points.transformers.shortened_race import ShortenedRacePointsTransformer
 
 
 class ShortenedRacePointsScraper(F1TableScraper):
@@ -72,7 +33,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
         section_id="Shortened_races",
         expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
-        schema=_build_shortened_race_points_schema(),
+        schema=build_shortened_race_points_schema(),
         record_factory=record_from_mapping,
     )
 

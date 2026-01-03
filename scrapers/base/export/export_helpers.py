@@ -1,7 +1,7 @@
 from typing import Any, List
 
-from scrapers.base.records import ExportRecord
 from scrapers.base.results import ScrapeResult
+from validation.records import ExportRecord
 
 
 def extract_data(result: ScrapeResult) -> List[Any]:

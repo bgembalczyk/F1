@@ -1,5 +1,5 @@
-from scrapers.base.records import ExportRecord
-from scrapers.base.validation import RecordValidator
+from validation.records import ExportRecord
+from validation.records import RecordValidator
 
 
 class GrandsPrixRecordValidator(RecordValidator):

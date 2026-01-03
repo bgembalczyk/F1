@@ -1,8 +1,8 @@
 import re
 from typing import Optional, Dict, Any, List
 
-from scrapers.base.infobox.circuits.services.constants import symbol_map
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.circuits.infobox.services.constants import symbol_map
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 

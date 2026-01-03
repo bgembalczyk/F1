@@ -5,7 +5,7 @@ from pathlib import Path
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 

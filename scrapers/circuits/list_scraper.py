@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchemaBuilder
+from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 from scrapers.circuits.constants import (
@@ -32,23 +33,6 @@ from scrapers.circuits.constants import (
 from scrapers.circuits.validation import CircuitsRecordValidator
 
 
-def _build_circuits_schema() -> TableSchemaBuilder:
-    return (
-        TableSchemaBuilder()
-        .map(CIRCUIT_HEADER, "circuit", CircuitNameStatusColumn())
-        .map(MAP_HEADER, "map", SkipColumn())
-        .map(TYPE_HEADER, "type", AutoColumn())
-        .map(DIRECTION_HEADER, "direction", AutoColumn())
-        .map(LOCATION_HEADER, "location", AutoColumn())
-        .map(COUNTRY_HEADER, "country", AutoColumn())
-        .map(LAST_LENGTH_USED_HEADER, "last_length_used", LastLengthUsedColumn())
-        .map(TURNS_HEADER, "turns", IntColumn())
-        .map(GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn())
-        .map(SEASONS_HEADER, "seasons", SeasonsColumn())
-        .map(GRANDS_PRIX_HELD_HEADER, "grands_prix_held", IntColumn())
-    )
-
-
 class CircuitsListScraper(F1TableScraper):
     """
     Lista torów F1:
@@ -63,7 +47,7 @@ class CircuitsListScraper(F1TableScraper):
         section_id="Circuits",
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
-        schema=_build_circuits_schema(),
+        schema=build_circuits_schema(),
         record_factory=build_circuit_record,
     )
 

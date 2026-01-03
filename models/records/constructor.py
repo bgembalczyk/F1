@@ -1,9 +1,9 @@
 from typing import Any, Optional, TypedDict
 
-from scrapers.base.validation import RecordValidator
 
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
+from validation.records import RecordValidator
 
 
 class ConstructorRecord(TypedDict, total=False):

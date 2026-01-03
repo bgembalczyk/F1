@@ -8,6 +8,7 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.engines.columns.manufacturer_name_status import EngineManufacturerNameStatusColumn
 
 
 class EngineManufacturersListScraper(F1TableScraper):
@@ -62,6 +63,3 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
-from scrapers.engines.columns.manufacturer_name_status import (
-    EngineManufacturerNameStatusColumn,
-)

@@ -3,10 +3,10 @@
 import re
 from typing import Any, Callable, Iterable, Mapping
 
+from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.base.helpers.text_normalization import normalize_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
 
 
 def extract_year_from_event(rec: dict[str, Any]) -> str | None:

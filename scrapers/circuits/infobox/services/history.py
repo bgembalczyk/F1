@@ -2,8 +2,8 @@ import re
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
-from scrapers.base.infobox.circuits.services.constants import MONTHS
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.circuits.infobox.services.constants import MONTHS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 

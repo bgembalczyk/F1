@@ -1,20 +1,16 @@
 from typing import Any, Dict, List, Optional, Tuple
 
 from models.records.link import LinkRecord
-from models.services.circuits.lap_record_utils import (
-    build_lap_record_key,
-    extract_year,
-    normalize_lap_record_entity,
-)
-from models.services.circuits.lap_record_merging import (
-    merge_two_records,
-    normalize_lap_record,
-)
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.helpers.lap_record import extract_time
 from scrapers.circuits.helpers.lap_record import select_details_paren
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
+from scrapers.circuits.models.services.lap_record_merging import merge_two_records
+from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
+from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
+from scrapers.circuits.models.services.lap_record_utils import extract_year
+from scrapers.circuits.models.services.lap_record_utils import normalize_lap_record_entity
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):

@@ -10,7 +10,7 @@ from scrapers.base.errors import (
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

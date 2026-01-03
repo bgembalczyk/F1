@@ -10,10 +10,10 @@ from infrastructure.http_client.interfaces.http_client_protocol import (
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import default_http_policy
+from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.parsers import SoupParser
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.validation import RecordValidator
+from validation.records import RecordValidator
 
 
 @dataclass(slots=True)
@@ -62,8 +62,6 @@ class ScraperOptions:
         return self.http_client
 
     def with_fetcher(self, *, policy: HttpPolicy | None = None) -> HtmlFetcher:
-        from scrapers.base.html_fetcher import HtmlFetcher
-
         if policy is not None:
             self.policy = policy
 

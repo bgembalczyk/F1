@@ -7,7 +7,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
@@ -22,10 +22,10 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
-from scrapers.drivers.helpers.columns.points_or_text import PointsOrTextColumn
-from scrapers.drivers.helpers.columns.round import RoundColumn
-from scrapers.drivers.helpers.columns.series import SeriesColumn
-from scrapers.drivers.helpers.columns.unknown_value import UnknownValueColumn
+from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
+from scrapers.drivers.columns.round import RoundColumn
+from scrapers.drivers.columns.series import SeriesColumn
+from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 

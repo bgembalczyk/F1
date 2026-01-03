@@ -5,7 +5,7 @@ from typing import List, Optional, Sequence, TYPE_CHECKING
 
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 from scrapers.base.normalization import NormalizationRule, RecordNormalizer
-from scrapers.base.records import ExportRecord
+from validation.records import ExportRecord
 
 if TYPE_CHECKING:
     from scrapers.base.export.exporters import DataExporter

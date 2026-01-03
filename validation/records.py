@@ -2,8 +2,11 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from typing import Any, Callable, Mapping, Sequence
+from typing import Dict
+from typing import TypeAlias
 
-from scrapers.base.records import ExportRecord
+
+ExportRecord: TypeAlias = Dict[str, Any]
 
 
 class RecordValidator(ABC):

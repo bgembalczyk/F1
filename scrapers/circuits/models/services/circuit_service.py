@@ -3,22 +3,17 @@
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.base.helpers.time import normalize_date_value
-from scrapers.base.helpers.prune import prune_empty
-
-from models.services.circuits.normalization import (
-    extract_circuit_names,
-    extract_circuit_url,
-    extract_circuit_location,
-    extract_fia_grade,
-    extract_history_events,
-    extract_infobox_layouts,
-    merge_tables_into_layouts,
-)
-from models.services.circuits.lap_record_merging import (
-    merge_race_lap_records,
-    normalize_lap_record,
-)
+from models.services.helpers import normalize_date_value
+from models.services.helpers import prune_empty
+from scrapers.circuits.models.services.lap_record_merging import merge_race_lap_records
+from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
+from scrapers.circuits.models.services.normalization import extract_circuit_location
+from scrapers.circuits.models.services.normalization import extract_circuit_names
+from scrapers.circuits.models.services.normalization import extract_circuit_url
+from scrapers.circuits.models.services.normalization import extract_fia_grade
+from scrapers.circuits.models.services.normalization import extract_history_events
+from scrapers.circuits.models.services.normalization import extract_infobox_layouts
+from scrapers.circuits.models.services.normalization import merge_tables_into_layouts
 
 
 @dataclass(frozen=True)

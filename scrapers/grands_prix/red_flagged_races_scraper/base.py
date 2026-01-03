@@ -7,24 +7,11 @@ from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.records import ExportRecord
+from validation.records import ExportRecord
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers import RecordTransformer
-
-
-class FailedToMakeRestartTransformer(RecordTransformer):
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        for row in records:
-            drivers = row.pop("failed_to_make_restart_drivers", None)
-            reason = row.pop("failed_to_make_restart_reason", None)
-            if drivers is None and reason is None:
-                continue
-            row["failed_to_make_restart"] = {
-                "drivers": drivers or [],
-                "reason": reason,
-            }
-        return records
+from scrapers.grands_prix.transformers.failed_to_make_restart import FailedToMakeRestartTransformer
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):

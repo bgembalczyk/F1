@@ -4,7 +4,7 @@ from scrapers.base.helpers.text_normalization import drop_empty_fields
 from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.logging import get_logger
 from scrapers.base.null_policy import normalize_empty
-from scrapers.base.records import ExportRecord
+from validation.records import ExportRecord
 
 NormalizationRule = Callable[[ExportRecord], ExportRecord]
 

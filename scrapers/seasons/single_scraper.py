@@ -1,4 +1,4 @@
-from __future__ import annotations
+# TODO: Podzielić na mniejsze klasy
 
 import re
 from typing import Any, Dict, List
@@ -9,7 +9,7 @@ from models.services.rounds_service import RoundsService
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.options import ScraperOptions
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.calendar_circuit import CalendarCircuitColumn
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn

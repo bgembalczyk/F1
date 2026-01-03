@@ -8,11 +8,11 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper import F1Scraper
-from scrapers.sponsorship_liveries.parsers.sponsorship_record_splitter import (
+from scrapers.base.ABC import F1Scraper
+from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )
-from scrapers.sponsorship_liveries.parsers.sponsorship_section_parser import (
+from scrapers.sponsorship_liveries.parsers.section_parser import (
     SponsorshipSectionParser,
 )
 

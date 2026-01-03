@@ -9,7 +9,7 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.circuit_location import LocationColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn

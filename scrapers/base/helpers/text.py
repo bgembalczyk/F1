@@ -9,13 +9,13 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.constants import LANG_CODES, REF_RE
 
 
-def _coerce_text(text: str | Tag | None) -> str:
+def coerce_text(text: str | Tag | None) -> str:
     if isinstance(text, Tag):
         return text.get_text(" ", strip=True)
     return str(text or "")
 
 
-def _extract_text_and_url(value: object) -> tuple[str, str]:
+def extract_text_and_url(value: object) -> tuple[str, str]:
     if isinstance(value, dict):
         text = str(value.get("text") or value.get("name") or "").strip()
         url = str(value.get("url") or "").strip()
@@ -25,8 +25,8 @@ def _extract_text_and_url(value: object) -> tuple[str, str]:
     return str(value).strip(), ""
 
 
-def _score_richer_entity(value: object) -> tuple[int, int]:
-    text, url = _extract_text_and_url(value)
+def score_richer_entity(value: object) -> tuple[int, int]:
+    text, url = extract_text_and_url(value)
     score = 0
     if text:
         score += 1
@@ -45,8 +45,8 @@ def choose_richer_entity(a: object, b: object) -> object:
     if b is None:
         return a
 
-    score_a, len_a = _score_richer_entity(a)
-    score_b, len_b = _score_richer_entity(b)
+    score_a, len_a = score_richer_entity(a)
+    score_b, len_b = score_richer_entity(b)
 
     if score_b > score_a:
         return b
@@ -59,7 +59,7 @@ def choose_richer_entity(a: object, b: object) -> object:
 
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 
-def _strip_wiki_refs(text: str) -> str:
+def strip_wiki_refs(text: str) -> str:
     """Usuń przypisy w formacie [1], [note 3], ..."""
     return REF_RE.sub("", text)
 
@@ -100,9 +100,9 @@ def clean_wiki_text(
     normalize_dashes: bool = True,
 ) -> str:
     """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
-    t = _coerce_text(text).replace("\xa0", " ").replace("&nbsp;", " ")
+    t = coerce_text(text).replace("\xa0", " ").replace("&nbsp;", " ")
     if strip_refs:
-        t = _strip_wiki_refs(t)
+        t = strip_wiki_refs(t)
     t = re.sub(r"\s+", " ", t).strip()
     if normalize_dashes:
         t = _normalize_dashes(t)
@@ -114,7 +114,7 @@ def clean_wiki_text(
 def strip_marks(text: str | Tag) -> str:
     """Usuwa typowe znaki oznaczeń z tabel."""
     return (
-        _coerce_text(text)
+        coerce_text(text)
         .replace("*", "")
         .replace("†", "")
         .replace("‡", "")

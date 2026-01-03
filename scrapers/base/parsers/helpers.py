@@ -6,12 +6,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.constants import UNIT_RE
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext
-
-
-class UnitValue(TypedDict):
-    value: float | None
-    unit: str
 
 
 EntriesStarts = Tuple[Optional[int], Optional[int]]

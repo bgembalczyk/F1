@@ -1,10 +1,10 @@
 from typing import Any
 from typing import Dict
 
-from scrapers.sponsorship_liveries.parsers.sponsorship_grand_prix_scope import (
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
     GrandPrixScopeParser,
 )
-from scrapers.sponsorship_liveries.parsers.sponsorship_record_text import (
+from scrapers.sponsorship_liveries.parsers.record_text import (
     SponsorshipRecordText,
 )
 

@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import Any
 from typing import Mapping
 
+from models.value_objects.helpers import normalize_text
 from scrapers.base.helpers.value_objects.helpers import normalize_seconds
-from scrapers.base.helpers.value_objects.helpers import normalize_text
 
 
 @dataclass(frozen=True)

@@ -3,10 +3,10 @@
 import re
 from typing import Any
 
+from models.services.helpers import prune_empty
 from scrapers.base.helpers.constants import LANG_CODES
-from scrapers.base.helpers.prune import prune_empty
-from scrapers.base.records import ExportRecord
 from scrapers.base.helpers.text import clean_wiki_text
+from validation.records import ExportRecord
 
 
 def clean_infobox_text(text: Any) -> str | None:

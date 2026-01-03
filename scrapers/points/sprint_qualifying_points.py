@@ -13,13 +13,7 @@ from scrapers.points.constants import (
     SPRINT_POSITIONS,
     SPRINT_QUALIFYING_EXPECTED_HEADERS,
 )
-
-
-def _build_sprint_qualifying_schema() -> TableSchemaBuilder:
-    builder = TableSchemaBuilder().map(SEASONS_HEADER, "seasons", SeasonsColumn())
-    for position in SPRINT_POSITIONS:
-        builder.map(position, position.lower(), IntColumn())
-    return builder
+from scrapers.points.schemas import build_sprint_qualifying_schema
 
 
 class SprintQualifyingPointsScraper(F1TableScraper):
@@ -32,7 +26,7 @@ class SprintQualifyingPointsScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
         section_id="Sprint_races",
         expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
-        schema=_build_sprint_qualifying_schema(),
+        schema=build_sprint_qualifying_schema(),
         record_factory=record_from_mapping,
     )
 

@@ -2,16 +2,16 @@ from typing import Any
 from typing import Dict
 from typing import List
 
-from scrapers.sponsorship_liveries.parsers.sponsorship_colour_scope import (
+from scrapers.sponsorship_liveries.parsers.colour_scope import (
     ColourScopeHandler,
 )
-from scrapers.sponsorship_liveries.parsers.sponsorship_grand_prix_scope import (
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
     GrandPrixScopeParser,
 )
-from scrapers.sponsorship_liveries.parsers.sponsorship_record_text import (
+from scrapers.sponsorship_liveries.parsers.record_text import (
     SponsorshipRecordText,
 )
-from scrapers.sponsorship_liveries.parsers.sponsorship_sponsor_scope import (
+from scrapers.sponsorship_liveries.parsers.sponsor_scope import (
     SponsorScopeHandler,
 )
 

@@ -3,20 +3,16 @@ from typing import Optional, Dict, Any, List
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
-from scrapers.base.infobox.circuits.services.constants import (
-    IGNORED_TOP_LEVEL_KEYS,
-    used_keys,
-)
+from scrapers.circuits.infobox.services.constants import IGNORED_TOP_LEVEL_KEYS
+from scrapers.circuits.infobox.services.constants import used_keys
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
 from scrapers.circuits.infobox.services.history import CircuitHistoryParser
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-from models.services.circuits.lap_record_merging import (
-    merge_two_records,
-    normalize_lap_record,
-)
+from scrapers.circuits.models.services.lap_record_merging import merge_two_records
+from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
 
 class CircuitEntitiesParser:

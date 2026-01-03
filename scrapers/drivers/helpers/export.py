@@ -6,9 +6,9 @@ from typing import Dict
 from pathlib import Path
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.parsers.helpers import extract_driver_text
 from scrapers.base.results import ScrapeResult
 from scrapers.drivers.complete_scraper import CompleteDriverScraper
-from scrapers.base.parsers.drivers import extract_driver_text
 
 
 def surname_initial(record: Dict[str, Any]) -> str:

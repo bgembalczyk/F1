@@ -16,7 +16,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
-from scrapers.sponsorship_liveries.parsers.sponsorship_record_splitter import (
+from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )
 

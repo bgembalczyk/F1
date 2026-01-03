@@ -1,8 +1,7 @@
 from typing import Any, TypedDict
 
-from scrapers.base.validation import RecordValidator
-
 from models.records.season import SeasonRecord
+from validation.records import RecordValidator
 
 
 class DriversChampionshipsRecord(TypedDict):

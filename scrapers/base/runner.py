@@ -3,28 +3,13 @@ import inspect
 from typing import Type
 from uuid import uuid4
 
+from scrapers.base.helpers.paremeters import supports_param
+from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper import F1Scraper
-
-
-def ensure_parent(path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-
-def supports_param(cls: type, param_name: str) -> bool:
-    """True jeśli __init__ klasy przyjmuje parametr o nazwie param_name lub **kwargs."""
-    try:
-        sig = inspect.signature(cls.__init__)
-    except (TypeError, ValueError):
-        return False
-
-    params = sig.parameters
-    if param_name in params:
-        return True
-    return any(p.kind == inspect.Parameter.VAR_KEYWORD for p in params.values())
+from scrapers.base.ABC import F1Scraper
 
 
 class ScraperRunner:

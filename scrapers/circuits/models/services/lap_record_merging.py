@@ -2,6 +2,7 @@
 
 from typing import Any
 
+from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.text_normalization import (
     match_driver_loose,
     match_vehicle_prefix,
@@ -11,16 +12,12 @@ from scrapers.base.helpers.time import (
     parse_time_key,
     parse_time_seconds_from_text,
 )
-
-from models.services.circuits.lap_record_utils import (
-    build_lap_record_key,
-    extract_year,
-    extract_year_from_event,
-    parse_lap_record_time_from_record,
-    select_best_field_with_url,
-    normalize_lap_record_entity,
-)
-from scrapers.base.helpers.value_objects.normalized_date import NormalizedDate
+from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
+from scrapers.circuits.models.services.lap_record_utils import extract_year
+from scrapers.circuits.models.services.lap_record_utils import extract_year_from_event
+from scrapers.circuits.models.services.lap_record_utils import normalize_lap_record_entity
+from scrapers.circuits.models.services.lap_record_utils import parse_lap_record_time_from_record
+from scrapers.circuits.models.services.lap_record_utils import select_best_field_with_url
 
 
 def normalize_entity_value(value: Any) -> dict[str, Any] | None:

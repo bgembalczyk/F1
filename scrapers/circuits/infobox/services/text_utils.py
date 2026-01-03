@@ -2,8 +2,8 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
+from models.services.helpers import prune_empty
 from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
-from scrapers.base.helpers.prune import prune_empty
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.text_normalization import (
     clean_infobox_text,

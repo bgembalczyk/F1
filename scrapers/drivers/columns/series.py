@@ -3,7 +3,7 @@ from typing import Any
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.drivers.helpers.columns.helpers import split_series
+from scrapers.drivers.columns.helpers import split_series
 
 
 class SeriesColumn(BaseColumn):

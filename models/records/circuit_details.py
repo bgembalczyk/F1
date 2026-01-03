@@ -1,6 +1,6 @@
 from typing import Any, TypedDict
 
-from scrapers.base.validation import RecordValidator
+from validation.records import RecordValidator
 
 
 class CircuitDetailsRecord(TypedDict):

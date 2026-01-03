@@ -6,11 +6,11 @@ from uuid import uuid4
 
 from bs4 import BeautifulSoup
 
+from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.normalization import RecordNormalizer
-from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
+from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.transformers import RecordTransformer
@@ -21,8 +21,8 @@ from scrapers.base.errors import (
     ScraperValidationError,
 )
 from scrapers.base.logging import get_logger
-from scrapers.base.validation import RecordValidator
-
+from validation.records import ExportRecord
+from validation.records import RecordValidator
 
 T = TypeVar("T")
 

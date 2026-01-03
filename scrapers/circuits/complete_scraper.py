@@ -3,13 +3,13 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
-from models.services.circuits.circuit_service import CircuitService
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper import F1Scraper
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.circuits.models.services.circuit_service import CircuitService
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
