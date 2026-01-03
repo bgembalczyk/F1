@@ -354,12 +354,25 @@ class DriverInfoboxScraper:
 
     def _parse_car_numbers(self, cell: Tag) -> List[Dict[str, Any]]:
         text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+        if not text:
+            return []
+        normalized = re.sub(r"\band\b", ",", text, flags=re.IGNORECASE)
+        normalized = normalized.replace("/", ",").replace(";", ",")
         entries: List[Dict[str, Any]] = []
-        for part in (line.strip() for line in text.splitlines() if line.strip()):
+        parts: List[str] = []
+        for line in normalized.splitlines():
+            parts.extend(part for part in line.split(","))
+        for part in (chunk.strip() for chunk in parts if chunk.strip()):
+            original = part
+            part = re.sub(r"^(?:No\.?|#|№)\s*", "", part, flags=re.IGNORECASE)
             match = re.match(r"^(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?$", part)
             if not match:
                 continue
             number = int(match.group("number"))
+            if number >= 1900 and not re.match(
+                r"^(?:No\.?|#|№)\s*", original, flags=re.IGNORECASE
+            ):
+                continue
             years_text = match.group("years") or ""
             years = (
                 self._parse_year_range(years_text)
