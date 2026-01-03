@@ -202,7 +202,7 @@ class F1Scraper(ABC):
     # ---------- Metody wewnętrzne ----------
 
     def _download(self) -> str:
-        # Adapter jest jedyną “bramką” do źródła.
+        # Adapter jest jedyną “bramką” do źródła (może być CacheAdapter).
         return self.fetch_html(self.url)
 
     def fetch_html(self, url: str) -> str:

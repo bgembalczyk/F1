@@ -63,6 +63,10 @@ class ScraperRunner:
         options.run_id = run_id
         if self._run_config.debug_dir is not None:
             options.debug_dir = self._run_config.debug_dir
+        if self._run_config.cache_dir is not None:
+            options.cache_dir = self._run_config.cache_dir
+        if self._run_config.cache_ttl is not None:
+            options.cache_ttl = self._run_config.cache_ttl
 
         if supports_param(scraper_cls, "options"):
             if self._supports_urls and hasattr(options, "include_urls"):
