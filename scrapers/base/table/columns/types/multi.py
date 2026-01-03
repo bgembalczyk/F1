@@ -31,6 +31,7 @@ class MultiColumn(BaseColumn):
                 cell=ctx.cell,
                 skip_sentinel=ctx.skip_sentinel,
                 model_fields=ctx.model_fields,
+                header_link=ctx.header_link,
             )
             val = col.parse(subctx)
             if val is not ctx.skip_sentinel:
@@ -48,5 +49,6 @@ class MultiColumn(BaseColumn):
                 cell=ctx.cell,
                 skip_sentinel=ctx.skip_sentinel,
                 model_fields=ctx.model_fields,
+                header_link=ctx.header_link,
             )
             col.apply(subctx, record)

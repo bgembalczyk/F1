@@ -42,7 +42,7 @@ class HtmlTableParser:
         return self.parse_table(table)
 
     def parse_table(self, table: Tag) -> list[TableRow]:
-        headers, header_rows = self._extract_headers(table)
+        headers, header_cells, header_rows = self._extract_headers(table)
 
         records: list[TableRow] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
@@ -73,7 +73,14 @@ class HtmlTableParser:
                 headers,
                 pending_rowspans,
             )
-            records.append(TableRow(headers=headers, cells=expanded_cells, raw_tr=tr))
+            records.append(
+                TableRow(
+                    headers=headers,
+                    cells=expanded_cells,
+                    raw_tr=tr,
+                    header_cells=header_cells,
+                )
+            )
 
         return records
 
@@ -85,7 +92,7 @@ class HtmlTableParser:
 
         for table in candidate_tables:
             try:
-                headers, _ = self._extract_headers(table)
+                headers, _, _ = self._extract_headers(table)
             except RuntimeError:
                 continue
 
@@ -195,7 +202,7 @@ class HtmlTableParser:
             col_index += 1
         return col_index
 
-    def _extract_headers(self, table: Tag) -> tuple[list[str], int]:
+    def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
         rows = table.find_all("tr")
         if not rows:
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
@@ -216,15 +223,15 @@ class HtmlTableParser:
         ]
 
         if len(rows) < 2:
-            return first_headers, 1
+            return first_headers, first_cells, 1
 
         second_row = rows[1]
         second_cells = second_row.find_all(["th", "td"])
         if not second_cells or not all(cell.name == "th" for cell in second_cells):
-            return first_headers, 1
+            return first_headers, first_cells, 1
 
         if not any(int(cell.get("colspan") or 1) > 1 for cell in first_cells):
-            return first_headers, 1
+            return first_headers, first_cells, 1
 
         second_headers = [
             clean_wiki_text(
@@ -237,6 +244,7 @@ class HtmlTableParser:
         ]
 
         combined: list[str] = []
+        combined_cells: list[Tag] = []
         second_index = 0
         for cell, header in zip(first_cells, first_headers):
             try:
@@ -250,13 +258,16 @@ class HtmlTableParser:
 
             if rowspan_value > 1 or colspan_value == 1:
                 combined.extend([header] * colspan_value)
+                combined_cells.extend([cell] * colspan_value)
                 continue
 
             for _ in range(colspan_value):
                 if second_index < len(second_headers):
                     combined.append(second_headers[second_index])
+                    combined_cells.append(second_cells[second_index])
                 else:
                     combined.append(header)
+                    combined_cells.append(cell)
                 second_index += 1
 
-        return combined, 2
+        return combined, combined_cells, 2

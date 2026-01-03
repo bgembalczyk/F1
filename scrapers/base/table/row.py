@@ -9,3 +9,4 @@ class TableRow:
     headers: Sequence[str]
     cells: Sequence[Tag]
     raw_tr: Tag
+    header_cells: Sequence[Tag] | None = None

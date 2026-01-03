@@ -169,6 +169,7 @@ def split_constructor_lines(ctx: ColumnContext) -> list[ColumnContext]:
                 cell=None,
                 skip_sentinel=ctx.skip_sentinel,
                 model_fields=ctx.model_fields,
+                header_link=ctx.header_link,
             )
         )
 
