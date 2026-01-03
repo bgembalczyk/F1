@@ -43,6 +43,18 @@ def parse_number(
         return None
 
 
+def parse_numeric_value(value: str | None) -> float | None:
+    if value is None:
+        return None
+    cleaned = value.replace(",", "").strip()
+    if not cleaned:
+        return None
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
+
+
 def parse_int_from_text(text: str) -> int | None:
     """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234)."""
     return parse_number(
@@ -115,8 +127,8 @@ def parse_numeric_range(text: str) -> dict[str, Any] | None:
     if not match:
         return None
     return {
-        "min": parse_number(match.group("min")),
-        "max": parse_number(match.group("max")),
+        "min": parse_numeric_value(match.group("min")),
+        "max": parse_numeric_value(match.group("max")),
     }
 
 
@@ -131,7 +143,7 @@ def parse_unit_value(
     if not match:
         return None
     return {
-        "value": parse_number(match.group(1)),
+        "value": parse_numeric_value(match.group(1)),
         "unit": output_unit or unit,
     }
 
@@ -148,8 +160,8 @@ def parse_range_with_unit(
         return None
     unit_label = output_unit or unit
     return {
-        "min": {"value": parse_number(match.group("min")), "unit": unit_label},
-        "max": {"value": parse_number(match.group("max")), "unit": unit_label},
+        "min": {"value": parse_numeric_value(match.group("min")), "unit": unit_label},
+        "max": {"value": parse_numeric_value(match.group("max")), "unit": unit_label},
     }
 
 
@@ -162,7 +174,7 @@ def parse_engine_rpm_limit(ctx) -> dict[str, Any]:
 
     limit_range = parse_numeric_range(text)
     if limit_range is None:
-        value = parse_number(text)
+        value = parse_numeric_value(text)
         limit_range = {"min": value, "max": value}
     return {"limit": limit_range}
 
