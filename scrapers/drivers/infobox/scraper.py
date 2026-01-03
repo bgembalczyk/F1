@@ -380,10 +380,16 @@ class DriverInfoboxScraper:
         return float(match.group(0)) if match else None
 
     def _parse_car_numbers(self, cell: Tag) -> List[Dict[str, Any]]:
-        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
-        if not text:
+        raw_text = cell.get_text("\n", strip=True) or ""
+        if not raw_text:
             return []
-        normalized = re.sub(r"\band\b", ",", text, flags=re.IGNORECASE)
+        lines = [
+            clean_wiki_text(line, strip_lang_suffix=False)
+            for line in raw_text.split("\n")
+            if line.strip()
+        ]
+        normalized = "\n".join(lines)
+        normalized = re.sub(r"\band\b", ",", normalized, flags=re.IGNORECASE)
         normalized = normalized.replace("/", ",").replace(";", ",")
         entries: List[Dict[str, Any]] = []
         parts: List[str] = []
