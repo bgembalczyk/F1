@@ -4,7 +4,7 @@ from typing import List
 from models.records.driver_championships import DriversChampionshipsRecord
 from validation.records import ExportRecord
 from scrapers.base.transformers import RecordTransformer
-
+from models.services.driver_service import DriverService
 
 class DriversChampionshipsTransformer(RecordTransformer):
     @staticmethod

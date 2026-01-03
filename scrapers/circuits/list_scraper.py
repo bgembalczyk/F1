@@ -30,7 +30,7 @@ from scrapers.circuits.constants import (
     TURNS_HEADER,
     TYPE_HEADER,
 )
-from scrapers.circuits.validation import CircuitsRecordValidator
+from scrapers.circuits.validator import CircuitsRecordValidator
 
 
 class CircuitsListScraper(F1TableScraper):
