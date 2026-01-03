@@ -29,7 +29,6 @@ class F1SingleGrandPrixScraper(F1Scraper):
     zwraca pustą listę.
     """
 
-    _SKIP = object()
     _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})")
     _BACKGROUND_MAP = {
         "ffffcc": "pre_war_european_championship",
@@ -80,7 +79,6 @@ class F1SingleGrandPrixScraper(F1Scraper):
         return TablePipeline(
             config=config,
             include_urls=self.include_urls,
-            skip_sentinel=self._SKIP,
             normalize_empty_values=self.normalize_empty_values,
         )
 

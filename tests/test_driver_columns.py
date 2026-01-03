@@ -19,7 +19,6 @@ def _ctx(
         clean_text=clean_text or raw_text,
         links=links or [],
         cell=None,
-        skip_sentinel=object(),
         model_fields=model_fields,
     )
 

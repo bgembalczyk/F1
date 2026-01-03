@@ -11,7 +11,6 @@ def _ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
         clean_text=clean_text or raw_text,
         links=[],
         cell=None,
-        skip_sentinel=object(),
         model_fields=None,
     )
 

@@ -26,7 +26,6 @@ class SeasonTableParser:
     ) -> None:
         self._options = options
         self._include_urls = include_urls
-        self._skip_sentinel = object()
         self.url = url
 
     def update_url(self, url: str) -> None:
@@ -98,7 +97,6 @@ class SeasonTableParser:
             pipeline = TablePipeline(
                 config=config,
                 include_urls=self._include_urls,
-                skip_sentinel=self._skip_sentinel,
                 normalize_empty_values=self._options.normalize_empty_values,
             )
             parser = HtmlTableParser(

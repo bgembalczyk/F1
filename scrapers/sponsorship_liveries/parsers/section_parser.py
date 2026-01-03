@@ -22,7 +22,6 @@ from scrapers.sponsorship_liveries.parsers.record_splitter import (
 
 
 class SponsorshipSectionParser:
-    _SKIP = object()
     _season_headers = {
         "year",
         "years",
@@ -75,7 +74,6 @@ class SponsorshipSectionParser:
         return TablePipeline(
             config=config,
             include_urls=self._include_urls,
-            skip_sentinel=self._SKIP,
             normalize_empty_values=self._normalize_empty_values,
         )
 

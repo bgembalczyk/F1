@@ -19,6 +19,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.constants import SKIP_SENTINEL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 
@@ -37,7 +38,6 @@ class TablePipeline:
         *,
         config: ScraperConfig,
         include_urls: bool,
-        skip_sentinel: object,
         normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,
         run_id: str | None = None,
@@ -46,7 +46,7 @@ class TablePipeline:
         self.config = config
         self.include_urls = include_urls
         self.base_url = config.url
-        self.skip_sentinel = skip_sentinel
+        self.skip_sentinel = SKIP_SENTINEL
         self.model_fields = model_fields
         self.run_id = run_id
         self.normalize_empty_values = normalize_empty_values
