@@ -24,8 +24,8 @@ class CompleteDriverScraper(CompositeScraper):
         options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
-        self._html_adapter = options.with_source_adapter()
-        self._policy = options.to_http_policy()
+        self._html_adapter = options.with_source_adapter(policy=policy)
+        self._policy = options.to_http_policy(options)
         super().__init__(options=options)
 
     def build_children(self) -> CompositeScraperChildren:

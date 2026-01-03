@@ -13,7 +13,8 @@ from scrapers.seasons.single_scraper import SingleSeasonScraper
 class CompleteSeasonScraper(F1Scraper):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
-        options.with_fetcher()
+        policy = self.get_http_policy(options)
+        options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self.url = SeasonsListScraper.CONFIG.url
         self._options = options

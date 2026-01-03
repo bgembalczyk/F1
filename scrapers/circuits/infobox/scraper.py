@@ -37,13 +37,14 @@ class F1CircuitInfoboxScraper(F1Scraper):
         options = init_scraper_options(options)
 
         # Zapewniamy fetcher (spójnie z resztą repo).
-        options.with_fetcher()
+        policy = self.get_http_policy(options)
+        options.with_fetcher(policy=policy)
 
         super().__init__(options=options)
 
         # Dla czytelności (F1Scraper i tak to trzyma)
         self.fetcher = options.fetcher
-        self.policy = options.to_http_policy()
+        self.policy = self.http_policy
         self.timeout = self.policy.timeout
 
         # WikipediaInfoboxScraper w stylu "main": przez ScraperOptions + fetcher

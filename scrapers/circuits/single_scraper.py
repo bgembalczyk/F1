@@ -36,10 +36,11 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         # HtmlFetcher jest config-driven — jeśli nie ma fetchera w options,
         # tworzymy domyślny.
-        options.with_fetcher()
+        policy = self.get_http_policy(options)
+        options.with_fetcher(policy=policy)
 
         super().__init__(options=options)
-        self.policy = options.to_http_policy()
+        self.policy = self.http_policy
         self.timeout = self.policy.timeout
         self.url: str = ""
         self._original_url: Optional[str] = None
