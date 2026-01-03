@@ -140,6 +140,7 @@ class SingleSeasonScraper(F1Scraper):
                 "rounds": BrListColumn(),
             },
         )
+        records = self._filter_source_footer_records(records)
         if records:
             return self._normalize_free_practice_records(records)
 
@@ -159,10 +160,11 @@ class SingleSeasonScraper(F1Scraper):
                 "rounds": BrListColumn(),
             },
         )
+        records = self._filter_source_footer_records(records)
         if records:
             return self._normalize_free_practice_records(records)
 
-        return self._parse_table(
+        records = self._parse_table(
             soup,
             section_ids=["Free_practice_drivers"],
             expected_headers=["Constructor", "Practice drivers"],
@@ -176,6 +178,68 @@ class SingleSeasonScraper(F1Scraper):
                 "practice_drivers": DriversWithRoundsColumn(),
             },
         )
+        return self._filter_source_footer_records(records)
+
+    def _filter_source_footer_records(
+        self, records: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        return [record for record in records if not self._is_source_footer_record(record)]
+
+    def _is_source_footer_record(self, record: Dict[str, Any]) -> bool:
+        texts: List[str] = []
+        texts.extend(self._constructor_texts(record.get("constructor")))
+        texts.extend(self._driver_list_texts(record.get("drivers")))
+        texts.extend(self._practice_driver_texts(record.get("practice_drivers")))
+        if not texts:
+            return False
+        return all(text == "Source:" for text in texts)
+
+    def _constructor_texts(self, value: Any) -> List[str]:
+        texts: List[str] = []
+        if isinstance(value, list):
+            for item in value:
+                texts.extend(self._constructor_texts(item))
+            return texts
+        if isinstance(value, dict):
+            for key in ("chassis_constructor", "engine_constructor"):
+                text = self._get_text(value.get(key))
+                if text:
+                    texts.append(text)
+            return texts
+        text = self._get_text(value)
+        return [text] if text else []
+
+    def _driver_list_texts(self, value: Any) -> List[str]:
+        if not isinstance(value, list):
+            return []
+        texts = []
+        for item in value:
+            text = self._get_text(item)
+            if text:
+                texts.append(text)
+        return texts
+
+    def _practice_driver_texts(self, value: Any) -> List[str]:
+        if not isinstance(value, list):
+            return []
+        texts = []
+        for item in value:
+            if not isinstance(item, dict):
+                continue
+            text = self._get_text(item.get("driver"))
+            if text:
+                texts.append(text)
+        return texts
+
+    @staticmethod
+    def _get_text(value: Any) -> str | None:
+        if isinstance(value, dict):
+            text = value.get("text")
+            if isinstance(text, str):
+                return text
+        if isinstance(value, str):
+            return value
+        return None
 
     @staticmethod
     def _normalize_free_practice_records(
