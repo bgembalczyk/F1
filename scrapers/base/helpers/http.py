@@ -1,7 +1,11 @@
+from typing import TYPE_CHECKING
+
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import ResponseCache
-from scrapers.base.options import ScraperOptions
+
+if TYPE_CHECKING:
+    from scrapers.base.options import ScraperOptions
 
 
 def default_http_policy() -> HttpPolicy:
@@ -22,10 +26,12 @@ def build_http_policy(
 
 
 def init_scraper_options(
-    options: ScraperOptions | None,
+    options: "ScraperOptions | None",
     *,
     include_urls: bool | None = None,
-) -> ScraperOptions:
+) -> "ScraperOptions":
+    from scrapers.base.options import ScraperOptions
+
     resolved = options or ScraperOptions()
     if include_urls is not None:
         resolved.include_urls = include_urls
