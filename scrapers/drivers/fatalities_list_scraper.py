@@ -1,11 +1,11 @@
 from pathlib import Path
 from typing import Any, List
 
-from models.scrape_types.fatality_row import FatalityRow
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import strip_marks
+from scrapers.base.records import ExportRecord
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -103,9 +103,11 @@ class F1FatalitiesListScraper(F1TableScraper):
             return {"event": strip_marks(auto_value), "championship": championship}
         return {"event": auto_value, "championship": championship}
 
-    def fetch(self) -> List[FatalityRow]:
-        rows = super().fetch()
-        for row in rows:
+    def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        before_count = len(records)
+        self.logger.debug("Post-processing fatality records: %d", before_count)
+
+        for row in records:
             formula_category = row.pop("formula_category", None)
             if not formula_category:
                 continue
@@ -118,7 +120,13 @@ class F1FatalitiesListScraper(F1TableScraper):
                     "url": None,
                     "formula_category": formula_category,
                 }
-        return rows  # type: ignore[return-value]
+
+        self.logger.debug(
+            "Post-processing fatality records complete: %d -> %d",
+            before_count,
+            len(records),
+        )
+        return records  # type: ignore[return-value]
 
 
 if __name__ == "__main__":
