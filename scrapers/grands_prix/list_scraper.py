@@ -2,6 +2,7 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
+from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -55,6 +56,7 @@ class GrandsPrixListScraper(F1TableScraper):
             "circuits": IntColumn(),
             "total": IntColumn(),
         },
+        record_factory=record_from_mapping,
     )
 
     def __init__(

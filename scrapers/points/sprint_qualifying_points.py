@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -30,6 +31,7 @@ class SprintQualifyingPointsScraper(F1TableScraper):
             "seasons": SeasonsColumn(),
             **{position.lower(): IntColumn() for position in SPRINT_POSITIONS},
         },
+        record_factory=record_from_mapping,
     )
 
 
