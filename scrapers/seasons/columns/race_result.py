@@ -26,9 +26,8 @@ class RaceResultColumn(BaseColumn):
         "ffffff": "Did not start",
     }
     _CLASSIFIED_DNF_MARK = "†"
-    _CLASSIFIED_DNF_NOTE = (
-        "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance."
-    )
+    _CLASSIFIED_DNF_NOTE = "classified_after_dnf_90_percent"
+    _CLASSIFIED_DNF_START_YEAR = 2009
     _CLASSIFIED_DNF_BACKGROUNDS = {
         "Winner",
         "Second place",
@@ -70,24 +69,27 @@ class RaceResultColumn(BaseColumn):
             payload["round"] = round_link
 
         if results:
+            share_count = len(results)
             if footnotes:
                 for result in results:
                     result["footnotes"] = footnotes
             for result in results:
                 self._apply_result_notes(result, background)
+                if result.get("points_shared") and share_count > 1:
+                    result["points_share_count"] = share_count
+                if result.get("shared_drive") and share_count > 1:
+                    result["shared_drive_share_count"] = share_count
+                result.pop("marks", None)
             payload["results"] = results
-            if len(results) == 1:
-                payload["position"] = results[0].get("position")
-                if results[0].get("notes"):
-                    payload["position_note"] = results[0]["notes"][0]
         if sprint_position is not None:
             payload["sprint_position"] = sprint_position
         if pole_position:
             payload["pole_position"] = True
         if fastest_lap:
             payload["fastest_lap"] = True
-            if any("*" in (result.get("marks") or []) for result in results):
+            if len(results) > 1:
                 payload["fastest_lap_shared"] = True
+                payload["fastest_lap_share_count"] = len(results)
         if footnotes:
             payload["footnotes"] = footnotes
         if background is not None:
@@ -153,7 +155,9 @@ class RaceResultColumn(BaseColumn):
         position = result.get("position")
 
         if (
-            self._CLASSIFIED_DNF_MARK in marks
+            self._season_year is not None
+            and self._season_year >= self._CLASSIFIED_DNF_START_YEAR
+            and self._CLASSIFIED_DNF_MARK in marks
             and background in self._CLASSIFIED_DNF_BACKGROUNDS
             and isinstance(position, int)
         ):
