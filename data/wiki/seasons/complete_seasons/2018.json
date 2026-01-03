@@ -2545,7 +2545,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/2018_British_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ger": {
@@ -2674,7 +2675,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2018_Azerbaijan_Grand_Prix"
             },
-            "position": "14 †",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -3777,7 +3779,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2018_French_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aut": {
@@ -3801,7 +3804,8 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/2018_German_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -4113,7 +4117,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/2018_Monaco_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -4665,7 +4670,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2018_Austrian_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -5009,7 +5015,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2018_French_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aut": {
@@ -5145,7 +5152,8 @@
               "text": "CHN",
               "url": "https://en.wikipedia.org/wiki/2018_Chinese_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aze": {
@@ -5169,7 +5177,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/2018_Monaco_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -5711,7 +5720,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2018_Azerbaijan_Grand_Prix"
             },
-            "position": "14 †",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -6511,7 +6521,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/2018_British_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ger": {
@@ -7589,7 +7600,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2018_French_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aut": {
@@ -7597,7 +7609,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2018_Austrian_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -7613,7 +7626,8 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/2018_German_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -8133,7 +8147,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/2018_Monaco_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -8473,7 +8488,8 @@
               "text": "CHN",
               "url": "https://en.wikipedia.org/wiki/2018_Chinese_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aze": {
@@ -8497,7 +8513,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/2018_Monaco_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -8877,7 +8894,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2018_French_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aut": {

@@ -5620,7 +5620,8 @@
               "text": "MAL",
               "url": "https://en.wikipedia.org/wiki/2004_Malaysian_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bhr": {
@@ -5636,7 +5637,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/2004_San_Marino_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -6293,7 +6295,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/2004_Monaco_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "eur": {
@@ -6798,7 +6801,8 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2004_United_States_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "fra": {
@@ -7474,7 +7478,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2004_Belgian_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {
@@ -8078,7 +8083,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2004_French_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {

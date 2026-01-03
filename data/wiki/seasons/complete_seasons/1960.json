@@ -4391,7 +4391,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {

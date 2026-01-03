@@ -2585,7 +2585,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "sprint_position": 3,
             "background": "Other classified position"
           },
@@ -3270,7 +3271,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -3362,7 +3364,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "jpn": {
@@ -3895,7 +3898,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -4903,7 +4907,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -5298,7 +5303,8 @@
               "text": "SIN",
               "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "usa": {
@@ -6129,7 +6135,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 4.0
@@ -6831,7 +6838,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "sprint_position": 3,
             "background": "Other classified position"
           },
@@ -7315,7 +7323,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -7752,7 +7761,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -7847,7 +7857,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "jpn": {
@@ -8596,7 +8607,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sin": {
@@ -9432,7 +9444,8 @@
               "text": "SIN",
               "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "usa": {
@@ -9898,7 +9911,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 46.0

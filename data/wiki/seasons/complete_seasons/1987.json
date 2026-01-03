@@ -2097,7 +2097,8 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -2193,7 +2194,8 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "pole_position": true,
             "background": "Other classified position"
           },
@@ -2426,7 +2428,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "det": {
@@ -2458,7 +2461,8 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
-            "position": "7†",
+            "position": 7,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -2817,7 +2821,8 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "smr": {
@@ -2913,7 +2918,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -3049,7 +3055,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -3178,7 +3185,8 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "esp": {
@@ -3322,7 +3330,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -3338,7 +3347,8 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -3506,7 +3516,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "bel": {
@@ -3754,7 +3765,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 6.0
@@ -3786,7 +3798,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "mon": {
@@ -3890,7 +3903,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 4.0
@@ -4050,7 +4064,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {
@@ -4935,7 +4950,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "7†",
+            "position": 7,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {
@@ -5071,7 +5087,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {
@@ -5265,7 +5282,8 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -5321,7 +5339,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "12†",
+            "position": 12,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {
@@ -5813,7 +5832,8 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "pole_position": true,
             "background": "Other classified position"
           },
@@ -5872,7 +5892,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 137.0
@@ -6017,7 +6038,8 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -6075,7 +6097,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "det": {
@@ -6107,7 +6130,8 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
-            "position": "7†",
+            "position": 7,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -6350,7 +6374,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "bel": {
@@ -6636,7 +6661,8 @@
               "text": "BRA",
               "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "smr": {
@@ -6732,7 +6758,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -7021,7 +7048,8 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "esp": {
@@ -7174,7 +7202,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -7521,7 +7550,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {
@@ -7754,7 +7784,8 @@
               "text": "ESP",
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mex": {
@@ -7770,7 +7801,8 @@
               "text": "JPN",
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -7964,7 +7996,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "mon": {
@@ -8068,7 +8101,8 @@
               "text": "AUS",
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 10.0
@@ -8721,7 +8755,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "7†",
+            "position": 7,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {
@@ -8866,7 +8901,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {
@@ -9373,7 +9409,8 @@
               "text": "POR",
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -9438,7 +9475,8 @@
               "text": "SMR",
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
-            "position": "12†",
+            "position": 12,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {

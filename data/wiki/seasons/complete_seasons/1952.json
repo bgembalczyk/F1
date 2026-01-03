@@ -5914,7 +5914,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -6185,7 +6186,8 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {

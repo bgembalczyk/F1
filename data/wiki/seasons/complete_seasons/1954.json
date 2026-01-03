@@ -3725,7 +3725,8 @@
               "text": "GER",
               "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Second place"
           },
           "sui": {
@@ -3772,7 +3773,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1954_Belgian_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "fra": {
@@ -4544,7 +4546,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1954_Italian_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "esp": null,
@@ -4700,7 +4703,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "bel": null,
@@ -5593,7 +5597,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": null,

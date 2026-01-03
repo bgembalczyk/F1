@@ -2774,7 +2774,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Second place"
           },
           "500": null,
@@ -2815,7 +2816,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Second place"
           },
           "points": 25.0
@@ -2953,7 +2955,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ger": {
@@ -3112,7 +3115,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
             },
-            "position": "1†",
+            "position": 1,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Winner"
           },
           "mon": {
@@ -3181,7 +3185,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
             },
-            "position": "10†",
+            "position": 10,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -3314,7 +3319,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "fra": {
@@ -3322,7 +3328,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "gbr": {
@@ -3679,7 +3686,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "mon": null,
@@ -3709,7 +3717,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "mon": null,
@@ -3757,7 +3766,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "500": null,
@@ -3860,7 +3870,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": null,
@@ -3883,7 +3894,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": null,
@@ -3907,7 +3919,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "500": null,

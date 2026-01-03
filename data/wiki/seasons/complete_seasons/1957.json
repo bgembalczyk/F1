@@ -3073,7 +3073,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1957_British_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "ger": null,
@@ -3092,7 +3093,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": {
@@ -3322,7 +3324,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "points": 1.0
@@ -3338,7 +3341,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "mon": null,
@@ -3361,7 +3365,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "mon": null,
@@ -3482,7 +3487,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1957_Argentine_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "mon": null,
@@ -3575,7 +3581,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/1957_French_Grand_Prix"
             },
-            "position": "7†",
+            "position": 7,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": null,
@@ -3924,7 +3931,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 0.0
@@ -3954,7 +3962,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1957_Italian_Grand_Prix"
             },
-            "position": "11†",
+            "position": 11,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 0.0

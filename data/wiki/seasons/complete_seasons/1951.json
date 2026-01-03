@@ -3505,7 +3505,8 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "esp": {
@@ -3745,7 +3746,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "bel": null,
@@ -3768,7 +3770,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "bel": null,

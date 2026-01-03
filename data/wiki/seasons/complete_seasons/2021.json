@@ -1902,7 +1902,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -2624,7 +2625,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 190.0
@@ -3383,7 +3385,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "emi": {
@@ -3944,7 +3947,8 @@
               "text": "EMI",
               "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "por": {
@@ -4000,7 +4004,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -4528,7 +4533,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "fra": {
@@ -4584,7 +4590,8 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {
@@ -4848,7 +4855,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "emi": {
@@ -4960,7 +4968,8 @@
               "text": "RUS",
               "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "tur": {
@@ -6283,7 +6292,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "fastest_lap": true,
             "background": "Other classified position"
           },
@@ -6417,7 +6427,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 585.5
@@ -7777,7 +7788,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "emi": {
@@ -8165,7 +8177,8 @@
               "text": "EMI",
               "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
             },
-            "position": "15†",
+            "position": 15,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "por": {
@@ -8221,7 +8234,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "gbr": {
@@ -8537,7 +8551,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "emi": {
@@ -8577,7 +8592,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "fra": {
@@ -8633,7 +8649,8 @@
               "text": "NED",
               "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {
@@ -8649,7 +8666,8 @@
               "text": "RUS",
               "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "tur": {

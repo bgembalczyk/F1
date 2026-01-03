@@ -2743,7 +2743,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "500": null,
@@ -2824,7 +2825,8 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "ned": {
@@ -3053,7 +3055,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Second place"
           },
           "bel": null,
@@ -3075,7 +3078,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Second place"
           },
           "bel": null,
@@ -3096,7 +3100,8 @@
               "text": "MON",
               "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
             },
-            "position": "8†",
+            "position": 8,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "500": null,
@@ -3146,7 +3151,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
             },
-            "position": "2†",
+            "position": 2,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "pole_position": true,
             "background": "Second place"
           },
@@ -3263,7 +3269,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
             },
-            "position": "3†",
+            "position": 3,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Third place"
           },
           "mon": null,
@@ -3292,7 +3299,8 @@
               "text": "ARG",
               "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
             },
-            "position": "4†",
+            "position": 4,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "mon": {
@@ -3323,7 +3331,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "bel": null,
@@ -3345,7 +3354,8 @@
               "text": "500",
               "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
             },
-            "position": "5†",
+            "position": 5,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other points position"
           },
           "bel": null,
@@ -3414,7 +3424,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
             },
-            "position": "6†",
+            "position": 6,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {
@@ -3762,7 +3773,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
             },
-            "position": "9†",
+            "position": 9,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ita": {

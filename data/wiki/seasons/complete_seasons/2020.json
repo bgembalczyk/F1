@@ -2232,7 +2232,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "skh": {
@@ -2555,7 +2556,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
             },
-            "position": "13†",
+            "position": 13,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sty": {
@@ -3565,7 +3567,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
             },
-            "position": "12†",
+            "position": 12,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sty": {
@@ -4422,7 +4425,8 @@
               "text": "TUR",
               "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bhr": {
@@ -5009,7 +5013,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
             },
-            "position": "13†",
+            "position": 13,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sty": {
@@ -5728,7 +5733,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "skh": {
@@ -6669,7 +6675,8 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
             },
-            "position": "12†",
+            "position": 12,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sty": {
@@ -7223,7 +7230,8 @@
               "text": "TUR",
               "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bhr": {

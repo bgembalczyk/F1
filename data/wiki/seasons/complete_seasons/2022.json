@@ -2088,7 +2088,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sau": {
@@ -2486,7 +2487,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sau": {
@@ -3232,7 +3234,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 240.0
@@ -3773,7 +3776,8 @@
               "text": "MXC",
               "url": "https://en.wikipedia.org/wiki/2022_Mexico_City_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sap": {
@@ -3902,7 +3906,8 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/2022_Hungarian_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {
@@ -4193,7 +4198,8 @@
               "text": "MIA",
               "url": "https://en.wikipedia.org/wiki/2022_Miami_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -4378,7 +4384,8 @@
               "text": "MIA",
               "url": "https://en.wikipedia.org/wiki/2022_Miami_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -4773,7 +4780,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2022_Azerbaijan_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -5356,7 +5364,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2022_French_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -5461,7 +5470,8 @@
               "text": "SAU",
               "url": "https://en.wikipedia.org/wiki/2022_Saudi_Arabian_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -5804,7 +5814,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 2.0
@@ -5909,7 +5920,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sau": {
@@ -6114,7 +6126,8 @@
               "text": "BHR",
               "url": "https://en.wikipedia.org/wiki/2022_Bahrain_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sau": {
@@ -7083,7 +7096,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
             },
-            "position": "18†",
+            "position": 18,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 515.0
@@ -7448,7 +7462,8 @@
               "text": "MXC",
               "url": "https://en.wikipedia.org/wiki/2022_Mexico_City_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "sap": {
@@ -8150,7 +8165,8 @@
               "text": "FRA",
               "url": "https://en.wikipedia.org/wiki/2022_French_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "hun": {
@@ -8158,7 +8174,8 @@
               "text": "HUN",
               "url": "https://en.wikipedia.org/wiki/2022_Hungarian_Grand_Prix"
             },
-            "position": "20†",
+            "position": 20,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "bel": {
@@ -8475,7 +8492,8 @@
               "text": "MIA",
               "url": "https://en.wikipedia.org/wiki/2022_Miami_Grand_Prix"
             },
-            "position": "17†",
+            "position": 17,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -8499,7 +8517,8 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2022_Azerbaijan_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "can": {
@@ -8855,7 +8874,8 @@
               "text": "MIA",
               "url": "https://en.wikipedia.org/wiki/2022_Miami_Grand_Prix"
             },
-            "position": "16†",
+            "position": 16,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "esp": {
@@ -9404,7 +9424,8 @@
               "text": "SAU",
               "url": "https://en.wikipedia.org/wiki/2022_Saudi_Arabian_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "aus": {
@@ -9754,7 +9775,8 @@
               "text": "ABU",
               "url": "https://en.wikipedia.org/wiki/2022_Abu_Dhabi_Grand_Prix"
             },
-            "position": "19†",
+            "position": 19,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "points": 8.0

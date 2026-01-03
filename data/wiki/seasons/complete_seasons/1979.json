@@ -2675,7 +2675,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ger": {
@@ -6373,7 +6374,8 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
             },
-            "position": "14†",
+            "position": 14,
+            "position_note": "Driver did not finish the Grand Prix, but was classified as he completed more than 90% of the race distance.",
             "background": "Other classified position"
           },
           "ger": {
