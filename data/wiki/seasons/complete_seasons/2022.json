@@ -2045,7 +2045,7 @@
           }
         }
       ],
-      "non_championship_races": [],
+      "non_championship_races": null,
       "scoring_system": [
         {
           "position": "Race",
@@ -13195,8 +13195,8 @@
           "points": 8.0
         }
       ],
-      "south_african_formula_one_championship": [],
-      "british_formula_one_championship": []
+      "south_african_formula_one_championship": null,
+      "british_formula_one_championship": null
     }
   }
 ]

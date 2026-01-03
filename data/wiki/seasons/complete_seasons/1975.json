@@ -2172,8 +2172,8 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
-      "calendar": [],
+      "free_practice_drivers": null,
+      "calendar": null,
       "results": [
         {
           "round": 1,
@@ -8640,7 +8640,7 @@
           }
         }
       ],
-      "constructors_standings": [],
+      "constructors_standings": null,
       "south_african_formula_one_championship": [
         {
           "race_name": "Cape South Easter Trophy",
@@ -8904,7 +8904,7 @@
           }
         }
       ],
-      "british_formula_one_championship": []
+      "british_formula_one_championship": null
     }
   }
 ]

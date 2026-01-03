@@ -1606,8 +1606,8 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
-      "calendar": [],
+      "free_practice_drivers": null,
+      "calendar": null,
       "results": [
         {
           "round": 1,
@@ -2138,7 +2138,7 @@
           }
         }
       ],
-      "non_championship_races": [],
+      "non_championship_races": null,
       "scoring_system": [
         {
           "position": "Race",
@@ -13461,8 +13461,8 @@
           "points": 0.0
         }
       ],
-      "south_african_formula_one_championship": [],
-      "british_formula_one_championship": []
+      "south_african_formula_one_championship": null,
+      "british_formula_one_championship": null
     }
   }
 ]

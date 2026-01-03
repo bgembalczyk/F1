@@ -479,7 +479,7 @@
           ]
         }
       ],
-      "free_practice_drivers": [],
+      "free_practice_drivers": null,
       "calendar": [
         {
           "round": 1,
@@ -986,13 +986,13 @@
           }
         }
       ],
-      "results": [],
-      "non_championship_races": [],
-      "scoring_system": [],
-      "drivers_standings": [],
-      "constructors_standings": [],
-      "south_african_formula_one_championship": [],
-      "british_formula_one_championship": []
+      "results": null,
+      "non_championship_races": null,
+      "scoring_system": null,
+      "drivers_standings": null,
+      "constructors_standings": null,
+      "south_african_formula_one_championship": null,
+      "british_formula_one_championship": null
     }
   }
 ]
