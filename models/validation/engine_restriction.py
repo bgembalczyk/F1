@@ -74,8 +74,8 @@ class EngineRestriction(ValidatedModel):
             )
         return result
 
+    @staticmethod
     def _normalize_limit(
-        self,
         value: Dict[str, Any] | None,
         field_name: str,
         *,
