@@ -5,6 +5,7 @@ from typing import List
 
 from bs4 import Tag
 
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
@@ -28,28 +29,34 @@ class InfoboxCellParser:
 
     @staticmethod
     def parse_year_range(text: str) -> Dict[str, int | None]:
-        normalized = clean_infobox_text(text) or ""
-        range_match = re.search(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", normalized)
-        if range_match:
-            start = int(range_match.group(1))
-            end_text = range_match.group(2)
-            if len(end_text) == 2:
-                end = (start // 100) * 100 + int(end_text)
-            else:
-                end = int(end_text)
-            return {"start": start, "end": end}
+        try:
+            normalized = clean_infobox_text(text) or ""
+            range_match = re.search(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", normalized)
+            if range_match:
+                start = int(range_match.group(1))
+                end_text = range_match.group(2)
+                if len(end_text) == 2:
+                    end = (start // 100) * 100 + int(end_text)
+                else:
+                    end = int(end_text)
+                return {"start": start, "end": end}
 
-        years = [int(value) for value in re.findall(r"\d{4}", normalized)]
-        if not years:
-            return {"start": None, "end": None}
-        start = years[0]
-        if "present" in normalized.lower() and len(years) == 1:
-            end = None
-        elif len(years) > 1:
-            end = years[-1]
-        else:
-            end = start
-        return {"start": start, "end": end}
+            years = [int(value) for value in re.findall(r"\d{4}", normalized)]
+            if not years:
+                return {"start": None, "end": None}
+            start = years[0]
+            if "present" in normalized.lower() and len(years) == 1:
+                end = None
+            elif len(years) > 1:
+                end = years[-1]
+            else:
+                end = start
+            return {"start": start, "end": end}
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować zakresu lat: {text!r}.",
+                cause=exc,
+            ) from exc
 
     def parse_teams(self, cell: Tag) -> List[Any]:
         if self._include_urls:
@@ -62,7 +69,13 @@ class InfoboxCellParser:
     @staticmethod
     def parse_entries(cell: Tag) -> Dict[str, int | None]:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        values = [int(value) for value in re.findall(r"\d+", text)]
+        try:
+            values = [int(value) for value in re.findall(r"\d+", text)]
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować wpisów/startów: {text!r}.",
+                cause=exc,
+            ) from exc
         entries = values[0] if values else None
         starts = values[1] if len(values) > 1 else None
         return {"entries": entries, "starts": starts}
@@ -71,13 +84,29 @@ class InfoboxCellParser:
     def parse_int_cell(cell: Tag) -> int | None:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         match = re.search(r"-?\d+", text.replace(",", ""))
-        return int(match.group(0)) if match else None
+        if not match:
+            return None
+        try:
+            return int(match.group(0))
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować liczby całkowitej: {text!r}.",
+                cause=exc,
+            ) from exc
 
     @staticmethod
     def parse_float_cell(cell: Tag) -> float | None:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         match = re.search(r"-?\d+(?:\.\d+)?", text.replace(",", ""))
-        return float(match.group(0)) if match else None
+        if not match:
+            return None
+        try:
+            return float(match.group(0))
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować liczby zmiennoprzecinkowej: {text!r}.",
+                cause=exc,
+            ) from exc
 
     def parse_car_numbers(self, cell: Tag) -> List[Dict[str, Any]]:
         raw_text = cell.get_text("\n", strip=True) or ""
@@ -93,7 +122,13 @@ class InfoboxCellParser:
         )
         for match in pattern.finditer(normalized):
             prefix = match.group("prefix") or ""
-            number = int(match.group("number"))
+            try:
+                number = int(match.group("number"))
+            except (TypeError, ValueError) as exc:
+                raise DomainParseError(
+                    f"Nie udało się sparsować numeru samochodu: {raw_text!r}.",
+                    cause=exc,
+                ) from exc
             if number >= 1900 and not prefix:
                 continue
             years_text = match.group("years") or ""
@@ -107,13 +142,19 @@ class InfoboxCellParser:
 
     def parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        if " in " in text:
-            result_text, season_text = text.split(" in ", 1)
-            season = self.parse_year_range(season_text)
-        else:
-            result_text = text
-            season = {"start": None, "end": None}
-        return {"result": result_text.strip() or None, "season": season}
+        try:
+            if " in " in text:
+                result_text, season_text = text.split(" in ", 1)
+                season = self.parse_year_range(season_text)
+            else:
+                result_text = text
+                season = {"start": None, "end": None}
+            return {"result": result_text.strip() or None, "season": season}
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
+                cause=exc,
+            ) from exc
 
     def parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))

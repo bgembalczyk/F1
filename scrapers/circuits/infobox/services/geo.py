@@ -2,6 +2,7 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -93,25 +94,30 @@ class CircuitGeoParser(InfoboxTextUtils):
     def _parse_position(text: str) -> Optional[Dict[str, float]]:
         if not text:
             return None
+        try:
+            decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
+            if decimal_match:
+                return {
+                    "lat": float(decimal_match.group(1)),
+                    "lon": float(decimal_match.group(2)),
+                }
 
-        decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
-        if decimal_match:
-            return {
-                "lat": float(decimal_match.group(1)),
-                "lon": float(decimal_match.group(2)),
-            }
-
-        parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
-        if len(parts) >= 2:
-            lat_dir, lat_val = parts[0]
-            lon_dir, lon_val = parts[1]
-            lat = float(lat_val)
-            lon = float(lon_val)
-            if lat_dir.upper() == "S":
-                lat = -lat
-            if lon_dir.upper() == "W":
-                lon = -lon
-            return {"lat": lat, "lon": lon}
+            parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
+            if len(parts) >= 2:
+                lat_dir, lat_val = parts[0]
+                lon_dir, lon_val = parts[1]
+                lat = float(lat_val)
+                lon = float(lon_val)
+                if lat_dir.upper() == "S":
+                    lat = -lat
+                if lon_dir.upper() == "W":
+                    lon = -lon
+                return {"lat": lat, "lon": lon}
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować współrzędnych: {text!r}.",
+                cause=exc,
+            ) from exc
 
         return None
 
@@ -131,9 +137,15 @@ class CircuitGeoParser(InfoboxTextUtils):
             return float(s.replace(",", "."))
 
         result: Dict[str, float] = {}
-        if acres_match:
-            result["acres"] = _to_float(acres_match.group(1))
-        if ha_match:
-            result["hectares"] = _to_float(ha_match.group(1))
+        try:
+            if acres_match:
+                result["acres"] = _to_float(acres_match.group(1))
+            if ha_match:
+                result["hectares"] = _to_float(ha_match.group(1))
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować powierzchni: {text!r}.",
+                cause=exc,
+            ) from exc
 
         return result or None

@@ -1,7 +1,7 @@
 import logging
 from typing import Optional
 
-from scrapers.base.errors import ScraperNetworkError, ScraperParseError
+from scrapers.base.errors import DomainParseError, ScraperNetworkError, ScraperParseError
 
 
 class ErrorHandler:
@@ -35,6 +35,12 @@ class ErrorHandler:
         Zwraca True jeśli błąd został obsłużony (soft-skip),
         False jeśli powinien być propagowany.
         """
+        if isinstance(error, DomainParseError):
+            self._logger.warning(
+                "Pomijam dane domenowe ze względu na błąd: %s", error
+            )
+            return True
+
         critical = bool(getattr(error, "critical", False))
         if critical:
             return False

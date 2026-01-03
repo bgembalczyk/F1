@@ -26,6 +26,23 @@ class ScraperParseError(ScraperError):
     """Błąd parsowania (krytyczny)."""
 
 
+class DomainParseError(ScraperError):
+    """Błąd parsowania danych domenowych (niekrytyczny)."""
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        url: Optional[str] = None,
+        cause: Optional[Exception] = None,
+    ) -> None:
+        self.message = message
+        self.url = url
+        self.cause = cause
+        self.critical = False
+        Exception.__init__(self, message)
+
+
 class ScraperValidationError(ScraperError):
     """Błąd walidacji rekordów (krytyczny)."""
 

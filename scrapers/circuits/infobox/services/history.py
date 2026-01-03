@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
+from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import MONTHS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -113,27 +114,33 @@ class CircuitHistoryParser(InfoboxTextUtils):
         if not is_start and lower in {"present", "present day", "current", "now"}:
             return str(now_year)
 
-        m = re.search(
-            r"(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{4})",
-            lower,
-        )
-        if m:
-            month_name = m.group(1)
-            year = int(m.group(2))
-            month = MONTHS[month_name]
-            return f"{year:04d}-{month:02d}"
+        try:
+            m = re.search(
+                r"(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{4})",
+                lower,
+            )
+            if m:
+                month_name = m.group(1)
+                year = int(m.group(2))
+                month = MONTHS[month_name]
+                return f"{year:04d}-{month:02d}"
 
-        m = re.search(r"(\d{4})s\b", lower)
-        if m:
-            year = int(m.group(1))
-            if is_start:
+            m = re.search(r"(\d{4})s\b", lower)
+            if m:
+                year = int(m.group(1))
+                if is_start:
+                    return str(year)
+                return str(year + 9)
+
+            m = re.search(r"(\d{4})", lower)
+            if m:
+                year = int(m.group(1))
                 return str(year)
-            return str(year + 9)
-
-        m = re.search(r"(\d{4})", lower)
-        if m:
-            year = int(m.group(1))
-            return str(year)
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować zakresu daty: {raw!r}.",
+                cause=exc,
+            ) from exc
 
         return None
 
