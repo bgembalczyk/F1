@@ -29536,7 +29536,15 @@
               },
               {
                 "label": "Car number",
-                "value": []
+                "value": [
+                  {
+                    "number": 5,
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Entries",
