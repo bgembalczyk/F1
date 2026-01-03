@@ -10,6 +10,9 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 
 class EngineColumn(BaseColumn):
+    def __init__(self, *, global_config: dict[str, Any] | None = None) -> None:
+        self._global_config = global_config or {}
+
     def parse(self, ctx: ColumnContext) -> Any:
         cell = ctx.cell
         if cell is None:
@@ -25,6 +28,9 @@ class EngineColumn(BaseColumn):
             if engine:
                 if class_value:
                     engine["class"] = class_value
+                if self._global_config:
+                    for key, value in self._global_config.items():
+                        engine.setdefault(key, value)
                 engines.append(engine)
 
         if not engines:

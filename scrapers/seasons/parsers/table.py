@@ -40,6 +40,7 @@ class SeasonTableParser:
         subject_header: str,
         subject_key: str,
         subject_column: Any,
+        season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
         for section_id in section_ids:
             config = ScraperConfig(
@@ -62,7 +63,7 @@ class SeasonTableParser:
                     "points": PointsColumn(),
                     "no": IntColumn(),
                 },
-                default_column=RaceResultColumn(),
+                default_column=RaceResultColumn(season_year=season_year),
                 record_factory=record_from_mapping,
             )
             scraper = F1StandingsScraper(options=self._options, config=config)

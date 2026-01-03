@@ -24,6 +24,8 @@ class SeasonEntriesParser:
     def parse(
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
+        engine_config = self._global_engine_config(season_year)
+        engine_column = EngineColumn(global_config=engine_config)
         records = self._table_parser.parse_table(
             soup,
             section_ids=[
@@ -57,13 +59,23 @@ class SeasonEntriesParser:
                 "no": BrListColumn(),
                 "drivers": DriverListColumn(),
                 "rounds": BrListColumn(),
-                "engine": EngineColumn(),
+                "engine": engine_column,
                 "tyre": TyreColumn(),
             },
         )
         if season_year is not None and season_year < 2007:
             records = self._normalize_pre_2007_entry_numbers(records)
         return self._entry_merger.merge_entries(records)
+
+    @staticmethod
+    def _global_engine_config(
+        season_year: int | None,
+    ) -> dict[str, Any] | None:
+        if season_year == 2008:
+            return {"displacement_l": 2.4, "layout": "V", "cylinders": 8}
+        if season_year is not None and 1998 <= season_year <= 2005:
+            return {"displacement_l": 3.0, "layout": "V", "cylinders": 10}
+        return None
 
     @staticmethod
     def _normalize_pre_2007_entry_numbers(
