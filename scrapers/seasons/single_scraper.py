@@ -8,20 +8,18 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.ABC import F1Scraper
+from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.entry_merger import EntryMerger
-from scrapers.seasons.parsers.season_entries_parser import SeasonEntriesParser
-from scrapers.seasons.parsers.season_free_practice_parser import (
+from scrapers.seasons.parsers.entries import SeasonEntriesParser
+from scrapers.seasons.parsers.free_practice import (
     SeasonFreePracticeParser,
 )
-from scrapers.seasons.parsers.season_section_parsers import (
-    SeasonCalendarParser,
-    SeasonNonChampionshipParser,
-    SeasonRegionalChampionshipParser,
-    SeasonResultsParser,
-    SeasonScoringSystemParser,
-    SeasonStandingsParser,
-)
-from scrapers.seasons.parsers.season_table_parser import SeasonTableParser
+from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
+from scrapers.seasons.parsers.regional_championship import SeasonRegionalChampionshipParser
+from scrapers.seasons.parsers.results import SeasonResultsParser
+from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
+from scrapers.seasons.parsers.standings import SeasonStandingsParser
+from scrapers.seasons.parsers.table import SeasonTableParser
 
 
 class SingleSeasonScraper(F1Scraper):

@@ -7,14 +7,12 @@ from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.parsers import (
-    InfoboxCareerParser,
-    InfoboxCellParser,
-    InfoboxGeneralParser,
-    InfoboxLinkExtractor,
-    InfoboxSectionCollector,
-    InfoboxTitlesParser,
-)
+from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
+from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
+from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
+from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
+from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 
 
 class DriverInfoboxScraper:

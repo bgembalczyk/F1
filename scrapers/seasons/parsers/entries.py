@@ -11,7 +11,7 @@ from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.seasons.parsers.entry_merger import EntryMerger
-from scrapers.seasons.parsers.season_table_parser import SeasonTableParser
+from scrapers.seasons.parsers.table import SeasonTableParser
 
 
 class SeasonEntriesParser:

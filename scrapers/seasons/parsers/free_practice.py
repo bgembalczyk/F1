@@ -8,7 +8,7 @@ from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.driver_rounds import DriversWithRoundsColumn
-from scrapers.seasons.parsers.season_table_parser import SeasonTableParser
+from scrapers.seasons.parsers.table import SeasonTableParser
 
 
 class SeasonFreePracticeParser:
