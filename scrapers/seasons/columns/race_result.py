@@ -36,6 +36,11 @@ class RaceResultColumn(BaseColumn):
         "Other points position",
         "Other classified position",
     }
+    _HALF_POINTS_MARK = "*"
+    _HALF_POINTS_NOTE = (
+        "Half points were awarded at this Grand Prix as less than 75% of the scheduled distance was completed. "
+        "Fastest laps were not recognised in the final classification."
+    )
 
     def parse(self, ctx: ColumnContext) -> Any:
         text = self._extract_result_text(ctx)
@@ -73,6 +78,8 @@ class RaceResultColumn(BaseColumn):
             if not round_link.get("text"):
                 round_link["text"] = ctx.header
             payload["round"] = round_link
+        if self._HALF_POINTS_MARK in ctx.header:
+            payload["round_note"] = self._HALF_POINTS_NOTE
         if position is not None:
             payload["position"] = position
         if note:
