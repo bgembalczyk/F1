@@ -148,6 +148,32 @@ def test_normalize_links_handles_none_and_single_link():
     ]
 
 
+def test_normalize_links_keeps_missing_url():
+    assert normalize_links({"text": "Plain", "url": None}) == [
+        {"text": "Plain", "url": None},
+    ]
+
+
+def test_normalize_links_from_html_filters_references_and_multiple_links():
+    html = """
+    <td>
+        <a href="/wiki/Good">Good</a>
+        <a href="#cite_note-1">[1]</a>
+        <a href="/wiki/Other">Other</a>
+    </td>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    cell = soup.find("td")
+
+    def full_url(href: str) -> str:
+        return f"https://en.wikipedia.org{href}" if href.startswith("/") else href
+
+    assert normalize_links(cell, full_url=full_url) == [
+        {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
+        {"text": "Other", "url": "https://en.wikipedia.org/wiki/Other"},
+    ]
+
+
 def test_normalize_auto_value_handles_dict():
     value = {"text": "Marked†", "url": "https://example.com/marked"}
 

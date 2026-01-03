@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text import extract_links_from_cell
+from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.wiki import build_full_url
 
 
@@ -83,7 +83,7 @@ class InfoboxHtmlParser:
         """
         Wyciąga wszystkie linki z komórki, pomijając linki do przypisów.
         """
-        return extract_links_from_cell(
+        return normalize_links(
             td,
             full_url=lambda href: build_full_url(self.wikipedia_base, href),
             allow_local_anchors=False,

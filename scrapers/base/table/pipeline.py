@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.html_utils import find_section_elements
-from scrapers.base.helpers.text import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.links import normalize_links
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.debug_dumps import (
@@ -229,7 +230,7 @@ class TablePipeline:
     def _extract_links(self, cell: Tag) -> list[LinkRecord]:
         if not self.include_urls:
             return []
-        return extract_links_from_cell(
+        return normalize_links(
             cell,
             full_url=lambda href: build_full_url(self.base_url, href),
         )
@@ -251,7 +252,7 @@ class TablePipeline:
         links = self._extract_links(cell)
         header_link = None
         if self.include_urls and header_cell is not None:
-            header_links = extract_links_from_cell(
+            header_links = normalize_links(
                 header_cell,
                 full_url=lambda href: build_full_url(self.base_url, href),
             )

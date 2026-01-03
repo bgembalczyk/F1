@@ -1,13 +1,14 @@
 """Helper utilities for link normalization."""
 
-from typing import Iterable
+from typing import Callable, Iterable
+
+from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
 from models.validation.validators import normalize_and_validate_link_dict
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text, strip_marks
 from scrapers.base.helpers.text_normalization import is_language_link
-from scrapers.base.helpers.text import strip_marks
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
+from scrapers.base.helpers.wiki import is_reference_link, is_wikipedia_redlink
 
 
 def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:
@@ -49,13 +50,29 @@ def normalize_single_link(
 
 
 def normalize_links(
-    links: Iterable[LinkRecord] | LinkRecord | None,
+    links: Iterable[LinkRecord] | LinkRecord | Tag | str | None,
     *,
+    full_url: Callable[[str], str] | None = None,
+    allow_local_anchors: bool = True,
     strip_marks: bool = True,
     drop_empty: bool = True,
     strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
-    if isinstance(links, dict):
+    if isinstance(links, Tag) or isinstance(links, str):
+        if isinstance(links, Tag):
+            search_root = links
+        else:
+            search_root = BeautifulSoup(links or "", "html.parser")
+        links_iterable = []
+        for anchor in search_root.find_all("a", href=True):
+            if is_reference_link(anchor, allow_local_anchors=allow_local_anchors):
+                continue
+            href = str(anchor.get("href") or "")
+            url = full_url(href) if full_url else href
+            links_iterable.append(
+                {"text": anchor.get_text(strip=True), "url": url}
+            )
+    elif isinstance(links, dict):
         links_iterable: Iterable[LinkRecord] = [links]
     else:
         links_iterable = links or []
