@@ -37,7 +37,6 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
         {
             "driver": "Max Verstappen",
             "time": "1:20.000",
-            "__raw_html__": {"Driver": "Max Verstappen", "Time": "1:20.000"},
         }
     ]
 
@@ -67,7 +66,6 @@ def test_table_pipeline_maps_columns_for_cells():
     assert pipeline.parse_cells(headers, cells) == {
         "driver_name": "Lewis Hamilton",
         "team": "Mercedes",
-        "__raw_html__": {"Driver": "Lewis Hamilton", "Team": "Mercedes"},
     }
 
 

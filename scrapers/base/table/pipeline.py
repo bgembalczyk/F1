@@ -157,18 +157,7 @@ class TablePipeline:
                     for key, value in record.items()
                     if key in self.model_fields
                 }
-            elif "__raw_html__" in record:
-                payload = {
-                    key: value
-                    for key, value in record.items()
-                    if key != "__raw_html__"
-                }
             instance = self.record_factory(**payload)
-            if "__raw_html__" in record:
-                try:
-                    setattr(instance, "__raw_html__", record["__raw_html__"])
-                except AttributeError:
-                    pass
             return instance
         return self.record_factory(record)
 
@@ -177,20 +166,6 @@ class TablePipeline:
         if cell is None:
             return None
         return cell.decode_contents()
-
-    def _record_raw_html(
-        self,
-        record: dict[str, Any],
-        header: str,
-        cell: Tag,
-    ) -> str | None:
-        raw_html = self._cell_html(cell)
-        if raw_html is None:
-            return None
-        raw_html_map = record.setdefault("__raw_html__", {})
-        if isinstance(raw_html_map, dict):
-            raw_html_map[header] = raw_html
-        return raw_html
 
     def _dump_parse_context(
         self,
@@ -245,7 +220,7 @@ class TablePipeline:
         *,
         row_index: int | None = None,
     ) -> None:
-        cell_html = self._record_raw_html(record, header, cell)
+        cell_html = self._cell_html(cell)
         key, raw_text, clean_text = self._normalize_cell(header, cell)
         links = self._extract_links(cell)
 
