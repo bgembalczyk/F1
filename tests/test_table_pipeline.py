@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 import pytest
 
 pytest.importorskip("bs4")
@@ -101,3 +103,33 @@ def test_table_pipeline_extract_links_respects_include_urls_flag():
     )
 
     assert pipeline._extract_links(cell) == []
+
+
+def test_table_pipeline_applies_record_factory():
+    @dataclass
+    class DriverRecord:
+        driver: str
+        time: str
+
+    html = """
+    <table class="wikitable">
+        <tr><th>Driver</th><th>Time</th></tr>
+        <tr><td>Max Verstappen</td><td>1:20.000</td></tr>
+    </table>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    config = ScraperConfig(
+        url="https://example.com",
+        expected_headers=["Driver", "Time"],
+        columns={"driver": AutoColumn(), "time": AutoColumn()},
+        record_factory=DriverRecord,
+    )
+    pipeline = TablePipeline(
+        config=config,
+        include_urls=False,
+        skip_sentinel=object(),
+    )
+
+    records = pipeline.parse_soup(soup)
+
+    assert records == [DriverRecord(driver="Max Verstappen", time="1:20.000")]

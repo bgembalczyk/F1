@@ -31,7 +31,7 @@ class EngineRestrictionsScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/Formula_One_regulations#Engine",
         section_id="Engine",
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
-        model_class=EngineRestriction,
+        record_factory=EngineRestriction,
         column_map={
             "Year": "year",
             "Size": "size",
@@ -60,7 +60,7 @@ class EngineRestrictionsScraper(F1TableScraper):
         },
     )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         parser = HtmlTableParser(
             section_id=self.section_id,
             expected_headers=self.expected_headers,
@@ -89,7 +89,7 @@ class EngineRestrictionsScraper(F1TableScraper):
             row_cells.append(row.cells[1:])
 
         headers = ["Year", *row_labels]
-        records: list[dict[str, Any]] = []
+        records: list[Any] = []
         for index, year_cell in enumerate(year_cells):
             cells: list[Tag] = [year_cell]
             for cells_for_row in row_cells:
