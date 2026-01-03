@@ -34,6 +34,7 @@ class ScraperOptions:
     debug_dir: Path | None = None
     normalize_empty_values: bool = True
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
+    run_id: str | None = None
 
     def __post_init__(self) -> None:
         if self.policy is None:
