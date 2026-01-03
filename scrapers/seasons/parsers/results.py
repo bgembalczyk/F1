@@ -19,23 +19,23 @@ class SeasonResultsParser:
     def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
-            section_ids=["Grands_Prix"],
+            section_ids=["Grands_Prix", "Results_and_standings"],
             expected_headers=[
                 "Round",
-                "Grand Prix",
-                "Pole position",
                 "Fastest lap",
                 "Winning driver",
-                "Winning constructor",
                 "Report",
             ],
             column_map={
                 "Round": "round",
                 "Grand Prix": "grand_prix",
+                "Race": "grand_prix",
                 "Pole position": "pole_position",
+                "Pole Position": "pole_position",
                 "Fastest lap": "fastest_lap",
                 "Winning driver": "winning_driver",
                 "Winning constructor": "winning_constructor",
+                "Constructor": "winning_constructor",
                 "Report": "report",
                 "Tyre": "tyre",
             },

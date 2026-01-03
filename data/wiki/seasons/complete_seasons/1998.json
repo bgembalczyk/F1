@@ -982,7 +982,536 @@
           }
         }
       ],
-      "results": null,
+      "results": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Australian_Grand_Prix"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Brazilian_Grand_Prix"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "fastest_lap": {
+            "text": "Alexander Wurz",
+            "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Argentine_Grand_Prix"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_San_Marino_Grand_Prix"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Spanish_Grand_Prix"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Monaco_Grand_Prix"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Canadian_Grand_Prix"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_French_Grand_Prix"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_British_Grand_Prix"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Giancarlo Fisichella",
+            "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+          },
+          "fastest_lap": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Austrian_Grand_Prix"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "David Coulthard",
+            "url": "https://en.wikipedia.org/wiki/David_Coulthard"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_German_Grand_Prix"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Hungarian_Grand_Prix"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "Damon Hill",
+            "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Jordan",
+              "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+            },
+            "engine_constructor": {
+              "text": "Mugen-Honda",
+              "url": "https://en.wikipedia.org/wiki/Mugen_Motorsports"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Belgian_Grand_Prix"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Italian_Grand_Prix"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Luxembourg Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Luxembourg_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "fastest_lap": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Luxembourg_Grand_Prix"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "fastest_lap": {
+            "text": "Michael Schumacher",
+            "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+          },
+          "winning_driver": {
+            "text": "Mika Häkkinen",
+            "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Mercedes",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1998_Japanese_Grand_Prix"
+          }
+        }
+      ],
       "non_championship_races": null,
       "scoring_system": [
         {

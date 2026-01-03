@@ -1937,7 +1937,536 @@
           }
         }
       ],
-      "results": null,
+      "results": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "fastest_lap": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_driver": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "fastest_lap": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_driver": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "United States Grand Prix West",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
+          },
+          "pole_position": {
+            "text": "Andrea de Cesaris",
+            "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
+          },
+          "fastest_lap": {
+            "text": "Niki Lauda",
+            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+          },
+          "winning_driver": {
+            "text": "Niki Lauda",
+            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "fastest_lap": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "winning_driver": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "fastest_lap": {
+            "text": "John Watson",
+            "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
+          },
+          "winning_driver": {
+            "text": "John Watson",
+            "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "fastest_lap": {
+            "text": "Riccardo Patrese",
+            "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+          },
+          "winning_driver": {
+            "text": "Riccardo Patrese",
+            "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Detroit Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Detroit_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "fastest_lap": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_driver": {
+            "text": "John Watson",
+            "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "fastest_lap": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "winning_driver": {
+            "text": "Nelson Piquet",
+            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Brabham",
+              "url": "https://en.wikipedia.org/wiki/Brabham"
+            },
+            "engine_constructor": {
+              "text": "BMW",
+              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "fastest_lap": {
+            "text": "Derek Warwick",
+            "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
+          },
+          "winning_driver": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Keke Rosberg",
+            "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
+          },
+          "fastest_lap": {
+            "text": "Brian Henton",
+            "url": "https://en.wikipedia.org/wiki/Brian_Henton"
+          },
+          "winning_driver": {
+            "text": "Niki Lauda",
+            "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "McLaren",
+              "url": "https://en.wikipedia.org/wiki/McLaren"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "fastest_lap": {
+            "text": "Riccardo Patrese",
+            "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
+          },
+          "winning_driver": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Didier Pironi",
+            "url": "https://en.wikipedia.org/wiki/Didier_Pironi"
+          },
+          "fastest_lap": {
+            "text": "Nelson Piquet",
+            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+          },
+          "winning_driver": {
+            "text": "Patrick Tambay",
+            "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            },
+            "engine_constructor": {
+              "text": "Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Nelson Piquet",
+            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+          },
+          "fastest_lap": {
+            "text": "Nelson Piquet",
+            "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
+          },
+          "winning_driver": {
+            "text": "Elio de Angelis",
+            "url": "https://en.wikipedia.org/wiki/Elio_de_Angelis"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Swiss Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "fastest_lap": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "winning_driver": {
+            "text": "Keke Rosberg",
+            "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Williams",
+              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Mario Andretti",
+            "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+          },
+          "fastest_lap": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "winning_driver": {
+            "text": "René Arnoux",
+            "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            },
+            "engine_constructor": {
+              "text": "Renault",
+              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Caesars Palace Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
+          },
+          "pole_position": {
+            "text": "Alain Prost",
+            "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+          },
+          "fastest_lap": {
+            "text": "Michele Alboreto",
+            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+          },
+          "winning_driver": {
+            "text": "Michele Alboreto",
+            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+          },
+          "winning_constructor": {
+            "chassis_constructor": {
+              "text": "Tyrrell",
+              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+          }
+        }
+      ],
       "non_championship_races": null,
       "scoring_system": [
         {
