@@ -1,7 +1,9 @@
 from typing import Any
 from typing import Mapping
+from typing import TYPE_CHECKING
 
-from scrapers.base.helpers.value_objects.lap_record import LapRecord
+if TYPE_CHECKING:
+    from scrapers.base.helpers.value_objects.lap_record import LapRecord
 
 
 def normalize_text(value: Any) -> str | None:
@@ -31,7 +33,9 @@ def normalize_iso(value: Any) -> str | None:
     return normalize_text(value)
 
 
-def as_lap_record(record: LapRecord | Mapping[str, Any]) -> LapRecord:
+def as_lap_record(record: "LapRecord" | Mapping[str, Any]):
+    from scrapers.base.helpers.value_objects.lap_record import LapRecord
+
     if isinstance(record, LapRecord):
         return record
     return LapRecord.from_dict(record)
