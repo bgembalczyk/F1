@@ -3,6 +3,7 @@ from typing import Any, Dict, Optional
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.scraper import (
     WikipediaInfoboxScraper,
     parse_infobox_from_soup,
@@ -16,6 +17,7 @@ from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
+from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
@@ -53,6 +55,11 @@ class F1CircuitInfoboxScraper(F1Scraper):
                 fetcher=self.fetcher,
                 policy=self.policy,
                 debug_dir=options.debug_dir,
+            ),
+            mapper=InfoboxFieldMapper(
+                schema=CIRCUIT_INFOBOX_SCHEMA,
+                logger=self.logger,
+                context="circuit.infobox",
             ),
         )
 

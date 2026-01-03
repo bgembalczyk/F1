@@ -13,20 +13,11 @@ from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
+from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 
 
 class DriverInfoboxScraper:
     _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
-    _GENERAL_KEYS = {
-        "Born": "born",
-        "Died": "died",
-        "Parent": "parents",
-        "Parents": "parents",
-        "Parent(s)": "parents",
-        "Relatives": "relatives",
-        "Children": "children",
-        "Cause of death": "cause_of_death",
-    }
 
     def __init__(
         self,
@@ -54,7 +45,8 @@ class DriverInfoboxScraper:
         self._general_parser = InfoboxGeneralParser(
             include_urls=self.include_urls,
             link_extractor=self._link_extractor,
-            general_keys=self._GENERAL_KEYS,
+            schema=DRIVER_GENERAL_SCHEMA,
+            logger=self.logger,
         )
         self._titles_parser = InfoboxTitlesParser(self._link_extractor)
         self._career_parser = InfoboxCareerParser(self._cell_parser)

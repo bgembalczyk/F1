@@ -4,6 +4,7 @@ from typing import List, Dict, Any, Optional
 from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -24,6 +25,7 @@ class CircuitLayoutsParser:
         self.text_utils = text_utils
         self.lap_record_parser = lap_record_parser
         self.specs_parser = specs_parser
+        self.schema = CIRCUIT_INFOBOX_SCHEMA
 
     def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         table = self.infobox_scraper.parser.find_infobox(soup)
@@ -62,24 +64,24 @@ class CircuitLayoutsParser:
             if current is None or not header or not data:
                 continue
 
-            label = header.get_text(" ", strip=True)
+            label = self.schema.normalize_label(header.get_text(" ", strip=True))
             cell_row = {
                 "text": data.get_text(" ", strip=True),
                 "links": self.infobox_scraper.parser.extract_links(data),
             }
 
-            if label == "Length":
+            if label == "length":
                 current["length_km"] = self.text_utils.parse_length(cell_row, unit="km")
                 current["length_mi"] = self.text_utils.parse_length(cell_row, unit="mi")
-            elif label == "Turns":
+            elif label == "turns":
                 current["turns"] = self.text_utils.parse_int(cell_row)
-            elif label == "Race lap record":
+            elif label == "race_lap_record":
                 current["race_lap_record"] = self.lap_record_parser.parse_lap_record(
                     cell_row
                 )
-            elif label == "Surface":
+            elif label == "surface":
                 current["surface"] = self.specs_parser.parse_surface(cell_row)
-            elif label == "Banking":
+            elif label == "banking":
                 current["banking"] = self.specs_parser.parse_banking(cell_row)
 
         return layouts

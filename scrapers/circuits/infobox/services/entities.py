@@ -43,20 +43,20 @@ class CircuitEntitiesParser:
         """Buduje znormalizowane dane z surowych wierszy."""
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),
-            "location": self.geo_parser.parse_location(rows.get("Location")),
-            "coordinates": self.geo_parser.parse_coordinates(rows.get("Coordinates")),
+            "location": self.geo_parser.parse_location(rows.get("location")),
+            "coordinates": self.geo_parser.parse_coordinates(rows.get("coordinates")),
             "specs": {
-                "fia_grade": self.text_utils.parse_int(rows.get("FIA Grade")),
+                "fia_grade": self.text_utils.parse_int(rows.get("fia_grade")),
                 "length_km": self.text_utils.parse_length(
-                    rows.get("Length"), unit="km"
+                    rows.get("length"), unit="km"
                 ),
                 "length_mi": self.text_utils.parse_length(
-                    rows.get("Length"), unit="mi"
+                    rows.get("length"), unit="mi"
                 ),
-                "turns": self.text_utils.parse_int(rows.get("Turns")),
+                "turns": self.text_utils.parse_int(rows.get("turns")),
             },
             "history": self.history_parser.parse_history(rows),
-            "architect": self.entity_parser.parse_linked_entity(rows.get("Architect")),
+            "architect": self.entity_parser.parse_linked_entity(rows.get("architect")),
         }
 
         extra_fields = self.additional_info_parser.collect_additional_info(
@@ -78,10 +78,10 @@ class CircuitEntitiesParser:
             "length_mi": normalized.get("specs", {}).get("length_mi"),
             "turns": normalized.get("specs", {}).get("turns"),
             "race_lap_record": self.lap_record_parser.parse_lap_record(
-                rows.get("Race lap record")
+                rows.get("race_lap_record")
             ),
-            "surface": self.specs_parser.parse_surface(rows.get("Surface")),
-            "banking": self.specs_parser.parse_banking(rows.get("Banking")),
+            "surface": self.specs_parser.parse_surface(rows.get("surface")),
+            "banking": self.specs_parser.parse_banking(rows.get("banking")),
         }
         return self.text_utils.prune_nulls(default_layout)
 
@@ -145,7 +145,7 @@ class CircuitEntitiesParser:
 
         if layouts:
             base_record = self.lap_record_parser.parse_lap_record(
-                rows.get("Race lap record")
+                rows.get("race_lap_record")
             )
             if base_record:
                 self._process_base_lap_record(layouts, base_record)
