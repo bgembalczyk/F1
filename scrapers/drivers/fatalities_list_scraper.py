@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, List
+from typing import List
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.runner import run_and_export
@@ -7,16 +7,14 @@ from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.helpers.wiki import strip_marks
 from scrapers.base.records import ExportRecord
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.drivers.columns.fatality_date import FatalityDateColumn
+from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 
 
 class F1FatalitiesListScraper(F1TableScraper):
@@ -53,18 +51,9 @@ class F1FatalitiesListScraper(F1TableScraper):
         },
         columns={
             "driver": UrlColumn(),
-            "date": MultiColumn(
-                {
-                    "date": FuncColumn(
-                        lambda ctx: F1FatalitiesListScraper._parse_date(ctx)
-                    ),
-                    "formula_category": FuncColumn(
-                        lambda ctx: F1FatalitiesListScraper._parse_formula_category(ctx)
-                    ),
-                }
-            ),
+            "date": FatalityDateColumn(),
             "age": IntColumn(),
-            "event": FuncColumn(lambda ctx: F1FatalitiesListScraper._parse_event(ctx)),
+            "event": FatalityEventColumn(),
             "circuit": UrlColumn(),
             "car": UrlColumn(),
             "session": TextColumn(),

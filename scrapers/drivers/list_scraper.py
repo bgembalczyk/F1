@@ -6,14 +6,12 @@ from models.services.driver_service import DriverService
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.records import ExportRecord
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.bool import BoolColumn
 from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 
 
 class F1DriversListScraper(F1TableScraper):
@@ -50,17 +48,7 @@ class F1DriversListScraper(F1TableScraper):
             "Points": "points",
         },
         columns={
-            "driver": MultiColumn(
-                {
-                    "driver": UrlColumn(),
-                    "is_active": BoolColumn(
-                        lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "*"))
-                    ),
-                    "is_world_champion": BoolColumn(
-                        lambda ctx: (ctx.raw_text or "").strip().endswith(("~", "^"))
-                    ),
-                }
-            ),
+            "driver": DriverNameStatusColumn(),
             "nationality": TextColumn(),
             "seasons_competed": SeasonsColumn(),
             "drivers_championships": TextColumn(),  # zparsujemy ręcznie w fetch()
