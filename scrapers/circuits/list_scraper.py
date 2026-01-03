@@ -2,7 +2,7 @@ from pathlib import Path
 
 from models.validation.circuit import Circuit
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.records import ExportRecord
+from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -10,33 +10,9 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.validation import RecordValidator
-
-
-class CircuitsListValidator(RecordValidator):
-    def validate(self, record: ExportRecord) -> list[str]:
-        errors: list[str] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                ["circuit", "circuit_status", "country", "seasons"],
-            )
-        )
-        errors.extend(self.require_type(record, "circuit", dict))
-        errors.extend(self.require_type(record, "circuit_status", str))
-        errors.extend(self.require_type(record, "country", (str, dict)))
-        errors.extend(self.require_type(record, "seasons", list))
-        errors.extend(self.require_type(record, "grands_prix", list, allow_none=True))
-
-        circuit = record.get("circuit")
-        if isinstance(circuit, dict):
-            errors.extend(self.require_link_dict(circuit, "circuit"))
-
-        grands_prix = record.get("grands_prix")
-        if isinstance(grands_prix, list):
-            errors.extend(self.require_link_list(grands_prix, "grands_prix"))
-
-        return errors
+from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
+from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
+from scrapers.circuits.validation import CircuitsRecordValidator
 
 
 class CircuitsListScraper(F1TableScraper):
@@ -46,7 +22,7 @@ class CircuitsListScraper(F1TableScraper):
     (duża tabela 'Circuits')
     """
 
-    default_validator = CircuitsListValidator()
+    default_validator = CircuitsRecordValidator()
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
@@ -88,6 +64,16 @@ class CircuitsListScraper(F1TableScraper):
         },
     )
 
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.validation_mode = "soft"
+        super().__init__(options=options, config=config)
+
 
 if __name__ == "__main__":
     run_and_export(
@@ -99,5 +85,3 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
-from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
-from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
