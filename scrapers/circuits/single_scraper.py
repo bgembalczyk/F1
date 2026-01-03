@@ -41,14 +41,10 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         super().__init__(options=options)
         self.policy = self.http_policy
-        self.timeout = self.policy.timeout
         self.url: str = ""
         self.debug_dir = options.debug_dir
         self._original_url: Optional[str] = None
         self._section_fragment: Optional[str] = None
-
-    def fetch_html(self, url: str) -> str:
-        return self.source_adapter.get(url, timeout=self.timeout)
 
     def _select_section(
         self,

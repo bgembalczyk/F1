@@ -44,12 +44,8 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self.policy = self.http_policy
-        self.timeout = self.policy.timeout
         self.url: str = ""
         self.debug_dir = options.debug_dir
-
-    def fetch_html(self, url: str) -> str:
-        return self.source_adapter.get(url, timeout=self.timeout)
 
     def fetch_by_url(self, url: str) -> List[Dict[str, Any]]:
         self.url = url

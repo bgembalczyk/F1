@@ -13,6 +13,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.transformers import RecordTransformer
 from scrapers.base.errors import (
     ScraperError,
@@ -54,7 +55,7 @@ class F1Scraper(ABC):
 
         # Preferuj gotowy source_adapter w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
-        self.source_adapter = options.with_source_adapter(policy=self.http_policy)
+        self.source_adapter = build_source_adapter(options, policy=self.http_policy)
         self.fetcher = options.fetcher
 
         # Parser może być zewnętrzny (np. mixin/adapter).

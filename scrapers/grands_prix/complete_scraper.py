@@ -30,22 +30,19 @@ class F1CompleteGrandPrixScraper(F1Scraper):
         options = options or ScraperOptions()
         options.include_urls = True
 
-        policy = self.get_http_policy(options)
-        html_adapter = options.with_source_adapter(policy=policy)
-
         super().__init__(options=options)
 
         self.list_scraper = GrandsPrixListScraper(
             options=ScraperOptions(
                 include_urls=True,
-                policy=policy,
-                source_adapter=html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
             ),
         )
         self.single_scraper = F1SingleGrandPrixScraper(
             options=ScraperOptions(
-                policy=policy,
-                source_adapter=html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
             ),
         )
         self.grands_prix_adapter = IterableSourceAdapter(self.list_scraper.fetch)

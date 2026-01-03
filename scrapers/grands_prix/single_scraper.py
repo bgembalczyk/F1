@@ -50,11 +50,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
         super().__init__(options=options)
         self.policy = self.http_policy
-        self.timeout = self.policy.timeout
         self.url: str = ""
-
-    def fetch_html(self, url: str) -> str:
-        return self.source_adapter.get(url, timeout=self.timeout)
 
     def fetch_by_url(self, url: str) -> List[Dict[str, Any]]:
         self.url = url

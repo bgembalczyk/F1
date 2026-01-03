@@ -26,27 +26,20 @@ class CompleteDriverScraper(CompositeScraper):
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
 
-        # Zapewniamy adapter źródła (spójnie z resztą repo)
-        policy = self.get_http_policy(options)
-        html_adapter = options.with_source_adapter(policy=policy)
-
-        self._html_adapter = html_adapter
-        self._policy = policy
-
         super().__init__(options=options)
 
     def build_children(self) -> CompositeScraperChildren:
         list_scraper = F1DriversListScraper(
             options=ScraperOptions(
                 include_urls=True,
-                policy=self._policy,
-                source_adapter=self._html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
             )
         )
         single_scraper = SingleDriverScraper(
             options=ScraperOptions(
-                policy=self._policy,
-                source_adapter=self._html_adapter,
+                policy=self.http_policy,
+                source_adapter=self.source_adapter,
             )
         )
         drivers_adapter = IterableSourceAdapter(list_scraper.fetch)
