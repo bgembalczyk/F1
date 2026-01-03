@@ -77,8 +77,6 @@ class RaceResultColumn(BaseColumn):
                 self._apply_result_notes(result, background)
                 if result.get("points_shared") and share_count > 1:
                     result["points_share_count"] = share_count
-                if result.get("shared_drive") and share_count > 1:
-                    result["shared_drive_share_count"] = share_count
                 result.pop("marks", None)
             payload["results"] = results
         if sprint_position is not None:
