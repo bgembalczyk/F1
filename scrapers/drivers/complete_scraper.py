@@ -7,10 +7,8 @@ from scrapers.base.composite_scraper import (
     CompositeScraper,
     CompositeScraperChildren,
 )
-from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
-from scrapers.drivers.helpers.export import export_complete_drivers
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
@@ -23,10 +21,20 @@ class CompleteDriverScraper(CompositeScraper):
         *,
         options: ScraperOptions | None = None,
     ) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        self._html_adapter = options.with_source_adapter(policy=policy)
-        self._policy = options.to_http_policy(options)
+        options = options or ScraperOptions()
+
+        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
+        options.include_urls = True
+
+        # Zapewniamy adapter źródła (spójnie z resztą repo)
+        policy = self.get_http_policy(options)
+        html_adapter = options.with_source_adapter(policy=policy)
+
         super().__init__(options=options)
+
+        # Przechowuj dla build_children
+        self._html_adapter = html_adapter
+        self._policy = policy
 
     def build_children(self) -> CompositeScraperChildren:
         list_scraper = F1DriversListScraper(
@@ -61,6 +69,8 @@ class CompleteDriverScraper(CompositeScraper):
 
 
 if __name__ == "__main__":
+    from scrapers.drivers.helpers.export import export_complete_drivers
+
     export_complete_drivers(
         output_dir=Path("../../data/wiki/drivers/complete_drivers"),
         include_urls=True,
