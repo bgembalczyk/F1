@@ -11,6 +11,11 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.base.parsers.drivers import parse_points_from_cell
+from scrapers.drivers.constants import (
+    FEMALE_DRIVERS_HEADERS,
+    FEMALE_DRIVERS_SECTION_ID,
+    INDEX_HEADER,
+)
 
 
 class FemaleDriversListScraper(F1TableScraper):
@@ -21,16 +26,10 @@ class FemaleDriversListScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers",
-        section_id="Official_drivers",
-        expected_headers=[
-            "Name",
-            "Seasons",
-            "Teams",
-            "Entries (starts)",
-            "Points",
-        ],
+        section_id=FEMALE_DRIVERS_SECTION_ID,
+        expected_headers=FEMALE_DRIVERS_HEADERS,
         column_map={
-            "#": "_skip",
+            INDEX_HEADER: "_skip",
             "Name": "driver",
             "Seasons": "seasons",
             "Teams": "teams",
