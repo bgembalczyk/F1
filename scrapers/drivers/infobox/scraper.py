@@ -383,28 +383,18 @@ class DriverInfoboxScraper:
         raw_text = cell.get_text("\n", strip=True) or ""
         if not raw_text:
             return []
-        lines = [
-            clean_wiki_text(line, strip_lang_suffix=False)
-            for line in raw_text.split("\n")
-            if line.strip()
-        ]
-        normalized = "\n".join(lines)
+        normalized = clean_wiki_text(raw_text, strip_lang_suffix=False)
         normalized = re.sub(r"\band\b", ",", normalized, flags=re.IGNORECASE)
         normalized = normalized.replace("/", ",").replace(";", ",")
         entries: List[Dict[str, Any]] = []
-        parts: List[str] = []
-        for line in normalized.splitlines():
-            parts.extend(part for part in line.split(","))
-        for part in (chunk.strip() for chunk in parts if chunk.strip()):
-            original = part
-            part = re.sub(r"^(?:No\.?|#|№)\s*", "", part, flags=re.IGNORECASE)
-            match = re.match(r"^(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?$", part)
-            if not match:
-                continue
+        pattern = re.compile(
+            r"(?<!\d)(?P<prefix>No\.?|#|№)?\s*(?P<number>\d+)\s*(?:\((?P<years>[^)]+)\))?",
+            re.IGNORECASE,
+        )
+        for match in pattern.finditer(normalized):
+            prefix = match.group("prefix") or ""
             number = int(match.group("number"))
-            if number >= 1900 and not re.match(
-                r"^(?:No\.?|#|№)\s*", original, flags=re.IGNORECASE
-            ):
+            if number >= 1900 and not prefix:
                 continue
             years_text = match.group("years") or ""
             years = (
