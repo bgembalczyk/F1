@@ -72,7 +72,6 @@ def _ctx(clean_text: str) -> ColumnContext:
         clean_text=clean_text,
         links=[],
         cell=None,
-        skip_sentinel=object(),
     )
 
 

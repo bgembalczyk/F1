@@ -31,7 +31,6 @@ from scrapers.base.table.columns.types.constructor import ConstructorColumn
 
 
 class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
-    _SKIP = object()
     _UNKNOWN_TOKEN = "unknown"
 
     def __init__(
@@ -322,7 +321,6 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         return TablePipeline(
             config=config,
             include_urls=self.include_urls,
-            skip_sentinel=self._SKIP,
             normalize_empty_values=self.normalize_empty_values,
             debug_dir=self.debug_dir,
         )

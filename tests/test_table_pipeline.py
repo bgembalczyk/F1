@@ -30,7 +30,6 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        skip_sentinel=object(),
     )
 
     assert pipeline.parse_soup(soup) == [
@@ -60,7 +59,6 @@ def test_table_pipeline_maps_columns_for_cells():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        skip_sentinel=object(),
     )
 
     assert pipeline.parse_cells(headers, cells) == {
@@ -81,7 +79,6 @@ def test_table_pipeline_normalize_cell_maps_header_and_cleans_text():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        skip_sentinel=object(),
     )
 
     key, raw_text, clean_text = pipeline._normalize_cell("Driver", cell)
@@ -102,7 +99,6 @@ def test_table_pipeline_extract_links_respects_include_urls_flag():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        skip_sentinel=object(),
     )
 
     assert pipeline._extract_links(cell) == []
@@ -130,7 +126,6 @@ def test_table_pipeline_applies_record_factory():
     pipeline = TablePipeline(
         config=config,
         include_urls=False,
-        skip_sentinel=object(),
     )
 
     records = pipeline.parse_soup(soup)
