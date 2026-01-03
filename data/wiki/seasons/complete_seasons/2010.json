@@ -618,11 +618,24 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "driver_name": {
-            "text": "Paul di Resta",
-            "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
-          },
-          "rounds": "2-5, 9-10, 12, 14"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Paul di Resta",
+                "url": "https://en.wikipedia.org/wiki/Paul_di_Resta"
+              },
+              "rounds": [
+                2,
+                3,
+                4,
+                5,
+                9,
+                10,
+                12,
+                14
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -635,8 +648,27 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "driver_name": "Christian Klien Sakon Yamamoto",
-          "rounds": "5, 9 7"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Christian Klien",
+                "url": "https://en.wikipedia.org/wiki/Christian_Klien"
+              },
+              "rounds": [
+                5,
+                9
+              ]
+            },
+            {
+              "driver": {
+                "text": "Sakon Yamamoto",
+                "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
+              },
+              "rounds": [
+                7
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -649,11 +681,21 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "driver_name": {
-            "text": "Fairuz Fauzy",
-            "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
-          },
-          "rounds": "3, 10-11, 15, 19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Fairuz Fauzy",
+                "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
+              },
+              "rounds": [
+                3,
+                10,
+                11,
+                15,
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -666,11 +708,20 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "driver_name": {
-            "text": "Jérôme d'Ambrosio",
-            "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
-          },
-          "rounds": "15-18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Jérôme d'Ambrosio",
+                "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
+              },
+              "rounds": [
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -683,8 +734,15 @@
               "url": null
             }
           },
-          "driver_name": "Sources:",
-          "rounds": "Sources:"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Sources:",
+                "url": null
+              },
+              "rounds": []
+            }
+          ]
         }
       ],
       "calendar": [],

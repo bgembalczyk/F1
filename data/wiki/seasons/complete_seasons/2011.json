@@ -654,11 +654,30 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
             }
           },
-          "driver_name": {
-            "text": "Nico Hülkenberg",
-            "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
-          },
-          "rounds": "1-5, 7-13, 15, 19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Nico Hülkenberg",
+                "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                15,
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -671,8 +690,29 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "driver_name": "Narain Karthikeyan Jan Charouz",
-          "rounds": "10, 14-16 19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Narain Karthikeyan",
+                "url": "https://en.wikipedia.org/wiki/Narain_Karthikeyan"
+              },
+              "rounds": [
+                10,
+                14,
+                15,
+                16
+              ]
+            },
+            {
+              "driver": {
+                "text": "Jan Charouz",
+                "url": "https://en.wikipedia.org/wiki/Jan_Charouz"
+              },
+              "rounds": [
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -685,8 +725,44 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "driver_name": "Karun Chandhok Davide Valsecchi Luiz Razia",
-          "rounds": "1, 4, 8-9, 12-13, 15-17 2 3, 19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Karun Chandhok",
+                "url": "https://en.wikipedia.org/wiki/Karun_Chandhok"
+              },
+              "rounds": [
+                1,
+                4,
+                8,
+                9,
+                12,
+                13,
+                15,
+                16,
+                17
+              ]
+            },
+            {
+              "driver": {
+                "text": "Davide Valsecchi",
+                "url": "https://en.wikipedia.org/wiki/Davide_Valsecchi"
+              },
+              "rounds": [
+                2
+              ]
+            },
+            {
+              "driver": {
+                "text": "Luiz Razia",
+                "url": "https://en.wikipedia.org/wiki/Luiz_Razia"
+              },
+              "rounds": [
+                3,
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -699,8 +775,27 @@
               "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
             }
           },
-          "driver_name": "Bruno Senna Romain Grosjean",
-          "rounds": "11 18-19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Bruno Senna",
+                "url": "https://en.wikipedia.org/wiki/Bruno_Senna"
+              },
+              "rounds": [
+                11
+              ]
+            },
+            {
+              "driver": {
+                "text": "Romain Grosjean",
+                "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
+              },
+              "rounds": [
+                18,
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -713,8 +808,35 @@
               "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
             }
           },
-          "driver_name": "Daniel Ricciardo Jean-Éric Vergne",
-          "rounds": "1-8 16, 18-19"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Daniel Ricciardo",
+                "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
+              },
+              "rounds": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
+            {
+              "driver": {
+                "text": "Jean-Éric Vergne",
+                "url": "https://en.wikipedia.org/wiki/Jean-%C3%89ric_Vergne"
+              },
+              "rounds": [
+                16,
+                18,
+                19
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -727,11 +849,17 @@
               "url": "https://en.wikipedia.org/wiki/Cosworth"
             }
           },
-          "driver_name": {
-            "text": "Robert Wickens",
-            "url": "https://en.wikipedia.org/wiki/Robert_Wickens"
-          },
-          "rounds": "18"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Robert Wickens",
+                "url": "https://en.wikipedia.org/wiki/Robert_Wickens"
+              },
+              "rounds": [
+                18
+              ]
+            }
+          ]
         },
         {
           "constructor": {
@@ -744,8 +872,15 @@
               "url": null
             }
           },
-          "driver_name": "Sources:",
-          "rounds": "Sources:"
+          "practice_drivers": [
+            {
+              "driver": {
+                "text": "Sources:",
+                "url": null
+              },
+              "rounds": []
+            }
+          ]
         }
       ],
       "calendar": [],

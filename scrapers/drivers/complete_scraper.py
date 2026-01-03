@@ -30,11 +30,10 @@ class CompleteDriverScraper(CompositeScraper):
         policy = self.get_http_policy(options)
         html_adapter = options.with_source_adapter(policy=policy)
 
-        super().__init__(options=options)
-
-        # Przechowuj dla build_children
         self._html_adapter = html_adapter
         self._policy = policy
+
+        super().__init__(options=options)
 
     def build_children(self) -> CompositeScraperChildren:
         list_scraper = F1DriversListScraper(
