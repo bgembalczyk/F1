@@ -2454,77 +2454,59 @@
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
           "arg": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "mon": {
-            "results": [
-              {
-                "value": "(Ret P F )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "(Ret )",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ned": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "points": {
             "championship_points": 40.0,
@@ -2538,83 +2520,56 @@
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
           "arg": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "4† / Ret",
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ned": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "1 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "points": 23.0
         },
@@ -2625,85 +2580,54 @@
             "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "6† / Ret",
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "points": 12.0
         },
@@ -2714,89 +2638,53 @@
             "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
           },
           "arg": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "2† / 3† / Ret",
+            "background": "Second place"
           },
           "mon": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "points": 11.333333333333334
         },
@@ -2807,63 +2695,39 @@
             "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
           },
           "arg": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "2† / 3†",
+            "background": "Second place"
           },
           "mon": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "points": 10.333333333333334
         },
@@ -2875,56 +2739,38 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 8,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "8†",
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "points": 9.0
         },
@@ -2937,16 +2783,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "bel": null,
           "ned": null,
@@ -2961,79 +2803,54 @@
             "url": "https://en.wikipedia.org/wiki/Roberto_Mieres"
           },
           "arg": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "5†",
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": "4 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 4,
             "fastest_lap": true,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "points": 7.0
         },
@@ -3044,103 +2861,53 @@
             "url": "https://en.wikipedia.org/wiki/Jean_Behra"
           },
           "arg": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "6† / Ret† / Ret",
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "3† / Ret†",
+            "background": "Third place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "5† / Ret",
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "points": 6.0
         },
@@ -3151,85 +2918,53 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
           },
           "arg": {
-            "results": [
-              {
-                "value": 7,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "7† / Ret†",
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 6.0
         },
@@ -3240,72 +2975,46 @@
             "url": "https://en.wikipedia.org/wiki/Karl_Kling"
           },
           "arg": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "4† / Ret",
+            "background": "Other points position"
           },
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 5.0
         },
@@ -3318,16 +3027,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "bel": null,
           "ned": null,
@@ -3344,18 +3049,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "2†",
+            "background": "Second place"
           },
           "bel": null,
           "ned": null,
@@ -3372,18 +3071,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "2†",
+            "background": "Second place"
           },
           "bel": null,
           "ned": null,
@@ -3399,31 +3092,21 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 8,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "8†",
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ned": null,
           "gbr": null,
@@ -3439,16 +3122,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "bel": null,
           "ned": null,
@@ -3463,18 +3142,13 @@
             "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
           },
           "arg": {
-            "results": [
-              {
-                "value": "2 P",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "2†",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "mon": null,
           "500": null,
@@ -3492,37 +3166,21 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "3† / Ret†",
+            "background": "Third place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ned": null,
           "gbr": null,
@@ -3536,50 +3194,32 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret† / Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "500": null,
           "bel": null,
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "points": 2.0
         },
@@ -3590,22 +3230,12 @@
             "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret† / Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -3613,16 +3243,12 @@
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "points": 2.0
         },
@@ -3633,18 +3259,12 @@
             "url": "https://en.wikipedia.org/wiki/Umberto_Maglioli"
           },
           "arg": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "3†",
+            "background": "Third place"
           },
           "mon": null,
           "500": null,
@@ -3652,16 +3272,12 @@
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "points": 1.3333333333333333
         },
@@ -3672,30 +3288,20 @@
             "url": "https://en.wikipedia.org/wiki/Hans_Herrmann"
           },
           "arg": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "4†",
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "500": null,
           "bel": null,
@@ -3713,18 +3319,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "5†",
+            "background": "Other points position"
           },
           "bel": null,
           "ned": null,
@@ -3741,18 +3341,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "5†",
+            "background": "Other points position"
           },
           "bel": null,
           "ned": null,
@@ -3769,16 +3363,13 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -3794,67 +3385,45 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "6†",
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -3865,86 +3434,46 @@
             "url": "https://en.wikipedia.org/wiki/Harry_Schell"
           },
           "arg": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": 7,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "6† / 7† / Ret†",
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "9† / Ret",
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -3956,16 +3485,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
@@ -3983,16 +3508,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4008,43 +3529,31 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
           "ned": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4057,16 +3566,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4086,16 +3591,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ita": null,
           "points": 0.0
@@ -4107,24 +3608,12 @@
             "url": "https://en.wikipedia.org/wiki/Sergio_Mantovani"
           },
           "arg": {
-            "results": [
-              {
-                "value": 7,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "7† / Ret†",
+            "background": "Other classified position"
           },
           "mon": null,
           "500": null,
@@ -4145,40 +3634,28 @@
           "500": null,
           "bel": null,
           "ned": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4190,31 +3667,23 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "500": null,
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ita": null,
           "points": 0.0
@@ -4228,16 +3697,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4253,41 +3718,29 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ita": null,
@@ -4305,30 +3758,20 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "9†",
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4341,16 +3784,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4371,16 +3810,12 @@
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4393,16 +3828,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4419,16 +3850,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4446,28 +3873,20 @@
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ned": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ita": null,
@@ -4482,16 +3901,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4508,16 +3923,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4534,16 +3945,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 14,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": 14,
+            "background": "Other classified position"
           },
           "bel": null,
           "ned": null,
@@ -4559,42 +3966,30 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -4610,40 +4005,28 @@
           "500": null,
           "bel": null,
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4654,28 +4037,20 @@
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -4691,28 +4066,20 @@
             "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -4729,31 +4096,23 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -4770,28 +4129,20 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4806,30 +4157,20 @@
           "500": null,
           "bel": null,
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -4841,16 +4182,12 @@
             "url": "https://en.wikipedia.org/wiki/Jesus_Iglesias"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -4867,16 +4204,12 @@
             "url": "https://en.wikipedia.org/wiki/Pablo_Birger"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -4893,16 +4226,12 @@
             "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -4921,16 +4250,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -4947,16 +4272,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -4973,16 +4294,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -4999,16 +4316,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5025,16 +4338,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5051,16 +4360,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5077,16 +4382,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5103,16 +4404,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5129,16 +4426,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5155,16 +4448,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5181,16 +4470,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5207,16 +4492,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5233,16 +4514,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5259,16 +4536,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5285,16 +4558,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5311,16 +4580,13 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5337,16 +4603,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5363,16 +4625,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "ned": null,
@@ -5392,16 +4650,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5418,16 +4672,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5444,16 +4694,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5470,16 +4716,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5497,16 +4739,12 @@
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5517,18 +4755,12 @@
             "url": "https://en.wikipedia.org/wiki/Clemar_Bucci"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -5550,18 +4782,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5574,16 +4800,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "500": null,
           "bel": null,
@@ -5604,16 +4826,12 @@
           "bel": null,
           "ned": null,
           "gbr": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ita": null,
           "points": 0.0
@@ -5631,16 +4849,12 @@
           "ned": null,
           "gbr": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "points": 0.0
         }

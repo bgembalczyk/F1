@@ -3266,125 +3266,94 @@
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
           "arg": {
-            "results": [
-              {
-                "value": "(3)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": "(3)",
+            "background": "Third place"
           },
           "mon": {
-            "results": [
-              {
-                "value": "(Ret F )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "(Ret )",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "(5)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "(5)",
+            "background": "Other points position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "2 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 2,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "fra": {
-            "results": [
-              {
-                "value": "1 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "2 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 2,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": "2 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 2,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "ita": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "mor": {
-            "results": [
-              {
-                "value": "2 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 2,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "points": {
             "championship_points": 42.0,
@@ -3398,125 +3367,91 @@
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
           "arg": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "points": 41.0
         },
@@ -3528,113 +3463,78 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 24.0
         },
@@ -3646,113 +3546,77 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ger": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "por": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mor": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "points": 15.0
         },
@@ -3763,89 +3627,61 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
@@ -3859,125 +3695,85 @@
             "url": "https://en.wikipedia.org/wiki/Harry_Schell"
           },
           "arg": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "points": 14.0
         },
@@ -3989,113 +3785,77 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "ned": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "por": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 12.0
         },
@@ -4106,65 +3866,45 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
           },
           "arg": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "mon": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ned": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -4181,102 +3921,71 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ger": null,
           "por": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 11.0
         },
@@ -4292,54 +4001,40 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "9 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 9,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": "3 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 3,
             "fastest_lap": true,
-            "background": "#ffdf9f"
+            "background": "Third place"
           },
           "mor": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "points": 9.0
         },
@@ -4350,125 +4045,85 @@
             "url": "https://en.wikipedia.org/wiki/Jean_Behra"
           },
           "arg": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 9.0
         },
@@ -4480,79 +4135,55 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": null,
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "por": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": null,
           "points": 9.0
@@ -4567,16 +4198,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "bel": null,
           "fra": null,
@@ -4594,43 +4221,33 @@
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
           "arg": {
-            "results": [
-              {
-                "value": "4 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 4,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "gbr": null,
           "ger": null,
@@ -4649,16 +4266,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "bel": null,
           "fra": null,
@@ -4679,16 +4292,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "bel": null,
           "fra": null,
@@ -4709,16 +4318,13 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "4 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 4,
             "fastest_lap": true,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -4737,113 +4343,79 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "11 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 11,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "points": 3.0
         },
@@ -4855,113 +4427,77 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "mor": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "points": 3.0
         },
@@ -4973,113 +4509,77 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "points": 3.0
         },
@@ -5093,16 +4593,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -5122,59 +4618,41 @@
           "arg": null,
           "mon": null,
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "~"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "4~",
+            "background": "Other classified position"
           },
           "mor": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5190,59 +4668,37 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ger": null,
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "~"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "4~ / Ret",
+            "background": "Other classified position"
           },
           "mor": null,
           "points": 0.0
@@ -5255,113 +4711,78 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "mor": {
-            "results": [
-              {
-                "value": 16,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 16,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5376,44 +4797,32 @@
           "ned": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5427,16 +4836,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -5454,16 +4859,12 @@
             "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
           },
           "arg": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "mon": null,
           "ned": null,
@@ -5487,16 +4888,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -5514,54 +4911,38 @@
             "url": "https://en.wikipedia.org/wiki/Paco_Godia"
           },
           "arg": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -5583,31 +4964,23 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5621,16 +4994,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -5649,69 +5018,49 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5729,41 +5078,29 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5774,40 +5111,28 @@
             "url": "https://en.wikipedia.org/wiki/Horace_Gould"
           },
           "arg": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "500": null,
           "bel": null,
@@ -5829,16 +5154,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -5857,57 +5178,41 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
           "ger": null,
           "por": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": null,
           "points": 0.0
@@ -5922,42 +5227,30 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "por": null,
           "ita": null,
@@ -5974,16 +5267,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -6003,32 +5292,25 @@
           "arg": null,
           "mon": null,
           "ned": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
@@ -6045,16 +5327,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -6075,16 +5353,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -6105,16 +5379,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -6138,28 +5408,21 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "7 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 7,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "por": null,
           "ita": null,
@@ -6179,28 +5442,21 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "11 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 11,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "por": null,
           "ita": null,
@@ -6218,44 +5474,33 @@
           "ned": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret 1",
-                "marks": null
-              }
-            ],
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -6267,28 +5512,20 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -6308,16 +5545,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -6327,16 +5560,12 @@
           "ger": null,
           "por": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mor": null,
           "points": 0.0
@@ -6349,16 +5578,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -6369,16 +5594,12 @@
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -6392,16 +5613,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6422,16 +5639,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6452,16 +5665,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6482,16 +5691,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6512,16 +5717,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6542,16 +5743,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6572,16 +5769,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6602,16 +5795,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6632,16 +5821,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6662,16 +5847,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6692,16 +5873,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6722,16 +5899,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6752,16 +5925,13 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6782,16 +5952,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6812,16 +5978,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6842,16 +6004,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6872,16 +6030,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6902,16 +6056,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6932,16 +6082,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6965,16 +6111,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "por": null,
@@ -6992,16 +6134,12 @@
           "mon": null,
           "ned": null,
           "500": {
-            "results": [
-              {
-                "value": "DSQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#000000"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "DSQ",
+            "background": "Disqualified"
           },
           "bel": null,
           "fra": null,
@@ -7020,30 +6158,22 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "fra": null,
           "gbr": null,
@@ -7061,16 +6191,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7091,16 +6217,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7121,16 +6243,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7151,16 +6269,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7181,32 +6295,23 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "DNP",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "DNP"
           },
           "ger": null,
           "por": null,
@@ -7222,16 +6327,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7252,16 +6353,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "500": null,
@@ -7281,136 +6378,81 @@
             "url": "https://en.wikipedia.org/wiki/Formula_Two"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1958_Argentine_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1958_Dutch_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "500": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1958_British_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "por": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "POR",
+              "url": "https://en.wikipedia.org/wiki/1958_Portuguese_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1958_Italian_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "mor": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points because they drove with Formula Two cars"
           },
           "points": null
         },
@@ -7428,30 +6470,22 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other classified position"
           },
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "points": null
         },
@@ -7469,16 +6503,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "por": null,
           "ita": null,
@@ -7499,16 +6529,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "por": null,
           "ita": null,
@@ -7532,16 +6558,12 @@
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": 14,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 14,
+            "background": "Other classified position"
           },
           "points": null
         },
@@ -7562,16 +6584,12 @@
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": 15,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": 15,
+            "background": "Other classified position"
           },
           "points": null
         },
@@ -7589,16 +6607,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
@@ -7619,16 +6633,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
@@ -7649,16 +6659,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "por": null,
           "ita": null,
@@ -7682,16 +6688,12 @@
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": null
         },
@@ -7712,16 +6714,12 @@
           "por": null,
           "ita": null,
           "mor": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MOR",
+              "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": null
         }

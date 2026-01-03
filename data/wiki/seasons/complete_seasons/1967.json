@@ -3738,148 +3738,98 @@
             "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "4 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 4,
             "fastest_lap": true,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "ned": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "2 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 2,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "position": 1,
+            "background": "Winner"
           },
           "ger": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "usa": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "mex": {
-            "results": [
-              {
-                "value": 51,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 51,
+            "pole_position": true
           }
         },
         {
@@ -3889,148 +3839,98 @@
             "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "6 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 6,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "position": 2,
+            "background": "Second place"
           },
           "ger": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "can": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "(5)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "(5)",
+            "background": "Other points position"
           },
           "usa": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "mex": {
-            "results": [
-              {
-                "value": "46 (48)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": "46 (48)",
+            "pole_position": true
           }
         },
         {
@@ -4040,148 +3940,107 @@
             "url": "https://en.wikipedia.org/wiki/Jim_Clark"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "bel": {
-            "results": [
-              {
-                "value": "6 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 6,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "can": {
-            "results": [
-              {
-                "value": "3 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 3,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffdf9f"
+            "background": "Third place"
           },
           "ita": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "usa": {
-            "results": [
-              {
-                "value": "1 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "mex": {
-            "results": [
-              {
-                "value": 41,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 41,
+            "pole_position": true
           }
         },
         {
@@ -4191,126 +4050,82 @@
             "url": "https://en.wikipedia.org/wiki/John_Surtees"
           },
           "rsa": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "position": 4,
+            "background": "Other points position"
           },
           "ger": null,
           "can": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 20,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 20,
+            "pole_position": true
           }
         },
         {
@@ -4321,136 +4136,88 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ned": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "position": 3,
+            "background": "Third place"
           },
           "ger": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "can": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 20,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 20,
+            "pole_position": true
           }
         },
         {
@@ -4460,115 +4227,75 @@
             "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
           },
           "rsa": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "mon": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "position": 11,
+            "background": "Other classified position"
           },
           "ger": null,
           "can": null,
           "ita": null,
           "usa": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 15,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 15,
+            "pole_position": true
           }
         },
         {
@@ -4578,148 +4305,101 @@
             "url": "https://en.wikipedia.org/wiki/Graham_Hill"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "2 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 2,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 15,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 15,
+            "pole_position": true
           }
         },
         {
@@ -4729,148 +4409,98 @@
             "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 13,
+            "pole_position": true
           }
         },
         {
@@ -4880,148 +4510,96 @@
             "url": "https://en.wikipedia.org/wiki/Jackie_Stewart"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "fra": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 10,
+            "pole_position": true
           }
         },
         {
@@ -5031,148 +4609,96 @@
             "url": "https://en.wikipedia.org/wiki/Mike_Spence"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "can": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 9,
+            "pole_position": true
           }
         },
         {
@@ -5182,16 +4708,12 @@
             "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
           },
           "rsa": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "mon": null,
           "ned": null,
@@ -5204,16 +4726,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 6,
+            "pole_position": true
           }
         },
         {
@@ -5223,148 +4741,96 @@
             "url": "https://en.wikipedia.org/wiki/Jo_Siffert"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "bel": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "usa": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 6,
+            "pole_position": true
           }
         },
         {
@@ -5374,137 +4840,89 @@
             "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 6,
+            "pole_position": true
           }
         },
         {
@@ -5515,125 +4933,81 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 3,
+            "pole_position": true
           }
         },
         {
@@ -5643,115 +5017,75 @@
             "url": "https://en.wikipedia.org/wiki/Jo_Bonnier"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "ned": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "position": 6,
+            "background": "Other points position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "usa": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 3,
+            "pole_position": true
           }
         },
         {
@@ -5763,124 +5097,80 @@
           "rsa": null,
           "mon": null,
           "ned": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "position": 9,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 2,
+            "pole_position": true
           }
         },
         {
@@ -5890,76 +5180,52 @@
             "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
           },
           "rsa": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "bel": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": null,
           "ger": null,
@@ -5967,16 +5233,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 2,
+            "pole_position": true
           }
         },
         {
@@ -5988,28 +5250,20 @@
           "rsa": null,
           "mon": null,
           "ned": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
@@ -6019,16 +5273,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 2,
+            "pole_position": true
           }
         },
         {
@@ -6041,101 +5291,65 @@
           "mon": null,
           "ned": null,
           "bel": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "position": 8,
+            "background": "Other points position"
           },
           "ger": null,
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 1,
+            "pole_position": true
           }
         },
         {
@@ -6147,58 +5361,42 @@
           "rsa": null,
           "mon": null,
           "ned": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "bel": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
           "": null,
           "ger": null,
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 1,
+            "pole_position": true
           }
         },
         {
@@ -6214,54 +5412,35 @@
           "fra": null,
           "gbr": null,
           "": {
-            "results": [
-              {
-                "value": "Ret 1",
-                "marks": null
-              }
-            ],
+            "position": "Ret",
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": null,
           "can": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 1,
+            "pole_position": true
           }
         },
         {
@@ -6272,16 +5451,12 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "bel": null,
@@ -6291,40 +5466,28 @@
           "ger": null,
           "can": null,
           "ita": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "usa": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6339,55 +5502,36 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "": {
-            "results": [
-              {
-                "value": "10 1",
-                "marks": null
-              }
-            ],
+            "position": 10,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6407,28 +5551,20 @@
           "can": null,
           "ita": null,
           "usa": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6443,44 +5579,29 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "": {
-            "results": [
-              {
-                "value": "7 1",
-                "marks": null
-              }
-            ],
+            "position": 7,
             "sprint_position": 1,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6497,31 +5618,23 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6538,42 +5651,30 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
           "usa": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6583,16 +5684,12 @@
             "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "mon": null,
           "ned": null,
@@ -6605,16 +5702,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6624,16 +5717,12 @@
             "url": "https://en.wikipedia.org/wiki/Luki_Botha"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "mon": null,
           "ned": null,
@@ -6646,16 +5735,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6672,31 +5757,23 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6706,43 +5783,31 @@
             "url": "https://en.wikipedia.org/wiki/Piers_Courage"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": null,
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "": null,
           "ger": null,
@@ -6750,16 +5815,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6778,40 +5839,28 @@
           "ger": null,
           "can": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6821,16 +5870,12 @@
             "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "ned": null,
@@ -6843,16 +5888,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6863,18 +5904,12 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "ned": null,
           "bel": null,
@@ -6886,16 +5921,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6906,16 +5937,12 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ned": null,
           "bel": null,
@@ -6927,16 +5954,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6951,16 +5974,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "": null,
           "ger": null,
@@ -6968,16 +5987,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -6993,32 +6008,20 @@
           "fra": null,
           "gbr": null,
           "": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -7036,30 +6039,22 @@
           "": null,
           "ger": null,
           "can": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -7076,31 +6071,23 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "DSQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#000000"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "DSQ",
+            "background": "Disqualified"
           },
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -7117,31 +6104,23 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "can": null,
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -7152,16 +6131,12 @@
           },
           "rsa": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "ned": null,
           "bel": null,
@@ -7173,16 +6148,12 @@
           "ita": null,
           "usa": null,
           "mex": {
-            "results": [
-              {
-                "value": 0,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": true,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": 0,
+            "pole_position": true
           }
         },
         {
@@ -7192,148 +6163,84 @@
             "url": "https://en.wikipedia.org/wiki/Formula_Two"
           },
           "rsa": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "ned": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "bel": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "can": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "usa": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "mex": {
-            "results": [
-              {
-                "value": "Drivers ineligible for Formula One points, because they drove with Formula Two cars",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
           },
           "points": null
         },
@@ -7351,16 +6258,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
@@ -7382,16 +6285,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "can": null,
           "ita": null,
@@ -7413,16 +6312,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": null,
           "ita": null,
@@ -7444,16 +6339,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": null,
           "ita": null,
@@ -7475,16 +6366,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "can": null,
           "ita": null,
@@ -7506,16 +6393,12 @@
           "gbr": null,
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "can": null,
           "ita": null,
@@ -7530,137 +6413,82 @@
             "url": null
           },
           "rsa": {
-            "results": [
-              {
-                "value": "RSA",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
+            },
+            "position": "RSA"
           },
           "mon": {
-            "results": [
-              {
-                "value": "MON",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+            },
+            "position": "MON"
           },
           "ned": {
-            "results": [
-              {
-                "value": "NED",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
+            },
+            "position": "NED"
           },
           "bel": {
-            "results": [
-              {
-                "value": "BEL",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
+            },
+            "position": "BEL"
           },
           "fra": {
-            "results": [
-              {
-                "value": "FRA",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
+            },
+            "position": "FRA"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "GBR",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
+            },
+            "position": "GBR"
           },
           "": null,
           "ger": {
-            "results": [
-              {
-                "value": "GER",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
+            "position": "GER"
           },
           "can": {
-            "results": [
-              {
-                "value": "CAN",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+            },
+            "position": "CAN"
           },
           "ita": {
-            "results": [
-              {
-                "value": "ITA",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+            },
+            "position": "ITA"
           },
           "usa": {
-            "results": [
-              {
-                "value": "USA",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "position": "USA"
           },
           "mex": {
-            "results": [
-              {
-                "value": "MEX",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": null
+            "round": {
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
+            },
+            "position": "MEX"
           },
           "points": null
         }

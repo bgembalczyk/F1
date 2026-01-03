@@ -3059,97 +3059,70 @@
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
           "sui": {
-            "results": [
-              {
-                "value": "1 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "(9 P F )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": "(9 )",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#cfcfff"
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "(1 F )",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "11 P",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "(1 )†/11 †",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ger": {
-            "results": [
-              {
-                "value": "2 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 2,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "esp": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "points": {
             "championship_points": 31.0,
@@ -3163,95 +3136,63 @@
             "url": "https://en.wikipedia.org/wiki/Alberto_Ascari"
           },
           "sui": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "fra": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "2†/ Ret",
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ita": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "esp": {
-            "results": [
-              {
-                "value": "(4 P )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "(4 )",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "points": {
             "championship_points": 25.0,
@@ -3265,80 +3206,55 @@
             "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "(2)",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "(2)†",
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ger": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ita": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "esp": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "points": {
             "championship_points": 24.0,
@@ -3352,95 +3268,63 @@
             "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
           },
           "sui": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "fra": {
-            "results": [
-              {
-                "value": "(5)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "(5)",
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "(Ret F )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "(Ret )",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "3 F",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "3 †/ Ret",
             "fastest_lap": true,
-            "background": "#ffdf9f"
+            "background": "Third place"
           },
           "esp": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "points": {
             "championship_points": 19.0,
@@ -3454,89 +3338,61 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Villoresi"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "fra": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ger": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "(4)",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "(4)",
+            "background": "Other points position"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": {
             "championship_points": 15.0,
@@ -3550,67 +3406,47 @@
             "url": "https://en.wikipedia.org/wiki/Piero_Taruffi"
           },
           "sui": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 10.0
         },
@@ -3622,16 +3458,13 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "bel": null,
           "fra": null,
@@ -3652,54 +3485,36 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "3†",
+            "background": "Third place"
           },
           "esp": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "points": 7.0
         },
@@ -3711,16 +3526,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "bel": null,
           "fra": null,
@@ -3740,41 +3551,29 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "esp": null,
           "points": 5.0
@@ -3789,24 +3588,12 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 1,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": 11,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "1† / 11†",
+            "background": "Winner"
           },
           "gbr": null,
           "ger": null,
@@ -3821,53 +3608,37 @@
             "url": "https://en.wikipedia.org/wiki/Consalvo_Sanesi"
           },
           "sui": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -3881,89 +3652,61 @@
             "url": "https://en.wikipedia.org/wiki/Louis_Rosier"
           },
           "sui": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "esp": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "points": 3.0
         },
@@ -3975,16 +3718,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -4002,18 +3741,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "3†",
+            "background": "Third place"
           },
           "bel": null,
           "fra": null,
@@ -4031,18 +3764,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "3†",
+            "background": "Third place"
           },
           "bel": null,
           "fra": null,
@@ -4059,67 +3786,47 @@
             "url": "https://en.wikipedia.org/wiki/Toulo_de_Graffenried"
           },
           "sui": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "points": 2.0
         },
@@ -4130,78 +3837,54 @@
             "url": "https://en.wikipedia.org/wiki/Yves_Giraud-Cabantous"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 2.0
         },
@@ -4213,16 +3896,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -4239,89 +3918,61 @@
             "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
           },
           "sui": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4332,44 +3983,32 @@
             "url": "https://en.wikipedia.org/wiki/Rudi_Fischer"
           },
           "sui": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "esp": null,
           "points": 0.0
@@ -4384,53 +4023,37 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4442,16 +4065,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4470,16 +4089,12 @@
           "sui": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
@@ -4498,53 +4113,37 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4555,89 +4154,61 @@
             "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
           },
           "sui": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4649,16 +4220,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4679,16 +4246,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -4704,42 +4267,30 @@
           "sui": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": null,
           "points": 0.0
@@ -4751,67 +4302,47 @@
             "url": "https://en.wikipedia.org/wiki/Philippe_%C3%89tancelin"
           },
           "sui": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "esp": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4822,16 +4353,12 @@
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
           "sui": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
@@ -4850,16 +4377,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4879,16 +4402,12 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": null,
@@ -4907,16 +4426,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -4930,30 +4445,22 @@
             "url": "https://en.wikipedia.org/wiki/Guy_Mairesse"
           },
           "sui": {
-            "results": [
-              {
-                "value": 14,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 14,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": null,
@@ -4968,55 +4475,39 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Whitehead_(racing_driver)"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": null,
           "points": 0.0
@@ -5034,16 +4525,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "esp": null,
           "points": 0.0
@@ -5060,28 +4547,20 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": null,
           "points": 0.0
@@ -5100,16 +4579,12 @@
           "ger": null,
           "ita": null,
           "esp": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -5124,16 +4599,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -5147,30 +4618,22 @@
             "url": "https://en.wikipedia.org/wiki/Harry_Schell"
           },
           "sui": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -5189,28 +4652,20 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "esp": null,
@@ -5227,16 +4682,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -5253,53 +4704,37 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5310,16 +4745,12 @@
             "url": "https://en.wikipedia.org/wiki/Henri_Louveau"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -5337,16 +4768,12 @@
             "url": "https://en.wikipedia.org/wiki/George_Abecassis"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -5364,16 +4791,12 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Hirt"
           },
           "sui": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
@@ -5392,16 +4815,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5419,16 +4838,13 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5446,16 +4862,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5473,16 +4885,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5500,16 +4908,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5527,16 +4931,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5554,16 +4954,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5581,16 +4977,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5608,16 +5000,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5635,16 +5023,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5662,16 +5046,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5689,16 +5069,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5716,16 +5092,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5743,16 +5115,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5770,16 +5138,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5797,16 +5161,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5824,16 +5184,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5851,16 +5207,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5878,16 +5230,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5905,16 +5253,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5932,16 +5276,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5959,16 +5299,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5986,16 +5322,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6013,16 +5345,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6040,16 +5368,12 @@
           },
           "sui": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -6069,16 +5393,12 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -6096,16 +5416,12 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -6124,16 +5440,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -6151,16 +5463,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -6178,16 +5486,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -6206,16 +5510,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "esp": null,
@@ -6233,16 +5533,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "esp": null,
@@ -6261,16 +5557,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": null,
           "points": 0.0
@@ -6288,16 +5580,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "esp": null,
           "points": 0.0
@@ -6316,16 +5604,12 @@
           "ger": null,
           "ita": null,
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -6343,16 +5627,12 @@
           "ger": null,
           "ita": null,
           "esp": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -6369,16 +5649,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "esp": null,
           "points": 0.0
@@ -6397,16 +5673,12 @@
           "ger": null,
           "ita": null,
           "esp": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "ESP",
+              "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "points": 0.0
         }

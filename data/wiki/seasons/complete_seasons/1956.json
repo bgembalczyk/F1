@@ -2612,111 +2612,71 @@
             "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
           },
           "arg": {
-            "results": [
-              {
-                "value": 1,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "1† / Ret",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "mon": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "4 P F",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "2† / 4†",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "4 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 4,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#dfffdf"
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "ger": {
-            "results": [
-              {
-                "value": "1 P F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": 1,
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "ita": {
-            "results": [
-              {
-                "value": "(2",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "8 P )",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "(2† / 8† )",
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "background": "Second place"
           },
           "points": {
             "championship_points": 30.0,
@@ -2730,101 +2690,65 @@
             "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "3† / Ret",
             "fastest_lap": true,
-            "background": "#ffdf9f"
+            "background": "Third place"
           },
           "fra": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "5† / Ret",
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "(Ret P F )",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "(Ret )",
             "pole_position": true,
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "1 F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 1,
             "fastest_lap": true,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "points": {
             "championship_points": 27.0,
@@ -2838,105 +2762,61 @@
             "url": "https://en.wikipedia.org/wiki/Peter_Collins_(racing_driver)"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "2†",
+            "background": "Second place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "fra": {
-            "results": [
-              {
-                "value": 1,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 1,
+            "background": "Winner"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "2† / Ret",
+            "background": "Second place"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret† / Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "2†",
+            "background": "Second place"
           },
           "points": 25.0
         },
@@ -2947,95 +2827,61 @@
             "url": "https://en.wikipedia.org/wiki/Jean_Behra"
           },
           "arg": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "mon": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ger": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret† / Ret",
+            "background": "Not classified, retired"
           },
           "points": 22.0
         },
@@ -3048,16 +2894,13 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "1 P",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 1,
             "pole_position": true,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "background": "Winner"
           },
           "bel": null,
           "fra": null,
@@ -3073,109 +2916,61 @@
             "url": "https://en.wikipedia.org/wiki/Eugenio_Castellotti"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "4† / Ret",
+            "background": "Other points position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 10,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "10†",
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret† / Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 8,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "8† / Ret",
+            "background": "Other classified position"
           },
           "points": 7.5
         },
@@ -3188,16 +2983,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "bel": null,
           "fra": null,
@@ -3216,16 +3007,12 @@
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 2,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 2,
+            "background": "Second place"
           },
           "fra": null,
           "gbr": null,
@@ -3243,64 +3030,44 @@
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ita": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "points": 6.0
         },
@@ -3316,29 +3083,21 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "points": 5.0
         },
@@ -3349,60 +3108,40 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Musso"
           },
           "arg": {
-            "results": [
-              {
-                "value": 1,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffbf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "1†",
+            "background": "Winner"
           },
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 4.0
         },
@@ -3413,67 +3152,45 @@
             "url": "https://en.wikipedia.org/wiki/Mike_Hawthorn"
           },
           "arg": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "mon": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "fra": {
-            "results": [
-              {
-                "value": 10,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "10†",
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -3491,29 +3208,21 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "points": 4.0
         },
@@ -3526,16 +3235,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 3,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 3,
+            "background": "Third place"
           },
           "bel": null,
           "fra": null,
@@ -3555,62 +3260,36 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 2,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": 10,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfdfdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "2† / 10†",
+            "background": "Second place"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 3.0
         },
@@ -3622,69 +3301,45 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 3,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffdf9f"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "3†",
+            "background": "Third place"
           },
           "fra": {
-            "results": [
-              {
-                "value": 5,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "5†",
+            "background": "Other points position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ita": null,
           "points": 3.0
@@ -3697,83 +3352,53 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 10,
-                "marks": [
-                  "†"
-                ]
-              },
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "10† / Ret",
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 3.0
         },
@@ -3786,16 +3411,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 4,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 4,
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -3812,65 +3433,45 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ita": null,
           "points": 2.0
@@ -3885,66 +3486,44 @@
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "points": 2.0
         },
@@ -3956,55 +3535,39 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 2.0
         },
@@ -4016,54 +3579,38 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 2.0
@@ -4075,31 +3622,23 @@
             "url": "https://en.wikipedia.org/wiki/Olivier_Gendebien"
           },
           "arg": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "mon": null,
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
@@ -4115,16 +3654,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 5,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 5,
+            "background": "Other points position"
           },
           "bel": null,
           "fra": null,
@@ -4140,18 +3675,12 @@
             "url": "https://en.wikipedia.org/wiki/Gerino_Gerini_(racing_driver)"
           },
           "arg": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "4†",
+            "background": "Other points position"
           },
           "mon": null,
           "500": null,
@@ -4160,16 +3689,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "points": 1.5
         },
@@ -4180,18 +3705,12 @@
             "url": "https://en.wikipedia.org/wiki/Chico_Landi"
           },
           "arg": {
-            "results": [
-              {
-                "value": 4,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#dfffdf"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "4†",
+            "background": "Other points position"
           },
           "mon": null,
           "500": null,
@@ -4211,16 +3730,13 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret F",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
             "fastest_lap": true,
-            "background": "#efcfff"
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -4237,56 +3753,38 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "6†",
+            "background": "Other classified position"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "fra": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ita": null,
           "points": 0.0
@@ -4298,16 +3796,12 @@
             "url": "https://en.wikipedia.org/wiki/Luigi_Piotti"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -4315,28 +3809,20 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "ita": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4349,16 +3835,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 6,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 6,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4374,18 +3856,12 @@
             "url": "https://en.wikipedia.org/wiki/%C3%93scar_Gonz%C3%A1lez_(racing_driver)"
           },
           "arg": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "6†",
+            "background": "Other classified position"
           },
           "mon": null,
           "500": null,
@@ -4403,18 +3879,12 @@
             "url": "https://en.wikipedia.org/wiki/Alberto_Ur%C3%ADa"
           },
           "arg": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "6†",
+            "background": "Other classified position"
           },
           "mon": null,
           "500": null,
@@ -4433,18 +3903,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": 6,
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "6†",
+            "background": "Other classified position"
           },
           "500": null,
           "bel": null,
@@ -4463,16 +3927,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4495,16 +3955,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 7,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 7,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4517,16 +3973,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 8,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 8,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4543,66 +3995,46 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "gbr": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -4617,30 +4049,22 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4653,16 +4077,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 9,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 9,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4680,16 +4100,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 10,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 10,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4710,40 +4126,28 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "points": 0.0
         },
@@ -4756,16 +4160,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4786,16 +4186,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": 11,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": 11,
+            "background": "Other classified position"
           },
           "ger": null,
           "ita": null,
@@ -4810,16 +4206,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 12,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 12,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4837,16 +4229,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 13,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 13,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4864,16 +4252,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 14,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 14,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4891,16 +4275,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 15,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 15,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4918,16 +4298,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 16,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 16,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4945,16 +4321,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 17,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 17,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4972,16 +4344,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 18,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 18,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -4999,16 +4367,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": 19,
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": 19,
+            "background": "Other classified position"
           },
           "bel": null,
           "fra": null,
@@ -5030,16 +4394,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "NC",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#cfcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "NC",
+            "background": "Other classified position"
           },
           "ita": null,
           "points": 0.0
@@ -5052,66 +4412,46 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5127,42 +4467,28 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5178,40 +4504,28 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": {
-            "results": [
-              {
-                "value": "DSQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#000"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "DSQ",
+            "background": "Disqualified"
           },
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5222,32 +4536,24 @@
             "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5264,30 +4570,22 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5299,31 +4597,23 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffffff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5337,32 +4627,24 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNQ",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#ffcfcf"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "DNQ",
+            "background": "Did not qualify"
           },
           "500": null,
           "bel": null,
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5374,16 +4656,12 @@
             "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
           },
           "arg": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ARG",
+              "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "mon": null,
           "500": null,
@@ -5403,16 +4681,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5430,16 +4704,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5457,16 +4727,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5484,16 +4750,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5511,16 +4773,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5538,16 +4796,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5565,16 +4819,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5592,16 +4842,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5619,16 +4865,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5646,16 +4888,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5673,16 +4911,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5700,16 +4934,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5728,16 +4958,12 @@
           "mon": null,
           "500": null,
           "bel": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "BEL",
+              "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "fra": null,
           "gbr": null,
@@ -5757,16 +4983,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5784,16 +5006,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5811,16 +5029,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5838,16 +5052,12 @@
           "bel": null,
           "fra": null,
           "gbr": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ger": null,
           "ita": null,
@@ -5866,16 +5076,12 @@
           "fra": null,
           "gbr": null,
           "ger": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "ita": null,
           "points": 0.0
@@ -5894,16 +5100,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -5916,18 +5118,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5945,18 +5141,12 @@
           "arg": null,
           "mon": null,
           "500": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "500",
+              "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "bel": null,
           "fra": null,
@@ -5979,18 +5169,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "Ret",
-                "marks": [
-                  "†"
-                ]
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#efcfff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "Ret†",
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },
@@ -6002,16 +5186,12 @@
           },
           "arg": null,
           "mon": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#fff"
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "500": null,
           "bel": null,
@@ -6032,16 +5212,12 @@
           "500": null,
           "bel": null,
           "fra": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#fff"
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "gbr": null,
           "ger": null,
@@ -6062,16 +5238,12 @@
           "gbr": null,
           "ger": null,
           "ita": {
-            "results": [
-              {
-                "value": "DNS",
-                "marks": null
-              }
-            ],
-            "sprint_position": null,
-            "pole_position": false,
-            "fastest_lap": false,
-            "background": "#fff"
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+            },
+            "position": "DNS",
+            "background": "Did not start"
           },
           "points": 0.0
         }
