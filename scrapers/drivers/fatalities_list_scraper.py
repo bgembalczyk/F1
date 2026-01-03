@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 
@@ -39,26 +40,17 @@ class F1FatalitiesListScraper(F1TableScraper):
             "Car",
             "Session",
         ],
-        column_map={
-            "Driver": "driver",
-            "Date of accident": "date",
-            "Age": "age",
-            "Event": "event",
-            "Circuit": "circuit",
-            "Car": "car",
-            "Session": "session",
-            "Ref.": "ref",
-        },
-        columns={
-            "driver": UrlColumn(),
-            "date": FatalityDateColumn(),
-            "age": IntColumn(),
-            "event": FatalityEventColumn(),
-            "circuit": UrlColumn(),
-            "car": UrlColumn(),
-            "session": TextColumn(),
-            "ref": SkipColumn(),
-        },
+        schema=(
+            TableSchemaBuilder()
+            .map("Driver", "driver", UrlColumn())
+            .map("Date of accident", "date", FatalityDateColumn())
+            .map("Age", "age", IntColumn())
+            .map("Event", "event", FatalityEventColumn())
+            .map("Circuit", "circuit", UrlColumn())
+            .map("Car", "car", UrlColumn())
+            .map("Session", "session", TextColumn())
+            .map("Ref.", "ref", SkipColumn())
+        ),
     )
 
     @staticmethod

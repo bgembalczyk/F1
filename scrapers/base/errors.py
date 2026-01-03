@@ -26,6 +26,10 @@ class ScraperParseError(ScraperError):
     """Błąd parsowania (krytyczny)."""
 
 
+class ScraperValidationError(ScraperError):
+    """Błąd walidacji rekordów (krytyczny)."""
+
+
 class ScraperNotFoundError(ScraperError):
     """Brak wymaganych elementów strony (niekrytyczny)."""
 

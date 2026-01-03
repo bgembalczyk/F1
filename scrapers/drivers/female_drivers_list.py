@@ -10,7 +10,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
-from scrapers.drivers.helpers.parsers import parse_points_from_cell
+from scrapers.base.parsers.drivers import parse_points_from_cell
 
 
 class FemaleDriversListScraper(F1TableScraper):

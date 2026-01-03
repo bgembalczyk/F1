@@ -4,10 +4,13 @@ import re
 
 from bs4 import Tag
 
+from infrastructure.http_client.policies.http import HttpPolicy
 from models.services.season_service import SeasonService
 from scrapers.base.helpers.html_utils import clean_wiki_text
+from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 
 
@@ -26,6 +29,14 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
     section_id = "Privateer_teams"
+
+    def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
+        base_policy = super().get_http_policy(options)
+        return build_http_policy(
+            timeout=max(base_policy.timeout, 20),
+            retries=max(base_policy.retries, 2),
+            cache=base_policy.cache,
+        )
 
     def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
         # 1) wywalamy wszystkie flagi, żeby nie przeszkadzały w szukaniu linka zespołu

@@ -1,9 +1,5 @@
 import re
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Tuple
+from typing import Any, Dict, List, Optional, Tuple, TypedDict
 
 from bs4 import BeautifulSoup
 
@@ -11,6 +7,15 @@ from scrapers.base.constants import UNIT_RE
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
+
+
+class UnitValue(TypedDict):
+    value: float | None
+    unit: str
+
+
+EntriesStarts = Tuple[Optional[int], Optional[int]]
+NumericValue = float | None
 
 
 def extract_visible_text(ctx: ColumnContext) -> str:
@@ -23,7 +28,7 @@ def extract_visible_text(ctx: ColumnContext) -> str:
     return clean_wiki_text(soup.get_text(" ", strip=True))
 
 
-def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[int]]:
+def parse_entries_starts(ctx: ColumnContext) -> EntriesStarts:
     text = extract_visible_text(ctx)
     if not text:
         return None, None
@@ -37,12 +42,12 @@ def parse_entries_starts(ctx: ColumnContext) -> Tuple[Optional[int], Optional[in
     return entries, starts
 
 
-def parse_points_from_cell(ctx: ColumnContext) -> float | None:
+def parse_points_from_cell(ctx: ColumnContext) -> NumericValue:
     text = extract_visible_text(ctx)
     return parse_float_from_text(text)
 
 
-def parse_number(value: str | None) -> float | None:
+def parse_number(value: str | None) -> NumericValue:
     if value is None:
         return None
     cleaned = value.replace(",", "").strip()
@@ -63,10 +68,10 @@ def normalize_unit(unit: str) -> str:
     return unit.strip()
 
 
-def parse_unit_list(text: str) -> List[Dict[str, Any]]:
+def parse_unit_list(text: str) -> List[UnitValue]:
     if not text:
         return []
-    values: List[Dict[str, Any]] = []
+    values: List[UnitValue] = []
     for match in UNIT_RE.finditer(text):
         values.append(
             {

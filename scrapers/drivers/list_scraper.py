@@ -11,7 +11,50 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.schema import TableSchemaBuilder
+from scrapers.base.validation import RecordValidator
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+
+
+class DriversListValidator(RecordValidator):
+    def validate(self, record: ExportRecord) -> list[str]:
+        errors: list[str] = []
+        errors.extend(
+            self.require_keys(
+                record,
+                [
+                    "driver",
+                    "nationality",
+                    "seasons_competed",
+                    "drivers_championships",
+                    "is_active",
+                    "is_world_champion",
+                ],
+            )
+        )
+        errors.extend(self.require_type(record, "driver", dict))
+        errors.extend(self.require_type(record, "nationality", str))
+        errors.extend(self.require_type(record, "seasons_competed", list))
+        errors.extend(self.require_type(record, "drivers_championships", dict))
+        errors.extend(self.require_type(record, "is_active", bool))
+        errors.extend(self.require_type(record, "is_world_champion", bool))
+
+        driver = record.get("driver")
+        if isinstance(driver, dict):
+            errors.extend(self.require_link_dict(driver, "driver"))
+
+        championships = record.get("drivers_championships")
+        if isinstance(championships, dict):
+            if "count" not in championships:
+                errors.append("drivers_championships.count is missing")
+            elif not isinstance(championships.get("count"), int):
+                errors.append("drivers_championships.count must be int")
+            if "seasons" not in championships:
+                errors.append("drivers_championships.seasons is missing")
+            elif not isinstance(championships.get("seasons"), list):
+                errors.append("drivers_championships.seasons must be list")
+
+        return errors
 
 
 class F1DriversListScraper(F1TableScraper):
@@ -25,6 +68,8 @@ class F1DriversListScraper(F1TableScraper):
     - drivers_championships: parsowane do dict {count, seasons}
     """
 
+    default_validator = DriversListValidator()
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
@@ -34,32 +79,24 @@ class F1DriversListScraper(F1TableScraper):
             "Seasons competed",
             "Drivers' Championships",
         ],
-        column_map={
-            "Driver name": "driver",
-            "Nationality": "nationality",
-            "Seasons competed": "seasons_competed",
-            "Drivers' Championships": "drivers_championships",
-            "Race entries": "race_entries",
-            "Race starts": "race_starts",
-            "Pole positions": "pole_positions",
-            "Race wins": "race_wins",
-            "Podiums": "podiums",
-            "Fastest laps": "fastest_laps",
-            "Points": "points",
-        },
-        columns={
-            "driver": DriverNameStatusColumn(),
-            "nationality": TextColumn(),
-            "seasons_competed": SeasonsColumn(),
-            "drivers_championships": TextColumn(),  # zparsujemy ręcznie w fetch()
-            "race_entries": IntColumn(),
-            "race_starts": IntColumn(),
-            "pole_positions": IntColumn(),
-            "race_wins": IntColumn(),
-            "podiums": IntColumn(),
-            "fastest_laps": IntColumn(),
-            "points": TextColumn(),
-        },
+        schema=(
+            TableSchemaBuilder()
+            .map("Driver name", "driver", DriverNameStatusColumn())
+            .map("Nationality", "nationality", TextColumn())
+            .map("Seasons competed", "seasons_competed", SeasonsColumn())
+            .map(
+                "Drivers' Championships",
+                "drivers_championships",
+                TextColumn(),  # zparsujemy ręcznie w fetch()
+            )
+            .map("Race entries", "race_entries", IntColumn())
+            .map("Race starts", "race_starts", IntColumn())
+            .map("Pole positions", "pole_positions", IntColumn())
+            .map("Race wins", "race_wins", IntColumn())
+            .map("Podiums", "podiums", IntColumn())
+            .map("Fastest laps", "fastest_laps", IntColumn())
+            .map("Points", "points", TextColumn())
+        ),
     )
 
     @staticmethod

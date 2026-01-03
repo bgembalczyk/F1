@@ -2,7 +2,7 @@ from typing import Any, Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.drivers.helpers.parsers import parse_entries_starts
+from scrapers.base.parsers.drivers import parse_entries_starts
 
 
 class EntriesStartsColumn(BaseColumn):

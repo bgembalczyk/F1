@@ -39,9 +39,10 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
-        options.with_fetcher()
+        policy = self.get_http_policy(options)
+        options.with_fetcher(policy=policy)
         super().__init__(options=options)
-        self.policy = options.to_http_policy()
+        self.policy = self.http_policy
         self.timeout = self.policy.timeout
         self.url: str = ""
 

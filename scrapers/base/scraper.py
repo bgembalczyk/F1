@@ -8,12 +8,19 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.normalization import RecordNormalizer
+from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import ExportRecord, NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import ScraperError, ScraperNetworkError, ScraperParseError
+from scrapers.base.errors import (
+    ScraperError,
+    ScraperNetworkError,
+    ScraperParseError,
+    ScraperValidationError,
+)
 from scrapers.base.logging import get_logger
+from scrapers.base.validation import RecordValidator
 
 
 T = TypeVar("T")
@@ -39,9 +46,13 @@ class F1Scraper(ABC):
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
 
+        self.http_policy = self.get_http_policy(options)
+        if self.http_policy is not None:
+            options.policy = self.http_policy
+
         # Preferuj gotowy source_adapter w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
-        self.source_adapter = options.with_source_adapter()
+        self.source_adapter = options.with_source_adapter(policy=self.http_policy)
         self.fetcher = options.fetcher
 
         # Parser może być zewnętrzny (np. mixin/adapter).
@@ -50,6 +61,15 @@ class F1Scraper(ABC):
         self._record_normalizer = RecordNormalizer()
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
+
+        self.validator: RecordValidator | None = options.validator or getattr(
+            self, "default_validator", None
+        )
+        self.validation_mode = options.validation_mode
+        if self.validation_mode not in {"soft", "hard"}:
+            raise ValueError(
+                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+            )
 
         self._data: Optional[List[ExportRecord]] = None
 
@@ -201,10 +221,48 @@ class F1Scraper(ABC):
         self.logger.debug("Post-process records: %d -> %d", len(records), len(records))
         return records
 
+    def validate_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        if self.validator is None:
+            return records
+
+        valid_records: List[ExportRecord] = []
+        for index, record in enumerate(records):
+            errors = self.validator.validate(record)
+            if not errors:
+                valid_records.append(record)
+                continue
+
+            message = (
+                f"Validation failed for record #{index} "
+                f"with {len(errors)} error(s): {', '.join(errors)}"
+            )
+            if self.validation_mode == "soft":
+                self.logger.warning(message)
+                continue
+            raise ScraperValidationError(
+                message=message,
+                url=getattr(self, "url", None),
+            )
+
+        if len(valid_records) != len(records):
+            self.logger.info(
+                "Validation filtered records: %d -> %d",
+                len(records),
+                len(valid_records),
+            )
+
+        return valid_records
+
     # ---------- Pomocnicze ----------
 
     def _full_url(self, href: str) -> str:
         return urljoin(self.url, href)
+
+    def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
+        policy = options.policy
+        if policy is None:
+            policy = options.to_http_policy()
+        return policy
 
     # ---------- Error handling ----------
 
