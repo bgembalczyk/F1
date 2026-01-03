@@ -15,6 +15,48 @@ def _coerce_text(text: str | Tag | None) -> str:
     return str(text or "")
 
 
+def _extract_text_and_url(value: object) -> tuple[str, str]:
+    if isinstance(value, dict):
+        text = str(value.get("text") or value.get("name") or "").strip()
+        url = str(value.get("url") or "").strip()
+        return text, url
+    if value is None:
+        return "", ""
+    return str(value).strip(), ""
+
+
+def _score_richer_entity(value: object) -> tuple[int, int]:
+    text, url = _extract_text_and_url(value)
+    score = 0
+    if text:
+        score += 1
+    if url:
+        score += 2
+    return score, len(text)
+
+
+def choose_richer_entity(a: object, b: object) -> object:
+    """
+    Wybiera bogatszą encję (np. dict z url) między a i b.
+    Preferuje encję z URL, potem z tekstem, a następnie dłuższy tekst.
+    """
+    if a is None:
+        return b
+    if b is None:
+        return a
+
+    score_a, len_a = _score_richer_entity(a)
+    score_b, len_b = _score_richer_entity(b)
+
+    if score_b > score_a:
+        return b
+    if score_a > score_b:
+        return a
+    if len_b > len_a:
+        return b
+    return a
+
+
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 
 def _strip_wiki_refs(text: str) -> str:
