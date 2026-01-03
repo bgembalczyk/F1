@@ -86,6 +86,18 @@ def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
     return parse_time_seconds_from_text(t)
 
 
+def has_meaningful_value(candidate: Any) -> bool:
+    if candidate is None:
+        return False
+    if isinstance(candidate, dict):
+        text = (candidate.get("text") or candidate.get("name") or "").strip()
+        url = candidate.get("url")
+        return bool(text or url)
+    if isinstance(candidate, str):
+        return bool(candidate.strip())
+    return True
+
+
 def select_best_field_with_url(
     records: Iterable[Mapping[str, Any]], *field_names: str
 ) -> Any:
@@ -94,11 +106,12 @@ def select_best_field_with_url(
     for r in records:
         value = None
         for field_name in field_names:
-            value = r.get(field_name)
-            if value is not None:
+            candidate = r.get(field_name)
+            if has_meaningful_value(candidate):
+                value = candidate
                 break
 
-        if not value:
+        if value is None:
             continue
         best = choose_richer_entity(best, value)
     return best
