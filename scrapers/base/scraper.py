@@ -94,7 +94,8 @@ class F1Scraper(ABC):
             raw_records = self.parse(soup)
 
             normalized_records = self._record_normalizer.normalize(list(raw_records))
-            self._data = self.to_export_records(normalized_records)
+            export_records = self.to_export_records(normalized_records)
+            self._data = self.post_process_records(export_records)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -181,6 +182,10 @@ class F1Scraper(ABC):
 
     @staticmethod
     def to_export_records(records: List[NormalizedRecord]) -> List[ExportRecord]:
+        return records
+
+    def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+        self.logger.debug("Post-process records: %d -> %d", len(records), len(records))
         return records
 
     # ---------- Pomocnicze ----------
