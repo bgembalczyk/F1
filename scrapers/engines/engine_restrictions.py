@@ -4,14 +4,9 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_restriction import EngineRestriction
-from scrapers.base.helpers.parsing import parse_engine_rpm_limit
-from scrapers.base.helpers.parsing import parse_fuel_flow_rate
-from scrapers.base.helpers.parsing import parse_fuel_injection_pressure_limit
-from scrapers.base.helpers.parsing import parse_fuel_limit_per_race
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -46,12 +41,10 @@ class EngineRestrictionsScraper(F1TableScraper):
             "year": SeasonsColumn(),
             "size": UnitColumn(unit="litre"),
             "type_of_engine": LinksListColumn(),
-            "fuel_limit_per_race": FuncColumn(parse_fuel_limit_per_race),
-            "fuel_flow_rate": FuncColumn(parse_fuel_flow_rate),
-            "fuel_injection_pressure_limit": FuncColumn(
-                parse_fuel_injection_pressure_limit
-            ),
-            "engine_rpm_limit": FuncColumn(parse_engine_rpm_limit),
+            "fuel_limit_per_race": FuelLimitPerRaceColumn(),
+            "fuel_flow_rate": FuelFlowRateColumn(),
+            "fuel_injection_pressure_limit": FuelInjectionPressureLimitColumn(),
+            "engine_rpm_limit": EngineRpmLimitColumn(),
             "power_output": RangeColumn(
                 UnitColumn(unit="hp"),
                 UnitColumn(unit="hp"),
@@ -113,3 +106,9 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
+from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
+from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
+from scrapers.engines.columns.fuel_injection_pressure_limit import (
+    FuelInjectionPressureLimitColumn,
+)
+from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn

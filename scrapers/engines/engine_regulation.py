@@ -4,12 +4,10 @@ from typing import Any, List
 from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_regulation import EngineRegulation
-from scrapers.base.helpers.parsing import parse_configuration
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text_normalization import clean_wiki_text
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.nested_text import NestedTextColumn
 from scrapers.base.table.columns.types.nested_unit_list import NestedUnitListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -51,7 +49,7 @@ class EngineRegulationScraper(F1TableScraper):
             "Maximum displacement - Forced induction": NestedUnitListColumn(
                 "forced_induction"
             ),
-            "configuration": FuncColumn(parse_configuration),
+            "configuration": EngineConfigurationColumn(),
             "rpm_limit": UnitColumn(unit="rpm"),
             "fuel_flow_limit": TextColumn(),
             "Fuel composition - Alcohol": NestedTextColumn("alcohol"),
@@ -154,3 +152,4 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
+from scrapers.engines.columns.configuration import EngineConfigurationColumn

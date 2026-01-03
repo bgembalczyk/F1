@@ -2,15 +2,14 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
-from scrapers.base.parsers.drivers import parse_points_from_cell
 from scrapers.drivers.constants import (
     FEMALE_DRIVERS_HEADERS,
     FEMALE_DRIVERS_SECTION_ID,
@@ -42,7 +41,7 @@ class FemaleDriversListScraper(F1TableScraper):
             "seasons": SeasonsColumn(),
             "teams": LinksListColumn(),
             "entries_starts": EntriesStartsColumn(),
-            "points": FuncColumn(parse_points_from_cell),
+            "points": PointsColumn(),
         },
     )
 

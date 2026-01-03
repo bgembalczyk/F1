@@ -4,13 +4,12 @@ from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.grands_prix.helpers.restart_status import restart_status
+from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 from scrapers.grands_prix.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,
 )
@@ -44,7 +43,7 @@ class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
             "season": IntColumn(),
             "grand_prix": UrlColumn(),
             "lap": IntColumn(),
-            "restart_status": FuncColumn(restart_status),
+            "restart_status": RestartStatusColumn(),
             "winner": DriverColumn(),
             "incident": TextColumn(),
             "failed_to_make_restart_drivers": DriverListColumn(),

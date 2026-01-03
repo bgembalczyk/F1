@@ -3,11 +3,8 @@ from pathlib import Path
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
-from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
@@ -47,15 +44,7 @@ class EngineManufacturersListScraper(F1TableScraper):
             #
             # Na wiki aktualni konstruktorzy mają w komórce nazwę z "~",
             # np. "Ferrari~" – to mapujemy na "current", reszta na "former".
-            "manufacturer": MultiColumn(
-                {
-                    "manufacturer": UrlColumn(),  # czyści tekst, zwraca dict{text, url}
-                    "manufacturer_status": EnumMarksColumn(
-                        {"~": "current"},
-                        default="former",
-                    ),
-                }
-            ),
+            "manufacturer": EngineManufacturerNameStatusColumn(),
             "engines_built_in": LinksListColumn(),
             **BASE_STATS_COLUMNS,
             "points": FloatColumn(),  # ma np. 405.5 itd.
@@ -73,3 +62,6 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
+from scrapers.engines.columns.manufacturer_name_status import (
+    EngineManufacturerNameStatusColumn,
+)

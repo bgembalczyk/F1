@@ -3,12 +3,9 @@ from pathlib import Path
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.records import ExportRecord
 from scrapers.base.runner import RunConfig
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.validation import RecordValidator
@@ -76,15 +73,7 @@ class GrandsPrixListScraper(F1TableScraper):
             # Race title → MultiColumn:
             #   - race_title: pierwszy link (UrlColumn) z automatycznym czyszczeniem * / † z .text
             #   - race_status: EnumMarksColumn patrzący na raw_text (gwiazdka = aktywne)
-            "race_title": MultiColumn(
-                {
-                    "race_title": UrlColumn(),
-                    "race_status": EnumMarksColumn(
-                        {"*": "active"},
-                        default="past",
-                    ),
-                }
-            ),
+            "race_title": RaceTitleStatusColumn(),
             # Country → lista linków [{text, url}, ...] z czyszczeniem znaczników
             "country": LinksListColumn(),
             # Years held → sezony (lista zakresów/lat)
@@ -105,3 +94,4 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
+from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn

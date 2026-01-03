@@ -10,13 +10,12 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.circuit_location import LocationColumn
-from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 
 
@@ -74,12 +73,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             columns={
                 "year": UrlColumn(),
                 "driver": DriverListColumn(),
-                "constructor": MultiColumn(
-                    {
-                        "chassis_constructor": ConstructorPartColumn(0),
-                        "engine_constructor": ConstructorPartColumn(1),
-                    }
-                ),
+                "constructor": ConstructorSplitColumn(),
                 "report": AutoColumn(),
                 "location": LocationColumn(),
             },
