@@ -1,6 +1,10 @@
+from scrapers.base.helpers.text import strip_marks
+
+
 def normalize_header(header: str) -> str:
     return (
-        header.strip()
+        strip_marks(header)
+        .strip()
         .lower()
         .replace(" ", "_")
         .replace("(", "")
