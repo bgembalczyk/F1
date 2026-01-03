@@ -18,7 +18,13 @@ class SeasonCalendarParser:
     def parse(
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
-        return self._table_parser.parse_table(
+        columns = {
+            "round": IntColumn(),
+            "grand_prix": UrlColumn(),
+            "circuit": CalendarCircuitColumn(),
+            "race_date": SeasonDateColumn(year=season_year),
+        }
+        records = self._table_parser.parse_table(
             soup,
             section_ids=["Calendar"],
             expected_headers=["Round", "Grand Prix", "Circuit", "Race date"],
@@ -28,10 +34,20 @@ class SeasonCalendarParser:
                 "Circuit": "circuit",
                 "Race date": "race_date",
             },
-            columns={
-                "round": IntColumn(),
-                "grand_prix": UrlColumn(),
-                "circuit": CalendarCircuitColumn(),
-                "race_date": SeasonDateColumn(year=season_year),
+            columns=columns,
+        )
+        if records:
+            return records
+
+        return self._table_parser.parse_table(
+            soup,
+            section_ids=["Calendar"],
+            expected_headers=["Round", "Grand Prix", "Circuit", "Date"],
+            column_map={
+                "Round": "round",
+                "Grand Prix": "grand_prix",
+                "Circuit": "circuit",
+                "Date": "race_date",
             },
+            columns=columns,
         )
