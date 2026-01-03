@@ -70,6 +70,8 @@ class ScraperRunner:
         """
         kwargs = dict(self._run_config.scraper_kwargs)
         options = self._run_config.options or ScraperOptions()
+        if self._run_config.debug_dir is not None:
+            options.debug_dir = self._run_config.debug_dir
 
         if supports_param(scraper_cls, "options"):
             if self._supports_urls and hasattr(options, "include_urls"):

@@ -11,5 +11,6 @@ from scrapers.base.options import ScraperOptions
 class RunConfig:
     include_urls: bool = True
     output_dir: str | Path = Path(".")
+    debug_dir: str | Path | None = None
     scraper_kwargs: dict[str, Any] = field(default_factory=dict)
     options: ScraperOptions | None = None

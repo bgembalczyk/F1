@@ -45,6 +45,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.policy = self.http_policy
         self.timeout = self.policy.timeout
         self.url: str = ""
+        self.debug_dir = options.debug_dir
 
     def fetch_html(self, url: str) -> str:
         return self.source_adapter.get(url, timeout=self.timeout)
@@ -64,7 +65,10 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
         infobox_scraper = DriverInfoboxScraper(
-            options=ScraperOptions(include_urls=self.include_urls),
+            options=ScraperOptions(
+                include_urls=self.include_urls,
+                debug_dir=self.debug_dir,
+            ),
             run_id=getattr(self, "_run_id", None),
         )
         records = infobox_scraper.parse(soup)
@@ -320,6 +324,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             config=config,
             include_urls=self.include_urls,
             skip_sentinel=self._SKIP,
+            debug_dir=self.debug_dir,
         )
 
     def _extract_headers(self, table: Tag) -> List[str]:

@@ -131,6 +131,7 @@ if __name__ == "__main__":
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
+            debug_dir=Path("../../data/debug"),
         ),
     )
 from scrapers.base.table.columns.context import ColumnContext

@@ -40,6 +40,7 @@ class F1CompleteCircuitScraper(F1Scraper):
         html_adapter = options.with_source_adapter(policy=policy)
 
         super().__init__(options=options)
+        self.debug_dir = options.debug_dir
 
         # Pod-scrapery współdzielą ten sam adapter (cache + retry + headers)
         self.list_scraper = CircuitsListScraper(
@@ -47,12 +48,14 @@ class F1CompleteCircuitScraper(F1Scraper):
                 include_urls=True,
                 policy=policy,
                 source_adapter=html_adapter,
+                debug_dir=self.debug_dir,
             ),
         )
         self.single_scraper = F1SingleCircuitScraper(
             options=ScraperOptions(
                 policy=policy,
                 source_adapter=html_adapter,
+                debug_dir=self.debug_dir,
             ),
         )
         self.circuits_adapter = IterableSourceAdapter(self.list_scraper.fetch)
@@ -97,5 +100,8 @@ if __name__ == "__main__":
     run_and_export(
         F1CompleteCircuitScraper,
         "circuits/f1_circuits_extended.json",
-        run_config=RunConfig(output_dir=Path("../../data/wiki")),
+        run_config=RunConfig(
+            output_dir=Path("../../data/wiki"),
+            debug_dir=Path("../../data/debug"),
+        ),
     )

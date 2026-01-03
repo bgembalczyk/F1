@@ -63,6 +63,7 @@ class F1TableScraper(F1Scraper, ABC):
             include_urls=self.include_urls,
             skip_sentinel=self._SKIP,
             model_fields=self._model_fields(),
+            debug_dir=options.debug_dir,
         )
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Any]:
