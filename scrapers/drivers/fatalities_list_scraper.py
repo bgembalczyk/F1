@@ -21,6 +21,14 @@ from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 from scrapers.drivers.constants import (
     FATALITIES_HEADERS,
+    FATALITIES_AGE_HEADER,
+    FATALITIES_CAR_HEADER,
+    FATALITIES_CIRCUIT_HEADER,
+    FATALITIES_DATE_HEADER,
+    FATALITIES_DRIVER_HEADER,
+    FATALITIES_EVENT_HEADER,
+    FATALITIES_REF_HEADER,
+    FATALITIES_SESSION_HEADER,
     FATALITIES_SECTION_ID,
     MARK_F2_CATEGORY,
     MARK_NON_CHAMPIONSHIP_EVENT,
@@ -61,14 +69,14 @@ class F1FatalitiesListScraper(F1TableScraper):
         expected_headers=FATALITIES_HEADERS,
         schema=(
             TableSchemaBuilder()
-            .map("Driver", "driver", UrlColumn())
-            .map("Date of accident", "date", FatalityDateColumn())
-            .map("Age", "age", IntColumn())
-            .map("Event", "event", FatalityEventColumn())
-            .map("Circuit", "circuit", UrlColumn())
-            .map("Car", "car", UrlColumn())
-            .map("Session", "session", TextColumn())
-            .map("Ref.", "ref", SkipColumn())
+            .map(FATALITIES_DRIVER_HEADER, "driver", UrlColumn())
+            .map(FATALITIES_DATE_HEADER, "date", FatalityDateColumn())
+            .map(FATALITIES_AGE_HEADER, "age", IntColumn())
+            .map(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn())
+            .map(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn())
+            .map(FATALITIES_CAR_HEADER, "car", UrlColumn())
+            .map(FATALITIES_SESSION_HEADER, "session", TextColumn())
+            .map(FATALITIES_REF_HEADER, "ref", SkipColumn())
         ),
         record_factory=build_fatality_record,
     )

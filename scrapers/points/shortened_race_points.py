@@ -11,7 +11,14 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.transformers import RecordTransformer
-from scrapers.points.constants import HISTORICAL_POSITIONS
+from scrapers.points.constants import (
+    FASTEST_LAP_HEADER,
+    HISTORICAL_POSITIONS,
+    NOTES_HEADER,
+    RACE_LENGTH_COMPLETED_HEADER,
+    SEASONS_HEADER,
+    SHORTENED_RACE_EXPECTED_HEADERS,
+)
 
 
 class ShortenedRacePointsTransformer(RecordTransformer):
@@ -41,14 +48,14 @@ class ShortenedRacePointsTransformer(RecordTransformer):
 def _build_shortened_race_points_schema() -> TableSchemaBuilder:
     builder = (
         TableSchemaBuilder()
-        .map("Seasons", "seasons", SeasonsColumn())
-        .map("Race length completed", "race_length_completed", TextColumn())
+        .map(SEASONS_HEADER, "seasons", SeasonsColumn())
+        .map(RACE_LENGTH_COMPLETED_HEADER, "race_length_completed", TextColumn())
     )
     for position in HISTORICAL_POSITIONS:
         builder.map(position, position.lower(), AutoColumn())
     return (
-        builder.map("Fastest lap", "fastest_lap", AutoColumn()).map(
-            "Notes",
+        builder.map(FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()).map(
+            NOTES_HEADER,
             "notes",
             SkipColumn(),
         )
@@ -64,13 +71,7 @@ class ShortenedRacePointsScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
         section_id="Shortened_races",
-        expected_headers=[
-            "Seasons",
-            "Race length completed",
-            *HISTORICAL_POSITIONS,
-            "Fastest lap",
-            "Notes",
-        ],
+        expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
         schema=_build_shortened_race_points_schema(),
         record_factory=record_from_mapping,
     )

@@ -1,0 +1,31 @@
+CONSTRUCTOR_HEADER = "Constructor"
+ENGINE_HEADER = "Engine"
+LICENSED_IN_HEADER = "Licensed in"
+BASED_IN_HEADER = "Based in"
+DRIVERS_HEADER = "Drivers"
+TOTAL_ENTRIES_HEADER = "Total Entries"
+WCC_HEADER = "WCC"  # World Constructors' Championship.
+WDC_HEADER = "WDC"  # World Drivers' Championship.
+ANTECEDENT_TEAMS_HEADER = "Antecedent teams"  # Poprzednie zespoły.
+
+SEASONS_HEADER = "Seasons"
+RACES_ENTERED_HEADER = "Races Entered"
+RACES_STARTED_HEADER = "Races Started"
+WINS_HEADER = "Wins"
+POINTS_HEADER = "Points"
+POLES_HEADER = "Poles"
+FASTEST_LAPS_HEADER = "FL"  # Fastest laps.
+PODIUMS_HEADER = "Podiums"
+
+CONSTRUCTORS_2025_EXPECTED_HEADERS = [
+    CONSTRUCTOR_HEADER,
+    ENGINE_HEADER,
+    LICENSED_IN_HEADER,
+    BASED_IN_HEADER,
+]
+
+FORMER_CONSTRUCTORS_EXPECTED_HEADERS = [
+    CONSTRUCTOR_HEADER,
+    LICENSED_IN_HEADER,
+    SEASONS_HEADER,
+]

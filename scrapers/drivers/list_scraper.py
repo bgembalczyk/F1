@@ -20,7 +20,14 @@ from scrapers.drivers.constants import (
     DRIVER_NAME_HEADER,
     DRIVERS_CHAMPIONSHIPS_HEADER,
     DRIVERS_LIST_HEADERS,
+    FASTEST_LAPS_HEADER,
     NATIONALITY_HEADER,
+    PODIUMS_HEADER,
+    POLE_POSITIONS_HEADER,
+    POINTS_HEADER,
+    RACE_ENTRIES_HEADER,
+    RACE_STARTS_HEADER,
+    RACE_WINS_HEADER,
     SEASONS_COMPETED_HEADER,
 )
 from scrapers.drivers.validation import DriversRecordValidator
@@ -73,13 +80,13 @@ class F1DriversListScraper(F1TableScraper):
                 "drivers_championships",
                 TextColumn(),  # zparsujemy ręcznie w fetch()
             )
-            .map("Race entries", "race_entries", IntColumn())
-            .map("Race starts", "race_starts", IntColumn())
-            .map("Pole positions", "pole_positions", IntColumn())
-            .map("Race wins", "race_wins", IntColumn())
-            .map("Podiums", "podiums", IntColumn())
-            .map("Fastest laps", "fastest_laps", IntColumn())
-            .map("Points", "points", TextColumn())
+            .map(RACE_ENTRIES_HEADER, "race_entries", IntColumn())
+            .map(RACE_STARTS_HEADER, "race_starts", IntColumn())
+            .map(POLE_POSITIONS_HEADER, "pole_positions", IntColumn())
+            .map(RACE_WINS_HEADER, "race_wins", IntColumn())
+            .map(PODIUMS_HEADER, "podiums", IntColumn())
+            .map(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn())
+            .map(POINTS_HEADER, "points", TextColumn())
         ),
         record_factory=build_driver_record,
     )

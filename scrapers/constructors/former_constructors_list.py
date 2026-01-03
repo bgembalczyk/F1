@@ -10,6 +10,23 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.constructors.constants import (
+    CONSTRUCTOR_HEADER,
+    DRIVERS_HEADER,
+    FASTEST_LAPS_HEADER,
+    FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
+    LICENSED_IN_HEADER,
+    PODIUMS_HEADER,
+    POINTS_HEADER,
+    POLES_HEADER,
+    RACES_ENTERED_HEADER,
+    RACES_STARTED_HEADER,
+    SEASONS_HEADER,
+    TOTAL_ENTRIES_HEADER,
+    WCC_HEADER,
+    WDC_HEADER,
+    WINS_HEADER,
+)
 
 
 class FormerConstructorsListScraper(F1TableScraper):
@@ -22,27 +39,23 @@ class FormerConstructorsListScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
         section_id="Former_constructors",
-        expected_headers=[
-            "Constructor",
-            "Licensed in",
-            "Seasons",
-        ],
+        expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
         # nagłówek z tabeli -> klucz w dict
         column_map={
-            "Constructor": "constructor",
-            "Licensed in": "licensed_in",
-            "Seasons": "seasons",
-            "Races Entered": "races_entered",
-            "Races Started": "races_started",
-            "Drivers": "drivers",
-            "Total Entries": "total_entries",
-            "Wins": "wins",
-            "Points": "points",
-            "Poles": "poles",
-            "FL": "fastest_laps",
-            "Podiums": "podiums",
-            "WCC": "wcc_titles",
-            "WDC": "wdc_titles",
+            CONSTRUCTOR_HEADER: "constructor",
+            LICENSED_IN_HEADER: "licensed_in",
+            SEASONS_HEADER: "seasons",
+            RACES_ENTERED_HEADER: "races_entered",
+            RACES_STARTED_HEADER: "races_started",
+            DRIVERS_HEADER: "drivers",
+            TOTAL_ENTRIES_HEADER: "total_entries",
+            WINS_HEADER: "wins",
+            POINTS_HEADER: "points",
+            POLES_HEADER: "poles",
+            FASTEST_LAPS_HEADER: "fastest_laps",
+            PODIUMS_HEADER: "podiums",
+            WCC_HEADER: "wcc_titles",
+            WDC_HEADER: "wdc_titles",
         },
         # logika kolumn po stronie KLUCZA (po column_map)
         columns={
