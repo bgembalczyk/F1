@@ -1,41 +1,15 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.records import ExportRecord
+from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.validation import RecordValidator
-
-
-class GrandsPrixListValidator(RecordValidator):
-    def validate(self, record: ExportRecord) -> list[str]:
-        errors: list[str] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                ["race_title", "race_status", "years_held", "country", "total"],
-            )
-        )
-        errors.extend(self.require_type(record, "race_title", dict))
-        errors.extend(self.require_type(record, "race_status", str))
-        errors.extend(self.require_type(record, "years_held", list))
-        errors.extend(self.require_type(record, "country", list))
-        errors.extend(self.require_type(record, "total", int, allow_none=True))
-        errors.extend(self.require_type(record, "circuits", int, allow_none=True))
-
-        race_title = record.get("race_title")
-        if isinstance(race_title, dict):
-            errors.extend(self.require_link_dict(race_title, "race_title"))
-
-        country = record.get("country")
-        if isinstance(country, list):
-            errors.extend(self.require_link_list(country, "country"))
-
-        return errors
+from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
+from scrapers.grands_prix.validation import GrandsPrixRecordValidator
 
 
 class GrandsPrixListScraper(F1TableScraper):
@@ -45,7 +19,7 @@ class GrandsPrixListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
 
-    default_validator = GrandsPrixListValidator()
+    default_validator = GrandsPrixRecordValidator()
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
@@ -83,6 +57,16 @@ class GrandsPrixListScraper(F1TableScraper):
         },
     )
 
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.validation_mode = "soft"
+        super().__init__(options=options, config=config)
+
 
 if __name__ == "__main__":
     run_and_export(
@@ -94,4 +78,3 @@ if __name__ == "__main__":
             include_urls=True,
         ),
     )
-from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn

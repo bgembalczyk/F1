@@ -247,7 +247,13 @@ class F1Scraper(ABC):
                 url=getattr(self, "url", None),
             )
 
-        if len(valid_records) != len(records):
+        rejected = len(records) - len(valid_records)
+        if rejected:
+            self.logger.info(
+                "Validation rejected %d record(s) out of %d",
+                rejected,
+                len(records),
+            )
             self.logger.info(
                 "Validation filtered records: %d -> %d",
                 len(records),
