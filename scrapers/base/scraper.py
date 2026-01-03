@@ -2,6 +2,7 @@ from abc import ABC
 from pathlib import Path
 from typing import Callable, List, Optional, Sequence, TypeVar
 from urllib.parse import urljoin
+from uuid import uuid4
 
 from bs4 import BeautifulSoup
 
@@ -73,8 +74,13 @@ class F1Scraper(ABC):
         if not getattr(self, "url", None):
             raise ValueError("Scraper.url musi być ustawiony przed fetch().")
 
+        run_id = uuid4().hex
+        self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
+
         try:
+            self.logger.debug("Scrape run %s: start download", run_id)
             html = self._download()
+            self.logger.debug("Scrape run %s: finish download", run_id)
         except Exception as exc:
             error: Exception
             if isinstance(exc, ScraperError):
@@ -91,11 +97,17 @@ class F1Scraper(ABC):
         try:
             soup = BeautifulSoup(html, "html.parser")
 
+            self.logger.debug("Scrape run %s: start parse", run_id)
             raw_records = self.parse(soup)
+            self.logger.debug("Scrape run %s: finish parse", run_id)
 
+            self.logger.debug("Scrape run %s: start normalize", run_id)
             normalized_records = self._record_normalizer.normalize(list(raw_records))
+            self.logger.debug("Scrape run %s: finish normalize", run_id)
             export_records = self.to_export_records(normalized_records)
+            self.logger.debug("Scrape run %s: start post-process", run_id)
             self._data = self.post_process_records(export_records)
+            self.logger.debug("Scrape run %s: finish post-process", run_id)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -107,6 +119,7 @@ class F1Scraper(ABC):
                 raise
             raise error from exc
 
+        self.logger.debug("Scrape run %s finished", run_id)
         return self._data
 
     def get_data(self) -> List[ExportRecord]:

@@ -4,7 +4,11 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.html_utils import clean_wiki_text, extract_links_from_cell
+from scrapers.base.helpers.html_utils import (
+    clean_wiki_text,
+    extract_links_from_cell,
+    find_section_elements,
+)
 from scrapers.base.helpers.wiki import build_full_url
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.logging import get_logger
@@ -53,6 +57,19 @@ class TablePipeline:
                 self.fragment = fragment
 
     def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        section_hint = self.section_id or self.fragment
+        candidate_tables = find_section_elements(
+            soup,
+            section_hint,
+            ["table"],
+            class_=self.table_css_class,
+        )
+        self.logger.debug(
+            "TablePipeline detected %d tables (section_id=%s fragment=%s)",
+            len(candidate_tables),
+            self.section_id,
+            self.fragment,
+        )
         parser = HtmlTableParser(
             section_id=self.section_id,
             fragment=self.fragment,
