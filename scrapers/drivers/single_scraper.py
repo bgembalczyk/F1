@@ -326,6 +326,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             config=config,
             include_urls=self.include_urls,
             skip_sentinel=self._SKIP,
+            normalize_empty_values=self.normalize_empty_values,
             debug_dir=self.debug_dir,
         )
 

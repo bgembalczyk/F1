@@ -62,6 +62,7 @@ class F1TableScraper(F1Scraper, ABC):
             config=resolved_config,
             include_urls=self.include_urls,
             skip_sentinel=self._SKIP,
+            normalize_empty_values=options.normalize_empty_values,
             model_fields=self._model_fields(),
             debug_dir=options.debug_dir,
         )

@@ -98,6 +98,7 @@ class SeasonTableParser:
                 config=config,
                 include_urls=self._include_urls,
                 skip_sentinel=self._skip_sentinel,
+                normalize_empty_values=self._options.normalize_empty_values,
             )
             parser = HtmlTableParser(
                 section_id=pipeline.section_id,

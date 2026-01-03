@@ -49,3 +49,14 @@ def test_record_normalizer_passes_through_non_dict_items() -> None:
 
     assert normalized[0] == {"driver_name": "Max"}
     assert normalized[1] is driver
+
+
+def test_record_normalizer_normalizes_empty_lists_and_dicts() -> None:
+    normalizer = RecordNormalizer(normalize_empty_values=True)
+    data = [{"notes": "", "items": [], "meta": {}, "value": "ok"}]
+
+    normalized = normalizer.normalize(data)
+
+    assert normalized == [
+        {"notes": None, "items": None, "meta": None, "value": "ok"}
+    ]

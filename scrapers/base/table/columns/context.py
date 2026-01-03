@@ -20,7 +20,7 @@ class ColumnContext:
 
     header: str
     key: str
-    raw_text: str
+    raw_text: str | None
     clean_text: str | None
     links: list[LinkRecord]
     cell: Optional[Tag]

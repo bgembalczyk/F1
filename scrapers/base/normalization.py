@@ -62,7 +62,10 @@ class RecordNormalizer:
         normalized_empty_fields = 0
         for key, value in record.items():
             cleaned = normalize_empty(value)
-            if cleaned is None and isinstance(value, str) and value.strip() == "":
+            if cleaned is None and (
+                (isinstance(value, str) and value.strip() == "")
+                or (isinstance(value, (list, dict)) and not value)
+            ):
                 normalized_empty_fields += 1
             normalized[key] = cleaned
         return normalized, normalized_empty_fields

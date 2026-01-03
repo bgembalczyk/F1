@@ -30,8 +30,15 @@ class SponsorshipSectionParser:
         "seasons",
     }
 
-    def __init__(self, *, include_urls: bool, splitter: SponsorshipRecordSplitter):
+    def __init__(
+        self,
+        *,
+        include_urls: bool,
+        normalize_empty_values: bool,
+        splitter: SponsorshipRecordSplitter,
+    ):
         self._include_urls = include_urls
+        self._normalize_empty_values = normalize_empty_values
         self._splitter = splitter
 
     def _build_pipeline(self) -> TablePipeline:
@@ -69,6 +76,7 @@ class SponsorshipSectionParser:
             config=config,
             include_urls=self._include_urls,
             skip_sentinel=self._SKIP,
+            normalize_empty_values=self._normalize_empty_values,
         )
 
     def parse_section_table(
