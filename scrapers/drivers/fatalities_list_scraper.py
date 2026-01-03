@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any, List
 
+from models.scrape_types.factories import build_fatality_row
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.time import parse_date_text
@@ -69,6 +70,7 @@ class F1FatalitiesListScraper(F1TableScraper):
             .map("Session", "session", TextColumn())
             .map("Ref.", "ref", SkipColumn())
         ),
+        record_factory=build_fatality_row,
     )
 
     @staticmethod

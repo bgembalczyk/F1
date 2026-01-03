@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
@@ -62,6 +63,7 @@ class CircuitsListScraper(F1TableScraper):
             "grands_prix": LinksListColumn(),
             # alternatywnie: LinksListColumn() + mała modyfikacja tekstu w osobnej kolumnie
         },
+        record_factory=build_circuit_record,
     )
 
     def __init__(

@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -50,6 +51,7 @@ class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
             "failed_to_make_restart_reason": TextColumn(),
             "ref": SkipColumn(),
         },
+        record_factory=record_from_mapping,
     )
 
 

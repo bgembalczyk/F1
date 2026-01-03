@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from models.scrape_types.factories import build_constructor_row
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -54,6 +55,7 @@ class Constructors2025ListScraper(F1TableScraper):
             # poprzednie zespoły – lista linków
             "antecedent_teams": LinksListColumn(),
         },
+        record_factory=build_constructor_row,
     )
     # pozostałe kolumny ("licensed_in", "based_in", "drivers") obsłuży domyślny AutoColumn
 
