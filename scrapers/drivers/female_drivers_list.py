@@ -4,12 +4,12 @@ from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.helpers.parsers import parse_entries_starts
+from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers.helpers.parsers import parse_points_from_cell
 
 
@@ -38,16 +38,11 @@ class FemaleDriversListScraper(F1TableScraper):
             "Points": "points",
         },
         columns={
-            "_skip": FuncColumn(lambda ctx: ctx.skip_sentinel),
+            "_skip": SkipColumn(),
             "driver": UrlColumn(),
             "seasons": SeasonsColumn(),
             "teams": LinksListColumn(),
-            "entries_starts": MultiColumn(
-                {
-                    "entries": FuncColumn(lambda ctx: parse_entries_starts(ctx)[0]),
-                    "starts": FuncColumn(lambda ctx: parse_entries_starts(ctx)[1]),
-                }
-            ),
+            "entries_starts": EntriesStartsColumn(),
             "points": FuncColumn(parse_points_from_cell),
         },
     )
