@@ -22,7 +22,7 @@ class LinksListColumn(BaseColumn):
         self._separator_token = object()
 
     @staticmethod
-    def _clean_text_item(self, text: str) -> str | None:
+    def _clean_text_item(text: str) -> str | None:
         cleaned = clean_wiki_text(text)
         cleaned = strip_marks(cleaned or "") or ""
         return cleaned or None

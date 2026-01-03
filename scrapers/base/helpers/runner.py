@@ -3,28 +3,8 @@ from pathlib import Path
 from typing import Type
 
 from scrapers.base.run_config import RunConfig
-from scrapers.base.runner import ScraperRunner
 from scrapers.base.scraper import F1Scraper
-
-
-def ensure_parent(path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-
-def supports_param(cls: type, param_name: str) -> bool:
-    """
-    True jeśli __init__ klasy przyjmuje param o nazwie param_name
-    albo ma **kwargs (wtedy też możemy bezpiecznie podać).
-    """
-    try:
-        sig = inspect.signature(cls.__init__)
-    except (TypeError, ValueError):
-        return False
-
-    params = sig.parameters
-    if param_name in params:
-        return True
-    return any(p.kind == inspect.Parameter.VAR_KEYWORD for p in params.values())
+from scrapers.base.runner import ScraperRunner
 
 
 def run_and_export(
