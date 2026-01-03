@@ -21,6 +21,13 @@ table_pipeline_20240101T120000Z_abcdef123456.json
 Każdy dump zawiera kontekst błędu (URL, section_id, header, row_index, run_id)
 oraz surowy HTML komórki.
 
+## Cache a debug
+
+Jeśli uruchamiasz scraper z cache (`RunConfig(cache_dir=..., cache_ttl=...)`),
+to debug dumpy mogą pochodzić z HTML-a pobranego z cache. W przypadku analizy
+świeżych danych lub problemów reprodukcji, wyczyść katalog cache albo ustaw
+`cache_ttl=0`, aby wymusić ponowne pobranie strony.
+
 ## Jak usuwać / rotować dumpy?
 
 - Ręcznie: usuń cały katalog `data/debug/` lub wybrane pliki.

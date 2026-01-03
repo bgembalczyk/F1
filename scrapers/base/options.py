@@ -13,6 +13,7 @@ from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.cache_adapter import CacheAdapter
 from validation.records import RecordValidator
 
 
@@ -32,6 +33,8 @@ class ScraperOptions:
     validator: RecordValidator | None = None
     validation_mode: str = "soft"
     debug_dir: Path | None = None
+    cache_dir: Path | str | None = None
+    cache_ttl: int | None = None
     normalize_empty_values: bool = True
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
     run_id: str | None = None
@@ -102,4 +105,15 @@ class ScraperOptions:
                 self.source_adapter = self.fetcher
         elif isinstance(self.source_adapter, HtmlFetcher):
             self.fetcher = self.source_adapter
+
+        if self.cache_dir is not None and not isinstance(
+            self.source_adapter, CacheAdapter
+        ):
+            ttl_seconds = self.cache_ttl or 0
+            self.source_adapter = CacheAdapter(
+                source_adapter=self.source_adapter,
+                cache_dir=self.cache_dir,
+                ttl_seconds=ttl_seconds,
+            )
+
         return self.source_adapter
