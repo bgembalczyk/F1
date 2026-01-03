@@ -136,7 +136,7 @@ class SingleSeasonScraper(F1Scraper):
             else:
                 numbers_list = [numbers]
 
-            if len(numbers_list) != 1:
+            if not numbers_list:
                 continue
 
             drivers = record.get("race_drivers")
@@ -145,7 +145,15 @@ class SingleSeasonScraper(F1Scraper):
             if not isinstance(drivers, list) or len(drivers) <= 1:
                 continue
 
-            record["no"] = [numbers_list[0] for _ in range(len(drivers))]
+            primary_number = numbers_list[0]
+            if isinstance(primary_number, str) and not primary_number.strip():
+                continue
+
+            if len(numbers_list) == 1 or all(
+                isinstance(number, str) and not number.strip()
+                for number in numbers_list[1:]
+            ):
+                record["no"] = [primary_number for _ in range(len(drivers))]
 
         return records
 
@@ -279,6 +287,9 @@ class SingleSeasonScraper(F1Scraper):
             drivers = record.pop("drivers", []) or []
             numbers = record.pop("numbers", []) or []
             rounds_list = record.pop("rounds", []) or []
+
+            if len(numbers) == 1 and len(drivers) > 1:
+                numbers = [numbers[0] for _ in range(len(drivers))]
 
             practice_drivers: List[Dict[str, Any]] = []
             for index, driver in enumerate(drivers):
