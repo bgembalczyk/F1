@@ -1,7 +1,7 @@
 from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.wiki import strip_marks as strip_wiki_marks
+from scrapers.base.helpers.text import strip_marks as strip_wiki_marks
 
 
 def normalize_auto_value(

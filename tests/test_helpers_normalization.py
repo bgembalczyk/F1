@@ -1,14 +1,14 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.html_utils import extract_links_from_cell
+from scrapers.base.helpers.text import (
+    clean_wiki_text,
+    extract_links_from_cell,
+    strip_marks,
+)
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.text_normalization import (
-    clean_wiki_text,
-    is_language_link,
-    split_delimited_text,
-)
+from scrapers.base.helpers.text_normalization import is_language_link, split_delimited_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.value_objects import NormalizedTime
 
@@ -50,6 +50,12 @@ def test_clean_wiki_text_strip_lang_suffix_ignores_word_endings():
         clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
         == "Silverstone circuit"
     )
+
+
+def test_clean_wiki_text_accepts_html_tag_input():
+    soup = BeautifulSoup("<span>Foo&nbsp;bar [1]</span>", "html.parser")
+
+    assert clean_wiki_text(soup.span) == "Foo bar"
 
 
 def test_is_language_link_matches_language_wikipedia_urls():
@@ -107,6 +113,18 @@ def test_extract_links_from_cell_handles_default_full_url():
     ]
 
 
+def test_extract_links_from_cell_accepts_html_string():
+    html = """
+    <td>
+        <a href="/wiki/Good">Good</a>
+        <a href="#cite_note-1">[1]</a>
+    </td>
+    """
+    links = extract_links_from_cell(html)
+
+    assert links == [{"text": "Good", "url": "/wiki/Good"}]
+
+
 def test_normalize_links_filters_empty_and_language_links_and_marks():
     links = [
         {"text": "", "url": "https://example.com/empty"},
@@ -153,6 +171,12 @@ def test_normalize_auto_value_handles_str():
 
 def test_normalize_auto_value_handles_none():
     assert normalize_auto_value(None) is None
+
+
+def test_strip_marks_handles_special_characters_and_tag():
+    soup = BeautifulSoup("<span>Marked†*</span>", "html.parser")
+
+    assert strip_marks(soup.span) == "Marked"
 
 
 def test_normalize_auto_value_drops_empty_dict_text():

@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.html_utils import extract_links_from_cell
+from scrapers.base.helpers.text import extract_links_from_cell
 from scrapers.base.helpers.wiki import build_full_url
 
 

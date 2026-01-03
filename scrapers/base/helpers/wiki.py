@@ -5,23 +5,8 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text_normalization import clean_wiki_text, is_language_link
-
-
-def strip_marks(text: str | None) -> str | None:
-    """Usuwa typowe znaki oznaczeń z tabel."""
-    if text is None:
-        return None
-    return (
-        text.replace("*", "")
-        .replace("†", "")
-        .replace("‡", "")
-        .replace("✝", "")
-        .replace("✚", "")
-        .replace("~", "")
-        .replace("^", "")
-        .strip()
-    )
+from scrapers.base.helpers.text import clean_wiki_text, strip_marks
+from scrapers.base.helpers.text_normalization import is_language_link
 
 
 def build_full_url(base: str, href: str) -> str:

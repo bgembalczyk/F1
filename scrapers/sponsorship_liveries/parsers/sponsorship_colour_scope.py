@@ -2,7 +2,7 @@ import re
 from typing import Any
 from typing import Dict
 
-from scrapers.base.helpers.text_normalization import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.sponsorship_liveries.parsers.sponsorship_grand_prix_scope import (
     GrandPrixScopeParser,
 )

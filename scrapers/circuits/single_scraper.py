@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.html_utils import clean_wiki_text
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.scraper import F1Scraper
