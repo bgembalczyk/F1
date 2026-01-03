@@ -1515,7 +1515,323 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Jacarepaguá",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
+            },
+            "location": {
+              "text": "Rio de Janeiro",
+              "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
+            }
+          },
+          "race_date": {
+            "text": "13 March 1983",
+            "iso": "1983-03-13"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "United States Grand Prix West",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Long Beach Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_of_Long_Beach"
+            },
+            "location": {
+              "text": "California",
+              "url": "https://en.wikipedia.org/wiki/Los_Angeles_County,_California"
+            }
+          },
+          "race_date": {
+            "text": "27 March 1983",
+            "iso": "1983-03-27"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Paul Ricard",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard"
+            },
+            "location": {
+              "text": "Le Castellet",
+              "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
+            }
+          },
+          "race_date": {
+            "text": "17 April 1983",
+            "iso": "1983-04-17"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "1 May 1983",
+            "iso": "1983-05-01"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "15 May 1983",
+            "iso": "1983-05-15"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "22 May 1983",
+            "iso": "1983-05-22"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Detroit Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Detroit_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Detroit Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Detroit_Street_Circuit"
+            },
+            "location": {
+              "text": "Michigan",
+              "url": "https://en.wikipedia.org/wiki/Michigan"
+            }
+          },
+          "race_date": {
+            "text": "5 June 1983",
+            "iso": "1983-06-05"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "12 June 1983",
+            "iso": "1983-06-12"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "16 July 1983",
+            "iso": "1983-07-16"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "7 August 1983",
+            "iso": "1983-08-07"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Österreichring",
+              "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "14 August 1983",
+            "iso": "1983-08-14"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Park Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "28 August 1983",
+            "iso": "1983-08-28"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "11 September 1983",
+            "iso": "1983-09-11"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Brands Hatch",
+              "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+            },
+            "location": {
+              "text": "West Kingsdown",
+              "url": "https://en.wikipedia.org/wiki/West_Kingsdown"
+            }
+          },
+          "race_date": {
+            "text": "25 September 1983",
+            "iso": "1983-09-25"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_Grand_Prix_Circuit"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "race_date": {
+            "text": "15 October 1983",
+            "iso": "1983-10-15"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

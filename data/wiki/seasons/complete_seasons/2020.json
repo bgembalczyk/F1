@@ -725,7 +725,365 @@
           ]
         }
       ],
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Red Bull Ring",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "5 July 2020",
+            "iso": "2020-07-05"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Styrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Styrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Red Bull Ring",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "12 July 2020",
+            "iso": "2020-07-12"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "19 July 2020",
+            "iso": "2020-07-19"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "2 August 2020",
+            "iso": "2020-08-02"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "70th Anniversary Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "9 August 2020",
+            "iso": "2020-08-09"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Barcelona-Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "16 August 2020",
+            "iso": "2020-08-16"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "30 August 2020",
+            "iso": "2020-08-30"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "6 September 2020",
+            "iso": "2020-09-06"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Tuscan Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Tuscan_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Internazionale del Mugello",
+              "url": "https://en.wikipedia.org/wiki/Mugello_Circuit"
+            },
+            "location": {
+              "text": "Scarperia e San Piero",
+              "url": "https://en.wikipedia.org/wiki/Scarperia_e_San_Piero"
+            }
+          },
+          "race_date": {
+            "text": "13 September 2020",
+            "iso": "2020-09-13"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Russian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Russian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Sochi Autodrom",
+              "url": "https://en.wikipedia.org/wiki/Sochi_Autodrom"
+            },
+            "location": {
+              "text": "Sochi",
+              "url": "https://en.wikipedia.org/wiki/Sochi"
+            }
+          },
+          "race_date": {
+            "text": "27 September 2020",
+            "iso": "2020-09-27"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Eifel Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Eifel_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "11 October 2020",
+            "iso": "2020-10-11"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Internacional do Algarve",
+              "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit"
+            },
+            "location": {
+              "text": "Portimão",
+              "url": "https://en.wikipedia.org/wiki/Portim%C3%A3o"
+            }
+          },
+          "race_date": {
+            "text": "25 October 2020",
+            "iso": "2020-10-25"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Emilia Romagna Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Emilia_Romagna_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Internazionale Enzo e Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Internazionale_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "1 November 2020",
+            "iso": "2020-11-01"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Turkish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Istanbul Park",
+              "url": "https://en.wikipedia.org/wiki/Istanbul_Park"
+            },
+            "location": {
+              "text": "Tuzla",
+              "url": "https://en.wikipedia.org/wiki/Tuzla,_Istanbul"
+            }
+          },
+          "race_date": {
+            "text": "15 November 2020",
+            "iso": "2020-11-15"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Bahrain Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Bahrain International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+            },
+            "location": {
+              "text": "Sakhir",
+              "url": "https://en.wikipedia.org/wiki/Sakhir"
+            }
+          },
+          "race_date": {
+            "text": "29 November 2020",
+            "iso": "2020-11-29"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Sakhir Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Sakhir_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Bahrain International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+            },
+            "location": {
+              "text": "Sakhir",
+              "url": "https://en.wikipedia.org/wiki/Sakhir"
+            }
+          },
+          "race_date": {
+            "text": "6 December 2020",
+            "iso": "2020-12-06"
+          }
+        },
+        {
+          "round": 17,
+          "grand_prix": {
+            "text": "Abu Dhabi Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Yas Marina Circuit",
+              "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
+            },
+            "location": {
+              "text": "Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+            }
+          },
+          "race_date": {
+            "text": "13 December 2020",
+            "iso": "2020-12-13"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

@@ -751,7 +751,365 @@
           ]
         }
       ],
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "race_date": {
+            "text": "18 March 2007",
+            "iso": "2007-03-18"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Malaysian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Sepang International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Sepang_International_Circuit"
+            },
+            "location": {
+              "text": "Kuala Lumpur",
+              "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+            }
+          },
+          "race_date": {
+            "text": "8 April 2007",
+            "iso": "2007-04-08"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Bahrain Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Bahrain International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+            },
+            "location": {
+              "text": "Sakhir",
+              "url": "https://en.wikipedia.org/wiki/Sakhir"
+            }
+          },
+          "race_date": {
+            "text": "15 April 2007",
+            "iso": "2007-04-15"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "13 May 2007",
+            "iso": "2007-05-13"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte-Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte-Carlo"
+            }
+          },
+          "race_date": {
+            "text": "27 May 2007",
+            "iso": "2007-05-27"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "10 June 2007",
+            "iso": "2007-06-10"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Indianapolis Motor Speedway",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+            },
+            "location": {
+              "text": "Speedway",
+              "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+            }
+          },
+          "race_date": {
+            "text": "17 June 2007",
+            "iso": "2007-06-17"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Nevers Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours"
+            },
+            "location": {
+              "text": "Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Magny-Cours"
+            }
+          },
+          "race_date": {
+            "text": "1 July 2007",
+            "iso": "2007-07-01"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "8 July 2007",
+            "iso": "2007-07-08"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "22 July 2007",
+            "iso": "2007-07-22"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "5 August 2007",
+            "iso": "2007-08-05"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Turkish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Istanbul Park",
+              "url": "https://en.wikipedia.org/wiki/Istanbul_Park"
+            },
+            "location": {
+              "text": "Istanbul",
+              "url": "https://en.wikipedia.org/wiki/Istanbul"
+            }
+          },
+          "race_date": {
+            "text": "26 August 2007",
+            "iso": "2007-08-26"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "9 September 2007",
+            "iso": "2007-09-09"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "16 September 2007",
+            "iso": "2007-09-16"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Fuji Speedway",
+              "url": "https://en.wikipedia.org/wiki/Fuji_Speedway"
+            },
+            "location": {
+              "text": "Oyama, Shizuoka",
+              "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
+            }
+          },
+          "race_date": {
+            "text": "30 September 2007",
+            "iso": "2007-09-30"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Shanghai International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
+            },
+            "location": {
+              "text": "Shanghai",
+              "url": "https://en.wikipedia.org/wiki/Shanghai"
+            }
+          },
+          "race_date": {
+            "text": "7 October 2007",
+            "iso": "2007-10-07"
+          }
+        },
+        {
+          "round": 17,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo José Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace"
+            },
+            "location": {
+              "text": "São Paulo",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+            }
+          },
+          "race_date": {
+            "text": "21 October 2007",
+            "iso": "2007-10-21"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

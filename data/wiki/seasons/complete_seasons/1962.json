@@ -2289,7 +2289,197 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "20 May 1962",
+            "iso": "1962-05-20"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "3 June 1962",
+            "iso": "1962-06-03"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "17 June 1962",
+            "iso": "1962-06-17"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Rouen-Les-Essarts",
+              "url": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts"
+            },
+            "location": {
+              "text": "Orival",
+              "url": "https://en.wikipedia.org/wiki/Orival,_Seine-Maritime"
+            }
+          },
+          "race_date": {
+            "text": "8 July 1962",
+            "iso": "1962-07-08"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Aintree Motor Racing Circuit",
+              "url": "https://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit"
+            },
+            "location": {
+              "text": "Merseyside",
+              "url": "https://en.wikipedia.org/wiki/Merseyside"
+            }
+          },
+          "race_date": {
+            "text": "21 July 1962",
+            "iso": "1962-07-21"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "5 August 1962",
+            "iso": "1962-08-05"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "16 September 1962",
+            "iso": "1962-09-16"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "7 October 1962",
+            "iso": "1962-10-07"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Prince George Circuit",
+              "url": "https://en.wikipedia.org/wiki/Prince_George_Circuit"
+            },
+            "location": {
+              "text": "East London",
+              "url": "https://en.wikipedia.org/wiki/East_London,_Eastern_Cape"
+            }
+          },
+          "race_date": {
+            "text": "29 December 1962",
+            "iso": "1962-12-29"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

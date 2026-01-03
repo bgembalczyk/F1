@@ -1545,7 +1545,155 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Oscar Alfredo Gálvez",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "race_date": {
+            "text": "16 January 1955",
+            "iso": "1955-01-16"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "22 May 1955",
+            "iso": "1955-05-22"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Indianapolis 500",
+            "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Indianapolis Motor Speedway",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+            },
+            "location": {
+              "text": "Speedway",
+              "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+            }
+          },
+          "race_date": {
+            "text": "30 May 1955",
+            "iso": "1955-05-30"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "5 June 1955",
+            "iso": "1955-06-05"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "19 June 1955",
+            "iso": "1955-06-19"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Aintree Motor Racing Circuit",
+              "url": "https://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit"
+            },
+            "location": {
+              "text": "Merseyside",
+              "url": "https://en.wikipedia.org/wiki/Merseyside"
+            }
+          },
+          "race_date": {
+            "text": "16 July 1955",
+            "iso": "1955-07-16"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "11 September 1955",
+            "iso": "1955-09-11"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

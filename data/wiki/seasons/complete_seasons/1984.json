@@ -1373,7 +1373,344 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Jacarepaguá",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
+            },
+            "location": {
+              "text": "Rio de Janeiro",
+              "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
+            }
+          },
+          "race_date": {
+            "text": "25 March 1984",
+            "iso": "1984-03-25"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_Grand_Prix_Circuit"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "race_date": {
+            "text": "7 April 1984",
+            "iso": "1984-04-07"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zolder",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zolder"
+            },
+            "location": {
+              "text": "Heusden-Zolder",
+              "url": "https://en.wikipedia.org/wiki/Heusden-Zolder"
+            }
+          },
+          "race_date": {
+            "text": "29 April 1984",
+            "iso": "1984-04-29"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "6 May 1984",
+            "iso": "1984-05-06"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Dijon-Prenois",
+              "url": "https://en.wikipedia.org/wiki/Dijon-Prenois"
+            },
+            "location": {
+              "text": "Dijon",
+              "url": "https://en.wikipedia.org/wiki/Dijon"
+            }
+          },
+          "race_date": {
+            "text": "20 May 1984",
+            "iso": "1984-05-20"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "3 June 1984",
+            "iso": "1984-06-03"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "17 June 1984",
+            "iso": "1984-06-17"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Detroit Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Detroit_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Detroit Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Detroit_Street_Circuit"
+            },
+            "location": {
+              "text": "Michigan",
+              "url": "https://en.wikipedia.org/wiki/Michigan"
+            }
+          },
+          "race_date": {
+            "text": "24 June 1984",
+            "iso": "1984-06-24"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Dallas Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dallas_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Fair Park Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Fair_Park"
+            },
+            "location": {
+              "text": "Dallas",
+              "url": "https://en.wikipedia.org/wiki/Dallas,_Texas"
+            }
+          },
+          "race_date": {
+            "text": "8 July 1984",
+            "iso": "1984-07-08"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Brands Hatch",
+              "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+            },
+            "location": {
+              "text": "West Kingsdown",
+              "url": "https://en.wikipedia.org/wiki/West_Kingsdown"
+            }
+          },
+          "race_date": {
+            "text": "22 July 1984",
+            "iso": "1984-07-22"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "5 August 1984",
+            "iso": "1984-08-05"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Österreichring",
+              "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "19 August 1984",
+            "iso": "1984-08-19"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Park Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "26 August 1984",
+            "iso": "1984-08-26"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "9 September 1984",
+            "iso": "1984-09-09"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "7 October 1984",
+            "iso": "1984-10-07"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo do Estoril",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_do_Estoril"
+            },
+            "location": {
+              "text": "Estoril",
+              "url": "https://en.wikipedia.org/wiki/Estoril"
+            }
+          },
+          "race_date": {
+            "text": "21 October 1984",
+            "iso": "1984-10-21"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

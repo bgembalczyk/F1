@@ -2229,7 +2229,197 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "22 May 1966",
+            "iso": "1966-05-22"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "12 June 1966",
+            "iso": "1966-06-12"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Reims-Gueux",
+              "url": "https://en.wikipedia.org/wiki/Reims-Gueux"
+            },
+            "location": {
+              "text": "Gueux",
+              "url": "https://en.wikipedia.org/wiki/Gueux,_Marne"
+            }
+          },
+          "race_date": {
+            "text": "3 July 1966",
+            "iso": "1966-07-03"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Brands Hatch",
+              "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+            },
+            "location": {
+              "text": "West Kingsdown",
+              "url": "https://en.wikipedia.org/wiki/West_Kingsdown"
+            }
+          },
+          "race_date": {
+            "text": "16 July 1966",
+            "iso": "1966-07-16"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Park Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "24 July 1966",
+            "iso": "1966-07-24"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "7 August 1966",
+            "iso": "1966-08-07"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "4 September 1966",
+            "iso": "1966-09-04"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "2 October 1966",
+            "iso": "1966-10-02"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Mexican Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Magdalena Mixhuca",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
+            },
+            "location": {
+              "text": "Mexico City",
+              "url": "https://en.wikipedia.org/wiki/Mexico_City"
+            }
+          },
+          "race_date": {
+            "text": "23 October 1966",
+            "iso": "1966-10-23"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

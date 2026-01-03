@@ -1534,7 +1534,323 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "United States Grand Prix West",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix_West"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Long Beach Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit"
+            },
+            "location": {
+              "text": "California",
+              "url": "https://en.wikipedia.org/wiki/Los_Angeles_County,_California"
+            }
+          },
+          "race_date": {
+            "text": "15 March 1981",
+            "iso": "1981-03-15"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo de Jacarepaguá",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_de_Jacarepagu%C3%A1"
+            },
+            "location": {
+              "text": "Rio de Janeiro",
+              "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
+            }
+          },
+          "race_date": {
+            "text": "29 March 1981",
+            "iso": "1981-03-29"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo de Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "race_date": {
+            "text": "12 April 1981",
+            "iso": "1981-04-12"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "3 May 1981",
+            "iso": "1981-05-03"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zolder",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zolder"
+            },
+            "location": {
+              "text": "Heusden-Zolder",
+              "url": "https://en.wikipedia.org/wiki/Heusden-Zolder"
+            }
+          },
+          "race_date": {
+            "text": "17 May 1981",
+            "iso": "1981-05-17"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "31 May 1981",
+            "iso": "1981-05-31"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuito Permanente Del Jarama",
+              "url": "https://en.wikipedia.org/wiki/Circuito_Permanente_Del_Jarama"
+            },
+            "location": {
+              "text": "Madrid",
+              "url": "https://en.wikipedia.org/wiki/Madrid"
+            }
+          },
+          "race_date": {
+            "text": "21 June 1981",
+            "iso": "1981-06-21"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Dijon-Prenois",
+              "url": "https://en.wikipedia.org/wiki/Dijon-Prenois"
+            },
+            "location": {
+              "text": "Prenois",
+              "url": "https://en.wikipedia.org/wiki/Prenois"
+            }
+          },
+          "race_date": {
+            "text": "5 July 1981",
+            "iso": "1981-07-05"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "18 July 1981",
+            "iso": "1981-07-18"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "2 August 1981",
+            "iso": "1981-08-02"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Österreichring",
+              "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "16 August 1981",
+            "iso": "1981-08-16"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "30 August 1981",
+            "iso": "1981-08-30"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "13 September 1981",
+            "iso": "1981-09-13"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Île Notre-Dame Circuit",
+              "url": "https://en.wikipedia.org/wiki/%C3%8Ele_Notre-Dame_Circuit"
+            },
+            "location": {
+              "text": "Montréal",
+              "url": "https://en.wikipedia.org/wiki/Montr%C3%A9al"
+            }
+          },
+          "race_date": {
+            "text": "27 September 1981",
+            "iso": "1981-09-27"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Caesars Palace Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Caesars Palace Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Caesars_Palace#Sports"
+            },
+            "location": {
+              "text": "Las Vegas",
+              "url": "https://en.wikipedia.org/wiki/Las_Vegas"
+            }
+          },
+          "race_date": {
+            "text": "17 October 1981",
+            "iso": "1981-10-17"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

@@ -2248,7 +2248,176 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "14 May 1961",
+            "iso": "1961-05-14"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "22 May 1961",
+            "iso": "1961-05-22"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "18 June 1961",
+            "iso": "1961-06-18"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Reims-Gueux",
+              "url": "https://en.wikipedia.org/wiki/Reims-Gueux"
+            },
+            "location": {
+              "text": "Gueux",
+              "url": "https://en.wikipedia.org/wiki/Gueux,_Marne"
+            }
+          },
+          "race_date": {
+            "text": "2 July 1961",
+            "iso": "1961-07-02"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Aintree Motor Racing Circuit",
+              "url": "https://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit"
+            },
+            "location": {
+              "text": "Merseyside",
+              "url": "https://en.wikipedia.org/wiki/Merseyside"
+            }
+          },
+          "race_date": {
+            "text": "15 July 1961",
+            "iso": "1961-07-15"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "6 August 1961",
+            "iso": "1961-08-06"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "10 September 1961",
+            "iso": "1961-09-10"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "8 October 1961",
+            "iso": "1961-10-08"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

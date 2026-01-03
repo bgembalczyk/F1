@@ -1844,7 +1844,239 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "race_date": {
+            "text": "6 March 1971",
+            "iso": "1971-03-06"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Montjuïc circuit",
+              "url": "https://en.wikipedia.org/wiki/Montju%C3%AFc_circuit"
+            },
+            "location": {
+              "text": "Barcelona",
+              "url": "https://en.wikipedia.org/wiki/Barcelona"
+            }
+          },
+          "race_date": {
+            "text": "18 April 1971",
+            "iso": "1971-04-18"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "23 May 1971",
+            "iso": "1971-05-23"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "20 June 1971",
+            "iso": "1971-06-20"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Paul Ricard Circuit",
+              "url": "https://en.wikipedia.org/wiki/Paul_Ricard_Circuit"
+            },
+            "location": {
+              "text": "Le Castellet",
+              "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
+            }
+          },
+          "race_date": {
+            "text": "4 July 1971",
+            "iso": "1971-07-04"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "17 July 1971",
+            "iso": "1971-07-17"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "1 August 1971",
+            "iso": "1971-08-01"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Österreichring",
+              "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "15 August 1971",
+            "iso": "1971-08-15"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "5 September 1971",
+            "iso": "1971-09-05"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Mosport Park",
+              "url": "https://en.wikipedia.org/wiki/Mosport_Park"
+            },
+            "location": {
+              "text": "Bowmanville",
+              "url": "https://en.wikipedia.org/wiki/Bowmanville"
+            }
+          },
+          "race_date": {
+            "text": "19 September 1971",
+            "iso": "1971-09-19"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "3 October 1971",
+            "iso": "1971-10-03"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

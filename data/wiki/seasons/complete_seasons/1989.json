@@ -1732,7 +1732,344 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Internacional Nelson Piquet",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet"
+            },
+            "location": {
+              "text": "Jacarepaguá",
+              "url": "https://en.wikipedia.org/wiki/Jacarepagu%C3%A1"
+            }
+          },
+          "race_date": {
+            "text": "26 March 1989",
+            "iso": "1989-03-26"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Enzo e Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "23 April 1989",
+            "iso": "1989-04-23"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "7 May 1989",
+            "iso": "1989-05-07"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Mexican Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Hermanos Rodríguez",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
+            },
+            "location": {
+              "text": "Mexico City",
+              "url": "https://en.wikipedia.org/wiki/Mexico_City"
+            }
+          },
+          "race_date": {
+            "text": "28 May 1989",
+            "iso": "1989-05-28"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Phoenix Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Phoenix_Street_Circuit"
+            },
+            "location": {
+              "text": "Phoenix, Arizona",
+              "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+            }
+          },
+          "race_date": {
+            "text": "4 June 1989",
+            "iso": "1989-06-04"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "18 June 1989",
+            "iso": "1989-06-18"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Paul Ricard",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard"
+            },
+            "location": {
+              "text": "Le Castellet",
+              "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
+            }
+          },
+          "race_date": {
+            "text": "9 July 1989",
+            "iso": "1989-07-09"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "16 July 1989",
+            "iso": "1989-07-16"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "30 July 1989",
+            "iso": "1989-07-30"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "13 August 1989",
+            "iso": "1989-08-13"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "27 August 1989",
+            "iso": "1989-08-27"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "10 September 1989",
+            "iso": "1989-09-10"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Portuguese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Portuguese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo do Estoril",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril"
+            },
+            "location": {
+              "text": "Estoril",
+              "url": "https://en.wikipedia.org/wiki/Estoril"
+            }
+          },
+          "race_date": {
+            "text": "24 September 1989",
+            "iso": "1989-09-24"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuito de Jerez",
+              "url": "https://en.wikipedia.org/wiki/Circuito_de_Jerez"
+            },
+            "location": {
+              "text": "Jerez de la Frontera",
+              "url": "https://en.wikipedia.org/wiki/Jerez_de_la_Frontera"
+            }
+          },
+          "race_date": {
+            "text": "1 October 1989",
+            "iso": "1989-10-01"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka Circuit",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+            },
+            "location": {
+              "text": "Suzuka",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "race_date": {
+            "text": "22 October 1989",
+            "iso": "1989-10-22"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Adelaide Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Adelaide_Street_Circuit"
+            },
+            "location": {
+              "text": "Adelaide",
+              "url": "https://en.wikipedia.org/wiki/Adelaide"
+            }
+          },
+          "race_date": {
+            "text": "5 November 1989",
+            "iso": "1989-11-05"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

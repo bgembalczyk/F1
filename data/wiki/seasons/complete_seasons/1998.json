@@ -644,7 +644,344 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "race_date": {
+            "text": "8 March 1998",
+            "iso": "1998-03-08"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo José Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace"
+            },
+            "location": {
+              "text": "São Paulo",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+            }
+          },
+          "race_date": {
+            "text": "29 March 1998",
+            "iso": "1998-03-29"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Oscar Alfredo Gálvez",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "race_date": {
+            "text": "12 April 1998",
+            "iso": "1998-04-12"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Enzo e Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "26 April 1998",
+            "iso": "1998-04-26"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "10 May 1998",
+            "iso": "1998-05-10"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "24 May 1998",
+            "iso": "1998-05-24"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "7 June 1998",
+            "iso": "1998-06-07"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Nevers Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours"
+            },
+            "location": {
+              "text": "Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Magny-Cours"
+            }
+          },
+          "race_date": {
+            "text": "28 June 1998",
+            "iso": "1998-06-28"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "12 July 1998",
+            "iso": "1998-07-12"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "A1-Ring",
+              "url": "https://en.wikipedia.org/wiki/A1-Ring"
+            },
+            "location": {
+              "text": "Spielberg, Styria",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "26 July 1998",
+            "iso": "1998-07-26"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "2 August 1998",
+            "iso": "1998-08-02"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "16 August 1998",
+            "iso": "1998-08-16"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "30 August 1998",
+            "iso": "1998-08-30"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "13 September 1998",
+            "iso": "1998-09-13"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Luxembourg Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Luxembourg_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "27 September 1998",
+            "iso": "1998-09-27"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka Circuit",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+            },
+            "location": {
+              "text": "Suzuka",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "race_date": {
+            "text": "1 November 1998",
+            "iso": "1998-11-01"
+          }
+        }
+      ],
       "results": null,
       "non_championship_races": null,
       "scoring_system": [

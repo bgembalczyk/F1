@@ -1924,7 +1924,218 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Prince George Circuit",
+              "url": "https://en.wikipedia.org/wiki/Prince_George_Circuit"
+            },
+            "location": {
+              "text": "East London",
+              "url": "https://en.wikipedia.org/wiki/East_London,_Eastern_Cape"
+            }
+          },
+          "race_date": {
+            "text": "1 January 1965",
+            "iso": "1965-01-01"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "30 May 1965",
+            "iso": "1965-05-30"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "13 June 1965",
+            "iso": "1965-06-13"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Charade Circuit",
+              "url": "https://en.wikipedia.org/wiki/Charade_Circuit"
+            },
+            "location": {
+              "text": "Clermont-Ferrand",
+              "url": "https://en.wikipedia.org/wiki/Clermont-Ferrand"
+            }
+          },
+          "race_date": {
+            "text": "27 June 1965",
+            "iso": "1965-06-27"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "10 July 1965",
+            "iso": "1965-07-10"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "race_date": {
+            "text": "18 July 1965",
+            "iso": "1965-07-18"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "1 August 1965",
+            "iso": "1965-08-01"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "12 September 1965",
+            "iso": "1965-09-12"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "3 October 1965",
+            "iso": "1965-10-03"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Mexican Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Mexican_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Magdalena Mixhuca",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Hermanos_Rodriguez"
+            },
+            "location": {
+              "text": "Mexico City",
+              "url": "https://en.wikipedia.org/wiki/Mexico_City"
+            }
+          },
+          "race_date": {
+            "text": "24 October 1965",
+            "iso": "1965-10-24"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

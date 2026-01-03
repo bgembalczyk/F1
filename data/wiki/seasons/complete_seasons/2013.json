@@ -628,7 +628,407 @@
           ]
         }
       ],
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "race_date": {
+            "text": "17 March 2013",
+            "iso": "2013-03-17"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Malaysian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Sepang International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Sepang_International_Circuit"
+            },
+            "location": {
+              "text": "Kuala Lumpur",
+              "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+            }
+          },
+          "race_date": {
+            "text": "24 March 2013",
+            "iso": "2013-03-24"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Shanghai International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
+            },
+            "location": {
+              "text": "Shanghai",
+              "url": "https://en.wikipedia.org/wiki/Shanghai"
+            }
+          },
+          "race_date": {
+            "text": "14 April 2013",
+            "iso": "2013-04-14"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Bahrain Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Bahrain International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+            },
+            "location": {
+              "text": "Sakhir",
+              "url": "https://en.wikipedia.org/wiki/Sakhir"
+            }
+          },
+          "race_date": {
+            "text": "21 April 2013",
+            "iso": "2013-04-21"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "12 May 2013",
+            "iso": "2013-05-12"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "26 May 2013",
+            "iso": "2013-05-26"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "9 June 2013",
+            "iso": "2013-06-09"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "30 June 2013",
+            "iso": "2013-06-30"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "7 July 2013",
+            "iso": "2013-07-07"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "28 July 2013",
+            "iso": "2013-07-28"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "25 August 2013",
+            "iso": "2013-08-25"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "8 September 2013",
+            "iso": "2013-09-08"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Singapore Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Marina Bay Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
+            },
+            "location": {
+              "text": "Singapore",
+              "url": "https://en.wikipedia.org/wiki/Singapore"
+            }
+          },
+          "race_date": {
+            "text": "22 September 2013",
+            "iso": "2013-09-22"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Korean Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Korean_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Korea International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Korea_International_Circuit"
+            },
+            "location": {
+              "text": "Yeongam",
+              "url": "https://en.wikipedia.org/wiki/Yeongam"
+            }
+          },
+          "race_date": {
+            "text": "6 October 2013",
+            "iso": "2013-10-06"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka Circuit",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+            },
+            "location": {
+              "text": "Suzuka",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "race_date": {
+            "text": "13 October 2013",
+            "iso": "2013-10-13"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Indian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Indian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Buddh International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Buddh_International_Circuit"
+            },
+            "location": {
+              "text": "Greater Noida",
+              "url": "https://en.wikipedia.org/wiki/Greater_Noida"
+            }
+          },
+          "race_date": {
+            "text": "27 October 2013",
+            "iso": "2013-10-27"
+          }
+        },
+        {
+          "round": 17,
+          "grand_prix": {
+            "text": "Abu Dhabi Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Abu_Dhabi_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Yas Marina Circuit",
+              "url": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit"
+            },
+            "location": {
+              "text": "Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+            }
+          },
+          "race_date": {
+            "text": "3 November 2013",
+            "iso": "2013-11-03"
+          }
+        },
+        {
+          "round": 18,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit of the Americas",
+              "url": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas"
+            },
+            "location": {
+              "text": "Austin, Texas",
+              "url": "https://en.wikipedia.org/wiki/Austin,_Texas"
+            }
+          },
+          "race_date": {
+            "text": "17 November 2013",
+            "iso": "2013-11-17"
+          }
+        },
+        {
+          "round": 19,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo José Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace"
+            },
+            "location": {
+              "text": "São Paulo",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+            }
+          },
+          "race_date": {
+            "text": "24 November 2013",
+            "iso": "2013-11-24"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

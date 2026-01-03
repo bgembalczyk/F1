@@ -789,7 +789,365 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "race_date": {
+            "text": "4 March 2001",
+            "iso": "2001-03-04"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Malaysian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Sepang International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Sepang_International_Circuit"
+            },
+            "location": {
+              "text": "Kuala Lumpur",
+              "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+            }
+          },
+          "race_date": {
+            "text": "18 March 2001",
+            "iso": "2001-03-18"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo José Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace"
+            },
+            "location": {
+              "text": "São Paulo",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+            }
+          },
+          "race_date": {
+            "text": "1 April 2001",
+            "iso": "2001-04-01"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "San Marino Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/San_Marino_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Enzo e Dino Ferrari",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+            },
+            "location": {
+              "text": "Imola",
+              "url": "https://en.wikipedia.org/wiki/Imola"
+            }
+          },
+          "race_date": {
+            "text": "15 April 2001",
+            "iso": "2001-04-15"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "29 April 2001",
+            "iso": "2001-04-29"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "A1-Ring",
+              "url": "https://en.wikipedia.org/wiki/A1-Ring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Austria"
+            }
+          },
+          "race_date": {
+            "text": "13 May 2001",
+            "iso": "2001-05-13"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "27 May 2001",
+            "iso": "2001-05-27"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "10 June 2001",
+            "iso": "2001-06-10"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "24 June 2001",
+            "iso": "2001-06-24"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Nevers Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours"
+            },
+            "location": {
+              "text": "Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Magny-Cours"
+            }
+          },
+          "race_date": {
+            "text": "1 July 2001",
+            "iso": "2001-07-01"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "15 July 2001",
+            "iso": "2001-07-15"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "29 July 2001",
+            "iso": "2001-07-29"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "19 August 2001",
+            "iso": "2001-08-19"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "2 September 2001",
+            "iso": "2001-09-02"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "16 September 2001",
+            "iso": "2001-09-16"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Indianapolis Motor Speedway",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+            },
+            "location": {
+              "text": "Speedway",
+              "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+            }
+          },
+          "race_date": {
+            "text": "30 September 2001",
+            "iso": "2001-09-30"
+          }
+        },
+        {
+          "round": 17,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka Circuit",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+            },
+            "location": {
+              "text": "Suzuka",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "race_date": {
+            "text": "14 October 2001",
+            "iso": "2001-10-14"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

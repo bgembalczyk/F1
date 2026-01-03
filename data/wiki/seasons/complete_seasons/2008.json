@@ -528,7 +528,386 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "race_date": {
+            "text": "16 March 2008",
+            "iso": "2008-03-16"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "Malaysian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Malaysian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Sepang International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Sepang_International_Circuit"
+            },
+            "location": {
+              "text": "Kuala Lumpur",
+              "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+            }
+          },
+          "race_date": {
+            "text": "23 March 2008",
+            "iso": "2008-03-23"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Bahrain Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Bahrain_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Bahrain International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+            },
+            "location": {
+              "text": "Sakhir",
+              "url": "https://en.wikipedia.org/wiki/Sakhir"
+            }
+          },
+          "race_date": {
+            "text": "6 April 2008",
+            "iso": "2008-04-06"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Catalunya",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+            },
+            "location": {
+              "text": "Montmeló",
+              "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
+            }
+          },
+          "race_date": {
+            "text": "27 April 2008",
+            "iso": "2008-04-27"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Turkish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Istanbul Park",
+              "url": "https://en.wikipedia.org/wiki/Istanbul_Park"
+            },
+            "location": {
+              "text": "Istanbul",
+              "url": "https://en.wikipedia.org/wiki/Istanbul"
+            }
+          },
+          "race_date": {
+            "text": "11 May 2008",
+            "iso": "2008-05-11"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "25 May 2008",
+            "iso": "2008-05-25"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "race_date": {
+            "text": "8 June 2008",
+            "iso": "2008-06-08"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Nevers Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours"
+            },
+            "location": {
+              "text": "Magny-Cours",
+              "url": "https://en.wikipedia.org/wiki/Magny-Cours"
+            }
+          },
+          "race_date": {
+            "text": "22 June 2008",
+            "iso": "2008-06-22"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Silverstone Circuit",
+              "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+            },
+            "location": {
+              "text": "Silverstone",
+              "url": "https://en.wikipedia.org/wiki/Silverstone"
+            }
+          },
+          "race_date": {
+            "text": "6 July 2008",
+            "iso": "2008-07-06"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hockenheimring",
+              "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+            },
+            "location": {
+              "text": "Hockenheim",
+              "url": "https://en.wikipedia.org/wiki/Hockenheim"
+            }
+          },
+          "race_date": {
+            "text": "20 July 2008",
+            "iso": "2008-07-20"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Hungarian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Hungarian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Hungaroring",
+              "url": "https://en.wikipedia.org/wiki/Hungaroring"
+            },
+            "location": {
+              "text": "Mogyoród",
+              "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
+            }
+          },
+          "race_date": {
+            "text": "3 August 2008",
+            "iso": "2008-08-03"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "European Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Valencia Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit"
+            },
+            "location": {
+              "text": "Valencia",
+              "url": "https://en.wikipedia.org/wiki/Valencia,_Spain"
+            }
+          },
+          "race_date": {
+            "text": "24 August 2008",
+            "iso": "2008-08-24"
+          }
+        },
+        {
+          "round": 13,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Spa-Francorchamps",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+            },
+            "location": {
+              "text": "Stavelot",
+              "url": "https://en.wikipedia.org/wiki/Stavelot"
+            }
+          },
+          "race_date": {
+            "text": "7 September 2008",
+            "iso": "2008-09-07"
+          }
+        },
+        {
+          "round": 14,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "14 September 2008",
+            "iso": "2008-09-14"
+          }
+        },
+        {
+          "round": 15,
+          "grand_prix": {
+            "text": "Singapore Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Marina Bay Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
+            },
+            "location": {
+              "text": "Singapore",
+              "url": "https://en.wikipedia.org/wiki/Singapore"
+            }
+          },
+          "race_date": {
+            "text": "28 September 2008",
+            "iso": "2008-09-28"
+          }
+        },
+        {
+          "round": 16,
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Fuji Speedway",
+              "url": "https://en.wikipedia.org/wiki/Fuji_Speedway"
+            },
+            "location": {
+              "text": "Oyama, Shizuoka",
+              "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
+            }
+          },
+          "race_date": {
+            "text": "12 October 2008",
+            "iso": "2008-10-12"
+          }
+        },
+        {
+          "round": 17,
+          "grand_prix": {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Shanghai International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
+            },
+            "location": {
+              "text": "Shanghai",
+              "url": "https://en.wikipedia.org/wiki/Shanghai"
+            }
+          },
+          "race_date": {
+            "text": "19 October 2008",
+            "iso": "2008-10-19"
+          }
+        },
+        {
+          "round": 18,
+          "grand_prix": {
+            "text": "Brazilian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo José Carlos Pace",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace"
+            },
+            "location": {
+              "text": "São Paulo",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
+            }
+          },
+          "race_date": {
+            "text": "2 November 2008",
+            "iso": "2008-11-02"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,

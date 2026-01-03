@@ -1548,7 +1548,260 @@
         }
       ],
       "free_practice_drivers": null,
-      "calendar": null,
+      "calendar": [
+        {
+          "round": 1,
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Oscar Alfredo Gálvez",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "race_date": {
+            "text": "23 January 1972",
+            "iso": "1972-01-23"
+          }
+        },
+        {
+          "round": 2,
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "race_date": {
+            "text": "4 March 1972",
+            "iso": "1972-03-04"
+          }
+        },
+        {
+          "round": 3,
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuito Permanente Del Jarama",
+              "url": "https://en.wikipedia.org/wiki/Circuito_Permanente_Del_Jarama"
+            },
+            "location": {
+              "text": "Madrid",
+              "url": "https://en.wikipedia.org/wiki/Madrid"
+            }
+          },
+          "race_date": {
+            "text": "1 May 1972",
+            "iso": "1972-05-01"
+          }
+        },
+        {
+          "round": 4,
+          "grand_prix": {
+            "text": "Monaco Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Monaco_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit de Monaco",
+              "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+            },
+            "location": {
+              "text": "Monte Carlo",
+              "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+            }
+          },
+          "race_date": {
+            "text": "14 May 1972",
+            "iso": "1972-05-14"
+          }
+        },
+        {
+          "round": 5,
+          "grand_prix": {
+            "text": "Belgian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Belgian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nivelles-Baulers",
+              "url": "https://en.wikipedia.org/wiki/Nivelles-Baulers"
+            },
+            "location": {
+              "text": "Nivelles",
+              "url": "https://en.wikipedia.org/wiki/Nivelles"
+            }
+          },
+          "race_date": {
+            "text": "4 June 1972",
+            "iso": "1972-06-04"
+          }
+        },
+        {
+          "round": 6,
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Charade Circuit",
+              "url": "https://en.wikipedia.org/wiki/Charade_Circuit"
+            },
+            "location": {
+              "text": "Clermont-Ferrand",
+              "url": "https://en.wikipedia.org/wiki/Clermont-Ferrand"
+            }
+          },
+          "race_date": {
+            "text": "2 July 1972",
+            "iso": "1972-07-02"
+          }
+        },
+        {
+          "round": 7,
+          "grand_prix": {
+            "text": "British Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/British_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Brands Hatch",
+              "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+            },
+            "location": {
+              "text": "Kent",
+              "url": "https://en.wikipedia.org/wiki/Kent"
+            }
+          },
+          "race_date": {
+            "text": "15 July 1972",
+            "iso": "1972-07-15"
+          }
+        },
+        {
+          "round": 8,
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "race_date": {
+            "text": "30 July 1972",
+            "iso": "1972-07-30"
+          }
+        },
+        {
+          "round": 9,
+          "grand_prix": {
+            "text": "Austrian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Austrian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Österreichring",
+              "url": "https://en.wikipedia.org/wiki/%C3%96sterreichring"
+            },
+            "location": {
+              "text": "Spielberg",
+              "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
+            }
+          },
+          "race_date": {
+            "text": "13 August 1972",
+            "iso": "1972-08-13"
+          }
+        },
+        {
+          "round": 10,
+          "grand_prix": {
+            "text": "Italian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autodromo Nazionale di Monza",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza"
+            },
+            "location": {
+              "text": "Monza",
+              "url": "https://en.wikipedia.org/wiki/Monza"
+            }
+          },
+          "race_date": {
+            "text": "10 September 1972",
+            "iso": "1972-09-10"
+          }
+        },
+        {
+          "round": 11,
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Mosport Park",
+              "url": "https://en.wikipedia.org/wiki/Mosport_Park"
+            },
+            "location": {
+              "text": "Bowmanville",
+              "url": "https://en.wikipedia.org/wiki/Bowmanville"
+            }
+          },
+          "race_date": {
+            "text": "24 September 1972",
+            "iso": "1972-09-24"
+          }
+        },
+        {
+          "round": 12,
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen International",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "race_date": {
+            "text": "8 October 1972",
+            "iso": "1972-10-08"
+          }
+        }
+      ],
       "results": [
         {
           "round": 1,
