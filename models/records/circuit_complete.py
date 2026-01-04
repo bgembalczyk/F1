@@ -1,7 +1,11 @@
 from typing import Any, TypedDict
 
+from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
+from validation.records import NestedSchema
+from validation.records import RecordSchema
 from validation.records import RecordValidator
 
 
@@ -20,26 +24,41 @@ class CircuitCompleteRecord(TypedDict, total=False):
     layouts: list[dict[str, Any]]
 
 
+CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
+    types={
+        "name": dict,
+        "url": str,
+        "circuit_status": str,
+        "type": str,
+        "direction": str,
+        "grands_prix": list,
+        "seasons": list,
+        "grands_prix_held": int,
+        "location": dict,
+        "fia_grade": str,
+        "history": list,
+        "layouts": list,
+    },
+    allow_none=(
+        "name",
+        "url",
+        "circuit_status",
+        "type",
+        "direction",
+        "grands_prix",
+        "seasons",
+        "grands_prix_held",
+        "location",
+        "fia_grade",
+        "history",
+        "layouts",
+    ),
+    nested={
+        "grands_prix": NestedSchema(LINK_SCHEMA, is_list=True),
+        "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
+    },
+)
+
+
 def validate_circuit_complete_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    errors.extend(RecordValidator.require_type(record, "name", dict, allow_none=True))
-    errors.extend(RecordValidator.require_type(record, "url", str, allow_none=True))
-    errors.extend(
-        RecordValidator.require_type(record, "circuit_status", str, allow_none=True)
-    )
-    errors.extend(RecordValidator.require_type(record, "type", str, allow_none=True))
-    errors.extend(RecordValidator.require_type(record, "direction", str, allow_none=True))
-    errors.extend(
-        RecordValidator.require_type(record, "grands_prix", list, allow_none=True)
-    )
-    errors.extend(RecordValidator.require_type(record, "seasons", list, allow_none=True))
-    errors.extend(
-        RecordValidator.require_type(record, "grands_prix_held", int, allow_none=True)
-    )
-    errors.extend(RecordValidator.require_type(record, "location", dict, allow_none=True))
-    errors.extend(
-        RecordValidator.require_type(record, "fia_grade", str, allow_none=True)
-    )
-    errors.extend(RecordValidator.require_type(record, "history", list, allow_none=True))
-    errors.extend(RecordValidator.require_type(record, "layouts", list, allow_none=True))
-    return errors
+    return RecordValidator.validate_schema(record, CIRCUIT_COMPLETE_SCHEMA)

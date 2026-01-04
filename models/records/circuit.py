@@ -1,7 +1,11 @@
 from typing import Any, Literal, TypedDict
 
+from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
+from validation.records import NestedSchema
+from validation.records import RecordSchema
 from validation.records import RecordValidator
 
 
@@ -20,28 +24,23 @@ class CircuitRecord(TypedDict, total=False):
     grands_prix_held: int | None
 
 
+CIRCUIT_SCHEMA = RecordSchema(
+    required=("circuit", "circuit_status", "country", "seasons"),
+    types={
+        "circuit": dict,
+        "circuit_status": str,
+        "country": (str, dict),
+        "seasons": list,
+        "grands_prix": list,
+    },
+    allow_none=("grands_prix",),
+    nested={
+        "circuit": NestedSchema(LINK_SCHEMA),
+        "grands_prix": NestedSchema(LINK_SCHEMA, is_list=True),
+        "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
+    },
+)
+
+
 def validate_circuit_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    errors.extend(
-        RecordValidator.require_keys(
-            record,
-            ["circuit", "circuit_status", "country", "seasons"],
-        )
-    )
-    errors.extend(RecordValidator.require_type(record, "circuit", dict))
-    errors.extend(RecordValidator.require_type(record, "circuit_status", str))
-    errors.extend(RecordValidator.require_type(record, "country", (str, dict)))
-    errors.extend(RecordValidator.require_type(record, "seasons", list))
-    errors.extend(
-        RecordValidator.require_type(record, "grands_prix", list, allow_none=True)
-    )
-
-    circuit = record.get("circuit")
-    if isinstance(circuit, dict):
-        errors.extend(RecordValidator.require_link_dict(circuit, "circuit"))
-
-    grands_prix = record.get("grands_prix")
-    if isinstance(grands_prix, list):
-        errors.extend(RecordValidator.require_link_list(grands_prix, "grands_prix"))
-
-    return errors
+    return RecordValidator.validate_schema(record, CIRCUIT_SCHEMA)

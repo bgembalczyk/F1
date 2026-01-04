@@ -1,5 +1,6 @@
 from typing import Any, TypedDict
 
+from validation.records import RecordSchema
 from validation.records import RecordValidator
 
 
@@ -9,9 +10,11 @@ class CircuitDetailsRecord(TypedDict):
     tables: list[dict[str, Any]]
 
 
+CIRCUIT_DETAILS_SCHEMA = RecordSchema(
+    required=("url", "infobox", "tables"),
+    types={"url": str, "infobox": dict, "tables": list},
+)
+
+
 def validate_circuit_details_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    errors.extend(RecordValidator.require_type(record, "url", str))
-    errors.extend(RecordValidator.require_type(record, "infobox", dict))
-    errors.extend(RecordValidator.require_type(record, "tables", list))
-    return errors
+    return RecordValidator.validate_schema(record, CIRCUIT_DETAILS_SCHEMA)

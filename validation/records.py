@@ -18,6 +18,21 @@ class QualityStats:
     types: dict[str, int] = field(default_factory=dict)
 
 
+@dataclass(frozen=True)
+class NestedSchema:
+    schema: "RecordSchema | Callable[[Mapping[str, Any]], Sequence[str]]"
+    is_list: bool = False
+
+
+@dataclass(frozen=True)
+class RecordSchema:
+    required: Sequence[str] = ()
+    types: Mapping[str, type | tuple[type, ...]] = field(default_factory=dict)
+    allow_none: Sequence[str] = ()
+    nested: Mapping[str, NestedSchema] = field(default_factory=dict)
+    custom_validators: Sequence[Callable[[Mapping[str, Any]], Sequence[str]]] = ()
+
+
 class RecordValidator(ABC):
     def __init__(self, record_factory: Callable[..., Any] | type | None = None) -> None:
         self.record_factory = record_factory
@@ -121,6 +136,111 @@ class RecordValidator(ABC):
             except Exception as exc:
                 return [f"validate failed: {exc}"]
         return []
+
+    @classmethod
+    def validate_schema(
+        cls, record: Mapping[str, Any], schema: RecordSchema | Mapping[str, Any]
+    ) -> list[str]:
+        normalized = cls._coerce_schema(schema)
+        errors: list[str] = []
+        errors.extend(cls.require_keys(record, normalized.required))
+        allow_none = set(normalized.allow_none)
+        for key, expected_types in normalized.types.items():
+            errors.extend(
+                cls.require_type(
+                    record,
+                    key,
+                    expected_types,
+                    allow_none=key in allow_none,
+                )
+            )
+        for key, nested_schema in normalized.nested.items():
+            if key not in record:
+                continue
+            value = record[key]
+            if value is None:
+                continue
+            errors.extend(cls._validate_nested_value(key, value, nested_schema))
+        for validator in normalized.custom_validators:
+            errors.extend([str(error) for error in validator(record)])
+        return errors
+
+    @classmethod
+    def _validate_nested_value(
+        cls, key: str, value: Any, nested_schema: NestedSchema
+    ) -> list[str]:
+        errors: list[str] = []
+        if nested_schema.is_list:
+            if not isinstance(value, list):
+                errors.append(
+                    f"Invalid type for {key}: expected list, got {type(value).__name__}"
+                )
+                return errors
+            for index, item in enumerate(value):
+                if not isinstance(item, Mapping):
+                    errors.append(f"{key}[{index}] must be a mapping")
+                    continue
+                errors.extend(
+                    cls._prefix_errors(
+                        cls._validate_nested_schema(item, nested_schema.schema),
+                        f"{key}[{index}]",
+                    )
+                )
+            return errors
+        if not isinstance(value, Mapping):
+            return [f"{key} must be a mapping"]
+        errors.extend(
+            cls._prefix_errors(
+                cls._validate_nested_schema(value, nested_schema.schema),
+                key,
+            )
+        )
+        return errors
+
+    @classmethod
+    def _validate_nested_schema(
+        cls,
+        record: Mapping[str, Any],
+        nested_schema: RecordSchema | Callable[[Mapping[str, Any]], Sequence[str]],
+    ) -> list[str]:
+        if isinstance(nested_schema, RecordSchema):
+            return cls.validate_schema(record, nested_schema)
+        return [str(error) for error in nested_schema(record)]
+
+    @staticmethod
+    def _prefix_errors(errors: Sequence[str], prefix: str) -> list[str]:
+        prefixed: list[str] = []
+        for error in errors:
+            if error.startswith("Missing key: "):
+                key = error.replace("Missing key: ", "", 1).strip()
+                prefixed.append(f"Missing key: {prefix}.{key}")
+            elif error.startswith("Null value for: "):
+                key = error.replace("Null value for: ", "", 1).strip()
+                prefixed.append(f"Null value for: {prefix}.{key}")
+            elif error.startswith("Invalid type for "):
+                suffix = error.replace("Invalid type for ", "", 1)
+                if ":" in suffix:
+                    field, details = suffix.split(":", 1)
+                    prefixed.append(
+                        f"Invalid type for {prefix}.{field.strip()}:{details}"
+                    )
+                else:
+                    prefixed.append(f"Invalid type for {prefix}.{suffix}")
+            else:
+                prefixed.append(f"{prefix}.{error}")
+        return prefixed
+
+    @staticmethod
+    def _coerce_schema(schema: RecordSchema | Mapping[str, Any]) -> RecordSchema:
+        if isinstance(schema, RecordSchema):
+            return schema
+        return RecordSchema(
+            required=schema.get("required", ()),
+            types=schema.get("types", {}),
+            allow_none=schema.get("allow_none", ()),
+            nested=schema.get("nested", {}),
+            custom_validators=schema.get("custom_validators", ()),
+        )
 
     @staticmethod
     def require_keys(record: Mapping[str, Any], keys: Sequence[str]) -> list[str]:
