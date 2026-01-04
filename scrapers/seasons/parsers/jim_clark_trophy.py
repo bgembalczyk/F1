@@ -35,7 +35,7 @@ class JimClarkTrophyParser:
         
         # Tworzymy kolumnę dla kierowcy z obsługą marku *
         driver_with_mark = MultiColumn(
-            columns={
+            subcolumns={
                 "driver": DriverColumn(),
                 "insufficient_events_mark": EnumMarksColumn(
                     mapping={"*": True},

@@ -35,7 +35,7 @@ class ColinChapmanTrophyParser:
         
         # Tworzymy kolumnę dla konstruktora z obsługą marku *
         constructor_with_mark = MultiColumn(
-            columns={
+            subcolumns={
                 "constructor": ConstructorColumn(),
                 "single_car_entry_mark": EnumMarksColumn(
                     mapping={"*": True},
