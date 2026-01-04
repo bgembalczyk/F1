@@ -170,7 +170,7 @@ class RaceResultColumn(BaseColumn):
 
         if "*" in marks and background == "Other classified position":
             result["points_eligible"] = False
-            # Note: Don't add redundant note - points_eligible=false is sufficient
+            # Note: Don't add redundant note - points_eligible=False is sufficient
         if "~" in marks:
             result["points_eligible"] = False
             self._append_note(result, "shared_drive_no_points")
