@@ -12,6 +12,7 @@ from infrastructure.http_client.interfaces.http_client_protocol import (
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import default_http_policy
+from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.cache_adapter import CacheAdapter
@@ -41,6 +42,7 @@ class ScraperOptions:
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
     run_id: str | None = None
     transformers: list[RecordTransformer] | None = None
+    post_processors: list[RecordPostProcessor] | None = None
     quality_report: bool = False
     error_report: bool = False
 
@@ -49,6 +51,8 @@ class ScraperOptions:
             self.policy = default_http_policy()
         if self.transformers is None:
             self.transformers = []
+        if self.post_processors is None:
+            self.post_processors = []
 
     def to_http_policy(self) -> HttpPolicy:
         if self.policy is not None:

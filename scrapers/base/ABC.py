@@ -14,6 +14,7 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.post_processors import apply_post_processors
 from scrapers.base.transformers import apply_transformers
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.errors import (
@@ -66,6 +67,7 @@ class F1Scraper(ABC):
             normalize_empty_values=self.normalize_empty_values,
         )
         self.transformers = build_transformers(options.transformers)
+        self.post_processors = list(options.post_processors or [])
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(
             logger=self.logger,
@@ -242,8 +244,17 @@ class F1Scraper(ABC):
         return records
 
     def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        self.logger.debug("Post-process records: %d -> %d", len(records), len(records))
-        return records
+        processed = apply_post_processors(
+            self.post_processors,
+            records,
+            logger=self.logger,
+        )
+        self.logger.debug(
+            "Post-process records: %d -> %d",
+            len(records),
+            len(processed),
+        )
+        return processed
 
     def validate_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
         if self.validator is None:
