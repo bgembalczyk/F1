@@ -16,6 +16,7 @@ class ScrapeResult:
     data: List[ExportRecord]
     source_url: Optional[str]
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    metadata: dict | None = None
 
     def _with_normalized_data(
         self,
@@ -36,6 +37,7 @@ class ScrapeResult:
             data=normalized,
             source_url=self.source_url,
             timestamp=self.timestamp,
+            metadata=self.metadata,
         )
 
     def to_json(

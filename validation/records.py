@@ -86,9 +86,13 @@ class RecordValidator(ABC):
             return error.split(" must be ", 1)[0].strip() or None
         return None
 
-    def build_quality_report(self) -> dict[str, Any]:
+    def build_quality_report(
+        self,
+        *,
+        metadata: Mapping[str, Any] | None = None,
+    ) -> dict[str, Any]:
         accepted = self._stats.total_records - self._stats.rejected_records
-        return {
+        report = {
             "summary": {
                 "total_records": self._stats.total_records,
                 "accepted_records": accepted,
@@ -97,12 +101,25 @@ class RecordValidator(ABC):
             "missing": dict(sorted(self._stats.missing.items())),
             "types": dict(sorted(self._stats.types.items())),
         }
+        if metadata:
+            report["meta"] = dict(metadata)
+        return report
 
-    def write_quality_report(self, debug_dir: Path) -> Path:
+    def write_quality_report(
+        self,
+        debug_dir: Path,
+        *,
+        metadata: Mapping[str, Any] | None = None,
+    ) -> Path:
         debug_dir.mkdir(parents=True, exist_ok=True)
         report_path = debug_dir / "quality_report.json"
         with report_path.open("w", encoding="utf-8") as handle:
-            json.dump(self.build_quality_report(), handle, ensure_ascii=False, indent=2)
+            json.dump(
+                self.build_quality_report(metadata=metadata),
+                handle,
+                ensure_ascii=False,
+                indent=2,
+            )
             handle.write("\n")
         return report_path
 

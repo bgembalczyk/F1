@@ -1,6 +1,8 @@
 from abc import ABC
+from contextlib import contextmanager
 from pathlib import Path
-from typing import Callable, List, Optional, Sequence, TypeVar
+from time import perf_counter
+from typing import Callable, Dict, List, Optional, Sequence, TypeVar
 from uuid import uuid4
 
 from bs4 import BeautifulSoup
@@ -26,6 +28,35 @@ from validation.records import ExportRecord
 from validation.records import RecordValidator
 
 T = TypeVar("T")
+
+
+class ScrapeTimer:
+    def __init__(
+        self,
+        *,
+        logger,
+        run_id: str,
+        metadata: Dict[str, object],
+    ) -> None:
+        self.logger = logger
+        self.run_id = run_id
+        self.metadata = metadata
+        self.timings: Dict[str, float] = self.metadata.setdefault("timings", {})
+
+    @contextmanager
+    def stage(self, name: str):
+        start = perf_counter()
+        try:
+            yield
+        finally:
+            elapsed = perf_counter() - start
+            self.timings[name] = elapsed
+            self.logger.debug(
+                "Scrape run %s: %s took %.3fs",
+                self.run_id,
+                name,
+                elapsed,
+            )
 
 
 class F1Scraper(ABC):
@@ -75,6 +106,7 @@ class F1Scraper(ABC):
         self._run_id: str | None = options.run_id
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
+        self._scrape_metadata: Dict[str, object] = {}
 
         self.validator: RecordValidator | None = options.validator or getattr(
             self, "default_validator", None
@@ -113,11 +145,18 @@ class F1Scraper(ABC):
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
         self._error_handler.set_run_id(run_id)
+        self._reset_metadata(run_id)
+        timer = ScrapeTimer(
+            logger=self.logger,
+            run_id=run_id,
+            metadata=self._scrape_metadata,
+        )
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
 
         try:
             self.logger.debug("Scrape run %s: start download", run_id)
-            html = self._download()
+            with timer.stage("download"):
+                html = self._download()
             self.logger.debug("Scrape run %s: finish download", run_id)
         except Exception as exc:
             error: Exception
@@ -136,20 +175,31 @@ class F1Scraper(ABC):
             soup = BeautifulSoup(html, "html.parser")
 
             self.logger.debug("Scrape run %s: start parse", run_id)
-            raw_records = self.parse(soup)
+            with timer.stage("parse"):
+                raw_records = list(self.parse(soup))
             self.logger.debug("Scrape run %s: finish parse", run_id)
+            self._log_record_count("parse", len(raw_records))
 
             self.logger.debug("Scrape run %s: start normalize", run_id)
-            normalized_records = self._record_normalizer.normalize(list(raw_records))
+            with timer.stage("normalize"):
+                normalized_records = self._record_normalizer.normalize(raw_records)
             self.logger.debug("Scrape run %s: finish normalize", run_id)
+            self._log_record_count("normalize", len(normalized_records))
+
             self.logger.debug("Scrape run %s: start transform", run_id)
-            transformed_records = self._apply_transformers(normalized_records)
+            with timer.stage("transform"):
+                transformed_records = self._apply_transformers(normalized_records)
             self.logger.debug("Scrape run %s: finish transform", run_id)
+            self._log_record_count("transform", len(transformed_records))
+
             self.logger.debug("Scrape run %s: start validate", run_id)
-            validated_records = self.validate_records(transformed_records)
+            with timer.stage("validate"):
+                validated_records = self.validate_records(transformed_records)
             self.logger.debug("Scrape run %s: finish validate", run_id)
+
             self.logger.debug("Scrape run %s: start post-process", run_id)
-            self._data = self.post_process_records(validated_records)
+            with timer.stage("post_process"):
+                self._data = self.post_process_records(validated_records)
             self.logger.debug("Scrape run %s: finish post-process", run_id)
         except Exception as exc:
             error = (
@@ -176,6 +226,7 @@ class F1Scraper(ABC):
         return ScrapeResult(
             data=data if data is not None else self.get_data(),
             source_url=getattr(self, "url", None),
+            metadata=self._scrape_metadata or None,
         )
 
     # ---------- Eksport (delegowany) ----------
@@ -246,6 +297,7 @@ class F1Scraper(ABC):
 
     def validate_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
         if self.validator is None:
+            self._log_record_count("validate", len(records))
             return records
 
         self.validator.reset_stats()
@@ -303,6 +355,7 @@ class F1Scraper(ABC):
                 len(valid_records),
             )
 
+        self._log_record_count("validate", len(valid_records))
         self._write_quality_report()
         return valid_records
 
@@ -313,7 +366,10 @@ class F1Scraper(ABC):
             or self.validator is None
         ):
             return
-        report_path = self.validator.write_quality_report(self.debug_dir)
+        report_path = self.validator.write_quality_report(
+            self.debug_dir,
+            metadata=self._scrape_metadata or None,
+        )
         self.logger.info("Saved quality report: %s", report_path)
 
     def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
@@ -324,6 +380,24 @@ class F1Scraper(ABC):
 
     def _full_url(self, href: str) -> str | None:
         return normalize_url(self.url, href)
+
+    def _reset_metadata(self, run_id: str) -> None:
+        self._scrape_metadata = {
+            "run_id": run_id,
+            "record_counts": {},
+            "timings": {},
+        }
+
+    def _log_record_count(self, stage: str, count: int) -> None:
+        record_counts = self._scrape_metadata.setdefault("record_counts", {})
+        if isinstance(record_counts, dict):
+            record_counts[stage] = count
+        self.logger.info(
+            "Scrape run %s: records after %s: %d",
+            self._run_id,
+            stage,
+            count,
+        )
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
         policy = options.policy

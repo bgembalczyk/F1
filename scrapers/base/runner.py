@@ -7,7 +7,6 @@ from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
 from scrapers.base.ABC import F1Scraper
 
@@ -34,10 +33,7 @@ class ScraperRunner:
         scraper_logger = getattr(scraper, "logger", run_logger)
         scraper_logger.info("Pobrano rekordów: %s (run_id=%s)", len(data), run_id)
 
-        result = ScrapeResult(
-            data=data,
-            source_url=getattr(scraper, "url", None),
-        )
+        result = scraper.build_result(data=data)
 
         output_dir = Path(self._run_config.output_dir)
         json_path = output_dir / Path(json_rel)
