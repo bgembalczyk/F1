@@ -7,11 +7,11 @@ from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
-from validation.records import ExportRecord
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers import RecordTransformer
-from scrapers.grands_prix.transformers.failed_to_make_restart import FailedToMakeRestartTransformer
+from scrapers.base.transformers.failed_to_make_restart import (
+    FailedToMakeRestartTransformer,
+)
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):

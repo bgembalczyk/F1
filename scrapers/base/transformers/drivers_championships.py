@@ -2,9 +2,10 @@ from typing import Any
 from typing import List
 
 from models.records.driver_championships import DriversChampionshipsRecord
-from validation.records import ExportRecord
-from scrapers.base.transformers import RecordTransformer
 from models.services.driver_service import DriverService
+from scrapers.base.transformers.record_transformer import RecordTransformer
+from validation.records import ExportRecord
+
 
 class DriversChampionshipsTransformer(RecordTransformer):
     @staticmethod
@@ -24,5 +25,4 @@ class DriversChampionshipsTransformer(RecordTransformer):
             champs_raw = row.get("drivers_championships")
             row["drivers_championships"] = self._parse_drivers_championships(champs_raw)
         return records
-
 

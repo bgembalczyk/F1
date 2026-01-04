@@ -1,7 +1,7 @@
 from typing import List
 
+from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
-from scrapers.base.transformers import RecordTransformer
 
 
 class FailedToMakeRestartTransformer(RecordTransformer):
@@ -16,5 +16,4 @@ class FailedToMakeRestartTransformer(RecordTransformer):
                 "reason": reason,
             }
         return records
-
 

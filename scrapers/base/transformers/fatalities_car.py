@@ -1,7 +1,7 @@
 from typing import List
 
+from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
-from scrapers.base.transformers import RecordTransformer
 
 
 class FatalitiesCarTransformer(RecordTransformer):
@@ -20,5 +20,4 @@ class FatalitiesCarTransformer(RecordTransformer):
                     "formula_category": formula_category,
                 }
         return records  # type: ignore[return-value]
-
 
