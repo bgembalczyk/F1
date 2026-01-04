@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional, Tuple
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
-from scrapers.circuits.helpers.lap_record import extract_time
-from scrapers.circuits.helpers.lap_record import select_details_paren
+from scrapers.circuits.parsers.lap_record import extract_time
+from scrapers.circuits.parsers.lap_record import select_details_paren
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 from scrapers.circuits.models.services.lap_record_merging import merge_two_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record

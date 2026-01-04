@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.validators import is_circuit_like_article
 from scrapers.circuits.single_scraper import (
     F1SingleCircuitScraper,
     detect_layout_name,

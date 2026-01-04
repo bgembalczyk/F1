@@ -10,7 +10,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
-from scrapers.grands_prix.validator import GrandsPrixRecordValidator
+from scrapers.grands_prix.validators import GrandsPrixRecordValidator
 
 
 class GrandsPrixListScraper(F1TableScraper):

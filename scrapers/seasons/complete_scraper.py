@@ -51,7 +51,7 @@ class CompleteSeasonScraper(F1Scraper):
 
 
 if __name__ == "__main__":
-    from scrapers.seasons.helpers import export_complete_seasons
+    from scrapers.seasons.parsers.export import export_complete_seasons
 
     export_complete_seasons(
         output_dir=Path("../../data/wiki/seasons/complete_seasons"),

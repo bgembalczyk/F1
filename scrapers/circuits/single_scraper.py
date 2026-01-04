@@ -8,10 +8,10 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.ABC import F1Scraper
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.helpers.lap_record import collect_lap_records
-from scrapers.circuits.helpers.lap_record import is_lap_record_table
-from scrapers.circuits.helpers.layout import detect_layout_name
+from scrapers.circuits.parsers import collect_lap_records
+from scrapers.circuits.parsers import detect_layout_name
+from scrapers.circuits.parsers import is_lap_record_table
+from scrapers.circuits.validators import is_circuit_like_article
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 
 

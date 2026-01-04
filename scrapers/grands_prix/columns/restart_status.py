@@ -3,7 +3,7 @@ from typing import Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.grands_prix.helpers.restart_status import restart_status
+from scrapers.grands_prix.parsers import restart_status
 
 
 class RestartStatusColumn(BaseColumn):

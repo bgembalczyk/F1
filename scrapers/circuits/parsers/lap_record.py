@@ -8,8 +8,8 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.circuits.helpers.logger import logger
-from scrapers.circuits.helpers.layout import layout_from_spanning_header
+from scrapers.circuits.parsers.logger import logger
+from scrapers.circuits.parsers.layout import layout_from_spanning_header
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
 
