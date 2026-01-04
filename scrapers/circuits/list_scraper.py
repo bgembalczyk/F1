@@ -2,6 +2,10 @@ from pathlib import Path
 
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
+from scrapers.base.helpers.config_factory import (
+    ScraperCommonConfig,
+    build_table_config,
+)
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -36,9 +40,14 @@ class CircuitsListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.validation_mode = "soft"
-        options.normalize_empty_values = False
+        options = build_table_config(
+            options,
+            config=ScraperCommonConfig(
+                include_urls=True,
+                normalize_empty_values=False,
+                validation_mode="soft",
+            ),
+        )
         super().__init__(options=options, config=config)
 
 
