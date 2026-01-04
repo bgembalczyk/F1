@@ -19,6 +19,12 @@ def test_validate_link_accepts_none_payload():
     assert link == {"text": "", "url": None}
 
 
+def test_validate_link_accepts_empty_payload():
+    link = validate_link({"text": " ", "url": ""}, field_name="link")
+
+    assert link == {"text": "", "url": None}
+
+
 def test_validate_link_rejects_invalid_url():
     with pytest.raises(ValueError, match="nieprawidłowy URL"):
         validate_link({"text": "Bad", "url": "notaurl"}, field_name="link")
@@ -37,6 +43,10 @@ def test_validate_seasons_filters_empty_and_coerces():
         {"year": 2020, "url": "https://example.com"},
         {"year": 2021},
     ]
+
+
+def test_validate_seasons_handles_empty_input():
+    assert validate_seasons(None) == []
 
 
 def test_validate_status_normalizes_case():

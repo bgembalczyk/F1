@@ -11,7 +11,25 @@ from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
 from scrapers.base.results import ScrapeResult
 
 
-def test_json_formatter_includes_metadata() -> None:
+def test_json_formatter_without_metadata() -> None:
+    formatter = JsonFormatter()
+    data = [{"name": "Ayrton", "wins": 41}]
+
+    payload = formatter.format(data, indent=2, include_metadata=False)
+
+    assert json.loads(payload) == data
+
+
+def test_json_formatter_handles_empty_data() -> None:
+    formatter = JsonFormatter()
+    data = []
+
+    payload = formatter.format(data, indent=2, include_metadata=False)
+
+    assert json.loads(payload) == []
+
+
+def test_json_formatter_with_metadata() -> None:
     formatter = JsonFormatter()
     result = ScrapeResult(
         data=[{"name": "Ayrton", "wins": 41}],
@@ -61,6 +79,14 @@ def test_metadata_is_consistent_between_json_and_csv() -> None:
     csv_meta = json.loads(csv_payload.splitlines()[0].replace("# meta: ", ""))
 
     assert json_payload["meta"] == csv_meta
+
+
+def test_csv_formatter_handles_empty_data() -> None:
+    formatter = CsvFormatter()
+
+    payload = formatter.format([])
+
+    assert payload == ""
 
 
 def test_dataframe_formatter_handles_optional_dependency() -> None:

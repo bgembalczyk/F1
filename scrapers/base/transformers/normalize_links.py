@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any, Iterable
 
 from scrapers.base.helpers.links import normalize_links, normalize_single_link
+from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
 
@@ -29,7 +30,9 @@ class NormalizeLinksTransformer(RecordTransformer):
         drop_empty: bool = True,
         strip_marks: bool = True,
         strip_lang_suffix: bool = True,
+        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
+        super().__init__(empty_value_policy=empty_value_policy)
         self.drop_empty = drop_empty
         self.strip_marks = strip_marks
         self.strip_lang_suffix = strip_lang_suffix
