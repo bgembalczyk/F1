@@ -5,15 +5,13 @@ from typing import List
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.config import ScraperConfig
-from scrapers.seasons.columns.race_result import RaceResultColumn
+from scrapers.seasons.columns.jim_clark_race_result import JimClarkRaceResultColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
@@ -30,24 +28,13 @@ class JimClarkTrophyParser:
         
         Table is identical to World Drivers' Championship standings,
         with one exception:
-        - Mark * means: "competed in insufficient events to be eligible for points"
+        - Mark * at race result means: "competed in insufficient events to be eligible for points"
         """
-        
-        # Create column for driver with * mark support
-        driver_with_mark = MultiColumn(
-            subcolumns={
-                "driver": DriverColumn(),
-                "insufficient_events_mark": EnumMarksColumn(
-                    mapping={"*": True},
-                    default=False
-                ),
-            }
-        )
         
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
             column("Pos", "pos", PositionColumn()),
-            column("Driver", "driver_data", driver_with_mark),
+            column("Driver", "driver", DriverColumn()),
             column("Points", "points", PointsColumn()),
             column("Pts.", "points", PointsColumn()),
             column("Pts", "points", PointsColumn()),
@@ -60,7 +47,7 @@ class JimClarkTrophyParser:
             section_id="Jim_Clark_Trophy",
             expected_headers=["Driver"],
             schema=TableSchemaDSL(columns=schema_columns),
-            default_column=RaceResultColumn(season_year=season_year),
+            default_column=JimClarkRaceResultColumn(season_year=season_year),
             record_factory=record_from_mapping,
         )
         
@@ -71,14 +58,6 @@ class JimClarkTrophyParser:
         
         try:
             records = scraper.parse(soup)
-            # Transform driver_data to driver and add insufficient_events field
-            for record in records:
-                if "driver_data" in record:
-                    driver_data = record.pop("driver_data")
-                    if isinstance(driver_data, dict):
-                        record["driver"] = driver_data.get("driver")
-                        if driver_data.get("insufficient_events_mark"):
-                            record["insufficient_events"] = True
             return records
         except RuntimeError:
             return []
