@@ -57,7 +57,7 @@ class InfoboxTitlesParser:
             if not isinstance(label_cell, Tag) or not isinstance(value_cell, Tag):
                 continue
             series_links = self._link_extractor.extract_title_links(value_cell)
-            year_data = self._link_extractor.extract_year_range_links(label_cell)
+            year_data = self._link_extractor.extract_year_list_with_links(label_cell)
             
             if (
                 series_links
