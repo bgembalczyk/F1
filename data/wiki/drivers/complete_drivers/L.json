@@ -79,7 +79,16 @@
         "general": {
           "born": {
             "date": "1943-11-21",
-            "place": null
+            "place": [
+              {
+                "text": "Paris",
+                "url": "https://en.wikipedia.org/wiki/Paris"
+              },
+              {
+                "text": "Nazi-occupied France",
+                "url": "https://en.wikipedia.org/wiki/Nazi-occupied_France"
+              }
+            ]
           },
           "children": [
             {
@@ -245,25 +254,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1977 Swedish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 Swedish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1977 Swedish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1981 Canadian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1981 Canadian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1981 Canadian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -367,17 +374,19 @@
                 "label": "Best finish",
                 "value": {
                   "result": "8th",
-                  "season": {
-                    "text": "1974",
-                    "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1974",
+                      "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -8732,19 +8741,21 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1988",
-                    "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1988",
+                      "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "1 ( 1988 )",
-                  "links": [
+                  "count": 1,
+                  "wins": [
                     {
-                      "text": "1988",
+                      "year": 1988,
                       "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
                     }
                   ]
@@ -26334,7 +26345,14 @@
         "general": {
           "born": {
             "date": "1964-03-19",
-            "place": null
+            "place": [
+              {
+                "text": "Lido di Camaiore",
+                "url": "https://en.wikipedia.org/wiki/Lido_di_Camaiore"
+              },
+              "Tuscany",
+              "Italy"
+            ]
           }
         },
         "championship_titles": [],
@@ -26563,10 +26581,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "5th",
-                  "season": {
-                    "text": "2007",
-                    "url": "https://en.wikipedia.org/wiki/2007_World_Touring_Car_Championship"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2007",
+                      "url": "https://en.wikipedia.org/wiki/2007_World_Touring_Car_Championship"
+                    }
+                  ]
                 }
               },
               {
@@ -26641,10 +26661,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "2nd",
-                  "season": {
-                    "text": "2001",
-                    "url": "https://en.wikipedia.org/wiki/2001_European_Super_Touring_Championship"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2001",
+                      "url": "https://en.wikipedia.org/wiki/2001_European_Super_Touring_Championship"
+                    }
+                  ]
                 }
               },
               {
@@ -26793,10 +26815,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1992",
-                    "url": "https://en.wikipedia.org/wiki/1992_Italian_Superturismo_Championship"
-                  },
+                  "seasons": [
+                    {
+                      "text": "1992",
+                      "url": "https://en.wikipedia.org/wiki/1992_Italian_Superturismo_Championship"
+                    }
+                  ],
                   "class": {
                     "text": "S1",
                     "url": "https://en.wikipedia.org/wiki/Group_A"
@@ -40556,7 +40580,11 @@
         "general": {
           "born": {
             "date": "1923-01-21",
-            "place": null
+            "place": [
+              "Grand Prairie",
+              "Texas",
+              "U.S."
+            ]
           },
           "died": {
             "date": "June 11, 1966 Reading, Pennsylvania , U.S.",
@@ -40628,90 +40656,80 @@
                 "label": "Best finish",
                 "value": {
                   "result": "4th-1958",
-                  "season": {
-                    "text": "1958",
-                    "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1958",
+                      "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1956 Hoosier Hundred ( ISF )",
-                  "links": [
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Hoosier Hundred",
-                      "url": "https://en.wikipedia.org/wiki/Hoosier_Hundred"
-                    },
-                    {
-                      "text": "ISF",
-                      "url": "https://en.wikipedia.org/wiki/Indiana_State_Fairgrounds"
-                    }
-                  ]
+                  "season": {
+                    "text": "1956",
+                    "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Hoosier Hundred",
+                    "url": "https://en.wikipedia.org/wiki/Hoosier_Hundred"
+                  },
+                  "circuit": {
+                    "text": "ISF",
+                    "url": "https://en.wikipedia.org/wiki/Indiana_State_Fairgrounds"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1965 Bobby Ball Memorial ( Phoenix )",
-                  "links": [
-                    {
-                      "text": "1965",
-                      "url": "https://en.wikipedia.org/wiki/1965_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Bobby Ball Memorial",
-                      "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
-                    },
-                    {
-                      "text": "Phoenix",
-                      "url": "https://en.wikipedia.org/wiki/Phoenix_Raceway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1965",
+                    "url": "https://en.wikipedia.org/wiki/1965_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Bobby Ball Memorial",
+                    "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
+                  },
+                  "circuit": {
+                    "text": "Phoenix",
+                    "url": "https://en.wikipedia.org/wiki/Phoenix_Raceway"
+                  }
                 }
               },
               {
                 "label": "First win",
                 "value": {
-                  "text": "1956 Golden State 100 ( Sacramento )",
-                  "links": [
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Golden State 100",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    },
-                    {
-                      "text": "Sacramento",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    }
-                  ]
+                  "season": {
+                    "text": "1956",
+                    "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Golden State 100",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  },
+                  "circuit": {
+                    "text": "Sacramento",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  }
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1958 Bobby Ball Memorial ( ASF )",
-                  "links": [
-                    {
-                      "text": "1958",
-                      "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Bobby Ball Memorial",
-                      "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
-                    },
-                    {
-                      "text": "ASF",
-                      "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
-                    }
-                  ]
+                  "season": {
+                    "text": "1958",
+                    "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Bobby Ball Memorial",
+                    "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
+                  },
+                  "circuit": {
+                    "text": "ASF",
+                    "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
+                  }
                 }
               },
               {
@@ -40723,20 +40741,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "5",
-                        "12",
-                        "9"
-                      ]
-                    ]
-                  }
+                  "wins": 5,
+                  "podiums": 12,
+                  "poles": 9
                 }
               },
               {
@@ -40902,7 +40909,14 @@
         "general": {
           "born": {
             "date": "1995-06-29",
-            "place": null
+            "place": [
+              {
+                "text": "Montreal",
+                "url": "https://en.wikipedia.org/wiki/Montreal"
+              },
+              "Quebec",
+              "Canada"
+            ]
           },
           "parents": [
             {
@@ -41045,36 +41059,120 @@
             },
             "years": [
               {
-                "year": 2012,
-                "url": "https://en.wikipedia.org/wiki/2012_Italian_Formula_Three_Championship"
-              },
-              {
-                "year": 2013,
-                "url": "https://en.wikipedia.org/wiki/2013_British_Formula_3_International_Series"
-              },
-              {
-                "year": 2014,
-                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
-              },
-              {
-                "year": 2015,
-                "url": "https://en.wikipedia.org/wiki/2015_Porsche_Carrera_Cup_Great_Britain"
-              },
-              {
-                "year": 2016,
-                "url": "https://en.wikipedia.org/wiki/2016_GP2_Series"
-              },
-              {
                 "year": 2017,
                 "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
               },
               {
                 "year": 2018,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
               },
               {
                 "year": 2019,
                 "url": "https://en.wikipedia.org/wiki/2019_Formula_2_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP2 Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "years": [
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_GP2_Series"
+              },
+              {
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_GP2_Series"
+              },
+              {
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_GP2_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_3.5"
+            },
+            "years": [
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_3.5_Series"
+              },
+              {
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Formula_Renault_3.5_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Porsche Carrera Cup GB",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup_GB"
+            },
+            "years": [
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Porsche_Carrera_Cup_Great_Britain"
+              },
+              {
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Porsche_Carrera_Cup_Great_Britain"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA F3 European",
+              "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
+            },
+            "years": [
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_FIA_Formula_3_European_Championship"
+              },
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Toyota Racing Series",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Racing_Series"
+            },
+            "years": [
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_Toyota_Racing_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_F3"
+            },
+            "years": [
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_British_Formula_3_International_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian F3",
+              "url": "https://en.wikipedia.org/wiki/Italian_F3"
+            },
+            "years": [
+              {
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_Italian_Formula_Three_Championship"
               }
             ]
           },
@@ -47504,7 +47602,16 @@
         "general": {
           "born": {
             "date": "1949-02-22",
-            "place": null
+            "place": [
+              {
+                "text": "Vienna",
+                "url": "https://en.wikipedia.org/wiki/Vienna"
+              },
+              {
+                "text": "Allied-occupied Austria",
+                "url": "https://en.wikipedia.org/wiki/Allied-occupied_Austria"
+              }
+            ]
           },
           "died": {
             "date": "20 May 2019 Zürich , Switzerland",
@@ -47682,25 +47789,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1974 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_Spanish_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1974 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_Spanish_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1985 Dutch Grand Prix",
-                  "links": [
-                    {
-                      "text": "1985 Dutch Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1985 Dutch Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -55962,7 +56067,13 @@
         "general": {
           "born": {
             "date": "2002-02-11",
-            "place": null
+            "place": [
+              {
+                "text": "Hastings",
+                "url": "https://en.wikipedia.org/wiki/Hastings,_New_Zealand"
+              },
+              "New Zealand"
+            ]
           }
         },
         "championship_titles": [
@@ -56125,36 +56236,132 @@
             },
             "years": [
               {
+                "year": 2023,
+                "url": "https://en.wikipedia.org/wiki/2023_Super_Formula_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA Formula 2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2"
+            },
+            "years": [
+              {
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+              },
+              {
+                "year": 2022,
+                "url": "https://en.wikipedia.org/wiki/2022_Formula_2_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            },
+            "years": [
+              {
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Deutsche_Tourenwagen_Masters"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA Formula 3",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_3"
+            },
+            "years": [
+              {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_FIA_Formula_3_Championship"
+              },
+              {
+                "year": 2020,
+                "url": "https://en.wikipedia.org/wiki/2020_FIA_Formula_3_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Toyota Racing Series",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Racing_Series"
+            },
+            "years": [
+              {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Toyota_Racing_Series"
+              },
+              {
+                "year": 2020,
+                "url": "https://en.wikipedia.org/wiki/2020_Toyota_Racing_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Euroformula Open",
+              "url": "https://en.wikipedia.org/wiki/Euroformula_Open"
+            },
+            "years": [
+              {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Euroformula_Open_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "F3 Asian",
+              "url": "https://en.wikipedia.org/wiki/F3_Asian"
+            },
+            "years": [
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_F3_Asian_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC F4",
+              "url": "https://en.wikipedia.org/wiki/ADAC_F4"
+            },
+            "years": [
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_ADAC_Formula_4_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Australian F4",
+              "url": "https://en.wikipedia.org/wiki/Australian_F4"
+            },
+            "years": [
+              {
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Australian_Formula_4_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "New Zealand FFord",
+              "url": "https://en.wikipedia.org/wiki/New_Zealand_FFord"
+            },
+            "years": [
+              {
                 "year": 2016,
                 "url": null
               },
               {
                 "year": 2017,
-                "url": "https://en.wikipedia.org/wiki/2017_Australian_Formula_4_Championship"
-              },
-              {
-                "year": 2018,
-                "url": "https://en.wikipedia.org/wiki/2018_ADAC_Formula_4_Championship"
-              },
-              {
-                "year": 2019,
-                "url": "https://en.wikipedia.org/wiki/2019_Euroformula_Open_Championship"
-              },
-              {
-                "year": 2020,
-                "url": "https://en.wikipedia.org/wiki/2020_Toyota_Racing_Series"
-              },
-              {
-                "year": 2021,
-                "url": "https://en.wikipedia.org/wiki/2021_Deutsche_Tourenwagen_Masters"
-              },
-              {
-                "year": 2022,
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_2_Championship"
-              },
-              {
-                "year": 2023,
-                "url": "https://en.wikipedia.org/wiki/2023_Super_Formula_Championship"
+                "url": null
               }
             ]
           }
@@ -61776,7 +61983,13 @@
         "general": {
           "born": {
             "date": "1997-10-16",
-            "place": null
+            "place": [
+              {
+                "text": "Monte Carlo",
+                "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
+              },
+              "Monaco"
+            ]
           },
           "relatives": [
             {
@@ -61911,25 +62124,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "2019 Belgian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2019 Belgian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "2019 Belgian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "2024 United States Grand Prix",
-                  "links": [
-                    {
-                      "text": "2024 United States Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "2024 United States Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -61968,20 +62179,56 @@
             },
             "years": [
               {
-                "year": 2014,
-                "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_Series"
-              },
-              {
-                "year": 2015,
-                "url": "https://en.wikipedia.org/wiki/2015_FIA_Formula_3_European_Championship"
-              },
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP3 Series",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            },
+            "years": [
               {
                 "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_GP3_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "FIA F3 European",
+              "url": "https://en.wikipedia.org/wiki/FIA_F3_European"
+            },
+            "years": [
               {
-                "year": 2017,
-                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_FIA_Formula_3_European_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 2.0 Alps",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Alps"
+            },
+            "years": [
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_Series"
               }
             ]
           }
@@ -68203,14 +68450,14 @@
                 "label": "Best finish",
                 "value": {
                   "result": "DNF",
-                  "season": null
+                  "seasons": null
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -74961,27 +75208,33 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1971",
-                    "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
-                  }
-                }
-              },
-              {
-                "label": "Class wins",
-                "value": {
-                  "text": "3 ( 1971 , 1975 , 1976 )",
-                  "links": [
+                  "seasons": [
                     {
                       "text": "1971",
                       "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
                     },
                     {
-                      "text": "1975",
+                      "text": "1976",
+                      "url": "https://en.wikipedia.org/wiki/1976_24_Hours_of_Le_Mans"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Class wins",
+                "value": {
+                  "count": 3,
+                  "wins": [
+                    {
+                      "year": 1971,
+                      "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 1975,
                       "url": "https://en.wikipedia.org/wiki/1975_24_Hours_of_Le_Mans"
                     },
                     {
-                      "text": "1976",
+                      "year": 1976,
                       "url": "https://en.wikipedia.org/wiki/1976_24_Hours_of_Le_Mans"
                     }
                   ]
@@ -77116,7 +77369,14 @@
         "general": {
           "born": {
             "date": "1966-01-31",
-            "place": null
+            "place": [
+              {
+                "text": "Espoo",
+                "url": "https://en.wikipedia.org/wiki/Espoo"
+              },
+              "Uusimaa",
+              "Finland"
+            ]
           }
         },
         "championship_titles": [],
@@ -77423,27 +77683,33 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1995",
-                    "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
-                  }
-                }
-              },
-              {
-                "label": "Class wins",
-                "value": {
-                  "text": "3 ( 1995 , 2003 , 2005 )",
-                  "links": [
+                  "seasons": [
                     {
                       "text": "1995",
                       "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
                     },
                     {
-                      "text": "2003",
+                      "text": "2005",
+                      "url": "https://en.wikipedia.org/wiki/2005_24_Hours_of_Le_Mans"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Class wins",
+                "value": {
+                  "count": 3,
+                  "wins": [
+                    {
+                      "year": 1995,
+                      "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2003,
                       "url": "https://en.wikipedia.org/wiki/2003_24_Hours_of_Le_Mans"
                     },
                     {
-                      "text": "2005",
+                      "year": 2005,
                       "url": "https://en.wikipedia.org/wiki/2005_24_Hours_of_Le_Mans"
                     }
                   ]
@@ -87902,7 +88168,14 @@
         "general": {
           "born": {
             "date": "1930-04-20",
-            "place": null
+            "place": [
+              {
+                "text": "Luton",
+                "url": "https://en.wikipedia.org/wiki/Luton"
+              },
+              "Bedfordshire",
+              "England"
+            ]
           },
           "died": {
             "date": "25 October 1958 East Grinstead , Sussex, England",
@@ -90195,7 +90468,11 @@
         "general": {
           "born": {
             "date": "1922-04-05",
-            "place": null
+            "place": [
+              "Brownsville",
+              "Pennsylvania",
+              "U.S."
+            ]
           },
           "died": {
             "date": "February 11, 1987 Los Angeles, California , U.S.",
@@ -90259,50 +90536,46 @@
                 "label": "Best finish",
                 "value": {
                   "result": "5th-1955",
-                  "season": {
-                    "text": "1955",
-                    "url": "https://en.wikipedia.org/wiki/1955_AAA_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1955",
+                      "url": "https://en.wikipedia.org/wiki/1955_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1950 Langhorne 100 ( Langhorne )",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Langhorne 100",
-                      "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
-                    },
-                    {
-                      "text": "Langhorne",
-                      "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1950",
+                    "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Langhorne 100",
+                    "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
+                  },
+                  "circuit": {
+                    "text": "Langhorne",
+                    "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1957 Golden State 100 ( Sacramento )",
-                  "links": [
-                    {
-                      "text": "1957",
-                      "url": "https://en.wikipedia.org/wiki/1957_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Golden State 100",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    },
-                    {
-                      "text": "Sacramento",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    }
-                  ]
+                  "season": {
+                    "text": "1957",
+                    "url": "https://en.wikipedia.org/wiki/1957_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Golden State 100",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  },
+                  "circuit": {
+                    "text": "Sacramento",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  }
                 }
               },
               {
@@ -90314,20 +90587,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "4",
-                        "3"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 4,
+                  "poles": 3
                 }
               },
               {
@@ -90692,7 +90954,17 @@
         "general": {
           "born": {
             "date": "1980-08-06",
-            "place": null
+            "place": [
+              {
+                "text": "Locorotondo",
+                "url": "https://en.wikipedia.org/wiki/Locorotondo"
+              },
+              {
+                "text": "Bari",
+                "url": "https://en.wikipedia.org/wiki/Province_of_Bari"
+              },
+              "Italy"
+            ]
           },
           "children": [],
           "relatives": [
@@ -100312,7 +100584,17 @@
         "general": {
           "born": {
             "date": "1981-11-19",
-            "place": null
+            "place": [
+              {
+                "text": "Duisburg",
+                "url": "https://en.wikipedia.org/wiki/Duisburg"
+              },
+              "North Rhine-Westphalia",
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
+            ]
           }
         },
         "championship_titles": [
@@ -100442,10 +100724,16 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "2012",
-                    "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
-                  },
+                  "seasons": [
+                    {
+                      "text": "2012",
+                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
+                    },
+                    {
+                      "text": "2024",
+                      "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship"
+                    }
+                  ],
                   "class": {
                     "text": "LMP1",
                     "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
@@ -100563,10 +100851,20 @@
                 "label": "Best finish",
                 "value": {
                   "result": "8th",
-                  "season": {
-                    "text": "2017-18",
-                    "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Formula_E_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2017-18",
+                      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Formula_E_season"
+                    },
+                    {
+                      "text": "2018-19",
+                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Formula_E_season"
+                    },
+                    {
+                      "text": "2019-20",
+                      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Formula_E_season"
+                    }
+                  ]
                 }
               },
               {
@@ -100882,10 +101180,16 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "2006",
-                    "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
-                  },
+                  "seasons": [
+                    {
+                      "text": "2006",
+                      "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
+                    },
+                    {
+                      "text": "2009",
+                      "url": "https://en.wikipedia.org/wiki/2009_Super_GT_Series"
+                    }
+                  ],
                   "class": {
                     "text": "GT500",
                     "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
@@ -100985,17 +101289,7 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "2011",
-                    "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
-                  }
-                }
-              },
-              {
-                "label": "Class wins",
-                "value": {
-                  "text": "3 ( 2011 , 2012 , 2014 )",
-                  "links": [
+                  "seasons": [
                     {
                       "text": "2011",
                       "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
@@ -101006,6 +101300,26 @@
                     },
                     {
                       "text": "2014",
+                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Class wins",
+                "value": {
+                  "count": 3,
+                  "wins": [
+                    {
+                      "year": 2011,
+                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2012,
+                      "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2014,
                       "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
                     }
                   ]

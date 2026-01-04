@@ -47,7 +47,13 @@
         "general": {
           "born": {
             "date": "1966-10-23",
-            "place": null
+            "place": [
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
+              "Italy"
+            ]
           }
         },
         "championship_titles": [
@@ -249,90 +255,84 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1997",
-                    "url": "https://en.wikipedia.org/wiki/1997_CART_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1997",
+                      "url": "https://en.wikipedia.org/wiki/1997_CART_season"
+                    },
+                    {
+                      "text": "1998",
+                      "url": "https://en.wikipedia.org/wiki/1998_CART_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1996 Marlboro Grand Prix of Miami ( Homestead )",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
-                    },
-                    {
-                      "text": "Marlboro Grand Prix of Miami",
-                      "url": "https://en.wikipedia.org/wiki/1996_Grand_Prix_of_Miami"
-                    },
-                    {
-                      "text": "Homestead",
-                      "url": "https://en.wikipedia.org/wiki/Homestead-Miami_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1996",
+                    "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
+                  },
+                  "race": {
+                    "text": "Marlboro Grand Prix of Miami",
+                    "url": "https://en.wikipedia.org/wiki/1996_Grand_Prix_of_Miami"
+                  },
+                  "circuit": {
+                    "text": "Homestead",
+                    "url": "https://en.wikipedia.org/wiki/Homestead-Miami_Speedway"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "2001 American Memorial ( Lausitz )",
-                  "links": [
-                    {
-                      "text": "2001",
-                      "url": "https://en.wikipedia.org/wiki/2001_CART_season"
-                    },
-                    {
-                      "text": "American Memorial",
-                      "url": "https://en.wikipedia.org/wiki/2001_American_Memorial"
-                    },
-                    {
-                      "text": "Lausitz",
-                      "url": "https://en.wikipedia.org/wiki/EuroSpeedway_Lausitz"
-                    }
-                  ]
+                  "season": {
+                    "text": "2001",
+                    "url": "https://en.wikipedia.org/wiki/2001_CART_season"
+                  },
+                  "race": {
+                    "text": "American Memorial",
+                    "url": "https://en.wikipedia.org/wiki/2001_American_Memorial"
+                  },
+                  "circuit": {
+                    "text": "Lausitz",
+                    "url": "https://en.wikipedia.org/wiki/EuroSpeedway_Lausitz"
+                  }
                 }
               },
               {
                 "label": "First win",
                 "value": {
-                  "text": "1996 Budweiser/G. I. Joe's 200 ( Portland )",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
-                    },
-                    {
-                      "text": "Budweiser/G. I. Joe's 200",
-                      "url": "https://en.wikipedia.org/wiki/Grand_Prix_of_Portland"
-                    },
-                    {
-                      "text": "Portland",
-                      "url": "https://en.wikipedia.org/wiki/Portland_International_Raceway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1996",
+                    "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
+                  },
+                  "race": {
+                    "text": "Budweiser/G. I. Joe's 200",
+                    "url": "https://en.wikipedia.org/wiki/Grand_Prix_of_Portland"
+                  },
+                  "circuit": {
+                    "text": "Portland",
+                    "url": "https://en.wikipedia.org/wiki/Portland_International_Raceway"
+                  }
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1998 Honda Indy 300 ( Surfers Paradise )",
-                  "links": [
-                    {
-                      "text": "1998",
-                      "url": "https://en.wikipedia.org/wiki/1998_CART_FedEx_Championship_Series"
-                    },
-                    {
-                      "text": "Honda Indy 300",
-                      "url": "https://en.wikipedia.org/wiki/1998_Honda_Indy_300"
-                    },
-                    {
-                      "text": "Surfers Paradise",
-                      "url": "https://en.wikipedia.org/wiki/Surfers_Paradise_Street_Circuit"
-                    }
-                  ]
+                  "season": {
+                    "text": "1998",
+                    "url": "https://en.wikipedia.org/wiki/1998_CART_FedEx_Championship_Series"
+                  },
+                  "race": {
+                    "text": "Honda Indy 300",
+                    "url": "https://en.wikipedia.org/wiki/1998_Honda_Indy_300"
+                  },
+                  "circuit": {
+                    "text": "Surfers Paradise",
+                    "url": "https://en.wikipedia.org/wiki/Surfers_Paradise_Street_Circuit"
+                  }
                 }
               },
               {
@@ -344,20 +344,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "15",
-                        "28",
-                        "10"
-                      ]
-                    ]
-                  }
+                  "wins": 15,
+                  "podiums": 28,
+                  "poles": 10
                 }
               }
             ]

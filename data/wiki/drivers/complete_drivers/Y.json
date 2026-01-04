@@ -5818,7 +5818,13 @@
         "general": {
           "born": {
             "date": "1976-07-20",
-            "place": null
+            "place": [
+              {
+                "text": "Kuala Lumpur",
+                "url": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+              },
+              "Malaysia"
+            ]
           },
           "children": []
         },
@@ -5956,17 +5962,19 @@
                 "label": "Best finish",
                 "value": {
                   "result": "8th",
-                  "season": {
-                    "text": "2006",
-                    "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2006",
+                      "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               },
               {

@@ -348,7 +348,17 @@
         "general": {
           "born": {
             "date": "1912-10-07",
-            "place": null
+            "place": [
+              {
+                "text": "Huby",
+                "url": "https://en.wikipedia.org/wiki/Huby,_Harrogate"
+              },
+              {
+                "text": "Yorkshire",
+                "url": "https://en.wikipedia.org/wiki/Yorkshire"
+              },
+              "England"
+            ]
           },
           "died": {
             "date": "1 March 1984 Newtown, Worcestershire , England",
@@ -1410,7 +1420,11 @@
         "general": {
           "born": {
             "date": "1910-09-07",
-            "place": null
+            "place": [
+              "Schenectady",
+              "New York",
+              "U.S."
+            ]
           },
           "died": {
             "date": "November 29, 1963 St. Petersburg, Florida , U.S.",
@@ -1437,82 +1451,74 @@
                 "label": "Best finish",
                 "value": {
                   "result": "6th",
-                  "season": {
-                    "text": "1948",
-                    "url": "https://en.wikipedia.org/wiki/1948_AAA_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1948",
+                      "url": "https://en.wikipedia.org/wiki/1948_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1941 Syracuse 100 ( Syracuse )",
-                  "links": [
-                    {
-                      "text": "1941",
-                      "url": "https://en.wikipedia.org/wiki/1941_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Syracuse",
-                      "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1941",
+                    "url": "https://en.wikipedia.org/wiki/1941_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Syracuse",
+                    "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
+                  },
+                  "circuit": null
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1951 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1951",
+                    "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
                 "label": "First win",
                 "value": {
-                  "text": "1946 Rutland Race ( Rutland )",
-                  "links": [
-                    {
-                      "text": "1946",
-                      "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Rutland",
-                      "url": "https://en.wikipedia.org/wiki/Vermont_State_Fairgrounds"
-                    }
-                  ]
+                  "season": {
+                    "text": "1946",
+                    "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Rutland",
+                    "url": "https://en.wikipedia.org/wiki/Vermont_State_Fairgrounds"
+                  },
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1951 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1951",
+                    "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
@@ -1524,20 +1530,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "3",
-                        "10",
-                        "2"
-                      ]
-                    ]
-                  }
+                  "wins": 3,
+                  "podiums": 10,
+                  "poles": 2
                 }
               },
               {
@@ -1630,13 +1625,12 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1951 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1951 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-                    }
-                  ]
+                  "season": {
+                    "text": "1951 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -1868,7 +1862,11 @@
         "general": {
           "born": {
             "date": "1921-01-10",
-            "place": null
+            "place": [
+              "Beloit",
+              "Kansas",
+              "U.S."
+            ]
           },
           "died": {
             "date": "July 5, 2004 Anaheim, California , U.S.",
@@ -1895,90 +1893,84 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1959",
-                    "url": "https://en.wikipedia.org/wiki/1959_USAC_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1959",
+                      "url": "https://en.wikipedia.org/wiki/1959_USAC_Championship_Car_season"
+                    },
+                    {
+                      "text": "1962",
+                      "url": "https://en.wikipedia.org/wiki/1962_USAC_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1950 Phoenix 100 ( Phoenix )",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Phoenix 100",
-                      "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
-                    },
-                    {
-                      "text": "Phoenix",
-                      "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
-                    }
-                  ]
+                  "season": {
+                    "text": "1950",
+                    "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Phoenix 100",
+                    "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
+                  },
+                  "circuit": {
+                    "text": "Phoenix",
+                    "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1966 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1966",
-                      "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1966_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1966",
+                    "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1966_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
                 "label": "First win",
                 "value": {
-                  "text": "1953 Springfield 100 ( Springfield )",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Springfield 100",
-                      "url": "https://en.wikipedia.org/wiki/Illinois_State_Fairgrounds_Racetrack"
-                    },
-                    {
-                      "text": "Springfield",
-                      "url": "https://en.wikipedia.org/wiki/Illinois_State_Fairgrounds_Racetrack"
-                    }
-                  ]
+                  "season": {
+                    "text": "1953",
+                    "url": "https://en.wikipedia.org/wiki/1953_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Springfield 100",
+                    "url": "https://en.wikipedia.org/wiki/Illinois_State_Fairgrounds_Racetrack"
+                  },
+                  "circuit": {
+                    "text": "Springfield",
+                    "url": "https://en.wikipedia.org/wiki/Illinois_State_Fairgrounds_Racetrack"
+                  }
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1966 Trenton 150 ( Trenton )",
-                  "links": [
-                    {
-                      "text": "1966",
-                      "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Trenton 150",
-                      "url": "https://en.wikipedia.org/wiki/Trenton_150"
-                    },
-                    {
-                      "text": "Trenton",
-                      "url": "https://en.wikipedia.org/wiki/Trenton_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1966",
+                    "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Trenton 150",
+                    "url": "https://en.wikipedia.org/wiki/Trenton_150"
+                  },
+                  "circuit": {
+                    "text": "Trenton",
+                    "url": "https://en.wikipedia.org/wiki/Trenton_Speedway"
+                  }
                 }
               },
               {
@@ -1990,20 +1982,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "26",
-                        "47",
-                        "11"
-                      ]
-                    ]
-                  }
+                  "wins": 26,
+                  "podiums": 47,
+                  "poles": 11
                 }
               },
               {
@@ -2026,41 +2007,35 @@
               {
                 "label": "First race",
                 "value": {
-                  "text": "1963 Daytona Qualifier #2 ( Daytona )",
-                  "links": [
-                    {
-                      "text": "1963",
-                      "url": "https://en.wikipedia.org/wiki/1963_NASCAR_Grand_National_Series"
-                    },
-                    {
-                      "text": "Daytona Qualifier #2",
-                      "url": "https://en.wikipedia.org/wiki/Budweiser_Duel"
-                    },
-                    {
-                      "text": "Daytona",
-                      "url": "https://en.wikipedia.org/wiki/Daytona_International_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1963",
+                    "url": "https://en.wikipedia.org/wiki/1963_NASCAR_Grand_National_Series"
+                  },
+                  "race": {
+                    "text": "Daytona Qualifier #2",
+                    "url": "https://en.wikipedia.org/wiki/Budweiser_Duel"
+                  },
+                  "circuit": {
+                    "text": "Daytona",
+                    "url": "https://en.wikipedia.org/wiki/Daytona_International_Speedway"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1964 Motor Trend 500 ( Riverside )",
-                  "links": [
-                    {
-                      "text": "1964",
-                      "url": "https://en.wikipedia.org/wiki/1964_NASCAR_Grand_National_Series"
-                    },
-                    {
-                      "text": "Motor Trend 500",
-                      "url": "https://en.wikipedia.org/wiki/Motor_Trend_500"
-                    },
-                    {
-                      "text": "Riverside",
-                      "url": "https://en.wikipedia.org/wiki/Riverside_International_Raceway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1964",
+                    "url": "https://en.wikipedia.org/wiki/1964_NASCAR_Grand_National_Series"
+                  },
+                  "race": {
+                    "text": "Motor Trend 500",
+                    "url": "https://en.wikipedia.org/wiki/Motor_Trend_500"
+                  },
+                  "circuit": {
+                    "text": "Riverside",
+                    "url": "https://en.wikipedia.org/wiki/Riverside_International_Raceway"
+                  }
                 }
               },
               {
@@ -2237,13 +2212,12 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1959 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1959 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
-                    }
-                  ]
+                  "season": {
+                    "text": "1959 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -2338,7 +2312,14 @@
         "general": {
           "born": {
             "date": "1954-08-27",
-            "place": null
+            "place": [
+              {
+                "text": "New Alresford",
+                "url": "https://en.wikipedia.org/wiki/New_Alresford"
+              },
+              "Hampshire",
+              "England"
+            ]
           },
           "relatives": [
             {
@@ -2646,19 +2627,21 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1992",
-                    "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1992",
+                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "1 ( 1992 )",
-                  "links": [
+                  "count": 1,
+                  "wins": [
                     {
-                      "text": "1992",
+                      "year": 1992,
                       "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
                     }
                   ]
@@ -9606,7 +9589,13 @@
         "general": {
           "born": {
             "date": "1946-05-04",
-            "place": null
+            "place": [
+              {
+                "text": "Belfast",
+                "url": "https://en.wikipedia.org/wiki/Belfast"
+              },
+              "Northern Ireland"
+            ]
           }
         },
         "championship_titles": [],
@@ -9758,25 +9747,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1976 Austrian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1976 Austrian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1976 Austrian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1983 United States Grand Prix West",
-                  "links": [
-                    {
-                      "text": "1983 United States Grand Prix West",
-                      "url": "https://en.wikipedia.org/wiki/1983_United_States_Grand_Prix_West"
-                    }
-                  ]
+                  "season": {
+                    "text": "1983 United States Grand Prix West",
+                    "url": "https://en.wikipedia.org/wiki/1983_United_States_Grand_Prix_West"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -9864,17 +9851,19 @@
                 "label": "Best finish",
                 "value": {
                   "result": "11th",
-                  "season": {
-                    "text": "1990",
-                    "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1990",
+                      "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -16804,7 +16793,11 @@
         "general": {
           "born": {
             "date": "1910-10-08",
-            "place": null
+            "place": [
+              "Joplin",
+              "Missouri",
+              "U.S."
+            ]
           },
           "died": {
             "date": "January 27, 1990 McMinnville, Oregon , U.S.",
@@ -16831,50 +16824,46 @@
                 "label": "Best finish",
                 "value": {
                   "result": "17th",
-                  "season": {
-                    "text": "1949",
-                    "url": "https://en.wikipedia.org/wiki/1949_AAA_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1949",
+                      "url": "https://en.wikipedia.org/wiki/1949_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1939 Milwaukee 100 ( Milwaukee )",
-                  "links": [
-                    {
-                      "text": "1939",
-                      "url": "https://en.wikipedia.org/wiki/1939_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Milwaukee 100",
-                      "url": "https://en.wikipedia.org/wiki/IndyCar_Series_at_the_Milwaukee_Mile"
-                    },
-                    {
-                      "text": "Milwaukee",
-                      "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1939",
+                    "url": "https://en.wikipedia.org/wiki/1939_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Milwaukee 100",
+                    "url": "https://en.wikipedia.org/wiki/IndyCar_Series_at_the_Milwaukee_Mile"
+                  },
+                  "circuit": {
+                    "text": "Milwaukee",
+                    "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1954 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1954",
-                      "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1954",
+                    "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
@@ -16886,20 +16875,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "4",
-                        "1"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 4,
+                  "poles": 1
                 }
               },
               {
@@ -17097,7 +17075,14 @@
         "general": {
           "born": {
             "date": "1976-08-27",
-            "place": null
+            "place": [
+              {
+                "text": "Queanbeyan",
+                "url": "https://en.wikipedia.org/wiki/Queanbeyan"
+              },
+              "New South Wales",
+              "Australia"
+            ]
           }
         },
         "championship_titles": [],
@@ -17241,25 +17226,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "2009 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "2009 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2009_German_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "2009 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2009_German_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "2012 British Grand Prix",
-                  "links": [
-                    {
-                      "text": "2012 British Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2012_British_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "2012 British Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2012_British_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -17347,10 +17330,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "2015",
-                    "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
-                  },
+                  "seasons": [
+                    {
+                      "text": "2015",
+                      "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
+                    }
+                  ],
                   "class": {
                     "text": "LMP1",
                     "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
@@ -17410,17 +17395,19 @@
                 "label": "Best finish",
                 "value": {
                   "result": "2nd",
-                  "season": {
-                    "text": "2015",
-                    "url": "https://en.wikipedia.org/wiki/2015_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2015",
+                      "url": "https://en.wikipedia.org/wiki/2015_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               },
               {
@@ -23080,7 +23067,14 @@
         "general": {
           "born": {
             "date": "1994-10-18",
-            "place": null
+            "place": [
+              {
+                "text": "Sigmaringen",
+                "url": "https://en.wikipedia.org/wiki/Sigmaringen"
+              },
+              "Baden-Württemberg",
+              "Germany"
+            ]
           },
           "children": []
         },
@@ -23420,20 +23414,40 @@
             },
             "years": [
               {
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_FIA_Formula_3_European_Championship"
+              },
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_FIA_Formula_3_European_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "F3 Euro Series",
+              "url": "https://en.wikipedia.org/wiki/F3_Euro_Series"
+            },
+            "years": [
+              {
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_Formula_3_Euro_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC Formel Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_Formel_Masters"
+            },
+            "years": [
+              {
                 "year": 2010,
                 "url": "https://en.wikipedia.org/wiki/2010_ADAC_Formel_Masters"
               },
               {
                 "year": 2011,
                 "url": "https://en.wikipedia.org/wiki/2011_ADAC_Formel_Masters"
-              },
-              {
-                "year": 2012,
-                "url": "https://en.wikipedia.org/wiki/2012_Formula_3_Euro_Series"
-              },
-              {
-                "year": 2013,
-                "url": "https://en.wikipedia.org/wiki/2013_FIA_Formula_3_European_Championship"
               }
             ]
           }
@@ -31344,7 +31358,11 @@
         "general": {
           "born": {
             "date": "1934-12-09",
-            "place": null
+            "place": [
+              "Phoenix",
+              "Arizona",
+              "U.S."
+            ]
           },
           "died": {
             "date": "October 13, 2005 Phoenix, Arizona, U.S.",
@@ -31392,50 +31410,46 @@
                 "label": "Best finish",
                 "value": {
                   "result": "13th-1960",
-                  "season": {
-                    "text": "1960",
-                    "url": "https://en.wikipedia.org/wiki/1960_USAC_Championship_Car_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1960",
+                      "url": "https://en.wikipedia.org/wiki/1960_USAC_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1958 Golden State 100 ( Sacramento )",
-                  "links": [
-                    {
-                      "text": "1958",
-                      "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Golden State 100",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    },
-                    {
-                      "text": "Sacramento",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    }
-                  ]
+                  "season": {
+                    "text": "1958",
+                    "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Golden State 100",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  },
+                  "circuit": {
+                    "text": "Sacramento",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1961 Rex Mays Classic ( Milwaukee )",
-                  "links": [
-                    {
-                      "text": "1961",
-                      "url": "https://en.wikipedia.org/wiki/1961_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Rex Mays Classic",
-                      "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
-                    },
-                    {
-                      "text": "Milwaukee",
-                      "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1961",
+                    "url": "https://en.wikipedia.org/wiki/1961_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Rex Mays Classic",
+                    "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
+                  },
+                  "circuit": {
+                    "text": "Milwaukee",
+                    "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
+                  }
                 }
               },
               {
@@ -31447,20 +31461,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "1",
-                        "1"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 1,
+                  "poles": 1
                 }
               },
               {
@@ -31594,7 +31597,13 @@
         "general": {
           "born": {
             "date": "1968-12-20",
-            "place": null
+            "place": [
+              {
+                "text": "Kufstein",
+                "url": "https://en.wikipedia.org/wiki/Kufstein"
+              },
+              "Austria"
+            ]
           }
         },
         "championship_titles": [
@@ -31696,10 +31705,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "43rd",
-                  "season": {
-                    "text": "2010",
-                    "url": "https://en.wikipedia.org/wiki/2010_FIA_GT1_World_Championship_season"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2010",
+                      "url": "https://en.wikipedia.org/wiki/2010_FIA_GT1_World_Championship_season"
+                    }
+                  ]
                 }
               }
             ]
@@ -41460,7 +41471,17 @@
         "general": {
           "born": {
             "date": "1914-11-12",
-            "place": null
+            "place": [
+              {
+                "text": "Menston",
+                "url": "https://en.wikipedia.org/wiki/Menston"
+              },
+              {
+                "text": "Yorkshire",
+                "url": "https://en.wikipedia.org/wiki/Yorkshire"
+              },
+              "England"
+            ]
           },
           "died": {
             "date": "21 September 1958 Lasalle , France",
@@ -57150,7 +57171,18 @@
         "general": {
           "born": {
             "date": "1978-07-31",
-            "place": null
+            "place": [
+              "Moorgate",
+              {
+                "text": "Rotherham",
+                "url": "https://en.wikipedia.org/wiki/Rotherham"
+              },
+              {
+                "text": "South Yorkshire",
+                "url": "https://en.wikipedia.org/wiki/South_Yorkshire"
+              },
+              "England"
+            ]
           },
           "died": {
             "date": "24 August 2015 Lehigh Valley Hospital-Cedar Crest , Allentown, Pennsylvania , U.S.",
@@ -57249,10 +57281,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "6th",
-                  "season": {
-                    "text": "2013",
-                    "url": "https://en.wikipedia.org/wiki/2013_IndyCar_Series"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2013",
+                      "url": "https://en.wikipedia.org/wiki/2013_IndyCar_Series"
+                    }
+                  ]
                 }
               },
               {
@@ -57551,7 +57585,16 @@
         "general": {
           "born": {
             "date": "1960-10-24",
-            "place": null
+            "place": [
+              {
+                "text": "Waiblingen",
+                "url": "https://en.wikipedia.org/wiki/Waiblingen"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
+            ]
           },
           "relatives": [
             {
@@ -65291,7 +65334,20 @@
         "general": {
           "born": {
             "date": "1951-10-06",
-            "place": null
+            "place": [
+              {
+                "text": "Waiblingen",
+                "url": "https://en.wikipedia.org/wiki/Waiblingen"
+              },
+              {
+                "text": "Württemberg-Baden",
+                "url": "https://en.wikipedia.org/wiki/W%C3%BCrttemberg-Baden"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
+            ]
           },
           "died": {
             "date": "12 August 1985 Toronto, Ontario , Canada",
@@ -65488,17 +65544,19 @@
                 "label": "Best finish",
                 "value": {
                   "result": "6th",
-                  "season": {
-                    "text": "1979",
-                    "url": "https://en.wikipedia.org/wiki/1979_24_Hours_of_Le_Mans"
-                  }
+                  "seasons": [
+                    {
+                      "text": "1979",
+                      "url": "https://en.wikipedia.org/wiki/1979_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -67663,7 +67721,16 @@
         "general": {
           "born": {
             "date": "1980-06-13",
-            "place": null
+            "place": [
+              {
+                "text": "Stuttgart",
+                "url": "https://en.wikipedia.org/wiki/Stuttgart"
+              },
+              {
+                "text": "West Germany",
+                "url": "https://en.wikipedia.org/wiki/West_Germany"
+              }
+            ]
           }
         },
         "championship_titles": [
@@ -67789,10 +67856,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "9th",
-                  "season": {
-                    "text": "2024",
-                    "url": "https://en.wikipedia.org/wiki/2024_GT_World_Challenge_Asia"
-                  }
+                  "seasons": [
+                    {
+                      "text": "2024",
+                      "url": "https://en.wikipedia.org/wiki/2024_GT_World_Challenge_Asia"
+                    }
+                  ]
                 }
               },
               {
@@ -79292,7 +79361,14 @@
         "general": {
           "born": {
             "date": "1974-02-15",
-            "place": null
+            "place": [
+              {
+                "text": "Waidhofen an der Thaya",
+                "url": "https://en.wikipedia.org/wiki/Waidhofen_an_der_Thaya"
+              },
+              "Lower Austria",
+              "Austria"
+            ]
           },
           "children": [
             {
@@ -79495,10 +79571,12 @@
                 "label": "Best finish",
                 "value": {
                   "result": "3rd",
-                  "season": {
-                    "text": "2012",
-                    "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
-                  },
+                  "seasons": [
+                    {
+                      "text": "2012",
+                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
+                    }
+                  ],
                   "class": {
                     "text": "LMP1",
                     "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
@@ -79578,23 +79656,29 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "text": "1996",
-                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
-                  }
-                }
-              },
-              {
-                "label": "Class wins",
-                "value": {
-                  "text": "2 ( 1996 , 2009 )",
-                  "links": [
+                  "seasons": [
                     {
                       "text": "1996",
                       "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
                     },
                     {
                       "text": "2009",
+                      "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Class wins",
+                "value": {
+                  "count": 2,
+                  "wins": [
+                    {
+                      "year": 1996,
+                      "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2009,
                       "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
                     }
                   ]
