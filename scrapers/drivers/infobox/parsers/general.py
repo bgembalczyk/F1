@@ -80,8 +80,8 @@ class InfoboxGeneralParser:
             date_text = filtered_parts[0] if filtered_parts else ""
             date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
         
-        # Extract place from birthplace span if available
-        birthplace_span = cell.find("span", class_="birthplace")
+        # Extract place from birthplace element (div or span) if available
+        birthplace_span = cell.find(class_="birthplace")
         if birthplace_span:
             place_text = clean_infobox_text(birthplace_span.get_text(" ", strip=True)) or ""
         else:

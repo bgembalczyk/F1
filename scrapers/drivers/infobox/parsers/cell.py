@@ -199,6 +199,64 @@ class InfoboxCellParser:
                 f"Nie udało się sparsować mistrzostw: {text!r}.",
                 cause=exc,
             ) from exc
+    
+    def parse_class_wins(self, cell: Tag) -> Dict[str, Any]:
+        """Parse class wins count with year and link information.
+        
+        Similar to championships, handles cases like:
+        - "6 (1969, 1975, 1976)" -> {count: 6, wins: [{year: 1969, url: ...}, ...]}
+        """
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        try:
+            # Extract count
+            count_match = re.search(r"^(\d+)", text)
+            count = int(count_match.group(1)) if count_match else 0
+            
+            # Extract year links
+            wins = []
+            links = self._link_extractor.extract_links(cell)
+            
+            # Build year -> url mapping from links
+            year_to_url: Dict[int, str | None] = {}
+            for link in links:
+                link_text = link.get("text", "")
+                year_match = re.search(r'\b(\d{4})\b', link_text)
+                if year_match:
+                    year = int(year_match.group(1))
+                    year_to_url[year] = link.get("url")
+            
+            # Extract all years from text (typically in parentheses or <small> tag)
+            # Check <small> tag first
+            small_tag = cell.find("small")
+            if small_tag:
+                small_text = clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
+                for year_match in re.finditer(r'\b(\d{4})\b', small_text):
+                    year = int(year_match.group(1))
+                    wins.append({
+                        "year": year,
+                        "url": year_to_url.get(year)
+                    })
+            else:
+                # Fallback to extracting from parentheses in main text
+                paren_match = re.search(r'\(([^)]+)\)', text)
+                if paren_match:
+                    paren_content = paren_match.group(1)
+                    for year_match in re.finditer(r'\b(\d{4})\b', paren_content):
+                        year = int(year_match.group(1))
+                        wins.append({
+                            "year": year,
+                            "url": year_to_url.get(year)
+                        })
+            
+            return {
+                "count": count,
+                "wins": wins
+            }
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować zwycięstw klasowych: {text!r}.",
+                cause=exc,
+            ) from exc
 
     @staticmethod
     def parse_float_cell(cell: Tag) -> float | None:
@@ -249,9 +307,9 @@ class InfoboxCellParser:
     def parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         try:
-            result: Dict[str, Any] = {"result": None, "season": None}
+            result: Dict[str, Any] = {"result": None, "seasons": None}
             
-            # Extract result position (e.g., "1st", "4th")
+            # Extract result position (e.g., "1st", "4th", "6th")
             if " in " in text:
                 result_text, _ = text.split(" in ", 1)
                 result["result"] = result_text.strip() or None
@@ -263,16 +321,18 @@ class InfoboxCellParser:
                 else:
                     result["result"] = text.strip() or None
             
-            # Extract season link
+            # Extract season links
             links = self._link_extractor.extract_links(cell)
             season_links = [link for link in links if not self._is_class_link(link)]
             if season_links:
-                season_link = season_links[0]
-                # Use the full link text instead of extracting just the year
-                result["season"] = {
-                    "text": season_link.get("text", ""),
-                    "url": season_link.get("url")
-                }
+                # Use all season links, not just the first one
+                result["seasons"] = [
+                    {
+                        "text": link.get("text", ""),
+                        "url": link.get("url")
+                    }
+                    for link in season_links
+                ]
             
             # Check <small> tag for class or additional season info
             small_tag = cell.find("small")
@@ -285,11 +345,14 @@ class InfoboxCellParser:
                 
                 if is_year_pattern and small_links:
                     # It's a season, not a class
-                    if not result["season"]:  # Only set if not already set
-                        result["season"] = {
-                            "text": small_links[0].get("text", ""),
-                            "url": small_links[0].get("url")
-                        }
+                    if not result["seasons"]:  # Only set if not already set
+                        result["seasons"] = [
+                            {
+                                "text": link.get("text", ""),
+                                "url": link.get("url")
+                            }
+                            for link in small_links
+                        ]
                 elif small_links and not is_year_pattern:
                     # It's a class
                     result["class"] = small_links[0]
@@ -298,6 +361,39 @@ class InfoboxCellParser:
         except (TypeError, ValueError) as exc:
             raise DomainParseError(
                 f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
+                cause=exc,
+            ) from exc
+    
+    def parse_race_event(self, cell: Tag) -> Dict[str, Any]:
+        """Parse race event fields like First race, Last race, First win, Last win.
+        
+        Expected format: SEASON RACE (CIRCUIT)
+        Example: 2019 Grand Prix of St. Petersburg ( St. Petersburg )
+        
+        Returns: {season: {...}, race: {...}, circuit: {...}}
+        """
+        try:
+            links = self._link_extractor.extract_links(cell)
+            
+            # Typically we have 3 links in order: season, race, circuit
+            result: Dict[str, Any | None] = {
+                "season": None,
+                "race": None,
+                "circuit": None
+            }
+            
+            if len(links) >= 1:
+                result["season"] = links[0]
+            if len(links) >= 2:
+                result["race"] = links[1]
+            if len(links) >= 3:
+                result["circuit"] = links[2]
+            
+            return result
+        except (TypeError, ValueError) as exc:
+            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            raise DomainParseError(
+                f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
                 cause=exc,
             ) from exc
     
@@ -321,8 +417,51 @@ class InfoboxCellParser:
 
         nested_table = cell.find("table")
         if nested_table:
-            payload["table"] = self.parse_nested_table(nested_table)
+            table_data = self.parse_nested_table(nested_table)
+            # Check if this is a Wins/Podiums/Poles table
+            if self._is_stats_table(table_data):
+                # Extract the values directly
+                stats = self._extract_stats_from_table(table_data)
+                payload.update(stats)
+            else:
+                payload["table"] = table_data
         return payload
+    
+    @staticmethod
+    def _is_stats_table(table_data: Dict[str, Any]) -> bool:
+        """Check if table is a Wins/Podiums/Poles stats table."""
+        headers = table_data.get("headers", [])
+        if len(headers) != 3:
+            return False
+        # Normalize headers for comparison
+        normalized = [h.lower().strip() for h in headers]
+        expected = ["wins", "podiums", "poles"]
+        return normalized == expected
+    
+    @staticmethod
+    def _extract_stats_from_table(table_data: Dict[str, Any]) -> Dict[str, int | None]:
+        """Extract Wins, Podiums, Poles from stats table."""
+        stats: Dict[str, int | None] = {
+            "wins": None,
+            "podiums": None,
+            "poles": None
+        }
+        rows = table_data.get("rows", [])
+        if rows and len(rows[0]) >= 3:
+            # First row contains the values
+            try:
+                stats["wins"] = int(rows[0][0])
+            except (ValueError, IndexError):
+                pass
+            try:
+                stats["podiums"] = int(rows[0][1])
+            except (ValueError, IndexError):
+                pass
+            try:
+                stats["poles"] = int(rows[0][2])
+            except (ValueError, IndexError):
+                pass
+        return stats
 
     @staticmethod
     def parse_nested_table(table: Tag) -> Dict[str, Any]:

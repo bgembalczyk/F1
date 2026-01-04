@@ -29,6 +29,8 @@ class InfoboxCareerParser:
                     value = self._cell_parser.parse_entries(value_cell)
                 elif label == "Championships":
                     value = self._cell_parser.parse_championships(value_cell)
+                elif label == "Class wins":
+                    value = self._cell_parser.parse_class_wins(value_cell)
                 elif label in {
                     "Wins",
                     "Podiums",
@@ -42,6 +44,8 @@ class InfoboxCareerParser:
                     value = self._cell_parser.parse_float_cell(value_cell)
                 elif label == "Best finish":
                     value = self._cell_parser.parse_best_finish(value_cell)
+                elif label in {"First race", "Last race", "First win", "Last win"}:
+                    value = self._cell_parser.parse_race_event(value_cell)
                 else:
                     value = self._cell_parser.parse_cell(value_cell)
                 rows.append(

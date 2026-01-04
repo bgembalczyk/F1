@@ -58,9 +58,15 @@ class InfoboxTitlesParser:
             if not isinstance(label_cell, Tag) or not isinstance(value_cell, Tag):
                 continue
             
-            # Split by <br> tags to match series with year groups
-            series_groups = self._split_by_br(value_cell)
-            year_groups = self._split_by_br(label_cell)
+            # Try splitting by <li> tags first (list items)
+            series_groups = self._split_by_list_items(value_cell)
+            year_groups = self._split_by_list_items(label_cell)
+            
+            # If no list items found, try splitting by <br> tags
+            if len(series_groups) <= 1:
+                series_groups = self._split_by_br(value_cell)
+            if len(year_groups) <= 1:
+                year_groups = self._split_by_br(label_cell)
             
             # If we have the same number of groups, pair them up
             if len(series_groups) == len(year_groups) and len(series_groups) > 1:
@@ -93,6 +99,16 @@ class InfoboxTitlesParser:
                         {"title": {"text": series_text or "", "url": None}, "years": year_data}
                     )
         return items
+    
+    @staticmethod
+    def _split_by_list_items(tag: Tag) -> List[str]:
+        """Split HTML content by <li> list items."""
+        # Find all <li> elements
+        li_elements = tag.find_all("li", recursive=True)
+        if not li_elements:
+            return []
+        # Return the HTML content of each <li>
+        return [str(li) for li in li_elements if str(li).strip()]
     
     @staticmethod
     def _split_by_br(tag: Tag) -> List[str]:

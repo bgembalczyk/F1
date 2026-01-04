@@ -17,12 +17,14 @@ class InfoboxLinkExtractor:
     def extract_links(self, cell: Tag) -> List[LinkRecord]:
         if not self._include_urls:
             return []
-        return normalize_links(
+        links = normalize_links(
             cell,
             full_url=lambda href: normalize_url(self._wikipedia_base, href),
             allow_local_anchors=False,
             drop_empty_text=True,
         )
+        # Additional filter to remove any links with empty or whitespace-only text
+        return [link for link in links if (link.get("text") or "").strip()]
 
     def first_link(self, cell: Tag) -> LinkRecord | None:
         links = self.extract_links(cell)
