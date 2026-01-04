@@ -14,6 +14,7 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from scrapers.base.transformers import RecordFactoryTransformer, TransformersPipeline
 
 
 class DriverInfoboxScraper:
@@ -34,6 +35,7 @@ class DriverInfoboxScraper:
         self.run_id = run_id
         self.url = url
         self.logger = get_logger(self.__class__.__name__)
+        self.transformers = list(options.transformers or [])
         self._link_extractor = InfoboxLinkExtractor(
             include_urls=self.include_urls,
             wikipedia_base=self.wikipedia_base,
@@ -89,24 +91,22 @@ class DriverInfoboxScraper:
             len(sections),
             self.run_id,
         )
-        return [self._apply_record_factory(parsed)]
+        return [self._apply_transformers(parsed)]
 
-    def _apply_record_factory(self, record: Dict[str, Any]) -> Any:
-        if self.record_factory is None:
-            return record
-        try:
-            if isinstance(self.record_factory, type):
-                return self.record_factory(**record)
-            return self.record_factory(record)
-        except Exception:
-            self.logger.warning(
-                "Infobox record_factory failed (run_id=%s). "
-                "Falling back to raw record: %s",
-                self.run_id,
-                record,
-                exc_info=True,
+    def _apply_transformers(self, record: Dict[str, Any]) -> Any:
+        transformers = list(self.transformers)
+        if self.record_factory is not None:
+            transformers.append(
+                RecordFactoryTransformer(
+                    self.record_factory,
+                    fallback_on_error=True,
+                )
             )
+        if not transformers:
             return record
+        pipeline = TransformersPipeline(transformers, logger=self.logger)
+        transformed = pipeline.apply([record])
+        return transformed[0] if transformed else {}
 
     def _parse_infobox_with_sections(
         self, table: Tag, sections: List[Dict[str, Any]]
