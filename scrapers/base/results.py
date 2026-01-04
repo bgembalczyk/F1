@@ -44,7 +44,6 @@ class ScrapeResult:
         *,
         exporter: "DataExporter | None" = None,
         indent: int = 2,
-        include_metadata: bool = False,
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
@@ -57,7 +56,6 @@ class ScrapeResult:
             normalized,
             path,
             indent=indent,
-            include_metadata=include_metadata,
         )
 
     def to_csv(

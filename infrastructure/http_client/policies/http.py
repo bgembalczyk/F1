@@ -1,13 +1,18 @@
 from dataclasses import dataclass
 
+from infrastructure.http_client.policies.defaults import (
+    DEFAULT_HTTP_RETRIES,
+    DEFAULT_HTTP_TIMEOUT,
+)
+
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
 
 @dataclass(frozen=True)
 class HttpPolicy:
     cache: ResponseCache | None = None
-    retries: int = 0
-    timeout: int = 10
+    retries: int = DEFAULT_HTTP_RETRIES
+    timeout: int = DEFAULT_HTTP_TIMEOUT
 
     def __post_init__(self) -> None:
         if self.timeout <= 0:
