@@ -29,6 +29,7 @@ class JsonFormatter:
             "meta": {
                 "source_url": result.source_url,
                 "timestamp": result.timestamp.isoformat(),
+                **({"metadata": result.metadata} if result.metadata else {}),
             },
             "data": extract_data(result),
         }
