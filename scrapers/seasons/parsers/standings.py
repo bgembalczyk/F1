@@ -111,31 +111,22 @@ class SeasonStandingsParser:
     ) -> List[Dict[str, Any]]:
         """
         Merge duplicate constructor standings entries that represent the same
-        constructor but have separate race results (one per driver).
+        constructor but have separate race results (one per driver/car number).
         
-        Only merge entries that:
+        Merge entries that:
         - Have the same constructor (chassis + engine)
         - Have the same position
         - Have the same points
-        - Don't have a 'no' field (driver number)
         
-        When entries have a 'no' field, they represent individual driver results
-        and should not be merged.
-        
-        This method now collects ALL matching entries (not just two) and merges
-        all their results together.
+        The 'no' field (car/driver number) is now used to distinguish which results
+        belong to which driver within a merged constructor entry. Each round in the
+        merged entry will have multiple results (one per driver).
         """
         merged: List[Dict[str, Any]] = []
         i = 0
         
         while i < len(records):
             current = records[i]
-            
-            # If this entry has a 'no' field, it's a driver-specific entry - don't merge
-            if "no" in current and current["no"] is not None:
-                merged.append(current)
-                i += 1
-                continue
             
             # Collect all consecutive entries that should be merged with current
             entries_to_merge = [current]
@@ -146,10 +137,8 @@ class SeasonStandingsParser:
                 
                 # Check if the next record should be merged
                 should_merge = (
-                    # Next record also has no 'no' field (or it's None)
-                    ("no" not in next_record or next_record.get("no") is None)
                     # Same position
-                    and current.get("pos") == next_record.get("pos")
+                    current.get("pos") == next_record.get("pos")
                     # Same points
                     and current.get("points") == next_record.get("points")
                     # Same constructor
@@ -198,6 +187,16 @@ class SeasonStandingsParser:
         )
     
     @staticmethod
+    def _remove_round_level_attributes(round_data: dict[str, Any]) -> None:
+        """
+        Remove attributes that should only exist on individual results.
+        Modifies the dictionary in place.
+        """
+        round_data.pop("background", None)
+        round_data.pop("pole_position", None)
+        round_data.pop("fastest_lap", None)
+    
+    @staticmethod
     def _merge_multiple_entries(
         entries: List[Dict[str, Any]]
     ) -> Dict[str, Any]:
@@ -206,18 +205,24 @@ class SeasonStandingsParser:
         
         Takes the first entry as the base and merges race results from all other entries.
         Each result in the results array maintains its own attributes (background, 
-        pole_position, fastest_lap, etc.).
+        pole_position, fastest_lap, etc.) from its original entry.
         """
         if not entries:
             return {}
         
         merged = dict(entries[0])
+        # Remove 'no' field from merged entry as it now represents multiple car/driver numbers
+        merged.pop("no", None)
         
         # Iterate through remaining entries
         for entry in entries[1:]:
             for key, value in entry.items():
                 # Skip metadata fields that should come from the first entry
-                if key in ("pos", "constructor", "points", "no"):
+                if key in ("pos", "constructor", "points"):
+                    continue
+                
+                # Skip the 'no' field as we want to remove it from merged output
+                if key == "no":
                     continue
                 
                 # If this is a race result (dict with 'results' key), merge the results
@@ -230,13 +235,26 @@ class SeasonStandingsParser:
                         if isinstance(existing_results, list) and isinstance(new_results, list):
                             merged[key]["results"] = existing_results + new_results
                         
-                        # Preserve other attributes from the round (like round info)
-                        # but don't overwrite attributes that belong to individual results
+                        # Remove round-level attributes that should only be on results
+                        SeasonStandingsParser._remove_round_level_attributes(merged[key])
+                        
+                        # Preserve other round attributes (like round info, sprint_position, etc.)
                         for round_key, round_value in value.items():
-                            if round_key != "results" and round_key not in merged[key]:
-                                merged[key][round_key] = round_value
+                            if round_key not in ("results", "background", "pole_position", "fastest_lap"):
+                                if round_key not in merged[key]:
+                                    merged[key][round_key] = round_value
                     else:
                         # This race result doesn't exist in the first entry, add it
+                        # But remove round-level attributes that should only be on results
+                        if isinstance(value, dict):
+                            value = dict(value)
+                            SeasonStandingsParser._remove_round_level_attributes(value)
                         merged[key] = value
+        
+        # Clean up round-level attributes from existing rounds in the first entry
+        # Create a list of items to avoid modifying dictionary during iteration
+        for key, value in list(merged.items()):
+            if isinstance(value, dict) and "results" in value:
+                SeasonStandingsParser._remove_round_level_attributes(value)
         
         return merged
