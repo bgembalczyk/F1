@@ -187,6 +187,16 @@ class SeasonStandingsParser:
         )
     
     @staticmethod
+    def _remove_round_level_attributes(round_data: dict[str, Any]) -> None:
+        """
+        Remove attributes that should only exist on individual results.
+        Modifies the dictionary in place.
+        """
+        round_data.pop("background", None)
+        round_data.pop("pole_position", None)
+        round_data.pop("fastest_lap", None)
+    
+    @staticmethod
     def _merge_multiple_entries(
         entries: List[Dict[str, Any]]
     ) -> Dict[str, Any]:
@@ -201,7 +211,7 @@ class SeasonStandingsParser:
             return {}
         
         merged = dict(entries[0])
-        # Remove 'no' field from merged entry as it now represents multiple drivers
+        # Remove 'no' field from merged entry as it now represents multiple car/driver numbers
         merged.pop("no", None)
         
         # Iterate through remaining entries
@@ -226,10 +236,7 @@ class SeasonStandingsParser:
                             merged[key]["results"] = existing_results + new_results
                         
                         # Remove round-level attributes that should only be on results
-                        # (they are now on individual result objects)
-                        merged[key].pop("background", None)
-                        merged[key].pop("pole_position", None) 
-                        merged[key].pop("fastest_lap", None)
+                        SeasonStandingsParser._remove_round_level_attributes(merged[key])
                         
                         # Preserve other round attributes (like round info, sprint_position, etc.)
                         for round_key, round_value in value.items():
@@ -241,16 +248,13 @@ class SeasonStandingsParser:
                         # But remove round-level attributes that should only be on results
                         if isinstance(value, dict):
                             value = dict(value)
-                            value.pop("background", None)
-                            value.pop("pole_position", None)
-                            value.pop("fastest_lap", None)
+                            SeasonStandingsParser._remove_round_level_attributes(value)
                         merged[key] = value
         
         # Clean up round-level attributes from existing rounds in the first entry
-        for key, value in merged.items():
+        # Create a list of items to avoid modifying dictionary during iteration
+        for key, value in list(merged.items()):
             if isinstance(value, dict) and "results" in value:
-                value.pop("background", None)
-                value.pop("pole_position", None)
-                value.pop("fastest_lap", None)
+                SeasonStandingsParser._remove_round_level_attributes(value)
         
         return merged
