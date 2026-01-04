@@ -19,12 +19,16 @@ class InfoboxCareerParser:
                 label = clean_infobox_text(label_cell.get_text(" ", strip=True))
                 if label in {"Active years", "Years active"}:
                     value = self._cell_parser.parse_active_years(value_cell)
+                elif label == "Years":
+                    value = self._cell_parser.parse_active_years(value_cell)
                 elif label == "Car number":
                     value = self._cell_parser.parse_car_numbers(value_cell)
                 elif label == "Teams":
                     value = self._cell_parser.parse_teams(value_cell)
                 elif label == "Entries":
                     value = self._cell_parser.parse_entries(value_cell)
+                elif label == "Championships":
+                    value = self._cell_parser.parse_championships(value_cell)
                 elif label in {
                     "Wins",
                     "Podiums",
@@ -32,7 +36,6 @@ class InfoboxCareerParser:
                     "Poles",
                     "Fastest laps",
                     "Starts",
-                    "Championships",
                 }:
                     value = self._cell_parser.parse_int_cell(value_cell)
                 elif label == "Career points":

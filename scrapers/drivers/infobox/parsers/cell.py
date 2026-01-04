@@ -151,6 +151,54 @@ class InfoboxCellParser:
                 f"Nie udało się sparsować liczby całkowitej: {text!r}.",
                 cause=exc,
             ) from exc
+    
+    def parse_championships(self, cell: Tag) -> Dict[str, Any]:
+        """Parse championships count with year and link information.
+        
+        Handles cases like:
+        - "1 (2014)" -> {count: 1, championships: [{year: 2014, url: ...}]}
+        - "2 (2015, 2016)" -> {count: 2, championships: [{year: 2015, url: ...}, {year: 2016, url: ...}]}
+        """
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        try:
+            # Extract count
+            count_match = re.search(r"^(\d+)", text)
+            count = int(count_match.group(1)) if count_match else 0
+            
+            # Extract year links from parentheses
+            championships = []
+            links = self._link_extractor.extract_links(cell)
+            
+            # Build year -> url mapping from links
+            year_to_url: Dict[int, str | None] = {}
+            for link in links:
+                link_text = link.get("text", "")
+                year_match = re.search(r'\b(\d{4})\b', link_text)
+                if year_match:
+                    year = int(year_match.group(1))
+                    year_to_url[year] = link.get("url")
+            
+            # Extract all years from text (typically in parentheses)
+            paren_match = re.search(r'\(([^)]+)\)', text)
+            if paren_match:
+                paren_content = paren_match.group(1)
+                # Find all years in the parentheses
+                for year_match in re.finditer(r'\b(\d{4})\b', paren_content):
+                    year = int(year_match.group(1))
+                    championships.append({
+                        "year": year,
+                        "url": year_to_url.get(year)
+                    })
+            
+            return {
+                "count": count,
+                "championships": championships
+            }
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować mistrzostw: {text!r}.",
+                cause=exc,
+            ) from exc
 
     @staticmethod
     def parse_float_cell(cell: Tag) -> float | None:
@@ -208,28 +256,43 @@ class InfoboxCellParser:
                 result_text, _ = text.split(" in ", 1)
                 result["result"] = result_text.strip() or None
             else:
-                result["result"] = text.strip() or None
+                # Extract result without parentheses content
+                result_match = re.match(r'^([^(]+)', text)
+                if result_match:
+                    result["result"] = result_match.group(1).strip() or None
+                else:
+                    result["result"] = text.strip() or None
             
             # Extract season link
             links = self._link_extractor.extract_links(cell)
             season_links = [link for link in links if not self._is_class_link(link)]
             if season_links:
                 season_link = season_links[0]
-                # Extract year from link text
-                year_match = re.search(r'\b(\d{4})(?:[-–](\d{2,4}))?\b', season_link.get("text", ""))
-                if year_match:
-                    year = int(year_match.group(1))
-                    result["season"] = {
-                        "year": year,
-                        "url": season_link.get("url")
-                    }
+                # Use the full link text instead of extracting just the year
+                result["season"] = {
+                    "text": season_link.get("text", ""),
+                    "url": season_link.get("url")
+                }
             
-            # Extract class from <small> tag
+            # Check <small> tag for class or additional season info
             small_tag = cell.find("small")
             if small_tag:
-                class_links = self._link_extractor.extract_links(small_tag)
-                if class_links:
-                    result["class"] = class_links[0]
+                small_links = self._link_extractor.extract_links(small_tag)
+                small_text = clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
+                
+                # Check if content is a year/season (number pattern) or a class (text)
+                is_year_pattern = re.search(r'\b\d{4}\b', small_text)
+                
+                if is_year_pattern and small_links:
+                    # It's a season, not a class
+                    if not result["season"]:  # Only set if not already set
+                        result["season"] = {
+                            "text": small_links[0].get("text", ""),
+                            "url": small_links[0].get("url")
+                        }
+                elif small_links and not is_year_pattern:
+                    # It's a class
+                    result["class"] = small_links[0]
             
             return result
         except (TypeError, ValueError) as exc:
