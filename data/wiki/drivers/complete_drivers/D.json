@@ -83,10 +83,6 @@
                   "text": "Belgian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Belgium"
-                    },
-                    {
                       "text": "Belgian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
                     }
@@ -95,10 +91,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2011,
-                  "end": 2012
-                }
+                "value": [
+                  {
+                    "year": 2011,
+                    "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -122,10 +124,7 @@
               },
               {
                 "label": "Championships",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Wins",
@@ -184,10 +183,36 @@
             "rows": [
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2014,
-                  "end": 2020
-                }
+                "value": [
+                  {
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Formula_E_Championship"
+                  },
+                  {
+                    "year": 2015,
+                    "url": null
+                  },
+                  {
+                    "year": 2016,
+                    "url": null
+                  },
+                  {
+                    "year": 2017,
+                    "url": null
+                  },
+                  {
+                    "year": 2018,
+                    "url": null
+                  },
+                  {
+                    "year": 2019,
+                    "url": null
+                  },
+                  {
+                    "year": 2020,
+                    "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Formula_E_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -227,10 +252,7 @@
               },
               {
                 "label": "Championships",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Wins",
@@ -242,10 +264,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "2",
-                  "links": []
-                }
+                "value": 2
               },
               {
                 "label": "Fastest laps",
@@ -15526,8 +15545,15 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Anthony Denis Davidson 18 April 1979 Hemel Hempstead , Hertfordshire, England",
-            "place": null
+            "date": "1979-04-18",
+            "place": [
+              {
+                "text": "Hemel Hempstead",
+                "url": "https://en.wikipedia.org/wiki/Hemel_Hempstead"
+              },
+              "Hertfordshire",
+              "England"
+            ]
           },
           "children": []
         },
@@ -15539,10 +15565,48 @@
             "rows": [
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2012,
-                  "end": 2021
-                }
+                "value": [
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2013,
+                    "url": "https://en.wikipedia.org/wiki/2013_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2015,
+                    "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2017,
+                    "url": "https://en.wikipedia.org/wiki/2017_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2019_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2020,
+                    "url": "https://en.wikipedia.org/wiki/2020_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -15587,10 +15651,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "4",
-                  "links": []
-                }
+                "value": 4
               },
               {
                 "label": "Fastest laps",
@@ -15601,8 +15662,12 @@
                 "value": {
                   "result": "1st",
                   "season": {
-                    "start": 2014,
-                    "end": 2014
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+                  },
+                  "class": {
+                    "text": "LMP1",
+                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
                   }
                 }
               },
@@ -15623,10 +15688,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -15635,10 +15696,24 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2007,
-                  "end": 2008
-                }
+                "value": [
+                  {
+                    "year": 2002,
+                    "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2005,
+                    "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -15666,10 +15741,7 @@
               },
               {
                 "label": "Championships",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Wins",
