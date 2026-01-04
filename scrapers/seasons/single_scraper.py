@@ -73,12 +73,15 @@ class SingleSeasonScraper(F1Scraper):
         return super().fetch()
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        # Parse calendar first, as cancelled_rounds may need it for comparison
+        calendar_data = self._calendar_parser.parse(soup, self.season_year)
+        
         return [
             {
                 "entries": self._entries_parser.parse(soup, self.season_year),
                 "free_practice_drivers": self._free_practice_parser.parse(soup),
-                "calendar": self._calendar_parser.parse(soup, self.season_year),
-                "cancelled_rounds": self._cancelled_rounds_parser.parse(soup, self.season_year),
+                "calendar": calendar_data,
+                "cancelled_rounds": self._cancelled_rounds_parser.parse(soup, self.season_year, calendar_data),
                 "testing_venues_and_dates": self._testing_venues_parser.parse(soup, self.season_year),
                 "results": self._results_parser.parse(soup),
                 "non_championship_races": self._non_championship_parser.parse(
