@@ -9,17 +9,21 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.ABC import F1Scraper
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
+from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
+from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
 from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.entries import SeasonEntriesParser
 from scrapers.seasons.parsers.free_practice import (
     SeasonFreePracticeParser,
 )
+from scrapers.seasons.parsers.jim_clark_trophy import JimClarkTrophyParser
 from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
 from scrapers.seasons.parsers.regional_championship import SeasonRegionalChampionshipParser
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 
 
 class SingleSeasonScraper(F1Scraper):
@@ -47,10 +51,14 @@ class SingleSeasonScraper(F1Scraper):
         )
         self._free_practice_parser = SeasonFreePracticeParser(self._table_parser)
         self._calendar_parser = SeasonCalendarParser(self._table_parser)
+        self._cancelled_rounds_parser = CancelledRoundsParser(self._table_parser)
+        self._testing_venues_parser = TestingVenuesParser(self._table_parser)
         self._results_parser = SeasonResultsParser(self._table_parser)
         self._non_championship_parser = SeasonNonChampionshipParser(self._table_parser)
         self._scoring_system_parser = SeasonScoringSystemParser(self._table_parser)
         self._standings_parser = SeasonStandingsParser(self._table_parser)
+        self._jim_clark_trophy_parser = JimClarkTrophyParser(self._table_parser)
+        self._colin_chapman_trophy_parser = ColinChapmanTrophyParser(self._table_parser)
         self._regional_parser = SeasonRegionalChampionshipParser(self._table_parser)
 
     def fetch_by_url(
@@ -70,6 +78,8 @@ class SingleSeasonScraper(F1Scraper):
                 "entries": self._entries_parser.parse(soup, self.season_year),
                 "free_practice_drivers": self._free_practice_parser.parse(soup),
                 "calendar": self._calendar_parser.parse(soup, self.season_year),
+                "cancelled_rounds": self._cancelled_rounds_parser.parse(soup, self.season_year),
+                "testing_venues_and_dates": self._testing_venues_parser.parse(soup, self.season_year),
                 "results": self._results_parser.parse(soup),
                 "non_championship_races": self._non_championship_parser.parse(
                     soup, self.season_year
@@ -80,6 +90,12 @@ class SingleSeasonScraper(F1Scraper):
                 ),
                 "constructors_standings": self._standings_parser.parse_constructors(
                     soup
+                ),
+                "jim_clark_trophy": self._jim_clark_trophy_parser.parse(
+                    soup, self.season_year
+                ),
+                "colin_chapman_trophy": self._colin_chapman_trophy_parser.parse(
+                    soup, self.season_year
                 ),
                 "south_african_formula_one_championship": self._regional_parser.parse(
                     soup,
