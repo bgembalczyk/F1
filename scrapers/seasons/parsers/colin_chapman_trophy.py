@@ -5,16 +5,15 @@ from typing import List
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.config import ScraperConfig
-from scrapers.seasons.columns.race_result import RaceResultColumn
+from scrapers.seasons.columns.colin_chapman_race_result import ColinChapmanRaceResultColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
 
@@ -30,29 +29,20 @@ class ColinChapmanTrophyParser:
         
         Table is identical to World Constructors' Championship standings,
         with one exception:
-        - Mark * means: "was not eligible for points, as the team had officially entered only one car for the entire championship"
+        - Mark * at race result means: "was not eligible for points, as the team had officially entered only one car for the entire championship"
         """
-        
-        # Create column for constructor with * mark support
-        constructor_with_mark = MultiColumn(
-            subcolumns={
-                "constructor": ConstructorColumn(),
-                "single_car_entry_mark": EnumMarksColumn(
-                    mapping={"*": True},
-                    default=False
-                ),
-            }
-        )
         
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
             column("Pos", "pos", PositionColumn()),
-            column("Constructor", "constructor_data", constructor_with_mark),
+            column("Constructor", "constructor", ConstructorColumn()),
             column("Points", "points", PointsColumn()),
             column("Pts.", "points", PointsColumn()),
             column("Pts", "points", PointsColumn()),
             column("No.", "no", IntColumn()),
             column("No", "no", IntColumn()),
+            # Handle "Car<br>no." which becomes "Car no." after text extraction
+            column("Car no.", "no", IntColumn()),
         ]
         
         config = ScraperConfig(
@@ -60,7 +50,7 @@ class ColinChapmanTrophyParser:
             section_id="Colin_Chapman_Trophy",
             expected_headers=["Constructor"],
             schema=TableSchemaDSL(columns=schema_columns),
-            default_column=RaceResultColumn(season_year=season_year),
+            default_column=ColinChapmanRaceResultColumn(season_year=season_year),
             record_factory=record_from_mapping,
         )
         
@@ -71,14 +61,7 @@ class ColinChapmanTrophyParser:
         
         try:
             records = scraper.parse(soup)
-            # Transform constructor_data to constructor and add single_car_entry field
-            for record in records:
-                if "constructor_data" in record:
-                    constructor_data = record.pop("constructor_data")
-                    if isinstance(constructor_data, dict):
-                        record["constructor"] = constructor_data.get("constructor")
-                        if constructor_data.get("single_car_entry_mark"):
-                            record["single_car_entry"] = True
-            return records
+            # Apply the same merging logic as constructors standings
+            return SeasonStandingsParser._merge_duplicate_constructors(records)
         except RuntimeError:
             return []

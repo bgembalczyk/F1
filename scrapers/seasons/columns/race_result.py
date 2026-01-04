@@ -27,7 +27,7 @@ class RaceResultColumn(BaseColumn):
     }
     _CLASSIFIED_DNF_MARK = "†"
     _CLASSIFIED_DNF_NOTE = "classified_after_dnf_90_percent"
-    _CLASSIFIED_DNF_START_YEAR = 2009
+    _CLASSIFIED_DNF_START_YEAR = 1985
     _CLASSIFIED_DNF_BACKGROUNDS = {
         "Winner",
         "Second place",
@@ -80,7 +80,12 @@ class RaceResultColumn(BaseColumn):
                 result.pop("marks", None)
                 # Add background, pole_position, and fastest_lap to each result
                 if background is not None:
-                    result["background"] = background
+                    # Special case: NC with blue background means "Not classified, finished"
+                    position = result.get("position")
+                    if isinstance(position, str) and position.upper() == "NC" and background == "Other classified position":
+                        result["background"] = "Not classified, finished"
+                    else:
+                        result["background"] = background
                 if pole_position:
                     result["pole_position"] = True
                 if fastest_lap:
@@ -165,7 +170,7 @@ class RaceResultColumn(BaseColumn):
 
         if "*" in marks and background == "Other classified position":
             result["points_eligible"] = False
-            self._append_note(result, "ineligible_for_points")
+            # Note: Don't add redundant note - points_eligible=false is sufficient
         if "~" in marks:
             result["points_eligible"] = False
             self._append_note(result, "shared_drive_no_points")
