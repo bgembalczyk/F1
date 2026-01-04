@@ -37,10 +37,31 @@ class DateRangeColumn(BaseColumn):
             return None
         
         start_str, end_str = parts
+        start_str = start_str.strip()
+        end_str = end_str.strip()
+        
+        # If start is just a number (day), extract month/year from end and prepend to start
+        if start_str.isdigit():
+            # Extract month and year from end_str
+            # Add year if not present in end_str
+            full_end = end_str
+            if self.year and not has_year(full_end):
+                full_end = f"{full_end} {self.year}"
+            
+            # Parse end date to extract components
+            end_parsed = parse_date_text(full_end)
+            
+            # Try to extract month name from end_str for start
+            month_match = re.search(r'\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\b', end_str, re.I)
+            if month_match:
+                month_name = month_match.group(1)
+                start_str = f"{start_str} {month_name}"
+                if self.year and not has_year(start_str):
+                    start_str = f"{start_str} {self.year}"
         
         # Parse dates
-        start_date = self._parse_single_date(start_str.strip())
-        end_date = self._parse_single_date(end_str.strip())
+        start_date = self._parse_single_date(start_str)
+        end_date = self._parse_single_date(end_str)
         
         if start_date is None or end_date is None:
             return None

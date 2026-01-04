@@ -51,6 +51,8 @@ class SeasonTableParser:
             column("Pts", "points", PointsColumn()),
             column("No.", "no", IntColumn()),
             column("No", "no", IntColumn()),
+            # Handle "Car<br>no." which becomes "Car no." after text extraction
+            column("Car no.", "no", IntColumn()),
         ]
         for section_id in section_ids:
             config = ScraperConfig(

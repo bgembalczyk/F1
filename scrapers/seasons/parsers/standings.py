@@ -121,6 +121,9 @@ class SeasonStandingsParser:
         
         When entries have a 'no' field, they represent individual driver results
         and should not be merged.
+        
+        This method now collects ALL matching entries (not just two) and merges
+        all their results together.
         """
         merged: List[Dict[str, Any]] = []
         i = 0
@@ -134,9 +137,12 @@ class SeasonStandingsParser:
                 i += 1
                 continue
             
-            # Look ahead to see if the next entry should be merged with this one
-            if i + 1 < len(records):
-                next_record = records[i + 1]
+            # Collect all consecutive entries that should be merged with current
+            entries_to_merge = [current]
+            j = i + 1
+            
+            while j < len(records):
+                next_record = records[j]
                 
                 # Check if the next record should be merged
                 should_merge = (
@@ -153,20 +159,26 @@ class SeasonStandingsParser:
                 )
                 
                 if should_merge:
-                    # Merge the two entries
-                    merged_entry = SeasonStandingsParser._merge_two_entries(
-                        current, next_record
-                    )
-                    merged.append(merged_entry)
-                    i += 2  # Skip both entries
-                    continue
+                    entries_to_merge.append(next_record)
+                    j += 1
+                else:
+                    break
             
-            # No merge needed, add current entry as-is
-            merged.append(current)
-            i += 1
+            # Merge all collected entries
+            if len(entries_to_merge) > 1:
+                merged_entry = SeasonStandingsParser._merge_multiple_entries(
+                    entries_to_merge
+                )
+                merged.append(merged_entry)
+            else:
+                # No merge needed, add current entry as-is
+                merged.append(current)
+            
+            # Skip all merged entries
+            i = j
         
         return merged
-
+    
     @staticmethod
     def _same_constructor(
         constructor1: Dict[str, Any] | None, constructor2: Dict[str, Any] | None
@@ -184,35 +196,47 @@ class SeasonStandingsParser:
             chassis1.get("text") == chassis2.get("text")
             and engine1.get("text") == engine2.get("text")
         )
-
+    
     @staticmethod
-    def _merge_two_entries(
-        entry1: Dict[str, Any], entry2: Dict[str, Any]
+    def _merge_multiple_entries(
+        entries: List[Dict[str, Any]]
     ) -> Dict[str, Any]:
         """
-        Merge two constructor standings entries by combining their race results.
+        Merge multiple constructor standings entries by combining their race results.
         
-        Takes the first entry as the base and merges race results from the second entry.
+        Takes the first entry as the base and merges race results from all other entries.
+        Each result in the results array maintains its own attributes (background, 
+        pole_position, fastest_lap, etc.).
         """
-        merged = dict(entry1)
+        if not entries:
+            return {}
         
-        # Iterate through all keys in the second entry
-        for key, value in entry2.items():
-            # Skip metadata fields that should come from the first entry
-            if key in ("pos", "constructor", "points", "no"):
-                continue
-            
-            # If this is a race result (dict with 'results' key), merge the results
-            if isinstance(value, dict) and "results" in value:
-                if key in merged and isinstance(merged[key], dict):
-                    # Merge the results arrays
-                    existing_results = merged[key].get("results", [])
-                    new_results = value.get("results", [])
-                    # Ensure both are lists before merging
-                    if isinstance(existing_results, list) and isinstance(new_results, list):
-                        merged[key]["results"] = existing_results + new_results
-                else:
-                    # This race result doesn't exist in the first entry, add it
-                    merged[key] = value
+        merged = dict(entries[0])
+        
+        # Iterate through remaining entries
+        for entry in entries[1:]:
+            for key, value in entry.items():
+                # Skip metadata fields that should come from the first entry
+                if key in ("pos", "constructor", "points", "no"):
+                    continue
+                
+                # If this is a race result (dict with 'results' key), merge the results
+                if isinstance(value, dict) and "results" in value:
+                    if key in merged and isinstance(merged[key], dict):
+                        # Merge the results arrays
+                        existing_results = merged[key].get("results", [])
+                        new_results = value.get("results", [])
+                        # Ensure both are lists before merging
+                        if isinstance(existing_results, list) and isinstance(new_results, list):
+                            merged[key]["results"] = existing_results + new_results
+                        
+                        # Preserve other attributes from the round (like round info)
+                        # but don't overwrite attributes that belong to individual results
+                        for round_key, round_value in value.items():
+                            if round_key != "results" and round_key not in merged[key]:
+                                merged[key][round_key] = round_value
+                    else:
+                        # This race result doesn't exist in the first entry, add it
+                        merged[key] = value
         
         return merged
