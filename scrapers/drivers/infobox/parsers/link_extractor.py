@@ -76,8 +76,8 @@ class InfoboxLinkExtractor:
         
         results: List[Dict[str, Any]] = []
         
-        # Find all year patterns in text (both individual and ranges)
-        processed_positions = set()
+        # Track which years have been processed as part of ranges
+        processed_years = set()
         
         # First, find ranges (year-year pattern)
         for match in re.finditer(r'\b(\d{4})\s*[-–]\s*(\d{2,4})\b', text):
@@ -88,8 +88,9 @@ class InfoboxLinkExtractor:
             else:
                 end = int(end_text)
             
-            # Mark these positions as processed
-            processed_positions.add(match.start())
+            # Mark these years as processed
+            processed_years.add(start)
+            processed_years.add(end)
             
             url_from = year_to_url.get(start)
             url_to = year_to_url.get(end)
@@ -109,8 +110,9 @@ class InfoboxLinkExtractor:
         
         # Then, find individual years not part of ranges
         for match in re.finditer(r'\b(\d{4})\b', text):
-            if match.start() not in processed_positions:
-                year = int(match.group(1))
+            year = int(match.group(1))
+            if year not in processed_years:
+                processed_years.add(year)
                 results.append({
                     "year": year,
                     "url": year_to_url.get(year)

@@ -5,6 +5,7 @@ from typing import List
 
 from bs4 import Tag
 
+from models.records.link import LinkRecord
 from models.services.helpers import parse_int_values
 from models.services.helpers import parse_year_range
 from models.services.helpers import split_delimited_text
