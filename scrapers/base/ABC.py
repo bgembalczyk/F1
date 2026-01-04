@@ -14,7 +14,7 @@ from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.source_adapter import build_source_adapter
-from scrapers.base.transformers import RecordTransformer
+from scrapers.base.transformers import RecordTransformer, TransformersPipeline
 from scrapers.base.errors import (
     ScraperError,
     ScraperNetworkError,
@@ -311,21 +311,8 @@ class F1Scraper(ABC):
         self.logger.info("Saved quality report: %s", report_path)
 
     def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        transformed = records
-        for transformer in self.transformers:
-            before_count = len(transformed)
-            self.logger.debug(
-                "Transformer %s: before=%d",
-                transformer.__class__.__name__,
-                before_count,
-            )
-            transformed = transformer.transform(transformed)
-            self.logger.debug(
-                "Transformer %s: after=%d",
-                transformer.__class__.__name__,
-                len(transformed),
-            )
-        return transformed
+        pipeline = TransformersPipeline(self.transformers, logger=self.logger)
+        return pipeline.apply(records)
 
     # ---------- Pomocnicze ----------
 

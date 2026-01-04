@@ -9,7 +9,8 @@ from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.pipeline import TablePipeline
+from scrapers.base.extractors.table import TableExtractor
+from scrapers.base.transformers import RecordFactoryTransformer, TransformersPipeline
 from scrapers.base.table.row import TableRow
 
 
@@ -56,7 +57,7 @@ class F1TableScraper(F1Scraper, ABC):
         self.record_factory = resolved_config.record_factory
         self.model_class = resolved_config.model_class
         self.default_column = resolved_config.default_column or AutoColumn()
-        self.pipeline = TablePipeline(
+        self.extractor = TableExtractor(
             config=resolved_config,
             include_urls=self.include_urls,
             normalize_empty_values=options.normalize_empty_values,
@@ -70,8 +71,8 @@ class F1TableScraper(F1Scraper, ABC):
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
         """
-        self.pipeline.set_run_id(getattr(self, "_run_id", None))
-        return self.pipeline.parse_soup(soup)
+        self.extractor.set_run_id(getattr(self, "_run_id", None))
+        return self.extractor.extract(soup)
 
     def parse_row(self, row: TableRow) -> Optional[Any]:
         """
@@ -80,8 +81,7 @@ class F1TableScraper(F1Scraper, ABC):
         - wybiera typ kolumny z `columns`,
         - deleguje całą logikę do handlera kolumny.
         """
-        mapped_row = dict(zip(row.headers, row.cells))
-        return self.pipeline.parse_row(mapped_row)
+        return self.extractor.parse_row(row)
 
     def _model_fields(self) -> set[str] | None:
         model_class = getattr(self, "model_class", None)
@@ -104,3 +104,10 @@ class F1TableScraper(F1Scraper, ABC):
             return set(pydantic_fields)
 
         return None
+
+    def _apply_transformers(self, records: List[Any]) -> List[Any]:
+        transformers = list(self.transformers)
+        if self.record_factory is not None:
+            transformers.append(RecordFactoryTransformer(self.record_factory))
+        pipeline = TransformersPipeline(transformers, logger=self.logger)
+        return pipeline.apply(records)
