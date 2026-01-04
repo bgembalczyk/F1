@@ -13,16 +13,16 @@ from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import (
-    ANTECEDENT_TEAMS_HEADER,
-    BASED_IN_HEADER,
-    CONSTRUCTOR_HEADER,
+    CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+    CONSTRUCTOR_BASED_IN_HEADER,
+    CONSTRUCTOR_DRIVERS_HEADER,
+    CONSTRUCTOR_ENGINE_HEADER,
+    CONSTRUCTOR_LICENSED_IN_HEADER,
+    CONSTRUCTOR_NAME_HEADER,
+    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+    CONSTRUCTOR_WCC_HEADER,
+    CONSTRUCTOR_WDC_HEADER,
     CONSTRUCTORS_2025_EXPECTED_HEADERS,
-    DRIVERS_HEADER,
-    ENGINE_HEADER,
-    LICENSED_IN_HEADER,
-    TOTAL_ENTRIES_HEADER,
-    WCC_HEADER,
-    WDC_HEADER,
 )
 
 
@@ -34,10 +34,10 @@ class Constructors2025ListScraper(F1TableScraper):
     """
 
     schema_columns = [
-        column(CONSTRUCTOR_HEADER, "constructor", UrlColumn()),
-        column(ENGINE_HEADER, "engine", LinksListColumn()),
-        column(LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
-        column(BASED_IN_HEADER, "based_in", LinksListColumn()),
+        column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
+        column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn()),
+        column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
+        column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn()),
         *[
             column(
                 header,
@@ -46,11 +46,15 @@ class Constructors2025ListScraper(F1TableScraper):
             )
             for header, key in BASE_STATS_MAP.items()
         ],
-        column(DRIVERS_HEADER, "drivers", IntColumn()),
-        column(TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
-        column(WCC_HEADER, "wcc_titles", IntColumn()),
-        column(WDC_HEADER, "wdc_titles", IntColumn()),
-        column(ANTECEDENT_TEAMS_HEADER, "antecedent_teams", LinksListColumn()),
+        column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+        column(CONSTRUCTOR_TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
+        column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+        column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+        column(
+            CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+            "antecedent_teams",
+            LinksListColumn(),
+        ),
     ]
 
     CONFIG = ScraperConfig(

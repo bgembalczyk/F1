@@ -16,13 +16,13 @@ from scrapers.base.transformers.points_scoring_systems_history import (
 )
 from scrapers.points.columns.first_place import FirstPlaceColumn
 from scrapers.points.constants import (
-    CONSTRUCTORS_CHAMPIONSHIP_HEADER,
-    DRIVERS_CHAMPIONSHIP_HEADER,
-    FASTEST_LAP_HEADER,
     HISTORICAL_POSITIONS,
-    NOTES_HEADER,
+    POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+    POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
+    POINTS_FASTEST_LAP_HEADER,
+    POINTS_NOTES_HEADER,
     POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
-    SEASONS_HEADER,
+    POINTS_SEASONS_HEADER,
 )
 
 
@@ -32,20 +32,24 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 
-    schema_columns = [column(SEASONS_HEADER, "seasons", SeasonsColumn())]
+    schema_columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
     for index, position in enumerate(HISTORICAL_POSITIONS):
         column_instance = FirstPlaceColumn() if index == 0 else IntColumn()
         schema_columns.append(column(position, position.lower(), column_instance))
     schema_columns.extend(
         [
-            column(FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
-            column(DRIVERS_CHAMPIONSHIP_HEADER, "drivers_championship", AutoColumn()),
+            column(POINTS_FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
             column(
-                CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+                POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
+                "drivers_championship",
+                AutoColumn(),
+            ),
+            column(
+                POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
                 "constructors_championship",
                 AutoColumn(),
             ),
-            column(NOTES_HEADER, "notes", SkipColumn()),
+            column(POINTS_NOTES_HEADER, "notes", SkipColumn()),
         ]
     )
 

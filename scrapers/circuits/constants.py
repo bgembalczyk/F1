@@ -1,18 +1,18 @@
-CIRCUIT_HEADER = "Circuit"
-MAP_HEADER = "Map"
-TYPE_HEADER = "Type"
-DIRECTION_HEADER = "Direction"
-LOCATION_HEADER = "Location"
-COUNTRY_HEADER = "Country"
-LAST_LENGTH_USED_HEADER = "Last length used"  # Ostatnio używana długość toru.
-TURNS_HEADER = "Turns"
-GRANDS_PRIX_HEADER = "Grands Prix"  # Lista powiązanych Grand Prix.
-SEASONS_HEADER = "Season(s)"  # Zbiorcze sezony obecności toru.
-GRANDS_PRIX_HELD_HEADER = "Grands Prix held"  # Liczba rozegranych GP.
+CIRCUIT_NAME_HEADER = "Circuit"
+CIRCUIT_MAP_HEADER = "Map"
+CIRCUIT_TYPE_HEADER = "Type"
+CIRCUIT_DIRECTION_HEADER = "Direction"
+CIRCUIT_LOCATION_HEADER = "Location"
+CIRCUIT_COUNTRY_HEADER = "Country"
+CIRCUIT_LAST_LENGTH_USED_HEADER = "Last length used"  # Ostatnio używana długość toru.
+CIRCUIT_TURNS_HEADER = "Turns"
+CIRCUIT_GRANDS_PRIX_HEADER = "Grands Prix"  # Lista powiązanych Grand Prix.
+CIRCUIT_SEASONS_HEADER = "Season(s)"  # Zbiorcze sezony obecności toru.
+CIRCUIT_GRANDS_PRIX_HELD_HEADER = "Grands Prix held"  # Liczba rozegranych GP.
 
 CIRCUITS_EXPECTED_HEADERS = [
-    CIRCUIT_HEADER,
-    TYPE_HEADER,
-    LOCATION_HEADER,
-    COUNTRY_HEADER,
+    CIRCUIT_NAME_HEADER,
+    CIRCUIT_TYPE_HEADER,
+    CIRCUIT_LOCATION_HEADER,
+    CIRCUIT_COUNTRY_HEADER,
 ]

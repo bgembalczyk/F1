@@ -4,32 +4,36 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.points.constants import FASTEST_LAP_HEADER
+from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
 from scrapers.points.constants import HISTORICAL_POSITIONS
-from scrapers.points.constants import NOTES_HEADER
-from scrapers.points.constants import RACE_LENGTH_COMPLETED_HEADER
-from scrapers.points.constants import SEASONS_HEADER
+from scrapers.points.constants import POINTS_NOTES_HEADER
+from scrapers.points.constants import POINTS_RACE_LENGTH_COMPLETED_HEADER
+from scrapers.points.constants import POINTS_SEASONS_HEADER
 from scrapers.points.constants import SPRINT_POSITIONS
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:
     columns = [
-        column(SEASONS_HEADER, "seasons", SeasonsColumn()),
-        column(RACE_LENGTH_COMPLETED_HEADER, "race_length_completed", TextColumn()),
+        column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        column(
+            POINTS_RACE_LENGTH_COMPLETED_HEADER,
+            "race_length_completed",
+            TextColumn(),
+        ),
     ]
     for position in HISTORICAL_POSITIONS:
         columns.append(column(position, position.lower(), AutoColumn()))
     columns.extend(
         [
-            column(FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()),
-            column(NOTES_HEADER, "notes", SkipColumn()),
+            column(POINTS_FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()),
+            column(POINTS_NOTES_HEADER, "notes", SkipColumn()),
         ]
     )
     return TableSchemaDSL(columns=columns)
 
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
-    columns = [column(SEASONS_HEADER, "seasons", SeasonsColumn())]
+    columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
     for position in SPRINT_POSITIONS:
         columns.append(column(position, position.lower(), IntColumn()))
     return TableSchemaDSL(columns=columns)

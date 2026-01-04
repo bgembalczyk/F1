@@ -20,8 +20,8 @@ from scrapers.drivers.constants import (
     FEMALE_DRIVER_SEASONS_HEADER,
     FEMALE_DRIVER_TEAMS_HEADER,
     FEMALE_DRIVERS_HEADERS,
+    FEMALE_DRIVERS_INDEX_HEADER,
     FEMALE_DRIVERS_SECTION_ID,
-    INDEX_HEADER,
 )
 from scrapers.drivers.post_processors import EntriesStartsPointsPostProcessor
 
@@ -33,7 +33,7 @@ class FemaleDriversListScraper(F1TableScraper):
     """
 
     schema_columns = [
-        column(INDEX_HEADER, "_skip", SkipColumn()),
+        column(FEMALE_DRIVERS_INDEX_HEADER, "_skip", SkipColumn()),
         column(FEMALE_DRIVER_NAME_HEADER, "driver", UrlColumn()),
         column(FEMALE_DRIVER_SEASONS_HEADER, "seasons", SeasonsColumn()),
         column(FEMALE_DRIVER_TEAMS_HEADER, "teams", LinksListColumn()),

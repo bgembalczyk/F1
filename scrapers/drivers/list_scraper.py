@@ -16,18 +16,18 @@ from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.constants import (
+    DRIVER_CHAMPIONSHIPS_HEADER,
+    DRIVER_FASTEST_LAPS_HEADER,
+    DRIVER_NATIONALITY_HEADER,
+    DRIVER_PODIUMS_HEADER,
+    DRIVER_POLE_POSITIONS_HEADER,
+    DRIVER_POINTS_HEADER,
+    DRIVER_RACE_ENTRIES_HEADER,
+    DRIVER_RACE_STARTS_HEADER,
+    DRIVER_RACE_WINS_HEADER,
+    DRIVER_SEASONS_COMPETED_HEADER,
     DRIVER_NAME_HEADER,
-    DRIVERS_CHAMPIONSHIPS_HEADER,
     DRIVERS_LIST_HEADERS,
-    FASTEST_LAPS_HEADER,
-    NATIONALITY_HEADER,
-    PODIUMS_HEADER,
-    POLE_POSITIONS_HEADER,
-    POINTS_HEADER,
-    RACE_ENTRIES_HEADER,
-    RACE_STARTS_HEADER,
-    RACE_WINS_HEADER,
-    SEASONS_COMPETED_HEADER,
 )
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
@@ -55,20 +55,24 @@ class F1DriversListScraper(F1TableScraper):
         schema=TableSchemaDSL(
             columns=[
                 column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
-                column(NATIONALITY_HEADER, "nationality", TextColumn()),
-                column(SEASONS_COMPETED_HEADER, "seasons_competed", SeasonsColumn()),
+                column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn()),
                 column(
-                    DRIVERS_CHAMPIONSHIPS_HEADER,
+                    DRIVER_SEASONS_COMPETED_HEADER,
+                    "seasons_competed",
+                    SeasonsColumn(),
+                ),
+                column(
+                    DRIVER_CHAMPIONSHIPS_HEADER,
                     "drivers_championships",
                     TextColumn(),  # zparsujemy ręcznie w fetch()
                 ),
-                column(RACE_ENTRIES_HEADER, "race_entries", IntColumn()),
-                column(RACE_STARTS_HEADER, "race_starts", IntColumn()),
-                column(POLE_POSITIONS_HEADER, "pole_positions", IntColumn()),
-                column(RACE_WINS_HEADER, "race_wins", IntColumn()),
-                column(PODIUMS_HEADER, "podiums", IntColumn()),
-                column(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
-                column(POINTS_HEADER, "points", TextColumn()),
+                column(DRIVER_RACE_ENTRIES_HEADER, "race_entries", IntColumn()),
+                column(DRIVER_RACE_STARTS_HEADER, "race_starts", IntColumn()),
+                column(DRIVER_POLE_POSITIONS_HEADER, "pole_positions", IntColumn()),
+                column(DRIVER_RACE_WINS_HEADER, "race_wins", IntColumn()),
+                column(DRIVER_PODIUMS_HEADER, "podiums", IntColumn()),
+                column(DRIVER_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
+                column(DRIVER_POINTS_HEADER, "points", TextColumn()),
             ]
         ),
         record_factory=build_driver_record,
