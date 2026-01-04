@@ -242,6 +242,8 @@ class RecordValidator(ABC):
             custom_validators=schema.get("custom_validators", ()),
         )
 
+
+class BaseDomainRecordValidator(RecordValidator):
     @staticmethod
     def require_keys(record: Mapping[str, Any], keys: Sequence[str]) -> list[str]:
         return [f"Missing key: {key}" for key in keys if key not in record]

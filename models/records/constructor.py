@@ -7,7 +7,7 @@ from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 class ConstructorRecord(TypedDict, total=False):
@@ -52,4 +52,4 @@ CONSTRUCTOR_SCHEMA = RecordSchema(
 
 
 def validate_constructor_record(record: dict[str, Any]) -> list[str]:
-    return RecordValidator.validate_schema(record, CONSTRUCTOR_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(record, CONSTRUCTOR_SCHEMA)

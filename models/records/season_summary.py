@@ -1,7 +1,7 @@
 from typing import Any, TypedDict
 
 from models.records.link import LinkRecord
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 class SeasonSummaryRecord(TypedDict, total=False):
@@ -18,49 +18,49 @@ class SeasonSummaryRecord(TypedDict, total=False):
 def validate_season_summary_record(record: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     errors.extend(
-        RecordValidator.require_keys(
+        BaseDomainRecordValidator.require_keys(
             record,
             ["season", "races", "countries", "drivers_champion_team"],
         )
     )
-    errors.extend(RecordValidator.require_type(record, "season", dict))
-    errors.extend(RecordValidator.require_type(record, "races", int, allow_none=True))
+    errors.extend(BaseDomainRecordValidator.require_type(record, "season", dict))
+    errors.extend(BaseDomainRecordValidator.require_type(record, "races", int, allow_none=True))
     errors.extend(
-        RecordValidator.require_type(record, "countries", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(record, "countries", int, allow_none=True)
     )
-    errors.extend(RecordValidator.require_type(record, "drivers_champion_team", list))
+    errors.extend(BaseDomainRecordValidator.require_type(record, "drivers_champion_team", list))
     errors.extend(
-        RecordValidator.require_type(
+        BaseDomainRecordValidator.require_type(
             record,
             "constructors_champion",
             list,
             allow_none=True,
         )
     )
-    errors.extend(RecordValidator.require_type(record, "winners", int, allow_none=True))
+    errors.extend(BaseDomainRecordValidator.require_type(record, "winners", int, allow_none=True))
 
     season = record.get("season")
     if isinstance(season, dict):
-        errors.extend(RecordValidator.require_link_dict(season, "season"))
+        errors.extend(BaseDomainRecordValidator.require_link_dict(season, "season"))
 
     drivers = record.get("drivers_champion_team")
     if isinstance(drivers, list):
         errors.extend(
-            RecordValidator.require_link_list(drivers, "drivers_champion_team")
+            BaseDomainRecordValidator.require_link_list(drivers, "drivers_champion_team")
         )
 
     constructors = record.get("constructors_champion")
     if isinstance(constructors, list):
         errors.extend(
-            RecordValidator.require_link_list(constructors, "constructors_champion")
+            BaseDomainRecordValidator.require_link_list(constructors, "constructors_champion")
         )
 
     first = record.get("first")
     if isinstance(first, dict):
-        errors.extend(RecordValidator.require_link_dict(first, "first"))
+        errors.extend(BaseDomainRecordValidator.require_link_dict(first, "first"))
 
     last = record.get("last")
     if isinstance(last, dict):
-        errors.extend(RecordValidator.require_link_dict(last, "last"))
+        errors.extend(BaseDomainRecordValidator.require_link_dict(last, "last"))
 
     return errors
