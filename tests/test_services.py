@@ -3,6 +3,9 @@ from pathlib import Path
 
 from models.services.circuits.circuit_service import CircuitService
 from models.services.driver_service import DriverService
+from models.services.helpers import parse_int_values
+from models.services.helpers import parse_year_range
+from models.services.helpers import split_delimited_text
 from models.services.season_service import SeasonService
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.options import ScraperOptions
@@ -158,3 +161,20 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
         {"name": "test", "marker": "custom", "url": None},
     ]
     assert "marker" in csv_path.read_text(encoding="utf-8")
+
+
+def test_split_delimited_text_handles_multiple_separators() -> None:
+    assert split_delimited_text("A, B;C / D") == ["A", "B", "C", "D"]
+    assert split_delimited_text("") == []
+
+
+def test_parse_int_values_handles_missing_and_multiple_numbers() -> None:
+    assert parse_int_values("12 entries, 10 starts") == [12, 10]
+    assert parse_int_values(None) == []
+
+
+def test_parse_year_range_handles_present_and_short_end_year() -> None:
+    assert parse_year_range("2001–03") == {"start": 2001, "end": 2003}
+    assert parse_year_range("2005–present") == {"start": 2005, "end": None}
+    assert parse_year_range("1999") == {"start": 1999, "end": 1999}
+    assert parse_year_range("unknown") == {"start": None, "end": None}
