@@ -233,6 +233,7 @@ class TablePipeline:
         return normalize_links(
             cell,
             full_url=lambda href: build_full_url(self.base_url, href),
+            drop_empty_text=True,
         )
 
     def _select_column(self, key: str, header: str) -> BaseColumn:
@@ -255,6 +256,7 @@ class TablePipeline:
             header_links = normalize_links(
                 header_cell,
                 full_url=lambda href: build_full_url(self.base_url, href),
+                drop_empty_text=True,
             )
             header_text = clean_wiki_text(header)
             header_link = next(
