@@ -1,5 +1,6 @@
 from typing import Any, Callable, Sequence
 
+from models.contracts import map_record_to_contract
 from scrapers.base.helpers.text_normalization import drop_empty_fields
 from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.logging import get_logger
@@ -47,14 +48,15 @@ class RecordNormalizer:
             )
         return normalized
 
-    def normalize_record(self, record: ExportRecord) -> tuple[ExportRecord, int]:
+    def normalize_record(self, record: ExportRecord) -> tuple[ExportRecord | Any, int]:
         updated: ExportRecord = dict(record)
         normalized_empty_fields = 0
         if self._normalize_empty_values:
             updated, normalized_empty_fields = self._normalize_empty_fields(updated)
         for rule in self._rules:
             updated = rule(updated)
-        return updated, normalized_empty_fields
+        mapped = map_record_to_contract(updated)
+        return mapped, normalized_empty_fields
 
     @staticmethod
     def _normalize_empty_fields(record: ExportRecord) -> tuple[ExportRecord, int]:
