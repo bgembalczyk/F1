@@ -1681,6 +1681,29 @@
           }
         }
       ],
+      "cancelled_rounds": [
+        {
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Autódromo Juan y Oscar Gálvez",
+              "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Juan_y_Oscar_G%C3%A1lvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "scheduled_date": {
+            "text": "16 October 1994",
+            "iso": "1994-10-16"
+          }
+        }
+      ],
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,

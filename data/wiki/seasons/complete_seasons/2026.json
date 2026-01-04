@@ -986,6 +986,8 @@
           }
         }
       ],
+      "cancelled_rounds": null,
+      "testing_venues_and_dates": null,
       "results": null,
       "non_championship_races": null,
       "scoring_system": null,

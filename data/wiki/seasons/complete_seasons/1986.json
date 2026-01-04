@@ -1492,6 +1492,89 @@
           }
         }
       ],
+      "cancelled_rounds": [
+        {
+          "grand_prix": {
+            "text": "Argentine Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Argentine_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Buenos Aires Autodrome",
+              "url": "https://en.wikipedia.org/wiki/Autodromo_Juan_y_Oscar_Galvez"
+            },
+            "location": {
+              "text": "Buenos Aires",
+              "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+          },
+          "scheduled_date": {
+            "text": "9 March 1986",
+            "iso": "1986-03-09"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka Circuit",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+            },
+            "location": {
+              "text": "Suzuka City",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "scheduled_date": {
+            "text": "6 April 1986",
+            "iso": "1986-04-06"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Dutch Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Dutch_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+            },
+            "location": {
+              "text": "Zandvoort",
+              "url": "https://en.wikipedia.org/wiki/Zandvoort"
+            }
+          },
+          "scheduled_date": {
+            "text": "31 August 1986",
+            "iso": "1986-08-31"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_Circuit"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "scheduled_date": {
+            "text": "26 October 1986",
+            "iso": "1986-10-26"
+          }
+        }
+      ],
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,

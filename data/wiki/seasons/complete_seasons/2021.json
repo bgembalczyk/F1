@@ -1089,6 +1089,109 @@
           }
         }
       ],
+      "cancelled_rounds": [
+        {
+          "grand_prix": {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Shanghai International Circuit",
+              "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit"
+            },
+            "location": {
+              "text": "Shanghai",
+              "url": "https://en.wikipedia.org/wiki/Shanghai"
+            }
+          },
+          "scheduled_date": {
+            "text": "11 April 2021",
+            "iso": "2021-04-11"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Canadian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Canadian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Gilles Villeneuve",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+            },
+            "location": {
+              "text": "Montreal",
+              "url": "https://en.wikipedia.org/wiki/Montreal"
+            }
+          },
+          "scheduled_date": {
+            "text": "13 June 2021",
+            "iso": "2021-06-13"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Singapore Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Singapore_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Marina Bay Street Circuit",
+              "url": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit"
+            },
+            "location": {
+              "text": "Singapore",
+              "url": "https://en.wikipedia.org/wiki/Singapore"
+            }
+          },
+          "scheduled_date": {
+            "text": "3 October 2021",
+            "iso": "2021-10-03"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Japanese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Suzuka International Racing Course",
+              "url": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course"
+            },
+            "location": {
+              "text": "Suzuka",
+              "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
+            }
+          },
+          "scheduled_date": {
+            "text": "10 October 2021",
+            "iso": "2021-10-10"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Australian Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Australian_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Albert Park Circuit",
+              "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+            },
+            "location": {
+              "text": "Melbourne",
+              "url": "https://en.wikipedia.org/wiki/Melbourne"
+            }
+          },
+          "scheduled_date": {
+            "text": "21 November 2021",
+            "iso": "2021-11-21"
+          }
+        }
+      ],
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,

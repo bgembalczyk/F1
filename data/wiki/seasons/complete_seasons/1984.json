@@ -1711,6 +1711,8 @@
           }
         }
       ],
+      "cancelled_rounds": null,
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,

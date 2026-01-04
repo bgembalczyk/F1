@@ -1694,6 +1694,89 @@
           }
         }
       ],
+      "cancelled_rounds": [
+        {
+          "grand_prix": {
+            "text": "French Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/French_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Reims-Gueux",
+              "url": "https://en.wikipedia.org/wiki/Reims-Gueux"
+            },
+            "location": {
+              "text": "Gueux",
+              "url": "https://en.wikipedia.org/wiki/Gueux,_Marne"
+            }
+          },
+          "scheduled_date": {
+            "text": "3 July 1955",
+            "iso": "1955-07-03"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/German_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Nürburgring",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+            },
+            "location": {
+              "text": "Nürburg",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
+            }
+          },
+          "scheduled_date": {
+            "text": "31 July 1955",
+            "iso": "1955-07-31"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Swiss Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Swiss_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Circuit Bremgarten",
+              "url": "https://en.wikipedia.org/wiki/Circuit_Bremgarten"
+            },
+            "location": {
+              "text": "Bern",
+              "url": "https://en.wikipedia.org/wiki/Bern"
+            }
+          },
+          "scheduled_date": {
+            "text": "21 August 1955",
+            "iso": "1955-08-21"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "Spanish Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Spanish_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Pedralbes Circuit",
+              "url": "https://en.wikipedia.org/wiki/Pedralbes_Circuit"
+            },
+            "location": {
+              "text": "Barcelona",
+              "url": "https://en.wikipedia.org/wiki/Barcelona"
+            }
+          },
+          "scheduled_date": {
+            "text": "23 October 1955",
+            "iso": "1955-10-23"
+          }
+        }
+      ],
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,

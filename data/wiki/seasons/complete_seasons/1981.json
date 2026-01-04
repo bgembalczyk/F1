@@ -1851,6 +1851,49 @@
           }
         }
       ],
+      "cancelled_rounds": [
+        {
+          "grand_prix": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Kyalami Grand Prix Circuit",
+              "url": "https://en.wikipedia.org/wiki/Kyalami"
+            },
+            "location": {
+              "text": "Midrand",
+              "url": "https://en.wikipedia.org/wiki/Midrand"
+            }
+          },
+          "scheduled_date": {
+            "text": "7 February 1981",
+            "iso": "1981-02-07"
+          }
+        },
+        {
+          "grand_prix": {
+            "text": "United States Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+          },
+          "circuit": {
+            "circuit": {
+              "text": "Watkins Glen Grand Prix Course",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+            },
+            "location": {
+              "text": "New York",
+              "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+            }
+          },
+          "scheduled_date": {
+            "text": "4 October 1981",
+            "iso": "1981-10-04"
+          }
+        }
+      ],
+      "testing_venues_and_dates": null,
       "results": [
         {
           "round": 1,
