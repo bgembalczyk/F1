@@ -1,6 +1,10 @@
 from pathlib import Path
 
 from models.records.factories import build_driver_record
+from scrapers.base.helpers.config_factory import (
+    ScraperCommonConfig,
+    build_table_config,
+)
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -76,9 +80,14 @@ class F1DriversListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.validation_mode = "hard"
-        options.normalize_empty_values = False
+        options = build_table_config(
+            options,
+            config=ScraperCommonConfig(
+                include_urls=True,
+                normalize_empty_values=False,
+                validation_mode="hard",
+            ),
+        )
         options.transformers = list(options.transformers or []) + [
             DriversChampionshipsTransformer(),
         ]

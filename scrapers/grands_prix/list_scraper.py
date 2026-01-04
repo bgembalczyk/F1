@@ -1,5 +1,9 @@
 from pathlib import Path
 
+from scrapers.base.helpers.config_factory import (
+    ScraperCommonConfig,
+    build_table_config,
+)
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from models.records.factories import build_grands_prix_record
@@ -49,8 +53,14 @@ class GrandsPrixListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.validation_mode = "soft"
+        options = build_table_config(
+            options,
+            config=ScraperCommonConfig(
+                include_urls=True,
+                normalize_empty_values=True,
+                validation_mode="soft",
+            ),
+        )
         super().__init__(options=options, config=config)
 
 
