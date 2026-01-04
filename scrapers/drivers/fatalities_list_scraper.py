@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any
 
+from models.records.factories import build_fatality_record
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.time import parse_date_text
@@ -61,7 +62,7 @@ class F1FatalitiesListScraper(F1TableScraper):
                 column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
             ]
         ),
-        record_factory=lambda record: dict(record),
+        record_factory=build_fatality_record,
     )
 
     def __init__(self, *args, **kwargs) -> None:

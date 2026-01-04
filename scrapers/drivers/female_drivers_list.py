@@ -2,7 +2,7 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-from scrapers.base.records import record_from_mapping
+from models.records.factories import build_special_driver_record
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -48,7 +48,7 @@ class FemaleDriversListScraper(F1TableScraper):
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=build_special_driver_record,
     )
 
     def _parse_soup(self, soup):

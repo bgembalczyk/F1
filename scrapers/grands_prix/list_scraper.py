@@ -2,7 +2,7 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import record_from_mapping
+from models.records.factories import build_grands_prix_record
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -40,7 +40,7 @@ class GrandsPrixListScraper(F1TableScraper):
             "Years held",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=build_grands_prix_record,
     )
 
     def __init__(
