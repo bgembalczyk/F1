@@ -22,13 +22,8 @@ class DataExporter:
         path: str | Path,
         *,
         indent: int = 2,
-        include_metadata: bool = False,
     ) -> None:
-        payload = self._json_formatter.format(
-            result,
-            indent=indent,
-            include_metadata=include_metadata,
-        )
+        payload = self._json_formatter.format(result, indent=indent)
         Path(path).write_text(payload, encoding="utf-8")
 
     def to_csv(
@@ -39,7 +34,21 @@ class DataExporter:
         fieldnames: Optional[Sequence[str]] = None,
     ) -> None:
         payload = self._csv_formatter.format(result, fieldnames=fieldnames)
-        if not payload:
-            return
-
         Path(path).write_text(payload, encoding="utf-8")
+
+
+def export_result(
+    result: ScrapeResult,
+    path: str | Path,
+    *,
+    format: str = "json",
+    **kwargs,
+) -> None:
+    exporter = DataExporter()
+    if format == "json":
+        exporter.to_json(result, path, **kwargs)
+        return
+    if format == "csv":
+        exporter.to_csv(result, path, **kwargs)
+        return
+    raise ValueError("Nieznany format eksportu. Dostępne: 'json', 'csv'.")
