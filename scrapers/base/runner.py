@@ -67,6 +67,8 @@ class ScraperRunner:
             options.cache_dir = self._run_config.cache_dir
         if self._run_config.cache_ttl is not None:
             options.cache_ttl = self._run_config.cache_ttl
+        if self._run_config.cache_adapter is not None:
+            options.cache_adapter = self._run_config.cache_adapter
         options.quality_report = self._run_config.quality_report
         options.error_report = self._run_config.error_report
 
