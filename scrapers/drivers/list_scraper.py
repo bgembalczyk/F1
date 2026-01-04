@@ -8,8 +8,8 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.constants import (
     DRIVER_NAME_HEADER,
@@ -48,23 +48,24 @@ class F1DriversListScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
-        schema=(
-            TableSchemaBuilder()
-            .map(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn())
-            .map(NATIONALITY_HEADER, "nationality", TextColumn())
-            .map(SEASONS_COMPETED_HEADER, "seasons_competed", SeasonsColumn())
-            .map(
-                DRIVERS_CHAMPIONSHIPS_HEADER,
-                "drivers_championships",
-                TextColumn(),  # zparsujemy ręcznie w fetch()
-            )
-            .map(RACE_ENTRIES_HEADER, "race_entries", IntColumn())
-            .map(RACE_STARTS_HEADER, "race_starts", IntColumn())
-            .map(POLE_POSITIONS_HEADER, "pole_positions", IntColumn())
-            .map(RACE_WINS_HEADER, "race_wins", IntColumn())
-            .map(PODIUMS_HEADER, "podiums", IntColumn())
-            .map(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn())
-            .map(POINTS_HEADER, "points", TextColumn())
+        schema=TableSchemaDSL(
+            columns=[
+                column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
+                column(NATIONALITY_HEADER, "nationality", TextColumn()),
+                column(SEASONS_COMPETED_HEADER, "seasons_competed", SeasonsColumn()),
+                column(
+                    DRIVERS_CHAMPIONSHIPS_HEADER,
+                    "drivers_championships",
+                    TextColumn(),  # zparsujemy ręcznie w fetch()
+                ),
+                column(RACE_ENTRIES_HEADER, "race_entries", IntColumn()),
+                column(RACE_STARTS_HEADER, "race_starts", IntColumn()),
+                column(POLE_POSITIONS_HEADER, "pole_positions", IntColumn()),
+                column(RACE_WINS_HEADER, "race_wins", IntColumn()),
+                column(PODIUMS_HEADER, "podiums", IntColumn()),
+                column(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
+                column(POINTS_HEADER, "points", TextColumn()),
+            ]
         ),
         record_factory=build_driver_record,
     )

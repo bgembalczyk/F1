@@ -12,6 +12,7 @@ from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
@@ -26,35 +27,35 @@ class EngineRestrictionsScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/Formula_One_regulations#Engine
     """
 
+    schema_columns = [
+        column("Year", "year", SeasonsColumn()),
+        column("Size", "size", UnitColumn(unit="litre")),
+        column("Type of engine", "type_of_engine", LinksListColumn()),
+        column("Fuel-limit per race", "fuel_limit_per_race", FuelLimitPerRaceColumn()),
+        column("Fuel-flow rate", "fuel_flow_rate", FuelFlowRateColumn()),
+        column(
+            "Fuel-injection pressure limit",
+            "fuel_injection_pressure_limit",
+            FuelInjectionPressureLimitColumn(),
+        ),
+        column("Engine RPM limit", "engine_rpm_limit", EngineRpmLimitColumn()),
+        column(
+            "Power Output",
+            "power_output",
+            RangeColumn(
+                UnitColumn(unit="hp"),
+                UnitColumn(unit="hp"),
+                shared_suffix="hp",
+            ),
+        ),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/Formula_One_regulations#Engine",
         section_id="Engine",
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
         record_factory=EngineRestriction,
-        column_map={
-            "Year": "year",
-            "Size": "size",
-            "Type of engine": "type_of_engine",
-            "Fuel-limit per race": "fuel_limit_per_race",
-            "Fuel-flow rate": "fuel_flow_rate",
-            "Fuel-injection pressure limit": "fuel_injection_pressure_limit",
-            "Engine RPM limit": "engine_rpm_limit",
-            "Power Output": "power_output",
-        },
-        columns={
-            "year": SeasonsColumn(),
-            "size": UnitColumn(unit="litre"),
-            "type_of_engine": LinksListColumn(),
-            "fuel_limit_per_race": FuelLimitPerRaceColumn(),
-            "fuel_flow_rate": FuelFlowRateColumn(),
-            "fuel_injection_pressure_limit": FuelInjectionPressureLimitColumn(),
-            "engine_rpm_limit": EngineRpmLimitColumn(),
-            "power_output": RangeColumn(
-                UnitColumn(unit="hp"),
-                UnitColumn(unit="hp"),
-                shared_suffix="hp",
-            ),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:

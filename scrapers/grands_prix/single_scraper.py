@@ -14,6 +14,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
@@ -56,24 +57,20 @@ class F1SingleGrandPrixScraper(F1Scraper):
         return super().fetch()
 
     def _build_pipeline(self, section_id: str) -> TablePipeline:
+        schema = TableSchemaDSL(
+            columns=[
+                column("Year", "year", UrlColumn()),
+                column("Driver", "driver", DriverListColumn()),
+                column("Constructor", "constructor", ConstructorSplitColumn()),
+                column("Report", "report", AutoColumn()),
+                column("Location", "location", LocationColumn()),
+            ]
+        )
         config = ScraperConfig(
             url=self.url,
             section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],
-            column_map={
-                "Year": "year",
-                "Driver": "driver",
-                "Constructor": "constructor",
-                "Report": "report",
-                "Location": "location",
-            },
-            columns={
-                "year": UrlColumn(),
-                "driver": DriverListColumn(),
-                "constructor": ConstructorSplitColumn(),
-                "report": AutoColumn(),
-                "location": LocationColumn(),
-            },
+            schema=schema,
             record_factory=record_from_mapping,
         )
         return TablePipeline(

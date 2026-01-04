@@ -3,7 +3,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.schema import TableSchemaBuilder
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 from scrapers.circuits.constants import CIRCUIT_HEADER
@@ -19,18 +19,19 @@ from scrapers.circuits.constants import TURNS_HEADER
 from scrapers.circuits.constants import TYPE_HEADER
 
 
-def build_circuits_schema() -> TableSchemaBuilder:
-    return (
-        TableSchemaBuilder()
-        .map(CIRCUIT_HEADER, "circuit", CircuitNameStatusColumn())
-        .map(MAP_HEADER, "map", SkipColumn())
-        .map(TYPE_HEADER, "type", AutoColumn())
-        .map(DIRECTION_HEADER, "direction", AutoColumn())
-        .map(LOCATION_HEADER, "location", AutoColumn())
-        .map(COUNTRY_HEADER, "country", AutoColumn())
-        .map(LAST_LENGTH_USED_HEADER, "last_length_used", LastLengthUsedColumn())
-        .map(TURNS_HEADER, "turns", IntColumn())
-        .map(GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn())
-        .map(SEASONS_HEADER, "seasons", SeasonsColumn())
-        .map(GRANDS_PRIX_HELD_HEADER, "grands_prix_held", IntColumn())
+def build_circuits_schema() -> TableSchemaDSL:
+    return TableSchemaDSL(
+        columns=[
+            column(CIRCUIT_HEADER, "circuit", CircuitNameStatusColumn()),
+            column(MAP_HEADER, "map", SkipColumn()),
+            column(TYPE_HEADER, "type", AutoColumn()),
+            column(DIRECTION_HEADER, "direction", AutoColumn()),
+            column(LOCATION_HEADER, "location", AutoColumn()),
+            column(COUNTRY_HEADER, "country", AutoColumn()),
+            column(LAST_LENGTH_USED_HEADER, "last_length_used", LastLengthUsedColumn()),
+            column(TURNS_HEADER, "turns", IntColumn()),
+            column(GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
+            column(SEASONS_HEADER, "seasons", SeasonsColumn()),
+            column(GRANDS_PRIX_HELD_HEADER, "grands_prix_held", IntColumn()),
+        ]
     )

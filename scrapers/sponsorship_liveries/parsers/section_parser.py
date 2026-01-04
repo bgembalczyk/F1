@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
@@ -41,34 +42,85 @@ class SponsorshipSectionParser:
         self._splitter = splitter
 
     def _build_pipeline(self) -> TablePipeline:
+        schema_columns = [
+            column("Year", "season", SeasonsColumn()),
+            column("Years", "season", SeasonsColumn()),
+            column("Season", "season", SeasonsColumn()),
+            column("Seasons", "season", SeasonsColumn()),
+            column("Year(s)", "season", SeasonsColumn()),
+            column("Driver(s)", "drivers", DriverListColumn()),
+            column("Main colour(s)", normalize_header("Main colour(s)"), ListColumn()),
+            column(
+                "Additional colour(s)",
+                normalize_header("Additional colour(s)"),
+                ListColumn(),
+            ),
+            column(
+                "Additional major sponsor(s)",
+                normalize_header("Additional major sponsor(s)"),
+                SponsorColumn(),
+            ),
+            column(
+                "Livery sponsor(s)",
+                normalize_header("Livery sponsor(s)"),
+                SponsorColumn(),
+            ),
+            column(
+                "Main sponsor(s)",
+                normalize_header("Main sponsor(s)"),
+                SponsorColumn(),
+            ),
+            column("Notes", normalize_header("Notes"), TextColumn()),
+            column(
+                "Non-tobacco liveries",
+                normalize_header("Non-tobacco liveries"),
+                TextColumn(),
+            ),
+            column(
+                "Special liveries",
+                normalize_header("Special liveries"),
+                TextColumn(),
+            ),
+            column(
+                "Non-tobacco/alcohol livery changes",
+                normalize_header("Non-tobacco/alcohol livery changes"),
+                TextColumn(),
+            ),
+            column(
+                "Other Informations (including non-tobacco/alcohol race changes)",
+                normalize_header(
+                    "Other Informations (including non-tobacco/alcohol race changes)"
+                ),
+                TextColumn(),
+            ),
+            column(
+                "Other information",
+                normalize_header("Other information"),
+                TextColumn(),
+            ),
+            column(
+                "Non Tobacco/Alcohol changes(s)",
+                normalize_header("Non Tobacco/Alcohol changes(s)"),
+                TextColumn(),
+            ),
+            column(
+                "Additional major sponsor(s) / Notes",
+                normalize_header("Additional major sponsor(s) / Notes"),
+                TextColumn(),
+            ),
+            column(
+                "Location-specific livery changes (2011–present)",
+                normalize_header("Location-specific livery changes (2011–present)"),
+                TextColumn(),
+            ),
+            column(
+                "Other Changes",
+                normalize_header("Other Changes"),
+                TextColumn(),
+            ),
+        ]
         config = ScraperConfig(
-            column_map={
-                "Year": "season",
-                "Years": "season",
-                "Season": "season",
-                "Seasons": "season",
-                "Year(s)": "season",
-                "Driver(s)": "drivers",
-            },
-            columns={
-                "season": SeasonsColumn(),
-                "drivers": DriverListColumn(),
-                "Main colour(s)": ListColumn(),
-                "Additional colour(s)": ListColumn(),
-                "Additional major sponsor(s)": SponsorColumn(),
-                "Livery sponsor(s)": SponsorColumn(),
-                "Main sponsor(s)": SponsorColumn(),
-                "Notes": TextColumn(),
-                "Non-tobacco liveries": TextColumn(),
-                "Special liveries": TextColumn(),
-                "Non-tobacco/alcohol livery changes": TextColumn(),
-                "Other Informations (including non-tobacco/alcohol race changes)": TextColumn(),
-                "Other information": TextColumn(),
-                "Non Tobacco/Alcohol changes(s)": TextColumn(),
-                "Additional major sponsor(s) / Notes": TextColumn(),
-                "Location-specific livery changes (2011–present)": TextColumn(),
-                "Other Changes": TextColumn(),
-            },
+            schema=TableSchemaDSL(columns=schema_columns),
             record_factory=record_from_mapping,
         )
         return TablePipeline(

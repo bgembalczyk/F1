@@ -9,6 +9,7 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import (
     CONSTRUCTOR_HEADER,
@@ -36,47 +37,28 @@ class FormerConstructorsListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
+    schema_columns = [
+        column(CONSTRUCTOR_HEADER, "constructor", UrlColumn()),
+        column(LICENSED_IN_HEADER, "licensed_in", LinksListColumn()),
+        column(SEASONS_HEADER, "seasons", SeasonsColumn()),
+        column(RACES_ENTERED_HEADER, "races_entered", IntColumn()),
+        column(RACES_STARTED_HEADER, "races_started", IntColumn()),
+        column(DRIVERS_HEADER, "drivers", IntColumn()),
+        column(TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
+        column(WINS_HEADER, "wins", IntColumn()),
+        column(POINTS_HEADER, "points", IntColumn()),
+        column(POLES_HEADER, "poles", IntColumn()),
+        column(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
+        column(PODIUMS_HEADER, "podiums", IntColumn()),
+        column(WCC_HEADER, "wcc_titles", IntColumn()),
+        column(WDC_HEADER, "wdc_titles", IntColumn()),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
         section_id="Former_constructors",
         expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
-        # nagłówek z tabeli -> klucz w dict
-        column_map={
-            CONSTRUCTOR_HEADER: "constructor",
-            LICENSED_IN_HEADER: "licensed_in",
-            SEASONS_HEADER: "seasons",
-            RACES_ENTERED_HEADER: "races_entered",
-            RACES_STARTED_HEADER: "races_started",
-            DRIVERS_HEADER: "drivers",
-            TOTAL_ENTRIES_HEADER: "total_entries",
-            WINS_HEADER: "wins",
-            POINTS_HEADER: "points",
-            POLES_HEADER: "poles",
-            FASTEST_LAPS_HEADER: "fastest_laps",
-            PODIUMS_HEADER: "podiums",
-            WCC_HEADER: "wcc_titles",
-            WDC_HEADER: "wdc_titles",
-        },
-        # logika kolumn po stronie KLUCZA (po column_map)
-        columns={
-            # nazwa konstruktora – pojedynczy link {text, url}
-            "constructor": UrlColumn(),
-            "licensed_in": LinksListColumn(),
-            # sezony – parser sezonów (lista lat/zakresów)
-            "seasons": SeasonsColumn(),
-            # statystyki – liczby całkowite
-            "races_entered": IntColumn(),
-            "races_started": IntColumn(),
-            "drivers": IntColumn(),
-            "total_entries": IntColumn(),
-            "wins": IntColumn(),
-            "points": IntColumn(),
-            "poles": IntColumn(),
-            "fastest_laps": IntColumn(),
-            "podiums": IntColumn(),
-            "wcc_titles": IntColumn(),
-            "wdc_titles": IntColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=build_constructor_record,
     )
     # "licensed_in" i "drivers" obsłuży domyślny AutoColumn z F1TableScraper

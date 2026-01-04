@@ -12,7 +12,9 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.transformers import RecordTransformer
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
@@ -47,16 +49,17 @@ class F1FatalitiesListScraper(F1TableScraper):
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver",
         section_id=FATALITIES_SECTION_ID,
         expected_headers=FATALITIES_HEADERS,
-        schema=(
-            TableSchemaBuilder()
-            .map(FATALITIES_DRIVER_HEADER, "driver", UrlColumn())
-            .map(FATALITIES_DATE_HEADER, "date", FatalityDateColumn())
-            .map(FATALITIES_AGE_HEADER, "age", IntColumn())
-            .map(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn())
-            .map(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn())
-            .map(FATALITIES_CAR_HEADER, "car", UrlColumn())
-            .map(FATALITIES_SESSION_HEADER, "session", TextColumn())
-            .map(FATALITIES_REF_HEADER, "ref", SkipColumn())
+        schema=TableSchemaDSL(
+            columns=[
+                column(FATALITIES_DRIVER_HEADER, "driver", UrlColumn()),
+                column(FATALITIES_DATE_HEADER, "date", FatalityDateColumn()),
+                column(FATALITIES_AGE_HEADER, "age", IntColumn()),
+                column(FATALITIES_EVENT_HEADER, "event", FatalityEventColumn()),
+                column(FATALITIES_CIRCUIT_HEADER, "circuit", UrlColumn()),
+                column(FATALITIES_CAR_HEADER, "car", UrlColumn()),
+                column(FATALITIES_SESSION_HEADER, "session", TextColumn()),
+                column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
+            ]
         ),
         record_factory=lambda record: dict(record),
     )

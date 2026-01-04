@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 from scrapers.grands_prix.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,
@@ -17,6 +18,26 @@ from scrapers.grands_prix.red_flagged_races_scraper.base import (
 
 
 class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
+    schema_columns = [
+        column("Year", "season", IntColumn()),
+        column("Event", "event", UrlColumn()),
+        column("Lap", "lap", IntColumn()),
+        column("R", "restart_status", RestartStatusColumn()),
+        column("Winner", "winner", DriverColumn()),
+        column("Incident that prompted red flag", "incident", TextColumn()),
+        column(
+            "Failed to make the restart - Drivers",
+            "failed_to_make_restart_drivers",
+            DriverListColumn(),
+        ),
+        column(
+            "Failed to make the restart - Reason",
+            "failed_to_make_restart_reason",
+            TextColumn(),
+        ),
+        column("Ref.", "ref", SkipColumn()),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_red-flagged_Formula_One_races",
         section_id="Non-championship_races",
@@ -29,28 +50,7 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
             "Incident that prompted red flag",
             "Failed to make the restart",
         ],
-        column_map={
-            "Year": "season",
-            "Event": "event",
-            "Lap": "lap",
-            "R": "restart_status",
-            "Winner": "winner",
-            "Incident that prompted red flag": "incident",
-            "Failed to make the restart - Drivers": "failed_to_make_restart_drivers",
-            "Failed to make the restart - Reason": "failed_to_make_restart_reason",
-            "Ref.": "ref",
-        },
-        columns={
-            "season": IntColumn(),
-            "event": UrlColumn(),
-            "lap": IntColumn(),
-            "restart_status": RestartStatusColumn(),
-            "winner": DriverColumn(),
-            "incident": TextColumn(),
-            "failed_to_make_restart_drivers": DriverListColumn(),
-            "failed_to_make_restart_reason": TextColumn(),
-            "ref": SkipColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
 

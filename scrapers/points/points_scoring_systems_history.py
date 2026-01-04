@@ -8,6 +8,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
@@ -30,27 +31,28 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 
+    schema_columns = [column(SEASONS_HEADER, "seasons", SeasonsColumn())]
+    for index, position in enumerate(HISTORICAL_POSITIONS):
+        column_instance = FirstPlaceColumn() if index == 0 else IntColumn()
+        schema_columns.append(column(position, position.lower(), column_instance))
+    schema_columns.extend(
+        [
+            column(FASTEST_LAP_HEADER, "fastest_lap", IntColumn()),
+            column(DRIVERS_CHAMPIONSHIP_HEADER, "drivers_championship", AutoColumn()),
+            column(
+                CONSTRUCTORS_CHAMPIONSHIP_HEADER,
+                "constructors_championship",
+                AutoColumn(),
+            ),
+            column(NOTES_HEADER, "notes", SkipColumn()),
+        ]
+    )
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
-        column_map={
-            SEASONS_HEADER: "seasons",
-            **{position: position.lower() for position in HISTORICAL_POSITIONS},
-            FASTEST_LAP_HEADER: "fastest_lap",
-            DRIVERS_CHAMPIONSHIP_HEADER: "drivers_championship",
-            CONSTRUCTORS_CHAMPIONSHIP_HEADER: "constructors_championship",
-            NOTES_HEADER: "notes",
-        },
-        columns={
-            "seasons": SeasonsColumn(),
-            "1st": FirstPlaceColumn(),
-            **{position.lower(): IntColumn() for position in HISTORICAL_POSITIONS[1:]},
-            "fastest_lap": IntColumn(),
-            "drivers_championship": AutoColumn(),
-            "constructors_championship": AutoColumn(),
-            "notes": SkipColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
 

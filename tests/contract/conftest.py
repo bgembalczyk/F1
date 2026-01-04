@@ -42,6 +42,20 @@ if importlib.util.find_spec("pandas") is None:
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
 
+if importlib.util.find_spec("bs4") is None:
+    bs4_stub = types.ModuleType("bs4")
+
+    class _Tag:
+        pass
+
+    class _BeautifulSoup:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+    bs4_stub.Tag = _Tag
+    bs4_stub.BeautifulSoup = _BeautifulSoup
+    sys.modules["bs4"] = bs4_stub
+
 
 @pytest.fixture()
 def minimal_fetch_html() -> str:

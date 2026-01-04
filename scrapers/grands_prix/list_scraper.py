@@ -8,6 +8,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.grands_prix.validator import GrandsPrixRecordValidator
@@ -22,6 +23,14 @@ class GrandsPrixListScraper(F1TableScraper):
 
     default_validator = GrandsPrixRecordValidator()
 
+    schema_columns = [
+        column("Race title", "race_title", RaceTitleStatusColumn()),
+        column("Country", "country", LinksListColumn()),
+        column("Years held", "years_held", SeasonsColumn()),
+        column("Circuits", "circuits", IntColumn()),
+        column("Total", "total", IntColumn()),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
         section_id="By_race_title",
@@ -30,32 +39,7 @@ class GrandsPrixListScraper(F1TableScraper):
             "Race title",
             "Years held",
         ],
-        # mapowanie nagłówek -> klucz w dict
-        column_map={
-            "Race title": "race_title",
-            "Country": "country",
-            "Years held": "years_held",
-            "Circuits": "circuits",
-            "Total": "total",
-        },
-        # klucz/nagłówek -> kolumna
-        #
-        # - race_title: MultiColumn → { race_title (link), race_status (enum po znaku *) }
-        # - years_held: sezony
-        # - races_held: int
-        # - country: lista linków [{text, url}, ...]
-        columns={
-            # Race title → MultiColumn:
-            #   - race_title: pierwszy link (UrlColumn) z automatycznym czyszczeniem * / † z .text
-            #   - race_status: EnumMarksColumn patrzący na raw_text (gwiazdka = aktywne)
-            "race_title": RaceTitleStatusColumn(),
-            # Country → lista linków [{text, url}, ...] z czyszczeniem znaczników
-            "country": LinksListColumn(),
-            # Years held → sezony (lista zakresów/lat)
-            "years_held": SeasonsColumn(),
-            "circuits": IntColumn(),
-            "total": IntColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
 
