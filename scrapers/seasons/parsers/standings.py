@@ -208,7 +208,9 @@ class SeasonStandingsParser:
                     # Merge the results arrays
                     existing_results = merged[key].get("results", [])
                     new_results = value.get("results", [])
-                    merged[key]["results"] = existing_results + new_results
+                    # Ensure both are lists before merging
+                    if isinstance(existing_results, list) and isinstance(new_results, list):
+                        merged[key]["results"] = existing_results + new_results
                 else:
                     # This race result doesn't exist in the first entry, add it
                     merged[key] = value
