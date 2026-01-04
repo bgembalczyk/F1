@@ -1,10 +1,7 @@
 import pytest
 
-from models.validation.validators import (
-    validate_link,
-    validate_seasons,
-    validate_status,
-)
+from models.validation.core import validate_float, validate_int, validate_status
+from models.validation.validators import validate_link, validate_seasons
 from models.value_objects import SeasonRef
 
 
@@ -49,3 +46,12 @@ def test_validate_status_normalizes_case():
 def test_validate_status_rejects_unknown_value():
     with pytest.raises(ValueError, match="musi mieć jedną z wartości"):
         validate_status("unknown", ["current", "former"], "status")
+
+
+def test_validate_int_rejects_negative_values():
+    with pytest.raises(ValueError, match="nie może być ujemne"):
+        validate_int(-1, "value")
+
+
+def test_validate_float_accepts_numeric_strings():
+    assert validate_float("3.5", "value") == 3.5

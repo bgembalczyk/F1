@@ -14,14 +14,12 @@ from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.records.season_summary import SeasonSummaryRecord
 from models.records.special_driver import SpecialDriverRecord
+from models.validation.core import validate_float, validate_int, validate_status
 from models.validation.validators import (
     is_empty_link,
     normalize_season_item,
-    validate_float,
-    validate_int,
     validate_link,
     validate_seasons,
-    validate_status,
 )
 
 _WIKI_SEASON_URL = "https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship"
