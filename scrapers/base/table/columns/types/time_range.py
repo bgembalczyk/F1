@@ -7,18 +7,18 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class TimeRangeColumn(BaseColumn):
     """
-    Parsuje zakres godzin z formatów typu "9:00am–1:00pm" na format 24-godzinny.
+    Parses time ranges from formats like "9:00am–1:00pm" to 24-hour format.
     
-    Zwraca dict: {"start": "09:00", "end": "13:00"} lub None jeśli parsowanie się nie powiedzie.
+    Returns dict: {"start": "09:00", "end": "13:00"} or None if parsing fails.
     """
 
-    # Pattern dla czasu w formacie 12-godzinnym z am/pm
+    # Pattern for time in 12-hour format with am/pm
     _TIME_12H_PATTERN = re.compile(
         r"(\d{1,2}):(\d{2})\s*(am|pm)",
         re.IGNORECASE
     )
     
-    # Pattern dla separatorów zakresu
+    # Pattern for range separators
     _SEPARATOR_PATTERN = re.compile(r"\s*[–—-]\s*")
 
     def parse(self, ctx: ColumnContext) -> Any:
@@ -26,14 +26,14 @@ class TimeRangeColumn(BaseColumn):
         if not text:
             return None
 
-        # Dzielimy tekst na start i end używając separatora
+        # Split text into start and end using separator
         parts = self._SEPARATOR_PATTERN.split(text, maxsplit=1)
         if len(parts) != 2:
             return None
 
         start_str, end_str = parts
         
-        # Parsujemy czas początkowy i końcowy
+        # Parse start and end times
         start_time = self._parse_12h_time(start_str.strip())
         end_time = self._parse_12h_time(end_str.strip())
         
@@ -47,8 +47,8 @@ class TimeRangeColumn(BaseColumn):
 
     def _parse_12h_time(self, time_str: str) -> str | None:
         """
-        Konwertuje czas z formatu 12-godzinnego na 24-godzinny.
-        Np. "9:00am" -> "09:00", "1:00pm" -> "13:00"
+        Converts time from 12-hour format to 24-hour format.
+        E.g., "9:00am" -> "09:00", "1:00pm" -> "13:00"
         """
         match = self._TIME_12H_PATTERN.match(time_str)
         if not match:
@@ -58,7 +58,7 @@ class TimeRangeColumn(BaseColumn):
         minutes = match.group(2)
         period = match.group(3).lower()
         
-        # Konwersja na format 24-godzinny
+        # Convert to 24-hour format
         if period == "am":
             if hours == 12:
                 hours = 0

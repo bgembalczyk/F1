@@ -21,7 +21,7 @@ class TestingVenuesParser:
     def parse(
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
-        # Ta tabela występuje tylko w 2011 i 2009
+        # This table only exists in 2011 and 2009
         if season_year not in {2009, 2011}:
             return []
         
@@ -34,22 +34,22 @@ class TestingVenuesParser:
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
         """
-        Parsuje tabelę testów dla roku 2011.
+        Parses the testing table for 2011.
         
-        Uwaga: Circuit i Event mają zamienioną zawartość w źródłowych danych!
-        - Circuit zawiera tekst który powinien być w Event
-        - Event zawiera dane obwodu który powinien być w Circuit
+        Note: Circuit and Event have swapped content in the source data!
+        - Circuit contains text that should be in Event
+        - Event contains circuit data that should be in Circuit
         """
         schema_columns = [
             column("Test", "test", IntColumn()),
-            # Zamieniona zawartość - Circuit zawiera tekst
+            # Swapped content - Circuit contains text
             column("Circuit", "circuit", TextColumn()),
-            # Zamieniona zawartość - Event zawiera dane obwodu
+            # Swapped content - Event contains circuit data
             column("Event", "event", CalendarCircuitColumn()),
-            # Session Timings ma podkolumny Morning i Afternoon
+            # Session Timings has subcolumns Morning and Afternoon
             column("Morning", "session_timings_morning", TimeRangeColumn()),
             column("Afternoon", "session_timings_afternoon", TimeRangeColumn()),
-            # Dates ma podkolumny Start i End
+            # Dates has subcolumns Start and End
             column("Start", "dates_start", SeasonDateColumn(year=season_year)),
             column("End", "dates_end", SeasonDateColumn(year=season_year)),
         ]
@@ -66,7 +66,7 @@ class TestingVenuesParser:
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
         """
-        Parsuje tabelę testów dla roku 2009.
+        Parses the testing table for 2009.
         """
         schema_columns = [
             column("Test", "test", IntColumn()),

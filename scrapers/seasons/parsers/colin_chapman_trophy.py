@@ -26,14 +26,14 @@ class ColinChapmanTrophyParser:
         self, soup: BeautifulSoup, season_year: int | None = None
     ) -> List[Dict[str, Any]]:
         """
-        Parsuje tabelę Colin Chapman Trophy.
+        Parses the Colin Chapman Trophy table.
         
-        Tabela jest identyczna jak World Constructors' Championship standings,
-        z jednym wyjątkiem:
-        - Mark * oznacza: "was not eligible for points, as the team had officially entered only one car for the entire championship"
+        Table is identical to World Constructors' Championship standings,
+        with one exception:
+        - Mark * means: "was not eligible for points, as the team had officially entered only one car for the entire championship"
         """
         
-        # Tworzymy kolumnę dla konstruktora z obsługą marku *
+        # Create column for constructor with * mark support
         constructor_with_mark = MultiColumn(
             subcolumns={
                 "constructor": ConstructorColumn(),
@@ -71,7 +71,7 @@ class ColinChapmanTrophyParser:
         
         try:
             records = scraper.parse(soup)
-            # Przekształcamy constructor_data na constructor i dodajemy pole single_car_entry
+            # Transform constructor_data to constructor and add single_car_entry field
             for record in records:
                 if "constructor_data" in record:
                     constructor_data = record.pop("constructor_data")

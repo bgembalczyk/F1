@@ -27,7 +27,7 @@ class CancelledRoundsParser:
         ]
         schema = TableSchemaDSL(columns=schema_columns)
         
-        # Próbujemy różne sekcje w kolejności
+        # Try different sections in order
         section_ids = [
             "Cancelled_Grands_Prix",
             "Provisional_calendar", 

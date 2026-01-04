@@ -26,14 +26,14 @@ class JimClarkTrophyParser:
         self, soup: BeautifulSoup, season_year: int | None = None
     ) -> List[Dict[str, Any]]:
         """
-        Parsuje tabelę Jim Clark Trophy.
+        Parses the Jim Clark Trophy table.
         
-        Tabela jest identyczna jak World Drivers' Championship standings,
-        z jednym wyjątkiem:
-        - Mark * oznacza: "competed in insufficient events to be eligible for points"
+        Table is identical to World Drivers' Championship standings,
+        with one exception:
+        - Mark * means: "competed in insufficient events to be eligible for points"
         """
         
-        # Tworzymy kolumnę dla kierowcy z obsługą marku *
+        # Create column for driver with * mark support
         driver_with_mark = MultiColumn(
             subcolumns={
                 "driver": DriverColumn(),
@@ -71,7 +71,7 @@ class JimClarkTrophyParser:
         
         try:
             records = scraper.parse(soup)
-            # Przekształcamy driver_data na driver i dodajemy pole insufficient_events
+            # Transform driver_data to driver and add insufficient_events field
             for record in records:
                 if "driver_data" in record:
                     driver_data = record.pop("driver_data")
