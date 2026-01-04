@@ -5,10 +5,11 @@ from typing import Optional
 
 from models.validation.utils import coerce_number
 from models.validation.utils import is_valid_url
+from models.value_objects.base import ValueObject
 
 
 @dataclass
-class SeasonRef:
+class SeasonRef(ValueObject):
     year: int
     url: Optional[str] = None
 
@@ -20,7 +21,7 @@ class SeasonRef:
                 raise ValueError("Pole seasons zawiera nieprawidłowy URL")
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None):
+    def from_dict(cls, data: Mapping[str, Any] | None) -> "SeasonRef | None":
         payload = data or {}
         year = payload.get("year")
         if year is None:

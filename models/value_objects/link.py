@@ -4,10 +4,11 @@ from typing import Mapping
 from typing import Optional
 
 from models.validation.utils import is_valid_url
+from models.value_objects.base import ValueObject
 
 
 @dataclass
-class Link:
+class Link(ValueObject):
     text: str = ""
     url: Optional[str] = None
 
@@ -22,7 +23,7 @@ class Link:
         return not self.text and self.url is None
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None):
+    def from_dict(cls, data: Mapping[str, Any] | None) -> "Link":
         payload = data or {}
         return cls(text=payload.get("text") or "", url=payload.get("url"))
 
