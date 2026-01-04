@@ -26,9 +26,85 @@ class InfoboxCellParser:
             payload["links"] = self._link_extractor.extract_links(cell)
         return payload
 
-    def parse_active_years(self, cell: Tag) -> Dict[str, int | None]:
+    def parse_active_years(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Parse active years as a list of individual seasons with links.
+        
+        Handles cases like:
+        - Individual years: 2002, 2005, 2007, 2008
+        - Ranges: 2007-2008 (interpolates missing links)
+        """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        return self._parse_year_range(text)
+        links = self._link_extractor.extract_links(cell)
+        
+        # Build a map of year -> link
+        year_to_link: Dict[int, str | None] = {}
+        for link in links:
+            link_text = link.get("text", "")
+            year_match = re.search(r'\b(\d{4})\b', link_text)
+            if year_match:
+                year = int(year_match.group(1))
+                year_to_link[year] = link.get("url")
+        
+        # Extract all years and ranges from text
+        years_set: set[int] = set()
+        
+        # Find ranges like "2007-2008" or "2007–2008"
+        for match in re.finditer(r'\b(\d{4})\s*[-–]\s*(\d{2,4})\b', text):
+            start = int(match.group(1))
+            end_text = match.group(2)
+            if len(end_text) == 2:
+                end = (start // 100) * 100 + int(end_text)
+            else:
+                end = int(end_text)
+            for year in range(start, end + 1):
+                years_set.add(year)
+        
+        # Find individual years
+        for match in re.finditer(r'\b(\d{4})\b', text):
+            year = int(match.group(1))
+            years_set.add(year)
+        
+        # Try to interpolate URLs for missing years
+        if len(year_to_link) >= 2:
+            # Detect URL pattern
+            url_pattern = self._detect_url_pattern(year_to_link)
+            if url_pattern:
+                for year in years_set:
+                    if year not in year_to_link:
+                        year_to_link[year] = url_pattern.replace("{year}", str(year))
+        
+        # Build result list
+        result = []
+        for year in sorted(years_set):
+            result.append({
+                "year": year,
+                "url": year_to_link.get(year)
+            })
+        
+        return result
+    
+    @staticmethod
+    def _detect_url_pattern(year_to_link: Dict[int, str | None]) -> str | None:
+        """Detect a predictable URL pattern from available year links.
+        
+        Returns a pattern string with {year} placeholder if pattern is predictable.
+        """
+        urls = [(year, url) for year, url in year_to_link.items() if url]
+        if len(urls) < 2:
+            return None
+        
+        # Check if all URLs follow the same pattern
+        patterns = []
+        for year, url in urls:
+            # Replace the year in URL with a placeholder
+            pattern = url.replace(str(year), "{year}")
+            patterns.append(pattern)
+        
+        # If all patterns are the same, we found a predictable pattern
+        if len(set(patterns)) == 1:
+            return patterns[0]
+        
+        return None
 
     @staticmethod
     def _parse_year_range(text: str) -> Dict[str, int | None]:
@@ -124,18 +200,54 @@ class InfoboxCellParser:
     def parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         try:
+            result: Dict[str, Any] = {"result": None, "season": None}
+            
+            # Extract result position (e.g., "1st", "4th")
             if " in " in text:
-                result_text, season_text = text.split(" in ", 1)
-                season = self._parse_year_range(season_text)
+                result_text, _ = text.split(" in ", 1)
+                result["result"] = result_text.strip() or None
             else:
-                result_text = text
-                season = {"start": None, "end": None}
-            return {"result": result_text.strip() or None, "season": season}
+                result["result"] = text.strip() or None
+            
+            # Extract season link
+            links = self._link_extractor.extract_links(cell)
+            season_links = [link for link in links if not self._is_class_link(link)]
+            if season_links:
+                season_link = season_links[0]
+                # Extract year from link text
+                year_match = re.search(r'\b(\d{4})(?:[-–](\d{2,4}))?\b', season_link.get("text", ""))
+                if year_match:
+                    year = int(year_match.group(1))
+                    result["season"] = {
+                        "year": year,
+                        "url": season_link.get("url")
+                    }
+            
+            # Extract class from <small> tag
+            small_tag = cell.find("small")
+            if small_tag:
+                class_links = self._link_extractor.extract_links(small_tag)
+                if class_links:
+                    result["class"] = class_links[0]
+            
+            return result
         except (TypeError, ValueError) as exc:
             raise DomainParseError(
                 f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
                 cause=exc,
             ) from exc
+    
+    @staticmethod
+    def _is_class_link(link: LinkRecord) -> bool:
+        """Check if link is a class designation (e.g., LMP1) rather than a season."""
+        url = (link.get("url") or "").lower()
+        text = (link.get("text") or "").upper()
+        # Class links typically don't contain years or season references
+        if "season" in url or "_season" in url:
+            return False
+        if re.search(r'\d{4}', text):
+            return False
+        return True
 
     def parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))

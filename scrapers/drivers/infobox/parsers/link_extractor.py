@@ -1,5 +1,5 @@
 import re
-from typing import List
+from typing import Any, Dict, List
 
 from bs4 import Tag
 
@@ -21,6 +21,7 @@ class InfoboxLinkExtractor:
             cell,
             full_url=lambda href: normalize_url(self._wikipedia_base, href),
             allow_local_anchors=False,
+            drop_empty_text=True,
         )
 
     def first_link(self, cell: Tag) -> LinkRecord | None:
@@ -51,6 +52,70 @@ class InfoboxLinkExtractor:
                 results.append(link)
             else:
                 results.append({"text": year, "url": None})
+        return results
+    
+    def extract_year_range_links(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Extract year ranges with separate from/to links.
+        
+        Handles cases like:
+        - Single year: 2014 -> {year: 2014, url: ...}
+        - Range with both links: 2008–2010 -> {from: 2008, to: 2010, url_from: ..., url_to: ...}
+        - Range with one link: 2008–2009 -> interpolates missing link if pattern is detected
+        """
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
+        
+        # Build year -> url mapping
+        year_to_url: Dict[int, str | None] = {}
+        for link in links:
+            link_text = link.get("text", "")
+            year_match = re.search(r'\b(\d{4})\b', link_text)
+            if year_match:
+                year = int(year_match.group(1))
+                year_to_url[year] = link.get("url")
+        
+        results: List[Dict[str, Any]] = []
+        
+        # Find all year patterns in text (both individual and ranges)
+        processed_positions = set()
+        
+        # First, find ranges (year-year pattern)
+        for match in re.finditer(r'\b(\d{4})\s*[-–]\s*(\d{2,4})\b', text):
+            start = int(match.group(1))
+            end_text = match.group(2)
+            if len(end_text) == 2:
+                end = (start // 100) * 100 + int(end_text)
+            else:
+                end = int(end_text)
+            
+            # Mark these positions as processed
+            processed_positions.add(match.start())
+            
+            url_from = year_to_url.get(start)
+            url_to = year_to_url.get(end)
+            
+            # Try to interpolate missing URLs
+            if url_from and not url_to:
+                url_to = url_from.replace(str(start), str(end))
+            elif url_to and not url_from:
+                url_from = url_to.replace(str(end), str(start))
+            
+            results.append({
+                "from": start,
+                "to": end,
+                "url_from": url_from,
+                "url_to": url_to
+            })
+        
+        # Then, find individual years not part of ranges
+        for match in re.finditer(r'\b(\d{4})\b', text):
+            if match.start() not in processed_positions:
+                year = int(match.group(1))
+                results.append({
+                    "year": year,
+                    "url": year_to_url.get(year)
+                })
+        
         return results
 
     @staticmethod
