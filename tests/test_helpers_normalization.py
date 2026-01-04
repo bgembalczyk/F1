@@ -10,6 +10,7 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.text_normalization import is_language_link, split_delimited_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
+from scrapers.base.helpers.url import normalize_url
 from scrapers.base.helpers.value_objects import NormalizedTime
 
 
@@ -80,10 +81,8 @@ def test_extract_links_from_cell_filters_reference_and_language_links():
     soup = BeautifulSoup(html, "html.parser")
     cell = soup.find("td")
 
-    def full_url(href: str) -> str:
-        if href.startswith("http"):
-            return href
-        return f"https://en.wikipedia.org{href}"
+    def full_url(href: str) -> str | None:
+        return normalize_url("https://en.wikipedia.org", href)
 
     links = extract_links_from_cell(cell, full_url=full_url)
 
@@ -165,8 +164,8 @@ def test_normalize_links_from_html_filters_references_and_multiple_links():
     soup = BeautifulSoup(html, "html.parser")
     cell = soup.find("td")
 
-    def full_url(href: str) -> str:
-        return f"https://en.wikipedia.org{href}" if href.startswith("/") else href
+    def full_url(href: str) -> str | None:
+        return normalize_url("https://en.wikipedia.org", href)
 
     assert normalize_links(cell, full_url=full_url) == [
         {"text": "Good", "url": "https://en.wikipedia.org/wiki/Good"},
@@ -235,3 +234,18 @@ def test_parse_time_text_prefers_text_fields():
     assert parse_time_text(NormalizedTime(text="1:20.000", seconds=80.0)) == "1:20.000"
     assert parse_time_text({"text": "  2:05.9 "}) == "2:05.9"
     assert parse_time_text(123.0) is None
+
+
+def test_normalize_url_builds_and_validates() -> None:
+    base = "https://en.wikipedia.org/wiki/Foo"
+
+    assert (
+        normalize_url(base, "/wiki/Bar") == "https://en.wikipedia.org/wiki/Bar"
+    )
+    assert (
+        normalize_url(base, "//en.wikipedia.org/wiki/Baz")
+        == "https://en.wikipedia.org/wiki/Baz"
+    )
+    assert normalize_url(base, "https://example.com/path") == "https://example.com/path"
+    assert normalize_url(base, "mailto:test@example.com") is None
+    assert normalize_url(base, "https://example.com//double") is None

@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.wiki import build_full_url
+from scrapers.base.helpers.url import normalize_url
 
 
 class InfoboxHtmlParser:
@@ -85,6 +85,6 @@ class InfoboxHtmlParser:
         """
         return normalize_links(
             td,
-            full_url=lambda href: build_full_url(self.wikipedia_base, href),
+            full_url=lambda href: normalize_url(self.wikipedia_base, href),
             allow_local_anchors=False,
         )

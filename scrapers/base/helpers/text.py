@@ -129,7 +129,7 @@ def strip_marks(text: str | Tag) -> str:
 def extract_links_from_cell(
     cell: str | Tag,
     *,
-    full_url: Callable[[str], str] | None = None,
+    full_url: Callable[[str], str | None] | None = None,
     allow_local_anchors: bool = True,
 ) -> list[LinkRecord]:
     """

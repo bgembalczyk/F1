@@ -1,15 +1,14 @@
 """Wikipedia helper utilities used by scrapers."""
 
-from urllib.parse import urljoin, urlsplit, urlunsplit
-
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text import clean_wiki_text, strip_marks
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text_normalization import is_language_link
+from scrapers.base.helpers.url import normalize_url
 
 
-def build_full_url(base: str, href: str) -> str:
+def build_full_url(base: str, href: str) -> str | None:
     """
     Buduje pełny URL na podstawie bazy i href.
 
@@ -18,25 +17,7 @@ def build_full_url(base: str, href: str) -> str:
     - schemowe URL-e (//...),
     - absolutne URL-e (http/https i inne schematy).
     """
-    href = href.strip()
-    if not href:
-        return href
-
-    parsed = urlsplit(href)
-    if parsed.scheme:
-        return href
-
-    if href.startswith("//"):
-        base_scheme = urlsplit(base).scheme or "https"
-        return f"{base_scheme}:{href}"
-
-    if href.startswith("/"):
-        base_parts = urlsplit(base)
-        return urlunsplit(
-            (base_parts.scheme or "https", base_parts.netloc, href, "", "")
-        )
-
-    return urljoin(base, href)
+    return normalize_url(base, href)
 
 
 def is_reference_link(tag: Tag, *, allow_local_anchors: bool = False) -> bool:
