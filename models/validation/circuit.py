@@ -3,13 +3,8 @@ from typing import Any, List, Optional
 
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_CIRCUIT_STATUSES
-from models.validation.validators import (
-    validate_status,
-    validate_float,
-    validate_int,
-    normalize_link_list,
-    normalize_season_list,
-)
+from models.validation.core import validate_float, validate_int, validate_status
+from models.validation.validators import normalize_link_list, normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
 

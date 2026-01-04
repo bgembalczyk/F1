@@ -2,9 +2,8 @@ from dataclasses import dataclass
 
 import pytest
 
+from models.validation.core import validate_float, validate_int
 from models.validation.validators import (
-    validate_int,
-    validate_float,
     validate_link,
     validate_links,
     validate_seasons,

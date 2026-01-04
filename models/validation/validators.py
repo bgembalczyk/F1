@@ -3,17 +3,10 @@ from typing import Any, Dict, Iterable, Optional
 
 from models.records.link import LinkRecord
 from models.serializers import to_dict_any
-from models.validation.utils import coerce_number, is_valid_url
+from models.validation.core import validate_float, validate_int
+from models.validation.utils import is_valid_url
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
-
-
-def validate_int(value: Any, field_name: str) -> Optional[int]:
-    return coerce_number(value, int, field_name, allow_none=True)
-
-
-def validate_float(value: Any, field_name: str) -> Optional[float]:
-    return coerce_number(value, float, field_name, allow_none=True)
 
 
 def normalize_and_validate_link_dict(
@@ -124,23 +117,6 @@ def validate_seasons(
     """
     normalized = (normalize_season_item(item) for item in seasons or [])
     return filter_nonempty(normalized)
-
-
-def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
-    status_normalized = (value or "").strip().lower()
-    allowed_normalized: list[str] = []
-    allowed_set: set[str] = set()
-    for option in allowed:
-        normalized = str(option).strip().lower()
-        if normalized and normalized not in allowed_set:
-            allowed_set.add(normalized)
-            allowed_normalized.append(normalized)
-    if status_normalized not in allowed_set:
-        allowed_display = ", ".join(allowed_normalized)
-        raise ValueError(
-            f"Pole {field_name} musi mieć jedną z wartości: {allowed_display}"
-        )
-    return status_normalized
 
 
 def model_to_dict(
