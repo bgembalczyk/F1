@@ -189,14 +189,12 @@ class F1Scraper(ABC):
         path: str | Path,
         *,
         indent: int = 2,
-        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_json(
             path,
             exporter=self.exporter,
             indent=indent,
-            include_metadata=include_metadata,
         )
 
     def to_csv(

@@ -7,44 +7,60 @@ import pytest
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-from scrapers.base.results import ScrapeResult
 from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
+from scrapers.base.results import ScrapeResult
 
 
-def test_json_formatter_without_metadata() -> None:
+def test_json_formatter_includes_metadata() -> None:
     formatter = JsonFormatter()
-    data = [{"name": "Ayrton", "wins": 41}]
+    result = ScrapeResult(
+        data=[{"name": "Ayrton", "wins": 41}],
+        source_url="https://example.com",
+    )
 
-    payload = formatter.format(data, indent=2, include_metadata=False)
-
-    assert json.loads(payload) == data
-
-
-def test_json_formatter_with_metadata() -> None:
-    formatter = JsonFormatter()
-    result = ScrapeResult(data=[{"team": "McLaren"}], source_url="https://example.com")
-
-    payload = formatter.format(result, include_metadata=True)
+    payload = formatter.format(result, indent=2)
     parsed = json.loads(payload)
 
     assert parsed["meta"]["source_url"] == "https://example.com"
     assert parsed["meta"]["timestamp"]
-    assert parsed["data"] == [{"team": "McLaren"}]
+    assert parsed["meta"]["records_count"] == 1
+    assert parsed["data"] == [{"name": "Ayrton", "wins": 41}]
 
 
 def test_csv_formatter_builds_union_of_fields() -> None:
     formatter = CsvFormatter()
-    data = [
-        {"name": "Lewis", "wins": 103},
-        {"name": "Michael", "titles": 7},
-    ]
+    result = ScrapeResult(
+        data=[
+            {"name": "Lewis", "wins": 103},
+            {"name": "Michael", "titles": 7},
+        ],
+        source_url="https://example.com",
+    )
 
-    payload = formatter.format(data)
+    payload = formatter.format(result)
 
     lines = payload.strip().splitlines()
-    assert lines[0].split(",") == ["name", "wins", "titles"]
-    assert "Lewis,103," in lines[1]
-    assert "Michael,,7" in lines[2]
+    metadata = json.loads(lines[0].replace("# meta: ", ""))
+    assert metadata["source_url"] == "https://example.com"
+    assert metadata["records_count"] == 2
+    assert lines[1].split(",") == ["name", "wins", "titles"]
+    assert "Lewis,103," in lines[2]
+    assert "Michael,,7" in lines[3]
+
+
+def test_metadata_is_consistent_between_json_and_csv() -> None:
+    formatter_json = JsonFormatter()
+    formatter_csv = CsvFormatter()
+    result = ScrapeResult(
+        data=[{"team": "McLaren"}],
+        source_url="https://example.com",
+    )
+
+    json_payload = json.loads(formatter_json.format(result))
+    csv_payload = formatter_csv.format(result)
+    csv_meta = json.loads(csv_payload.splitlines()[0].replace("# meta: ", ""))
+
+    assert json_payload["meta"] == csv_meta
 
 
 def test_dataframe_formatter_handles_optional_dependency() -> None:
@@ -75,10 +91,11 @@ def test_json_formatter_serializes_normalized_value_objects() -> None:
         source_url="https://example.com",
     )
 
-    payload = formatter.format(result, include_metadata=False)
+    payload = formatter.format(result)
     parsed = json.loads(payload)
 
-    assert parsed == [
+    assert parsed["meta"]["records_count"] == 1
+    assert parsed["data"] == [
         {
             "date": {"text": "7 June 2019", "iso": "2019-06-07"},
             "time": {"text": "1:23.456", "seconds": 83.456},
