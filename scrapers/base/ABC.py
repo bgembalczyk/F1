@@ -64,7 +64,7 @@ class F1Scraper(ABC):
         self._record_normalizer = RecordNormalizer(
             normalize_empty_values=self.normalize_empty_values,
         )
-        self.transformers: List[RecordTransformer] = []
+        self.transformers = list(options.transformers or [])
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
         self._run_id: str | None = options.run_id
@@ -290,11 +290,15 @@ class F1Scraper(ABC):
         transformed = records
         for transformer in self.transformers:
             before_count = len(transformed)
-            transformed = transformer.transform(transformed)
             self.logger.debug(
-                "Transformer %s: %d -> %d",
+                "Transformer %s: before=%d",
                 transformer.__class__.__name__,
                 before_count,
+            )
+            transformed = transformer.transform(transformed)
+            self.logger.debug(
+                "Transformer %s: after=%d",
+                transformer.__class__.__name__,
                 len(transformed),
             )
         return transformed

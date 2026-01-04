@@ -56,6 +56,7 @@ def normalize_links(
     allow_local_anchors: bool = True,
     strip_marks: bool = True,
     drop_empty: bool = True,
+    drop_empty_text: bool = False,
     strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
     if isinstance(links, Tag) or isinstance(links, str):
@@ -86,6 +87,8 @@ def normalize_links(
             strip_lang_suffix=strip_lang_suffix,
         )
         if normalized is None:
+            continue
+        if drop_empty_text and not (normalized.get("text") or "").strip():
             continue
         normalized_links.append(normalized)
 

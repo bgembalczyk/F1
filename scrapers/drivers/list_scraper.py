@@ -1,13 +1,8 @@
 from pathlib import Path
-from typing import Any, List
 
-from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.factories import build_driver_record
-from models.services.driver_service import DriverService
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from validation.records import ExportRecord
-from scrapers.base.transformers import RecordTransformer
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -30,7 +25,9 @@ from scrapers.drivers.constants import (
     RACE_WINS_HEADER,
     SEASONS_COMPETED_HEADER,
 )
-from scrapers.drivers.transformers.drivers_championships import DriversChampionshipsTransformer
+from scrapers.base.transformers.drivers_championships import (
+    DriversChampionshipsTransformer,
+)
 from scrapers.drivers.validator import DriversRecordValidator
 
 

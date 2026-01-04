@@ -10,7 +10,9 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers import RecordTransformer
+from scrapers.base.transformers.points_scoring_systems_history import (
+    PointsScoringSystemsHistoryTransformer,
+)
 from scrapers.points.columns.first_place import FirstPlaceColumn
 from scrapers.points.constants import (
     CONSTRUCTORS_CHAMPIONSHIP_HEADER,
@@ -21,9 +23,6 @@ from scrapers.points.constants import (
     POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
     SEASONS_HEADER,
 )
-from scrapers.points.helpers.parsers import extract_first_place_role
-from scrapers.points.helpers.parsers import seasons_key
-from scrapers.points.transformers.scoring_systems_history import PointsScoringSystemsHistoryTransformer
 
 
 class PointsScoringSystemsHistoryScraper(F1TableScraper):

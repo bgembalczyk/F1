@@ -3,10 +3,6 @@ from pathlib import Path
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers import RecordTransformer
@@ -19,7 +15,9 @@ from scrapers.points.constants import (
     SHORTENED_RACE_EXPECTED_HEADERS,
 )
 from scrapers.points.schemas import build_shortened_race_points_schema
-from scrapers.points.transformers.shortened_race import ShortenedRacePointsTransformer
+from scrapers.base.transformers.shortened_race_points import (
+    ShortenedRacePointsTransformer,
+)
 
 
 class ShortenedRacePointsScraper(F1TableScraper):
