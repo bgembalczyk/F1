@@ -1,5 +1,6 @@
 """Tests for CancelledRoundsParser logic."""
 
+import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
@@ -7,7 +8,19 @@ from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
-def test_cancelled_rounds_returns_second_table_when_two_tables_in_section() -> None:
+@pytest.fixture
+def parser():
+    """Create a CancelledRoundsParser instance for testing."""
+    options = ScraperOptions()
+    table_parser = SeasonTableParser(
+        options=options,
+        include_urls=True,
+        url="https://example.com/test"
+    )
+    return CancelledRoundsParser(table_parser)
+
+
+def test_cancelled_rounds_returns_second_table_when_two_tables_in_section(parser) -> None:
     """When there are 2 tables in the section, cancelled_rounds should be the second one."""
     html = """
     <html>
@@ -44,14 +57,6 @@ def test_cancelled_rounds_returns_second_table_when_two_tables_in_section() -> N
     """
     soup = BeautifulSoup(html, "html.parser")
     
-    options = ScraperOptions()
-    table_parser = SeasonTableParser(
-        options=options,
-        include_urls=True,
-        url="https://example.com/test"
-    )
-    parser = CancelledRoundsParser(table_parser)
-    
     # Parse without calendar data (should return second table)
     result = parser.parse(soup, season_year=2020, calendar_data=None)
     
@@ -61,7 +66,7 @@ def test_cancelled_rounds_returns_second_table_when_two_tables_in_section() -> N
     assert result[0]["circuit"]["circuit"]["text"] == "Spa-Francorchamps"
 
 
-def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar() -> None:
+def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar(parser) -> None:
     """When there's 1 table and it matches calendar, return empty list."""
     html = """
     <html>
@@ -84,14 +89,6 @@ def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar() -> Non
     """
     soup = BeautifulSoup(html, "html.parser")
     
-    options = ScraperOptions()
-    table_parser = SeasonTableParser(
-        options=options,
-        include_urls=True,
-        url="https://example.com/test"
-    )
-    parser = CancelledRoundsParser(table_parser)
-    
     # Create calendar data that matches the table
     # Note: The circuit structure is nested as {'circuit': {'text': '...', 'url': ...}}
     calendar_data = [
@@ -109,7 +106,7 @@ def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar() -> Non
     assert result == []
 
 
-def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar() -> None:
+def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(parser) -> None:
     """When there's 1 table and it differs from calendar, return it."""
     html = """
     <html>
@@ -132,14 +129,6 @@ def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar() -
     """
     soup = BeautifulSoup(html, "html.parser")
     
-    options = ScraperOptions()
-    table_parser = SeasonTableParser(
-        options=options,
-        include_urls=True,
-        url="https://example.com/test"
-    )
-    parser = CancelledRoundsParser(table_parser)
-    
     # Create calendar data that differs from the table
     calendar_data = [
         {
@@ -157,7 +146,7 @@ def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar() -
     assert result[0]["grand_prix"]["text"] == "Belgian Grand Prix"
 
 
-def test_cancelled_rounds_returns_empty_when_no_table_found() -> None:
+def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
     """When no table is found in any section, return empty list."""
     html = """
     <html>
@@ -168,14 +157,6 @@ def test_cancelled_rounds_returns_empty_when_no_table_found() -> None:
     </html>
     """
     soup = BeautifulSoup(html, "html.parser")
-    
-    options = ScraperOptions()
-    table_parser = SeasonTableParser(
-        options=options,
-        include_urls=True,
-        url="https://example.com/test"
-    )
-    parser = CancelledRoundsParser(table_parser)
     
     result = parser.parse(soup, season_year=2020, calendar_data=None)
     

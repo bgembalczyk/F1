@@ -48,6 +48,8 @@ class CancelledRoundsParser:
                 schema=schema,
                 calendar_data=calendar_data,
             )
+            # None means no tables found in this section, try next section
+            # Empty list means tables found but no cancelled_rounds (matched calendar)
             if records is not None:  # Explicitly check for None vs empty list
                 return records
         
@@ -110,8 +112,9 @@ class CancelledRoundsParser:
         matching_tables = []
         for table in candidate_tables:
             try:
+                # Create parser without section_id since table is already found
                 parser = HtmlTableParser(
-                    section_id=None,  # Don't re-filter by section
+                    section_id=None,  # Table already found, no need to re-filter by section
                     expected_headers=expected_headers,
                 )
                 headers, _, _ = parser._extract_headers(table)
@@ -139,8 +142,9 @@ class CancelledRoundsParser:
             include_urls=self._table_parser._include_urls,
             normalize_empty_values=self._table_parser._options.normalize_empty_values,
         )
+        # Parse table directly without section filtering (table already located)
         parser = HtmlTableParser(
-            section_id=None,  # Table already found
+            section_id=None,  # Table already found, no need to filter by section
             expected_headers=pipeline.expected_headers,
         )
         
@@ -180,7 +184,10 @@ class CancelledRoundsParser:
                 if isinstance(circuit, dict):
                     # Circuit might be nested like {'circuit': {'text': '...', 'url': ...}}
                     circuit_inner = circuit.get("circuit", circuit)
-                    circuit_text = circuit_inner.get("text", "") if isinstance(circuit_inner, dict) else str(circuit_inner)
+                    if isinstance(circuit_inner, dict):
+                        circuit_text = circuit_inner.get("text", "")
+                    else:
+                        circuit_text = str(circuit_inner)
                 else:
                     circuit_text = str(circuit)
                 
