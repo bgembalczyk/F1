@@ -3,8 +3,8 @@ from typing import Any
 from typing import Mapping
 from typing import Optional
 
-from models.validation.utils import is_valid_url
 from models.value_objects.base import ValueObject
+from models.value_objects.link_utils import validate_link
 
 
 @dataclass
@@ -13,11 +13,11 @@ class Link(ValueObject):
     url: Optional[str] = None
 
     def __post_init__(self) -> None:
-        self.text = str(self.text or "").strip()
-        self.url = self.url or None
-        if self.url:
-            if not isinstance(self.url, str) or not is_valid_url(self.url):
-                raise ValueError("Pole link zawiera nieprawidłowy URL")
+        normalized = validate_link(
+            {"text": self.text, "url": self.url}, field_name="link"
+        )
+        self.text = normalized["text"]
+        self.url = normalized["url"]
 
     def is_empty(self) -> bool:
         return not self.text and self.url is None

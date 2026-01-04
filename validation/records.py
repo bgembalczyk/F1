@@ -6,6 +6,8 @@ from typing import Any, Callable, Mapping, Sequence
 from typing import Dict
 from typing import TypeAlias
 
+from models.value_objects.link_utils import normalize_link, validate_link
+
 
 ExportRecord: TypeAlias = Dict[str, Any]
 
@@ -278,12 +280,18 @@ class BaseDomainRecordValidator(RecordValidator):
         if not isinstance(value, dict):
             return [f"{field_name} must be a link dict"]
         errors: list[str] = []
-        text = value.get("text")
-        if not isinstance(text, str) or not text.strip():
+        normalized = normalize_link(value)
+        if not normalized["text"]:
             errors.append(f"{field_name}.text must be a non-empty string")
-        url = value.get("url")
+        url = normalized["url"]
         if url is not None and not isinstance(url, str):
             errors.append(f"{field_name}.url must be a string or None")
+            return errors
+        if url is not None:
+            try:
+                validate_link(normalized, field_name=field_name)
+            except ValueError as exc:
+                errors.append(str(exc))
         return errors
 
     @classmethod

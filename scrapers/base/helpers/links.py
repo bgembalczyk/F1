@@ -5,7 +5,7 @@ from typing import Callable, Iterable
 from bs4 import BeautifulSoup, Tag
 
 from models.records.link import LinkRecord
-from models.validation.validators import normalize_and_validate_link_dict
+from models.value_objects.link_utils import validate_link
 from scrapers.base.helpers.text import clean_wiki_text, strip_marks
 from scrapers.base.helpers.text_normalization import is_language_link
 from scrapers.base.helpers.wiki import is_reference_link, is_wikipedia_redlink
@@ -41,10 +41,8 @@ def normalize_single_link(
     if is_wikipedia_redlink(url):
         url = None
 
-    normalized = normalize_and_validate_link_dict(
-        {"text": text, "url": url}, field_name="link"
-    )
-    if normalized is None:
+    normalized = validate_link({"text": text, "url": url}, field_name="link")
+    if not normalized.get("text") and normalized.get("url") is None:
         return empty_link_record(drop_empty=drop_empty)
     return normalized
 
