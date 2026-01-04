@@ -39,7 +39,11 @@ class Constructors2025ListScraper(F1TableScraper):
         column(LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
         column(BASED_IN_HEADER, "based_in", LinksListColumn()),
         *[
-            column(header, key, BASE_STATS_COLUMNS[key])
+            column(
+                header,
+                {"wcc": "wcc_titles", "wdc": "wdc_titles"}.get(key, key),
+                BASE_STATS_COLUMNS[key],
+            )
             for header, key in BASE_STATS_MAP.items()
         ],
         column(DRIVERS_HEADER, "drivers", IntColumn()),

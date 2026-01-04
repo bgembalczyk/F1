@@ -7,6 +7,7 @@ from models.records import (
     LinkRecord,
     SeasonRecord,
 )
+from models.mappers.field_aliases import apply_field_aliases, FIELD_ALIASES
 from models.records.driver import DRIVER_SCHEMA
 from models.records.season import SEASON_SCHEMA
 from validation.records import RecordValidator
@@ -99,3 +100,27 @@ def test_validate_schema_handles_nested_records() -> None:
     assert (
         "Invalid type for seasons_competed[0].year: expected int, got str" in errors
     )
+
+
+def test_apply_field_aliases_resolves_constructor_wcc_wdc() -> None:
+    payload = apply_field_aliases(
+        {"wcc": 3, "wdc": 2},
+        FIELD_ALIASES["constructor"],
+        record_name="constructor",
+    )
+
+    assert payload["wcc_titles"] == 3
+    assert payload["wdc_titles"] == 2
+
+
+def test_apply_field_aliases_raises_on_conflict() -> None:
+    try:
+        apply_field_aliases(
+            {"wcc": 2, "wcc_titles": 1},
+            FIELD_ALIASES["constructor"],
+            record_name="constructor",
+        )
+    except ValueError as exc:
+        assert "Konflikt aliasów" in str(exc)
+    else:
+        raise AssertionError("Expected conflict error for alias mapping")
