@@ -39,6 +39,8 @@ class TestingVenuesParser:
         Note: Circuit and Event have swapped content in the source data!
         - Circuit contains text that should be in Event
         - Event contains circuit data that should be in Circuit
+        
+        We parse them as-is and then swap them to correct the Wikipedia error.
         """
         schema_columns = [
             column("Test", "test", IntColumn()),
@@ -55,12 +57,19 @@ class TestingVenuesParser:
         ]
         schema = TableSchemaDSL(columns=schema_columns)
         
-        return self._table_parser.parse_table(
+        records = self._table_parser.parse_table(
             soup,
             section_ids=["Testing_venues_and_dates"],
             expected_headers=["Test", "Circuit", "Event"],
             schema=schema,
         )
+        
+        # Swap circuit and event fields to correct the Wikipedia error
+        for record in records:
+            if "circuit" in record and "event" in record:
+                record["circuit"], record["event"] = record["event"], record["circuit"]
+        
+        return records
 
     def _parse_2009(
         self, soup: BeautifulSoup, season_year: int | None
