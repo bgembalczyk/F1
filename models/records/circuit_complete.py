@@ -6,7 +6,7 @@ from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
 class CircuitCompleteRecord(TypedDict, total=False):
@@ -60,5 +60,5 @@ CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
 )
 
 
-def validate_circuit_complete_record(record: dict[str, Any]) -> list[str]:
+def validate_circuit_complete_record(record: dict[str, Any]) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(record, CIRCUIT_COMPLETE_SCHEMA)

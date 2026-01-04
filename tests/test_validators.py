@@ -3,6 +3,7 @@ import pytest
 from models.validation.core import validate_float, validate_int, validate_status
 from models.validation.validators import validate_link, validate_seasons
 from models.value_objects import SeasonRef
+from validation.records import RecordValidator, ValidationIssue
 
 
 def test_validate_link_accepts_link_dict():
@@ -65,3 +66,18 @@ def test_validate_int_rejects_negative_values():
 
 def test_validate_float_accepts_numeric_strings():
     assert validate_float("3.5", "value") == 3.5
+
+
+def test_quality_report_counts_null_fields():
+    class DummyValidator(RecordValidator):
+        def validate(self, record):  # type: ignore[override]
+            return []
+
+    validator = DummyValidator()
+    validator.record_validation_result([ValidationIssue.null("driver")])
+
+    report = validator.build_quality_report()
+
+    assert report["summary"]["total_records"] == 1
+    assert report["summary"]["rejected_records"] == 1
+    assert report["missing"] == {"driver": 1}

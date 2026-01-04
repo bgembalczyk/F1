@@ -1,10 +1,9 @@
-from validation.records import ExportRecord
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, ExportRecord, ValidationIssue
 
 
 class GrandsPrixRecordValidator(BaseDomainRecordValidator):
-    def validate(self, record: ExportRecord) -> list[str]:
-        errors: list[str] = []
+    def validate(self, record: ExportRecord) -> list[ValidationIssue]:
+        errors: list[ValidationIssue] = []
         errors.extend(
             self.require_keys(
                 record,

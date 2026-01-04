@@ -12,7 +12,7 @@ from models.validation.validators import (
     normalize_season_list,
 )
 from models.value_objects import Link, SeasonRef
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, RecordValidator, ValidationIssue
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
@@ -104,11 +104,13 @@ def test_base_domain_validator_checks_required_and_type_rules():
 
     errors = BaseDomainRecordValidator.require_keys(record, ["name", "count", "missing"])
 
-    assert "Missing key: missing" in errors
-    assert (
-        "Invalid type for count: expected int, got str"
-        in BaseDomainRecordValidator.require_type(record, "count", int)
-    )
+    messages = [error.message for error in errors]
+    assert "Missing key: missing" in messages
+    type_messages = [
+        error.message
+        for error in BaseDomainRecordValidator.require_type(record, "count", int)
+    ]
+    assert "Invalid type for count: expected int, got str" in type_messages
 
 
 def test_base_domain_validator_link_helpers_report_invalid_entries():
@@ -116,11 +118,35 @@ def test_base_domain_validator_link_helpers_report_invalid_entries():
         {"text": " ", "url": 123},
         "link",
     )
-    assert "link.text must be a non-empty string" in errors
-    assert "link.url must be a string or None" in errors
+    messages = [error.message for error in errors]
+    assert "link.text must be a non-empty string" in messages
+    assert "link.url must be a string or None" in messages
 
     list_errors = BaseDomainRecordValidator.require_link_list(
         [{"text": "Ok", "url": None}, "bad"],
         "links",
     )
-    assert "links[1] must be a link dict" in list_errors
+    list_messages = [error.message for error in list_errors]
+    assert "links[1] must be a link dict" in list_messages
+
+
+def test_quality_report_tracks_structured_issues():
+    class DummyValidator(RecordValidator):
+        def validate(self, record):  # type: ignore[override]
+            return []
+
+    validator = DummyValidator()
+    validator.record_validation_result(
+        [
+            ValidationIssue.missing("name"),
+            ValidationIssue.type_error("age", "int", "str"),
+            ValidationIssue.custom("other issue"),
+        ]
+    )
+
+    report = validator.build_quality_report()
+
+    assert report["summary"]["total_records"] == 1
+    assert report["summary"]["rejected_records"] == 1
+    assert report["missing"] == {"name": 1}
+    assert report["types"] == {"age": 1}
