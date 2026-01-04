@@ -1,13 +1,17 @@
 import re
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Callable, TypeVar
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import ScraperError
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+
+_T = TypeVar("_T")
 
 
 class CircuitLayoutsParser:
@@ -20,12 +24,37 @@ class CircuitLayoutsParser:
         text_utils: InfoboxTextUtils,
         lap_record_parser: CircuitLapRecordParser,
         specs_parser: CircuitSpecsParser,
+        error_handler: ErrorHandler,
+        url_provider: Callable[[], Optional[str]] | None = None,
     ) -> None:
         self.infobox_scraper = infobox_scraper
         self.text_utils = text_utils
         self.lap_record_parser = lap_record_parser
         self.specs_parser = specs_parser
         self.schema = CIRCUIT_INFOBOX_SCHEMA
+        self.error_handler = error_handler
+        self._url_provider = url_provider
+
+    def _safe_parse(
+        self,
+        fn: Callable[..., _T],
+        *args: Any,
+        **kwargs: Any,
+    ) -> Optional[_T]:
+        try:
+            return fn(*args, **kwargs)
+        except Exception as exc:
+            url = self._url_provider() if self._url_provider else None
+            error = (
+                exc
+                if isinstance(exc, ScraperError)
+                else self.error_handler.wrap_parse(exc, url=url)
+            )
+            if self.error_handler.handle(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
 
     def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         table = self.infobox_scraper.parser.find_infobox(soup)
@@ -71,18 +100,26 @@ class CircuitLayoutsParser:
             }
 
             if label == "length":
-                current["length_km"] = self.text_utils.parse_length(cell_row, unit="km")
-                current["length_mi"] = self.text_utils.parse_length(cell_row, unit="mi")
+                current["length_km"] = self._safe_parse(
+                    self.text_utils.parse_length, cell_row, unit="km"
+                )
+                current["length_mi"] = self._safe_parse(
+                    self.text_utils.parse_length, cell_row, unit="mi"
+                )
             elif label == "turns":
-                current["turns"] = self.text_utils.parse_int(cell_row)
+                current["turns"] = self._safe_parse(self.text_utils.parse_int, cell_row)
             elif label == "race_lap_record":
-                current["race_lap_record"] = self.lap_record_parser.parse_lap_record(
-                    cell_row
+                current["race_lap_record"] = self._safe_parse(
+                    self.lap_record_parser.parse_lap_record, cell_row
                 )
             elif label == "surface":
-                current["surface"] = self.specs_parser.parse_surface(cell_row)
+                current["surface"] = self._safe_parse(
+                    self.specs_parser.parse_surface, cell_row
+                )
             elif label == "banking":
-                current["banking"] = self.specs_parser.parse_banking(cell_row)
+                current["banking"] = self._safe_parse(
+                    self.specs_parser.parse_banking, cell_row
+                )
 
         return layouts
 
