@@ -18,7 +18,7 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
-from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+from scrapers.grands_prix.validators import is_grand_prix_article
 
 
 class F1SingleGrandPrixScraper(F1Scraper):

@@ -28,7 +28,7 @@ from scrapers.drivers.constants import (
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
-from scrapers.drivers.validator import DriversRecordValidator
+from scrapers.drivers.validators import DriversRecordValidator
 
 
 class F1DriversListScraper(F1TableScraper):

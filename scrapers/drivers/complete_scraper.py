@@ -61,7 +61,7 @@ class CompleteDriverScraper(CompositeScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.drivers.helpers.export import export_complete_drivers
+    from scrapers.drivers.parsers.export import export_complete_drivers
 
     export_complete_drivers(
         output_dir=Path("../../data/wiki/drivers/complete_drivers"),
