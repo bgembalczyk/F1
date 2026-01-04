@@ -7,11 +7,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.points.constants import (
-    SEASONS_HEADER,
-    SPRINT_POSITIONS,
-    SPRINT_QUALIFYING_EXPECTED_HEADERS,
-)
+from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.points.schemas import build_sprint_qualifying_schema
 
 

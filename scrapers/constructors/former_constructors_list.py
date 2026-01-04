@@ -12,21 +12,21 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import (
-    CONSTRUCTOR_HEADER,
-    DRIVERS_HEADER,
-    FASTEST_LAPS_HEADER,
+    CONSTRUCTOR_DRIVERS_HEADER,
+    CONSTRUCTOR_FASTEST_LAPS_HEADER,
+    CONSTRUCTOR_LICENSED_IN_HEADER,
+    CONSTRUCTOR_NAME_HEADER,
+    CONSTRUCTOR_PODIUMS_HEADER,
+    CONSTRUCTOR_POINTS_HEADER,
+    CONSTRUCTOR_POLES_HEADER,
+    CONSTRUCTOR_RACES_ENTERED_HEADER,
+    CONSTRUCTOR_RACES_STARTED_HEADER,
+    CONSTRUCTOR_SEASONS_HEADER,
+    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+    CONSTRUCTOR_WCC_HEADER,
+    CONSTRUCTOR_WDC_HEADER,
+    CONSTRUCTOR_WINS_HEADER,
     FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
-    LICENSED_IN_HEADER,
-    PODIUMS_HEADER,
-    POINTS_HEADER,
-    POLES_HEADER,
-    RACES_ENTERED_HEADER,
-    RACES_STARTED_HEADER,
-    SEASONS_HEADER,
-    TOTAL_ENTRIES_HEADER,
-    WCC_HEADER,
-    WDC_HEADER,
-    WINS_HEADER,
 )
 
 
@@ -38,20 +38,20 @@ class FormerConstructorsListScraper(F1TableScraper):
     """
 
     schema_columns = [
-        column(CONSTRUCTOR_HEADER, "constructor", UrlColumn()),
-        column(LICENSED_IN_HEADER, "licensed_in", LinksListColumn()),
-        column(SEASONS_HEADER, "seasons", SeasonsColumn()),
-        column(RACES_ENTERED_HEADER, "races_entered", IntColumn()),
-        column(RACES_STARTED_HEADER, "races_started", IntColumn()),
-        column(DRIVERS_HEADER, "drivers", IntColumn()),
-        column(TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
-        column(WINS_HEADER, "wins", IntColumn()),
-        column(POINTS_HEADER, "points", IntColumn()),
-        column(POLES_HEADER, "poles", IntColumn()),
-        column(FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
-        column(PODIUMS_HEADER, "podiums", IntColumn()),
-        column(WCC_HEADER, "wcc_titles", IntColumn()),
-        column(WDC_HEADER, "wdc_titles", IntColumn()),
+        column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
+        column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn()),
+        column(CONSTRUCTOR_SEASONS_HEADER, "seasons", SeasonsColumn()),
+        column(CONSTRUCTOR_RACES_ENTERED_HEADER, "races_entered", IntColumn()),
+        column(CONSTRUCTOR_RACES_STARTED_HEADER, "races_started", IntColumn()),
+        column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+        column(CONSTRUCTOR_TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
+        column(CONSTRUCTOR_WINS_HEADER, "wins", IntColumn()),
+        column(CONSTRUCTOR_POINTS_HEADER, "points", IntColumn()),
+        column(CONSTRUCTOR_POLES_HEADER, "poles", IntColumn()),
+        column(CONSTRUCTOR_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
+        column(CONSTRUCTOR_PODIUMS_HEADER, "podiums", IntColumn()),
+        column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+        column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
     ]
 
     CONFIG = ScraperConfig(
