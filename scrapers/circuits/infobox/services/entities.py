@@ -1,5 +1,7 @@
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Callable, TypeVar
 
+from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import ScraperError
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
@@ -13,6 +15,8 @@ from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.models.services.lap_record_merging import merge_two_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
+
+_T = TypeVar("_T")
 
 
 class CircuitEntitiesParser:
@@ -28,6 +32,8 @@ class CircuitEntitiesParser:
         lap_record_parser: CircuitLapRecordParser,
         entity_parser: CircuitEntityParser,
         additional_info_parser: CircuitAdditionalInfoParser,
+        error_handler: ErrorHandler,
+        url_provider: Callable[[], Optional[str]] | None = None,
     ) -> None:
         self.text_utils = text_utils
         self.geo_parser = geo_parser
@@ -36,6 +42,29 @@ class CircuitEntitiesParser:
         self.lap_record_parser = lap_record_parser
         self.entity_parser = entity_parser
         self.additional_info_parser = additional_info_parser
+        self.error_handler = error_handler
+        self._url_provider = url_provider
+
+    def _safe_parse(
+        self,
+        fn: Callable[..., _T],
+        *args: Any,
+        **kwargs: Any,
+    ) -> Optional[_T]:
+        try:
+            return fn(*args, **kwargs)
+        except Exception as exc:
+            url = self._url_provider() if self._url_provider else None
+            error = (
+                exc
+                if isinstance(exc, ScraperError)
+                else self.error_handler.wrap_parse(exc, url=url)
+            )
+            if self.error_handler.handle(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
 
     def _build_normalized_data(
         self, raw: Dict[str, Any], rows: Dict[str, Dict[str, Any]]
@@ -43,20 +72,28 @@ class CircuitEntitiesParser:
         """Buduje znormalizowane dane z surowych wierszy."""
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),
-            "location": self.geo_parser.parse_location(rows.get("location")),
-            "coordinates": self.geo_parser.parse_coordinates(rows.get("coordinates")),
+            "location": self._safe_parse(
+                self.geo_parser.parse_location, rows.get("location")
+            ),
+            "coordinates": self._safe_parse(
+                self.geo_parser.parse_coordinates, rows.get("coordinates")
+            ),
             "specs": {
-                "fia_grade": self.text_utils.parse_int(rows.get("fia_grade")),
-                "length_km": self.text_utils.parse_length(
-                    rows.get("length"), unit="km"
+                "fia_grade": self._safe_parse(
+                    self.text_utils.parse_int, rows.get("fia_grade")
                 ),
-                "length_mi": self.text_utils.parse_length(
-                    rows.get("length"), unit="mi"
+                "length_km": self._safe_parse(
+                    self.text_utils.parse_length, rows.get("length"), unit="km"
                 ),
-                "turns": self.text_utils.parse_int(rows.get("turns")),
+                "length_mi": self._safe_parse(
+                    self.text_utils.parse_length, rows.get("length"), unit="mi"
+                ),
+                "turns": self._safe_parse(self.text_utils.parse_int, rows.get("turns")),
             },
-            "history": self.history_parser.parse_history(rows),
-            "architect": self.entity_parser.parse_linked_entity(rows.get("architect")),
+            "history": self._safe_parse(self.history_parser.parse_history, rows),
+            "architect": self._safe_parse(
+                self.entity_parser.parse_linked_entity, rows.get("architect")
+            ),
         }
 
         extra_fields = self.additional_info_parser.collect_additional_info(
@@ -77,11 +114,15 @@ class CircuitEntitiesParser:
             "length_km": normalized.get("specs", {}).get("length_km"),
             "length_mi": normalized.get("specs", {}).get("length_mi"),
             "turns": normalized.get("specs", {}).get("turns"),
-            "race_lap_record": self.lap_record_parser.parse_lap_record(
-                rows.get("race_lap_record")
+            "race_lap_record": self._safe_parse(
+                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record")
             ),
-            "surface": self.specs_parser.parse_surface(rows.get("surface")),
-            "banking": self.specs_parser.parse_banking(rows.get("banking")),
+            "surface": self._safe_parse(
+                self.specs_parser.parse_surface, rows.get("surface")
+            ),
+            "banking": self._safe_parse(
+                self.specs_parser.parse_banking, rows.get("banking")
+            ),
         }
         return self.text_utils.prune_nulls(default_layout)
 
@@ -144,8 +185,8 @@ class CircuitEntitiesParser:
                 layouts = [default_layout]
 
         if layouts:
-            base_record = self.lap_record_parser.parse_lap_record(
-                rows.get("race_lap_record")
+            base_record = self._safe_parse(
+                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record")
             )
             if base_record:
                 self._process_base_lap_record(layouts, base_record)

@@ -81,6 +81,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
             lap_record_parser=self.lap_record_parser,
             entity_parser=self.entity_parser,
             additional_info_parser=self.additional_info_parser,
+            error_handler=self._error_handler,
+            url_provider=lambda: self.url,
         )
 
         self.layouts_parser = CircuitLayoutsParser(
@@ -88,6 +90,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
             text_utils=self.text_utils,
             lap_record_parser=self.lap_record_parser,
             specs_parser=self.specs_parser,
+            error_handler=self._error_handler,
+            url_provider=lambda: self.url,
         )
 
         self.url: str = ""

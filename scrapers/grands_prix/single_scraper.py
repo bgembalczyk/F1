@@ -10,6 +10,7 @@ from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.ABC import F1Scraper
+from scrapers.base.errors import DomainParseError, ScraperError
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
@@ -231,8 +232,24 @@ class F1SingleGrandPrixScraper(F1Scraper):
                         ),
                     }
                 ]
-            except RuntimeError:
-                continue
+            except Exception as exc:
+                if isinstance(exc, RuntimeError):
+                    error: Exception = DomainParseError(
+                        f"Brak sekcji {section_id!r} w artykule.",
+                        url=self.url,
+                        cause=exc,
+                    )
+                else:
+                    error = (
+                        exc
+                        if isinstance(exc, ScraperError)
+                        else self._wrap_parse_error(exc)
+                    )
+                if self._handle_scraper_error(error):
+                    continue
+                if error is exc:
+                    raise
+                raise error from exc
 
         return [
             {

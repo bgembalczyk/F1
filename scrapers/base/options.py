@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Mapping, Optional, cast
@@ -12,7 +14,6 @@ from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.cache_adapter import CacheAdapter
 from scrapers.base.transformers import RecordTransformer
 from validation.records import RecordValidator
@@ -73,6 +74,8 @@ class ScraperOptions:
     def with_fetcher(self, *, policy: HttpPolicy | None = None) -> HtmlFetcher:
         if policy is not None:
             self.policy = policy
+
+        from scrapers.base.html_fetcher import HtmlFetcher
 
         if self.fetcher is None:
             if isinstance(self.source_adapter, HtmlFetcher):

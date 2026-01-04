@@ -1,10 +1,13 @@
-from typing import Any
-from typing import Dict
+from __future__ import annotations
+
+from typing import Any, Dict, TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 
 from scrapers.base.extractors.infobox import InfoboxExtractor
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+
+if TYPE_CHECKING:
+    from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 
 
 def parse_infobox_from_soup(

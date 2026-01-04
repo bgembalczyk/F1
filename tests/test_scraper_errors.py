@@ -2,16 +2,6 @@ import sys
 from pathlib import Path
 import types
 import pytest
-from scrapers.base.errors import (
-    ScraperNetworkError,
-    ScraperNotFoundError,
-    ScraperParseError,
-)
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -29,6 +19,9 @@ if "bs4" not in sys.modules:
 
         def find(self, *_, **__):
             return None
+
+        def select(self, *_, **__):
+            return []
 
         def get_text(self, *_, **__):
             return ""
@@ -73,6 +66,29 @@ if "pandas" not in sys.modules:
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
+
+from scrapers.base.errors import (
+    ScraperNetworkError,
+    ScraperNotFoundError,
+    ScraperParseError,
+)
+from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.options import ScraperOptions
+from scrapers.base.ABC import F1Scraper
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
+from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.infobox.services.history import CircuitHistoryParser
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
 class DummyFetcher:
@@ -175,3 +191,44 @@ def test_infobox_scraper_soft_skips_not_found():
     )
 
     assert scraper.scrape("https://example.com/wiki/Test") == {}
+
+
+def test_single_grand_prix_scraper_soft_skips_missing_section(monkeypatch):
+    monkeypatch.setattr(
+        "scrapers.grands_prix.single_scraper.is_grand_prix_article",
+        lambda _soup: True,
+    )
+    scraper = F1SingleGrandPrixScraper(
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+    )
+
+    result = scraper.fetch_by_url("https://example.com/wiki/Test")
+
+    assert result == [{"url": scraper.url, "by_year": None}]
+
+
+def test_circuit_entities_parser_skips_domain_parse_errors():
+    handler = ErrorHandler()
+    parser = CircuitEntitiesParser(
+        text_utils=InfoboxTextUtils(),
+        geo_parser=CircuitGeoParser(),
+        history_parser=CircuitHistoryParser(),
+        specs_parser=CircuitSpecsParser(),
+        lap_record_parser=CircuitLapRecordParser(),
+        entity_parser=CircuitEntityParser(),
+        additional_info_parser=CircuitAdditionalInfoParser(),
+        error_handler=handler,
+        url_provider=lambda: "https://example.com/wiki/Test",
+    )
+
+    raw = {
+        "title": "Test Circuit",
+        "rows": {
+            "length": {"text": "not-a-number", "links": []},
+        },
+    }
+
+    result = parser.with_normalized(raw, [])
+
+    assert result["normalized"]["name"] == "Test Circuit"
+    assert result["normalized"].get("specs") is None

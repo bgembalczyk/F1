@@ -343,6 +343,7 @@ class F1Scraper(ABC):
         return self._error_handler.handle(error)
 
     # ---------- Wspólne narzędzie do error handling ----------
+    # Używane poza fetch(), np. w mixinach/infobox.
 
     def run_with_error_handling(
         self,
