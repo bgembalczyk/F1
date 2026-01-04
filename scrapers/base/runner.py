@@ -67,6 +67,7 @@ class ScraperRunner:
             options.cache_dir = self._run_config.cache_dir
         if self._run_config.cache_ttl is not None:
             options.cache_ttl = self._run_config.cache_ttl
+        options.quality_report = self._run_config.quality_report
 
         if supports_param(scraper_cls, "options"):
             if self._supports_urls and hasattr(options, "include_urls"):

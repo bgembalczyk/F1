@@ -68,6 +68,8 @@ class F1Scraper(ABC):
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(logger=self.logger)
         self._run_id: str | None = options.run_id
+        self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
+        self._quality_report_enabled = options.quality_report
 
         self.validator: RecordValidator | None = options.validator or getattr(
             self, "default_validator", None
@@ -135,8 +137,14 @@ class F1Scraper(ABC):
             normalized_records = self._record_normalizer.normalize(list(raw_records))
             self.logger.debug("Scrape run %s: finish normalize", run_id)
             self.logger.debug("Scrape run %s: start transform", run_id)
-            self._data = self._apply_transformers(normalized_records)
+            transformed_records = self._apply_transformers(normalized_records)
             self.logger.debug("Scrape run %s: finish transform", run_id)
+            self.logger.debug("Scrape run %s: start validate", run_id)
+            validated_records = self.validate_records(transformed_records)
+            self.logger.debug("Scrape run %s: finish validate", run_id)
+            self.logger.debug("Scrape run %s: start post-process", run_id)
+            self._data = self.post_process_records(validated_records)
+            self.logger.debug("Scrape run %s: finish post-process", run_id)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -234,11 +242,14 @@ class F1Scraper(ABC):
         if self.validator is None:
             return records
 
+        self.validator.reset_stats()
         valid_records: List[ExportRecord] = []
         for index, record in enumerate(records):
             errors = self.validator.validate(record)
             record_factory_errors = self.validator.validate_record_factory(record)
+            errors_for_tracking = list(errors)
             if record_factory_errors:
+                errors_for_tracking.extend(record_factory_errors)
                 record_factory_label = (
                     getattr(self.validator.record_factory, "__name__", None)
                     if self.validator.record_factory is not None
@@ -248,6 +259,7 @@ class F1Scraper(ABC):
                 errors.extend(
                     [f"{label}: {error}" for error in record_factory_errors]
                 )
+            self.validator.record_validation_result(errors_for_tracking)
             if not errors:
                 valid_records.append(record)
                 continue
@@ -266,6 +278,7 @@ class F1Scraper(ABC):
             if self.validation_mode == "soft":
                 self.logger.warning(message)
                 continue
+            self._write_quality_report()
             raise ScraperValidationError(
                 message=message,
                 url=getattr(self, "url", None),
@@ -284,7 +297,18 @@ class F1Scraper(ABC):
                 len(valid_records),
             )
 
+        self._write_quality_report()
         return valid_records
+
+    def _write_quality_report(self) -> None:
+        if (
+            not self._quality_report_enabled
+            or self.debug_dir is None
+            or self.validator is None
+        ):
+            return
+        report_path = self.validator.write_quality_report(self.debug_dir)
+        self.logger.info("Saved quality report: %s", report_path)
 
     def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
         transformed = records
