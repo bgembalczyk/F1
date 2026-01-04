@@ -1,5 +1,6 @@
 from typing import Any, Mapping, cast
 
+from models.mappers.field_aliases import FIELD_ALIASES, apply_field_aliases
 from models.records.car import CarRecord
 from models.records.circuit import CircuitRecord
 from models.records.circuit_complete import CircuitCompleteRecord
@@ -148,7 +149,7 @@ def build_drivers_championships_record(
 
 
 def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
-    payload = dict(record)
+    payload = apply_field_aliases(record, FIELD_ALIASES["driver"], record_name="driver")
     payload["driver"] = _normalize_link_value(payload.get("driver"), "driver")
     nationality = payload.get("nationality")
     payload["nationality"] = nationality.strip() if isinstance(nationality, str) else None
@@ -187,7 +188,9 @@ def build_special_driver_record(record: Mapping[str, Any]) -> SpecialDriverRecor
 
 
 def build_constructor_record(record: Mapping[str, Any]) -> ConstructorRecord:
-    payload = dict(record)
+    payload = apply_field_aliases(
+        record, FIELD_ALIASES["constructor"], record_name="constructor"
+    )
     payload["constructor"] = _normalize_link_value(
         payload.get("constructor"), "constructor"
     )

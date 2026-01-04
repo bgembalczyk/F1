@@ -28,7 +28,11 @@ def build_circuits_schema() -> TableSchemaDSL:
             column(DIRECTION_HEADER, "direction", AutoColumn()),
             column(LOCATION_HEADER, "location", AutoColumn()),
             column(COUNTRY_HEADER, "country", AutoColumn()),
-            column(LAST_LENGTH_USED_HEADER, "last_length_used", LastLengthUsedColumn()),
+            column(
+                LAST_LENGTH_USED_HEADER,
+                "last_length_used_km",
+                LastLengthUsedColumn(),
+            ),
             column(TURNS_HEADER, "turns", IntColumn()),
             column(GRANDS_PRIX_HEADER, "grands_prix", LinksListColumn()),
             column(SEASONS_HEADER, "seasons", SeasonsColumn()),
