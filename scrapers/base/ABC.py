@@ -13,7 +13,8 @@ from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.source_adapter import build_source_adapter
-from scrapers.base.transformers import RecordTransformer, TransformersPipeline
+from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.transformers import apply_transformers
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.errors import (
     ScraperError,
@@ -64,7 +65,7 @@ class F1Scraper(ABC):
         self._record_normalizer = RecordNormalizer(
             normalize_empty_values=self.normalize_empty_values,
         )
-        self.transformers = list(options.transformers or [])
+        self.transformers = build_transformers(options.transformers)
         self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(
             logger=self.logger,
@@ -317,8 +318,7 @@ class F1Scraper(ABC):
         self.logger.info("Saved quality report: %s", report_path)
 
     def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        pipeline = TransformersPipeline(self.transformers, logger=self.logger)
-        return pipeline.apply(records)
+        return apply_transformers(self.transformers, records, logger=self.logger)
 
     # ---------- Pomocnicze ----------
 

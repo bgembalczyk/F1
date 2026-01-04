@@ -4,6 +4,7 @@ from typing import Any
 from models.records.factories import build_fatality_record
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.options import ScraperOptions
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
@@ -15,7 +16,6 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers import RecordTransformer
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
@@ -65,9 +65,17 @@ class F1FatalitiesListScraper(F1TableScraper):
         record_factory=build_fatality_record,
     )
 
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-        self.transformers = [FatalitiesCarTransformer()]
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.transformers = list(options.transformers or []) + [
+            FatalitiesCarTransformer(),
+        ]
+        super().__init__(options=options, config=config)
 
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:

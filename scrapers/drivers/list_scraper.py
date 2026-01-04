@@ -79,8 +79,10 @@ class F1DriversListScraper(F1TableScraper):
         options = options or ScraperOptions()
         options.validation_mode = "hard"
         options.normalize_empty_values = False
+        options.transformers = list(options.transformers or []) + [
+            DriversChampionshipsTransformer(),
+        ]
         super().__init__(options=options, config=config)
-        self.transformers = [DriversChampionshipsTransformer()]
 
 
 if __name__ == "__main__":

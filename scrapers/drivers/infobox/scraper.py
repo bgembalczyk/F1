@@ -14,7 +14,8 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
-from scrapers.base.transformers import RecordFactoryTransformer, TransformersPipeline
+from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
 
 
 class DriverInfoboxScraper:
@@ -35,7 +36,7 @@ class DriverInfoboxScraper:
         self.run_id = run_id
         self.url = url
         self.logger = get_logger(self.__class__.__name__)
-        self.transformers = list(options.transformers or [])
+        self.transformers = build_transformers(options.transformers)
         self._link_extractor = InfoboxLinkExtractor(
             include_urls=self.include_urls,
             wikipedia_base=self.wikipedia_base,
@@ -104,8 +105,7 @@ class DriverInfoboxScraper:
             )
         if not transformers:
             return record
-        pipeline = TransformersPipeline(transformers, logger=self.logger)
-        transformed = pipeline.apply([record])
+        transformed = apply_transformers(transformers, [record], logger=self.logger)
         return transformed[0] if transformed else {}
 
     def _parse_infobox_with_sections(

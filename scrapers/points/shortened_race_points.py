@@ -1,11 +1,11 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers import RecordTransformer
 from scrapers.points.constants import (
     FASTEST_LAP_HEADER,
     HISTORICAL_POSITIONS,
@@ -34,9 +34,17 @@ class ShortenedRacePointsScraper(F1TableScraper):
         record_factory=record_from_mapping,
     )
 
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-        self.transformers = [ShortenedRacePointsTransformer()]
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.transformers = list(options.transformers or []) + [
+            ShortenedRacePointsTransformer(),
+        ]
+        super().__init__(options=options, config=config)
 
 
 if __name__ == "__main__":

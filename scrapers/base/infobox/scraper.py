@@ -11,7 +11,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
-from scrapers.base.transformers import RecordFactoryTransformer, TransformersPipeline
+from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
 
 
 class WikipediaInfoboxScraper:
@@ -46,7 +47,7 @@ class WikipediaInfoboxScraper:
         self.error_report = options.error_report
         self.run_id = run_id
         self.url: str | None = None
-        self.transformers = list(options.transformers or [])
+        self.transformers = build_transformers(options.transformers)
 
     # ------------------------------
     # Public API
@@ -118,8 +119,7 @@ class WikipediaInfoboxScraper:
             )
         if not transformers:
             return record
-        pipeline = TransformersPipeline(transformers, logger=self.logger)
-        transformed = pipeline.apply([record])
+        transformed = apply_transformers(transformers, [record], logger=self.logger)
         return transformed[0] if transformed else {}
 
     # ------------------------------
