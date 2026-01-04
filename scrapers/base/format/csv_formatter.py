@@ -1,7 +1,9 @@
 import csv
 import io
+import json
 from typing import List, Optional, Sequence
 
+from scrapers.base.export.metadata import ExportMetadata
 from scrapers.base.format.formatter_helpers import extract_data
 from scrapers.base.results import ScrapeResult
 
@@ -14,8 +16,13 @@ class CsvFormatter:
         fieldnames: Optional[Sequence[str]] = None,
     ) -> str:
         data = extract_data(result)
+        metadata = ExportMetadata.from_result(result)
+        output = io.StringIO()
+        output.write(
+            f"# meta: {json.dumps(metadata.to_dict(), ensure_ascii=False)}\n"
+        )
         if not data:
-            return ""
+            return output.getvalue()
 
         if fieldnames is None:
             keys: List[str] = []
@@ -25,7 +32,6 @@ class CsvFormatter:
                         keys.append(key)
             fieldnames = keys
 
-        output = io.StringIO()
         writer = csv.DictWriter(output, fieldnames=fieldnames)
         writer.writeheader()
         for row in data:

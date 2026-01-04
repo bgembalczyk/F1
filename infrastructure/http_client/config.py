@@ -4,6 +4,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Optional
 
+from infrastructure.http_client.policies.defaults import (
+    DEFAULT_HTTP_BACKOFF_SECONDS,
+    DEFAULT_HTTP_RETRIES,
+    DEFAULT_HTTP_TIMEOUT,
+)
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 from infrastructure.http_client.policies.response_cache import ResponseCache
 from infrastructure.http_client.policies.retry import RetryPolicy
@@ -13,9 +18,9 @@ from infrastructure.http_client.policies.retry import RetryPolicy
 class HttpClientConfig:
     """Zbiór ustawień współdzielonych przez klientów HTTP."""
 
-    timeout: int = 10
-    retries: int = 0
-    backoff_seconds: float = 0.5
+    timeout: int = DEFAULT_HTTP_TIMEOUT
+    retries: int = DEFAULT_HTTP_RETRIES
+    backoff_seconds: float = DEFAULT_HTTP_BACKOFF_SECONDS
     min_delay_seconds: float = 1.5
     jitter_seconds: float = 0.7
     retry_policy: RetryPolicy | None = None
