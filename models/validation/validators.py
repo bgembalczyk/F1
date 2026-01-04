@@ -6,23 +6,8 @@ from models.serializers import to_dict_any
 from models.validation.core import validate_float, validate_int
 from models.validation.utils import is_valid_url
 from models.value_objects.link import Link
+from models.value_objects.link_utils import validate_link as validate_link_payload
 from models.value_objects.season_ref import SeasonRef
-
-
-def normalize_and_validate_link_dict(
-    link: Dict[str, Any] | None, *, field_name: str
-) -> LinkRecord | None:
-    data: Dict[str, Any] = dict(link or {})
-    text = str(data.get("text") or "").strip()
-    url = data.get("url")
-    if url == "":
-        url = None
-    if text == "" and url is None:
-        return None
-    if url is not None:
-        if not isinstance(url, str) or not is_valid_url(url):
-            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
-    return {"text": text, "url": url}
 
 
 def validate_link(
@@ -39,8 +24,8 @@ def validate_link(
     if isinstance(link, Link):
         return link.to_dict()
 
-    normalized = normalize_and_validate_link_dict(link, field_name=field_name)
-    if normalized is None:
+    normalized = validate_link_payload(link, field_name=field_name)
+    if is_empty_link(normalized):
         return {"text": "", "url": None}
 
     return Link.from_dict(normalized).to_dict()
