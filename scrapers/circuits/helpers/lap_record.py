@@ -4,6 +4,7 @@ from typing import Optional
 
 from bs4 import Tag
 
+from models.services.helpers import split_delimited_text
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
@@ -44,7 +45,7 @@ def score_details_candidate(s: str) -> int:
     if is_speed_paren(s):
         return -100
 
-    parts = [p.strip() for p in s.split(",") if p.strip()]
+    parts = split_delimited_text(s, pattern=r",")
     score = 0
 
     if len(parts) >= 4:
@@ -74,7 +75,7 @@ def select_details_paren(text: str) -> list[str]:
     if score_details_candidate(best) <= 0:
         return []
 
-    return [p.strip() for p in best.split(",") if p.strip()]
+    return split_delimited_text(best, pattern=r",")
 
 
 def is_lap_record_table(
