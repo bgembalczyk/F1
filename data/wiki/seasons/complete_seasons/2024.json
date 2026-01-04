@@ -8816,6 +8816,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -8828,6 +8831,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -8840,6 +8846,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -8852,6 +8861,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -8866,6 +8878,12 @@
                 "position": 2,
                 "footnotes": [
                   "6"
+                ]
+              },
+              {
+                "position": 8,
+                "footnotes": [
+                  "7"
                 ]
               }
             ],
@@ -8882,6 +8900,12 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 13,
+                "footnotes": [
+                  "6"
+                ]
               }
             ],
             "background": "Winner"
@@ -8894,6 +8918,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -8906,6 +8933,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -8918,6 +8948,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Second place"
@@ -8930,6 +8963,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 7
               }
             ],
             "pole_position": true,
@@ -8947,347 +8983,7 @@
                 "footnotes": [
                   "2"
                 ]
-              }
-            ],
-            "footnotes": [
-              "2"
-            ],
-            "background": "Second place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "3"
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "footnotes": [
-              "1"
-            ],
-            "background": "Third place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "points": 666.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "fastest_lap": true,
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 20,
                 "footnotes": [
@@ -9296,9 +8992,9 @@
               }
             ],
             "footnotes": [
-              "3"
+              "2"
             ],
-            "background": "Other classified position"
+            "background": "Second place"
           },
           "gbr": {
             "round": {
@@ -9307,10 +9003,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "hun": {
             "round": {
@@ -9319,11 +9018,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "background": "Winner"
           },
           "bel": {
             "round": {
@@ -9332,10 +9033,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "ned": {
             "round": {
@@ -9344,10 +9048,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "ita": {
             "round": {
@@ -9356,12 +9065,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Third place"
+            "background": "Second place"
           },
           "aze": {
             "round": {
@@ -9370,11 +9080,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 4
               }
             ],
-            "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Winner"
           },
           "sin": {
             "round": {
@@ -9383,10 +9095,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "usa": {
             "round": {
@@ -9395,8 +9111,18 @@
             },
             "results": [
               {
+                "position": 4,
+                "footnotes": [
+                  "3"
+                ]
+              },
+              {
                 "position": 5
               }
+            ],
+            "pole_position": true,
+            "footnotes": [
+              "3"
             ],
             "background": "Other points position"
           },
@@ -9407,10 +9133,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "sap": {
             "round": {
@@ -9419,14 +9148,21 @@
             },
             "results": [
               {
+                "position": 6,
+                "footnotes": [
+                  "1"
+                ]
+              },
+              {
                 "position": 8,
                 "footnotes": [
                   "2"
                 ]
               }
             ],
+            "pole_position": true,
             "footnotes": [
-              "2"
+              "1"
             ],
             "background": "Other points position"
           },
@@ -9437,9 +9173,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 7
               }
             ],
+            "fastest_lap": true,
             "background": "Other points position"
           },
           "qat": {
@@ -9449,17 +9189,22 @@
             },
             "results": [
               {
+                "position": 3,
+                "footnotes": [
+                  "1"
+                ]
+              },
+              {
                 "position": 10,
                 "footnotes": [
                   "2"
                 ]
               }
             ],
-            "fastest_lap": true,
             "footnotes": [
-              "2"
+              "1"
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "abu": {
             "round": {
@@ -9468,10 +9213,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "points": 666.0
         },
@@ -9495,6 +9244,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -9507,6 +9259,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 7
               }
             ],
             "fastest_lap": true,
@@ -9520,6 +9275,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -9532,6 +9290,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -9546,6 +9307,12 @@
                 "position": 4,
                 "footnotes": [
                   "4"
+                ]
+              },
+              {
+                "position": 5,
+                "footnotes": [
+                  "5"
                 ]
               }
             ],
@@ -9565,6 +9332,12 @@
                 "footnotes": [
                   "2"
                 ]
+              },
+              {
+                "position": 5,
+                "footnotes": [
+                  "5"
+                ]
               }
             ],
             "footnotes": [
@@ -9580,6 +9353,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -9592,6 +9368,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -9603,6 +9382,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9617,6 +9399,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -9632,344 +9417,7 @@
                 "footnotes": [
                   "5"
                 ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "background": "Third place"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Winner"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Second place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 652.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 11,
                 "footnotes": [
@@ -9978,9 +9426,9 @@
               }
             ],
             "footnotes": [
-              "7"
+              "5"
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "gbr": {
             "round": {
@@ -9989,10 +9437,14 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "fastest_lap": true,
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -10000,6 +9452,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -10013,10 +9468,14 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "background": "Third place"
           },
           "ned": {
             "round": {
@@ -10025,10 +9484,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "ita": {
             "round": {
@@ -10037,10 +9499,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "aze": {
             "round": {
@@ -10049,10 +9514,14 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Second place"
           },
           "sin": {
             "round": {
@@ -10060,6 +9529,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 7
               }
@@ -10073,6 +9545,12 @@
             },
             "results": [
               {
+                "position": 1,
+                "footnotes": [
+                  "4"
+                ]
+              },
+              {
                 "position": 2,
                 "footnotes": [
                   "2"
@@ -10080,9 +9558,9 @@
               }
             ],
             "footnotes": [
-              "2"
+              "4"
             ],
-            "background": "Second place"
+            "background": "Winner"
           },
           "mxc": {
             "round": {
@@ -10091,11 +9569,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "fastest_lap": true,
-            "background": "Third place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "sap": {
             "round": {
@@ -10104,6 +9585,12 @@
             },
             "results": [
               {
+                "position": 5,
+                "footnotes": [
+                  "3"
+                ]
+              },
+              {
                 "position": "Ret",
                 "footnotes": [
                   "5"
@@ -10111,9 +9598,9 @@
               }
             ],
             "footnotes": [
-              "5"
+              "3"
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "lvg": {
             "round": {
@@ -10122,10 +9609,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "qat": {
             "round": {
@@ -10134,6 +9624,12 @@
             },
             "results": [
               {
+                "position": 2,
+                "footnotes": [
+                  "5"
+                ]
+              },
+              {
                 "position": 6,
                 "footnotes": [
                   "4"
@@ -10141,9 +9637,9 @@
               }
             ],
             "footnotes": [
-              "4"
+              "5"
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "abu": {
             "round": {
@@ -10152,10 +9648,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Second place"
           },
           "points": 652.0
         },
@@ -10179,6 +9678,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -10193,6 +9695,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -10206,6 +9711,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10218,6 +9726,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -10234,6 +9745,12 @@
                 "position": 1,
                 "footnotes": [
                   "1"
+                ]
+              },
+              {
+                "position": 3,
+                "footnotes": [
+                  "3"
                 ]
               }
             ],
@@ -10254,6 +9771,12 @@
                 "footnotes": [
                   "1"
                 ]
+              },
+              {
+                "position": 4,
+                "footnotes": [
+                  "3"
+                ]
               }
             ],
             "pole_position": true,
@@ -10270,6 +9793,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 8
               }
             ],
             "pole_position": true,
@@ -10283,6 +9809,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10295,6 +9824,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Winner"
@@ -10307,6 +9839,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Winner"
@@ -10322,6 +9857,12 @@
                 "footnotes": [
                   "1"
                 ]
+              },
+              {
+                "position": 7,
+                "footnotes": [
+                  "8"
+                ]
               }
             ],
             "pole_position": true,
@@ -10338,6 +9879,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Second place"
@@ -10350,6 +9894,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -10362,6 +9909,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -10374,6 +9924,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Second place"
@@ -10386,6 +9939,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -10398,6 +9954,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -10410,6 +9969,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Second place"
@@ -10425,6 +9987,9 @@
                 "footnotes": [
                   "1"
                 ]
+              },
+              {
+                "position": 7
               }
             ],
             "footnotes": [
@@ -10440,6 +10005,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -10455,336 +10023,7 @@
                 "footnotes": [
                   "4"
                 ]
-              }
-            ],
-            "fastest_lap": true,
-            "footnotes": [
-              "4"
-            ],
-            "background": "Winner"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "8"
-                ]
-              }
-            ],
-            "footnotes": [
-              "8"
-            ],
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 589.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Honda RBPT",
-              "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Third place"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7,
-                "footnotes": [
-                  "8"
-                ]
-              }
-            ],
-            "footnotes": [
-              "8"
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 11,
                 "footnotes": [
@@ -10792,10 +10031,11 @@
                 ]
               }
             ],
+            "fastest_lap": true,
             "footnotes": [
-              "8"
+              "4"
             ],
-            "background": "Other classified position"
+            "background": "Winner"
           },
           "lvg": {
             "round": {
@@ -10803,6 +10043,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 10
               }
@@ -10816,10 +10059,19 @@
             },
             "results": [
               {
+                "position": 1,
+                "footnotes": [
+                  "8"
+                ]
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "footnotes": [
+              "8"
+            ],
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -10828,10 +10080,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 589.0
         },
@@ -10855,6 +10110,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -10867,6 +10125,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10879,6 +10140,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10891,6 +10155,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10906,336 +10173,7 @@
                 "footnotes": [
                   "8"
                 ]
-              }
-            ],
-            "footnotes": [
-              "8"
-            ],
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Winner"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "3"
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 468.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 9,
                 "footnotes": [
@@ -11244,7 +10182,7 @@
               }
             ],
             "footnotes": [
-              "2"
+              "8"
             ],
             "background": "Other points position"
           },
@@ -11254,6 +10192,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 8
               }
@@ -11267,10 +10208,12 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 7
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "mon": {
@@ -11280,10 +10223,12 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 7
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "can": {
@@ -11293,11 +10238,14 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "fastest_lap": true,
-            "background": "Other points position"
+            "pole_position": true,
+            "background": "Third place"
           },
           "esp": {
             "round": {
@@ -11306,10 +10254,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "aut": {
             "round": {
@@ -11318,6 +10269,12 @@
             },
             "results": [
               {
+                "position": 1,
+                "footnotes": [
+                  "4"
+                ]
+              },
+              {
                 "position": 4,
                 "footnotes": [
                   "6"
@@ -11325,9 +10282,9 @@
               }
             ],
             "footnotes": [
-              "6"
+              "4"
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "gbr": {
             "round": {
@@ -11336,11 +10293,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "hun": {
             "round": {
@@ -11349,11 +10308,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 8
               }
             ],
-            "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -11362,10 +10323,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Winner"
           },
           "ned": {
             "round": {
@@ -11373,6 +10337,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -11386,6 +10353,9 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 7
               }
             ],
@@ -11398,10 +10368,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "sin": {
             "round": {
@@ -11409,6 +10382,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -11422,6 +10398,12 @@
             },
             "results": [
               {
+                "position": 6,
+                "footnotes": [
+                  "5"
+                ]
+              },
+              {
                 "position": "Ret",
                 "footnotes": [
                   "6"
@@ -11429,9 +10411,9 @@
               }
             ],
             "footnotes": [
-              "6"
+              "5"
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -11439,6 +10421,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -11452,8 +10437,17 @@
             },
             "results": [
               {
+                "position": 4,
+                "footnotes": [
+                  "6"
+                ]
+              },
+              {
                 "position": 10
               }
+            ],
+            "footnotes": [
+              "6"
             ],
             "background": "Other points position"
           },
@@ -11464,10 +10458,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "qat": {
             "round": {
@@ -11476,16 +10474,23 @@
             },
             "results": [
               {
+                "position": 4,
+                "footnotes": [
+                  "3"
+                ]
+              },
+              {
                 "position": 12,
                 "footnotes": [
                   "6"
                 ]
               }
             ],
+            "pole_position": true,
             "footnotes": [
-              "6"
+              "3"
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -11493,6 +10498,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -11521,6 +10529,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -11533,6 +10544,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11545,6 +10559,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -11557,6 +10574,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -11569,6 +10589,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 15
               }
             ],
             "fastest_lap": true,
@@ -11582,311 +10605,12 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 94.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Aston Martin Aramco",
-              "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 17
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "emi": {
             "round": {
@@ -11895,10 +10619,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 19
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -11906,6 +10633,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 14
               }
@@ -11919,6 +10649,9 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 7
               }
             ],
@@ -11930,6 +10663,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 14
               }
@@ -11943,10 +10679,12 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 18
               }
             ],
-            "fastest_lap": true,
             "background": "Other classified position"
           },
           "gbr": {
@@ -11955,6 +10693,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -11968,10 +10709,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -11980,10 +10724,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -11992,10 +10739,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -12003,6 +10753,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 19
               }
@@ -12016,10 +10769,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 19
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sin": {
             "round": {
@@ -12028,10 +10784,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -12039,6 +10798,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 15
               }
@@ -12052,10 +10814,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sap": {
             "round": {
@@ -12064,10 +10829,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other classified position"
           },
           "lvg": {
             "round": {
@@ -12075,6 +10843,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 15
               }
@@ -12088,10 +10859,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -12100,10 +10874,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 94.0
         },
@@ -12127,6 +10904,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12139,6 +10919,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12151,6 +10934,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12163,6 +10949,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12175,6 +10964,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -12187,6 +10979,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12199,6 +10994,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12211,6 +11009,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12223,6 +11024,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -12235,6 +11039,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -12247,6 +11054,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12259,6 +11069,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other classified position"
@@ -12271,6 +11084,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12283,6 +11099,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -12295,6 +11114,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -12307,6 +11129,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12319,6 +11144,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12331,6 +11159,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -12343,6 +11174,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12355,6 +11189,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -12367,6 +11204,12 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3,
+                "footnotes": [
+                  "7"
+                ]
               }
             ],
             "background": "Second place"
@@ -12379,6 +11222,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12391,6 +11237,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12403,318 +11252,12 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
-          },
-          "points": 65.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alpine",
-              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Third place"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
           },
           "points": 65.0
         },
@@ -12738,6 +11281,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12750,6 +11296,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12762,6 +11311,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -12774,6 +11326,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -12786,6 +11341,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -12801,6 +11359,9 @@
                 "footnotes": [
                   "7"
                 ]
+              },
+              {
+                "position": 19
               }
             ],
             "footnotes": [
@@ -12816,6 +11377,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other classified position"
@@ -12826,6 +11390,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12840,6 +11407,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other classified position"
@@ -12852,6 +11422,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -12864,6 +11437,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -12876,6 +11452,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12888,6 +11467,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12900,6 +11482,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12912,6 +11497,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12924,6 +11512,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -12936,6 +11527,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12948,6 +11542,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other points position"
@@ -12963,6 +11560,12 @@
                 "footnotes": [
                   "8"
                 ]
+              },
+              {
+                "position": 11,
+                "footnotes": [
+                  "7"
+                ]
               }
             ],
             "footnotes": [
@@ -12978,312 +11581,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 58.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 9
               }
@@ -13296,11 +11594,14 @@
               "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Other classified position"
           },
           "lvg": {
             "round": {
@@ -13309,10 +11610,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "qat": {
             "round": {
@@ -13320,6 +11624,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": "Ret",
                 "footnotes": [
@@ -13327,10 +11634,7 @@
                 ]
               }
             ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -13339,11 +11643,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 16
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 58.0
         },
@@ -13367,6 +11673,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -13379,6 +11688,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -13391,6 +11703,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -13403,6 +11718,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -13413,6 +11731,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13430,6 +11751,12 @@
                 "footnotes": [
                   "8"
                 ]
+              },
+              {
+                "position": 15,
+                "footnotes": [
+                  "4"
+                ]
               }
             ],
             "footnotes": [
@@ -13445,6 +11772,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -13457,6 +11787,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -13469,6 +11802,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -13481,312 +11817,7 @@
             "results": [
               {
                 "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 46.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "RB",
-              "url": "https://en.wikipedia.org/wiki/RB_Formula_One_Team"
-            },
-            "engine_constructor": {
-              "text": "Honda RBPT",
-              "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 19
               }
@@ -13800,10 +11831,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -13812,10 +11846,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -13824,10 +11861,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -13836,10 +11876,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 16
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -13847,6 +11890,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -13860,10 +11906,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aze": {
             "round": {
@@ -13872,10 +11921,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sin": {
             "round": {
@@ -13884,10 +11936,12 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 18
               }
             ],
-            "fastest_lap": true,
             "background": "Other classified position"
           },
           "usa": {
@@ -13897,10 +11951,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -13909,10 +11966,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sap": {
             "round": {
@@ -13920,6 +11980,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 9
               }
@@ -13933,10 +11996,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 16
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "qat": {
             "round": {
@@ -13944,6 +12010,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 14
               }
@@ -13956,6 +12025,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -13984,306 +12056,7 @@
             "results": [
               {
                 "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 17.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 20
               }
@@ -14297,6 +12070,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 14
               }
             ],
@@ -14308,10 +12084,14 @@
               "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": "WD"
               }
-            ]
+            ],
+            "background": "Other classified position"
           },
           "jpn": {
             "round": {
@@ -14320,10 +12100,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -14331,6 +12114,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -14344,10 +12130,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "emi": {
             "round": {
@@ -14356,10 +12145,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mon": {
             "round": {
@@ -14368,10 +12160,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -14379,6 +12174,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -14392,6 +12190,9 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": 20
               }
             ],
@@ -14403,6 +12204,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 19
               }
@@ -14416,10 +12220,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -14427,6 +12234,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 17
               }
@@ -14440,6 +12250,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 17
               }
             ],
@@ -14451,6 +12264,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -14464,10 +12280,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aze": {
             "round": {
@@ -14475,6 +12294,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -14488,10 +12310,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": {
             "round": {
@@ -14500,10 +12325,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 16
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -14512,10 +12340,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sap": {
             "round": {
@@ -14523,11 +12354,14 @@
               "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Not classified, retired"
           },
           "lvg": {
             "round": {
@@ -14536,10 +12370,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "qat": {
             "round": {
@@ -14548,10 +12385,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "abu": {
             "round": {
@@ -14560,10 +12400,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 17.0
         },
@@ -14587,306 +12430,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2024_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2024_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2024_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2024_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2024_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2024_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2024_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2024_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2024_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2024_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2024_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2024_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2024_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 4.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Kick Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2024_Bahrain_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 19
               }
@@ -14900,6 +12444,9 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": 18
               }
             ],
@@ -14911,6 +12458,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -14924,10 +12474,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -14936,10 +12489,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mia": {
             "round": {
@@ -14947,6 +12503,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Miami_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -14960,6 +12519,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 18
               }
             ],
@@ -14971,6 +12533,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 16
               }
@@ -14984,6 +12549,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 15
               }
             ],
@@ -14995,6 +12563,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 16
               }
@@ -15008,6 +12579,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 17
               }
             ],
@@ -15019,6 +12593,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 18
               }
@@ -15032,6 +12609,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 19
               }
             ],
@@ -15044,10 +12624,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ned": {
             "round": {
@@ -15055,6 +12638,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": 19
+              },
               {
                 "position": 20
               }
@@ -15068,6 +12654,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 18
               }
             ],
@@ -15079,6 +12668,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_Azerbaijan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -15092,6 +12684,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -15103,6 +12698,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 19
               }
@@ -15116,6 +12714,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 15
               }
             ],
@@ -15127,6 +12728,9 @@
               "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 15
               }
@@ -15140,6 +12744,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 18
               }
             ],
@@ -15152,10 +12759,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -15164,10 +12774,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 4.0
         }

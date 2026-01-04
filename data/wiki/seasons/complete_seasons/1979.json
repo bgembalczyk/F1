@@ -7815,6 +7815,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ]
           },
@@ -7824,6 +7827,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -7838,206 +7844,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 113.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 12
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 5
               }
@@ -8051,11 +7858,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 1
               }
             ],
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Second place"
           },
           "usw": {
             "round": {
@@ -8064,12 +7873,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Second place"
           },
           "esp": {
             "round": {
@@ -8078,11 +7888,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 7
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -8091,11 +7903,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 7
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Winner"
           },
           "mon": {
             "round": {
@@ -8104,10 +7918,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "pole_position": true,
+            "background": "Winner"
           },
           "fra": {
             "round": {
@@ -8116,10 +7934,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -8127,11 +7948,14 @@
               "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -8140,11 +7964,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 8
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -8153,10 +7979,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -8165,11 +7994,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "fastest_lap": true,
-            "background": "Not classified, retired"
+            "background": "Second place"
           },
           "ita": {
             "round": {
@@ -8178,10 +8009,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Winner"
           },
           "can": {
             "round": {
@@ -8190,10 +8024,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -8202,10 +8039,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 1
               }
             ],
-            "background": "Winner"
+            "background": "Not classified, retired"
           },
           "points": 113.0
         },
@@ -8225,209 +8065,7 @@
             "results": [
               {
                 "position": 27
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "points": 75.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 28
               }
@@ -8439,6 +8077,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -8452,10 +8093,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "rsa": {
             "round": {
@@ -8464,10 +8108,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "usw": {
             "round": {
@@ -8476,10 +8123,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "esp": {
             "round": {
@@ -8487,6 +8137,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8501,6 +8154,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -8512,10 +8168,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -8523,6 +8182,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -8536,11 +8198,14 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 1
               }
             ],
-            "fastest_lap": true,
-            "background": "Winner"
+            "pole_position": true,
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -8549,10 +8214,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Winner"
           },
           "aut": {
             "round": {
@@ -8561,10 +8229,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "ned": {
             "round": {
@@ -8573,10 +8244,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "ita": {
             "round": {
@@ -8585,11 +8259,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 3
               }
             ],
-            "fastest_lap": true,
-            "background": "Third place"
+            "background": "Other classified position"
           },
           "can": {
             "round": {
@@ -8598,10 +8274,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "usa": {
             "round": {
@@ -8611,8 +8292,12 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
+            "pole_position": true,
             "background": "Not classified, retired"
           },
           "points": 75.0
@@ -8633,206 +8318,7 @@
             "results": [
               {
                 "position": 25
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 61.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 26
               }
@@ -8845,12 +8331,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -8859,12 +8346,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Second place"
           },
           "rsa": {
             "round": {
@@ -8872,6 +8360,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8885,10 +8376,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -8897,11 +8391,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "bel": {
             "round": {
@@ -8910,11 +8406,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "background": "Not classified, retired"
           },
           "mon": {
             "round": {
@@ -8923,10 +8421,14 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "fastest_lap": true,
+            "background": "Other points position"
           },
           "fra": {
             "round": {
@@ -8935,10 +8437,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "gbr": {
             "round": {
@@ -8947,10 +8452,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -8959,10 +8467,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -8971,10 +8482,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "ned": {
             "round": {
@@ -8983,10 +8497,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -8994,6 +8511,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9008,6 +8528,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9018,6 +8541,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9042,406 +8568,10 @@
             "results": [
               {
                 "position": 1
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 39.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 2
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 39.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 31
               }
@@ -9454,10 +8584,16 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -9466,10 +8602,16 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
+                "position": 3
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "rsa": {
             "round": {
@@ -9478,10 +8620,16 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "usw": {
             "round": {
@@ -9490,10 +8638,16 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
+                "position": "Ret"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -9502,10 +8656,16 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -9515,11 +8675,31 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
           },
-          "mon": null,
+          "mon": {
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "Ret"
+              },
+              {
+                "position": 3
+              }
+            ],
+            "background": "Not classified, retired"
+          },
           "fra": {
             "round": {
               "text": "FRA",
@@ -9527,10 +8707,16 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
+                "position": 13
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "gbr": {
             "round": {
@@ -9539,10 +8725,16 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
+                "position": 8
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -9550,6 +8742,12 @@
               "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9563,10 +8761,16 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "ned": {
             "round": {
@@ -9575,14 +8779,62 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret"
+              },
+              {
                 "position": 7
+              }
+            ],
+            "background": "Not classified, retired"
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": 5
+              },
+              {
+                "position": 7
+              }
+            ],
+            "background": "Other points position"
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
           },
-          "ita": null,
-          "can": null,
-          "usa": null,
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret"
+              }
+            ],
+            "background": "Not classified, retired"
+          },
           "points": 39.0
         },
         {
@@ -9601,6 +8853,12 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
+              },
+              {
+                "position": 33
               }
             ]
           },
@@ -9610,6 +8868,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9624,6 +8885,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9636,6 +8900,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Not classified, retired"
@@ -9648,6 +8915,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Disqualified"
@@ -9660,6 +8930,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -9672,6 +8945,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Third place"
@@ -9682,6 +8958,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9696,6 +8975,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Not classified, retired"
@@ -9708,6 +8990,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Other classified position"
@@ -9720,205 +9005,7 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "points": 28.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 4
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 7
               }
@@ -9931,6 +9018,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -9945,6 +9035,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9956,23 +9049,32 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 6
+              }
+            ],
+            "background": "Other classified position"
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": 5
+              },
+              {
+                "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
           },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
           "usa": {
             "round": {
               "text": "USA",
@@ -9980,68 +9082,16 @@
             },
             "results": [
               {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 28.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+                "position": 3
+              },
               {
-                "position": 33
-              }
-            ]
-          },
-          "arg": null,
-          "bra": null,
-          "rsa": null,
-          "usw": null,
-          "esp": null,
-          "bel": null,
-          "mon": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "points": 28.0
         },
@@ -10061,6 +9111,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 16
               }
             ]
           },
@@ -10070,6 +9123,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10084,6 +9140,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10094,6 +9153,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10109,6 +9171,9 @@
             "results": [
               {
                 "position": "DNS"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Did not start"
@@ -10121,6 +9186,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Not classified, retired"
@@ -10131,6 +9199,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10145,6 +9216,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10157,6 +9231,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -10170,6 +9247,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -10180,6 +9260,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10195,6 +9278,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Not classified, retired"
@@ -10205,6 +9291,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10219,6 +9308,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -10230,6 +9322,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10244,214 +9339,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 26.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 16
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 2
               }
             ],
-            "background": "Second place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
             "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
           },
           "points": 26.0
         },
@@ -10471,6 +9364,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ]
           },
@@ -10482,6 +9378,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -10494,6 +9393,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10506,6 +9408,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Not classified, retired"
@@ -10516,6 +9421,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10530,6 +9438,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Not classified, retired"
@@ -10542,6 +9453,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other points position"
@@ -10554,6 +9468,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other points position"
@@ -10566,6 +9483,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other classified position"
@@ -10578,6 +9498,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -10590,6 +9513,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10602,205 +9528,7 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 15.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 8
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 10
               }
@@ -10815,6 +9543,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10825,6 +9556,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10838,10 +9572,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -10850,10 +9587,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 15.0
         },
@@ -10873,6 +9613,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ]
           },
@@ -10882,6 +9625,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10896,183 +9642,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": null,
-          "usa": null,
-          "points": 7.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 6
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -11085,11 +9655,14 @@
               "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usw": {
             "round": {
@@ -11098,10 +9671,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "esp": {
             "round": {
@@ -11109,6 +9685,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11123,6 +9702,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11133,6 +9715,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11147,6 +9732,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11157,6 +9745,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11170,10 +9761,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -11181,6 +9775,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11194,10 +9791,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "ita": {
             "round": {
@@ -11206,10 +9806,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "can": null,
           "usa": null,
@@ -11231,205 +9834,7 @@
             "results": [
               {
                 "position": 29
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 5.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 30
               }
@@ -11442,10 +9847,13 @@
             },
             "results": [
               {
+                "position": "DNS"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not start"
           },
           "bra": {
             "round": {
@@ -11453,6 +9861,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 7
               }
@@ -11466,6 +9877,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 12
               }
             ],
@@ -11478,10 +9892,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "esp": {
             "round": {
@@ -11489,6 +9906,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 8
               }
@@ -11502,10 +9922,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -11514,10 +9937,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -11525,6 +9951,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -11539,6 +9968,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11550,10 +9982,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -11561,6 +9996,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11574,10 +10012,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "ita": {
             "round": {
@@ -11586,10 +10027,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "can": {
             "round": {
@@ -11598,10 +10042,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "usa": {
             "round": {
@@ -11610,10 +10057,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "points": 5.0
         },
@@ -11633,6 +10083,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ]
           },
@@ -11644,6 +10097,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Not classified, retired"
@@ -11656,205 +10112,7 @@
             "results": [
               {
                 "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1979_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "points": 3.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Shadow",
-              "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 18
-              }
-            ]
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1979_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1979_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
@@ -11869,6 +10127,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11880,10 +10141,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "esp": {
             "round": {
@@ -11892,10 +10156,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bel": {
             "round": {
@@ -11904,10 +10171,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mon": {
             "round": {
@@ -11915,6 +10185,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -11927,6 +10200,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 16
               }
@@ -11940,6 +10216,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 12
               }
             ],
@@ -11951,6 +10230,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 11
               }
@@ -11965,6 +10247,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11975,6 +10260,9 @@
               "url": "https://en.wikipedia.org/wiki/1979_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11988,10 +10276,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "can": {
             "round": {
@@ -12000,10 +10291,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": {
             "round": {
@@ -12012,10 +10306,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Did not qualify"
           },
           "points": 3.0
         },
@@ -12236,6 +10533,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 19
               }
             ]
           },
@@ -12403,6 +10703,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -12415,67 +10718,12 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
-          },
-          "points": 1.0
-        },
-        {
-          "pos": 12,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Fittipaldi",
-              "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 19
-              }
-            ]
-          },
-          "arg": null,
-          "bra": null,
-          "rsa": null,
-          "usw": null,
-          "esp": null,
-          "bel": null,
-          "mon": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
           },
           "points": 1.0
         },
@@ -12495,62 +10743,7 @@
             "results": [
               {
                 "position": 5
-              }
-            ]
-          },
-          "arg": null,
-          "bra": null,
-          "rsa": null,
-          "usw": null,
-          "esp": null,
-          "bel": null,
-          "mon": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 6
               }
@@ -12576,10 +10769,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": {
             "round": {
@@ -12589,9 +10785,11 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
-            "fastest_lap": true,
             "background": "Not classified, retired"
           },
           "points": 0.0
@@ -13014,6 +11212,9 @@
             "results": [
               {
                 "position": 35
+              },
+              {
+                "position": 36
               }
             ]
           },
@@ -13059,67 +11260,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1979_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 36
-              }
-            ]
-          },
-          "arg": null,
-          "bra": null,
-          "rsa": null,
-          "usw": null,
-          "esp": null,
-          "bel": null,
-          "mon": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1979_Italian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "can": {
             "round": {
@@ -13140,10 +11286,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },

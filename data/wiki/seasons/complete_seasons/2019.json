@@ -7050,6 +7050,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7063,6 +7066,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -7075,6 +7081,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -7087,6 +7096,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7100,6 +7112,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7113,6 +7128,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -7126,6 +7144,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -7138,6 +7159,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7151,6 +7175,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -7163,6 +7190,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7176,6 +7206,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -7189,6 +7222,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Winner"
@@ -7201,6 +7237,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -7213,6 +7252,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -7225,6 +7267,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -7237,6 +7282,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7250,6 +7298,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -7262,6 +7313,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -7274,6 +7328,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7287,6 +7344,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7299,285 +7359,14 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "pole_position": true,
             "fastest_lap": true,
             "background": "Winner"
-          },
-          "points": 739.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
           },
           "points": 739.0
         },
@@ -7601,6 +7390,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -7613,6 +7405,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -7627,6 +7422,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -7639,6 +7437,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -7651,6 +7452,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -7663,6 +7467,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -7675,6 +7482,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -7688,6 +7498,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -7700,6 +7513,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "pole_position": true,
@@ -7713,6 +7529,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Third place"
@@ -7725,6 +7544,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -7737,6 +7559,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -7749,6 +7574,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "pole_position": true,
@@ -7762,6 +7590,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 13
               }
             ],
             "pole_position": true,
@@ -7775,6 +7606,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -7787,6 +7621,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -7800,6 +7637,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "pole_position": true,
@@ -7813,6 +7653,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -7825,6 +7668,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -7838,276 +7684,7 @@
             "results": [
               {
                 "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "points": 504.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 18
               }
@@ -8121,10 +7698,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "points": 504.0
         },
@@ -8148,280 +7728,12 @@
             "results": [
               {
                 "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 417.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "bhr": {
             "round": {
@@ -8429,6 +7741,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 8
               }
@@ -8442,10 +7757,12 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 6
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "aze": {
@@ -8455,10 +7772,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -8467,10 +7787,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "mon": {
             "round": {
@@ -8479,10 +7802,12 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "can": {
@@ -8491,6 +7816,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 8
               }
@@ -8503,6 +7831,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 10
               }
@@ -8516,10 +7847,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other points position"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "gbr": {
             "round": {
@@ -8527,6 +7862,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -8540,10 +7878,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "hun": {
             "round": {
@@ -8552,10 +7894,15 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Second place"
           },
           "bel": {
             "round": {
@@ -8564,10 +7911,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -8575,6 +7925,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 8
               }
@@ -8588,10 +7941,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "rus": {
             "round": {
@@ -8599,6 +7955,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -8612,10 +7971,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mex": {
             "round": {
@@ -8623,6 +7985,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -8636,10 +8001,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bra": {
             "round": {
@@ -8648,10 +8016,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -8660,10 +8032,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "points": 417.0
         },
@@ -8687,275 +8062,12 @@
             "results": [
               {
                 "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 145.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bhr": {
             "round": {
@@ -8963,11 +8075,14 @@
               "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 19
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "chn": {
             "round": {
@@ -8975,6 +8090,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 18
               }
@@ -8988,6 +8106,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 8
               }
             ],
@@ -9000,10 +8121,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -9012,10 +8136,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -9024,10 +8151,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "fra": {
             "round": {
@@ -9035,6 +8165,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 9
               }
@@ -9048,6 +8181,9 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 8
               }
             ],
@@ -9060,10 +8196,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -9072,10 +8211,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -9083,6 +8225,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 9
               }
@@ -9096,10 +8241,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -9108,10 +8256,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "sin": {
             "round": {
@@ -9120,10 +8271,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -9131,6 +8285,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 8
               }
@@ -9144,10 +8301,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mex": {
             "round": {
@@ -9156,10 +8316,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": {
             "round": {
@@ -9167,6 +8330,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -9180,10 +8346,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "abu": {
             "round": {
@@ -9191,6 +8360,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -9219,6 +8391,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9231,270 +8406,7 @@
             "results": [
               {
                 "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 91.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 18
               }
@@ -9508,10 +8420,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "aze": {
             "round": {
@@ -9520,10 +8435,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "esp": {
             "round": {
@@ -9531,6 +8449,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -9544,10 +8465,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -9555,6 +8479,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -9568,10 +8495,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -9579,6 +8509,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -9591,6 +8524,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 10
               }
@@ -9605,6 +8541,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9615,6 +8554,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 14
               }
@@ -9628,10 +8570,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -9639,6 +8584,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -9652,10 +8600,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -9664,10 +8615,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -9675,6 +8629,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DSQ"
+              },
               {
                 "position": "DSQ"
               }
@@ -9688,6 +8645,9 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 10
               }
             ],
@@ -9699,6 +8659,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 9
               }
@@ -9712,10 +8675,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -9723,6 +8689,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 12
               }
@@ -9751,6 +8720,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -9763,6 +8735,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -9775,6 +8750,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9787,6 +8765,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9799,6 +8780,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -9811,6 +8795,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -9823,6 +8810,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9835,6 +8825,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -9847,6 +8840,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -9859,6 +8855,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -9871,6 +8870,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Third place"
@@ -9883,6 +8885,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -9895,6 +8900,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9907,6 +8915,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9919,6 +8930,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -9931,6 +8945,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -9943,6 +8960,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9955,6 +8975,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -9967,6 +8990,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -9979,6 +9005,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Second place"
@@ -9991,275 +9020,12 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 85.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Scuderia Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 85.0
         },
@@ -10283,6 +9049,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -10295,6 +9064,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -10307,6 +9079,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -10319,6 +9094,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10331,275 +9109,12 @@
             "results": [
               {
                 "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 73.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Racing Point",
-              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "BWT Mercedes",
-              "url": null
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mon": {
             "round": {
@@ -10607,6 +9122,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 16
               }
@@ -10620,10 +9138,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "fra": {
             "round": {
@@ -10631,6 +9152,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -10644,6 +9168,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 14
               }
             ],
@@ -10655,6 +9182,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 17
               }
@@ -10668,10 +9198,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -10679,6 +9212,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 17
               }
@@ -10692,6 +9228,9 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 10
               }
             ],
@@ -10704,10 +9243,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sin": {
             "round": {
@@ -10716,10 +9258,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "rus": {
             "round": {
@@ -10728,10 +9273,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -10739,6 +9287,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 9
               }
@@ -10752,10 +9303,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -10764,10 +9318,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -10776,10 +9333,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 19
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -10788,10 +9348,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 73.0
         },
@@ -10815,6 +9378,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -10827,6 +9393,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10839,6 +9408,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -10851,6 +9423,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -10863,6 +9438,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -10875,270 +9453,7 @@
             "results": [
               {
                 "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 57.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo Racing",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 19
               }
@@ -11152,6 +9467,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 15
               }
             ],
@@ -11164,10 +9482,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 16
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -11175,6 +9496,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -11188,10 +9512,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -11199,6 +9526,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -11212,10 +9542,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -11223,6 +9556,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -11236,10 +9572,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sin": {
             "round": {
@@ -11248,10 +9587,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -11259,6 +9601,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 15
               }
@@ -11272,6 +9617,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 14
               }
             ],
@@ -11284,10 +9632,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": {
             "round": {
@@ -11295,6 +9646,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 14
               }
@@ -11307,6 +9661,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -11320,6 +9677,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 16
               }
             ],
@@ -11347,6 +9707,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11359,6 +9722,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11371,270 +9737,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 28.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 13
               }
@@ -11648,10 +9751,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "esp": {
             "round": {
@@ -11659,6 +9765,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 10
               }
@@ -11672,10 +9781,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -11683,6 +9795,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 17
               }
@@ -11696,10 +9811,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aut": {
             "round": {
@@ -11707,6 +9825,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 19
               }
@@ -11721,6 +9842,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11731,6 +9855,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -11744,10 +9871,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bel": {
             "round": {
@@ -11755,6 +9885,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -11768,10 +9901,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sin": {
             "round": {
@@ -11780,10 +9916,12 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 17
               }
             ],
-            "fastest_lap": true,
             "background": "Other classified position"
           },
           "rus": {
@@ -11793,10 +9931,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -11804,6 +9945,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 15
               }
@@ -11817,6 +9961,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -11828,6 +9975,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 18
               }
@@ -11841,6 +9991,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 13
               }
             ],
@@ -11852,6 +10005,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -11880,270 +10036,7 @@
             "results": [
               {
                 "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2019_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2019_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2019_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2019_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2019_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2019_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2019_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2019_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2019_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2019_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 1.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2019_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 17
               }
@@ -12157,6 +10050,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -12168,6 +10064,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 17
               }
@@ -12181,6 +10080,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -12192,6 +10094,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -12205,6 +10110,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 18
               }
             ],
@@ -12217,6 +10125,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 18
               }
             ],
@@ -12228,6 +10139,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 19
               }
@@ -12240,6 +10154,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 20
               }
@@ -12253,6 +10170,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 15
               }
             ],
@@ -12265,10 +10185,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -12276,6 +10199,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 19
               }
@@ -12289,6 +10215,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -12300,6 +10229,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 17
               }
@@ -12313,10 +10245,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "rus": {
             "round": {
@@ -12324,6 +10259,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12337,6 +10275,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 17
               }
             ],
@@ -12348,6 +10289,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -12361,10 +10305,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bra": {
             "round": {
@@ -12372,6 +10319,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 16
               }
@@ -12384,6 +10334,9 @@
               "url": "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 19
               }

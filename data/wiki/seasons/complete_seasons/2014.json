@@ -7225,6 +7225,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -7238,6 +7241,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7252,6 +7258,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -7264,6 +7273,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7277,6 +7289,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7290,6 +7305,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7303,6 +7321,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -7316,6 +7337,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -7328,6 +7352,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -7341,6 +7368,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -7354,270 +7384,12 @@
             "results": [
               {
                 "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "points": 701.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 4
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -7626,10 +7398,15 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Second place"
           },
           "ita": {
             "round": {
@@ -7638,10 +7415,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "sin": {
             "round": {
@@ -7650,10 +7432,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "jpn": {
             "round": {
@@ -7662,11 +7449,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "rus": {
             "round": {
@@ -7675,10 +7465,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "usa": {
             "round": {
@@ -7687,11 +7481,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "background": "Winner"
           },
           "bra": {
             "round": {
@@ -7700,11 +7496,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "fastest_lap": true,
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -7714,12 +7513,14 @@
               "points_multiplier": 0.5
             },
             "results": [
+              {
+                "position": 1
+              },
               {
                 "position": 14
               }
             ],
-            "pole_position": true,
-            "background": "Other classified position"
+            "background": "Winner"
           },
           "points": 701.0
         },
@@ -7743,254 +7544,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "points": 405.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Not classified, retired"
           },
           "mal": {
             "round": {
@@ -7999,10 +7558,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bhr": {
             "round": {
@@ -8010,6 +7572,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -8023,6 +7588,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
@@ -8035,11 +7603,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Third place"
           },
           "mon": {
             "round": {
@@ -8048,10 +7618,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "can": {
             "round": {
@@ -8060,10 +7633,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Winner"
           },
           "aut": {
             "round": {
@@ -8072,10 +7648,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -8084,10 +7663,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "ger": {
             "round": {
@@ -8095,6 +7677,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -8108,10 +7693,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "bel": {
             "round": {
@@ -8120,10 +7708,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "ita": {
             "round": {
@@ -8131,6 +7722,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -8144,10 +7738,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Second place"
           },
           "jpn": {
             "round": {
@@ -8156,10 +7753,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "rus": {
             "round": {
@@ -8167,6 +7767,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -8180,11 +7783,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 7
               }
             ],
-            "fastest_lap": true,
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bra": {
             "round": {
@@ -8193,10 +7798,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -8207,9 +7815,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 8
               }
             ],
+            "fastest_lap": true,
             "background": "Other points position"
           },
           "points": 405.0
@@ -8234,254 +7846,12 @@
             "results": [
               {
                 "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 320.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mal": {
             "round": {
@@ -8489,6 +7859,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -8502,6 +7875,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 8
               }
             ],
@@ -8513,11 +7889,14 @@
               "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -8526,10 +7905,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -8538,10 +7920,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -8550,11 +7935,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 12
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -8563,11 +7950,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "pole_position": true,
-            "background": "Other points position"
+            "background": "Third place"
           },
           "gbr": {
             "round": {
@@ -8576,10 +7965,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Second place"
           },
           "ger": {
             "round": {
@@ -8588,10 +7980,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Second place"
           },
           "hun": {
             "round": {
@@ -8599,6 +7994,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 8
               }
@@ -8612,10 +8010,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "ita": {
             "round": {
@@ -8624,10 +8025,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "sin": {
             "round": {
@@ -8636,10 +8040,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -8647,6 +8054,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -8660,10 +8070,14 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "fastest_lap": true,
+            "background": "Third place"
           },
           "usa": {
             "round": {
@@ -8671,6 +8085,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -8684,10 +8101,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "abu": {
             "round": {
@@ -8698,10 +8118,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Second place"
           },
           "points": 320.0
         },
@@ -8725,6 +8148,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -8737,6 +8163,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -8749,6 +8178,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8761,6 +8193,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Third place"
@@ -8773,6 +8208,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -8785,6 +8223,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -8797,6 +8238,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8809,6 +8253,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8821,6 +8268,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8833,6 +8283,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -8845,6 +8298,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Second place"
@@ -8857,6 +8313,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -8869,6 +8328,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8881,249 +8343,7 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 216.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -9137,10 +8357,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "rus": {
             "round": {
@@ -9148,6 +8371,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 9
               }
@@ -9160,11 +8386,14 @@
               "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -9172,6 +8401,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -9186,6 +8418,9 @@
               "points_multiplier": 0.5
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -9214,6 +8449,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -9226,248 +8464,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 181.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 9
               }
@@ -9481,10 +8478,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -9492,6 +8492,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 13
               }
@@ -9505,6 +8508,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 12
               }
             ],
@@ -9516,6 +8522,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 10
               }
@@ -9529,6 +8538,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 9
               }
             ],
@@ -9541,10 +8553,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -9552,6 +8567,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 7
               }
@@ -9565,6 +8583,9 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 9
               }
             ],
@@ -9577,10 +8598,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -9589,10 +8613,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -9600,6 +8627,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -9613,10 +8643,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -9625,10 +8658,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -9636,6 +8672,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -9649,10 +8688,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -9660,6 +8702,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 9
               }
@@ -9675,10 +8720,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 181.0
         },
@@ -9702,6 +8750,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9714,6 +8765,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other points position"
@@ -9726,6 +8780,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -9738,6 +8795,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9750,6 +8810,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9762,6 +8825,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9774,6 +8840,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -9786,6 +8855,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "fastest_lap": true,
@@ -9799,6 +8871,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -9811,6 +8886,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9821,6 +8899,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9835,6 +8916,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9847,6 +8931,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -9859,6 +8946,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9871,6 +8961,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9883,6 +8976,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -9893,6 +8989,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9907,6 +9006,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -9921,248 +9023,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 155.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Force India",
-              "url": "https://en.wikipedia.org/wiki/Force_India"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
+              },
               {
                 "position": 7
               }
@@ -10191,6 +9052,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10203,6 +9067,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10215,6 +9082,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10227,6 +9097,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -10239,6 +9112,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10249,6 +9125,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10263,6 +9142,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10273,6 +9155,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10287,6 +9172,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -10299,6 +9187,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Not classified, retired"
@@ -10311,6 +9202,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -10323,6 +9217,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10335,6 +9232,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -10347,6 +9247,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -10359,6 +9262,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10371,248 +9277,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 30.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 14
               }
@@ -10625,11 +9290,14 @@
               "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -10637,6 +9305,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 13
               }
@@ -10652,10 +9323,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 30.0
         },
@@ -10679,6 +9353,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10691,6 +9368,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10703,248 +9383,7 @@
             "results": [
               {
                 "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 10.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Lotus_F1"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 14
               }
@@ -10958,10 +9397,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "esp": {
             "round": {
@@ -10970,10 +9412,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -10981,11 +9426,14 @@
               "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -10993,6 +9441,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11006,6 +9457,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 14
               }
             ],
@@ -11017,6 +9471,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -11030,10 +9487,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "hun": {
             "round": {
@@ -11042,10 +9502,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bel": {
             "round": {
@@ -11053,6 +9516,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11066,6 +9532,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 16
               }
             ],
@@ -11077,6 +9546,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -11090,6 +9562,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -11101,6 +9576,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -11114,10 +9592,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -11125,6 +9606,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -11140,10 +9624,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 10.0
         },
@@ -11167,212 +9654,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "WD"
-              }
-            ]
-          },
-          "usa": null,
-          "bra": null,
-          "abu": null,
-          "points": 2.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Marussia",
-              "url": "https://en.wikipedia.org/wiki/Marussia_F1"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "NC"
               }
@@ -11386,10 +9668,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bhr": {
             "round": {
@@ -11397,6 +9682,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 16
               }
@@ -11410,6 +9698,9 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": 19
               }
             ],
@@ -11421,6 +9712,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 19
               }
@@ -11434,10 +9728,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -11445,6 +9742,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11458,6 +9758,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -11469,6 +9772,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -11482,6 +9788,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -11493,6 +9802,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -11506,6 +9818,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 18
               }
             ],
@@ -11518,10 +9833,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sin": {
             "round": {
@@ -11529,6 +9847,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 17
               }
@@ -11542,6 +9863,9 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": 20
               }
             ],
@@ -11554,10 +9878,12 @@
             },
             "results": [
               {
+                "position": "WD"
+              },
+              {
                 "position": "Ret"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": null,
           "bra": null,
@@ -11584,248 +9910,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2014_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
@@ -11840,6 +9925,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11850,6 +9938,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11863,10 +9954,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "esp": {
             "round": {
@@ -11874,6 +9968,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 17
               }
@@ -11888,6 +9985,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11898,6 +9998,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 14
               }
@@ -11911,6 +10014,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 19
               }
             ],
@@ -11923,10 +10029,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ger": {
             "round": {
@@ -11935,10 +10044,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "hun": {
             "round": {
@@ -11947,10 +10059,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bel": {
             "round": {
@@ -11958,6 +10073,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -11970,6 +10088,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 20
               }
@@ -11984,6 +10105,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11994,6 +10118,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 21
               }
@@ -12007,6 +10134,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -12019,10 +10149,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bra": {
             "round": {
@@ -12030,6 +10163,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -12044,6 +10180,9 @@
               "points_multiplier": 0.5
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -12070,6 +10209,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12084,226 +10226,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2014_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2014_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 20
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2014_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2014_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2014_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2014_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": null,
-          "bra": null,
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": 11,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Caterham",
-              "url": "https://en.wikipedia.org/wiki/Caterham_F1"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2014_Malaysian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 14
               }
@@ -12317,10 +10240,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -12328,6 +10254,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 20
               }
@@ -12341,10 +10270,13 @@
             },
             "results": [
               {
+                "position": 20
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mon": {
             "round": {
@@ -12352,6 +10284,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 13
               }
@@ -12366,6 +10301,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12376,6 +10314,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -12389,10 +10330,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ger": {
             "round": {
@@ -12400,6 +10344,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -12414,6 +10361,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12425,10 +10375,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -12436,6 +10389,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 19
               }
@@ -12449,10 +10405,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other classified position"
           },
           "jpn": {
             "round": {
@@ -12460,6 +10419,9 @@
               "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 19
               }
@@ -12473,10 +10435,13 @@
             },
             "results": [
               {
+                "position": 19
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usa": null,
           "bra": null,
@@ -12489,10 +10454,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 0.0
         }

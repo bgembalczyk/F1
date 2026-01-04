@@ -8714,6 +8714,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 9
               }
             ],
             "pole_position": true,
@@ -8731,6 +8734,12 @@
                 "footnotes": [
                   "2"
                 ]
+              },
+              {
+                "position": 2,
+                "footnotes": [
+                  "8"
+                ]
               }
             ],
             "pole_position": true,
@@ -8747,6 +8756,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -8759,6 +8771,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -8773,6 +8788,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -8787,6 +8805,12 @@
                 "position": 1,
                 "footnotes": [
                   "2"
+                ]
+              },
+              {
+                "position": 2,
+                "footnotes": [
+                  "1"
                 ]
               }
             ],
@@ -8803,6 +8827,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -8815,6 +8842,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -8829,6 +8859,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -8843,6 +8876,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other points position"
@@ -8855,6 +8891,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -8868,6 +8907,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -8882,6 +8924,12 @@
                 "position": 1,
                 "footnotes": [
                   "2"
+                ]
+              },
+              {
+                "position": 2,
+                "footnotes": [
+                  "3"
                 ]
               }
             ],
@@ -8898,6 +8946,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -8910,6 +8961,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 18
               }
             ],
             "pole_position": true,
@@ -8924,6 +8978,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "fastest_lap": true,
@@ -8937,6 +8994,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8949,6 +9009,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -8961,6 +9024,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Second place"
@@ -8973,6 +9039,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -8989,6 +9058,9 @@
                 "footnotes": [
                   "1"
                 ]
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -9005,344 +9077,12 @@
             "results": [
               {
                 "position": "DSQ"
-              }
-            ],
-            "pole_position": true,
-            "background": "Disqualified"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Second place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 833.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "8"
-                ]
-              }
-            ],
-            "fastest_lap": true,
-            "footnotes": [
-              "8"
-            ],
-            "background": "Second place"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "fastest_lap": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Second place"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "3"
-            ],
-            "background": "Second place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DSQ"
               }
             ],
+            "pole_position": true,
             "background": "Disqualified"
           },
           "qat": {
@@ -9351,6 +9091,12 @@
               "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 2,
+                "footnotes": [
+                  "1"
+                ]
+              },
               {
                 "position": 4,
                 "footnotes": [
@@ -9358,10 +9104,12 @@
                 ]
               }
             ],
+            "pole_position": true,
+            "fastest_lap": true,
             "footnotes": [
-              "3"
+              "1"
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "abu": {
             "round": {
@@ -9370,10 +9118,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Second place"
           },
           "points": 833.0
         },
@@ -9397,6 +9148,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -9411,6 +9165,12 @@
                 "position": 3,
                 "footnotes": [
                   "4"
+                ]
+              },
+              {
+                "position": 6,
+                "footnotes": [
+                  "7"
                 ]
               }
             ],
@@ -9427,6 +9187,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -9439,6 +9202,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Second place"
@@ -9451,6 +9217,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -9465,6 +9234,12 @@
                 "position": 3,
                 "footnotes": [
                   "4"
+                ]
+              },
+              {
+                "position": 6,
+                "footnotes": [
+                  "7"
                 ]
               }
             ],
@@ -9481,6 +9256,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9493,6 +9271,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -9505,6 +9286,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9517,6 +9301,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -9531,6 +9318,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9543,6 +9333,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9555,6 +9348,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -9567,6 +9363,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 10
               }
             ],
             "fastest_lap": true,
@@ -9580,6 +9379,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -9592,6 +9394,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9604,6 +9409,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -9616,6 +9424,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -9632,6 +9443,12 @@
                 "footnotes": [
                   "2"
                 ]
+              },
+              {
+                "position": 13,
+                "footnotes": [
+                  "8"
+                ]
               }
             ],
             "footnotes": [
@@ -9647,6 +9464,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -9661,6 +9481,12 @@
                 "position": 2,
                 "footnotes": [
                   "2"
+                ]
+              },
+              {
+                "position": 4,
+                "footnotes": [
+                  "3"
                 ]
               }
             ],
@@ -9677,6 +9503,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -9692,337 +9521,7 @@
                 "footnotes": [
                   "6"
                 ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 469.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13,
-                "footnotes": [
-                  "8"
-                ]
-              }
-            ],
-            "fastest_lap": true,
-            "footnotes": [
-              "8"
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 6,
                 "footnotes": [
@@ -10031,7 +9530,7 @@
               }
             ],
             "footnotes": [
-              "2"
+              "6"
             ],
             "background": "Other points position"
           },
@@ -10042,10 +9541,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 469.0
         },
@@ -10069,6 +9571,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -10084,6 +9589,9 @@
                 "footnotes": [
                   "3"
                 ]
+              },
+              {
+                "position": 12
               }
             ],
             "footnotes": [
@@ -10099,6 +9607,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 12
               }
             ],
             "pole_position": true,
@@ -10112,6 +9623,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10124,6 +9638,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -10137,6 +9654,12 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 10,
+                "footnotes": [
+                  "6"
+                ]
               }
             ],
             "pole_position": true,
@@ -10150,6 +9673,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 10
               }
             ],
             "fastest_lap": true,
@@ -10163,6 +9689,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -10175,6 +9704,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -10187,6 +9719,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Second place"
@@ -10199,6 +9734,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10211,6 +9749,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 15
               }
             ],
             "pole_position": true,
@@ -10227,6 +9768,9 @@
                 "footnotes": [
                   "1"
                 ]
+              },
+              {
+                "position": 13
               }
             ],
             "footnotes": [
@@ -10242,6 +9786,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -10254,6 +9801,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Second place"
@@ -10266,6 +9816,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 13
               }
             ],
             "pole_position": true,
@@ -10279,6 +9832,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 6
               }
             ],
             "pole_position": true,
@@ -10293,6 +9849,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Second place"
@@ -10308,330 +9867,7 @@
                 "footnotes": [
                   "1"
                 ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Winner"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Third place"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "points": 451.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Honda RBPT",
-              "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 7,
                 "footnotes": [
@@ -10639,10 +9875,11 @@
                 ]
               }
             ],
+            "pole_position": true,
             "footnotes": [
-              "7"
+              "1"
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "mxc": {
             "round": {
@@ -10651,10 +9888,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "sap": {
             "round": {
@@ -10663,10 +9903,19 @@
             },
             "results": [
               {
+                "position": 3,
+                "footnotes": [
+                  "4"
+                ]
+              },
+              {
                 "position": 17
               }
             ],
-            "background": "Other classified position"
+            "footnotes": [
+              "4"
+            ],
+            "background": "Third place"
           },
           "lvg": {
             "round": {
@@ -10675,10 +9924,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "qat": {
             "round": {
@@ -10687,6 +9940,12 @@
             },
             "results": [
               {
+                "position": 1,
+                "footnotes": [
+                  "4"
+                ]
+              },
+              {
                 "position": 10,
                 "footnotes": [
                   "5"
@@ -10694,9 +9953,9 @@
               }
             ],
             "footnotes": [
-              "5"
+              "4"
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -10705,10 +9964,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "points": 451.0
         },
@@ -10732,6 +9995,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -10746,6 +10012,12 @@
                 "position": "DSQ",
                 "footnotes": [
                   "1"
+                ]
+              },
+              {
+                "position": "DSQ",
+                "footnotes": [
+                  "5"
                 ]
               }
             ],
@@ -10762,332 +10034,7 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "4"
-                ]
-              }
-            ],
-            "footnotes": [
-              "4"
-            ],
-            "background": "Third place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "pole_position": true,
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Third place"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Not classified, retired"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "points": 398.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ",
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Disqualified"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 7
               }
@@ -11101,6 +10048,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
@@ -11113,10 +10063,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "mia": {
             "round": {
@@ -11124,6 +10077,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8,
                 "footnotes": [
@@ -11131,9 +10087,6 @@
                 ]
               }
             ],
-            "footnotes": [
-              "3"
-            ],
             "background": "Other points position"
           },
           "emi": {
@@ -11142,6 +10095,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -11155,10 +10111,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "esp": {
             "round": {
@@ -11167,10 +10126,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "can": {
             "round": {
@@ -11178,6 +10140,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -11191,10 +10156,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "gbr": {
             "round": {
@@ -11203,10 +10171,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -11215,10 +10186,19 @@
             },
             "results": [
               {
+                "position": 3,
+                "footnotes": [
+                  "4"
+                ]
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other points position"
+            "footnotes": [
+              "4"
+            ],
+            "background": "Third place"
           },
           "hun": {
             "round": {
@@ -11227,10 +10207,14 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -11238,6 +10222,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11251,6 +10238,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 6
               }
             ],
@@ -11262,6 +10252,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 9
               }
@@ -11275,10 +10268,12 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 8
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "usa": {
@@ -11288,6 +10283,12 @@
             },
             "results": [
               {
+                "position": 3,
+                "footnotes": [
+                  "5"
+                ]
+              },
+              {
                 "position": 4,
                 "footnotes": [
                   "4"
@@ -11295,9 +10296,9 @@
               }
             ],
             "footnotes": [
-              "4"
+              "5"
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "mxc": {
             "round": {
@@ -11306,10 +10307,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "sap": {
             "round": {
@@ -11320,12 +10324,18 @@
               {
                 "position": "Ret",
                 "footnotes": [
+                  "5"
+                ]
+              },
+              {
+                "position": "Ret",
+                "footnotes": [
                   "7"
                 ]
               }
             ],
             "footnotes": [
-              "7"
+              "5"
             ],
             "background": "Not classified, retired"
           },
@@ -11335,6 +10345,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 8
               }
@@ -11348,10 +10361,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -11360,9 +10376,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 8
               }
             ],
+            "fastest_lap": true,
             "background": "Other points position"
           },
           "points": 398.0
@@ -11387,6 +10407,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11399,6 +10422,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -11411,6 +10437,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -11423,6 +10452,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11435,6 +10467,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -11447,6 +10482,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -11459,6 +10497,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -11471,6 +10512,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -11483,6 +10527,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11495,6 +10542,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11507,6 +10557,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -11519,6 +10572,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -11531,6 +10587,12 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 18,
+                "footnotes": [
+                  "6"
+                ]
               }
             ],
             "background": "Other points position"
@@ -11543,6 +10605,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -11555,6 +10620,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -11567,6 +10635,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -11579,6 +10650,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Third place"
@@ -11591,6 +10665,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -11605,6 +10682,12 @@
                 "position": 14,
                 "footnotes": [
                   "6"
+                ]
+              },
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "3"
                 ]
               }
             ],
@@ -11621,6 +10704,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11633,6 +10719,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "fastest_lap": true,
@@ -11646,6 +10735,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11661,6 +10753,9 @@
                 "footnotes": [
                   "8"
                 ]
+              },
+              {
+                "position": 11
               }
             ],
             "footnotes": [
@@ -11676,318 +10771,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 137.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Not classified, retired"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 16
               }
@@ -12016,6 +10800,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other classified position"
@@ -12028,6 +10815,12 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 16,
+                "footnotes": [
+                  "6"
+                ]
               }
             ],
             "background": "Other classified position"
@@ -12040,6 +10833,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -12052,6 +10848,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12064,6 +10863,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12076,6 +10878,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12088,6 +10893,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -12100,6 +10908,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -12112,6 +10923,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12124,6 +10938,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12136,6 +10953,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12146,6 +10966,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12160,6 +10983,12 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 20,
+                "footnotes": [
+                  "8"
+                ]
               }
             ],
             "background": "Other points position"
@@ -12172,6 +11001,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12184,6 +11016,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Third place"
@@ -12196,6 +11031,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -12208,6 +11046,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -12220,6 +11061,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12232,6 +11076,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -12244,6 +11091,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12256,6 +11106,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -12268,6 +11121,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -12280,323 +11136,12 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 92.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Racing Bulls",
-              "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-            },
-            "engine_constructor": {
-              "text": "Honda RBPT",
-              "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 20,
-                "footnotes": [
-                  "8"
-                ]
-              }
-            ],
-            "footnotes": [
-              "8"
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -12604,6 +11149,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -12632,6 +11180,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12644,6 +11195,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12656,318 +11210,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14,
-                "footnotes": [
-                  "6"
-                ]
-              }
-            ],
-            "footnotes": [
-              "6"
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7,
-                "footnotes": [
-                  "7"
-                ]
-              }
-            ],
-            "footnotes": [
-              "7"
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 89.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Aston Martin Aramco",
-              "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 20
               }
@@ -12981,6 +11224,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -12992,6 +11238,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 16
               }
@@ -13005,14 +11254,14 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16,
                 "footnotes": [
                   "5"
                 ]
               }
-            ],
-            "footnotes": [
-              "5"
             ],
             "background": "Other classified position"
           },
@@ -13022,6 +11271,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 15
               }
@@ -13035,10 +11287,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "esp": {
             "round": {
@@ -13047,9 +11302,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "WD"
               }
-            ]
+            ],
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -13058,10 +11317,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 17
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -13070,10 +11332,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -13081,6 +11346,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 9
               }
@@ -13094,6 +11362,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 17
               }
             ],
@@ -13105,6 +11376,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 7
               }
@@ -13118,6 +11392,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 8
               }
             ],
@@ -13130,10 +11407,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aze": {
             "round": {
@@ -13141,6 +11421,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 17
               }
@@ -13154,10 +11437,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -13166,10 +11452,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -13178,10 +11467,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sap": {
             "round": {
@@ -13190,8 +11482,17 @@
             },
             "results": [
               {
+                "position": 14,
+                "footnotes": [
+                  "6"
+                ]
+              },
+              {
                 "position": 16
               }
+            ],
+            "footnotes": [
+              "6"
             ],
             "background": "Other classified position"
           },
@@ -13202,10 +11503,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "qat": {
             "round": {
@@ -13214,10 +11518,19 @@
             },
             "results": [
               {
+                "position": 7,
+                "footnotes": [
+                  "7"
+                ]
+              },
+              {
                 "position": 17
               }
             ],
-            "background": "Other classified position"
+            "footnotes": [
+              "7"
+            ],
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -13225,6 +11538,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 10
               }
@@ -13253,6 +11569,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -13265,6 +11584,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -13277,6 +11599,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other points position"
@@ -13289,6 +11614,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -13301,6 +11629,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -13313,6 +11644,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13325,6 +11659,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13337,6 +11674,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -13349,6 +11689,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -13361,6 +11704,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -13373,6 +11719,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -13385,6 +11734,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -13400,6 +11752,12 @@
                 "footnotes": [
                   "7"
                 ]
+              },
+              {
+                "position": 15,
+                "footnotes": [
+                  "5"
+                ]
               }
             ],
             "footnotes": [
@@ -13415,6 +11773,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13427,6 +11788,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -13439,6 +11803,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -13451,6 +11818,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -13463,6 +11833,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other points position"
@@ -13475,6 +11848,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -13487,6 +11863,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -13499,6 +11878,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -13511,6 +11893,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -13523,6 +11908,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13535,317 +11923,12 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 79.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15,
-                "footnotes": [
-                  "5"
-                ]
-              }
-            ],
-            "footnotes": [
-              "5"
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
             "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
           },
           "points": 79.0
         },
@@ -13869,6 +11952,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -13881,6 +11967,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -13893,306 +11982,7 @@
             "results": [
               {
                 "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 70.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Kick Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 19
               }
@@ -14206,10 +11996,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Other classified position"
           },
           "sau": {
             "round": {
@@ -14217,6 +12010,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 18
               }
@@ -14230,10 +12026,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "emi": {
             "round": {
@@ -14241,6 +12040,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 18
               }
@@ -14254,6 +12056,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 16
               }
             ],
@@ -14266,10 +12071,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -14278,10 +12086,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -14289,6 +12100,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 9
               }
@@ -14302,10 +12116,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -14314,10 +12131,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "hun": {
             "round": {
@@ -14326,10 +12146,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -14337,6 +12160,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -14350,10 +12176,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other points position"
           },
           "aze": {
             "round": {
@@ -14361,6 +12190,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 16
               }
@@ -14374,6 +12206,9 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": 20
               }
             ],
@@ -14386,10 +12221,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -14398,10 +12236,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "sap": {
             "round": {
@@ -14410,10 +12251,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "lvg": {
             "round": {
@@ -14422,10 +12266,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "qat": {
             "round": {
@@ -14434,10 +12281,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "abu": {
             "round": {
@@ -14446,10 +12296,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 70.0
         },
@@ -14473,6 +12326,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -14485,6 +12341,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "DSQ"
               }
             ],
             "background": "Other classified position"
@@ -14497,6 +12356,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -14509,6 +12371,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -14521,6 +12386,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -14536,6 +12404,9 @@
                 "footnotes": [
                   "8"
                 ]
+              },
+              {
+                "position": "Ret"
               }
             ],
             "footnotes": [
@@ -14551,6 +12422,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -14563,6 +12437,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -14575,6 +12452,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -14587,6 +12467,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -14599,6 +12482,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -14611,6 +12497,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other points position"
@@ -14623,6 +12512,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other points position"
@@ -14635,6 +12527,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -14647,6 +12542,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -14659,6 +12557,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -14671,6 +12572,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -14683,6 +12587,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -14695,6 +12602,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -14707,6 +12617,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -14722,6 +12635,9 @@
                 "footnotes": [
                   "8"
                 ]
+              },
+              {
+                "position": 15
               }
             ],
             "footnotes": [
@@ -14737,306 +12653,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2025_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 22.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alpine",
-              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2025_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2025_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2025_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mia": {
-            "round": {
-              "text": "MIA",
-              "url": "https://en.wikipedia.org/wiki/2025_Miami_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2025_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2025_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2025_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2025_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2025_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2025_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2025_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2025_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2025_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2025_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2025_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2025_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2025_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2025_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "lvg": {
-            "round": {
-              "text": "LVG",
-              "url": "https://en.wikipedia.org/wiki/2025_Las_Vegas_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 15
               }
@@ -15050,6 +12667,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 16
               }
             ],
@@ -15061,6 +12681,9 @@
               "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 19
+              },
               {
                 "position": 20
               }

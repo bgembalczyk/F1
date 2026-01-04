@@ -8679,182 +8679,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "mon": null,
-          "det": null,
-          "can": null,
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "points": 74.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 18
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "bra": {
             "round": {
@@ -8863,10 +8693,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "usw": {
             "round": {
@@ -8875,10 +8708,13 @@
             },
             "results": [
               {
+                "position": "DSQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Disqualified"
           },
           "smr": {
             "round": {
@@ -8887,12 +8723,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Second place"
           },
           "bel": {
             "round": {
@@ -8900,6 +8737,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNS"
+              },
               {
                 "position": "DNS"
               }
@@ -8951,10 +8791,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 1
               }
             ],
-            "background": "Winner"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -8963,10 +8806,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Third place"
           },
           "fra": {
             "round": {
@@ -8975,10 +8821,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -8987,14 +8836,38 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "pole_position": true,
+            "background": "Winner"
+          },
+          "aut": {
+            "round": {
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": 4
+              }
+            ],
+            "background": "Other points position"
+          },
+          "sui": {
+            "round": {
+              "text": "SUI",
+              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "DNS"
+              }
+            ],
             "background": "Did not start"
           },
-          "aut": null,
-          "sui": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -9002,11 +8875,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "pole_position": true,
-            "background": "Third place"
+            "background": "Second place"
           },
           "cpl": {
             "round": {
@@ -9015,10 +8890,13 @@
             },
             "results": [
               {
+                "position": "DNS"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not start"
           },
           "points": 74.0
         },
@@ -9042,6 +8920,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Other points position"
@@ -9054,6 +8935,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -9066,6 +8950,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Other points position"
@@ -9079,6 +8966,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "DSQ"
               }
             ],
             "pole_position": true,
@@ -9093,6 +8983,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9105,6 +8998,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Winner"
@@ -9117,6 +9013,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -9129,6 +9028,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Other classified position"
@@ -9141,6 +9043,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Not classified, retired"
@@ -9153,6 +9058,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Not classified, retired"
@@ -9165,6 +9073,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -9177,6 +9088,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other classified position"
@@ -9189,6 +9103,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Other classified position"
@@ -9201,6 +9118,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9213,206 +9133,12 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
-          },
-          "points": 69.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
           },
           "points": 69.0
         },
@@ -9436,6 +9162,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -9450,6 +9179,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -9464,6 +9196,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9476,6 +9211,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9486,6 +9224,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9501,6 +9242,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9513,6 +9257,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": 10
               }
             ],
             "pole_position": true,
@@ -9527,6 +9274,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9537,6 +9287,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9551,6 +9304,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9563,6 +9319,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Second place"
@@ -9575,6 +9334,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -9587,6 +9349,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9599,6 +9364,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 16
               }
             ],
             "pole_position": true,
@@ -9613,6 +9381,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Not classified, retired"
@@ -9625,223 +9396,13 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
             "background": "Other points position"
-          },
-          "points": 62.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "background": "Third place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
           },
           "points": 62.0
         },
@@ -9865,6 +9426,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Second place"
@@ -9877,6 +9441,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DSQ"
               }
             ],
             "background": "Not classified, retired"
@@ -9889,6 +9456,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -9902,6 +9472,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -9914,6 +9487,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9926,6 +9502,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Other points position"
@@ -9938,6 +9517,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9950,6 +9532,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Other points position"
@@ -9962,6 +9547,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9974,6 +9562,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other classified position"
@@ -9986,6 +9577,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Not classified, retired"
@@ -9998,6 +9592,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -10010,6 +9607,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Other classified position"
@@ -10022,6 +9622,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Not classified, retired"
@@ -10034,200 +9637,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 58.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 5
               }
@@ -10256,6 +9666,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10268,204 +9681,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 30.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "usw": {
             "round": {
@@ -10473,11 +9694,14 @@
               "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "smr": null,
           "bel": {
@@ -10487,10 +9711,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -10498,6 +9725,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 4
               }
@@ -10512,6 +9742,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10523,10 +9756,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ned": {
             "round": {
@@ -10534,11 +9770,14 @@
               "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "gbr": {
             "round": {
@@ -10547,10 +9786,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "fra": {
             "round": {
@@ -10559,10 +9801,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -10571,10 +9816,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -10583,10 +9831,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "sui": {
             "round": {
@@ -10595,10 +9846,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -10607,10 +9861,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "cpl": {
             "round": {
@@ -10618,6 +9875,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10646,212 +9906,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "points": 25.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 16
               }
@@ -10865,10 +9920,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usw": {
             "round": {
@@ -10877,10 +9935,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "smr": {
             "round": {
@@ -10889,10 +9950,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -10900,6 +9964,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10913,6 +9980,9 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 8
               }
             ],
@@ -10925,10 +9995,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "can": {
             "round": {
@@ -10937,10 +10010,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "NC"
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ned": {
             "round": {
@@ -10949,10 +10025,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -10961,12 +10040,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -10975,10 +10055,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -10987,10 +10070,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -10998,6 +10084,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11010,6 +10099,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 11
               }
@@ -11023,10 +10115,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "cpl": {
             "round": {
@@ -11035,10 +10130,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "points": 25.0
         },
@@ -11062,6 +10162,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11077,6 +10180,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11125,6 +10231,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Second place"
@@ -11135,6 +10244,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11149,6 +10261,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11159,6 +10274,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11173,6 +10291,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11189,146 +10310,7 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 22.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": null,
-          "usw": null,
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": null,
-          "det": null,
-          "can": null,
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 5
               }
@@ -11343,6 +10325,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11353,6 +10338,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11381,6 +10369,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11393,6 +10384,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11403,6 +10397,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11418,6 +10415,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Third place"
@@ -11428,6 +10428,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11442,6 +10445,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Second place"
@@ -11454,6 +10460,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11466,6 +10475,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Did not qualify"
@@ -11476,6 +10488,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11490,199 +10505,7 @@
             "results": [
               {
                 "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "points": 20.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-            },
-            "engine_constructor": {
-              "text": "Matra",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 14
               }
@@ -11697,6 +10520,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11708,10 +10534,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "sui": {
             "round": {
@@ -11719,6 +10548,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11732,10 +10564,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "cpl": {
             "round": {
@@ -11744,10 +10579,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "points": 20.0
         },
@@ -11772,6 +10610,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Disqualified"
@@ -11784,61 +10625,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": null,
-          "bel": null,
-          "mon": null,
-          "det": null,
-          "can": null,
-          "ned": null,
-          "gbr": null,
-          "fra": null,
-          "ger": null,
-          "aut": null,
-          "sui": null,
-          "ita": null,
-          "cpl": null,
-          "points": 19.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": null,
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
+              },
               {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "smr": null,
           "bel": null,
@@ -11910,6 +10702,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other classified position"
@@ -11922,6 +10717,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11932,6 +10730,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11947,6 +10748,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11957,6 +10761,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11971,6 +10778,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -11983,6 +10793,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11995,6 +10808,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12007,6 +10823,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Not classified, retired"
@@ -12019,215 +10838,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 7.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -12236,10 +10852,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -12248,10 +10867,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -12259,6 +10881,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12271,6 +10896,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 12
               }
@@ -12284,10 +10912,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "cpl": {
             "round": {
@@ -12295,6 +10926,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -12323,6 +10957,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -12335,6 +10972,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Did not qualify"
@@ -12347,6 +10987,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -12360,6 +11003,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12372,6 +11018,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -12384,6 +11033,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12396,6 +11048,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -12408,6 +11063,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other classified position"
@@ -12420,6 +11078,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Not classified, retired"
@@ -12432,6 +11093,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12444,6 +11108,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12456,6 +11123,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Not classified, retired"
@@ -12468,6 +11138,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -12480,6 +11153,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Not classified, retired"
@@ -12492,199 +11168,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 5.0
-        },
-        {
-          "pos": 11,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 11
               }
@@ -12713,6 +11197,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other classified position"
@@ -12725,6 +11212,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12735,6 +11225,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12749,6 +11242,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Disqualified"
@@ -12761,6 +11257,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12771,6 +11270,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12785,6 +11287,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12797,6 +11302,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Did not qualify"
@@ -12809,210 +11317,7 @@
             "results": [
               {
                 "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NC"
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 4.0
-        },
-        {
-          "pos": 12,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "ATS",
-              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 13
               }
@@ -13027,6 +11332,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13038,10 +11346,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ger": {
             "round": {
@@ -13049,6 +11360,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13062,10 +11376,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "sui": {
             "round": {
@@ -13074,10 +11391,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ita": {
             "round": {
@@ -13086,10 +11406,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not qualify"
           },
           "cpl": {
             "round": {
@@ -13098,10 +11421,13 @@
             },
             "results": [
               {
+                "position": "NC"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Other classified position"
           },
           "points": 4.0
         },
@@ -13125,6 +11451,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13137,6 +11466,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Other classified position"
@@ -13149,6 +11481,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13161,6 +11496,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -13173,6 +11511,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13185,6 +11526,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Did not qualify"
@@ -13197,6 +11541,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -13207,6 +11554,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13309,124 +11659,6 @@
             ],
             "background": "Did not start"
           },
-          "points": 3.0
-        },
-        {
-          "pos": 13,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": null,
-          "gbr": null,
-          "fra": null,
-          "ger": null,
-          "aut": null,
-          "sui": null,
-          "ita": null,
-          "cpl": null,
           "points": 3.0
         },
         {
@@ -13644,199 +11876,7 @@
             "results": [
               {
                 "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 15
               }
@@ -13850,10 +11890,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "usw": {
             "round": {
@@ -13861,6 +11904,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 9
               }
@@ -13875,10 +11921,16 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
+              },
+              {
+                "position": "DNPQ"
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "mon": {
             "round": {
@@ -13886,6 +11938,12 @@
               "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
+              {
+                "position": "DNPQ"
+              },
               {
                 "position": "DNPQ"
               }
@@ -13899,10 +11957,16 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "can": {
             "round": {
@@ -13911,10 +11975,16 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ned": {
             "round": {
@@ -13924,6 +11994,12 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13935,10 +12011,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Other classified position"
           },
           "fra": {
             "round": {
@@ -13947,10 +12026,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -13959,10 +12041,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "aut": {
             "round": {
@@ -13971,10 +12056,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "sui": {
             "round": {
@@ -13982,6 +12070,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13996,6 +12087,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14007,96 +12101,14 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 13
               }
             ],
             "background": "Other classified position"
           },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "rsa": null,
-          "bra": null,
-          "usw": null,
-          "smr": null,
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "gbr": null,
-          "fra": null,
-          "ger": null,
-          "aut": null,
-          "sui": null,
-          "ita": null,
-          "cpl": null,
           "points": 0.0
         },
         {
@@ -14313,6 +12325,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -14323,6 +12338,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14337,6 +12355,9 @@
             "results": [
               {
                 "position": "DNPQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14349,6 +12370,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "NC"
               }
             ],
             "background": "Not classified, retired"
@@ -14359,6 +12383,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -14373,6 +12400,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Did not qualify"
@@ -14387,6 +12417,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "pole_position": true,
@@ -14401,6 +12434,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -14413,6 +12449,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -14425,6 +12464,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -14435,6 +12477,9 @@
               "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -14449,188 +12494,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toleman",
-              "url": "https://en.wikipedia.org/wiki/Toleman"
-            },
-            "engine_constructor": {
-              "text": "Hart",
-              "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NC"
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "det": null,
-          "can": null,
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sui": {
-            "round": {
-              "text": "SUI",
-              "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -14645,6 +12509,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -14656,10 +12523,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "points": 0.0
         },

@@ -7462,6 +7462,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ]
           },
@@ -7473,6 +7476,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7486,6 +7492,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Winner"
@@ -7496,6 +7505,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -7511,6 +7523,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7524,6 +7539,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7537,6 +7555,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -7550,6 +7571,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7563,6 +7587,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 1
               }
             ],
             "pole_position": true,
@@ -7577,6 +7604,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 1
               }
             ],
             "pole_position": true,
@@ -7590,6 +7620,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7603,6 +7636,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Third place"
@@ -7615,229 +7651,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 137.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 6
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "esp": {
             "round": {
@@ -7845,12 +7664,14 @@
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 1
+              },
               {
                 "position": 4
               }
             ],
-            "pole_position": true,
-            "background": "Other points position"
+            "background": "Winner"
           },
           "mex": {
             "round": {
@@ -7859,11 +7680,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "fastest_lap": true,
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "jpn": {
             "round": {
@@ -7871,11 +7695,14 @@
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNS"
+              },
               {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not start"
           },
           "aus": {
             "round": {
@@ -7884,10 +7711,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 137.0
         },
@@ -7907,6 +7737,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ]
           },
@@ -7918,6 +7751,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -7930,6 +7766,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Not classified, retired"
@@ -7942,6 +7781,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -7955,6 +7797,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -7967,6 +7812,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Third place"
@@ -7979,6 +7827,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Third place"
@@ -7989,6 +7840,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8003,6 +7857,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Other classified position"
@@ -8015,6 +7872,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -8027,6 +7887,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -8039,6 +7902,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other classified position"
@@ -8051,6 +7917,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Winner"
@@ -8063,6 +7932,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -8073,6 +7945,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8087,6 +7962,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 3
               }
             ],
             "fastest_lap": true,
@@ -8100,217 +7978,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 76.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "TAG",
-              "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 2
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -8335,217 +8003,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NC"
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 64.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 12
               }
@@ -8558,10 +8016,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "smr": {
             "round": {
@@ -8570,11 +8031,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -8583,10 +8046,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -8595,11 +8061,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 1
               }
             ],
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Other classified position"
           },
           "det": {
             "round": {
@@ -8608,11 +8076,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 1
               }
             ],
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -8621,10 +8091,13 @@
             },
             "results": [
               {
+                "position": "NC"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -8633,10 +8106,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -8645,10 +8121,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "hun": {
             "round": {
@@ -8657,10 +8136,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -8669,10 +8151,13 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -8681,11 +8166,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 2
               }
             ],
-            "fastest_lap": true,
-            "background": "Second place"
+            "background": "Other classified position"
           },
           "por": {
             "round": {
@@ -8693,6 +8180,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 7
               }
@@ -8706,10 +8196,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "mex": {
             "round": {
@@ -8717,6 +8210,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8730,10 +8226,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "background": "Other points position"
           },
           "aus": {
             "round": {
@@ -8742,10 +8241,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Not classified, retired"
           },
           "points": 64.0
         },
@@ -8765,217 +8267,7 @@
             "results": [
               {
                 "position": 27
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 53.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 28
               }
@@ -8988,10 +8280,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "smr": {
             "round": {
@@ -9000,10 +8295,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -9011,6 +8309,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9024,10 +8325,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "det": {
             "round": {
@@ -9036,10 +8340,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -9047,6 +8354,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9061,6 +8371,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9071,6 +8384,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9085,6 +8401,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9095,6 +8414,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9108,10 +8430,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "por": {
             "round": {
@@ -9120,12 +8445,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Second place"
+            "background": "Not classified, retired"
           },
           "esp": {
             "round": {
@@ -9134,11 +8460,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "fastest_lap": true,
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mex": {
             "round": {
@@ -9146,6 +8474,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9159,11 +8490,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "background": "Winner"
+            "background": "Other points position"
           },
           "aus": {
             "round": {
@@ -9172,12 +8505,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 1
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            "background": "Second place"
           },
           "points": 53.0
         },
@@ -9197,6 +8531,9 @@
             "results": [
               {
                 "position": 19
+              },
+              {
+                "position": 20
               }
             ]
           },
@@ -9208,6 +8545,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Not classified, retired"
@@ -9218,6 +8558,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9233,6 +8576,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9245,6 +8591,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9255,6 +8604,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9269,6 +8621,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9281,6 +8636,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -9291,6 +8649,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9305,6 +8666,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Not classified, retired"
@@ -9317,6 +8681,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -9329,6 +8696,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other classified position"
@@ -9341,222 +8711,12 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 28.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Benetton",
-              "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 20
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -9564,11 +8724,14 @@
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": 16
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "mex": {
             "round": {
@@ -9577,10 +8740,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -9589,10 +8755,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "aus": {
             "round": {
@@ -9601,10 +8770,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "points": 28.0
         },
@@ -9624,217 +8796,7 @@
             "results": [
               {
                 "position": 3
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 11.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 4
               }
@@ -9846,6 +8808,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 11
               }
@@ -9859,10 +8824,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "bel": {
             "round": {
@@ -9870,11 +8838,14 @@
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "mon": {
             "round": {
@@ -9883,10 +8854,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "det": {
             "round": {
@@ -9895,10 +8869,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "fra": {
             "round": {
@@ -9906,11 +8883,14 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -9919,10 +8899,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ger": {
             "round": {
@@ -9930,6 +8913,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 4
               }
@@ -9943,6 +8929,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 9
               }
             ],
@@ -9955,10 +8944,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -9966,6 +8958,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 12
               }
@@ -9979,6 +8974,9 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 12
               }
             ],
@@ -9991,10 +8989,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "mex": {
             "round": {
@@ -10002,6 +9003,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -10015,6 +9019,9 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 12
               }
             ],
@@ -10027,10 +9034,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 11.0
         },
@@ -10050,6 +9060,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ]
           },
@@ -10059,6 +9072,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10073,6 +9089,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10085,6 +9104,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Not classified, retired"
@@ -10095,6 +9117,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10109,6 +9134,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Not classified, retired"
@@ -10119,6 +9147,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10133,6 +9164,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10143,6 +9177,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10157,6 +9194,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -10169,6 +9209,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10179,6 +9222,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10193,6 +9239,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other classified position"
@@ -10205,217 +9254,7 @@
             "results": [
               {
                 "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 11.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Megatron",
-              "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 18
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -10429,10 +9268,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "jpn": {
             "round": {
@@ -10440,6 +9282,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 9
               }
@@ -10452,6 +9297,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10476,6 +9324,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ]
           },
@@ -10485,6 +9336,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10499,6 +9353,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10511,6 +9368,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Not classified, retired"
@@ -10521,6 +9381,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10535,6 +9398,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10545,6 +9411,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10559,6 +9428,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10569,6 +9441,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10583,6 +9458,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10593,6 +9471,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10607,6 +9488,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10617,6 +9501,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10631,6 +9518,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10643,6 +9533,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -10655,6 +9548,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10667,222 +9563,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 10.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "BMW",
-              "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 8
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "points": 10.0
         },
@@ -10902,78 +9588,7 @@
             "results": [
               {
                 "position": 29
-              }
-            ]
-          },
-          "bra": null,
-          "smr": null,
-          "bel": null,
-          "mon": null,
-          "det": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "hun": null,
-          "aut": null,
-          "ita": null,
-          "por": null,
-          "esp": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5,
-                "points_eligible": false,
-                "notes": [
-                  "ineligible_for_points"
-                ]
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 3.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lola",
-              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 30
               }
@@ -11131,10 +9746,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "jpn": {
             "round": {
@@ -11143,10 +9761,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aus": {
             "round": {
@@ -11155,10 +9776,17 @@
             },
             "results": [
               {
+                "position": 5,
+                "points_eligible": false,
+                "notes": [
+                  "ineligible_for_points"
+                ]
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "points": 3.0
         },
@@ -11178,6 +9806,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ]
           },
@@ -11189,6 +9820,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Not classified, retired"
@@ -11201,6 +9835,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -11211,6 +9848,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11225,6 +9865,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "EX"
               }
             ],
             "background": "Other classified position"
@@ -11237,6 +9880,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Not classified, retired"
@@ -11247,6 +9893,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11261,6 +9910,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11273,6 +9925,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11283,6 +9938,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11297,6 +9955,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Disqualified"
@@ -11309,6 +9970,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Not classified, retired"
@@ -11321,6 +9985,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -11333,6 +10000,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11343,6 +10013,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11357,216 +10030,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 2.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Zakspeed",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
-            },
-            "engine_constructor": {
-              "text": "Zakspeed",
-              "url": "https://en.wikipedia.org/wiki/Zakspeed"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 10
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "EX"
-              }
-            ]
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -11580,10 +10044,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "points": 2.0
         },
@@ -11603,206 +10070,7 @@
             "results": [
               {
                 "position": 25
-              }
-            ]
-          },
-          "bra": null,
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 1.0
-        },
-        {
-          "pos": 11,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-            },
-            "engine_constructor": {
-              "text": "Megatron",
-              "url": "https://en.wikipedia.org/wiki/BMW_M12#Megatron"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 26
               }
@@ -11816,10 +10084,13 @@
             },
             "results": [
               {
+                "position": "DNS"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not start"
           },
           "bel": {
             "round": {
@@ -11828,10 +10099,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 7
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -11839,6 +10113,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 12
               }
@@ -11852,10 +10129,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "fra": {
             "round": {
@@ -11863,6 +10143,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11876,10 +10159,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "EX"
               }
             ],
-            "background": "Did not start"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -11887,6 +10173,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11900,10 +10189,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "aut": {
             "round": {
@@ -11911,6 +10203,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 8
               }
@@ -11923,6 +10218,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 8
               }
@@ -11937,6 +10235,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11947,6 +10248,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11961,6 +10265,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11972,10 +10279,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "aus": {
             "round": {
@@ -11983,6 +10293,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12433,6 +10746,9 @@
             "results": [
               {
                 "position": 23
+              },
+              {
+                "position": 24
               }
             ]
           },
@@ -12444,6 +10760,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Disqualified"
@@ -12456,6 +10775,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12466,6 +10788,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12480,6 +10805,9 @@
             "results": [
               {
                 "position": "DNS"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Did not start"
@@ -12492,6 +10820,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12502,6 +10833,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12516,6 +10850,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -12526,6 +10863,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12540,6 +10880,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Not classified, retired"
@@ -12550,6 +10893,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12564,6 +10910,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Not classified, retired"
@@ -12576,6 +10925,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Not classified, retired"
@@ -12588,6 +10940,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12598,6 +10953,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12612,217 +10970,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Minardi",
-              "url": "https://en.wikipedia.org/wiki/Minardi"
-            },
-            "engine_constructor": {
-              "text": "Motori Moderni",
-              "url": "https://en.wikipedia.org/wiki/Motori_Moderni"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 24
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1987_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1987_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "det": {
-            "round": {
-              "text": "DET",
-              "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1987_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1987_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1987_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/1987_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1987_Japanese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -12835,6 +10983,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Australian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12859,6 +11010,9 @@
             "results": [
               {
                 "position": 21
+              },
+              {
+                "position": 22
               }
             ]
           },
@@ -12882,6 +11036,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12990,6 +11147,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -13002,6 +11162,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -13012,6 +11175,9 @@
               "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13054,87 +11220,6 @@
             ],
             "background": "Did not qualify"
           },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 22
-              }
-            ]
-          },
-          "bra": null,
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": null,
-          "mon": null,
-          "det": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "hun": null,
-          "aut": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1987_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/1987_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1987_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mex": null,
-          "jpn": null,
-          "aus": null,
           "points": 0.0
         },
         {
