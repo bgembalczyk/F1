@@ -1,17 +1,15 @@
 from typing import Any, TypedDict
 
-from models.records.link import LINK_SCHEMA
-from models.records.link import LinkRecord
-from models.records.season import SEASON_SCHEMA
-from models.records.season import SeasonRecord
+from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
+from models.records.link import LINK_SCHEMA, LinkRecord
+from models.records.season import SEASON_SCHEMA, SeasonRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
 from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
-class CircuitCompleteRecord(TypedDict, total=False):
+class CircuitCompleteRecord(CircuitBaseRecord, total=False):
     name: dict[str, Any]
-    url: str | None
     circuit_status: str
     type: str | None
     direction: str | None
@@ -26,8 +24,8 @@ class CircuitCompleteRecord(TypedDict, total=False):
 
 CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
     types={
+        **CIRCUIT_BASE_SCHEMA.types,
         "name": dict,
-        "url": str,
         "circuit_status": str,
         "type": str,
         "direction": str,
@@ -40,8 +38,8 @@ CIRCUIT_COMPLETE_SCHEMA = RecordSchema(
         "layouts": list,
     },
     allow_none=(
+        *CIRCUIT_BASE_SCHEMA.allow_none,
         "name",
-        "url",
         "circuit_status",
         "type",
         "direction",

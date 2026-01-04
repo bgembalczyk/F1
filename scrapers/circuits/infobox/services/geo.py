@@ -2,6 +2,7 @@ import re
 from typing import Optional, Dict, Any, List
 
 from models.records.link import LinkRecord
+from models.services.helpers import split_delimited_text
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS
@@ -15,8 +16,8 @@ class CircuitGeoParser(InfoboxTextUtils):
     def _split_plain_segment(segment: str) -> List[str]:
         """Dzieli segment tekstu na części rozdzielone przecinkami, ukośnikami itp."""
         segment_parts: List[str] = []
-        for raw_part in re.split(r"[,·/;]", segment):
-            cleaned_part = raw_part.strip(" ,")
+        for part in split_delimited_text(segment, pattern=r"[,·/;]"):
+            cleaned_part = part.strip(" ,")
             if not cleaned_part:
                 continue
             if cleaned_part.lower() in LOCATION_STOPWORDS:

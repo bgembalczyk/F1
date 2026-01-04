@@ -11,6 +11,7 @@ from models.validation.constants import (
     MANUFACTURER_STATUS_FORMER,
 )
 from models.validation.engine_manufacturer import EngineManufacturer
+from models.value_objects.link_utils import normalize_link
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
@@ -163,3 +164,10 @@ def test_table_scraper_instantiates_model_and_filters_unknown_fields():
     )
 
     assert result == {"name": "Example"}
+
+
+def test_normalize_link_strips_text_and_empty_url():
+    assert normalize_link({"text": " Example ", "url": ""}) == {
+        "text": "Example",
+        "url": None,
+    }

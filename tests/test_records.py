@@ -1,4 +1,6 @@
+from models.mappers.serialization import to_circuit_record_dict
 from models.records import (
+    CircuitBaseRecord,
     CircuitCompleteRecord,
     CircuitDetailsRecord,
     CircuitRecord,
@@ -7,6 +9,8 @@ from models.records import (
     LinkRecord,
     SeasonRecord,
 )
+from models.records.circuit_complete import validate_circuit_complete_record
+from models.records.circuit_details import validate_circuit_details_record
 from models.mappers.field_aliases import apply_field_aliases, FIELD_ALIASES
 from models.records.driver import DRIVER_SCHEMA
 from models.records.season import SEASON_SCHEMA
@@ -57,6 +61,8 @@ def test_circuit_record_structure() -> None:
 
 
 def test_circuit_details_and_complete_records() -> None:
+    assert CircuitBaseRecord.__required_keys__ == set()
+    assert CircuitBaseRecord.__optional_keys__ == {"url"}
     assert CircuitDetailsRecord.__required_keys__ == {"url", "infobox", "tables"}
     assert CircuitCompleteRecord.__optional_keys__ >= {
         "name",
@@ -72,6 +78,24 @@ def test_circuit_details_and_complete_records() -> None:
         "history",
         "layouts",
     }
+
+
+def test_validate_circuit_base_in_details_and_complete() -> None:
+    details_errors = validate_circuit_details_record(
+        {"url": None, "infobox": {}, "tables": []}
+    )
+    complete_errors = validate_circuit_complete_record({"url": None})
+
+    assert "Null value for: url" in details_errors
+    assert complete_errors == []
+
+
+def test_circuit_serialization_supports_details_and_complete() -> None:
+    details = {"url": "https://example.com", "infobox": {}, "tables": []}
+    complete = {"url": None, "grands_prix": [], "seasons": []}
+
+    assert to_circuit_record_dict(details)["url"] == "https://example.com"
+    assert to_circuit_record_dict(complete)["url"] is None
 
 
 def test_validate_schema_reports_missing_and_type_errors() -> None:

@@ -6,6 +6,8 @@ from typing import Any, Callable, Mapping, Sequence
 from typing import Dict
 from typing import TypeAlias
 
+from models.value_objects.link_utils import normalize_link, validate_link
+
 
 ExportRecord: TypeAlias = Dict[str, Any]
 
