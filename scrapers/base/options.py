@@ -19,7 +19,11 @@ from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.cache_adapter import CacheAdapter
+from scrapers.base.cache_adapter import (
+    CacheAdapter,
+    CacheBackend,
+    FileCacheBackend,
+)
 from scrapers.base.transformers import RecordTransformer
 from validation.records import RecordValidator
 
@@ -42,6 +46,7 @@ class ScraperOptions:
     debug_dir: Path | None = None
     cache_dir: Path | str | None = None
     cache_ttl: int | None = None
+    cache_adapter: CacheBackend | None = None
     http_timeout: int | None = None
     http_retries: int | None = None
     http_backoff_seconds: float | None = None
@@ -101,11 +106,24 @@ class ScraperOptions:
             )
         return self.http_client
 
+    def _resolve_cache_adapter(self) -> CacheBackend | None:
+        if self.cache_adapter is not None:
+            return self.cache_adapter
+        if self.cache_dir is not None:
+            ttl_seconds = self.cache_ttl or 0
+            self.cache_adapter = FileCacheBackend(
+                cache_dir=self.cache_dir,
+                ttl_seconds=ttl_seconds,
+            )
+        return self.cache_adapter
+
     def with_fetcher(self, *, policy: HttpPolicy | None = None) -> HtmlFetcher:
         if policy is not None:
             self.policy = policy
 
         from scrapers.base.html_fetcher import HtmlFetcher
+
+        cache_adapter = self._resolve_cache_adapter()
 
         if self.fetcher is None:
             if isinstance(self.source_adapter, HtmlFetcher):
@@ -116,9 +134,12 @@ class ScraperOptions:
                 self.fetcher = HtmlFetcher(
                     policy=resolved_policy,
                     http_client=http_client,
+                    cache_adapter=cache_adapter,
                 )
                 if self.source_adapter is None:
                     self.source_adapter = self.fetcher
+        elif cache_adapter is not None:
+            self.fetcher.set_cache(cache_adapter)
         return self.fetcher
 
     def with_source_adapter(
@@ -140,19 +161,20 @@ class ScraperOptions:
                 self.fetcher = HtmlFetcher(
                     policy=resolved_policy,
                     http_client=http_client,
+                    cache_adapter=self._resolve_cache_adapter(),
                 )
                 self.source_adapter = self.fetcher
         elif isinstance(self.source_adapter, HtmlFetcher):
             self.fetcher = self.source_adapter
 
-        if self.cache_dir is not None and not isinstance(
-            self.source_adapter, CacheAdapter
-        ):
-            ttl_seconds = self.cache_ttl or 0
-            self.source_adapter = CacheAdapter(
-                source_adapter=self.source_adapter,
-                cache_dir=self.cache_dir,
-                ttl_seconds=ttl_seconds,
-            )
+        cache_adapter = self._resolve_cache_adapter()
+        if cache_adapter is not None:
+            if isinstance(self.source_adapter, HtmlFetcher):
+                self.source_adapter.set_cache(cache_adapter)
+            elif not isinstance(self.source_adapter, CacheAdapter):
+                self.source_adapter = CacheAdapter(
+                    source_adapter=self.source_adapter,
+                    cache_adapter=cache_adapter,
+                )
 
         return self.source_adapter

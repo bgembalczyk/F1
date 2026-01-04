@@ -67,6 +67,8 @@ class ScraperRunner:
             options.cache_dir = self._run_config.cache_dir
         if self._run_config.cache_ttl is not None:
             options.cache_ttl = self._run_config.cache_ttl
+        if self._run_config.cache_adapter is not None:
+            options.cache_adapter = self._run_config.cache_adapter
         if self._run_config.http_timeout is not None:
             options.http_timeout = self._run_config.http_timeout
         if self._run_config.http_retries is not None:
