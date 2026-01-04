@@ -41,6 +41,7 @@ class ScraperOptions:
     run_id: str | None = None
     transformers: list[RecordTransformer] | None = None
     quality_report: bool = False
+    error_report: bool = False
 
     def __post_init__(self) -> None:
         if self.policy is None:

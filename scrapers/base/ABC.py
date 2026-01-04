@@ -66,7 +66,12 @@ class F1Scraper(ABC):
         )
         self.transformers = list(options.transformers or [])
         self.logger = get_logger(self.__class__.__name__)
-        self._error_handler = ErrorHandler(logger=self.logger)
+        self._error_handler = ErrorHandler(
+            logger=self.logger,
+            debug_dir=options.debug_dir,
+            error_report_enabled=options.error_report,
+            run_id=options.run_id,
+        )
         self._run_id: str | None = options.run_id
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
@@ -107,6 +112,7 @@ class F1Scraper(ABC):
 
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
+        self._error_handler.set_run_id(run_id)
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
 
         try:
