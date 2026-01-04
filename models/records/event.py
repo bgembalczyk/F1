@@ -5,13 +5,13 @@ from typing import TypedDict
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.records import RecordSchema
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 def _validate_event_field(record: dict[str, Any]) -> list[str]:
     event = record.get("event")
     if isinstance(event, dict):
-        return RecordValidator.validate_schema(event, LINK_SCHEMA)
+        return BaseDomainRecordValidator.validate_schema(event, LINK_SCHEMA)
     if isinstance(event, list):
         errors: list[str] = []
         for index, item in enumerate(event):
@@ -19,8 +19,8 @@ def _validate_event_field(record: dict[str, Any]) -> list[str]:
                 errors.append(f"event[{index}] must be a mapping")
                 continue
             errors.extend(
-                RecordValidator._prefix_errors(
-                    RecordValidator.validate_schema(item, LINK_SCHEMA),
+                BaseDomainRecordValidator._prefix_errors(
+                    BaseDomainRecordValidator.validate_schema(item, LINK_SCHEMA),
                     f"event[{index}]",
                 )
             )
@@ -42,4 +42,4 @@ EVENT_SCHEMA = RecordSchema(
 
 
 def validate_event_record(record: dict[str, Any]) -> list[str]:
-    return RecordValidator.validate_schema(record, EVENT_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(record, EVENT_SCHEMA)

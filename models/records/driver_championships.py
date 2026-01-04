@@ -4,7 +4,7 @@ from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 DRIVERS_CHAMPIONSHIPS_SCHEMA = RecordSchema(
@@ -20,4 +20,4 @@ class DriversChampionshipsRecord(TypedDict):
 
 
 def validate_drivers_championships_record(record: dict[str, Any]) -> list[str]:
-    return RecordValidator.validate_schema(record, DRIVERS_CHAMPIONSHIPS_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(record, DRIVERS_CHAMPIONSHIPS_SCHEMA)

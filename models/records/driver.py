@@ -8,7 +8,7 @@ from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 class DriverRecord(TypedDict, total=False):
@@ -53,4 +53,4 @@ DRIVER_SCHEMA = RecordSchema(
 
 
 def validate_driver_record(record: dict[str, Any]) -> list[str]:
-    return RecordValidator.validate_schema(record, DRIVER_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(record, DRIVER_SCHEMA)

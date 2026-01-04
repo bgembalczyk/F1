@@ -12,6 +12,7 @@ from models.validation.validators import (
     normalize_season_list,
 )
 from models.value_objects import Link, SeasonRef
+from validation.records import BaseDomainRecordValidator
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
@@ -96,3 +97,30 @@ def test_normalize_season_list_filters_none_entries():
     )
 
     assert seasons == [SeasonRef(year=2020), SeasonRef(year=2021)]
+
+
+def test_base_domain_validator_checks_required_and_type_rules():
+    record = {"name": "Example", "count": "invalid"}
+
+    errors = BaseDomainRecordValidator.require_keys(record, ["name", "count", "missing"])
+
+    assert "Missing key: missing" in errors
+    assert (
+        "Invalid type for count: expected int, got str"
+        in BaseDomainRecordValidator.require_type(record, "count", int)
+    )
+
+
+def test_base_domain_validator_link_helpers_report_invalid_entries():
+    errors = BaseDomainRecordValidator.require_link_dict(
+        {"text": " ", "url": 123},
+        "link",
+    )
+    assert "link.text must be a non-empty string" in errors
+    assert "link.url must be a string or None" in errors
+
+    list_errors = BaseDomainRecordValidator.require_link_list(
+        [{"text": "Ok", "url": None}, "bad"],
+        "links",
+    )
+    assert "links[1] must be a link dict" in list_errors

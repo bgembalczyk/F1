@@ -1,7 +1,7 @@
 from typing import Any, TypedDict
 
 from validation.records import RecordSchema
-from validation.records import RecordValidator
+from validation.records import BaseDomainRecordValidator
 
 
 class CircuitDetailsRecord(TypedDict):
@@ -17,4 +17,4 @@ CIRCUIT_DETAILS_SCHEMA = RecordSchema(
 
 
 def validate_circuit_details_record(record: dict[str, Any]) -> list[str]:
-    return RecordValidator.validate_schema(record, CIRCUIT_DETAILS_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(record, CIRCUIT_DETAILS_SCHEMA)
