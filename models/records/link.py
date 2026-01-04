@@ -1,13 +1,13 @@
 from typing import Any, TypedDict
 
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
-def _validate_link_text(record: dict[str, Any]) -> list[str]:
+def _validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
     text = record.get("text")
     if isinstance(text, str) and not text.strip():
-        return ["text must be a non-empty string"]
+        return [ValidationIssue.custom("text must be a non-empty string")]
     return []
 
 
@@ -24,5 +24,5 @@ class LinkRecord(TypedDict):
     url: str | None
 
 
-def validate_link_record(record: dict[str, Any]) -> list[str]:
+def validate_link_record(record: dict[str, Any]) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(record, LINK_SCHEMA)

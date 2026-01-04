@@ -8,7 +8,7 @@ from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
 class FatalityRecord(TypedDict, total=False):
@@ -33,5 +33,5 @@ FATALITY_SCHEMA = RecordSchema(
 )
 
 
-def validate_fatality_record(record: dict[str, Any]) -> list[str]:
+def validate_fatality_record(record: dict[str, Any]) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(record, FATALITY_SCHEMA)

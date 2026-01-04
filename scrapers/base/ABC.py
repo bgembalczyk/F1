@@ -265,6 +265,7 @@ class F1Scraper(ABC):
             errors = self.validator.validate(record)
             record_factory_errors = self.validator.validate_record_factory(record)
             errors_for_tracking = list(errors)
+            messages = [error.message for error in errors]
             if record_factory_errors:
                 errors_for_tracking.extend(record_factory_errors)
                 record_factory_label = (
@@ -273,11 +274,11 @@ class F1Scraper(ABC):
                     else None
                 )
                 label = record_factory_label or "record_factory"
-                errors.extend(
-                    [f"{label}: {error}" for error in record_factory_errors]
+                messages.extend(
+                    [f"{label}: {error.message}" for error in record_factory_errors]
                 )
             self.validator.record_validation_result(errors_for_tracking)
-            if not errors:
+            if not errors_for_tracking:
                 valid_records.append(record)
                 continue
 
@@ -290,7 +291,7 @@ class F1Scraper(ABC):
             message = (
                 f"Validation failed for record #{index}"
                 f"{f' ({model_label})' if model_label else ''} "
-                f"with {len(errors)} error(s): {', '.join(errors)}"
+                f"with {len(errors_for_tracking)} error(s): {', '.join(messages)}"
             )
             if self.validation_mode == "soft":
                 self.logger.warning(message)

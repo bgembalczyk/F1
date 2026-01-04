@@ -101,8 +101,9 @@ def test_circuit_serialization_supports_details_and_complete() -> None:
 def test_validate_schema_reports_missing_and_type_errors() -> None:
     errors = RecordValidator.validate_schema({"year": "2024"}, SEASON_SCHEMA)
 
-    assert "Missing key: url" in errors
-    assert "Invalid type for year: expected int, got str" in errors
+    messages = [error.message for error in errors]
+    assert "Missing key: url" in messages
+    assert "Invalid type for year: expected int, got str" in messages
 
 
 def test_validate_schema_handles_nested_records() -> None:
@@ -120,9 +121,10 @@ def test_validate_schema_handles_nested_records() -> None:
 
     errors = RecordValidator.validate_schema(record, DRIVER_SCHEMA)
 
-    assert "driver.text must be a non-empty string" in errors
+    messages = [error.message for error in errors]
+    assert "driver.text must be a non-empty string" in messages
     assert (
-        "Invalid type for seasons_competed[0].year: expected int, got str" in errors
+        "Invalid type for seasons_competed[0].year: expected int, got str" in messages
     )
 
 

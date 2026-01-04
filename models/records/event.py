@@ -5,18 +5,20 @@ from typing import TypedDict
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator
+from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
-def _validate_event_field(record: dict[str, Any]) -> list[str]:
+def _validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
     event = record.get("event")
     if isinstance(event, dict):
         return BaseDomainRecordValidator.validate_schema(event, LINK_SCHEMA)
     if isinstance(event, list):
-        errors: list[str] = []
+        errors: list[ValidationIssue] = []
         for index, item in enumerate(event):
             if not isinstance(item, dict):
-                errors.append(f"event[{index}] must be a mapping")
+                errors.append(
+                    ValidationIssue.custom(f"event[{index}] must be a mapping")
+                )
                 continue
             errors.extend(
                 BaseDomainRecordValidator._prefix_errors(
@@ -26,7 +28,9 @@ def _validate_event_field(record: dict[str, Any]) -> list[str]:
             )
         return errors
     if event is not None and not isinstance(event, str):
-        return ["event must be a string, link, or list of links"]
+        return [
+            ValidationIssue.custom("event must be a string, link, or list of links")
+        ]
     return []
 
 
@@ -41,5 +45,5 @@ EVENT_SCHEMA = RecordSchema(
 )
 
 
-def validate_event_record(record: dict[str, Any]) -> list[str]:
+def validate_event_record(record: dict[str, Any]) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(record, EVENT_SCHEMA)
