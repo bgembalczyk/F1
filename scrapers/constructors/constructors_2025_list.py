@@ -4,10 +4,12 @@ from models.records.factories import build_constructor_record
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
+from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import (
@@ -31,38 +33,27 @@ class Constructors2025ListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
+    schema_columns = [
+        column(CONSTRUCTOR_HEADER, "constructor", UrlColumn()),
+        column(ENGINE_HEADER, "engine", LinksListColumn()),
+        column(LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
+        column(BASED_IN_HEADER, "based_in", LinksListColumn()),
+        *[
+            column(header, key, BASE_STATS_COLUMNS[key])
+            for header, key in BASE_STATS_MAP.items()
+        ],
+        column(DRIVERS_HEADER, "drivers", IntColumn()),
+        column(TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
+        column(WCC_HEADER, "wcc_titles", IntColumn()),
+        column(WDC_HEADER, "wdc_titles", IntColumn()),
+        column(ANTECEDENT_TEAMS_HEADER, "antecedent_teams", LinksListColumn()),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
         section_id="Constructors_for_the_2025_season",
         expected_headers=CONSTRUCTORS_2025_EXPECTED_HEADERS,
-        # nagłówek z tabeli -> klucz w dict
-        column_map={
-            CONSTRUCTOR_HEADER: "constructor",
-            ENGINE_HEADER: "engine",
-            LICENSED_IN_HEADER: "licensed_in",
-            BASED_IN_HEADER: "based_in",
-            **BASE_STATS_MAP,
-            DRIVERS_HEADER: "drivers",
-            TOTAL_ENTRIES_HEADER: "total_entries",
-            WCC_HEADER: "wcc_titles",
-            WDC_HEADER: "wdc_titles",
-            ANTECEDENT_TEAMS_HEADER: "antecedent_teams",
-        },
-        # logika kolumn po stronie KLUCZA (po column_map)
-        columns={
-            # nazwa konstruktora – pojedynczy link {text, url}
-            "constructor": UrlColumn(),
-            # silnik – lista linków [{text, url}, ...]
-            "engine": LinksListColumn(),
-            "based_in": LinksListColumn(),
-            **BASE_STATS_COLUMNS,
-            "drivers": IntColumn(),
-            "total_entries": IntColumn(),
-            "wcc_titles": IntColumn(),
-            "wdc_titles": IntColumn(),
-            # poprzednie zespoły – lista linków
-            "antecedent_teams": LinksListColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=build_constructor_record,
     )
     # pozostałe kolumny ("licensed_in", "based_in", "drivers") obsłuży domyślny AutoColumn

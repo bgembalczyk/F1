@@ -8,6 +8,7 @@ from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
@@ -30,20 +31,14 @@ class SeasonRegionalChampionshipParser:
                 "Constructor",
                 "Report",
             ],
-            column_map={
-                "Race name": "race_name",
-                "Circuit": "circuit",
-                "Date": "date",
-                "Winning driver": "winning_driver",
-                "Constructor": "constructor",
-                "Report": "report",
-            },
-            columns={
-                "race_name": TextColumn(),
-                "circuit": UrlColumn(),
-                "date": SeasonDateColumn(year=season_year),
-                "winning_driver": DriverColumn(),
-                "constructor": ConstructorColumn(),
-                "report": UrlColumn(),
-            },
+            schema=TableSchemaDSL(
+                columns=[
+                    column("Race name", "race_name", TextColumn()),
+                    column("Circuit", "circuit", UrlColumn()),
+                    column("Date", "date", SeasonDateColumn(year=season_year)),
+                    column("Winning driver", "winning_driver", DriverColumn()),
+                    column("Constructor", "constructor", ConstructorColumn()),
+                    column("Report", "report", UrlColumn()),
+                ]
+            ),
         )

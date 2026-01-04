@@ -5,31 +5,10 @@ from models.validation.circuit import Circuit
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.circuits.schemas import build_circuits_schema
-from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
-from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
-from scrapers.circuits.constants import (
-    CIRCUIT_HEADER,
-    CIRCUITS_EXPECTED_HEADERS,
-    COUNTRY_HEADER,
-    DIRECTION_HEADER,
-    GRANDS_PRIX_HEADER,
-    GRANDS_PRIX_HELD_HEADER,
-    LAST_LENGTH_USED_HEADER,
-    LOCATION_HEADER,
-    MAP_HEADER,
-    SEASONS_HEADER,
-    TURNS_HEADER,
-    TYPE_HEADER,
-)
+from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 

@@ -7,6 +7,7 @@ from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
@@ -20,20 +21,16 @@ class SeasonFreePracticeParser:
             soup,
             section_ids=["Free_practice_drivers", "Friday_drivers"],
             expected_headers=["Constructor", "No.", "Driver name", "Rounds"],
-            column_map={
-                "Constructor": "constructor",
-                "No.": "numbers",
-                "No": "numbers",
-                "Driver name": "drivers",
-                "Driver": "drivers",
-                "Rounds": "rounds",
-            },
-            columns={
-                "constructor": ConstructorColumn(),
-                "numbers": BrListColumn(),
-                "drivers": DriverListColumn(),
-                "rounds": BrListColumn(),
-            },
+            schema=TableSchemaDSL(
+                columns=[
+                    column("Constructor", "constructor", ConstructorColumn()),
+                    column("No.", "numbers", BrListColumn()),
+                    column("No", "numbers", BrListColumn()),
+                    column("Driver name", "drivers", DriverListColumn()),
+                    column("Driver", "drivers", DriverListColumn()),
+                    column("Rounds", "rounds", BrListColumn()),
+                ]
+            ),
         )
         records = self._filter_source_footer_records(records)
         if records:
@@ -43,17 +40,14 @@ class SeasonFreePracticeParser:
             soup,
             section_ids=["Free_practice_drivers"],
             expected_headers=["Constructor", "Driver name", "Rounds"],
-            column_map={
-                "Constructor": "constructor",
-                "Driver name": "drivers",
-                "Driver": "drivers",
-                "Rounds": "rounds",
-            },
-            columns={
-                "constructor": ConstructorColumn(),
-                "drivers": DriverListColumn(),
-                "rounds": BrListColumn(),
-            },
+            schema=TableSchemaDSL(
+                columns=[
+                    column("Constructor", "constructor", ConstructorColumn()),
+                    column("Driver name", "drivers", DriverListColumn()),
+                    column("Driver", "drivers", DriverListColumn()),
+                    column("Rounds", "rounds", BrListColumn()),
+                ]
+            ),
         )
         records = self._filter_source_footer_records(records)
         if records:
@@ -63,15 +57,21 @@ class SeasonFreePracticeParser:
             soup,
             section_ids=["Free_practice_drivers"],
             expected_headers=["Constructor", "Practice drivers"],
-            column_map={
-                "Constructor": "constructor",
-                "Practice drivers": "practice_drivers",
-                "Practice driver(s)": "practice_drivers",
-            },
-            columns={
-                "constructor": ConstructorColumn(),
-                "practice_drivers": DriversWithRoundsColumn(),
-            },
+            schema=TableSchemaDSL(
+                columns=[
+                    column("Constructor", "constructor", ConstructorColumn()),
+                    column(
+                        "Practice drivers",
+                        "practice_drivers",
+                        DriversWithRoundsColumn(),
+                    ),
+                    column(
+                        "Practice driver(s)",
+                        "practice_drivers",
+                        DriversWithRoundsColumn(),
+                    ),
+                ]
+            ),
         )
         return self._filter_source_footer_records(records)
 

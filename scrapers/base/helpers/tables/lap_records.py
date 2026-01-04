@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
 
@@ -25,30 +26,22 @@ class LapRecordsTableScraper(F1TableScraper):
     logiki kolumn / ColumnContext / extract_links_from_cell itd.
     """
 
+    schema_columns = [
+        column("Category", "category", AutoColumn()),
+        column("Class", "class_", AutoColumn()),
+        column("Driver", "driver", DriverColumn()),
+        column("Driver/Rider", "driver_rider", DriverColumn()),
+        column("Vehicle", "vehicle", AutoColumn()),
+        column("Event", "event", UrlColumn()),
+        column("Time", "time", TimeColumn()),
+        column("Date", "date", DateColumn()),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org",
         section_id=None,
         expected_headers=["Time"],
-        column_map={
-            "Category": "category",
-            "Class": "class_",
-            "Driver": "driver",
-            "Driver/Rider": "driver_rider",
-            "Vehicle": "vehicle",
-            "Event": "event",
-            "Time": "time",
-            "Date": "date",
-        },
-        columns={
-            "category": AutoColumn(),
-            "class_": AutoColumn(),
-            "driver": DriverColumn(),
-            "driver_rider": DriverColumn(),
-            "vehicle": AutoColumn(),
-            "event": UrlColumn(),
-            "time": TimeColumn(),
-            "date": DateColumn(),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
 

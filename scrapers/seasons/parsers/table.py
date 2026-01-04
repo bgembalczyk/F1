@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.seasons.columns.race_result import RaceResultColumn
@@ -41,27 +42,22 @@ class SeasonTableParser:
         subject_column: Any,
         season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
+        schema_columns = [
+            column("Pos.", "pos", PositionColumn()),
+            column("Pos", "pos", PositionColumn()),
+            column(subject_header, subject_key, subject_column),
+            column("Points", "points", PointsColumn()),
+            column("Pts.", "points", PointsColumn()),
+            column("Pts", "points", PointsColumn()),
+            column("No.", "no", IntColumn()),
+            column("No", "no", IntColumn()),
+        ]
         for section_id in section_ids:
             config = ScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=[subject_header],
-                column_map={
-                    "Pos.": "pos",
-                    "Pos": "pos",
-                    subject_header: subject_key,
-                    "Points": "points",
-                    "Pts.": "points",
-                    "Pts": "points",
-                    "No.": "no",
-                    "No": "no",
-                },
-                columns={
-                    "pos": PositionColumn(),
-                    subject_key: subject_column,
-                    "points": PointsColumn(),
-                    "no": IntColumn(),
-                },
+                schema=TableSchemaDSL(columns=schema_columns),
                 default_column=RaceResultColumn(season_year=season_year),
                 record_factory=record_from_mapping,
             )
@@ -80,8 +76,7 @@ class SeasonTableParser:
         *,
         section_ids: list[str],
         expected_headers: list[str],
-        column_map: dict[str, str],
-        columns: dict[str, Any],
+        schema: TableSchemaDSL,
         default_column: Any | None = None,
     ) -> List[Dict[str, Any]]:
         for section_id in section_ids:
@@ -89,8 +84,7 @@ class SeasonTableParser:
                 url=self.url,
                 section_id=section_id,
                 expected_headers=expected_headers,
-                column_map=column_map,
-                columns=columns,
+                schema=schema,
                 default_column=default_column,
                 record_factory=record_from_mapping,
             )

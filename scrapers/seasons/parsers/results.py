@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
@@ -27,27 +28,23 @@ class SeasonResultsParser:
                 "Winning driver",
                 "Report",
             ],
-            column_map={
-                "Round": "round",
-                "Grand Prix": "grand_prix",
-                "Race": "grand_prix",
-                "Pole position": "pole_position",
-                "Pole Position": "pole_position",
-                "Fastest lap": "fastest_lap",
-                "Winning driver": "winning_driver",
-                "Winning constructor": "winning_constructor",
-                "Constructor": "winning_constructor",
-                "Report": "report",
-                "Tyre": "tyre",
-            },
-            columns={
-                "round": IntColumn(),
-                "grand_prix": UrlColumn(),
-                "pole_position": DriverColumn(),
-                "fastest_lap": DriverListColumn(),
-                "winning_driver": DriverColumn(),
-                "winning_constructor": ConstructorColumn(),
-                "report": UrlColumn(),
-                "tyre": TyreColumn(),
-            },
+            schema=TableSchemaDSL(
+                columns=[
+                    column("Round", "round", IntColumn()),
+                    column("Grand Prix", "grand_prix", UrlColumn()),
+                    column("Race", "grand_prix", UrlColumn()),
+                    column("Pole position", "pole_position", DriverColumn()),
+                    column("Pole Position", "pole_position", DriverColumn()),
+                    column("Fastest lap", "fastest_lap", DriverListColumn()),
+                    column("Winning driver", "winning_driver", DriverColumn()),
+                    column(
+                        "Winning constructor",
+                        "winning_constructor",
+                        ConstructorColumn(),
+                    ),
+                    column("Constructor", "winning_constructor", ConstructorColumn()),
+                    column("Report", "report", UrlColumn()),
+                    column("Tyre", "tyre", TyreColumn()),
+                ]
+            ),
         )

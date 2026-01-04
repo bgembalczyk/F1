@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -18,23 +19,19 @@ class SeasonCalendarParser:
     def parse(
         self, soup: BeautifulSoup, season_year: int | None
     ) -> List[Dict[str, Any]]:
-        columns = {
-            "round": IntColumn(),
-            "grand_prix": UrlColumn(),
-            "circuit": CalendarCircuitColumn(),
-            "race_date": SeasonDateColumn(year=season_year),
-        }
+        schema_columns = [
+            column("Round", "round", IntColumn()),
+            column("Grand Prix", "grand_prix", UrlColumn()),
+            column("Circuit", "circuit", CalendarCircuitColumn()),
+            column("Race date", "race_date", SeasonDateColumn(year=season_year)),
+            column("Date", "race_date", SeasonDateColumn(year=season_year)),
+        ]
+        schema = TableSchemaDSL(columns=schema_columns)
         records = self._table_parser.parse_table(
             soup,
             section_ids=["Calendar"],
             expected_headers=["Round", "Grand Prix", "Circuit", "Race date"],
-            column_map={
-                "Round": "round",
-                "Grand Prix": "grand_prix",
-                "Circuit": "circuit",
-                "Race date": "race_date",
-            },
-            columns=columns,
+            schema=schema,
         )
         if records:
             return records
@@ -43,11 +40,5 @@ class SeasonCalendarParser:
             soup,
             section_ids=["Calendar"],
             expected_headers=["Round", "Grand Prix", "Circuit", "Date"],
-            column_map={
-                "Round": "round",
-                "Grand Prix": "grand_prix",
-                "Circuit": "circuit",
-                "Date": "race_date",
-            },
-            columns=columns,
+            schema=schema,
         )

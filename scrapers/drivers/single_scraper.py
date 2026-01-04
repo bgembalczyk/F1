@@ -20,6 +20,7 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
@@ -157,52 +158,35 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         return None
 
     def _parse_career_highlights(self, table: Tag) -> List[Dict[str, Any]]:
-        pipeline = self._build_pipeline(
-            column_map={
-                "Season": "season",
-                "Series": "series",
-                "Position": "position",
-                "Team": "team",
-                "Car": "car",
-            },
-            columns={
-                "season": self._unknown(IntColumn()),
-                "series": self._unknown(UrlColumn()),
-                "position": self._unknown(PositionColumn()),
-                "team": self._unknown(EntrantColumn()),
-                "car": self._unknown(UrlColumn()),
-            },
+        schema = TableSchemaDSL(
+            columns=[
+                column("Season", "season", self._unknown(IntColumn())),
+                column("Series", "series", self._unknown(UrlColumn())),
+                column("Position", "position", self._unknown(PositionColumn())),
+                column("Team", "team", self._unknown(EntrantColumn())),
+                column("Car", "car", self._unknown(UrlColumn())),
+            ]
         )
+        pipeline = self._build_pipeline(schema=schema)
         return self._parse_table(table, pipeline)
 
     def _parse_career_summary(self, table: Tag) -> List[Dict[str, Any]]:
-        pipeline = self._build_pipeline(
-            column_map={
-                "Season": "season",
-                "Series": "series",
-                "Position": "position",
-                "Team": "team",
-                "Races": "races",
-                "Wins": "wins",
-                "Poles": "poles",
-                "F/Laps": "fastest_laps",
-                "F/Lap": "fastest_laps",
-                "Podiums": "podiums",
-                "Points": "points",
-            },
-            columns={
-                "season": self._unknown(IntColumn()),
-                "series": self._unknown(SeriesColumn()),
-                "position": self._unknown(TextColumn()),
-                "team": self._unknown(EntrantColumn()),
-                "races": self._unknown(IntColumn()),
-                "wins": self._unknown(IntColumn()),
-                "poles": self._unknown(IntColumn()),
-                "fastest_laps": self._unknown(IntColumn()),
-                "podiums": self._unknown(IntColumn()),
-                "points": self._unknown(PointsOrTextColumn()),
-            },
+        schema = TableSchemaDSL(
+            columns=[
+                column("Season", "season", self._unknown(IntColumn())),
+                column("Series", "series", self._unknown(SeriesColumn())),
+                column("Position", "position", self._unknown(TextColumn())),
+                column("Team", "team", self._unknown(EntrantColumn())),
+                column("Races", "races", self._unknown(IntColumn())),
+                column("Wins", "wins", self._unknown(IntColumn())),
+                column("Poles", "poles", self._unknown(IntColumn())),
+                column("F/Laps", "fastest_laps", self._unknown(IntColumn())),
+                column("F/Lap", "fastest_laps", self._unknown(IntColumn())),
+                column("Podiums", "podiums", self._unknown(IntColumn())),
+                column("Points", "points", self._unknown(PointsOrTextColumn())),
+            ]
         )
+        pipeline = self._build_pipeline(schema=schema)
         return self._parse_table(table, pipeline)
 
     def _parse_complete_results(
@@ -279,11 +263,16 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             "ref": SkipColumn(),
         }
 
+        schema_columns = [
+            column(header, key, columns[key]) for header, key in column_map.items()
+        ]
         for header in headers:
             if header.isdigit():
-                columns[header] = self._unknown(RoundColumn())
+                schema_columns.append(
+                    column(header, header, self._unknown(RoundColumn()))
+                )
 
-        pipeline = self._build_pipeline(column_map=column_map, columns=columns)
+        pipeline = self._build_pipeline(schema=TableSchemaDSL(columns=schema_columns))
         return self._parse_table(table, pipeline)
 
     def _parse_table(
@@ -306,15 +295,13 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
     def _build_pipeline(
         self,
         *,
-        column_map: Dict[str, str],
-        columns: Dict[str, Any],
+        schema: TableSchemaDSL,
     ) -> TablePipeline:
         config = ScraperConfig(
             url=self.url,
             section_id=None,
             expected_headers=None,
-            column_map=column_map,
-            columns=columns,
+            schema=schema,
             default_column=AutoColumn(),
             record_factory=record_from_mapping,
         )

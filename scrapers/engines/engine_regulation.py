@@ -13,6 +13,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
@@ -26,37 +27,40 @@ class EngineRegulationScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era
     """
 
+    schema_columns = [
+        column("Years", "seasons", SeasonsColumn()),
+        column("Operating principle", "operating_principle", TextColumn()),
+        column(
+            "Maximum displacement - Naturally aspirated",
+            "maximum_displacement",
+            NestedUnitListColumn("naturally_aspirated"),
+        ),
+        column(
+            "Maximum displacement - Forced induction",
+            "maximum_displacement",
+            NestedUnitListColumn("forced_induction"),
+        ),
+        column("Configuration", "configuration", EngineConfigurationColumn()),
+        column("RPM limit", "rpm_limit", UnitColumn(unit="rpm")),
+        column("Fuel flow limit (Qmax)", "fuel_flow_limit", TextColumn()),
+        column(
+            "Fuel composition - Alcohol",
+            "fuel_composition",
+            NestedTextColumn("alcohol"),
+        ),
+        column(
+            "Fuel composition - Petrol",
+            "fuel_composition",
+            NestedTextColumn("petrol"),
+        ),
+    ]
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era",
         section_id="Engine_regulation_progression_by_era",
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
-        column_map={
-            "Years": "seasons",
-            "Operating principle": "operating_principle",
-            "Maximum displacement - Naturally aspirated": "maximum_displacement",
-            "Maximum displacement - Forced induction": "maximum_displacement",
-            "Configuration": "configuration",
-            "RPM limit": "rpm_limit",
-            "Fuel flow limit (Qmax)": "fuel_flow_limit",
-            "Fuel composition - Alcohol": "fuel_composition",
-            "Fuel composition - Petrol": "fuel_composition",
-        },
-        columns={
-            "seasons": SeasonsColumn(),
-            "operating_principle": TextColumn(),
-            "Maximum displacement - Naturally aspirated": NestedUnitListColumn(
-                "naturally_aspirated"
-            ),
-            "Maximum displacement - Forced induction": NestedUnitListColumn(
-                "forced_induction"
-            ),
-            "configuration": EngineConfigurationColumn(),
-            "rpm_limit": UnitColumn(unit="rpm"),
-            "fuel_flow_limit": TextColumn(),
-            "Fuel composition - Alcohol": NestedTextColumn("alcohol"),
-            "Fuel composition - Petrol": NestedTextColumn("petrol"),
-        },
+        schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
 
