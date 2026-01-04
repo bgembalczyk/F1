@@ -189,12 +189,14 @@ class F1Scraper(ABC):
         path: str | Path,
         *,
         indent: int = 2,
+        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_json(
             path,
             exporter=self.exporter,
             indent=indent,
+            include_metadata=include_metadata,
         )
 
     def to_csv(
@@ -203,6 +205,7 @@ class F1Scraper(ABC):
         *,
         fieldnames: Optional[Sequence[str]] = None,
         fieldnames_strategy: str = "union",
+        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_csv(
@@ -210,6 +213,7 @@ class F1Scraper(ABC):
             exporter=self.exporter,
             fieldnames=fieldnames,
             fieldnames_strategy=fieldnames_strategy,
+            include_metadata=include_metadata,
         )
 
     def to_dataframe(self):
