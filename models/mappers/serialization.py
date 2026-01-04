@@ -1,6 +1,9 @@
 from dataclasses import asdict, is_dataclass
 from typing import Any, Mapping
 
+from models.records.circuit_base import CircuitBaseRecord
+from models.records.circuit_complete import CircuitCompleteRecord
+from models.records.circuit_details import CircuitDetailsRecord
 from models.value_objects.base import ValueObject
 
 
@@ -38,6 +41,20 @@ def to_dict(value: Any) -> dict[str, Any]:
     if is_dataclass(value):
         return normalize_value(asdict(value))
     raise TypeError(f"Nieobsługiwany typ modelu: {type(value)!r}")
+
+
+def to_circuit_record_dict(
+    value: CircuitBaseRecord | CircuitCompleteRecord | CircuitDetailsRecord | Mapping[str, Any]
+) -> dict[str, Any]:
+    return to_dict(value)
+
+
+def to_circuit_record_dict_list(
+    values: list[
+        CircuitBaseRecord | CircuitCompleteRecord | CircuitDetailsRecord | Mapping[str, Any]
+    ],
+) -> list[dict[str, Any]]:
+    return [to_circuit_record_dict(value) for value in values]
 
 
 def to_dict_list(values: list[Any]) -> list[dict[str, Any]]:
