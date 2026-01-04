@@ -12,6 +12,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.post_processors import apply_post_processors
@@ -337,10 +338,7 @@ class F1Scraper(ABC):
         return normalize_url(self.url, href)
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
-        policy = options.policy
-        if policy is None:
-            policy = options.to_http_policy()
-        return policy
+        return resolve_http_policy(options)
 
     # ---------- Error handling ----------
 

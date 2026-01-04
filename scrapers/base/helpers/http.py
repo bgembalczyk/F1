@@ -1,6 +1,10 @@
 from typing import TYPE_CHECKING
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from infrastructure.http_client.policies.defaults import (
+    DEFAULT_HTTP_RETRIES,
+    DEFAULT_HTTP_TIMEOUT,
+)
 from infrastructure.http_client.policies.http import HttpPolicy
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
@@ -9,13 +13,17 @@ if TYPE_CHECKING:
 
 
 def default_http_policy() -> HttpPolicy:
-    return HttpPolicy(cache=WikipediaCachePolicy.with_file_cache())
+    return HttpPolicy(
+        cache=WikipediaCachePolicy.with_file_cache(),
+        retries=DEFAULT_HTTP_RETRIES,
+        timeout=DEFAULT_HTTP_TIMEOUT,
+    )
 
 
 def build_http_policy(
     *,
-    timeout: int = 10,
-    retries: int = 0,
+    timeout: int = DEFAULT_HTTP_TIMEOUT,
+    retries: int = DEFAULT_HTTP_RETRIES,
     cache: ResponseCache | None = None,
 ) -> HttpPolicy:
     return HttpPolicy(
@@ -23,6 +31,16 @@ def build_http_policy(
         retries=retries,
         cache=cache,
     )
+
+
+def resolve_http_policy(
+    options: "ScraperOptions",
+    *,
+    policy: HttpPolicy | None = None,
+) -> HttpPolicy:
+    if policy is not None:
+        options.policy = policy
+    return options.to_http_policy()
 
 
 def init_scraper_options(
