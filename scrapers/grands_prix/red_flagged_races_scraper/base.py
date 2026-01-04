@@ -7,6 +7,7 @@ from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
@@ -15,9 +16,17 @@ from scrapers.base.transformers.failed_to_make_restart import (
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
-    def __init__(self, *, options=None, config=None) -> None:
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config=None,
+    ) -> None:
+        options = options or ScraperOptions()
+        options.transformers = list(options.transformers or []) + [
+            FailedToMakeRestartTransformer(),
+        ]
         super().__init__(options=options, config=config)
-        self.transformers = [FailedToMakeRestartTransformer()]
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         parser = HtmlTableParser(

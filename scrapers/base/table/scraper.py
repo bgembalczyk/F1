@@ -10,7 +10,7 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.extractors.table import TableExtractor
-from scrapers.base.transformers import RecordFactoryTransformer, TransformersPipeline
+from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
 from scrapers.base.table.row import TableRow
 
 
@@ -109,5 +109,4 @@ class F1TableScraper(F1Scraper, ABC):
         transformers = list(self.transformers)
         if self.record_factory is not None:
             transformers.append(RecordFactoryTransformer(self.record_factory))
-        pipeline = TransformersPipeline(transformers, logger=self.logger)
-        return pipeline.apply(records)
+        return apply_transformers(transformers, records, logger=self.logger)
