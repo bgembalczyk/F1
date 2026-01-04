@@ -78,20 +78,22 @@ class RaceResultColumn(BaseColumn):
                 if result.get("points_shared") and share_count > 1:
                     result["points_share_count"] = share_count
                 result.pop("marks", None)
+                # Add background, pole_position, and fastest_lap to each result
+                if background is not None:
+                    result["background"] = background
+                if pole_position:
+                    result["pole_position"] = True
+                if fastest_lap:
+                    result["fastest_lap"] = True
             payload["results"] = results
-        if sprint_position is not None:
-            payload["sprint_position"] = sprint_position
-        if pole_position:
-            payload["pole_position"] = True
-        if fastest_lap:
-            payload["fastest_lap"] = True
-            if len(results) > 1:
+            # For backwards compatibility with shared fastest laps in driver standings
+            if fastest_lap and len(results) > 1:
                 payload["fastest_lap_shared"] = True
                 payload["fastest_lap_share_count"] = len(results)
+        if sprint_position is not None:
+            payload["sprint_position"] = sprint_position
         if footnotes:
             payload["footnotes"] = footnotes
-        if background is not None:
-            payload["background"] = background
 
         return payload or None
 
