@@ -14,17 +14,12 @@ class JimClarkRaceResultColumn(RaceResultColumn):
     def _apply_result_notes(
         self, result: dict[str, Any], background: str | None
     ) -> None:
-        # First apply the standard notes
+        # First apply the standard notes (except for * mark handling)
         super()._apply_result_notes(result, background)
         
-        # Override the * mark behavior for Jim Clark Trophy
+        # Add specific note for Jim Clark Trophy * mark
         marks = result.get("marks") or []
-        if "*" in marks:
-            # For Jim Clark Trophy, * means insufficient events
-            result["points_eligible"] = False
-            # Remove the generic "ineligible_for_points" note if it was added
-            notes = result.get("notes", [])
-            if "ineligible_for_points" in notes:
-                notes.remove("ineligible_for_points")
-            # Add the specific note for insufficient events
+        if "*" in marks and background == "Other classified position":
+            # The base class already set points_eligible = False
+            # Now add the specific note for Jim Clark Trophy
             self._append_note(result, "insufficient_events_to_be_eligible")
