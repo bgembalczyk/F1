@@ -6289,9 +6289,6 @@
               {
                 "position": 5,
                 "points_eligible": false,
-                "notes": [
-                  "ineligible_for_points"
-                ],
                 "background": "Other classified position"
               }
             ]
@@ -6361,9 +6358,6 @@
               {
                 "position": 6,
                 "points_eligible": false,
-                "notes": [
-                  "ineligible_for_points"
-                ],
                 "background": "Other classified position"
               }
             ]
@@ -7170,7 +7164,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -7206,7 +7200,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -7230,7 +7224,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -7312,7 +7306,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -9740,7 +9734,7 @@
               },
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -11369,7 +11363,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -11394,7 +11388,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -11418,7 +11412,7 @@
             "results": [
               {
                 "position": "NC",
-                "background": "Other classified position"
+                "background": "Not classified, finished"
               }
             ]
           },
