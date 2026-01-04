@@ -1,9 +1,11 @@
 from dataclasses import dataclass
 from typing import Any
 
+from models.value_objects.base import ValueObject
+
 
 @dataclass(frozen=True)
-class DateValue:
+class DateValue(ValueObject):
     iso: str | list[str] | None = None
     year: int | None = None
     month: int | None = None

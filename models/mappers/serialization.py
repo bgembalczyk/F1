@@ -1,11 +1,13 @@
 from dataclasses import asdict, is_dataclass
 from typing import Any, Mapping
 
+from models.value_objects.base import ValueObject
+
 
 def normalize_value(value: Any) -> Any:
     if value is None:
         return None
-    if hasattr(value, "to_dict") and callable(value.to_dict):
+    if isinstance(value, ValueObject):
         return normalize_value(value.to_dict())
     if isinstance(value, Mapping):
         return {key: normalize_value(val) for key, val in value.items()}
@@ -25,7 +27,7 @@ def normalize_value(value: Any) -> Any:
 def to_dict(value: Any) -> dict[str, Any]:
     if value is None:
         return {}
-    if hasattr(value, "to_dict") and callable(value.to_dict):
+    if isinstance(value, ValueObject):
         return normalize_value(value.to_dict())
     if isinstance(value, Mapping):
         return {key: normalize_value(val) for key, val in value.items()}

@@ -4,10 +4,11 @@ from typing import Mapping
 
 from models.value_objects.helpers import normalize_iso
 from models.value_objects.helpers import normalize_text
+from models.value_objects.base import ValueObject
 
 
 @dataclass(frozen=True)
-class NormalizedDate:
+class NormalizedDate(ValueObject):
     text: str | None = None
     iso: str | None = None
 
