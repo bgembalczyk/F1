@@ -20,6 +20,15 @@ def test_json_formatter_without_metadata() -> None:
     assert json.loads(payload) == data
 
 
+def test_json_formatter_handles_empty_data() -> None:
+    formatter = JsonFormatter()
+    data = []
+
+    payload = formatter.format(data, indent=2, include_metadata=False)
+
+    assert json.loads(payload) == []
+
+
 def test_json_formatter_with_metadata() -> None:
     formatter = JsonFormatter()
     result = ScrapeResult(data=[{"team": "McLaren"}], source_url="https://example.com")
@@ -45,6 +54,14 @@ def test_csv_formatter_builds_union_of_fields() -> None:
     assert lines[0].split(",") == ["name", "wins", "titles"]
     assert "Lewis,103," in lines[1]
     assert "Michael,,7" in lines[2]
+
+
+def test_csv_formatter_handles_empty_data() -> None:
+    formatter = CsvFormatter()
+
+    payload = formatter.format([])
+
+    assert payload == ""
 
 
 def test_dataframe_formatter_handles_optional_dependency() -> None:

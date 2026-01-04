@@ -15,7 +15,11 @@ from scrapers.base.debug_dumps import (
     write_table_pipeline_dump,
 )
 from scrapers.base.logging import get_logger
-from scrapers.base.null_policy import normalize_empty
+from scrapers.base.normalization import (
+    EmptyValuePolicy,
+    normalize_empty,
+    normalize_record_values,
+)
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -51,6 +55,7 @@ class TablePipeline:
         self.model_fields = model_fields
         self.run_id = run_id
         self.normalize_empty_values = normalize_empty_values
+        self.empty_value_policy = EmptyValuePolicy.from_flag(normalize_empty_values)
 
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
@@ -164,17 +169,21 @@ class TablePipeline:
     def _finalize_record(self, record: dict[str, Any]) -> Any:
         if not record or self.record_factory is None:
             return record
+        normalized_record, _ = normalize_record_values(
+            record,
+            policy=self.empty_value_policy,
+        )
         if isinstance(self.record_factory, type):
-            payload = record
+            payload = normalized_record
             if self.model_fields:
                 payload = {
                     key: value
-                    for key, value in record.items()
+                    for key, value in payload.items()
                     if key in self.model_fields
                 }
             instance = self.record_factory(**payload)
             return instance
-        return self.record_factory(record)
+        return self.record_factory(normalized_record)
 
     @staticmethod
     def _cell_html(cell: Tag | None) -> str | None:
@@ -212,15 +221,17 @@ class TablePipeline:
     ) -> tuple[str, str | None, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
-        normalized_raw_text = (
-            normalize_empty(raw_text) if self.normalize_empty_values else raw_text
+        normalized_raw_text = normalize_empty(
+            raw_text,
+            policy=self.empty_value_policy,
         )
         clean_text = clean_wiki_text(raw_text)
-        normalized_clean = (
-            normalize_empty(clean_text) if self.normalize_empty_values else clean_text
+        normalized_clean = normalize_empty(
+            clean_text,
+            policy=self.empty_value_policy,
         )
         if (
-            self.normalize_empty_values
+            self.empty_value_policy is EmptyValuePolicy.NORMALIZE
             and normalized_clean is None
             and clean_text == ""
         ):

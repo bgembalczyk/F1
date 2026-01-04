@@ -1,9 +1,3 @@
-from typing import Any
+from scrapers.base.normalization import EmptyValuePolicy, normalize_empty
 
-
-def normalize_empty(value: Any) -> Any:
-    if isinstance(value, str):
-        return value if value.strip() else None
-    if isinstance(value, list | dict):
-        return value if value else None
-    return value
+__all__ = ["EmptyValuePolicy", "normalize_empty"]
