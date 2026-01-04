@@ -1,4 +1,4 @@
-from scrapers.base.transformers import RecordTransformer
+from scrapers.base.transformers.record_transformer import RecordTransformer
 
 
 class ShortenedRacePointsTransformer(RecordTransformer):

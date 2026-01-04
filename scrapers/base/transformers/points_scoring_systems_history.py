@@ -1,4 +1,4 @@
-from scrapers.base.transformers import RecordTransformer
+from scrapers.base.transformers.record_transformer import RecordTransformer
 from scrapers.points.helpers.parsers import extract_first_place_role
 from scrapers.points.helpers.parsers import seasons_key
 
@@ -34,5 +34,4 @@ class PointsScoringSystemsHistoryTransformer(RecordTransformer):
                 merged.append(record)
 
         return merged
-
 

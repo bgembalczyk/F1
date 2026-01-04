@@ -14,6 +14,7 @@ from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.cache_adapter import CacheAdapter
+from scrapers.base.transformers import RecordTransformer
 from validation.records import RecordValidator
 
 
@@ -38,10 +39,13 @@ class ScraperOptions:
     normalize_empty_values: bool = True
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
     run_id: str | None = None
+    transformers: list[RecordTransformer] | None = None
 
     def __post_init__(self) -> None:
         if self.policy is None:
             self.policy = default_http_policy()
+        if self.transformers is None:
+            self.transformers = []
 
     def to_http_policy(self) -> HttpPolicy:
         if self.policy is not None:
