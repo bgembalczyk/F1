@@ -42,7 +42,7 @@ class SeasonStandingsParser:
             subject_key="constructor",
             subject_column=ConstructorColumn(),
         )
-        return self._merge_duplicate_constructors(records)
+        return self.merge_duplicate_constructors(records)
 
     def _parse_standings_table(
         self,
@@ -106,7 +106,7 @@ class SeasonStandingsParser:
                     value["fastest_lap_share_count"] = count
 
     @staticmethod
-    def _merge_duplicate_constructors(
+    def merge_duplicate_constructors(
         records: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
         """

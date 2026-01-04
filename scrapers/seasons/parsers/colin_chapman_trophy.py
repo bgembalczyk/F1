@@ -62,6 +62,6 @@ class ColinChapmanTrophyParser:
         try:
             records = scraper.parse(soup)
             # Apply the same merging logic as constructors standings
-            return SeasonStandingsParser._merge_duplicate_constructors(records)
+            return SeasonStandingsParser.merge_duplicate_constructors(records)
         except RuntimeError:
             return []
