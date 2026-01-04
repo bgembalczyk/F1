@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from models.records.factories import build_season_summary_record
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -38,7 +39,7 @@ class SeasonsListScraper(F1TableScraper):
             "Races",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=lambda record: dict(record),
+        record_factory=build_season_summary_record,
     )
 
 
