@@ -14,6 +14,9 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
 class InfoboxGeneralParser:
+    # Date pattern for matching common date formats
+    _DATE_PATTERN = r'\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b'
+    
     def __init__(
         self,
         *,
@@ -56,21 +59,53 @@ class InfoboxGeneralParser:
         return data
 
     def _parse_date_place(self, cell: Tag) -> Dict[str, Any]:
-        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
-        parts = [p.strip() for p in text.split("\n") if p.strip()]
-        date_text = parts[0] if parts else ""
-        date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
-
-        place_text = " ".join(parts[1:]).strip()
-        if not place_text and date_text:
-            match = re.match(
-                r"^([0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})\s*(.*)$",
-                date_text,
-            )
-            if match:
-                date_text = match.group(1).strip()
-                place_text = match.group(2).strip()
-
+        # Try to extract date from structured data (bday class)
+        bday_span = cell.find("span", class_="bday")
+        if bday_span:
+            date_text = clean_infobox_text(bday_span.get_text(strip=True)) or ""
+        else:
+            # Fallback to text-based extraction
+            text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+            parts = [p.strip() for p in text.split("\n") if p.strip()]
+            
+            # Filter out the original name (first part if it doesn't contain date pattern)
+            filtered_parts = []
+            for part in parts:
+                # Skip parts that look like names (no date pattern and no numbers)
+                if not re.search(self._DATE_PATTERN, part):
+                    # This might be the original name, skip it
+                    continue
+                filtered_parts.append(part)
+            
+            date_text = filtered_parts[0] if filtered_parts else ""
+            date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
+        
+        # Extract place from birthplace div if available
+        birthplace_div = cell.find("div", class_="birthplace")
+        if birthplace_div:
+            place_text = clean_infobox_text(birthplace_div.get_text(" ", strip=True)) or ""
+        else:
+            # Fallback to parsing from text
+            text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+            parts = [p.strip() for p in text.split("\n") if p.strip()]
+            
+            # Find the part with the date and take everything after it
+            place_text = ""
+            for i, part in enumerate(parts):
+                if re.search(self._DATE_PATTERN, part):
+                    # Found date part, check if place is on same line or next lines
+                    match = re.match(
+                        r"^(?:[0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})(?:\s*\([^)]*\))?\s*(.*)$",
+                        part,
+                    )
+                    if match:
+                        place_text = match.group(1).strip()
+                    # Also include following parts as place
+                    if i + 1 < len(parts):
+                        remaining = " ".join(parts[i + 1:])
+                        place_text = (place_text + " " + remaining).strip()
+                    break
+        
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
         place: List[str | LinkRecord] = place_parts
         if self._include_urls and place_parts:

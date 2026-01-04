@@ -57,18 +57,19 @@ class InfoboxTitlesParser:
             if not isinstance(label_cell, Tag) or not isinstance(value_cell, Tag):
                 continue
             series_links = self._link_extractor.extract_title_links(value_cell)
-            year_links = self._link_extractor.extract_year_links(label_cell)
+            year_data = self._link_extractor.extract_year_range_links(label_cell)
+            
             if (
                 series_links
-                and year_links
-                and len(series_links) == len(year_links)
+                and year_data
+                and len(series_links) == len(year_data)
                 and len(series_links) > 1
             ):
-                for series_link, year_link in zip(series_links, year_links):
-                    items.append({"title": series_link, "years": [year_link]})
+                for series_link, year_info in zip(series_links, year_data):
+                    items.append({"title": series_link, "years": [year_info]})
                 continue
-            if series_links and year_links:
-                items.append({"title": series_links[0], "years": year_links})
+            if series_links and year_data:
+                items.append({"title": series_links[0], "years": year_data})
                 continue
             if series_links:
                 for series_link in series_links:
@@ -76,6 +77,6 @@ class InfoboxTitlesParser:
                 continue
             series_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
             items.append(
-                {"title": {"text": series_text or "", "url": None}, "years": year_links}
+                {"title": {"text": series_text or "", "url": None}, "years": year_data}
             )
         return items

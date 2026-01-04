@@ -29,8 +29,10 @@ class InfoboxCareerParser:
                     "Wins",
                     "Podiums",
                     "Pole positions",
+                    "Poles",
                     "Fastest laps",
                     "Starts",
+                    "Championships",
                 }:
                     value = self._cell_parser.parse_int_cell(value_cell)
                 elif label == "Career points":
