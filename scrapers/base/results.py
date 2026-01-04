@@ -46,6 +46,7 @@ class ScrapeResult:
         indent: int = 2,
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
+        include_metadata: bool = False,
     ) -> None:
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
@@ -56,6 +57,7 @@ class ScrapeResult:
             normalized,
             path,
             indent=indent,
+            include_metadata=include_metadata,
         )
 
     def to_csv(
@@ -67,6 +69,7 @@ class ScrapeResult:
         fieldnames_strategy: str = "union",
         normalize_keys: bool = False,
         normalization_rules: Sequence[NormalizationRule] | None = None,
+        include_metadata: bool = False,
     ) -> None:
         from scrapers.base.export.export_helpers import (
             fieldnames_from_first_row,
@@ -93,7 +96,7 @@ class ScrapeResult:
                     )
 
         exporter = self._resolve_exporter(exporter)
-        exporter.to_csv(normalized, path, fieldnames=fieldnames)
+        exporter.to_csv(normalized, path, fieldnames=fieldnames, include_metadata=include_metadata)
 
     def to_dataframe(
         self,

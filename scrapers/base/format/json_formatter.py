@@ -12,16 +12,22 @@ class JsonFormatter:
         result: ScrapeResult,
         *,
         indent: int = 2,
+        include_metadata: bool = False,
     ) -> str:
-        payload = self._json_payload(result)
+        payload = self._json_payload(result, include_metadata=include_metadata)
         return json.dumps(payload, ensure_ascii=False, indent=indent)
 
     @staticmethod
     def _json_payload(
         result: ScrapeResult,
+        *,
+        include_metadata: bool = False,
     ) -> Any:
-        metadata = ExportMetadata.from_result(result)
-        return {
-            "meta": metadata.to_dict(),
-            "data": extract_data(result),
-        }
+        data = extract_data(result)
+        if include_metadata:
+            metadata = ExportMetadata.from_result(result)
+            return {
+                "meta": metadata.to_dict(),
+                "data": data,
+            }
+        return data

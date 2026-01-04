@@ -14,13 +14,15 @@ class CsvFormatter:
         result: ScrapeResult,
         *,
         fieldnames: Optional[Sequence[str]] = None,
+        include_metadata: bool = False,
     ) -> str:
         data = extract_data(result)
-        metadata = ExportMetadata.from_result(result)
         output = io.StringIO()
-        output.write(
-            f"# meta: {json.dumps(metadata.to_dict(), ensure_ascii=False)}\n"
-        )
+        if include_metadata:
+            metadata = ExportMetadata.from_result(result)
+            output.write(
+                f"# meta: {json.dumps(metadata.to_dict(), ensure_ascii=False)}\n"
+            )
         if not data:
             return output.getvalue()
 

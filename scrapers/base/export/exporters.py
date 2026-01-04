@@ -22,8 +22,11 @@ class DataExporter:
         path: str | Path,
         *,
         indent: int = 2,
+        include_metadata: bool = False,
     ) -> None:
-        payload = self._json_formatter.format(result, indent=indent)
+        payload = self._json_formatter.format(
+            result, indent=indent, include_metadata=include_metadata
+        )
         Path(path).write_text(payload, encoding="utf-8")
 
     def to_csv(
@@ -32,8 +35,11 @@ class DataExporter:
         path: str | Path,
         *,
         fieldnames: Optional[Sequence[str]] = None,
+        include_metadata: bool = False,
     ) -> None:
-        payload = self._csv_formatter.format(result, fieldnames=fieldnames)
+        payload = self._csv_formatter.format(
+            result, fieldnames=fieldnames, include_metadata=include_metadata
+        )
         Path(path).write_text(payload, encoding="utf-8")
 
 

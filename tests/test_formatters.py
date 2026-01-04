@@ -36,7 +36,7 @@ def test_json_formatter_with_metadata() -> None:
         source_url="https://example.com",
     )
 
-    payload = formatter.format(result, indent=2)
+    payload = formatter.format(result, indent=2, include_metadata=True)
     parsed = json.loads(payload)
 
     assert parsed["meta"]["source_url"] == "https://example.com"
@@ -55,7 +55,7 @@ def test_csv_formatter_builds_union_of_fields() -> None:
         source_url="https://example.com",
     )
 
-    payload = formatter.format(result)
+    payload = formatter.format(result, include_metadata=True)
 
     lines = payload.strip().splitlines()
     metadata = json.loads(lines[0].replace("# meta: ", ""))
@@ -74,8 +74,8 @@ def test_metadata_is_consistent_between_json_and_csv() -> None:
         source_url="https://example.com",
     )
 
-    json_payload = json.loads(formatter_json.format(result))
-    csv_payload = formatter_csv.format(result)
+    json_payload = json.loads(formatter_json.format(result, include_metadata=True))
+    csv_payload = formatter_csv.format(result, include_metadata=True)
     csv_meta = json.loads(csv_payload.splitlines()[0].replace("# meta: ", ""))
 
     assert json_payload["meta"] == csv_meta
@@ -117,7 +117,7 @@ def test_json_formatter_serializes_normalized_value_objects() -> None:
         source_url="https://example.com",
     )
 
-    payload = formatter.format(result)
+    payload = formatter.format(result, include_metadata=True)
     parsed = json.loads(payload)
 
     assert parsed["meta"]["records_count"] == 1
