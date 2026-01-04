@@ -22169,20 +22169,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Switzerland"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1994,
-                  "end": 1995
-                }
+                "value": [
+                  {
+                    "year": 1994,
+                    "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -22206,10 +22207,7 @@
               },
               {
                 "label": "Championships",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Wins",
@@ -38198,10 +38196,6 @@
                   "text": "Australian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Australia"
-                    },
-                    {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
                     }
@@ -38210,10 +38204,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2024,
-                  "end": 2025
-                }
+                "value": [
+                  {
+                    "year": 2024,
+                    "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2025,
+                    "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -38245,10 +38245,7 @@
               },
               {
                 "label": "Championships",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Wins",
