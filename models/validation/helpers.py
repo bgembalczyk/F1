@@ -3,6 +3,7 @@ from typing import Dict
 from typing import List
 
 from models.validation.validators import validate_float
+from models.value_objects.helpers import normalize_text
 
 
 def normalize_unit_value(value: Any, field_name: str) -> Dict[str, Any] | None:
@@ -34,13 +35,6 @@ def normalize_unit_list(value: Any, field_name: str) -> List[Dict[str, Any]]:
         if normalized_item is not None:
             normalized.append(normalized_item)
     return normalized
-
-
-def normalize_text(value: Any) -> str | None:
-    if value is None:
-        return None
-    text = str(value).strip()
-    return text or None
 
 
 def normalize_range_value(value: Any, field_name: str) -> Dict[str, Any] | None:
